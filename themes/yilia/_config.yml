@@ -68,7 +68,8 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: "https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png"
+#avatar: "https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png"
+avatar: "http://www.fleven.com/img/avatar.png"
 
 #是否开启分享
 share_jia: true
@@ -102,7 +103,7 @@ style:
   # 头像上面的背景颜色
   header: '#fff'
   # 右滑板块背景
-  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+  slider: ''
 
 # slider的设置
 slider:
@@ -112,15 +113,16 @@ slider:
 # 智能菜单
 # 如不需要，将该对应项置为false
 # 比如
-#smart_menu:
-#  friends: false
+# smart_menu:
+  
 smart_menu:
   innerArchive: '所有文章'
   aboutme: '关于我'
+  friends: '我的足迹'
 
 friends:
   csdn: https://blog.csdn.net/daoyuly/article/list/1
   cnblogs: https://www.cnblogs.com/daoyuly
   github: https://github.com/daoyuly
 
-aboutme: 软件开发工程师<br>普通工匠<br>用技术创造生活<br>用技术改变世界
+aboutme: 程序员<br>踔厉奋发，笃行不怠

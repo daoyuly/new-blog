@@ -23,7 +23,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: #fff;
     }
   </style>
   
@@ -49,7 +49,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png" class="js-avatar">
+			<img src="http://www.fleven.com/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="">daoyuly</a></h1>
@@ -71,6 +71,10 @@ var _hmt = _hmt || [];
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">我的足迹</a>
     			
             
 		</nav>
@@ -97,7 +101,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png" class="js-avatar">
+				<img src="http://www.fleven.com/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">daoyuly</h1>
@@ -139,6 +143,271 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-常见javascript解析器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B8%B8%E8%A7%81javascript%E8%A7%A3%E6%9E%90%E5%99%A8/">常见javascript解析器</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B8%B8%E8%A7%81javascript%E8%A7%A3%E6%9E%90%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2022-10-22T11:22:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果对编译器或者语言编译技术感兴趣，可以研究一些JavaScript解析器。</p>
+<h1 id="常见的javascript解析器-JavaScript-parser-列表"><a href="#常见的javascript解析器-JavaScript-parser-列表" class="headerlink" title="常见的javascript解析器(JavaScript parser)列表"></a>常见的javascript解析器(JavaScript parser)列表</h1><h2 id="terser"><a href="#terser" class="headerlink" title="terser"></a><a href="https://github.com/terser/terser" target="_blank" rel="noopener">terser</a></h2><p>A JavaScript mangler/compressor toolkit for ES6+.</p>
+<h2 id="jsep"><a href="#jsep" class="headerlink" title="jsep"></a><a href="https://github.com/EricSmekens/jsep" target="_blank" rel="noopener">jsep</a></h2><p>jsep: A Tiny JavaScript Expression Parser</p>
+<p>jsep is a simple expression parser written in JavaScript. It can parse JavaScript expressions but not operations. The difference between expressions and operations is akin to the difference between a cell in an Excel spreadsheet vs. a proper JavaScript program.</p>
+<h2 id="slimit"><a href="#slimit" class="headerlink" title="slimit"></a><a href="https://github.com/rspivak/slimit" target="_blank" rel="noopener">slimit</a></h2><p>limIt is a JavaScript minifier written in Python. It compiles JavaScript into more compact code so that it downloads and runs faster.</p>
+<p>SlimIt also provides a library that includes a JavaScript parser, lexer, pretty printer and a tree visitor.</p>
+<h2 id="uglify-js"><a href="#uglify-js" class="headerlink" title="uglify-js"></a><a href="https://github.com/mishoo/UglifyJS" target="_blank" rel="noopener">uglify-js</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/mishoo" target="_blank" rel="noopener">https://github.com/mishoo</a></p>
+<p><a href="http://lisperator.net/" target="_blank" rel="noopener">http://lisperator.net/</a></p>
+<h2 id="Esprima"><a href="#Esprima" class="headerlink" title="Esprima"></a><a href="https://github.com/jquery/esprima" target="_blank" rel="noopener">Esprima</a></h2><p>相关资源:</p>
+<p><a href="https://ariya.io/about" target="_blank" rel="noopener">https://ariya.io/about</a></p>
+<p><a href="https://github.com/ariya" target="_blank" rel="noopener">https://github.com/ariya</a></p>
+<h2 id="acorn"><a href="#acorn" class="headerlink" title="acorn"></a><a href="https://github.com/acornjs/acorn" target="_blank" rel="noopener">acorn</a></h2><p>相关资源:</p>
+<p><a href="https://marijnhaverbeke.nl/" target="_blank" rel="noopener">https://marijnhaverbeke.nl/</a></p>
+<p><a href="https://github.com/marijnh" target="_blank" rel="noopener">https://github.com/marijnh</a></p>
+<h2 id="babel-parser"><a href="#babel-parser" class="headerlink" title="@babel/parser"></a><a href="https://github.com/babel/babel/tree/master/packages/babel-parser" target="_blank" rel="noopener">@babel/parser</a></h2><h2 id="espree"><a href="#espree" class="headerlink" title="espree"></a><a href="https://github.com/eslint/espree" target="_blank" rel="noopener">espree</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/nzakas" target="_blank" rel="noopener">https://github.com/nzakas</a></p>
+<p><a href="https://humanwhocodes.com/" target="_blank" rel="noopener">https://humanwhocodes.com/</a></p>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a><a href="https://github.com/microsoft/TypeScript/tree/master/src/compiler" target="_blank" rel="noopener">TypeScript</a></h2><h2 id="sucrase"><a href="#sucrase" class="headerlink" title="sucrase"></a><a href="https://github.com/alangpierce/sucrase" target="_blank" rel="noopener">sucrase</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/alangpierce" target="_blank" rel="noopener">https://github.com/alangpierce</a></p>
+<h2 id="swc"><a href="#swc" class="headerlink" title="swc"></a><a href="https://github.com/swc-project/swc" target="_blank" rel="noopener">swc</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/kdy1" target="_blank" rel="noopener">https://github.com/kdy1</a></p>
+<p><a href="https://kdy1.github.io/" target="_blank" rel="noopener">https://kdy1.github.io/</a></p>
+<h2 id="esbuild"><a href="#esbuild" class="headerlink" title="esbuild"></a><a href="https://github.com/evanw/esbuild/" target="_blank" rel="noopener">esbuild</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/evanw" target="_blank" rel="noopener">https://github.com/evanw</a></p>
+<p><a href="http://madebyevan.com/" target="_blank" rel="noopener">http://madebyevan.com/</a></p>
+<h2 id="recast"><a href="#recast" class="headerlink" title="recast"></a><a href="https://github.com/benjamn/recast" target="_blank" rel="noopener">recast</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/benjamn" target="_blank" rel="noopener">https://github.com/benjamn</a></p>
+<p><a href="https://www.quora.com/profile/Ben-Newman" target="_blank" rel="noopener">https://www.quora.com/profile/Ben-Newman</a></p>
+<h2 id="jscodeshift"><a href="#jscodeshift" class="headerlink" title="jscodeshift"></a><a href="https://github.com/facebook/jscodeshift" target="_blank" rel="noopener">jscodeshift</a></h2><p>相关资源:</p>
+<p><a href="https://github.com/fkling" target="_blank" rel="noopener">https://github.com/fkling</a></p>
+<p><a href="https://felix-kling.de/" target="_blank" rel="noopener">https://felix-kling.de/</a></p>
+<h2 id="esprit"><a href="#esprit" class="headerlink" title="esprit"></a><a href="https://github.com/dherman/esprit" target="_blank" rel="noopener">esprit</a></h2><p>A JavaScript parser written in Rust.</p>
+<h2 id="ASTExplorer"><a href="#ASTExplorer" class="headerlink" title="ASTExplorer"></a><a href="https://github.com/fkling/astexplorer" target="_blank" rel="noopener">ASTExplorer</a></h2><h2 id="pyjsparser"><a href="#pyjsparser" class="headerlink" title="pyjsparser"></a><a href="https://github.com/PiotrDabkowski/pyjsparser" target="_blank" rel="noopener">pyjsparser</a></h2><p>Fast JavaScript parser - manual translation of esprima.js to python. Takes 1 second to parse whole angular.js library so parsing speed is about 100k characters per second which makes it the fastest and most comprehensible JavaScript parser for python out there.</p>
+<h1 id="其他的相关解析器"><a href="#其他的相关解析器" class="headerlink" title="其他的相关解析器"></a>其他的相关解析器</h1><h2 id="css-js"><a href="#css-js" class="headerlink" title="css.js"></a><a href="https://github.com/jotform/css.js" target="_blank" rel="noopener">css.js</a></h2><p>A lightweight, battle tested, fast, css parser in JavaScript</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术汇总</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B8%B8%E8%A7%81javascript%E8%A7%A3%E6%9E%90%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-立场" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E7%AB%8B%E5%9C%BA/">立场</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E7%AB%8B%E5%9C%BA/" class="archive-article-date">
+  	<time datetime="2022-10-16T04:16:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很多人在思考问题时，有一个根本问题没有搞清楚，那就是自己的立场。如果一个人的思考范围是一个圆，立场就是这个圆的圆心，思考工具、思考材料、思考方法、个人经验都是圆心之外的辅助。</p>
+<p>立场是一定存在的。在生活工作中，你做的任何事情的背后都有立场的存在，有些立场藏得很深，七转八绕才能看见真正的立场，有的立场很明确，一眼就能被看透。当我们在争论一个技术方案，讨论一个社会问题时，所有论点的背后那个不动的东西就是立场。比如现在俄乌战争，很多人的言论是支持或者同情俄罗斯，很多人是支持或者同情乌克兰，也有很多人的是中国如何在这场冲突中的选择，各种观点都有，但是所有这些言论的立场基本上都是这场战争对我们个人意味着什么，趋利避害是在关于战争话题讨论中最根本的立场。立场丰富多样，其实是有限的，可以被识别的。这个世界复杂多变，很难理解。确立正确的立场才能更好的生存。没有立场的灵魂是苍白的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">思考 感悟</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E7%AB%8B%E5%9C%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-重读《赢在中国》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E9%87%8D%E8%AF%BB%E3%80%8A%E8%B5%A2%E5%9C%A8%E4%B8%AD%E5%9B%BD%E3%80%8B/">厚读《赢在中国》</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E9%87%8D%E8%AF%BB%E3%80%8A%E8%B5%A2%E5%9C%A8%E4%B8%AD%E5%9B%BD%E3%80%8B/" class="archive-article-date">
+  	<time datetime="2022-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>利用假期好好学习一下《赢在中国》里面的很多观点和思考。摘录了马云的一些点评和观点，有些可以理解，有些还需要继续琢磨。使用“把书读厚”的方式来读。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">少做就是多做，不要贪多，做精做透很重要，碰到一个强大的对手事，不要去挑战它，而应该去补充它，做它做不到的，服务好它，先求生存，再求战略，这是所有商家的基本规律。</span><br><span class="line"></span><br><span class="line">主题20问：</span><br><span class="line">1，商业的基本规律是什么？包括哪些内容？</span><br><span class="line">2，怎么理解“少做就是多做”？</span><br><span class="line">3，少做为什么就是多做？</span><br><span class="line">4，在一个范围和程度内，如何评估是多做了还是少做了？</span><br><span class="line">5，“少做”的付出是什么？结果是什么？副产品是什么？</span><br><span class="line">6，“多做”的付出是什么？结果是什么？有何不好的影响，有何好的影响？</span><br><span class="line">7，如何统筹理解“少做”和“多做”的现实关系和取舍，</span><br><span class="line">8，从发展的角度，如何动态的调整“少做”和“多做”</span><br><span class="line">9，少做和多做的关系，背后的根本原因是什么</span><br><span class="line">10，举一个例子说明，少做 比 多做 更好或者更坏？</span><br><span class="line">11，举一个例子说明，多做 比 少做更好 或者更坏？？</span><br><span class="line">12，做精做透的内涵是指啥？</span><br><span class="line">13，如何找到强大对手没有做好的的地方？</span><br><span class="line">14，如何界定“挑战”和“补充”？</span><br><span class="line">15，如何低调的发展，不让对手所有防范？</span><br><span class="line">16，生存和战略是企业中始终要思考的问题</span><br><span class="line">17，商业的本质是什么？</span><br><span class="line">18，如何看待和竞争对手的关系？</span><br><span class="line">19，从18的思考开始，这一点往深里思考，涉及到了一个人的商业价值观？本质上我们如何做生意？做生意为了什么？</span><br><span class="line">20，“少做就是多做，不要贪多，做精做透很重要，碰到一个强大的对手事，不要去挑战它，而应该去补充它，做它做不到的，服务好它，先求生存，再求战略，这是所有商家的基本规律。”这就话到底该如何理解？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">这世界上没有优秀的理念，只有脚踏实地的结果。</span><br><span class="line">主题20问：</span><br><span class="line">1，‘理念’到底是一种什么东西？</span><br><span class="line">2，‘理念’是如何形成的？</span><br><span class="line">3，‘理念’是如何影响我们的思考和行为的？</span><br><span class="line">4，如何定义的结果？</span><br><span class="line">5，要用哪些维度来定义结果？比如 时间、金钱，情感，情绪，认同，心理，享受，体验等等</span><br><span class="line">6，你能举例说明，影响你自己的理念有哪些？</span><br><span class="line">7，如何定义“优秀”？</span><br><span class="line">8，如何定义“优秀的理念”？</span><br><span class="line">9，尽可能多的举例你所知道的“理念”？</span><br><span class="line">10，从上面列举的“理念”中，你认为“优秀的理念”有哪些，说明你的理由？</span><br><span class="line">11，“脚踏实地”用来形容怎样的一种行动？</span><br><span class="line">12，“脚踏实地的结果” 和 不“脚踏实地的结果”有何区别？</span><br><span class="line">13，如何理解 “没有...., 只有...” 这种句式？</span><br><span class="line">14，如何理解“这世界上没有优秀的理念，只有脚踏实地的结果。”的积极意义？</span><br><span class="line">15，如何理解“这世界上没有优秀的理念，只有脚踏实地的结果。”的消极意义？</span><br><span class="line">16，如何创造&#x2F;发明一个‘理念’？</span><br><span class="line">17，从“理念”到“结果”，中间到底要经历什么？</span><br><span class="line">18，”结果“如何达成？</span><br><span class="line">19，说说你的“理念”和“结果”的辩证关系？</span><br><span class="line">20，从因果论的角度，简述【9】中的一个理念，在你的工作生活中形成了怎样的结果？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">永远不要让资本说话，要让资本赚钱。</span><br><span class="line">主题20问：</span><br><span class="line">1，资本永远是贪婪的</span><br><span class="line">2，资本不是万能的，他可能不会说话，很可能说的不对</span><br><span class="line">3，资本的目的是赚钱，让他说话，他也会嫌累，不在其位不谋其政</span><br><span class="line">4，契约很重要，明确企业的目标和责任义务，约束资本的目标和责任义务</span><br><span class="line">5，坚定自己的立场，明确自己的存在的价值，资本要是说话了，就没你啥事了</span><br><span class="line">6，资本也是脆弱和敏感的，资本其实非常脆弱，抗压力是最弱的，最值得保护的</span><br><span class="line">7，说的好听点的，资本想是企业的爹娘，能给你企业温暖和基础的生命力，但是企业不能遇到啥事都找爹娘，但是爹娘对企业的啥事有都爱操心</span><br><span class="line">8，说的不好听的，资本是苍蝇，不管是臭味的蛋，还是香味的蛋，只要让它看见缝，它都想盯一下</span><br><span class="line">9，</span><br><span class="line">10，</span><br><span class="line">11，</span><br><span class="line">12，</span><br><span class="line">13，</span><br><span class="line">14，</span><br><span class="line">15，</span><br><span class="line">16，</span><br><span class="line">17，</span><br><span class="line">18，</span><br><span class="line">19，</span><br><span class="line">20，</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">我觉得一个好东西往往是说不清楚的，说的清楚的往往不是好东西。</span><br><span class="line">主题20问：</span><br><span class="line">1，哲学思辨色彩浓厚，背后是丰厚的经验和敏锐的洞察，这种能力很难轻易获得</span><br><span class="line">2，这个论断的一个背景思考是，分类思维。“东西”很多种类，这里的“东西”应该是“创意”，“观点”，“方案”，“战略方向”，“思路”，“思想”等</span><br><span class="line">3，我想起了一句老话，只可意会不可言传。</span><br><span class="line">4，当然很多“好东西”是说的清楚的，说不清楚不是好事</span><br><span class="line">5，这里的说不清楚的意思应该是指，没有更多的基于事实的数据，现象或者现有的理论让别人相信或者理解你所说的内容（如2所列举的那些），经过若干时间后，这些内容直接或间接造成的后果被证实是符合预想的</span><br><span class="line">6，说的清楚的往往不是好东西，这句话其实很有深意。试想我们身边什么东西是你说不清楚的呢？或者说的清楚呢？每个人很难对身边的所有的现象能用现存知识说清楚，即便是再博学的人</span><br><span class="line">7，说不清楚 意味着可能2个事，1是你的本身的知识太少，不足以说清楚，2是内容本身足够复杂，你说不清楚</span><br><span class="line">8，作为工程师，不管是好东西还是坏东西，都要有说清楚的能力，这是非常基础和重要的能力，说清楚的东西才能成为一种现实，才能作为技术决策的因素</span><br><span class="line">9，</span><br><span class="line">10，</span><br><span class="line">11，</span><br><span class="line">12，</span><br><span class="line">13，</span><br><span class="line">14，</span><br><span class="line">15，</span><br><span class="line">16，</span><br><span class="line">17，</span><br><span class="line">18，</span><br><span class="line">19，</span><br><span class="line">20，</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">我没有关系，也没有钱，我是一点点起来， 我相信关系非凡不可靠，做生意不能凭关系，做生 意不能凭小聪明，做生意最重要的是你明白客户需 要什么，实实在在创造价值，坚持下去。这世界最 不可靠的东西就是关系。</span><br><span class="line"></span><br><span class="line">关于【关系】20问：</span><br><span class="line">    1，为什么说关系不可靠？</span><br><span class="line">    2，这个“关系”本质上什么呢？</span><br><span class="line">    3，关系有哪些分类？ </span><br><span class="line">    4，何时需要关系？</span><br><span class="line">    5，何时需要主动的稳定关系？</span><br><span class="line">    6，何时需要增强关系？</span><br><span class="line">    7，何时需要减弱关系？</span><br><span class="line">    8，何时需要主动断绝关系？</span><br><span class="line">    9，我们需要什么什么样的关系？</span><br><span class="line">    10，形成关系的因素是</span><br><span class="line">    11，可靠的关系是什么样子的？</span><br><span class="line">    12，做生意为什么要凭关系?</span><br><span class="line">    13，关系对于生意人意味什么？</span><br><span class="line">    14，关系的生命周期是怎样？</span><br><span class="line">    15，如何从无到有的创建一个关系？</span><br><span class="line">    16，如何处理多个关系之间的关系？</span><br><span class="line">    17，关系怎么产生利益？</span><br><span class="line">    18，关系会对目标达成产生什么样的影响？</span><br><span class="line">    19，关系的的负反馈是什么？</span><br><span class="line">    20，关系管理的原则是什么？</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记 思考总结</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E9%87%8D%E8%AF%BB%E3%80%8A%E8%B5%A2%E5%9C%A8%E4%B8%AD%E5%9B%BD%E3%80%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-2022清明组诗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -654,237 +923,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-软件设计的哲学-ch16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16/">软件设计的哲学 - ch16</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16/" class="archive-article-date">
-  	<time datetime="2021-02-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>修改现有的代码</p>
-        
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件设计的哲学-ch15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch15/">软件设计的哲学 - ch15</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch15/" class="archive-article-date">
-  	<time datetime="2021-02-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>先写评论</p>
-        
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch15/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch15/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件设计的哲学-ch14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch14/">软件设计的哲学 - ch14</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch14/" class="archive-article-date">
-  	<time datetime="2021-02-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>选择的名字</p>
-        
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch14/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch14/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -940,17 +981,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">我的足迹</a></li>
       
         
     </ul>
@@ -1037,6 +1086,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">软件设计的哲学 软件开发 方法论</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">思考 感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术汇总</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1082,11 +1143,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://blog.csdn.net/daoyuly/article/list/1" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>csdn</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.cnblogs.com/daoyuly" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>cnblogs</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://github.com/daoyuly" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>github</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">软件开发工程师&lt;br&gt;普通工匠&lt;br&gt;用技术创造生活&lt;br&gt;用技术改变世界</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序员&lt;br&gt;踔厉奋发，笃行不怠</div>
   	  	
     	</section>
     

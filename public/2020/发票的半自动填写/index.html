@@ -28,7 +28,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: #fff;
     }
   </style>
   
@@ -54,7 +54,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png" class="js-avatar">
+			<img src="http://www.fleven.com/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="">daoyuly</a></h1>
@@ -76,6 +76,10 @@ var _hmt = _hmt || [];
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">我的足迹</a>
     			
             
 		</nav>
@@ -102,7 +106,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png" class="js-avatar">
+				<img src="http://www.fleven.com/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">daoyuly</h1>
@@ -388,17 +392,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">我的足迹</a></li>
       
         
     </ul>
@@ -485,6 +497,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">软件设计的哲学 软件开发 方法论</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">思考 感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术汇总</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -530,11 +554,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://blog.csdn.net/daoyuly/article/list/1" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>csdn</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.cnblogs.com/daoyuly" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>cnblogs</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://github.com/daoyuly" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>github</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">软件开发工程师&lt;br&gt;普通工匠&lt;br&gt;用技术创造生活&lt;br&gt;用技术改变世界</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序员&lt;br&gt;踔厉奋发，笃行不怠</div>
   	  	
     	</section>
     

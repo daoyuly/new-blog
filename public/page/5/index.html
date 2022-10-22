@@ -23,7 +23,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: #fff;
     }
   </style>
   
@@ -49,7 +49,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png" class="js-avatar">
+			<img src="http://www.fleven.com/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="">daoyuly</a></h1>
@@ -71,6 +71,10 @@ var _hmt = _hmt || [];
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">我的足迹</a>
     			
             
 		</nav>
@@ -97,7 +101,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png" class="js-avatar">
+				<img src="http://www.fleven.com/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">daoyuly</h1>
@@ -139,6 +143,246 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-EventBus源码解析(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/">EventBus源码解析(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/" class="archive-article-date">
+  	<time datetime="2020-02-26T16:51:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p>描述一对多的依赖的关系，当一个对象的状态发生变化时，所有依赖它的对象都会获得通知：</p>
+        
+          <a class="article-more-a" href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java android EventBus</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-发票的半自动填写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/">发票的半自动填写</a>
+    </h1>
+  
+
+        
+        <a href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/" class="archive-article-date">
+  	<time datetime="2020-02-21T16:23:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每个月都有一天都会比较头疼，填写发票！每天的开发工作都要加班完成，这种琐碎的事情更不想做了，但是作为职场中，走报销是日常工作的一部分。作为写代码的手艺人，天天给客户赋能，为啥不利用技术给自己赋能呢？</p>
+<p>忙里偷闲，搞起来吧！</p>
+        
+          <a class="article-more-a" href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">日常 自制 创意</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-shell学习: 提取文本，升级版本号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/shell%E5%AD%A6%E4%B9%A0:%20%E6%8F%90%E5%8F%96%E6%96%87%E6%9C%AC%EF%BC%8C%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC%E5%8F%B7/">使用提取文本，升级版本号</a>
+    </h1>
+  
+
+        
+        <a href="/2020/shell%E5%AD%A6%E4%B9%A0:%20%E6%8F%90%E5%8F%96%E6%96%87%E6%9C%AC%EF%BC%8C%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC%E5%8F%B7/" class="archive-article-date">
+  	<time datetime="2020-02-19T16:38:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用shell写Android的自动构建脚本时，需要从build.gradle中读取当前的版本号，自动加1，最后写入build.gradle。其中使用到grep，sek命令，具体代码如下：</p>
+<p>基本思路：</p>
+<ul>
+<li>通过grep获取版本号的位置，存到临时文件tmpshelldata.txt</li>
+<li>使用sed提取tmpshelldata.txt中的具体版本号，并且用命令替换赋值给一个变量version1</li>
+<li>通过 version1 加 1，计算新的版本号</li>
+<li>使用sed命令，用新版本号 代替 老版本号</li>
+<li>删除临时文件</li>
+</ul>
+<p>sed的一些技巧：</p>
+<ul>
+<li>提取字符串 是使用正则替换的方法，用\1捕获到的字符串，替换其他的，\1其实要提取的字符串</li>
+<li>在mac上使用 -i替换，后面必须加个””, 否则不生效，这和linux上不同</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gradleSrc=./</span><br><span class="line"></span><br><span class="line">function updateVersionHomePatch()&#123;</span><br><span class="line">    touch ./tmpshelldata.txt</span><br><span class="line">    grep -o "def versionHomePatch = \([0-9]*\)" $gradleSrc &gt; ./tmpshelldata.txt</span><br><span class="line">    version1=`sed 's/.*def versionHomePatch = \([0-9]*\)/\1/' ./tmpshelldata.txt`</span><br><span class="line">    echo "当前版本：$version1";</span><br><span class="line">    add=1</span><br><span class="line">    count=$[$version1+add]</span><br><span class="line">    echo "打包版本：$count"</span><br><span class="line">    new="def versionHomePatch = $count"</span><br><span class="line">    sed -i "" "s/def versionHomePatch = $version1/def versionHomePatch = $count/" </span><br><span class="line">    cd $gradleSrc</span><br><span class="line">    rm -f ./tmpshelldata.txt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">updateVersionHomePatch</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell 语言学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/shell%E5%AD%A6%E4%B9%A0:%20%E6%8F%90%E5%8F%96%E6%96%87%E6%9C%AC%EF%BC%8C%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC%E5%8F%B7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-机会来的时候，你准备好了吗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -667,204 +911,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-常见的心理学效应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/">常见的心理学效应</a>
-    </h1>
-  
-
-        
-        <a href="/2017/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/" class="archive-article-date">
-  	<time datetime="2017-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>常见的心理学效应，每天学习一下，站在更高一点的位置看人的行为，会让我们活的更通透一些。</p>
-        
-          <a class="article-more-a" href="/2017/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何选择一个看起来更松快的车厢" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E6%9D%BE%E5%BF%AB%E7%9A%84%E8%BD%A6%E5%8E%A2/">如何选择一个看起来更松快的车厢</a>
-    </h1>
-  
-
-        
-        <a href="/2017/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E6%9D%BE%E5%BF%AB%E7%9A%84%E8%BD%A6%E5%8E%A2/" class="archive-article-date">
-  	<time datetime="2017-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>晚上10点半，从宣武门到角门西的地铁里仍然拥挤不堪，这个点的4号线车到天宫院的是隔次列车，拥挤些也不奇怪。城区内的房租年年都要涨，越来越多的人选择子在丰台南部、大兴，燕郊那边租房居住，城内上班城外住，似乎已经成为工薪阶层的潮流。</p>
-        
-          <a class="article-more-a" href="/2017/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E6%9D%BE%E5%BF%AB%E7%9A%84%E8%BD%A6%E5%8E%A2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E6%9D%BE%E5%BF%AB%E7%9A%84%E8%BD%A6%E5%8E%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-管理学效应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/%E7%AE%A1%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/">管理学效应</a>
-    </h1>
-  
-
-        
-        <a href="/2017/%E7%AE%A1%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/" class="archive-article-date">
-  	<time datetime="2017-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>管理无处不在，管理就是如何处理人际关系，平衡利益，分配权力的过程。</p>
-        
-          <a class="article-more-a" href="/2017/%E7%AE%A1%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/%E7%AE%A1%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -920,17 +969,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">我的足迹</a></li>
       
         
     </ul>
@@ -1017,6 +1074,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">软件设计的哲学 软件开发 方法论</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">思考 感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术汇总</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1062,11 +1131,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://blog.csdn.net/daoyuly/article/list/1" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>csdn</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.cnblogs.com/daoyuly" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>cnblogs</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://github.com/daoyuly" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>github</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">软件开发工程师&lt;br&gt;普通工匠&lt;br&gt;用技术创造生活&lt;br&gt;用技术改变世界</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序员&lt;br&gt;踔厉奋发，笃行不怠</div>
   	  	
     	</section>
     
