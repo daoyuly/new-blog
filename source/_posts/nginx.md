@@ -1,7 +1,8 @@
 ---
 title: nginx 学习笔记
-date: 2020-02-01 20:36:30
 tags: nginx
+abbrlink: 24182
+date: 2020-02-01 20:36:30
 ---
 关于nginx使用的一些基本知识和实践，持续更新。
 <!-- more -->

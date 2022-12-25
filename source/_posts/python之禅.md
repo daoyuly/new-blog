@@ -1,7 +1,8 @@
 ---
 title: The Zen of Python
-date: 2020-04-27 02:29:54
 tags: Python 语言学习
+abbrlink: 14499
+date: 2020-04-27 02:29:54
 ---
 
 Beautiful is better than ugly.

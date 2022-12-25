@@ -1,7 +1,8 @@
 ---
 title: EventBus源码解析(一)
-date: 2020-02-27 00:51:19
 tags: java android EventBus
+abbrlink: 38778
+date: 2020-02-27 00:51:19
 ---
 
 ### 观察者模式

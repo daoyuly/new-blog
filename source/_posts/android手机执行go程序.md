@@ -1,7 +1,8 @@
 ---
 title: android手机执行go程序
-date: 2020-03-02 23:23:11
 tags: go android linux 刷机 root
+abbrlink: 16151
+date: 2020-03-02 23:23:11
 ---
 
 # 概述

@@ -1,6 +1,7 @@
 ---
 title: demo
-date: 2017-09-27
+abbrlink: 37731
+date: 2017-09-27 00:00:00
 ---
 <p><a href="http://www.fleven.com/demo/drink_responsability/index.html">基于three.js + canvas的动画实例</a></p>
 <p><a href="http://www.fleven.com/demo/equation/">数学公式输入示例</a></p>

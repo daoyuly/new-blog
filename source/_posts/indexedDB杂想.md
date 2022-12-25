@@ -1,7 +1,8 @@
 ---
 title: indexedDB杂想
-date: 2020-04-06 14:44:19
 tags: 技术杂想
+abbrlink: 62137
+date: 2020-04-06 14:44:19
 ---
 
 ## 仔细理解下indexedDB的设计哲学：
