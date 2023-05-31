@@ -10,10 +10,10 @@ function readDir(){
     done
 }
 
-      
+    
 
 hexo generate
 cd ./public
-rm -rf .DS_Store
+rm -rf ./.DS_Store
 #readDir .
 scp -r ./ root@101.200.240.217:/alidata/www/default
