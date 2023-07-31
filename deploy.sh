@@ -11,9 +11,11 @@ function readDir(){
 }
 
     
-
+# n # node 切到10.15
 hexo generate
 cd ./public
 rm -rf ./.DS_Store
 #readDir .
 scp -r ./ root@101.200.240.217:/alidata/www/default
+
+# n # node 切回来
