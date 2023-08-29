@@ -4,8 +4,7 @@ date: 2021-02-8
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 23082
 ---
-降低复杂性
-<!-- more -->
+
 # 第 8 章 降低复杂性
 
 > Chapter 8 Pull Complexity Downwards

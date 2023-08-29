@@ -4,8 +4,7 @@ date: 2021-02-9
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 39659
 ---
-在一起更好还是分开更好？
-<!-- more -->
+
 # 第 9 章 在一起更好还是分开更好？
 
 > Chapter 9 Better Together Or Better Apart?

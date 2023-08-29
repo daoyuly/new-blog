@@ -4,8 +4,7 @@ date: 2021-02-7
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 24170
 ---
-不同的层，不同的抽象
-<!-- more -->
+
 # 第 7 章 不同的层，不同的抽象
 
 > Chapter 7 Different Layer, Different Abstraction

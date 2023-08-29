@@ -5,7 +5,7 @@ abbrlink: 24182
 date: 2020-02-01 20:36:30
 ---
 关于nginx使用的一些基本知识和实践，持续更新。
-<!-- more -->
+
 
 - nginx.config
     - 使用```nginx -t```验证配置文件

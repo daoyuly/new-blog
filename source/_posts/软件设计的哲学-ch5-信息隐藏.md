@@ -4,8 +4,7 @@ date: 2021-02-5
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 40939
 ---
-信息隐藏(和泄漏)
-<!-- more -->
+
 # 第 5 章 信息隐藏(和泄漏)
 
 > Chapter 5 Information Hiding (and Leakage)

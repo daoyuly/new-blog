@@ -4,8 +4,7 @@ date: 2021-02-6
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 40619
 ---
-通用模块更深入
-<!-- more -->
+
 # 第 6 章 通用模块更深入
 
 > Chapter 6 General-Purpose Modules are Deeper
