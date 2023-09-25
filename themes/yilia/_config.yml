@@ -6,7 +6,7 @@ menu:
 
 # SubNav
 subnav:
-  github: "https://github.com/daoyuly"
+  github: "https://github.com/daoyuly/cv"
   #weibo: "#"
   #rss: "#"
   #zhihu: "#"
@@ -123,6 +123,6 @@ smart_menu:
 friends:
   csdn: https://blog.csdn.net/daoyuly/article/list/1
   cnblogs: https://www.cnblogs.com/daoyuly
-  github: https://github.com/daoyuly
+  github: https://github.com/daoyuly/cv
 
-aboutme: 程序员<br>踔厉奋发，笃行不怠
+aboutme: 程序员

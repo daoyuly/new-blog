@@ -1,7 +1,7 @@
 ---
-title: go入门学习笔记
+title: Go入门学习笔记
 date: '2020年03月02日23:34:09'
-tags: go 语言学习
+tags: go语言学习
 abbrlink: 38316
 ---
 go入门学习笔记
