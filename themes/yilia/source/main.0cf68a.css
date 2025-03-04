@@ -1026,7 +1026,6 @@ html {
     overflow: hidden;
     background: #88acdb;
     -webkit-transition: all .2s ease-in;
-    display: -webkit-box;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
     -webkit-box-align: center;
