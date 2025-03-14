@@ -12,6 +12,7 @@ function readDir(){
 
     
 # n # node 切到10.15
+# nvm use v10.15.3
 npm run build
 cd ./public
 rm -rf ./.DS_Store
