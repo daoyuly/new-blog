@@ -2,7 +2,7 @@
 title: Agentic Design Patterns - Glossary
 tags: AI agent 设计
 abbrlink: 24168
-date: 2025-1003 08:05:02
+date: 2025-10-03 08:05:02
 ---
 
 # 术语表
