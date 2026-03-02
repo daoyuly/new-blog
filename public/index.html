@@ -150,6 +150,357 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-02-ai-coding-design-decisions" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-02-ai-coding-design-decisions/">代码即设计决策累加？AI编程的理论边界与实践挑战</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-02-ai-coding-design-decisions/" class="archive-article-date">
+  	<time datetime="2026-03-02T09:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="代码即设计决策累加？AI编程的理论边界与实践挑战"><a href="#代码即设计决策累加？AI编程的理论边界与实践挑战" class="headerlink" title="代码即设计决策累加？AI编程的理论边界与实践挑战"></a>代码即设计决策累加？AI编程的理论边界与实践挑战</h1><blockquote>
+<p><strong>核心观点：</strong> “代码是所有设计决策的累加，这意味着，通过AI编程，只要存在一系列设计决策，就能复刻任何代码。”</p>
+</blockquote>
+<p>这个观点乍看之下似乎不言自明——毕竟，每一行代码都是某个决策的产物。但当我们深入思考时，会发现这个看似简单的命题背后，隐藏着关于<strong>知识表达、创造性与复杂性</strong>的深层哲学问题。</p>
+<p>本文将从<strong>理论可行性</strong>与<strong>实践局限性</strong>两个维度，对这一观点进行辩证性分析。</p>
+<hr>
+<h2 id="一、正题：理论上的合理性"><a href="#一、正题：理论上的合理性" class="headerlink" title="一、正题：理论上的合理性"></a>一、正题：理论上的合理性</h2><h3 id="1-1-代码确实是决策的结晶"><a href="#1-1-代码确实是决策的结晶" class="headerlink" title="1.1 代码确实是决策的结晶"></a>1.1 代码确实是决策的结晶</h3><p>从软件工程的角度来看，这个观点有其深刻的合理性：</p>
+<p><strong>每个代码细节都是决策：</strong></p>
+<ul>
+<li>为什么用 React 而不是 Vue？——技术选型决策</li>
+<li>为什么用递归而不是循环？——算法设计决策</li>
+<li>为什么这个变量叫 <code>userId</code> 而不是 <code>id</code>？——命名决策</li>
+<li>为什么这里要加缓存？——性能优化决策</li>
+<li>为什么用微服务而不是单体？——架构决策</li>
+</ul>
+<p><strong>显性化的决策可以传递：</strong><br>如果我们将所有这些决策显式地记录下来，理论上确实可以”复刻”代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">决策1：使用 React 18.2</span><br><span class="line">决策2：使用 TypeScript 5.0</span><br><span class="line">决策3：状态管理用 Zustand</span><br><span class="line">决策4：用 Tailwind CSS 做样式</span><br><span class="line">决策5：实现用户认证功能</span><br><span class="line">决策6：密码使用 bcrypt 加密</span><br><span class="line">决策7：Session 存储在 Redis</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>给定这些决策，一个足够强大的 AI 系统应该能够生成对应的代码。</p>
+<p><strong>这正是 AI 编程的核心逻辑：</strong></p>
+<ul>
+<li>GitHub Copilot：根据上下文（已做出的决策）预测下一个决策</li>
+<li>Cursor：理解项目结构（已有决策）并延续编码风格</li>
+<li>Devin：接收任务描述（决策指令）并生成完整实现</li>
+</ul>
+<p>从这个角度看，**”代码 &#x3D; 决策累加”** 是一个强有力的理论框架。</p>
+<hr>
+<h3 id="1-2-决策树视角的验证"><a href="#1-2-决策树视角的验证" class="headerlink" title="1.2 决策树视角的验证"></a>1.2 决策树视角的验证</h3><p>我们可以将代码生成视为一个<strong>决策树遍历</strong>的过程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">根节点：需求</span><br><span class="line">├─ 架构决策：前端 + 后端</span><br><span class="line">│  ├─ 前端框架：React</span><br><span class="line">│  │  ├─ 状态管理：Zustand</span><br><span class="line">│  │  └─ 样式方案：Tailwind</span><br><span class="line">│  └─ 后端框架：Express</span><br><span class="line">│     ├─ 数据库：PostgreSQL</span><br><span class="line">│     └─ 缓存：Redis</span><br><span class="line">└─ 部署方案：Docker + Kubernetes</span><br></pre></td></tr></table></figure>
+
+<p>如果我们能够：</p>
+<ol>
+<li><strong>完整遍历</strong>这棵决策树</li>
+<li><strong>明确记录</strong>每个节点的选择</li>
+<li><strong>传递给 AI</strong> 这些决策信息</li>
+</ol>
+<p>那么理论上，AI 确实可以生成与原代码功能等价的代码。</p>
+<hr>
+<h2 id="二、反题：实践中的困境"><a href="#二、反题：实践中的困境" class="headerlink" title="二、反题：实践中的困境"></a>二、反题：实践中的困境</h2><p>然而，当我们从理论走向实践时，会遇到一系列深刻的挑战。</p>
+<h3 id="2-1-隐性知识问题"><a href="#2-1-隐性知识问题" class="headerlink" title="2.1 隐性知识问题"></a>2.1 隐性知识问题</h3><p><strong>不是所有决策都能被显式表达。</strong></p>
+<p><strong>案例：命名决策</strong></p>
+<p>为什么这个函数叫 <code>processData</code> 而不是 <code>handleData</code>？</p>
+<ul>
+<li>决策者可能说：”感觉这样更顺口”</li>
+<li>背后是：英语语感、行业惯例、个人经验、团队文化</li>
+<li>这些因素难以完全显式化</li>
+</ul>
+<p><strong>案例：重构时机</strong></p>
+<p>什么时候该重构代码？</p>
+<ul>
+<li>代码重复了几次就该提取函数？2次？3次？</li>
+<li>这个决策依赖于：代码复杂度、未来需求预期、团队水平</li>
+<li>这些是”隐性知识”（Tacit Knowledge）</li>
+</ul>
+<p>哲学家迈克尔·波兰尼（Michael Polanyi）指出：**”我们所知道的，多于我们所能说的。”**</p>
+<hr>
+<h3 id="2-2-决策的依赖性问题"><a href="#2-2-决策的依赖性问题" class="headerlink" title="2.2 决策的依赖性问题"></a>2.2 决策的依赖性问题</h3><p><strong>决策不是独立的，而是相互纠缠的。</strong></p>
+<p><strong>案例：数据库选型</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">决策A：使用 PostgreSQL</span><br><span class="line">↓</span><br><span class="line">影响决策B：需要连接池（pg-pool）</span><br><span class="line">↓</span><br><span class="line">影响决策C：需要处理连接断开的重连逻辑</span><br><span class="line">↓</span><br><span class="line">影响决策D：需要在特定位置添加错误处理</span><br></pre></td></tr></table></figure>
+
+<p>如果你只告诉我”用 PostgreSQL”，我可能不会自动推导出所有下游决策。除非你同时告诉我：</p>
+<ul>
+<li>“用 pg-pool 做连接池”</li>
+<li>“需要处理连接断开”</li>
+<li>“重连策略是指数退避”</li>
+<li>“错误处理要记录到日志”</li>
+</ul>
+<p>但这样的决策列表会呈<strong>指数级增长</strong>。</p>
+<hr>
+<h3 id="2-3-创造性的涌现"><a href="#2-3-创造性的涌现" class="headerlink" title="2.3 创造性的涌现"></a>2.3 创造性的涌现</h3><p><strong>某些决策具有”涌现性”，无法通过线性决策序列预测。</strong></p>
+<p><strong>案例：算法创新</strong></p>
+<ul>
+<li>快速排序的设计：分治思想 + 基准元素选择</li>
+<li>这个决策不是”累积”出来的，而是”涌现”出来的</li>
+<li>它依赖于对问题本质的深刻洞察</li>
+</ul>
+<p><strong>案例：架构创新</strong></p>
+<ul>
+<li>微服务架构的提出：不是为了解决单个问题，而是对整个系统复杂性的重新思考</li>
+<li>这种决策往往来自对多个领域的综合理解</li>
+</ul>
+<p>如果我们只能”复刻”已有决策，那么我们永远无法”创造”新的设计范式。</p>
+<hr>
+<h3 id="2-4-上下文无限性问题"><a href="#2-4-上下文无限性问题" class="headerlink" title="2.4 上下文无限性问题"></a>2.4 上下文无限性问题</h3><p><strong>决策依赖于上下文，而上下文是无限的。</strong></p>
+<p><strong>案例：性能优化</strong></p>
+<p>为什么这里加缓存？</p>
+<ul>
+<li>因为性能测试显示这个查询慢</li>
+<li>为什么慢？</li>
+<li>因为数据库索引不够</li>
+<li>为什么索引不够？</li>
+<li>因为数据量增长超预期</li>
+<li>为什么增长超预期？</li>
+<li>因为产品策略调整…</li>
+</ul>
+<p>这是一个<strong>无限倒退</strong>的过程。要完整描述一个决策，需要描述整个因果链条，而这在实践中是不可能的。</p>
+<hr>
+<h2 id="三、合题：辩证的平衡"><a href="#三、合题：辩证的平衡" class="headerlink" title="三、合题：辩证的平衡"></a>三、合题：辩证的平衡</h2><h3 id="3-1-理论可行，但实践受限"><a href="#3-1-理论可行，但实践受限" class="headerlink" title="3.1 理论可行，但实践受限"></a>3.1 理论可行，但实践受限</h3><p><strong>结论：</strong> 这个观点在<strong>理论上</strong>是成立的，但在<strong>实践中</strong>面临巨大挑战。</p>
+<p><strong>类比：</strong></p>
+<ul>
+<li>理论上，象棋的所有最优走法都可以计算出来（有限博弈）</li>
+<li>但在实践中，计算机仍无法穷举所有可能（计算复杂度）</li>
+</ul>
+<p>同理：</p>
+<ul>
+<li>理论上，给定所有设计决策，AI 可以复刻代码</li>
+<li>但在实践中，完整描述所有决策的成本极高</li>
+</ul>
+<hr>
+<h3 id="3-2-适用场景的划分"><a href="#3-2-适用场景的划分" class="headerlink" title="3.2 适用场景的划分"></a>3.2 适用场景的划分</h3><p><strong>这个观点在以下场景中成立：</strong></p>
+<ol>
+<li><p><strong>标准化场景</strong></p>
+<ul>
+<li>CRUD 操作、REST API、登录注册</li>
+<li>决策模式已经高度标准化</li>
+<li>AI 编程效果极好</li>
+</ul>
+</li>
+<li><p><strong>框架约束场景</strong></p>
+<ul>
+<li>在 React&#x2F;Django&#x2F;Rails 等框架内开发</li>
+<li>框架已经限制了决策空间</li>
+<li>AI 只需在有限空间内选择</li>
+</ul>
+</li>
+<li><p><strong>重复性场景</strong></p>
+<ul>
+<li>代码迁移、格式转换、测试生成</li>
+<li>决策模式可从历史数据学习</li>
+</ul>
+</li>
+</ol>
+<p><strong>这个观点在以下场景中失效：</strong></p>
+<ol>
+<li><p><strong>创新性场景</strong></p>
+<ul>
+<li>新算法设计、新架构模式</li>
+<li>需要真正的创造性思维</li>
+</ul>
+</li>
+<li><p><strong>高度上下文依赖场景</strong></p>
+<ul>
+<li>遗留系统改造、复杂业务逻辑</li>
+<li>需要深入理解领域知识</li>
+</ul>
+</li>
+<li><p><strong>跨领域综合场景</strong></p>
+<ul>
+<li>将多个领域的知识融合</li>
+<li>需要人类的直觉和经验</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3-3-人机协作的最优模式"><a href="#3-3-人机协作的最优模式" class="headerlink" title="3.3 人机协作的最优模式"></a>3.3 人机协作的最优模式</h3><p><strong>基于上述分析，AI 编程的正确姿势应该是：</strong></p>
+<p><strong>模式 1：决策者 + 执行者</strong></p>
+<ul>
+<li>人类：做出高层设计决策</li>
+<li>AI：根据决策生成代码</li>
+<li>适用：常规开发任务</li>
+</ul>
+<p><strong>模式 2：协作者 + 审查者</strong></p>
+<ul>
+<li>AI：生成初步方案</li>
+<li>人类：审查并做出关键决策</li>
+<li>AI：根据反馈调整</li>
+<li>适用：探索性开发</li>
+</ul>
+<p><strong>模式 3：创造者 + 助手</strong></p>
+<ul>
+<li>人类：提出创新思路</li>
+<li>AI：辅助验证和实现</li>
+<li>适用：前沿探索</li>
+</ul>
+<hr>
+<h2 id="四、未来展望"><a href="#四、未来展望" class="headerlink" title="四、未来展望"></a>四、未来展望</h2><h3 id="4-1-决策显式化的工具"><a href="#4-1-决策显式化的工具" class="headerlink" title="4.1 决策显式化的工具"></a>4.1 决策显式化的工具</h3><p><strong>趋势：未来的编程工具会更注重”决策记录”</strong></p>
+<ul>
+<li>**Architectural Decision Records (ADR)**：记录架构决策</li>
+<li><strong>Design Docs</strong>：记录设计思路</li>
+<li><strong>Code Comments 2.0</strong>：结构化的决策说明</li>
+</ul>
+<p>这些工具可以让更多隐性知识显性化，从而提升 AI 编程的能力。</p>
+<hr>
+<h3 id="4-2-AI-的学习方向"><a href="#4-2-AI-的学习方向" class="headerlink" title="4.2 AI 的学习方向"></a>4.2 AI 的学习方向</h3><p><strong>AI 需要突破的方向：</strong></p>
+<ol>
+<li><p><strong>理解上下文</strong></p>
+<ul>
+<li>不仅理解当前代码，还要理解项目历史</li>
+<li>学习从 commit history、issue tracker 中提取决策</li>
+</ul>
+</li>
+<li><p><strong>学习隐性知识</strong></p>
+<ul>
+<li>从大量代码中学习”不成文的规则”</li>
+<li>理解行业惯例、团队风格</li>
+</ul>
+</li>
+<li><p><strong>创造性推理</strong></p>
+<ul>
+<li>不仅仅是模式匹配，还要能提出新思路</li>
+<li>类比推理、跨领域迁移</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><h3 id="核心观点的修正"><a href="#核心观点的修正" class="headerlink" title="核心观点的修正"></a>核心观点的修正</h3><p>原观点：”代码是所有设计决策的累加，只要存在一系列设计决策，就能复刻任何代码。”</p>
+<p><strong>修正后的观点：</strong></p>
+<blockquote>
+<p>“代码是<strong>显性决策</strong>与<strong>隐性知识</strong>的结合体。AI 可以复刻那些能够被显式表达的决策，但对于高度依赖隐性知识、创造性思维和复杂上下文的代码，AI 的复刻能力仍然有限。”</p>
+</blockquote>
+<hr>
+<h3 id="对开发者的启示"><a href="#对开发者的启示" class="headerlink" title="对开发者的启示"></a>对开发者的启示</h3><ol>
+<li><p><strong>善用 AI，但不要神话 AI</strong></p>
+<ul>
+<li>AI 是强大的工具，但不是万能的</li>
+<li>理解 AI 的能力边界</li>
+</ul>
+</li>
+<li><p><strong>显式化你的决策</strong></p>
+<ul>
+<li>写好注释、文档、设计说明</li>
+<li>不仅是为了 AI，也是为了团队</li>
+</ul>
+</li>
+<li><p><strong>保持创造性</strong></p>
+<ul>
+<li>真正的创新仍然需要人类</li>
+<li>AI 可以辅助，但不能替代</li>
+</ul>
+</li>
+<li><p><strong>专注于高层决策</strong></p>
+<ul>
+<li>让 AI 处理细节实现</li>
+<li>人类专注于架构、策略、创新</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="最后的思考"><a href="#最后的思考" class="headerlink" title="最后的思考"></a>最后的思考</h3><p>“代码即决策累加”这个观点，深刻地揭示了编程的本质：<strong>编程是决策的艺术</strong>。</p>
+<p>AI 编程的兴起，实际上是在迫使我们思考：</p>
+<ul>
+<li>哪些决策是本质的？</li>
+<li>哪些决策是偶然的？</li>
+<li>哪些决策可以被自动化？</li>
+<li>哪些决策需要人类的直觉？</li>
+</ul>
+<p>在这个过程中，我们不仅会更理解 AI 的能力，也会更理解编程本身。</p>
+<hr>
+<blockquote>
+<p><strong>一句话总结：</strong> 代码确实是决策的累加，但不是所有决策都能被累加。AI 编程的未来，在于人类与 AI 共同构建一个<strong>部分显式、部分隐式</strong>的决策体系。</p>
+</blockquote>
+<hr>
+<p><strong>相关阅读：</strong></p>
+<ul>
+<li>《设计模式：可复用面向对象软件的基础》</li>
+<li>《代码大全》</li>
+<li>《程序员修炼之道》</li>
+<li>Michael Polanyi, <em>The Tacit Dimension</em> (1966)</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AI编程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件工程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计哲学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术思考//" class="article-tag-list-link color5">技术思考</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-02-ai-coding-design-decisions/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-02-arxiv-ai-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1286,89 +1637,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 11 月 17 日 - 2025年 11 月 21 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%2017%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%2021%20%E6%97%A5/">工作周报2025年 11 月 17 日 - 2025年 11 月 21 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%2017%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%2021%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-11-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p><strong>脱敏处理</strong></p>
-<ul>
-<li>Cloudflare 事故的思考<ol>
-<li>本周Cloudflare 发生了严重的事故，对我们没有影响，不过作为工程师我也深有感触，也值得用他人的血泪教育一下自己。</li>
-<li>很多事故都是发生在不经意的一个小失误和小bug，工程开发不能存在侥幸心理。从自身来说，要不断的提醒自己要严谨，认真做功能设计，严谨写每一个方法，尽可能保证每一行代码的健壮，考虑到尽可能多的异常情况，边界情况，特别是让大模型想尽可能多的非预期的可能，如在大模型使用文件记忆时，要考虑到如果硬盘慢了怎么半，文件权限被篡改了怎么办，多线程如何同步等。</li>
-<li>很多事故都是小概率事件，但是事故的复杂就是事故之前从理性想似乎是绝无可能发生，事故后又会觉得它一定会发生。这种认知距离究竟是怎么产生的，如何避免这种认知距离实际上很重要的事情。</li>
-<li>最近结合uShow的问题，我也顺带学习了一下Datadog + Pagerduty + Slack 的告警机制和事故处理流程机制。对于复杂而又真实的世界来说，事故的发生难以避免，从务实的角度出发，在做好质量保障之外，建立切实可行的事故处理流程是至关重要的，遇事不慌，临危不乱，紧急有序响应，各团队协同合作，让损失降到最低。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%2017%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%2021%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1706,6 +1974,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
               </li>
             
             <div class="clearfix"></div>

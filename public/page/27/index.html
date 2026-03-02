@@ -150,6 +150,82 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2022年 11 月28 日 - 2022年 12 月 4 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2011%20%E6%9C%8828%20%E6%97%A5%20-%202022%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5/">工作周报2022年 11 月28 日 - 2022年 12 月 4 日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2011%20%E6%9C%8828%20%E6%97%A5%20-%202022%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-12-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>表格开发比我预想的要复杂一些，主要难点在列fixed和自适应宽度列的实现。总共设计开发了2版，月初的预期是想开发一个比较纯粹的表格，用于Wweb端简单的表格的替换，开发完成了，并且替换了课程和学习项目表格，涉及到7个表格，比如报名列表，学员列表，考试评分列表。在管理后台中有些表格的的特性较多，如固定列，自适应列，双滚动条等特性，看了目前我们内部大部分的表格实现，总体都是针对具体业务的，特性点没有一个是汇总的，这样未来表格的使用还是统一，达不到快速寻找，快速复用的这种效果。所以月中对表格做了新的扩展开发，这次是基于rc-table的开发，由于ts的支持不同，对源码做了较大的类型调整和梳理，对第三方依赖也做了一些精简，主要目的是保证我们对表格代码和扩展的完全掌控。期初类型化的力度把握的不是很好，修改了部分代码的初始值，就导致一些奇怪的异常问题发生，这个排查花费了一些时间，也是值得在其他类似项目做类型化时注意的点。这个过程给我的经验就是类型化要把握好粒度，在类型化精细度和时间成本之间做好平衡。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2011%20%E6%9C%8828%20%E6%97%A5%20-%202022%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2022年 11 月21 日 - 2022年 11 月 27 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -925,114 +1001,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-常见javascript解析器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B8%B8%E8%A7%81javascript%E8%A7%A3%E6%9E%90%E5%99%A8/">常见javascript解析器</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B8%B8%E8%A7%81javascript%E8%A7%A3%E6%9E%90%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2022-10-22T11:22:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果对编译器或者语言编译技术感兴趣，可以研究一些JavaScript解析器。</p>
-<h1 id="常见的javascript解析器-JavaScript-parser-列表"><a href="#常见的javascript解析器-JavaScript-parser-列表" class="headerlink" title="常见的javascript解析器(JavaScript parser)列表"></a>常见的javascript解析器(JavaScript parser)列表</h1><h2 id="terser"><a href="#terser" class="headerlink" title="terser"></a><a target="_blank" rel="noopener" href="https://github.com/terser/terser">terser</a></h2><p>A JavaScript mangler&#x2F;compressor toolkit for ES6+.</p>
-<h2 id="jsep"><a href="#jsep" class="headerlink" title="jsep"></a><a target="_blank" rel="noopener" href="https://github.com/EricSmekens/jsep">jsep</a></h2><p>jsep: A Tiny JavaScript Expression Parser</p>
-<p>jsep is a simple expression parser written in JavaScript. It can parse JavaScript expressions but not operations. The difference between expressions and operations is akin to the difference between a cell in an Excel spreadsheet vs. a proper JavaScript program.</p>
-<h2 id="slimit"><a href="#slimit" class="headerlink" title="slimit"></a><a target="_blank" rel="noopener" href="https://github.com/rspivak/slimit">slimit</a></h2><p>limIt is a JavaScript minifier written in Python. It compiles JavaScript into more compact code so that it downloads and runs faster.</p>
-<p>SlimIt also provides a library that includes a JavaScript parser, lexer, pretty printer and a tree visitor.</p>
-<h2 id="uglify-js"><a href="#uglify-js" class="headerlink" title="uglify-js"></a><a target="_blank" rel="noopener" href="https://github.com/mishoo/UglifyJS">uglify-js</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/mishoo">https://github.com/mishoo</a></p>
-<p><a target="_blank" rel="noopener" href="http://lisperator.net/">http://lisperator.net/</a></p>
-<h2 id="Esprima"><a href="#Esprima" class="headerlink" title="Esprima"></a><a target="_blank" rel="noopener" href="https://github.com/jquery/esprima">Esprima</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://ariya.io/about">https://ariya.io/about</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/ariya">https://github.com/ariya</a></p>
-<h2 id="acorn"><a href="#acorn" class="headerlink" title="acorn"></a><a target="_blank" rel="noopener" href="https://github.com/acornjs/acorn">acorn</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://marijnhaverbeke.nl/">https://marijnhaverbeke.nl/</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/marijnh">https://github.com/marijnh</a></p>
-<h2 id="babel-parser"><a href="#babel-parser" class="headerlink" title="@babel&#x2F;parser"></a><a target="_blank" rel="noopener" href="https://github.com/babel/babel/tree/master/packages/babel-parser">@babel&#x2F;parser</a></h2><h2 id="espree"><a href="#espree" class="headerlink" title="espree"></a><a target="_blank" rel="noopener" href="https://github.com/eslint/espree">espree</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/nzakas">https://github.com/nzakas</a></p>
-<p><a target="_blank" rel="noopener" href="https://humanwhocodes.com/">https://humanwhocodes.com/</a></p>
-<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a><a target="_blank" rel="noopener" href="https://github.com/microsoft/TypeScript/tree/master/src/compiler">TypeScript</a></h2><h2 id="sucrase"><a href="#sucrase" class="headerlink" title="sucrase"></a><a target="_blank" rel="noopener" href="https://github.com/alangpierce/sucrase">sucrase</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/alangpierce">https://github.com/alangpierce</a></p>
-<h2 id="swc"><a href="#swc" class="headerlink" title="swc"></a><a target="_blank" rel="noopener" href="https://github.com/swc-project/swc">swc</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/kdy1">https://github.com/kdy1</a></p>
-<p><a target="_blank" rel="noopener" href="https://kdy1.github.io/">https://kdy1.github.io/</a></p>
-<h2 id="esbuild"><a href="#esbuild" class="headerlink" title="esbuild"></a><a target="_blank" rel="noopener" href="https://github.com/evanw/esbuild/">esbuild</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/evanw">https://github.com/evanw</a></p>
-<p><a target="_blank" rel="noopener" href="http://madebyevan.com/">http://madebyevan.com/</a></p>
-<h2 id="recast"><a href="#recast" class="headerlink" title="recast"></a><a target="_blank" rel="noopener" href="https://github.com/benjamn/recast">recast</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/benjamn">https://github.com/benjamn</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.quora.com/profile/Ben-Newman">https://www.quora.com/profile/Ben-Newman</a></p>
-<h2 id="jscodeshift"><a href="#jscodeshift" class="headerlink" title="jscodeshift"></a><a target="_blank" rel="noopener" href="https://github.com/facebook/jscodeshift">jscodeshift</a></h2><p>相关资源:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/fkling">https://github.com/fkling</a></p>
-<p><a target="_blank" rel="noopener" href="https://felix-kling.de/">https://felix-kling.de/</a></p>
-<h2 id="esprit"><a href="#esprit" class="headerlink" title="esprit"></a><a target="_blank" rel="noopener" href="https://github.com/dherman/esprit">esprit</a></h2><p>A JavaScript parser written in Rust.</p>
-<h2 id="ASTExplorer"><a href="#ASTExplorer" class="headerlink" title="ASTExplorer"></a><a target="_blank" rel="noopener" href="https://github.com/fkling/astexplorer">ASTExplorer</a></h2><h2 id="pyjsparser"><a href="#pyjsparser" class="headerlink" title="pyjsparser"></a><a target="_blank" rel="noopener" href="https://github.com/PiotrDabkowski/pyjsparser">pyjsparser</a></h2><p>Fast JavaScript parser - manual translation of esprima.js to python. Takes 1 second to parse whole angular.js library so parsing speed is about 100k characters per second which makes it the fastest and most comprehensible JavaScript parser for python out there.</p>
-<h1 id="其他的相关解析器"><a href="#其他的相关解析器" class="headerlink" title="其他的相关解析器"></a>其他的相关解析器</h1><h2 id="css-js"><a href="#css-js" class="headerlink" title="css.js"></a><a target="_blank" rel="noopener" href="https://github.com/jotform/css.js">css.js</a></h2><p>A lightweight, battle tested, fast, css parser in JavaScript</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术汇总</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B8%B8%E8%A7%81javascript%E8%A7%A3%E6%9E%90%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/26/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/28/">Next &raquo;</a>
@@ -1370,6 +1338,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
               </li>
             
             <div class="clearfix"></div>
