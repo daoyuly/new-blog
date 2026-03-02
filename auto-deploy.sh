@@ -32,6 +32,7 @@ fi
 
 # 4. 上传后 git 提交所有变更
 if ! git diff --staged --quiet; then
+  git add .
   git commit -m "auto deploy: $(date '+%Y-%m-%d %H:%M')"
   git push origin main
 fi

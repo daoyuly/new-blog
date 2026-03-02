@@ -150,6 +150,105 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2025年 3 月 24 日 - 2025年 3 月 30 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2030%20%E6%97%A5/">工作周报2025年 3 月 24 日 - 2025年 3 月 30 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2030%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-03-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>完善前端代码日志规范和异常处理规范<ol>
+<li>本周我完成了150多个问题排查，集中一部分按照ignore的问题解决，其他的部分是是常规性异常类的请求，边缘逻辑，设备兼容性问题。</li>
+<li>上周和本周开始计划性的重点解决某一类问题，本周是播放器相关的所有问题。现阶段的处理策略：基于现有实现，用最小的优化措施，尽可能的提高播放器的稳定性和兼容性。目前已经解决的问题包括：部分浏览器上视频播放完，完成状态触发的无限循环的问题；某些交互导致的play和pause冲突的问题；异常日志不充分不详细的问题；AI 字幕转换异常报错的问题等等，这些问题一部分经过验证已经彻底解决，另一部分还在验证中。</li>
+<li>本周对主要Repo（Course,Support_modules等）的异常信息做了修正和优化，主要是4点：<ul>
+<li>把所有的中文异常信息改成英文异常信息</li>
+<li>严格区分error，log，warn的使用，主要是为了更好在Sentry实现可观测性</li>
+<li>部分关键实现补充try-catch</li>
+<li>完善异常信息，所有的catch信息增加异常的title，以方便定位异常的位置</li>
+<li>下一周还要对其他Repo继续完善异常信息，这类工作在以前，是一个非常耗时的工作而且也是不太安全的事情，现在很大一部分重复工作是靠Cursor完成，我们要做的就是引导，审核，写例子性的代码，写注释性伪代码。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>构建MCP + Sentry的日常巡检体系<ol>
+<li>通过和张浩、袁圆等伙伴们的讨论沟通，我们会探索利用MCP技术建立Sentry的日常巡检报警机制，这样可以补充丰富目前Sentry上的查询，问题识别的不足，提升报警的时效性和精准度</li>
+<li>这个体系初步看需要3个关键组件，1是Issue数据库，存储我们已经识别和分类的问题，2 是Sentry的MCP相关的服务； 3 常见的Prompt和Slack报警，下周会建立初步的Demo的功能，评估其收益。</li>
+</ol>
+</li>
+<li>关于MCP的思考，本周和Web组的伙伴们一起分享学习了MCP的相关内容，除了相关的示例，我也从第一性原理的思路出发和大家伙儿讨论清楚MCP基本的机制和基本实现。<ol>
+<li>Cursor + Figma + MCP  这个组合确实会改变前端的开发模式，我觉的开发页面前把Figma的加在Prompt里，可能是一个微小的动作，但是结果非常不同，要让MCP成为日常开发的微习惯，对于一些项目，效率的提升是倍数级的。</li>
+<li>另外通过不同的尝试，我们也认识到MCP对设计师，也就对Figma的结构化设计提出了新的要求。但是什么样Figma数据更好的生成和我们对齐的代码，我们还在探索，相信通过一段时间使用，我们能找最佳实践。</li>
+<li>MCP产生的背景是AI要指向交付结果，要给使用者方来看得见的绩效提升，任何不交付结果的AI，都可以归类为玩具。我们现在用到了非常多的第三方工具，比如在开发页面阶段，需要在在Cursor，Figma，Chrome，Anasa，接口文档，有时还有Wiki，Json格式工具，PostMan等各种工具之间来回切换，本质上说，这些动作是对脑力和时间的极大浪费，很多开发阶段的问题的来源也出现在这些工具的协作产生的能力差缝隙。如何把这些工具所代表的能力整合在一起，可能是未来一个阶段我们工程效能提升的一个重要方向。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2030%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2025年 3 月 17 日 - 2025年 3 月 23 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1095,74 +1194,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-创业公司那些事-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-2/">创业公司那些事-2</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-2/" class="archive-article-date">
-  	<time datetime="2025-03-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于不断试错，不断迭代的思考。</p>
-<p>每个人，每个行业，每次创业的上下文，所处的环境，机遇，资源，政策，创始人运气，创始人能力都有不同，所以很难有一个统一的过程。但不论怎样，刚开始的摸索，尝试，趟出模式，这个过程是一定少不了的。</p>
-<p>创业初期，商业模式没有经过市场验证，没有摸索到属于自己的商业道路，需要不断摸索，试错有成本，思考的底线是不让自己死掉，花最小的钱办最大的事。</p>
-<p>肯定有冒险赌博的心理，但也要稳住自己的产品方向。</p>
-<p>尽量少的试错，试错的成本是巨大的。很多公司的成功的基础往往就是它的试错成本比别公司更少，它就活下来了，得到了发展机会。</p>
-<p>这个创业过程中最难的，也是最关键的事情。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
@@ -1488,6 +1519,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
             
             <div class="clearfix"></div>

@@ -150,6 +150,178 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-软件设计的哲学-ch12-为什么写评论呢？四个理由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch12-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%AF%84%E8%AE%BA%E5%91%A2%EF%BC%9F%E5%9B%9B%E4%B8%AA%E7%90%86%E7%94%B1/">软件设计的哲学 - ch12</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch12-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%AF%84%E8%AE%BA%E5%91%A2%EF%BC%9F%E5%9B%9B%E4%B8%AA%E7%90%86%E7%94%B1/" class="archive-article-date">
+  	<time datetime="2021-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-12-章-为什么写评论呢？四个理由"><a href="#第-12-章-为什么写评论呢？四个理由" class="headerlink" title="第 12 章 为什么写评论呢？四个理由"></a>第 12 章 为什么写评论呢？四个理由</h1><blockquote>
+<p>Chapter 12 Why Write Comments? The Four Excuses</p>
+</blockquote>
+<p>In-code documentation plays a crucial role in software design. Comments are essential to help developers understand a system and work efficiently, but the role of comments goes beyond this. Documentation also plays an important role in abstraction; without comments, you can’t hide complexity. Finally, the process of writing comments, if done correctly, will actually improve a system’s design. Conversely, a good software design loses much of its value if it is poorly documented.</p>
+<blockquote>
+<p>代码内文档在软件设计中起着至关重要的作用。注释对于帮助开发人员理解系统和有效工作至关重要，但是注释的作用不止于此。文档在抽象中也起着重要作用。没有评论，您就无法隐藏复杂性。最后，编写注释的过程（如果正确完成）将实际上改善系统的设计。相反，如果没有很好的文档记录，那么好的软件设计会失去很多价值。</p>
+</blockquote>
+<p>Unfortunately, this view is not universally shared. A significant fraction of production code contains essentially no comments. Many developers think that comments are a waste of time; others see the value in comments, but somehow never get around to writing them. Fortunately, many development teams recognize the value of documentation, and it feels like the prevalence of these teams is gradually increasing. However, even in teams that encourage documentation, comments are often viewed as drudge work and many developers don’t understand how to write them, so the resulting documentation is often mediocre. Inadequate documentation creates a huge and unnecessary drag on software development.</p>
+<blockquote>
+<p>不幸的是，这种观点并未得到普遍认同。生产代码的很大一部分基本上不包含任何注释。许多开发人员认为评论是浪费时间。其他人则看到了注释中的价值，但不知何故从不动手编写它们。幸运的是，许多开发团队认识到了文档的价值，并且感觉这些团队的普及率正在逐渐提高。但是，即使在鼓励文档的团队中，注释也经常被视为繁琐的工作，而且许多开发人员也不了解如何编写注释，因此生成的文档通常是平庸的。文档不足会给软件开发带来巨大且不必要的拖累。</p>
+</blockquote>
+<p>In this chapter I will discuss the excuses developers use to avoid writing comments, and the reasons why comments really do matter. Chapter 13 will then describe how to write good comments and the next few chapters after that will discuss related issues such as choosing variable names and how to use documentation to improve a system’s design. I hope these chapters will convince you of three things: good comments can make a big difference in the overall quality of software; it isn’t hard to write good comments; and (this may be hard to believe) writing comments can actually be fun.</p>
+<blockquote>
+<p>在本章中，我将讨论开发人员避免写评论的借口，以及评论真正重要的原因。然后，第 13 章将描述如何编写好的注释，其后的几章将讨论相关问题，例如选择变量名以及如何使用文档来改进系统的设计。我希望这些章节能使您相信三件事：好的评论可以对软件的整体质量产生很大的影响；写好评论并不难；并且（可能很难相信）写评论实际上很有趣。</p>
+</blockquote>
+<p>When developers don’t write comments, they usually justify their behavior with one or more of the following excuses:</p>
+<blockquote>
+<p>当开发人员不发表评论时，他们通常会以以下一种或多种借口为自己的行为辩护：</p>
+</blockquote>
+<ul>
+<li>“Good code is self-documenting.”</li>
+<li>“I don’t have time to write comments.”</li>
+<li>“Comments get out of date and become misleading.”</li>
+<li>“The comments I have seen are all worthless; why bother?” In the sections below I will address each of these excuses in turn.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>“好的代码可以自我记录。”</li>
+<li>“我没有时间写评论。”</li>
+<li>“评论过时，并会产生误导。”</li>
+<li>“我所看到的评论都是毫无价值的；何必？” 在以下各节中，我将依次讨论这些借口。</li>
+</ul>
+</blockquote>
+<h2 id="12-1-Good-code-is-self-documenting-好的代码可以自我记录"><a href="#12-1-Good-code-is-self-documenting-好的代码可以自我记录" class="headerlink" title="12.1 Good code is self-documenting 好的代码可以自我记录"></a>12.1 Good code is self-documenting 好的代码可以自我记录</h2><p>Some people believe that if code is written well, it is so obvious that no comments are needed. This is a delicious myth, like a rumor that ice cream is good for your health: we’d really like to believe it! Unfortunately, it’s simply not true. To be sure, there are things you can do when writing code to reduce the need for comments, such as choosing good variable names (see Chapter 14). Nonetheless, there is still a significant amount of design information that can’t be represented in code. For example, only a small part of a class’s interface, such as the signatures of its methods, can be specified formally in the code. The informal aspects of an interface, such as a high-level description of what each method does or the meaning of its result, can only be described in comments. There are many other examples of things that can’t be described in the code, such as the rationale for a particular design decision, or the conditions under which it makes sense to call a particular method.</p>
+<blockquote>
+<p>有人认为，如果代码编写得当，那么显而易见，不需要注释。这是一个美味的神话，就像谣言说冰淇淋对您的健康有益：我们真的很想相信！不幸的是，事实并非如此。可以肯定的是，在编写代码时可以做一些事情来减少对注释的需求，例如选择好的变量名（请参阅第 14 章）。尽管如此，仍有大量设计信息无法用代码表示。例如，只能在代码中正式指定类接口的一小部分，例如其方法的签名。界面的非正式方面，例如对每种方法的作用或其结果含义的高级描述，只能在注释中描述。</p>
+</blockquote>
+<p>Some developers argue that if others want to know what a method does, they should just read the code of the method: this will be more accurate than any comment. It’s possible that a reader could deduce the abstract interface of the method by reading its code, but it would be time-consuming and painful. In addition, if you write code with the expectation that users will read method implementations, you will try to make each method as short as possible, so that it’s easy to read. If the method does anything nontrivial, you will break it up into several smaller methods. This will result in a large number of shallow methods. Furthermore, it doesn’t really make the code easier to read: in order to understand the behavior of the top-level method, readers will probably need to understand the behaviors of the nested methods. For large systems it isn’t practical for users to read the code to learn the behavior.</p>
+<blockquote>
+<p>一些开发人员认为，如果其他人想知道某个方法的作用，那么他们应该只阅读该方法的代码：这将比任何注释都更准确。读者可能会通过阅读其代码来推断该方法的抽象接口，但这既费时又痛苦。另外，如果在编写代码时期望用户会阅读方法实现，则将尝试使每个方法尽可能短，以便于阅读。如果该方法执行了一些重要操作，则将其分解为几个较小的方法。这将导致大量浅层方法。此外，它并没有真正使代码更易于阅读：为了理解顶层方法的行为，读者可能需要了解嵌套方法的行为。</p>
+</blockquote>
+<p>Moreover, comments are fundamental to abstractions. Recall from Chapter 4 that the goal of abstractions is to hide complexity: an abstraction is a simplified view of an entity, which preserves essential information but omits details that can safely be ignored. If users must read the code of a method in order to use it, then there is no abstraction: all of the complexity of the method is exposed. Without comments, the only abstraction of a method is its declaration, which specifies its name and the names and types of its arguments and results. The declaration is missing too much essential information to provide a useful abstraction by itself. For example, a method to extract a substring might have two arguments, start and end, indicating the range of characters to extract. From the declaration alone, it isn’t possible to tell whether the extracted substring will include the character indicated by end, or what happens if start &gt; end. Comments allow us to capture the additional information that callers need, thereby completing the simplified view while hiding implementation details. It’s also important that comments are written in a human language such as English; this makes them less precise than code, but it provides more expressive power, so we can create simple, intuitive descriptions. If you want to use abstractions to hide complexity, comments are essential.</p>
+<blockquote>
+<p>此外，注释是抽象的基础。回顾第四章，抽象的目的是隐藏复杂性：抽象是实体的简化视图，该实体保留必要的信息，但忽略了可以安全忽略的细节。如果用户必须阅读方法的代码才能使用它，则没有任何抽象：方法的所有复杂性都将暴露出来。没有注释，方法的唯一抽象就是其声明，该声明指定其名称以及其参数和结果的名称和类型。该声明缺少太多基本信息，无法单独提供有用的抽象。例如，提取子字符串的方法可能有两个参数，开始和结束，表示要提取的字符范围。仅凭宣言，无法确定提取的子字符串是否将包含 end 指示的字符，或者如果 start&gt; end 会发生什么。注释使我们能够捕获调用者所需的其他信息，从而在隐藏实现细节的同时完成简化的视图。用人类语言（例如英语）写评论也很重要；这使它们不如代码精确，但提供了更多的表达能力，因此我们可以创建简单直观的描述。如果要使用抽象来隐藏复杂性，则注释必不可少。用人类语言（例如英语）写评论也很重要；这使它们不如代码精确，但提供了更多的表达能力，因此我们可以创建简单直观的描述。如果要使用抽象来隐藏复杂性，则注释必不可少。用人类语言（例如英语）写评论也很重要；这使它们不如代码精确，但提供了更多的表达能力，因此我们可以创建简单直观的描述。如果要使用抽象来隐藏复杂性，则注释必不可少。</p>
+</blockquote>
+<h2 id="12-2-I-don’t-have-time-to-write-comments-我没有时间写评论"><a href="#12-2-I-don’t-have-time-to-write-comments-我没有时间写评论" class="headerlink" title="12.2 I don’t have time to write comments 我没有时间写评论"></a>12.2 I don’t have time to write comments 我没有时间写评论</h2><p>It’s tempting to prioritize comments lower than other development tasks. Given a choice between adding a new feature and documenting an existing feature, it seems logical to choose the new feature. However, software projects are almost always under time pressure, and there will always be things that seem higher priority than writing comments. Thus, if you allow documentation to be de-prioritized, you’ll end up with no documentation.</p>
+<blockquote>
+<p>优先考虑低于其他开发任务的注释是很诱人的。在添加新功能和记录现有功能之间做出选择之后，选择新功能似乎合乎逻辑。但是，软件项目几乎总是处于时间压力之下，并且总会有比编写注释优先级更高的事情。因此，如果您允许取消对文档的优先级，则最终将没有文档。</p>
+</blockquote>
+<p>The counter-argument to this excuse is the investment mindset discussed on page 15. If you want a clean software structure, which will allow you to work efficiently over the long-term, then you must take some extra time up front in order to create that structure. Good comments make a huge difference in the maintainability of software, so the effort spent on them will pay for itself quickly. Furthermore, writing comments needn’t take a lot of time. Ask yourself how much of your development time you spend typing in code (as opposed to designing, compiling, testing, etc.), assuming you don’t include any comments; I doubt that the answer is more than 10%. Now suppose that you spend as much time typing comments as typing code; this should be a safe upper bound. With these assumptions, writing good comments won’t add more than about 10% to your development time. The benefits of having good documentation will quickly offset this cost.</p>
+<blockquote>
+<p>与该借口相反的是第 15 页上讨论的投资思路。如果您想要一个干净的软件结构，可以长期有效地工作，那么您必须花一些额外的时间才能创建该结构。好的评论对软件的可维护性有很大的影响，因此花费在它们上面的精力将很快收回成本。此外，撰写评论不需要花费很多时间。询问自己，假设您不包含任何注释，那么您花费了多少开发时间来键入代码（与设计，编译，测试等相对）。我怀疑答案是否超过 10％。现在假设您花在输入注释上的时间与输入代码所花费的时间一样多。这应该是一个安全的上限。基于这些假设，撰写好的评论不会增加您的开发时间约 10％。拥有良好文档的好处将迅速抵消这一成本。</p>
+</blockquote>
+<p>Furthermore, many of the most important comments are those related to abstractions, such as the top-level documentation for classes and methods. Chapter 15 will argue that these comments should be written as part of the design process, and that the act of writing the documentation serves as an important design tool that improves the overall design. These comments pay for themselves immediately.</p>
+<blockquote>
+<p>此外，许多最重要的注释是与抽象有关的注释，例如类和方法的顶级文档。第 15 章认为，这些注释应作为设计过程的一部分编写，并且编写文档的行为是改善整体设计的重要设计工具。这些评论立即付诸行动。</p>
+</blockquote>
+<h2 id="12-3-Comments-get-out-of-date-and-become-misleading-评论过时并产生误导"><a href="#12-3-Comments-get-out-of-date-and-become-misleading-评论过时并产生误导" class="headerlink" title="12.3 Comments get out of date and become misleading 评论过时并产生误导"></a>12.3 Comments get out of date and become misleading 评论过时并产生误导</h2><p>Comments do sometimes get out of date, but this need not be a major problem in practice. Keeping documentation up-to-date does not require an enormous effort. Large changes to the documentation are only required if there have been large changes to the code, and the code changes will take more time than the documentation changes. Chapter 16 discusses how to organize documentation so that it is as easy as possible to keep it updated after code modifications (the key ideas are to avoid duplicated documentation and keep the documentation close to the corresponding code). Code reviews provide a great mechanism for detecting and fixing stale comments.</p>
+<blockquote>
+<p>注释有时确实会过时，但这实际上并不是主要问题。使文档保持最新状态并不需要付出巨大的努力。仅当对代码进行了较大的更改时才需要对文档进行大的更改，并且代码更改将比文档的更改花费更多的时间。第 16 章讨论了如何组织文档，以便在修改代码后尽可能容易地对其进行更新（主要思想是避免重复的文档并使文档与相应的代码保持一致）。代码审查提供了一种检测和修复陈旧注释的强大机制。</p>
+</blockquote>
+<h2 id="12-4-All-the-comments-I-have-seen-are-worthless-我所看到的所有评论都是毫无价值的"><a href="#12-4-All-the-comments-I-have-seen-are-worthless-我所看到的所有评论都是毫无价值的" class="headerlink" title="12.4 All the comments I have seen are worthless 我所看到的所有评论都是毫无价值的"></a>12.4 All the comments I have seen are worthless 我所看到的所有评论都是毫无价值的</h2><p>Of the four excuses, this is probably the one with the most merit. Every software developer has seen comments that provide no useful information, and most existing documentation is so-so at best. Fortunately, this problem is solvable; writing solid documentation is not hard, once you know how. The next chapters will lay out a framework for how to write good documentation and maintain it over time.</p>
+<blockquote>
+<p>在这四个借口中，这可能是最有价值的借口。每个软件开发人员都看到没有提供有用信息的注释，并且大多数现有文档充其量都是这样。幸运的是，这个问题是可以解决的。一旦知道了如何编写可靠的文档并不难。下一章将为如何编写良好的文档并随时间进行维护提供一个框架。</p>
+</blockquote>
+<h2 id="12-5-Benefits-of-well-written-comments"><a href="#12-5-Benefits-of-well-written-comments" class="headerlink" title="12.5 Benefits of well-written comments"></a>12.5 Benefits of well-written comments</h2><p>Now that I have discussed (and, hopefully, debunked) the arguments against writing comments, let’s consider the benefits that you will get from good comments. The overall idea behind comments is to capture information that was in the mind of the designer but couldn’t be represented in the code. This information ranges from low-level details, such as a hardware quirk that motivates a particularly tricky piece of code, up to high-level concepts such as the rationale for a class. When other developers come along later to make modifications, the comments will allow them to work more quickly and accurately. Without documentation, future developers will have to rederive or guess at the developer’s original knowledge; this will take additional time, and there is a risk of bugs if the new developer misunderstands the original designer’s intentions. Comments are valuable even when the original designer is the one making the changes: if it has been more than a few weeks since you last worked in a piece of code, you will have forgotten many of the details of the original design.</p>
+<blockquote>
+<p>既然我已经讨论了（并希望揭穿了这些）反对撰写评论的论点，让我们考虑一下从良好评论中将获得的好处。注释背后的总体思想是捕获设计者所想但不能在代码中表示的信息。这些信息从低级详细信息（例如，激发特殊代码的硬件怪癖）到高级概念（例如，类的基本原理）。当其他开发人员稍后进行修改时，这些注释将使他们能够更快，更准确地工作。没有文档，未来的开发人员将不得不重新编写或猜测开发人员的原始知识。这将花费额外的时间，并且如果新开发者误解了原始设计者的意图，则存在错误的风险。</p>
+</blockquote>
+<p>Chapter 2 described three ways in which complexity manifests itself in software systems:</p>
+<blockquote>
+<p>第 2 章介绍了在软件系统中表现出复杂性的三种方式：</p>
+</blockquote>
+<ul>
+<li>Change amplification: a seemingly simple change requires code modifications in many places.</li>
+<li>Cognitive load: in order to make a change, the developer must accumulate a large amount of information.</li>
+<li>Unknown unknowns: it is unclear what code needs to be modified, or what information must be considered in order to make those modifications.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>变更放大：看似简单的变更需要在许多地方进行代码修改。</li>
+<li>认知负荷：为了进行更改，开发人员必须积累大量信息。</li>
+<li>未知未知数：尚不清楚需要修改哪些代码，或必须考虑哪些信息才能进行这些修改。</li>
+</ul>
+</blockquote>
+<p>Good documentation helps with the last two of these issues. Documentation can reduce cognitive load by providing developers with the information they need to make changes and by making it easy for developers to ignore information that is irrelevant. Without adequate documentation, developers may have to read large amounts of code to reconstruct what was in the designer’s mind. Documentation can also reduce the unknown unknowns by clarifying the structure of the system, so that it is clear what information and code is relevant for any given change.</p>
+<blockquote>
+<p>好的文档可以帮助解决最后两个问题。通过为开发人员提供他们进行更改所需的信息，并使开发人员容易忽略不相关的信息，文档可以减轻认知负担。没有足够的文档，开发人员可能必须阅读大量代码才能重构设计人员的想法。文档还可以通过阐明系统的结构来减少未知的未知数，从而可以清楚地了解与任何给定更改相关的信息和代码。</p>
+</blockquote>
+<p>Chapter 2 pointed out that the primary causes of complexity are dependencies and obscurity. Good documentation can clarify dependencies, and it fills in gaps to eliminate obscurity.</p>
+<blockquote>
+<p>第 2 章指出，导致复杂性的主要原因是依赖性和模糊性。好的文档可以阐明依赖关系，并且可以填补空白以消除模糊性。</p>
+</blockquote>
+<p>The next few chapters will show you how to write good documentation. They will also discuss how to integrate documentation-writing into the design process so that it improves the design of your software.</p>
+<blockquote>
+<p>接下来的几章将向您展示如何编写好的文档。他们还将讨论如何将文档编写集成到设计过程中，从而改善软件设计。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch12-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%AF%84%E8%AE%BA%E5%91%A2%EF%BC%9F%E5%9B%9B%E4%B8%AA%E7%90%86%E7%94%B1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-软件设计的哲学-ch11-设计它两次" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1926,107 +2098,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-软件设计的哲学-ch2-复杂性的本质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">软件设计的哲学 - ch2</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/" class="archive-article-date">
-  	<time datetime="2021-02-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-2-章-复杂性的本质"><a href="#第-2-章-复杂性的本质" class="headerlink" title="第 2 章 复杂性的本质"></a>第 2 章 复杂性的本质</h1><p>这本书是关于如何设计软件系统以最小化其复杂性。第一步是了解敌人。究竟什么是“复杂性”？您如何判断系统是否过于复杂？是什么导致系统变得复杂？本章将在较高层次上解决这些问题。后续章节将向您展示如何从较低的层次上根据特定的结构特征来识别复杂性。</p>
-<p>识别复杂性的能力是至关重要的设计技能。它使您可以先找出问题，然后再付出大量努力，并可以在其他选择中做出正确的选择。判断一个设计是否简单比创建一个简单的设计要容易得多，但是一旦您认识到一个系统过于复杂，就可以使用该功能指导您的设计哲学走向简单。如果设计看起来很复杂，请尝试其他方法，看看是否更简单。随着时间的流逝，您会注意到某些技术往往会导致设计更简单，而其他技术则与复杂性相关。这将使您更快地制作更简单的设计。</p>
-<p>本章还列出了一些基本假设，这些基本假设为本书的其余部分奠定了基础。后面的章节将采用本章的内容，并用其论证各种改进和结论。</p>
-<h2 id="2-1-Complexity-defined-复杂性的定义"><a href="#2-1-Complexity-defined-复杂性的定义" class="headerlink" title="2.1 Complexity defined 复杂性的定义"></a>2.1 Complexity defined 复杂性的定义</h2><p>出于本书的目的，我以实用的方式定义“复杂性”。复杂性与软件系统的结构有关，这使它很难理解和修改系统。复杂性可以采取多种形式。例如，可能很难理解一段代码是如何工作的。可能需要花费很多精力才能实现较小的改进，或者可能不清楚必须修改系统的哪些部分才能进行改进；如果不引入其他错误，可能很难修复。如果一个软件系统难以理解和修改，那就很复杂。如果很容易理解和修改，那就很简单。</p>
-<p>您还可以考虑成本和收益方面的复杂性。在复杂的系统中，要实施甚至很小的改进都需要大量的工作。在一个简单的系统中，可以用更少的精力实现更大的改进。</p>
-<p>复杂性是开发人员在尝试实现特定目标时在特定时间点所经历的。它不一定与系统的整体大小或功能有关。人们通常使用“复杂”一词来描述具有复杂功能的大型系统，但是如果这样的系统易于使用，那么就本书而言，它并不复杂。当然，实际上几乎所有大型复杂的软件系统都很难使用，因此它们也符合我对复杂性的定义，但这不一定是事实。小型而不复杂的系统也可能非常复杂。</p>
-<p>复杂性取决于最常见的活动。如果系统中有一些非常复杂的部分，但是几乎不需要触摸这些部分，那么它们对系统的整体复杂性不会有太大影响。为了用粗略的数学方法来表征：</p>
-<p><img src="/../../img/figures/00009.gif"></p>
-<p>系统的总体复杂度（C）由每个部分的复杂度（cp）乘以开发人员在该部分上花费的时间（tp）加权。在一个永远不会被看到的地方隔离复杂性几乎和完全消除复杂性一样好。</p>
-<p>读者比作家更容易理解复杂性。如果您编写了一段代码，对您来说似乎很简单，但是其他人则认为它很复杂，那么它就是复杂的。当您遇到这种情况时，有必要对其他开发人员进行调查，以找出为什么代码对他们而言似乎很复杂；从您的观点与观点之间的脱节中可能可以学习一些有趣的课程。作为开发人员，您的工作不仅是创建可以轻松使用的代码，而且还要创建其他人也可以轻松使用的代码。</p>
-<h2 id="2-2-Symptoms-of-complexity-复杂性的症状"><a href="#2-2-Symptoms-of-complexity-复杂性的症状" class="headerlink" title="2.2 Symptoms of complexity 复杂性的症状"></a>2.2 Symptoms of complexity 复杂性的症状</h2><p>复杂性通过以下三种段落中描述的三种一般方式体现出来。这些表现形式中的每一个都使执行开发任务变得更加困难。</p>
-<p>变更放大：复杂性的第一个征兆是，看似简单的变更需要在许多不同地方进行代码修改。例如，考虑一个包含几个页面的网站，每个页面显示带有背景色的横幅。在许多早期的网站中，颜色是在每个页面上明确指定的，如图 2.1（a）所示。为了更改此类网站的背景，开发人员可能必须手动修改每个现有页面；对于拥有数千个页面的大型网站而言，这几乎是不可能的。幸运的是，现代网站使用的方法类似于图 2.1（b），其中横幅颜色一次在中心位置指定，并且所有各个页面均引用该共享值。使用这种方法，可以通过一次修改来更改整个网站的标题颜色。</p>
-<p>认知负荷：复杂性的第二个症状是认知负荷，这是指开发人员需要多少知识才能完成一项任务。较高的认知负担意味着开发人员必须花更多的时间来学习所需的信息，并且由于错过了重要的东西而导致错误的风险也更大。例如，假设 C 中的一个函数分配了内存，返回了指向该内存的指针，并假定调用者将释放该内存。这增加了使用该功能的开发人员的认知负担。如果开发人员无法释放内存，则会发生内存泄漏。如果可以对系统进行重组，以使调用者不必担心释放内存（分配内存的同一模块也负责释放内存），它将减少认知负担。</p>
-<p>系统设计人员有时会假设可以通过代码行来衡量复杂性。他们认为，如果一个实现比另一个实现短，那么它必须更简单；如果只需要几行代码就可以进行更改，那么更改必须很容易。但是，这种观点忽略了与认知负荷相关的成本。我已经看到了仅允许使用几行代码编写应用程序的框架，但是要弄清楚这些行是什么极其困难。有时，需要更多代码行的方法实际上更简单，因为它减少了认知负担。</p>
-<p><img src="/../../img/figures/00010.jpeg"></p>
-<p>图 2.1：网站中的每个页面都显示一个彩色横幅。在（a）中，横幅的背景色在每页中都明确指定。在（b）中，共享变量保留背景色，并且每个页面都引用该变量。在（c）中，某些页面会显示其他用于强调的颜色，即横幅背景颜色的暗色；如果背景颜色改变，则强调颜色也必须改变。</p>
-<p>未知的未知:复杂性的第三个症状是，必须修改哪些代码才能完成任务，或者开发人员必须获得哪些信息才能成功地执行任务，这些都是不明显的。图 2.1(c)说明了这个问题。网站使用一个中心变量来确定横幅的背景颜色，所以它看起来很容易改变。但是，一些 Web 页面使用较暗的背景色来强调，并且在各个页面中明确指定了较暗的颜色。如果背景颜色改变，那么强调的颜色必须改变以匹配。不幸的是，开发人员不太可能意识到这一点，所以他们可能会更改中央 bannerBg 变量而不更新强调颜色。即使开发人员意识到这个问题，也不清楚哪些页面使用了强调色，因此开发人员可能必须搜索 Web 站点中的每个页面。</p>
-<p>在复杂性的三种表现形式中，未知的未知是最糟糕的。一个未知的未知意味着你需要知道一些事情，但是你没有办法找到它是什么，甚至是否有一个问题。你不会发现它，直到错误出现后，你做了一个改变。更改放大是令人恼火的，但是只要清楚哪些代码需要修改，一旦更改完成，系统就会工作。同样，高的认知负荷会增加改变的成本，但如果明确要阅读哪些信息，改变仍然可能是正确的。对于未知的未知，不清楚该做什么，或者提出的解决方案是否有效。唯一确定的方法是读取系统中的每一行代码，这对于任何大小的系统都是不可能的。甚至这可能还不够，因为更改可能依赖于一个从未记录的细微设计决策。</p>
-<p>良好设计的最重要目标之一就是使系统显而易见。这与高认知负荷和未知未知数相反。在一个显而易见的系统中，开发人员可以快速了解现有代码的工作方式以及进行更改所需的内容。一个显而易见的系统是，开发人员可以在不费力地思考的情况下快速猜测要做什么，同时又可以确信该猜测是正确的。第 18 章讨论使代码更明显的技术。</p>
-<h2 id="2-3-Causes-of-complexity-复杂性的原因"><a href="#2-3-Causes-of-complexity-复杂性的原因" class="headerlink" title="2.3 Causes of complexity 复杂性的原因"></a>2.3 Causes of complexity 复杂性的原因</h2><p>既然您已经了解了复杂性的高级症状以及为什么复杂性会使软件开发变得困难，那么下一步就是了解导致复杂性的原因，以便我们设计系统来避免这些问题。复杂性是由两件事引起的：依赖性和模糊性。本节从高层次讨论这些因素。随后的章节将讨论它们与低级设计决策之间的关系。</p>
-<p>就本书而言，当无法孤立地理解和修改给定的一段代码时，便存在依赖关系。该代码以某种方式与其他代码相关，如果更改了给定代码，则必须考虑和&#x2F;或修改其他代码。在图 2.1（a）的网站示例中，背景色在所有页面之间创建了依赖关系。所有页面都必须具有相同的背景，因此，如果更改一页的背景，则必须更改所有背景。依赖关系的另一个示例发生在网络协议中。通常，协议的发送方和接收方有单独的代码，但是它们必须分别符合协议。更改发送方的代码几乎总是需要在接收方进行相应的更改，反之亦然。</p>
-<p>考虑网站示例。在每个页面分别指定背景的旧网站中，所有网页都是相互依赖的。新的网站通过在中心位置指定背景色并提供一个 API，供各个页面在呈现它们时检索该颜色，从而解决了该问题。新的网站消除了页面之间的依赖关系，但是它围绕 API 创建了一个新的依赖关系以检索背景色。幸运的是，新的依赖性更加明显：很明显，每个单独的网页都取决于 bannerBg 颜色，并且开发人员可以通过搜索其名称轻松找到使用该变量的所有位置。此外，编译器还有助于管理 API 依赖性：如果共享变量的名称发生变化，任何仍使用旧名称的代码都将发生编译错误。新的网站用一种更简单，更明显的方式代替了一种不明显且难以管理的依赖性。</p>
-<p>复杂性的第二个原因是晦涩。当重要的信息不明显时，就会发生模糊。一个简单的例子是一个变量名，它是如此的通用，以至于它没有携带太多有用的信息(例如，时间)。或者，一个变量的文档可能没有指定它的单位，所以找到它的惟一方法是扫描代码，查找使用该变量的位置。晦涩常常与依赖项相关联，在这种情况下，依赖项的存在并不明显。例如，如果向系统添加了一个新的错误状态，可能需要向一个包含每个状态的字符串消息的表添加一个条目，但是对于查看状态声明的程序员来说，消息表的存在可能并不明显。不一致性也是造成不透明性的一个主要原因:如果同一个变量名用于两个不同的目的，那么开发人员就无法清楚地知道某个特定变量的目的是什么。</p>
-<p>在许多情况下，由于文档不足而导致模糊不清。第 13 章讨论了这个主题。但是，模糊性也是设计问题。如果系统设计简洁明了，则所需的文档将更少。对大量文档的需求通常是一个警告，即设计不正确。减少模糊性的最佳方法是简化系统设计。</p>
-<p>依赖性和模糊性共同构成了第 2.2 节中描述的三种复杂性表现。依赖性导致变化放大和高认知负荷。晦涩会产生未知的未知数，还会增加认知负担。如果我们找到最小化依赖关系和模糊性的设计技术，那么我们就可以降低软件的复杂性。</p>
-<h2 id="2-4-Complexity-is-incremental-复杂度是递增的"><a href="#2-4-Complexity-is-incremental-复杂度是递增的" class="headerlink" title="2.4 Complexity is incremental 复杂度是递增的"></a>2.4 Complexity is incremental 复杂度是递增的</h2><p>复杂性不是由单个灾难性错误引起的；它堆积成许多小块。单个依赖项或模糊性本身不太可能显着影响软件系统的可维护性。之所以会出现复杂性，是因为随着时间的流逝，成千上万的小依赖性和模糊性逐渐形成。最终，这些小问题太多了，以至于对系统的每次可能更改都会受到其中几个问题的影响。</p>
-<p>复杂性的增量性质使其难以控制。可以很容易地说服自己，当前更改所带来的一点点复杂性没什么大不了的。但是，如果每个开发人员对每种更改都采用这种方法，那么复杂性就会迅速累积。一旦积累了复杂性，就很难消除它，因为修复单个依赖项或模糊性本身不会产生很大的变化。为了减缓复杂性的增长，您必须采用第 3 章中讨论的“零容忍”理念。</p>
-<h2 id="2-5-Conclusion-结论"><a href="#2-5-Conclusion-结论" class="headerlink" title="2.5 Conclusion 结论"></a>2.5 Conclusion 结论</h2><p>复杂性来自于依赖性和模糊性的积累。随着复杂性的增加，它会导致变化放大，高认知负荷和未知的未知数。结果，需要更多的代码修改才能实现每个新功能。此外，开发人员花费更多时间获取足够的信息以安全地进行更改，在最坏的情况下，他们甚至找不到所需的所有信息。最重要的是，复杂性使得修改现有代码库变得困难且冒险。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
@@ -2352,6 +2423,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
             
             <div class="clearfix"></div>

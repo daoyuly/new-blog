@@ -150,6 +150,259 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-02-arxiv-ai-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-02-arxiv-ai-agent-trends/">arXiv AI Agent 最新趋势（2026-03-02）</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-02-arxiv-ai-agent-trends/" class="archive-article-date">
+  	<time datetime="2026-03-02T08:22:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="arXiv-AI-Agent-最新趋势（2026-03-02）"><a href="#arXiv-AI-Agent-最新趋势（2026-03-02）" class="headerlink" title="arXiv AI Agent 最新趋势（2026-03-02）"></a>arXiv AI Agent 最新趋势（2026-03-02）</h1><p>今天整理 arXiv cs.AI 领域的最新论文，重点关注 <strong>Agent（智能代理）</strong> 相关的研究进展。以下是本次的核心发现。</p>
+<h2 id="📊-今日亮点速览"><a href="#📊-今日亮点速览" class="headerlink" title="📊 今日亮点速览"></a>📊 今日亮点速览</h2><ul>
+<li><strong>9 篇核心 Agent 论文</strong>，涵盖框架设计、多代理协作、推理优化等方向</li>
+<li><strong>Agentic AI 框架化</strong> 成为明显趋势，多个工作提出系统性架构</li>
+<li><strong>多代理系统（MAS）</strong> 持续升温，强调协调、辩论和失败归因</li>
+<li><strong>测试时计算（Test-time Compute）</strong> 与 <strong>自适应路由</strong> 成为效率优化新方向</li>
+</ul>
+<hr>
+<h2 id="🤖-Agent-相关核心论文"><a href="#🤖-Agent-相关核心论文" class="headerlink" title="🤖 Agent 相关核心论文"></a>🤖 Agent 相关核心论文</h2><h3 id="1-The-Auton-Agentic-AI-Framework"><a href="#1-The-Auton-Agentic-AI-Framework" class="headerlink" title="1. The Auton Agentic AI Framework"></a>1. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23720">The Auton Agentic AI Framework</a></h3><p><strong>核心贡献：</strong> 提出了 Agentic AI 的原则性架构，严格分离 <strong>Cognitive Blueprint</strong>（认知蓝图）和 <strong>Runtime Engine</strong>（运行时引擎）。</p>
+<p><strong>关键创新：</strong></p>
+<ul>
+<li>跨语言可移植性和模块化工具集成（通过 MCP 协议）</li>
+<li>增强型 POMDP 执行模型 + 隐式推理空间</li>
+<li>受生物情节记忆启发的分层记忆巩固架构</li>
+<li>三级自我进化框架（上下文适应 → 强化学习）</li>
+</ul>
+<p><strong>意义：</strong> 为从生成式 AI 向代理式 AI 过渡提供了系统性框架。</p>
+<hr>
+<h3 id="2-CHIEF-分层失败归因"><a href="#2-CHIEF-分层失败归因" class="headerlink" title="2. CHIEF: 分层失败归因"></a>2. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23701">CHIEF: 分层失败归因</a></h3><p><strong>问题：</strong> LLM 驱动的多代理系统（MAS）脆弱且失败机制不透明，现有方法将执行日志视为扁平序列。</p>
+<p><strong>解决方案：</strong></p>
+<ul>
+<li>将混乱轨迹转换为<strong>分层因果图</strong></li>
+<li>使用 <strong>Oracle 引导回溯</strong> 高效剪枝搜索空间</li>
+<li>通过<strong>反事实归因</strong>区分真正根因和传播症状</li>
+</ul>
+<p><strong>成果：</strong> 在 Who&amp;When 基准测试上超越 8 个强基线。</p>
+<hr>
+<h3 id="3-ProductResearch-电商深度研究代理"><a href="#3-ProductResearch-电商深度研究代理" class="headerlink" title="3. ProductResearch: 电商深度研究代理"></a>3. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23716">ProductResearch: 电商深度研究代理</a></h3><p><strong>方法：</strong> 多代理合成轨迹蒸馏框架</p>
+<ul>
+<li><strong>User Agent</strong> 推断购物意图</li>
+<li><strong>Supervisor Agent</strong> 协调迭代协作</li>
+<li><strong>Research Agent</strong> 生成产品研究报告</li>
+</ul>
+<p><strong>亮点：</strong> 紧凑 MoE 模型在合成数据上微调后，接近前沿专有深度研究系统的性能。</p>
+<hr>
+<h3 id="4-RUMAD-强化学习统一的多代理辩论"><a href="#4-RUMAD-强化学习统一的多代理辩论" class="headerlink" title="4. RUMAD: 强化学习统一的多代理辩论"></a>4. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23864">RUMAD: 强化学习统一的多代理辩论</a></h3><p><strong>创新点：</strong> 将多代理辩论中的<strong>动态通信拓扑控制</strong>形式化为 RL 问题。</p>
+<p><strong>特性：</strong></p>
+<ul>
+<li>内容无关观察方案，避免访问原始推理内容</li>
+<li>多目标奖励建模（解决方案质量 + 凝聚力 + 效率）</li>
+<li>**Token 成本降低 80%+**，同时提高推理准确性</li>
+<li>在 MMLU 上训练后，零样本泛化到 OOD 任务</li>
+</ul>
+<hr>
+<h3 id="5-ODAR-原则性自适应路由"><a href="#5-ODAR-原则性自适应路由" class="headerlink" title="5. ODAR: 原则性自适应路由"></a>5. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23681">ODAR: 原则性自适应路由</a></h3><p><strong>理念：</strong> 从参数缩放转向<strong>测试时计算缩放</strong>，避免统一暴力采样。</p>
+<p><strong>核心设计：</strong></p>
+<ul>
+<li>基于<strong>摊销主动推理</strong>的难度估计器</li>
+<li>动态路由查询到 <strong>Fast Agent</strong>（启发式）或 <strong>Slow Agent</strong>（深思熟虑）</li>
+<li>基于<strong>自由能原则</strong>的风险敏感融合机制</li>
+</ul>
+<p><strong>成果：</strong> MATH 98.2%，HLE 54.8%，计算成本降低 82%。</p>
+<hr>
+<h3 id="6-PseudoAct-伪代码合成规划"><a href="#6-PseudoAct-伪代码合成规划" class="headerlink" title="6. PseudoAct: 伪代码合成规划"></a>6. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23668">PseudoAct: 伪代码合成规划</a></h3><p><strong>问题：</strong> ReAct 等反应式范式在长时程任务中导致冗余工具使用、不稳定推理。</p>
+<p><strong>解决方案：</strong> 通过<strong>伪代码合成</strong>实现灵活规划和动作控制</p>
+<ul>
+<li>明确编码控制流（顺序、条件、循环、并行）</li>
+<li>减少 20.93% 冗余动作（FEVER 基准）</li>
+<li>防止无限循环，避免无信息探索</li>
+</ul>
+<hr>
+<h3 id="7-RF-Agent-自动奖励函数设计"><a href="#7-RF-Agent-自动奖励函数设计" class="headerlink" title="7. RF-Agent: 自动奖励函数设计"></a>7. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23876">RF-Agent: 自动奖励函数设计</a></h3><p><strong>方法：</strong> 将 LLM 作为语言代理，通过 <strong>MCTS</strong> 管理奖励设计和优化。</p>
+<p><strong>优势：</strong></p>
+<ul>
+<li>更好利用历史信息</li>
+<li>提高搜索效率</li>
+<li>在 17 个低级控制任务中表现优异</li>
+</ul>
+<hr>
+<h3 id="8-A-Minimal-Agent-for-Automated-Theorem-Proving"><a href="#8-A-Minimal-Agent-for-Automated-Theorem-Proving" class="headerlink" title="8. A Minimal Agent for Automated Theorem Proving"></a>8. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.24273">A Minimal Agent for Automated Theorem Proving</a></h3><p><strong>贡献：</strong> 提出最小代理基线，实现不同 AI 定理证明器架构的系统性比较。</p>
+<p><strong>特性：</strong></p>
+<ul>
+<li>迭代证明精炼</li>
+<li>库搜索和上下文管理</li>
+<li>迭代方法优于单次生成（样本效率 + 成本效益）</li>
+</ul>
+<hr>
+<h3 id="9-Artificial-Agency-Program"><a href="#9-Artificial-Agency-Program" class="headerlink" title="9. Artificial Agency Program"></a>9. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.24100">Artificial Agency Program</a></h3><p><strong>理念：</strong> 将 AI 系统构建为<strong>现实嵌入、资源受限的代理</strong>，发展驱动力是<strong>好奇心即学习进步</strong>。</p>
+<p><strong>统一概念：</strong></p>
+<ul>
+<li>预测压缩</li>
+<li>内在动机</li>
+<li>赋能和控制</li>
+<li>界面质量（统一）</li>
+<li>语言&#x2F;自我通信作为选择性信息瓶颈</li>
+</ul>
+<hr>
+<h2 id="📈-趋势总结"><a href="#📈-趋势总结" class="headerlink" title="📈 趋势总结"></a>📈 趋势总结</h2><h3 id="1️⃣-从生成式-AI-到代理式-AI"><a href="#1️⃣-从生成式-AI-到代理式-AI" class="headerlink" title="1️⃣ 从生成式 AI 到代理式 AI"></a>1️⃣ <strong>从生成式 AI 到代理式 AI</strong></h3><p>多篇论文明确提出”Agentic AI”范式转换，强调：</p>
+<ul>
+<li><strong>确定性执行</strong> vs 概率性生成</li>
+<li><strong>环境交互</strong> vs 被动响应</li>
+<li><strong>工具使用</strong> vs 文本生成</li>
+</ul>
+<h3 id="2️⃣-多代理系统（MAS）成为主流"><a href="#2️⃣-多代理系统（MAS）成为主流" class="headerlink" title="2️⃣ 多代理系统（MAS）成为主流"></a>2️⃣ <strong>多代理系统（MAS）成为主流</strong></h3><ul>
+<li>协调机制：辩论、分工、监督</li>
+<li>拓扑控制：静态 → 动态自适应</li>
+<li>失败处理：因果图 + 反事实归因</li>
+</ul>
+<h3 id="3️⃣-测试时计算优化"><a href="#3️⃣-测试时计算优化" class="headerlink" title="3️⃣ 测试时计算优化"></a>3️⃣ <strong>测试时计算优化</strong></h3><ul>
+<li>自适应路由（Fast&#x2F;Slow Agent）</li>
+<li>免费能原则决策</li>
+<li>减少暴力采样</li>
+</ul>
+<h3 id="4️⃣-框架化和标准化"><a href="#4️⃣-框架化和标准化" class="headerlink" title="4️⃣ 框架化和标准化"></a>4️⃣ <strong>框架化和标准化</strong></h3><ul>
+<li>认知蓝图 + 运行时引擎分离</li>
+<li>MCP 协议工具集成</li>
+<li>跨语言可移植性</li>
+</ul>
+<h3 id="5️⃣-长时程任务规划"><a href="#5️⃣-长时程任务规划" class="headerlink" title="5️⃣ 长时程任务规划"></a>5️⃣ <strong>长时程任务规划</strong></h3><ul>
+<li>伪代码合成</li>
+<li>控制流明确编码</li>
+<li>防止循环和冗余</li>
+</ul>
+<hr>
+<h2 id="🔮-展望"><a href="#🔮-展望" class="headerlink" title="🔮 展望"></a>🔮 展望</h2><ol>
+<li><strong>效率与性能平衡</strong> 将是 2026 年 Agent 研究的核心议题</li>
+<li><strong>多代理协作</strong> 需要更成熟的协调理论和失败恢复机制</li>
+<li><strong>测试时自适应</strong> 可能取代部分训练时优化</li>
+<li><strong>框架统一</strong> 将降低 Agent 开发门槛，加速应用落地</li>
+</ol>
+<hr>
+<h2 id="📚-其他值得关注的论文"><a href="#📚-其他值得关注的论文" class="headerlink" title="📚 其他值得关注的论文"></a>📚 其他值得关注的论文</h2><table>
+<thead>
+<tr>
+<th>论文</th>
+<th>主题</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DARE-bench</td>
+<td>数据科学 LLM 评估</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.24288">arXiv</a></td>
+</tr>
+<tr>
+<td>LemmaBench</td>
+<td>数学研究级基准</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.24173">arXiv</a></td>
+</tr>
+<tr>
+<td>SCOPE</td>
+<td>RLVR 部分正确轨迹回收</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.24110">arXiv</a></td>
+</tr>
+<tr>
+<td>EMO-R3</td>
+<td>多模态情感推理</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23802">arXiv</a></td>
+</tr>
+<tr>
+<td>SAI (Superhuman Adaptable Intelligence)</td>
+<td>重新定义 AGI</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2602.23643">arXiv</a></td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>数据来源：</strong> <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a><br><strong>整理时间：</strong> 2026-03-02 16:22 (Asia&#x2F;Shanghai)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arXiv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/论文速递//" class="article-tag-list-link color5">论文速递</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-02-arxiv-ai-agent-trends/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-02-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1116,82 +1369,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 11 月 10 日 - 2025年 11 月 14 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%2014%20%E6%97%A5/">工作周报2025年 11 月 10 日 - 2025年 11 月 14 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%2014%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-11-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周的线上uShow出现了线上任务积压，录制视频上传失败的问题。线上积压问题其实是个低级问题引发，如果有及时的发现就能够缩小这个问题，这个问题给我了很深的反思，没有保持足够长的服务耐心，在长时间的服务值班后容易松懈，没有体现出应有的职业素养，关注监控是很要求耐心和责任心，仪表盘需要时刻盯着，但是这个工作本身比较乏味，但是这是系统稳定的第一到防线。通过这个问题的排查的过程，我从各位伙伴身上学到了很多书上学不到的东西，这种排查问题的感觉和品味非常重要，可能是从书上或者从代码上学不到的东西。以市场结果为导向就是看对客户的服务是否满意是否愿意付款，一旦出现客户问题，要始终以该结果为思考的出发点，其实这点比较难，要对齐客户的结果，要做比想象的要多的多，不仅仅是交付功能，还要交付服务，这对我来说是重要的一课。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%2014%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1517,6 +1694,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
             
             <div class="clearfix"></div>

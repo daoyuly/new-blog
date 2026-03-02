@@ -150,6 +150,107 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-软件设计的哲学-ch2-复杂性的本质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">软件设计的哲学 - ch2</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/" class="archive-article-date">
+  	<time datetime="2021-02-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-2-章-复杂性的本质"><a href="#第-2-章-复杂性的本质" class="headerlink" title="第 2 章 复杂性的本质"></a>第 2 章 复杂性的本质</h1><p>这本书是关于如何设计软件系统以最小化其复杂性。第一步是了解敌人。究竟什么是“复杂性”？您如何判断系统是否过于复杂？是什么导致系统变得复杂？本章将在较高层次上解决这些问题。后续章节将向您展示如何从较低的层次上根据特定的结构特征来识别复杂性。</p>
+<p>识别复杂性的能力是至关重要的设计技能。它使您可以先找出问题，然后再付出大量努力，并可以在其他选择中做出正确的选择。判断一个设计是否简单比创建一个简单的设计要容易得多，但是一旦您认识到一个系统过于复杂，就可以使用该功能指导您的设计哲学走向简单。如果设计看起来很复杂，请尝试其他方法，看看是否更简单。随着时间的流逝，您会注意到某些技术往往会导致设计更简单，而其他技术则与复杂性相关。这将使您更快地制作更简单的设计。</p>
+<p>本章还列出了一些基本假设，这些基本假设为本书的其余部分奠定了基础。后面的章节将采用本章的内容，并用其论证各种改进和结论。</p>
+<h2 id="2-1-Complexity-defined-复杂性的定义"><a href="#2-1-Complexity-defined-复杂性的定义" class="headerlink" title="2.1 Complexity defined 复杂性的定义"></a>2.1 Complexity defined 复杂性的定义</h2><p>出于本书的目的，我以实用的方式定义“复杂性”。复杂性与软件系统的结构有关，这使它很难理解和修改系统。复杂性可以采取多种形式。例如，可能很难理解一段代码是如何工作的。可能需要花费很多精力才能实现较小的改进，或者可能不清楚必须修改系统的哪些部分才能进行改进；如果不引入其他错误，可能很难修复。如果一个软件系统难以理解和修改，那就很复杂。如果很容易理解和修改，那就很简单。</p>
+<p>您还可以考虑成本和收益方面的复杂性。在复杂的系统中，要实施甚至很小的改进都需要大量的工作。在一个简单的系统中，可以用更少的精力实现更大的改进。</p>
+<p>复杂性是开发人员在尝试实现特定目标时在特定时间点所经历的。它不一定与系统的整体大小或功能有关。人们通常使用“复杂”一词来描述具有复杂功能的大型系统，但是如果这样的系统易于使用，那么就本书而言，它并不复杂。当然，实际上几乎所有大型复杂的软件系统都很难使用，因此它们也符合我对复杂性的定义，但这不一定是事实。小型而不复杂的系统也可能非常复杂。</p>
+<p>复杂性取决于最常见的活动。如果系统中有一些非常复杂的部分，但是几乎不需要触摸这些部分，那么它们对系统的整体复杂性不会有太大影响。为了用粗略的数学方法来表征：</p>
+<p><img src="/../../img/figures/00009.gif"></p>
+<p>系统的总体复杂度（C）由每个部分的复杂度（cp）乘以开发人员在该部分上花费的时间（tp）加权。在一个永远不会被看到的地方隔离复杂性几乎和完全消除复杂性一样好。</p>
+<p>读者比作家更容易理解复杂性。如果您编写了一段代码，对您来说似乎很简单，但是其他人则认为它很复杂，那么它就是复杂的。当您遇到这种情况时，有必要对其他开发人员进行调查，以找出为什么代码对他们而言似乎很复杂；从您的观点与观点之间的脱节中可能可以学习一些有趣的课程。作为开发人员，您的工作不仅是创建可以轻松使用的代码，而且还要创建其他人也可以轻松使用的代码。</p>
+<h2 id="2-2-Symptoms-of-complexity-复杂性的症状"><a href="#2-2-Symptoms-of-complexity-复杂性的症状" class="headerlink" title="2.2 Symptoms of complexity 复杂性的症状"></a>2.2 Symptoms of complexity 复杂性的症状</h2><p>复杂性通过以下三种段落中描述的三种一般方式体现出来。这些表现形式中的每一个都使执行开发任务变得更加困难。</p>
+<p>变更放大：复杂性的第一个征兆是，看似简单的变更需要在许多不同地方进行代码修改。例如，考虑一个包含几个页面的网站，每个页面显示带有背景色的横幅。在许多早期的网站中，颜色是在每个页面上明确指定的，如图 2.1（a）所示。为了更改此类网站的背景，开发人员可能必须手动修改每个现有页面；对于拥有数千个页面的大型网站而言，这几乎是不可能的。幸运的是，现代网站使用的方法类似于图 2.1（b），其中横幅颜色一次在中心位置指定，并且所有各个页面均引用该共享值。使用这种方法，可以通过一次修改来更改整个网站的标题颜色。</p>
+<p>认知负荷：复杂性的第二个症状是认知负荷，这是指开发人员需要多少知识才能完成一项任务。较高的认知负担意味着开发人员必须花更多的时间来学习所需的信息，并且由于错过了重要的东西而导致错误的风险也更大。例如，假设 C 中的一个函数分配了内存，返回了指向该内存的指针，并假定调用者将释放该内存。这增加了使用该功能的开发人员的认知负担。如果开发人员无法释放内存，则会发生内存泄漏。如果可以对系统进行重组，以使调用者不必担心释放内存（分配内存的同一模块也负责释放内存），它将减少认知负担。</p>
+<p>系统设计人员有时会假设可以通过代码行来衡量复杂性。他们认为，如果一个实现比另一个实现短，那么它必须更简单；如果只需要几行代码就可以进行更改，那么更改必须很容易。但是，这种观点忽略了与认知负荷相关的成本。我已经看到了仅允许使用几行代码编写应用程序的框架，但是要弄清楚这些行是什么极其困难。有时，需要更多代码行的方法实际上更简单，因为它减少了认知负担。</p>
+<p><img src="/../../img/figures/00010.jpeg"></p>
+<p>图 2.1：网站中的每个页面都显示一个彩色横幅。在（a）中，横幅的背景色在每页中都明确指定。在（b）中，共享变量保留背景色，并且每个页面都引用该变量。在（c）中，某些页面会显示其他用于强调的颜色，即横幅背景颜色的暗色；如果背景颜色改变，则强调颜色也必须改变。</p>
+<p>未知的未知:复杂性的第三个症状是，必须修改哪些代码才能完成任务，或者开发人员必须获得哪些信息才能成功地执行任务，这些都是不明显的。图 2.1(c)说明了这个问题。网站使用一个中心变量来确定横幅的背景颜色，所以它看起来很容易改变。但是，一些 Web 页面使用较暗的背景色来强调，并且在各个页面中明确指定了较暗的颜色。如果背景颜色改变，那么强调的颜色必须改变以匹配。不幸的是，开发人员不太可能意识到这一点，所以他们可能会更改中央 bannerBg 变量而不更新强调颜色。即使开发人员意识到这个问题，也不清楚哪些页面使用了强调色，因此开发人员可能必须搜索 Web 站点中的每个页面。</p>
+<p>在复杂性的三种表现形式中，未知的未知是最糟糕的。一个未知的未知意味着你需要知道一些事情，但是你没有办法找到它是什么，甚至是否有一个问题。你不会发现它，直到错误出现后，你做了一个改变。更改放大是令人恼火的，但是只要清楚哪些代码需要修改，一旦更改完成，系统就会工作。同样，高的认知负荷会增加改变的成本，但如果明确要阅读哪些信息，改变仍然可能是正确的。对于未知的未知，不清楚该做什么，或者提出的解决方案是否有效。唯一确定的方法是读取系统中的每一行代码，这对于任何大小的系统都是不可能的。甚至这可能还不够，因为更改可能依赖于一个从未记录的细微设计决策。</p>
+<p>良好设计的最重要目标之一就是使系统显而易见。这与高认知负荷和未知未知数相反。在一个显而易见的系统中，开发人员可以快速了解现有代码的工作方式以及进行更改所需的内容。一个显而易见的系统是，开发人员可以在不费力地思考的情况下快速猜测要做什么，同时又可以确信该猜测是正确的。第 18 章讨论使代码更明显的技术。</p>
+<h2 id="2-3-Causes-of-complexity-复杂性的原因"><a href="#2-3-Causes-of-complexity-复杂性的原因" class="headerlink" title="2.3 Causes of complexity 复杂性的原因"></a>2.3 Causes of complexity 复杂性的原因</h2><p>既然您已经了解了复杂性的高级症状以及为什么复杂性会使软件开发变得困难，那么下一步就是了解导致复杂性的原因，以便我们设计系统来避免这些问题。复杂性是由两件事引起的：依赖性和模糊性。本节从高层次讨论这些因素。随后的章节将讨论它们与低级设计决策之间的关系。</p>
+<p>就本书而言，当无法孤立地理解和修改给定的一段代码时，便存在依赖关系。该代码以某种方式与其他代码相关，如果更改了给定代码，则必须考虑和&#x2F;或修改其他代码。在图 2.1（a）的网站示例中，背景色在所有页面之间创建了依赖关系。所有页面都必须具有相同的背景，因此，如果更改一页的背景，则必须更改所有背景。依赖关系的另一个示例发生在网络协议中。通常，协议的发送方和接收方有单独的代码，但是它们必须分别符合协议。更改发送方的代码几乎总是需要在接收方进行相应的更改，反之亦然。</p>
+<p>考虑网站示例。在每个页面分别指定背景的旧网站中，所有网页都是相互依赖的。新的网站通过在中心位置指定背景色并提供一个 API，供各个页面在呈现它们时检索该颜色，从而解决了该问题。新的网站消除了页面之间的依赖关系，但是它围绕 API 创建了一个新的依赖关系以检索背景色。幸运的是，新的依赖性更加明显：很明显，每个单独的网页都取决于 bannerBg 颜色，并且开发人员可以通过搜索其名称轻松找到使用该变量的所有位置。此外，编译器还有助于管理 API 依赖性：如果共享变量的名称发生变化，任何仍使用旧名称的代码都将发生编译错误。新的网站用一种更简单，更明显的方式代替了一种不明显且难以管理的依赖性。</p>
+<p>复杂性的第二个原因是晦涩。当重要的信息不明显时，就会发生模糊。一个简单的例子是一个变量名，它是如此的通用，以至于它没有携带太多有用的信息(例如，时间)。或者，一个变量的文档可能没有指定它的单位，所以找到它的惟一方法是扫描代码，查找使用该变量的位置。晦涩常常与依赖项相关联，在这种情况下，依赖项的存在并不明显。例如，如果向系统添加了一个新的错误状态，可能需要向一个包含每个状态的字符串消息的表添加一个条目，但是对于查看状态声明的程序员来说，消息表的存在可能并不明显。不一致性也是造成不透明性的一个主要原因:如果同一个变量名用于两个不同的目的，那么开发人员就无法清楚地知道某个特定变量的目的是什么。</p>
+<p>在许多情况下，由于文档不足而导致模糊不清。第 13 章讨论了这个主题。但是，模糊性也是设计问题。如果系统设计简洁明了，则所需的文档将更少。对大量文档的需求通常是一个警告，即设计不正确。减少模糊性的最佳方法是简化系统设计。</p>
+<p>依赖性和模糊性共同构成了第 2.2 节中描述的三种复杂性表现。依赖性导致变化放大和高认知负荷。晦涩会产生未知的未知数，还会增加认知负担。如果我们找到最小化依赖关系和模糊性的设计技术，那么我们就可以降低软件的复杂性。</p>
+<h2 id="2-4-Complexity-is-incremental-复杂度是递增的"><a href="#2-4-Complexity-is-incremental-复杂度是递增的" class="headerlink" title="2.4 Complexity is incremental 复杂度是递增的"></a>2.4 Complexity is incremental 复杂度是递增的</h2><p>复杂性不是由单个灾难性错误引起的；它堆积成许多小块。单个依赖项或模糊性本身不太可能显着影响软件系统的可维护性。之所以会出现复杂性，是因为随着时间的流逝，成千上万的小依赖性和模糊性逐渐形成。最终，这些小问题太多了，以至于对系统的每次可能更改都会受到其中几个问题的影响。</p>
+<p>复杂性的增量性质使其难以控制。可以很容易地说服自己，当前更改所带来的一点点复杂性没什么大不了的。但是，如果每个开发人员对每种更改都采用这种方法，那么复杂性就会迅速累积。一旦积累了复杂性，就很难消除它，因为修复单个依赖项或模糊性本身不会产生很大的变化。为了减缓复杂性的增长，您必须采用第 3 章中讨论的“零容忍”理念。</p>
+<h2 id="2-5-Conclusion-结论"><a href="#2-5-Conclusion-结论" class="headerlink" title="2.5 Conclusion 结论"></a>2.5 Conclusion 结论</h2><p>复杂性来自于依赖性和模糊性的积累。随着复杂性的增加，它会导致变化放大，高认知负荷和未知的未知数。结果，需要更多的代码修改才能实现每个新功能。此外，开发人员花费更多时间获取足够的信息以安全地进行更改，在最坏的情况下，他们甚至找不到所需的所有信息。最重要的是，复杂性使得修改现有代码库变得困难且冒险。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-软件设计的哲学-ch1-介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -927,95 +1028,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-软件兴国" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/">软件兴国</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/" class="archive-article-date">
-  	<time datetime="2020-05-24T15:51:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何思考软件在中国发展中的作用？</p>
-<p>最近美国特朗普政府对中国新一轮的科技绞杀开始了，我认为这不是最后一次，也不是最严重的一次，更多风雨还在后面。</p>
-<p>随着智能手机在国内的普及，软件已经和每个人息息相关，在我看来，社会文明发展的高低取决于软件化程度的高低。<br>极度发达的社会，必然有极度发达的软件，相应的，极度发达的软件促使社会文明程度的发达。软件影响了人类社会的方方面面，未来的黑客帝国，也是因为软件的兴起。</p>
-<p>美国对中国的新一轮制裁，归根结底是对中国高级软件技术的限制，新中国成立后，中国在老一辈科研人员的艰苦奋斗下，在核武器，航天技术的突破赢得了世界的认可。现在我们需要在软件上实现突破才能再次突破现有的地位，赢得世界对中国大国地位的认可。</p>
-<p>软件上的突破实际上对各个行业的系统化升级改造，需要完整的软件开发工具链的自主化，实现在软件技术上中国创新和中国影响力。</p>
-<p>我窃以为，国内软件业还非常落后，就像是洋务运动后的中国，我们会用洋钉，洋灯，洋车，洋机器，可是没有一个我们可以完整的自主造出来。从业十余年，用到的软件开发语言没有一个国产的，用到开发工具没有一个国产，用到的设计理念绝大部分也不是国内自主创新的，我们这些所谓的开发人员特别像那时候的买办，转卖洋人的东西给国人，顺手打了个国产的标签。从这个角度看，我们的软件行业被更高级的洋软件殖****民了， 软件现代化，我们还有很多路要走。</p>
-<p>我们常用 站在巨人的肩膀上 这句话来麻痹自己，其实站在巨人的肩膀是对的啊，关键是站在哪个巨人的肩膀上呢，我们站在美国这个巨人的肩膀上，人家要不要你站，还不是看人家的心情吗！所以艰苦奋斗，自力更生什么时候都不要扔。我们要坚决的发展自主的软件研发体系，各个行业的软件体系；</p>
-<p>软件行业为什么那么重要呢？</p>
-<ul>
-<li>从全球来看，软件行业是相对更加是智力密集行业，这个行业的人员普遍高于其他行业，如果这个行业的平均智力水平不高，那么其他行业的平均智力水平可想而知。</li>
-<li>软件是硬件的生命和灵魂。硬件是机械的，有软件的硬件才够灵活和智能，才是能创造大价值的。</li>
-<li>软件行业的成长是不能复制的。硬件的生成其实是可以复制的，生产线可以组装产业工人可以培训，但是软件行业需要大量的协作，大量的普通开发人员，需要这些大量的普通开发人员付出自己的大量优质的智力活动，需要每个开发人员投入自己的智慧，经验，创造力和想象力。</li>
-<li>软件是最复杂的，它看不见，摸不着，但是它又实实在在控制着数以亿万计的硬件，它的生成过程就是智力活动的过程。</li>
-</ul>
-<p>目前看，软件代表着一个国家最高的科技实力和科技行业的整体水平，软件兴，则中国兴！</p>
-<p>中国软件，加油！ 中国，加油！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/34/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="page-number current">35</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/36/">Next &raquo;</a>
@@ -1341,6 +1353,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
             
             <div class="clearfix"></div>

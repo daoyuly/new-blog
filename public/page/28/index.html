@@ -150,6 +150,88 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2022年 10 月 17 日 - 2022年 10 月 21 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2017%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2021%20%E6%97%A5/">工作周报2022年 10 月 17 日 - 2022年 10 月 21 日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2017%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2021%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-10-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>Web端Tab组件改造升级<ul>
+<li>Web端的Angularjs版的Tabs在实现是上复用了原来Tabs指令的API，保持API的兼容性，内部实现完成按照新Tabs的样式和布局， 这样能方便现有的老Tabs直接替换成新的<umu-tabs>，样式上直接复用umu-design的Tabs组件。这种实现方案的好处是方便现有组件的替换，都是Angularjs框架，现有的Tabs现实都能替换，即便使用React版本的也需要包装一次。Tabs本身实现就比较简单，从开发方便性上来说，反而不如直接使用Angularjs快速省事。</li>
+<li>Web端Tab组件使用主要有2种形式，包括Tabs指令，HTML的<UL>或者<Div>形式。Tabs指令的形式因为新老Tabs的API是兼容的，所以直接替换指令名称即可。对于后一种形式，相当于重构，涉及到点击事件，样式布局，Tabs数据的整理等功能问题，相对复杂一些。目前涉及这类的改动大概有30多处，加上功能自测和样式Reivew，整体工作量比Button替换要大很多。</li>
+<li>替换范围上这次是整体提测，Button涉及面太多，查找和功能回归是占用开发时间的大头。Tab相对来说涉及面没有那么大，总共有七八十处，层级不会太深，所在的功能也比较明确，出现遗漏的情况会比较少。另外涉及部分代码的重构，避免过多的代码冲突，需要整体性的快速搞定。</li>
+<li>All hands上东朔老师分享了很多有价值的方法论和现身说法的案例，非常值得借鉴和学习，比如做事要提前谋划，提前准备。我最感同身受的是很多结果是由之前的很多细节和努力累积而成。今天的任何好的或者坏的结果都是之前的行为导致的，认真踏实的活在当下，才能创造更好的未来。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2017%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2021%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-立场" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -918,87 +1000,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 8月 15 日 - 2022年 8月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2015%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2019%20%E6%97%A5/">工作周报2022年 8月 15 日 - 2022年 8月 19 日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2015%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-08-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周的绝大部分时间在在跟进拖拽的问题，主要遇到了几类问题：<ul>
-<li>非可拖拽目标区的定位，拖拽的API中对drop事件和dropend分别对应可放置区域和拖拽目标，小节列表在定义上把除去右侧导航和顶部导航的区域都是可放置目标区域，但是实际dom上没有触发事件，所以使用代码模拟实现这个功能，其实这个也是我个人认为HTML5 Drag API设计的太过抽象，对来说拖拽目标有 drag start，drag end，可放置区域上有drag over，drag enter，drag leave，drop，有一种情况是拖拽目标飞到非可放置区域释放了，这个时候只触发drag end，此时程序无法拿到可放置区域的任何信息。从拖拽本身来说，离开区域应该是不做任何操作，实际上对更易用的交互来说，比如我们这种交互需求，需要默认的操作，所以API，应该有一个类似 drag abort的事件，应对这种拖拽在非放置取的情况，从更广泛的场景上来说 ，浏览器Tab和Tab之间， 两个Chrome之间的拖拽就非常适合这个API的使用，当然还有不同程序和浏览器的拖拽交互，不同浏览器之间的拖拽目前看似乎都有技术硬伤的存在；当然目前API的也具有相对的先进性，比如我们有一个小的需求是在非置顶区章节拖拽到非置顶区域时，拖拽预设图像要变成红色，之前在技术预研的时候，我发现不能实现，就和@贾琨说了这个技术上问题，这周随着最这块技术的深入掌握，我发现是可以自定义这个图像，甚至可以直接使用Canvas或者Video，具有相对高的可定制性，但也有一定的复杂性；</li>
-<li>IE兼容上，对于施加了dragable的元素来说，其内部input的的焦点触发和光标，有明显的bug，可能也是IE浏览器的地方方言，焦点触发后其光标是不展示的，需要二次激活，这个问题只改了一行代码，实际上查了将近一天的时间，只为修复这个莫名其妙的问题，通过这个bug，我很理解Microsoft为什么放弃IE了，因为类似的问题我们遇到好几个了，我的理解是IE已经修不过来这些bug了，比如自定义标签了加入disabled属性，自定义标签里的事件触发机制，带有非常明显的IE的特色，不能完全说IE有明显的bug，但是从浏览器的发展来看，不符合标准就是bug，这个行业里事实上的规则了；</li>
-<li>还有其他疑难问题，根本上都是现有拖拽dom实现的问题，基于树状的拖拽，硬要在结构上做成一维数据，还是有一些复杂的，在课程分类，组织架构有过类似的树状拖拽排序，从交互上看相对简单，限制条件较少，相对这次的实现，前期的设计没有做好，很多bug在填设计上的坑，这是一个很大的教训，中间有想过重新设计，我发现成本也是比较大，并且也不见得是最好的设计给后期扩展和测试都会带来极大的风险，就放弃了这个方向。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2015%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/27/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/29/">Next &raquo;</a>
@@ -1324,6 +1325,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
             
             <div class="clearfix"></div>
