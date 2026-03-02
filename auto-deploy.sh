@@ -16,16 +16,21 @@ CHANGED_FILES=$(git diff --cached --name-only --diff-filter=AM | grep '^public/'
 
 # 3. 只上传新增和修改的文件
 if [ -n "$CHANGED_FILES" ]; then
-  EXCLUDE_OPTS=(
-    --exclude='.DS_Store'
-    --exclude='Thumbs.db'
-    --exclude='*.map'
-    --exclude='*.log'
-    --exclude='.git*'
-    --exclude='*~'
-  )
-  echo "$CHANGED_FILES" | sed 's|^public/||' | rsync -avz --files-from=- "${EXCLUDE_OPTS[@]}" ./public/ blog:/usr/share/nginx/html/
-  echo "已上传 $(echo "$CHANGED_FILES" | wc -l | tr -d ' ') 个变更文件"
+  UPLOAD_COUNT=0
+  while IFS= read -r file; do
+    [ -z "$file" ] && continue
+    # 排除无需上传的文件
+    case "$file" in
+      *.DS_Store|*Thumbs.db|*.map|*.log|*.git*|*~) continue ;;
+    esac
+    [ ! -f "$file" ] && continue
+    remote_path="/usr/share/nginx/html/$(echo "$file" | sed 's|^public/||')"
+    remote_dir=$(dirname "$remote_path")
+    ssh blog "mkdir -p $remote_dir"
+    scp "$file" "blog:$remote_path"
+    ((UPLOAD_COUNT++)) || true
+  done <<< "$CHANGED_FILES"
+  echo "已上传 $UPLOAD_COUNT 个变更文件"
 else
   echo "无变更文件，跳过上传"
 fi
