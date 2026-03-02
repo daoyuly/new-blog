@@ -54,9 +54,9 @@ a:hover {
 .left-col .header-author a {
   color: white;
 }
-.left-col .intrude-less {
+/* .left-col .intrude-less {
   background: var(--ac-primary);
-}
+} */
 
 /* 文章区域 */
 .article-inner {
