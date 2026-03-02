@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#2c3e50">
+  <title>随想 · 编辑</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: #f5f6fa;
+      min-height: 100vh;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.25rem;
+      color: #2c3e50;
+      margin: 0 0 16px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 12px;
+      font-size: 16px;
+      line-height: 1.5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+    }
+    .counter {
+      text-align: right;
+      font-size: 0.75rem;
+      color: #95a5a6;
+      margin-top: 4px;
+    }
+    .counter.warn { color: #e74c3c; }
+    .password-wrap {
+      margin-top: 16px;
+    }
+    .password-wrap input {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .btn {
+      width: 100%;
+      margin-top: 16px;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:active { opacity: 0.8; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary {
+      background: #3498db;
+      color: white;
+    }
+    .status {
+      margin-top: 12px;
+      font-size: 0.875rem;
+      min-height: 1.2em;
+    }
+    .status.success { color: #27ae60; }
+    .status.error { color: #e74c3c; }
+    .status.offline { color: #95a5a6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>随想</h1>
+    <textarea id="content" placeholder="写下你的想法（最多500字）" maxlength="500"></textarea>
+    <div class="counter" id="counter">0 / 500</div>
+    <div class="password-wrap">
+      <input type="password" id="password" placeholder="发布密码" autocomplete="current-password">
+    </div>
+    <button class="btn btn-primary" id="publish">发布</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+    (function() {
+      const DB_NAME = 'blog-editor';
+      const STORE_NAME = 'drafts';
+      const KEY = 'current';
+
+      const contentEl = document.getElementById('content');
+      const counterEl = document.getElementById('counter');
+      const passwordEl = document.getElementById('password');
+      const publishBtn = document.getElementById('publish');
+      const statusEl = document.getElementById('status');
+
+      function openDB() {
+        return new Promise((resolve, reject) => {
+          const req = indexedDB.open(DB_NAME, 1);
+          req.onerror = () => reject(req.error);
+          req.onsuccess = () => resolve(req.result);
+          req.onupgradeneeded = (e) => {
+            e.target.result.createObjectStore(STORE_NAME);
+          };
+        });
+      }
+
+      async function loadDraft() {
+        try {
+          const db = await openDB();
+          return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readonly');
+            const req = tx.objectStore(STORE_NAME).get(KEY);
+            req.onsuccess = () => resolve(req.result || '');
+            req.onerror = () => reject(req.error);
+          });
+        } catch (e) {
+          return '';
+        }
+      }
+
+      async function saveDraft(text) {
+        try {
+          const db = await openDB();
+          return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).put(text, KEY);
+            tx.oncomplete = () => resolve();
+            tx.onerror = () => reject(tx.error);
+          });
+        } catch (e) {
+          console.warn('IndexedDB save failed', e);
+        }
+      }
+
+      function updateCounter() {
+        const len = contentEl.value.length;
+        counterEl.textContent = len + ' / 500';
+        counterEl.classList.toggle('warn', len >= 500);
+      }
+
+      contentEl.addEventListener('input', () => {
+        updateCounter();
+        saveDraft(contentEl.value);
+      });
+
+      function setStatus(msg, type) {
+        statusEl.textContent = msg;
+        statusEl.className = 'status ' + (type || '');
+      }
+
+      publishBtn.addEventListener('click', async () => {
+        const content = contentEl.value.trim();
+        const password = passwordEl.value;
+        if (!content) {
+          setStatus('请输入内容', 'error');
+          return;
+        }
+        if (!password) {
+          setStatus('请输入发布密码', 'error');
+          return;
+        }
+        if (content.length > 500) {
+          setStatus('内容不能超过500字', 'error');
+          return;
+        }
+
+        publishBtn.disabled = true;
+        setStatus('发布中...');
+
+        try {
+          const res = await fetch('/api/publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content, password })
+          });
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            setStatus('发布成功', 'success');
+            contentEl.value = '';
+            updateCounter();
+            saveDraft('');
+          } else {
+            setStatus(data.message || '发布失败', 'error');
+          }
+        } catch (e) {
+          if (!navigator.onLine) {
+            setStatus('网络离线，内容已保存到本地', 'offline');
+          } else {
+            setStatus('发布失败：' + (e.message || '网络错误'), 'error');
+          }
+        } finally {
+          publishBtn.disabled = false;
+        }
+      });
+
+      loadDraft().then(text => {
+        contentEl.value = text;
+        updateCounter();
+      });
+
+      updateCounter();
+    })();
+  </script>
+</body>
+</html>
