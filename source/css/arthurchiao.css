@@ -1,0 +1,193 @@
+/**
+ * Arthur Chiao / Long Haul 风格复刻
+ * 参考: https://arthurchiao.art/blog/gpt-as-a-finite-state-markov-chain-zh/
+ */
+
+:root {
+  --ac-primary: #2e8b57;
+  --ac-primary-dark: #21653f;
+  --ac-primary-darker: #1b5233;
+  --ac-text-muted: #6a737d;
+  --ac-blockquote-border: #dfe2e5;
+  --ac-code-bg: #f6f8fa;
+}
+
+/* 全局字体与排版 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 56.25em) {
+  body {
+    text-align: justify;
+  }
+}
+
+/* 链接颜色 */
+a {
+  color: var(--ac-primary);
+}
+a:hover {
+  color: var(--ac-primary-darker);
+}
+
+/* 选中高亮 */
+::selection {
+  background: var(--ac-primary);
+  color: white;
+}
+::-moz-selection {
+  background: var(--ac-primary);
+  color: white;
+}
+
+/* 左侧栏主题色 */
+.left-col .overlay {
+  background: var(--ac-primary) !important;
+}
+.left-col .header-menu a:hover,
+.left-col .header-smart-menu a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+.left-col .header-author a {
+  color: white;
+}
+.left-col .intrude-less {
+  background: var(--ac-primary);
+}
+
+/* 文章区域 */
+.article-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.archive-article-date {
+  text-align: center;
+  color: var(--ac-text-muted);
+  font-size: 0.9em;
+  margin-bottom: 1.5rem;
+}
+
+/* 文章正文排版 */
+.article-entry {
+  font-size: 1em;
+  line-height: 1.7;
+}
+
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4,
+.article-entry h5,
+.article-entry h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: 1.5em 0 0.75em;
+  font-weight: 600;
+}
+
+.article-entry h1 { font-size: 1.8em; }
+.article-entry h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+.article-entry h3 { font-size: 1.25em; }
+.article-entry h4 { font-size: 1.1em; }
+
+/* 引用块 - Long Haul 风格 */
+.article-entry blockquote {
+  border-left: 0.25em solid var(--ac-blockquote-border);
+  padding: 0 1em;
+  margin: 1.5em 0;
+  color: var(--ac-text-muted);
+  line-height: 1.8;
+}
+
+/* 代码块 */
+.article-entry code,
+.article-entry pre {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 85%;
+}
+
+.article-entry code {
+  background: var(--ac-code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  border: 1px solid #e1e4e8;
+}
+
+.article-entry pre {
+  background: #272822;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.article-entry pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: #f8f8f2;
+}
+
+.article-entry .highlight {
+  background: #272822;
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+.article-entry .highlight pre {
+  margin: 0;
+  padding: 1em;
+}
+
+/* 列表 */
+.article-entry ul,
+.article-entry ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.article-entry li {
+  margin: 0.5em 0;
+}
+
+/* 段落 */
+.article-entry p {
+  margin: 1em 0;
+}
+
+/* 分隔线 */
+.article-entry hr {
+  border: none;
+  border-top: 1px solid #eaecef;
+  margin: 2em 0;
+}
+
+/* 标签与分类链接 */
+.article-tag-list-link,
+.article-category .article-tag-list-link {
+  color: var(--ac-primary) !important;
+}
+.article-tag-list-link:hover,
+.article-category .article-tag-list-link:hover {
+  color: var(--ac-primary-darker) !important;
+}
+
+/* 页脚 */
+#footer {
+  border-top: 4px solid #d9d9d9;
+  padding-top: 1.5em;
+  margin-top: 2em;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--ac-text-muted);
+}

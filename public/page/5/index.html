@@ -20,6 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  <link rel="stylesheet" type="text/css" href="/css/arthurchiao.css">
   <style type="text/css">
   
     #container.show {
@@ -149,6 +150,284 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-ADP-7_ Multi-Agent Collaboration" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-7_%20Multi-Agent%20Collaboration/">Agentic Design Patterns - Chapter 7_ Multi-Agent Collaboration</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-7_%20Multi-Agent%20Collaboration/" class="archive-article-date">
+  	<time datetime="2025-10-12T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-7-章：多-Agent-协作"><a href="#第-7-章：多-Agent-协作" class="headerlink" title="第 7 章：多 Agent 协作"></a>第 7 章：多 Agent 协作</h1><p>虽然单体 Agent 架构对于定义明确的问题可能是有效的，但在面对复杂的多领域任务时，其能力往往受到限制。多 Agent 协作模式通过将系统构建为由不同专门化 Agent 组成的协作集合来解决这些限制。这种方法基于任务分解原则，其中高级目标被分解为离散的子问题。然后将每个子问题分配给拥有最适合该任务的特定工具、数据访问或推理能力的 Agent。</p>
+<p>例如，一个复杂的研究查询可能被分解并分配给研究 Agent 进行信息检索、数据分析 Agent 进行统计处理，以及综合 Agent 生成最终报告。这种系统的效能不仅仅源于劳动分工，而是关键依赖于 Agent 间通信的机制。这需要标准化的通信协议和共享本体，允许 Agent 交换数据、委托子任务并协调其行动以确保最终输出的连贯性。</p>
+<p>这种分布式架构提供了几个优势，包括增强的模块化、可扩展性和稳健性，因为单个 Agent 的故障不一定会导致整个系统故障。协作允许产生协同结果，其中多 Agent 系统的集体性能超过集合内任何单个 Agent 的潜在能力。</p>
+<h2 id="多-Agent-协作模式概述"><a href="#多-Agent-协作模式概述" class="headerlink" title="多 Agent 协作模式概述"></a>多 Agent 协作模式概述</h2><p>多 Agent 协作模式涉及设计系统，其中多个独立或半独立的 Agent 协同工作以实现共同目标。每个 Agent 通常具有定义的角色、与总体目标一致的特定目标，并且可能访问不同的工具或知识库。此模式的力量在于这些 Agent 之间的交互和协同作用。</p>
+<p>协作可以采取各种形式：</p>
+<ul>
+<li><p><strong>顺序交接：</strong> 一个 Agent 完成任务并将其输出传递给另一个 Agent 以进行管道中的下一步（类似于规划模式，但明确涉及不同的 Agent）。</p>
+</li>
+<li><p><strong>并行处理：</strong> 多个 Agent 同时处理问题的不同部分，然后它们的结果稍后被组合。</p>
+</li>
+<li><p><strong>辩论和共识：</strong> 多 Agent 协作，其中具有不同观点和信息来源的 Agent 进行讨论以评估选项，最终达成共识或更明智的决策。</p>
+</li>
+<li><p><strong>层次结构：</strong> 管理者 Agent 可能根据其工具访问或插件能力动态地将任务委托给工作 Agent，并综合其结果。每个 Agent 还可以处理相关的工具组，而不是单个 Agent 处理所有工具。</p>
+</li>
+<li><p><strong>专家团队：</strong> 在不同领域具有专业知识的 Agent（例如，研究员、作家、编辑）协作产生复杂输出。</p>
+</li>
+<li><h3 id="批评者-审查者：-Agent-创建初始输出，如计划、草稿或答案。第二组-Agent-然后批判性地评估此输出是否符合政策、安全性、合规性、正确性、质量以及与组织目标的一致性。原始创建者或最终-Agent-根据此反馈修订输出。此模式对于代码生成、研究写作、逻辑检查和确保道德一致性特别有效。这种方法的优势包括增强的稳健性、改进的质量以及减少幻觉或错误的可能性。"><a href="#批评者-审查者：-Agent-创建初始输出，如计划、草稿或答案。第二组-Agent-然后批判性地评估此输出是否符合政策、安全性、合规性、正确性、质量以及与组织目标的一致性。原始创建者或最终-Agent-根据此反馈修订输出。此模式对于代码生成、研究写作、逻辑检查和确保道德一致性特别有效。这种方法的优势包括增强的稳健性、改进的质量以及减少幻觉或错误的可能性。" class="headerlink" title="批评者-审查者： Agent 创建初始输出，如计划、草稿或答案。第二组 Agent 然后批判性地评估此输出是否符合政策、安全性、合规性、正确性、质量以及与组织目标的一致性。原始创建者或最终 Agent 根据此反馈修订输出。此模式对于代码生成、研究写作、逻辑检查和确保道德一致性特别有效。这种方法的优势包括增强的稳健性、改进的质量以及减少幻觉或错误的可能性。"></a><strong>批评者-审查者：</strong> Agent 创建初始输出，如计划、草稿或答案。第二组 Agent 然后批判性地评估此输出是否符合政策、安全性、合规性、正确性、质量以及与组织目标的一致性。原始创建者或最终 Agent 根据此反馈修订输出。此模式对于代码生成、研究写作、逻辑检查和确保道德一致性特别有效。这种方法的优势包括增强的稳健性、改进的质量以及减少幻觉或错误的可能性。</h3></li>
+</ul>
+<p>多 Agent 系统（见图 1）从根本上包括 Agent 角色和职责的界定、Agent 通过其交换信息的通信渠道的建立，以及指导其协作努力的任务流或交互协议的制定。</p>
+<p><img src="/../images/chapter-7/image1.png"></p>
+<p>图 1：多 Agent 系统示例</p>
+<p>像 CrewAI 和 Google ADK 这样的框架旨在通过提供 Agent、任务及其交互程序的规范结构来促进这种范式。这种方法对于需要各种专业知识、包含多个离散阶段或利用并发处理和跨 Agent 信息确认优势的挑战特别有效。</p>
+<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>多 Agent 协作是一种适用于众多领域的强大模式：</p>
+<ul>
+<li><strong>复杂研究和分析：</strong> 一组 Agent 可以协作完成研究项目。一个 Agent 可能专门搜索学术数据库，另一个总结发现，第三个识别趋势，第四个将信息综合成报告。这反映了人类研究团队可能如何运作。</li>
+<li><strong>软件开发：</strong> 想象 Agent 协作构建软件。一个 Agent 可以是需求分析师，另一个是代码生成器，第三个是测试员，第四个是文档编写者。他们可以在彼此之间传递输出以构建和验证组件。</li>
+<li><strong>创意内容生成：</strong> 创建营销活动可能涉及市场研究 Agent、文案撰写 Agent、图形设计 Agent（使用图像生成工具）和社交媒体调度 Agent，所有这些都在一起工作。</li>
+<li><strong>财务分析：</strong> 多 Agent 系统可以分析金融市场。Agent 可能专门获取股票数据、分析新闻情绪、执行技术分析和生成投资建议。</li>
+<li><strong>客户支持升级：</strong> 前线支持 Agent 可以处理初始查询，在需要时将复杂问题升级给专家 Agent（例如，技术专家或计费专家），展示基于问题复杂性的顺序交接。</li>
+<li><strong>供应链优化：</strong> Agent 可以代表供应链中的不同节点（供应商、制造商、分销商）并协作优化库存水平、物流和调度以响应需求变化或中断。</li>
+<li><strong>网络分析与修复</strong>：自主操作从 Agent 架构中受益匪浅，特别是在故障定位方面。多个 Agent 可以协作分类和修复问题，建议最佳行动。这些 Agent 还可以与传统机器学习模型和工具集成，利用现有系统，同时提供生成式 AI 的优势。</li>
+</ul>
+<p>界定专门 Agent 并细致编排其相互关系的能力使开发人员能够构建展现增强模块化、可扩展性以及处理单个集成 Agent 无法解决的复杂性的系统。</p>
+<h2 id="多-Agent-协作：探索相互关系和通信结构"><a href="#多-Agent-协作：探索相互关系和通信结构" class="headerlink" title="多 Agent 协作：探索相互关系和通信结构"></a>多 Agent 协作：探索相互关系和通信结构</h2><p>理解 Agent 交互和通信的复杂方式对于设计有效的多 Agent 系统至关重要。如图 2 所示，存在一系列相互关系和通信模型，从最简单的单 Agent 场景到复杂的、定制设计的协作框架。每个模型都呈现独特的优势和挑战，影响多 Agent 系统的整体效率、稳健性和适应性。</p>
+<p><strong>1. 单 Agent：</strong> 在最基本的层面上，”单 Agent”在没有与其他实体直接交互或通信的情况下自主运行。虽然此模型易于实现和管理，但其能力固有地受到单个 Agent 范围和资源的限制。它适用于可分解为独立子问题的任务，每个子问题都可由单个自给自足的 Agent 解决。</p>
+<p><strong>2. 网络：</strong> “网络”模型代表了向协作迈出的重要一步，其中多个 Agent 以去中心化方式直接相互交互。通信通常以点对点方式进行，允许共享信息、资源甚至任务。此模型促进弹性，因为一个 Agent 的故障不一定会使整个系统瘫痪。然而，管理通信开销并确保大型非结构化网络中的连贯决策可能具有挑战性。</p>
+<p><strong>3. 监督者：</strong> 在”监督者”模型中，专用 Agent（”监督者”）监督和协调一组下属 Agent 的活动。监督者充当通信、任务分配和冲突解决的中心枢纽。这种层次结构提供了清晰的权限线，可以简化管理和控制。然而，它引入了单点故障（监督者），如果监督者被大量下属或复杂任务压倒，可能会成为瓶颈。</p>
+<p><strong>4. 监督者作为工具：</strong> 此模型是”监督者”概念的细微扩展，其中监督者的角色不太关乎直接命令和控制，而更多关乎向其他 Agent 提供资源、指导或分析支持。监督者可能提供工具、数据或计算服务，使其他 Agent 能够更有效地执行其任务，而不必规定其每一个行动。这种方法旨在利用监督者的能力，而不施加严格的自上而下控制。</p>
+<p><strong>5. 层次化：</strong> “层次化”模型扩展了监督者概念，创建了多层组织结构。这涉及多个监督者级别，高级监督者监督低级监督者，最终在最低层有一组操作 Agent。此结构非常适合可分解为子问题的复杂问题，每个子问题由层次结构的特定层管理。它提供了一种结构化的可扩展性和复杂性管理方法，允许在定义的边界内进行分布式决策。</p>
+<p><img src="/../images/chapter-7/image2.png"></p>
+<p>图 2：Agent 以各种方式进行通信和交互。</p>
+<p><strong>6. 自定义：</strong> “自定义”模型代表了多 Agent 系统设计的终极灵活性。它允许创建根据给定问题或应用程序的特定要求精确定制的独特相互关系和通信结构。这可能涉及结合前述模型元素的混合方法，或从环境的独特约束和机会中产生的全新设计。自定义模型通常源于需要针对特定性能指标进行优化、处理高度动态的环境或将特定领域知识纳入系统架构。设计和实现自定义模型通常需要对多 Agent 系统原理有深入理解，并仔细考虑通信协议、协调机制和涌现行为。</p>
+<p>总之，为多 Agent 系统选择相互关系和通信模型是关键的设计决策。每个模型提供不同的优势和劣势，最佳选择取决于诸如任务复杂性、Agent 数量、期望的自主程度、对稳健性的需求以及可接受的通信开销等因素。多 Agent 系统的未来进展可能会继续探索和完善这些模型，以及开发协作智能的新范式。</p>
+<h2 id="实操代码（Crew-AI）"><a href="#实操代码（Crew-AI）" class="headerlink" title="实操代码（Crew AI）"></a>实操代码（Crew AI）</h2><p>此 Python 代码使用 CrewAI 框架定义了一个 AI 驱动的团队来生成关于 AI 趋势的博客文章。它首先设置环境，从 .env 文件加载 API 密钥。应用程序的核心涉及定义两个 Agent：一个研究员用于查找和总结 AI 趋势，一个作家用于基于研究创建博客文章。</p>
+<p>相应地定义了两个任务：一个用于研究趋势，另一个用于撰写博客文章，写作任务依赖于研究任务的输出。然后将这些 Agent 和任务组装成一个团队，指定顺序流程，其中任务按顺序执行。团队使用 Agent、任务和语言模型（特别是”gemini-2.0-flash”模型）初始化。主函数使用 kickoff() 方法执行此团队，编排 Agent 之间的协作以产生所需的输出。最后，代码打印团队执行的最终结果，即生成的博客文章。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">from</span> crewai <span class="keyword">import</span> Agent, Task, Crew, Process</span><br><span class="line"><span class="keyword">from</span> langchain_google_genai <span class="keyword">import</span> ChatGoogleGenerativeAI</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setup_environment</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;加载环境变量并检查所需的 API 密钥。&quot;&quot;&quot;</span></span><br><span class="line">    load_dotenv()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.getenv(<span class="string">&quot;GOOGLE_API_KEY&quot;</span>):</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;未找到 GOOGLE_API_KEY。请在您的 .env 文件中设置它。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    使用最新的 Gemini 模型初始化并运行用于内容创建的 AI 团队。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    setup_environment()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定义要使用的语言模型。</span></span><br><span class="line">    <span class="comment"># 更新为 Gemini 2.0 系列中的模型以获得更好的性能和功能。</span></span><br><span class="line">    <span class="comment"># 对于尖端（预览）功能，您可以使用 &quot;gemini-2.5-flash&quot;。</span></span><br><span class="line">    llm = ChatGoogleGenerativeAI(model=<span class="string">&quot;gemini-2.0-flash&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定义具有特定角色和目标的 Agent</span></span><br><span class="line">    researcher = Agent(</span><br><span class="line">        role=<span class="string">&#x27;高级研究分析师&#x27;</span>,</span><br><span class="line">        goal=<span class="string">&#x27;查找并总结 AI 的最新趋势。&#x27;</span>,</span><br><span class="line">        backstory=<span class="string">&quot;你是一位经验丰富的研究分析师，擅长识别关键趋势和综合信息。&quot;</span>,</span><br><span class="line">        verbose=<span class="literal">True</span>,</span><br><span class="line">        allow_delegation=<span class="literal">False</span>,</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    writer = Agent(</span><br><span class="line">        role=<span class="string">&#x27;技术内容作家&#x27;</span>,</span><br><span class="line">        goal=<span class="string">&#x27;基于研究发现撰写清晰且引人入胜的博客文章。&#x27;</span>,</span><br><span class="line">        backstory=<span class="string">&quot;你是一位熟练的作家，可以将复杂的技术主题转化为易于理解的内容。&quot;</span>,</span><br><span class="line">        verbose=<span class="literal">True</span>,</span><br><span class="line">        allow_delegation=<span class="literal">False</span>,</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 为 Agent 定义任务</span></span><br><span class="line">    research_task = Task(</span><br><span class="line">        description=<span class="string">&quot;研究 2024-2025 年人工智能中出现的前 3 个趋势。重点关注实际应用和潜在影响。&quot;</span>,</span><br><span class="line">        expected_output=<span class="string">&quot;前 3 个 AI 趋势的详细摘要，包括关键点和来源。&quot;</span>,</span><br><span class="line">        agent=researcher,</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    writing_task = Task(</span><br><span class="line">        description=<span class="string">&quot;基于研究发现撰写一篇 500 字的博客文章。文章应该引人入胜且易于普通读者理解。&quot;</span>,</span><br><span class="line">        expected_output=<span class="string">&quot;一篇关于最新 AI 趋势的完整 500 字博客文章。&quot;</span>,</span><br><span class="line">        agent=writer,</span><br><span class="line">        context=[research_task],</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 创建团队</span></span><br><span class="line">    blog_creation_crew = Crew(</span><br><span class="line">        agents=[researcher, writer],</span><br><span class="line">        tasks=[research_task, writing_task],</span><br><span class="line">        process=Process.sequential,</span><br><span class="line">        llm=llm,</span><br><span class="line">        verbose=<span class="number">2</span> <span class="comment"># 为详细的团队执行日志设置详细程度</span></span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 执行团队</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;## 使用 Gemini 2.0 Flash 运行博客创建团队... ##&quot;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        result = blog_creation_crew.kickoff()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n------------------\n&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;## 团队最终输出 ##&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(result)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;\n发生意外错误：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>我们现在将深入研究 Google ADK 框架中的更多示例，特别强调层次化、并行和顺序协调范式，以及将 Agent 实现为操作工具。</p>
+<h2 id="实操代码（Google-ADK）"><a href="#实操代码（Google-ADK）" class="headerlink" title="实操代码（Google ADK）"></a>实操代码（Google ADK）</h2><p>以下代码示例演示了通过创建父子关系在 Google ADK 中建立层次化 Agent 结构。代码定义了两种类型的 Agent：LlmAgent 和从 BaseAgent 派生的自定义 TaskExecutor Agent。TaskExecutor 专为特定的非 LLM 任务而设计，在此示例中，它只是生成”任务成功完成”事件。使用指定的模型和指令初始化名为 greeter 的 LlmAgent，以充当友好的欢迎者。自定义 TaskExecutor 实例化为 task_doer。创建名为 coordinator 的父 LlmAgent，也带有模型和指令。coordinator 的指令引导它将欢迎委托给 greeter，将任务执行委托给 task_doer。greeter 和 task_doer 作为子 Agent 添加到 coordinator，建立父子关系。然后代码断言此关系设置正确。最后，它打印一条消息，指示已成功创建 Agent 层次结构。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent, BaseAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.agents.invocation_context <span class="keyword">import</span> InvocationContext</span><br><span class="line"><span class="keyword">from</span> google.adk.events <span class="keyword">import</span> Event</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> AsyncGenerator</span><br><span class="line"></span><br><span class="line"><span class="comment">## 通过扩展 BaseAgent 正确实现自定义 Agent</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TaskExecutor</span>(<span class="title class_ inherited__">BaseAgent</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;具有自定义非 LLM 行为的专门 Agent。&quot;&quot;&quot;</span></span><br><span class="line">    name: <span class="built_in">str</span> = <span class="string">&quot;TaskExecutor&quot;</span></span><br><span class="line">    description: <span class="built_in">str</span> = <span class="string">&quot;执行预定义的任务。&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">_run_async_impl</span>(<span class="params">self, context: InvocationContext</span>) -&gt; AsyncGenerator[Event, <span class="literal">None</span>]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;任务的自定义实现逻辑。&quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 这是您的自定义逻辑所在的地方。</span></span><br><span class="line">        <span class="comment"># 对于此示例，我们只会生成一个简单的事件。</span></span><br><span class="line">        <span class="keyword">yield</span> Event(author=<span class="variable language_">self</span>.name, content=<span class="string">&quot;任务成功完成。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用适当的初始化定义单个 Agent</span></span><br><span class="line"><span class="comment">## LlmAgent 需要指定模型。</span></span><br><span class="line">greeter = LlmAgent(</span><br><span class="line">    name=<span class="string">&quot;Greeter&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;你是一个友好的欢迎者。&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">task_doer = TaskExecutor() <span class="comment"># 实例化我们的具体自定义 Agent</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建父 Agent 并分配其子 Agent</span></span><br><span class="line"><span class="comment">## 父 Agent 的描述和指令应该引导其委托逻辑。</span></span><br><span class="line">coordinator = LlmAgent(</span><br><span class="line">    name=<span class="string">&quot;Coordinator&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;可以欢迎用户并执行任务的协调者。&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;当被要求欢迎时，委托给 Greeter。当被要求执行任务时，委托给 TaskExecutor。&quot;</span>,</span><br><span class="line">    sub_agents=[</span><br><span class="line">        greeter,</span><br><span class="line">        task_doer</span><br><span class="line">    ]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## ADK 框架自动建立父子关系。</span></span><br><span class="line"><span class="comment">## 如果在初始化后检查，这些断言将通过。</span></span><br><span class="line"><span class="keyword">assert</span> greeter.parent_agent == coordinator</span><br><span class="line"><span class="keyword">assert</span> task_doer.parent_agent == coordinator</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Agent 层次结构创建成功。&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>此代码摘录说明了在 Google ADK 框架中使用 LoopAgent 建立迭代工作流。代码定义了两个 Agent：ConditionChecker 和 ProcessingStep。ConditionChecker 是一个自定义 Agent，检查会话状态中的”status”值。如果”status”为”completed”，ConditionChecker 升级事件以停止循环。否则，它生成事件以继续循环。ProcessingStep 是使用”gemini-2.0-flash-exp”模型的 LlmAgent。其指令是执行任务，如果是最后一步则将会话”status”设置为”completed”。创建名为 StatusPoller 的 LoopAgent。StatusPoller 配置为 max_iterations&#x3D;10。StatusPoller 包括 ProcessingStep 和 ConditionChecker 实例作为子 Agent。LoopAgent 将顺序执行子 Agent 最多 10 次迭代，如果 ConditionChecker 发现状态为”completed”则停止。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> AsyncGenerator</span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LoopAgent, LlmAgent, BaseAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.events <span class="keyword">import</span> Event, EventActions</span><br><span class="line"><span class="keyword">from</span> google.adk.agents.invocation_context <span class="keyword">import</span> InvocationContext</span><br><span class="line"></span><br><span class="line"><span class="comment">## 最佳实践：将自定义 Agent 定义为完整的、自描述的类。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ConditionChecker</span>(<span class="title class_ inherited__">BaseAgent</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;检查会话状态中&quot;completed&quot;状态的自定义 Agent。&quot;&quot;&quot;</span></span><br><span class="line">    name: <span class="built_in">str</span> = <span class="string">&quot;ConditionChecker&quot;</span></span><br><span class="line">    description: <span class="built_in">str</span> = <span class="string">&quot;检查流程是否完成并向循环发出停止信号。&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">_run_async_impl</span>(<span class="params"></span></span><br><span class="line"><span class="params">        self, context: InvocationContext</span></span><br><span class="line"><span class="params">    </span>) -&gt; AsyncGenerator[Event, <span class="literal">None</span>]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;检查状态并生成事件以继续或停止循环。&quot;&quot;&quot;</span></span><br><span class="line">        status = context.session.state.get(<span class="string">&quot;status&quot;</span>, <span class="string">&quot;pending&quot;</span>)</span><br><span class="line">        is_done = (status == <span class="string">&quot;completed&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> is_done:</span><br><span class="line">            <span class="comment"># 在满足条件时升级以终止循环。</span></span><br><span class="line">            <span class="keyword">yield</span> Event(author=<span class="variable language_">self</span>.name, actions=EventActions(escalate=<span class="literal">True</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 生成简单事件以继续循环。</span></span><br><span class="line">            <span class="keyword">yield</span> Event(author=<span class="variable language_">self</span>.name, content=<span class="string">&quot;条件未满足，继续循环。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 更正：LlmAgent 必须有模型和清晰的指令。</span></span><br><span class="line">process_step = LlmAgent(</span><br><span class="line">    name=<span class="string">&quot;ProcessingStep&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;你是较长流程中的一步。执行你的任务。如果你是最后一步，通过将 &#x27;status&#x27; 设置为 &#x27;completed&#x27; 来更新会话状态。&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## LoopAgent 编排工作流。</span></span><br><span class="line">poller = LoopAgent(</span><br><span class="line">    name=<span class="string">&quot;StatusPoller&quot;</span>,</span><br><span class="line">    max_iterations=<span class="number">10</span>,</span><br><span class="line">    sub_agents=[</span><br><span class="line">        process_step,</span><br><span class="line">        ConditionChecker() <span class="comment"># 实例化定义良好的自定义 Agent。</span></span><br><span class="line">    ]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 此轮询器现在将执行 &#x27;process_step&#x27;</span></span><br><span class="line"><span class="comment">## 然后执行 &#x27;ConditionChecker&#x27;</span></span><br><span class="line"><span class="comment">## 重复直到状态为 &#x27;completed&#x27; 或已经过</span></span><br><span class="line"><span class="comment">## 10 次迭代。</span></span><br></pre></td></tr></table></figure>
+
+<p>此代码摘录阐明了 Google ADK 中的 SequentialAgent 模式，专为构建线性工作流而设计。此代码使用 google.adk.agents 库定义顺序 Agent 管道。管道由两个 Agent 组成，step1 和 step2。step1 命名为”Step1_Fetch”，其输出将存储在会话状态中的键”data”下。step2 命名为”Step2_Process”，并被指示分析存储在 session.state[“data”] 中的信息并提供摘要。名为”MyPipeline”的 SequentialAgent 编排这些子 Agent 的执行。当使用初始输入运行管道时，step1 将首先执行。来自 step1 的响应将保存到键”data”下的会话状态中。随后，step2 将执行，根据其指令利用 step1 放入状态的信息。此结构允许构建工作流，其中一个 Agent 的输出成为下一个 Agent 的输入。这是创建多步 AI 或数据处理管道的常见模式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> SequentialAgent, LlmAgent <span class="comment"># Changed Agent to LlmAgent</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 此 Agent 的输出将保存到 session.state[&quot;data&quot;]</span></span><br><span class="line">step1 = LlmAgent(name=<span class="string">&quot;Step1_Fetch&quot;</span>, output_key=<span class="string">&quot;data&quot;</span>, model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>) <span class="comment"># Added model for LlmAgent</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 此 Agent 将使用前一步的数据。</span></span><br><span class="line"><span class="comment">## 我们指示它如何查找和使用此数据。</span></span><br><span class="line">step2 = LlmAgent( <span class="comment"># Changed Agent to LlmAgent</span></span><br><span class="line">    name=<span class="string">&quot;Step2_Process&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;分析在 state[&#x27;data&#x27;] 中找到的信息并提供摘要。&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span> <span class="comment"># Added model for LlmAgent</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">pipeline = SequentialAgent(</span><br><span class="line">    name=<span class="string">&quot;MyPipeline&quot;</span>,</span><br><span class="line">    sub_agents=[step1, step2]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 当使用初始输入运行管道时，Step1 将执行，</span></span><br><span class="line"><span class="comment">## 其响应将存储在 session.state[&quot;data&quot;] 中，然后</span></span><br><span class="line"><span class="comment">## Step2 将执行，按指示使用来自状态的信息。</span></span><br></pre></td></tr></table></figure>
+
+<p>以下代码示例说明了 Google ADK 中的 ParallelAgent 模式，它促进多个 Agent 任务的并发执行。data_gatherer 设计为并发运行两个子 Agent：weather_fetcher 和 news_fetcher。weather_fetcher Agent 被指示获取给定位置的天气并将结果存储在 session.state[“weather_data”] 中。同样，news_fetcher Agent 被指示检索给定主题的头条新闻故事并将其存储在 session.state[“news_data”] 中。每个子 Agent 都配置为使用”gemini-2.0-flash-exp”模型。ParallelAgent 编排这些子 Agent 的执行，允许它们并行工作。来自 weather_fetcher 和 news_fetcher 的结果将被收集并存储在会话状态中。最后，示例展示了如何在 Agent 执行完成后从 final_state 访问收集的天气和新闻数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent, ParallelAgent <span class="comment"># Changed Agent to LlmAgent</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 最好将获取逻辑定义为 Agent 的工具</span></span><br><span class="line"><span class="comment">## 为了简化此示例，我们将逻辑嵌入 Agent 的指令中。</span></span><br><span class="line"><span class="comment">## 在实际场景中，您将使用工具。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义将并行运行的各个 Agent</span></span><br><span class="line">weather_fetcher = LlmAgent( <span class="comment"># Changed Agent to LlmAgent</span></span><br><span class="line">    name=<span class="string">&quot;weather_fetcher&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;获取给定位置的天气并仅返回天气报告。&quot;</span>,</span><br><span class="line">    output_key=<span class="string">&quot;weather_data&quot;</span>  <span class="comment"># 结果将存储在 session.state[&quot;weather_data&quot;] 中</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">news_fetcher = LlmAgent( <span class="comment"># Changed Agent to LlmAgent</span></span><br><span class="line">    name=<span class="string">&quot;news_fetcher&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;获取给定主题的头条新闻故事并仅返回该故事。&quot;</span>,</span><br><span class="line">    output_key=<span class="string">&quot;news_data&quot;</span>      <span class="comment"># 结果将存储在 session.state[&quot;news_data&quot;] 中</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建 ParallelAgent 以编排子 Agent</span></span><br><span class="line">data_gatherer = ParallelAgent(</span><br><span class="line">    name=<span class="string">&quot;data_gatherer&quot;</span>,</span><br><span class="line">    sub_agents=[</span><br><span class="line">        weather_fetcher,</span><br><span class="line">        news_fetcher</span><br><span class="line">    ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>提供的代码段示例了 Google ADK 中的”Agent 作为工具”范式，使 Agent 能够以类似于函数调用的方式利用另一个 Agent 的能力。具体来说，代码使用 Google 的 LlmAgent 和 AgentTool 类定义了一个图像生成系统。它由两个 Agent 组成：父 artist_agent 和子 Agent image_generator_agent。generate_image 函数是一个简单的工具，模拟图像创建，返回模拟图像数据。image_generator_agent 负责根据其接收的文本提示词使用此工具。artist_agent 的角色是首先发明一个创意图像提示词。然后它通过 AgentTool 包装器调用 image_generator_agent。AgentTool 充当桥梁，允许一个 Agent 将另一个 Agent 用作工具。当 artist_agent 调用 image_tool 时，AgentTool 使用艺术家发明的提示词调用 image_generator_agent。image_generator_agent 然后使用该提示词使用 generate_image 函数。最后，生成的图像（或模拟数据）通过 Agent 返回。此架构演示了一个分层 Agent 系统，其中更高级别的 Agent 编排较低级别的专门 Agent 以执行任务。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.tools <span class="keyword">import</span> agent_tool</span><br><span class="line"><span class="keyword">from</span> google.genai <span class="keyword">import</span> types</span><br><span class="line"></span><br><span class="line"><span class="comment">## 1. 核心能力的简单函数工具。</span></span><br><span class="line"><span class="comment">## 这遵循将操作与推理分离的最佳实践。</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_image</span>(<span class="params">prompt: <span class="built_in">str</span></span>) -&gt; <span class="built_in">dict</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    基于文本提示词生成图像。</span></span><br><span class="line"><span class="string">    参数：</span></span><br><span class="line"><span class="string">        prompt：要生成的图像的详细描述。</span></span><br><span class="line"><span class="string">    返回：</span></span><br><span class="line"><span class="string">        包含状态和生成的图像字节的字典。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;工具：为提示词生成图像：&#x27;<span class="subst">&#123;prompt&#125;</span>&#x27;&quot;</span>)</span><br><span class="line">    <span class="comment"># 在真实实现中，这将调用图像生成 API。</span></span><br><span class="line">    <span class="comment"># 对于此示例，我们返回模拟图像数据。</span></span><br><span class="line">    mock_image_bytes = <span class="string">b&quot;mock_image_data_for_a_cat_wearing_a_hat&quot;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&quot;status&quot;</span>: <span class="string">&quot;success&quot;</span>,</span><br><span class="line">        <span class="comment"># 工具返回原始字节，Agent 将处理 Part 创建。</span></span><br><span class="line">        <span class="string">&quot;image_bytes&quot;</span>: mock_image_bytes,</span><br><span class="line">        <span class="string">&quot;mime_type&quot;</span>: <span class="string">&quot;image/png&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 2. 将 ImageGeneratorAgent 重构为 LlmAgent。</span></span><br><span class="line"><span class="comment">## 它现在正确使用传递给它的输入。</span></span><br><span class="line">image_generator_agent = LlmAgent(</span><br><span class="line">    name=<span class="string">&quot;ImageGen&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;基于详细的文本提示词生成图像。&quot;</span>,</span><br><span class="line">    instruction=(</span><br><span class="line">        <span class="string">&quot;你是图像生成专家。你的任务是接受用户的请求 &quot;</span></span><br><span class="line">        <span class="string">&quot;并使用 `generate_image` 工具创建图像。&quot;</span></span><br><span class="line">        <span class="string">&quot;用户的整个请求应用作工具的 &#x27;prompt&#x27; 参数。&quot;</span></span><br><span class="line">        <span class="string">&quot;工具返回图像字节后，你必须输出图像。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    tools=[generate_image]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3. 将更正的 Agent 包装在 AgentTool 中。</span></span><br><span class="line"><span class="comment">## 这里的描述是父 Agent 看到的。</span></span><br><span class="line">image_tool = agent_tool.AgentTool(</span><br><span class="line">    agent=image_generator_agent,</span><br><span class="line">    description=<span class="string">&quot;使用此工具生成图像。输入应该是所需图像的描述性提示词。&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 4. 父 Agent 保持不变。其逻辑是正确的。</span></span><br><span class="line">artist_agent = LlmAgent(</span><br><span class="line">    name=<span class="string">&quot;Artist&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    instruction=(</span><br><span class="line">        <span class="string">&quot;你是一位富有创造力的艺术家。首先，为图像发明一个创意且描述性的提示词。&quot;</span></span><br><span class="line">        <span class="string">&quot;然后，使用 `ImageGen` 工具使用你的提示词生成图像。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    tools=[image_tool]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> 复杂问题通常超出单个单体基于 LLM 的 Agent 的能力。单个 Agent 可能缺乏解决多方面任务所有部分所需的多样化专业技能或对特定工具的访问。此限制造成瓶颈，降低系统的整体效率和可扩展性。因此，处理复杂的多领域目标变得低效，并可能导致不完整或次优的结果。</p>
+<p><strong>为什么：</strong> 多 Agent 协作模式通过创建多个协作 Agent 的系统提供了标准化解决方案。复杂问题被分解为更小的更易于管理的子问题。然后将每个子问题分配给具有解决它所需的精确工具和能力的专门 Agent。这些 Agent 通过定义的通信协议和交互模型（如顺序交接、并行工作流或层次化委托）协同工作。这种 Agent 化的分布式方法创造了协同效应，使团队能够实现任何单个 Agent 都无法实现的结果。</p>
+<p><strong>经验法则：</strong> 当任务对于单个 Agent 来说太复杂并且可以分解为需要专业技能或工具的不同子任务时，使用此模式。它非常适合受益于多样化专业知识、并行处理或具有多个阶段的结构化工作流的问题，例如复杂的研究和分析、软件开发或创意内容生成。</p>
+<p><strong>视觉摘要</strong></p>
+<p><strong><img src="/../images/chapter-7/image3.png"></strong></p>
+<p>图 3：多 Agent 设计模式</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
+<li>多 Agent 协作涉及多个 Agent 协同工作以实现共同目标。</li>
+<li>此模式利用专业角色、分布式任务和 Agent 间通信。</li>
+<li>协作可以采取顺序交接、并行处理、辩论或层次结构等形式。</li>
+<li>此模式非常适合需要多样化专业知识或多个不同阶段的复杂问题。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>本章探讨了多 Agent 协作模式，展示了在系统内编排多个专门 Agent 的好处。我们研究了各种协作模型，强调该模式在跨不同领域解决复杂多方面问题中的关键作用。理解 Agent 协作自然会引出对其与外部环境交互的探究。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Multi-Agent Collaboration Mechanisms: A Survey of LLMs, <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.06322">https://arxiv.org/abs/2501.06322</a></li>
+<li>Multi-Agent System — The Power of Collaboration, <a target="_blank" rel="noopener" href="https://aravindakumar.medium.com/introducing-multi-agent-frameworks-the-power-of-collaboration-e9db31bba1b6">https://aravindakumar.medium.com/introducing-multi-agent-frameworks-the-power-of-collaboration-e9db31bba1b6</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-7_%20Multi-Agent%20Collaboration/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-6_ Planning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-6_%20Planning/">Agentic Design Patterns - Chapter 6_ Planning</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-6_%20Planning/" class="archive-article-date">
+  	<time datetime="2025-10-11T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-6-章：规划"><a href="#第-6-章：规划" class="headerlink" title="第 6 章：规划"></a>第 6 章：规划</h1><p>智能行为通常不仅仅涉及对即时输入做出反应。它需要远见、将复杂任务分解为更小的可管理步骤，以及制定实现期望结果的策略。这就是规划模式发挥作用的地方。规划的核心是 Agent 或 Agent 系统制定一系列行动以从初始状态向目标状态移动的能力。</p>
+<h2 id="规划模式概述"><a href="#规划模式概述" class="headerlink" title="规划模式概述"></a>规划模式概述</h2><p>在 AI 的背景下，将规划 Agent 视为您委托复杂目标的专家是有帮助的。当您要求它”组织团队外出活动”时，您定义的是”什么”——目标及其约束——而不是”如何”。Agent 的核心任务是自主规划实现该目标的路线。它必须首先理解初始状态（例如，预算、参与者人数、期望日期）和目标状态（成功预订的外出活动），然后发现连接它们的最佳行动序列。计划并不是预先知道的；它是响应请求而创建的。</p>
+<p>这个过程的标志是适应性。初始计划仅仅是一个起点，而不是僵化的脚本。Agent 的真正力量在于其整合新信息并引导项目绕过障碍的能力。例如，如果首选场地变得不可用或选择的餐饮服务商已完全预订，一个有能力的 Agent 不会简单地失败。它会适应：记录新的约束，重新评估选项，并制定新计划，也许通过建议替代场地或日期。</p>
+<p>然而，认识到灵活性和可预测性之间的权衡至关重要。动态规划是一个特定的工具，而不是通用解决方案。当问题的解决方案已经被充分理解且可重复时，将 Agent 限制为预定的固定工作流更有效。这种方法限制 Agent 的自主性以减少不确定性和不可预测行为的风险，保证可靠和一致的结果。因此，使用规划 Agent 与简单任务执行 Agent 的决定取决于一个问题：是否需要发现”如何”，还是已经知道？</p>
+<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>规划模式是自主系统中的核心计算过程，使 Agent 能够综合一系列行动以实现指定目标，特别是在动态或复杂环境中。这个过程将高级目标转换为由离散可执行步骤组成的结构化计划。</p>
+<p>在过程任务自动化等领域，规划用于编排复杂的工作流。例如，像新员工入职这样的业务流程可以分解为定向的子任务序列，例如创建系统帐户、分配培训模块和与不同部门协调。Agent 生成一个计划以逻辑顺序执行这些步骤，调用必要的工具或与各种系统交互以管理依赖关系。</p>
+<p>在机器人和自主导航中，规划对于状态空间遍历是基础性的。一个系统，无论是物理机器人还是虚拟实体，都必须生成路径或行动序列以从初始状态转换到目标状态。这涉及优化时间或能源消耗等指标，同时遵守环境约束，如避开障碍物或遵守交通规则。</p>
+<p>此模式对于结构化信息综合也至关重要。当被要求生成像研究报告这样的复杂输出时，Agent 可以制定一个包括信息收集、数据总结、内容结构化和迭代完善的不同阶段的计划。同样，在涉及多步问题解决的客户支持场景中，Agent 可以创建并遵循诊断、解决方案实施和升级的系统计划。</p>
+<p>从本质上讲，规划模式允许 Agent 从简单的反应性行动转向目标导向的行为。它提供了解决需要一系列相互依赖操作的问题所必需的逻辑框架。</p>
+<h2 id="实操代码（Crew-AI）"><a href="#实操代码（Crew-AI）" class="headerlink" title="实操代码（Crew AI）"></a>实操代码（Crew AI）</h2><p>以下部分将演示使用 Crew AI 框架实现规划模式。此模式涉及一个 Agent，它首先制定多步计划以解决复杂查询，然后顺序执行该计划。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">from</span> crewai <span class="keyword">import</span> Agent, Task, Crew, Process</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"></span><br><span class="line"><span class="comment">## 从 .env 文件加载环境变量以确保安全</span></span><br><span class="line">load_dotenv()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 1. 为清晰起见，明确定义语言模型</span></span><br><span class="line">llm = ChatOpenAI(model=<span class="string">&quot;gpt-4-turbo&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 2. 定义一个清晰且专注的 Agent</span></span><br><span class="line">planner_writer_agent = Agent(</span><br><span class="line">    role=<span class="string">&#x27;文章规划者和撰写者&#x27;</span>,</span><br><span class="line">    goal=<span class="string">&#x27;规划然后撰写关于指定主题的简洁、引人入胜的摘要。&#x27;</span>,</span><br><span class="line">    backstory=(</span><br><span class="line">        <span class="string">&#x27;你是一位专业的技术作家和内容策略师。&#x27;</span></span><br><span class="line">        <span class="string">&#x27;你的优势在于在写作之前创建清晰、可操作的计划，&#x27;</span></span><br><span class="line">        <span class="string">&#x27;确保最终摘要既信息丰富又易于理解。&#x27;</span></span><br><span class="line">    ),</span><br><span class="line">    verbose=<span class="literal">True</span>,</span><br><span class="line">    allow_delegation=<span class="literal">False</span>,</span><br><span class="line">    llm=llm <span class="comment"># 将特定 LLM 分配给 Agent</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3. 定义具有更结构化和具体的预期输出的任务</span></span><br><span class="line">topic = <span class="string">&quot;强化学习在 AI 中的重要性&quot;</span></span><br><span class="line">high_level_task = Task(</span><br><span class="line">    description=(</span><br><span class="line">        <span class="string">f&quot;1. 为主题&#x27;<span class="subst">&#123;topic&#125;</span>&#x27;的摘要创建要点计划。\n&quot;</span></span><br><span class="line">        <span class="string">f&quot;2. 根据您的计划撰写摘要，保持在 200 字左右。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    expected_output=(</span><br><span class="line">        <span class="string">&quot;包含两个不同部分的最终报告：\n\n&quot;</span></span><br><span class="line">        <span class="string">&quot;### 计划\n&quot;</span></span><br><span class="line">        <span class="string">&quot;- 概述摘要要点的项目符号列表。\n\n&quot;</span></span><br><span class="line">        <span class="string">&quot;### 摘要\n&quot;</span></span><br><span class="line">        <span class="string">&quot;- 主题的简洁且结构良好的摘要。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    agent=planner_writer_agent,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用清晰的流程创建团队</span></span><br><span class="line">crew = Crew(</span><br><span class="line">    agents=[planner_writer_agent],</span><br><span class="line">    tasks=[high_level_task],</span><br><span class="line">    process=Process.sequential,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 执行任务</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;## 运行规划和写作任务 ##&quot;</span>)</span><br><span class="line">result = crew.kickoff()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n\n---\n## 任务结果 ##\n---&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+
+<p>此代码使用 CrewAI 库创建一个 AI Agent，该 Agent 规划并撰写关于给定主题的摘要。它首先导入必要的库，包括 CrewAI 和 langchain_openai，并从 .env 文件加载环境变量。明确定义了一个 ChatOpenAI 语言模型供 Agent 使用。创建了一个名为 planner_writer_agent 的 Agent，具有特定的角色和目标：规划然后撰写简洁的摘要。Agent 的背景故事强调其在规划和技术写作方面的专业知识。定义了一个任务，明确描述首先创建计划，然后撰写关于”强化学习在 AI 中的重要性”主题的摘要，并为预期输出指定了特定格式。组建了一个包含 Agent 和任务的团队，设置为顺序处理它们。最后，调用 crew.kickoff() 方法执行定义的任务并打印结果。</p>
+<h2 id="Google-DeepResearch"><a href="#Google-DeepResearch" class="headerlink" title="Google DeepResearch"></a>Google DeepResearch</h2><p>Google Gemini DeepResearch（见图 1）是一个基于 Agent 的系统，设计用于自主信息检索和综合。它通过多步 Agent 管道运行，动态和迭代地查询 Google 搜索以系统地探索复杂主题。该系统设计用于处理大量基于网络的资源，评估收集的数据的相关性和知识差距，并执行后续搜索以解决它们。最终输出将经过审核的信息整合成一个结构化的多页摘要，并附有原始来源的引用。</p>
+<p>进一步扩展，该系统的运行不是单个查询-响应事件，而是一个受管理的长时间运行过程。它首先将用户的提示词分解为多点研究计划（见图 1），然后呈现给用户审查和修改。这允许在执行之前协作塑造研究轨迹。一旦计划获得批准，Agent 管道就会启动其迭代搜索和分析循环。这不仅仅是执行一系列预定义的搜索；Agent 根据收集的信息动态制定和完善其查询，主动识别知识差距、确认数据点并解决差异。</p>
+<p><img src="/../images/chapter-6/image1.png"><br>图 1：Google Deep Research Agent 生成使用 Google 搜索作为工具的执行计划。</p>
+<p>关键的架构组件是系统异步管理此过程的能力。这种设计确保了调查（可能涉及分析数百个来源）对单点故障具有弹性，并允许用户脱离并在完成时收到通知。系统还可以集成用户提供的文档，将来自私有来源的信息与其基于网络的研究相结合。最终输出不仅仅是发现的串联列表，而是一个结构化的多页报告。在综合阶段，模型对收集的信息进行批判性评估，识别主要主题并将内容组织成具有逻辑部分的连贯叙述。该报告设计为交互式的，通常包括音频概述、图表和指向原始引用来源的链接等功能，允许用户验证和进一步探索。除了综合结果外，模型还明确返回它搜索和咨询的完整来源列表（见图 2）。这些作为引用呈现，提供完全的透明度和对主要信息的直接访问。整个过程将简单的查询转换为全面的、综合的知识体。</p>
+<p><img src="/../images/chapter-6/image2.png"><br>图 2：Deep Research 计划执行的示例，导致使用 Google 搜索作为工具搜索各种网络来源。</p>
+<p>通过减轻手动数据获取和综合所需的大量时间和资源投资，Gemini DeepResearch 为信息发现提供了更结构化和详尽的方法。该系统的价值在跨各个领域的复杂、多方面研究任务中尤为明显。</p>
+<p>例如，在竞争分析中，可以指示 Agent 系统地收集和整理关于市场趋势、竞争对手产品规格、来自各种在线来源的公众情绪和营销策略的数据。这个自动化过程取代了手动跟踪多个竞争对手的繁重任务，使分析师能够专注于更高层次的战略解释而不是数据收集（见图 3）。</p>
+<p><img src="/../images/chapter-6/image3.png"><br>图 3：Google Deep Research Agent 生成的最终输出，代表我们分析使用 Google 搜索作为工具获得的来源。</p>
+<p>同样，在学术探索中，该系统作为进行广泛文献综述的强大工具。它可以识别和总结基础论文，追踪概念在众多出版物中的发展，并绘制特定领域内新兴研究前沿的地图，从而加速学术探究的初始和最耗时的阶段。</p>
+<p>这种方法的效率源于迭代搜索和过滤周期的自动化，这是手动研究的核心瓶颈。通过系统处理比人类研究人员在可比时间框架内通常可行的更大量和更多样化的信息来源来实现全面性。这种更广泛的分析范围有助于减少选择偏差的潜力，并增加发现不太明显但可能至关重要的信息的可能性，从而导致对主题更稳健和充分支持的理解。</p>
+<h2 id="OpenAI-Deep-Research-API"><a href="#OpenAI-Deep-Research-API" class="headerlink" title="OpenAI Deep Research API"></a>OpenAI Deep Research API</h2><p>OpenAI Deep Research API 是一个专门设计用于自动化复杂研究任务的工具。它利用一个先进的 Agent 模型，可以独立推理、规划和从现实世界来源综合信息。与简单的问答模型不同，它接受高级查询并自主将其分解为子问题，使用其内置工具执行网络搜索，并提供结构化的、富含引用的最终报告。该 API 提供对整个过程的直接程序化访问，在撰写本文时使用 o3-deep-research-2025-06-26 等模型进行高质量综合，以及更快的 o4-mini-deep-research-2025-06-26 用于延迟敏感的应用程序。</p>
+<p>Deep Research API 很有用，因为它自动化了原本需要数小时的手动研究，提供适合为业务战略、投资决策或政策建议提供信息的专业级、数据驱动的报告。其主要好处包括：</p>
+<ul>
+<li><strong>结构化、引用的输出：</strong> 它产生组织良好的报告，带有链接到来源元数据的内联引用，确保声明可验证且有数据支持。</li>
+<li><strong>透明度：</strong> 与 ChatGPT 中的抽象过程不同，API 公开所有中间步骤，包括 Agent 的推理、它执行的特定网络搜索查询以及它运行的任何代码。这允许详细的调试、分析以及更深入地理解最终答案是如何构建的。</li>
+<li><strong>可扩展性：</strong> 它支持模型上下文协议（MCP），使开发人员能够将 Agent 连接到私有知识库和内部数据源，将公共网络研究与专有信息混合。</li>
+</ul>
+<p>要使用 API，您向 client.responses.create 端点发送请求，指定模型、输入提示词和 Agent 可以使用的工具。输入通常包括定义 Agent 角色和期望输出格式的 system_message，以及 user_query。您还必须包括 web_search_preview 工具，并可以选择添加其他工具，如 code_interpreter 或自定义 MCP 工具（见第 10 章）用于内部数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用您的 API 密钥初始化客户端</span></span><br><span class="line">client = OpenAI(api_key=<span class="string">&quot;YOUR_OPENAI_API_KEY&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义 Agent 的角色和用户的研究问题</span></span><br><span class="line">system_message = <span class="string">&quot;&quot;&quot;你是一名准备结构化、数据驱动报告的专业研究员。专注于数据丰富的见解，使用可靠的来源，并包括内联引用。&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">user_query = <span class="string">&quot;研究司美格鲁肽对全球医疗保健系统的经济影响。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建 Deep Research API 调用</span></span><br><span class="line">response = client.responses.create(</span><br><span class="line">    model=<span class="string">&quot;o3-deep-research-2025-06-26&quot;</span>,</span><br><span class="line">    <span class="built_in">input</span>=[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;role&quot;</span>: <span class="string">&quot;developer&quot;</span>,</span><br><span class="line">            <span class="string">&quot;content&quot;</span>: [&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;input_text&quot;</span>, <span class="string">&quot;text&quot;</span>: system_message&#125;]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>,</span><br><span class="line">            <span class="string">&quot;content&quot;</span>: [&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;input_text&quot;</span>, <span class="string">&quot;text&quot;</span>: user_query&#125;]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    reasoning=&#123;<span class="string">&quot;summary&quot;</span>: <span class="string">&quot;auto&quot;</span>&#125;,</span><br><span class="line">    tools=[&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;web_search_preview&quot;</span>&#125;]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 从响应中访问并打印最终报告</span></span><br><span class="line">final_report = response.output[-<span class="number">1</span>].content[<span class="number">0</span>].text</span><br><span class="line"><span class="built_in">print</span>(final_report)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 访问内联引用和元数据 ---</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--- 引用 ---&quot;</span>)</span><br><span class="line">annotations = response.output[-<span class="number">1</span>].content[<span class="number">0</span>].annotations</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> annotations:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;报告中未找到注释。&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">for</span> i, citation <span class="keyword">in</span> <span class="built_in">enumerate</span>(annotations):</span><br><span class="line">        <span class="comment"># 引用所指的文本范围</span></span><br><span class="line">        cited_text = final_report[citation.start_index:citation.end_index]</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;引用 <span class="subst">&#123;i+<span class="number">1</span>&#125;</span>:&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  引用文本：<span class="subst">&#123;cited_text&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  标题：<span class="subst">&#123;citation.title&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  URL：<span class="subst">&#123;citation.url&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  位置：字符 <span class="subst">&#123;citation.start_index&#125;</span>–<span class="subst">&#123;citation.end_index&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">&quot;=&quot;</span>*<span class="number">50</span> + <span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 检查中间步骤 ---</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--- 中间步骤 ---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 1. 推理步骤：模型生成的内部计划和摘要。</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    reasoning_step = <span class="built_in">next</span>(item <span class="keyword">for</span> item <span class="keyword">in</span> response.output <span class="keyword">if</span> item.<span class="built_in">type</span> == <span class="string">&quot;reasoning&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n[找到推理步骤]&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> summary_part <span class="keyword">in</span> reasoning_step.summary:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;  - <span class="subst">&#123;summary_part.text&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> StopIteration:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n未找到推理步骤。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 2. 网络搜索调用：Agent 执行的确切搜索查询。</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    search_step = <span class="built_in">next</span>(item <span class="keyword">for</span> item <span class="keyword">in</span> response.output <span class="keyword">if</span> item.<span class="built_in">type</span> == <span class="string">&quot;web_search_call&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n[找到网络搜索调用]&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;  执行的查询：&#x27;<span class="subst">&#123;search_step.action[<span class="string">&#x27;query&#x27;</span>]&#125;</span>&#x27;&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;  状态：<span class="subst">&#123;search_step.status&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> StopIteration:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n未找到网络搜索步骤。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3. 代码执行：Agent 使用代码解释器运行的任何代码。</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    code_step = <span class="built_in">next</span>(item <span class="keyword">for</span> item <span class="keyword">in</span> response.output <span class="keyword">if</span> item.<span class="built_in">type</span> == <span class="string">&quot;code_interpreter_call&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n[找到代码执行步骤]&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;  代码输入：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;  ```python\n<span class="subst">&#123;code_step.<span class="built_in">input</span>&#125;</span>\n  ```&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;  代码输出：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;  <span class="subst">&#123;code_step.output&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> StopIteration:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n未找到代码执行步骤。&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>此代码片段利用 OpenAI API 执行”深度研究”任务。它首先使用您的 API 密钥初始化 OpenAI 客户端，这对于身份验证至关重要。然后，它将 AI Agent 的角色定义为专业研究员，并设置用户关于司美格鲁肽经济影响的研究问题。代码构造对 o3-deep-research-2025-06-26 模型的 API 调用，提供定义的系统消息和用户查询作为输入。它还请求推理的自动摘要并启用网络搜索功能。进行 API 调用后，它提取并打印最终生成的报告。</p>
+<p>随后，它尝试访问并显示报告注释中的内联引用和元数据，包括引用文本、标题、URL 和报告中的位置。最后，它检查并打印模型采取的中间步骤的详细信息，例如推理步骤、网络搜索调用（包括执行的查询）以及如果使用了代码解释器的任何代码执行步骤。</p>
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> 复杂问题通常无法通过单个操作解决，需要远见才能实现期望的结果。没有结构化的方法，Agent 系统难以处理涉及多个步骤和依赖关系的多方面请求。这使得将高级目标分解为一系列可管理的更小可执行任务变得困难。因此，系统无法有效地制定策略，在面对复杂目标时导致不完整或不正确的结果。</p>
+<p><strong>为什么：</strong> 规划模式通过让 Agent 系统首先创建一个连贯的计划来解决目标提供了标准化解决方案。它涉及将高级目标分解为一系列更小的可操作步骤或子目标。这允许系统管理复杂的工作流、编排各种工具并以逻辑顺序处理依赖关系。LLM 特别适合这一点，因为它们可以基于其庞大的训练数据生成合理且有效的计划。这种结构化方法将简单的反应性 Agent 转变为战略执行者，可以主动朝着复杂目标工作，甚至在必要时调整其计划。</p>
+<p><strong>经验法则：</strong> 当用户的请求太复杂而无法通过单个操作或工具处理时使用此模式。它非常适合自动化多步流程，例如生成详细的研究报告、新员工入职或执行竞争分析。每当任务需要一系列相互依赖的操作以达到最终的综合结果时，应用规划模式。</p>
+<p><strong>视觉摘要</strong><br><strong><img src="/../images/chapter-6/image4.png"></strong><br>图 4；规划设计模式</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
+<li>规划使 Agent 能够将复杂目标分解为可操作的顺序步骤。</li>
+<li>它对于处理多步任务、工作流自动化和导航复杂环境至关重要。</li>
+<li>LLM 可以通过基于任务描述生成逐步方法来执行规划。</li>
+<li>明确提示或设计任务以要求规划步骤会在 Agent 框架中鼓励这种行为。</li>
+<li>Google Deep Research 是一个代表我们分析使用 Google 搜索作为工具获得的来源的 Agent。它反思、规划并执行。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总之，规划模式是将 Agent 系统从简单的反应性响应者提升为战略性、目标导向的执行者的基础组件。现代大型语言模型为此提供了核心能力，自主地将高级目标分解为连贯的可操作步骤。此模式从简单的顺序任务执行（如 CrewAI Agent 创建并遵循写作计划所演示的）扩展到更复杂和动态的系统。Google DeepResearch Agent 体现了这种高级应用，创建基于持续信息收集而适应和演化的迭代研究计划。最终，规划为复杂问题的人类意图和自动化执行之间提供了必要的桥梁。通过构建问题解决方法，此模式使 Agent 能够管理复杂的工作流并提供全面的综合结果。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Google DeepResearch (Gemini Feature): <a target="_blank" rel="noopener" href="http://gemini.google.com/">gemini.google.com</a></li>
+<li>OpenAI ,Introducing deep research  <a target="_blank" rel="noopener" href="https://openai.com/index/introducing-deep-research/">https://openai.com/index/introducing-deep-research/</a></li>
+<li>Perplexity, Introducing Perplexity Deep Research, <a target="_blank" rel="noopener" href="https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research">https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-6_%20Planning/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-ADP-5_ Tool Use" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1446,520 +1725,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ADP-Index of Terms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-Index%20of%20Terms/">Agentic Design Patterns - Index of Terms</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-Index%20of%20Terms/" class="archive-article-date">
-  	<time datetime="2025-10-02T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="提示词（Prompt）：提示词是用户提供给-AI-模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用-AI-的关键技能。"><a href="#提示词（Prompt）：提示词是用户提供给-AI-模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用-AI-的关键技能。" class="headerlink" title="提示词（Prompt）：提示词是用户提供给 AI 模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用 AI 的关键技能。"></a>提示词（Prompt）：提示词是用户提供给 AI 模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用 AI 的关键技能。</h3><h3 id="上下文窗口（Context-Window）：上下文窗口是-AI-模型一次可以处理的最大-token-数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。"><a href="#上下文窗口（Context-Window）：上下文窗口是-AI-模型一次可以处理的最大-token-数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。" class="headerlink" title="上下文窗口（Context Window）：上下文窗口是 AI 模型一次可以处理的最大 token 数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。"></a>上下文窗口（Context Window）：上下文窗口是 AI 模型一次可以处理的最大 token 数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。</h3><h3 id="上下文学习（In-Context-Learning）：上下文学习是-AI-直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。"><a href="#上下文学习（In-Context-Learning）：上下文学习是-AI-直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。" class="headerlink" title="上下文学习（In-Context Learning）：上下文学习是 AI 直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。"></a>上下文学习（In-Context Learning）：上下文学习是 AI 直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。</h3><h3 id="零样本、单样本和少样本提示（Zero-Shot-One-Shot-Few-Shot-Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。"><a href="#零样本、单样本和少样本提示（Zero-Shot-One-Shot-Few-Shot-Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。" class="headerlink" title="零样本、单样本和少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。"></a>零样本、单样本和少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。</h3><h3 id="多模态性（Multimodality）：多模态性是-AI-理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。"><a href="#多模态性（Multimodality）：多模态性是-AI-理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。" class="headerlink" title="多模态性（Multimodality）：多模态性是 AI 理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。"></a>多模态性（Multimodality）：多模态性是 AI 理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。</h3><h3 id="基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过-RAG-等技术实现，使-AI-系统更值得信赖。"><a href="#基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过-RAG-等技术实现，使-AI-系统更值得信赖。" class="headerlink" title="基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过 RAG 等技术实现，使 AI 系统更值得信赖。"></a>基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过 RAG 等技术实现，使 AI 系统更值得信赖。</h3><h2 id="核心-AI-模型架构"><a href="#核心-AI-模型架构" class="headerlink" title="核心 AI 模型架构"></a>核心 AI 模型架构</h2><h3 id="Transformers：Transformer-是大多数现代-LLM-的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。"><a href="#Transformers：Transformer-是大多数现代-LLM-的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。" class="headerlink" title="Transformers：Transformer 是大多数现代 LLM 的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。"></a>Transformers：Transformer 是大多数现代 LLM 的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。</h3><h3 id="循环神经网络（Recurrent-Neural-Network-RNN）：循环神经网络是-Transformer-之前的基础架构。RNN-按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。"><a href="#循环神经网络（Recurrent-Neural-Network-RNN）：循环神经网络是-Transformer-之前的基础架构。RNN-按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。" class="headerlink" title="循环神经网络（Recurrent Neural Network, RNN）：循环神经网络是 Transformer 之前的基础架构。RNN 按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。"></a>循环神经网络（Recurrent Neural Network, RNN）：循环神经网络是 Transformer 之前的基础架构。RNN 按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。</h3><h3 id="专家混合（Mixture-of-Experts-MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。"><a href="#专家混合（Mixture-of-Experts-MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。" class="headerlink" title="专家混合（Mixture of Experts, MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。"></a>专家混合（Mixture of Experts, MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。</h3><h3 id="扩散模型（Diffusion-Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。"><a href="#扩散模型（Diffusion-Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。" class="headerlink" title="扩散模型（Diffusion Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。"></a>扩散模型（Diffusion Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。</h3><h3 id="Mamba：Mamba-是一种最新的-AI-架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为-Transformer-的潜在替代方案。"><a href="#Mamba：Mamba-是一种最新的-AI-架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为-Transformer-的潜在替代方案。" class="headerlink" title="Mamba：Mamba 是一种最新的 AI 架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为 Transformer 的潜在替代方案。"></a>Mamba：Mamba 是一种最新的 AI 架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为 Transformer 的潜在替代方案。</h3><h2 id="LLM-开发生命周期"><a href="#LLM-开发生命周期" class="headerlink" title="LLM 开发生命周期"></a>LLM 开发生命周期</h2><h3 id="强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。"><a href="#强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。" class="headerlink" title="强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。"></a>强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。</h3><h3 id="预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。"><a href="#预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。" class="headerlink" title="预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。"></a>预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。</h3><h3 id="微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括-LoRA（低秩适应），仅更新少量参数，以及其内存优化版本-QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。"><a href="#微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括-LoRA（低秩适应），仅更新少量参数，以及其内存优化版本-QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。" class="headerlink" title="微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括 LoRA（低秩适应），仅更新少量参数，以及其内存优化版本 QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。"></a>微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括 LoRA（低秩适应），仅更新少量参数，以及其内存优化版本 QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。</h3><h3 id="对齐和安全技术：对齐是确保-AI-模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导-AI-的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及-Kahneman-Tversky-优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。"><a href="#对齐和安全技术：对齐是确保-AI-模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导-AI-的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及-Kahneman-Tversky-优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。" class="headerlink" title="对齐和安全技术：对齐是确保 AI 模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导 AI 的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及 Kahneman-Tversky 优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。"></a>对齐和安全技术：对齐是确保 AI 模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导 AI 的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及 Kahneman-Tversky 优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。</h3><h2 id="增强-AI-Agent-能力"><a href="#增强-AI-Agent-能力" class="headerlink" title="增强 AI Agent 能力"></a>增强 AI Agent 能力</h2><h3 id="AI-Agent-是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。"><a href="#AI-Agent-是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。" class="headerlink" title="AI Agent 是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。"></a>AI Agent 是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。</h3><h3 id="思维链（Chain-of-Thought-CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。"><a href="#思维链（Chain-of-Thought-CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。" class="headerlink" title="思维链（Chain of Thought, CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。"></a>思维链（Chain of Thought, CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。</h3><h3 id="思维树（Tree-of-Thoughts-ToT）：思维树是一种高级推理框架，其中-Agent-同时探索多个推理路径，就像树上的分支一样。它允许-Agent-自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。"><a href="#思维树（Tree-of-Thoughts-ToT）：思维树是一种高级推理框架，其中-Agent-同时探索多个推理路径，就像树上的分支一样。它允许-Agent-自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。" class="headerlink" title="思维树（Tree of Thoughts, ToT）：思维树是一种高级推理框架，其中 Agent 同时探索多个推理路径，就像树上的分支一样。它允许 Agent 自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。"></a>思维树（Tree of Thoughts, ToT）：思维树是一种高级推理框架，其中 Agent 同时探索多个推理路径，就像树上的分支一样。它允许 Agent 自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。</h3><h3 id="ReAct（推理与行动，Reason-and-Act）：ReAct-是一个-Agent-框架，在循环中结合推理和行动。Agent-首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。"><a href="#ReAct（推理与行动，Reason-and-Act）：ReAct-是一个-Agent-框架，在循环中结合推理和行动。Agent-首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。" class="headerlink" title="ReAct（推理与行动，Reason and Act）：ReAct 是一个 Agent 框架，在循环中结合推理和行动。Agent 首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。"></a>ReAct（推理与行动，Reason and Act）：ReAct 是一个 Agent 框架，在循环中结合推理和行动。Agent 首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。</h3><h3 id="规划（Planning）：这是-Agent-将高级目标分解为一系列较小的、可管理的子任务的能力。然后-Agent-创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。"><a href="#规划（Planning）：这是-Agent-将高级目标分解为一系列较小的、可管理的子任务的能力。然后-Agent-创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。" class="headerlink" title="规划（Planning）：这是 Agent 将高级目标分解为一系列较小的、可管理的子任务的能力。然后 Agent 创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。"></a>规划（Planning）：这是 Agent 将高级目标分解为一系列较小的、可管理的子任务的能力。然后 Agent 创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。</h3><h3 id="深度研究（Deep-Research）：深度研究是指-Agent-通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许-Agent-建立对主题的全面理解，远超单个搜索查询。"><a href="#深度研究（Deep-Research）：深度研究是指-Agent-通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许-Agent-建立对主题的全面理解，远超单个搜索查询。" class="headerlink" title="深度研究（Deep Research）：深度研究是指 Agent 通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许 Agent 建立对主题的全面理解，远超单个搜索查询。"></a>深度研究（Deep Research）：深度研究是指 Agent 通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许 Agent 建立对主题的全面理解，远超单个搜索查询。</h3><h3 id="批评模型（Critique-Model）：批评模型是一种专门的-AI-模型，经过训练可以审查、评估和提供关于另一个-AI-模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。"><a href="#批评模型（Critique-Model）：批评模型是一种专门的-AI-模型，经过训练可以审查、评估和提供关于另一个-AI-模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。" class="headerlink" title="批评模型（Critique Model）：批评模型是一种专门的 AI 模型，经过训练可以审查、评估和提供关于另一个 AI 模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。"></a>批评模型（Critique Model）：批评模型是一种专门的 AI 模型，经过训练可以审查、评估和提供关于另一个 AI 模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。</h3><h2 id="术语索引"><a href="#术语索引" class="headerlink" title="术语索引"></a>术语索引</h2><p>此术语索引使用 Gemini Pro 2.5 生成。提示词和推理步骤包含在末尾，以展示 AI 辅助索引创建的效率优势并用于教育目的。</p>
-<p><strong>A</strong></p>
-<ul>
-<li>A&#x2F;B 测试 - 第 3 章：并行化</li>
-<li>行动选择 - 第 20 章：优先级排序</li>
-<li>适应 - 第 9 章：学习与适应</li>
-<li>自适应任务分配 - 第 16 章：资源感知优化</li>
-<li>自适应工具使用与选择 - 第 16 章：资源感知优化</li>
-<li>Agent - 什么使 AI 系统成为 Agent？</li>
-<li>Agent-计算机接口（ACIs）- 附录 B</li>
-<li>Agent 驱动型经济 - 什么使 AI 系统成为 Agent？</li>
-<li>Agent 作为工具 - 第 7 章：多 Agent 协作</li>
-<li>Agent 卡片 - 第 15 章：Agent 间通信（A2A）</li>
-<li>Agent Development Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多 Agent 协作，第 8 章：记忆管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C</li>
-<li>Agent 发现 - 第 15 章：Agent 间通信（A2A）</li>
-<li>Agent 轨迹 - 第 19 章：评估与监控</li>
-<li>Agentic 设计模式 - 引言</li>
-<li>Agentic RAG - 第 14 章：知识检索（RAG）</li>
-<li>Agentic 系统 - 引言</li>
-<li>AI 联合科学家 - 第 21 章：探索与发现</li>
-<li>对齐 - 术语表</li>
-<li>AlphaEvolve - 第 9 章：学习与适应</li>
-<li>类比 - 附录 A</li>
-<li>异常检测 - 第 19 章：评估与监控</li>
-<li>Anthropic’s Claude 4 系列 - 附录 B</li>
-<li>Anthropic’s Computer Use - 附录 B</li>
-<li>API 交互 - 第 10 章：模型上下文协议（MCP）</li>
-<li>工件 - 第 15 章：Agent 间通信（A2A）</li>
-<li>异步轮询 - 第 15 章：Agent 间通信（A2A）</li>
-<li>审计日志 - 第 15 章：Agent 间通信（A2A）</li>
-<li>自动化指标 - 第 19 章：评估与监控</li>
-<li>自动提示工程（APE）- 附录 A</li>
-<li>自主性 - 引言</li>
-<li>A2A（Agent-to-Agent）- 第 15 章：Agent 间通信（A2A）</li>
-</ul>
-<p><strong>B</strong></p>
-<ul>
-<li>行为约束 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>浏览器使用 - 附录 B</li>
-</ul>
-<p><strong>C</strong></p>
-<ul>
-<li>回调 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>因果语言建模（CLM）- 术语表</li>
-<li>辩论链（CoD）- 第 17 章：推理技术</li>
-<li>思维链（CoT）- 第 17 章：推理技术，附录 A</li>
-<li>聊天机器人 - 第 8 章：记忆管理</li>
-<li>ChatMessageHistory - 第 8 章：记忆管理</li>
-<li>检查点与回滚 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>分块 - 第 14 章：知识检索（RAG）</li>
-<li>清晰性和具体性 - 附录 A</li>
-<li>客户端 Agent - 第 15 章：Agent 间通信（A2A）</li>
-<li>代码生成 - 第 1 章：提示链，第 4 章：反思</li>
-<li>代码提示 - 附录 A</li>
-<li>CoD（辩论链）- 第 17 章：推理技术</li>
-<li>CoT（思维链）- 第 17 章：推理技术，附录 A</li>
-<li>协作 - 第 7 章：多 Agent 协作</li>
-<li>合规性 - 第 19 章：评估与监控</li>
-<li>简洁性 - 附录 A</li>
-<li>内容生成 - 第 1 章：提示链，第 4 章：反思</li>
-<li>上下文工程 - 第 1 章：提示链</li>
-<li>上下文窗口 - 术语表</li>
-<li>上下文修剪与摘要 - 第 16 章：资源感知优化</li>
-<li>上下文提示 - 附录 A</li>
-<li>承包商模型 - 第 19 章：评估与监控</li>
-<li>ConversationBufferMemory - 第 8 章：记忆管理</li>
-<li>对话式 Agent - 第 1 章：提示链，第 4 章：反思</li>
-<li>成本敏感探索 - 第 16 章：资源感知优化</li>
-<li>CrewAI - 第 3 章：并行化，第 5 章：工具使用，第 6 章：规划，第 7 章：多 Agent 协作，第 18 章：护栏&#x2F;安全模式，附录 C</li>
-<li>批评 Agent - 第 16 章：资源感知优化</li>
-<li>批评模型 - 术语表</li>
-<li>客户支持 - 第 13 章：人机协同</li>
-</ul>
-<p><strong>D</strong></p>
-<ul>
-<li>数据提取 - 第 1 章：提示链</li>
-<li>数据标注 - 第 13 章：人机协同</li>
-<li>数据库集成 - 第 10 章：模型上下文协议（MCP）</li>
-<li>DatabaseSessionService - 第 8 章：记忆管理</li>
-<li>辩论与共识 - 第 7 章：多 Agent 协作</li>
-<li>决策增强 - 第 13 章：人机协同</li>
-<li>分解 - 附录 A</li>
-<li>深度研究 - 第 6 章：规划，第 17 章：推理技术，术语表</li>
-<li>分隔符 - 附录 A</li>
-<li>去噪目标 - 术语表</li>
-<li>依赖关系 - 第 20 章：优先级排序</li>
-<li>扩散模型 - 术语表</li>
-<li>直接偏好优化（DPO）- 第 9 章：学习与适应</li>
-<li>可发现性 - 第 10 章：模型上下文协议（MCP）</li>
-<li>漂移检测 - 第 19 章：评估与监控</li>
-<li>动态模型切换 - 第 16 章：资源感知优化</li>
-<li>动态重新优先级排序 - 第 20 章：优先级排序</li>
-</ul>
-<p><strong>E</strong></p>
-<ul>
-<li>嵌入 - 第 14 章：知识检索（RAG）</li>
-<li>具身化 - 什么使 AI 系统成为 Agent？</li>
-<li>节能部署 - 第 16 章：资源感知优化</li>
-<li>情景记忆 - 第 8 章：记忆管理</li>
-<li>错误检测 - 第 12 章：异常处理与恢复</li>
-<li>错误处理 - 第 12 章：异常处理与恢复</li>
-<li>升级策略 - 第 13 章：人机协同</li>
-<li>评估 - 第 19 章：评估与监控</li>
-<li>异常处理 - 第 12 章：异常处理与恢复</li>
-<li>专家团队 - 第 7 章：多 Agent 协作</li>
-<li>探索与发现 - 第 21 章：探索与发现</li>
-<li>外部审核 API - 第 18 章：护栏&#x2F;安全模式</li>
-</ul>
-<p><strong>F</strong></p>
-<ul>
-<li>因子化认知 - 附录 A</li>
-<li>FastMCP - 第 10 章：模型上下文协议（MCP）</li>
-<li>容错 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>少样本学习 - 第 9 章：学习与适应</li>
-<li>少样本提示 - 附录 A</li>
-<li>微调 - 术语表</li>
-<li>正式化合同 - 第 19 章：评估与监控</li>
-<li>函数调用 - 第 5 章：工具使用，附录 A</li>
-</ul>
-<p><strong>G</strong></p>
-<ul>
-<li>Gemini Live - 附录 B</li>
-<li>Gems - 附录 A</li>
-<li>生成媒体编排 - 第 10 章：模型上下文协议（MCP）</li>
-<li>目标设定 - 第 11 章：目标设定与监控</li>
-<li>GoD（辩论图）- 第 17 章：推理技术</li>
-<li>Google Agent Development Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多 Agent 协作，第 8 章：内存管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C</li>
-<li>Google 联合科学家 - 第 21 章：探索与发现</li>
-<li>Google DeepResearch - 第 6 章：规划</li>
-<li>Google Project Mariner - 附录 B</li>
-<li>优雅降级 - 第 12 章：异常处理与恢复，第 16 章：资源感知优化</li>
-<li>辩论图（GoD）- 第 17 章：推理技术</li>
-<li>基础化 - 术语表</li>
-<li>护栏 - 第 18 章：护栏&#x2F;安全模式</li>
-</ul>
-<p><strong>H</strong></p>
-<ul>
-<li>Haystack - 附录 C</li>
-<li>层次化分解 - 第 19 章：评估与监控</li>
-<li>层次化结构 - 第 7 章：多 Agent 协作</li>
-<li>HITL（人机协同）- 第 13 章：人机协同</li>
-<li>人机协同（HITL）- 第 13 章：人机协同</li>
-<li>人在环路上 - 第 13 章：人机协同</li>
-<li>人类监督 - 第 13 章：人机协同，第 18 章：护栏&#x2F;安全模式</li>
-</ul>
-<p><strong>I</strong></p>
-<ul>
-<li>上下文学习 - 术语表</li>
-<li>InMemoryMemoryService - 第 8 章：记忆管理</li>
-<li>InMemorySessionService - 第 8 章：记忆管理</li>
-<li>输入验证&#x2F;清理 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>指令优先于约束 - 附录 A</li>
-<li>Agent 间通信（A2A）- 第 15 章：Agent 间通信（A2A）</li>
-<li>干预与纠正 - 第 13 章：人机协同</li>
-<li>IoT 设备控制 - 第 10 章：模型上下文协议（MCP）</li>
-<li>迭代提示&#x2F;细化 - 附录 A</li>
-</ul>
-<p><strong>J</strong></p>
-<ul>
-<li>越狱 - 第 18 章：护栏&#x2F;安全模式</li>
-</ul>
-<p><strong>K</strong></p>
-<ul>
-<li>Kahneman-Tversky 优化（KTO）- 术语表</li>
-<li>知识检索（RAG）- 第 14 章：知识检索（RAG）</li>
-</ul>
-<p><strong>L</strong></p>
-<ul>
-<li>LangChain - 第 1 章：提示链，第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 8 章：记忆管理，第 20 章：优先级排序，附录 C</li>
-<li>LangGraph - 第 1 章：提示链，第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 8 章：记忆管理，附录 C</li>
-<li>延迟监控 - 第 19 章：评估与监控</li>
-<li>学习资源分配策略 - 第 16 章：资源感知优化</li>
-<li>学习与适应 - 第 9 章：学习与适应</li>
-<li>LLM 作为裁判 - 第 19 章：评估与监控</li>
-<li>LlamaIndex - 附录 C</li>
-<li>LoRA（低秩适应）- 术语表</li>
-<li>低秩适应（LoRA）- 术语表</li>
-</ul>
-<p><strong>M</strong></p>
-<ul>
-<li>Mamba - 术语表</li>
-<li>掩码语言建模（MLM）- 术语表</li>
-<li>MASS（多 Agent 系统搜索）- 第 17 章：推理技术</li>
-<li>MCP（模型上下文协议）- 第 10 章：模型上下文协议（MCP）</li>
-<li>记忆管理 - 第 8 章：记忆管理</li>
-<li>基于内存的学习 - 第 9 章：学习与适应</li>
-<li>MetaGPT - 附录 C</li>
-<li>Microsoft AutoGen - 附录 C</li>
-<li>专家混合（MoE）- 术语表</li>
-<li>模型上下文协议（MCP）- 第 10 章：模型上下文协议（MCP）</li>
-<li>模块化 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>监控 - 第 11 章：目标设定与监控，第 19 章：评估与监控</li>
-<li>多 Agent 协作 - 第 7 章：多 Agent 协作</li>
-<li>多 Agent 系统搜索（MASS）- 第 17 章：推理技术</li>
-<li>多模态性 - 术语表</li>
-<li>多模态提示 - 附录 A</li>
-</ul>
-<p><strong>N</strong></p>
-<ul>
-<li>负面示例 - 附录 A</li>
-<li>下一句预测（NSP）- 术语表</li>
-</ul>
-<p><strong>O</strong></p>
-<ul>
-<li>可观察性 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>单样本提示 - 附录 A</li>
-<li>在线学习 - 第 9 章：学习与适应</li>
-<li>OpenAI Deep Research API - 第 6 章：规划</li>
-<li>OpenEvolve - 第 9 章：学习与适应</li>
-<li>OpenRouter - 第 16 章：资源感知优化</li>
-<li>输出过滤&#x2F;后处理 - 第 18 章：护栏&#x2F;安全模式</li>
-</ul>
-<p><strong>P</strong></p>
-<ul>
-<li>PAL（程序辅助语言模型）- 第 17 章：推理技术</li>
-<li>并行化 - 第 3 章：并行化</li>
-<li>并行化与分布式计算感知 - 第 16 章：资源感知优化</li>
-<li>参数高效微调（PEFT）- 术语表</li>
-<li>PEFT（参数高效微调）- 术语表</li>
-<li>性能跟踪 - 第 19 章：评估与监控</li>
-<li>角色模式 - 附录 A</li>
-<li>个性化 - 什么使 AI 系统成为 Agent？</li>
-<li>规划 - 第 6 章：规划，术语表</li>
-<li>优先级排序 - 第 20 章：优先级排序</li>
-<li>最小权限原则 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>主动资源预测 - 第 16 章：资源感知优化</li>
-<li>过程记忆 - 第 8 章：记忆管理</li>
-<li>程序辅助语言模型（PAL）- 第 17 章：推理技术</li>
-<li>Project Astra - 附录 B</li>
-<li>提示词 - 术语表</li>
-<li>提示链 - 第 1 章：提示链</li>
-<li>提示工程 - 附录 A</li>
-<li>近端策略优化（PPO）- 第 9 章：学习与适应</li>
-<li>推送通知 - 第 15 章：Agent 间通信（A2A）</li>
-</ul>
-<p><strong>Q</strong></p>
-<ul>
-<li>QLoRA - 术语表</li>
-<li>质量导向迭代执行 - 第 19 章：评估与监控</li>
-</ul>
-<p><strong>R</strong></p>
-<ul>
-<li>RAG（检索增强生成）- 第 8 章：内存管理，第 14 章：知识检索（RAG），附录 A</li>
-<li>ReAct（推理与行动）- 第 17 章：推理技术，附录 A，术语表</li>
-<li>推理 - 第 17 章：推理技术</li>
-<li>基于推理的信息提取 - 第 10 章：模型上下文协议（MCP）</li>
-<li>恢复 - 第 12 章：异常处理与恢复</li>
-<li>循环神经网络（RNN）- 术语表</li>
-<li>反思 - 第 4 章：反思</li>
-<li>强化学习 - 第 9 章：学习与适应</li>
-<li>基于人类反馈的强化学习（RLHF）- 术语表</li>
-<li>可验证奖励的强化学习（RLVR）- 第 17 章：推理技术</li>
-<li>远程 Agent - 第 15 章：Agent 间通信（A2A）</li>
-<li>请求&#x2F;响应（轮询）- 第 15 章：Agent 间通信（A2A）</li>
-<li>资源感知优化 - 第 16 章：资源感知优化</li>
-<li>检索增强生成（RAG）- 第 8 章：内存管理，第 14 章：知识检索（RAG），附录 A</li>
-<li>RLHF（基于人类反馈的强化学习）- 术语表</li>
-<li>RLVR（可验证奖励的强化学习）- 第 17 章：推理技术</li>
-<li>RNN（循环神经网络）- 术语表</li>
-<li>角色提示 - 附录 A</li>
-<li>路由器 Agent - 第 16 章：资源感知优化</li>
-<li>路由 - 第 2 章：路由</li>
-</ul>
-<p><strong>S</strong></p>
-<ul>
-<li>安全 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>扩展推理法则 - 第 17 章：推理技术</li>
-<li>调度 - 第 20 章：优先级排序</li>
-<li>自一致性 - 附录 A</li>
-<li>自我纠正 - 第 4 章：反思，第 17 章：推理技术</li>
-<li>自我改进编码 Agent（SICA）- 第 9 章：学习与适应</li>
-<li>自我细化 - 第 17 章：推理技术</li>
-<li>Semantic Kernel - 附录 C</li>
-<li>语义记忆 - 第 8 章：记忆管理</li>
-<li>语义相似性 - 第 14 章：知识检索（RAG）</li>
-<li>关注点分离 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>顺序交接 - 第 7 章：多 Agent 协作</li>
-<li>服务器发送事件（SSE）- 第 15 章：Agent 间通信（A2A）</li>
-<li>会话 - 第 8 章：内存管理</li>
-<li>SICA（自我改进编码 Agent）- 第 9 章：学习与适应</li>
-<li>SMART 目标 - 第 11 章：目标设定与监控</li>
-<li>状态 - 第 8 章：内存管理</li>
-<li>状态回滚 - 第 12 章：异常处理与恢复</li>
-<li>后退提示 - 附录 A</li>
-<li>流式更新 - 第 15 章：Agent 间通信（A2A）</li>
-<li>结构化日志 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>结构化输出 - 第 1 章：提示链，附录 A</li>
-<li>SuperAGI - 附录 C</li>
-<li>监督微调（SFT）- 术语表</li>
-<li>监督学习 - 第 9 章：学习与适应</li>
-<li>系统提示 - 附录 A</li>
-</ul>
-<p><strong>T</strong></p>
-<ul>
-<li>任务评估 - 第 20 章：优先级排序</li>
-<li>文本相似性 - 第 14 章：知识检索（RAG）</li>
-<li>Token 使用 - 第 19 章：评估与监控</li>
-<li>工具使用 - 第 5 章：工具使用，附录 A</li>
-<li>工具使用限制 - 第 18 章：护栏&#x2F;安全模式</li>
-<li>ToT（思维树）- 第 17 章：推理技术，附录 A，术语表</li>
-<li>Transformers - 术语表</li>
-<li>思维树（ToT）- 第 17 章：推理技术，附录 A，术语表</li>
-</ul>
-<p><strong>U</strong></p>
-<ul>
-<li>无监督学习 - 第 9 章：学习与适应</li>
-<li>用户角色 - 附录 A</li>
-</ul>
-<p><strong>V</strong></p>
-<ul>
-<li>验证 - 第 3 章：并行化</li>
-<li>向量搜索 - 第 14 章：知识检索（RAG）</li>
-<li>VertexAiRagMemoryService - 第 8 章：内存管理</li>
-<li>VertexAiSessionService - 第 8 章：内存管理</li>
-<li>Vibe 编码 - 附录 B</li>
-<li>视觉感知 - 附录 B</li>
-</ul>
-<p><strong>W</strong></p>
-<ul>
-<li>Webhooks - 第 15 章：Agent 间通信（A2A）</li>
-</ul>
-<p><strong>Z</strong></p>
-<ul>
-<li>零样本学习 - 第 9 章：学习与适应</li>
-<li>零样本提示 - 附录 A</li>
-</ul>
-<h2 id="提示词"><a href="#提示词" class="headerlink" title="提示词"></a>提示词</h2><p>以下是用于创建此术语索引的提示词。</p>
-<table>
-<thead>
-<tr>
-<th align="left"><em>请阅读 <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/edit?tab=t.0">https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/edit?tab=t.0</a> 及第一页中的所有相关文档。请提取各章节的所有标题并打印出来。然后处理所有独立章节的内容，创建一个用于出版的详细索引，包含单词或短语列表（”标题”）以及指向文档或文档集合中相关有用材料位置的指针（”定位符”）。我不需要示例索引，而是要求完整的索引，包含 100 个索引术语</em></th>
-</tr>
-</thead>
-</table>
-<h2 id="Gemini-2-5：推理步骤"><a href="#Gemini-2-5：推理步骤" class="headerlink" title="Gemini 2.5：推理步骤"></a>Gemini 2.5：推理步骤</h2><p><strong>开始创建索引</strong></p>
-<p>我已启动索引创建流程，首先阅读了提供的 Google 文档。目前，我专注于理解用户需求：提取章节标题以构建详细索引。正在仔细审查文档内容，寻找能够标识章节分隔的清晰结构元素，期望能够识别出一致的格式模式或关键词来指导索引过程。</p>
-<p><strong>定义索引提取流程</strong></p>
-<p>现在已完全投入到此任务中。已将用户请求分解为可执行的步骤：初始阶段使用 Workspaces 访问主 Google 文档，接着解析文档以定位并检索相关文档（同样使用 Workspaces 工具），最后从所有文档中提取章节标题并创建全面索引。已规划完整的详细流程。</p>
-<p><strong>完善提取策略</strong></p>
-<p>用户指令明确：阅读 Google 文档及其相关文档，构建章节标题的详细索引。已制定多步骤计划：Workspaces 首先访问主文档，然后解析并检索相关文档，同样使用 Workspaces。当前专注于提取标题并使用所需术语构建详细索引，优先确保准确性以满足用户对综合索引的特定要求。</p>
-<p><strong>1. 确定用户意图</strong></p>
-<p>已明确用户需求：获取来自 Google 文档及相关文档的章节标题列表和综合索引。现在需要确定最有效的提取和索引方法，正在探索潜在的 API 功能来简化此任务，并评估处理不同文档结构的最佳策略。</p>
-<p><strong>3. 考虑工具使用</strong></p>
-<p>已使用正则表达式从主文档中提取了章节 URL。现在准备利用 Workspaces 检索各章节的实际内容。一旦获得各章节文本，将立即开始索引工作。</p>
-<p><strong>访问章节内容</strong></p>
-<p>已成功从主文档中识别出各章节 URL，现在可使用 Workspaces。下一步是从这些 URL 检索内容，以便生成索引。专注于效率优化，旨在快速处理这些信息。</p>
-<p><strong>获取章节内容</strong></p>
-<p>已成功从主文档中识别出章节 URL，准备使用 Workspaces。计划包括提取这些 URL、批量处理调用以提高效率，然后处理检索内容以创建所需索引。这确保捕获所有相关信息，为全面准确的结果奠定基础。</p>
-<p><strong>启动 URL 检索</strong></p>
-<p>现已成功从主文档中提取章节 URL。目前正在设置对 Workspaces 工具的调用，准备获取各章节内容。目标是获取索引所需的文本内容，进而促进创建包含至少 100 个术语的索引。</p>
-<p><strong>启动章节提取</strong></p>
-<p>已成功从主文档中识别并提取章节 URL（如上所列）。现在继续为每个 URL 使用 Workspaces 以获取章节内容。目标是获取索引所需的文本，进而促进创建包含至少 100 个术语的索引。已开始检索相关信息。</p>
-<p><strong>编排章节检索</strong></p>
-<p>已提取章节 URL 并发起对 Workspaces 的调用。目前正在检索各章节内容。为确保流程顺畅，正在进行批量调用处理以防止速率限制问题。这应能高效编译索引所需文本。</p>
-<p><strong>解码用户请求</strong></p>
-<p>已明确用户需求：两个主要交付成果——从 Google 文档提取的章节标题综合列表，以及包含至少一百个关键术语的详细索引。提取标题的过程相对直接，而策划索引则需要更细致的分析工作。</p>
-<p><strong>提取标题和索引</strong></p>
-<p>已成功识别用户需求：从提供文档中提取章节标题并编制综合索引。已获取 31 个 Google 文档的内容，包括主文档及其各章节。确认无需额外工具。计划包含两个步骤：首先从文档文件名中提取章节标题，其次精心处理文本内容，使用关键术语和章节定位符构建索引。</p>
-<p><strong>制定提取计划</strong></p>
-<p>已完善处理用户请求的方法。现制定精确计划：首先从 31 个已获取文档的文件名中编制章节标题，其次（更复杂的部分）精心分析内容以创建超过 100 个条目的综合、按字母顺序排列的索引。已最终确定提取和索引策略，现在可以开始执行。</p>
-<p><strong>制定提取策略</strong></p>
-<p>方法已明确定义：从 31 个已获取文档的文件名中编制章节标题，随后精心分析内容以构建按字母顺序组织、超过 100 个条目的索引。已最终确定提取和索引策略，现在可以开始实施。用户获取详细索引的目标——涵盖 Agentic 设计模式系列中各个章节和附录的内容——现已触手可及。将专注于提供全面响应，超越简单的示例索引。</p>
-<p><strong>定义方法</strong></p>
-<p>已明确用户需求：从文档文件名中提取章节标题，随后精心创建超过 100 个条目的索引，按字母顺序排列并注明章节位置。准备开始索引和提取过程。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-Index%20of%20Terms/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ADP-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-README/">Agentic Design Patterns - README</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-README/" class="archive-article-date">
-  	<time datetime="2025-09-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>为方便阅读而翻译此系列文章，从不谋取个人利益。并遵从开源协议。</strong></p>
-<p><strong>如有侵权，请即刻告知</strong></p>
-<p><strong>内容来源<a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/preview?ref=ppc.land&tab=t.0#heading=h.pxcur8v2qagu">Agentic Design Patterns</a></strong></p>
-<p><strong>内容来源<a target="_blank" rel="noopener" href="https://github.com/xindoo/agentic-design-patterns">Agentic Design Patterns</a></strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-README/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -2068,11 +1833,67 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
+                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">EasyClaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">OpenClaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品分析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">AI agent 设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2120,11 +1941,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python 语言学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2136,11 +1961,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
+                <a href="javascript:void(0)" class="js-tag color5">生活随想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生活随想</a>
+                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2180,19 +2005,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件创意</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">原子习惯</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">家庭</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件创意</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兄弟</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">家庭</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2201,6 +2030,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">定居天津的那些日子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">周报</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2257,58 +2090,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兄弟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
               </li>
             
             <div class="clearfix"></div>

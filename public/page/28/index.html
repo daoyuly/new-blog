@@ -20,6 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  <link rel="stylesheet" type="text/css" href="/css/arthurchiao.css">
   <style type="text/css">
   
     #container.show {
@@ -149,6 +150,166 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-工作周报2022年 10 月 24 日 - 2022年 10 月 28 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2024%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2028%20%E6%97%A5/">工作周报2022年 10 月 24 日 - 2022年 10 月 28 日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2024%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2028%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-10-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>文章中文字出现重叠问题修复的思考<ul>
+<li>文章小节的展示经常性的出现一些异常情况，比如图片找不到，图片尺寸过大，文本字体颜色不对，样式不对等等问题；</li>
+<li>文章小节的实现方案是这样的：文章小节的内容输入框是富文本编辑器，展示部分首先做安全处理，然后以HTML的方式展示出来； 用户一般有两种输入方式，1 直接手工输入内容，2 从别处复制过来粘贴都这里；</li>
+<li>基于这样的实现方案，很容易出现上述举例所说的问题，如果文本和格式是从别处复制过来的，特别是内联样式， 很容易出现这类问题；这类问题不能完美的从技术侧解决，因为诊断和纠正用户的文本格式非常困难，样式带有较大的主观性和随意性，1是不知道用户是无意设置成这种样式，还是有意设置成这种样式，2是假定知道用户设置可不合适的样式，也很难把样式纠正成用户满意的样式</li>
+<li>针对这种情况如果改善呢？结合目前的经验，目前有3类方案：</li>
+<li>1 是针对问题具体解决，比如图片加载不到，图片尺寸过大的问题，这个问题是有解决过的，基本思路是通过正则找到img标签，解析出宽度和高度，判断宽度和高度是否超出我们预设的最大值，如果超出了取最大值，以此来纠正图片过大的问题；</li>
+<li>2 是基于html合法性和业务规则的校验，目前文本重叠的问题就是基于这种思路修复的，这个思路是受html validator启发而来，主要框架是把用户的输入转换成dom，通过遍历dom节点，使每个节点都接受一些规则插件的访问（vistor），规则插件可以是业务规则可以是html的w3c规则，比如转化dom失败，可以针对转化dom失败的原因，转成合法的html，比如图片节点的大小必须控制在一定的范围，比如a标签不能带有某些特定url的链接奠定。结合该解决框架，文本重叠是因为line-height不合法的，可以编写lineHeight插件，保证line-height必须大于1；</li>
+<li>3 是基于拼写检查的思路，结合上述的html validator实现，Web侧编辑时，框架实时检测用户输入的html，对于认为不合理的地方，在输入框出给出下划线或者tooltips提示，让用户根据提示修改；</li>
+<li>以上3类方案各有优缺点，方案1简单直接，缺点是不成体系，代码分散，问题解决不彻底，时间长了代码很难管理，方案2代码收敛，思路单一清晰，缺点是可能会有性能问题，方案3相对是比较完善的方案，缺单是改动较大，现有富文本编辑器实现实时拼写检查存在技术挑战和性能挑战。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2024%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2028%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-北漂的日子（16）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8816%EF%BC%89/">北漂的日子（十六）</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8816%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-10-22T13:35:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一年大事挺多的。</p>
+<p>俄罗斯和乌克兰打起来了，历史关系太过复杂，现实问题又太过尖锐，俄罗斯保持区域霸主地位，乌克兰想要彻底加入西方的体系，总之都想过好日子。没办法，国际关系就是这样现实主义的，用权利保证自己的安全，用实力正确最大的利益，国际关系是正儿八经的丛林法则，不是你死就是我亡。很多中国人太善良了，经常性的把博爱平等仁慈放在国际关系中，真的愚蠢至极。</p>
+<p>俄罗斯和乌克兰打就打吧，美国带着北约，裹挟着欧洲就跟进上了，彻底的成为了代理人战争，俄罗斯到底是能源大国和军事大国，搞得欧洲能源危机，经济危机，社会政治危机一块来。</p>
+<p>我们离战争非常之近了。</p>
+<p>国内疫情也是此起披伏，按下葫芦浮起瓢，十一过后全国到处都有疫情出现。中国国内走的是“清零”“封城”的政策，基本上就是通过限制人员流动来控制疫情发展。很多小地方基本上是完全限制人员流动。每三天做核酸检测，看健康宝，行程码，进不去，出不来，感觉到了世界末日一样。</p>
+<p>党的二十大胜利召开了，习总依然在任，希望能在任期内带着中国走完崛起之路，任重而道远，稍有不慎，中国就会走上日本的老路。</p>
+<p>说了那么多大事，聊聊自己吧。</p>
+<p>年龄越大心事越多，想的越多越迷茫，很多事不如意，很多事真糟心，工作有工作的烦恼，生活有生活的不易，孩子在哪上学搞的我全无头绪，职业目标何时实现也是找不到北。</p>
+<p>越来越想用手机填满时间，越来越觉得人生的无聊，往前走一步似乎还是长夜漫漫，往后退一步似乎也是风平浪静。</p>
+<p>生活平虽然淡如水，但我不想看新闻，平淡才是生活本真，平凡也是人生要走的路，踏踏实实只为让生活平淡一些，小心谨慎只为让工作平稳一些，努力奋斗只为让人生平凡一些。</p>
+<p>看着孩子越来越大，很多盆友有两个娃了，自己也挺羡慕的，可是我也没有那份 勇气再来一个，从生物学上说，孩子越多越好，这样才能让自己的基因尽最大可能不断传递下去，可是想着我小时候过的穷日子，想想算了，谁来到这个世界上都不容易，孩子到了咱家尽量给他点好的环境，兄弟姐妹他可以以后在社会上找，爸妈就不给他了。不过就一个孩子想想也挺孤单的，人都是群居动物，希望和他人在一起，年轻不在乎团聚，老了可能需要。话说回来，以后的事谁知道呢。</p>
+<p>不管怎样，保持平常心，活出点自己的精彩也就够了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8816%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-常见javascript解析器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -854,181 +1015,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 9 月 5 日 - 2022年 9月 11 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%209%20%E6%9C%88%205%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%2011%20%E6%97%A5/">工作周报2022年 9 月 5 日 - 2022年 9月 11 日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%209%20%E6%9C%88%205%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%2011%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-09-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>页面的样式优化项目<ul>
-<li>目前页面上存在视觉和体验类的问题还是比较多的，按照我们已有的高标准高要求来排查，目前很多页面都存在或多或少的体验上的问题，当然体验没有最好，只有不断改善，逼近我们所能达到的更好，所谓用户体验，按照一个项目的思路，要清晰的理解我们所关注的用户和体验分别是什么，这个问题其实是我持续思考的话题，目前的思考不够全面，简单来说，</li>
-<li>对老用户来说，很多细节问题不是影响体验的关键因素，对他们来说用户体验来自最好的体验和最差的体验的峰值，也就说产品给用户的惊艳值和吐槽值构成他们平时使用的体验的总体感觉，从这个角度出发</li>
-<li>要避免功能性错误，这是底线，如白页，页面崩溃，数据不展示，数据不正确，样式完全错乱影响功能使用的这类问题，如果出现这类问题，会拉高体验的最差值，让用户产生挫败感，会极大影响用户体验，因为人总是容易记住糟糕的事情，丧失对产品价值的信任；</li>
-<li>对于竞品也有的功能，也就是常规功能，除了要保持用户体验基本要求不放松，我们要花精力多创造一些让用户在使用中产生惊艳和惊喜的优化，作为专业类的SaaS产品，我们的老用户使用过得同类型服务肯定有不少，当用户们在使用类似功能时，潜意识里会有不自觉的类比，我们的功能如果能在这类暗自比较中有比较多的比较优势，这会极大的提升用户惊艳值，惊艳值会让用户在发出惊叹的那瞬间，分泌兴奋的多巴胺，让用户的使用过程产生满足感和幸福感， 总的来说种使用体验会增强续费率的提升，增强用户口碑；</li>
-<li>对于我们独创类的功能，实际上我们是设立事实上行业标准的机会，因为用户肯定先入为主，拿我们的产品和后续跟进的同类型产品比较，如果我们有比较优势，就会增强我们的行业地位，会大大提升品牌价值和市场竞争力；</li>
-<li>对新用户来说，我定义两种关键的新用户，1是具有采购决策权力的用户，2是产品的首批使用者（客户公司里的种子用户），包括讲师和学员。对于这两类新用户，在我看来，其关注点有所不同</li>
-<li>第一类是具有采购决策权力的用户，一般属于公司的资深员工，专业度和职位相对较高，他们的关注点在产品体验上是否专业，功能是否丰富，界面是否美观并符合所在公司的体验理念等高层次的用户体验</li>
-<li>第二类是首批使用者，他们关注体验的和自己相关的低层次体验， 如产品是否易于上手，是否有不合他们使用习惯的交互，功能是否易于查找，是否便于完成自己的CoreJob</li>
-<li>这两类新用户对我们也是至关重要，影响第一类用户决策的因素有很多，这个不是我目前思考所能顾全的，但从页面角度来说，保证整体用户界面的设计感非常重要，对第二类用户保证界面交互和设计元素的一致性，易用性非常重要。</li>
-<li>对于我们Web端来说，就现在阶段而言，用户体验提升和新功能开发同等重要，我觉得也对我们提出了更高的要求，要多花力气在准确还原设计稿上，目标就是要让页面看起来有设计感，有专业感，对前端工程师而言，除了多研究如何还原设计稿的技术之外，也要逐步提升审美素养，对美有了一定的认知，自然就不会放过丑的页面了。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%209%20%E6%9C%88%205%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%2011%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 8月 29 日 - 2022年 9月 4 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2029%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%204%20%E6%97%A5/">工作周报2022年 8月 29 日 - 2022年 9月 4 日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2029%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%204%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-09-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>如何做好前端的技术深耕问题<ul>
-<li>在我看来我们的很多前端的技术点、交互点已经到了技术的深入区。这个问题我一直在持续思考，</li>
-<li>在功能实现上，包括文本编辑器（课程编辑的富文本编辑器，微课编辑器，学习圈主题编辑器，AI语音微课文本编辑器，数学公式编辑器），视频编辑器（AI作业录制， Web录制，语音微课），HTML5 API（小节（学习项目，课程里的一系列）拖拽排序，AI语音微课Slides拖拽排序，切屏防作弊），语音编辑（语音微课），组件编辑器（微页面构建器），资源上传技术（单文件上传，大文件上传，断点续传），视频播放器（直播播放器，语音微课播放器，普通视频播放器，字幕，加密，资源转换），没法一一枚举，特别是Html5和Css3的应用上，我们已经完全拥抱了新技术，在我看来，这一块上我们实际上是超出业界平均水平的，开始构建自己的技术壁垒，还有一些在技术上需要深一步的迭代，比如基于DASH的学习播放器，直播技术栈，多媒体编辑器等；</li>
-<li>在工程化上，坦白来说我们还是落后于业界平均水平，包括从构建工具链的完整度，发布自动化程度，开发工具链的建设入，代码依赖和复用管理我们还都要更加投入才能有效改善现有的代码生产能力和功能实现效率；</li>
-<li>在功能开发和工程技术上，一般是采用自研和开源相结合的方式，在功能开发上，核心组件自研的占绝大多数，部分是基于开源的二次开发，很多伙伴，包括很多了解前端但不是前端的伙伴会问一个问题，这个组件你们为什么不用xxx开源的呢，为什么不用xxx架构呢？这类问题其实很难回答，纯从专业度的来说，听者不见得真的理解，纯从应用角度来说，似乎也是婆说婆有理。但在技术决策上，我们坚持4个原则：<br>1是长期主义，2是一开始就做正确的事情，哪怕有困难，3是专业的人做专业的事，4是技术改变未来。</li>
-<li>技术长期主义，就是技术选型，架构和设计要考虑充分的变化，要在产品持续迭代，团队长期存在，公司永续发展的前提下，考虑技术的可行性，可能性及其技术的发展趋势，坚持长期主义的公司需要正确面对经济周期，政治周期甚至是历史周期，同时也要面对技术浪潮和技术周期的冲击，技术浪潮来的时候，大家特别容易随波逐流，站在长期主义的视角下能够比较容易的认清我们该走什么样的技术路线</li>
-<li>一开始就做正确的事情是特别难遵循的，什么是正确的，在技术讨论上非常难，所以要站在更高的维度和视角，对所讨论有更深的理解和应用的时候，才能知道什么是正确的，我们很多的技术类项目研发是在确定什么是“正确”的技术上花费了很多精力和时间，第二层意思是大家要充分学习，提升技术能力，第三层意思是我们要积极吸收我们所不足的技术领域的顶尖人才，快速拉升团队技术视野和技术判断力</li>
-<li>专业的人做专业的事，是内涵极其丰富的原则，就目前阶段对我来说，第一层意思就是让能搞定技术的人去搞定该搞定的技术，此过程，给予充分的技术信任和外围的支持及管理，第二层意思是每个人都要有自己的技术上的亮点，并且做到专精亮</li>
-<li>技术改变未来，我觉得这应该是每一位工程师的精神信仰之一，否则很难坚持做冷板凳，很难坚持任劳任怨，很难坚持在平凡的岗位上做些许不平凡的事。其次，专业技术人员所做的任何事都应该从纯技术角度考虑解决方案，而不是一个技术人遇到问题，首先考虑的是我们去找外包啊，我们去找外外部资源啊，如果这样，我建议去做管理。再次，技术可以改变自己的未来，可以改变公司的未来，可以改变他人的未来，甚至会改变社会和历史的未来。</li>
-<li>随着产品迭代的持续深化，很多技术点和功能点正在经历由量变到质变的过程，也是建立我们自有技术壁垒的最佳阶段，说个大家都能懂的例子，一个接口访问，当有十万级别访问到千万级别的访问时，在开发设计上完全是不同的两个约束，也就是完全不同的设计方案和实现方法，流量逐步上来，设计也在逐步升级，千万级别的接口的实现，绝不是一家刚起步的公司所能理解的，这是个简单直接的例子，很多问题远不是一个接口那么简单的。这个阶段我们也面临很多重要的约束，比如业务关联错综复杂，代码实现因迭代导致了设计意图不清晰，暗线功能不明确等等问题，这就会让我们觉得，不改的话很难持续迭代，改的话往往牵一发动全身，但这就是我们的技术现状，只有在此基础之上实现了技术迭代和升级，才能甩开新的创业公司的疯狂追赶，才能甩开财大气粗的业界大佬们的半路劫杀。所以我们正在逐步面临技术上新的阶段的新的问题，特别是很多功能不是完全新的功能，而是完全的迭代开发，设计方案既要兼顾老功能，也要考虑如何突破，构建新的面向未来的技术架构，面对更复杂的后续迭代，而不是单单是在现有功能上累加代码，因为凡事预则立不预则废。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2029%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%204%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/27/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/29/">Next &raquo;</a>
@@ -1137,11 +1123,67 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
+                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">EasyClaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">OpenClaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品分析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">AI agent 设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1189,11 +1231,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python 语言学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1205,11 +1251,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
+                <a href="javascript:void(0)" class="js-tag color5">生活随想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生活随想</a>
+                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1249,19 +1295,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件创意</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">原子习惯</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">家庭</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件创意</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兄弟</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">家庭</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1270,6 +1320,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">定居天津的那些日子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">周报</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1326,58 +1380,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兄弟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
               </li>
             
             <div class="clearfix"></div>

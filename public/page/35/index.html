@@ -20,6 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  <link rel="stylesheet" type="text/css" href="/css/arthurchiao.css">
   <style type="text/css">
   
     #container.show {
@@ -149,6 +150,379 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-软件设计的哲学-ch5-信息隐藏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch5-%E4%BF%A1%E6%81%AF%E9%9A%90%E8%97%8F/">软件设计的哲学 - ch5</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch5-%E4%BF%A1%E6%81%AF%E9%9A%90%E8%97%8F/" class="archive-article-date">
+  	<time datetime="2021-02-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-5-章-信息隐藏-和泄漏"><a href="#第-5-章-信息隐藏-和泄漏" class="headerlink" title="第 5 章 信息隐藏(和泄漏)"></a>第 5 章 信息隐藏(和泄漏)</h1><blockquote>
+<p>Chapter 5 Information Hiding (and Leakage)</p>
+</blockquote>
+<p>Chapter 4 argued that modules should be deep. This chapter, and the next few that follow, discuss techniques for creating deep modules.</p>
+<blockquote>
+<p>第四章认为模块应该很深。本章及随后的其他章节讨论了创建深层模块的技术。</p>
+</blockquote>
+<h2 id="5-1-Information-hiding-信息隐藏"><a href="#5-1-Information-hiding-信息隐藏" class="headerlink" title="5.1 Information hiding 信息隐藏"></a>5.1 Information hiding 信息隐藏</h2><p>The most important technique for achieving deep modules is information hiding. This technique was first described by David Parnas1. The basic idea is that each module should encapsulate a few pieces of knowledge, which represent design decisions. The knowledge is embedded in the module’s implementation but does not appear in its interface, so it is not visible to other modules.</p>
+<blockquote>
+<p>实现深层模块最重要的技术是信息隐藏。该技术最早由 David Parnas1 描述。基本思想是每个模块应封装一些知识，这些知识代表设计决策。该知识嵌入在模块的实现中，但不会出现在其界面中，因此其他模块不可见。</p>
+</blockquote>
+<p>The information hidden within a module usually consists of details about how to implement some mechanism. Here are some examples of information that might be hidden within a module:</p>
+<blockquote>
+<p>隐藏在模块中的信息通常包含有关如何实现某种机制的详细信息。以下是一些可能隐藏在模块中的信息示例：</p>
+</blockquote>
+<ul>
+<li>How to store information in a B-tree, and how to access it efficiently.</li>
+<li>How to identify the physical disk block corresponding to each logical block within a file.</li>
+<li>How to implement the TCP network protocol.</li>
+<li>How to schedule threads on a multi-core processor.</li>
+<li>How to parse JSON documents.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>如何在 B 树中存储信息，以及如何有效地访问它。</li>
+<li>如何识别与文件中每个逻辑块相对应的物理磁盘块。</li>
+<li>如何实现 TCP 网络协议。</li>
+<li>如何在多核处理器上调度线程。</li>
+<li>如何解析 JSON 文档。</li>
+</ul>
+</blockquote>
+<p>The hidden information includes data structures and algorithms related to the mechanism. It can also include lower-level details such as the size of a page, and it can include higher-level concepts that are more abstract, such as an assumption that most files are small.</p>
+<blockquote>
+<p>隐藏的信息包括与该机制有关的数据结构和算法。它还可以包含较低级别的详细信息（例如页面大小），还可以包含更抽象的较高级别的概念，例如大多数文件较小的假设。</p>
+</blockquote>
+<p>Information hiding reduces complexity in two ways. First, it simplifies the interface to a module. The interface reflects a simpler, more abstract view of the module’s functionality and hides the details; this reduces the cognitive load on developers who use the module. For instance, a developer using a B-tree class need not worry about the ideal fanout for nodes in the tree or how to keep the tree balanced. Second, information hiding makes it easier to evolve the system. If a piece of information is hidden, there are no dependencies on that information outside the module containing the information, so a design change related to that information will affect only the one module. For example, if the TCP protocol changes (to introduce a new mechanism for congestion control, for instance), the protocol’s implementation will have to be modified, but no changes should be needed in higher-level code that uses TCP to send and receive data.</p>
+<blockquote>
+<p>信息隐藏在两个方面降低了复杂性。首先，它将接口简化为模块。接口反映了模块功能的更简单、更抽象的视图，并隐藏了细节;这减少了使用该模块的开发人员的认知负担。例如，使用 B-tree 类的开发人员不需要考虑树中节点的理想扇出，也不需要考虑如何保持树的平衡。其次，信息隐藏使系统更容易演化。如果隐藏了一段信息，那么在包含该信息的模块之外就不存在对该信息的依赖，因此与该信息相关的设计更改将只影响一个模块。例如，如果 TCP 协议发生了变化(例如，为了引入一种新的拥塞控制机制)，协议的实现就必须进行修改，但是在使用 TCP 发送和接收数据的高级代码中不需要进行任何修改。</p>
+</blockquote>
+<p>When designing a new module, you should think carefully about what information can be hidden in that module. If you can hide more information, you should also be able to simplify the module’s interface, and this makes the module deeper.</p>
+<blockquote>
+<p>设计新模块时，应仔细考虑可以在该模块中隐藏哪些信息。如果您可以隐藏更多信息，则还应该能够简化模块的界面，这会使模块更深。</p>
+</blockquote>
+<p>Note: hiding variables and methods in a class by declaring them private isn’t the same thing as information hiding. Private elements can help with information hiding, since they make it impossible for the items to be accessed directly from outside the class. However, information about the private items can still be exposed through public methods such as getter and setter methods. When this happens the nature and usage of the variables are just as exposed as if the variables were public.</p>
+<blockquote>
+<p>注意：通过声明变量和方法为私有来隐藏类中的变量和方法与信息隐藏不是同一回事。私有元素可以帮助隐藏信息，因为它们使无法从类外部直接访问项目。但是，有关私人物品的信息仍可以通过公共方法（如 getter 和 setter 方法）公开。发生这种情况时，变量的性质和用法就如同变量是公开的一样暴露。</p>
+</blockquote>
+<p>The best form of information hiding is when information is totally hidden within a module, so that it is irrelevant and invisible to users of the module. However, partial information hiding also has value. For example, if a particular feature or piece of information is only needed by a few of a class’s users, and it is accessed through separate methods so that it isn’t visible in the most common use cases, then that information is mostly hidden. Such information will create fewer dependencies than information that is visible to every user of the class.</p>
+<blockquote>
+<p>信息隐藏的最佳形式是将信息完全隐藏在模块中，从而使该信息对模块的用户无关且不可见。但是，部分信息隐藏也具有价值。例如，如果某个类的某些用户仅需要特定的功能或信息，并且可以通过单独的方法对其进行访问，以使其在最常见的用例中不可见，则该信息通常会被隐藏。与类的每个用户可见的信息相比，此类信息将创建更少的依赖项。</p>
+</blockquote>
+<h2 id="5-2-Information-leakage-信息泄漏"><a href="#5-2-Information-leakage-信息泄漏" class="headerlink" title="5.2 Information leakage 信息泄漏"></a>5.2 Information leakage 信息泄漏</h2><p>The opposite of information hiding is information leakage. Information leakage occurs when a design decision is reflected in multiple modules. This creates a dependency between the modules: any change to that design decision will require changes to all of the involved modules. If a piece of information is reflected in the interface for a module, then by definition it has been leaked; thus, simpler interfaces tend to correlate with better information hiding. However, information can be leaked even if it doesn’t appear in a module’s interface. Suppose two classes both have knowledge of a particular file format (perhaps one class reads files in that format and the other class writes them). Even if neither class exposes that information in its interface, they both depend on the file format: if the format changes, both classes will need to be modified. Back-door leakage like this is more pernicious than leakage through an interface, because it isn’t obvious.</p>
+<blockquote>
+<p>信息隐藏的反面是信息泄漏。当一个设计决策反映在多个模块中时，就会发生信息泄漏。这在模块之间创建了依赖关系：对该设计决策的任何更改都将要求对所有涉及的模块进行更改。如果一条信息反映在模块的界面中，则根据定义，该信息已经泄漏；因此，更简单的界面往往与更好的信息隐藏相关。但是，即使信息未出现在模块的界面中，也可能会泄漏信息。假设两个类都具有特定文件格式的知识（也许一个类读取该格式的文件，而另一个类写入它们）。即使两个类都不在其接口中公开该信息，它们都取决于文件格式：如果格式更改，则两个类都将需要修改。</p>
+</blockquote>
+<p>Information leakage is one of the most important red flags in software design. One of the best skills you can learn as a software designer is a high level of sensitivity to information leakage. If you encounter information leakage between classes, ask yourself “How can I reorganize these classes so that this particular piece of knowledge only affects a single class?” If the affected classes are relatively small and closely tied to the leaked information, it may make sense to merge them into a single class. Another possible approach is to pull the information out of all of the affected classes and create a new class that encapsulates just that information. However, this approach will be effective only if you can find a simple interface that abstracts away from the details; if the new class exposes most of the knowledge through its interface, then it won’t provide much value (you’ve simply replaced back-door leakage with leakage through an interface).</p>
+<blockquote>
+<p>信息泄漏是软件设计中最重要的危险信号之一。作为一个软件设计师，你能学到的最好的技能之一就是对信息泄露的高度敏感性。如果您在类之间遇到信息泄漏，请自问“我如何才能重新组织这些类，使这些特定的知识只影响一个类?”如果受影响的类相对较小，并且与泄漏的信息紧密相关，那么将它们合并到一个类中是有意义的。另一种可能的方法是从所有受影响的类中提取信息，并创建一个只封装这些信息的新类。但是，这种方法只有在您能够找到一个从细节中抽象出来的简单接口时才有效;如果新类通过其接口公开了大部分知识，那么它就不会提供太多的价值(您只是用通过接口的泄漏替换了后门泄漏)。</p>
+</blockquote>
+<p>img Red Flag: Information Leakage img</p>
+<p>Information leakage occurs when the same knowledge is used in multiple places, such as two different classes that both understand the format of a particular type of file.</p>
+<blockquote>
+<p>当在多个地方使用相同的知识时，例如两个都理解特定类型文件格式的不同类，就会发生信息泄漏。</p>
+</blockquote>
+<h2 id="5-3-Temporal-decomposition-时间分解"><a href="#5-3-Temporal-decomposition-时间分解" class="headerlink" title="5.3 Temporal decomposition 时间分解"></a>5.3 Temporal decomposition 时间分解</h2><p>One common cause of information leakage is a design style I call temporal decomposition. In temporal decomposition, the structure of a system corresponds to the time order in which operations will occur. Consider an application that reads a file in a particular format, modifies the contents of the file, and then writes the file out again. With temporal decomposition, this application might be broken into three classes: one to read the file, another to perform the modifications, and a third to write out the new version. Both the file reading and file writing steps have knowledge about the file format, which results in information leakage. The solution is to combine the core mechanisms for reading and writing files into a single class. This class will get used during both the reading and writing phases of the application. It’s easy to fall into the trap of temporal decomposition, because the order in which operations must occur is often on your mind when you code. However, most design decisions manifest themselves at several different times over the life of the application; as a result, temporal decomposition often results in information leakage.</p>
+<blockquote>
+<p>信息泄漏的一个常见原因是我称为时间分解的设计风格。在时间分解中，系统的结构对应于操作将发生的时间顺序。考虑一个应用程序，该应用程序以特定格式读取文件，修改文件内容，然后再次将文件写出。通过时间分解，该应用程序可以分为三类：一类用于读取文件，另一类用于执行修改，第三类用于写出新版本。文件读取和文件写入步骤都具有有关文件格式的知识，这会导致信息泄漏。解决方案是将用于读写文件的核心机制结合到一个类中。该类将在应用程序的读取和写入阶段使用。很容易陷入时间分解的陷阱，因为在编写代码时通常会想到必须执行操作的顺序。但是，大多数设计决策会在应用程序的整个生命周期中的多个不同时刻表现出来。结果，时间分解常常导致信息泄漏。</p>
+</blockquote>
+<p>Order usually does matter, so it will be reflected somewhere in the application. However, it shouldn’t be reflected in the module structure unless that structure is consistent with information hiding (perhaps the different stages use totally different information). When designing modules, focus on the knowledge that’s needed to perform each task, not the order in which tasks occur.</p>
+<blockquote>
+<p>顺序通常很重要，因此它将反映在应用程序中的某个位置。但是，除非该结构与信息隐藏保持一致（也许不同阶段使用完全不同的信息），否则不应将其反映在模块结构中。在设计模块时，应专注于执行每个任务所需的知识，而不是任务发生的顺序。</p>
+</blockquote>
+<p>img Red Flag: Temporal Decomposition img</p>
+<p>In temporal decomposition, execution order is reflected in the code structure: operations that happen at different times are in different methods or classes. If the same knowledge is used at different points in execution, it gets encoded in multiple places, resulting in information leakage.</p>
+<blockquote>
+<p>在时间分解中，执行顺序反映在代码结构中：在不同时间发生的操作在不同的方法或类中。如果在执行的不同点使用相同的知识，则会在多个位置对其进行编码，从而导致信息泄漏。</p>
+</blockquote>
+<h2 id="5-4-Example-HTTP-server-示例：HTTP-服务器"><a href="#5-4-Example-HTTP-server-示例：HTTP-服务器" class="headerlink" title="5.4 Example: HTTP server 示例：HTTP 服务器"></a>5.4 Example: HTTP server 示例：HTTP 服务器</h2><p>To illustrate the issues in information hiding, let’s consider the design decisions made by students implementing the HTTP protocol in a software design course. It’s useful to see both the things they did well and they areas where they had problems.</p>
+<blockquote>
+<p>为了说明信息隐藏中的问题，让我们考虑由学生在软件设计课程中实现 HTTP 协议的设计决策。看到他们做得好的事情以及遇到问题的地方都是很有用的。</p>
+</blockquote>
+<p>HTTP is a mechanism used by Web browsers to communicate with Web servers. When a user clicks on a link in a Web browser or submits a form, the browser uses HTTP to send a request over the network to a Web server. Once the server has processed the request, it sends a response back to the browser; the response normally contains a new Web page to display. The HTTP protocol specifies the format of requests and responses, both of which are represented textually. Figure 5.1 shows a sample HTTP request describing a form submission. The students in the course were asked to implement one or more classes to make it easy for Web servers to receive incoming HTTP requests and send responses.</p>
+<blockquote>
+<p>HTTP 是 Web 浏览器用来与 Web 服务器通信的机制。当用户单击 Web 浏览器中的链接或提交表单时，浏览器使用 HTTP 通过网络将请求发送到 Web 服务器。服务器处理完请求后，会将响应发送回浏览器。该响应通常包含要显示的新网页。HTTP 协议指定了请求和响应的格式，两者均以文本形式表示。图 5.1 显示了描述表单提交的 HTTP 请求示例。要求课程中的学生实施一门或多门课程，以使 Web 服务器可以轻松地接收传入的 HTTP 请求并发送响应。</p>
+</blockquote>
+<p><img src="/../../img/figures/00014.gif"></p>
+<p>Figure 5.1: A POST request in the HTTP protocol consists of text sent over a TCP socket. Each request contains an initial line, a collection of headers terminated by an empty line, and an optional body. The initial line contains the request type (POST is used for submitting form data), a URL indicating an operation (&#x2F;comments&#x2F;create) and optional parameters (photo_id has the value 246), and the HTTP protocol version used by the sender. Each header line consists of a name such as Content-Length followed by its value. For this request, the body contains additional parameters (comment and priority).</p>
+<blockquote>
+<p>图 5.1：HTTP 协议中的 POST 请求包含通过 TCP 套接字发送的文本。每个请求都包含一个初始行，一个由空行终止的标头集合以及一个可选主体。初始行包含请求类型（POST 用于提交表单数据），指示操作（&#x2F;注释&#x2F;创建）和可选参数的 URL（photo_id 的值为 246）以及发送者使用的 HTTP 协议版本。每个标题行由一个名称（例如 Content-Length）及其后的值组成。对于此请求，正文包含其他参数（注释和优先级）。</p>
+</blockquote>
+<h2 id="5-5-Example-too-many-classes-示例：太多的类"><a href="#5-5-Example-too-many-classes-示例：太多的类" class="headerlink" title="5.5 Example: too many classes 示例：太多的类"></a>5.5 Example: too many classes 示例：太多的类</h2><p>The most common mistake made by students was to divide their code into a large number of shallow classes, which led to information leakage between the classes. One team used two different classes for receiving HTTP requests; the first class read the request from the network connection into a string, and the second class parsed the string. This is an example of a temporal decomposition (“first we read the request, then we parse it”). Information leakage occurred because an HTTP request can’t be read without parsing much of the message; for example, the Content-Length header specifies the length of the request body, so the headers must be parsed in order to compute the total request length. As a result, both classes needed to understand most of the structure of HTTP requests, and parsing code was duplicated in both classes. This approach also created extra complexity for callers, who had to invoke two methods in different classes, in a particular order, to receive a request.</p>
+<blockquote>
+<p>学生最常犯的错误是将他们的代码分成大量的浅层类，这导致了类之间的信息泄漏。一个团队使用两种不同的类来接收 HTTP 请求。第一类将来自网络连接的请求读取为字符串，第二类将字符串解析。这是时间分解的一个示例（“首先读取请求，然后解析它”）。发生信息泄漏是因为无法解析大量消息就无法读取 HTTP 请求。例如，Content-Length 标头指定了请求主体的长度，因此必须对标头进行解析才能计算总请求长度。结果，这两个类都需要了解 HTTP 请求的大多数结构，并且解析代码在两个类中都是重复的。</p>
+</blockquote>
+<p>Because the classes shared so much information, it would have been better to merge them into a single class that handles both request reading and parsing. This provides better information hiding, since it isolates all knowledge of the request format in one class, and it also provides a simpler interface to callers (just one method to invoke).</p>
+<blockquote>
+<p>由于这些类共享大量信息，因此最好将它们合并为一个同时处理请求读取和解析的类。由于它将请求格式的所有知识隔离在一个类中，因此它提供了更好的信息隐藏，并且还为调用者提供了一个更简单的接口（只是一种调用方法）。</p>
+</blockquote>
+<p>This example illustrates a general theme in software design: information hiding can often be improved by making a class slightly larger. One reason for doing this is to bring together all of the code related to a particular capability (such as parsing an HTTP request), so that the resulting class contains everything related to that capability. A second reason for increasing the size of a class is to raise the level of the interface; for example, rather than having separate methods for each of three steps of a computation, have a single method that performs the entire computation. This can result in a simpler interface. Both of these benefits apply in the example of the previous paragraph: combining the classes brings together all of the code related to parsing an HTTP request, and it replaces two externally-visible methods with one. The combined class is deeper than the original classes.</p>
+<blockquote>
+<p>此示例说明了软件设计中的一般主题：通常可以通过使类稍大一些来改善信息隐藏。这样做的一个原因是将与特定功能相关的所有代码（例如，解析 HTTP 请求）组合在一起，以便生成的类包含与该功能相关的所有内容。增加类大小的第二个原因是提高接口的级别。例如，与其为计算的三个步骤中的每一个步骤使用单独的方法，不如使用一种方法来执行整个计算。这样可以简化界面。这两个优点都适用于上一段的示例：组合类将与解析 HTTP 请求相关的所有代码组合在一起，并且用一个替换了两个外部可见的方法。</p>
+</blockquote>
+<p>Of course, it is possible to take the notion of larger classes too far (such as a single class for the entire application). Chapter 9 will discuss conditions under which it makes sense to separate code into multiple smaller classes.</p>
+<blockquote>
+<p>当然，可以将较大的类的概念考虑得太远（例如整个应用程序的单个类）。第 9 章将讨论将代码分成多个较小的类的合理条件。</p>
+</blockquote>
+<h2 id="5-6-Example-HTTP-parameter-handling-示例：HTTP-参数处理"><a href="#5-6-Example-HTTP-parameter-handling-示例：HTTP-参数处理" class="headerlink" title="5.6 Example: HTTP parameter handling 示例：HTTP 参数处理"></a>5.6 Example: HTTP parameter handling 示例：HTTP 参数处理</h2><p>After an HTTP request has been received by a server, the server needs to access some of the information from the request. The code that handles the request in Figure 5.1 might need to know the value of the photo_id parameter. Parameters can be specified in the first line of the request (photo_id in Figure 5.1) or, sometimes, in the body (comment and priority in Figure 5.1). Each parameter has a name and a value. The values of parameters use a special encoding called URL encoding; for example, in the value for comment in Figure 5.1, “+” is used to represent a space character, and “%21” is used instead of “!”. In order to process a request, the server will need the values for some of the parameters, and it will want them in unencoded form.</p>
+<blockquote>
+<p>服务器收到 HTTP 请求后，服务器需要访问该请求中的某些信息。图 5.1 中处理请求的代码可能需要知道 photo_id 参数的值。参数可以在请求的第一行中指定（图 5.1 中的 photo_id），有时也可以在正文中指定（图 5.1 中的注释和优先级）。每个参数都有一个名称和一个值。参数的值使用一种称为 URL 编码的特殊编码。例如，在图 5.1 中的注释值中，“ +”代表空格字符，“％21”代替“！”。为了处理请求，服务器将需要某些参数的值，并且希望它们采用未编码的形式。</p>
+</blockquote>
+<p>Most of the student projects made two good choices with respect to parameter handling. First, they recognized that server applications don’t care whether a parameter is specified in the header line or the body of the request, so they hid this distinction from callers and merged the parameters from both locations together. Second, they hid knowledge of URL encoding: the HTTP parser decodes parameter values before returning them to the Web server, so that the value of the comment parameter in Figure 5.1 will be returned as “What a cute baby!”, not “What+a+cute+baby%21”). In both of these cases, information hiding resulted in simpler APIs for the code using the HTTP module.</p>
+<blockquote>
+<p>关于参数处理，大多数学生项目都做出了两个不错的选择。首先，他们认识到服务器应用程序不在乎是否在标题行或请求的正文中指定了参数，因此他们对调用者隐藏了这种区别，并将两个位置的参数合并在一起。其次，他们隐藏了 URL 编码的知识：HTTP 解析器在将参数值返回到 Web 服务器之前先对其进行解码，以便图 5.1 中的 comment 参数的值将返回 “What a cute baby!”，而不是 “What+a+cute+baby%21”）。在这两种情况下，信息隐藏都使使用 HTTP 模块的代码的 API 更加简单。</p>
+</blockquote>
+<p>However, most of the students used an interface for returning parameters that was too shallow, and this resulted in lost opportunities for information hiding. Most projects used an object of type HTTPRequest to hold the parsed HTTP request, and the HTTPRequest class had a single method like the following one to return parameters:</p>
+<blockquote>
+<p>但是，大多数学生使用的界面返回的参数太浅，这导致丢失信息隐藏的机会。大多数项目使用 HTTPRequest 类型的对象来保存已解析的 HTTP 请求，并且 HTTPRequest 类具有一种类似于以下方法的单个方法来返回参数：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Map&lt;String, String&gt; <span class="title function_">getParams</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Rather than returning a single parameter, the method returns a reference to the Map used internally to store all of the parameters. This method is shallow, and it exposes the internal representation used by the HTTPRequest class to store parameters. Any change to that representation will result in a change to the interface, which will require modifications to all callers. When implementations are modified, the changes often involve changes in the representation of key data structures (to improve performance, for example). Thus, it’s important to avoid exposing internal data structures as much as possible. This approach also makes more work for callers: a caller must first invoke getParams, then it must call another method to retrieve a specific parameter from the Map. Finally, callers must realize that they should not modify the Map returned by getParams, since that will affect the internal state of the HTTPRequest.</p>
+<blockquote>
+<p>该方法不是返回单个参数，而是返回内部用于存储所有参数的映射的引用。这个方法是浅层的，它公开了 HTTPRequest 类用来存储参数的内部表示。对该表示的任何更改都将导致接口的更改，这将需要对所有调用者进行修改。在修改实现时，更改通常涉及关键数据结构表示的更改(例如，为了提高性能)。因此，尽量避免暴露内部数据结构是很重要的。这种方法还为调用者提供了更多的工作:调用者必须首先调用 getParams，然后必须调用另一个方法来从映射中检索特定的参数。最后，调用者必须意识到他们不应该修改 getParams 返回的映射，因为这会影响 HTTPRequest 的内部状态。</p>
+</blockquote>
+<p>Here is a better interface for retrieving parameter values:</p>
+<blockquote>
+<p>这是一个用于检索参数值的更好的接口：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">getParameter</span><span class="params">(String name)</span> &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getIntParameter</span><span class="params">(String name)</span> &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+<p>getParameter returns a parameter value as a string. It provides a slightly deeper interface than getParams above; more importantly, it hides the internal representation of parameters. getIntParameter converts the value of a parameter from its string form in the HTTP request to an integer (e.g., the photo_id parameter in Figure 5.1). This saves the caller from having to request string-to-integer conversion separately, and hides that mechanism from the caller. Additional methods for other data types, such as getDoubleParameter, could be defined if needed. (All of these methods will throw exceptions if the desired parameter doesn’t exist, or if it can’t be converted to the requested type; the exception declarations have been omitted in the code above).</p>
+<blockquote>
+<p>getParameter 以字符串形式返回参数值。它提供了一个比上面的 getParams 更深的接口；更重要的是，它隐藏了参数的内部表示。getIntParameter 将参数的值从 HTTP 请求中的字符串形式转换为整数（例如，图 5.1 中的 photo_id 参数）。这使调用者不必单独请求字符串到整数的转换，并且对调用者隐藏了该机制。如果需要，可以定义其他数据类型的其他方法，例如 getDoubleParameter。（如果所需的参数不存在，或者无法将其转换为所请求的类型，则所有这些方法都将引发异常；上面的代码中省略了异常声明）。</p>
+</blockquote>
+<h2 id="5-7-Example-defaults-in-HTTP-responses-示例：HTTP-响应中的默认值"><a href="#5-7-Example-defaults-in-HTTP-responses-示例：HTTP-响应中的默认值" class="headerlink" title="5.7 Example: defaults in HTTP responses 示例：HTTP 响应中的默认值"></a>5.7 Example: defaults in HTTP responses 示例：HTTP 响应中的默认值</h2><p>The HTTP projects also had to provide support for generating HTTP responses. The most common mistake students made in this area was inadequate defaults. Each HTTP response must specify an HTTP protocol version; one team required callers to specify this version explicitly when creating a response object. However, the response version must correspond to that in the request object, and the request must already be passed as an argument when sending the response (it indicates where to send the response). Thus, it makes more sense for the HTTP classes to provide the response version automatically. The caller is unlikely to know what version to specify, and if the caller does specify a value, it probably results in information leakage between the HTTP library and the caller. HTTP responses also include a Date header specifying the time when the response was sent; the HTTP library should provide a sensible default for this as well.</p>
+<blockquote>
+<p>HTTP 项目还必须提供对生成 HTTP 响应的支持。学生在该领域中最常见的错误是默认值不足。每个 HTTP 响应必须指定一个 HTTP 协议版本。一个团队要求呼叫者在创建响应对象时明确指定此版本。但是，响应版本必须与请求对象中的版本相对应，并且在发送响应时必须已将请求作为参数传递（它指示将响应发送到何处）。因此，HTTP 类自动提供响应版本更为有意义。调用者不太可能知道要指定哪个版本，并且如果调用者确实指定了一个值，则可能导致 HTTP 库和调用者之间的信息泄漏。HTTP 响应还包括一个 Date 标头，用于指定发送响应的时间；HTTP 库也应该为此提供一个合理的默认值。</p>
+</blockquote>
+<p>Defaults illustrate the principle that interfaces should be designed to make the common case as simple as possible. They are also an example of partial information hiding: in the normal case, the caller need not be aware of the existence of the defaulted item. In the rare cases where a caller needs to override a default, it will have to know about the value, and it can invoke a special method to modify it.</p>
+<blockquote>
+<p>默认值说明了应该设计接口以使常见情况尽可能简单的原则。它们还是隐藏部分信息的一个示例：在正常情况下，调用者无需知道默认项的存在。在极少数情况下，调用方需要覆盖默认值，它必须知道该值，并且可以调用特殊方法来对其进行修改。</p>
+</blockquote>
+<p>Whenever possible, classes should “do the right thing” without being explicitly asked. Defaults are an example of this. The Java I&#x2F;O example on page 26 illustrates this point in a negative way. Buffering in file I&#x2F;O is so universally desirable that noone should ever have to ask explicitly for it, or even be aware of its existence; the I&#x2F;O classes should do the right thing and provide it automatically. The best features are the ones you get without even knowing they exist.</p>
+<blockquote>
+<p>只要有可能，类就应该“做正确的事”，而无需明确要求。默认值就是一个例子。第 26 页上的 Java I&#x2F;O 示例以负面方式说明了这一点。普遍希望在文件 I&#x2F;O 中缓冲，以至于没有人需要明确要求它，甚至不知道它的存在。I&#x2F;O 类应该做正确的事情并自动提供它。最好的功能是您甚至不知道它们存在的功能。</p>
+</blockquote>
+<p>img Red Flag: Overexposure img</p>
+<p>If the API for a commonly used feature forces users to learn about other features that are rarely used, this increases the cognitive load on users who don’t need the rarely used features.</p>
+<blockquote>
+<p>如果常用功能的 API 迫使用户了解很少使用的其他功能，则这会增加不需要很少使用功能的用户的认知负担。</p>
+</blockquote>
+<h2 id="5-8-Information-hiding-within-a-class-信息隐藏在班级中"><a href="#5-8-Information-hiding-within-a-class-信息隐藏在班级中" class="headerlink" title="5.8 Information hiding within a class 信息隐藏在班级中"></a>5.8 Information hiding within a class 信息隐藏在班级中</h2><p>The examples in this chapter focused on information hiding as it relates to the externally visible APIs for classes, but information hiding can also be applied at other levels in the system, such as within a class. Try to design the private methods within a class so that each method encapsulates some information or capability and hides it from the rest of the class. In addition, try to minimize the number of places where each instance variable is used. Some variables may need to be accessed widely across the class, but others may be needed in only a few places; if you can reduce the number of places where a variable is used, you will eliminate dependencies within the class and reduce its complexity.</p>
+<blockquote>
+<p>本章中的示例着重于信息隐藏，因为它与类的外部可见 API 有关，但是信息隐藏也可以应用于系统中的其他级别，例如类内。尝试在一个类中设计私有方法，以便每个方法都封装一些信息或功能，并将其隐藏在类的其余部分中。此外，请尽量减少使用每个实例变量的位置数量。有些变量可能需要在整个班级中广泛使用，但是其他变量可能只需要在少数地方使用；如果可以减少使用变量的位置的数量，则将消除类内的依赖关系并降低其复杂性。</p>
+</blockquote>
+<h2 id="5-9-Taking-it-too-far-走得太远"><a href="#5-9-Taking-it-too-far-走得太远" class="headerlink" title="5.9 Taking it too far 走得太远"></a>5.9 Taking it too far 走得太远</h2><p>Information hiding only makes sense when the information being hidden is not needed outside its module. If the information is needed outside the module, then you must not hide it. Suppose that the performance of a module is affected by certain configuration parameters, and that different uses of the module will require different settings of the parameters. In this case it is important that the parameters are exposed in the interface of the module, so that they can be turned appropriately. As a software designer, your goal should be to minimize the amount of information needed outside a module; for example, if a module can automatically adjust its configuration, that is better than exposing configuration parameters. But, it’s important to recognize which information is needed outside a module and make sure it is exposed.</p>
+<blockquote>
+<p>仅当在其模块外部不需要隐藏信息时，隐藏信息才有意义。如果模块外部需要该信息，则不得隐藏它。假设模块的性能受某些配置参数的影响，并且模块的不同用途将需要对参数进行不同的设置。在这种情况下，将参数暴露在模块的界面中很重要，以便可以对其进行适当的旋转。作为软件设计师，您的目标应该是最大程度地减少模块外部所需的信息量。例如，如果模块可以自动调整其配置，那将比公开配置参数更好。但是，重要的是要识别模块外部需要哪些信息，并确保将其公开。</p>
+</blockquote>
+<h2 id="5-10-Conclusion-结论"><a href="#5-10-Conclusion-结论" class="headerlink" title="5.10 Conclusion 结论"></a>5.10 Conclusion 结论</h2><p>Information hiding and deep modules are closely related. If a module hides a lot of information, that tends to increase the amount of functionality provided by the module while also reducing its interface. This makes the module deeper. Conversely, if a module doesn’t hide much information, then either it doesn’t have much functionality, or it has a complex interface; either way, the module is shallow.</p>
+<blockquote>
+<p>信息隐藏和深层模块密切相关。如果模块隐藏了很多信息，则往往会增加模块提供的功能，同时还会减少其接口。这使模块更深。相反，如果一个模块没有隐藏太多信息，则它要么功能不多，要么接口复杂。无论哪种方式，模块都是浅的。</p>
+</blockquote>
+<p>When decomposing a system into modules, try not to be influenced by the order in which operations will occur at runtime; that will lead you down the path of temporal decomposition, which will result in information leakage and shallow modules. Instead, think about the different pieces of knowledge that are needed to carry out the tasks of your application, and design each module to encapsulate one or a few of those pieces of knowledge. This will produce a clean and simple design with deep modules.</p>
+<blockquote>
+<p>将系统分解为模块时，请尽量不要受运行时操作顺序的影响。这将使您沿着时间分解的路径前进，这将导致信息泄漏和模块浅。相反，请考虑执行应用程序任务所需的不同知识，并设计每个模块以封装这些知识中的一个或几个。这将产生带有深色模块的干净简单的设计。</p>
+</blockquote>
+<p>1David Parnas, “On the Criteria to be Used in Decomposing Systems into Modules,” Communications of the ACM, December 1972.</p>
+<blockquote>
+<p>1 David Parnas，“关于将系统分解为模块的标准”，ACM 通讯，1972 年 12 月。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch5-%E4%BF%A1%E6%81%AF%E9%9A%90%E8%97%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件设计的哲学-ch4-模块应该是深的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch4-%E6%A8%A1%E5%9D%97%E5%BA%94%E8%AF%A5%E6%98%AF%E6%B7%B1%E7%9A%84/">软件设计的哲学 - ch4</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch4-%E6%A8%A1%E5%9D%97%E5%BA%94%E8%AF%A5%E6%98%AF%E6%B7%B1%E7%9A%84/" class="archive-article-date">
+  	<time datetime="2021-02-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-4-章-模块应该是深的"><a href="#第-4-章-模块应该是深的" class="headerlink" title="第 4 章 模块应该是深的"></a>第 4 章 模块应该是深的</h1><p>管理软件复杂性最重要的技术之一就是设计系统，以便开发人员在任何给定时间只需要面对整体复杂性的一小部分。这种方法称为模块化设计，本章介绍其基本原理。</p>
+<h2 id="4-1-Modular-design-模块化设计"><a href="#4-1-Modular-design-模块化设计" class="headerlink" title="4.1 Modular design 模块化设计"></a>4.1 Modular design 模块化设计</h2><p>在模块化设计中，软件系统被分解为相对独立的模块集合。模块可以采用多种形式，例如类，子系统或服务。在理想的世界中，每个模块都将完全独立于其他模块：开发人员可以在任何模块中工作，而无需了解任何其他模块。在这个世界上，系统的复杂性就是最糟糕的模块的复杂性。</p>
+<p>不幸的是，这种理想是无法实现的。模块必须通过调用彼此的函数或方法来协同工作。结果，模块必须相互了解。模块之间将存在依赖关系：如果一个模块发生更改，则可能需要更改其他模块以进行匹配。例如，方法的参数在方法与调用该方法的任何代码之间创建依赖关系。如果必需的参数更改，则必须修改该方法的所有调用以符合新的签名。依赖关系可以采用许多其他形式，并且它们可能非常微妙。模块化设计的目标是最大程度地减少模块之间的依赖性。</p>
+<p>为了管理依赖关系，我们将每个模块分为两个部分：接口和实现。接口包含使用其他模块的开发人员必须知道的所有内容，才能使用给定的模块。通常，界面描述模块的功能，但不描述模块的功能。该实现由执行接口所承诺的代码组成。在特定模块中工作的开发人员必须了解该模块的接口和实现，以及由给定模块调用的任何其他模块的接口。除了正在使用的模块以外，开发人员无需了解其他模块的实现。</p>
+<p>考虑一个实现平衡树的模块。该模块可能包含复杂的代码，以确保树保持平衡。但是，此复杂性对于模块用户而言是不可见的。用户可以看到一个相对简单的界面，用于调用在树中插入，删除和获取节点的操作。要调用插入操作，调用者只需提供新节点的键和值即可。遍历树和拆分节点的机制在界面中不可见。</p>
+<p>就本书而言，模块是具有接口和实现的任何代码单元。面向对象编程语言中的每个类都是一个模块。类中的方法或非面向对象语言中的函数也可以视为模块：每个模块都有一个接口和一个实现，并且可以将模块化设计技术应用于它们。更高级别的子系统和服务也是模块。它们的接口可能采用不同的形式，例如内核调用或 HTTP 请求。本书中有关模块化设计的许多讨论都集中在设计类上，但是技术和概念也适用于其他种类的模块。</p>
+<p>最好的模块是那些其接口比其实现简单得多的模块。这样的模块具有两个优点。首先，一个简单的接口可以将模块强加于系统其余部分的复杂性降至最低。其次，如果以不更改其接口的方式修改了一个模块，则该修改不会影响其他模块。如果模块的接口比其实现简单得多，则可以在不影响其他模块的情况下更改模块的许多方面。</p>
+<h2 id="4-2-What’s-in-an-interface-接口中有什么？"><a href="#4-2-What’s-in-an-interface-接口中有什么？" class="headerlink" title="4.2 What’s in an interface? 接口中有什么？"></a>4.2 What’s in an interface? 接口中有什么？</h2><p>模块的接口包含两种信息：正式信息和非正式信息。接口的形式部分在代码中明确指定，并且其中一些可以通过编程语言检查其正确性。例如，方法的形式接口是其签名，其中包括其参数的名称和类型，其返回值的类型以及有关该方法引发的异常的信息。大多数编程语言都确保对方法的每次调用都提供正确数量和类型的参数以匹配其签名。类的形式接口包括其所有公共方法的签名以及任何公共变量的名称和类型。</p>
+<p>每个界面还包括非正式元素。这些没有以编程语言可以理解或执行的方式指定。接口的非正式部分包括其高级行为，例如，函数删除由其参数之一命名的文件的事实。如果对类的使用存在限制（也许必须先调用一种方法），则这些约束也是类接口的一部分。通常，如果开发人员需要了解特定信息才能使用模块，则该信息是模块界面的一部分。界面的非正式方面只能使用注释来描述，而编程语言不能确保描述是完整或准确的 1。对于大多数界面，非正式方面比正式方面更大，更复杂。</p>
+<p>明确指定接口的好处之一是，它可以准确指示开发人员使用关联模块所需要知道的内容。这有助于消除第 2.2 节中描述的“未知未知数”问题。</p>
+<h2 id="4-3-Abstractions-抽象"><a href="#4-3-Abstractions-抽象" class="headerlink" title="4.3 Abstractions 抽象"></a>4.3 Abstractions 抽象</h2><p>术语抽象与模块化设计的思想紧密相关。抽象是实体的简化视图，其中省略了不重要的细节。抽象是有用的，因为它们使我们更容易思考和操纵复杂的事物。</p>
+<p>在模块化编程中，每个模块以其接口的形式提供抽象。该界面提供了模块功能的简化视图；从模块抽象的角度来看，实现的细节并不重要，因此在接口中将其省略。</p>
+<p>在抽象的定义中，“无关紧要”一词至关重要。从抽象中忽略的不重要的细节越多越好。但是，如果细节不重要，则只能将其从抽象中省略。抽象可以通过两种方式出错。首先，它可以包含并非真正重要的细节。当这种情况发生时，它会使抽象变得不必要的复杂，从而增加了使用抽象的开发人员的认知负担。第二个错误是抽象忽略了真正重要的细节。这导致模糊不清：仅查看抽象的开发人员将不会获得正确使用抽象所需的全部信息。忽略重要细节的抽象是错误的抽象：它可能看起来很简单，但实际上并非如此。</p>
+<p>例如，考虑一个文件系统。文件系统提供的抽象省略了许多细节，例如用于选择存储设备上的哪些块用于给定文件中的数据的机制。这些详细信息对于文件系统的用户而言并不重要（只要系统提供足够的性能即可）。但是，文件系统实现的一些细节对用户很重要。大多数文件系统将数据缓存在主内存中，并且它们可能会延迟将新数据写入存储设备以提高性能。一些应用程序（例如数据库）需要确切地知道何时将数据写入存储设备，因此它们可以确保在系统崩溃后将保留数据。因此，将数据刷新到辅助存储的规则必须在文件系统的界面中可见。</p>
+<p>我们不仅依靠抽象来管理复杂性，而且不仅在编程中，而且在日常生活中无处不在。微波炉包含复杂的电子设备，可将交流电转换为微波辐射并将该辐射分布到整个烹饪腔中。幸运的是，用户看到了一个简单得多的抽象，它由几个按钮控制微波的定时和强度。汽车提供了一种简单的抽象概念，使我们可以在不了解电动机，电池电源管理，防抱死制动，巡航控制等机制的情况下驾驶它们。</p>
+<h2 id="4-4-Deep-modules-深度模块"><a href="#4-4-Deep-modules-深度模块" class="headerlink" title="4.4 Deep modules 深度模块"></a>4.4 Deep modules 深度模块</h2><p>最好的模块是那些提供强大功能但具有简单接口的模块。我用“深入”一词来描述这样的模块。为了形象化深度的概念，假设每个模块都由一个矩形表示，如图 4.1 所示。每个矩形的面积与模块实现的功能成比例。矩形的顶部边缘代表模块的界面；边缘的长度表示接口的复杂性。最好的模块很深：它们在简单的界面后隐藏了许多功能。深度模块是一个很好的抽象，因为其内部复杂性的很小一部分对其用户可见。</p>
+<p><img src="/../../img/figures/00012.jpeg"></p>
+<p>图 4.1：深浅模块。最好的模块很深：它们允许通过简单的界面访问许多功能。浅层模块是具有相对复杂的接口的模块，但功能不多：它不会掩盖太多的复杂性。</p>
+<p>模块深度是考虑成本与收益的一种方式。模块提供的好处是其功能。模块的成本（就系统复杂性而言）是其接口。模块的接口代表了模块强加给系统其余部分的复杂性：接口越小越简单，引入的复杂性就越小。最好的模块是那些收益最大，成本最低的模块。界面不错，但更多或更大的界面不一定更好！</p>
+<p>Unix 操作系统及其后代（例如 Linux）提供的文件 I&#x2F;O 机制是深层接口的一个很好的例子。I&#x2F;O 只有五个基本系统调用，带有简单签名：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">open</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* path, <span class="type">int</span> flags, <span class="type">mode_t</span> permissions)</span>;</span><br><span class="line"><span class="type">ssize_t</span> <span class="title function_">read</span><span class="params">(<span class="type">int</span> fd, <span class="type">void</span>* buffer, <span class="type">size_t</span> count)</span>;</span><br><span class="line"><span class="type">ssize_t</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> fd, <span class="type">const</span> <span class="type">void</span>* buffer, <span class="type">size_t</span> count)</span>;</span><br><span class="line"><span class="type">off_t</span> <span class="title function_">lseek</span><span class="params">(<span class="type">int</span> fd, <span class="type">off_t</span> offset, <span class="type">int</span> referencePosition)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">close</span><span class="params">(<span class="type">int</span> fd)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>开放系统调用采用分层文件名，例如&#x2F; a &#x2F; b &#x2F; c，并返回一个整数文件描述符，该描述符用于引用打开文件。open 的其他自变量提供可选信息，例如是否正在打开文件以进行读取或写入，如果不存在现有文件则是否应创建新文件，以及如果创建新文件则具有文件的访问权限。读写系统调用在应用程序内存和文件的缓冲区之间传输信息。close 结束对文件的访问。大多数文件是按顺序访问的，因此这是默认设置。但是，可以通过调用 lseek 系统调用来更改当前访问位置来实现随机访问。</p>
+<p>Unix I&#x2F;O 接口的现代实现需要成千上万行代码，这些代码可以解决诸如以下的复杂问题：</p>
+<blockquote>
+<ul>
+<li>如何在磁盘上表示文件以便有效访问？</li>
+<li>如何存储目录，以及如何处理分层路径名以查找它们所引用的文件？</li>
+<li>如何强制执行权限，以使一个用户无法修改或删除另一用户的文件？</li>
+<li>如何实现文件访问？例如，如何在中断处理程序和后台代码之间划分功能，以及这两个元素如何安全通信？</li>
+<li>在同时访问多个文件时使用什么调度策略？</li>
+<li>如何将最近访问的文件数据缓存在内存中以减少磁盘访问次数？</li>
+<li>如何将各种不同的辅助存储设备（例如磁盘和闪存驱动器）合并到单个文件系统中？</li>
+</ul>
+</blockquote>
+<p>所有这些问题，以及更多的问题，都由 Unix 文件系统实现来解决。对于调用系统调用的程序员来说，它们是不可见的。多年来，Unix I&#x2F;O 接口的实现已经发生了根本的发展，但是五个基本内核调用并没有改变。</p>
+<p>深度模块的另一个示例是诸如 Go 或 Java 之类的语言中的垃圾收集器。这个模块根本没有接口。它在后台进行隐形操作以回收未使用的内存。由于将垃圾收集消除了用于释放对象的接口，因此向系统中添加垃圾回收实际上会缩小其总体接口。垃圾收集器的实现非常复杂，但是使用该语言的程序员无法发现这种复杂性。</p>
+<p>Deep modules such as Unix I&#x2F;O and garbage collectors provide powerful abstractions because they are easy to use, yet they hide significant implementation complexity.</p>
+<blockquote>
+<p>诸如 Unix I&#x2F;O 和垃圾收集器之类的深层模块提供了强大的抽象，因为它们易于使用，但隐藏了巨大的实现复杂性。</p>
+</blockquote>
+<h2 id="4-5-Shallow-modules-浅模块"><a href="#4-5-Shallow-modules-浅模块" class="headerlink" title="4.5 Shallow modules 浅模块"></a>4.5 Shallow modules 浅模块</h2><p>另一方面，浅层模块是其接口与其提供的功能相比相对复杂的模块。例如，实现链接列表的类很浅。操作链接列表不需要太多代码（插入或删除元素仅需几行），因此链接列表抽象不会隐藏很多细节。链接列表接口的复杂度几乎与其实现的复杂度一样高。浅类有时是不可避免的，但是它们在管理复杂性方面没有提供太多帮助。</p>
+<p>从管理复杂性的角度来看，此方法会使情况变得更糟，而不是更好。该方法不提供任何抽象，因为其所有功能都可以通过其接口看到。例如，调用者可能需要知道该属性将存储在 data 变量中。考虑接口并不比考虑完整实现简单。如果正确记录了该方法，则文档将比该方法的代码长。与调用方直接操作数据变量相比，调用该方法所花费的击键甚至更多。该方法增加了复杂性（以供开发人员学习的新界面的形式），但没有提供任何补偿。</p>
+<p>img Red Flag: Shallow Module img</p>
+<p>浅层模块是一个界面相对于其提供的功能而言复杂的模块。浅层模块在对抗复杂性方面无济于事，因为它们提供的好处（不必了解它们在内部如何工作）被学习和使用其接口的成本所抵消。小模块往往很浅。</p>
+<h2 id="4-6-Classitis"><a href="#4-6-Classitis" class="headerlink" title="4.6 Classitis"></a>4.6 Classitis</h2><p>不幸的是，深度类的价值在今天并未得到广泛认可。编程中的传统观点是，类应该小而不是深。经常告诉学生，班级设计中最重要的事情是将较大的班级分成较小的班级。对于方法，通常会给出相同的建议：“任何长于 N 行的方法都应分为多种方法”（N 可以低至 10）。这种方法导致了大量的浅类和方法，这增加了整体系统的复杂性。</p>
+<p>“班级应小”的极端做法是我称之为“类炎”的综合症，这是由于错误地认为“班级好，所以班级越多越好”。在遭受类共患的系统中，鼓励开发人员最小化每个新类的功能：如果您想要更多的功能，请引入更多的类。分类炎可能导致个别地简单的分类，但是却增加了整个系统的复杂性。小类不会贡献太多功能，因此必须有很多小类，每个小类都有自己的接口。这些接口的累积会在系统级别产生巨大的复杂性。小类也导致冗长的编程风格，这是由于每个类都需要样板。</p>
+<h2 id="4-7-Examples-Java-and-Unix-I-O-示例：Java-和-Unix-I-O"><a href="#4-7-Examples-Java-and-Unix-I-O-示例：Java-和-Unix-I-O" class="headerlink" title="4.7 Examples: Java and Unix I&#x2F;O 示例：Java 和 Unix I&#x2F;O"></a>4.7 Examples: Java and Unix I&#x2F;O 示例：Java 和 Unix I&#x2F;O</h2><p>如今，最常见的分类病实例之一是 Java 类库。Java 语言不需要很多小类，但是分类文化似乎已在 Java 编程社区中扎根。例如，要打开文件以便从文件中读取序列化的对象，必须创建三个不同的对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">FileInputStream</span> <span class="variable">fileStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(fileName);</span><br><span class="line"></span><br><span class="line"><span class="type">BufferedInputStream</span> <span class="variable">bufferedStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(fileStream);</span><br><span class="line"></span><br><span class="line"><span class="type">ObjectInputStream</span> <span class="variable">objectStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(bufferedStream);</span><br></pre></td></tr></table></figure>
+
+<p>FileInputStream 对象仅提供基本的 I&#x2F;O：它不能执行缓冲的 I&#x2F;O，也不能读取或写入序列化的对象。BufferedInputStream 对象将缓冲添加到 FileInputStream，而 ObjectInputStream 添加了读取和写入序列化对象的功能。一旦文件被打开，上面代码中的前两个对象 fileStream 和 bufferedStream 将永远不会被使用。以后的所有操作都使用 objectStream。</p>
+<p>特别令人烦恼（并且容易出错）的是，必须通过创建一个单独的 BufferedInputStream 对象来显式请求缓冲。如果开发人员忘记创建该对象，将没有缓冲，并且 I&#x2F;O 将变慢。也许 Java 开发人员会争辩说，并不是每个人都希望对文件 I&#x2F;O 使用缓冲，因此不应将其内置到基本机制中。他们可能会争辩说，最好分开保持缓冲，以便人们可以选择是否使用它。提供选择是好的，但是应该设计接口以使常见情况尽可能简单（请参阅第 6 页的公式）。几乎每个文件 I&#x2F;O 用户都希望缓冲，因此默认情况下应提供缓冲。对于不需要缓冲的少数情况，该库可以提供一种禁用它的机制。</p>
+<p>相反，Unix 系统调用的设计者使常见情况变得简单。例如，他们认识到顺序 I&#x2F;O 是最常见的，因此他们将其作为默认行为。使用 lseek 系统调用，随机访问仍然相对容易实现，但是仅执行顺序访问的开发人员无需了解该机制。如果一个界面具有许多功能，但是大多数开发人员只需要了解其中的一些功能，那么该界面的有效复杂性就是常用功能的复杂性。</p>
+<h2 id="4-8-Conclusion-结论"><a href="#4-8-Conclusion-结论" class="headerlink" title="4.8 Conclusion 结论"></a>4.8 Conclusion 结论</h2><p>通过将模块的接口与其实现分开，我们可以将实现的复杂性从系统的其余部分中隐藏出来。模块的用户只需要了解其接口提供的抽象。设计类和其他模块时，最重要的问题是使它们更深，以使它们具有适用于常见用例的简单接口，但仍提供重要的功能。这使隐藏的复杂性最大化。</p>
+<p>1 存在语言，主要是在研究社区中，在其中可以使用规范语言来正式描述方法或功能的整体行为。可以自动检查该规范以确保它与实现相匹配。一个有趣的问题是，这样的正式规范是否可以代替接口的非正式部分。我目前的观点是，用英语描述的界面比使用正式规范语言编写的界面对开发人员来说更直观和易于理解。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch4-%E6%A8%A1%E5%9D%97%E5%BA%94%E8%AF%A5%E6%98%AF%E6%B7%B1%E7%9A%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-软件设计的哲学-ch3-工作代码是不够的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -931,134 +1305,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-学习2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E5%AD%A6%E4%B9%A02/">学习方法论（2）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E5%AD%A6%E4%B9%A02/" class="archive-article-date">
-  	<time datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>flutter的动画抽象出了4个概念以及对应的抽象类，相当于用这4个构建了一个动画实现的模型和框架，各个类的职责分明，，易于理解和使用。这种抽象出基本模型，或者抽象类的实现方法是很多框架的基本思路,比如yaf，koa。它们用有限的类构建了一类运行方式。</p>
-<p>这可以总结成一种思维模型 行为构建，就是在高层次上去定义和构建业务运行的基本形式，分析和识别里面内在的行为和联系，要习惯用概念之间的联系去推理和分析。</p>
-<p>在平时阅读代码的过程中也要善于使用这种思维模型，总结和抽象本身没有这种抽象的代码。只有有过这种总结，才能真正吸收代码的思想和其中的技巧。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E5%AD%A6%E4%B9%A02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E5%AD%A6%E4%B9%A01/">学习方法论（1）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E5%AD%A6%E4%B9%A01/" class="archive-article-date">
-  	<time datetime="2020-06-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习技术点时，搞清楚这个技术的前因后果，这个技术为解决什么问题而产生的，现在能解决什么问题，是怎么实现的，如何使用，有没有副作用。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E5%AD%A6%E4%B9%A01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/34/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="page-number current">35</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/36/">Next &raquo;</a>
@@ -1167,11 +1413,67 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
+                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">EasyClaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">OpenClaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品分析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">AI agent 设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1219,11 +1521,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python 语言学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1235,11 +1541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
+                <a href="javascript:void(0)" class="js-tag color5">生活随想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生活随想</a>
+                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1279,19 +1585,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件创意</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">原子习惯</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">家庭</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件创意</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兄弟</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">家庭</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1300,6 +1610,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">定居天津的那些日子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">周报</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,58 +1670,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兄弟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
               </li>
             
             <div class="clearfix"></div>
