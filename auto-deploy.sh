@@ -14,6 +14,8 @@ cd "$ROOT"
 git add .
 
 # 3. 只上传新增和修改的文件
+cd ./public
+rm -rf ./.DS_Store
 scp -r ./* root@8.147.135.17:/usr/share/nginx/html/
 
 # 4. 上传后 git 提交所有变更
