@@ -4,10 +4,10 @@
  */
 
 :root {
-  --ac-primary: #2e8b57;
-  --ac-primary-dark: #21653f;
-  --ac-primary-darker: #1b5233;
-  --ac-text-muted: #6a737d;
+  --ac-primary: #f5f5f5;
+  --ac-primary-dark: #e1e0e0;
+  --ac-primary-darker: #c9c8c8;
+  --ac-text-muted: #f9fafb;
   --ac-blockquote-border: #dfe2e5;
   --ac-code-bg: #f6f8fa;
 }
