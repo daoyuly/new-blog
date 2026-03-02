@@ -335,3 +335,4 @@ AI 编程的兴起，实际上是在迫使我们思考：
 - 《代码大全》
 - 《程序员修炼之道》
 - Michael Polanyi, *The Tacit Dimension* (1966)
+<!-- 测试 rsync 部署 -->
