@@ -151,6 +151,165 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ADP- C - Quick overview of Agentic Frameworks" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-%20C%20-%20Quick%20overview%20of%20Agentic%20Frameworks/">Agentic Design Patterns - Appendix C - Quick overview of Agentic Frameworks</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-%20C%20-%20Quick%20overview%20of%20Agentic%20Frameworks/" class="archive-article-date">
+  	<time datetime="2025-11-03T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="附录-C-Agentic-框架快速概览"><a href="#附录-C-Agentic-框架快速概览" class="headerlink" title="附录 C - Agentic 框架快速概览"></a>附录 C - Agentic 框架快速概览</h1><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><p>LangChain 是一个用于开发由大语言模型驱动的应用程序的框架。其核心优势在于 LangChain 表达式语言（LCEL），它允许你将组件通过”管道”操作符连接成链。这种设计创建了清晰的线性序列，其中每一步的输出自动成为下一步的输入。该框架专为有向无环图（DAG）工作流构建，意味着处理流程单向流动且无循环。</p>
+<p>适用场景：</p>
+<ul>
+<li>简单 RAG：检索文档，构建提示，从 LLM 获取答案。</li>
+<li>文本摘要：接收用户文本，输入至摘要提示，返回摘要结果。</li>
+<li>数据提取：从文本块中提取结构化数据（如 JSON 格式）。</li>
+</ul>
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 一个简单的 LCEL 链概念示例</span></span><br><span class="line"><span class="comment">## （此为示意性代码，展示流程结构）</span></span><br><span class="line">chain = prompt | model | output_parse</span><br></pre></td></tr></table></figure>
+
+<h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><p>LangGraph 是构建于 LangChain 之上的库，专为处理更高级的 Agentic 系统设计。它允许你将工作流定义为包含节点（函数或 LCEL 链）和边（条件逻辑）的图结构。其主要优势在于支持循环创建，使应用程序能够循环执行、重试操作或以灵活顺序调用工具，直至任务完成。该库显式管理应用程序状态，状态在节点间传递并在整个流程中持续更新。</p>
+<p>适用场景：</p>
+<ul>
+<li>多 Agent 系统：监督 Agent 将任务路由至专业化工作 Agent，可能循环执行直至目标达成。</li>
+<li>规划与执行 Agent：Agent 制定计划，执行步骤，随后基于结果循环反馈以更新计划。</li>
+<li>人机协同：图结构可等待人工输入，再决定后续执行节点。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">LangChain</th>
+<th align="left">LangGraph</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">核心抽象</td>
+<td align="left">链（使用 LCEL）</td>
+<td align="left">节点图</td>
+</tr>
+<tr>
+<td align="left">工作流类型</td>
+<td align="left">线性（有向无环图）</td>
+<td align="left">循环（支持循环的图）</td>
+</tr>
+<tr>
+<td align="left">状态管理</td>
+<td align="left">通常单次运行无状态</td>
+<td align="left">显式且持久的状态对象</td>
+</tr>
+<tr>
+<td align="left">主要用途</td>
+<td align="left">简单、可预测的序列</td>
+<td align="left">复杂、动态、有状态的 Agent</td>
+</tr>
+</tbody></table>
+<h3 id="如何选择？"><a href="#如何选择？" class="headerlink" title="如何选择？"></a>如何选择？</h3><ul>
+<li>当应用程序具备清晰、可预测的线性步骤流程时，选择 LangChain。若你能定义从 A 到 B 再到 C 的直连过程而无需回环，则采用 LCEL 的 LangChain 是理想工具。</li>
+<li>当应用程序需进行推理、规划或循环操作时，选择 LangGraph。若你的 Agent 需使用工具、反思结果并可能尝试不同策略，则需借助 LangGraph 的循环和有状态特性。</li>
+</ul>
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 图状态</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">State</span>(<span class="title class_ inherited__">TypedDict</span>):</span><br><span class="line">    topic: <span class="built_in">str</span></span><br><span class="line">    joke: <span class="built_in">str</span></span><br><span class="line">    story: <span class="built_in">str</span></span><br><span class="line">    poem: <span class="built_in">str</span></span><br><span class="line">    combined_output: <span class="built_in">str</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 节点</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">call_llm_1</span>(<span class="params">state: State</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;第一次 LLM 调用以生成初始笑话&quot;&quot;&quot;</span></span><br><span class="line">    msg = llm.invoke(<span class="string">f&quot;Write a joke about <span class="subst">&#123;state[<span class="string">&#x27;topic&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;joke&quot;</span>: msg.content&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">call_llm_2</span>(<span class="params">state: State</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;第二次 LLM 调用以生成故事&quot;&quot;&quot;</span></span><br><span class="line">    msg = llm.invoke(<span class="string">f&quot;Write a story about <span class="subst">&#123;state[<span class="string">&#x27;topic&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;story&quot;</span>: msg.content&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">call_llm_3</span>(<span class="params">state: State</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;第三次 LLM 调用以生成诗歌&quot;&quot;&quot;</span></span><br><span class="line">    msg = llm.invoke(<span class="string">f&quot;Write a poem about <span class="subst">&#123;state[<span class="string">&#x27;topic&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;poem&quot;</span>: msg.content&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">aggregator</span>(<span class="params">state: State</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;将笑话和故事组合成单个输出&quot;&quot;&quot;</span></span><br><span class="line">    combined = <span class="string">f&quot;Here&#x27;s a story, joke, and poem about <span class="subst">&#123;state[<span class="string">&#x27;topic&#x27;</span>]&#125;</span>!\n\n&quot;</span></span><br><span class="line">    combined += <span class="string">f&quot;STORY:\n<span class="subst">&#123;state[<span class="string">&#x27;story&#x27;</span>]&#125;</span>\n\n&quot;</span></span><br><span class="line">    combined += <span class="string">f&quot;JOKE:\n<span class="subst">&#123;state[<span class="string">&#x27;joke&#x27;</span>]&#125;</span>\n\n&quot;</span></span><br><span class="line">    combined += <span class="string">f&quot;POEM:\n<span class="subst">&#123;state[<span class="string">&#x27;poem&#x27;</span>]&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;combined_output&quot;</span>: combined&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 构建工作流</span></span><br><span class="line">parallel_builder = StateGraph(State)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加节点</span></span><br><span class="line">parallel_builder.add_node(<span class="string">&quot;call_llm_1&quot;</span>, call_llm_1)</span><br><span class="line">parallel_builder.add_node(<span class="string">&quot;call_llm_2&quot;</span>, call_llm_2)</span><br><span class="line">parallel_builder.add_node(<span class="string">&quot;call_llm_3&quot;</span>, call_llm_3)</span><br><span class="line">parallel_builder.add_node(<span class="string">&quot;aggregator&quot;</span>, aggregator)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加边来连接节点</span></span><br><span class="line">parallel_builder.add_edge(START, <span class="string">&quot;call_llm_1&quot;</span>)</span><br><span class="line">parallel_builder.add_edge(START, <span class="string">&quot;call_llm_2&quot;</span>)</span><br><span class="line">parallel_builder.add_edge(START, <span class="string">&quot;call_llm_3&quot;</span>)</span><br><span class="line">parallel_builder.add_edge(<span class="string">&quot;call_llm_1&quot;</span>, <span class="string">&quot;aggregator&quot;</span>)</span><br><span class="line">parallel_builder.add_edge(<span class="string">&quot;call_llm_2&quot;</span>, <span class="string">&quot;aggregator&quot;</span>)</span><br><span class="line">parallel_builder.add_edge(<span class="string">&quot;call_llm_3&quot;</span>, <span class="string">&quot;aggregator&quot;</span>)</span><br><span class="line">parallel_builder.add_edge(<span class="string">&quot;aggregator&quot;</span>, END)</span><br><span class="line"></span><br><span class="line">parallel_workflow = parallel_builder.<span class="built_in">compile</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 显示工作流</span></span><br><span class="line">display(Image(parallel_workflow.get_graph().draw_mermaid_png()))</span><br><span class="line"></span><br><span class="line"><span class="comment">## 调用</span></span><br><span class="line">state = parallel_workflow.invoke(&#123;<span class="string">&quot;topic&quot;</span>: <span class="string">&quot;cats&quot;</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(state[<span class="string">&quot;combined_output&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<p>这段代码定义并运行了一个并行操作的 LangGraph 工作流。其主要目的是同时生成关于给定主题的笑话、故事和诗歌，然后将它们组合成单个格式化的文本输出。</p>
+<h2 id="Google’s-ADK"><a href="#Google’s-ADK" class="headerlink" title="Google’s ADK"></a>Google’s ADK</h2><p>Google 的 Agent 开发工具包（ADK）提供了一个高级、结构化的框架，用于构建和部署由多个交互式 AI Agent 组成的应用程序。与 LangChain 和 LangGraph 相比，它提供了一个更具指导性和生产就绪的系统来编排 Agent 协作，而非提供 Agent 内部逻辑的基础构建块。</p>
+<p>LangChain 在最基础层面运作，提供组件和标准化接口以创建操作序列，例如调用模型并解析其输出。LangGraph 通过引入更灵活强大的控制流对此进行扩展；它将 Agent 工作流视为有状态图。使用 LangGraph，开发者显式定义节点（函数或工具）和边（决定执行路径）。这种图结构支持复杂循环推理，系统可循环执行、重试任务，并基于节点间传递的显式管理状态对象做出决策。它为开发者提供了对单个 Agent 认知过程的细粒度控制，或从第一性原理构建多 Agent 系统的能力。</p>
+<p>Google 的 ADK 抽象了大部分此类低级图构建工作。ADK 不要求开发者定义每个节点和边，而是为多 Agent 交互提供预构建的架构模式。例如，ADK 包含 SequentialAgent 或 ParallelAgent 等内置 Agent 类型，它们自动管理不同 Agent 间的控制流。其架构围绕 Agent”团队”概念设计，通常由主 Agent 将任务委派给专业化子 Agent。状态和会话管理由框架更隐式地处理，提供了比 LangGraph 显式状态传递更连贯但精细度稍低的方法。因此，若将 LangGraph 比作提供详细工具以设计单个机器人或团队复杂接线的工具箱，Google 的 ADK 则如同一个工厂装配线，旨在构建和管理一支已具备协同工作能力的机器人舰队。</p>
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.tools <span class="keyword">import</span> google_Search</span><br><span class="line"></span><br><span class="line">dice_agent = LlmAgent(</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    name=<span class="string">&quot;question_answer_agent&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;一个能回答问题的有用助手 Agent。&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;&quot;&quot;使用谷歌搜索响应查询&quot;&quot;&quot;</span>,</span><br><span class="line">    tools=[google_search],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>此代码创建了一个搜索增强型 Agent。当该 Agent 收到问题时，不会仅依赖其既有知识。相反，遵循其指令，它将使用 Google 搜索工具从网络查找相关实时信息，并据此构建答案。</p>
+<p>Crew.AI</p>
+<p>CrewAI 提供了一个编排框架，通过聚焦协作角色与结构化流程来构建多 Agent 系统。它在比基础工具包更高的抽象层级运作，提供模拟人类团队的概念模型。开发者无需将逻辑细粒度流程定义为图，而是定义参与者及其任务分配，由 CrewAI 管理其交互。</p>
+<p>该框架核心组件包括 Agent、Task 和 Crew。Agent 不仅由功能定义，还通过角色、目标和背景故事等角色特征来定义，这些特征指导其行为与沟通风格。Task 是具备明确描述和预期输出的离散工作单元，分配给特定 Agent。Crew 是包含 Agent 和 Task 列表的协调单元，执行预定义的 Process。此流程决定工作流模式，通常为顺序型（一个任务的输出成为下一任务的输入）或层级型（经理型 Agent 委派任务并协调其他 Agent 间的工作流）。</p>
+<p>与其他框架相比，CrewAI 定位独特。它脱离了 LangGraph 的低层级、显式状态管理与控制流（后者要求开发者连接每个节点与条件边）。开发者不是构建状态机，而是设计团队章程。尽管 Google 的 ADK 为整个 Agent 生命周期提供了全面、生产就绪的平台，CrewAI 则专注于 Agent 协作逻辑与专家团队模拟。</p>
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@crew</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">crew</span>(<span class="params">self</span>) -&gt; Crew:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;创建研究团队&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> Crew(</span><br><span class="line">        agents=<span class="variable language_">self</span>.agents,</span><br><span class="line">        tasks=<span class="variable language_">self</span>.tasks,</span><br><span class="line">        process=Process.sequential,</span><br><span class="line">        verbose=<span class="literal">True</span>,</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<p>此代码为 AI Agent 组配置了顺序工作流，Agent 按特定顺序处理任务列表，并启用详细日志以监控进度。</p>
+<p>其他 Agent 开发框架</p>
+<p><strong>Microsoft AutoGen</strong>：AutoGen 是一个以对话方式编排多 Agent 解决任务为核心的框架。其架构使具备不同能力的 Agent 能够交互，支持复杂问题分解与协作解决。AutoGen 主要优势在于其灵活的对话驱动方法，可应对动态复杂的多 Agent 交互。然而，这种对话范式可能导致执行路径预测性降低，且需复杂提示工程以确保任务高效收敛。</p>
+<p><strong>LlamaIndex</strong>：LlamaIndex 本质上是数据框架，旨在连接大语言模型与外部及私有数据源。它擅长构建复杂的数据摄取与检索管道，这对创建能执行 RAG 的知识型 Agent 至关重要。尽管其数据索引与查询能力对构建情境感知 Agent 极为强大，但与 Agent 优先框架相比，其在复杂 agentic 控制流和多 Agent 编排方面的原生工具较少。当核心技术挑战为数据检索与综合时，LlamaIndex 是最佳选择。</p>
+<p><strong>Haystack</strong>：Haystack 是专为构建语言模型驱动的可扩展、生产就绪搜索系统而设计的开源框架。其架构由模块化、可互操作的节点组成，这些节点构成文档检索、问答和摘要的管道。Haystack 主要优势在于其对大规模信息检索任务性能与可扩展性的专注，使其适用于企业级应用。潜在权衡在于，其针对搜索管道优化的设计在实现高度动态和创造性 agentic 行为时可能较为僵化。</p>
+<p><strong>MetaGPT</strong>：MetaGPT 通过基于预定义标准操作程序（SOP）分配角色和任务来实现多 Agent 系统。该框架将 Agent 协作结构化以模拟软件开发公司，Agent 承担产品经理或工程师等角色完成复杂任务。这种 SOP 驱动方法产生高度结构化且连贯的输出，对代码生成等专业领域是显著优势。该框架主要局限在于其高度专业化，使其在核心设计范畴外的通用 agentic 任务适应性较弱。</p>
+<p><strong>SuperAGI</strong>：SuperAGI 是旨在为自主 Agent 提供完整生命周期管理系统的开源框架。它包括 Agent 配置、监控和图形界面等功能，旨在提升 Agent 执行可靠性。关键优势在于其对生产就绪性的关注，具备处理循环等常见故障模式的内置机制，并提供 Agent 性能可观测性。潜在缺点在于，与更轻量级库框架相比，其全面平台方法可能引入更多复杂性与开销。</p>
+<p><strong>Semantic Kernel</strong>：由 Microsoft 开发，Semantic Kernel 是通过”插件”和”规划器”系统将大语言模型与传统编程代码集成的 SDK。它允许 LLM 调用原生函数并编排工作流，有效将模型视为大型软件应用中的推理引擎。其主要优势是与现有企业代码库（尤其在 .NET 和 Python 环境）的无缝集成。其插件与规划器架构的概念开销可能带来比更直接 Agent 框架更陡峭的学习曲线。</p>
+<p><strong>Strands Agents</strong>：AWS 的轻量级灵活 SDK，采用模型驱动方法构建和运行 AI Agent。其设计简洁且可扩展，支持从基础对话助手到复杂多 Agent 自主系统的各类场景。该框架与模型无关，广泛支持多种 LLM 提供商，并包含与 MCP 的原生集成以便轻松访问外部工具。其核心优势是简洁性与灵活性，提供易于上手的可定制 Agent 循环。潜在权衡在于，其轻量级设计意味着开发者可能需要构建更多周边运营基础设施（如高级监控或生命周期管理系统），而更全面框架可能提供开箱即用功能。</p>
+<p>结论</p>
+<p>Agentic 框架生态提供了多样化工具，涵盖从定义 Agent 逻辑的低级库到编排多 Agent 协作的高级平台。在基础层，LangChain 支持简单线性工作流，而 LangGraph 引入有状态循环图以实现更复杂推理。如 CrewAI 和 Google ADK 等高级框架将重心转向编排具预定义角色的 Agent 团队，而 LlamaIndex 等其他框架则专注数据密集型应用。这种多样性为开发者带来了基于图系统的细粒度控制与更具指导性平台的简化开发之间的核心权衡。因此，框架选择取决于应用需求：简单序列、动态推理循环还是受管专家团队。最终，这一不断演进的技术生态系统使开发者能通过选择项目所需的精确抽象级别，构建日益复杂的 AI 系统。</p>
+<p>参考文献</p>
+<ol>
+<li>LangChain, <a target="_blank" rel="noopener" href="https://www.langchain.com/">https://www.langchain.com/</a>   </li>
+<li>LangGraph, <a target="_blank" rel="noopener" href="https://www.langchain.com/langgraph">https://www.langchain.com/langgraph</a>   </li>
+<li>Google’s ADK, <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/">https://google.github.io/adk-docs/</a>   </li>
+<li>Crew.AI, <a target="_blank" rel="noopener" href="https://docs.crewai.com/en/introduction">https://docs.crewai.com/en/introduction</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-%20C%20-%20Quick%20overview%20of%20Agentic%20Frameworks/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ADP-B - AI Agentic Interactions_ From GUI to Real world environment" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1575,164 +1734,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/ADP-17_%20Reasoning%20Techniques/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ADP-16_ Resource-Aware Optimization" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-16_%20Resource-Aware%20Optimization/">Agentic Design Patterns - Chapter 16_ Resource-Aware Optimization</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-16_%20Resource-Aware%20Optimization/" class="archive-article-date">
-  	<time datetime="2025-10-21T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-16-章：资源感知优化"><a href="#第-16-章：资源感知优化" class="headerlink" title="第 16 章：资源感知优化"></a>第 16 章：资源感知优化</h1><p>资源感知优化使智能 Agent 能够在运行过程中动态监控和管理计算、时间和财务资源。这与简单的规划不同，后者主要关注动作序列的安排。资源感知优化要求 Agent 就动作执行做出决策，以在指定的资源预算内达成目标或优化效率。这涉及在更准确但昂贵的模型与更快速、成本更低的模型之间进行权衡，或者决定是否分配额外的计算资源以获得更精细的响应，还是返回更快但细节较少的答案。</p>
-<p>例如，考虑一个被指派为金融分析师分析大型数据集的 Agent。如果分析师需要立即获得初步报告，Agent 可能会使用更快、更经济的模型来快速总结关键趋势。然而，如果分析师需要高度准确的预测用于关键投资决策，并且有更充裕的预算和时间，Agent 将分配更多资源来利用功能更强、速度较慢但更精确的预测模型。此类别中的一个关键策略是回退机制，它在首选模型因过载或受限而不可用时充当保障。为确保优雅降级，系统会自动切换到默认或更经济的模型，保持服务连续性而非完全失败。</p>
-<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>实际应用场景包括：</p>
-<ul>
-<li><strong>成本优化的 LLM 使用</strong>：Agent 根据预算约束，决定是对复杂任务使用大型、昂贵的 LLM，还是对简单查询使用更小、更经济的 LLM。</li>
-<li><strong>延迟敏感操作</strong>：在实时系统中，Agent 选择更快但可能不够全面的推理路径以确保及时响应。</li>
-<li><strong>能源效率</strong>：对于部署在边缘设备或电力受限环境中的 Agent，优化其处理过程以延长电池寿命。</li>
-<li><strong>服务可靠性回退</strong>：当主要选择不可用时，Agent 自动切换到备用模型，确保服务连续性和优雅降级。</li>
-<li><strong>数据使用管理</strong>：Agent 选择摘要数据检索而非完整数据集下载，以节省带宽或存储空间。</li>
-<li><strong>自适应任务分配</strong>：在多 Agent 系统中，Agent 根据其当前计算负载或可用时间自行分配任务。</li>
-</ul>
-<h2 id="实践代码示例"><a href="#实践代码示例" class="headerlink" title="实践代码示例"></a>实践代码示例</h2><p>一个用于回答用户问题的智能系统可以评估每个问题的难度。对于简单查询，它使用成本效益高的语言模型，如 Gemini Flash。对于复杂查询，会考虑更强大但更昂贵的语言模型（如 Gemini Pro）。使用更强大模型的决定还取决于资源可用性，特别是预算和时间约束。该系统能够动态选择合适的模型。</p>
-<p>例如，考虑一个使用分层 Agent 构建的旅行规划器。高级规划（涉及理解用户的复杂请求，将其分解为多步骤行程，并做出逻辑决策）将由像 Gemini Pro 这样复杂且更强大的 LLM 管理。这是需要深入理解上下文和推理能力的”规划器”Agent。</p>
-<p>然而，一旦计划制定完成，其中的各个任务（如查询航班价格、检查酒店可用性或查找餐厅评论）本质上是简单的、重复的网络查询。这些”工具函数调用”可以由更快、更经济的模型（如 Gemini Flash）执行。这样就容易理解为什么经济模型可用于这些直接的网络搜索，而复杂的规划阶段需要更高级模型的更强智能来确保连贯且逻辑合理的旅行计划。</p>
-<p>Google 的 ADK 通过其多 Agent 架构支持这种方法，允许构建模块化和可扩展的应用程序。不同的 Agent 可以处理专门的任务。模型灵活性使得可以直接使用各种 Gemini 模型，包括 Gemini Pro 和 Gemini Flash，或通过 LiteLLM 集成其他模型。ADK 的编排能力支持动态、LLM 驱动的路由以实现自适应行为。内置的评估功能允许系统评估 Agent 性能，可用于系统改进（参见评估和监控章节）。</p>
-<p>接下来，我们将定义两个具有相同设置但使用不同模型和成本的 Agent。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 概念性的类 Python 结构，非可运行代码</span></span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> Agent</span><br><span class="line"><span class="comment">## from google.adk.models.lite_llm import LiteLlm # 如果使用 ADK 默认 Agent 不直接支持的模型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用更昂贵的 Gemini Pro 2.5 的 Agent</span></span><br><span class="line">gemini_pro_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;GeminiProAgent&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.5-pro&quot;</span>, <span class="comment"># 如果实际模型名称不同，这是占位符</span></span><br><span class="line">    description=<span class="string">&quot;一个用于复杂查询的高能力Agent。&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;您是一个专门解决复杂问题的专家助手。&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用更便宜的 Gemini Flash 2.5 的 Agent</span></span><br><span class="line">gemini_flash_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;GeminiFlashAgent&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.5-flash&quot;</span>, <span class="comment"># 如果实际模型名称不同，这是占位符</span></span><br><span class="line">    description=<span class="string">&quot;一个用于简单查询的快速高效Agent。&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;您是一个处理简单问题的快速助手。&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>路由器 Agent 可以基于简单的指标（如查询长度）引导查询，其中较短的查询转到较便宜的模型，较长的查询转到更强大的模型。然而，更复杂的路由器 Agent 可以利用 LLM 或 ML 模型来分析查询的细微差别和复杂性。这个 LLM 路由器可以确定哪个下游语言模型最合适。例如，请求事实回忆的查询被路由到 Flash 模型，而需要深入分析的复杂查询被路由到 Pro 模型。</p>
-<p>优化技术可以进一步增强 LLM 路由器的有效性。提示调优涉及精心设计提示词以指导路由器 LLM 做出更好的路由决策。在查询及其最优模型选择的数据集上微调 LLM 路由器可提高其准确性和效率。这种动态路由能力在响应质量和成本效益之间取得平衡。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 概念性的类 Python 结构，非可运行代码</span></span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> Agent, BaseAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.events <span class="keyword">import</span> Event</span><br><span class="line"><span class="keyword">from</span> google.adk.agents.invocation_context <span class="keyword">import</span> InvocationContext</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">QueryRouterAgent</span>(<span class="title class_ inherited__">BaseAgent</span>):</span><br><span class="line">    name: <span class="built_in">str</span> = <span class="string">&quot;QueryRouter&quot;</span></span><br><span class="line">    description: <span class="built_in">str</span> = <span class="string">&quot;根据复杂性将用户查询路由到适当的LLM Agent。&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">_run_async_impl</span>(<span class="params">self, context: InvocationContext</span>) -&gt; AsyncGenerator[Event, <span class="literal">None</span>]:</span><br><span class="line">        user_query = context.current_message.text <span class="comment"># 假设文本输入</span></span><br><span class="line">        query_length = <span class="built_in">len</span>(user_query.split()) <span class="comment"># 简单指标：单词数</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> query_length &lt; <span class="number">20</span>: <span class="comment"># 示例阈值，用于简单性与复杂性的区分</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;Routing to Gemini Flash Agent for short query (length: <span class="subst">&#123;query_length&#125;</span>)&quot;</span>)</span><br><span class="line">            <span class="comment"># 在真实的 ADK 设置中，您会使用 &#x27;transfer_to_agent&#x27; 或直接调用</span></span><br><span class="line">            <span class="comment"># 为了演示，我们将模拟一个调用并产生其响应</span></span><br><span class="line">            response = <span class="keyword">await</span> gemini_flash_agent.run_async(context.current_message)</span><br><span class="line">            <span class="keyword">yield</span> Event(author=<span class="variable language_">self</span>.name, content=<span class="string">f&quot;Flash Agent processed: <span class="subst">&#123;response&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;Routing to Gemini Pro Agent for long query (length: <span class="subst">&#123;query_length&#125;</span>)&quot;</span>)</span><br><span class="line">            response = <span class="keyword">await</span> gemini_pro_agent.run_async(context.current_message)</span><br><span class="line">            <span class="keyword">yield</span> Event(author=<span class="variable language_">self</span>.name, content=<span class="string">f&quot;Pro Agent processed: <span class="subst">&#123;response&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>批评 Agent 评估语言模型的响应，提供具有多种功能的反馈。对于自我纠正，它识别错误或不一致，促使回答 Agent 改进其输出以提高质量。它还系统地评估响应以进行性能监控，跟踪准确性和相关性等指标，用于优化。</p>
-<p>此外，其反馈可以为强化学习或微调提供信号；例如，持续识别 Flash 模型响应不足可以改进路由器 Agent 的逻辑。虽然不直接管理预算，批评 Agent 通过识别次优路由选择（例如将简单查询定向到 Pro 模型或将复杂查询定向到 Flash 模型，导致结果不佳）来间接管理预算。这为改进资源分配和节约成本的调整提供了依据。</p>
-<p>批评 Agent 可以配置为仅审查回答 Agent 生成的文本，或同时审查原始查询和生成的文本，从而能够全面评估响应与初始问题的一致性。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CRITIC_SYSTEM_PROMPT = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">您是**批评 Agent**，作为我们协作研究助手系统的质量保证部门。您的主要功能是**细致审查和质疑**来自研究 Agent 的信息，确保**准确性、完整性和无偏见的呈现**。您的职责包括：</span></span><br><span class="line"><span class="string">* **评估研究发现**的事实正确性、全面性和潜在倾向。</span></span><br><span class="line"><span class="string">* **识别任何缺失数据**或推理中的不一致。</span></span><br><span class="line"><span class="string">* **提出关键问题**以改进或扩展当前理解。</span></span><br><span class="line"><span class="string">* **提供建设性建议**以增强或探索不同角度。</span></span><br><span class="line"><span class="string">* **验证最终输出是否全面**且平衡。</span></span><br><span class="line"><span class="string">所有批评必须是建设性的。您的目标是加强研究，而非否定它。清晰组织您的反馈，突出需要修订的具体要点。您的首要目标是确保最终研究产品达到尽可能高的质量标准。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>批评 Agent 基于预定义的系统提示词运行，该提示词概述其角色、职责和反馈方法。为此 Agent 设计良好的提示词必须清楚地确立其作为评估者的功能。它应指定批评重点领域，并强调提供建设性反馈而不仅仅是拒绝。提示词还应鼓励识别优势和弱点，并且必须指导 Agent 如何构建和呈现其反馈。</p>
-<h2 id="使用-OpenAI-的实践代码"><a href="#使用-OpenAI-的实践代码" class="headerlink" title="使用 OpenAI 的实践代码"></a>使用 OpenAI 的实践代码</h2><p>该系统使用资源感知优化策略来高效处理用户查询。它首先将每个查询分类为三个类别之一，以确定最合适和最具成本效益的处理路径。这种方法避免在简单请求上浪费计算资源，同时确保复杂查询获得必要的关注。三个类别是：</p>
-<ul>
-<li>simple：用于可以直接回答而无需复杂推理或外部数据的简单问题。</li>
-<li>reasoning：用于需要逻辑推理或多步骤思考过程的查询，这些查询被路由到更强大的模型。</li>
-<li>internet_search：用于需要当前信息的问题，会自动触发 Google 搜索以提供最新答案。</li>
-</ul>
-<p>代码采用 MIT 许可证，可在 Github 上获取：(<a target="_blank" rel="noopener" href="https://github.com/mahtabsyed/21-Agentic-Patterns/blob/main/16_Resource_Aware_Opt_LLM_Reflection_v2.ipynb">https://github.com/mahtabsyed/21-Agentic-Patterns/blob/main/16_Resource_Aware_Opt_LLM_Reflection_v2.ipynb</a>)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## MIT License</span></span><br><span class="line"><span class="comment">## Copyright (c) 2025 Mahtab Syed</span></span><br><span class="line"><span class="comment">## https://www.linkedin.com/in/mahtabsyed/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI</span><br><span class="line"></span><br><span class="line"><span class="comment">## 加载环境变量</span></span><br><span class="line">load_dotenv()</span><br><span class="line"></span><br><span class="line">OPENAI_API_KEY = os.getenv(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br><span class="line">GOOGLE_CUSTOM_SEARCH_API_KEY = os.getenv(<span class="string">&quot;GOOGLE_CUSTOM_SEARCH_API_KEY&quot;</span>)</span><br><span class="line">GOOGLE_CSE_ID = os.getenv(<span class="string">&quot;GOOGLE_CSE_ID&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> OPENAI_API_KEY <span class="keyword">or</span> <span class="keyword">not</span> GOOGLE_CUSTOM_SEARCH_API_KEY <span class="keyword">or</span> <span class="keyword">not</span> GOOGLE_CSE_ID:</span><br><span class="line">    <span class="keyword">raise</span> ValueError(</span><br><span class="line">        <span class="string">&quot;Please set OPENAI_API_KEY, GOOGLE_CUSTOM_SEARCH_API_KEY, and GOOGLE_CSE_ID in your .env file.&quot;</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">client = OpenAI(api_key=OPENAI_API_KEY)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 步骤 1：分类提示词 ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">classify_prompt</span>(<span class="params">prompt: <span class="built_in">str</span></span>) -&gt; <span class="built_in">dict</span>:</span><br><span class="line">    system_message = &#123;</span><br><span class="line">        <span class="string">&quot;role&quot;</span>: <span class="string">&quot;system&quot;</span>,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: (</span><br><span class="line">            <span class="string">&quot;You are a classifier that analyzes user prompts and returns one of three categories ONLY:\n\n&quot;</span></span><br><span class="line">            <span class="string">&quot;- simple\n&quot;</span></span><br><span class="line">            <span class="string">&quot;- reasoning\n&quot;</span></span><br><span class="line">            <span class="string">&quot;- internet_search\n\n&quot;</span></span><br><span class="line">            <span class="string">&quot;Rules:\n&quot;</span></span><br><span class="line">            <span class="string">&quot;- Use &#x27;simple&#x27; for direct factual questions that need no reasoning or current events.\n&quot;</span></span><br><span class="line">            <span class="string">&quot;- Use &#x27;reasoning&#x27; for logic, math, or multi-step inference questions.\n&quot;</span></span><br><span class="line">            <span class="string">&quot;- Use &#x27;internet_search&#x27; if the prompt refers to current events, recent data, or things not in your training data.\n\n&quot;</span></span><br><span class="line">            <span class="string">&quot;Respond ONLY with JSON like:\n&quot;</span></span><br><span class="line">            <span class="string">&#x27;&#123; &quot;classification&quot;: &quot;simple&quot; &#125;&#x27;</span></span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line">    user_message = &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: prompt&#125;</span><br><span class="line">    response = client.chat.completions.create(</span><br><span class="line">        model=<span class="string">&quot;gpt-4o&quot;</span>, messages=[system_message, user_message], temperature=<span class="number">1</span></span><br><span class="line">    )</span><br><span class="line">    reply = response.choices[<span class="number">0</span>].message.content</span><br><span class="line">    <span class="keyword">return</span> json.loads(reply)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 步骤 2：Google 搜索 ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">google_search</span>(<span class="params">query: <span class="built_in">str</span>, num_results=<span class="number">1</span></span>) -&gt; <span class="built_in">list</span>:</span><br><span class="line">    url = <span class="string">&quot;https://www.googleapis.com/customsearch/v1&quot;</span></span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">&quot;key&quot;</span>: GOOGLE_CUSTOM_SEARCH_API_KEY,</span><br><span class="line">        <span class="string">&quot;cx&quot;</span>: GOOGLE_CSE_ID,</span><br><span class="line">        <span class="string">&quot;q&quot;</span>: query,</span><br><span class="line">        <span class="string">&quot;num&quot;</span>: num_results,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, params=params)</span><br><span class="line">        response.raise_for_status()</span><br><span class="line">        results = response.json()</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;items&quot;</span> <span class="keyword">in</span> results <span class="keyword">and</span> results[<span class="string">&quot;items&quot;</span>]:</span><br><span class="line">            <span class="keyword">return</span> [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;title&quot;</span>: item.get(<span class="string">&quot;title&quot;</span>),</span><br><span class="line">                    <span class="string">&quot;snippet&quot;</span>: item.get(<span class="string">&quot;snippet&quot;</span>),</span><br><span class="line">                    <span class="string">&quot;link&quot;</span>: item.get(<span class="string">&quot;link&quot;</span>),</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> results[<span class="string">&quot;items&quot;</span>]</span><br><span class="line">            ]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;error&quot;</span>: <span class="built_in">str</span>(e)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 步骤 3：生成响应 ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_response</span>(<span class="params">prompt: <span class="built_in">str</span>, classification: <span class="built_in">str</span>, search_results=<span class="literal">None</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="keyword">if</span> classification == <span class="string">&quot;simple&quot;</span>:</span><br><span class="line">        model = <span class="string">&quot;gpt-4o-mini&quot;</span></span><br><span class="line">        full_prompt = prompt</span><br><span class="line">    <span class="keyword">elif</span> classification == <span class="string">&quot;reasoning&quot;</span>:</span><br><span class="line">        model = <span class="string">&quot;o4-mini&quot;</span></span><br><span class="line">        full_prompt = prompt</span><br><span class="line">    <span class="keyword">elif</span> classification == <span class="string">&quot;internet_search&quot;</span>:</span><br><span class="line">        model = <span class="string">&quot;gpt-4o&quot;</span></span><br><span class="line">        <span class="comment"># 将每个搜索结果字典转换为可读字符串</span></span><br><span class="line">        <span class="keyword">if</span> search_results:</span><br><span class="line">            search_context = <span class="string">&quot;\n&quot;</span>.join(</span><br><span class="line">                [</span><br><span class="line">                    <span class="string">f&quot;Title: <span class="subst">&#123;item.get(<span class="string">&#x27;title&#x27;</span>)&#125;</span>\nSnippet: <span class="subst">&#123;item.get(<span class="string">&#x27;snippet&#x27;</span>)&#125;</span>\nLink: <span class="subst">&#123;item.get(<span class="string">&#x27;link&#x27;</span>)&#125;</span>&quot;</span></span><br><span class="line">                    <span class="keyword">for</span> item <span class="keyword">in</span> search_results</span><br><span class="line">                ]</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            search_context = <span class="string">&quot;未找到搜索结果。&quot;</span></span><br><span class="line">            full_prompt = <span class="string">f&quot;&quot;&quot;使用以下网络结果回答用户查询：<span class="subst">&#123;search_context&#125;</span> 查询：<span class="subst">&#123;prompt&#125;</span>&quot;&quot;&quot;</span></span><br><span class="line">    response = client.chat.completions.create(</span><br><span class="line">        model=model,</span><br><span class="line">        messages=[&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: full_prompt&#125;],</span><br><span class="line">        temperature=<span class="number">1</span>,</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> response.choices[<span class="number">0</span>].message.content, model</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 步骤 4：组合路由器 ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">handle_prompt</span>(<span class="params">prompt: <span class="built_in">str</span></span>) -&gt; <span class="built_in">dict</span>:</span><br><span class="line">    classification_result = classify_prompt(prompt)</span><br><span class="line">    <span class="comment"># 删除或注释掉下一行以避免重复打印</span></span><br><span class="line">    <span class="comment"># print(&quot;\n🔍 Classification Result:&quot;, classification_result)</span></span><br><span class="line">    classification = classification_result[<span class="string">&quot;classification&quot;</span>]</span><br><span class="line">    search_results = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> classification == <span class="string">&quot;internet_search&quot;</span>:</span><br><span class="line">        search_results = google_search(prompt)</span><br><span class="line">        <span class="comment"># print(&quot;\n🔍 Search Results:&quot;, search_results)</span></span><br><span class="line">    answer, model = generate_response(prompt, classification, search_results)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;classification&quot;</span>: classification, <span class="string">&quot;response&quot;</span>: answer, <span class="string">&quot;model&quot;</span>: model&#125;</span><br><span class="line"></span><br><span class="line">test_prompt = <span class="string">&quot;What is the capital of Australia?&quot;</span></span><br><span class="line"><span class="comment">## test_prompt = &quot;Explain the impact of quantum computing on cryptography.&quot;</span></span><br><span class="line"><span class="comment">## test_prompt = &quot;When does the Australian Open 2026 start, give me full date?&quot;</span></span><br><span class="line">result = handle_prompt(test_prompt)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;🔍 Classification:&quot;</span>, result[<span class="string">&quot;classification&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;🧠 Model Used:&quot;</span>, result[<span class="string">&quot;model&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;🧠 Response:\n&quot;</span>, result[<span class="string">&quot;response&quot;</span>])</span><br></pre></td></tr></table></figure>
-
-<p>这段 Python 代码实现了一个提示词路由系统来回答用户问题。它首先从 .env 文件加载 OpenAI 和 Google 自定义搜索的必要 API 密钥。核心功能在于将用户的提示词分类为三个类别：simple、reasoning 或 internet search。专用函数利用 OpenAI 模型进行此分类步骤。如果提示词需要当前信息，则使用 Google 自定义搜索 API 执行 Google 搜索。另一个函数然后生成最终响应，根据分类选择适当的 OpenAI 模型。对于互联网搜索查询，搜索结果作为上下文提供给模型。主 handle_prompt 函数编排此工作流，在生成响应之前调用分类和搜索（如果需要）函数。它返回分类、使用的模型和生成的答案。该系统有效地将不同类型的查询引导到优化的方法以获得更好的响应。</p>
-<h2 id="实践代码示例（OpenRouter）"><a href="#实践代码示例（OpenRouter）" class="headerlink" title="实践代码示例（OpenRouter）"></a>实践代码示例（OpenRouter）</h2><p>OpenRouter 通过单个 API 端点提供对数百个 AI 模型的统一接口。它提供自动故障转移和成本优化，可通过您首选的 SDK 或框架轻松集成。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">response = requests.post(</span><br><span class="line">  url=<span class="string">&quot;https://openrouter.ai/api/v1/chat/completions&quot;</span>,</span><br><span class="line">  headers=&#123;</span><br><span class="line">    <span class="string">&quot;Authorization&quot;</span>: <span class="string">&quot;Bearer &lt;OPENROUTER_API_KEY&gt;&quot;</span>,</span><br><span class="line">    <span class="string">&quot;HTTP-Referer&quot;</span>: <span class="string">&quot;&lt;YOUR_SITE_URL&gt;&quot;</span>, <span class="comment"># 可选。用于 openrouter.ai 上排名的网站 URL。</span></span><br><span class="line">    <span class="string">&quot;X-Title&quot;</span>: <span class="string">&quot;&lt;YOUR_SITE_NAME&gt;&quot;</span>, <span class="comment"># 可选。用于 openrouter.ai 上排名的网站标题。</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data=json.dumps(&#123;</span><br><span class="line">    <span class="string">&quot;model&quot;</span>: <span class="string">&quot;openai/gpt-4o&quot;</span>, <span class="comment"># 可选</span></span><br><span class="line">    <span class="string">&quot;messages&quot;</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: <span class="string">&quot;What is the meaning of life?&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>这段代码片段使用 requests 库与 OpenRouter API 交互。它向聊天完成端点发送带有用户消息的 POST 请求。请求包括带有 API 密钥和可选网站信息的授权头。目标是从指定的语言模型（在本例中为”openai&#x2F;gpt-4o”）获得响应。</p>
-<p>OpenRouter 提供两种不同的方法来路由和确定用于处理给定请求的计算模型：</p>
-<ul>
-<li><strong>自动模型选择</strong>：此功能将请求路由到从一组精选可用模型中选择的优化模型。选择基于用户提示词的特定内容。最终处理请求的模型的标识符在响应的元数据中返回。</li>
-</ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;openrouter/auto&quot;</span><span class="punctuation">,</span></span><br><span class="line">  ... <span class="comment">// 其他参数</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>顺序模型回退</strong>：此机制通过允许用户指定分层模型列表来提供运营冗余。系统将首先尝试使用序列中指定的主要模型处理请求。如果此主要模型由于任何错误条件（如服务不可用、速率限制或内容过滤）而无法响应，系统将自动将请求重新路由到序列中的下一个指定模型。此过程继续，直到列表中的模型成功执行请求或列表耗尽。操作的最终成本和响应中返回的模型标识符将对应于成功完成计算的模型。</li>
-</ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;anthropic/claude-3.5-sonnet&quot;</span><span class="punctuation">,</span> <span class="string">&quot;gryphe/mythomax-l2-13b&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  ... <span class="comment">// 其他参数</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>OpenRouter 提供详细的排行榜（<a target="_blank" rel="noopener" href="https://openrouter.ai/rankings">https://openrouter.ai/rankings</a>），根据可用 AI 模型的累积 token 生成对其进行排名。它还提供来自不同提供商（ChatGPT、Gemini、Claude）的最新模型（见图 1）</p>
-<p><img src="/../images/chapter-16/image1.png"><br>图 1：OpenRouter 网站（<a target="_blank" rel="noopener" href="https://openrouter.ai/">https://openrouter.ai/</a>）</p>
-<h2 id="超越动态模型切换：Agent-资源优化的范围"><a href="#超越动态模型切换：Agent-资源优化的范围" class="headerlink" title="超越动态模型切换：Agent 资源优化的范围"></a>超越动态模型切换：Agent 资源优化的范围</h2><p>资源感知优化对于开发在现实世界约束内高效有效运行的智能 Agent 系统至关重要。让我们看看一些额外的技术：</p>
-<p><strong>动态模型切换</strong>是一项关键技术，涉及根据手头任务的复杂性和可用计算资源战略性地选择大语言模型。当面对简单查询时，可以部署轻量级、成本效益高的 LLM，而复杂的、多方面的问题则需要利用更复杂和资源密集型的模型。</p>
-<p><strong>自适应工具使用和选择</strong>确保 Agent 可以智能地从一套工具中进行选择，为每个特定子任务选择最合适和高效的工具，并仔细考虑 API 使用成本、延迟和执行时间等因素。这种动态工具选择通过优化外部 API 和服务的使用来提高整体系统效率。</p>
-<p><strong>上下文修剪和摘要</strong>在管理 Agent 处理的信息量方面发挥着至关重要的作用，通过智能摘要和选择性保留交互历史中最相关的信息，战略性地最小化提示词 token 计数并降低推理成本，防止不必要的计算开销。</p>
-<p><strong>主动资源预测</strong>涉及通过预测未来工作负载和系统需求来预测资源需求，这允许主动分配和管理资源，确保系统响应性并防止瓶颈。</p>
-<p><strong>成本敏感探索</strong>在多 Agent 系统中将优化考虑扩展到包括通信成本以及传统计算成本，影响 Agent 用于协作和共享信息的策略，旨在最小化整体资源支出。</p>
-<p><strong>节能部署</strong>专门针对资源严格约束的环境，旨在最小化智能 Agent 系统的能源足迹，延长运营时间并降低整体运行成本。</p>
-<p><strong>并行化和分布式计算感知</strong>利用分布式资源来增强 Agent 的处理能力和吞吐量，将计算工作负载分布到多台机器或处理器上，以实现更高的效率和更快的任务完成。</p>
-<p><strong>学习型资源分配策略</strong>引入学习机制，使 Agent 能够根据反馈和性能指标随时间调整和优化其资源分配策略，通过持续改进来提高效率。</p>
-<p><strong>优雅降级和回退机制</strong>确保智能 Agent 系统即使在资源约束严重时也能继续运行，尽管可能以降低的能力运行，优雅地降低性能并回退到替代策略以维持运营并提供基本功能。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong>：资源感知优化解决了在智能系统中管理计算、时间和财务资源消耗的挑战。基于 LLM 的应用程序可能既昂贵又缓慢，为每项任务选择最佳模型或工具通常效率低下。这在系统输出的质量与产生它所需的资源之间创建了基本权衡。如果没有动态管理策略，系统无法适应不同的任务复杂性或在预算和性能约束内运行。</p>
-<p><strong>为什么</strong>：标准化解决方案是构建一个智能监控和分配资源的 agentic 系统。此模式通常使用”路由器 Agent”首先对传入请求的复杂性进行分类。然后将请求转发到最合适的 LLM 或工具——对于简单查询使用快速、经济的模型，对于复杂推理使用更强大的模型。”批评 Agent”可以通过评估响应质量来进一步改进流程，提供反馈以随时间改进路由逻辑。这种动态、多 Agent 方法确保系统高效运行，在响应质量和成本效益之间取得平衡。</p>
-<p><strong>经验法则</strong>：在以下情况下使用此模式：在 API 调用或计算能力的严格财务预算下运行，构建对延迟敏感的应用程序（其中快速响应时间至关重要），在资源受限的硬件（如电池寿命有限的边缘设备）上部署 Agent，以编程方式平衡响应质量和运营成本之间的权衡，以及管理复杂的、多步骤的工作流（其中不同任务具有不同的资源需求）。</p>
-<p><strong>视觉摘要</strong></p>
-<p><strong><img src="/../images/chapter-16/image2.png"></strong></p>
-<p>图 2：资源感知优化设计模式</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
-<li>资源感知优化至关重要：智能 Agent 可以动态管理计算、时间和财务资源。根据实时约束和目标做出关于模型使用和执行路径的决策。</li>
-<li>可扩展性的多 Agent 架构：Google 的 ADK 提供多 Agent 框架，实现模块化设计。不同的 Agent（回答、路由、批评）处理特定任务。</li>
-<li>动态、LLM 驱动的路由：路由器 Agent 根据查询复杂性和预算将查询引导到语言模型（简单查询使用 Gemini Flash，复杂查询使用 Gemini Pro）。这优化了成本和性能。</li>
-<li>批评 Agent 功能：专用批评 Agent 提供自我纠正、性能监控和改进路由逻辑的反馈，增强系统有效性。</li>
-<li>通过反馈和灵活性进行优化：批评和模型集成灵活性的评估能力有助于自适应和自我改进的系统行为。</li>
-<li>其他资源感知优化：其他方法包括自适应工具使用和选择、上下文修剪和摘要、主动资源预测、多 Agent 系统中的成本敏感探索、节能部署、并行化和分布式计算感知、学习型资源分配策略、优雅降级和回退机制，以及关键任务的优先级排序。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>资源感知优化对于智能 Agent 的开发至关重要，使其能够在现实世界约束内高效运行。通过管理计算、时间和财务资源，Agent 可以实现最佳性能和成本效益。动态模型切换、自适应工具使用和上下文修剪等技术对于实现这些效率至关重要。高级策略，包括学习型资源分配策略和优雅降级，增强了 Agent 在不同条件下的适应性和弹性。将这些优化原则集成到 Agent 设计中对于构建可扩展、强大和可持续的 AI 系统至关重要。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Google’s Agent Development Kit (ADK): <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/">https://google.github.io/adk-docs/</a></li>
-<li>Gemini Flash 2.5 &amp; Gemini 2.5 Pro:  <a target="_blank" rel="noopener" href="https://aistudio.google.com/">https://aistudio.google.com/</a></li>
-<li>OpenRouter: <a target="_blank" rel="noopener" href="https://openrouter.ai/docs/quickstart">https://openrouter.ai/docs/quickstart</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-16_%20Resource-Aware%20Optimization/">展开全文 >></a>
         </p>
       
 

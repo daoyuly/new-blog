@@ -151,6 +151,245 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-shell学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/shell%E5%AD%A6%E4%B9%A0/">shell 学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/shell%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-01-30T04:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于shell使用的一些基本知识和实践，持续更新。</p>
+<ul>
+<li><p>#! 是一种约定的写法，指示使用何种解释器；</p>
+</li>
+<li><p>为什么使用.&#x2F;xx.sh的方式执行shell文件？<br>.&#x2F;xx.sh 指定目录会让系统从指定的目录寻找可以执行的文件。如果是xx.sh，系统会从PATH中寻找可执行文件；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文件查找在很多系统中有存在，可以对比理解：</span><br><span class="line">    1 npm的路径寻找过程</span><br><span class="line">    2 java中class loader的依赖查找</span><br></pre></td></tr></table></figure></li>
+<li><p>反引号 和 $() 可以表示命令替换</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NPM_LOC_1=`which npm`</span><br><span class="line">NPM_LOC_2=$(which npm)</span><br><span class="line"></span><br><span class="line">if [ $NPM_LOC_1 = $NPM_LOC_1 ]; then</span><br><span class="line">    echo &quot;相同&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x3D; 之后有空格，可以表示命令替换</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a= ls ./</span><br><span class="line">echo &quot;$a&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>运算符和操作数之间要有空格</p>
+</li>
+<li><p>一般性输出使用echo，需要一定格式的可以使用printf</p>
+</li>
+<li><p>特殊符号</p>
+<ul>
+<li>$#</li>
+<li>$@</li>
+<li>$*</li>
+</ul>
+</li>
+<li><p>注释</p>
+<ul>
+<li>单行注释   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br></pre></td></tr></table></figure></li>
+<li>多行注释  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br><span class="line"></span><br><span class="line">:&lt;&lt;EOF</span><br><span class="line">这是注释</span><br><span class="line">这是注释</span><br><span class="line">这是注释</span><br><span class="line">EOF</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>变量</p>
+<ul>
+<li><p>合法的变量名，数字，字母，下划线，不能以数字开头;</p>
+</li>
+<li><p>变量名和&#x3D;之间不能有空格;</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=`123`</span><br><span class="line">echo $&#123;name&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>类型：字符串, 数字, 数组</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;test&#x27;</span><br><span class="line">echo $&#123;name&#125;</span><br><span class="line">name=1</span><br><span class="line">echo $&#123;name&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>变量使用，使用${变量名}，花括号可以省略，最佳实践是不要去掉花花括号；</p>
+</li>
+<li><p>使用readonly可以定义只读变量</p>
+</li>
+<li><p>删除变量</p>
+</li>
+<li><p>变量作用域</p>
+<ul>
+<li>局部变量</li>
+<li>环境变量</li>
+<li>shell 变量</li>
+</ul>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>单引号和双引号的区别：单引号内都是字符串，双引号内可以包括变量的引用和转义字符</li>
+<li>拼接  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name1=&#x27;I love &#x27;</span><br><span class="line">name2=&#x27;shell&#x27;</span><br><span class="line">echo $&#123;name1&#125; $&#123;name2&#125; </span><br></pre></td></tr></table></figure></li>
+<li>长度  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;I love shell!&#x27;</span><br><span class="line">echo $&#123;#name&#125;</span><br></pre></td></tr></table></figure></li>
+<li>子串  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;I love shell!&#x27;</span><br><span class="line">echo $&#123;name:1:2&#125;</span><br></pre></td></tr></table></figure></li>
+<li>查找（有问题）  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;I love shell!&#x27;</span><br><span class="line">echo `expr index &quot;$&#123;name&#125;&quot; love`</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>数字</p>
+</li>
+<li><p>数组</p>
+<ul>
+<li>定义，使用圆括号包括，元素之间使用空格分隔   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br></pre></td></tr></table></figure></li>
+<li>赋值  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">list[5]=&#x27;c++&#x27;</span><br></pre></td></tr></table></figure></li>
+<li>使用   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">echo $&#123;list[1]&#125;</span><br></pre></td></tr></table></figure></li>
+<li>获取所有元素， 使用@或者*获取   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">echo $&#123;list[@]&#125;</span><br></pre></td></tr></table></figure></li>
+<li>获取长度   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">echo $&#123;#list[@]&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>参数传递</p>
+<ul>
+<li>使用$n获取传入的第n个参数</li>
+</ul>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;执行的文件名：$0&quot;;</span><br><span class="line">echo &quot;参数个数 $#&quot;;</span><br><span class="line">echo &quot;所有参数 $*&quot;;</span><br><span class="line">echo &quot;所有参数 $@&quot;</span><br><span class="line">echo &quot;第一个参数为：$1&quot;;</span><br><span class="line">echo &quot;第二个参数为：$2&quot;;</span><br><span class="line">echo &quot;第三个参数为：$3&quot;; </span><br><span class="line">echo &quot;脚本运行的当前进程ID号 $$&quot;</span><br><span class="line">echo &quot;后台运行的最后一个进程的ID号 $!&quot;</span><br><span class="line">echo &quot;显示Shell使用的当前选项 $-&quot;      </span><br></pre></td></tr></table></figure></li>
+<li><p>基本运算符</p>
+<ul>
+<li><p>数学运算一般使用其他命令，如expr</p>
+</li>
+<li><p>数学运算也可以使用如下符号</p>
+<ul>
+<li>$(())</li>
+<li>$[]  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line">c=$[$a+$b]</span><br><span class="line">d=$(($a+$b))</span><br><span class="line">echo &quot;$c&quot;</span><br><span class="line">echo &quot;$d&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>算术运算， 加，减，乘，除，赋值，取余，相等，不等</p>
+<ul>
+<li>条件表达式需要使用方括号，并且需要空格, [ $a &#x3D;&#x3D; $b ]</li>
+<li>算术运算符两边需要加空格</li>
+<li>乘号(*)前边必须加反斜杠()才能实现乘法运算；  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">val=`expr $a + $b`</span><br><span class="line">echo &quot; a + b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a / $b`</span><br><span class="line">echo &quot; a / b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a - $b`</span><br><span class="line">echo &quot; a - b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a \* $b`</span><br><span class="line">echo &quot; a * b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a % $b`</span><br><span class="line">echo &quot; a % b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">if [ $a == $b ]; then</span><br><span class="line">    echo &quot;a ==  b&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;a !=  b&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>关系运算</p>
+<ul>
+<li>只支持数字，不支持字符串</li>
+<li>-eq</li>
+<li>-ne</li>
+<li>-gt</li>
+<li>-lt</li>
+<li>-ge</li>
+<li>-le</li>
+</ul>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">if [ $a -eq $b ]; then</span><br><span class="line">    echo &quot;a -eq b: 相等&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -eq b: 不相等&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $a -ne $b ]; then</span><br><span class="line">    echo &quot;a -ne b: 不相等&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -ne b: 相等&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $a -gt $b ]; then</span><br><span class="line">    echo &quot;a -gt b: 大于&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -gt b: 小于等于&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $a -lt $b ]; then</span><br><span class="line">    echo &quot;a -lt b: 小于&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -lt b: 大于等于&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li>
+<li><p>布尔运算</p>
+<ul>
+<li>!</li>
+<li>-o</li>
+<li>-a  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">if [ $a -eq 1 -a $b -ne 2 ]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi  </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>逻辑运算符，使用双中括号</p>
+<ul>
+<li>&amp;&amp;</li>
+<li>||   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">if [[ $a -eq 1 &amp;&amp; $b -ne 2 ]]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi  </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>字符串运算</p>
+<ul>
+<li>&#x3D; 两个字符串是否相等</li>
+<li>!&#x3D; 两个字符串是否不相等</li>
+<li>-z 字符串长度是否是0</li>
+<li>-n 字符串长度是否不为0</li>
+<li>$ 字符串是否为空</li>
+<li>字符串比较可以使用双中括号，双中括号提供了针对字符串比较的高级特性，使用双中括号 [[ ]] 进行字符串比较时，可以把右边的项看做一个模式，故而可以在 [[ ]] 中使用正则表达式：</li>
+</ul>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[ &quot;$script_location&quot; != /* ]]</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=&quot;1&quot;</span><br><span class="line">b=&quot;2&quot;</span><br><span class="line"></span><br><span class="line">if [ -n $a ]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi </span><br></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=&quot;1&quot;</span><br><span class="line">b=&quot;2&quot;</span><br><span class="line"></span><br><span class="line">if [[ -n $a ]]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件测试运算</p>
+<ul>
+<li>-f file 判断文件是否是普通文件</li>
+<li>-r file 是否是可读文件</li>
+<li>-w file 是否是可写文件</li>
+<li>-x file 是否是可执行文件  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file=&quot;./test.sh&quot;</span><br><span class="line">if [ -f $file ]; then</span><br><span class="line">    echo &quot;$file 是普通文件&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>控制流</p>
+<ul>
+<li>if else fi</li>
+<li>if elif else fi</li>
+<li>for<ul>
+<li>in列表可以包含替换、字符串和文件名。</li>
+<li>command1 指任何有效的命令和语句  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for var in item1 item2 item3 ... itmeN; do</span><br><span class="line">    command1</span><br><span class="line">done</span><br><span class="line">for num in `ls .`; do</span><br><span class="line">    echo $&#123;num&#125;</span><br><span class="line">done</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>while  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while condition; do</span><br><span class="line">    command1</span><br><span class="line">done</span><br></pre></td></tr></table></figure></li>
+<li>case  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">case 值 in</span><br><span class="line">模式1)</span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    ;;</span><br><span class="line">模式2)</span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    ;;</span><br><span class="line">*)</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name=&quot;apple&quot;</span><br><span class="line">case $name in</span><br><span class="line">&quot;apple&quot;)</span><br><span class="line">    echo &quot;apple&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;bear&quot;)</span><br><span class="line">    echo &quot;bear&quot;</span><br><span class="line">;;</span><br><span class="line">esac    </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>函数</p>
+<ul>
+<li>函数定义  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">demofun() &#123;</span><br><span class="line">    echo &quot;demo&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">demofun</span><br></pre></td></tr></table></figure></li>
+<li>返回值 $?</li>
+<li>函数参数 $n</li>
+<li>调用 函数名  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add() &#123;</span><br><span class="line">    return `expr $1 + $2`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add 1 2</span><br><span class="line">echo &quot;add 1 2: $?&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>输入输出重定向</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell 语言学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/shell%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的扛疫" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -930,91 +1169,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/%E7%AE%A1%E7%90%86%E5%AD%A6%E6%95%88%E5%BA%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-北漂的日子（14）杂说" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8814%EF%BC%89%E6%9D%82%E8%AF%B4/">杂说-北漂的日子(十四)</a>
-    </h1>
-  
-
-        
-        <a href="/2015/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8814%EF%BC%89%E6%9D%82%E8%AF%B4/" class="archive-article-date">
-  	<time datetime="2015-10-28T17:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这个系列的日志越来越像年终总结了，其实偶尔该静下来反思一下自己，以前工作空闲的时候，经常静下来，想想自己从哪来的，要到哪里去？其实想也白想，当时改变不了什么。要改变早就改变了，改变不了的，那可能就是命了，我也奇怪，刚到而立之年，为啥这么消极。静下来想，其实不是消极，这是命。佛教中说千千世界里的因果，人的一生又何尝不是，从出生到死亡，其中五味陈杂之事，又何尝不是环环相扣，丝丝入骨呢。懒惰有懒惰的原因，失败有失败的起因，成功有成功的推力，幸福有幸福的缘由……</p>
-<p>改变不了啥，不等于这个事就像个屁一样，放了就放了，看清眼前的路，才能走的更明白，即便是路是崎岖无比，即便是泥泞曲折，我也想走的清楚一点。</p>
-<p>我自愧读书不多，常常自责，常常自省，不懂人生，不解人世。人的一生有像数学模型般规律吗？ 如果有，规律是啥，如果没有，我们又为何而生？为谁而活呢？滔滔历史长河，数千年的人类文明史，有没有总结出人活得规律？或许有，某些原因，前人不想留给后人。  人不可能两次踏进同一条河流。每个人有自己的独有的人生轨迹。历史的书写者不能关照每个人的生活，所以历史写不出人生的规律，由此观点看去，每个人都是独一无二的，你的活法，你的体验，都是独一无二，未来不会有人和你一样，过去也没有人和你耦合。</p>
-<p>于是，我想在自己个人这个层次上，我有自己的命，我有自己独特的人生，可是这不是人本身这个生物体处于舒适区间的条件，也不是人这个意识体处于自由的区间 。于是我即便这么想了自己的人生，我还时要明天早起上班 ，还是要挤地铁，当现实和理想拥挤时，就像你在拥挤的早高峰的路上，在地铁，是肉与肉的拥挤，在高速上是铁与铁的拥挤。在地铁上的拥挤更真切，因为这是让人这个生物体感到拥挤。于是理想与生物体的生存发生冲撞时，理想会投降。</p>
-<p>有人说，理想总会绽放，只要你去浇灌。我也时常对自己说，会的，其实想想，这是有点自欺欺人，越年长，对自己的认识越深刻广泛，越觉得自己的无知无能，在我在成长的每个里程碑上我都有留下了太多的遗憾，而这些遗憾里面有一些我突破不了的东西，我渐渐的明白有些东西争是争不来，因为在没上起跑线我就输了。</p>
-<p>到年关了，地铁里又能看见很多大包小包的农民工兄弟，看到他们我经常想起我初中时，我哥骑自行车带我去剪头发，问我一个问题：你长大了想干什么？我当时正好翻看了一下我哥带回家的一本大学教程《微观经济学》，我对里面的边际效应，最佳资源配置等似懂非懂的词非常感兴趣，我当时觉得经济可以改变我家的贫困面貌。于是我坐在自行车座后面，说，我要做经济学家，我要搞清楚为什么有人每天拼命却挣不着钱，有人每天很悠闲却很有钱，然后再找到办法，让这个社会不再有穷人……已经过去十几年了，这个理想其实一直在我心里。有人说，你去实现了这个理想啊，人生的每一步都是带着历史的包袱和与现实的妥协一步一步走来，这个过程会给我的性格带来各种影响，而这种影响又会在不同的现实条件中相互作用。这理想会越来越细化量化，我一直在努力。其实这些过程也可以用的这些农民工兄弟身上，他们走在在繁华的拥挤的街道，挤在早高峰的地铁里， 穿着习惯和周边的人格格不入，但是他们在奋力的改变自己，或者改变自己的子女，他们也有儿时的理想也许记得，也许忘却…..他们不需要我的同情，因为我也是他们中的一员，只是因为我的自卑，故意把自己弄得不像一个大包小包的农民工。</p>
-<p>我给自己前三十年做了个定位：穷人。穷者，缺乏财物，处境恶劣。人者，人也。处境如此，不堪其忧。 粗缯大布裹生涯，却腹无诗书。采菊南山下，只为付房租。与其说在奋斗，不如说是挣扎。人生苦短，何其寥寥。结合前面的思量，前三十年和父辈的后三十年是顺承的，富贵也好，穷困也罢，这是命，你改变逃脱的可能性不大。后三十年是运，是顺承自己的前三十年的积累和铺垫。我对自己的后三十年没有规划，但是我觉得我有很多值得我去做的事情，也许改变的不仅仅是我自己。</p>
-<p>续。</p>
-<p>投降的理想会这么样？我不知道。<br>熬夜的我，该怎么办？我知道。</p>
-<p>承。</p>
-<p>晚安。</p>
-<p>初：2015-10-29 01:44<br>查缺补漏：2015年12月28日00:56:07</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">北漂生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8814%EF%BC%89%E6%9D%82%E8%AF%B4/">展开全文 >></a>
         </p>
       
 

@@ -151,6 +151,212 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-v8学习-事件循环机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/v8%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6/">v8学习-事件循环机制</a>
+    </h1>
+  
+
+        
+        <a href="/2020/v8%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-07-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>V8 本身不实现事件循环</strong>。<br>事件循环属于 <strong>宿主环境</strong>（Node.js 的 <code>libuv</code>，浏览器的 event loop）。<br><strong>V8 只负责：执行 JS、管理 Call Stack、维护 Microtask Queue。</strong></p>
+<h2 id="一、完整角色拆分"><a href="#一、完整角色拆分" class="headerlink" title="一、完整角色拆分"></a>一、完整角色拆分</h2><h3 id="1️⃣-V8-引擎负责什么"><a href="#1️⃣-V8-引擎负责什么" class="headerlink" title="1️⃣ V8 引擎负责什么"></a>1️⃣ V8 引擎负责什么</h3><ul>
+<li><p>解析 JS → AST → 字节码 &#x2F; JIT</p>
+</li>
+<li><p>执行同步代码（Call Stack）</p>
+</li>
+<li><p><strong>管理 Microtask Queue</strong></p>
+<ul>
+<li><code>Promise.then</code></li>
+<li><code>queueMicrotask</code></li>
+<li><code>MutationObserver</code>（浏览器）</li>
+</ul>
+</li>
+</ul>
+<p>❌ 不负责：</p>
+<ul>
+<li>定时器</li>
+<li>I&#x2F;O</li>
+<li>网络</li>
+<li>事件循环调度</li>
+</ul>
+<hr>
+<h3 id="2️⃣-事件循环是谁实现的"><a href="#2️⃣-事件循环是谁实现的" class="headerlink" title="2️⃣ 事件循环是谁实现的"></a>2️⃣ 事件循环是谁实现的</h3><table>
+<thead>
+<tr>
+<th>环境</th>
+<th>实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node.js</td>
+<td><strong>libuv</strong></td>
+</tr>
+<tr>
+<td>浏览器</td>
+<td><strong>HTML Event Loop 规范</strong></td>
+</tr>
+</tbody></table>
+<p>它们调度 <strong>宏任务（task &#x2F; macrotask）</strong>，并在关键时机调用 V8 去：</p>
+<blockquote>
+<p>👉 清空 microtask queue</p>
+</blockquote>
+<hr>
+<h2 id="二、Node-js-事件循环的真实结构（libuv）"><a href="#二、Node-js-事件循环的真实结构（libuv）" class="headerlink" title="二、Node.js 事件循环的真实结构（libuv）"></a>二、Node.js 事件循环的真实结构（libuv）</h2><p>不是一句“宏任务 &#x2F; 微任务”能解释清楚的。</p>
+<h3 id="libuv-六个阶段（顺序固定）"><a href="#libuv-六个阶段（顺序固定）" class="headerlink" title="libuv 六个阶段（顺序固定）"></a>libuv 六个阶段（顺序固定）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌───────────────────────────┐</span><br><span class="line">│ timers                    │  setTimeout / setInterval</span><br><span class="line">├───────────────────────────┤</span><br><span class="line">│ pending callbacks         │  TCP errors etc</span><br><span class="line">├───────────────────────────┤</span><br><span class="line">│ idle, prepare             │</span><br><span class="line">├───────────────────────────┤</span><br><span class="line">│ poll                      │  I/O callbacks（最核心）</span><br><span class="line">├───────────────────────────┤</span><br><span class="line">│ check                     │  setImmediate</span><br><span class="line">├───────────────────────────┤</span><br><span class="line">│ close callbacks           │  socket.on(&#x27;close&#x27;)</span><br><span class="line">└───────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<p><strong>每一个阶段结束后：</strong></p>
+<blockquote>
+<p>👉 Node 会调用 V8，<strong>清空 Microtask Queue</strong></p>
+</blockquote>
+<hr>
+<h2 id="三、Microtask-的地位（比你想的更高）"><a href="#三、Microtask-的地位（比你想的更高）" class="headerlink" title="三、Microtask 的地位（比你想的更高）"></a>三、Microtask 的地位（比你想的更高）</h2><h3 id="Microtask-的本质"><a href="#Microtask-的本质" class="headerlink" title="Microtask 的本质"></a>Microtask 的本质</h3><ul>
+<li><strong>不是事件循环阶段</strong></li>
+<li>是 <strong>V8 的“执行尾钩子”</strong></li>
+</ul>
+<p>规则只有一条：</p>
+<blockquote>
+<p><strong>每次 JS 执行栈清空后，必须立刻清空 microtask</strong></p>
+</blockquote>
+<h3 id="Microtask-包括"><a href="#Microtask-包括" class="headerlink" title="Microtask 包括"></a>Microtask 包括</h3><ul>
+<li><code>Promise.then / catch / finally</code></li>
+<li><code>queueMicrotask</code></li>
+<li>（浏览器）<code>MutationObserver</code></li>
+</ul>
+<h3 id="Node-js-额外插队机制"><a href="#Node-js-额外插队机制" class="headerlink" title="Node.js 额外插队机制"></a>Node.js 额外插队机制</h3><p>Node 还有一个 <strong>nextTickQueue</strong>：</p>
+<p>优先级（Node）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process.nextTick</span><br><span class="line">→ microtasks (Promise)</span><br><span class="line">→ 事件循环下一阶段</span><br></pre></td></tr></table></figure>
+
+<p><code>process.nextTick</code> 是<strong>反人类设计</strong>，会饿死 I&#x2F;O，不要滥用。</p>
+<hr>
+<h2 id="四、执行顺序的硬规则（必须背）"><a href="#四、执行顺序的硬规则（必须背）" class="headerlink" title="四、执行顺序的硬规则（必须背）"></a>四、执行顺序的硬规则（必须背）</h2><h3 id="1️⃣-同步永远第一"><a href="#1️⃣-同步永远第一" class="headerlink" title="1️⃣ 同步永远第一"></a>1️⃣ 同步永远第一</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>));</span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">4</span><br><span class="line">3</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>解释：</p>
+<ul>
+<li>同步 → microtask → 下一轮宏任务</li>
+</ul>
+<hr>
+<h3 id="2️⃣-microtask-会“清空到死”"><a href="#2️⃣-microtask-会“清空到死”" class="headerlink" title="2️⃣ microtask 会“清空到死”"></a>2️⃣ microtask 会“清空到死”</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>microtask 内部再产生 microtask，会继续执行，直到队列为空。</p>
+<hr>
+<h3 id="3️⃣-setImmediate-vs-setTimeout（Node）"><a href="#3️⃣-setImmediate-vs-setTimeout（Node）" class="headerlink" title="3️⃣ setImmediate vs setTimeout（Node）"></a>3️⃣ setImmediate vs setTimeout（Node）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;timeout&#x27;</span>));</span><br><span class="line"><span class="title function_">setImmediate</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;immediate&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>❌ 没有绝对顺序<br>✔️ <strong>取决于是否在 I&#x2F;O 阶段触发</strong></p>
+<p>在 I&#x2F;O callback 里：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;a.txt&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;timeout&#x27;</span>));</span><br><span class="line">  <span class="title function_">setImmediate</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;immediate&#x27;</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>必然：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">immediate</span><br><span class="line">timeout</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、浏览器事件循环（与-Node-的关键差异）"><a href="#五、浏览器事件循环（与-Node-的关键差异）" class="headerlink" title="五、浏览器事件循环（与 Node 的关键差异）"></a>五、浏览器事件循环（与 Node 的关键差异）</h2><h3 id="浏览器宏任务来源"><a href="#浏览器宏任务来源" class="headerlink" title="浏览器宏任务来源"></a>浏览器宏任务来源</h3><ul>
+<li><code>script</code></li>
+<li><code>setTimeout</code></li>
+<li><code>setInterval</code></li>
+<li><code>postMessage</code></li>
+<li><code>MessageChannel</code></li>
+<li><code>setImmediate</code> ❌（非标准）</li>
+</ul>
+<h3 id="浏览器规则（简化版）"><a href="#浏览器规则（简化版）" class="headerlink" title="浏览器规则（简化版）"></a>浏览器规则（简化版）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">取一个 task（宏任务）</span><br><span class="line">→ 执行 JS</span><br><span class="line">→ 清空 microtask</span><br><span class="line">→ 渲染（可能）</span><br><span class="line">→ 下一个 task</span><br></pre></td></tr></table></figure>
+
+<p>Node <strong>没有渲染阶段</strong>。</p>
+<hr>
+<h2 id="六、一个常见致命误区"><a href="#六、一个常见致命误区" class="headerlink" title="六、一个常见致命误区"></a>六、一个常见致命误区</h2><p>❌ 误区：</p>
+<blockquote>
+<p>“Promise 是异步的，所以比 setTimeout 慢”</p>
+</blockquote>
+<p>✔️ 真相：</p>
+<blockquote>
+<p>Promise 的回调是 <strong>当前宏任务结束后立即执行</strong><br>它比任何定时器都快</p>
+</blockquote>
+<hr>
+<h2 id="七、工程级理解"><a href="#七、工程级理解" class="headerlink" title="七、工程级理解"></a>七、工程级理解</h2><h3 id="什么时候用-microtask"><a href="#什么时候用-microtask" class="headerlink" title="什么时候用 microtask"></a>什么时候用 microtask</h3><ul>
+<li>状态收敛</li>
+<li>批量更新</li>
+<li>保证当前逻辑后立即执行，但不打断同步栈</li>
+</ul>
+<h3 id="什么时候用宏任务"><a href="#什么时候用宏任务" class="headerlink" title="什么时候用宏任务"></a>什么时候用宏任务</h3><ul>
+<li>拆大任务（防止阻塞）</li>
+<li>UI 让步</li>
+<li>I&#x2F;O 等待</li>
+</ul>
+<h3 id="以下为bad-case"><a href="#以下为bad-case" class="headerlink" title="以下为bad case"></a>以下为bad case</h3><ul>
+<li>用 <code>process.nextTick</code> 写控制流</li>
+<li>用 Promise 模拟定时器</li>
+<li>依赖 setTimeout(0) 精准调度</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/v8%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-学习2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -844,97 +1050,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/2020%E5%B9%B44%E6%9C%884%E6%97%A5%C2%B7%E5%85%A8%E5%9B%BD%E5%93%80%E6%82%BC%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-go入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/go%E5%85%A5%E9%97%A8/">Go入门学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/go%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-03-02T15:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>go入门学习笔记</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
-<li>demo的前提条件，本机上按照有go的编译环境。</li>
-<li>来一段代码测试下<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>调试方法<ul>
-<li>目前基本是打印的方式，如果熟悉PHP的话，你懂得这方式.</li>
-<li>常用的打印方式：fmt.Print&#x2F;fmt.Println&#x2F;fmt.Printf.</li>
-<li>使用fmt.Printf打印变量<ul>
-<li>%+v 打印包括字段在内的实例的完整信息</li>
-<li>%#v 打印包括字段和限定类型名称在内的实例的完整信息</li>
-<li>%T 打印某个类型的完整信息</li>
-</ul>
-</li>
-<li>使用panic, 获取执行点的堆栈信息</li>
-<li>使用defer来跟踪代码执行过程</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">go语言学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/go%E5%85%A5%E9%97%A8/">展开全文 >></a>
         </p>
       
 

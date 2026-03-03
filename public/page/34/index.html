@@ -151,6 +151,174 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-软件设计的哲学-ch16-修改现有的代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16-%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%A3%E7%A0%81/">软件设计的哲学 - ch16</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16-%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%A3%E7%A0%81/" class="archive-article-date">
+  	<time datetime="2021-02-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-16-章-修改现有的代码"><a href="#第-16-章-修改现有的代码" class="headerlink" title="第 16 章 修改现有的代码"></a>第 16 章 修改现有的代码</h1><blockquote>
+<p>Chapter 16 Modifying Existing Code</p>
+</blockquote>
+<p>Chapter 1 described how software development is iterative and incremental. A large software system develops through a series of evolutionary stages, where each stage adds new capabilities and modifies existing modules. This means that a system’s design is constantly evolving. It isn’t possible to conceive the right design for a system at the outset; the design of a mature system is determined more by changes made during the system’s evolution than by any initial conception. Previous chapters described how to squeeze out complexity during the initial design and implementation; this chapter discusses how to keep complexity from creeping in as the system evolves.</p>
+<blockquote>
+<p>第 1 章介绍了软件开发是如何迭代和增量的。大型软件系统是通过一系列演化阶段开发的，其中每个阶段都添加了新功能并修改了现有模块。这意味着系统的设计在不断发展。一开始就不可能为系统设计正确的设计。一个成熟的系统的设计更多地取决于系统演化过程中所做的更改，而不是任何初始概念。前面的章节描述了如何在初始设计和实现过程中降低复杂性。本章讨论如何防止随着系统的发展而增加复杂性。</p>
+</blockquote>
+<h2 id="16-1-Stay-strategic-保持战略"><a href="#16-1-Stay-strategic-保持战略" class="headerlink" title="16.1 Stay strategic 保持战略"></a>16.1 Stay strategic 保持战略</h2><p>Chapter 3 introduced the distinction between tactical programming and strategic programming: in tactical programming, the primary goal is to get something working quickly, even if that results in additional complexity; in strategic programming, the most important goal is to produce a great system design. The tactical approach very quickly leads to a messy system design. If you want to have a system that is easy to maintain and enhance, then “working” isn’t a high enough standard; you have to prioritize design and think strategically. This idea also applies when you are modifying existing code.</p>
+<blockquote>
+<p>第 3 章介绍了战术编程和战略编程之间的区别：在战术编程中，主要目标是使某些事物快速工作，即使这会导致额外的复杂性；在战略编程中，最重要的目标是进行出色的系统设计。战术方法很快导致系统设计混乱。如果您想要一个易于维护和增强的系统，那么“工作”还不够高。您必须优先考虑设计并进行战略思考。当您修改现有代码时，此想法也适用。</p>
+</blockquote>
+<p>Unfortunately, when developers go into existing code to make changes such as bug fixes or new features, they don’t usually think strategically. A typical mindset is “what is the smallest possible change I can make that does what I need?” Sometimes developers justify this because they are not comfortable with the code being modified; they worry that larger changes carry a greater risk of introducing new bugs. However, this results in tactical programming. Each one of these minimal changes introduces a few special cases, dependencies, or other forms of complexity. As a result, the system design gets just a bit worse, and the problems accumulate with each step in the system’s evolution.</p>
+<blockquote>
+<p>不幸的是，当开发人员进入现有代码以进行更改（例如错误修复或新功能）时，他们通常不会从战略角度进行思考。一个典型的心态是“我能做出我需要做的最小的改变是什么？” 有时，开发人员证明这是合理的，因为他们对修改的代码不满意。他们担心较大的更改会带来更大的引入新错误的风险。但是，这导致了战术编程。这些最小的变化中的每一个都会引入一些特殊情况，依赖性或其他形式的复杂性。结果，系统设计变得更糟，并且问题随着系统发展的每个步骤而累积。</p>
+</blockquote>
+<p>If you want to maintain a clean design for a system, you must take a strategic approach when modifying existing code. Ideally, when you have finished with each change, the system will have the structure it would have had if you had designed it from the start with that change in mind. To achieve this goal, you must resist the temptation to make a quick fix. Instead, think about whether the current system design is still the best one, in light of the desired change. If not, refactor the system so that you end up with the best possible design. With this approach, the system design improves with every modification.</p>
+<blockquote>
+<p>如果要维护系统的简洁设计，则在修改现有代码时必须采取战略性方法。理想情况下，当您完成每次更改时，如果您从一开始就考虑到更改就设计了系统，那么系统将具有它应该具有的结构。为了实现此目标，您必须抵制诱惑以快速解决问题。相反，请根据所需的更改来考虑当前的系统设计是否仍然是最佳的。如果不是，请重构系统，以便最终获得最佳设计。通过这种方法，每次修改都会改善系统设计。</p>
+</blockquote>
+<p>This is also an example of the investment mindset introduced on page 15: if you invest a little extra time to refactor and improve the system design, you’ll end up with a cleaner system. This will speed up development, and you will recoup the effort that you invested in the refactoring. Even if your particular change doesn’t require refactoring, you should still be on the lookout for design imperfections that you can fix while you’re in the code. Whenever you modify any code, try to find a way to improve the system design at least a little bit in the process. If you’re not making the design better, you are probably making it worse.</p>
+<blockquote>
+<p>这也是第 15 页介绍的投资心态的一个示例：如果您花费一些额外的时间来重构和改善系统设计，您将得到一个更干净的系统。这将加快开发速度，您将收回在重构方面投入的精力。即使您的特定更改不需要重构，您仍然应该注意在代码中可以修复的设计缺陷。每当您修改任何代码时，都尝试在该过程中至少找到一点方法来改进系统设计。如果您没有使设计更好，则可能会使它变得更糟。</p>
+</blockquote>
+<p>As discussed in Chapter 3, an investment mindset sometimes conflicts with the realities of commercial software development. If refactoring the system “the right way” would take three months but a quick and dirty fix would take only two hours, you may have to take the quick and dirty approach, particularly if you are working against a tight deadline. Or, if refactoring the system would create incompatibilities that affect many other people and teams, then the refactoring may not be practical.</p>
+<blockquote>
+<p>如第 3 章所述，投资心态有时与商业软件开发的现实相冲突。如果“正确的方式”重构系统需要三个月，而快速且肮脏的修复仅需两个小时，则您可能必须采取快速而肮脏的方法，尤其是在紧迫的期限内工作时。或者，如果重构系统会造成影响许多其他人员和团队的不兼容性，则重构可能不切实际。</p>
+</blockquote>
+<p>Nonetheless, you should resist these compromises as much as possible. Ask yourself “Is this the best I can possibly do to create a clean system design, given my current constraints?” Perhaps there’s an alternative approach that would be almost as clean as the 3-month refactoring but could be done in a couple of days? Or, if you can’t afford to do a large refactoring now, get your boss to allocate time for you to come back to it after the current deadline. Every development organization should plan to spend a small fraction of its total effort on cleanup and refactoring; this work will pay for itself over the long run.</p>
+<blockquote>
+<p>但是，您应尽可能抵制这些妥协。问问自己：“考虑到我目前的限制，这是否是我能做的最好的工作来创建一个干净的系统设计？” 也许有一种替代方法几乎可以像 3 个月的重构一样干净，但是可以在几天内完成？或者，如果您现在负担不起大型重构，请让您的老板为您分配时间，让您在当前截止日期之后恢复到原来的水平。每个开发组织都应计划将其全部工作的一小部分用于清理和重构；从长远来看，这项工作将收回成本。</p>
+</blockquote>
+<h2 id="16-2-Maintaining-comments-keep-the-comments-near-the-code-维护注释：将注释保留在代码附近"><a href="#16-2-Maintaining-comments-keep-the-comments-near-the-code-维护注释：将注释保留在代码附近" class="headerlink" title="16.2 Maintaining comments: keep the comments near the code 维护注释：将注释保留在代码附近"></a>16.2 Maintaining comments: keep the comments near the code 维护注释：将注释保留在代码附近</h2><p>When you change existing code, there’s a good chance that the changes will invalidate some of the existing comments. It’s easy to forget to update comments when you modify code, which results in comments that are no longer accurate. Inaccurate comments are frustrating to readers, and if there are very many of them, readers begin to distrust all of the comments. Fortunately, with a little discipline and a couple of guiding rules, it’s possible to keep comments up-to-date without a huge effort. This section and the following ones put forth some specific techniques.</p>
+<blockquote>
+<p>当您更改现有代码时，更改很有可能会使某些现有注释无效。修改代码时，很容易忘记更新注释，从而导致注释不再准确。不准确的评论使读者感到沮丧，如果评论太多，读者就会开始不信任所有评论。幸运的是，只要有一点纪律和一些指导规则，就可以在不付出巨大努力的情况下使评论保持最新。本节及随后的部分提出了一些特定的技术。</p>
+</blockquote>
+<p>The best way to ensure that comments get updated is to position them close to the code they describe, so developers will see them when they change the code. The farther a comment is from its associated code, the less likely it is that it will be updated properly. For example, the best place for a method’s interface comment is in the code file, right next to the body of the method. Any changes to the method will involve this code, so the developer is likely to see the interface comments and update them if needed.</p>
+<blockquote>
+<p>确保注释更新的最佳方法是将注释放置在它们描述的代码附近，以便开发人员在更改代码时可以看到它们。注释离其关联的代码越远，正确更新的可能性就越小。例如，方法界面注释的最佳位置是在代码文件中，紧靠该方法主体的位置。对方法的任何更改都将涉及此代码，因此开发人员很可能会看到界面注释，并在需要时进行更新。</p>
+</blockquote>
+<p>An alternative for languages like C and C++ that have separate code and header files, is to place the interface comments next to the method’s declaration in the .h file. However, this is a long way from the code; developers won’t see those comments when modifying the method’s body, and it takes additional work to open a different file and find the interface comments to update them. Some might argue that interface comments should go in header files so that users can learn how to use an abstraction without having to look at the code file. However, users should not need to read either code or header files; they should get their information from documentation compiled by tools such as Doxygen or Javadoc. In addition, many IDEs will extract and present documentation to users, such as by displaying a method’s documentation when the method’s name is typed. Given tools such as these, the documentation should be located in the place that is most convenient for developers working on the code.</p>
+<blockquote>
+<p>对于 C 和 C ++等具有单独的代码和头文件的语言，一种替代方法是将接口注释放在.h 文件中方法声明的旁边。但是，这距离代码还有很长的路要走。开发人员在修改方法的主体时将看不到这些注释，因此需要打开其他文件并查找接口注释来更新它们，这需要额外的工作。有人可能会争辩说接口注释应该放在头文件中，以便用户可以不必看代码文件就可以学习如何使用抽象。但是，用户无需读取代码或头文件；他们应该从由 Doxygen 或 Javadoc 等工具编译的文档中获取信息。此外，许多 IDE 都会提取文档并将其呈现给用户，例如在键入方法名称时显示方法的文档。给定诸如此类的工具，文档应位于对开发人员进行代码开发最方便的位置。</p>
+</blockquote>
+<p>When writing implementation comments, don’t put all the comments for an entire method at the top of the method. Spread them out, pushing each comment down to the narrowest scope that includes all of the code referred to by the comment. For example, if a method has three major phases, don’t write one comment at the top of the method that describes all of the phases in detail. Instead, write a separate comment for each phase and position that comment just above the first line of code in that phase. On the other hand, it can also be helpful to have a comment at the top of a method’s implementation that describes the overall strategy, like this:</p>
+<blockquote>
+<p>在编写实现注释时，不要将整个方法的所有注释放在方法的顶部。展开它们，将每个注释推到最狭窄的范围，其中包括该注释所引用的所有代码。例如，如果一种方法具有三个主要阶段，则不要在方法的顶部写一个详细描述所有阶段的注释。而是为每个阶段编写一个单独的注释，并将该注释放置在该阶段的第一行代码的正上方。另一方面，在描述总体策略的方法实现的顶部添加注释也可能会有所帮助，例如：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  We proceed in three phases:</span></span><br><span class="line"><span class="comment">//  Phase 1: Find feasible candidates</span></span><br><span class="line"><span class="comment">//  Phase 2: Assign each candidate a score</span></span><br><span class="line"><span class="comment">//  Phase 3: Choose the best, and remove it</span></span><br></pre></td></tr></table></figure>
+
+<p>Additional details can be documented just above the code for each phase.</p>
+<blockquote>
+<p>每个阶段的代码上方都可以记录其他详细信息。</p>
+</blockquote>
+<p>In general, the farther a comment is from the code it describes, the more abstract it should be (this reduces the likelihood that the comment will be invalidated by code changes).</p>
+<blockquote>
+<p>通常，注释离描述的代码越远，注释应该越抽象（这减少了注释因代码更改而无效的可能性）。</p>
+</blockquote>
+<h2 id="16-3-Comments-belong-in-the-code-not-the-commit-log-注释属于代码，而不是提交日志"><a href="#16-3-Comments-belong-in-the-code-not-the-commit-log-注释属于代码，而不是提交日志" class="headerlink" title="16.3 Comments belong in the code, not the commit log 注释属于代码，而不是提交日志"></a>16.3 Comments belong in the code, not the commit log 注释属于代码，而不是提交日志</h2><p>A common mistake when modifying code is to put detailed information about the change in the commit message for the source code repository, but then not to document it in the code. Although commit messages can be browsed in the future by scanning the repository’s log, a developer who needs the information is unlikely to think of scanning the repository log. Even if they do scan the log, it will be tedious to find the right log message.</p>
+<blockquote>
+<p>修改代码时，常见的错误是将有关更改的详细信息放入源代码存储库的提交消息中，而不是将其记录在代码中。尽管将来可以通过扫描存储库的日志来浏览提交消息，但是需要该信息的开发人员不太可能考虑扫描存储库的日志。即使他们确实扫描了日志，也很难找到正确的日志消息。</p>
+</blockquote>
+<p>When writing a commit message, ask yourself whether developers will need to use that information in the future. If so, then document this information in the code. An example is a commit message describing a subtle problem that motivated a code change. If this isn’t documented in the code, then a developer might come along later and undo the change without realizing that they have re-created a bug. If you want to include a copy of this information in the commit message as well, that’s fine, but the most important thing is to get it in the code. This illustrates the principle of placing documentation in the place where developers are most likely to see it; the commit log is rarely that place.</p>
+<blockquote>
+<p>在编写提交消息时，请问自己将来开发人员是否需要使用该信息。如果是这样，则在代码中记录此信息。一个示例是提交消息，描述了导致代码更改的细微问题。如果代码中未对此进行记录，则开发人员可能会稍后再提出并撤消更改，而不会意识到他们已经重新创建了错误。如果您也想在提交消息中包含此信息的副本，那很好，但是最重要的是在代码中获取它。这说明了将文档放置在开发人员最有可能看到它的地方的原理；提交日志很少在那个地方。</p>
+</blockquote>
+<h2 id="16-4-Maintaining-comments-avoid-duplication-维护注释：避免重复"><a href="#16-4-Maintaining-comments-avoid-duplication-维护注释：避免重复" class="headerlink" title="16.4 Maintaining comments: avoid duplication 维护注释：避免重复"></a>16.4 Maintaining comments: avoid duplication 维护注释：避免重复</h2><p>The second technique for keeping comments up to date is to avoid duplication. If documentation is duplicated, it is more difficult for developers to find and update all of the relevant copies. Instead, try to document each design decision exactly once. If there are multiple places in the code that are affected by a particular decision, don’t repeat the documentation at each of these points. Instead, find the most obvious single place to put the documentation. For example, suppose there is tricky behavior related to a variable, which affects several different places where the variable is used. You can document that behavior in the comment next to the variable’s declaration. This is a natural place that developers are likely to check if they’re having trouble understanding code that uses the variable.</p>
+<blockquote>
+<p>保持评论最新的第二种技术是避免重复。如果文档重复，那么开发人员将很难找到并更新所有相关副本。相反，请尝试仅一次记录每个设计决策。如果代码中有多个地方受某个特定决定的影响，请不要在所有这些地方重复文档。相反，找到放置文档最明显的位置。例如，假设存在与变量相关的棘手行为，这会影响使用变量的几个不同位置。您可以在变量声明旁边的注释中记录该行为。这是很自然的地方，开发人员可能会检查他们是否在理解使用该变量的代码时遇到麻烦。</p>
+</blockquote>
+<p>If there is no “obvious” single place to put a particular piece of documentation where developers will find it, create a designNotes file as described in Section 13.7. Or, pick the best of the available places and put the documentation there. In addition, add short comments in the other places that refer to the central location: “See the comment in xyz for an explanation of the code below.” If the reference becomes obsolete because the master comment was moved or deleted, this inconsistency will be self-evident because developers won’t find the comment at the indicated place; they can use revision control history to find out what happened to the comment and then update the reference. In contrast, if the documentation is duplicated and some of the copies don’t get updated, there will be no indication to developers that they are using stale information.</p>
+<blockquote>
+<p>如果没有一个“明显的”地方来放置特定的文档，开发人员可以找到它，那么创建一个 designNotes 文件，如第 13.7 节所述。或者，选择最好的地方，把文档放在那里。另外，在引用中心位置的其他地方添加简短的注释:“查看 xyz 中的注释以了解下面代码的解释。“如果引用因为主注释被移动或删除而变得过时，这种不一致性将是不言而喻的，因为开发人员将无法在指定的位置找到注释;他们可以使用修订控制历史记录来查找注释发生了什么，然后更新引用。相反，如果文档是重复的，并且一些副本没有得到更新，那么开发人员就不会知道他们使用的是陈旧的信息。</p>
+</blockquote>
+<p>Don’t redocument one module’s design decisions in another module. For example, don’t put comments before a method call that explain what happens in the called method. If readers want to know, they should look at the interface comments for the method. Good development tools will usually provide this information automatically, for example, by displaying the interface comments for a method if you select the method’s name or hover the mouse over it. Try to make it easy for developers to find appropriate documentation, but don’t do it by repeating the documentation.</p>
+<blockquote>
+<p>不要在另一个模块中记录一个模块的设计决策。例如，不要在方法调用前添加注释，以解释被调用方法中发生的情况。如果读者想知道，他们应该查看该方法的界面注释。好的开发工具通常会自动提供此信息，例如，如果您选择了方法的名称或将鼠标悬停在该方法的名称上，则将显示该方法的界面注释。尝试使开发人员容易找到合适的文档，但是不要重复文档。</p>
+</blockquote>
+<p>If information is already documented someplace outside your program, don’t repeat the documentation inside the program; just reference the external documentation. For example, if you write a class that implements the HTTP protocol, there’s no need for you to describe the HTTP protocol inside your code. There are already numerous sources for this documentation on the Web; just add a short comment to your code with a URL for one of these sources. Another example is features that are already documented in a user manual. Suppose you are writing a program that implements a collection of commands, with one method responsible for implementing each command. If there is a user manual that describes those commands, there’s no need to duplicate this information in the code. Instead, include a short note like the following in the interface comment for each command method:</p>
+<blockquote>
+<p>如果信息已经在程序之外的某个地方记录了，不要在程序内部重复记录;只需参考外部文档。例如，如果您编写一个实现 HTTP 协议的类，那么就不需要在代码中描述 HTTP 协议。在网上已经有很多关于这个文档的来源;只需在您的代码中添加一个简短的注释，并为其中一个源添加一个 URL。另一个例子是已经在用户手册中记录的特性。假设您正在编写一个实现命令集合的程序，其中有一个负责实现每个命令的方法。如果有描述这些命令的用户手册，就不需要在代码中重复这些信息。相反，在每个命令方法的接口注释中包含如下简短说明:</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Implements the Foo command; see the user manual for details.</span></span><br></pre></td></tr></table></figure>
+
+<p>It’s important that readers can easily find all the documentation needed to understand your code, but that doesn’t mean you have to write all of that documentation.</p>
+<blockquote>
+<p>读者可以轻松找到理解代码所需的所有文档，这一点很重要，但这并不意味着您必须编写所有这些文档。</p>
+</blockquote>
+<h2 id="16-5-Maintaining-comments-check-the-diffs-维护注释：检查差异"><a href="#16-5-Maintaining-comments-check-the-diffs-维护注释：检查差异" class="headerlink" title="16.5 Maintaining comments: check the diffs 维护注释：检查差异"></a>16.5 Maintaining comments: check the diffs 维护注释：检查差异</h2><p>One good way to make sure documentation stays up to date is to take a few minutes before committing a change to your revision control system to scan over all the changes for that commit; make sure that each change is properly reflected in the documentation. These pre-commit scans will also detect several other problems, such as accidentally leaving debugging code in the system or failing to fix TODO items.</p>
+<blockquote>
+<p>确保文档保持最新状态的一种好方法是，在将更改提交到修订控制系统之前需要花费几分钟，以扫描该提交的所有更改。确保文档中正确反映了每个更改。这些预先提交的扫描还将检测其他一些问题，例如意外地将调试代码留在系统中或无法修复 TODO 项目。</p>
+</blockquote>
+<h2 id="16-6-Higher-level-comments-are-easier-to-maintain-更高级的注释更易于维护"><a href="#16-6-Higher-level-comments-are-easier-to-maintain-更高级的注释更易于维护" class="headerlink" title="16.6 Higher-level comments are easier to maintain 更高级的注释更易于维护"></a>16.6 Higher-level comments are easier to maintain 更高级的注释更易于维护</h2><p>One final thought on maintaining documentation: comments are easier to maintain if they are higher-level and more abstract than the code. These comments do not reflect the details of the code, so they will not be affected by minor code changes; only changes in overall behavior will affect these comments. Of course, as discussed in Chapter 13, some comments do need to be detailed and precise. But in general, the comments that are most useful (they don’t simply repeat the code) are also easiest to maintain.</p>
+<blockquote>
+<p>关于维护文档的最后一个想法：如果注释比代码更高级，更抽象，则注释更易于维护。这些注释不反映代码的详细信息，因此它们不会受到代码更改的影响；只有整体行为的变化才会影响这些评论。当然，正如第 13 章所讨论的那样，某些注释的确需要详细和精确。但总的来说，最有用的注释（它们不只是重复代码）也最容易维护。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16-%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%A3%E7%A0%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-软件设计的哲学-ch15-先写评论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -2315,192 +2483,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch7-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B1%82%EF%BC%8C%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%BD%E8%B1%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件设计的哲学-ch6-通用模块更深入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch6-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%B7%B1%E5%85%A5/">软件设计的哲学 - ch6</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch6-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%B7%B1%E5%85%A5/" class="archive-article-date">
-  	<time datetime="2021-02-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-6-章-通用模块更深入"><a href="#第-6-章-通用模块更深入" class="headerlink" title="第 6 章 通用模块更深入"></a>第 6 章 通用模块更深入</h1><blockquote>
-<p>Chapter 6 General-Purpose Modules are Deeper</p>
-</blockquote>
-<p>One of the most common decisions that you will face when designing a new module is whether to implement it in a general-purpose or special-purpose fashion. Some might argue that you should take a general-purpose approach, in which you implement a mechanism that can be used to address a broad range of problems, not just the ones that are important today. In this case, the new mechanism may find unanticipated uses in the future, thereby saving time. The general-purpose approach seems consistent with the investment mindset discussed in Chapter 3, where you spend a bit more time up front to save time later on.</p>
-<blockquote>
-<p>设计新模块时，您将面临的最普遍的决定之一就是以通用还是专用方式实现它。有人可能会争辩说，您应该采用通用方法，在这种方法中，您将实现一种可用于解决广泛问题的机制，而不仅是当今重要的问题。在这种情况下，新机制可能会在将来发现意外用途，从而节省时间。通用方法似乎与第 3 章中讨论的投资思路一致，在这里您花了更多时间在前面，以节省以后的时间。</p>
-</blockquote>
-<p>On the other hand, we know that it’s hard to predict the future needs of a software system, so a general-purpose solution might include facilities that are never actually needed. Furthermore, if you implement something that is too general-purpose, it might not do a good job of solving the particular problem you have today. As a result, some might argue that it’s better to focus on today’s needs, building just what you know you need, and specializing it for the way you plan to use it today. If you take the special-purpose approach and discover additional uses later, you can always refactor it to make it general-purpose. The special-purpose approach seems consistent with an incremental approach to software development.</p>
-<blockquote>
-<p>另一方面，我们知道很难预测软件系统的未来需求，因此通用解决方案可能包含从未真正需要的功能。此外，如果您实现的东西过于通用，那么可能无法很好地解决您今天遇到的特定问题。结果，有些人可能会争辩说，最好只关注当今的需求，构建您所知道的需求，并针对您今天打算使用的方式进行专门化处理。如果您采用特殊用途的方法并在以后发现更多用途，则始终可以对其进行重构以使其通用。专用方法似乎与软件开发的增量方法一致。</p>
-</blockquote>
-<h2 id="6-1-Make-classes-somewhat-general-purpose-使类变得通用"><a href="#6-1-Make-classes-somewhat-general-purpose-使类变得通用" class="headerlink" title="6.1 Make classes somewhat general-purpose 使类变得通用"></a>6.1 Make classes somewhat general-purpose 使类变得通用</h2><p>In my experience, the sweet spot is to implement new modules in a somewhat general-purpose fashion. The phrase “somewhat general-purpose” means that the module’s functionality should reflect your current needs, but its interface should not. Instead, the interface should be general enough to support multiple uses. The interface should be easy to use for today’s needs without being tied specifically to them. The word “somewhat” is important: don’t get carried away and build something so general-purpose that it is difficult to use for your current needs.</p>
-<blockquote>
-<p>以我的经验，最有效的方法是以某种通用的方式实现新模块。短语“有点通用”表示该模块的功能应反映您当前的需求，但其接口则不应。相反，该接口应该足够通用以支持多种用途。该界面应易于使用，以满足当今的需求，而不必专门与它们联系在一起。“有点”这个词很重要：不要被带走并建造通用的东西，以致于很难满足当前的需求。</p>
-</blockquote>
-<p>The most important (and perhaps surprising) benefit of the general-purpose approach is that it results in simpler and deeper interfaces than a special-purpose approach. The general-purpose approach can also save you time in the future, if you reuse the class for other purposes. However, even if the module is only used for its original purpose, the general-purpose approach is still better because of its simplicity.</p>
-<blockquote>
-<p>通用方法最重要的（也许是令人惊讶的）好处是，与专用方法相比，它导致更简单，更深入的界面。如果您将该类用于其他目的，则通用方法还可以节省将来的时间。但是，即使该模块仅用于其原始用途，由于其简单性，通用方法仍然更好。</p>
-</blockquote>
-<h2 id="6-2-Example-storing-text-for-an-editor-示例：为编辑器存储文本"><a href="#6-2-Example-storing-text-for-an-editor-示例：为编辑器存储文本" class="headerlink" title="6.2 Example: storing text for an editor 示例：为编辑器存储文本"></a>6.2 Example: storing text for an editor 示例：为编辑器存储文本</h2><p>Let’s consider an example from a software design class in which students were asked to build simple GUI text editors. The editors had to display a file and allow users to point, click, and type to edit the file. The editors had to support multiple simultaneous views of the same file in different windows; they also had to support multi-level undo and redo for modifications to the file.</p>
-<blockquote>
-<p>让我们考虑一个软件设计课程的示例，其中要求学生构建简单的 GUI 文本编辑器。编辑器必须显示一个文件，并允许用户指向，单击并键入以编辑该文件。编辑者必须在不同的窗口中支持同一文件的多个同时视图。他们还必须支持多级撤消和重做以修改文件。</p>
-</blockquote>
-<p>Each of the student projects included a class that managed the underlying text of the file. The text classes typically provided methods for loading a file into memory, reading and modifying the text of the file, and writing the modified text back to a file.</p>
-<blockquote>
-<p>每个学生项目都包括一个管理文件的基础文本的类。文本类通常提供以下方法：将文件加载到内存，读取和修改文件的文本以及将修改后的文本写回到文件。</p>
-</blockquote>
-<p>Many of the student teams implemented special-purpose APIs for the text class. They knew that the class was going to be used in an interactive editor, so they thought about the features that the editor had to provide and tailored the API of the text class to those specific features. For example, if a user of the editor typed the backspace key, the editor deleted the character immediately to the left of the cursor; if the user typed the delete key, the editor deleted the character immediately to the right of the cursor. Knowing this, some of the teams created one method in the text class to support each of these specific features:</p>
-<blockquote>
-<p>许多学生团队为文本课实现了专用的 API。他们知道该类将在交互式编辑器中使用，因此他们考虑了编辑器必须提供的功能，并针对这些特定功能定制了文本类的 API。例如，如果编辑者的用户键入了退格键，则编辑者会立即删除光标左侧的字符；如果用户键入删除键，则编辑器立即删除光标右侧的字符。知道这一点后，一些团队在文本类中创建了一个方法来支持以下每个特定功能：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">backspace</span><span class="params">(Cursor cursor)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(Cursor cursor)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>Each of these methods takes the cursor position as its argument; a special type Cursor represents this position. The editor also had to support a selection that could be copied or deleted. The students handled this by defining a Selection class and passing an object of this class to the text class during deletions:</p>
-<blockquote>
-<p>这些方法中的每一个都以光标位置作为参数。特殊类型的光标表示此位置。编辑器还必须支持可以复制或删除的选择。学生通过定义选择类并在删除过程中将该类的对象传递给文本类来解决此问题：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">deleteSelection</span><span class="params">(Selection selection)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>The students probably thought that it would be easier to implement the user interface if the methods of the text class corresponded to the features visible to users. In reality, however, this specialization provided little benefit for the user interface code, and it created a high cognitive load for developers working on either the user interface or the text class. The text class ended up with a large number of shallow methods, each of which was only suitable for one user interface operation. Many of the methods, such as delete, were only invoked in a single place. As a result, a developer working on the user interface had to learn about a large number of methods for the text class.</p>
-<blockquote>
-<p>学生们可能认为，如果文本类的方法与用户可见的功能相对应，则将更易于实现用户界面。但是，实际上，这种专业化对用户界面代码几乎没有好处，并且为使用用户界面或文本类的开发人员带来了很高的认知负担。文本类以大量浅层方法结束，每种浅层方法仅适用于一个用户界面操作。许多方法（例如 delete）仅在单个位置调用。结果，在用户界面上工作的开发人员必须学习大量有关文本类的方法。</p>
-</blockquote>
-<p>This approach created information leakage between the user interface and the text class. Abstractions related to the user interface, such as the selection or the backspace key, were reflected in the text class; this increased the cognitive load for developers working on the text class. Each new user interface operation required a new method to be defined in the text class, so a developer working on the user interface was likely to end up working on the text class as well. One of the goals in class design is to allow each class to be developed independently, but the specialized approach tied the user interface and text classes together.</p>
-<blockquote>
-<p>这种方法在用户界面和文本类之间造成了信息泄漏。与用户界面有关的抽象（例如选择或退格键）反映在文本类中；这增加了从事文本课的开发人员的认知负担。每个新的用户界面操作都需要在文本类中定义一个新方法，因此使用该用户界面的开发人员也可能最终也要使用该文本类。类设计的目标之一是允许每个类独立开发，但是专用方法将用户界面和文本类联系在一起。</p>
-</blockquote>
-<h2 id="6-3-A-more-general-purpose-API-更通用的-API"><a href="#6-3-A-more-general-purpose-API-更通用的-API" class="headerlink" title="6.3 A more general-purpose API 更通用的 API"></a>6.3 A more general-purpose API 更通用的 API</h2><p>A better approach is to make the text class more generic. Its API should be defined only in terms of basic text features, without reflecting the higher-level operations that will be implemented with it. For example, only two methods are needed for modifying text:</p>
-<blockquote>
-<p>更好的方法是使文本类更通用。仅应根据基本文本功能定义其 API，而不应反映将用其实现的更高级别的操作。例如，只需两种方法即可修改文本：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(Position position, String newText)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(Position start, Position end)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>The first method inserts an arbitrary string at an arbitrary position within the text, and the second method deletes all of the characters at positions greater than or equal to start but less than end. This API also uses a more generic type Position instead of Cursor, which reflects a specific user interface. The text class should also provide general-purpose facilities for manipulating positions within the text, such as the following:</p>
-<blockquote>
-<p>第一种方法在文本内的任意位置插入任意字符串，第二种方法删除大于或等于开始但小于结束的位置处的所有字符。此 API 还使用了更通用的 Position 类型来代替 Cursor，它反映了特定的用户界面。文本类还应该提供用于操纵文本中位置的通用工具，例如：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Position <span class="title function_">changePosition</span><span class="params">(Position position, <span class="type">int</span> numChars)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>This method returns a new position that is a given number of characters away from a given position. If the numChars argument is positive, the new position is later in the file than position; if numChars is negative, the new position is before position. The method automatically skips to the next or previous line when necessary. With these methods, the delete key can be implemented with the following code (assuming the cursor variable holds the current cursor position):</p>
-<blockquote>
-<p>此方法返回一个新位置，该位置与给定位置相距给定字符数。如果 numChars 参数为正，则新位置在文件中比位置晚；如果 numChars 为负，则新位置在位置之前。必要时，该方法会自动跳到下一行或上一行。使用这些方法，可以使用以下代码来实现删除键（假定 cursor 变量保留当前光标的位置）：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text.delete(cursor, text.changePosition(cursor, <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-
-<p>Similarly, the backspace key can be implemented as follows:</p>
-<blockquote>
-<p>同样，可以按以下方式实现退格键：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text.delete(text.changePosition(cursor, -<span class="number">1</span>), cursor);</span><br></pre></td></tr></table></figure>
-
-<p>With the general-purpose text API, the code to implement user interface functions such as delete and backspace is a bit longer than with the original approach using a specialized text API. However, the new code is more obvious than the old code. A developer working in the user interface module probably cares about which characters are deleted by the backspace key. With the new code, this is obvious. With the old code, the developer had to go to the text class and read the documentation and&#x2F;or code of the backspace method to verify the behavior. Furthermore, the general-purpose approach has less code overall than the specialized approach, since it replaces a large number of special-purpose methods in the text class with a smaller number of general-purpose ones.</p>
-<blockquote>
-<p>使用通用文本 API，实现用户界面功能（如删除和退格）的代码比使用专用文本 API 的原始方法要长一些。但是，新代码比旧代码更明显。在用户界面模块中工作的开发人员可能会关心由 Backspace 键删除哪些字符。使用新代码，这是显而易见的。使用旧代码，开发人员必须转到文本类并阅读退格方法的文档和&#x2F;或代码以验证行为。此外，通用方法总体上比专用方法具有更少的代码，因为它用较少数量的通用方法代替了文本类中的大量专用方法。</p>
-</blockquote>
-<p>A text class implemented with the general-purpose interface could potentially be used for other purposes besides an interactive editor. As one example, suppose you were building an application that modified a specified file by replacing all occurrences of a particular string with another string. Methods from the specialized text class, such as backspace and delete, would have little value for this application. However, the general-purpose text class would already have most of the functionality needed for the new application. All that is missing is a method to search for the next occurrence of a given string, such as this:</p>
-<blockquote>
-<p>使用通用接口实现的文本类除交互式编辑器外，还可以用于其他目的。作为一个示例，假设您正在构建一个应用程序，该应用程序通过将所有出现的特定字符串替换为另一个字符串来修改指定文件。专用文本类中的方法（例如，退格键和 Delete）对于此应用程序几乎没有价值。但是，通用文本类已经具有新应用程序所需的大多数功能。缺少的只是一种搜索给定字符串的下一个匹配项的方法，例如：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Position <span class="title function_">findNext</span><span class="params">(Position start, String string)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>Of course, an interactive text editor is likely to have a mechanism for searching and replacing, in which case the text class would already include this method.</p>
-<blockquote>
-<p>当然，交互式文本编辑器可能具有搜索和替换的机制，在这种情况下，文本类将已经包含此方法。</p>
-</blockquote>
-<h2 id="6-4-Generality-leads-to-better-information-hiding-通用性可以更好地隐藏信息"><a href="#6-4-Generality-leads-to-better-information-hiding-通用性可以更好地隐藏信息" class="headerlink" title="6.4 Generality leads to better information hiding 通用性可以更好地隐藏信息"></a>6.4 Generality leads to better information hiding 通用性可以更好地隐藏信息</h2><p>The general-purpose approach provides a cleaner separation between the text and user interface classes, which results in better information hiding. The text class need not be aware of specifics of the user interface, such as how the backspace key is handled; these details are now encapsulated in the user interface class. New user interface features can be added without creating new supporting functions in the text class. The general-purpose interface also reduces cognitive load: a developer working on the user interface only needs to learn a few simple methods, which can be reused for a variety of purposes.</p>
-<blockquote>
-<p>通用方法在文本和用户界面类之间提供了更清晰的分隔，从而可以更好地隐藏信息。文本类不需要知道用户界面的详细信息，例如如何处理退格键。这些细节现在封装在用户界面类中。可以添加新的用户界面功能，而无需在文本类中创建新的支持功能。通用界面还减轻了认知负担：使用用户界面的开发人员只需要学习一些简单的方法，就可以将其重复用于各种目的。</p>
-</blockquote>
-<p>The backspace method in the original version of the text class was a false abstraction. It purported to hide information about which characters are deleted, but the user interface module really needs to know this; user interface developers are likely to read the code of the backspace method in order to confirm its precise behavior. Putting the method in the text class just makes it harder for user interface developers to get the information they need. One of the most important elements of software design is determining who needs to know what, and when. When the details are important, it is better to make them explicit and as obvious as possible, such as the revised implementation of the backspace operation. Hiding this information behind an interface just creates obscurity.</p>
-<blockquote>
-<p>文本类原始版本中的 backspace 方法是错误的抽象。它旨在隐藏有关删除哪些字符的信息，但是用户界面模块确实需要知道这一点。用户界面开发人员可能会阅读退格方法的代码，以确认其精确的行为。将方法放在文本类中只会使用户界面开发人员更难获得所需的信息。软件设计最重要的元素之一就是确定谁需要知道什么以及何时知道。当细节很重要时，最好使它们明确且尽可能明显，例如修订的 Backspace 操作实现。将这些信息隐藏在界面后面只会产生晦涩感。</p>
-</blockquote>
-<h2 id="6-5-Questions-to-ask-yourself-问自己的问题"><a href="#6-5-Questions-to-ask-yourself-问自己的问题" class="headerlink" title="6.5 Questions to ask yourself 问自己的问题"></a>6.5 Questions to ask yourself 问自己的问题</h2><p>It is easier to recognize a clean general-purpose class design than it is to create one. Here are some questions you can ask yourself, which will help you to find the right balance between general-purpose and special-purpose for an interface.</p>
-<blockquote>
-<p>识别干净的通用类设计要比创建一个简单。您可以问自己一些问题，这将帮助您在接口的通用和专用之间找到适当的平衡。</p>
-</blockquote>
-<p>What is the simplest interface that will cover all my current needs? If you reduce the number of methods in an API without reducing its overall capabilities, then you are probably creating more general-purpose methods. The special-purpose text API had at least three methods for deleting text: backspace, delete, and deleteSelection. The more general-purpose API had only one method for deleting text, which served all three purposes. Reducing the number of methods makes sense only as long as the API for each individual method stays simple; if you have to introduce lots of additional arguments in order to reduce the number of methods, then you may not really be simplifying things.</p>
-<blockquote>
-<p>满足我当前所有需求的最简单的界面是什么？如果减少 API 中的方法数量而不降低其整体功能，则可能正在创建更多通用的方法。专用文本 API 至少具有三种删除文本的方法：退格，删除和 deleteSelection。通用性更强的 API 只有一种删除文本的方法，可同时满足所有三个目的。仅在每种方法的 API 保持简单的前提下，减少方法的数量才有意义。如果您必须引入许多其他参数以减少方法数量，那么您可能并没有真正简化事情。</p>
-</blockquote>
-<p>In how many situations will this method be used? If a method is designed for one particular use, such as the backspace method, that is a red flag that it may be too special-purpose. See if you can replace several special-purpose methods with a single general-purpose method.</p>
-<blockquote>
-<p>在多少情况下会使用此方法？如果一种方法是为特定用途而设计的，例如退格方法，那是一个危险信号，它可能太特殊了。看看是否可以用一个通用方法替换几种专用方法。</p>
-</blockquote>
-<p>Is this API easy to use for my current needs? This question can help you to determine when you have gone too far in making an API simple and general-purpose. If you have to write a lot of additional code to use a class for your current purpose, that’s a red flag that the interface doesn’t provide the right functionality. For example, one approach for the text class would be to design it around single-character operations: insert inserts a single character and delete deletes a single character. This API is both simple and general-purpose. However, it would not be particularly easy to use for a text editor: higher-level code would contain lots of loops to insert or delete ranges of characters. The single-character approach would also be inefficient for large operations. Thus it’s better for the text class to have built-in support for operations on ranges of characters.</p>
-<blockquote>
-<p>这个 API 是否易于使用以满足我当前的需求？这个问题可以帮助您确定何时使 API 变得简单而通用。如果您必须编写许多其他代码才能将类用于当前用途，那么这是一个危险信号，即该接口未提供正确的功能。例如，针对文本类的一种方法是围绕单字符操作进行设计：insert 插入单个字符，而 delete 删除单个字符。该 API 既简单又通用。但是，对于文本编辑器来说并不是特别容易使用：更高级别的代码将包含许多循环，用于插入或删除字符范围。单字符方法对于大型操作也将是低效的。</p>
-</blockquote>
-<h2 id="6-6-Conclusion-结论"><a href="#6-6-Conclusion-结论" class="headerlink" title="6.6 Conclusion 结论"></a>6.6 Conclusion 结论</h2><p>General-purpose interfaces have many advantages over special-purpose ones. They tend to be simpler, with fewer methods that are deeper. They also provide a cleaner separation between classes, whereas special-purpose interfaces tend to leak information between classes. Making your modules somewhat general-purpose is one of the best ways to reduce overall system complexity.</p>
-<blockquote>
-<p>通用接口比专用接口具有许多优点。它们往往更简单，使用的方法更少。它们还提供了类之间的更清晰的分隔，而专用接口则倾向于在类之间泄漏信息。使模块具有某种通用性是降低整体系统复杂性的最佳方法之一。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch6-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%B7%B1%E5%85%A5/">展开全文 >></a>
         </p>
       
 
