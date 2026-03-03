@@ -4,10 +4,10 @@
  */
 
 :root {
-  --ac-primary: #ffffff;
-  --ac-primary-dark: #e1e0e0;
-  --ac-primary-darker: #c9c8c8;
-  --ac-text-muted: #f9fafb;
+  --ac-primary: #2e8b57;
+  --ac-primary-dark: #21653f;
+  --ac-primary-darker: #1b5233;
+  --ac-text-muted: #6a737d;
   --ac-blockquote-border: #dfe2e5;
   --ac-code-bg: #f6f8fa;
 }
@@ -27,7 +27,7 @@ body {
 
 /* 链接颜色 */
 a {
-  color: var(--ac-primary);
+  color: #08c
 }
 a:hover {
   color: var(--ac-primary-darker);
@@ -105,7 +105,7 @@ a:hover {
   border-left: 0.25em solid var(--ac-blockquote-border);
   padding: 0 1em;
   margin: 1.5em 0;
-  color: var(--ac-text-muted);
+  color: rgb(26, 26, 26);
   line-height: 1.8;
 }
 
