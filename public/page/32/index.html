@@ -151,6 +151,82 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2022年 3月 14日 - 2022年 3月19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/">工作周报2022年 3月 14日 - 2022年 3月19日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-03-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Web录制本周已经完成了流程的主要架构设计开发和关键技术的开发和整合。架构基于tapable和web stream的事件合流的设计(参考数据流管道架构图)，主要解决两个关键问题：1 是录制，美颜，合成，上传等各个模块的耦合串联及扩展，通过tapable定义整个流程的钩子函数，让各个模块可以灵活通信及扩展，2 采用数据流管道的思想串联各个模块的数据，目的数据流生产和消费通过消息队列的方式生产录制流和消费录制流；<br>实现过程中比较花时间的是合成和美颜，合成选了两种技术方案，1是基于webassembly的FFmpeg多路视频流合成方案， 2是基于双video + canvas的画图方式；FFmpeg合流的方案比较成熟，现在涉及音视频合流的场景很多都是用FFmpeg实现的，web端的比较少见，@duanjun做了web端的技术预研，在录制项目我做完成了FFmpeg的接入，但是接入美颜后，涉及数据格式的转换，美颜基于opencv，返回的是帧图片，需要转成stream或者blob的形式使用FFmpeg ，所以从串联简单性考虑使用了canvas的方案，canvas方案是基本原理是每路流打入对应video并自动播放，同时捕获video帧数据，根据每路流的合成方式，使用canvas的绘制API绘制到canvas上，canvas的捕获流可以直接接入上传流；<br>web端FFmpeg的接入给我们带来了很多想象的地方，简单的如，上传的图片，音频，视频都可以在浏览器端加可见水印，这可以有效的保护讲师和企业的知识产权，复杂点的，我们可以在web端实现微课小节，视频小节，作业小节，直播回放的音视频材料的裁切及拼装等编辑，可以提升音视频内容小节的内容编辑能力和内容制作体验；<br>整个录制流程涉及的环节稍多，可以参考录制流程图，很多技术点在最初技术设计和技术预研上并未完全想到，这也是个比较大的教训，对与技术难点较多的项目，要比较完整的分析整体功能，对关键的代码结构，关键的技术实现有比较透彻的了解才能比较好的评估项目用时。</p>
+<p>录制流程图</p>
+<p>数据流管道架构图</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2022年 3月 7日 - 2022年 3月11日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -854,89 +930,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 1月 4日 - 2022年 1月7日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%887%E6%97%A5/">工作周报2022年 1月 4日 - 2022年 1月7日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%887%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-01-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周三的工程例会上东朔老师指出Teck Leader的首要职责是给伙伴们安排好任务明确好优先级，Teck Leader要对结果负责，做好兜底的工作，这两点给了我很多的触动，从这个角度反思，我有很多做的不好的地方，很多时候我陷在自己的优先级工作里，比如改bug，比如跟线上问题，比如自己的项目，很少和其他伙伴合作的项目，我认为这是我的core job，其实我错了，我要花更多的精力专注在更重要的事情上，比如思考 对伙伴们需要我给予什么样的帮助和支持提高 项目效率和质量，我需要怎快速解决团队中的共性问题等等<ul>
-<li>对工程质量负责，做好check，需要了解项目技术难度很复杂度，做好技术兜底和风险规避</li>
-<li>了解每个伙伴的优势，让大家更好的发挥最大价值</li>
-<li>加强技术预研，提高项目风险识别，关注项目质量和项目指标，引导每一位伙伴持续成长，成为更优秀的自己</li>
-<li>最最重要的是，不要自己单独做项目，一定要和其他伙伴合作项目，哪怕分很小的一个模块，也要和其他伙伴一起完成，要在项目开发过程中和协作伙伴一起并肩作战，解决遇到的工程问题，效率问题，流程问题等等项目中实实在在的小问题和大问题，最终的目的是让每位伙伴成为Teck Leader的Backup</li>
-<li></li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%887%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/31/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/33/">Next &raquo;</a>
@@ -1318,6 +1311,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">趋势分析</a>
               </li>
             
             <div class="clearfix"></div>

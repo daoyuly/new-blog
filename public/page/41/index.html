@@ -151,6 +151,81 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-技术思考.net框架中的类或组件重写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83.net%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E7%B1%BB%E6%88%96%E7%BB%84%E4%BB%B6%E9%87%8D%E5%86%99/">技术思考：.net框架中的类或组件重写</a>
+    </h1>
+  
+
+        
+        <a href="/2008/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83.net%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E7%B1%BB%E6%88%96%E7%BB%84%E4%BB%B6%E9%87%8D%E5%86%99/" class="archive-article-date">
+  	<time datetime="2008-01-31T01:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2008-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对.net框架中的类或组件进行重写，或重载能够使组件灵活的服务与自己的程序，<br>这就涉及到许多低层的东西，这需要对.net的基础类有比较深刻的认识和理解。并且能够懂得如何重写这些基类。</p>
+<p>例如：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyForm</span>:<span class="title">Form</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="title">OnClosed</span>(<span class="params">EventArgs e</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">     <span class="comment">//do something</span></span><br><span class="line">      <span class="comment">//程序作者重写了Form类中的OnClosed方法，该方法在Form类被关闭时触发</span></span><br><span class="line">      <span class="comment">//在这里程序作者可以写一个方法放在这里，当MyForm被关闭是执行该方法。</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术思考</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2008/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83.net%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E7%B1%BB%E6%88%96%E7%BB%84%E4%BB%B6%E9%87%8D%E5%86%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-概要设计说明书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -646,6 +721,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">趋势分析</a>
               </li>
             
             <div class="clearfix"></div>

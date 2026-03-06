@@ -151,6 +151,282 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-06-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-06-arxiv-agent-trends/">2026-03-06 arXiv AI Agent 领域最新趋势</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-06-arxiv-agent-trends/" class="archive-article-date">
+  	<time datetime="2026-03-06T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="2026年3月6日-arXiv-AI-Agent-领域最新趋势"><a href="#2026年3月6日-arXiv-AI-Agent-领域最新趋势" class="headerlink" title="2026年3月6日 arXiv AI Agent 领域最新趋势"></a>2026年3月6日 arXiv AI Agent 领域最新趋势</h1><blockquote>
+<p>本报告整理自 <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a>，聚焦 AI Agent 相关的最新研究进展。</p>
+</blockquote>
+<h2 id="📊-核心趋势概览"><a href="#📊-核心趋势概览" class="headerlink" title="📊 核心趋势概览"></a>📊 核心趋势概览</h2><p>今天共发布 <strong>12 篇 Agent 相关论文</strong>，呈现出以下关键趋势：</p>
+<h3 id="1️⃣-Web-GUI-Agents-持续升温"><a href="#1️⃣-Web-GUI-Agents-持续升温" class="headerlink" title="1️⃣ Web&#x2F;GUI Agents 持续升温"></a>1️⃣ <strong>Web&#x2F;GUI Agents 持续升温</strong></h3><ul>
+<li>3 篇论文聚焦 Web 代理（WebChain, STRUCTUREDAGENT, WebFactory）</li>
+<li>重点解决长时序任务、数据效率、环境合成等问题</li>
+<li>从依赖人工数据转向自动化训练流水线</li>
+</ul>
+<h3 id="2️⃣-多代理协作成为主流范式"><a href="#2️⃣-多代理协作成为主流范式" class="headerlink" title="2️⃣ 多代理协作成为主流范式"></a>2️⃣ <strong>多代理协作成为主流范式</strong></h3><ul>
+<li>医疗诊断（MedCoRAG）、数学推理、群聊（GCAgent）等领域广泛应用</li>
+<li>角色专业化 + 协作共识的架构模式趋于成熟</li>
+</ul>
+<h3 id="3️⃣-终端-编码代理崛起"><a href="#3️⃣-终端-编码代理崛起" class="headerlink" title="3️⃣ 终端&#x2F;编码代理崛起"></a>3️⃣ <strong>终端&#x2F;编码代理崛起</strong></h3><ul>
+<li>OPENDEV 展示了从 IDE 插件到终端原生代理的转变</li>
+<li>上下文管理和安全性控制成为关键挑战</li>
+</ul>
+<h3 id="4️⃣-强化学习训练代理"><a href="#4️⃣-强化学习训练代理" class="headerlink" title="4️⃣ 强化学习训练代理"></a>4️⃣ <strong>强化学习训练代理</strong></h3><ul>
+<li>KARL 通过 RL 训练企业搜索代理，超越 Claude 4.6 和 GPT 5.2</li>
+<li>多任务训练展现出强大的泛化能力</li>
+</ul>
+<h3 id="5️⃣-移动端代理架构创新"><a href="#5️⃣-移动端代理架构创新" class="headerlink" title="5️⃣ 移动端代理架构创新"></a>5️⃣ <strong>移动端代理架构创新</strong></h3><ul>
+<li>Jagarin 提出三层架构解决移动端部署悖论</li>
+<li>通过”休眠-唤醒”机制平衡功能性和能耗</li>
+</ul>
+<hr>
+<h2 id="🔥-重点论文详解"><a href="#🔥-重点论文详解" class="headerlink" title="🔥 重点论文详解"></a>🔥 重点论文详解</h2><h3 id="1-WebChain-最大规模-Web-代理数据集"><a href="#1-WebChain-最大规模-Web-代理数据集" class="headerlink" title="1. WebChain: 最大规模 Web 代理数据集"></a>1. WebChain: 最大规模 Web 代理数据集</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05295">WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces</a></p>
+<p><strong>核心亮点</strong>:</p>
+<ul>
+<li>📈 <strong>规模</strong>: 31,725 条轨迹，318k 步骤</li>
+<li>🎯 <strong>Triple Alignment</strong>: 视觉、结构、动作三模态对齐</li>
+<li>🏆 <strong>Dual Mid-Training</strong>: 解耦空间定位与规划，在 WebChainBench 上达到 SOTA</li>
+</ul>
+<p><strong>意义</strong>: 为下一代可扩展 Web 代理提供高质量训练数据和评估基准。</p>
+<hr>
+<h3 id="2-STRUCTUREDAGENT-AND-OR-树规划长时序任务"><a href="#2-STRUCTUREDAGENT-AND-OR-树规划长时序任务" class="headerlink" title="2. STRUCTUREDAGENT: AND&#x2F;OR 树规划长时序任务"></a>2. STRUCTUREDAGENT: AND&#x2F;OR 树规划长时序任务</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05294">STRUCTUREDAGENT: Planning with AND&#x2F;OR Trees for Long-Horizon Web Tasks</a></p>
+<p><strong>核心创新</strong>:</p>
+<ul>
+<li>🌳 <strong>动态 AND&#x2F;OR 树</strong>: 在线分层规划器，高效搜索</li>
+<li>💾 <strong>结构化记忆模块</strong>: 跟踪候选解，改进约束满足</li>
+<li>📋 <strong>可解释性</strong>: 生成可调试的分层计划</li>
+</ul>
+<p><strong>性能</strong>: 在 WebVoyager、WebArena 和购物基准上超越标准 LLM 代理。</p>
+<hr>
+<h3 id="3-WebFactory-自动化-GUI-代理训练流水线"><a href="#3-WebFactory-自动化-GUI-代理训练流水线" class="headerlink" title="3. WebFactory: 自动化 GUI 代理训练流水线"></a>3. WebFactory: 自动化 GUI 代理训练流水线</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05044">WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents</a></p>
+<p><strong>突破性方法</strong>:</p>
+<ul>
+<li>🔄 <strong>完全自动化闭环 RL 流水线</strong></li>
+<li>📦 <strong>仅 10 个网站合成数据</strong> &#x3D; 大规模人工标注数据性能</li>
+<li>🎓 <strong>知识压缩</strong>: 将 LLM 互联网知识转化为可执行的代理行为</li>
+</ul>
+<p><strong>关键洞察</strong>: 提出”具身潜力”(embodiment potential) 作为 LLM 评估新维度。</p>
+<hr>
+<h3 id="4-KARL-强化学习训练企业搜索代理"><a href="#4-KARL-强化学习训练企业搜索代理" class="headerlink" title="4. KARL: 强化学习训练企业搜索代理"></a>4. KARL: 强化学习训练企业搜索代理</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05218">KARL: Knowledge Agents via Reinforcement Learning</a></p>
+<p><strong>四大贡献</strong>:</p>
+<ol>
+<li><strong>KARLBench</strong>: 6 种搜索能力的评估套件</li>
+<li><strong>多任务泛化</strong>: 异构搜索行为训练 &gt; 单一基准优化</li>
+<li><strong>代理合成流水线</strong>: 长时序推理 + 工具使用生成高质量数据</li>
+<li><strong>迭代大批次离策略 RL</strong>: 样本高效，支持分布外泛化</li>
+</ol>
+<p><strong>性能对比</strong>:</p>
+<ul>
+<li>相比 Claude 4.6 和 GPT 5.2，在成本-质量和延迟-质量权衡上达到 Pareto 最优</li>
+<li>足够测试时计算可超越最强闭源模型</li>
+</ul>
+<hr>
+<h3 id="5-OPENDEV-终端原生编码代理"><a href="#5-OPENDEV-终端原生编码代理" class="headerlink" title="5. OPENDEV: 终端原生编码代理"></a>5. OPENDEV: 终端原生编码代理</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05344">Building AI Coding Agents for the Terminal</a></p>
+<p><strong>架构特点</strong>:</p>
+<ul>
+<li>🎯 <strong>双代理架构</strong>: 规划与执行分离</li>
+<li>🔄 <strong>自适应上下文压缩</strong>: 渐进减少旧观察，防止上下文膨胀</li>
+<li>🧠 <strong>自动记忆系统</strong>: 跨会话积累项目特定知识</li>
+<li>🛡️ <strong>安全控制</strong>: 严格的安全机制 + 延迟工具发现</li>
+</ul>
+<p><strong>范式转变</strong>: 从复杂 IDE 插件转向多功能终端原生代理。</p>
+<hr>
+<h3 id="6-MedCoRAG-医疗诊断多代理协作"><a href="#6-MedCoRAG-医疗诊断多代理协作" class="headerlink" title="6. MedCoRAG: 医疗诊断多代理协作"></a>6. MedCoRAG: 医疗诊断多代理协作</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05129">MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus</a></p>
+<p><strong>多代理架构</strong>:</p>
+<ul>
+<li>🏥 <strong>Router Agent</strong>: 根据病例复杂度动态调度</li>
+<li>👨‍⚕️ <strong>Specialist Agents</strong>: 迭代推理，按需重新检索</li>
+<li>🩺 <strong>Generalist Agent</strong>: 综合所有讨论，生成可追溯共识诊断</li>
+</ul>
+<p><strong>混合证据检索</strong>: UMLS 知识图谱 + 临床指南联合检索与剪枝。</p>
+<hr>
+<h3 id="7-GCAgent-群聊通信增强"><a href="#7-GCAgent-群聊通信增强" class="headerlink" title="7. GCAgent: 群聊通信增强"></a>7. GCAgent: 群聊通信增强</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05240">GCAgent: Enhancing Group Chat Communication through Dialogue Agents System</a></p>
+<p><strong>三大模块</strong>:</p>
+<ol>
+<li><strong>Agent Builder</strong>: 按用户兴趣定制代理</li>
+<li><strong>Dialogue Manager</strong>: 协调对话状态和代理调用</li>
+<li><strong>Interface Plugins</strong>: 三种工具降低交互障碍</li>
+</ol>
+<p><strong>实战效果</strong>:</p>
+<ul>
+<li>350 天真实部署，消息量增加 <strong>28.80%</strong></li>
+<li>平均评分 4.68，51.04% 偏好率</li>
+</ul>
+<hr>
+<h3 id="8-Jagarin-移动端个人任务代理三层架构"><a href="#8-Jagarin-移动端个人任务代理三层架构" class="headerlink" title="8. Jagarin: 移动端个人任务代理三层架构"></a>8. Jagarin: 移动端个人任务代理三层架构</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05069">Jagarin: A Three-Layer Architecture for Hibernating Personal Duty Agents on Mobile</a></p>
+<p><strong>解决的核心矛盾</strong>: 持续后台执行耗电 vs 纯反应式代理错过时效任务</p>
+<p><strong>三层架构</strong>:</p>
+<ol>
+<li><strong>DAWN (Duty-Aware Wake Network)</strong>: 设备端启发式引擎，计算综合紧急度</li>
+<li><strong>ARIA (Agent Relay Identity Architecture)</strong>: 邮件身份代理，路由商业收件箱</li>
+<li><strong>ACE (Agent-Centric Exchange)</strong>: 机构到个人代理的直接机器可读通信协议</li>
+</ol>
+<p><strong>优势</strong>: 无持久云端状态、无持续后台执行、无隐私妥协。</p>
+<hr>
+<h3 id="9-Bidirectional-Curriculum-Generation-双向课程生成"><a href="#9-Bidirectional-Curriculum-Generation-双向课程生成" class="headerlink" title="9. Bidirectional Curriculum Generation: 双向课程生成"></a>9. Bidirectional Curriculum Generation: 双向课程生成</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/05120">Bidirectional Curriculum Generation: A Multi-Agent Framework for Data-Efficient Mathematical Reasoning</a></p>
+<p><strong>核心创新</strong>:</p>
+<ul>
+<li>⬆️ <strong>复杂化</strong>: 挑战模型</li>
+<li>⬇️ <strong>简化</strong>: 修复特定推理失败</li>
+<li>🔄 <strong>闭环反馈</strong>: 动态生成，确保每个阶段只消费最有效的数据</li>
+</ul>
+<p><strong>理论基础</strong>: 基于 Optimal Pacing Theorem，显著优于基线，用更少的指令样本达到更优推理性能。</p>
+<hr>
+<h2 id="📈-趋势总结与展望"><a href="#📈-趋势总结与展望" class="headerlink" title="📈 趋势总结与展望"></a>📈 趋势总结与展望</h2><h3 id="当前热点"><a href="#当前热点" class="headerlink" title="当前热点"></a>当前热点</h3><ol>
+<li><p><strong>数据效率</strong> &gt; 数据规模</p>
+<ul>
+<li>WebFactory 仅用 10 个网站达到大规模人工标注性能</li>
+<li>双向课程生成用更少样本达到更优效果</li>
+</ul>
+</li>
+<li><p><strong>架构专业化</strong></p>
+<ul>
+<li>Web 代理: 分层规划 + 结构化记忆</li>
+<li>医疗代理: 多专科协作</li>
+<li>移动代理: 三层休眠-唤醒</li>
+</ul>
+</li>
+<li><p><strong>训练方法创新</strong></p>
+<ul>
+<li>RL 训练代理成为主流（KARL）</li>
+<li>合成数据 + 多任务训练展现强大泛化</li>
+</ul>
+</li>
+<li><p><strong>评估体系完善</strong></p>
+<ul>
+<li>KARLBench、WebChainBench 等新基准涌现</li>
+<li>关注分布外泛化能力</li>
+</ul>
+</li>
+</ol>
+<h3 id="未来方向"><a href="#未来方向" class="headerlink" title="未来方向"></a>未来方向</h3><ul>
+<li><strong>可解释性</strong>: STRUCTUREDAGENT 的分层计划、MedCoRAG 的可追溯诊断</li>
+<li><strong>能效优化</strong>: 移动端代理的能耗管理（Jagarin）</li>
+<li><strong>人机协作</strong>: 从使用 AI 工具到设计 AI 协作伙伴（Trilingual Triad Framework）</li>
+<li><strong>安全可靠</strong>: LLM Judge 的偏见有界评估、可靠性压力测试</li>
+</ul>
+<hr>
+<h2 id="📚-相关论文列表"><a href="#📚-相关论文列表" class="headerlink" title="📚 相关论文列表"></a>📚 相关论文列表</h2><h3 id="核心-Agent-论文"><a href="#核心-Agent-论文" class="headerlink" title="核心 Agent 论文"></a>核心 Agent 论文</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05295">WebChain</a> - Web 代理数据集</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05294">STRUCTUREDAGENT</a> - AND&#x2F;OR 树规划</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05044">WebFactory</a> - GUI 代理自动化训练</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05218">KARL</a> - RL 训练企业搜索代理</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05344">OPENDEV</a> - 终端编码代理</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05129">MedCoRAG</a> - 医疗诊断多代理</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05240">GCAgent</a> - 群聊通信增强</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05069">Jagarin</a> - 移动端代理架构</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05120">Bidirectional Curriculum Generation</a> - 数学推理多代理</li>
+</ol>
+<h3 id="相关评估与工具"><a href="#相关评估与工具" class="headerlink" title="相关评估与工具"></a>相关评估与工具</h3><ol start="10">
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05399">Judge Reliability Harness</a> - LLM Judge 可靠性测试</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05485">Towards Provably Unbiased LLM Judges</a> - 偏见有界评估</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05361">PACE</a> - 个性化自适应课程引擎</li>
+</ol>
+<hr>
+<h2 id="💡-关键洞察"><a href="#💡-关键洞察" class="headerlink" title="💡 关键洞察"></a>💡 关键洞察</h2><blockquote>
+<p><strong>“The future of AI agents depends not only on scaling intelligence, but on scaling efficiency.”</strong></p>
+<p>—— AI+HW 2035 Vision Paper</p>
+</blockquote>
+<p>今天的论文清晰展示了一个趋势：<strong>效率 &gt; 规模</strong>。无论是数据效率、训练效率还是部署效率，都成为下一代 AI 代理的关键竞争力。</p>
+<hr>
+<p><em>整理时间: 2026-03-06 12:00 (Asia&#x2F;Shanghai)</em><br><em>数据来源: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arXiv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">趋势分析</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI前沿//" class="article-tag-list-link color5">AI前沿</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-06-arxiv-agent-trends/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-05-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -3509,80 +3785,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-结束umu十年旅程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E7%BB%93%E6%9D%9Fumu%E5%8D%81%E5%B9%B4%E6%97%85%E7%A8%8B/">完成umu十年地旅程</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E7%BB%93%E6%9D%9Fumu%E5%8D%81%E5%B9%B4%E6%97%85%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2025-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从 2015 年到 2025 年，在 2025 年底，经过了艰难的思考，我最终选择离开了我曾经坚定选择的 umu。</p>
-<p>经历了公司从0到1的过程，起步、高峰、稳速，直到 2025 年底，这其中风雨，个中滋味，对我是一段非常有意义而且重要的人生旅程和职业经历。</p>
-<p>我为通过 umu 平台而服务过众多的用户而感到自豪！</p>
-<p>未来，我也会通过更多的方式、更有效的平台用更优秀的产品服务更多的人们！</p>
-<p>用户是我的衣食父母，这是我很多重要思考中的关键因素！</p>
-<p>感谢所有的曾经在 umu 共事过的人们！我和您一起在 umu 经历的每一件事，都是出于公心，并保持了足够的真诚！</p>
-<p>对于因一起在 umu 共事而拥有了彼此友谊的朋友们，愿我们友谊长存，历久醇厚！</p>
-<p>每一家公司在成长过程中总是伴随着众多的赞誉和许多的批评，我始终认为，关键领导者要坚守战略方向，以开放、专业、谦卑的姿态来面对市场。</p>
-<p>这十年里，面对新来的人们，离开的人们，共事过的人们，我不曾偏见以待，我坚信，热情和尊重是一家成功公司唯一不变的企业文化！</p>
-<p>对我而言，过往一切淡然且珍贵，沉淀心中的自不必说，没有领悟的也无法言说。</p>
-<p>我祝愿老雇主 umu 生意兴隆，客户多多，向美好的未来蓬勃进发！</p>
-<p>未来我依然会选择用纯粹的态度拥抱整个世界！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E7%BB%93%E6%9D%9Fumu%E5%8D%81%E5%B9%B4%E6%97%85%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -3964,6 +4166,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">趋势分析</a>
               </li>
             
             <div class="clearfix"></div>
