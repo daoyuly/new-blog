@@ -151,6 +151,80 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2024年 7 月 15 日 - 2024年 7 月 21 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%207%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%207%20%E6%9C%88%2021%20%E6%97%A5/">工作周报2024年 7 月 15 日 - 2024年 7 月 21 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%207%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%207%20%E6%9C%88%2021%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-07-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-07-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>uShow优化在实现上采用基于大模型的设计思路。迭代前的uShow的开场白，结束语中的自我介绍，感谢， 结尾的感谢都是基于传统的正则匹配算法， 主题介绍，引言，呼吁行动，议程，结尾总结，联系实际等都是基于小模型的文本分类算法。<br>基于正则匹配算法的缺点是匹配的准确性取决于匹配单词的多样性，就要要枚举所有表示感谢地词，正则能够覆盖60%的表达感谢地场景，但是对于有创意性的感谢表达缺乏足够的识别能力，另外就是 得分是0和1的离散值，在实际的联系，评估值要么得分，要么不得分。<br>文本分类小模型大部分是基于BERT的微调模型（CN和JP），确定是语义识别不准，BERT在文本分类上有较好的表现，目前的缺点是：<br>模型版本较低，在专业性表达上分类评估不好<br>需要自己找文本分类标签，在没有统一逐字稿的情况下，练习者的表达丰富多样，小模型不足以支撑这类文本分类的需求<br>多个模型并行，增加了程序的复杂度和计算资源<br>基于以上考虑，这次迭代在实现上，主要是验证大模型（GPT-4o，后续千问）的效果，主要思路如下：<br>基于测试数据，构造最优的多个Prompt，目标是利用大模型完成语言分类任务<br>利用大模型找到基于语义的各项分类，固定各维度权重<br>利用部分验证数据，微调分数分数维度权重<br>调整现有的架构，兼容以往小模型的情况下，加入大模型流程<br>构造验证数据，评估和微调新算法的效果</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%207%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%207%20%E6%9C%88%2021%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2024年 7 月 8 日 - 2024年 7 月 14 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -817,80 +891,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2024年 5 月 6 日 - 2024年 5 月 12 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%205%20%E6%9C%88%206%20%E6%97%A5%20-%202024%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5/">工作周报2024年 5 月 6 日 - 2024年 5 月 12 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%205%20%E6%9C%88%206%20%E6%97%A5%20-%202024%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-05-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Chatbot相关问题总结<br>反思日本盐野义的Chatbot实施问题，这里有我很大的责任，没有及时消除其中的危机，日常优化中功能回顾不够深入，特别是go和python两侧服务中的类型没有对齐的问题导致的阈值问题。建立信任难，毁灭信任容易，和客户建立信任的基础是稳定和可靠的质量，以后的交付过程中必须想办法守住质量，除了优化调整交付流程，增加验证粒度，还要持续增加一些可靠性和准确度验证，虽然语言本身是模糊的，在现有的架构下，需要丰富评测维度，实现客户预期，提升用户体验。<br>增强客户服务意识也很重要，客户的很多反馈问题，实际上是客户在使用上和对Chatbot的理解存在偏差，支持工程师需要针对性的找到解决方案，并切实解决客户问题。解决掉客户的问题，透过这些解决方案再去优化Chatbot<br>AI类的产品比以前的任何产品都更需要工程化，现阶段模型本身存在一定的不确定性和个性化（这个是问题空间和解空间的映射有关），商业化产品要求准确稳定，AI类产品在问题对齐，数据，训练，开发，测试，评估等各个方面建立工程化的工具和平台，保证各个环节的结果符合预期，这样形成标准化的交付，保证所有的交付具有同样的高质量结果。<br>深挖实现原理，不少bug是出在对实现理解不深刻，对对应调整引发的深层次问题意识不到，往往的这类问题没有深入的对应的测试，又不能得到及时的发现，一旦发现就可能演变成事故了。<br>我另一个深刻的认识是敬畏客户，敬畏产品。敬畏不止是态度，在围绕客户服务的所有缓解中，只指向为客户创造价值这个一结果，不给客户惹麻烦，不增加客户负担，为客户消解难题，以客户的困难为自己的困难，敬畏产品，需要严谨，严肃的态度对台产品的任何变更。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%205%20%E6%9C%88%206%20%E6%97%A5%20-%202024%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
@@ -1276,6 +1276,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">趋势分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目开发</a>
               </li>
             
             <div class="clearfix"></div>
