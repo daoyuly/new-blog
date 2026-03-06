@@ -45,7 +45,7 @@ a:hover {
 
 /* 左侧栏主题色 */
 .left-col .overlay {
-  background: var(--ac-primary) !important;
+  background: var(--ac-primary);
 }
 .left-col .header-menu a:hover,
 .left-col .header-smart-menu a:hover {
