@@ -8,7 +8,8 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "start": "node server/index.js",
-    "dev": "hexo generate && node server/index.js"
+    "dev": "hexo generate && node server/index.js",
+    "vercel-build": "hexo generate"
   },
   "hexo": {
     "version": "7.3.0"

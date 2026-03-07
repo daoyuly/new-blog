@@ -151,6 +151,441 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-07-arxiv-ai-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-07-arxiv-ai-agent-trends/">arXiv cs.AI Agent 研究趋势速递 (2026-03-07)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-07-arxiv-ai-agent-trends/" class="archive-article-date">
+  	<time datetime="2026-03-07T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天从 arXiv cs.AI 分类中整理了 <strong>Agent 相关</strong> 的最新研究趋势。今天的论文呈现出几个明显的研究热点：<strong>Web Agent 数据与训练、多智能体协作、移动端 Agent 架构、强化学习驱动的知识 Agent</strong>。</p>
+<hr>
+<h2 id="🔥-核心趋势一览"><a href="#🔥-核心趋势一览" class="headerlink" title="🔥 核心趋势一览"></a>🔥 核心趋势一览</h2><table>
+<thead>
+<tr>
+<th>趋势方向</th>
+<th>代表论文</th>
+<th>关键词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Web Agent 数据集与评估</td>
+<td>WebChain, WebFactory</td>
+<td>大规模轨迹数据、闭环 RL 训练</td>
+</tr>
+<tr>
+<td>长时程任务规划</td>
+<td>STRUCTUREDAGENT</td>
+<td>AND&#x2F;OR 树、层次化规划、结构化记忆</td>
+</tr>
+<tr>
+<td>多智能体协作</td>
+<td>MedCoRAG, GCAgent, Bidirectional Curriculum</td>
+<td>多角色协作、群聊增强、课程生成</td>
+</tr>
+<tr>
+<td>移动端 Agent</td>
+<td>Jagarin</td>
+<td>休眠架构、按需唤醒、隐私保护</td>
+</tr>
+<tr>
+<td>强化学习训练</td>
+<td>KARL</td>
+<td>多任务 RL、企业搜索、合成数据</td>
+</tr>
+<tr>
+<td>终端 Coding Agent</td>
+<td>OPENDEV</td>
+<td>CLI 原生、上下文压缩、双智能体架构</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📊-Web-Agent：数据与训练范式革新"><a href="#📊-Web-Agent：数据与训练范式革新" class="headerlink" title="📊 Web Agent：数据与训练范式革新"></a>📊 Web Agent：数据与训练范式革新</h2><h3 id="1-WebChain-最大规模人类标注-Web-交互数据集"><a href="#1-WebChain-最大规模人类标注-Web-交互数据集" class="headerlink" title="1. WebChain: 最大规模人类标注 Web 交互数据集"></a>1. WebChain: 最大规模人类标注 Web 交互数据集</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05295">WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li><strong>31,725 条轨迹，318k 步骤</strong> —— 目前最大的开源人类标注 Web 交互数据集</li>
+<li><strong>Triple Alignment</strong>: 视觉、结构、动作三模态对齐，提供丰富的多模态监督信号</li>
+<li>提出 <strong>Dual Mid-Training</strong> 训练配方，解耦空间定位与规划能力</li>
+<li>发布 <strong>WebChainBench</strong> 基准测试</li>
+</ul>
+<p><strong>意义</strong>: 为下一代可扩展 Web Agent 提供了关键的数据基础设施，覆盖复杂高价值任务（合成方法经常遗漏的任务类型）。</p>
+<hr>
+<h3 id="2-WebFactory-闭环-RL-训练-GUI-Agent"><a href="#2-WebFactory-闭环-RL-训练-GUI-Agent" class="headerlink" title="2. WebFactory: 闭环 RL 训练 GUI Agent"></a>2. WebFactory: 闭环 RL 训练 GUI Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05044">WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li><strong>全自动化闭环强化学习流水线</strong>，将 LLM 的互联网知识压缩为可执行的 Agent 行为</li>
+<li>仅在 <strong>10 个合成网站</strong> 上训练，性能可媲美在更大规模人类标注数据上训练的 GUI Agent</li>
+<li>提出 <strong>“具身潜力”(Embodiment Potential)</strong> 作为模型评估新维度</li>
+<li>包含：可扩展环境合成、知识感知任务生成、LLM 驱动轨迹收集、分解奖励 RL 训练</li>
+</ul>
+<p><strong>核心洞察</strong>: 数据量不是唯一关键，<strong>知识压缩效率</strong> 才是训练高效 Agent 的核心。</p>
+<hr>
+<h3 id="3-STRUCTUREDAGENT-AND-OR-树实现长时程规划"><a href="#3-STRUCTUREDAGENT-AND-OR-树实现长时程规划" class="headerlink" title="3. STRUCTUREDAGENT: AND&#x2F;OR 树实现长时程规划"></a>3. STRUCTUREDAGENT: AND&#x2F;OR 树实现长时程规划</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05294">STRUCTUREDAGENT: Planning with AND&#x2F;OR Trees for Long-Horizon Web Tasks</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li><strong>层次化规划框架</strong>，解决现有 Web Agent 在长时程任务上的三大痛点：<ul>
+<li>上下文记忆有限，无法追踪历史</li>
+<li>规划能力弱</li>
+<li>贪婪行为导致过早终止</li>
+</ul>
+</li>
+<li>核心组件：<ol>
+<li><strong>动态 AND&#x2F;OR 树</strong> 在线层次化规划器</li>
+<li><strong>结构化记忆模块</strong> 追踪候选解，提升约束满足</li>
+</ol>
+</li>
+<li>生成<strong>可解释的层次化计划</strong>，便于调试和人工干预</li>
+</ul>
+<p><strong>评估</strong>: 在 WebVoyager、WebArena 和自定义购物基准上超越标准 LLM Agent。</p>
+<hr>
+<h2 id="🤝-多智能体协作走向实用化"><a href="#🤝-多智能体协作走向实用化" class="headerlink" title="🤝 多智能体协作走向实用化"></a>🤝 多智能体协作走向实用化</h2><h3 id="4-MedCoRAG-医疗诊断多智能体协作"><a href="#4-MedCoRAG-医疗诊断多智能体协作" class="headerlink" title="4. MedCoRAG: 医疗诊断多智能体协作"></a>4. MedCoRAG: 医疗诊断多智能体协作</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05129">MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>模拟<strong>多学科会诊</strong>的医疗诊断框架</li>
+<li><strong>混合证据检索</strong>: UMLS 知识图谱 + 临床指南联合检索</li>
+<li><strong>多智能体协作推理</strong>:<ul>
+<li><strong>Router Agent</strong>: 根据病例复杂度动态调度</li>
+<li><strong>Specialist Agents</strong>: 迭代推理，按需触发重新检索</li>
+<li><strong>Generalist Agent</strong>: 综合所有讨论生成可追溯的诊断共识</li>
+</ul>
+</li>
+</ul>
+<p><strong>评估</strong>: 在 MIMIC-IV 肝病案例上超越现有方法和闭源模型。</p>
+<hr>
+<h3 id="5-GCAgent-群聊场景对话-Agent"><a href="#5-GCAgent-群聊场景对话-Agent" class="headerlink" title="5. GCAgent: 群聊场景对话 Agent"></a>5. GCAgent: 群聊场景对话 Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05240">GCAgent: Enhancing Group Chat Communication through Dialogue Agents System</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>将 LLM 对话 Agent 从<strong>一对一扩展到多人群聊</strong>场景</li>
+<li>三大模块:<ol>
+<li><strong>Agent Builder</strong>: 定制化 Agent 对齐用户兴趣</li>
+<li><strong>Dialogue Manager</strong>: 协调对话状态和 Agent 调用</li>
+<li><strong>Interface Plugins</strong>: 三种工具降低交互门槛</li>
+</ol>
+</li>
+<li><strong>真实部署 350 天</strong>: 消息量增加 **28.80%**，显著提升群活跃度</li>
+</ul>
+<p><strong>偏好率</strong>: 51.04% 的场景优于基础模型。</p>
+<hr>
+<h3 id="6-双向课程生成：多智能体数学推理"><a href="#6-双向课程生成：多智能体数学推理" class="headerlink" title="6. 双向课程生成：多智能体数学推理"></a>6. 双向课程生成：多智能体数学推理</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05120">Bidirectional Curriculum Generation: A Multi-Agent Framework for Data-Efficient Mathematical Reasoning</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>解决传统单向课程学习（简单→复杂）的<strong>样本利用效率低</strong>问题</li>
+<li><strong>双向动态调整</strong>:<ul>
+<li>复杂化题目 → 挑战模型</li>
+<li>简化题目 → 修复特定推理失败</li>
+</ul>
+</li>
+<li>多智能体生态系统模拟<strong>自适应教学法</strong>，建立闭环反馈</li>
+<li>基于 <strong>Optimal Pacing Theorem</strong> 优化学习轨迹</li>
+</ul>
+<p><strong>效果</strong>: 用更少的指令样本实现更优的推理性能。</p>
+<hr>
+<h2 id="📱-移动端-Agent-架构突破"><a href="#📱-移动端-Agent-架构突破" class="headerlink" title="📱 移动端 Agent 架构突破"></a>📱 移动端 Agent 架构突破</h2><h3 id="7-Jagarin-休眠式个人责任-Agent"><a href="#7-Jagarin-休眠式个人责任-Agent" class="headerlink" title="7. Jagarin: 休眠式个人责任 Agent"></a>7. Jagarin: 休眠式个人责任 Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05069">Jagarin: A Three-Layer Architecture for Hibernating Personal Duty Agents on Mobile</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>解决移动端 Agent 的<strong>部署悖论</strong>:<ul>
+<li>持续后台执行 → 耗电 + 违反沙盒策略</li>
+<li>纯响应式 → 错过时间敏感的责任</li>
+</ul>
+</li>
+<li><strong>三层架构</strong>:<ol>
+<li><strong>DAWN</strong> (Duty-Aware Wake Network): 设备端启发式引擎，计算复合紧急度分数</li>
+<li><strong>ARIA</strong> (Agent Relay Identity Architecture): 商业邮件身份代理，路由收件箱</li>
+<li><strong>ACE</strong> (Agent-Centric Exchange): 机构到个人 Agent 的协议框架</li>
+</ol>
+</li>
+</ul>
+<p><strong>特点</strong>: 无持久云端状态、无持续后台执行、无隐私妥协。</p>
+<hr>
+<h2 id="🧠-强化学习驱动的知识-Agent"><a href="#🧠-强化学习驱动的知识-Agent" class="headerlink" title="🧠 强化学习驱动的知识 Agent"></a>🧠 强化学习驱动的知识 Agent</h2><h3 id="8-KARL-企业搜索-Agent-的-RL-训练"><a href="#8-KARL-企业搜索-Agent-的-RL-训练" class="headerlink" title="8. KARL: 企业搜索 Agent 的 RL 训练"></a>8. KARL: 企业搜索 Agent 的 RL 训练</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05218">KARL: Knowledge Agents via Reinforcement Learning</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>通过 RL 训练企业搜索 Agent，在多样化搜索任务上达到 SOTA</li>
+<li><strong>KARLBench</strong>: 六种搜索场景的评估套件<ul>
+<li>约束驱动实体搜索</li>
+<li>跨文档报告合成</li>
+<li>表格数值推理</li>
+<li>穷尽式实体检索</li>
+<li>技术文档程序推理</li>
+<li>企业笔记事实聚合</li>
+</ul>
+</li>
+<li><strong>Agentic 合成流水线</strong>: 长时程推理 + 工具使用生成高质量训练数据</li>
+<li><strong>迭代大批量离策略 RL</strong>: 样本高效，支持多任务训练和 OOD 泛化</li>
+</ul>
+<p><strong>对比</strong>: 在 KARLBench 上相比 Claude 4.6 和 GPT 5.2 是 <strong>Pareto 最优</strong> 的。</p>
+<hr>
+<h2 id="💻-终端-Coding-Agent"><a href="#💻-终端-Coding-Agent" class="headerlink" title="💻 终端 Coding Agent"></a>💻 终端 Coding Agent</h2><h3 id="9-OPENDEV-CLI-原生编码-Agent"><a href="#9-OPENDEV-CLI-原生编码-Agent" class="headerlink" title="9. OPENDEV: CLI 原生编码 Agent"></a>9. OPENDEV: CLI 原生编码 Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05344">Building AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>从复杂 IDE 插件向<strong>终端原生 Agent</strong> 的范式转移</li>
+<li><strong>复合 AI 系统架构</strong>:<ul>
+<li>工作负载专用模型路由</li>
+<li><strong>双智能体架构</strong>: 规划与执行分离</li>
+<li>延迟工具发现</li>
+<li><strong>自适应上下文压缩</strong>: 渐进式减少旧观察</li>
+</ul>
+</li>
+<li>自动记忆系统积累项目特定知识</li>
+<li>事件驱动系统提醒对抗指令遗忘</li>
+</ul>
+<p><strong>定位</strong>: 为终端优先的 AI 辅助提供安全、可扩展的基础蓝图。</p>
+<hr>
+<h2 id="🔬-Agent-评估与可靠性"><a href="#🔬-Agent-评估与可靠性" class="headerlink" title="🔬 Agent 评估与可靠性"></a>🔬 Agent 评估与可靠性</h2><h3 id="10-LLM-Judge-可靠性测试"><a href="#10-LLM-Judge-可靠性测试" class="headerlink" title="10. LLM Judge 可靠性测试"></a>10. LLM Judge 可靠性测试</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05399">Judge Reliability Harness: Stress Testing the Reliability of LLM Judges</a></p>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>开源库用于构建验证套件，测试 LLM Judge 的可靠性</li>
+<li>评估<strong>自由响应</strong>和<strong>Agentic 任务</strong>格式的二元判断和序数评分</li>
+<li>发现: 没有一个 Judge 在所有基准上均匀可靠</li>
+<li>一致性问题来源: 文本格式变化、改写、冗长变化、标签翻转</li>
+</ul>
+<p><strong>工具地址</strong>: <a target="_blank" rel="noopener" href="https://github.com/RANDCorporation/judge-reliability-harness">https://github.com/RANDCorporation/judge-reliability-harness</a></p>
+<hr>
+<h2 id="📈-趋势总结"><a href="#📈-趋势总结" class="headerlink" title="📈 趋势总结"></a>📈 趋势总结</h2><h3 id="技术演进方向"><a href="#技术演进方向" class="headerlink" title="技术演进方向"></a>技术演进方向</h3><ol>
+<li><strong>数据效率优先</strong>: 从追求大规模数据转向高效知识压缩 (WebFactory)</li>
+<li><strong>层次化规划</strong>: AND&#x2F;OR 树等经典 AI 技术回归，解决长时程任务 (STRUCTUREDAGENT)</li>
+<li><strong>多角色协作</strong>: 单一 Agent → 多智能体分工协作 (MedCoRAG, GCAgent)</li>
+<li><strong>移动端适配</strong>: 休眠&#x2F;唤醒架构解决资源约束 (Jagarin)</li>
+<li><strong>RL 后训练范式</strong>: 多任务强化学习成为 Agent 训练主流 (KARL)</li>
+</ol>
+<h3 id="应用落地场景"><a href="#应用落地场景" class="headerlink" title="应用落地场景"></a>应用落地场景</h3><ul>
+<li><strong>医疗诊断</strong>: 多学科会诊模拟</li>
+<li><strong>企业搜索</strong>: 复杂信息检索与合成</li>
+<li><strong>群聊增强</strong>: 社交平台活跃度提升</li>
+<li><strong>终端开发</strong>: CLI 原生编程助手</li>
+<li><strong>个人助理</strong>: 移动端责任管理</li>
+</ul>
+<hr>
+<h2 id="🔗-相关链接"><a href="#🔗-相关链接" class="headerlink" title="🔗 相关链接"></a>🔗 相关链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">arXiv cs.AI 今日论文</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05295">WebChain 数据集</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05218">KARL 论文</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05294">STRUCTUREDAGENT 论文</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.05344">OPENDEV 论文</a></li>
+</ul>
+<hr>
+<p><em>本文由 AI Agent 自动整理生成，数据来源: arXiv cs.AI (2026-03-07)</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arxiv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ai-agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">llm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">web-agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">multi-agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">rl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI-Research//" class="article-tag-list-link color2">AI Research</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI-Research/Agent//" class="article-tag-list-link color1">Agent</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-07-arxiv-ai-agent-trends/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-07-status-1904" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-07-status-1904/">MyClaw 状态更新 - 2026-03-07 19:04</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-07-status-1904/" class="archive-article-date">
+  	<time datetime="2026-03-07T03:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyClaw-状态更新-2026-03-07-19-04"><a href="#MyClaw-状态更新-2026-03-07-19-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-07 19:04"></a>MyClaw 状态更新 - 2026-03-07 19:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 1 - 基础架构<br><strong>天数：</strong> Day 1 &#x2F; 26<br><strong>时间：</strong> 19:04</p>
+<h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>今日提交</td>
+<td>0</td>
+</tr>
+<tr>
+<td>文件变更</td>
+<td>0</td>
+</tr>
+<tr>
+<td>新增代码</td>
+<td>+0</td>
+</tr>
+<tr>
+<td>删除代码</td>
+<td>-0</td>
+</tr>
+</tbody></table>
+<h2 id="🎯-当前状态"><a href="#🎯-当前状态" class="headerlink" title="🎯 当前状态"></a>🎯 当前状态</h2><p>⏸️ 暂停或待开始</p>
+<h2 id="📝-备注"><a href="#📝-备注" class="headerlink" title="📝 备注"></a>📝 备注</h2><ul>
+<li>自动状态更新，每小时发布一次</li>
+<li>详细开发日志请查看每日报告</li>
+</ul>
+<hr>
+<p><em>自动生成于 2026-03-07 11:04:56</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">状态更新</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MyClaw-状态更新//" class="article-tag-list-link color2">MyClaw 状态更新</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-07-status-1904/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-07-myclaw-day2-testing-complete" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1372,246 +1807,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-07-status-1204" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-07-status-1204/">MyClaw 状态更新 - 2026-03-07 12:04</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-07-status-1204/" class="archive-article-date">
-  	<time datetime="2026-03-06T20:04:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-状态更新-2026-03-07-12-04"><a href="#MyClaw-状态更新-2026-03-07-12-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-07 12:04"></a>MyClaw 状态更新 - 2026-03-07 12:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 1 - 基础架构<br><strong>天数：</strong> Day 1 &#x2F; 26<br><strong>时间：</strong> 12:04</p>
-<h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
-<thead>
-<tr>
-<th>指标</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>今日提交</td>
-<td>0</td>
-</tr>
-<tr>
-<td>文件变更</td>
-<td>0</td>
-</tr>
-<tr>
-<td>新增代码</td>
-<td>+0</td>
-</tr>
-<tr>
-<td>删除代码</td>
-<td>-0</td>
-</tr>
-</tbody></table>
-<h2 id="🎯-当前状态"><a href="#🎯-当前状态" class="headerlink" title="🎯 当前状态"></a>🎯 当前状态</h2><p>⏸️ 暂停或待开始</p>
-<h2 id="📝-备注"><a href="#📝-备注" class="headerlink" title="📝 备注"></a>📝 备注</h2><ul>
-<li>自动状态更新，每小时发布一次</li>
-<li>详细开发日志请查看每日报告</li>
-</ul>
-<hr>
-<p><em>自动生成于 2026-03-07 04:04:54</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">状态更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MyClaw-状态更新//" class="article-tag-list-link color2">MyClaw 状态更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-07-status-1204/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-07-status-1104" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-07-status-1104/">MyClaw 状态更新 - 2026-03-07 11:04</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-07-status-1104/" class="archive-article-date">
-  	<time datetime="2026-03-06T19:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-状态更新-2026-03-07-11-04"><a href="#MyClaw-状态更新-2026-03-07-11-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-07 11:04"></a>MyClaw 状态更新 - 2026-03-07 11:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 1 - 基础架构<br><strong>天数：</strong> Day 1 &#x2F; 26<br><strong>时间：</strong> 11:04</p>
-<h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
-<thead>
-<tr>
-<th>指标</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>今日提交</td>
-<td>0</td>
-</tr>
-<tr>
-<td>文件变更</td>
-<td>0</td>
-</tr>
-<tr>
-<td>新增代码</td>
-<td>+0</td>
-</tr>
-<tr>
-<td>删除代码</td>
-<td>-0</td>
-</tr>
-</tbody></table>
-<h2 id="🎯-当前状态"><a href="#🎯-当前状态" class="headerlink" title="🎯 当前状态"></a>🎯 当前状态</h2><p>⏸️ 暂停或待开始</p>
-<h2 id="📝-备注"><a href="#📝-备注" class="headerlink" title="📝 备注"></a>📝 备注</h2><ul>
-<li>自动状态更新，每小时发布一次</li>
-<li>详细开发日志请查看每日报告</li>
-</ul>
-<hr>
-<p><em>自动生成于 2026-03-07 03:04:53</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">状态更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MyClaw-状态更新//" class="article-tag-list-link color2">MyClaw 状态更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-07-status-1104/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -2025,6 +2220,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ai-agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">llm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">web-agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">multi-agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">rl</a>
               </li>
             
             <div class="clearfix"></div>
