@@ -151,6 +151,358 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ADP-11_ Goal Setting and Monitoring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-11_%20Goal%20Setting%20and%20Monitoring/">Agentic Design Patterns - Chapter 11_ Goal Setting and Monitoring</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-11_%20Goal%20Setting%20and%20Monitoring/" class="archive-article-date">
+  	<time datetime="2025-10-16T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-11-章：目标设定和监控"><a href="#第-11-章：目标设定和监控" class="headerlink" title="第 11 章：目标设定和监控"></a>第 11 章：目标设定和监控</h1><p>要使 AI Agent 真正有效且有目的性，它们不仅需要处理信息或使用工具的能力，还需要明确的方向感和判断自身是否真正成功的方法。这就是目标设定和监控模式发挥作用的地方。该模式的核心是为 Agent 提供具体的工作目标，并为其配备跟踪进度和确定这些目标是否已实现的手段。</p>
+<h2 id="目标设定和监控模式概述"><a href="#目标设定和监控模式概述" class="headerlink" title="目标设定和监控模式概述"></a>目标设定和监控模式概述</h2><p>设想规划一次旅行。你不会自发地出现在目的地。你需要决定想去哪里（目标状态），弄清楚从哪里开始（初始状态），考虑可用选项（交通工具、路线、预算），然后制定一系列步骤：订票、打包行李、前往机场&#x2F;车站、登机&#x2F;上车、抵达、找住宿等。这个逐步的过程，通常考虑依赖关系和约束条件，从根本上就是我们在 Agent 系统中所说的规划。</p>
+<p>在 AI Agent 的上下文中，规划通常涉及 Agent 接受高级目标，并自主或半自主地生成一系列中间步骤或子目标。这些步骤可以按顺序执行，或以更复杂的流程执行，可能涉及其他模式，如工具使用、路由或多 Agent 协作。规划机制可能涉及复杂的搜索算法、逻辑推理，或越来越多地利用大型语言模型（LLM）的能力，根据其训练数据和对任务的理解生成合理且有效的计划。</p>
+<p>良好的规划能力使 Agent 能够处理非简单的单步查询问题。它使 Agent 能够处理多方面的请求，通过重新规划适应不断变化的情况，并编排复杂的工作流。这是支撑许多高级 Agent 行为的基础模式，将简单的反应系统转变为能够主动朝着定义目标工作的系统。</p>
+<h2 id="实际应用和用例"><a href="#实际应用和用例" class="headerlink" title="实际应用和用例"></a>实际应用和用例</h2><p>目标设定和监控模式对于构建能够在复杂的现实场景中自主可靠运行的 Agent 至关重要。以下是一些实际应用：</p>
+<ul>
+<li><strong>客户支持自动化</strong>：Agent 的目标可能是”解决客户的账单查询”。它监控对话，检查数据库条目，并使用工具调整账单。通过确认账单更改并收到客户的积极反馈来监控成功。如果问题未解决，它会升级处理。</li>
+<li><strong>个性化学习系统</strong>：学习 Agent 可能有”提高学生对代数的理解”的目标。它监控学生在练习中的进度，调整教学材料，并跟踪准确性和完成时间等性能指标，如果学生遇到困难则调整其方法。</li>
+<li><strong>项目管理助手</strong>：可以为 Agent 分配”确保项目里程碑 X 在 Y 日期前完成”的任务。它监控任务状态、团队沟通和资源可用性，如果目标面临风险则标记延迟并建议纠正措施。</li>
+<li><strong>自动交易机器人</strong>：交易 Agent 的目标可能是”在保持风险承受范围内最大化投资组合收益”。它持续监控市场数据、当前投资组合价值和风险指标，在条件符合其目标时执行交易，并在突破风险阈值时调整策略。</li>
+<li><strong>机器人和自动驾驶车辆</strong>：自动驾驶车辆的主要目标是”安全地将乘客从 A 点运送到 B 点”。它不断监控其环境（其他车辆、行人、交通信号）、自身状态（速度、燃料）以及沿规划路线的进度，调整其驾驶行为以安全高效地实现目标。</li>
+<li><strong>内容审核</strong>：Agent 的目标可能是”识别并从平台 X 中删除有害内容”。它监控传入的内容，应用分类模型，并跟踪误报&#x2F;漏报等指标，调整其过滤标准或将模糊案例升级给人工审查员。</li>
+</ul>
+<p>此模式对于需要可靠运行、实现特定成果并适应动态条件的 Agent 至关重要，为智能自我管理提供了必要的框架。</p>
+<h2 id="实践代码示例"><a href="#实践代码示例" class="headerlink" title="实践代码示例"></a>实践代码示例</h2><p>为了说明目标设定和监控模式，我们有一个使用 LangChain 和 OpenAI API 的示例。这个 Python 脚本概述了一个旨在生成和完善 Python 代码的自主 AI Agent。其核心功能是为指定的问题生成解决方案，确保符合用户定义的质量基准。</p>
+<p>它采用”目标设定和监控”模式，不仅仅生成一次代码，而是进入创建、自我评估和改进的迭代循环。Agent 的成功通过其自己的 AI 驱动的判断来衡量，判断生成的代码是否成功满足初始目标。最终输出是一个经过打磨、注释完善且可以立即使用的 Python 文件，代表了这个完善过程的成果。</p>
+<p><strong>依赖项</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain_openai openai python-dotenv</span><br><span class="line"><span class="comment">## .env 文件中需要有 OPENAI_API_KEY</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以通过将此脚本想象为分配给项目的自主 AI 程序员来最好地理解它（见图 1）。该过程从你向 AI 提供详细的项目简报开始，这是它需要解决的特定编码问题。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## MIT License</span></span><br><span class="line"><span class="comment">## Copyright (c) 2025 Mahtab Syed</span></span><br><span class="line"><span class="comment">## https://www.linkedin.com/in/mahtabsyed/</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">实践代码示例 - 迭代 2</span></span><br><span class="line"><span class="string">为了说明目标设定和监控模式，我们有一个使用 LangChain 和 OpenAI API 的示例：</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">目标：构建一个 AI Agent，可以根据指定的目标为指定的用例编写代码：</span></span><br><span class="line"><span class="string">- 接受编码问题（用例）作为代码输入或可以作为输入。</span></span><br><span class="line"><span class="string">- 接受目标列表（例如，&quot;简单&quot;、&quot;经过测试&quot;、&quot;处理边缘情况&quot;）作为代码输入或可以作为输入。</span></span><br><span class="line"><span class="string">- 使用 LLM（如 GPT-4o）生成和完善 Python 代码，直到满足目标。（我使用最多 5 次迭代，这也可以基于设定的目标）</span></span><br><span class="line"><span class="string">- 要检查我们是否达到了目标，我要求 LLM 判断这一点并仅回答 True 或 False，这使得更容易停止迭代。</span></span><br><span class="line"><span class="string">- 将最终代码保存在 .py 文件中，使用清晰的文件名和头部注释。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv, find_dotenv</span><br><span class="line"></span><br><span class="line"><span class="comment">## 🔐 加载环境变量</span></span><br><span class="line">_ = load_dotenv(find_dotenv())</span><br><span class="line">OPENAI_API_KEY = os.getenv(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> OPENAI_API_KEY:</span><br><span class="line">   <span class="keyword">raise</span> EnvironmentError(<span class="string">&quot;❌ 请设置 OPENAI_API_KEY 环境变量。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## ✅ 初始化 OpenAI 模型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;📡 初始化 OpenAI LLM (gpt-4o)...&quot;</span>)</span><br><span class="line">llm = ChatOpenAI(</span><br><span class="line">   model=<span class="string">&quot;gpt-4o&quot;</span>,  <span class="comment"># 如果你无法访问 gpt-4o，请使用其他 OpenAI LLM</span></span><br><span class="line">   temperature=<span class="number">0.3</span>,</span><br><span class="line">   openai_api_key=OPENAI_API_KEY,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 实用函数 ---</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_prompt</span>(<span class="params"></span></span><br><span class="line"><span class="params">   use_case: <span class="built_in">str</span>, goals: <span class="built_in">list</span>[<span class="built_in">str</span>], previous_code: <span class="built_in">str</span> = <span class="string">&quot;&quot;</span>, feedback: <span class="built_in">str</span> = <span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="params"></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;📝 构建代码生成提示词...&quot;</span>)</span><br><span class="line">   base_prompt = <span class="string">f&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">你是一个 AI 编码 Agent。你的工作是根据以下用例编写 Python 代码：</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">用例：<span class="subst">&#123;use_case&#125;</span></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">你的目标是：</span></span><br><span class="line"><span class="string"><span class="subst">&#123;<span class="built_in">chr</span>(<span class="number">10</span>).join(<span class="string">f&quot;- <span class="subst">&#123;g.strip()&#125;</span>&quot;</span> <span class="keyword">for</span> g <span class="keyword">in</span> goals)&#125;</span></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">   <span class="keyword">if</span> previous_code:</span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;🔄 将之前的代码添加到提示词中以进行完善。&quot;</span>)</span><br><span class="line">       base_prompt += <span class="string">f&quot;\n之前生成的代码：\n<span class="subst">&#123;previous_code&#125;</span>&quot;</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">if</span> feedback:</span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;📋 包含反馈以进行修订。&quot;</span>)</span><br><span class="line">       base_prompt += <span class="string">f&quot;\n对之前版本的反馈：\n<span class="subst">&#123;feedback&#125;</span>\n&quot;</span></span><br><span class="line">   </span><br><span class="line">   base_prompt += <span class="string">&quot;\n请仅返回修订后的 Python 代码。不要在代码之外包含注释或解释。&quot;</span></span><br><span class="line">   <span class="keyword">return</span> base_prompt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_code_feedback</span>(<span class="params">code: <span class="built_in">str</span>, goals: <span class="built_in">list</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;🔍 根据目标评估代码...&quot;</span>)</span><br><span class="line">   feedback_prompt = <span class="string">f&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">你是一个 Python 代码审查员。下面显示了一个代码片段。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">基于以下目标：</span></span><br><span class="line"><span class="string"><span class="subst">&#123;<span class="built_in">chr</span>(<span class="number">10</span>).join(<span class="string">f&quot;- <span class="subst">&#123;g.strip()&#125;</span>&quot;</span> <span class="keyword">for</span> g <span class="keyword">in</span> goals)&#125;</span></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">请对此代码进行批评并确定是否满足目标。提及是否需要改进清晰度、简单性、正确性、边缘情况处理或测试覆盖率。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">代码：</span></span><br><span class="line"><span class="string"><span class="subst">&#123;code&#125;</span></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">   <span class="keyword">return</span> llm.invoke(feedback_prompt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">goals_met</span>(<span class="params">feedback_text: <span class="built_in">str</span>, goals: <span class="built_in">list</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">   <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">   使用 LLM 根据反馈文本评估目标是否已达成。</span></span><br><span class="line"><span class="string">   返回 True 或 False（从 LLM 输出中解析）。</span></span><br><span class="line"><span class="string">   &quot;&quot;&quot;</span></span><br><span class="line">   review_prompt = <span class="string">f&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">你是一个 AI 审查员。这些是目标：</span></span><br><span class="line"><span class="string"><span class="subst">&#123;<span class="built_in">chr</span>(<span class="number">10</span>).join(<span class="string">f&quot;- <span class="subst">&#123;g.strip()&#125;</span>&quot;</span> <span class="keyword">for</span> g <span class="keyword">in</span> goals)&#125;</span></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">这是关于代码的反馈：</span></span><br><span class="line"><span class="string">\&quot;\&quot;\&quot;</span></span><br><span class="line"><span class="string"><span class="subst">&#123;feedback_text&#125;</span></span></span><br><span class="line"><span class="string">\&quot;\&quot;\&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">根据上述反馈，目标是否已达成？仅用一个词回答：True 或 False。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">   response = llm.invoke(review_prompt).content.strip().lower()</span><br><span class="line">   <span class="keyword">return</span> response == <span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">clean_code_block</span>(<span class="params">code: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   lines = code.strip().splitlines()</span><br><span class="line">   <span class="keyword">if</span> lines <span class="keyword">and</span> lines[<span class="number">0</span>].strip().startswith(<span class="string">&quot;```&quot;</span>):</span><br><span class="line">       lines = lines[<span class="number">1</span>:]</span><br><span class="line">   <span class="keyword">if</span> lines <span class="keyword">and</span> lines[-<span class="number">1</span>].strip() == <span class="string">&quot;```&quot;</span>:</span><br><span class="line">       lines = lines[:-<span class="number">1</span>]</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&quot;\n&quot;</span>.join(lines).strip()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_comment_header</span>(<span class="params">code: <span class="built_in">str</span>, use_case: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   comment = <span class="string">f&quot;# 此 Python 程序实现以下用例：\n# <span class="subst">&#123;use_case.strip()&#125;</span>\n&quot;</span></span><br><span class="line">   <span class="keyword">return</span> comment + <span class="string">&quot;\n&quot;</span> + code</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_snake_case</span>(<span class="params">text: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   text = re.sub(<span class="string">r&quot;[^a-zA-Z0-9 ]&quot;</span>, <span class="string">&quot;&quot;</span>, text)</span><br><span class="line">   <span class="keyword">return</span> re.sub(<span class="string">r&quot;\s+&quot;</span>, <span class="string">&quot;_&quot;</span>, text.strip().lower())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_code_to_file</span>(<span class="params">code: <span class="built_in">str</span>, use_case: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;💾 保存最终代码到文件...&quot;</span>)</span><br><span class="line">   summary_prompt = (</span><br><span class="line">       <span class="string">f&quot;将以下用例总结为一个小写单词或短语，&quot;</span></span><br><span class="line">       <span class="string">f&quot;不超过 10 个字符，适合作为 Python 文件名：\n\n<span class="subst">&#123;use_case&#125;</span>&quot;</span></span><br><span class="line">   )</span><br><span class="line">   raw_summary = llm.invoke(summary_prompt).content.strip()</span><br><span class="line">   short_name = re.sub(<span class="string">r&quot;[^a-zA-Z0-9_]&quot;</span>, <span class="string">&quot;&quot;</span>, raw_summary.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;_&quot;</span>).lower())[:<span class="number">10</span>]</span><br><span class="line">   random_suffix = <span class="built_in">str</span>(random.randint(<span class="number">1000</span>, <span class="number">9999</span>))</span><br><span class="line">   filename = <span class="string">f&quot;<span class="subst">&#123;short_name&#125;</span>_<span class="subst">&#123;random_suffix&#125;</span>.py&quot;</span></span><br><span class="line">   filepath = Path.cwd() / filename</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">with</span> <span class="built_in">open</span>(filepath, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">       f.write(code)</span><br><span class="line">   </span><br><span class="line">   <span class="built_in">print</span>(<span class="string">f&quot;✅ 代码保存到：<span class="subst">&#123;filepath&#125;</span>&quot;</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">str</span>(filepath)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 主 Agent 函数 ---</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_code_agent</span>(<span class="params">use_case: <span class="built_in">str</span>, goals_input: <span class="built_in">str</span>, max_iterations: <span class="built_in">int</span> = <span class="number">5</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">   goals = [g.strip() <span class="keyword">for</span> g <span class="keyword">in</span> goals_input.split(<span class="string">&quot;,&quot;</span>)]</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">f&quot;\n🎯 用例：<span class="subst">&#123;use_case&#125;</span>&quot;</span>)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;🎯 目标：&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g <span class="keyword">in</span> goals:</span><br><span class="line">       <span class="built_in">print</span>(<span class="string">f&quot;  - <span class="subst">&#123;g&#125;</span>&quot;</span>)</span><br><span class="line">   </span><br><span class="line">   previous_code = <span class="string">&quot;&quot;</span></span><br><span class="line">   feedback = <span class="string">&quot;&quot;</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(max_iterations):</span><br><span class="line">       <span class="built_in">print</span>(<span class="string">f&quot;\n=== 🔁 迭代 <span class="subst">&#123;i + <span class="number">1</span>&#125;</span> / <span class="subst">&#123;max_iterations&#125;</span> ===&quot;</span>)</span><br><span class="line">       </span><br><span class="line">       prompt = generate_prompt(use_case, goals, previous_code, </span><br><span class="line">                               feedback <span class="keyword">if</span> <span class="built_in">isinstance</span>(feedback, <span class="built_in">str</span>) <span class="keyword">else</span> feedback.content)</span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;🚧 生成代码...&quot;</span>)</span><br><span class="line">       code_response = llm.invoke(prompt)</span><br><span class="line">       raw_code = code_response.content.strip()</span><br><span class="line">       code = clean_code_block(raw_code)</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;\n🧾 生成的代码：\n&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span> + <span class="string">f&quot;\n<span class="subst">&#123;code&#125;</span>\n&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;\n📤 提交代码进行反馈审查...&quot;</span>)</span><br><span class="line">       feedback = get_code_feedback(code, goals)</span><br><span class="line">       feedback_text = feedback.content.strip()</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;\n📥 收到反馈：\n&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span> + <span class="string">f&quot;\n<span class="subst">&#123;feedback_text&#125;</span>\n&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span> goals_met(feedback_text, goals):</span><br><span class="line">           <span class="built_in">print</span>(<span class="string">&quot;✅ LLM 确认目标已达成。停止迭代。&quot;</span>)</span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       </span><br><span class="line">       <span class="built_in">print</span>(<span class="string">&quot;🛠️ 目标尚未完全达成。准备下一次迭代...&quot;</span>)</span><br><span class="line">       previous_code = code</span><br><span class="line">   </span><br><span class="line">   final_code = add_comment_header(code, use_case)</span><br><span class="line">   <span class="keyword">return</span> save_code_to_file(final_code, use_case)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- CLI 测试运行 ---</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;\n🧠 欢迎使用 AI 代码生成 Agent&quot;</span>)</span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 示例 1</span></span><br><span class="line">   use_case_input = <span class="string">&quot;编写代码查找给定正整数的 BinaryGap&quot;</span></span><br><span class="line">   goals_input = <span class="string">&quot;代码简单易懂，功能正确，处理全面的边缘情况，仅接受正整数输入，打印结果并附带几个示例&quot;</span></span><br><span class="line">   run_code_agent(use_case_input, goals_input)</span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 示例 2</span></span><br><span class="line">   <span class="comment"># use_case_input = &quot;编写代码计算当前目录及其所有嵌套子目录中的文件数量，并打印总数&quot;</span></span><br><span class="line">   <span class="comment"># goals_input = (</span></span><br><span class="line">   <span class="comment">#     &quot;代码简单易懂，功能正确，处理全面的边缘情况，忽略性能建议，忽略关于使用 unittest 或 pytest 等测试套件的建议&quot;</span></span><br><span class="line">   <span class="comment"># )</span></span><br><span class="line">   <span class="comment"># run_code_agent(use_case_input, goals_input)</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 示例 3</span></span><br><span class="line">   <span class="comment"># use_case_input = &quot;编写代码，接受 word doc 或 docx 文件的命令行输入，打开它并计算其中的单词数和字符数并全部打印&quot;</span></span><br><span class="line">   <span class="comment"># goals_input = &quot;代码简单易懂，功能正确，处理边缘情况&quot;</span></span><br><span class="line">   <span class="comment"># run_code_agent(use_case_input, goals_input)</span></span><br></pre></td></tr></table></figure>
+
+<p>除了这个简报，你还提供了一个严格的质量检查清单，它代表了最终代码必须满足的目标——诸如”解决方案必须简单”、”它必须在功能上正确”或”它需要处理意外的边缘情况”等标准。</p>
+<p><img src="/../images/chapter-11/image1.png"></p>
+<p>图 1：目标设定和监控示例</p>
+<p>有了这个任务，AI 程序员开始工作并产生其第一个代码草稿。然而，它没有立即提交这个初始版本，而是暂停执行一个关键步骤：严格的自我审查。它仔细地将自己的创作与你提供的质量检查清单上的每一项进行比较，充当自己的质量保证检查员。在这次检查之后，它对自己的进度做出一个简单、无偏见的判断：”True”如果工作满足所有标准，或”False”如果它不足。</p>
+<p>如果判断是”False”，AI 不会放弃。它进入深思熟虑的修订阶段，使用自我批评的见解来确定弱点并智能地重写代码。这个起草、自我审查和完善的循环继续进行，每次迭代都旨在更接近目标。这个过程重复进行，直到 AI 最终通过满足每个要求而达到”True”状态，或直到它达到预定义的尝试次数限制，就像开发人员在截止日期前工作一样。一旦代码通过了这次最终检查，脚本就会打包打磨好的解决方案，添加有用的注释并将其保存到一个干净的新 Python 文件中，准备使用。</p>
+<p><strong>注意事项和考虑因素</strong>：重要的是要注意，这是一个示例性的说明，而不是生产就绪的代码。对于实际应用，必须考虑几个因素。LLM 可能无法完全理解目标的预期含义，并可能错误地评估其性能为成功。即使目标被很好地理解，模型也可能产生幻觉。当同一个 LLM 既负责编写代码又负责判断其质量时，它可能更难发现自己走向错误的方向。</p>
+<p>最终，LLM 不会魔法般地产生完美的代码；你仍然需要运行和测试生成的代码。此外，简单示例中的”监控”是基础的，并造成了进程可能永远运行的潜在风险。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">充当一位对产生清晰、正确和简单代码有着深刻承诺的专家代码审查员。你的核心使命是通过确保每个建议都基于现实和最佳实践来消除代码&quot;幻觉&quot;。当我向你提供代码片段时，我希望你：</span><br><span class="line"></span><br><span class="line">-- 识别和纠正错误：指出任何逻辑缺陷、错误或潜在的运行时错误。</span><br><span class="line">-- 简化和重构：建议使代码更易读、高效和可维护的更改，而不牺牲正确性。</span><br><span class="line">-- 提供清晰的解释：对于每个建议的更改，解释为什么它是改进，引用清晰代码、性能或安全性的原则。</span><br><span class="line">-- 提供更正后的代码：显示建议更改的&quot;之前&quot;和&quot;之后&quot;，以便改进清晰可见。</span><br><span class="line"></span><br><span class="line">你的反馈应该是直接的、建设性的，并始终旨在提高代码质量。</span><br></pre></td></tr></table></figure>
+
+<p>更健壮的方法涉及通过为 Agent 团队分配特定角色来分离这些关注点。例如，我使用 Gemini 构建了一个个人 AI Agent 团队，其中每个都有特定的角色：</p>
+<ul>
+<li><strong>同伴程序员</strong>：帮助编写和头脑风暴代码。</li>
+<li><strong>代码审查员</strong>：捕获错误并建议改进。</li>
+<li><strong>文档编写员</strong>：生成清晰简洁的文档。</li>
+<li><strong>测试编写员</strong>：创建全面的单元测试。</li>
+<li><strong>提示词优化器</strong>：优化与 AI 的交互。</li>
+</ul>
+<p>在这个多 Agent 系统中，作为独立实体的代码审查员与程序员 Agent 分开，具有与示例中的判断者类似的提示词，这显著提高了客观评估。这种结构自然导致更好的实践，因为测试编写员 Agent 可以满足为同伴程序员产生的代码编写单元测试的需求。</p>
+<p>我留给感兴趣的读者添加这些更复杂的控制并使代码更接近生产就绪的任务。</p>
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么</strong>：AI Agent 通常缺乏明确的方向，阻碍了它们超越简单反应性任务的有目的行动。如果没有定义的目标，它们无法独立处理复杂的多步骤问题或编排复杂的工作流。此外，它们缺乏固有的机制来确定其行动是否导致成功的结果。这限制了它们的自主性，并阻止它们在仅执行任务不足的动态现实世界场景中真正有效。</p>
+<p><strong>为什么</strong>：目标设定和监控模式通过将目的感和自我评估嵌入 Agent 系统来提供标准化的解决方案。它涉及明确定义 Agent 要实现的清晰、可衡量的目标。同时，它建立了一个监控机制，持续跟踪 Agent 的进度和其环境的状态与这些目标的对比。这创建了一个关键的反馈循环，使 Agent 能够评估其性能，纠正其路线，并在偏离成功之路时调整其计划。通过实施此模式，开发人员可以将简单的反应 Agent 转变为能够自主和可靠运行的主动的、以目标为导向的系统。</p>
+<p><strong>经验法则</strong>：当 AI Agent 必须自主执行多步骤任务、适应动态条件并在没有持续人工干预的情况下可靠地实现特定的高级目标时，使用此模式。</p>
+<p><strong>可视化摘要</strong>：</p>
+<p><img src="/../images/chapter-11/image2.png"></p>
+<p>图 2：目标设计模式</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><p>关键要点包括：</p>
+<ul>
+<li>目标设定和监控为 Agent 配备目的和跟踪进度的机制。</li>
+<li>目标应该是具体的、可衡量的、可实现的、相关的和有时限的（SMART）。</li>
+<li>清楚地定义指标和成功标准对于有效监控至关重要。</li>
+<li>监控涉及观察 Agent 的行动、环境状态和工具输出。</li>
+<li>来自监控的反馈循环允许 Agent 调整、修订计划或升级问题。</li>
+<li>在 Google 的 ADK 中，目标通常通过 Agent 指令传达，监控通过状态管理和工具交互完成。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>本章重点介绍了目标设定和监控的关键范式。我们强调了这个概念如何将 AI Agent 从仅仅是反应系统转变为主动的、以目标为驱动的实体。文本强调了定义清晰、可衡量的目标以及建立严格的监控程序来跟踪进度的重要性。实际应用展示了这个范式如何支持在各个领域（包括客户服务和机器人）的可靠自主运行。一个概念性的编码示例说明了这些原则在结构化框架内的实现，使用 Agent 指令和状态管理来指导和评估 Agent 对其指定目标的实现。最终，为 Agent 配备制定和监督目标的能力是构建真正智能和负责任的 AI 系统的基本步骤。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>SMART Goals Framework. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SMART_criteria">https://en.wikipedia.org/wiki/SMART_criteria</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-11_%20Goal%20Setting%20and%20Monitoring/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-10_ Model Context Protocol (MCP)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-10_%20Model%20Context%20Protocol%20(MCP)/">Agentic Design Patterns - Chapter 10_ Model Context Protocol (MCP)</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-10_%20Model%20Context%20Protocol%20(MCP)/" class="archive-article-date">
+  	<time datetime="2025-10-15T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-10-章：模型上下文协议-MCP"><a href="#第-10-章：模型上下文协议-MCP" class="headerlink" title="第 10 章：模型上下文协议 (MCP)"></a>第 10 章：模型上下文协议 (MCP)</h1><p>要使 LLM 作为 Agent 有效运作，其能力必须超越多模态生成。与外部环境的交互不可或缺，包括访问实时数据、使用外部软件以及执行特定操作任务。模型上下文协议（MCP）通过提供标准化接口满足此需求，使 LLM 能与外部资源交互。该协议是实现一致和可预测集成的关键机制。</p>
+<h2 id="MCP-模式概述"><a href="#MCP-模式概述" class="headerlink" title="MCP 模式概述"></a>MCP 模式概述</h2><p>想象一个通用适配器，允许任何 LLM 连接到任何外部系统、数据库或工具，无需为每个连接进行自定义集成。这本质上就是模型上下文协议（MCP）的功能。它是一个开放标准，旨在标准化 Gemini、OpenAI 的 GPT 模型、Mixtral 和 Claude 等 LLM 与外部应用程序、数据源和工具的通信方式。可将其视为通用连接机制，简化 LLM 获取上下文、执行操作以及与各类系统交互的方式。</p>
+<p>MCP 基于客户端-服务器架构运行。它定义了不同元素——数据（称为资源）、交互模板（本质是提示）和可操作函数（称为工具）——如何由 MCP 服务器公开。这些元素随后由 MCP 客户端使用，客户端可以是 LLM 宿主应用程序或 AI Agent 本身。这种标准化方法显著降低了将 LLM 集成到多样化操作环境中的复杂性。</p>
+<p>然而，MCP 是”Agent 接口”的契约，其有效性很大程度上取决于其所公开底层 API 的设计。存在开发人员仅简单包装现有遗留 API 而不进行修改的风险，这对 Agent 可能并非最优。例如，若票务系统 API 仅允许逐个检索完整票务详情，被要求总结高优先级票务的 Agent 在处理大量数据时将变得缓慢且不准确。为真正有效，底层 API 应通过过滤和排序等确定性特性进行改进，以帮助非确定性 Agent 高效工作。这凸显了 Agent 无法神奇替代确定性工作流；它们通常需要更强确定性支持才能成功。</p>
+<p>此外，MCP 可包装输入或输出对 Agent 仍非固有可理解的 API。仅当 API 数据格式对 Agent 友好时才有用，而 MCP 本身无法保证此点。例如，为返回 PDF 文件的文档存储创建 MCP 服务器基本无用，若消费 Agent 无法解析 PDF 内容。更好方法是首先创建返回文档文本版本（如 Markdown）的 API，使 Agent 能实际阅读和处理。这表明开发人员必须考虑的不只是连接，还有所交换数据的性质，以确保真正兼容性。</p>
+<h2 id="MCP-与工具函数调用"><a href="#MCP-与工具函数调用" class="headerlink" title="MCP 与工具函数调用"></a>MCP 与工具函数调用</h2><p>模型上下文协议（MCP）和工具函数调用是使 LLM 能与外部能力（含工具）交互并执行操作的不同机制。虽然两者都服务于扩展 LLM 超越文本生成的能力，但它们在方法和抽象级别上存在差异。</p>
+<p>工具函数调用可视为 LLM 对特定预定义工具或函数的直接请求。请注意，在此上下文中我们交替使用”工具”和”函数”二词。这种交互特点是一对一通信模型，LLM 根据其对需要外部操作用户意图的理解格式化请求。随后应用程序代码执行此请求并将结果返回 LLM。此过程通常为专有，且在不同 LLM 提供商间存在差异。</p>
+<p>相比之下，模型上下文协议（MCP）作为 LLM 发现、通信和使用外部能力的标准化接口运行。它作为开放协议促进与各种工具和系统交互，旨在建立任何兼容工具可被任何兼容 LLM 访问的生态系统。这促进了不同系统和实现间的互操作性、可组合性和可重用性。通过采用联合模型，我们显著提升互操作性并释放现有资产价值。此策略允许我们通过简单包装符合 MCP 接口将分散和遗留服务引入现代生态系统。这些服务继续独立运行，但现可组合到新应用程序和工作流中，其协作由 LLM 协调。这促进了敏捷性和可重用性，而无需对基础系统进行昂贵重写。</p>
+<p>以下是 MCP 与工具函数调用的基本区别：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>工具函数调用</th>
+<th>模型上下文协议（MCP）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>标准化</strong></td>
+<td>专有和供应商特定。格式和实现在不同 LLM 提供商间各异</td>
+<td>开放标准化协议，促进不同 LLM 和工具间互操作性</td>
+</tr>
+<tr>
+<td><strong>范围</strong></td>
+<td>LLM 请求执行特定预定义函数的直接机制</td>
+<td>更广泛框架，定义 LLM 和外部工具如何相互发现和通信</td>
+</tr>
+<tr>
+<td><strong>架构</strong></td>
+<td>LLM 与应用程序工具处理逻辑间的一对一交互</td>
+<td>客户端-服务器架构，LLM 驱动应用程序（客户端）可连接并使用各种 MCP 服务器（工具）</td>
+</tr>
+<tr>
+<td><strong>发现</strong></td>
+<td>LLM 被明确告知特定对话上下文中哪些工具可用</td>
+<td>支持动态发现可用工具。MCP 客户端可查询服务器以查看其提供能力</td>
+</tr>
+<tr>
+<td><strong>可重用性</strong></td>
+<td>工具集成通常与所用特定应用程序和 LLM 紧密耦合</td>
+<td>促进开发可重用独立”MCP 服务器”，可被任何兼容应用程序访问</td>
+</tr>
+</tbody></table>
+<p>可将工具函数调用想象为给 AI 一组特定定制工具，如特定扳手和螺丝刀。这对具有固定任务集的车间高效。另一方面，MCP（模型上下文协议）如同创建通用标准化电源插座系统。它本身不提供工具，但允许任何制造商任何兼容工具插入工作，从而实现动态不断扩展的车间。</p>
+<p>简而言之，函数调用提供对少数特定函数的直接访问，而 MCP 是标准化通信框架，让 LLM 发现和使用广泛外部资源。对简单应用程序，特定工具足够；对需要适应的复杂互联 AI 系统，像 MCP 的通用标准必不可少。</p>
+<h2 id="MCP-的其他考虑因素"><a href="#MCP-的其他考虑因素" class="headerlink" title="MCP 的其他考虑因素"></a>MCP 的其他考虑因素</h2><p>虽然 MCP 提供了强大框架，但全面评估需考虑影响其适用性的几个关键方面。让我们详细探讨某些方面：</p>
+<ul>
+<li><strong>工具 vs. 资源 vs. 提示</strong>：理解这些组件的特定角色很重要。资源是静态数据（如 PDF 文件、数据库记录）。工具是执行操作的可执行函数（如发送电子邮件、查询 API）。提示是指导 LLM 如何与资源或工具交互的模板，确保交互结构化和有效</li>
+<li><strong>可发现性</strong>：MCP 的关键优势是 MCP 客户端可动态查询服务器了解其提供的工具和资源。这种”即时”发现机制对需要适应新能力而无需重新部署的 Agent 非常强大</li>
+<li><strong>安全性</strong>：通过任何协议公开工具和数据都需要强大安全措施。MCP 实现必须包含身份验证和授权，以控制哪些客户端可访问哪些服务器及允许执行哪些特定操作</li>
+<li><strong>实现</strong>：虽然 MCP 是开放标准，但其实现可能复杂。然而提供商正开始简化此过程。例如 Anthropic 或 FastMCP 等模型提供商提供 SDK，抽象大部分样板代码，使开发人员更易创建和连接 MCP 客户端和服务器</li>
+<li><strong>错误处理</strong>：全面错误处理策略至关重要。协议必须定义如何将错误（如工具执行失败、服务器不可用、无效请求）传达回 LLM，使其能理解失败并可能尝试替代方法</li>
+<li><strong>本地 vs. 远程服务器</strong>：MCP 服务器可部署在与 Agent 相同机器本地，或远程部署在不同服务器。本地服务器可能因速度和敏感数据安全性被选择，而远程服务器架构允许组织内共享可扩展访问公共工具</li>
+<li><strong>按需 vs. 批处理</strong>：MCP 可支持按需交互式会话和大规模批处理。选择取决于应用程序，从需要立即工具访问的实时对话 Agent 到批量处理记录的数据分析管道</li>
+<li><strong>传输机制</strong>：协议还定义通信的底层传输层。对本地交互，使用基于 STDIO（标准输入&#x2F;输出）的 JSON-RPC 实现高效进程间通信。对远程连接，利用 Web 友好协议如可流式 HTTP 和服务器发送事件（SSE）实现持久高效客户端-服务器通信</li>
+</ul>
+<p>模型上下文协议使用客户端-服务器模型标准化信息流。理解组件交互是 MCP 高级 Agent 行为关键：</p>
+<ol>
+<li><strong>大型语言模型（LLM）</strong>：核心智能。处理用户请求，制定计划，决定何时需要访问外部信息或执行操作</li>
+<li><strong>MCP 客户端</strong>：围绕 LLM 的应用程序或包装器。充当中介，将 LLM 意图转换为符合 MCP 标准的正式请求。负责发现、连接和与 MCP 服务器通信</li>
+<li><strong>MCP 服务器</strong>：通往外部世界的网关。向任何授权 MCP 客户端公开一组工具、资源和提示。每个服务器通常负责特定领域，如连接公司内部数据库、电子邮件服务或公共 API</li>
+<li><strong>可选的第三方（3P）服务</strong>：代表 MCP 服务器管理和公开的实际外部工具、应用程序或数据源。是执行请求操作的最终端点，如查询专有数据库、与 SaaS 平台交互或调用公共天气 API</li>
+</ol>
+<p>交互流程如下：</p>
+<ol>
+<li><strong>发现</strong>：MCP 客户端代表 LLM 查询 MCP 服务器询问其提供能力。服务器响应清单列出可用工具（如 send_email）、资源（如 customer_database）和提示</li>
+<li><strong>请求制定</strong>：LLM 确定需要使用发现的工具之一。例如决定发送电子邮件。制定请求指定要使用的工具（send_email）和必要参数（收件人、主题、正文）</li>
+<li><strong>客户端通信</strong>：MCP 客户端获取 LLM 制定的请求，将其作为标准化调用发送到适当 MCP 服务器</li>
+<li><strong>服务器执行</strong>：MCP 服务器接收请求。对客户端进行身份验证，验证请求，然后通过与底层软件交互执行指定操作（如调用电子邮件 API 的 send() 函数）</li>
+<li><strong>响应和上下文更新</strong>：执行后，MCP 服务器将标准化响应发送回 MCP 客户端。此响应指示操作是否成功，包括任何相关输出（如已发送电子邮件的确认 ID）。然后客户端将此结果传递回 LLM，更新其上下文并使其能继续任务的下一步</li>
+</ol>
+<h2 id="实际应用和用例"><a href="#实际应用和用例" class="headerlink" title="实际应用和用例"></a>实际应用和用例</h2><p>MCP 显著扩展了 AI&#x2F;LLM 能力，使其更加多功能强大。以下是九个关键用例：</p>
+<ul>
+<li><strong>数据库集成</strong>：MCP 允许 LLM 和 Agent 无缝访问数据库中结构化数据并与之交互。例如使用数据库 MCP 工具箱，Agent 可查询 Google BigQuery 数据集检索实时信息、生成报告或更新记录，所有由自然语言命令驱动</li>
+<li><strong>生成媒体编排</strong>：MCP 使 Agent 能与高级生成媒体服务集成。通过生成媒体服务的 MCP 工具，Agent 可编排涉及 Google Imagen 图像生成、Google Veo 视频创建、Google Chirp 3 HD 逼真语音或 Google Lyria 音乐创作的工作流，允许在 AI 应用程序中进行动态内容创建</li>
+<li><strong>外部 API 交互</strong>：MCP 为 LLM 提供调用任何外部 API 并接收响应的标准化方式。这意味着 Agent 可获取实时天气数据、拉取股票价格、发送电子邮件或与 CRM 系统交互，将其能力扩展到核心语言模型之外</li>
+<li><strong>基于推理的信息提取</strong>：利用 LLM 强大推理能力，MCP 促进有效的依赖查询信息提取，超越传统搜索和检索系统。Agent 可分析文本并提取精确回答用户复杂问题的特定条款、数字或陈述，而非传统搜索工具返回整个文档</li>
+<li><strong>自定义工具开发</strong>：开发人员可构建自定义工具并通过 MCP 服务器公开（如使用 FastMCP）。这允许以标准化易于使用格式向 LLM 和其他 Agent 提供专门内部函数或专有系统，而无需直接修改 LLM</li>
+<li><strong>标准化的 LLM 到应用程序通信</strong>：MCP 确保 LLM 与它们交互的应用程序间有一致通信层。这减少了集成开销，促进不同 LLM 提供商和宿主应用程序间互操作性，并简化复杂 Agent 系统开发</li>
+<li><strong>复杂工作流编排</strong>：通过组合各种 MCP 公开工具和数据源，Agent 可编排高度复杂多步骤工作流。例如 Agent 可从数据库检索客户数据，生成个性化营销图像，起草定制电子邮件，然后发送，所有通过与不同 MCP 服务交互完成</li>
+<li><strong>物联网设备控制</strong>：MCP 可促进 LLM 与物联网（IoT）设备交互。Agent 可使用 MCP 向智能家居电器、工业传感器或机器人发送命令，实现自然语言控制和物理系统自动化</li>
+<li><strong>金融服务自动化</strong>：在金融服务中，MCP 可使 LLM 与各种金融数据源、交易平台或合规系统交互。Agent 可能分析市场数据、执行交易、生成个性化财务建议或自动化监管报告，同时保持安全和标准化通信</li>
+</ul>
+<p>简而言之，模型上下文协议（MCP）使 Agent 能从数据库、API 和 Web 资源访问实时信息。还允许 Agent 执行如发送电子邮件、更新记录、控制设备以及通过集成和处理来自各种来源数据执行复杂任务等操作。此外，MCP 支持 AI 应用程序的媒体生成工具</p>
+<h2 id="使用-ADK-的实践代码示例"><a href="#使用-ADK-的实践代码示例" class="headerlink" title="使用 ADK 的实践代码示例"></a>使用 ADK 的实践代码示例</h2><p>本节概述了如何连接到提供文件系统操作的本地 MCP 服务器，使 ADK Agent 能够与本地文件系统交互。</p>
+<h2 id="使用-MCPToolset-的-Agent-设置"><a href="#使用-MCPToolset-的-Agent-设置" class="headerlink" title="使用 MCPToolset 的 Agent 设置"></a>使用 MCPToolset 的 Agent 设置</h2><p>要配置 Agent 进行文件系统交互，必须创建一个 <code>agent.py</code> 文件（例如，在 <code>./adk_agent_samples/mcp_agent/agent.py</code>）。<code>MCPToolset</code> 在 <code>LlmAgent</code> 对象的 <code>tools</code> 列表中实例化。至关重要的是，必须将 <code>args</code> 列表中的 <code>&quot;/path/to/your/folder&quot;</code> 替换为本地系统上 MCP 服务器可以访问的目录的绝对路径。此目录将是 Agent 执行的文件系统操作的根目录。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.tools.mcp_tool.mcp_toolset <span class="keyword">import</span> MCPToolset, StdioServerParameters</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建一个可靠的绝对路径，指向名为 &#x27;mcp_managed_files&#x27; 的文件夹</span></span><br><span class="line"><span class="comment">## 该文件夹位于此 Agent 脚本所在的同一目录中。</span></span><br><span class="line"><span class="comment">## 这确保了 Agent 开箱即用地进行演示。</span></span><br><span class="line"><span class="comment">## 对于生产环境，您需要将此路径指向一个更持久和安全的位置。</span></span><br><span class="line">TARGET_FOLDER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), <span class="string">&quot;mcp_managed_files&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 在 Agent 需要之前确保目标目录存在。</span></span><br><span class="line">os.makedirs(TARGET_FOLDER_PATH, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">root_agent = LlmAgent(</span><br><span class="line">    model=<span class="string">&#x27;gemini-2.0-flash&#x27;</span>,</span><br><span class="line">    name=<span class="string">&#x27;filesystem_assistant_agent&#x27;</span>,</span><br><span class="line">    instruction=(</span><br><span class="line">        <span class="string">&#x27;Help the user manage their files. You can list files, read files, and write files. &#x27;</span></span><br><span class="line">        <span class="string">f&#x27;You are operating in the following directory: <span class="subst">&#123;TARGET_FOLDER_PATH&#125;</span>&#x27;</span></span><br><span class="line">    ),</span><br><span class="line">    tools=[</span><br><span class="line">        MCPToolset(</span><br><span class="line">            connection_params=StdioServerParameters(</span><br><span class="line">                command=<span class="string">&#x27;npx&#x27;</span>,</span><br><span class="line">                args=[</span><br><span class="line">                    <span class="string">&quot;-y&quot;</span>,  <span class="comment"># npx 的参数，用于自动确认安装</span></span><br><span class="line">                    <span class="string">&quot;@modelcontextprotocol/server-filesystem&quot;</span>,</span><br><span class="line">                    <span class="comment"># 这必须是文件夹的绝对路径。</span></span><br><span class="line">                    TARGET_FOLDER_PATH,</span><br><span class="line">                ],</span><br><span class="line">            ),</span><br><span class="line">            <span class="comment"># 可选：您可以过滤从 MCP 服务器公开的工具。</span></span><br><span class="line">            <span class="comment"># 例如，仅允许读取：</span></span><br><span class="line">            <span class="comment"># tool_filter=[&#x27;list_directory&#x27;, &#x27;read_file&#x27;]</span></span><br><span class="line">        )</span><br><span class="line">    ],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><code>npx</code>（Node Package Execute）与 npm（Node Package Manager）版本 5.2.0 及更高版本捆绑在一起，是一个实用程序，可以直接从 npm 注册表执行 Node.js 包。这消除了全局安装的需要。本质上，<code>npx</code> 作为 npm 包运行器，它通常用于运行许多社区 MCP 服务器，这些服务器作为 Node.js 包分发。</p>
+<p>创建 <strong>init</strong>.py 文件是必要的，以确保 agent.py 文件被识别为 Agent 开发工具包（ADK）的可发现 Python 包的一部分。此文件应与 <a target="_blank" rel="noopener" href="http://agent.py/">agent.py</a> 位于同一目录中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## ./adk_agent_samples/mcp_agent/__init__.py</span></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> agent</span><br></pre></td></tr></table></figure>
+
+<p>当然，还可以使用其他受支持的命令。例如，可以按如下方式连接到 python3：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">connection_params = StdioConnectionParams(</span><br><span class="line">    server_params=&#123;</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;python3&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [<span class="string">&quot;./agent/mcp_server.py&quot;</span>],</span><br><span class="line">        <span class="string">&quot;env&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;SERVICE_ACCOUNT_PATH&quot;</span>: SERVICE_ACCOUNT_PATH,</span><br><span class="line">            <span class="string">&quot;DRIVE_FOLDER_ID&quot;</span>: DRIVE_FOLDER_ID</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>在 Python 的上下文中，UVX 是指一个命令行工具，它利用 uv 在临时的、隔离的 Python 环境中执行命令。本质上，它允许您运行 Python 工具和包，而无需全局安装或在项目环境中安装它们。您可以通过 MCP 服务器运行它。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">connection_params = StdioConnectionParams(</span><br><span class="line">    server_params=&#123;</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;uvx&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [<span class="string">&quot;mcp-google-sheets@latest&quot;</span>],</span><br><span class="line">        <span class="string">&quot;env&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;SERVICE_ACCOUNT_PATH&quot;</span>: SERVICE_ACCOUNT_PATH,</span><br><span class="line">            <span class="string">&quot;DRIVE_FOLDER_ID&quot;</span>: DRIVE_FOLDER_ID</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>创建 MCP 服务器后，下一步是连接到它。</p>
+<h2 id="使用-ADK-Web-连接-MCP-服务器"><a href="#使用-ADK-Web-连接-MCP-服务器" class="headerlink" title="使用 ADK Web 连接 MCP 服务器"></a>使用 ADK Web 连接 MCP 服务器</h2><p>首先，执行 ‘adk web’。在终端中导航到 mcp_agent 的父目录（例如，adk_agent_samples）并运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./adk_agent_samples <span class="comment"># 或您的等效父目录</span></span><br><span class="line">adk web</span><br></pre></td></tr></table></figure>
+
+<p>ADK Web UI 在浏览器中加载后，从 Agent 菜单中选择 <code>filesystem_assistant_agent</code>。接下来，尝试以下提示：</p>
+<ul>
+<li>“Show me the contents of this folder.”</li>
+<li>“Read the <code>sample.txt</code> file.”（假设 <code>sample.txt</code> 位于 <code>TARGET_FOLDER_PATH</code>。）</li>
+<li>“What’s in <code>another_file.md</code>?”</li>
+</ul>
+<h2 id="使用-FastMCP-创建-MCP-服务器"><a href="#使用-FastMCP-创建-MCP-服务器" class="headerlink" title="使用 FastMCP 创建 MCP 服务器"></a>使用 FastMCP 创建 MCP 服务器</h2><p>FastMCP 是一个高级 Python 框架，旨在简化 MCP 服务器的开发。它提供了一个抽象层，简化了协议复杂性，允许开发人员专注于核心逻辑。</p>
+<p>该库使用简单的 Python 装饰器能够快速定义工具、资源和提示词。一个显著的优势是其自动模式生成，它智能地解释 Python 函数签名、类型提示和文档字符串，以构建必要的 AI 模型接口规范。这种自动化最大限度地减少了手动配置并减少了人为错误。</p>
+<p>除了基本的工具创建之外，FastMCP 还促进了高级架构模式，如服务器组合和代理。这使得能够模块化开发复杂的、多组件系统，并将现有服务无缝集成到 AI 可访问的框架中。此外，FastMCP 包括针对高效、分布式和可扩展的 AI 驱动应用程序的优化。</p>
+<h2 id="使用-FastMCP-设置服务器"><a href="#使用-FastMCP-设置服务器" class="headerlink" title="使用 FastMCP 设置服务器"></a>使用 FastMCP 设置服务器</h2><p>为了说明，考虑服务器提供的基本”greet”工具。一旦激活，ADK Agent 和其他 MCP 客户端可以使用 HTTP 与此工具交互。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## fastmcp_server.py</span></span><br><span class="line"><span class="comment">## 此脚本演示如何使用 FastMCP 创建一个简单的 MCP 服务器。</span></span><br><span class="line"><span class="comment">## 它公开一个生成问候语的单一工具。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 1. 确保您已安装 FastMCP：</span></span><br><span class="line"><span class="comment">## pip install fastmcp</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fastmcp <span class="keyword">import</span> FastMCP, Client</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化 FastMCP 服务器。</span></span><br><span class="line">mcp_server = FastMCP()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义一个简单的工具函数。</span></span><br><span class="line"><span class="comment">## `@mcp_server.tool` 装饰器将此 Python 函数注册为 MCP 工具。</span></span><br><span class="line"><span class="comment">## 文档字符串成为 LLM 的工具描述。</span></span><br><span class="line"><span class="meta">@mcp_server.tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    生成个性化的问候语。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    参数：</span></span><br><span class="line"><span class="string">        name: 要问候的人的名字。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    返回：</span></span><br><span class="line"><span class="string">        问候语字符串。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hello, <span class="subst">&#123;name&#125;</span>! Nice to meet you.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 或者如果您想从脚本运行它：</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    mcp_server.run(</span><br><span class="line">        transport=<span class="string">&quot;http&quot;</span>,</span><br><span class="line">        host=<span class="string">&quot;127.0.0.1&quot;</span>,</span><br><span class="line">        port=<span class="number">8000</span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<p>这个 Python 脚本定义了一个名为 greet 的单一函数，它接受一个人的名字并返回个性化的问候语。此函数上方的 @tool() 装饰器自动将其注册为 AI 或其他程序可以使用的工具。函数的文档字符串和类型提示被 FastMCP 用来告诉 Agent 工具的工作原理、需要什么输入以及它将返回什么。</p>
+<p>当脚本执行时，它启动 FastMCP 服务器，该服务器在 localhost:8000 上监听请求。这使得 greet 函数作为网络服务可用。然后可以将 Agent 配置为连接到此服务器，并使用 greet 工具生成问候语，作为更大任务的一部分。服务器持续运行，直到手动停止。</p>
+<h2 id="使用-ADK-Agent-消费-FastMCP-服务器"><a href="#使用-ADK-Agent-消费-FastMCP-服务器" class="headerlink" title="使用 ADK Agent 消费 FastMCP 服务器"></a>使用 ADK Agent 消费 FastMCP 服务器</h2><p>可以将 ADK Agent 设置为 MCP 客户端，以使用正在运行的 FastMCP 服务器。这需要使用 FastMCP 服务器的网络地址配置 HttpServerParameters，通常是 https 127.0.0.1:8000。</p>
+<p>可以包含 tool_filter 参数以限制 Agent 对服务器提供的特定工具的使用，例如 ‘greet’。当提示”Greet John Doe”等请求时，Agent 的嵌入式 LLM 识别通过 MCP 可用的 ‘greet’ 工具，使用参数”John Doe”调用它，并返回服务器的响应。此过程演示了通过 MCP 公开的用户定义工具与 ADK Agent 的集成。</p>
+<p>要建立此配置，需要一个 Agent 文件（例如，位于 .&#x2F;adk_agent_samples&#x2F;fastmcp_client_agent&#x2F; 的 agent.py）。此文件将实例化一个 ADK Agent，并使用 HttpServerParameters 与正在运行的 FastMCP 服务器建立连接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## ./adk_agent_samples/fastmcp_client_agent/agent.py</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent</span><br><span class="line"><span class="keyword">from</span> google.adk.tools.mcp_tool.mcp_toolset <span class="keyword">import</span> MCPToolset, HttpServerParameters</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义 FastMCP 服务器的地址。</span></span><br><span class="line"><span class="comment">## 确保您的 fastmcp_server.py（之前定义的）正在此端口上运行。</span></span><br><span class="line">FASTMCP_SERVER_URL = <span class="string">&#x27;http://127.0.0.1:8000&#x27;</span></span><br><span class="line"></span><br><span class="line">root_agent = LlmAgent(</span><br><span class="line">    model=<span class="string">&#x27;gemini-2.0-flash&#x27;</span>,  <span class="comment"># 或您首选的模型</span></span><br><span class="line">    name=<span class="string">&#x27;fastmcp_greeter_agent&#x27;</span>,</span><br><span class="line">    instruction=<span class="string">&#x27;You are a friendly assistant that can greet people by their name. Use the &quot;greet&quot; tool.&#x27;</span>,</span><br><span class="line">    tools=[</span><br><span class="line">        MCPToolset(</span><br><span class="line">            connection_params=HttpServerParameters(</span><br><span class="line">                url=FASTMCP_SERVER_URL,</span><br><span class="line">            ),</span><br><span class="line">            <span class="comment"># 可选：过滤从 MCP 服务器公开的工具</span></span><br><span class="line">            <span class="comment"># 对于此示例，我们只期望 &#x27;greet&#x27;</span></span><br><span class="line">            tool_filter=[<span class="string">&#x27;greet&#x27;</span>]</span><br><span class="line">        )</span><br><span class="line">    ],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>该脚本定义了一个名为 fastmcp_greeter_agent 的 Agent，它使用 Gemini 语言模型。它被赋予特定的指令，作为一个友好的助手，其目的是问候人们。至关重要的是，该代码为此 Agent 配备了执行其任务的工具。它配置了一个 MCPToolset 来连接到在 localhost:8000 上运行的独立服务器，该服务器应该是前面示例中的 FastMCP 服务器。Agent 被明确授予访问该服务器上托管的 greet 工具的权限。本质上，此代码设置了系统的客户端，创建了一个智能 Agent，它理解其目标是问候人们，并确切地知道使用哪个外部工具来完成它。</p>
+<p>在 fastmcp_client_agent 目录中创建 <strong>init</strong>.py 文件是必要的。这确保了 Agent 被识别为 ADK 的可发现 Python 包。</p>
+<p>首先，打开一个新终端并运行 <code>python fastmcp_server.py</code> 来启动 FastMCP 服务器。接下来，在终端中转到 <code>fastmcp_client_agent</code> 的父目录（例如，<code>adk_agent_samples</code>）并执行 <code>adk web</code>。一旦 ADK Web UI 在浏览器中加载，从 Agent 菜单中选择 <code>fastmcp_greeter_agent</code>。然后可以通过输入”Greet John Doe”等提示来测试它。Agent 将使用 FastMCP 服务器上的 <code>greet</code> 工具创建响应。</p>
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么</strong>：要作为有效 Agent 运作，LLM 必须超越简单文本生成。它们需要与外部环境交互能力以访问当前数据并使用外部软件。若无标准化通信方法，LLM 与外部工具或数据源间每次集成都成为定制复杂不可重用工作。这种临时方法阻碍可扩展性，并使构建复杂互联 AI 系统变得困难低效</p>
+<p><strong>为什么</strong>：模型上下文协议（MCP）通过充当 LLM 和外部系统间通用接口提供标准化解决方案。它建立开放标准化协议，定义如何发现和使用外部能力。基于客户端-服务器模型运行，MCP 允许服务器向任何兼容客户端公开工具、数据资源和交互式提示。LLM 驱动应用程序充当这些客户端，以可预测方式动态发现和与可用资源交互。这种标准化方法促进了可互操作和可重用组件生态系统，显著简化复杂 Agent 工作流开发</p>
+<p><strong>经验法则</strong>：在构建需要与各种不断发展的外部工具、数据源和 API 交互的复杂可扩展或企业级 Agent 系统时，使用模型上下文协议（MCP）。当不同 LLM 和工具间互操作性是优先考虑事项时，以及当 Agent 需要能够动态发现新能力而无需重新部署时，它是理想选择。对具有固定有限数量预定义函数的简单应用程序，直接工具函数调用可能足够</p>
+<p><strong>可视化摘要</strong></p>
+<p><img src="/../images/chapter-10/image1.png"></p>
+<p>图 1：模型上下文协议</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><p>以下是本章核心要点：</p>
+<ul>
+<li>模型上下文协议（MCP）是开放标准，促进 LLM 与外部应用程序、数据源和工具间标准化通信</li>
+<li>它采用客户端-服务器架构，定义公开和使用资源、提示和工具的方法</li>
+<li>Agent 开发工具包（ADK）支持使用现有 MCP 服务器以及通过 MCP 服务器公开 ADK 工具</li>
+<li>FastMCP 简化了 MCP 服务器开发和管理，特别用于公开在 Python 中实现的工具</li>
+<li>生成媒体服务的 MCP 工具允许 Agent 与 Google Cloud 的生成媒体能力（Imagen、Veo、Chirp 3 HD、Lyria）集成</li>
+<li>MCP 使 LLM 和 Agent 能与现实世界系统交互，访问动态信息，并执行超越文本生成的操作</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>模型上下文协议（MCP）是开放标准，促进大型语言模型（LLM）与外部系统间通信。它采用客户端-服务器架构，使 LLM 能通过标准化工具访问资源、使用提示和执行操作。MCP 允许 LLM 与数据库交互、管理生成媒体工作流、控制物联网设备以及自动化金融服务。实际示例演示了设置 Agent 与 MCP 服务器通信的方法，包括文件系统服务器和使用 FastMCP 构建的服务器，说明了其与 Agent 开发工具包（ADK）的集成。MCP 是开发超越基本语言能力的交互式 AI Agent 的关键组件</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Model Context Protocol (MCP) Documentation. (Latest). <em>Model Context Protocol (MCP)</em>. <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/mcp/">https://google.github.io/adk-docs/mcp/</a></li>
+<li>FastMCP Documentation. FastMCP. <a target="_blank" rel="noopener" href="https://github.com/jlowin/fastmcp">https://github.com/jlowin/fastmcp</a></li>
+<li>MCP Tools for Genmedia Services. <em>MCP Tools for Genmedia Services</em>. <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/mcp/#mcp-servers-for-google-cloud-genmedia">https://google.github.io/adk-docs/mcp/#mcp-servers-for-google-cloud-genmedia</a></li>
+<li>MCP Toolbox for Databases Documentation. (Latest). <em>MCP Toolbox for Databases</em>. <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/mcp/databases/">https://google.github.io/adk-docs/mcp/databases/</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-10_%20Model%20Context%20Protocol%20(MCP)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ADP-9_ Learning and Adaptation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1488,337 +1840,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ADP-2_ Routing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-2_%20Routing/">Agentic Design Patterns - Chapter 2_ Routing</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-2_%20Routing/" class="archive-article-date">
-  	<time datetime="2025-10-07T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-2-章：路由"><a href="#第-2-章：路由" class="headerlink" title="第 2 章：路由"></a>第 2 章：路由</h1><h2 id="路由模式概述"><a href="#路由模式概述" class="headerlink" title="路由模式概述"></a>路由模式概述</h2><p>虽然通过提示词链进行顺序处理是执行确定性、线性工作流的基础技术，但其适用性在需要自适应响应的场景中受到限制。现实世界的 Agent 系统必须经常根据偶然因素在多个潜在行动之间进行仲裁，例如环境状态、用户输入或前一操作的结果。这种动态决策能力，控制流向不同的专门函数、工具或子流程，是通过一种称为路由的机制实现的。</p>
-<p>路由将条件逻辑引入 Agent 的操作框架，使其能够从固定执行路径转变为这样一种模型：Agent 动态评估特定标准以从一组可能的后续行动中进行选择。这允许更灵活和上下文感知的系统行为。</p>
-<p>例如，一个设计用于客户查询的 Agent，当配备路由功能时，可以首先对传入查询进行分类以确定用户的意图。基于此分类，它可以将查询定向到专门的 Agent 进行直接问答、用于帐户信息的数据库检索工具，或用于复杂问题的升级程序，而不是默认使用单一的预定响应路径。因此，使用路由的更复杂 Agent 可以：</p>
-<ol>
-<li>分析用户的查询。</li>
-<li>基于其<strong>意图</strong>路由查询：<ul>
-<li>如果意图是”检查订单状态”，路由到与订单数据库交互的子 Agent 或工具链。</li>
-<li>如果意图是”产品信息”，路由到搜索产品目录的子 Agent 或链。</li>
-<li>如果意图是”技术支持”，路由到访问故障排除指南或升级到人工的不同链。</li>
-<li>如果意图不清楚，路由到澄清子 Agent 或提示词链。</li>
-</ul>
-</li>
-</ol>
-<p>路由模式的核心组件是执行评估并指导流程的机制。这种机制可以通过几种方式实现：</p>
-<ul>
-<li><strong>基于 LLM 的路由：</strong> 语言模型本身可以被提示分析输入并输出指示下一步或目的地的特定标识符或指令。例如，提示词可能要求 LLM “分析以下用户查询并仅输出类别：’订单状态’、’产品信息’、’技术支持’或’其他’。” Agent 系统然后读取此输出并相应地指导工作流。</li>
-<li><strong>基于嵌入的路由：</strong> 输入查询可以转换为向量嵌入（参见 RAG，第 14 章）。然后将此嵌入与代表不同路由或能力的嵌入进行比较。查询被路由到嵌入最相似的路由。这对于语义路由很有用，其中决策基于输入的含义而不仅仅是关键词。</li>
-<li><strong>基于规则的路由：</strong> 这涉及使用基于关键词、模式或从输入中提取的结构化数据的预定义规则或逻辑（例如，if-else 语句、switch case）。这可以比基于 LLM 的路由更快、更确定，但在处理细微或新颖输入方面的灵活性较差。</li>
-<li><strong>基于机器学习模型的路由：</strong> 它采用判别模型，例如分类器，该模型已经在小型标记数据语料库上专门训练以执行路由任务。虽然它与基于嵌入的方法在概念上有相似之处，但其关键特征是监督微调过程，该过程调整模型的参数以创建专门的路由功能。这种技术与基于 LLM 的路由不同，因为决策组件不是在推理时执行提示词的生成模型。相反，路由逻辑被编码在微调模型的学习权重中。虽然 LLM 可能在预处理步骤中用于生成合成数据以增强训练集，但它们不参与实时路由决策本身。</li>
-</ul>
-<p>路由机制可以在 Agent 操作周期内的多个节点实现。它们可以在开始时应用以对主要任务进行分类，在处理链内的中间点应用以确定后续操作，或在子程序期间应用以从给定集合中选择最合适的工具。</p>
-<p>诸如 LangChain、LangGraph 和 Google 的 Agent Developer Kit (ADK) 等计算框架提供了用于定义和管理这种条件逻辑的显式构造。凭借其基于状态的图架构，LangGraph 特别适合复杂的路由场景，其中决策取决于整个系统的累积状态。类似地，Google 的 ADK 提供了用于构建 Agent 能力和交互模型的基础组件，这些组件作为实现路由逻辑的基础。在这些框架提供的执行环境中，开发人员定义可能的操作路径以及决定计算图中节点之间转换的函数或基于模型的评估。</p>
-<p>路由的实现使系统能够超越确定性顺序处理。它促进了更自适应的执行流的开发，可以动态且适当地响应更广泛的输入和状态变化。</p>
-<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>路由模式是自适应 Agent 系统设计中的关键控制机制，使它们能够动态改变其执行路径以响应可变输入和内部状态。其效用通过提供必要的条件逻辑层跨越多个领域。</p>
-<p>在人机交互中，例如虚拟助手或 AI 驱动的导师，路由用于解释用户意图。对自然语言查询的初始分析确定最合适的后续操作，无论是调用特定信息检索工具、升级到人工操作员，还是根据用户表现选择课程中的下一个模块。这使系统能够超越线性对话流并进行上下文响应。</p>
-<p>在自动化数据和文档处理管道中，路由作为分类和分发功能。传入的数据，如电子邮件、支持票据或 API 有效载荷，根据内容、元数据或格式进行分析。然后系统将每个项目定向到相应的工作流，例如销售线索摄入流程、JSON 或 CSV 格式的特定数据转换函数，或紧急问题升级路径。</p>
-<p>在涉及多个专门工具或 Agent 的复杂系统中，路由充当高级调度器。由用于搜索、总结和分析信息的不同 Agent 组成的研究系统将使用路由器根据当前目标将任务分配给最合适的 Agent。类似地，AI 编码助手使用路由来识别编程语言和用户意图——调试、解释或翻译——然后将代码片段传递给正确的专门工具。</p>
-<p>最终，路由提供了创建功能多样化和上下文感知系统所必需的逻辑仲裁能力。它将 Agent 从预定义序列的静态执行器转变为可以在变化条件下就完成任务的最有效方法做出决策的动态系统。</p>
-<h2 id="实操代码示例（LangChain）"><a href="#实操代码示例（LangChain）" class="headerlink" title="实操代码示例（LangChain）"></a>实操代码示例（LangChain）</h2><p>在代码中实现路由涉及定义可能的路径和决定采取哪条路径的逻辑。像 LangChain 和 LangGraph 这样的框架为此提供了特定的组件和结构。LangGraph 基于状态的图结构对于可视化和实现路由逻辑特别直观。</p>
-<p>此代码演示了使用 LangChain 和 Google 的生成式 AI 的简单类 Agent 系统。它设置了一个”协调器”，根据请求的意图（预订、信息或不清楚）将用户请求路由到不同的模拟”子 Agent”处理程序。系统使用语言模型对请求进行分类，然后将其委托给适当的处理函数，模拟多 Agent 架构中常见的基本委托模式。</p>
-<p>首先，确保您已安装必要的库：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain langgraph google-cloud-aiplatform langchain-google-genai google-adk deprecated pydantic</span><br></pre></td></tr></table></figure>
-
-<p>您还需要使用您选择的语言模型的 API 密钥设置环境（例如，OpenAI、Google Gemini、Anthropic）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Copyright (c) 2025 Marco Fago</span></span><br><span class="line"><span class="comment">## https://www.linkedin.com/in/marco-fago/</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">## 此代码根据 MIT 许可证授权。</span></span><br><span class="line"><span class="comment">## 请参阅仓库中的 LICENSE 文件以获取完整许可文本。</span></span><br><span class="line"><span class="keyword">from</span> langchain_google_genai <span class="keyword">import</span> ChatGoogleGenerativeAI</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"><span class="keyword">from</span> langchain_core.runnables <span class="keyword">import</span> RunnablePassthrough, RunnableBranch</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 配置 ---</span></span><br><span class="line"><span class="comment">## 确保设置了您的 API 密钥环境变量（例如，GOOGLE_API_KEY）</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    llm = ChatGoogleGenerativeAI(model=<span class="string">&quot;gemini-2.5-flash&quot;</span>, temperature=<span class="number">0</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;语言模型已初始化: <span class="subst">&#123;llm.model&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;初始化语言模型时出错: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    llm = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义模拟子 Agent 处理程序（相当于 ADK 的 sub_agents）---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">booking_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;模拟预订 Agent 处理请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 委托给预订处理程序 ---&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;预订处理程序处理了请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。结果：模拟预订操作。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;模拟信息 Agent 处理请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 委托给信息处理程序 ---&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;信息处理程序处理了请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。结果：模拟信息检索。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">unclear_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理无法委托的请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 处理不清楚的请求 ---&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;协调器无法委托请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。请澄清。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义协调器路由链（相当于 ADK 协调器的指令）---</span></span><br><span class="line"><span class="comment">## 此链决定应委托给哪个处理程序。</span></span><br><span class="line">coordinator_router_prompt = ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>, <span class="string">&quot;&quot;&quot;分析用户的请求并确定哪个专家处理程序应处理它。</span></span><br><span class="line"><span class="string">     - 如果请求与预订航班或酒店相关，</span></span><br><span class="line"><span class="string">        输出 &#x27;booker&#x27;。</span></span><br><span class="line"><span class="string">     - 对于所有其他一般信息问题，输出 &#x27;info&#x27;。</span></span><br><span class="line"><span class="string">     - 如果请求不清楚或不适合任一类别，</span></span><br><span class="line"><span class="string">        输出 &#x27;unclear&#x27;。</span></span><br><span class="line"><span class="string">     只输出一个词：&#x27;booker&#x27;、&#x27;info&#x27; 或 &#x27;unclear&#x27;。&quot;&quot;&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;user&quot;</span>, <span class="string">&quot;&#123;request&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> llm:</span><br><span class="line">    coordinator_router_chain = coordinator_router_prompt | llm | StrOutputParser()</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义委托逻辑（相当于 ADK 的基于 sub_agents 的自动流）---</span></span><br><span class="line"><span class="comment">## 使用 RunnableBranch 根据路由链的输出进行路由。</span></span><br><span class="line"><span class="comment">## 为 RunnableBranch 定义分支</span></span><br><span class="line">branches = &#123;</span><br><span class="line">    <span class="string">&quot;booker&quot;</span>: RunnablePassthrough.assign(output=<span class="keyword">lambda</span> x: booking_handler(x[<span class="string">&#x27;request&#x27;</span>][<span class="string">&#x27;request&#x27;</span>])),</span><br><span class="line">    <span class="string">&quot;info&quot;</span>: RunnablePassthrough.assign(output=<span class="keyword">lambda</span> x: info_handler(x[<span class="string">&#x27;request&#x27;</span>][<span class="string">&#x27;request&#x27;</span>])),</span><br><span class="line">    <span class="string">&quot;unclear&quot;</span>: RunnablePassthrough.assign(output=<span class="keyword">lambda</span> x: unclear_handler(x[<span class="string">&#x27;request&#x27;</span>][<span class="string">&#x27;request&#x27;</span>])),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建 RunnableBranch。它接受路由链的输出</span></span><br><span class="line"><span class="comment">## 并将原始输入（&#x27;request&#x27;）路由到相应的处理程序。</span></span><br><span class="line">delegation_branch = RunnableBranch(</span><br><span class="line">    (<span class="keyword">lambda</span> x: x[<span class="string">&#x27;decision&#x27;</span>].strip() == <span class="string">&#x27;booker&#x27;</span>, branches[<span class="string">&quot;booker&quot;</span>]), <span class="comment"># 添加了 .strip()</span></span><br><span class="line">    (<span class="keyword">lambda</span> x: x[<span class="string">&#x27;decision&#x27;</span>].strip() == <span class="string">&#x27;info&#x27;</span>, branches[<span class="string">&quot;info&quot;</span>]),     <span class="comment"># 添加了 .strip()</span></span><br><span class="line">    branches[<span class="string">&quot;unclear&quot;</span>] <span class="comment"># &#x27;unclear&#x27; 或任何其他输出的默认分支</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 将路由链和委托分支组合成单个可运行对象</span></span><br><span class="line"><span class="comment">## 路由链的输出（&#x27;decision&#x27;）与原始输入（&#x27;request&#x27;）一起传递</span></span><br><span class="line"><span class="comment">## 到 delegation_branch。</span></span><br><span class="line">coordinator_agent = &#123;</span><br><span class="line">    <span class="string">&quot;decision&quot;</span>: coordinator_router_chain,</span><br><span class="line">    <span class="string">&quot;request&quot;</span>: RunnablePassthrough()</span><br><span class="line">&#125; | delegation_branch | (<span class="keyword">lambda</span> x: x[<span class="string">&#x27;output&#x27;</span>]) <span class="comment"># 提取最终输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 示例用法 ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> llm:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n由于 LLM 初始化失败，跳过执行。&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- 运行预订请求 ---&quot;</span>)</span><br><span class="line">    request_a = <span class="string">&quot;给我预订去伦敦的航班。&quot;</span></span><br><span class="line">    result_a = coordinator_agent.invoke(&#123;<span class="string">&quot;request&quot;</span>: request_a&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终结果 A: <span class="subst">&#123;result_a&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 运行信息请求 ---&quot;</span>)</span><br><span class="line">    request_b = <span class="string">&quot;意大利的首都是什么？&quot;</span></span><br><span class="line">    result_b = coordinator_agent.invoke(&#123;<span class="string">&quot;request&quot;</span>: request_b&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终结果 B: <span class="subst">&#123;result_b&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 运行不清楚的请求 ---&quot;</span>)</span><br><span class="line">    request_c = <span class="string">&quot;告诉我关于量子物理学的事。&quot;</span></span><br><span class="line">    result_c = coordinator_agent.invoke(&#123;<span class="string">&quot;request&quot;</span>: request_c&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终结果 C: <span class="subst">&#123;result_c&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p>如上所述，这段 Python 代码使用 LangChain 库和 Google 的生成式 AI 模型（特别是 gemini-2.5-flash）构建了一个简单的类 Agent 系统。详细来说，它定义了三个模拟子 Agent 处理程序：booking_handler、info_handler 和 unclear_handler，每个都设计用于处理特定类型的请求。</p>
-<p>核心组件是 coordinator_router_chain，它利用 ChatPromptTemplate 指示语言模型将传入的用户请求分类为三个类别之一：’booker’、’info’ 或 ‘unclear’。然后路由链的输出由 RunnableBranch 使用，将原始请求委托给相应的处理函数。RunnableBranch 检查来自语言模型的决策，并将请求数据定向到 booking_handler、info_handler 或 unclear_handler。coordinator_agent 结合了这些组件，首先路由请求以做出决策，然后将请求传递给选定的处理程序。最终输出从处理程序的响应中提取。</p>
-<p>main 函数通过三个示例请求演示了系统的用法，展示了不同的输入如何被路由并由模拟 Agent 处理。包含了语言模型初始化的错误处理以确保健壮性。代码结构模仿了基本的多 Agent 框架，其中中央协调器根据意图将任务委托给专门的 Agent。</p>
-<h2 id="实操代码示例（Google-ADK）"><a href="#实操代码示例（Google-ADK）" class="headerlink" title="实操代码示例（Google ADK）"></a>实操代码示例（Google ADK）</h2><p>Agent Development Kit (ADK) 是一个用于工程化 Agent 系统的框架，为定义 Agent 的能力和行为提供了结构化环境。与基于显式计算图的架构相比，ADK 范式中的路由通常通过定义一组离散的”工具”来实现，这些工具代表 Agent 的功能。响应用户查询选择适当工具由框架的内部逻辑管理，该逻辑利用底层模型将用户意图与正确的功能处理程序匹配。</p>
-<p>此 Python 代码演示了使用 Google ADK 库的 Agent Development Kit (ADK) 应用程序示例。它设置了一个”协调器” Agent，根据定义的指令将用户请求路由到专门的子 Agent（”Booker”用于预订，”Info”用于一般信息）。然后子 Agent 使用特定工具模拟处理请求，展示了 Agent 系统中的基本委托模式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Copyright (c) 2025 Marco Fago</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">## 此代码根据 MIT 许可证授权。</span></span><br><span class="line"><span class="comment">## 请参阅仓库中的 LICENSE 文件以获取完整许可文本。</span></span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Dict</span>, <span class="type">Any</span>, <span class="type">Optional</span></span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> Agent</span><br><span class="line"><span class="keyword">from</span> google.adk.runners <span class="keyword">import</span> InMemoryRunner</span><br><span class="line"><span class="keyword">from</span> google.adk.tools <span class="keyword">import</span> FunctionTool</span><br><span class="line"><span class="keyword">from</span> google.genai <span class="keyword">import</span> types</span><br><span class="line"><span class="keyword">from</span> google.adk.events <span class="keyword">import</span> Event</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义工具函数 ---</span></span><br><span class="line"><span class="comment">## 这些函数模拟专家 Agent 的操作。</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">booking_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    处理航班和酒店的预订请求。</span></span><br><span class="line"><span class="string">    参数：</span></span><br><span class="line"><span class="string">        request: 用户的预订请求。</span></span><br><span class="line"><span class="string">    返回：</span></span><br><span class="line"><span class="string">        确认预订已处理的消息。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;-------------------------- 调用预订处理程序 ----------------------------&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;已模拟对 &#x27;<span class="subst">&#123;request&#125;</span>&#x27; 的预订操作。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    处理一般信息请求。</span></span><br><span class="line"><span class="string">    参数：</span></span><br><span class="line"><span class="string">        request: 用户的问题。</span></span><br><span class="line"><span class="string">    返回：</span></span><br><span class="line"><span class="string">        表示信息请求已处理的消息。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;-------------------------- 调用信息处理程序 ----------------------------&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;对 &#x27;<span class="subst">&#123;request&#125;</span>&#x27; 的信息请求。结果：模拟信息检索。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">unclear_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理无法委托的请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;协调器无法委托请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。请澄清。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 从函数创建工具 ---</span></span><br><span class="line">booking_tool = FunctionTool(booking_handler)</span><br><span class="line">info_tool = FunctionTool(info_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义配备各自工具的专门子 Agent</span></span><br><span class="line">booking_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;Booker&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;一个专门的 Agent，通过调用预订工具处理所有航班和酒店预订请求。&quot;</span>,</span><br><span class="line">    tools=[booking_tool]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">info_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;Info&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;一个专门的 Agent，通过调用信息工具提供一般信息并回答用户问题。&quot;</span>,</span><br><span class="line">    tools=[info_tool]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义具有明确委托指令的父 Agent</span></span><br><span class="line">coordinator = Agent(</span><br><span class="line">    name=<span class="string">&quot;Coordinator&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    instruction=(</span><br><span class="line">        <span class="string">&quot;你是主协调器。你唯一的任务是分析传入的用户请求&quot;</span></span><br><span class="line">        <span class="string">&quot;并将它们委托给适当的专家 Agent。不要尝试直接回答用户。\n&quot;</span></span><br><span class="line">        <span class="string">&quot;- 对于任何与预订航班或酒店相关的请求，委托给 &#x27;Booker&#x27; Agent。\n&quot;</span></span><br><span class="line">        <span class="string">&quot;- 对于所有其他一般信息问题，委托给 &#x27;Info&#x27; Agent。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    description=<span class="string">&quot;一个将用户请求路由到正确专家 Agent 的协调器。&quot;</span>,</span><br><span class="line">    <span class="comment"># sub_agents 的存在默认启用 LLM 驱动的委托（自动流）。</span></span><br><span class="line">    sub_agents=[booking_agent, info_agent]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 执行逻辑 ---</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">run_coordinator</span>(<span class="params">runner: InMemoryRunner, request: <span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用给定请求运行协调器 Agent 并委托。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n--- 使用请求运行协调器: &#x27;<span class="subst">&#123;request&#125;</span>&#x27; ---&quot;</span>)</span><br><span class="line">    final_result = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        user_id = <span class="string">&quot;user_123&quot;</span></span><br><span class="line">        session_id = <span class="built_in">str</span>(uuid.uuid4())</span><br><span class="line">        <span class="keyword">await</span> runner.session_service.create_session(</span><br><span class="line">            app_name=runner.app_name, user_id=user_id, session_id=session_id</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> runner.run(</span><br><span class="line">            user_id=user_id,</span><br><span class="line">            session_id=session_id,</span><br><span class="line">            new_message=types.Content(</span><br><span class="line">                role=<span class="string">&#x27;user&#x27;</span>,</span><br><span class="line">                parts=[types.Part(text=request)]</span><br><span class="line">            ),</span><br><span class="line">        ):</span><br><span class="line">            <span class="keyword">if</span> event.is_final_response() <span class="keyword">and</span> event.content:</span><br><span class="line">                <span class="comment"># 尝试直接从 event.content 获取文本</span></span><br><span class="line">                <span class="comment"># 以避免迭代部分</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">hasattr</span>(event.content, <span class="string">&#x27;text&#x27;</span>) <span class="keyword">and</span> event.content.text:</span><br><span class="line">                    final_result = event.content.text</span><br><span class="line">                <span class="keyword">elif</span> event.content.parts:</span><br><span class="line">                    <span class="comment"># 后备：迭代部分并提取文本（可能触发警告）</span></span><br><span class="line">                    text_parts = [part.text <span class="keyword">for</span> part <span class="keyword">in</span> event.content.parts <span class="keyword">if</span> part.text]</span><br><span class="line">                    final_result = <span class="string">&quot;&quot;</span>.join(text_parts)</span><br><span class="line">                <span class="comment"># 假设循环应在最终响应后中断</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;协调器最终响应: <span class="subst">&#123;final_result&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> final_result</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;处理您的请求时出错: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;处理您的请求时出错: <span class="subst">&#123;e&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;运行 ADK 示例的主函数。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- Google ADK 路由示例（ADK 自动流风格）---&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;注意：这需要安装并认证 Google ADK。&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    runner = InMemoryRunner(coordinator)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 示例用法</span></span><br><span class="line">    result_a = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;给我在巴黎预订一家酒店。&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 A: <span class="subst">&#123;result_a&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    result_b = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;世界上最高的山是什么？&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 B: <span class="subst">&#123;result_b&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    result_c = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;告诉我一个随机事实。&quot;</span>) <span class="comment"># 应该去 Info</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 C: <span class="subst">&#123;result_c&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    result_d = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;查找下个月去东京的航班。&quot;</span>) <span class="comment"># 应该去 Booker</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 D: <span class="subst">&#123;result_d&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">import</span> nest_asyncio</span><br><span class="line">    nest_asyncio.apply()</span><br><span class="line">    <span class="keyword">await</span> main()</span><br></pre></td></tr></table></figure>
-
-<p>此脚本由一个主协调器 Agent 和两个专门的子 Agent 组成：Booker 和 Info。每个专门的 Agent 都配备了一个 FunctionTool，它包装了一个模拟操作的 Python 函数。booking_handler 函数模拟处理航班和酒店预订，而 info_handler 函数模拟检索一般信息。unclear_handler 作为协调器无法委托的请求的后备包含在内，尽管当前协调器逻辑在主 run_coordinator 函数中没有明确使用它进行委托失败。</p>
-<p>协调器 Agent 的主要角色，如其指令中定义的，是分析传入的用户消息并将它们委托给 Booker 或 Info Agent。这种委托由 ADK 的自动流机制自动处理，因为协调器定义了 sub_agents。run_coordinator 函数设置了一个 InMemoryRunner，创建一个用户和会话 ID，然后使用运行器通过协调器 Agent 处理用户的请求。runner.run 方法处理请求并产生事件，代码从 event.content 中提取最终响应文本。</p>
-<p>main 函数通过使用不同请求运行协调器来演示系统的用法，展示了它如何将预订请求委托给 Booker，将信息请求委托给 Info Agent。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> Agent 系统必须经常响应各种各样的输入和情况，这些无法由单一的线性流程处理。简单的顺序工作流缺乏基于上下文做出决策的能力。没有为特定任务选择正确工具或子流程的机制，系统仍然是僵化和非自适应的。这种限制使得难以构建能够管理现实世界用户请求的复杂性和可变性的复杂应用程序。</p>
-<p><strong>为什么：</strong> 路由模式通过将条件逻辑引入 Agent 的操作框架提供了标准化解决方案。它使系统能够首先分析传入查询以确定其意图或性质。基于此分析，Agent 动态地将控制流定向到最合适的专门工具、功能或子 Agent。这个决策可以由各种方法驱动，包括提示 LLM、应用预定义规则或使用基于嵌入的语义相似性。最终，路由将静态的预定执行路径转变为能够选择最佳可能操作的灵活和上下文感知工作流。</p>
-<p><strong>经验法则：</strong> 当 Agent 必须根据用户输入或当前状态在多个不同的工作流、工具或子 Agent 之间做出决策时，使用路由模式。它对于需要对传入请求进行分类或分类以处理不同类型任务的应用程序至关重要，例如客户支持机器人区分销售查询、技术支持和帐户管理问题。</p>
-<h4 id="视觉摘要："><a href="#视觉摘要：" class="headerlink" title="视觉摘要："></a><strong>视觉摘要：</strong></h4><p><img src="/../images/chapter-2/image1.png"><br>图 1：路由模式，使用 LLM 作为路由器</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
-<li>路由使 Agent 能够根据条件动态决定工作流中的下一步。</li>
-<li>它允许 Agent 处理各种输入并调整其行为，超越线性执行。</li>
-<li>路由逻辑可以使用 LLM、基于规则的系统或嵌入相似性实现。</li>
-<li>像 LangGraph 和 Google ADK 这样的框架提供了在 Agent 工作流中定义和管理路由的结构化方式，尽管采用不同的架构方法。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>路由模式是构建真正动态和响应式 Agent 系统的关键步骤。通过实现路由，我们超越了简单的线性执行流，使我们的 Agent 能够就如何处理信息、响应用户输入以及利用可用工具或子 Agent 做出智能决策。</p>
-<p>我们已经看到路由如何应用于各个领域，从客户服务聊天机器人到复杂的数据处理管道。分析输入并有条件地指导工作流的能力是创建能够处理现实世界任务固有可变性的 Agent 的基础。</p>
-<p>使用 LangChain 和 Google ADK 的代码示例展示了实现路由的两种不同但有效的方法。LangGraph 基于图的结构提供了定义状态和转换的可视化和显式方式，使其成为具有复杂路由逻辑的复杂多步工作流的理想选择。另一方面，Google ADK 通常专注于定义不同的能力（工具）并依赖框架将用户请求路由到适当工具处理程序的能力，这对于具有明确定义的离散操作集的 Agent 可能更简单。</p>
-<p>掌握路由模式对于构建能够智能地导航不同场景并根据上下文提供定制响应或操作的 Agent 至关重要。它是创建多功能和健壮 Agent 应用程序的关键组件。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>LangGraph Documentation: <a target="_blank" rel="noopener" href="https://www.langchain.com/">https://www.langchain.com/</a></li>
-<li>Google Agent Developer Kit Documentation: <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/">https://google.github.io/adk-docs/</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-2_%20Routing/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ADP-1_ Prompt Chaining" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-1_%20Prompt%20Chaining/">Agentic Design Patterns - Chapter 1_ Prompt Chaining</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-1_%20Prompt%20Chaining/" class="archive-article-date">
-  	<time datetime="2025-10-06T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-1-章：提示词链"><a href="#第-1-章：提示词链" class="headerlink" title="第 1 章：提示词链"></a>第 1 章：提示词链</h1><h2 id="提示词链模式概述"><a href="#提示词链模式概述" class="headerlink" title="提示词链模式概述"></a>提示词链模式概述</h2><p>提示词链（Prompt Chaining），有时也称为管道模式（Pipeline pattern），是利用大型语言模型（LLM）处理复杂任务时的一种强大范式。提示词链不是期望 LLM 在单一的、整体化的步骤中解决复杂问题，而是采用分而治之的策略。其核心思想是将原始复杂问题分解为一系列更小、更易管理的子问题。每个子问题通过专门设计的提示词单独处理，并且一个提示词的输出会作为输入传递给链中的下一个提示词。</p>
-<p>这种顺序处理技术为与 LLM 的交互引入了模块化和清晰性。通过分解复杂任务，更容易理解和调试每个单独的步骤，使整个过程更加健壮和可解释。链中的每一步都可以精心设计和优化，专注于更大问题的特定方面，从而产生更准确和聚焦的输出。</p>
-<p>一个步骤的输出作为下一个步骤的输入至关重要。这种信息传递建立了依赖链（因此得名），其中先前操作的上下文和结果指导后续处理。这使得 LLM 能够在其先前工作的基础上构建，完善理解，并逐步接近期望的解决方案。</p>
-<p>此外，提示词链不仅仅是分解问题；它还支持外部知识和工具的集成。在每一步，LLM 都可以被指示与外部系统、API 或数据库交互，丰富其超越内部训练数据的知识和能力。这种能力极大地扩展了 LLM 的潜力，使它们不仅仅作为独立模型运行，而是作为更广泛智能系统的组成部分。</p>
-<p>提示词链的重要性超越了简单的问题解决。它是构建复杂 AI Agent 的基础技术。这些 Agent 可以利用提示词链在动态环境中自主规划、推理和行动。通过战略性地构建提示词序列，Agent 可以参与需要多步推理、规划和决策的任务。这样的 Agent 工作流可以更紧密地模拟人类思维过程，从而实现与复杂领域和系统更自然有效的交互。</p>
-<p><strong>单一提示词的局限性：</strong> 对于多方面的任务，为 LLM 使用单一的复杂提示词可能效率低下，导致模型在约束和指令方面遇到困难，可能导致指令忽略（提示词的某些部分被忽视）、上下文漂移（模型失去对初始上下文的跟踪）、错误传播（早期错误被放大）、需要更长上下文窗口（模型获得的信息不足无法响应）以及幻觉（认知负荷增加导致错误信息的可能性）。例如，一个要求分析市场研究报告、总结发现、识别带数据点的趋势并起草电子邮件的查询可能会失败，因为模型可能总结得很好，但未能提取数据或正确起草电子邮件。</p>
-<p><strong>通过顺序分解增强可靠性：</strong> 提示词链通过将复杂任务分解为聚焦的顺序工作流来解决这些挑战，显著提高了可靠性和控制力。基于上面的例子，管道或链式方法可以描述如下：</p>
-<ol>
-<li>初始提示词（总结）：”总结以下市场研究报告的主要发现：[文本]。” 模型的唯一焦点是总结，提高了这一初始步骤的准确性。</li>
-<li>第二个提示词（趋势识别）：”使用摘要，识别前三个新兴趋势并提取支持每个趋势的具体数据点：[步骤 1 的输出]。” 此提示词现在更受约束，并直接建立在经过验证的输出之上。</li>
-<li>第三个提示词（电子邮件撰写）：”向营销团队起草一封简明的电子邮件，概述以下趋势及其支持数据：[步骤 2 的输出]。”</li>
-</ol>
-<p>这种分解允许对流程进行更精细的控制。每一步都更简单且更清晰，这减少了模型的认知负荷，并导致更准确和可靠的最终输出。这种模块化类似于计算管道，其中每个函数在执行特定操作后将结果传递给下一个。为了确保每个特定任务的准确响应，可以在每个阶段为模型分配不同的角色。例如，在给定的场景中，初始提示词可以被指定为”市场分析师”，后续提示词为”贸易分析师”，第三个提示词为”专家文档撰写者”，依此类推。</p>
-<p><strong>结构化输出的作用：</strong> 提示词链的可靠性高度依赖于步骤之间传递的数据完整性。如果一个提示词的输出不明确或格式不佳，后续提示词可能由于错误的输入而失败。为了缓解这一问题，指定结构化输出格式（如 JSON 或 XML）至关重要。</p>
-<p>例如，趋势识别步骤的输出可以格式化为 JSON 对象：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;trends&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;trend_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI-Powered Personalization&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;supporting_data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;73% of consumers prefer to do business with brands that use personal information to make their shopping experiences more relevant.&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;trend_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Sustainable and Ethical Brands&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;supporting_data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Sales of products with ESG-related claims grew 28% over the last five years, compared to 20% for products without.&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>这种结构化格式确保数据是机器可读的，可以精确解析并插入到下一个提示词中，而不会产生歧义。这种做法最大限度地减少了解释自然语言可能产生的错误，是构建健壮的多步骤 LLM 系统的关键组成部分。</p>
-<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>提示词链是一种多用途模式，在构建 Agent 系统时适用于广泛的场景。其核心效用在于将复杂问题分解为顺序的、可管理的步骤。以下是几个实际应用和用例：</p>
-<p><strong>1. 信息处理工作流：</strong> 许多任务涉及通过多次转换处理原始信息。例如，总结文档、提取关键实体，然后使用这些实体查询数据库或生成报告。提示词链可能如下所示：</p>
-<ul>
-<li>提示词 1：从给定的 URL 或文档中提取文本内容。</li>
-<li>提示词 2：总结清理后的文本。</li>
-<li>提示词 3：从摘要或原始文本中提取特定实体（例如，姓名、日期、位置）。</li>
-<li>提示词 4：使用实体搜索内部知识库。</li>
-<li>提示词 5：生成包含摘要、实体和搜索结果的最终报告。</li>
-</ul>
-<p>这种方法应用于自动化内容分析、AI 驱动的研究助手开发和复杂报告生成等领域。</p>
-<p><strong>2. 复杂查询回答：</strong> 回答需要多步推理或信息检索的复杂问题是一个主要用例。例如，”1929 年股市崩盘的主要原因是什么，政府政策如何应对？”</p>
-<ul>
-<li>提示词 1：识别用户查询中的核心子问题（崩盘原因、政府响应）。</li>
-<li>提示词 2：专门研究或检索有关 1929 年崩盘原因的信息。</li>
-<li>提示词 3：专门研究或检索有关政府对 1929 年股市崩盘的政策响应的信息。</li>
-<li>提示词 4：将步骤 2 和 3 的信息综合成对原始查询的连贯答案。</li>
-</ul>
-<p>这种顺序处理方法是开发能够进行多步推理和信息综合的 AI 系统的核心。当查询无法从单个数据点回答，而是需要一系列逻辑步骤或来自不同来源的信息集成时，需要这样的系统。</p>
-<p>例如，设计用于生成关于特定主题的综合报告的自动化研究 Agent 执行混合计算工作流。最初，系统检索大量相关文章。从每篇文章中提取关键信息的后续任务可以为每个来源并发执行。此阶段非常适合并行处理，其中独立的子任务同时运行以最大化效率。</p>
-<p>然而，一旦完成单个提取，过程就变得本质上是顺序的。系统必须首先整理提取的数据，然后将其综合成连贯的草稿，最后审查和完善此草稿以生成最终报告。这些后期阶段中的每一个在逻辑上都依赖于前一个阶段的成功完成。这就是应用提示词链的地方：整理的数据作为综合提示词的输入，生成的综合文本成为最终审查提示词的输入。因此，复杂操作经常将独立数据收集的并行处理与综合和完善的依赖步骤的提示词链结合起来。</p>
-<p><strong>3. 数据提取和转换：</strong> 将非结构化文本转换为结构化格式通常通过迭代过程实现，需要顺序修改以提高输出的准确性和完整性。</p>
-<ul>
-<li>提示词 1：尝试从发票文档中提取特定字段（例如，姓名、地址、金额）。</li>
-<li>处理：检查是否提取了所有必需字段以及它们是否满足格式要求。</li>
-<li>提示词 2（条件性）：如果字段缺失或格式错误，制作新提示词要求模型专门查找缺失&#x2F;格式错误的信息，可能提供失败尝试的上下文。</li>
-<li>处理：再次验证结果。如有必要重复。</li>
-<li>输出：提供提取的、验证的结构化数据。</li>
-</ul>
-<p>这种顺序处理方法特别适用于从表单、发票或电子邮件等非结构化来源进行数据提取和分析。例如，解决复杂的光学字符识别（OCR）问题，如处理 PDF 表单，通过分解的多步方法更有效地处理。</p>
-<p>最初，使用大型语言模型从文档图像执行主要文本提取。随后，模型处理原始输出以规范化数据，在这一步中，它可能将数字文本（如”一千零五十”）转换为其数字等价物 1050。LLM 的一个重大挑战是执行精确的数学计算。因此，在随后的步骤中，系统可以将任何所需的算术运算委托给外部计算器工具。LLM 识别必要的计算，将规范化的数字馈送到工具，然后合并精确的结果。这种文本提取、数据规范化和外部工具使用的链式序列实现了最终的准确结果，这通常很难从单个 LLM 查询中可靠地获得。</p>
-<p><strong>4. 内容生成工作流：</strong> 复杂内容的创作是一个程序化任务，通常分解为不同的阶段，包括初始构思、结构大纲、起草和后续修订。</p>
-<ul>
-<li>提示词 1：根据用户的一般兴趣生成 5 个主题想法。</li>
-<li>处理：允许用户选择一个想法或自动选择最佳想法。</li>
-<li>提示词 2：基于选定的主题，生成详细的大纲。</li>
-<li>提示词 3：根据大纲中的第一点编写草稿部分。</li>
-<li>提示词 4：根据大纲中的第二点编写草稿部分，提供前一部分作为上下文。对所有大纲点继续这样做。</li>
-<li>提示词 5：审查和完善完整草稿的连贯性、语气和语法。</li>
-</ul>
-<p>这种方法用于一系列自然语言生成任务，包括创意叙事、技术文档和其他形式的结构化文本内容的自动创作。</p>
-<p><strong>5. 具有状态的对话 Agent：</strong> 尽管全面的状态管理架构采用比顺序链接更复杂的方法，提示词链提供了保持对话连续性的基础机制。这种技术通过将每个对话轮次构建为新提示词来维护上下文，该提示词系统地合并来自对话序列中先前交互的信息或提取的实体。</p>
-<ul>
-<li>提示词 1：处理用户话语 1，识别意图和关键实体。</li>
-<li>处理：使用意图和实体更新对话状态。</li>
-<li>提示词 2：基于当前状态，生成响应和&#x2F;或识别下一个所需的信息片段。</li>
-<li>对于后续轮次重复，每个新的用户话语启动一个利用累积对话历史（状态）的链。</li>
-</ul>
-<p>这一原则是开发对话 Agent 的基础，使它们能够在扩展的、多轮对话中保持上下文和连贯性。通过保留对话历史，系统可以理解并适当响应依赖于先前交换信息的用户输入。</p>
-<p><strong>6. 代码生成和完善：</strong> 功能代码的生成通常是一个多阶段过程，需要将问题分解为逐步执行的离散逻辑操作序列。</p>
-<ul>
-<li>提示词 1：理解用户对代码函数的请求。生成伪代码或大纲。</li>
-<li>提示词 2：基于大纲编写初始代码草稿。</li>
-<li>提示词 3：识别代码中的潜在错误或改进领域（可能使用静态分析工具或另一个 LLM 调用）。</li>
-<li>提示词 4：基于识别的问题重写或完善代码。</li>
-<li>提示词 5：添加文档或测试用例。</li>
-</ul>
-<p>在 AI 辅助软件开发等应用中，提示词链的效用源于其将复杂编码任务分解为一系列可管理的子问题的能力。这种模块化结构降低了每一步大型语言模型的操作复杂性。至关重要的是，这种方法还允许在模型调用之间插入确定性逻辑，实现中间数据处理、输出验证和工作流中的条件分支。通过这种方法，一个可能导致不可靠或不完整结果的单一多面请求被转换为由底层执行框架管理的结构化操作序列。</p>
-<p><strong>7. 多模态和多步推理：</strong> 分析具有不同模态的数据集需要将问题分解为更小的、基于提示词的任务。例如，解释包含带嵌入文本的图片、突出显示特定文本段的标签以及解释每个标签的表格数据的图像，需要这样的方法。</p>
-<ul>
-<li>提示词 1：从用户的图像请求中提取和理解文本。</li>
-<li>提示词 2：将提取的图像文本与其相应的标签链接起来。</li>
-<li>提示词 3：使用表格解释收集的信息以确定所需的输出。</li>
-</ul>
-<h2 id="实操代码示例"><a href="#实操代码示例" class="headerlink" title="实操代码示例"></a>实操代码示例</h2><p>实现提示词链的范围从脚本中的直接顺序函数调用到利用专门设计用于管理控制流、状态和组件集成的框架。诸如 LangChain、LangGraph、Crew AI 和 Google Agent Development Kit (ADK) 等框架提供了用于构建和执行这些多步过程的结构化环境，这对于复杂架构特别有利。</p>
-<p>出于演示目的，LangChain 和 LangGraph 是合适的选择，因为它们的核心 API 明确设计用于组合操作链和图。LangChain 为线性序列提供基础抽象，而 LangGraph 扩展了这些能力以支持状态化和循环计算，这对于实现更复杂的 Agent 行为是必需的。此示例将专注于基础线性序列。</p>
-<p>以下代码实现了一个两步提示词链，作为数据处理管道运行。初始阶段旨在解析非结构化文本并提取特定信息。后续阶段然后接收此提取的输出并将其转换为结构化数据格式。</p>
-<p>要复制此过程，必须首先安装所需的库。这可以使用以下命令完成：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain langchain-community langchain-openai langgraph</span><br></pre></td></tr></table></figure>
-
-<p>请注意，langchain-openai 可以替换为不同模型提供商的适当包。随后，必须为选定的语言模型提供商（如 OpenAI、Google Gemini 或 Anthropic）配置执行环境所需的 API 凭据。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"></span><br><span class="line"><span class="comment">## 为了更好的安全性，从 .env 文件加载环境变量</span></span><br><span class="line"><span class="comment">## from dotenv import load_dotenv</span></span><br><span class="line"><span class="comment">## load_dotenv()</span></span><br><span class="line"><span class="comment">## 确保你的 OPENAI_API_KEY 在 .env 文件中设置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化语言模型（推荐使用 ChatOpenAI）</span></span><br><span class="line">llm = ChatOpenAI(temperature=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 提示词 1：提取信息 ---</span></span><br><span class="line">prompt_extract = ChatPromptTemplate.from_template(</span><br><span class="line">    <span class="string">&quot;从以下文本中提取技术规格：\n\n&#123;text_input&#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 提示词 2：转换为 JSON ---</span></span><br><span class="line">prompt_transform = ChatPromptTemplate.from_template(</span><br><span class="line">    <span class="string">&quot;将以下规格转换为 JSON 对象，使用 &#x27;cpu&#x27;、&#x27;memory&#x27; 和 &#x27;storage&#x27; 作为键：\n\n&#123;specifications&#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 使用 LCEL 构建链 ---</span></span><br><span class="line"><span class="comment">## StrOutputParser() 将 LLM 的消息输出转换为简单字符串。</span></span><br><span class="line">extraction_chain = prompt_extract | llm | StrOutputParser()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 完整的链将提取链的输出传递到转换提示词的 &#x27;specifications&#x27; 变量中。</span></span><br><span class="line">full_chain = (</span><br><span class="line">    &#123;<span class="string">&quot;specifications&quot;</span>: extraction_chain&#125;</span><br><span class="line">    | prompt_transform</span><br><span class="line">    | llm</span><br><span class="line">    | StrOutputParser()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 运行链 ---</span></span><br><span class="line">input_text = <span class="string">&quot;新款笔记本电脑型号配备 3.5 GHz 八核处理器、16GB 内存和 1TB NVMe 固态硬盘。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用输入文本字典执行链。</span></span><br><span class="line">final_result = full_chain.invoke(&#123;<span class="string">&quot;text_input&quot;</span>: input_text&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n--- 最终 JSON 输出 ---&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(final_result)</span><br></pre></td></tr></table></figure>
-
-<p>这段 Python 代码演示了如何使用 LangChain 库处理文本。它利用两个独立的提示词：一个从输入字符串中提取技术规格，另一个将这些规格格式化为 JSON 对象。ChatOpenAI 模型用于语言模型交互，StrOutputParser 确保输出为可用的字符串格式。LangChain 表达式语言（LCEL）用于优雅地将这些提示词和语言模型链接在一起。第一个链 extraction_chain 提取规格。然后 full_chain 获取提取的输出并将其用作转换提示词的输入。提供了描述笔记本电脑的示例输入文本。full_chain 通过这两个步骤调用此文本进行处理。最后打印最终结果，这是一个包含提取和格式化规格的 JSON 字符串。</p>
-<h2 id="上下文工程和提示工程"><a href="#上下文工程和提示工程" class="headerlink" title="上下文工程和提示工程"></a>上下文工程和提示工程</h2><p>上下文工程（见图 1）是在 token 生成之前系统地设计、构建和向 AI 模型提供完整信息环境的学科。这种方法论断言，模型输出的质量较少依赖于模型架构本身，而更多依赖于所提供上下文的丰富性。</p>
-<p><img src="/../images/chapter-1/image1.png"></p>
-<p>图 1：上下文工程是为 AI 构建丰富、全面的信息环境的学科，因为此上下文的质量是实现高级 Agent 性能的主要因素。</p>
-<p>它代表了从传统提示工程的重大演进，传统提示工程主要关注优化用户即时查询的措辞。上下文工程将此范围扩展到包括多个信息层，例如<strong>系统提示词</strong>，这是定义 AI 操作参数的基础指令集——例如，*”你是一名技术作家；你的语气必须正式而精确。”* 上下文通过外部数据进一步丰富。这包括检索的文档，其中 AI 主动从知识库中获取信息以告知其响应，例如提取项目的技术规格。它还包含工具输出，这是 AI 使用外部 API 获取实时数据的结果，例如查询日历以确定用户的可用性。这些显式数据与关键的隐式数据结合，如用户身份、交互历史和环境状态。核心原则是，即使是高级模型，在提供有限或构建不良的操作环境视图时，也会表现不佳。</p>
-<p>因此，这种实践将任务从仅仅回答问题重新定义为为 Agent 构建全面的操作图景。例如，上下文工程化的 Agent 不仅会响应查询，而且首先会整合用户的日历可用性（工具输出）、与电子邮件收件人的专业关系（隐式数据）以及之前会议的笔记（检索的文档）。这使得模型能够生成高度相关、个性化和实用的输出。”工程”组件涉及创建健壮的管道以在运行时获取和转换此数据，并建立反馈循环以持续改进上下文质量。</p>
-<p>要实现这一点，可以使用专门的调优系统来大规模自动化改进过程。例如，像 Google 的 Vertex AI 提示词优化器这样的工具可以通过系统地根据一组样本输入和预定义的评估指标评估响应来提高模型性能。这种方法对于在不同模型之间调整提示词和系统指令而无需大量手动重写非常有效。通过向这样的优化器提供样本提示词、系统指令和模板，它可以以编程方式完善上下文输入，为实现复杂上下文工程所需的反馈循环提供结构化方法。</p>
-<p>这种结构化方法是区分基本 AI 工具与更复杂、上下文感知系统的关键。它将上下文本身视为主要组件，对 Agent 知道什么、何时知道以及如何使用该信息给予关键重要性。这种实践确保模型对用户的意图、历史和当前环境有全面的理解。最终，上下文工程是将无状态聊天机器人提升为高度能干、情境感知系统的关键方法论。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> 复杂任务在单个提示词内处理时通常会使 LLM 不堪重负，导致严重的性能问题。模型的认知负荷增加了错误的可能性，如忽略指令、失去上下文和生成错误信息。单体提示词难以有效管理多个约束和顺序推理步骤。这导致不可靠和不准确的输出，因为 LLM 未能解决多方面请求的所有方面。</p>
-<p><strong>为什么：</strong> 提示词链通过将复杂问题分解为一系列较小的、相互关联的子任务来提供标准化解决方案。链中的每一步使用聚焦的提示词执行特定操作，显著提高可靠性和控制力。一个提示词的输出作为下一个提示词的输入传递，创建逐步构建最终解决方案的逻辑工作流。这种模块化的分而治之策略使过程更易于管理、更易于调试，并允许在步骤之间集成外部工具或结构化数据格式。这种模式是开发能够规划、推理和执行复杂工作流的复杂多步 Agent 系统的基础。</p>
-<p><strong>经验法则：</strong> 当任务对于单个提示词过于复杂、涉及多个不同的处理阶段、需要在步骤之间与外部工具交互，或者在构建需要执行多步推理并维护状态的 Agent 系统时，使用此模式。</p>
-<p><strong>视觉摘要</strong></p>
-<p><img src="/../images/chapter-1/image2.png"></p>
-<p>图 2：提示词链模式：Agent 从用户接收一系列提示词，每个 Agent 的输出作为链中下一个 Agent 的输入。</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><p>以下是一些关键要点：</p>
-<ul>
-<li>提示词链将复杂任务分解为一系列更小的、聚焦的步骤。这有时被称为管道模式。</li>
-<li>链中的每一步涉及 LLM 调用或处理逻辑，使用前一步的输出作为输入。</li>
-<li>这种模式提高了与语言模型的复杂交互的可靠性和可管理性。</li>
-<li>像 LangChain&#x2F;LangGraph 和 Google ADK 这样的框架提供了强大的工具来定义、管理和执行这些多步序列。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>通过将复杂问题分解为一系列更简单、更易于管理的子任务，提示词链为指导大型语言模型提供了一个健壮的框架。这种”分而治之”策略通过一次专注于一个特定操作，显著提高了输出的可靠性和控制力。作为基础模式，它支持开发能够进行多步推理、工具集成和状态管理的复杂 AI Agent。最终，掌握提示词链对于构建能够执行远超单个提示词能力的复杂工作流的健壮、上下文感知系统至关重要。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>LangChain Documentation on LCEL: <a target="_blank" rel="noopener" href="https://python.langchain.com/v0.2/docs/core_modules/expression_language/">https://python.langchain.com/v0.2/docs/core_modules&#x2F;expression_language&#x2F;</a></li>
-<li>LangGraph Documentation: <a target="_blank" rel="noopener" href="https://langchain-ai.github.io/langgraph/">https://langchain-ai.github.io/langgraph/</a></li>
-<li>Prompt Engineering Guide - Chaining Prompts: <a target="_blank" rel="noopener" href="https://www.promptingguide.ai/techniques/chaining">https://www.promptingguide.ai/techniques/chaining</a></li>
-<li>OpenAI API Documentation (General Prompting Concepts): <a target="_blank" rel="noopener" href="https://platform.openai.com/docs/guides/gpt/prompting">https://platform.openai.com/docs/guides/gpt/prompting</a></li>
-<li>Crew AI Documentation (Tasks and Processes): <a target="_blank" rel="noopener" href="https://docs.crewai.com/">https://docs.crewai.com/</a></li>
-<li>Google AI for Developers (Prompting Guides): <a target="_blank" rel="noopener" href="https://cloud.google.com/discover/what-is-prompt-engineering?hl=en">https://cloud.google.com/discover/what-is-prompt-engineering?hl=en</a></li>
-<li>Vertex Prompt Optimizer <a target="_blank" rel="noopener" href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer">https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-1_%20Prompt%20Chaining/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -2272,6 +2293,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">自然语言处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">myclaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">status</a>
               </li>
             
             <div class="clearfix"></div>
