@@ -1,6 +1,5 @@
 ---
 title: MyClaw 开发日记 Day 2 - 核心包与配置系统完成
-date: 2026-03-07 16:10:00
 tags:
   - MyClaw
   - 开发日记
@@ -9,6 +8,8 @@ tags:
   - macOS Keychain
 categories:
   - 项目开发
+abbrlink: 15910
+date: 2026-03-07 16:10:00
 ---
 
 # MyClaw 开发日记 Day 2 - 核心包与配置系统完成 ✅

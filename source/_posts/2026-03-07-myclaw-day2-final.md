@@ -1,6 +1,5 @@
 ---
 title: MyClaw 开发日记 Day 2 完成 - 129个测试全部通过
-date: 2026-03-07 16:15:00
 tags:
   - MyClaw
   - 开发日记
@@ -9,6 +8,8 @@ tags:
   - TypeScript
 categories:
   - 项目开发
+abbrlink: 44580
+date: 2026-03-07 16:15:00
 ---
 
 # MyClaw 开发日记 Day 2 完成 - 129个测试全部通过 🎉

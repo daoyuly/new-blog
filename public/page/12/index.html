@@ -151,6 +151,94 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2025年 4 月 21日 - 2025年 4 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2025年 4 月 21日 - 2025年 4 月 26 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>部分前端库增加cursorignore文件的考虑<ol>
+<li>本周的处理线上问题和时候，把涉及到的仓库增加了cursor文件，主要是防止cursor的索引文件的时候去把安全敏感文件加到索引里面，这个事本身的处理比较简单，主要是从安全角度出发的考量。从Cursor的公布的技术文档上看，codebase会把编码后存储到其服务器上，本身不涉及到明文存储，不过其文档中也提示用户把敏感信息放在cursorignore里，尽管如此，cursor也不保证这类信息不会被大模型使用。</li>
+<li>对我们来说，尽量保证敏感数据不直接存储在需要使用Cursor的代码库中，我们是自己的数据安全的第一负责人。</li>
+<li>在MCP，A2A，各种Agent和各种大模型技术和工具井喷式出现的时候，各家工具商对用户数据的安全重视程度不同，特别存在很多黑盒的情况下，大模型如何利用这类敏感信息，我们只能按照这些供应商对外提供的协议或者技术文档上来的对策，或者说很多这些工具的提供商也没法明确，这就要求对数据安全有一定的敏感性和主动的防范意识。</li>
+</ol>
+</li>
+<li>本周Sentry问题排查进展<ol>
+<li>随着对Sentry使用深入理解，我们对Sentry的整体设置做了一些优化，增加了更多的Tag和用户信息，对Sentry的可观测性思想也有了深入的认知，在具体的使用上针对了基于umuI，企业ID，数据大盘都对用户的使用情况有了一定的观察和洞察，比如在遇到Issue时，我们可以判断用户是否还在继续使用，用户是否自我修复的能力，是否影响到了用户体验，用户的使用旅程到底是怎么样的。</li>
+<li>在问题修复上我们已经进入对困难问题的修复阶段，这类问题往往没有具体的错误的代码位置，或者有具体的代码位置但不知道怎么改，还有就是改动影响较大，特别是视频类（视频小节，视频作业，音视频录制），文档类（文档小节，图文小节）这类问题涉及到比较复杂的技术和业务，虽然知道问题在哪，但是真正解决还要做不少的代码分析和排查。我们目前基于报错数量和遇到此类问题的用户数量排序做优先级，踏踏实实的解决好这类难点问题。</li>
+<li>为了排查问题，除了和大模型聊，我也经常去翻阅网上相关资料获取去Sentry的论坛寻找一些线索和答案，我发现很多开发者也会面临着和我们一样的各类问题，大家通过Sentry或者其它工具都在不断地解决这些问题，不断提升各自公司的产品质量和用户体验，这也体现一个趋势：用户对互联网产品的质量和用户体验的要求是在不断提高的。</li>
+<li>Sentry问题的排查是一种事后解决策略，它的最好结果是减少损失，而不是避免损失。很多思考和经验也不断的提醒我们，重视事后解决的同时，更要重视事前预防，把需求理解透，挖清楚，代码设计好，大模型利用好切实提高业务和代码质量，这样才能让Sentry问题排查更有价值。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2025年 4 月 14 日 - 2025年 4 月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1138,84 +1226,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-创业-确定性vs不确定性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E7%A1%AE%E5%AE%9A%E6%80%A7vs%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/">创业中的确定性vs不确定性</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A-%E7%A1%AE%E5%AE%9A%E6%80%A7vs%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2025-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="创业的过程就是把不确定性改造成确定性的过程"><a href="#创业的过程就是把不确定性改造成确定性的过程" class="headerlink" title="创业的过程就是把不确定性改造成确定性的过程"></a>创业的过程就是把不确定性改造成确定性的过程</h1><p>初创公司里的一切没有确定性。创业本质上是一种从0到1的过程，就是对抗不确定性的过程。</p>
-<p>创业上从本质上说，就是通过各种手段将不确定性变成确定性的一个过程。</p>
-<p>因为我们对未来的不确定性，对未来缺乏安全感，或者存在不在不稳定感，通过创业的过程，把这些不确定的事情变成尽可能确定性过程。</p>
-<p>在市场上，总有一部分商品是人们必需的，总有一部分老板是挣钱的，就是市场对合适产品的需求是必然存在的。</p>
-<p>把不确定因素通过技术手段、商业手段、管理手段等改造成可控的，确定的。这个过程企业收益人本身会带来金钱、社会地位、个人成就的极大发展。</p>
-<p>从另一个角度，社会秩序，商业秩序，包括金钱是熵变的过程，创业过程就是把无序的一盘散沙变成有序的组织，也就是把人，财，物有序的组织成一个整体。</p>
-<h1 id="不确定性孕育创富机会"><a href="#不确定性孕育创富机会" class="headerlink" title="不确定性孕育创富机会"></a>不确定性孕育创富机会</h1><p>正是因为有不确定性，才有创业的机会。</p>
-<p>创业过程拥抱变化，拥抱不确定性。</p>
-<h1 id="不确定性是双刃剑"><a href="#不确定性是双刃剑" class="headerlink" title="不确定性是双刃剑"></a>不确定性是双刃剑</h1><p>杀死创业者的也是不确定性，无法躲避。</p>
-<h1 id="如何面对不确定性"><a href="#如何面对不确定性" class="headerlink" title="如何面对不确定性"></a>如何面对不确定性</h1><p>扩大自己的控制能力和控制范围，在这个范围内是可控的。</p>
-<p>多做准备，未雨绸缪。顺势而为，借势发展。</p>
-<p>最好的防守就是攻击。</p>
-<p>建立有力的团队，整合资源，集中力量逐次化解不确定的因素。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E7%A1%AE%E5%AE%9A%E6%80%A7vs%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
     </nav>
   
 
@@ -1646,6 +1659,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">rl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">macOS Keychain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Web Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Multi-Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">规则引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">自然语言处理</a>
               </li>
             
             <div class="clearfix"></div>

@@ -151,6 +151,80 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2024年 11 月 25 日 - 2024年 12 月 1 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2025%20%E6%97%A5%20-%202024%E5%B9%B4%2012%20%E6%9C%88%201%20%E6%97%A5/">工作周报2024年 11 月 25 日 - 2024年 12 月 1 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2025%20%E6%97%A5%20-%202024%E5%B9%B4%2012%20%E6%9C%88%201%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-11-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>关于团队异地协作开发的思考<br>最近的一些项目是和成都交付中心的伙伴们一起完成的，有不少Good Case，也有一些Bad Case，总体上说，随着项目的进行，相互了解的增进，整体工作效率上提升了很多。<br>Good Case上说，成都交付中心的伙伴们不定时的来北京工作，借着这个时间，也是多找些时间相互了解，聊聊共同关注的技术话题，各自的自我发展的认知，对公司文化和价值的理解等等。借着一些解决bug的，跟进线上问题的契机，相互了解了彼此的技术擅长点，思维方式和业务能力的长短板，通过这种立体性的了解， 形成的团队合力就非常有竞争力。Bad Case上就是缺乏直接的面对面的沟通，需要利用好远程会议，Slack等工具做好尽可能的沟通，比如一个优化点，改动的点和测试的点，很可能是不一致的，这个业务的学习过程可能缺少了随时的复盘思考，吃饭的时候，晚上下班的时候，如果是坐在一起，很可能会随时随地的彼此的聊一下，有时候这种非正式够沟通对技术的理解，对业务的学习都重要的推进作用。<br>三年的疫情让大家都极大的提高了跨地域工作的软&#x2F;硬能力，我觉得这是我们非常有利的一个基础条件。我记得很早我在中石油体系内工作的时候，跨地域工作主要通过邮件来驱动，哪怕是一个很小的事情，也要主要通过抄送不同级别的领导来驱动的，特别是涉及到兄弟部门时，比如涉及到分公司协作时，要抄送我的领导，我的领导的领导，对方的领导及对方领导的领导，这个从流程上来说是，是绝对的“政治正确”，因为新员工培训里就有对这个流程的完整说明。但实际上效率非常之慢，而且由此衍生出各种“大公司病”，当然不同的公司的性质，规模，阶段，发展侧重点不同，协作策略也有不同。对我们而言公司一直有一个价值观点：我们是一个团队，我们也是一个球队。踢过足球的伙伴们知道，合格的球员要守住自己的位置，护着队友的位置，防死对手的位置，这样才能整个球队赢球。<br>我觉得不同地域的伙伴们要有意识的相互靠拢，从个人发展来说，这是一个适应能力的体现， 也是一种职业素养的体现，从公司层面来说，设置不同的地域的办公室和团队是为了更好的适应市场，不同地域的办公室和团队都是公司发展过程中不可或缺的重要组成部分，有不同的组织定位和发展目标。不同地域的办公室和团队在积极相互靠拢的过程中也要积极的发展自己能力特色，以拓展公司的能力拼图。<br>Web Log排查<br>稳定性和可靠性一直作为长期的基础工作在进行。我们也一直把“问题解决在用户前面”作为这项工作的最终目标。<br>最近有几周在跟进Log的排查和分类，目前Web和Node的错误类型了做比较细致的分类，截止到目前，Nodejs上分出了36个较大的错误类型，Web上分出了112个错误分类，这个分类还比较大的分类，比如”系统未知错误”，”请刷新重试，如果反复出现当前错误，请联络<a href="mailto:&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#x74;&#64;&#117;&#x6d;&#117;&#x2e;&#x63;&#x6f;&#109;">&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#x74;&#64;&#117;&#x6d;&#117;&#x2e;&#x63;&#x6f;&#109;</a>反馈问题”这类错误有很多内部原因导致，这类问题的解决可能需要不少的代码上改动，这类问题的排查会综合考虑成本和损益。目前的思路就是逐渐解决代码改成成本较少，测试成本较少的问题。<br>日志排查上比较难的挑战是评估是否值得现在修复以及花费多的的时间去修复。很多日志上报出来的问题可能对用户是透明，也可能对用户影响很大，比如我们关注到一类问题，报的量比较大，但是技术上推测对用户影响很少，还一类问题是报的量很少，但是出现这类用报错的用户的影响确很大。<br>另外一个需要注意的观点就是，不是用户反馈的问题就不是大问题。用户作为服务的消费者，第一他们不一定有能力反馈问题，第二是他们不一定有意愿反馈问题，但是一定会影响他们使用服务的意愿度。所以对我们而言就要充分利用团队的能力尽可能的解决这这些类的问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2025%20%E6%97%A5%20-%202024%E5%B9%B4%2012%20%E6%9C%88%201%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2024年 11 月 18 日 - 2024年 11 月 24 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -818,83 +892,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2024年 9 月 9 日 - 2024年 9 月 18 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%209%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%2018%20%E6%97%A5/">工作周报2024年 9 月 9 日 - 2024年 9 月 18 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%209%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%2018%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-09-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>首页推荐多模块开发<br>该功能原来的功能是非常内聚的一种实现思路，当前的迭代功能和原来的实现思路完全不能兼容，除了基本的样式类组件，卡片类组件外，基本上要重新实现，另外涉及到原来功能的兼容，所以当前的实现比较新增一种功能更加复杂一些<br>基本思路是增加一种多模块的思路，和目前模块的思路完全兼容。现有实现还有一个问题是没有实现组件化，就是一个大组件实现了整体功能。所以在开发新功能前，需要使用组件化现有的实现，才能在此基础上迭代新的功能。<br>这块代码有六年左右没有彻底的迭代，从现有的开发思想和经验来复盘当时的设计和实现：<br>组件化的粒度要保证功能拆分一致<br>功能的拆分要遵守职责单一原则<br>设计一定要有可扩展性，在产品开发中，设计扩展性可能是最重要的和关键的开发能力</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%209%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%2018%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
     </nav>
   
 
@@ -1325,6 +1325,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">rl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">macOS Keychain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Web Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Multi-Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">规则引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">自然语言处理</a>
               </li>
             
             <div class="clearfix"></div>

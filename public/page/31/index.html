@@ -151,6 +151,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2022年 9 月 26 日 - 2022年 9月 30 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%209%20%E6%9C%88%2026%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%2030%20%E6%97%A5/">工作周报2022年 9 月 26 日 - 2022年 9月 30 日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%209%20%E6%9C%88%2026%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%2030%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-09-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>关于软件价值\设计价值\代码价值\时间价值的简单思考<ul>
+<li>优化点或者bug改的多了很容易让开发者进入“就事论事”的思考方式，认为这个有bug了，就改这个地方，软件从构成上来说是一行行代码，一个个组件或者模块，实际上软件一个极其的复杂的系统，规避复杂的思路不应该是不动其他地方，不往深里改，正确的思路在理解软件系统运行方式的基础上找到最正确的方法，这个最正确是从整个系统来说的，对系统的长期运行、扩展、性能来说最合适的， 而不能站在某个优化点或者某个bug上来说。以我的经验，从任何单个优化点或bug问题本身来说，稍有经验的开发人员都能给出至少5种不同的修改方法，但是如果从维护整个系统健康的角度来说，正确的方法比较有限，一般能够想到2种就很不错了，再加上时间、成本、研发能力之类的约束，对一个问题能找到一个完全正确方法并且能执行，其实是不太容易的。所以有时候我们会陷入一种技术决策纠结，对待一个bug，我是用简单的不太正确的方法改呢，还是用正确但是有些困难的方法改呢？我相信每开发人员每天都会都会碰到这类问题，我也是一样，有时候在这个上面花的时间比实际写代码的时候多。我也在不断思考这类问题到底该如何回答，到目前为止，我也没有思考清楚这个问题该如何解答，如果从代码修改上的“政治正确”上来说，那肯定要选择最后一个，要困难但是正确的，实际如果要细细思考，答案远没有那么简单，不过以我的思考和实践来说，要回到系统设计本身来说，这个出问题的背后的设计到底是解决了什么问题，针对这个问题，现在解决方式能不能促进这个问题的解决呢？如果能促进这个问题解决，那能不能推进这个设计的优化呢？如果能促进这个设计的优化，那能不能改善这块代码的质量呢？如何能改善这块代码的质量，那能不能花更少的时间呢？这个思考模型是从大到小的逐层深入的思考，依次是软件价值，设计价值，代码价值，时间价值，从这四个价值上判断修改思路是否合适。</li>
+<li>软件价值，设计价值，代码价值，时间价值构成了我对一个技术决策的价值观的判断，软件价值代表了给用户解决的问题，可以一定程度上体现商业价值，设计价值是对软件运行的保证和守护，代码价值则代表了技术本身的价值，时间价值则代码完成这件是要花费的实实在在的成本，在公司里我们所在的一切首先是指向商业价值，如果一件事情从各个角度看都没有直接的或者间接的关系，或者价值传导链很长，那这件事存在的合理性就很值得质疑了。同样的当一个系统具有软件价值，但是不太有设计价值时，那么这个软件的运行，扩展，迭代，维护都会面临巨大的挑战和负向的风险，这种情况会非常影响软件价值的实现，甚至会反噬软件价值，代码价值的实现则会增强设计价值，不合适的代码会影响架构的实现，进行影响到设计价值。</li>
+<li>很多bug和优化点的实现方式主要在代码价值这，如果实现方式是可以实现设计增值，那种方式才是最正确的方式，可以简单概括成一个有意思的公式<br>修改一个bug的方法的收益价值 &#x3D; （软件价值＾3 * 设计价值＾2 * 代码价值）&#x2F; 时间价值＾2, 如果有伙伴真的碰到了一个纠结的技术问题，难于决策，可以尝试这种思路，假设每个价值单位 都是正整数，按照这个公式算就会发现，很多看起来“政治正确”的方法，因为增加了时间价值，所以收益价值小于正常改的情况，因为时间价值2次方的关系，但是如果对软件价值有增加的话，会极大的增加整个收益价值，当时时间价值是否要二次方关系，要看开发者所在岗位的成本价值。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%209%20%E6%9C%88%2026%20%E6%97%A5%20-%202022%E5%B9%B4%209%E6%9C%88%2030%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2022年 9 月 19 日 - 2022年 9月 25 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -898,91 +979,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 7月 11日 - 2022年 7月 17日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%207%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%207%E6%9C%88%2017%E6%97%A5/">工作周报2022年 7月 11日 - 2022年 7月 17日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%207%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%207%E6%9C%88%2017%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-07-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>关于BSM Workshop的思考<ul>
-<li>感谢公司提供了一次非常深刻的workshop，让我们从生意的角度上了解我们的外部环境以及我们如何思考build-&gt;sell-&gt;margin以如何积极的应对这种变化；</li>
-<li>从我个人角度来说，要训练精打细算的能力，结合专业能力从公司财务的角度和公司经营的角度更深刻的理解公司运行规律，是非常必要和紧迫的成长任务；站在公司的角度，oneline by online的从工程项目技术项目和公司的发展目标和发展要求结合起来，任何项目都从公司经营的角度思考一些，这个项目需要多少公司，需要多少成本和资源，能够带来哪些收益，考虑一个项目能不能带来一倍的收益，考虑能不能做的时候要考虑下研发成本，技术成本以及机会成本，发展成本，切切实实的考虑下这个项目这么转化成实实在在的订单，实实在在的收入；</li>
-<li>深刻体会到“不当家不知柴米贵”的局限，行动要直接指向收益， 对我来说说，ownership不仅仅是做好手里事情，还要做到大处着眼，小处着手，想清楚行动背后的思路逻辑和考虑因素，想清楚行动的细节，想清楚行动的成本资源及收益，我想是这是任何做事的基础逻辑；</li>
-<li>面对大变化要保持平常心，越是惊涛骇浪越要冷静看清方向， 2015年以来我深受经济新常态的思想影响，中国经济年均8%以上的的增长速度不是必然的，这也就意味这以前高速增长带来的一切维持不了几年，中国经济发展创造了奇迹，但是奇迹不是永恒的，试想当下GDP增长是2%甚至是负增长，对我们个人和企业来说意味着什么，现在的很多所谓的巨大变化只是因为一些黑天鹅事件让这些问题来的早了一些，但是这些事情迟早要来。在我看来，外部环境有变化，但是没有变革，生意的本质没有变化，赚钱的游戏规则没有变化，价值创造利润，客户是上帝的规则理念还是适用的，我们还是要保持最大限度的冷静和努力，我们还是要扎实的用最少的资源做最好的产品，扎实的做好客户服务和客户体验，扎实的帮客户赚钱，这样我们的生意没有做不下去的道理，因为现在既不是战时经济，也不是危机经济，因为商机还在，因为大家对经济发展的信心还在，只是意外多了些而已。   我们要准备好应对真正的经济危机的到来时我们生存下去的理由是什么，时刻要保持濒死的危机感，顺势而为，借势发展，我们的目标不仅仅是活下去，我们还要活的好，我们还要发展的好，我们还要对社会有贡献。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%207%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%207%E6%9C%88%2017%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/30/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/32/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/30/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/32/">Next &raquo;</a>
     </nav>
   
 
@@ -1413,6 +1412,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">rl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">macOS Keychain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Web Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Multi-Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">规则引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">自然语言处理</a>
               </li>
             
             <div class="clearfix"></div>

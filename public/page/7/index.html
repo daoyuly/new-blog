@@ -151,6 +151,180 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ADP-9_ Learning and Adaptation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-9_%20Learning%20and%20Adaptation/">Agentic Design Patterns - Chapter 9_ Learning and Adaptation</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-9_%20Learning%20and%20Adaptation/" class="archive-article-date">
+  	<time datetime="2025-10-14T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-9-章：学习和适应"><a href="#第-9-章：学习和适应" class="headerlink" title="第 9 章：学习和适应"></a>第 9 章：学习和适应</h1><p>学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探讨支撑 Agent 学习和适应的原理与机制。</p>
+<h2 id="全局视角"><a href="#全局视角" class="headerlink" title="全局视角"></a>全局视角</h2><p>Agent 通过基于新经验和数据改变其思维、行动或知识来实现学习和适应。这使得 Agent 能够从简单地遵循指令演化为随时间推移变得更加智能。</p>
+<ul>
+<li><strong>强化学习：</strong> Agent 尝试不同的行动，对积极结果获得奖励，对消极结果受到惩罚，从而在动态环境中学习最优行为。适用于控制机器人或玩游戏的 Agent。</li>
+<li><strong>监督学习：</strong> Agent 从标注示例中学习，建立输入与期望输出之间的映射关系，实现决策制定和模式识别等任务。适用于分类电子邮件或预测趋势的 Agent。</li>
+<li><strong>无监督学习：</strong> Agent 在未标注数据中发现隐藏的连接和模式，有助于获得洞察、进行组织并构建其环境的心理地图。适用于在没有特定指导的情况下探索数据的 Agent。</li>
+<li><strong>基于 LLM 的 Agent 的少样本&#x2F;零样本学习：</strong> 利用大语言模型的 Agent 能够用最少的示例或清晰的指令快速适应新任务，实现对新命令或情况的快速响应。</li>
+<li><strong>在线学习：</strong> Agent 持续使用新数据更新知识，对于动态环境中的实时响应和持续适应至关重要。适用于处理连续数据流的 Agent。</li>
+<li><strong>基于内存的学习：</strong> Agent 回忆过去的经验以在类似情况下调整当前行动，增强上下文感知和决策能力。对于具备记忆召回能力的 Agent 特别有效。</li>
+</ul>
+<p>Agent 基于学习结果改变策略、理解或目标来实现适应。这对于在不可预测、变化或新环境中的 Agent 至关重要。</p>
+<p><strong>近端策略优化（PPO）</strong> 是一种强化学习算法，用于在具有连续动作范围的环境中训练 Agent，例如控制机器人的关节或游戏中的角色。其主要目标是可靠且稳定地改进 Agent 的决策策略（即其策略）。</p>
+<p>PPO 的核心思想是对 Agent 的策略进行小幅而谨慎的更新，避免可能导致性能崩溃的剧烈变化。其工作原理如下：</p>
+<ol>
+<li><strong>收集数据：</strong> Agent 使用其当前策略与环境交互（例如，玩游戏）并收集一批经验数据（状态、动作、奖励）。</li>
+<li><strong>评估代理目标：</strong> PPO 计算潜在策略更新将如何改变预期奖励。然而，它不仅仅是最大化这个奖励，而是使用特殊的”裁剪”目标函数。</li>
+<li><strong>裁剪机制：</strong> 这是 PPO 稳定性的关键。它在当前策略周围创建一个”信任区域”或安全区，阻止算法进行与当前策略差异过大的更新。这种裁剪机制就像一个安全刹车，确保 Agent 不会采取巨大而有风险的步骤来破坏其学习成果。</li>
+</ol>
+<p>简而言之，PPO 在改进性能与保持接近已知有效策略之间取得平衡，这可以防止训练期间的灾难性故障并实现更稳定的学习过程。</p>
+<p><strong>直接偏好优化（DPO）</strong> 是一种专门为使大语言模型与人类偏好保持一致而设计的更新方法。它为此任务提供了比使用 PPO 更简单、更直接的替代方案。</p>
+<p>要理解 DPO，首先了解传统的基于 PPO 的对齐方法会有所帮助：</p>
+<ul>
+<li><strong>PPO 方法（两步过程）：</strong><ol>
+<li><strong>训练奖励模型：</strong> 首先收集人类反馈数据，人们在其中评级或比较不同的 LLM 响应（例如，”响应 A 比响应 B 更好”）。这些数据用于训练一个独立的 AI 模型，称为奖励模型，其任务是预测人类会给任何新响应打什么分数。</li>
+<li><strong>使用 PPO 微调：</strong> 接下来使用 PPO 微调 LLM。LLM 的目标是生成能够从奖励模型获得最高分的响应。奖励模型在训练过程中充当”评判员”。</li>
+</ol>
+</li>
+</ul>
+<p>这个两步过程可能既复杂又不稳定。例如，LLM 可能会找到漏洞并学会”破解”奖励模型，为质量较差的响应获得高分。</p>
+<ul>
+<li><strong>DPO 方法（直接过程）：</strong> DPO 完全跳过了奖励模型。它不是将人类偏好转换为奖励分数然后优化该分数，而是直接使用偏好数据来更新 LLM 的策略。</li>
+<li>它通过利用直接将偏好数据与最优策略联系起来的数学关系来工作。本质上，它教导模型：”增加生成类似<em>偏好</em>响应的概率，减少生成类似<em>不受欢迎</em>响应的概率。”</li>
+</ul>
+<p>本质上，DPO 通过直接在人类偏好数据上优化语言模型来简化对齐过程。这避免了训练和使用单独奖励模型的复杂性和潜在不稳定性，使对齐过程更加高效和稳健。</p>
+<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>自适应 Agent 通过由经验数据驱动的迭代更新，在可变环境中表现出增强的性能。</p>
+<ul>
+<li><strong>个性化助手 Agent：</strong> 通过对个人用户行为的纵向分析来改进交互协议，确保高度优化的响应生成。</li>
+<li><strong>交易机器人 Agent：</strong> 通过基于高分辨率、实时市场数据动态调整模型参数来优化决策算法，从而最大化财务回报并降低风险因素。</li>
+<li><strong>应用程序 Agent：</strong> 通过基于观察到的用户行为进行动态修改来优化用户界面和功能，从而提升用户参与度和系统直观性。</li>
+<li><strong>机器人和自动驾驶车辆 Agent：</strong> 通过整合传感器数据和历史行动分析来增强导航和响应能力，在各种环境条件下实现安全高效的操作。</li>
+<li><strong>欺诈检测 Agent：</strong> 通过使用新识别的欺诈模式改进预测模型来增强异常检测能力，提高系统安全性并最小化财务损失。</li>
+<li><strong>推荐 Agent：</strong> 通过采用用户偏好学习算法来提高内容选择精度，提供高度个性化和上下文相关的推荐。</li>
+<li><strong>游戏 AI Agent：</strong> 通过动态调整战略算法来增强玩家参与度，从而增加游戏复杂性和挑战性。</li>
+<li><strong>知识库学习 Agent：</strong> Agent 可以利用检索增强生成（RAG）来维护问题描述和已验证解决方案的动态知识库（参见第 14 章）。通过存储成功的策略和遇到的挑战，Agent 可以在决策期间引用这些数据，使其能够通过应用先前成功的模式或避免已知陷阱来更有效地适应新情况。</li>
+</ul>
+<h2 id="案例研究：自我改进编码-Agent（SICA）"><a href="#案例研究：自我改进编码-Agent（SICA）" class="headerlink" title="案例研究：自我改进编码 Agent（SICA）"></a>案例研究：自我改进编码 Agent（SICA）</h2><p>自我改进编码 Agent（SICA）由 Maxime Robeyns、Laurence Aitchison 和 Martin Szummer 开发，代表了基于 Agent 的学习的重要进展，展示了 Agent 修改自身源代码的能力。这与传统方法形成鲜明对比，在传统方法中，一个 Agent 可能训练另一个 Agent；而 SICA 既是修改者又是被修改的实体，通过迭代方式改进其代码库，以提升在各种编码挑战中的性能。</p>
+<p>SICA 的自我改进通过迭代循环运行（见图 1）。最初，SICA 审查其过去版本的存档及其在基准测试上的性能表现。它选择具有最高性能分数的版本，该分数基于考虑成功率、时间和计算成本的加权公式计算得出。选定的版本随后进行下一轮自我修改。它分析存档以识别潜在的改进点，然后直接修改其代码库。修改后的 Agent 随后针对基准进行测试，结果记录在存档中。这个过程不断重复，促进从过去性能中直接学习。这种自我改进机制使 SICA 能够在不需要传统训练范式的情况下演化其能力。</p>
+<p><img src="/../images/chapter-9/image1.png"></p>
+<p>图 1：SICA 的自我改进过程，基于其过去版本进行学习和适应</p>
+<p>SICA 经历了显著的自我改进，在代码编辑和导航方面取得了重要进展。最初，SICA 使用基本的文件覆盖方法进行代码更改。随后，它开发了能够进行更智能和上下文相关编辑的”智能编辑器”。这进一步演变为”差异增强智能编辑器”，结合差异进行有针对性的修改和基于模式的编辑，以及”快速覆盖工具”以减少处理需求。</p>
+<p>SICA 进一步实现了”最小差异输出优化”和”上下文敏感差异最小化”，使用抽象语法树（AST）解析来提高效率。此外，还添加了”智能编辑器输入规范化器”。在导航方面，SICA 独立创建了”AST 符号定位器”，使用代码的结构图（AST）来识别代码库中的定义。后来，开发了”混合符号定位器”，将快速搜索与 AST 检查相结合。这通过”混合符号定位器中的优化 AST 解析”进一步优化，专注于相关代码部分，提高搜索速度（见图 2）。</p>
+<p><img src="/../images/chapter-9/image2.png"></p>
+<p>图 2：跨迭代的性能表现。关键改进用其相应的工具或 Agent 修改进行标注。（由 Maxime Robeyns、Martin Szummer、Laurence Aitchison 提供）</p>
+<p>SICA 的架构包括用于基本文件操作、命令执行和算术计算的基础工具包。它包含结果提交机制和专门子 Agent（编码、问题解决和推理）的调用功能。这些子 Agent 负责分解复杂任务并管理 LLM 的上下文长度，特别是在扩展改进周期期间。</p>
+<p>异步监督者（另一个 LLM）监控 SICA 的行为，识别潜在问题，如循环或停滞。它与 SICA 进行通信，必要时可以介入以停止执行。监督者接收 SICA 行动的详细报告，包括调用图和消息及工具操作日志，以识别模式和低效率。</p>
+<p>SICA 的 LLM 在其上下文窗口（其短期内存）中以结构化方式组织信息，这对操作至关重要。此结构包括定义 Agent 目标的系统提示词、工具和子 Agent 文档以及系统指令。核心提示词包含问题陈述或指令、打开文件的内容和目录映射。助手消息记录 Agent 的逐步推理、工具和子 Agent 调用记录及结果以及监督者通信。这种组织方式促进了高效的信息流动，增强了 LLM 操作并减少了处理时间和成本。最初，文件更改记录为差异，仅显示修改内容并定期合并。</p>
+<p><strong>SICA：代码深度解析：</strong> 深入研究 SICA 的实现揭示了支撑其能力的几个关键设计选择。如前所述，该系统采用模块化架构构建，包含多个子 Agent，如编码 Agent、问题解决 Agent 和推理 Agent。这些子 Agent 由主 Agent 调用，类似于工具调用，用于分解复杂任务并有效管理上下文长度，特别是在这些扩展的元改进迭代期间。</p>
+<p>该项目正在积极开发中，旨在为那些对 LLM 在工具使用和其他 Agent 任务上进行后训练感兴趣的人提供一个强大的框架，完整代码可在 <a target="_blank" rel="noopener" href="https://github.com/MaximeRobeyns/self_improving_coding_agent/">https://github.com/MaximeRobeyns/self_improving_coding_agent&#x2F;</a> GitHub 存储库中供进一步探索和贡献。</p>
+<p>出于安全考虑，该项目强烈强调 Docker 容器化，这意味着 Agent 在专用 Docker 容器内运行。这是一个关键措施，因为它提供了与主机的隔离，鉴于 Agent 执行 shell 命令的能力，这减轻了意外文件系统操作等风险。</p>
+<p>为确保透明度和控制，系统通过可视化事件总线上的事件和 Agent 调用图的交互式网页提供强大的可观察性。这提供了对 Agent 行动的全面洞察，允许用户检查单个事件、阅读监督者消息并折叠子 Agent 跟踪以获得更清晰的理解。</p>
+<p>就其核心智能而言，Agent 框架支持来自各种提供商的 LLM 集成，使用户能够尝试不同的模型以找到特定任务的最佳匹配。最后，一个关键组件是异步监督者，这是一个与主 Agent 并发运行的 LLM。此监督者定期评估 Agent 的行为是否存在病理性偏差或停滞，必要时可以通过发送通知甚至取消 Agent 的执行来介入。它接收系统状态的详细文本表示，包括调用图和 LLM 消息、工具调用和响应的事件流，这使它能够检测低效模式或重复工作。</p>
+<p>初始 SICA 实现中的一个显著挑战是提示基于 LLM 的 Agent 在每次元改进迭代期间独立提出新颖、创新、可行且引人入胜的修改。这一限制，特别是在培养 LLM Agent 的开放式学习和真正创造力方面，仍然是当前研究的关键领域。</p>
+<h2 id="AlphaEvolve-和-OpenEvolve"><a href="#AlphaEvolve-和-OpenEvolve" class="headerlink" title="AlphaEvolve 和 OpenEvolve"></a>AlphaEvolve 和 OpenEvolve</h2><p><strong>AlphaEvolve</strong> 是 Google 开发的一个 AI Agent，旨在发现和优化算法。它利用 LLM 的组合，特别是 Gemini 模型（Flash 和 Pro）、自动化评估系统和进化算法框架。该系统旨在推进理论数学和实际计算应用。</p>
+<p>AlphaEvolve 采用 Gemini 模型的集合。Flash 用于生成广泛的初始算法提案，而 Pro 提供更深入的分析和改进。然后根据预定义标准自动评估和评分提出的算法。此评估提供用于迭代改进解决方案的反馈，从而产生优化和新颖的算法。</p>
+<p>在实际计算中，AlphaEvolve 已部署在 Google 的基础设施中。它在数据中心调度方面展示了改进，导致全球计算资源使用减少 0.7%。它还通过为即将推出的张量处理单元（TPU）的 Verilog 代码提出优化建议来促进硬件设计。此外，AlphaEvolve 加速了 AI 性能，包括 Gemini 架构核心内核的 23% 速度提升以及 FlashAttention 的低级 GPU 指令的最高 32.5% 优化。</p>
+<p>在基础研究领域，AlphaEvolve 为矩阵乘法新算法的发现做出了贡献，包括使用 48 次标量乘法的 4x4 复数值矩阵方法，超过了先前已知的解决方案。在更广泛的数学研究中，它在 75% 的情况下重新发现了超过 50 个开放问题的现有最先进解决方案，并在 20% 的情况下改进了现有解决方案，例子包括接吻数问题的进步。</p>
+<p><strong>OpenEvolve</strong> 是一个利用 LLM（见图 3）迭代优化代码的进化编码 Agent。它编排 LLM 驱动的代码生成、评估和选择管道，以持续增强各种任务的程序。OpenEvolve 的一个关键方面是其演化整个代码文件的能力，而不是局限于单个函数。该 Agent 设计具有多功能性，提供对多种编程语言的支持以及与任何 LLM 的 OpenAI 兼容 API 的兼容性。此外，它结合了多目标优化，允许灵活的提示词工程，并能够进行分布式评估以有效处理复杂的编码挑战。</p>
+<p><img src="/../images/chapter-9/image3.png"></p>
+<p>图 3：OpenEvolve 内部架构由控制器管理。该控制器编排几个关键组件：程序采样器、程序数据库、评估器池和 LLM 集合。其主要功能是促进它们的学习和适应过程以提高代码质量。</p>
+<p>此代码片段使用 OpenEvolve 库对程序执行进化优化。它使用初始程序、评估文件和配置文件的路径初始化 OpenEvolve 系统。<code>evolve.run(iterations=1000)</code> 行启动进化过程，运行 1000 次迭代以找到程序的改进版本。最后，它打印在进化过程中找到的最佳程序的指标，格式化为四位小数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openevolve <span class="keyword">import</span> OpenEvolve</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化系统</span></span><br><span class="line">evolve = OpenEvolve(</span><br><span class="line">    initial_program_path=<span class="string">&quot;path/to/initial_program.py&quot;</span>,</span><br><span class="line">    evaluation_file=<span class="string">&quot;path/to/evaluator.py&quot;</span>,</span><br><span class="line">    config_path=<span class="string">&quot;path/to/config.yaml&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 运行进化</span></span><br><span class="line">best_program = <span class="keyword">await</span> evolve.run(iterations=<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;最佳程序指标：&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> name, value <span class="keyword">in</span> best_program.metrics.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;  <span class="subst">&#123;name&#125;</span>: <span class="subst">&#123;value:<span class="number">.4</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> AI Agent 通常在动态和不可预测的环境中运行，其中预编程逻辑是不够的。当面对初始设计期间未预料到的新情况时，它们的性能可能会下降。没有从经验中学习的能力，Agent 无法随时间优化其策略或个性化其交互。这种刚性限制了它们的有效性，并阻止它们在复杂的现实世界场景中实现真正的自主性。</p>
+<p><strong>为什么：</strong> 标准化解决方案是集成学习和适应机制，将静态 Agent 转变为动态的、演化的系统。这使 Agent 能够基于新数据和交互自主改进其知识和行为。Agent 系统可以使用各种方法，从强化学习到更高级的技术，如自我改进编码 Agent（SICA）中看到的自我修改。像 Google 的 AlphaEvolve 这样的高级系统利用 LLM 和进化算法来发现全新的、更高效的复杂问题解决方案。通过持续学习，Agent 可以掌握新任务、增强其性能并适应变化的条件，而无需持续的手动重新编程。</p>
+<p><strong>经验法则：</strong> 在构建必须在动态、不确定或演化环境中运行的 Agent 时使用此模式。它对于需要个性化、持续性能改进以及自主处理新情况的能力的应用至关重要。</p>
+<p><strong>视觉摘要</strong></p>
+<p><strong><img src="/../images/chapter-9/image4.png"></strong></p>
+<p>图 4：学习和适应模式</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
+<li>学习和适应是 Agent 通过使用其经验来改进其行为并处理新情况的过程。</li>
+<li>“适应”是来自学习的 Agent 行为或知识的可见变化。</li>
+<li>SICA（自我改进编码 Agent）通过基于过去性能修改其代码来自我改进。这导致了像智能编辑器和 AST 符号定位器这样的工具。</li>
+<li>拥有专门的”子 Agent”和”监督者”有助于这些自我改进系统管理大任务并保持正轨。</li>
+<li>LLM 的”上下文窗口”的设置方式（包括系统提示词、核心提示词和助手消息）对 Agent 的工作效率至关重要。</li>
+<li>此模式对于需要在始终变化、不确定或需要个性化交互的环境中运行的 Agent 至关重要。</li>
+<li>构建学习 Agent 通常意味着将它们与机器学习工具连接并管理数据流。</li>
+<li>配备基本编码工具的 Agent 系统可以自主编辑自身，从而提高其在基准任务上的性能。</li>
+<li>AlphaEvolve 是 Google 的 AI Agent，利用 LLM 和进化框架自主发现和优化算法，显著增强基础研究和实际计算应用。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>本章探讨了学习和适应在人工智能中的关键作用。AI Agent 通过持续的数据获取和经验来增强其性能。自我改进编码 Agent（SICA）通过代码修改自主改进其能力，很好地例证了这一点。</p>
+<p>我们已经回顾了 Agent AI 的基本组成部分，包括架构、应用、规划、多 Agent 协作、内存管理以及学习和适应。学习原理对于多 Agent 系统中的协调改进特别重要。为了实现这一点，调优数据必须准确反映完整的交互轨迹，捕获每个参与 Agent 的个体输入和输出。</p>
+<p>这些元素促成了重大进展，如 Google 的 AlphaEvolve。这个 AI 系统通过 LLM、自动化评估和进化方法独立发现和改进算法，推动科学研究和计算技术的进步。这些模式可以组合起来构建复杂的 AI 系统。像 AlphaEvolve 这样的发展表明，AI Agent 的自主算法发现和优化是可以实现的。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Sutton, R. S., &amp; Barto, A. G. (2018). <em>Reinforcement Learning: An Introduction</em>. MIT Press.</li>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning</em>. MIT Press.</li>
+<li>Mitchell, T. M. (1997). <em>Machine Learning</em>. McGraw-Hill.</li>
+<li>Proximal Policy Optimization Algorithms by John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. You can find it on arXiv: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1707.06347">https://arxiv.org/abs/1707.06347</a></li>
+<li>Robeyns, M., Aitchison, L., &amp; Szummer, M. (2025). <em>A Self-Improving Coding Agent</em>. arXiv:2504.15228v2. <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2504.15228">https://arxiv.org/pdf/2504.15228</a>  <a target="_blank" rel="noopener" href="https://github.com/MaximeRobeyns/self_improving_coding_agent">https://github.com/MaximeRobeyns/self_improving_coding_agent</a></li>
+<li>AlphaEvolve blog, <a target="_blank" rel="noopener" href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/</a></li>
+<li>OpenEvolve, <a target="_blank" rel="noopener" href="https://github.com/codelion/openevolve">https://github.com/codelion/openevolve</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-9_%20Learning%20and%20Adaptation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-AI应用：浏览器端的切水果游戏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1645,119 +1819,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ADP-Conclusion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-Conclusion/">Agentic Design Patterns - Conclusion</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-Conclusion/" class="archive-article-date">
-  	<time datetime="2025-10-05T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>在本书中，我们从 Agentic AI 的基础概念出发，一路探索到复杂自主系统的实际实现。我们从这样一个前提开始：构建智能 Agent 就像在技术画布上创作一幅复杂的艺术作品——这个过程不仅需要一个强大的认知引擎（如大型语言模型），还需要一套稳健的架构蓝图。这些蓝图，或者说 Agentic 模式，提供了将简单的被动模型转变为能够进行复杂推理和行动的主动的、目标导向的实体所需的结构和可靠性。</p>
-<p>本结论章节将综合我们探索的核心原则。我们将首先回顾关键的 Agentic 模式，将它们组织成一个连贯的框架，强调它们的集体重要性。接下来，我们将研究如何将这些单独的模式组合成更复杂的系统，创造强大的协同效应。最后，我们将展望 Agent 开发的未来，探索将塑造下一代智能系统的新兴趋势和挑战。</p>
-<h2 id="关键-Agentic-原则回顾"><a href="#关键-Agentic-原则回顾" class="headerlink" title="关键 Agentic 原则回顾"></a>关键 Agentic 原则回顾</h2><p>本指南中详细介绍的 21 种模式代表了 Agent 开发的全面工具包。虽然每种模式都针对特定的设计挑战，但可以通过将它们归类到反映智能 Agent 核心能力的基础类别中来整体理解它们。</p>
-<ol>
-<li><p><strong>核心执行和任务分解：</strong> 在最基本的层面上，Agent 必须能够执行任务。提示词链、路由、并行化和规划这些模式构成了 Agent 行动能力的基石。提示词链提供了一种简单而强大的方法，将问题分解为一系列离散步骤的线性序列，确保一个操作的输出在逻辑上为下一个操作提供信息。当工作流需要更动态的行为时，路由引入了条件逻辑，允许 Agent 根据输入的上下文选择最合适的路径或工具。并行化通过启用独立子任务的并发执行来优化效率，而规划模式则将 Agent 从单纯的执行者提升为战略家，能够制定多步骤计划以实现高层次目标。</p>
-</li>
-<li><p><strong>与外部环境的交互：</strong> Agent 通过与其直接内部状态之外的世界交互，其效用得到显著增强。工具使用（函数调用）模式在这里至关重要，为 Agent 提供了利用外部 API、数据库和其他软件系统的机制。这将 Agent 的操作建立在真实世界的数据和能力之上。为了有效使用这些工具，Agent 通常必须从庞大的存储库中访问特定的相关信息。知识检索模式，特别是检索增强生成（RAG），通过使 Agent 能够查询知识库并将该信息纳入其响应中来解决这个问题，使它们更加准确和具有上下文意识。</p>
-</li>
-<li><p><strong>状态、学习和自我改进：</strong> 为了使 Agent 能够执行多于单轮任务，它必须具备维护上下文和随时间改进的能力。内存管理模式对于赋予 Agent 短期对话上下文和长期知识保留至关重要。除了简单的记忆，真正智能的 Agent 还表现出自我改进的能力。反思和自我纠正模式使 Agent 能够批评自己的输出，识别错误或缺陷，并迭代地改进其工作，从而产生更高质量的最终结果。学习和适应模式更进一步，允许 Agent 的行为根据反馈和经验而演变，使其随时间变得更加有效。</p>
-</li>
-<li><p><strong>协作和通信：</strong> 许多复杂问题最好通过协作来解决。多 Agent 协作模式允许创建系统，其中多个专门的 Agent（每个都有不同的角色和能力集）共同努力实现共同目标。这种劳动分工使系统能够处理对单个 Agent 来说难以解决的多方面问题。此类系统的有效性取决于清晰高效的通信，这是 Agent 间通信（A2A）和模型上下文协议（MCP）模式所要解决的挑战，它们旨在标准化 Agent 和工具如何交换信息。</p>
-</li>
-</ol>
-<p>这些原则通过各自的模式应用时，为构建智能系统提供了一个稳健的框架。它们指导开发人员创建不仅能够执行复杂任务，而且结构化、可靠和适应性强的 Agent。</p>
-<h2 id="为复杂系统组合模式"><a href="#为复杂系统组合模式" class="headerlink" title="为复杂系统组合模式"></a>为复杂系统组合模式</h2><p>Agentic 设计的真正力量不是来自孤立地应用单一模式，而是来自巧妙地组合多种模式以创建复杂的多层系统。Agentic 画布很少由单一的简单工作流填充；相反，它成为相互连接的模式的织锦，这些模式协同工作以实现复杂的目标。</p>
-<p>考虑开发一个自主 AI 研究助手，这项任务需要规划、信息检索、分析和综合的组合。这样的系统将是模式组合的典型例子：</p>
-<ul>
-<li><p><strong>初始规划：</strong> 用户查询，例如”分析量子计算对网络安全格局的影响”，首先会被规划器 Agent 接收。该 Agent 将利用规划模式将高层次请求分解为结构化的多步骤研究计划。该计划可能包括诸如”识别量子计算的基础概念”、”研究常见的加密算法”、”查找有关量子威胁对加密的专家分析”和”将发现综合成结构化报告”等步骤。</p>
-</li>
-<li><p><strong>使用工具使用进行信息收集：</strong> 为了执行该计划，Agent 将严重依赖工具使用模式。计划的每一步都将触发对 Google 搜索或 vertex_ai_search 工具的调用。对于更结构化的数据，它可能使用工具查询学术数据库（如 ArXiv）或金融数据 API。</p>
-</li>
-<li><p><strong>协作分析和写作：</strong> 单个 Agent 可能会处理这个问题，但更稳健的架构将采用多 Agent 协作。”研究员” Agent 可以负责执行搜索计划和收集原始信息。它的输出——摘要和来源链接的集合——然后将传递给”作家” Agent。这个专家 Agent 使用初始计划作为其大纲，将收集的信息综合成连贯的草稿。</p>
-</li>
-<li><p><strong>迭代反思和改进：</strong> 初稿很少是完美的。反思模式可以通过引入第三个”批评家” Agent 来实现。该 Agent 的唯一目的是审查作家的草稿，检查逻辑不一致、事实不准确或缺乏清晰度的领域。其批评将反馈给作家 Agent，然后作家 Agent 将利用自我纠正模式来改进其输出，纳入反馈以产生更高质量的最终报告。</p>
-</li>
-<li><p><strong>状态管理：</strong> 在整个过程中，内存管理系统将是必不可少的。它将维护研究计划的状态，存储研究员收集的信息，保存作家创建的草稿，并跟踪批评家的反馈，确保在整个多步骤、多 Agent 工作流中保持上下文。</p>
-</li>
-</ul>
-<p>在这个例子中，至少有五种不同的 Agentic 模式被编织在一起。规划模式提供高层次结构，工具使用将操作建立在真实世界数据上，多 Agent 协作实现专业化和劳动分工，反思确保质量，内存管理保持连贯性。这种组合将一组单独的能力转变为一个强大的自主系统，能够处理对单个提示词或简单链来说过于复杂的任务。</p>
-<h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><p>将 Agentic 模式组合成复杂系统（如我们的 AI 研究助手所示）不是故事的结束，而是软件开发新篇章的开始。展望未来，几个新兴趋势和挑战将定义下一代智能系统，推动可能性的边界，并要求其创建者具有更高的复杂性。</p>
-<p>迈向更先进的 Agentic AI 的旅程将以追求更大的<strong>自主性和推理能力</strong>为标志。我们讨论的模式为目标导向的行为提供了脚手架，但未来将需要能够应对模糊性、执行抽象和因果推理，甚至表现出一定程度常识的 Agent。这可能涉及与新颖模型架构和神经符号方法的更紧密集成，这些方法将 LLM 的模式匹配优势与经典 AI 的逻辑严谨性相结合。我们将看到从人机协同系统（其中 Agent 是副驾驶）向人机在环系统的转变，其中 Agent 被信任以最少的监督执行复杂的、长时间运行的任务，仅在目标完成或发生关键异常时报告。</p>
-<p>这种演变将伴随着 <strong>Agentic 生态系统和标准化</strong>的兴起。多 Agent 协作模式突出了专门 Agent 的力量，未来将看到开放市场和平台的出现，开发人员可以在其中部署、发现和编排 Agent 即服务的舰队。为了使这一切成功，模型上下文协议（MCP）和 Agent 间通信（A2A）背后的原则将变得至关重要，导致 Agent、工具和模型如何交换不仅是数据，还有上下文、目标和能力的行业标准。</p>
-<p>这种不断增长的生态系统的一个典型例子是”Awesome Agents” GitHub 存储库，这是一个宝贵的资源，作为开源 AI Agent、框架和工具的精选列表。它通过组织从软件开发到自主研究和对话式 AI 等应用的尖端项目来展示该领域的快速创新。</p>
-<p>然而，这条道路并非没有其巨大的挑战。<strong>安全性、一致性和稳健性</strong>的核心问题将变得更加关键，因为 Agent 变得更加自主和互连。我们如何确保 Agent 的学习和适应不会导致它偏离其最初目的？我们如何构建对对抗性攻击和不可预测的真实世界场景具有弹性的系统？回答这些问题将需要一套新的”安全模式”和专注于测试、验证和道德一致性的严格工程学科。</p>
-<h2 id="最后的思考"><a href="#最后的思考" class="headerlink" title="最后的思考"></a>最后的思考</h2><p>在本指南中，我们将智能 Agent 的构建定义为在技术画布上实践的艺术形式。这些 Agentic 设计模式是您的调色板和笔触——使您能够超越简单的提示词并创建动态的、响应式的和目标导向的实体的基础元素。它们提供了将大型语言模型的原始认知能力转变为可靠且有目的的系统所需的架构规范。</p>
-<p>真正的技艺不在于掌握单一模式，而在于理解它们的相互作用——将画布视为一个整体，并组合一个系统，其中规划、工具使用、反思和协作和谐地工作。Agentic 设计的原则是一种新的创造语言的语法，它允许我们不仅指导机器做什么，而且指导它们如何<em>存在</em>。</p>
-<p>Agentic AI 领域是技术中最令人兴奋和快速发展的领域之一。这里详述的概念和模式不是最终的静态教条，而是一个起点——一个在其上构建、实验和创新的坚实基础。未来不是我们仅仅是 AI 的用户，而是我们是智能系统的架构师，这些系统将帮助我们解决世界上最复杂的问题。画布就在你面前，模式就在你手中。现在，是时候开始构建了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-Conclusion/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -2188,6 +2252,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">rl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">macOS Keychain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Web Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Multi-Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">规则引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">自然语言处理</a>
               </li>
             
             <div class="clearfix"></div>
