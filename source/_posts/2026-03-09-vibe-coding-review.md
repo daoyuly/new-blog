@@ -1,6 +1,5 @@
 ---
 title: Vibe Coding 综述：AI时代编程范式的变革与未来
-date: 2026-03-09 11:16:00
 tags:
   - AI编程
   - Vibe Coding
@@ -8,6 +7,8 @@ tags:
   - 人工智能
 categories:
   - 技术趋势
+abbrlink: 33497
+date: 2026-03-09 11:16:00
 ---
 
 # Vibe Coding 综述：AI时代编程范式的变革与未来

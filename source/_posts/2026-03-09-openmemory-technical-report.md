@@ -1,6 +1,5 @@
 ---
 title: OpenMemory 技术研究报告
-date: 2026-03-09 01:20:00
 tags:
   - AI
   - Memory
@@ -9,6 +8,8 @@ tags:
   - Technical Analysis
 categories:
   - 技术研究
+abbrlink: 26097
+date: 2026-03-09 01:20:00
 ---
 
 # OpenMemory 技术研究报告

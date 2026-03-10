@@ -151,230 +151,6 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-工作周报2022年 3月 21日 - 2022年 3月 25日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2021%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%88%2025%E6%97%A5/">工作周报2022年 3月 21日 - 2022年 3月 25日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2021%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%88%2025%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>周一在调试录制流合成的时候发现一个问题，当tab页切换时，合成就失败了，表现就是用户头像暂停了，通过log发现当切换tab时，合成操作停止，具体跟进代码发现当时使用了requestAnimationFrame作为循环合成的计数器，查阅了requestAnimationFrame的MDN文档才意识到当页面Hidden时，浏览器从性能角度考虑requestAnimationFrame是停止的，所以合成就停止了，找到了问题原因，也就很好解决了，可以使用setTtimeout模拟了requestAnimationFrame执行。这个事给了我很大的一个反思，技术基础扎实不扎实，还是要看对基本技术知识的掌握程度，对浏览器提供的这样API掌握的怎么样，requestAnimationFrame的这个特性我之前看到过，但是确实没有掌握，在用的时候没有意识这方面的问题，假设我开发的时候充分了解这个特性的限制，我就不会用requestAnimationFrame，也就省去了这个排查的时间，其实也就是提升了工作效率，所以从这个角度来说，个人生产力的提升，其实也依赖于对基础专业知识的掌握程度，熟练的使用这些知识解决我们的业务问题，就构成了我们技术能力的基本要素。对我来说提升技术能力，除了在工作多总结和思考，还要扎扎实实的对专业内的基础知识加深理解和掌握；</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2021%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%88%2025%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 3月 14日 - 2022年 3月19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/">工作周报2022年 3月 14日 - 2022年 3月19日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Web录制本周已经完成了流程的主要架构设计开发和关键技术的开发和整合。架构基于tapable和web stream的事件合流的设计(参考数据流管道架构图)，主要解决两个关键问题：1 是录制，美颜，合成，上传等各个模块的耦合串联及扩展，通过tapable定义整个流程的钩子函数，让各个模块可以灵活通信及扩展，2 采用数据流管道的思想串联各个模块的数据，目的数据流生产和消费通过消息队列的方式生产录制流和消费录制流；<br>实现过程中比较花时间的是合成和美颜，合成选了两种技术方案，1是基于webassembly的FFmpeg多路视频流合成方案， 2是基于双video + canvas的画图方式；FFmpeg合流的方案比较成熟，现在涉及音视频合流的场景很多都是用FFmpeg实现的，web端的比较少见，@duanjun做了web端的技术预研，在录制项目我做完成了FFmpeg的接入，但是接入美颜后，涉及数据格式的转换，美颜基于opencv，返回的是帧图片，需要转成stream或者blob的形式使用FFmpeg ，所以从串联简单性考虑使用了canvas的方案，canvas方案是基本原理是每路流打入对应video并自动播放，同时捕获video帧数据，根据每路流的合成方式，使用canvas的绘制API绘制到canvas上，canvas的捕获流可以直接接入上传流；<br>web端FFmpeg的接入给我们带来了很多想象的地方，简单的如，上传的图片，音频，视频都可以在浏览器端加可见水印，这可以有效的保护讲师和企业的知识产权，复杂点的，我们可以在web端实现微课小节，视频小节，作业小节，直播回放的音视频材料的裁切及拼装等编辑，可以提升音视频内容小节的内容编辑能力和内容制作体验；<br>整个录制流程涉及的环节稍多，可以参考录制流程图，很多技术点在最初技术设计和技术预研上并未完全想到，这也是个比较大的教训，对与技术难点较多的项目，要比较完整的分析整体功能，对关键的代码结构，关键的技术实现有比较透彻的了解才能比较好的评估项目用时。</p>
-<p>录制流程图</p>
-<p>数据流管道架构图</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 3月 7日 - 2022年 3月11日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%207%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8811%E6%97%A5/">工作周报2022年 3月 7日 - 2022年 3月11日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%207%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8811%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周集中精力做web录制，非常充实，除去一些现实的问题，工程师的快乐其实很简单。简单来说，非必要会议做合理的安排，特定的阶段要做特定的取舍，慢慢有点感悟到一位前辈跟我说过的一句话：“一辈子很长，能把一件事做好的时间其实不多”，偷你时间事太多，给你时间增价值的事又不多，其实很多时候是自己看不准，那些事真的重要，哪些事真的不那么重要。<br>web录制涉及到技术点其实挺多，回头看当初的技术方案，要完完整整的做2个月，不静下来心来做，很难发现里面的问题，特别是把这些可以技术验证的点转化成产品代码，也需要时间去打磨，之前靠零碎的时间去做，很多点想不全，离产品化还是有距离，比如我一直在思考的，之前设计的把合成和美颜都看成Effector（音视频效果器），但是我做的时候逐渐理解到合成可能看成是Transformer，转换器，职责是把单路的或者多路的，音频的或者视频的分片的Blob数据转换成任意数据，图片，或者视频，音频，或者格式的转换，输入是多路的stream，输出是调整后的多路stream，Effector在我的设计里可以分为视频效果和音频效果，关注视频内容本身或者音频内容本身，从技术上讲，Effector和Transformer有相似点，但是核心区别看是关注数据本身还是关注内容本身，关注数据的是Transformer，关注内容的事Effector，这个概念区分看似简单，需要对多媒体编程有足够的的经验才能体会到，很多技术靠看别人的代码只能学点皮毛和面上的东西，真正的技术要靠自己去摸索才能掌握，也才能体会到技术之美</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%207%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8811%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-孤独之感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -925,9 +701,254 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-工作周报2022年 1月 10日 - 2022年 1月14日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%2010%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%8814%E6%97%A5/">工作周报2022年 1月 10日 - 2022年 1月14日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%2010%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%8814%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-01-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>我有一个毛病，组件开发时，有一种安逸的方式，每个项目的组件都是按照以前习惯的思维方式写，比如参数的判断，参数的处理是否可以封装处理，日常开发中很难处理的一个事是如何在规范和创新中取舍，日常开发中我更倾向基于原则开发，规范的制定也是基于开发原则和最佳实践的总结，所以在理解规范的时候，要搞明白规范背后的故事和逻辑，规范不代表着呆板和僵化，规范是否为了更好的效率和后续的设计迭代，所以开发中要保持审慎的质疑和批判，以前的一定是好的吗？是不是有更好的设计？是不是有更好的实现，是不是hooks可以抽出一点，是不是可以安全一点，是不是可以优雅一点，是不是有更有效的办法，是不是可以做的灵活一点？人们常说，幸福指数往往和钱无关，有时候项目质量往往和时间无关，这里面有些逻辑是相同的。很多人做了十个项目，其实只成长了一次，有的项目用10天和用6天，做的效果差不多，如果有这种情况，真的该停下来想一想；<ul>
+<li>我觉得Code review是一件很难的事但一定要做的事，code review如果可以度量的那会轻松很多，但这个事不容易做，如何来衡量code review本身的深度和质量，出去代码质量分析工具外，很大程度上取决于reviewer本身的能力和经验，code review本身不是轻松的事，reviewer要理解规范，要明白业务，要懂得设计，请别人review的时候，实际上再请一位老师帮助你做好一件事情，所以作为代码提交人要重视reviewer的建议，作为viewer也要认真review并且注意自身能力的提升，因为你的态度和能力也会体现再代码的review上，所以做代码审查的时候要高标准高要求，代码提交者对审查点也要认真思考敢于质疑，这种碰撞往往是最有效的集体学习和最好的集体智慧；</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%2010%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%8814%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 1月 4日 - 2022年 1月7日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%887%E6%97%A5/">工作周报2022年 1月 4日 - 2022年 1月7日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%887%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-01-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周三的工程例会上东朔老师指出Teck Leader的首要职责是给伙伴们安排好任务明确好优先级，Teck Leader要对结果负责，做好兜底的工作，这两点给了我很多的触动，从这个角度反思，我有很多做的不好的地方，很多时候我陷在自己的优先级工作里，比如改bug，比如跟线上问题，比如自己的项目，很少和其他伙伴合作的项目，我认为这是我的core job，其实我错了，我要花更多的精力专注在更重要的事情上，比如思考 对伙伴们需要我给予什么样的帮助和支持提高 项目效率和质量，我需要怎快速解决团队中的共性问题等等<ul>
+<li>对工程质量负责，做好check，需要了解项目技术难度很复杂度，做好技术兜底和风险规避</li>
+<li>了解每个伙伴的优势，让大家更好的发挥最大价值</li>
+<li>加强技术预研，提高项目风险识别，关注项目质量和项目指标，引导每一位伙伴持续成长，成为更优秀的自己</li>
+<li>最最重要的是，不要自己单独做项目，一定要和其他伙伴合作项目，哪怕分很小的一个模块，也要和其他伙伴一起完成，要在项目开发过程中和协作伙伴一起并肩作战，解决遇到的工程问题，效率问题，流程问题等等项目中实实在在的小问题和大问题，最终的目的是让每位伙伴成为Teck Leader的Backup</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%201%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%201%E6%9C%887%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2021年 12月 20日 - 2021年 12月25日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2012%E6%9C%88%2020%E6%97%A5%20-%202021%E5%B9%B4%2012%E6%9C%8825%E6%97%A5/">工作周报2021年 12月 20日 - 2021年 12月25日</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2012%E6%9C%88%2020%E6%97%A5%20-%202021%E5%B9%B4%2012%E6%9C%8825%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2021-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>今天问题排查的反思<ul>
+<li>在跟进Edge页面白屏的问题时，因为本地没法复现，约了用户去复现排查问题，感谢我们可爱的日本用户，他们非常配合；</li>
+<li>排查过程中约了2次会议，现在总结来看其实第一次就可以解决这问题，第一次在看用户浏览器的报错信息时，看到了一些报错，目前来看有三种报错，1 js兼容问题，2 https和http混用问题，3 QRcode.js加载的问题，第一次会议只看到前两个问题，第三个问题没有注意，原因就是经验性的忽视了，自以为第三个问题和第二个问题是一个问题，就没有认真的分析错误的原因</li>
+<li>我觉得这是一种低效的做法，如果我在第一次会议时再认真一些，再细致一些，再考虑周全一些， 就没有第二次约会了，这不仅节省了我和洪宝的时间，也节省了日本用户的时间，还会建立更加专业的公司形象，这类事后诸葛，其实挺沮丧的；</li>
+<li>快就是慢，慢就是快，如果把工作和生活中的每件事做到极致，其实总的来看是快的，就是高效的，令人愉悦的。什么算极致呢，我理解的极致就是这个事在事前想到了最好的结果和计划，事中高效愉快的完成了计划并达成了想要的结果，其实要享受过程，事后反思总结没有明显的纰漏和现有能力下的提升空间。最近一段时间我的很多事做完了，总结发现有很多可以做的更好的地方，其实对自己来说挺遗憾的，我的一个感受是处理很多零碎的事情会无形降低自己做事的标准，现在看沉浸式的工作方式可能是最有效的方式</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2012%E6%9C%88%2020%E6%97%A5%20-%202021%E5%B9%B4%2012%E6%9C%8825%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
     </nav>
   
 
@@ -1381,15 +1402,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">myclaw</a>
+                <a href="javascript:void(0)" class="js-tag color2">Memory</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">development</a>
+                <a href="javascript:void(0)" class="js-tag color4">Technical Analysis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">status</a>
+                <a href="javascript:void(0)" class="js-tag color5">AI助手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统思维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ray Dalio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创业分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vibe Coding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程范式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">人工智能</a>
               </li>
             
             <div class="clearfix"></div>

@@ -1,6 +1,5 @@
 ---
 title: OpenClaw深度分析：达利欧视角下的AI助手革命
-date: 2026-03-09 11:30:00
 tags:
   - OpenClaw
   - AI助手
@@ -9,6 +8,8 @@ tags:
   - 创业分析
 categories:
   - 深度分析
+abbrlink: 65103
+date: 2026-03-09 11:30:00
 ---
 
 # OpenClaw深度分析：达利欧视角下的AI助手革命

@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 3 (基础架构)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 54435
 date: 2026-03-09 04:43:49
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 3 (基础架构)
