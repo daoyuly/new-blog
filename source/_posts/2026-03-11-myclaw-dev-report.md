@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 2 (Gateway 管理)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 41899
 date: 2026-03-11 04:30:09
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 2 (Gateway 管理)

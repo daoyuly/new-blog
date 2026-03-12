@@ -151,120 +151,909 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-工作周报2025年 9 月 1 日 - 2025年 9 月 7 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ADP-Conclusion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%207%20%E6%97%A5/">工作周报2025年 9 月 1 日 - 2025年 9 月 7 日</a>
+      <a class="article-title" href="/2025/ADP-Conclusion/">Agentic Design Patterns - Conclusion</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%207%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-09-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-07</time>
+        <a href="/2025/ADP-Conclusion/" class="archive-article-date">
+  	<time datetime="2025-10-05T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Agent上下文管理(Context-Engineering)的总结与反思<ol>
-<li>Sentry Agent在不同的任务的选用了不同模型，在这个策略的支持下，服务任务分发的决策Agent使用gpt-4o的模型，因为要把之前的所有的agent的输出以及issue data作为输入，导致经常出现上下文超限。</li>
-<li>目前的解决办法是采用简单的压缩策略，具体来说遍历第二层对象，检查每层对象的长度，超出阈值，就进行压缩处理。</li>
-<li>具体的压缩算法：列出数据结构中所有的第三级和第四级对象，设定每个对象的重要程度，对超出阈值的对象，依次递归以对象的重要程度开始裁切，重要程度最低的，最先移除；如果最后核心对象的数据也超出，就是直接裁切的办法，使用”…”告诉大模型此处有压缩的情况</li>
-<li>这一种简单粗暴的办法，目前也暴露出了问题，上下文不足，导致问题判断出现错误，可以自动修复的，现在也要用人工修复。</li>
-<li>目前Agent上下文的相关论文，讨论和实践非常多，但在遇到具体的问题往往不能很快的找到最佳实践，作为一个探索转落地的项目，我的设计原则是在创新探索和实用可靠保持均衡，目前尝试使用类mem0和memoryBank方案</li>
-<li>在这个角度思考，目前Agent相关思想、技术等太过庞杂，对于我们来说各有利弊，以过往经验看这种情况一般表示是技术的工程化程度不高的表现，对我们来说，现有业务需要谨慎增加这类还不太稳定的技术栈，而对新业务来说，我们可以积极拥抱这类处于发展初期的技术，但需要以审慎的态度进行技术选型，并以长期主义为理念进行及时的重构技术架构</li>
-</ol>
+        <h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>在本书中，我们从 Agentic AI 的基础概念出发，一路探索到复杂自主系统的实际实现。我们从这样一个前提开始：构建智能 Agent 就像在技术画布上创作一幅复杂的艺术作品——这个过程不仅需要一个强大的认知引擎（如大型语言模型），还需要一套稳健的架构蓝图。这些蓝图，或者说 Agentic 模式，提供了将简单的被动模型转变为能够进行复杂推理和行动的主动的、目标导向的实体所需的结构和可靠性。</p>
+<p>本结论章节将综合我们探索的核心原则。我们将首先回顾关键的 Agentic 模式，将它们组织成一个连贯的框架，强调它们的集体重要性。接下来，我们将研究如何将这些单独的模式组合成更复杂的系统，创造强大的协同效应。最后，我们将展望 Agent 开发的未来，探索将塑造下一代智能系统的新兴趋势和挑战。</p>
+<h2 id="关键-Agentic-原则回顾"><a href="#关键-Agentic-原则回顾" class="headerlink" title="关键 Agentic 原则回顾"></a>关键 Agentic 原则回顾</h2><p>本指南中详细介绍的 21 种模式代表了 Agent 开发的全面工具包。虽然每种模式都针对特定的设计挑战，但可以通过将它们归类到反映智能 Agent 核心能力的基础类别中来整体理解它们。</p>
+<ol>
+<li><p><strong>核心执行和任务分解：</strong> 在最基本的层面上，Agent 必须能够执行任务。提示词链、路由、并行化和规划这些模式构成了 Agent 行动能力的基石。提示词链提供了一种简单而强大的方法，将问题分解为一系列离散步骤的线性序列，确保一个操作的输出在逻辑上为下一个操作提供信息。当工作流需要更动态的行为时，路由引入了条件逻辑，允许 Agent 根据输入的上下文选择最合适的路径或工具。并行化通过启用独立子任务的并发执行来优化效率，而规划模式则将 Agent 从单纯的执行者提升为战略家，能够制定多步骤计划以实现高层次目标。</p>
 </li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%207%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 8 月 25 日 - 2025年 8 月 31 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2031%20%E6%97%A5/">工作周报2025年 8 月 25 日 - 2025年 8 月 31 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2031%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-08-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p><strong>脱敏处理</strong></p>
+<li><p><strong>与外部环境的交互：</strong> Agent 通过与其直接内部状态之外的世界交互，其效用得到显著增强。工具使用（函数调用）模式在这里至关重要，为 Agent 提供了利用外部 API、数据库和其他软件系统的机制。这将 Agent 的操作建立在真实世界的数据和能力之上。为了有效使用这些工具，Agent 通常必须从庞大的存储库中访问特定的相关信息。知识检索模式，特别是检索增强生成（RAG），通过使 Agent 能够查询知识库并将该信息纳入其响应中来解决这个问题，使它们更加准确和具有上下文意识。</p>
+</li>
+<li><p><strong>状态、学习和自我改进：</strong> 为了使 Agent 能够执行多于单轮任务，它必须具备维护上下文和随时间改进的能力。内存管理模式对于赋予 Agent 短期对话上下文和长期知识保留至关重要。除了简单的记忆，真正智能的 Agent 还表现出自我改进的能力。反思和自我纠正模式使 Agent 能够批评自己的输出，识别错误或缺陷，并迭代地改进其工作，从而产生更高质量的最终结果。学习和适应模式更进一步，允许 Agent 的行为根据反馈和经验而演变，使其随时间变得更加有效。</p>
+</li>
+<li><p><strong>协作和通信：</strong> 许多复杂问题最好通过协作来解决。多 Agent 协作模式允许创建系统，其中多个专门的 Agent（每个都有不同的角色和能力集）共同努力实现共同目标。这种劳动分工使系统能够处理对单个 Agent 来说难以解决的多方面问题。此类系统的有效性取决于清晰高效的通信，这是 Agent 间通信（A2A）和模型上下文协议（MCP）模式所要解决的挑战，它们旨在标准化 Agent 和工具如何交换信息。</p>
+</li>
+</ol>
+<p>这些原则通过各自的模式应用时，为构建智能系统提供了一个稳健的框架。它们指导开发人员创建不仅能够执行复杂任务，而且结构化、可靠和适应性强的 Agent。</p>
+<h2 id="为复杂系统组合模式"><a href="#为复杂系统组合模式" class="headerlink" title="为复杂系统组合模式"></a>为复杂系统组合模式</h2><p>Agentic 设计的真正力量不是来自孤立地应用单一模式，而是来自巧妙地组合多种模式以创建复杂的多层系统。Agentic 画布很少由单一的简单工作流填充；相反，它成为相互连接的模式的织锦，这些模式协同工作以实现复杂的目标。</p>
+<p>考虑开发一个自主 AI 研究助手，这项任务需要规划、信息检索、分析和综合的组合。这样的系统将是模式组合的典型例子：</p>
 <ul>
-<li>线上运行稳定性和AI编程的思考<ol>
-<li>最近一年我开发理念最大的转变之一就是：不要盲跑，多加日志，多加异常处理，多加非法判断，多加各种监控，每一行代码都不可轻信</li>
-<li>10行核心业务逻辑要用50行的代码来保障这10行的代码的稳定、可靠、可观测</li>
-<li>所谓的工程能力就是消除抖动的，意想不到的异常的散点问题，在整个庞大系统变得稳定可靠，这就是企业级开发中的所谓的脏活、累活，很多人不屑于干的活</li>
-<li>成本与质量的权衡游戏规则被AI打破了。 以前高质量意味着高成本，  AI编程会逐渐 降低这个成本，低成本高质量正在成为现实</li>
-<li>以前我们经常在理想方案和成本方案之间妥协，很多资深架构师也会常说，架构就是妥协的艺术：时间有限，团队能力有限，开发量大，下周就要上线，我们该怎么办？答案往往是权衡和各个设计约束的妥协</li>
-<li>AI编程让我最有感触的是，以后可以少妥协，多坚持，坚持最好的设计方案，坚持最”笨“的方式写代码</li>
-<li>AI时代，每个工程师可以无限逼近”乔布斯“，只有极致才能创造一线生机</li>
+<li><p><strong>初始规划：</strong> 用户查询，例如”分析量子计算对网络安全格局的影响”，首先会被规划器 Agent 接收。该 Agent 将利用规划模式将高层次请求分解为结构化的多步骤研究计划。该计划可能包括诸如”识别量子计算的基础概念”、”研究常见的加密算法”、”查找有关量子威胁对加密的专家分析”和”将发现综合成结构化报告”等步骤。</p>
+</li>
+<li><p><strong>使用工具使用进行信息收集：</strong> 为了执行该计划，Agent 将严重依赖工具使用模式。计划的每一步都将触发对 Google 搜索或 vertex_ai_search 工具的调用。对于更结构化的数据，它可能使用工具查询学术数据库（如 ArXiv）或金融数据 API。</p>
+</li>
+<li><p><strong>协作分析和写作：</strong> 单个 Agent 可能会处理这个问题，但更稳健的架构将采用多 Agent 协作。”研究员” Agent 可以负责执行搜索计划和收集原始信息。它的输出——摘要和来源链接的集合——然后将传递给”作家” Agent。这个专家 Agent 使用初始计划作为其大纲，将收集的信息综合成连贯的草稿。</p>
+</li>
+<li><p><strong>迭代反思和改进：</strong> 初稿很少是完美的。反思模式可以通过引入第三个”批评家” Agent 来实现。该 Agent 的唯一目的是审查作家的草稿，检查逻辑不一致、事实不准确或缺乏清晰度的领域。其批评将反馈给作家 Agent，然后作家 Agent 将利用自我纠正模式来改进其输出，纳入反馈以产生更高质量的最终报告。</p>
+</li>
+<li><p><strong>状态管理：</strong> 在整个过程中，内存管理系统将是必不可少的。它将维护研究计划的状态，存储研究员收集的信息，保存作家创建的草稿，并跟踪批评家的反馈，确保在整个多步骤、多 Agent 工作流中保持上下文。</p>
+</li>
+</ul>
+<p>在这个例子中，至少有五种不同的 Agentic 模式被编织在一起。规划模式提供高层次结构，工具使用将操作建立在真实世界数据上，多 Agent 协作实现专业化和劳动分工，反思确保质量，内存管理保持连贯性。这种组合将一组单独的能力转变为一个强大的自主系统，能够处理对单个提示词或简单链来说过于复杂的任务。</p>
+<h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><p>将 Agentic 模式组合成复杂系统（如我们的 AI 研究助手所示）不是故事的结束，而是软件开发新篇章的开始。展望未来，几个新兴趋势和挑战将定义下一代智能系统，推动可能性的边界，并要求其创建者具有更高的复杂性。</p>
+<p>迈向更先进的 Agentic AI 的旅程将以追求更大的<strong>自主性和推理能力</strong>为标志。我们讨论的模式为目标导向的行为提供了脚手架，但未来将需要能够应对模糊性、执行抽象和因果推理，甚至表现出一定程度常识的 Agent。这可能涉及与新颖模型架构和神经符号方法的更紧密集成，这些方法将 LLM 的模式匹配优势与经典 AI 的逻辑严谨性相结合。我们将看到从人机协同系统（其中 Agent 是副驾驶）向人机在环系统的转变，其中 Agent 被信任以最少的监督执行复杂的、长时间运行的任务，仅在目标完成或发生关键异常时报告。</p>
+<p>这种演变将伴随着 <strong>Agentic 生态系统和标准化</strong>的兴起。多 Agent 协作模式突出了专门 Agent 的力量，未来将看到开放市场和平台的出现，开发人员可以在其中部署、发现和编排 Agent 即服务的舰队。为了使这一切成功，模型上下文协议（MCP）和 Agent 间通信（A2A）背后的原则将变得至关重要，导致 Agent、工具和模型如何交换不仅是数据，还有上下文、目标和能力的行业标准。</p>
+<p>这种不断增长的生态系统的一个典型例子是”Awesome Agents” GitHub 存储库，这是一个宝贵的资源，作为开源 AI Agent、框架和工具的精选列表。它通过组织从软件开发到自主研究和对话式 AI 等应用的尖端项目来展示该领域的快速创新。</p>
+<p>然而，这条道路并非没有其巨大的挑战。<strong>安全性、一致性和稳健性</strong>的核心问题将变得更加关键，因为 Agent 变得更加自主和互连。我们如何确保 Agent 的学习和适应不会导致它偏离其最初目的？我们如何构建对对抗性攻击和不可预测的真实世界场景具有弹性的系统？回答这些问题将需要一套新的”安全模式”和专注于测试、验证和道德一致性的严格工程学科。</p>
+<h2 id="最后的思考"><a href="#最后的思考" class="headerlink" title="最后的思考"></a>最后的思考</h2><p>在本指南中，我们将智能 Agent 的构建定义为在技术画布上实践的艺术形式。这些 Agentic 设计模式是您的调色板和笔触——使您能够超越简单的提示词并创建动态的、响应式的和目标导向的实体的基础元素。它们提供了将大型语言模型的原始认知能力转变为可靠且有目的的系统所需的架构规范。</p>
+<p>真正的技艺不在于掌握单一模式，而在于理解它们的相互作用——将画布视为一个整体，并组合一个系统，其中规划、工具使用、反思和协作和谐地工作。Agentic 设计的原则是一种新的创造语言的语法，它允许我们不仅指导机器做什么，而且指导它们如何<em>存在</em>。</p>
+<p>Agentic AI 领域是技术中最令人兴奋和快速发展的领域之一。这里详述的概念和模式不是最终的静态教条，而是一个起点——一个在其上构建、实验和创新的坚实基础。未来不是我们仅仅是 AI 的用户，而是我们是智能系统的架构师，这些系统将帮助我们解决世界上最复杂的问题。画布就在你面前，模式就在你手中。现在，是时候开始构建了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Conclusion/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-Frequently Asked Questions_ Agentic Design Patterns" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-Frequently%20Asked%20Questions_%20Agentic%20Design%20Patterns/">Agentic Design Patterns - Frequently Asked Questions_ Agentic Design Patterns</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-Frequently%20Asked%20Questions_%20Agentic%20Design%20Patterns/" class="archive-article-date">
+  	<time datetime="2025-10-04T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常见问题解答：Agentic-设计模式"><a href="#常见问题解答：Agentic-设计模式" class="headerlink" title="常见问题解答：Agentic 设计模式"></a><strong>常见问题解答：Agentic 设计模式</strong></h3><p><strong>什么是”Agentic 设计模式”？</strong> Agentic 设计模式是可复用的高层解决方案，用于应对构建智能自主系统（Agent）时的常见挑战。这些模式为设计 Agent 行为提供结构化框架，其作用类似于传统编程中的软件设计模式。它们助力开发者构建更稳健、可预测且高效的 AI Agent。</p>
+<p><strong>本指南的核心目标是什么？</strong> 本指南致力于提供设计与构建 Agentic 系统的实践性指导。超越纯理论探讨，提供开发者可直接运用的具体架构蓝图，以可靠方式创建具备复杂目标导向行为能力的 Agent。</p>
+<p><strong>本指南面向哪些读者群体？</strong> 本指南主要面向运用大语言模型（LLM）及其他 AI 组件构建应用的 AI 开发者、软件工程师与系统架构师。特别适合希望从简单提示-响应交互进阶至构建复杂自主 Agent 的技术人员。</p>
+<p><strong>4. 本指南涵盖哪些关键 Agentic 模式？</strong> 依据目录结构，本指南深入探讨以下核心模式：</p>
+<ul>
+<li><strong>反思（Reflection）</strong>：Agent 通过批判自身行为与输出来提升性能的能力。</li>
+<li><strong>规划（Planning）</strong>：将复杂目标分解为可管理步骤或任务序列的过程。</li>
+<li><strong>工具使用（Tool Use）</strong>：Agent 借助外部工具（如代码解释器、搜索引擎或其他 API）获取信息或执行自身无法完成操作的模式。</li>
+<li><strong>多 Agent 协作（Multi-Agent Collaboration）</strong>：多个专业化 Agent 协同解决问题的架构，通常包含”领导者”或”协调者”Agent。</li>
+<li><strong>人机协同（Human-in-the-Loop）</strong>：整合人类监督与干预机制，支持对 Agent 行为进行反馈、修正与审批。</li>
+</ul>
+<p><strong>为何”规划”模式至关重要？</strong> 规划模式使 Agent 能够处理无法通过单步操作解决的复杂多阶段任务。通过制定计划，Agent 可维持连贯策略、追踪进度，并以结构化方式应对错误或意外障碍。这有效防止 Agent 陷入”停滞”或偏离用户最终目标。</p>
+<p><strong>Agent 语境中”工具”与”技能”有何区别？</strong> 虽常被混用，但”工具”通常指 Agent 可调用的外部资源（如天气 API、计算器）；”技能”则是 Agent 通过学习获得的更集成化能力，往往结合工具使用与内部推理以执行特定功能（如”航班预订”技能可能涉及日历与航空 API 的协同使用）。</p>
+<p><strong>“反思”模式如何提升 Agent 性能？</strong> 反思机制充当自我校正功能。在生成响应或完成任务后，引导 Agent 审查自身工作：检测错误、依据既定标准评估质量、考量替代方案。此迭代优化过程显著提升 Agent 输出的准确性、相关性及整体质量。</p>
+<p><strong>反思模式的核心理念是什么？</strong> 反思模式赋予 Agent 后退一步批判自身工作的能力。Agent 并非一次性生成最终输出，而是先创建草稿后进行”反思”，识别缺陷、信息缺失或改进空间。此自我校正流程是提升响应质量与准确度的关键机制。</p>
+<p><strong>为何简单”提示链”难以保证高质量输出？</strong> 简单提示链（前序提示输出作为后续提示输入）通常过于基础。模型可能仅对先前输出进行措辞重组而未实现实质性改进。真正的反思模式需引入结构化批判机制，引导 Agent 依据特定标准分析工作、检验逻辑错误或核实事实。</p>
+<p><strong>本章阐述的两种主要反思类型是什么？</strong> 本章详细解析两种核心反思形式：</p>
+<ul>
+<li><strong>“工作自查”式反思</strong>：基础形式，仅要求 Agent 审查并修正前序输出。适用于捕捉简单错误的入门场景。</li>
+<li><strong>“内部评审”式反思</strong>：进阶形式，通过独立”评审者”Agent（或专用提示）评估”执行者”Agent 的输出。可为评审者设定特定检验标准，实现更严密且定向的改进。</li>
+</ul>
+<p><strong>反思机制如何助力减少”幻觉”现象？</strong> 通过强制 Agent 审查自身工作——特别是将其陈述与已知来源比对或检验推理步骤——反思模式能显著降低幻觉（虚构事实）发生概率。Agent 被迫更严格遵循给定上下文，减少生成无依据信息的可能性。</p>
+<p><strong>反思模式可否多次迭代应用？</strong> 可以，反思本身即为迭代过程。可引导 Agent 对同一工作进行多轮反思，每轮循环持续优化输出质量。这对复杂任务尤为关键，因初版或次版输出可能仍存在细微错误或具大幅提升空间。</p>
+<p><strong>AI Agent 语境中的规划模式指什么？</strong> 规划模式旨在使 Agent 能将复杂高层目标分解为系列可执行步骤序列。Agent 不试图一次性解决宏观问题，而是先构建”计划”框架，随后按序执行各步骤，此方法显著提升任务可靠性。</p>
+<p><strong>为何复杂任务必须引入规划机制？</strong> 大语言模型在处理多步骤或具依赖关系的任务时存在局限。缺乏计划指引时，Agent 易丢失整体目标脉络、遗漏关键环节或未能将前步骤输出有效传递至后续输入。计划提供清晰实施路线，确保按逻辑顺序满足原始请求全部要求。</p>
+<p><strong>实现规划模式的典型方法有哪些？</strong> 常见实施方案是引导 Agent 首先生成结构化步骤列表（如 JSON 数组或编号清单）。系统随后遍历该列表，逐项执行步骤并将执行结果反馈至 Agent 以指导后续操作。</p>
+<p><strong>Agent 如何处理执行过程中的异常或动态变化？</strong> 健全的规划模式支持动态调整能力。当某步骤失败或情境变更时，可触发 Agent 基于当前状态”重新规划”。Agent 能分析错误成因、调整剩余步骤序列，甚至新增步骤以突破障碍。</p>
+<p><strong>计划内容是否对用户可见？</strong> 此为设计决策项。多数场景下，预先向用户展示计划并获取批准是推荐实践。这与”人机协同”模式高度契合，在执行前赋予用户对 Agent 拟执行操作的透明度与控制权。</p>
+<p><strong>“工具使用”模式的核心要素是什么？</strong> 工具使用模式使 Agent 能通过与外部软件或 API 交互扩展自身能力边界。鉴于 LLM 知识库的静态特性及无法自主执行现实操作的限制，工具为其提供实时信息访问（如 Google 搜索）、专有数据获取（如企业数据库）及动作执行能力（如邮件发送、会议预订）。</p>
+<p><strong>Agent 如何决策工具选用？</strong> Agent 通常获授可用工具清单及各工具功能描述与参数要求。当面临内部知识无法处理的请求时，Agent 依托推理能力从清单中筛选最适配任务需求的工具。</p>
+<p><strong>文中所提”ReAct”（推理-行动）框架是什么？</strong> ReAct 是集成推理与行动的流行框架。Agent 遵循<strong>思考</strong>（分析待执行任务）、<strong>行动</strong>（决策工具选择及输入参数）与<strong>观察</strong>（获取工具返回结果）的循环流程。该循环持续迭代直至收集足够信息满足用户请求。</p>
+<p><strong>工具使用实施面临哪些主要挑战？</strong> 关键挑战包括：</p>
+<ul>
+<li><strong>异常处理</strong>：工具可能执行失败、返回意外数据或超时。Agent 需具备异常识别能力并决策重试、切换工具或寻求用户协助。</li>
+<li><strong>安全考量</strong>：授予 Agent 工具访问权限——特别是具现实影响的操作工具——存在安全风险。对敏感操作必须设置防护机制、权限控制及常需人工审批流程。</li>
+<li><strong>提示工程</strong>：需通过精准提示引导 Agent 生成格式规范的工具调用（如正确函数名与参数结构）。</li>
+</ul>
+<p><strong>什么是人机协同（HITL）模式？</strong> HITL 是一种将人类监督与交互机制深度整合至 Agent 工作流的模式。Agent 并非完全自主运行，而是在关键决策节点暂停执行，主动寻求人类反馈、审批、澄清或方向指引。</p>
+<p><strong>为何 HITL 对 Agentic 系统至关重要？</strong> 其重要性体现在多个维度：</p>
+<ul>
+<li><strong>安全与可控性</strong>：针对高风险任务（如金融交易、官方通讯发送），HITL 确保人类在操作执行前验证 Agent 提议行动。</li>
+<li><strong>质量提升</strong>：人类可提供精准修正或 nuanced 反馈，助力 Agent 性能优化，尤其在主观判断或模糊情境任务中。</li>
+<li><strong>信任构建</strong>：用户更倾向于采纳具备可指导与监督特性的 AI 系统，从而建立长期信任关系。</li>
+</ul>
+<p><strong>工作流中哪些环节应引入人类干预？</strong> 典型的人类介入节点包括：</p>
+<ul>
+<li><strong>计划审批环节</strong>：多步骤计划正式执行前的确认阶段。</li>
+<li><strong>工具使用授权</strong>：涉及现实影响或产生经济成本的工具调用前。</li>
+<li><strong>歧义消解节点</strong>：当 Agent 执行路径不明确或需用户补充信息时。</li>
+<li><strong>最终输出审核</strong>：向终端用户或下游系统交付成果前的质量把关。</li>
+</ul>
+<p><strong>持续人工介入是否影响效率？</strong> 确存此风险，因此关键在于精准把握平衡点。HITL 应部署于核心决策节点，而非每个操作步骤。目标是构建人机协作伙伴关系：Agent 承担主体工作量，人类提供战略级指导。</p>
+<p><strong>何为多 Agent 协作模式？</strong> 该模式指构建由多个专业化 Agent 组成的协同系统，通过集体智慧达成共同目标。替代单一”全才”Agent 尝试包揽所有任务的模式，转而组建各具专长的”专家”Agent 团队。</p>
+<p><strong>多 Agent 系统的优势何在？</strong></p>
+<ul>
+<li><strong>模块化与专业化</strong>：每个 Agent 可针对特定任务进行精细化提示调优（如”研究专员”、”文案专家”、”代码工程师”），产出质量显著提升。</li>
+<li><strong>复杂度管控</strong>：将复杂工作流分解为专业角色，大幅降低系统整体设计、调试与维护难度。</li>
+<li><strong>群体智慧模拟</strong>：不同 Agent 提供多元视角，催生更具创意与鲁棒性的解决方案，仿效人类团队协作模式。</li>
+</ul>
+<p><strong>多 Agent 系统的典型架构如何？</strong> 常见架构核心为<strong>协调者 Agent</strong>（亦称”管理者”或”指挥者”）。协调者把握全局目标，进行任务分解与委派，收集各专家 Agent 产出并进行最终合成输出。</p>
+<p><strong>Agent 间如何实现通信协作？</strong> 通信通常由协调者主导管理。例如，协调者可将”研究员”Agent 的输出作为上下文传递给”写作”Agent。此外，支持 Agent 发布发现的共享”工作区”或消息总线亦是常用通信机制。</p>
+<p><strong>为何 Agent 评估较传统软件更复杂？</strong> 传统软件具备确定性输出（相同输入恒定产生相同输出）。而基于 LLM 的 Agent 具有非确定性特征，其性能评估常涉主观判断。评估需聚焦输出<em>质量</em>与<em>相关性</em>，而非单纯技术正确性。</p>
+<p><strong>Agent 性能评估的常用方法有哪些？</strong> 本指南推荐以下方法：</p>
+<ul>
+<li><strong>结果导向评估</strong>：Agent 是否成功达成终极目标？例如任务为”航班预订”，是否实际完成正确预订？此为核心衡量指标。</li>
+<li><strong>过程质量评估</strong>：Agent 执行<em>流程</em>是否高效合理？工具选用是否恰当？计划遵循是否严谨？此有助于诊断失败根源。</li>
+<li><strong>人工评分评估</strong>：邀请人类评估者依据帮助性、准确性、连贯性等维度进行量表评分（如1-5分）。对用户导向应用尤为关键。</li>
+</ul>
+<p><strong>何为”Agent 轨迹”？</strong> Agent 轨迹是任务执行全过程的完整步骤记录，涵盖所有思考过程、操作行为（工具调用）及环境观察。分析这些轨迹是调试与理解 Agent 行为模式的核心手段。</p>
+<p><strong>如何为非确定性系统构建可靠测试？</strong> 虽无法保证 Agent 输出的精确措辞，但可设计验证关键要素的测试。例如创建检测最终响应是否<em>包含</em>特定信息，或是否以正确参数成功调用某工具的测试。通常通过在专用测试环境部署模拟工具实现。</p>
+<p><strong>Agent 提示与简单 ChatGPT 提示有何本质区别？</strong> Agent 提示需构建详尽的”系统提示”或运行章程作为操作指南。这超越单一用户查询范畴，需明确定义 Agent 角色定位、可用工具集、应遵循模式（如 ReAct 或规划）、行为约束及交互风格。</p>
+<p><strong>优质 Agent 系统提示的核心构成要素有哪些？</strong> 卓越的系统提示通常包含：</p>
+<ul>
+<li><strong>角色与目标界定</strong>：清晰定义 Agent 身份标识与核心使命。</li>
+<li><strong>工具规格说明</strong>：可用工具清单、功能描述及调用规范（如特定函数调用格式）。</li>
+<li><strong>约束与规则体系</strong>：明确禁止行为指令（如”未经批准禁止使用工具”、”不提供金融建议”）。</li>
+<li><strong>流程执行指引</strong>：模式应用指导，例如”首先制定计划，随后按步骤执行”。</li>
+<li><strong>示范轨迹案例</strong>：提供若干成功”思考-行动-观察”循环实例，可大幅提升 Agent 行为可靠性。</li>
+</ul>
+<p><strong>何为”提示泄漏”？</strong> 提示泄漏指系统提示内容（如工具定义或内部指令）意外出现在 Agent 对用户的最终响应中。此现象可能导致用户困惑并暴露系统实现细节。采用推理与最终答案生成分离的提示策略等技术可有效防范。</p>
+<p><strong>Agentic 系统未来发展趋势如何？</strong> 本指南展望以下方向：</p>
+<ul>
+<li><strong>增强自主能力</strong>：需更少人工干预且具备自学习与自适应能力的 Agent。</li>
+<li><strong>深度专业分化</strong>：形成可按需雇佣或订阅的专项任务 Agent 生态系统（如旅行顾问、研究助手）。</li>
+<li><strong>工具平台演进</strong>：开发更 sophisticated 的框架与平台，显著降低构建、测试与部署健壮多 Agent 系统的技术门槛。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Frequently%20Asked%20Questions_%20Agentic%20Design%20Patterns/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-Glossary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-Glossary/">Agentic Design Patterns - Glossary</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-Glossary/" class="archive-article-date">
+  	<time datetime="2025-10-03T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><p><strong>提示词（Prompt）：</strong> 提示词是用户向 AI 模型提供的输入，通常以问题、指令或陈述形式呈现，旨在激发模型生成相应输出。提示词的质量与结构深度影响模型响应效果，使提示工程成为高效运用 AI 的核心技能。</p>
+<p><strong>上下文窗口（Context Window）：</strong> 上下文窗口指 AI 模型单次处理的最大 token 容量，涵盖输入内容与生成输出。此固定尺寸构成关键限制——超出窗口范围的信息将被忽略，而更大窗口则支持更复杂对话交互与文档分析能力。</p>
+<p><strong>上下文学习（In-Context Learning）：</strong> 上下文学习是 AI 通过提示中直接嵌入的示例掌握新任务的能力，无需额外训练过程。此强大特性使单一通用模型可即时适配海量特定任务场景。</p>
+<p><strong>零样本、单样本与少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：</strong> 此类提示技术通过提供零个、单个或少量任务示例引导模型生成响应。增加示例数量通常能提升模型对用户意图的把握精度，增强特定任务表现。</p>
+<p><strong>多模态（Multimodality）：</strong> 多模态指 AI 理解并处理跨数据类型信息（如文本、图像、音频）的能力。该特性支持更丰富类人化交互，例如图像描述或语音问答场景。</p>
+<p><strong>事实锚定（Grounding）：</strong> 事实锚定是将模型输出关联至可验证真实信息源的过程，旨在确保事实准确性并降低幻觉发生。常通过 RAG 等技术实现，提升 AI 系统可信度。</p>
+<h2 id="核心-AI-模型架构"><a href="#核心-AI-模型架构" class="headerlink" title="核心 AI 模型架构"></a>核心 AI 模型架构</h2><p><strong>Transformer：</strong> Transformer 构成多数现代 LLM 的基石神经网络架构。其核心创新自注意力机制能高效处理长文本序列，精准捕捉词汇间复杂关联。</p>
+<p><strong>循环神经网络（Recurrent Neural Network, RNN）：</strong> 循环神经网络是早于 Transformer 的基础架构。RNN 采用序列化信息处理方式，通过循环结构维持对历史输入的”记忆”，曾广泛应用于文本与语音处理任务。</p>
+<p><strong>专家混合（Mixture of Experts, MoE）：</strong> 专家混合为高效模型架构，通过”路由”网络动态筛选少量”专家”网络处理特定输入。该设计使模型在保持海量参数规模的同时，有效控制计算开销。</p>
+<p><strong>扩散模型（Diffusion Models）：</strong> 扩散模型是专精高质量图像生成的生成式模型。其工作原理是通过向数据注入随机噪声，继而训练模型精确逆转该过程，从而实现从随机初始状态生成新颖数据。</p>
+<p><strong>Mamba：</strong> Mamba 是采用选择性状态空间模型（Selective State Space Model, SSM）的新兴 AI 架构，具备超长上下文序列的高效处理能力。其选择性机制可聚焦相关信息同时滤除噪声，被视为 Transformer 的潜在替代方案。</p>
+<h2 id="LLM-开发生命周期"><a href="#LLM-开发生命周期" class="headerlink" title="LLM 开发生命周期"></a>LLM 开发生命周期</h2><p>强大语言模型的开发遵循明确演进路径。初始阶段为预训练（Pre-training）——通过海量通用互联网文本数据集训练构建大规模基础模型，掌握语言规律、推理能力与世界知识。随后进入微调（Fine-tuning）阶段，通用模型在较小规模任务特定数据集上进一步训练，实现面向特定场景的能力适配。最终阶段为对齐（Alignment），调整专业化模型行为模式，确保输出兼具实用性、安全性且符合人类价值导向。</p>
+<p><strong>预训练技术（Pre-training Techniques）：</strong> 预训练是模型从海量数据中汲取通用知识的奠基阶段。该领域顶尖技术涵盖多样化的学习目标设定。最普遍的是因果语言建模（Causal Language Modeling, CLM），模型通过预测句中下一词汇进行学习。另一主流方法是掩码语言建模（Masked Language Modeling, MLM），模型负责还原文本中被刻意遮蔽的词汇。其他关键方法论包括：去噪目标（Denoising Objectives）——模型学习将受损输入修复至原始状态；对比学习（Contrastive Learning）——模型习得区分相似与相异数据片段的能力；以及下句预测（Next Sentence Prediction, NSP）——模型判断两句间是否存在逻辑连贯性。</p>
+<p><strong>微调技术（Fine-tuning Techniques）：</strong> 微调是使用专业化小规模数据集将通用预训练模型适配至特定任务的过程。最常用方法为监督微调（Supervised Fine-Tuning, SFT），模型在标注准确的输入输出配对示例上进行训练。指令微调（Instruction Tuning）作为流行变体，重点提升模型遵循用户指令的精准度。为提升过程效率，普遍采用参数高效微调（Parameter-Efficient Fine-Tuning, PEFT）方法，其中代表性技术包括 LoRA（低秩适应）——仅更新少量参数，及其内存优化版本 QLoRA。检索增强生成（Retrieval-Augmented Generation, RAG）作为补充技术，通过在微调或推理阶段连接外部知识源增强模型能力。</p>
+<p><strong>对齐与安全技术（Alignment &amp; Safety Techniques）：</strong> 对齐是确保 AI 模型行为契合人类价值观与期望的过程，使其输出兼具帮助性与安全性。最突出的技术是基于人类反馈的强化学习（Reinforcement Learning from Human Feedback, RLHF），通过基于人类偏好训练的”奖励模型”指导 AI 学习过程，常辅以近端策略优化（Proximal Policy Optimization, PPO）等算法保障训练稳定性。近年涌现的简化替代方案包括直接偏好优化（Direct Preference Optimization, DPO）——规避独立奖励模型需求，以及卡尼曼-特沃斯基优化（Kahneman-Tversky Optimization, KTO）——进一步简化数据收集流程。为确保部署安全，护栏（Guardrails）作为终态安全层被广泛应用，实时过滤输出并阻断有害行为。</p>
+<h2 id="增强-AI-Agent-能力"><a href="#增强-AI-Agent-能力" class="headerlink" title="增强 AI Agent 能力"></a>增强 AI Agent 能力</h2><p>AI Agent 是能感知环境并采取自主行动以实现目标的智能系统。其效能通过强大的推理框架显著提升。</p>
+<p><strong>思维链（Chain of Thought, CoT）：</strong> 该提示技术引导模型在给出最终答案前逐步展示推理过程。此类”显式思考”机制常在复杂推理任务中产生更精确结果。</p>
+<p><strong>思维树（Tree of Thoughts, ToT）：</strong> 思维树是进阶推理框架，Agent 同步探索多条推理路径（如树枝分叉）。该框架支持 Agent 自评估不同思路质量，择优推进最 promising 路径，极大增强复杂问题解决效能。</p>
+<p><strong>ReAct（推理-行动框架，Reason and Act）：</strong> ReAct 是将推理与工具使用融合于循环流程的 Agent 框架。Agent 先进行”思考”确定行动方向，随后通过工具执行”行动”，并依据执行结果”观察”调整后续思考，该机制在复杂任务解决中表现卓越。</p>
+<p><strong>规划（Planning）：</strong> 指 Agent 将高层目标分解为系列可管理子任务的能力。Agent 据此制定执行计划并按序推进步骤，从而胜任复杂的多阶段任务。</p>
+<p><strong>深度研究（Deep Research）：</strong> 深度研究指 Agent 通过迭代式信息检索、发现整合与新问题识别，实现对主题的自主深入探索能力。这使得 Agent 能构建远超单次查询范围的 comprehensive 主题认知。</p>
+<p><strong>评审模型（Critique Model）：</strong> 评审模型是经专门训练的 AI 模型，用于审查、评估并对其他 AI 模型输出提供反馈。其扮演自动化评审者角色，协助识别错误、优化推理流程并确保最终输出符合预期质量标准。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Glossary/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-Index of Terms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-Index%20of%20Terms/">Agentic Design Patterns - Index of Terms</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-Index%20of%20Terms/" class="archive-article-date">
+  	<time datetime="2025-10-02T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="提示词（Prompt）：提示词是用户提供给-AI-模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用-AI-的关键技能。"><a href="#提示词（Prompt）：提示词是用户提供给-AI-模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用-AI-的关键技能。" class="headerlink" title="提示词（Prompt）：提示词是用户提供给 AI 模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用 AI 的关键技能。"></a>提示词（Prompt）：提示词是用户提供给 AI 模型的输入，通常以问题、指令或陈述的形式出现，用于引发响应。提示词的质量和结构极大地影响模型的输出，使提示词工程成为有效使用 AI 的关键技能。</h3><h3 id="上下文窗口（Context-Window）：上下文窗口是-AI-模型一次可以处理的最大-token-数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。"><a href="#上下文窗口（Context-Window）：上下文窗口是-AI-模型一次可以处理的最大-token-数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。" class="headerlink" title="上下文窗口（Context Window）：上下文窗口是 AI 模型一次可以处理的最大 token 数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。"></a>上下文窗口（Context Window）：上下文窗口是 AI 模型一次可以处理的最大 token 数量，包括输入和生成的输出。这个固定大小是一个关键限制，因为窗口外的信息会被忽略，而更大的窗口可以实现更复杂的对话和文档分析。</h3><h3 id="上下文学习（In-Context-Learning）：上下文学习是-AI-直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。"><a href="#上下文学习（In-Context-Learning）：上下文学习是-AI-直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。" class="headerlink" title="上下文学习（In-Context Learning）：上下文学习是 AI 直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。"></a>上下文学习（In-Context Learning）：上下文学习是 AI 直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。</h3><h3 id="零样本、单样本和少样本提示（Zero-Shot-One-Shot-Few-Shot-Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。"><a href="#零样本、单样本和少样本提示（Zero-Shot-One-Shot-Few-Shot-Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。" class="headerlink" title="零样本、单样本和少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。"></a>零样本、单样本和少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。</h3><h3 id="多模态性（Multimodality）：多模态性是-AI-理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。"><a href="#多模态性（Multimodality）：多模态性是-AI-理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。" class="headerlink" title="多模态性（Multimodality）：多模态性是 AI 理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。"></a>多模态性（Multimodality）：多模态性是 AI 理解和处理多种数据类型（如文本、图像和音频）信息的能力。这允许更多样化和类人的交互，例如描述图像或回答口头问题。</h3><h3 id="基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过-RAG-等技术实现，使-AI-系统更值得信赖。"><a href="#基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过-RAG-等技术实现，使-AI-系统更值得信赖。" class="headerlink" title="基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过 RAG 等技术实现，使 AI 系统更值得信赖。"></a>基础化（Grounding）：基础化是将模型输出连接到可验证的真实世界信息源的过程，以确保事实准确性并减少幻觉。这通常通过 RAG 等技术实现，使 AI 系统更值得信赖。</h3><h2 id="核心-AI-模型架构"><a href="#核心-AI-模型架构" class="headerlink" title="核心 AI 模型架构"></a>核心 AI 模型架构</h2><h3 id="Transformers：Transformer-是大多数现代-LLM-的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。"><a href="#Transformers：Transformer-是大多数现代-LLM-的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。" class="headerlink" title="Transformers：Transformer 是大多数现代 LLM 的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。"></a>Transformers：Transformer 是大多数现代 LLM 的基础神经网络架构。其关键创新是自注意力机制，可以高效处理长文本序列并捕获单词之间的复杂关系。</h3><h3 id="循环神经网络（Recurrent-Neural-Network-RNN）：循环神经网络是-Transformer-之前的基础架构。RNN-按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。"><a href="#循环神经网络（Recurrent-Neural-Network-RNN）：循环神经网络是-Transformer-之前的基础架构。RNN-按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。" class="headerlink" title="循环神经网络（Recurrent Neural Network, RNN）：循环神经网络是 Transformer 之前的基础架构。RNN 按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。"></a>循环神经网络（Recurrent Neural Network, RNN）：循环神经网络是 Transformer 之前的基础架构。RNN 按顺序处理信息，使用循环来维护先前输入的”记忆”，这使它们适合文本和语音处理等任务。</h3><h3 id="专家混合（Mixture-of-Experts-MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。"><a href="#专家混合（Mixture-of-Experts-MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。" class="headerlink" title="专家混合（Mixture of Experts, MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。"></a>专家混合（Mixture of Experts, MoE）：专家混合是一种高效的模型架构，其中”路由器”网络动态选择一小部分”专家”网络来处理任何给定的输入。这允许模型拥有大量参数，同时保持可管理的计算成本。</h3><h3 id="扩散模型（Diffusion-Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。"><a href="#扩散模型（Diffusion-Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。" class="headerlink" title="扩散模型（Diffusion Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。"></a>扩散模型（Diffusion Models）：扩散模型是擅长创建高质量图像的生成模型。它们通过向数据添加随机噪声，然后训练模型精确地逆转该过程来工作，允许它们从随机起点生成新颖的数据。</h3><h3 id="Mamba：Mamba-是一种最新的-AI-架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为-Transformer-的潜在替代方案。"><a href="#Mamba：Mamba-是一种最新的-AI-架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为-Transformer-的潜在替代方案。" class="headerlink" title="Mamba：Mamba 是一种最新的 AI 架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为 Transformer 的潜在替代方案。"></a>Mamba：Mamba 是一种最新的 AI 架构，使用选择性状态空间模型（SSM）以高效率处理序列，特别是对于非常长的上下文。其选择性机制允许它专注于相关信息同时过滤噪声，使其成为 Transformer 的潜在替代方案。</h3><h2 id="LLM-开发生命周期"><a href="#LLM-开发生命周期" class="headerlink" title="LLM 开发生命周期"></a>LLM 开发生命周期</h2><h3 id="强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。"><a href="#强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。" class="headerlink" title="强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。"></a>强大语言模型的开发遵循明确的顺序。它始于预训练（Pre-training），在大量通用互联网文本数据集上训练大规模基础模型，以学习语言、推理和世界知识。接下来是微调（Fine-tuning），这是一个专业化阶段，在较小的特定任务数据集上进一步训练通用模型，以使其能力适应特定目的。最后阶段是对齐（Alignment），调整专业化模型的行为，以确保其输出有帮助、无害且与人类价值观保持一致。</h3><h3 id="预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。"><a href="#预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。" class="headerlink" title="预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。"></a>预训练技术：预训练是模型从大量数据中学习通用知识的初始阶段。这方面的顶级技术涉及模型学习的不同目标。最常见的是因果语言建模（CLM），其中模型预测句子中的下一个单词。另一种是掩码语言建模（MLM），其中模型填充文本中故意隐藏的单词。其他重要方法包括去噪目标，其中模型学习将损坏的输入恢复到其原始状态，对比学习，其中它学习区分相似和不相似的数据片段，以及下一句预测（NSP），其中它确定两个句子是否在逻辑上相互跟随。</h3><h3 id="微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括-LoRA（低秩适应），仅更新少量参数，以及其内存优化版本-QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。"><a href="#微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括-LoRA（低秩适应），仅更新少量参数，以及其内存优化版本-QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。" class="headerlink" title="微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括 LoRA（低秩适应），仅更新少量参数，以及其内存优化版本 QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。"></a>微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括 LoRA（低秩适应），仅更新少量参数，以及其内存优化版本 QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。</h3><h3 id="对齐和安全技术：对齐是确保-AI-模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导-AI-的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及-Kahneman-Tversky-优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。"><a href="#对齐和安全技术：对齐是确保-AI-模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导-AI-的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及-Kahneman-Tversky-优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。" class="headerlink" title="对齐和安全技术：对齐是确保 AI 模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导 AI 的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及 Kahneman-Tversky 优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。"></a>对齐和安全技术：对齐是确保 AI 模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的”奖励模型”指导 AI 的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及 Kahneman-Tversky 优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。</h3><h2 id="增强-AI-Agent-能力"><a href="#增强-AI-Agent-能力" class="headerlink" title="增强 AI Agent 能力"></a>增强 AI Agent 能力</h2><h3 id="AI-Agent-是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。"><a href="#AI-Agent-是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。" class="headerlink" title="AI Agent 是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。"></a>AI Agent 是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。</h3><h3 id="思维链（Chain-of-Thought-CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。"><a href="#思维链（Chain-of-Thought-CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。" class="headerlink" title="思维链（Chain of Thought, CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。"></a>思维链（Chain of Thought, CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种”大声思考”的过程通常会在复杂推理任务上产生更准确的结果。</h3><h3 id="思维树（Tree-of-Thoughts-ToT）：思维树是一种高级推理框架，其中-Agent-同时探索多个推理路径，就像树上的分支一样。它允许-Agent-自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。"><a href="#思维树（Tree-of-Thoughts-ToT）：思维树是一种高级推理框架，其中-Agent-同时探索多个推理路径，就像树上的分支一样。它允许-Agent-自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。" class="headerlink" title="思维树（Tree of Thoughts, ToT）：思维树是一种高级推理框架，其中 Agent 同时探索多个推理路径，就像树上的分支一样。它允许 Agent 自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。"></a>思维树（Tree of Thoughts, ToT）：思维树是一种高级推理框架，其中 Agent 同时探索多个推理路径，就像树上的分支一样。它允许 Agent 自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。</h3><h3 id="ReAct（推理与行动，Reason-and-Act）：ReAct-是一个-Agent-框架，在循环中结合推理和行动。Agent-首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。"><a href="#ReAct（推理与行动，Reason-and-Act）：ReAct-是一个-Agent-框架，在循环中结合推理和行动。Agent-首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。" class="headerlink" title="ReAct（推理与行动，Reason and Act）：ReAct 是一个 Agent 框架，在循环中结合推理和行动。Agent 首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。"></a>ReAct（推理与行动，Reason and Act）：ReAct 是一个 Agent 框架，在循环中结合推理和行动。Agent 首先”思考”要做什么，然后使用工具采取”行动”，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。</h3><h3 id="规划（Planning）：这是-Agent-将高级目标分解为一系列较小的、可管理的子任务的能力。然后-Agent-创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。"><a href="#规划（Planning）：这是-Agent-将高级目标分解为一系列较小的、可管理的子任务的能力。然后-Agent-创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。" class="headerlink" title="规划（Planning）：这是 Agent 将高级目标分解为一系列较小的、可管理的子任务的能力。然后 Agent 创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。"></a>规划（Planning）：这是 Agent 将高级目标分解为一系列较小的、可管理的子任务的能力。然后 Agent 创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。</h3><h3 id="深度研究（Deep-Research）：深度研究是指-Agent-通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许-Agent-建立对主题的全面理解，远超单个搜索查询。"><a href="#深度研究（Deep-Research）：深度研究是指-Agent-通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许-Agent-建立对主题的全面理解，远超单个搜索查询。" class="headerlink" title="深度研究（Deep Research）：深度研究是指 Agent 通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许 Agent 建立对主题的全面理解，远超单个搜索查询。"></a>深度研究（Deep Research）：深度研究是指 Agent 通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许 Agent 建立对主题的全面理解，远超单个搜索查询。</h3><h3 id="批评模型（Critique-Model）：批评模型是一种专门的-AI-模型，经过训练可以审查、评估和提供关于另一个-AI-模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。"><a href="#批评模型（Critique-Model）：批评模型是一种专门的-AI-模型，经过训练可以审查、评估和提供关于另一个-AI-模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。" class="headerlink" title="批评模型（Critique Model）：批评模型是一种专门的 AI 模型，经过训练可以审查、评估和提供关于另一个 AI 模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。"></a>批评模型（Critique Model）：批评模型是一种专门的 AI 模型，经过训练可以审查、评估和提供关于另一个 AI 模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。</h3><h2 id="术语索引"><a href="#术语索引" class="headerlink" title="术语索引"></a>术语索引</h2><p>此术语索引使用 Gemini Pro 2.5 生成。提示词和推理步骤包含在末尾，以展示 AI 辅助索引创建的效率优势并用于教育目的。</p>
+<p><strong>A</strong></p>
+<ul>
+<li>A&#x2F;B 测试 - 第 3 章：并行化</li>
+<li>行动选择 - 第 20 章：优先级排序</li>
+<li>适应 - 第 9 章：学习与适应</li>
+<li>自适应任务分配 - 第 16 章：资源感知优化</li>
+<li>自适应工具使用与选择 - 第 16 章：资源感知优化</li>
+<li>Agent - 什么使 AI 系统成为 Agent？</li>
+<li>Agent-计算机接口（ACIs）- 附录 B</li>
+<li>Agent 驱动型经济 - 什么使 AI 系统成为 Agent？</li>
+<li>Agent 作为工具 - 第 7 章：多 Agent 协作</li>
+<li>Agent 卡片 - 第 15 章：Agent 间通信（A2A）</li>
+<li>Agent Development Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多 Agent 协作，第 8 章：记忆管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C</li>
+<li>Agent 发现 - 第 15 章：Agent 间通信（A2A）</li>
+<li>Agent 轨迹 - 第 19 章：评估与监控</li>
+<li>Agentic 设计模式 - 引言</li>
+<li>Agentic RAG - 第 14 章：知识检索（RAG）</li>
+<li>Agentic 系统 - 引言</li>
+<li>AI 联合科学家 - 第 21 章：探索与发现</li>
+<li>对齐 - 术语表</li>
+<li>AlphaEvolve - 第 9 章：学习与适应</li>
+<li>类比 - 附录 A</li>
+<li>异常检测 - 第 19 章：评估与监控</li>
+<li>Anthropic’s Claude 4 系列 - 附录 B</li>
+<li>Anthropic’s Computer Use - 附录 B</li>
+<li>API 交互 - 第 10 章：模型上下文协议（MCP）</li>
+<li>工件 - 第 15 章：Agent 间通信（A2A）</li>
+<li>异步轮询 - 第 15 章：Agent 间通信（A2A）</li>
+<li>审计日志 - 第 15 章：Agent 间通信（A2A）</li>
+<li>自动化指标 - 第 19 章：评估与监控</li>
+<li>自动提示工程（APE）- 附录 A</li>
+<li>自主性 - 引言</li>
+<li>A2A（Agent-to-Agent）- 第 15 章：Agent 间通信（A2A）</li>
+</ul>
+<p><strong>B</strong></p>
+<ul>
+<li>行为约束 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>浏览器使用 - 附录 B</li>
+</ul>
+<p><strong>C</strong></p>
+<ul>
+<li>回调 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>因果语言建模（CLM）- 术语表</li>
+<li>辩论链（CoD）- 第 17 章：推理技术</li>
+<li>思维链（CoT）- 第 17 章：推理技术，附录 A</li>
+<li>聊天机器人 - 第 8 章：记忆管理</li>
+<li>ChatMessageHistory - 第 8 章：记忆管理</li>
+<li>检查点与回滚 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>分块 - 第 14 章：知识检索（RAG）</li>
+<li>清晰性和具体性 - 附录 A</li>
+<li>客户端 Agent - 第 15 章：Agent 间通信（A2A）</li>
+<li>代码生成 - 第 1 章：提示链，第 4 章：反思</li>
+<li>代码提示 - 附录 A</li>
+<li>CoD（辩论链）- 第 17 章：推理技术</li>
+<li>CoT（思维链）- 第 17 章：推理技术，附录 A</li>
+<li>协作 - 第 7 章：多 Agent 协作</li>
+<li>合规性 - 第 19 章：评估与监控</li>
+<li>简洁性 - 附录 A</li>
+<li>内容生成 - 第 1 章：提示链，第 4 章：反思</li>
+<li>上下文工程 - 第 1 章：提示链</li>
+<li>上下文窗口 - 术语表</li>
+<li>上下文修剪与摘要 - 第 16 章：资源感知优化</li>
+<li>上下文提示 - 附录 A</li>
+<li>承包商模型 - 第 19 章：评估与监控</li>
+<li>ConversationBufferMemory - 第 8 章：记忆管理</li>
+<li>对话式 Agent - 第 1 章：提示链，第 4 章：反思</li>
+<li>成本敏感探索 - 第 16 章：资源感知优化</li>
+<li>CrewAI - 第 3 章：并行化，第 5 章：工具使用，第 6 章：规划，第 7 章：多 Agent 协作，第 18 章：护栏&#x2F;安全模式，附录 C</li>
+<li>批评 Agent - 第 16 章：资源感知优化</li>
+<li>批评模型 - 术语表</li>
+<li>客户支持 - 第 13 章：人机协同</li>
+</ul>
+<p><strong>D</strong></p>
+<ul>
+<li>数据提取 - 第 1 章：提示链</li>
+<li>数据标注 - 第 13 章：人机协同</li>
+<li>数据库集成 - 第 10 章：模型上下文协议（MCP）</li>
+<li>DatabaseSessionService - 第 8 章：记忆管理</li>
+<li>辩论与共识 - 第 7 章：多 Agent 协作</li>
+<li>决策增强 - 第 13 章：人机协同</li>
+<li>分解 - 附录 A</li>
+<li>深度研究 - 第 6 章：规划，第 17 章：推理技术，术语表</li>
+<li>分隔符 - 附录 A</li>
+<li>去噪目标 - 术语表</li>
+<li>依赖关系 - 第 20 章：优先级排序</li>
+<li>扩散模型 - 术语表</li>
+<li>直接偏好优化（DPO）- 第 9 章：学习与适应</li>
+<li>可发现性 - 第 10 章：模型上下文协议（MCP）</li>
+<li>漂移检测 - 第 19 章：评估与监控</li>
+<li>动态模型切换 - 第 16 章：资源感知优化</li>
+<li>动态重新优先级排序 - 第 20 章：优先级排序</li>
+</ul>
+<p><strong>E</strong></p>
+<ul>
+<li>嵌入 - 第 14 章：知识检索（RAG）</li>
+<li>具身化 - 什么使 AI 系统成为 Agent？</li>
+<li>节能部署 - 第 16 章：资源感知优化</li>
+<li>情景记忆 - 第 8 章：记忆管理</li>
+<li>错误检测 - 第 12 章：异常处理与恢复</li>
+<li>错误处理 - 第 12 章：异常处理与恢复</li>
+<li>升级策略 - 第 13 章：人机协同</li>
+<li>评估 - 第 19 章：评估与监控</li>
+<li>异常处理 - 第 12 章：异常处理与恢复</li>
+<li>专家团队 - 第 7 章：多 Agent 协作</li>
+<li>探索与发现 - 第 21 章：探索与发现</li>
+<li>外部审核 API - 第 18 章：护栏&#x2F;安全模式</li>
+</ul>
+<p><strong>F</strong></p>
+<ul>
+<li>因子化认知 - 附录 A</li>
+<li>FastMCP - 第 10 章：模型上下文协议（MCP）</li>
+<li>容错 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>少样本学习 - 第 9 章：学习与适应</li>
+<li>少样本提示 - 附录 A</li>
+<li>微调 - 术语表</li>
+<li>正式化合同 - 第 19 章：评估与监控</li>
+<li>函数调用 - 第 5 章：工具使用，附录 A</li>
+</ul>
+<p><strong>G</strong></p>
+<ul>
+<li>Gemini Live - 附录 B</li>
+<li>Gems - 附录 A</li>
+<li>生成媒体编排 - 第 10 章：模型上下文协议（MCP）</li>
+<li>目标设定 - 第 11 章：目标设定与监控</li>
+<li>GoD（辩论图）- 第 17 章：推理技术</li>
+<li>Google Agent Development Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多 Agent 协作，第 8 章：内存管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C</li>
+<li>Google 联合科学家 - 第 21 章：探索与发现</li>
+<li>Google DeepResearch - 第 6 章：规划</li>
+<li>Google Project Mariner - 附录 B</li>
+<li>优雅降级 - 第 12 章：异常处理与恢复，第 16 章：资源感知优化</li>
+<li>辩论图（GoD）- 第 17 章：推理技术</li>
+<li>基础化 - 术语表</li>
+<li>护栏 - 第 18 章：护栏&#x2F;安全模式</li>
+</ul>
+<p><strong>H</strong></p>
+<ul>
+<li>Haystack - 附录 C</li>
+<li>层次化分解 - 第 19 章：评估与监控</li>
+<li>层次化结构 - 第 7 章：多 Agent 协作</li>
+<li>HITL（人机协同）- 第 13 章：人机协同</li>
+<li>人机协同（HITL）- 第 13 章：人机协同</li>
+<li>人在环路上 - 第 13 章：人机协同</li>
+<li>人类监督 - 第 13 章：人机协同，第 18 章：护栏&#x2F;安全模式</li>
+</ul>
+<p><strong>I</strong></p>
+<ul>
+<li>上下文学习 - 术语表</li>
+<li>InMemoryMemoryService - 第 8 章：记忆管理</li>
+<li>InMemorySessionService - 第 8 章：记忆管理</li>
+<li>输入验证&#x2F;清理 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>指令优先于约束 - 附录 A</li>
+<li>Agent 间通信（A2A）- 第 15 章：Agent 间通信（A2A）</li>
+<li>干预与纠正 - 第 13 章：人机协同</li>
+<li>IoT 设备控制 - 第 10 章：模型上下文协议（MCP）</li>
+<li>迭代提示&#x2F;细化 - 附录 A</li>
+</ul>
+<p><strong>J</strong></p>
+<ul>
+<li>越狱 - 第 18 章：护栏&#x2F;安全模式</li>
+</ul>
+<p><strong>K</strong></p>
+<ul>
+<li>Kahneman-Tversky 优化（KTO）- 术语表</li>
+<li>知识检索（RAG）- 第 14 章：知识检索（RAG）</li>
+</ul>
+<p><strong>L</strong></p>
+<ul>
+<li>LangChain - 第 1 章：提示链，第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 8 章：记忆管理，第 20 章：优先级排序，附录 C</li>
+<li>LangGraph - 第 1 章：提示链，第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 8 章：记忆管理，附录 C</li>
+<li>延迟监控 - 第 19 章：评估与监控</li>
+<li>学习资源分配策略 - 第 16 章：资源感知优化</li>
+<li>学习与适应 - 第 9 章：学习与适应</li>
+<li>LLM 作为裁判 - 第 19 章：评估与监控</li>
+<li>LlamaIndex - 附录 C</li>
+<li>LoRA（低秩适应）- 术语表</li>
+<li>低秩适应（LoRA）- 术语表</li>
+</ul>
+<p><strong>M</strong></p>
+<ul>
+<li>Mamba - 术语表</li>
+<li>掩码语言建模（MLM）- 术语表</li>
+<li>MASS（多 Agent 系统搜索）- 第 17 章：推理技术</li>
+<li>MCP（模型上下文协议）- 第 10 章：模型上下文协议（MCP）</li>
+<li>记忆管理 - 第 8 章：记忆管理</li>
+<li>基于内存的学习 - 第 9 章：学习与适应</li>
+<li>MetaGPT - 附录 C</li>
+<li>Microsoft AutoGen - 附录 C</li>
+<li>专家混合（MoE）- 术语表</li>
+<li>模型上下文协议（MCP）- 第 10 章：模型上下文协议（MCP）</li>
+<li>模块化 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>监控 - 第 11 章：目标设定与监控，第 19 章：评估与监控</li>
+<li>多 Agent 协作 - 第 7 章：多 Agent 协作</li>
+<li>多 Agent 系统搜索（MASS）- 第 17 章：推理技术</li>
+<li>多模态性 - 术语表</li>
+<li>多模态提示 - 附录 A</li>
+</ul>
+<p><strong>N</strong></p>
+<ul>
+<li>负面示例 - 附录 A</li>
+<li>下一句预测（NSP）- 术语表</li>
+</ul>
+<p><strong>O</strong></p>
+<ul>
+<li>可观察性 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>单样本提示 - 附录 A</li>
+<li>在线学习 - 第 9 章：学习与适应</li>
+<li>OpenAI Deep Research API - 第 6 章：规划</li>
+<li>OpenEvolve - 第 9 章：学习与适应</li>
+<li>OpenRouter - 第 16 章：资源感知优化</li>
+<li>输出过滤&#x2F;后处理 - 第 18 章：护栏&#x2F;安全模式</li>
+</ul>
+<p><strong>P</strong></p>
+<ul>
+<li>PAL（程序辅助语言模型）- 第 17 章：推理技术</li>
+<li>并行化 - 第 3 章：并行化</li>
+<li>并行化与分布式计算感知 - 第 16 章：资源感知优化</li>
+<li>参数高效微调（PEFT）- 术语表</li>
+<li>PEFT（参数高效微调）- 术语表</li>
+<li>性能跟踪 - 第 19 章：评估与监控</li>
+<li>角色模式 - 附录 A</li>
+<li>个性化 - 什么使 AI 系统成为 Agent？</li>
+<li>规划 - 第 6 章：规划，术语表</li>
+<li>优先级排序 - 第 20 章：优先级排序</li>
+<li>最小权限原则 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>主动资源预测 - 第 16 章：资源感知优化</li>
+<li>过程记忆 - 第 8 章：记忆管理</li>
+<li>程序辅助语言模型（PAL）- 第 17 章：推理技术</li>
+<li>Project Astra - 附录 B</li>
+<li>提示词 - 术语表</li>
+<li>提示链 - 第 1 章：提示链</li>
+<li>提示工程 - 附录 A</li>
+<li>近端策略优化（PPO）- 第 9 章：学习与适应</li>
+<li>推送通知 - 第 15 章：Agent 间通信（A2A）</li>
+</ul>
+<p><strong>Q</strong></p>
+<ul>
+<li>QLoRA - 术语表</li>
+<li>质量导向迭代执行 - 第 19 章：评估与监控</li>
+</ul>
+<p><strong>R</strong></p>
+<ul>
+<li>RAG（检索增强生成）- 第 8 章：内存管理，第 14 章：知识检索（RAG），附录 A</li>
+<li>ReAct（推理与行动）- 第 17 章：推理技术，附录 A，术语表</li>
+<li>推理 - 第 17 章：推理技术</li>
+<li>基于推理的信息提取 - 第 10 章：模型上下文协议（MCP）</li>
+<li>恢复 - 第 12 章：异常处理与恢复</li>
+<li>循环神经网络（RNN）- 术语表</li>
+<li>反思 - 第 4 章：反思</li>
+<li>强化学习 - 第 9 章：学习与适应</li>
+<li>基于人类反馈的强化学习（RLHF）- 术语表</li>
+<li>可验证奖励的强化学习（RLVR）- 第 17 章：推理技术</li>
+<li>远程 Agent - 第 15 章：Agent 间通信（A2A）</li>
+<li>请求&#x2F;响应（轮询）- 第 15 章：Agent 间通信（A2A）</li>
+<li>资源感知优化 - 第 16 章：资源感知优化</li>
+<li>检索增强生成（RAG）- 第 8 章：内存管理，第 14 章：知识检索（RAG），附录 A</li>
+<li>RLHF（基于人类反馈的强化学习）- 术语表</li>
+<li>RLVR（可验证奖励的强化学习）- 第 17 章：推理技术</li>
+<li>RNN（循环神经网络）- 术语表</li>
+<li>角色提示 - 附录 A</li>
+<li>路由器 Agent - 第 16 章：资源感知优化</li>
+<li>路由 - 第 2 章：路由</li>
+</ul>
+<p><strong>S</strong></p>
+<ul>
+<li>安全 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>扩展推理法则 - 第 17 章：推理技术</li>
+<li>调度 - 第 20 章：优先级排序</li>
+<li>自一致性 - 附录 A</li>
+<li>自我纠正 - 第 4 章：反思，第 17 章：推理技术</li>
+<li>自我改进编码 Agent（SICA）- 第 9 章：学习与适应</li>
+<li>自我细化 - 第 17 章：推理技术</li>
+<li>Semantic Kernel - 附录 C</li>
+<li>语义记忆 - 第 8 章：记忆管理</li>
+<li>语义相似性 - 第 14 章：知识检索（RAG）</li>
+<li>关注点分离 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>顺序交接 - 第 7 章：多 Agent 协作</li>
+<li>服务器发送事件（SSE）- 第 15 章：Agent 间通信（A2A）</li>
+<li>会话 - 第 8 章：内存管理</li>
+<li>SICA（自我改进编码 Agent）- 第 9 章：学习与适应</li>
+<li>SMART 目标 - 第 11 章：目标设定与监控</li>
+<li>状态 - 第 8 章：内存管理</li>
+<li>状态回滚 - 第 12 章：异常处理与恢复</li>
+<li>后退提示 - 附录 A</li>
+<li>流式更新 - 第 15 章：Agent 间通信（A2A）</li>
+<li>结构化日志 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>结构化输出 - 第 1 章：提示链，附录 A</li>
+<li>SuperAGI - 附录 C</li>
+<li>监督微调（SFT）- 术语表</li>
+<li>监督学习 - 第 9 章：学习与适应</li>
+<li>系统提示 - 附录 A</li>
+</ul>
+<p><strong>T</strong></p>
+<ul>
+<li>任务评估 - 第 20 章：优先级排序</li>
+<li>文本相似性 - 第 14 章：知识检索（RAG）</li>
+<li>Token 使用 - 第 19 章：评估与监控</li>
+<li>工具使用 - 第 5 章：工具使用，附录 A</li>
+<li>工具使用限制 - 第 18 章：护栏&#x2F;安全模式</li>
+<li>ToT（思维树）- 第 17 章：推理技术，附录 A，术语表</li>
+<li>Transformers - 术语表</li>
+<li>思维树（ToT）- 第 17 章：推理技术，附录 A，术语表</li>
+</ul>
+<p><strong>U</strong></p>
+<ul>
+<li>无监督学习 - 第 9 章：学习与适应</li>
+<li>用户角色 - 附录 A</li>
+</ul>
+<p><strong>V</strong></p>
+<ul>
+<li>验证 - 第 3 章：并行化</li>
+<li>向量搜索 - 第 14 章：知识检索（RAG）</li>
+<li>VertexAiRagMemoryService - 第 8 章：内存管理</li>
+<li>VertexAiSessionService - 第 8 章：内存管理</li>
+<li>Vibe 编码 - 附录 B</li>
+<li>视觉感知 - 附录 B</li>
+</ul>
+<p><strong>W</strong></p>
+<ul>
+<li>Webhooks - 第 15 章：Agent 间通信（A2A）</li>
+</ul>
+<p><strong>Z</strong></p>
+<ul>
+<li>零样本学习 - 第 9 章：学习与适应</li>
+<li>零样本提示 - 附录 A</li>
+</ul>
+<h2 id="提示词"><a href="#提示词" class="headerlink" title="提示词"></a>提示词</h2><p>以下是用于创建此术语索引的提示词。</p>
+<table>
+<thead>
+<tr>
+<th align="left"><em>请阅读 <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/edit?tab=t.0">https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/edit?tab=t.0</a> 及第一页中的所有相关文档。请提取各章节的所有标题并打印出来。然后处理所有独立章节的内容，创建一个用于出版的详细索引，包含单词或短语列表（”标题”）以及指向文档或文档集合中相关有用材料位置的指针（”定位符”）。我不需要示例索引，而是要求完整的索引，包含 100 个索引术语</em></th>
+</tr>
+</thead>
+</table>
+<h2 id="Gemini-2-5：推理步骤"><a href="#Gemini-2-5：推理步骤" class="headerlink" title="Gemini 2.5：推理步骤"></a>Gemini 2.5：推理步骤</h2><p><strong>开始创建索引</strong></p>
+<p>我已启动索引创建流程，首先阅读了提供的 Google 文档。目前，我专注于理解用户需求：提取章节标题以构建详细索引。正在仔细审查文档内容，寻找能够标识章节分隔的清晰结构元素，期望能够识别出一致的格式模式或关键词来指导索引过程。</p>
+<p><strong>定义索引提取流程</strong></p>
+<p>现在已完全投入到此任务中。已将用户请求分解为可执行的步骤：初始阶段使用 Workspaces 访问主 Google 文档，接着解析文档以定位并检索相关文档（同样使用 Workspaces 工具），最后从所有文档中提取章节标题并创建全面索引。已规划完整的详细流程。</p>
+<p><strong>完善提取策略</strong></p>
+<p>用户指令明确：阅读 Google 文档及其相关文档，构建章节标题的详细索引。已制定多步骤计划：Workspaces 首先访问主文档，然后解析并检索相关文档，同样使用 Workspaces。当前专注于提取标题并使用所需术语构建详细索引，优先确保准确性以满足用户对综合索引的特定要求。</p>
+<p><strong>1. 确定用户意图</strong></p>
+<p>已明确用户需求：获取来自 Google 文档及相关文档的章节标题列表和综合索引。现在需要确定最有效的提取和索引方法，正在探索潜在的 API 功能来简化此任务，并评估处理不同文档结构的最佳策略。</p>
+<p><strong>3. 考虑工具使用</strong></p>
+<p>已使用正则表达式从主文档中提取了章节 URL。现在准备利用 Workspaces 检索各章节的实际内容。一旦获得各章节文本，将立即开始索引工作。</p>
+<p><strong>访问章节内容</strong></p>
+<p>已成功从主文档中识别出各章节 URL，现在可使用 Workspaces。下一步是从这些 URL 检索内容，以便生成索引。专注于效率优化，旨在快速处理这些信息。</p>
+<p><strong>获取章节内容</strong></p>
+<p>已成功从主文档中识别出章节 URL，准备使用 Workspaces。计划包括提取这些 URL、批量处理调用以提高效率，然后处理检索内容以创建所需索引。这确保捕获所有相关信息，为全面准确的结果奠定基础。</p>
+<p><strong>启动 URL 检索</strong></p>
+<p>现已成功从主文档中提取章节 URL。目前正在设置对 Workspaces 工具的调用，准备获取各章节内容。目标是获取索引所需的文本内容，进而促进创建包含至少 100 个术语的索引。</p>
+<p><strong>启动章节提取</strong></p>
+<p>已成功从主文档中识别并提取章节 URL（如上所列）。现在继续为每个 URL 使用 Workspaces 以获取章节内容。目标是获取索引所需的文本，进而促进创建包含至少 100 个术语的索引。已开始检索相关信息。</p>
+<p><strong>编排章节检索</strong></p>
+<p>已提取章节 URL 并发起对 Workspaces 的调用。目前正在检索各章节内容。为确保流程顺畅，正在进行批量调用处理以防止速率限制问题。这应能高效编译索引所需文本。</p>
+<p><strong>解码用户请求</strong></p>
+<p>已明确用户需求：两个主要交付成果——从 Google 文档提取的章节标题综合列表，以及包含至少一百个关键术语的详细索引。提取标题的过程相对直接，而策划索引则需要更细致的分析工作。</p>
+<p><strong>提取标题和索引</strong></p>
+<p>已成功识别用户需求：从提供文档中提取章节标题并编制综合索引。已获取 31 个 Google 文档的内容，包括主文档及其各章节。确认无需额外工具。计划包含两个步骤：首先从文档文件名中提取章节标题，其次精心处理文本内容，使用关键术语和章节定位符构建索引。</p>
+<p><strong>制定提取计划</strong></p>
+<p>已完善处理用户请求的方法。现制定精确计划：首先从 31 个已获取文档的文件名中编制章节标题，其次（更复杂的部分）精心分析内容以创建超过 100 个条目的综合、按字母顺序排列的索引。已最终确定提取和索引策略，现在可以开始执行。</p>
+<p><strong>制定提取策略</strong></p>
+<p>方法已明确定义：从 31 个已获取文档的文件名中编制章节标题，随后精心分析内容以构建按字母顺序组织、超过 100 个条目的索引。已最终确定提取和索引策略，现在可以开始实施。用户获取详细索引的目标——涵盖 Agentic 设计模式系列中各个章节和附录的内容——现已触手可及。将专注于提供全面响应，超越简单的示例索引。</p>
+<p><strong>定义方法</strong></p>
+<p>已明确用户需求：从文档文件名中提取章节标题，随后精心创建超过 100 个条目的索引，按字母顺序排列并注明章节位置。准备开始索引和提取过程。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Index%20of%20Terms/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-README/">Agentic Design Patterns - README</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-README/" class="archive-article-date">
+  	<time datetime="2025-09-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>为方便阅读而翻译此系列文章，从不谋取个人利益。并遵从开源协议。</strong></p>
+<p><strong>如有侵权，请即刻告知</strong></p>
+<p><strong>内容来源<a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/preview?ref=ppc.land&tab=t.0#heading=h.pxcur8v2qagu">Agentic Design Patterns</a></strong></p>
+<p><strong>内容来源<a target="_blank" rel="noopener" href="https://github.com/xindoo/agentic-design-patterns">Agentic Design Patterns</a></strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-README/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 9 月 22 日 - 2025年 9 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2022%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2025年 9 月 22 日 - 2025年 9 月 26 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2022%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-09-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周的在工作节奏上开始使用番茄工作法来开展各项工作任务。效果不错，工作效率和注意力时间有所提升，但是整体上效果还有很大的提升和改进空间。<ol>
+<li>现在 AI 时代开发方式和工作方式多是多任务并行的情况，这类任务是不是适合番茄工作法呢。在周一周二的日志增强任务中，并行开启4个Claude code 客户端，也就是同时进行个code repo的代码修改，就需要同时关注这4个客户是否有确认、Review、答疑或者启动下一个code repo。这类任务以目标导向似乎更合适，但是反思后又会发现，如果是每25分钟停下暂停这个个工作，给于有一些梳理和总结，也是很合适的节奏，只要这个工作内部保证目标明确，产出可以量化，就可以使用这中工作方式。</li>
+<li>类似周报、日报的任务挺适合用番茄工作法的，集中精力在一个工作周期内完成，这个目标并不是很明确，如要写多字、要写的都好，其实很难量化，但是如果给定的25分钟内完成，这其实量化了这个任务，其目标就简化为在25内完成一个篇日报的编写并且越有质量越好。</li>
+<li>番茄工作法给我最大的帮助是关注当下的任务，养成习惯把任务拆分成25内可以完成和量化的目标和结果，我觉得这也体现了微习惯的内在思想，关注当下的每个小任务的完成，就能避免忙忙碌碌一天，但一总结好像啥也没干的那种感觉</li>
 </ol>
 </li>
 </ul>
@@ -291,7 +1080,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2031%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2022%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -321,20 +1110,165 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 8 月 18 日 - 2025年 8 月 24 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-番茄工作法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2018%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2024%20%E6%97%A5/">工作周报2025年 8 月 18 日 - 2025年 8 月 24 日</a>
+      <a class="article-title" href="/2025/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/">番茄工作法</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2018%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2024%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-08-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-24</time>
+        <a href="/2025/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2025-09-25T15:42:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-养娃日志4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%974/">养娃日志（4）</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%974/" class="archive-article-date">
+  	<time datetime="2025-09-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>孩子经常对我们说，我要成为科学家。我们要相信孩子，他一定能成为科学家。</p>
+<p>科学家与其说是一个理想， 不如说一种职业。从小就灌输一种长大后就从事某种职业的观念，似乎是不太合适的。</p>
+<p>但是我不能对孩子说不行，有目标总比没目标强，好目标总比差目标靠谱一些。</p>
+<p>不过依我说，我希望我的孩子以后能成为一个有故事的人，确切的说，成为一个有故事的男人。</p>
+<p>有啥样的故事呢？他能讲什么样故事呢？人生应该是怎样的呢？每个人需要讲述自己的故事，或精彩，或平凡，或波澜壮阔，或平静如水。</p>
+<p>我喜欢有故事的人，我也喜欢听他们的故事。有故事的男人，有故事的女人，都会让我着迷。</p>
+<p>物以类聚人以群分，我想我也是有故事的人，我一直在向人们讲述我自己的故事，只是我希望我的故事是波澜壮阔的，是人们能争相传颂的。</p>
+<p>虽然愿望的美丽并不能打动现实的冷酷。不过我一直坚信，只要是真实的、独特的故事一定会有人愿意听。有时候，你最爱的那个人，和最爱你的人，不一定是最温柔，不一定是最漂亮的，不一定是最英俊的，但是应该是最愿意听你讲故事的。</p>
+<p>纵观我们的历史、文化、哲学、科学、艺术又有哪一个不是在讲述人类共同的故事呢？</p>
+<p>我的娃，等待你讲述自己的精彩故事，我愿意做一位最忠诚的听众。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">生活 养娃</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%974/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 9 月 15 日 - 2025年 9 月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2015%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2019%20%E6%97%A5/">工作周报2025年 9 月 15 日 - 2025年 9 月 19 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2015%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-09-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-19</time>
 </a>
         
       </header>
@@ -342,11 +1276,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>今后工作需要深入研究提示词工程<ol>
-<li>本周的需要工作都是编写Prompt，也是试用了多个Claude code 方案，如claude-flow,BMAD-METHOD,Claude-Command-Suite 等，各有其用，各有优点和缺点</li>
-<li>以前需要多阅读源码，分析技术和设计框架，现在需要多研究这类提示词工程，需要深入研究设计思想，工程方法论，产品方法论</li>
-<li>我也发现大模型的能力边界需要深度挖掘，需要更恰当的提示词方案。目前阶段的大模型能力已经足够强大，如何设计出更优秀的功能，需要有更精深的提示词工程能力</li>
-<li>我的这一段时间的经验是需要系统的学习提示词工程，需要反复的研究和思考，总体来说，比学习编程需要更深和更广的知识和能力要求</li>
+<li>本周的工作任务比较细小繁多一些，多个开发任务和开发准备工作会同时进行，这种情况很可能是未来工作中的常态。这种情况下更要做好任务优先级安排和任务组合的设计。<ol>
+<li>我的最近的经验是开发任务和非开发任务组合可以一起做。比如完成开发任务Prompt的设计编写后，Claude在执行任务的同时，可以并行进行其他项目的技术调研，bug复现与分析，需求理解或者项目沟通等。</li>
+<li>有意识的开发和使用工作工具。以往工作中会遇到很繁琐的事项，想用工具处理，但是工具的开发成本比较高，两者权衡，往往采用自己动手完成的方式。现在AI编程好比是一个身边的工厂，你需要什么工具，只要说明功能，下订单就行。因为工具的开发和其他任务是并行的，这个成本非常低，但是因为有了工具，不仅提高了效率，也让这个工作的本身通过工具得到了标准化和沉淀。</li>
+<li>最近看到一个关于过马路的短视频，视频展示的一家日本工厂里工人过厂内马路路口的标准动作，每一个工人都在路口右看，左看，前看，并结合手势动作。我观察到该视频评论区里有非常多的讨论，很多人都是惊讶于这种近乎僵硬的标准执行动作，但是了解过日本工业史的人都知道，日本制造业的成功离不开这种极致的标准动作精神。有名的日本丰田八步法的理念就是持续优化标准动作。持续优化沉淀标准化的动作，非常值得我们学习和借鉴，虽然有些标准化动作过于僵硬，但是在本职上保证任何任务的结果都不会太坏，权衡好灵活性和标准化也许是我们一直要努力和探索的。</li>
 </ol>
 </li>
 </ul>
@@ -373,7 +1306,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2018%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2024%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2015%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -403,42 +1336,34 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 8 月 11 日 - 2025年 8 月 17 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-大模型技术学习（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2011%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2017%20%E6%97%A5/">工作周报2025年 8 月 11 日 - 2025年 8 月 17 日</a>
+      <a class="article-title" href="/2025/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">大模型技术学习（一）</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2011%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2017%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-17</time>
+        <a href="/2025/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2025-09-18T14:12:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>AI编程在工作上的实践与思考<ol>
-<li>Sentry-agent 实现了基于AI分析的Sentry 问题的诊断排除任务分配的整个任务流程<ul>
-<li>这个是基于工作流的agentic 应用，通过AI的推理分析把Sentry，Anasa 的数据整合到了一起，同时也把很多很多繁琐的人工工作自动化了，从最近的实践看确实提高了问题的处理能力。</li>
-<li>原来需要挨个Sentry问题排查，做出优先级和是否处理的判断，手动的寻找线索，手动利用大模型或者搜索工具，每个问题的处理至少要10分钟，按照排查Top 50个问题看看，就要大概1天的时间，现在每问题的排查时间缩短到1.5分钟左右，至少在问题排查上的时间效率就提升了6倍左右，同时工时提升带来的人力价值的提升。</li>
-<li>我一直记得东朔老师的一个工作理念：把一项工作做到无比好，以后就再也不要做了。在我看来，Agentic在应用上的实践就是实现了这个理念。</li>
-<li>下一步增加search agent, code fix agent 并打通 MCP ，可以通过大模型灵活调用各类MCP的工具，Sentry的问题排查将可以实习智能化和自动化。</li>
+        <h1 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h1><h2 id="阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。"><a href="#阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。" class="headerlink" title="阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。"></a>阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。</h2><ul>
+<li>掌握其数据数据结构</li>
+<li>精通软件工程基本原理和基本实践</li>
 </ul>
-</li>
-<li>uShow-admin 实现了 uShow 数据配置的自动化<ul>
-<li>本周用2天时间实现了这个平台的开发，如果没有AI编程的帮助，这个工具估计要开发至少7个工作日，整个开发效率提升了3.5倍</li>
-<li>同时这类工具在很大程度上让很多琐碎的工作流程化，集成化，规范化，让整个的工作效率和工作质量都得到了有效提升。</li>
-</ul>
-</li>
-</ol>
-</li>
+<h2 id="掌握了这些数据结构，基本上就能提高阅读速度和理解速度。"><a href="#掌握了这些数据结构，基本上就能提高阅读速度和理解速度。" class="headerlink" title="掌握了这些数据结构，基本上就能提高阅读速度和理解速度。"></a>掌握了这些数据结构，基本上就能提高阅读速度和理解速度。</h2><ul>
+<li>提升阅读速度</li>
+<li>深入思考设计要点</li>
+<li>完整理解要解决的问题是什么</li>
 </ul>
 
       
@@ -448,492 +1373,11 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2011%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2017%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 8 月 4 日 - 2025年 8 月 10 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%204%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2010%20%E6%97%A5/">工作周报2025年 8 月 4 日 - 2025年 8 月 10 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%204%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2010%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-08-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Sentry-Agent 开发和使用的一点思考<ol>
-<li>从应用来看，还有不少需要完善的细节，比如异常堆栈信息不足，线上是压缩代码等情况，导致AI分析的有效性不高，只能给出比较粗略的分析和可能的问题分析</li>
-<li>根因分析是后续这个Agent系统的关键点，现在很多Sentry的解决点在是否能够有比较清晰的根因分析图，假设根因分析有效，这个问题是需要自动解决，还是人工解决等这类的AI决策有效性会大大提高</li>
-<li>从成本上看，目前100个Sentry问题的排查需要大约25美元（gpt-4o），一个问题大约需要0.25美元，后面加上代码排查，根因分析（0.5美元），各类MCP工具的调用（0.5美元），结合现在的token使用情况，预估一个问题的解决上线能到1 ~ 1.5 美元，如果问题能到得到有效解决，这个就值得做。</li>
-<li>这周对Sentry-Agent 的开发较少，一直再思考和编写设计的prompt，现在写代码最重要的是对问题的深刻理解，并把任务拆分成专业有效的prompt，开发习惯已经完全转变了。</li>
-</ol>
-</li>
-<li>很荣幸参加冉冉的十周年入职庆祝会，作为共事多年老伙计，钦佩他低调内敛但丰盈通透的个性和静心但不含糊的做事心气，从他身上我学习到了少说话多做事的一种行事风格，也学习到了他身上那种不争不抢但是专业要求极高的职业态度。也感谢东朔老师和公司为我们提供了一个海纳百川的坚实平台，让具有不同个性的人们成为伙伴，彼此成就，共筑UMU大品牌。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%204%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2010%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 7 月 28 日 - 2025年 8 月 3 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2028%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%203%20%E6%97%A5/">工作周报2025年 7 月 28 日 - 2025年 8 月 3 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2028%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%203%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-08-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p><strong>脱敏处理</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2028%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-定居天津的那些日子（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%AE%9A%E5%B1%85%E5%A4%A9%E6%B4%A5%E7%9A%84%E9%82%A3%E4%BA%9B%E6%97%A5%E5%AD%90%EF%BC%88%E4%BA%8C%EF%BC%89/">定居天津的那些日子（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%AE%9A%E5%B1%85%E5%A4%A9%E6%B4%A5%E7%9A%84%E9%82%A3%E4%BA%9B%E6%97%A5%E5%AD%90%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2025-07-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于是否装修，找哪家装修公司，这么装修，花了近一个月才确定下来。既来之，则安之，居住条件再提高一点，生活品质再提高一点，这是奋斗的初心。本着这个初心，很多决定就很明确了，房子要装，还要用能用的钱装的更好些。</p>
-<p>对装修没有任何经验，所以就找了一家自己信的过的小公司，我内心说，好坏就是她了。</p>
-<p>这个月硬装总算的搞的差不多了，但是还有很多电器没有买， 掐指一算，又是一笔不少的开支。</p>
-<p>于是，我们的口号是，搞钱，搞钱，搞钱。我们的目标是搞钱，搞钱，搞钱。生活不易，当如是。明知庸俗，明知不可为，偏要挣扎的奔赴目标。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定居天津的那些日子</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%AE%9A%E5%B1%85%E5%A4%A9%E6%B4%A5%E7%9A%84%E9%82%A3%E4%BA%9B%E6%97%A5%E5%AD%90%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-车轮上的蜉蝣（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E8%BD%A6%E8%BD%AE%E4%B8%8A%E7%9A%84%E8%9C%89%E8%9D%A3%EF%BC%88%E4%B8%80%EF%BC%89/">车轮上的蜉蝣（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E8%BD%A6%E8%BD%AE%E4%B8%8A%E7%9A%84%E8%9C%89%E8%9D%A3%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2025-07-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>寄蜉蝣于天地，渺沧海之一粟。人生就像蜉蝣，对自驾游行就是蜉蝣，在某地出现数小时，然后消失，对于常住某地的人来说，自驾来此地的就是“蜉蝣”。</p>
-<p>最近几个月，外出承德，张北，塞罕坝等地，共行程2000公里左右，其实没咋用心玩，用心看，都在路上了。 路途风景固然值得一看，毕竟饱了眼福，亏了精神享受。</p>
-<p>旅游如果只是看看景色，我觉得大可不必非到在现场。旅游如果只是放松心情，我觉得桑楠洗浴，唱歌看妞更适合。旅游的目的用该是灵魂的涤荡，对顿悟的追寻，对未知的实地探寻，看似渺茫无物，实则正中心的。那是一种苦行憎式的旅行。</p>
-<p>有些地方你去了，但其实你没有去，有些地方你没有去，但确实去过了。</p>
-<p>一路平安！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自驾，外出</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E8%BD%A6%E8%BD%AE%E4%B8%8A%E7%9A%84%E8%9C%89%E8%9D%A3%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 7 月 21 日 - 2025年 7 月 27 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2021%20%E6%97%A5%20-%202025%E5%B9%B4%207%20%E6%9C%88%2027%20%E6%97%A5/">工作周报2025年 7 月 21 日 - 2025年 7 月 27 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2021%20%E6%97%A5%20-%202025%E5%B9%B4%207%20%E6%9C%88%2027%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-07-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>在开发Sentry 巡检Agent的过程中，我觉得最重要的是构思和设计。在以前的开发项目中，从产品idea到功能上线，只少要4周左右，其中有2周左右要留给研发测试及上线等工程工作，但是从商业角度出发，最重要的PMF这个阶段的重要工作产品设计的主要工作也就2周左右。随着vibe coding各类AI 编程的出现，可以保证在项目周期不变的情况下，增加了产品设计的时候，或者缩短了整个项目时间，比如原来4-3周的项目可以缩短到2周-1.5周完成。这种节奏特别适合MVP类的产品开发。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2021%20%E6%97%A5%20-%202025%E5%B9%B4%207%20%E6%9C%88%2027%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 7 月 14 日 - 2025年 7 月 20 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%207%20%E6%9C%88%2020%20%E6%97%A5/">工作周报2025年 7 月 14 日 - 2025年 7 月 20 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%207%20%E6%9C%88%2020%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周每天抽一些时间对AI Tools的进行一个比较全面的学习和研究，包括对一些特别的Prompt做一些测试和有效性验证，当时主要从用户的角度来学习和研究的，对部分问题我自己也对照着Dify尝试着走一遍，同时也有一些自己的思考。<ol>
-<li>从单类的问题解决上、对话流程编排和解决框架上还有不少亮点的。我的思考是这样的，解决问题的框架面向的人群，面向的问题不同，带来的价值也是不同的。现有目标可能不是解决高认知高难度超复杂的问题。但是所有的问题都值得用AI解决以创造更高的价值，所有的人需要AI提升自己的价值，不能用我们个人的所知所见来理解这个市场。</li>
-<li>最近在排查Sentry问题是，我注意到一门课，是新疆那边的一个县里的举办的假期老师培训，主要是讲大模型通识课，从他们提交的课堂笔记的照片来看，都是基本的大模型理论课，从这个场景出发，我认为AI Tools就非常适合这个场景。</li>
-<li>另外的体会是我的老家有很多木板厂，我的很多兄弟子侄也都在其中工作，他们中很多没有上过大学， 但是他们也从事销售工作，全国各地的出差卖木材，但他们长期在市县域经济圈工作， 也会有各种各样的销售上的问题 ，他们可能有比较强的销售综合能力，但是大都是利用行业经验和人脉资源，比如你问他如何挖掘新需求，他可能说不太清楚，但如果使用AI Tools这种针对性比较强的AI助手，我想一定会就能够帮助到他们，据我所知现在也有一大批这个人群在使用UMU。</li>
-<li>随着使用量的增加，我想我们遇到的问题越来越多，在持续的迭代中，我们对这类问题的理解和解决的能力越打磨越有效，就会慢慢的迭代出类似Agent这样的着眼于结果的有效工具。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%207%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%207%20%E6%9C%88%2020%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -965,7 +1409,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -1452,6 +1896,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人工智能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Claude Code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内容检测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">水印技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学术诚信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AI-Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Self-Evolution</a>
               </li>
             
             <div class="clearfix"></div>

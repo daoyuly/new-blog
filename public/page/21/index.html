@@ -151,27 +151,27 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-工作周报2023年 12 月 4 日 - 2023年 12 月 10 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 2 月 26 日 - 2024年 3 月 3 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2010%20%E6%97%A5/">工作周报2023年 12 月 4 日 - 2023年 12 月 10 日</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%203%20%E6%9C%88%203%20%E6%97%A5/">工作周报2024年 2 月 26 日 - 2024年 3 月 3 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2010%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-12-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-10</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%203%20%E6%9C%88%203%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-03-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>持续完善Chatbot项目的工程侧实施过程。 诺和诺德东南区Chatbot的项目做的不太顺利，最初的计划是按照老数据升级到新数据， 在UCS-v2版本上部署，基础数据准备好了，我们却低估了数据切换这个事的难度和时间。在不同的数据结构上切换数据有很多细节确实主要，@寅涛在这个该过程中做了很多细致的工作，比如勋章，积分，老的库表结构没有记录那么多的信息，需要老数据的拆分填充在现有的数据结构中。这个项目要改进的点有四个：<br>（1）虽然现在Chatbot的部署上线比较快，但是还是不能大意的预估时间， 这个项目和客户推迟了一次时间，那时就应该想到立即解决客户的需求的问题，而不是依赖内部的UCS的切换；<br>（2）早做准备，全面计划完备，虽然对脚本做了Review，上线后却发现客户提供的账号没有Chatbot权限，关卡的设置没有确认， 当天晚上又和年兰沟通确认，耽误了一些时间；<br>（3）代码的历史还是需要再深入理解一些，最后在老脚本上写的SQL脚本，我不得不把那个库表结构彻底的整体分析完整了，才完成脚本的编写，如果这个之前有了解，不至于当晚做的很匆忙。<br>（4）随着经验的积累和对Go代码，Python代码的熟悉，基于目前版本的Chatbot部署的自动化的思路也逐渐清晰，有了更深入的把控。<br>数据切换会让Chatbot彻底甩掉老版本兼容的这个包袱<br>建设和完善uShow实施部署的Master Doc。 AXA Life uShow的项目整个跟进下来，我基本掌握了整个部署和实施的基本过程，也在逐渐的建立和完善Master Doc，另外随着对uShow过程和Chatbot的理解的理解的深入，对整个架构体系有了一些初步的认知和理解，并已经开始独立承担具体AI业务的开发，思维模式也逐渐的切换回到了服务端开发角色，对与安全，性能，日志，监控，稳定性更加敏感。前端功能在架构和设计上更侧重扩展性，敏捷性和具象性，而服务端更侧重鲁棒性，可靠性和适度的抽象性，特别是AI类服务端开发对于性能，模型选择有更多的要求，比如HuggingFace有数万的模型可供选择，如何选择迭代最优的模型，如何评测模型效果，如何设计最优的模型组合，还都要不断的实践和学习。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>继续上周的脚步生成器的开发，本周有一半的时间用在了脚本生成的开发和完善了。测试的典型场景准备的4套，为了验证，json格式和yam格式都要写了一份。典型场景一般是多余2轮对话，所以上周设计的算法实现上问题不大，本周测试上数据比较极端，2轮对话都是自动回复，这个其实在真实的用户场景中不会出现，但是用户很可能会验证脚本编辑器和Chatbot的产品能力，可能会这么写，所以针对这些场景做了算法上的调整。之前的算法的思路是Flow，对话流的形式，把Bot和Human个字的对话分别放到队列了，因为所有的对话都是围绕人的对话进行的，所以转译的过程就是基于人类对话进行，简单说就是一个循环，Bot一句，Human一句，加上跳转结构，就形成了转译后的对话格式。这种算法比较简单，而且需要固定的对话写法，这种算法我用在了基于google sheet的脚步生成工具中，还能勉强用用，放在脚本编辑器里，就解决不了系统提示的位置问题。为了解决这个问题，把基于对话流的实现改成基于轮次流的写法，基本思路是把对话转成一个一个的对话组，这个一个对话组我称为轮次，其中包括一个对话的三个角色：Bot，Human，System，这样各种信息都存在在轮次里。总的来说，脚本转译要保留的信息包括：各个角色的对话顺序，对话内容，逻辑生成跳转关系，附加上每个对话的设置信息。<br>在开发过程我也遇到了一些不好解决的问题，主要有2个，Chatbot开发术语和脚本的文法。Chatbot开发术语是个统一规范的问题，本质上是开发生态的问题，这是个看起来没啥，有开发经验的伙伴都知道，关键术语的提炼和命名是系统设计的第一步，命名对了，后面的动作就都对了，这个确实十分重要的事。比如在开发过程中我经常会遇到一些命名，比如轮次，对话，场景，脚本，提示，对话失败提示等等，这些次在开发中意味概念，背后对应着开发设计思考，现在网上很难找到公认的叫法，也可能是各家的Chatbot的实现各不一样，提炼的术语也就不同。不过这也说明各家都在摸索前行，各家都各自的Chatbot的技术细节对外界都有所隐藏。<br>另外一个就是脚本的文法规范，定义哪些脚本是合法，哪些是不合法，各个关键词的用法如何， 比如2轮自动对话是否是对话引擎支持，一轮次对话怎么写，目前这些都还要再开发过程中逐渐完善和对齐。</p>
 
       
 
@@ -195,7 +195,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2010%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%203%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -225,27 +225,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2023年 11 月 27 日 - 2023年 12 月 3 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 2 月 19 日 - 2024年 2 月 24 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%203%20%E6%97%A5/">工作周报2023年 11 月 27 日 - 2023年 12 月 3 日</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%2019%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%2024%20%E6%97%A5/">工作周报2024年 2 月 19 日 - 2024年 2 月 24 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%203%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%2019%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%2024%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-02-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在编写Chatbot脚本时学到了很多沟通的技术和一些固定话术，这些都是我以前不曾注意过的，之前也不曾总结过沟通的模式，联想到之前曾学过如何提问或者探询的书籍，但是确实没有掌握书中所讲的技术的，这其实也说明，我读的并不深刻：记忆，理解，应用，融会贯通这四个层次中，我似乎只在第一二个层次徘徊。回到Chatbot上的对话式训练，我理解背后其实是认知模式的固化，当时第一要形成嘴巴的肌肉记忆，训练达到在与客户的谈判和沟通中“信口拈来”，例如一个场景中AI说：医院管理政策限停了某些药物，而我们的药恰在其中。在遇到客观的障碍和限制时，如何应对，这是在不同的场景下，不同的企业里，不同的团队文化里，都是经常遇到的问题，且立场都是很不同的，有些要虎口夺食，有些要立即改弦更张，有些要长线跟进，这时候就特别需要Chatbot的这种剧本式的对话，在对话实操中将认知和价值观渗透到对话了。在深入思考Chatbot的对话形式时，我现在还没有想明白的一件事，在技术上如何将人的信念和立场统一的嵌入到对话过程中。<br>本周集中处理UTJ团队反馈的一批Chatbot上的问题，主要是性能，响应度的问题，有些是持续一段时间了，有些是新近发现的，针对这些问题我也做了一些总结和复盘，压测和性能监控已经在进行中了，常规的自动化测试和巡检需要运行起来，另外就是完善问题跟踪机制，提升对Chatbot运行状态的把控度。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>刘澜老师《学习力30讲》学习<br>春节前几个月实在是繁忙，很多工作要跟进，工作之外的时间都用来补AI技术栈上的短板，《30讲》这个课程的学习进度缓慢，利用假期时间，好好的学习了这门课，目前也还没有学完，不过受益颇多。这门课融合了很多学习方法论和思想，也凝结了作者的多年的思考和思想， 很多类似的课程在学习的“术”，刘澜老师在讲学习的“道”，学习起来确实很费力，看来要多看几遍了。看极简管理学的时候也是这样，我理解刘澜老师的主要思维模式是跳出问题看问题，细品深度较大，大处思考小处着手，有些是哲学性思考，确又给出了一些实操方法。跳出学习这件事看学习，跳出管理本身看管理，这样才能更接近事物的本质，因为这样才能看到学习和其他事物的关联，比如究竟什么是学习，学习到底是个什么事，怎么样把学习这件事做好，做好之后的结果是什么，这些问题都很不容易想清楚，做到知行合一更需要多学习几篇，再用课程里学到的内容学习课程，多多感悟。“学习”其实是自我的事情，更多的是高强度的心理活动，就像很多事是不能说清楚的一样，每个人感受到的苹果的味道大体一致，但是感受完全是自我的。这个可能就得需要多思考，多感悟，多切己。<br>脚本编辑器设计和开发<br>脚本生成服务总体上比较顺利。但也有一些麻烦的点，比如按照最初的设计，不动python的代码，从实际开发来看，我忽视了Chatbot系统配置文件是基于python的这个细节，用go修改pyhon后面不好阅读和维护，所以重新思考了这块设计，对话脚本的注册和更新统一放在python侧，归到对话管理中，这种设计其实是更合乎逻辑，符合我们对对话脚本管理的理解，道理很简单：谁用谁管理。</p>
 
       
 
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%2019%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%2024%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -299,27 +299,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2023年 11 月 20 日 - 2023年 11 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 2 月 4 日 - 2024年 2 月 7 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2023年 11 月 20 日 - 2023年 11 月 26 日</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%204%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%207%20%E6%97%A5/">工作周报2024年 2 月 4 日 - 2024年 2 月 7 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-11-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-26</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%204%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%207%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-02-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>这周排查了AI微课&#x2F;AI字幕&#x2F;Chatbot等三个大功能的相关问题，问题各不相同，因为一部分问题的原因还没有最终确定，问题原因先不做复盘总结，不过可以复盘下自己在排查过程中的反思和总结：<br>在排查过程，我发现自己对服务端很多解决问题的心智模型缺乏足够的理解，也不够丰富，比如在任务调度，微服务架构实践，Devops实操等存在不少知识盲区，所以后续一段时间一定要把这些内容快速补齐。<br>和AI相关的业务比较复杂，和非AI业务相比，AI业务多了一层AI异步任务及其调用，为了有效的解耦AI服务层和具体的业务层，中间增加了基于Go的Gateway层，AI服务层天然的具有服务自治要求（安全，性能，稳定性，成本构成，第三方服务隔离等等），服务扩展需求高，AI算法服务的独特性，服务部署灵活高等隐性的架构需求；当AI服务需要依赖其他非AI类基础服务时，比如用户，业务权限等，基于Go的Gateway层又是聚合层。用户端侧因为要整合不同的业务接口（包括AI类接口，其实在用户端侧无需区分是AI类接口还是非AI类接口），所以增加了对用户端友好的Nodejs层作为BFF层。BFF是Backend for Frontend，字面意思能够很好说明其在整个架构中的作用，接近前端的后端层，说它接近前端指说它转为前端提供服务，对前端足够友好。这里所说的前端是指Web，APP，微信小程序，钉钉&#x2F;企微Hybird及小程序、客户服务对接层等，从这些前端的种类就可以得知，这一层的职责主要是适配，整合，路由等。用户端侧目前需要的服务调用方式有两类，1是Restful的http接口调用，2是websocket的长链接类的调用，但Nodejs层目前没有提供websocket类的调用能力，所以部分基于长链接的AI服务时通过Go层直接对外提供的。这里其实有两个重要的关于架构选型的上技术实践讨论，1是AI的gateway层为什么是Go而不是PHP，2是PHP层为什么不直接做BFF层。坦白说，要搞明白这两个架构问题非常之难，显然这些问题没有标准答案，甚至也没有参考答案，实际上我们在摸着石头过河，也就说我们在探索。脱离现实的业务和约束条件谈架构设计都是无意义的，实际上我们很难找到一个即懂AI及工程，又要懂PHP，又要懂GO，还要懂Nodejs，还必须理解我们的业务场景和既有的条件约束，更重要的是还要理解未来产品发展路径。所以当大家讨论这个问题，总是站在一个这样的位置：对某个或者某两个领域非常熟悉，对其他几个了解的基本情况下讨论这些问题，这样就会造成每个决策理由都很充分，但是整合起来的架构又不足以解决所有的需要被关注的关键问题，所以最好的方案是先关注优先级最高的关键问题，在迭代过程中不断丰富知识和总结经验，探索最佳方案，以解决所有的关键问题，这个其实很像寻路算法，在探寻中才能找到下一步，而且不管正确或者错误，必须前进一步。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>脚本编辑器设计和开发<br>脚本格式转换服务开发是脚本编辑器依赖的服务，主要用功能是把脚本编辑器中存储的用户对话的JSON格式转化为对话引擎需要的YAML格式的脚本文件，并且实现脚本文件的注册和更新，涉及规则转换，文件修改，上传和下载，AI对话引擎的升级。这个功能相对独立，也是产品工程和算法的对接桥梁，考虑到开发难度和时间成本，设计思路上是尽量合理利用现有的能力，如AI对话引擎的更新脚本，现有的JSON脚本转化YAML的规则。在开发过程中我发现一个问题，就是AI算法设计和产品工程化之间的设计差异带来的复杂性，比如这个项目中，用户使用的对话是流式对话，用户一句，Bot一句，实现一轮对话，实际在AI Chat引擎一侧要加上上下文钩子，要明确说明一轮的意图和跳转的条件。我认为在未来的开发中我们要尽量的识别和消除这类差异，因为在弥合两者之间的设计差异，本身就是一件比较困难的事情，需要消耗较多开发成本，如果工程侧工程师不掌握AI侧的设计意图，就很难开发出可以持续迭代的代码，同样的AI算法侧工程师不熟悉工程侧的开发设计模式，也很难设计出易于工程侧整合的实现。</p>
 
       
 
@@ -343,7 +343,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%202%20%E6%9C%88%204%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%207%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -373,27 +373,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2023年 11 月 13 日 - 2023年 11 月 18 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 1 月 29 日 - 2024年 2 月 3 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2013%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5/">工作周报2023年 11 月 13 日 - 2023年 11 月 18 日</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2029%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%203%20%E6%97%A5/">工作周报2024年 1 月 29 日 - 2024年 2 月 3 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2013%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-11-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-18</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2029%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%203%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-02-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在@柳祎的细心的指导下，比较全面的掌握了目前uShow产品的数据拟合和打分系数调校的整个流程，虽然对逻辑细节和服务端部署过程还不是很清晰，至少可以承接部分uShow项目中比较繁琐的工作，方便后续把这块工作自动化的设计开发。<br>近期uShow项目及Chatbot项目，也让我的成长的压力和动力越来越大，一个是要在比较短的时间内让自身的知识结构和能力需要发生剧大的变化的要求，从一名前端工程师要快速转变为擅长后端工程及业务且熟悉AI算法的优秀工程师。我印象最深的一次排查问题，从Flutter，Nodejs，Php，Go，一直看到Python，这里面我觉得最难的是理解每个技术栈背后的思想和要我们要解决的问题以及其独特的设计特点；另一个压力是基于目前的Chatbot和uShow产品形态，要建设比较完善的工程能力的紧迫性，每个自动化能力的建设都会比较有效的提升整个团队的效能，但是又要保证目前日渐增长的产能需求。我觉得要适应各种约束条件下继续保持专注的态度，以创业的心态，聚焦在当下投入产出比最高的事情上，给重要的紧急和重要不紧急的事情分配好时间，保持自律，把全部的精力放在低头做事上。“悲观者或许正确，但乐观者才能创造未来”。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>脚本编辑器设计和开发<br>整体功能开发完成，但是还有很多不完善的地方，在联调阶段继续完善整个功能还是比较完整的现有Chatbot管理系统。为了统一设计、概念和后续迭代，我们把这套系统称之为后台系统，用户使用的Chatbot对应的为前台系统。脚本编辑器是整个后台系统中很中重要的组成部分，这个系统里包含模板和目录管理，场景管理，对话管理，部署管理，后台权限管理（目前是隐藏功能，简单处理）。后续迭代应该会有机器人管理，模型管理，积分和激励管理，话术策略（知识）管理，数据洞察管理。这10个管理模板完备之后，我认为就基本实现了UMU Chatbot的产品化过程，形成业务闭环。这个过程可能需要较长一段时间，且随着Chatbot的对话模型的迭代升级，部分相关模板也要跟进升级。 我们现在现实的脚本编辑器在可能要经过3个阶段的迭代过程，分别是研发辅助+脚本编辑器，客户界面CSS辅助 + 脚本编辑器，客户辅助设计+ 脚本编辑器+客户界面CSS辅助，之所以会长时间存在客户界面CSS辅助，是因为在数据洞察和话术策略上我们的优势会慢慢的高于客户的优势，那时候客户辅助设计的价值会得到很大凸显，Chatbot就会成为新的护城河。</p>
 
       
 
@@ -417,7 +417,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2013%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2029%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -447,267 +447,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-读书笔记 六" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 1 月 22 日 - 2024年 1 月 28 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20%E5%85%AD/">读书笔记之《美丽的化学结构》</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2022%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2028%20%E6%97%A5/">工作周报2024年 1 月 22 日 - 2024年 1 月 28 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20%E5%85%AD/" class="archive-article-date">
-  	<time datetime="2023-11-12T04:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-12</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2022%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2028%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近几周最有震撼的书籍：《美丽的化学结构》。</p>
-<p>最近断断续续读了很多书，因为大部分是在地铁上断断续续读的，很多书没有读完。小部分的在精读，但是能够分给读书的时间又实在太少了。</p>
-<p>坦白说，地铁上只能使用泛读。我曾经尝试在地铁上精读，我发现非常不爽，手写笔记就不说了，当你长时间思考，联想时，总是被打断。特别是读到精彩处，到了下车的地点，这时候真的是讨厌的很。</p>
-<p>《美丽的化学结构》是那种特别适合泛读，但是有很大程度上改变认知的这种书，看到这些奇妙的化学结构，无与伦比的美感冲击你的脑海，那种认知震撼真的太爽了。</p>
-<p>对于这本书，我觉得任何的读书笔记都是多余的，因为他里面都是化学结构的图片，一个结构一个图片。我们看不见的神奇分子，蛋白质都在他们那个度量尺寸上表现的有序而完美，真的感叹造物主的神奇与伟大。</p>
-<p>当你看到这篇唠叨的文章时。我推荐你去看一看。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20%E5%85%AD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-腾讯音乐AIGC音频业务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/">腾讯音乐AIGC音频业创新应用技术交流-笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2023-11-12T03:42:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="低延迟高吞吐-同步，异步，流式"><a href="#低延迟高吞吐-同步，异步，流式" class="headerlink" title="低延迟高吞吐 -  同步，异步，流式"></a>低延迟高吞吐 -  同步，异步，流式</h1><h1 id="软件生态适配-插件化解耦兼容"><a href="#软件生态适配-插件化解耦兼容" class="headerlink" title="软件生态适配 - 插件化解耦兼容"></a>软件生态适配 - 插件化解耦兼容</h1><ul>
-<li>client </li>
-<li>inference protocol <ul>
-<li>rest &#x2F;grpc<br><a target="_blank" rel="noopener" href="https://www.ray.io/">ray.io</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="多云调度（sky-computing）-面向失败的对等设计"><a href="#多云调度（sky-computing）-面向失败的对等设计" class="headerlink" title="多云调度（sky-computing） - 面向失败的对等设计"></a>多云调度（sky-computing） - 面向失败的对等设计</h1><h1 id="胡克弹性计算平台的实践"><a href="#胡克弹性计算平台的实践" class="headerlink" title="胡克弹性计算平台的实践"></a>胡克弹性计算平台的实践</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>算法背后的力量</li>
-<li>低成本，高性能，异部署</li>
-</ul>
-<h2 id="模块构成"><a href="#模块构成" class="headerlink" title="模块构成"></a>模块构成</h2><ul>
-<li>模型管理，存储，复用，拉取，加载，版本，验证</li>
-<li>镜像管理，环境问题，各种兼容和组合，直接复用</li>
-<li>数据源管理，开源，闭源</li>
-<li>服务管理，离线，在线，推荐服务</li>
-<li>成本管理，监控，可视化，成本开源，模型市场</li>
-</ul>
-<h2 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h2><ul>
-<li>虚拟化技术 <ul>
-<li>qGPU</li>
-<li>离线在线混布</li>
-<li>全技术栈容器化</li>
-</ul>
-</li>
-<li>异构计算<ul>
-<li>cpu与gpu分离</li>
-<li>work flow能力</li>
-<li>多优先级调度</li>
-<li>跨地域多集群部署</li>
-</ul>
-</li>
-<li>推理加速<ul>
-<li>外部开源</li>
-<li>内部自研</li>
-<li>推理框架c++</li>
-</ul>
-</li>
-</ul>
-<h1 id="移动端神经网络框架的工程化落地的实践"><a href="#移动端神经网络框架的工程化落地的实践" class="headerlink" title="移动端神经网络框架的工程化落地的实践"></a>移动端神经网络框架的工程化落地的实践</h1><h1 id="K歌背景及问题"><a href="#K歌背景及问题" class="headerlink" title="K歌背景及问题"></a>K歌背景及问题</h1><ul>
-<li>算法模型的开发</li>
-<li>模型管理，下载， 加载，参数</li>
-<li>业务调用，推理引擎的引入，跨平台处理</li>
-<li>推理过程</li>
-<li>端侧加速</li>
-<li>效率分析</li>
-<li>优化</li>
-</ul>
-<h1 id="AI模型遇到的问题"><a href="#AI模型遇到的问题" class="headerlink" title="AI模型遇到的问题"></a>AI模型遇到的问题</h1><ul>
-<li>不同业务使用不同的模型，如何统一</li>
-<li>如何验证调优后的模型效果</li>
-<li>如何简化模型接入</li>
-<li>如何检测不同模型的效率</li>
-<li>如何在不同平台的硬件加速</li>
-<li>开箱即用AI模型的能力</li>
-</ul>
-<h1 id="自研的Tnet"><a href="#自研的Tnet" class="headerlink" title="自研的Tnet"></a>自研的Tnet</h1><ul>
-<li>一套平台，模型管理，性能管理，推理引擎管理，效率评估</li>
-<li>面向业务，model hub</li>
-<li>面向工程</li>
-</ul>
-<h1 id="Tnet的框架介绍"><a href="#Tnet的框架介绍" class="headerlink" title="Tnet的框架介绍"></a>Tnet的框架介绍</h1><ul>
-<li>模型生成</li>
-<li>模型管理</li>
-<li>模型评测</li>
-<li>模型调优</li>
-<li>模型开发</li>
-<li>模型使用</li>
-<li>推理引擎使用</li>
-<li>统一不同推理引擎的调用接口</li>
-<li>端侧模型加速</li>
-<li>效率分析和监控<ul>
-<li>perfdog</li>
-<li>TME</li>
-<li>benchmark</li>
-</ul>
-</li>
-<li>音频处理SDK统一</li>
-</ul>
-<h1 id="落地情况"><a href="#落地情况" class="headerlink" title="落地情况"></a>落地情况</h1><ul>
-<li>多维度打分</li>
-<li>录唱AEC的不断优化</li>
-</ul>
-<h1 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h1><p>模型训练<br>标签数据<br>模型管理平台<br>推理SDK<br>业务后台</p>
-<h1 id="业务层"><a href="#业务层" class="headerlink" title="业务层"></a>业务层</h1><ul>
-<li>AI评分<br>能力层</li>
-<li>AI歌声评价<br>基础库</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AIGC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2023年 11 月 6 日 - 2023年 11 月 11 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/">工作周报2023年 11 月 6 日 - 2023年 11 月 11 日</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-11-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在美敦力经理辅导和Fujipan配置脚本的编写中，因为涉及到的脚步量比较大，单就Fujipan配置脚本就有26个脚本，总共68轮对话的配置，整个看下来这些脚本有两个对话模式Call-Response（首先AI和Bot完成一轮对话, 引出第二轮用户对话）和User-First（用户发问，引出一轮的对话），对话模式比较固定，特别适合自动化生成，所以完成了这两种的模式的自动化生产程序，比手工写节省50%时间。目前还需要完全人工参与的是金句和近义词的处理。特别是日文的金句目前是使用第三方分词，但需要把近义词单独匹配，两个需求的约束下，就没有想到很完美的自动处理办法，目前的策略就是放弃一部分自动分词的情况，优先近义词的匹配。<br>另外一个麻烦的点在于目前的这些自动化工具来自两个技术栈，JavaScript和Python，这样整个生成过程的中的数据串联就要人工介入，柳祎建议用ChatGPT把JavaScript转成Python，省去一些中转环节，我尝试了一下，是个好办法。<br>我切身体会到的这个事情，就想到了东朔老师在All Hands上说的，做事前想想想能不能用AI。这个思考方式要彻底改变过往的思维方式。在未来很可能高效人士或者每一个人都会有一个根据自己的知识管理和思维习惯定制的私人大模型，就像现在大部分人都有自己的微信一样，这个数字分身就是每个人思想和自我认知的影子。其实对我们大部分人来说，AI像一个突然闯进房间的陌生人，我们能够快速的观察和试探，却不能很快的认识和熟悉，但是AI发展却足够快速，他似乎很快就熟悉里房间里的所有人，为了更好的交流和协作，我们必须要更深入的了解和学习他的来龙去脉以及内在机制，逐渐让自己具有同等的“大模型意识”，这样才能更好的了解他，才有更好的协作和使用。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>脚本编辑器设计和开发<br>随着AI开发组新伙伴的加入，人多力量大，很多工作量的进展推进的快了起来，我手里各项工作也慢慢的有序了，做模板管理的项目过程中，我对整个现在的Chatbot实现有了更多的认识，现在的设计思路，业务逻辑组织关系，模块结构和层次也有了新的认识，回过头来看之前脚本编辑器设计有点过于粗糙，比如没有考虑清楚部署里的流程，模板和大小关卡在实现上的依赖关系。其实整个脚本编辑器的整体业务复杂度不大，与过往的很多项目比，业务规模，业务复杂度和技术难度都属于中等，这个也是初期项目评估的出发点，在时间比较仓促的情况下，我过于乐观的估计了排期。经过这两周折腾的经验和思考，结合对go开发速度的认知，和新宇重新评估了后面的工作量和之前没有想到的问题。另外一个复盘得到的一个深刻认知是如何在自己优势不佳和资源不足的领域较快的取得有效结果，首先看机会，要谨慎珍惜，其次需要动脑子，想路子，多参考其他项目和其他人的经验，避免冒进，稳重求胜。在没有太多总结和认知的项目里，先慢后快节奏要优于先快后慢的节奏。另外就是对新的认知领域，能力迁移要限于认知重建和认知拓展，也就是要先认知重建，然后是认知拓展，再是能力迁移，再是能力发展，最后形成闭环。</p>
 
       
 
@@ -731,7 +491,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2022%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2028%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -761,27 +521,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2023年 10 月 23 日 - 2023年 11 月 5 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 1 月 15 日 - 2024年 1 月 21 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%205%20%E6%97%A5/">工作周报2023年 10 月 23 日 - 2023年 11 月 5 日</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2021%20%E6%97%A5/">工作周报2024年 1 月 15 日 - 2024年 1 月 21 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%205%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-11-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2021%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-01-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>经过上个月份的工作，已经能够独立完成Chatbot的完整的上线流程和相关工作，能够排查相关问题，在此过程中也整理、收集、开发了一系列的小工具和脚本，虽然还不能完整自动实现配置化脚本生成-&gt;配置化脚本部署–新增数据落盘，这些工具也在较大提升了脚本生成速度，基本能够cover住来自客户的部署上线的时间约束。工具的不成熟也造成了一些问题，比如自动生成的脚本中的跳转逻辑就导致过一次问题，复盘下来的改进点，1是要提高回归的覆盖率，从目前实际情况看，多分配一些自测的时间，基于目前的运行情况，每个脚本上线后用标准回答回复确保运行正常，2是提高自动化测试的工程能力，除了一般的接口的准确性，稳定性和压力测试外，还需要探索语音类的测试及评测，3是持续总结上线的细节流程标准化，目的上尽量明确每个过程的细节、输入输出，4是提升工具化和平台化程度，尽量少的减少人为参与过程， 即使现阶段无法实现高平台化，也要通过流程的标准化，每个人工参与的工作可控，减少失误。目前这4个点都在进行中，其中第一步在后续的脚步上中都要严格做到。2,3,4个点都在OKR和路线图里有计划的进行。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Chatbot模板管理本周底层实现重新写了一版<br>主要原因有4个，1是原来的实现的bug比较多，细节上不满足业务需求，2是原来的设计实现比较难维护和扩展，3是重新实现的成本相对于之前实现的维护和修复bug的成本，是可以接受的，且也方便脚本编辑器的开发，4使用新宇熟悉的权限设计思路，权限部分能较快实现，而且能和学习平台的设计思路保持一致。<br>这个项目我复盘了一下，1是我对Chatbot go的细节深入度不够，在细节实现上花费了不少时间，2是对go grpc缺乏经验，在上面踩了2个坑，花费数小时才搞定，3是决定重新实现的时间太晚了，上上周五就应该看到关键的问题，做出技术结论和决定，犹豫了一下，导致时间很紧张。<br>以后还要多花一些时间练习下go的大型产品类项目，对于技术决定一定要审慎思考，果断决定，当然这样也依赖于对整个项目和技术的掌握程度，所以在做好项目的同时，也要做好技术总结和思考。</p>
 
       
 
@@ -805,7 +565,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%205%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2021%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -835,31 +595,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-养娃日志3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 1 月 8 日 - 2024年 1 月 14 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%973/">养娃日志（3）</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%208%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2014%20%E6%97%A5/">工作周报2024年 1 月 8 日 - 2024年 1 月 14 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%973/" class="archive-article-date">
-  	<time datetime="2023-10-29T04:57:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-29</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%208%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2014%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-01-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今年8月底，小朋友开启了义务学年的第一年。我也开始了双城生活。</p>
-<ol>
-<li>争取每周一封信</li>
-<li>多互动</li>
-</ol>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>脚本编辑器接口的开发不是很顺利，开始设计了8个核心接口，在开发中发现有些功能需要单独的接口，或者以前的接口不能复用，随着开发接口增加到了14个，目前核心开发量比较大的Deploy的接口还在开发中，因为涉及chatbot的脚步的发布流程，需要串联go部分和python的异步任务，目前的单个流程可用，整合起来还是有较大的开发量和自测量。<br>Chatbot模板优化之前的伙伴开发了一版，我主要参与接口&#x2F;proto设计，数据库设计和node<br>部分开发，目前看还存在不少问题，比如接口参数设计的不太合理，汇总数据不准确，模板数据的统计数据相似与企业的汇总数据，但是有很大的不同，比如完成场景数需要做多表的聚合计算，需要补充实现，另外现有库表中的数据需要较大的调整，以增加模版层数据。<br>随着需求的深入，系统设计上需要更细分domain，并且提供足够的基础方法，这部分是比较欠缺的很多应用层的工作量都是在补充基础方法，迭代新的设计和架构。</p>
 
       
 
@@ -873,7 +629,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">生活 养娃</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
         		</li>
       		
 		</ul>
@@ -883,7 +639,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%973/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%208%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2014%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -913,130 +669,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-学习之美（9）- 《学习之美》读后感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2024年 1 月 2 日 - 2024年 1 月 7 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%889%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">学习之美（9） - 《学习之美》读后感</a>
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%202%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%207%20%E6%97%A5/">工作周报2024年 1 月 2 日 - 2024年 1 月 7 日</a>
     </h1>
   
 
         
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%889%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/" class="archive-article-date">
-  	<time datetime="2023-10-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-29</time>
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%202%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%207%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-01-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前几天听了他有关学习方法的视频直播，讲得很好，记录消化，并收入“学会学习”之“模仿高手”板块。</p>
-<p>应该说，其中95%的内容是自己已经认知到的，但刘澜老师可能用更准确传神的语言表达了一次，这进一步加深了我对这些想法的认知和“微观体感”。剩下5%的东西对我来说确实是新鲜的，例如由一般性、精确性、简单性三种特性构成的理论时钟模型。</p>
-<p>一共四组关键词：</p>
-<ul>
-<li><p>1 “去”学习。</p>
-</li>
-<li><p>2 元学习。</p>
-</li>
-<li><p>3 模式化学习。</p>
-</li>
-<li><p>4 三环学习。</p>
-</li>
-</ul>
-<h1 id="一、“去”学习"><a href="#一、“去”学习" class="headerlink" title="一、“去”学习"></a>一、“去”学习</h1><p>一个很聪明的朋友说过，一个人学东西就像吃饭一样，一方面你得到了自己想要的结果，另一方面你可能也吃下了某些你身体消化不了的毒，“是药三分毒”。</p>
-<p>为什么很多高考状元注定平庸？</p>
-<p>因为长期的应试教育导致他们养成了一种心智模式，这些心智模式看似虚无缥缈，缺乏生活阅历的人也很难察觉这些心智模式及其导致的一系列后果，但作为长期浸泡在这种意识形态中的人，客观一点看，我们都难免被染上了颜色，就像我们要承认，原生家庭对自己的影响一样。</p>
-<p>“去”学习的意思就是要有自己排解学校教育留在我们精神中的毒素的意识和能力。</p>
-<p>在学习方面，这些毒素包括：</p>
-<h2 id="学校教育让我们寻求标准答案。"><a href="#学校教育让我们寻求标准答案。" class="headerlink" title="学校教育让我们寻求标准答案。"></a>学校教育让我们寻求标准答案。</h2><p>更好的做法是：寻求参考答案，为什么要寻求参考答案，而不是标准答案，学了接下来的“一般性+准确性+简单性”理论时钟模型你就会深刻理解了。</p>
-<h2 id="学校教育让我们养成了分科思考的思维模式。"><a href="#学校教育让我们养成了分科思考的思维模式。" class="headerlink" title="学校教育让我们养成了分科思考的思维模式。"></a>学校教育让我们养成了分科思考的思维模式。</h2><p>分科只是一种人类自己的定义，真是世界里的问题是不分科的。</p>
-<p>分科学习和思考可能导致我们忽视哪些跨学科的底层规律，甚至造成一种假象，以为世界就是按照分科的方式来运行的，或者思考运行的方式最好用分科的思维，毕竟这是学校教的东西，学校教的东西难道也会错吗？</p>
-<p>分科导向导致了一种思维遮蔽性，我们常常理不顺某些观念和规划，原因可能就出在这个地方。</p>
-<h2 id="碎片。"><a href="#碎片。" class="headerlink" title="碎片。"></a>碎片。</h2><p>学校学习其实很多是碎片化的，这一点可能出乎很多人的意料。</p>
-<p>罗永浩曾经说，在他的同学满足于读鲁迅的一篇文章的时候，他则在读鲁迅全集。</p>
-<p>两者学到的东西那是完全不一样，通过读全集，罗永浩一定或多或少吸收了鲁迅本人的思维方式，而仅仅这一点，他的同学们都没有学到。</p>
-<p>在领导力方面，这些毒素包括：</p>
-<ul>
-<li>1 鼓励个人成功，而不是团队成功。</li>
-</ul>
-<p>不知道自己的成功需要建立在别人的成功之上。</p>
-<ul>
-<li><p>2 鼓励你给答案，而不是提问题。</p>
-</li>
-<li><p>3 补人之短，而不是用人之长。</p>
-</li>
-</ul>
-<p>学校教育留下的毒，其实远远不止上述这些，我们还可以举出一些例子：</p>
-<p>学校教育鼓励学生单独完成考试，考试不准交头接耳，但进入社会后，完成一件事最关键的是要懂得协作和求助。</p>
-<p>学校教育让我们从书本中学习，但进入社会后更重要的是从经验中学习，要察觉自己心智模式中的毒，单单靠读书是不够的，不会从经验中学习的人就无法觉知自己的心智模式中藏着的毒。</p>
-<h1 id="二、元学习"><a href="#二、元学习" class="headerlink" title="二、元学习"></a>二、元学习</h1><p>元学习就是学习方法，而学习方法也是需要学习的，对学习方法的学习是真正的、最底层的“磨刀不误砍柴工”。</p>
-<p>一个很明显的事实是，100个人里面可能不到3个人认真地研究过学习方法，他们手中的“斧头”钝得不成样子了，但自己却不自知，一旦你主动从这方面完善，你就获得了一个超越点，这个超越点可能让你成为人群中的百分之一。</p>
-<p>刘澜给出了以下关键控制点，如果你能把这几个点守住，你的学习方法就不会出太大问题，你就避免了因学习方法不对而停止成长的风险：</p>
-<h2 id="学通一个老师。"><a href="#学通一个老师。" class="headerlink" title="学通一个老师。"></a>学通一个老师。</h2><p>读他所有的著作，以及影响他的人。</p>
-<p>好老师的三个标准：</p>
-<ul>
-<li><p>1 鹅卵石人格</p>
-</li>
-<li><p>2 既谦卑又自信</p>
-</li>
-<li><p>3 π型知识</p>
-</li>
-</ul>
-<p>和π型知识结构相对的是T型知识结构，差别是，T型结构要求人精通一门学会，而π型结构要求人至少精通两门学问。</p>
-<p>只懂营销，你就不懂营销；只懂马克思主义经济学，你就不懂马克思主义经济学；只懂佛教，你就不懂佛教。</p>
-<p>因为没有对比，没有参照系，没有批判，你很可能把自己所学当做唯一正确的真理，因为你眼中没有别的东西，手里拿着把锤子，看什么都是钉子。</p>
-<ul>
-<li>3 3&#x2F;3&#x2F;3感受。</li>
-</ul>
-<p>这位老师的东西，1&#x2F;3让你拍案叫绝，1&#x2F;3让你似懂非懂，1&#x2F;3让你完全不懂。</p>
-<h2 id="2、去阅读，不要光听书"><a href="#2、去阅读，不要光听书" class="headerlink" title="2、去阅读，不要光听书"></a>2、去阅读，不要光听书</h2><p>阅读和听书所调动的思维模式是不一样的。</p>
-<p>阅读就像当导演，通过阅读，你负责还原书中的灯光、摄影、生效等等。</p>
-<p>听书就像遛狗，你被被人的思维带着一路往前跑，没有你在某个地方停下来细细品味的时间。</p>
-<h2 id="3、搞懂一个问题"><a href="#3、搞懂一个问题" class="headerlink" title="3、搞懂一个问题"></a>3、搞懂一个问题</h2><p>关键不是你学了30本书，而是你学通了3本书，你是学习的感受，还是要学习的结果？</p>
-<p>对个体来说，问题树是收敛的，而知识树则是无限的，无限的东西你是无法做实的。</p>
-<h2 id="4、写好一本笔记"><a href="#4、写好一本笔记" class="headerlink" title="4、写好一本笔记"></a>4、写好一本笔记</h2><p>用手写笔记，而不是用电脑打字。</p>
-<p>写字所用到的神经要比用电脑打调动的神经更多、更深。</p>
-<h2 id="5、教是最好的学"><a href="#5、教是最好的学" class="headerlink" title="5、教是最好的学"></a>5、教是最好的学</h2><p>你能把被人教明白了，自己也就明白了。</p>
-<p>很多你不太明白的东西，教着教着你就明白了，因为“教”是一种互动，</p>
-<p>互动的关系中才能“二生三、三生万物”。</p>
-<h1 id="三、模式化学习"><a href="#三、模式化学习" class="headerlink" title="三、模式化学习"></a>三、模式化学习</h1><p>与模式化学习相对的是碎片化学习，模式化学习学到的是模式，碎片化学习学到的事模式中的一段碎片。</p>
-<p>有了模式，你再看其他书籍时，就是从书中找到一些碎片放到自己模式中。</p>
-<p>怀特海说：智慧增长，知识就会消减，因为细节会被原则包容。</p>
-<p>也就是说，模式越多，知识越少。</p>
-<p>模式让碎片有了吸附的载体，模式包容碎片，碎片是模式下的一个子集，碎片是模式之下的一个具象化表达。</p>
-<p>就像腾讯模仿淘宝做电商，淘宝的网站等等都是很好复制的，但是淘宝这么多年沉淀下来的一环扣一环的紧密而庞大的模式你却很难短期建立。</p>
-<p>刘澜老师提出两个说法，一个是成功企业悖论，一个是管理大师悖论。</p>
-<p>成功企业悖论：成功企业你往往学不会。</p>
-<p>原因包括：</p>
-<ul>
-<li><p>1 天才你学不会</p>
-</li>
-<li><p>2 运气你学不会</p>
-</li>
-</ul>
-<p>成功&#x3D;才能+运气。</p>
-<p>巨大的成功&#x3D;多一些才能+多很多运气</p>
-<ul>
-<li>3 模式你学不会。</li>
-</ul>
-<p>模式是一整套的东西，你去学时，往往只能学一些碎片。</p>
-<p>管理大师悖论：管理大师往往不准确。</p>
-<p>因为他要让大多数人都认同，追求一般性，所以不准确，因为他们要让大多数人都听懂，所以很简单，追求简单性。</p>
-<p>因为一个理论总在一般性、准确性、简单性三者之间做取舍平衡。</p>
-<p>一般性位于时钟的12点、准确性位于4点、简单性位于时钟的8点，一个理论如果如果指向10点，那这个理论就与一般性、简单性较近，而离准确性较远。</p>
-<p>这就是我们学东西最好把所学当做参考答案，而不是标准答案的原因。</p>
-<h1 id="四、三环学习"><a href="#四、三环学习" class="headerlink" title="四、三环学习"></a>四、三环学习</h1><p>三环指：行为——目标——心智模式。</p>
-<p>有句话叫，不要用战术层面的勤奋掩盖战略层面的懒惰。</p>
-<p>三环学习也是类似的意思，如果我们的学习仅仅停留在“行动”层面，那很多问题可能是无法解决的。</p>
-<p>三环学习的理念也提醒我们，不要试图用一样的方法得到不一样的结果，你不能用跟造成问题的思维相同的思维去解决问题。</p>
-<p>如果前两个改变是应用软件层面的改变，那心智模式就是操作系统层面的改变。</p>
-<p>跳出原有层面的问题，让原来的问题变得无关紧要，这同样需要我们通过经验反思来学习，而不能仅仅从书本上学习。</p>
-<p>心智模式是要扩大自己的觉知范围才能实现的，我们可以通过学习心理学加强自己的额觉知能力。</p>
-<p>心理学的功能之一就是扩大对“自我”和“经验”维度的觉知，不要困在局里，“盲维”比“盲点”更可怕，这是心理学之所以重要的地方，也是从经验中学习之所以重要的地方。</p>
-<p>列宁说过，一个人一旦真正懂得了反思，他就步入了伟大的起点。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周在开发时项目时遇到了很多问题，比如usc v2 proto的关联问题，go和nodejs的调用问题，问题的的原因是整个Chatbot的现实细节掌握度不够，Chatbot的整体实现比较复杂，中间的经历过架构的调整，一些业务逻辑和实现细节就存在适配，也就造成了逻辑上的复杂，使一些业务点比较模糊，如果不了解前因后果，很可能对开发造成影响，不过目前经过了几个项目上开发已经逐渐掌握了整体架构和实现。从技术实现上来说，可以用以下图简单概括，以后我也会按照这个架构图逐渐完善其骨架，完善细节，形成一个完善的技术上masterdoc，以增强Chatbot的工程化能力</p>
 
       
 
@@ -1050,7 +703,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
         		</li>
       		
 		</ul>
@@ -1060,7 +713,155 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%889%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%202%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%207%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 12 月 25 日 - 2023年 12 月 31 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%2025%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2031%20%E6%97%A5/">工作周报2023年 12 月 25 日 - 2023年 12 月 31 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%2025%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2031%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-12-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>最近这几周的工作比较紧张，急躁的工作习惯又慢慢回来了，一件一件的追进度，想办法满足各个项目重要干系人的诉求，就容易忙中出错，新的Circle里要戒急戒躁，快速有序。<br>最近的项目都是直接和CSS打交道，作为开发人员，能够站在离离客户最近的位置，我觉得是一种幸福，这种幸福来源是最直接感受的自己工作的价值。当然压力和挑战也是非常之大，有时也很焦虑，同时自身的能力要求也变的丰富的，既要管理好自己的期望及能力发展，也要正确的处理相关干系人的期望，解决问题，策应打单，搞定客户，这是我这几周的工作中越来越明确的目标，我也越来清楚自身的优势和不足，我觉得要把优势发挥到极致，把不足的影响降低到最小。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%2025%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2031%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 12 月 17 日 - 2023年 12 月 24 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%2017%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2024%20%E6%97%A5/">工作周报2023年 12 月 17 日 - 2023年 12 月 24 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%2017%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2024%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-12-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>反思复盘Astellas Chatbot项目反馈问题<br>问题有四类，1是我的Chatbot掌控不足造成的，2是客户的需求，3是Chatbot的待提升的地方，4是脚本创作上，也就是提供给客户的Chatbot解决方案上的漏洞，下面分别说说<br>提升TTS的准确率，专业术语符合医疗专业的发音要求，优化现有生成工具，使用生成脚本和手写脚本时增加TTS发音纠正<br>平假名和片假名只能出现在TTS里，日文书写习惯汉字<br>CO的Chatbot在实施时要考虑ASR的词汇表更新，目前这块需要人工导入<br>系统提示，金句和关键词命中错误提示使用给定格式，优化现有生成工具<br>多学习日语语法和文法相关的知识，提升日语文本语法分析能力<br>提升Chatbot的可配置能力，目前客户提出的一部分看似简单的文本配置要求，现有实现化不能快速实现<br>持续完善自动化脚本生成的规则，包括TTS和给定读音的映射，还原文本格式，关键词和近义词的映射，ASR识别的历史存留及分析<br>对Chatbot研发侧2024的思考<br>建立Chatbot高质量交付框架，提升Chatbot项目脚本交付的专业性，减少客户问题的反馈，提升客户满意度<br>解决已知的关键问题，包括提升Chatbot的企业自主管理性 ，如企业灵活多样的配置，多维度的数据洞察，灵活的脚本创作管理（如基于AI生成式的脚本，基于规则约束的脚本，基于限定主题的脚步），场景部署管理，灵活的对话纠正机制（管理者对训练者的每一个对话进行点评，类似导演对演员的的点评指导）<br>整合到UMU学习平台，如数据看板，任务分配，协同管理，脚本创建，权限管理，Chatbot小节化，Web端Chatbot<br>提升对话灵活度和上下文串联度，现有框架下对话的灵活度取决于脚本，实际上是取决于脚本创作者对客户预训练对话场景的理解和设计能力，未来我们提供脚本创作工具，更取决于客户对脚本的创作能力，所以要提供一种新方式，降低对客户创作能力的要求，比如像uShow一样提供一些素材，我们就能做出评分，当然Chatbot难度比uShow要大一两个数量级，uShow本质上是分类，Chatbot本质上是基于主题的有序生成，不可控的因素更多，但我认为这个这个课题是未来我们赢得客户的关键<br>持续思考可定义的对话管理框架的建设，比如场景情绪模板，对话风格模板，灵活对话， 在脚本配置过程中，我发现不同的企业中在不同的对话的情绪，语调，人物都有巨大的不同，有的是零售店里导购和年轻妈妈，导购和中年健身达人，经理对下属的指导，医药代表对普通医生，医药代表对科室主任等等，这些场景其实是不同的情绪，不同的语境。这些其实都是对应着销售能力的中的不同部分<br>我相信Chatbot是让企业内的普通销售成为金牌销售的关键一步，这也是Chatbot的最重要的价值体现，优秀的销售在和关键客户见面之前，都是在心里预演了很多次。如果我们能够让普通销售也能够像金牌销售那样，因为用Chatbot预演了很多次，所以面见客户时更具推介力，说服力，谈判力和领悟力，所以更多的企业会因此而赢得市场<br>uShow的问题的思考<br>从UTJ伙伴和客户反馈的问题看，AXA Life这类保险类的销售话术在FAB上打分过低，之前我们从分数分布上做了抬分计算，但由于FAB整体得分较低，抬分计算还是有些局限。后续需要从模型训练和分数计算两个维度上做一些针对性的调整。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%2017%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2024%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -1092,7 +893,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/20/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/22/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/20/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/22/">Next &raquo;</a>
     </nav>
   
 
@@ -1579,6 +1380,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人工智能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Claude Code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内容检测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">水印技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学术诚信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AI-Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Self-Evolution</a>
               </li>
             
             <div class="clearfix"></div>

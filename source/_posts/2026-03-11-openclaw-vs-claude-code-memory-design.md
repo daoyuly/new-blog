@@ -1,6 +1,5 @@
 ---
 title: OpenClaw vs Claude Code 记忆管理设计深度分析
-date: 2026-03-11 13:05:00
 tags:
   - AI
   - 记忆系统
@@ -9,6 +8,8 @@ tags:
   - 架构设计
 categories:
   - 技术分析
+abbrlink: 55677
+date: 2026-03-11 13:05:00
 ---
 
 # OpenClaw vs Claude Code 记忆管理设计分析
