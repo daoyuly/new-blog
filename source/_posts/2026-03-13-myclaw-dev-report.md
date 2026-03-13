@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 2 (规则引擎)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 26095
 date: 2026-03-13 04:30:11
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 2 (规则引擎)
