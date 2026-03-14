@@ -151,6 +151,518 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ADP-B - AI Agentic Interactions_ From GUI to Real world environment" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-B%20-%20AI%20Agentic%20Interactions_%20From%20GUI%20to%20Real%20world%20environment/">Agentic Design Patterns - Appendix B - AI Agentic Interactions_ From GUI to Real world environment</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-B%20-%20AI%20Agentic%20Interactions_%20From%20GUI%20to%20Real%20world%20environment/" class="archive-article-date">
+  	<time datetime="2025-11-02T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="附录-B-AI-Agentic-交互：从图形界面到现实世界环境"><a href="#附录-B-AI-Agentic-交互：从图形界面到现实世界环境" class="headerlink" title="附录 B - AI Agentic 交互：从图形界面到现实世界环境"></a>附录 B - AI Agentic 交互：从图形界面到现实世界环境</h1><p>AI Agent 正日益通过数字界面和物理环境的交互来执行复杂任务。它们在这些多样化环境中感知、处理和行动的能力，正在从根本上重塑自动化、人机交互和智能系统的格局。本附录深入探讨 Agent 如何与计算机及其环境交互，并重点介绍相关技术进展与代表性项目。</p>
+<h2 id="交互：Agent-与计算机"><a href="#交互：Agent-与计算机" class="headerlink" title="交互：Agent 与计算机"></a>交互：Agent 与计算机</h2><p>AI 从对话伙伴向主动式任务导向型 Agent 的演进，正由 Agent-计算机界面（ACI）技术驱动。这些界面使 AI 能够直接与计算机的图形用户界面（GUI）交互，使其能像人类一样感知并操作图标、按钮等视觉元素。这种新范式超越了依赖 API 和系统调用的传统自动化方法——后者往往受限于僵化的、依赖开发人员编写的脚本。通过利用软件的视觉”前门”，AI 现能以更灵活、更强大的方式自动化复杂数字任务，该过程涉及以下关键阶段：</p>
+<ul>
+<li><strong>视觉感知</strong>：Agent 首先捕获屏幕的视觉呈现，本质上相当于截屏操作。</li>
+<li><strong>GUI 元素识别</strong>：随后分析该图像以区分各类 GUI 元素。它必须学会将屏幕”解读”为具有交互组件的结构化布局，而非单纯的像素集合，能够辨别可点击的”提交”按钮与静态横幅广告，或区分可编辑文本框与普通标签。</li>
+<li><strong>上下文理解</strong>：ACI 模块作为视觉数据与 Agent 核心智能（通常为大型语言模型 LLM）间的桥梁，在任务背景下解析这些元素。它能理解放大镜图标通常代表”搜索”，或一组单选按钮表示选项。此模块对增强 LLM 推理能力至关重要，使其能基于视觉证据制定行动计划。</li>
+<li><strong>动态执行与响应</strong>：Agent 随后通过程序化控制鼠标和键盘执行计划——包括点击、输入、滚动和拖拽。关键在于，它必须持续监控屏幕以获取视觉反馈，动态响应界面变化、加载状态、弹窗通知或错误信息，从而成功驾驭多步骤工作流。</li>
+</ul>
+<p>该技术已超越理论范畴。多家领先 AI 实验室已开发出功能性 Agent，充分展示了 GUI 交互的强大潜力：</p>
+<p><strong>ChatGPT Operator（OpenAI）</strong>：作为数字协作伙伴的愿景，ChatGPT Operator 旨在直接从桌面端自动化跨多种应用的任务。它能理解屏幕元素，从而执行诸如将电子表格数据导入客户关系管理（CRM）系统、在航空公司和酒店网站间规划复杂行程，或填写详尽在线表单等操作，无需为每个服务配置专用 API 访问。这使其成为通用性工具，旨在通过接管重复性数字任务提升个人与企业效率。</p>
+<p><strong>Google Project Mariner</strong>：作为研究原型，Project Mariner 以 Agent 身份在 Chrome 浏览器内运行（见图 1）。其核心目标是理解用户意图并自主执行基于网络的任务。例如，用户可指令其在特定预算和区域内寻找三套出租公寓；Mariner 便会导航至房产网站，应用筛选条件，浏览房源列表，并将相关信息提取至文档中。该项目体现了 Google 对构建真正实用且具”代理性”网络体验的探索——让浏览器主动为用户服务。</p>
+<p><img src="/../images/appendix-b/image1.png"></p>
+<p>图 1：Agent 与网络浏览器的交互示意图</p>
+<p><strong>Anthropic 的计算机使用功能</strong>：该特性使 Anthropic 的 AI 模型 Claude 能够成为计算机桌面环境的直接操作用户。通过截屏感知界面并以程序化方式控制鼠标键盘，Claude 可编排跨多个独立应用的工作流。用户可要求其分析 PDF 报告中的数据，打开电子表格程序进行相关计算，生成图表，并将图表插入邮件草稿——这一系列任务以往需要持续的人工介入。</p>
+<p><strong>Browser Use</strong>：这是一个提供程序化浏览器自动化高级 API 的开源库。它使 AI Agent 能通过访问和控制文档对象模型（DOM）与网页交互。该 API 将浏览器控制协议的复杂底层指令抽象为更简洁直观的函数集。这使得 Agent 能执行复杂操作序列，包括从嵌套元素提取数据、提交表单以及跨页面自动导航。因此，该库助力将非结构化网络数据转化为 AI Agent 可系统处理并用于分析或决策的结构化格式。</p>
+<h2 id="交互：Agent-与环境"><a href="#交互：Agent-与环境" class="headerlink" title="交互：Agent 与环境"></a>交互：Agent 与环境</h2><p>超越计算机屏幕的局限，AI Agent 正越来越多地被设计用于与复杂、动态的环境交互，这些环境往往模拟现实世界。这要求 Agent 具备精密的感知、推理和执行能力。</p>
+<p>Google 的 <strong>Project Astra</strong> 是推动 Agent 与环境交互边界的一个典范。Astra 致力于打造一个在日常生活中实用的通用 AI Agent，它利用多模态输入（视觉、听觉、语音）和输出来理解世界并进行上下文交互。该项目聚焦于快速理解、推理与响应，使 Agent 能通过摄像头和麦克风”看见”和”听见”周遭环境，并在提供实时协助的同时进行自然对话。Astra 的愿景是打造一个能无缝帮助用户完成从寻找失物到调试代码等各种任务的 Agent，其核心在于理解所观察的环境。这超越了简单的语音指令，实现了对用户即时物理情境的真正具身化理解。</p>
+<p>Google 的 <strong>Gemini Live</strong> 将标准 AI 交互转化为流畅且动态的对话体验。用户可与 AI 交谈，并以极低延迟收到自然语音回复，甚至能在语句中途打断或切换话题，AI 会立即适应。交互界面不限于语音，用户还可通过手机摄像头、屏幕共享或文件上传融入视觉信息，进行更具情境感知的讨论。更高级版本甚至能感知用户语调，并智能滤除无关背景噪音以提升对话理解。这些能力共同创造了丰富的交互场景，例如仅需将摄像头对准某物即可获得该任务的实时指导。</p>
+<p>OpenAI 的 <strong>GPT-4o 模型</strong> 是专为”全向”交互设计的另一选择，意指其能跨语音、视觉和文本进行推理。该模型以接近人类响应速度的低延迟处理这些输入，从而实现实时对话。例如，用户可向 AI 展示实时视频流并询问画面内容，或用于语言翻译。OpenAI 为开发者提供了”实时 API”，用于构建需要低延迟、语音到语音交互的应用。</p>
+<p>OpenAI 的 <strong>ChatGPT Agent</strong> 代表了相较于前代产品的重大架构升级，集成了新功能框架。其设计包含多项核心功能模式：自主浏览实时互联网以提取实时数据的能力、动态生成并执行计算代码以完成数据分析等任务的能力，以及直接与第三方软件应用交互的功能。这些能力的融合使 Agent 能从单一用户指令出发，编排并完成复杂、有序的工作流。因此，它能自主管理整个流程，例如执行市场分析并生成对应演示文稿，或规划物流安排并执行必要交易。在发布同时，OpenAI 主动应对了此类系统固有的新兴安全问题。随附的”系统卡”文件阐明了具备在线操作能力的 AI 可能带来的潜在风险，承认了新的滥用途径。为降低这些风险，Agent 架构内置了工程化保障措施，如要求特定操作类别需获得用户明确授权，并部署了强健的内容过滤机制。公司现正通过反馈驱动的迭代流程，邀请初期用户群体共同完善这些安全协议。</p>
+<p><strong>Seeing AI</strong> 是 Microsoft 推出的一款免费移动应用，它通过实时描述周围环境，为盲人或视力障碍人士赋能。该应用借助设备摄像头运用人工智能技术，识别并描述各类元素，包括物体、文字乃至人物。其核心功能涵盖文档阅读、货币识别、条形码产品辨识以及场景和颜色描述。通过增强对视觉信息的可及性，Seeing AI 最终提升了视障用户的独立生活能力。</p>
+<p><strong>Anthropic 的 Claude 4 系列</strong>：Anthropic 的 Claude 4 是另一款具备高级推理与分析能力的替代选择。尽管其传统强项在于文本处理，但 Claude 4 也包含了强大的视觉功能，能处理来自图像、图表和文档的信息。该模型适用于处理复杂的多步骤任务并提供详尽分析。虽然其实时对话特性并非主要焦点（相较于其他模型），但其底层智能专为构建高能力 AI Agent 而设计。</p>
+<h2 id="Vibe-编码：使用-AI-的直观开发范式"><a href="#Vibe-编码：使用-AI-的直观开发范式" class="headerlink" title="Vibe 编码：使用 AI 的直观开发范式"></a>Vibe 编码：使用 AI 的直观开发范式</h2><p>除了与 GUI 和物理环境的直接交互外，开发人员使用 AI 构建软件的方式也涌现出新范式：”vibe 编码”。这种方法摒弃了精确的、逐步的指令，转而依赖开发者与 AI 编码助手之间更直观、对话式和迭代的协作。开发者提供高层次目标、期望的”氛围”或大致方向，AI 则生成与之匹配的代码。</p>
+<p>该过程具有以下特征：</p>
+<ul>
+<li><strong>对话式提示</strong>：开发者不再编写详细规格说明，而是用自然语言表达，如”为新应用创建一个简洁现代风格的登录页面”，或”重构此函数使其更符合 Pythonic 风格并提升可读性”。AI 会解读”现代”或”Pythonic”的”氛围”内涵，生成相应代码。</li>
+<li><strong>迭代精炼</strong>：AI 的初始输出通常只是起点。开发者随后以自然语言提供反馈，如”这个开头不错，但能把按钮改成蓝色吗？”或”为那段代码添加错误处理机制。”如此往复，直至代码符合预期。</li>
+<li><strong>创意伙伴关系</strong>：在 vibe 编码中，AI 扮演创意伙伴角色，提出开发者可能未曾考虑的创意和解决方案。这能加速开发进程并催生更具创新性的成果。</li>
+<li>**聚焦”目标”而非”方法”**：开发者专注于期望成果（”目标”），将实现细节（”方法”）交由 AI 处理。这使得快速原型设计和多方案探索成为可能，避免陷入样板代码的繁琐。</li>
+<li><strong>可选记忆库</strong>：为在长对话中保持上下文连贯，开发者可使用”记忆库”存储关键信息、偏好或约束条件。例如，开发者可将特定编码风格或项目需求集保存至 AI 记忆库，确保后续代码生成与既定”氛围”保持一致，无需重复指令。</li>
+</ul>
+<p>随着 GPT-4、Claude 和 Gemini 等强大 AI 模型集成至开发环境，Vibe 编码日益流行。这些工具不仅是代码自动补全器；它们正积极参与软件开发的创意过程，使其更易用、更高效。这种新型工作方式正在改变软件工程的性质，强调创造力与高阶思维，而非对语法和 API 的死记硬背。</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
+<li>AI Agent 正从简单自动化演进为通过图形用户界面视觉控制软件，操作方式类人化。</li>
+<li>下一前沿是现实世界交互，如 Google Astra 等项目利用摄像头和麦克风感知、聆听并理解物理环境。</li>
+<li>领先科技公司正融合这些数字与物理能力，打造跨域无缝运行的通用 AI 助手。</li>
+<li>这一转变催生了新型主动式、情境感知型 AI 伙伴，能协助用户处理日常生活中的大量任务。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Agent 正经历重大转型，从基础自动化迈向与数字及物理环境的复杂交互。借助视觉感知操作图形用户界面，这些 Agent 现已能像人类一样操控软件，绕过了对传统 API 的依赖。主要技术实验室正引领这一领域，其开发的 Agent 能在用户桌面直接自动化复杂的多应用工作流。与此同时，下一前沿已扩展至物理世界，如 Google Project Astra 等举措利用摄像头和麦克风与周边环境进行情境化互动。这些先进系统旨在实现媲美人类交互的多模态实时理解。</p>
+<p>终极愿景是融合这些数字与物理能力，创建跨用户所有环境无缝运作的通用 AI 助手。这一演进也通过”vibe 编码”重塑了软件创作本身，形成开发者与 AI 间更直观、对话式的伙伴关系。该新方法优先考虑高层次目标与创意意图，让开发者聚焦于期望成果而非实现细节。通过将 AI 视为创意合作伙伴，这一转变加速了开发进程并激发了创新。最终，这些进步正为主动式、情境感知型 AI 伙伴的新时代铺平道路，使其能够协助我们应对日常生活中的海量任务。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Open AI Operator, <a target="_blank" rel="noopener" href="https://openai.com/index/introducing-operator/">https://openai.com/index/introducing-operator/</a></li>
+<li>Open AI ChatGPT Agent: <a target="_blank" rel="noopener" href="https://openai.com/index/introducing-chatgpt-agent/">https://openai.com/index/introducing-chatgpt-agent/</a></li>
+<li>Browser Use: <a target="_blank" rel="noopener" href="https://docs.browser-use.com/introduction">https://docs.browser-use.com/introduction</a></li>
+<li>Project Mariner, <a target="_blank" rel="noopener" href="https://deepmind.google/models/project-mariner/">https://deepmind.google/models/project-mariner/</a></li>
+<li>Anthropic Computer use: <a target="_blank" rel="noopener" href="https://docs.anthropic.com/en/docs/build-with-claude/computer-use">https://docs.anthropic.com/en/docs/build-with-claude/computer-use</a></li>
+<li>Project Astra, <a target="_blank" rel="noopener" href="https://deepmind.google/models/project-astra/">https://deepmind.google/models/project-astra/</a></li>
+<li>Gemini Live, <a target="_blank" rel="noopener" href="https://gemini.google/overview/gemini-live/?hl=en">https://gemini.google/overview/gemini-live/?hl=en</a></li>
+<li>OpenAI’s GPT-4,  <a target="_blank" rel="noopener" href="https://openai.com/index/gpt-4-research/">https://openai.com/index/gpt-4-research/</a></li>
+<li>Claude 4, <a target="_blank" rel="noopener" href="https://www.anthropic.com/news/claude-4">https://www.anthropic.com/news/claude-4</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-B%20-%20AI%20Agentic%20Interactions_%20From%20GUI%20to%20Real%20world%20environment/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-A_ Advanced Prompting Techniques" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-A_%20Advanced%20Prompting%20Techniques/">Agentic Design Patterns - Appendix A_ Advanced Prompting Techniques</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-A_%20Advanced%20Prompting%20Techniques/" class="archive-article-date">
+  	<time datetime="2025-11-01T00:02:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="附录-A：高级提示工程技巧"><a href="#附录-A：高级提示工程技巧" class="headerlink" title="附录 A：高级提示工程技巧"></a>附录 A：高级提示工程技巧</h1><h2 id="提示工程简介"><a href="#提示工程简介" class="headerlink" title="提示工程简介"></a>提示工程简介</h2><p>提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的响应。相反，设计不当的提示则可能导致模糊、不相关甚至错误的输出。</p>
+<p>提示工程的目标是从语言模型中获得持续高质量的输出。这需要深入理解模型的能力边界和局限性，并有效地传达预期目标。它涉及通过学习如何最优地指导 AI 来发展与 AI 沟通的专业技能。</p>
+<p>本附录详细介绍了超越基础交互方法的各类提示技术。它探讨了构建复杂请求、增强模型推理能力、控制输出格式以及整合外部信息的方法论。这些技术适用于构建从简单聊天机器人到复杂多 Agent 系统的各类应用，能够显著提升 Agentic 应用的性能和可靠性。</p>
+<p>Agentic 模式是构建智能系统的架构蓝图，在主要章节中已有详细阐述。这些模式定义了 Agent 如何规划、使用工具、管理记忆和协同工作。这些 Agentic 系统的效能最终取决于它们与语言模型进行有意义交互的能力。</p>
+<h2 id="核心提示原则"><a href="#核心提示原则" class="headerlink" title="核心提示原则"></a>核心提示原则</h2><p>有效提示语言模型的核心原则：</p>
+<p>有效的提示建立在指导与语言模型沟通的基本原则之上，这些原则适用于各种模型和任务复杂度。掌握这些原则对于持续生成有用且准确的响应至关重要。</p>
+<p><strong>清晰性和具体性</strong>：指令必须明确无误且精确。语言模型基于模式进行推理；多重解释可能导致意外结果。需要明确定义任务、期望的输出格式以及任何限制或要求。避免使用模糊语言或做出假设。不充分的提示会产生模糊和不准确的响应，影响输出的质量。</p>
+<p><strong>简洁性</strong>：在确保具体性的同时，必须保持简洁。指令应当直截了当。不必要的措辞或复杂的句子结构可能混淆模型或掩盖核心指令。提示应当简单明了：对用户而言困惑的内容，对模型同样可能造成困惑。避免使用复杂语言和冗余信息。采用直接表达和主动动词来清晰界定期望操作。有效的动词包括：执行、分析、分类、归类、对比、比较、创建、描述、定义、评估、提取、查找、生成、识别、列出、测量、组织、解析、挑选、预测、提供、排序、推荐、返回、检索、重写、选择、显示、排序、总结、翻译、编写。</p>
+<p><strong>善用动词</strong>：动词选择是提示工程的关键技巧。动作动词明确指示期望的操作。与其说”考虑总结这个”，不如直接使用”总结以下文本”这样的指令更为有效。精确的动词能够引导模型激活与特定任务相关的训练数据和流程。</p>
+<p><strong>指令优于约束</strong>：积极指令通常比消极约束更为有效。明确指定期望操作比罗列禁止事项效果更好。虽然约束在安全控制或严格格式要求中有其价值，但过度依赖可能使模型过度关注规避而非目标达成。构建提示时应直接引导模型。积极指令更符合人类指导习惯，并能减少混淆。</p>
+<p><strong>实验和迭代</strong>：提示工程是一个迭代过程。找到最有效的提示需要多次尝试。从初步设计开始，进行测试，分析输出，识别不足，然后优化提示。模型变体、配置参数（如温度或 top-p）以及细微的措辞变化都可能产生不同结果。记录实验过程对于学习和改进至关重要。实验和迭代是实现预期性能的必要手段。</p>
+<p>这些原则构成了与语言模型有效沟通的基础。通过优先考虑清晰性、简洁性、善用动词、积极指令和迭代流程，为应用更高级提示技术奠定了坚实基础。</p>
+<h2 id="基础提示技术"><a href="#基础提示技术" class="headerlink" title="基础提示技术"></a>基础提示技术</h2><p>基于核心原则，基础技术为语言模型提供不同层次的信息或示例来引导其响应。这些方法作为提示工程的入门阶段，适用于广泛的应用场景。</p>
+<h2 id="Zero-Shot-提示"><a href="#Zero-Shot-提示" class="headerlink" title="Zero-Shot 提示"></a>Zero-Shot 提示</h2><p>Zero-shot 提示是最基础的提示形式，语言模型仅接收指令和输入数据，不提供任何期望的输入-输出对示例。它完全依赖模型的预训练知识来理解任务并生成相关响应。本质上，zero-shot 提示包含任务描述和启动过程的初始文本。</p>
+<ul>
+<li><strong>适用场景</strong>：Zero-shot 提示通常适用于模型在训练过程中可能广泛接触的任务，例如简单问答、文本补全或基础文本摘要。这是最快捷的初步尝试方法。</li>
+<li><strong>示例</strong>：<br>将以下英文句子翻译成法语：’Hello, how are you?’</li>
+</ul>
+<h2 id="One-Shot-提示"><a href="#One-Shot-提示" class="headerlink" title="One-Shot 提示"></a>One-Shot 提示</h2><p>One-shot 提示在呈现实际任务前，向语言模型提供一个输入及其对应期望输出的示例。这种方法作为初始演示，展示模型应遵循的模式。目的是为模型提供具体实例，使其能够作为模板有效执行给定任务。</p>
+<ul>
+<li><p><strong>适用场景</strong>：当期望的输出格式或风格较为特殊或不常见时，One-shot 提示十分有用。它为模型提供了具体的学习范例。相比 zero-shot，它能提升需要特定结构或语气任务的性能。</p>
+</li>
+<li><p><strong>示例</strong>：<br>将以下英文句子翻译成西班牙语：<br>英文：’Thank you.’<br>西班牙语：’Gracias.’</p>
+<p>英文：’Please.’<br>西班牙语：</p>
+</li>
+</ul>
+<h2 id="Few-Shot-提示"><a href="#Few-Shot-提示" class="headerlink" title="Few-Shot 提示"></a>Few-Shot 提示</h2><p>Few-shot 提示在 one-shot 基础上增强，提供多个（通常三到五个）输入-输出对示例。这旨在展示更清晰的预期响应模式，提高模型为新输入复制该模式的可能性。此方法通过多个示例引导模型遵循特定输出模式。</p>
+<ul>
+<li><p><strong>适用场景</strong>：Few-shot 提示特别适用于需要遵循特定格式、风格或展现细微变化的任务。它非常适合于分类、具有特定模式的数据提取或以特定风格生成文本等任务，尤其是在 zero-shot 或 one-shot 无法产生一致结果时。使用至少三到五个示例是通用经验法则，可根据任务复杂度和模型 token 限制进行调整。</p>
+</li>
+<li><p><strong>示例质量与多样性的重要性</strong>：Few-shot 提示的效果很大程度上取决于所提供示例的质量和多样性。示例应准确、具有代表性，并涵盖模型可能遇到的潜在变化或边缘情况。高质量、精心编写的示例至关重要；即使微小错误也可能混淆模型并导致不良输出。包含多样化示例有助于模型更好地泛化到未见过的输入。</p>
+</li>
+<li><p><strong>分类示例中的类别混合</strong>：在使用 few-shot 提示进行分类任务（模型需要将输入分类到预定义类别）时，混合不同类别的示例顺序是最佳实践。这防止模型过度拟合特定示例序列，确保其学会独立识别每个类别的关键特征，从而在未见数据上实现更鲁棒和可泛化的性能。</p>
+</li>
+<li><p><strong>向”Many-Shot”学习的演进</strong>：随着 Gemini 等现代 LLM 在长上下文建模方面能力增强，它们在利用”many-shot”学习方面变得极为有效。这意味着现在可以通过在提示中直接包含大量示例（有时甚至数百个）来实现复杂任务的最佳性能，使模型能够学习更复杂的模式。</p>
+</li>
+<li><p><strong>示例</strong>：<br>将以下电影评论的情感分类为 POSITIVE、NEUTRAL 或 NEGATIVE：</p>
+<p>评论：”表演精湛，故事引人入胜。”<br>情感：POSITIVE</p>
+<p>评论：”还行，没什么特别的。”<br>情感：NEUTRAL</p>
+<p>评论：”我觉得情节混乱，角色不讨喜。”<br>情感：NEGATIVE</p>
+<p>评论：”视觉效果惊艳，但对话薄弱。”<br>情感：</p>
+</li>
+</ul>
+<p>理解何时应用 zero-shot、one-shot 和 few-shot 提示技术，并精心设计和组织示例，对于提升 Agentic 系统的效能至关重要。这些基础方法为各种提示策略奠定了根基。</p>
+<h2 id="结构化提示"><a href="#结构化提示" class="headerlink" title="结构化提示"></a>结构化提示</h2><p>除了提供示例的基础技术外，提示的结构化方式在引导语言模型方面起着关键作用。结构化涉及在提示中使用不同部分或元素，以清晰有序的方式提供指令、上下文或示例等不同类型的信息。这有助于模型正确解析提示，理解每段文本的特定角色。</p>
+<h2 id="系统提示"><a href="#系统提示" class="headerlink" title="系统提示"></a>系统提示</h2><p>系统提示为语言模型设定整体上下文和目的，定义其在交互或会话中的预期行为。这涉及提供建立规则、角色或整体行为的指令或背景信息。与具体的用户查询不同，系统提示为模型的响应提供基础指导。它影响模型在整个交互过程中的语气、风格和总体方法。例如，系统提示可指示模型始终保持简洁有益的响应，或确保输出适合普通受众。系统提示还用于安全和内容控制，包含保持尊重语言等指导原则。</p>
+<p>此外，为最大化其效果，系统提示可通过基于 LLM 的迭代改进进行自动优化。Vertex AI Prompt Optimizer 等服务通过根据用户定义的指标和目标数据系统性地优化提示来促进这一过程，确保特定任务的最佳性能。</p>
+<ul>
+<li><strong>示例</strong>：<br>你是一个乐于助人且无害的 AI 助手。以礼貌且信息丰富的方式回应所有查询。不要生成有害、有偏见或不适当的内容。</li>
+</ul>
+<h2 id="角色提示"><a href="#角色提示" class="headerlink" title="角色提示"></a>角色提示</h2><p>角色提示为语言模型分配特定角色、身份或专业背景，通常与系统或上下文提示结合使用。这涉及指示模型采用与该角色相关的知识、语气和沟通风格。例如，”扮演旅游指南”或”你是一位专业数据分析师”等提示引导模型体现所分配角色的视角和专长。定义角色为语气、风格和专业焦点提供框架，旨在提升输出的质量和相关性。还可指定角色内的期望风格，如”幽默且鼓舞人心的风格”。</p>
+<ul>
+<li><strong>示例</strong>：<br>扮演一位经验丰富的旅行博主。写一段简短且引人入胜的文字，介绍罗马最佳隐藏景点。</li>
+</ul>
+<h2 id="使用分隔符"><a href="#使用分隔符" class="headerlink" title="使用分隔符"></a>使用分隔符</h2><p>有效的提示需要为语言模型清晰区分指令、上下文、示例和输入。可使用分隔符，如三重反引号（```）、XML 标签（&lt;instruction&gt;、&lt;context&gt;）或标记（—），在视觉和程序上分隔这些部分。这种在提示工程中广泛采用的做法，通过明确提示各部分的角色，最小化模型的误解。</p>
+<ul>
+<li><strong>示例</strong>：<br>&lt;instruction&gt;总结以下文章，重点关注作者提出的主要论点。&lt;&#x2F;instruction&gt;<br>&lt;article&gt;<br>[在此插入文章全文]<br>&lt;&#x2F;article&gt;</li>
+</ul>
+<h2 id="上下文工程"><a href="#上下文工程" class="headerlink" title="上下文工程"></a>上下文工程</h2><p>上下文工程与静态系统提示不同，它动态提供对任务和对话至关重要的背景信息。这种持续变化的信息帮助模型理解细微差别、回忆过往交互并整合相关细节，从而产生有根据的响应和更流畅的交流。示例包括先前对话、相关文档（如在检索增强生成中）或特定操作参数。例如，在讨论日本旅行时，可请求提供东京的三个适合家庭的活动，利用现有对话上下文。在 Agentic 系统中，上下文工程是核心 Agent 行为（如记忆持久性、决策制定和跨子任务协调）的基础。具备动态上下文管道的 Agent 能够随时间维持目标、调整策略，并与其他 Agent 或工具无缝协作——这些是实现长期自主性的关键特质。该方法论认为，模型输出的质量更多取决于所提供上下文的丰富度，而非模型架构本身。它标志着从传统提示工程的重大演进，传统提示工程主要聚焦于优化直接用户查询的措辞。上下文工程将其范畴扩展至包含多层信息。</p>
+<p>这些层次包括：</p>
+<ul>
+<li><strong>系统提示</strong>：定义 AI 操作参数的基础指令（例如，”你是技术文档作者；语气必须正式且精确”）。</li>
+<li><strong>外部数据</strong>：<ul>
+<li><strong>检索文档</strong>：从知识库主动获取以支撑响应的信息（例如，提取技术规格）。</li>
+<li><strong>工具输出</strong>：AI 使用外部 API 获取实时数据的结果（例如，查询日历获取可用性）。</li>
+</ul>
+</li>
+<li><strong>隐式数据</strong>：关键信息，如用户身份、交互历史和环境状态。整合隐式上下文面临与隐私和道德数据管理相关的挑战。因此，强大的治理机制对上下文工程至关重要，尤其是在企业、医疗和金融等领域。</li>
+</ul>
+<p>核心原则是，即使是先进模型，若对其操作环境的认知有限或构建不当，表现也会欠佳。这种做法将任务从单纯回答问题重新定义为为 Agent 构建全面的操作图景。例如，一个经过上下文工程设计的 Agent 在响应查询前，会整合用户的日历可用性（工具输出）、与邮件收件人的专业关系（隐式数据）以及过往会议记录（检索文档）。这使得模型能够生成高度相关、个性化且实用的输出。”工程”方面涉及构建稳健的管道以在运行时获取和转换这些数据，并建立反馈循环以持续提升上下文质量。</p>
+<p>为实现这一点，专门的调优系统（如 Google 的 Vertex AI prompt optimizer）可大规模自动化改进过程。通过基于样本输入和预定义指标系统评估响应，这些工具能提升模型性能，并在不同模型间调整提示和系统指令，无需大量手动重写。为优化器提供样本提示、系统指令和模板，使其能程序化地优化上下文输入，为实施复杂上下文工程所需的反馈循环提供结构化方法。</p>
+<p>这种结构化方法将基础 AI 工具与更复杂的情境感知系统区分开来。它将上下文视为核心要素，强调 Agent 知晓什么、何时知晓以及如何运用这些信息。这种做法确保模型对用户的意图、历史和当前环境有全面理解。最终，上下文工程是将无状态聊天机器人转变为高能力情境感知系统的关键方法论。</p>
+<h2 id="结构化输出"><a href="#结构化输出" class="headerlink" title="结构化输出"></a>结构化输出</h2><p>通常，提示的目标不仅是获得自由形式的文本响应，而是以特定机器可读格式提取或生成信息。请求结构化输出（如 JSON、XML、CSV 或 Markdown 表格）是一项关键的结构化技术。通过明确要求特定格式输出并可能提供期望结构的模式或示例，您可以引导模型以易于被 Agentic 系统或其他应用组件解析和使用的方式组织响应。返回 JSON 对象进行数据提取的优势在于强制模型创建结构，从而限制幻觉产生。建议尝试不同输出格式，特别是对于数据提取或分类等非创意任务。</p>
+<ul>
+<li><p><strong>示例</strong>：<br>从以下文本中提取信息，并以包含 “name”、”address” 和 “phone_number” 键的 JSON 对象形式返回。</p>
+<p>文本：”联系 John Smith，地址：123 Main St, Anytown, CA，或致电 (555) 123-4567。”</p>
+</li>
+</ul>
+<p>有效利用系统提示、角色分配、上下文信息、分隔符和结构化输出，显著提升了与语言模型交互的清晰度、控制力和实用性，为构建可靠的 Agentic 系统奠定了坚实基础。请求结构化输出对于创建管道至关重要，其中语言模型的输出将作为后续系统或处理步骤的输入。</p>
+<p><strong>利用 Pydantic 实现面向对象封装</strong>：强制执行结构化输出和增强互操作性的强大技术是使用 LLM 生成的数据填充 Pydantic 对象实例。Pydantic 是一个使用 Python 类型注解进行数据验证和设置管理的 Python 库。通过定义 Pydantic 模型，您可以为期望的数据结构创建清晰且可强制执行的模式。这种方法有效地为提示输出提供了面向对象的封装，将原始文本或半结构化数据转换为经过验证的、类型提示的 Python 对象。</p>
+<p>您可以使用 model_validate_json 方法直接将来自 LLM 的 JSON 字符串解析为 Pydantic 对象。这特别高效，因为它在一个步骤中同时完成解析和验证。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel, EmailStr, Field, ValidationError</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Optional</span></span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> date</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- Pydantic 模型定义（基于前述内容）---</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">User</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    name: <span class="built_in">str</span> = Field(..., description=<span class="string">&quot;用户的全名。&quot;</span>)</span><br><span class="line">    email: EmailStr = Field(..., description=<span class="string">&quot;用户的电子邮件地址。&quot;</span>)</span><br><span class="line">    date_of_birth: <span class="type">Optional</span>[date] = Field(<span class="literal">None</span>, description=<span class="string">&quot;用户的出生日期。&quot;</span>)</span><br><span class="line">    interests: <span class="type">List</span>[<span class="built_in">str</span>] = Field(default_factory=<span class="built_in">list</span>, description=<span class="string">&quot;用户兴趣列表。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 假设的 LLM 输出 ---</span></span><br><span class="line">llm_output_json = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    &quot;name&quot;: &quot;Alice Wonderland&quot;,</span></span><br><span class="line"><span class="string">    &quot;email&quot;: &quot;alice.w@example.com&quot;,</span></span><br><span class="line"><span class="string">    &quot;date_of_birth&quot;: &quot;1995-07-21&quot;,</span></span><br><span class="line"><span class="string">    &quot;interests&quot;: [</span></span><br><span class="line"><span class="string">        &quot;自然语言处理&quot;,</span></span><br><span class="line"><span class="string">        &quot;Python 编程&quot;,</span></span><br><span class="line"><span class="string">        &quot;园艺&quot;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 解析和验证 ---</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 使用 model_validate_json 类方法解析 JSON 字符串。</span></span><br><span class="line">    <span class="comment"># 此步骤同时完成 JSON 解析和基于 User 模型的数据验证。</span></span><br><span class="line">    user_object = User.model_validate_json(llm_output_json)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 现在可以使用干净、类型安全的 Python 对象。</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;成功创建 User 对象！&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;姓名：<span class="subst">&#123;user_object.name&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;电子邮件：<span class="subst">&#123;user_object.email&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;出生日期：<span class="subst">&#123;user_object.date_of_birth&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;第一个兴趣：<span class="subst">&#123;user_object.interests[<span class="number">0</span>]&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="comment"># 可以像访问任何其他 Python 对象属性一样访问数据。</span></span><br><span class="line">    <span class="comment"># Pydantic 已将 &#x27;date_of_birth&#x27; 字符串自动转换为 datetime.date 对象。</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;date_of_birth 的类型：<span class="subst">&#123;<span class="built_in">type</span>(user_object.date_of_birth)&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span> ValidationError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="comment"># 如果 JSON 格式错误或数据不符合模型类型要求，</span></span><br><span class="line">    <span class="comment"># Pydantic 将抛出 ValidationError。</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;无法验证来自 LLM 的 JSON 数据。&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br></pre></td></tr></table></figure>
+
+<p>这段 Python 代码演示了如何使用 Pydantic 库定义数据模型并验证 JSON 数据。它定义了一个包含姓名、电子邮件、出生日期和兴趣字段的 User 模型，附带类型提示和描述。代码随后使用 User 模型的 model_validate_json 方法解析来自大型语言模型（LLM）的假设 JSON 输出。该方法根据模型结构和类型要求处理 JSON 解析和数据验证。最后，代码从生成的 Python 对象中访问已验证数据，并包含 ValidationError 的异常处理，以应对 JSON 无效的情况。</p>
+<p>对于 XML 数据，可使用 xmltodict 库将 XML 转换为字典，然后传递给 Pydantic 模型进行解析。通过在 Pydantic 模型中使用 Field 别名，可以无缝地将通常冗长或属性密集的 XML 结构映射到对象的字段。</p>
+<p>这种方法对于确保基于 LLM 的组件与更大系统其他部分的互操作性极为宝贵。当 LLM 输出封装在 Pydantic 对象中时，可以可靠地传递给其他函数、API 或数据处理管道，并确保数据符合预期结构和类型。这种在系统组件边界实施”解析而非验证”的原则，能够构建更健壮和可维护的应用程序。</p>
+<p>有效利用系统提示、角色分配、上下文信息、分隔符和结构化输出，显著增强了与语言模型交互的清晰度、控制力和实用性，为开发可靠的 Agentic 系统提供了坚实基础。请求结构化输出对于创建管道至关重要，其中语言模型的输出作为后续系统或处理步骤的输入。</p>
+<p>结构化提示 除了提供示例的基础技术外，提示的结构化方式在引导语言模型方面起着关键作用。结构化涉及在提示中使用不同部分或元素，以清晰有序的方式提供指令、上下文或示例等不同类型的信息。这有助于模型正确解析提示，理解每段文本的特定角色。</p>
+<h2 id="推理与思维过程技术"><a href="#推理与思维过程技术" class="headerlink" title="推理与思维过程技术"></a>推理与思维过程技术</h2><p>大型语言模型擅长模式识别和文本生成，但在需要复杂多步骤推理的任务中常常面临挑战。本附录重点介绍旨在通过鼓励模型揭示其内部思维过程来增强推理能力的技术。具体而言，它探讨了改进逻辑推演、数学计算和规划的方法。</p>
+<h2 id="思维链（CoT）"><a href="#思维链（CoT）" class="headerlink" title="思维链（CoT）"></a>思维链（CoT）</h2><p>思维链（CoT）提示技术是一种强大方法，通过明确提示模型在得出最终答案前生成中间推理步骤来提高语言模型的推理能力。您不仅是要求结果，而是指示模型”逐步思考”。这一过程模拟了人类如何将问题分解为更小、更易管理的部分并按顺序处理。</p>
+<p>CoT 帮助 LLM 生成更准确的答案，特别是对于需要计算或逻辑推演的任务，这些任务中模型可能因直接得出结果而产生错误。通过生成中间步骤，模型更有可能保持正确方向并准确执行必要操作。</p>
+<p>CoT 有两个主要变体：</p>
+<ul>
+<li><p><strong>Zero-Shot CoT</strong>：这涉及简单地在提示中添加”让我们逐步思考”（或类似措辞）的短语，不提供任何推理过程示例。令人惊讶的是，对于许多任务，这一简单添加能通过触发模型暴露内部推理轨迹的能力，显著提升其性能。</p>
+<ul>
+<li><strong>示例（Zero-Shot CoT）</strong>：<br>如果火车以每小时 60 英里的速度行驶，覆盖 240 英里的距离，旅程耗时多久？让我们逐步思考。</li>
+</ul>
+</li>
+<li><p><strong>Few-Shot CoT</strong>：这结合了 CoT 与 few-shot 提示。您向模型提供多个示例，展示输入、逐步推理过程和最终输出。这为模型提供了更清晰的模板，指导其如何执行推理和构建响应，通常在复杂任务上比 zero-shot CoT 产生更好结果。</p>
+<ul>
+<li><p><strong>示例（Few-Shot CoT）</strong>：<br>问：三个连续整数的和是 36。这些整数是什么？<br>答：设第一个整数为 x。下一个连续整数是 x+1，第三个是 x+2。和为 x + (x+1) + (x+2) &#x3D; 3x + 3。已知和为 36，所以 3x + 3 &#x3D; 36。两边减去 3：3x &#x3D; 33。除以 3：x &#x3D; 11。这些整数是 11、11+1&#x3D;12 和 11+2&#x3D;13。这些整数是 11、12 和 13。</p>
+<p>问：Sarah 有 5 个苹果，她又买了 8 个。她吃了 3 个苹果。她还剩多少苹果？让我们逐步思考。<br>答：让我们逐步思考。Sarah 开始有 5 个苹果。她买了 8 个，所以她在初始数量上加 8：5 + 8 &#x3D; 13 个苹果。然后，她吃了 3 个苹果，所以从总数中减去 3：13 - 3 &#x3D; 10。Sarah 还剩 10 个苹果。答案是 10。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>CoT 具有多个优势。它相对易于实施，且能在现成 LLM 上高效运行，无需微调。一个重要好处是模型输出的可解释性增强；您可以观察其遵循的推理步骤，这有助于理解其得出特定答案的原因，并在出现问题时进行调试。此外，CoT 似乎提升了提示在不同版本语言模型间的鲁棒性，意味着模型更新时性能不易下降。主要缺点是生成推理步骤会增加输出长度，导致更高的 token 使用量，可能增加成本和响应时间。</p>
+<p>CoT 的最佳实践包括确保最终答案在推理步骤<em>之后</em>呈现，因为推理生成会影响后续答案 token 的预测。此外，对于具有单一正确答案的任务（如数学问题），建议在使用 CoT 时将模型温度设置为 0（贪婪解码），以确保在每一步确定性地选择最可能的下一个 token。</p>
+<h2 id="自我一致性"><a href="#自我一致性" class="headerlink" title="自我一致性"></a>自我一致性</h2><p>基于思维链理念，自我一致性技术旨在通过利用语言模型的概率性质来提高推理可靠性。自我一致性不依赖单一贪婪推理路径（如基本 CoT），而是为同一问题生成多个不同推理路径，然后从中选择最一致的答案。</p>
+<p>自我一致性包含三个主要步骤：</p>
+<ol>
+<li><strong>生成多样化推理路径</strong>：将同一提示（通常是 CoT 提示）多次发送给 LLM。通过使用更高温度设置，鼓励模型探索不同推理方法并生成多样化逐步解释。</li>
+<li><strong>提取答案</strong>：从每个生成的推理路径中提取最终答案。</li>
+<li><strong>选择最常出现的答案</strong>：对提取的答案进行多数投票。在不同推理路径中出现最频繁的答案被选为最终、最一致的答案。</li>
+</ol>
+<p>这种方法提高了响应的准确性和连贯性，特别适用于可能存在多个有效推理路径或模型单次尝试易出错的任务。优势在于获得答案正确的伪概率可能性，从而提升整体准确性。然而，显著代价是需要为同一查询多次运行模型，导致计算成本和费用大幅增加。</p>
+<ul>
+<li><strong>示例（概念性）</strong>：<ul>
+<li><em>提示</em>：”陈述’所有鸟类都能飞’是真还是假？解释你的推理。”</li>
+<li><em>模型运行 1（高温度）</em>：推理大多数鸟类会飞，结论为真。</li>
+<li><em>模型运行 2（高温度）</em>：考虑企鹅和鸵鸟等例外，结论为假。</li>
+<li><em>模型运行 3（高温度）</em>：讨论鸟类<em>一般</em>特性，简要提及例外，结论为真。</li>
+<li><em>自我一致性结果</em>：基于多数投票（真出现两次），最终答案为”真”。（注：更复杂的方法会权衡推理质量）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="后退提示"><a href="#后退提示" class="headerlink" title="后退提示"></a>后退提示</h2><p>后退提示通过首先要求语言模型考虑与任务相关的一般原则或概念来增强推理，然后再处理具体细节。对这一更广泛问题的响应随后用作解决原始问题的上下文。</p>
+<p>此过程允许语言模型激活相关背景知识和更广泛的推理策略。通过关注基本原则或更高层次抽象，模型能生成更准确和富有洞察力的答案，减少受表面元素影响。初始考虑一般因素可为生成特定创意输出提供更强基础。后退提示鼓励批判性思维和知识应用，通过强调一般原则可能减轻偏见。</p>
+<ul>
+<li><strong>示例</strong>：<ul>
+<li><em>提示 1（后退）</em>：”优秀侦探故事的关键要素是什么？”</li>
+<li><em>模型响应 1</em>：（列出如红鲱鱼、令人信服的动机、有缺陷的主角、逻辑线索、令人满意的结局等要素）。</li>
+<li><em>提示 2（原始任务 + 后退上下文）</em>：”运用优秀侦探故事的关键要素[在此插入模型响应 1]，为一部设定在小镇的新神秘小说撰写简短情节摘要。”</li>
+</ul>
+</li>
+</ul>
+<h2 id="思维树（ToT）"><a href="#思维树（ToT）" class="headerlink" title="思维树（ToT）"></a>思维树（ToT）</h2><p>思维树（ToT）是一种高级推理技术，扩展了思维链方法。它使语言模型能够同时探索多个推理路径，而非遵循单一线性进程。此技术采用树状结构，其中每个节点代表一个”思维”——作为中间步骤的连贯语言序列。从每个节点，模型可分支探索替代推理路线。</p>
+<p>ToT 特别适合需要探索、回溯或在得出解决方案前评估多种可能性的复杂问题。虽然比线性思维链方法计算要求更高且实现更复杂，但 ToT 能在需要深思熟虑和探索性问题解决的任务上取得更优结果。它允许 Agent 考虑不同视角，并通过调查”思维树”中的替代分支从初始错误中恢复。</p>
+<ul>
+<li><strong>示例（概念性）</strong>：对于像”基于这些情节点为故事构思三种不同可能结局”的复杂创意写作任务，ToT 将允许模型从关键转折点探索不同叙事分支，而非仅生成单一线性延续。</li>
+</ul>
+<p>这些推理和思维过程技术对于构建能处理超越简单信息检索或文本生成任务的 Agent 至关重要。通过提示模型暴露推理、考虑多视角或后退至一般原则，我们能显著增强其在 Agentic 系统中执行复杂认知任务的能力。</p>
+<h2 id="行动与交互技术"><a href="#行动与交互技术" class="headerlink" title="行动与交互技术"></a>行动与交互技术</h2><p>智能 Agent 具备主动与环境交互的能力，超越单纯的文本生成。这包括利用工具、执行外部函数以及参与观察、推理和行动的迭代循环。本节探讨旨在实现这些主动行为的提示技术。</p>
+<h2 id="工具使用-函数调用"><a href="#工具使用-函数调用" class="headerlink" title="工具使用&#x2F;函数调用"></a>工具使用&#x2F;函数调用</h2><p>Agent 的关键能力之一是使用外部工具或调用函数来执行超出其内部能力范围的操作。这些操作可能包括网络搜索、数据库访问、发送电子邮件、执行计算或与外部 API 交互。有效的工具使用提示涉及设计能够指示模型在适当时机和方法下利用工具的指令。</p>
+<p>现代语言模型通常经过”函数调用”或”工具使用”的专门微调。这使得它们能够理解可用工具的描述，包括其用途和参数。在接收到用户请求后，模型可以判断是否需要使用工具，识别合适的工具，并格式化调用所需的参数。模型本身并不直接执行工具，而是生成结构化输出（通常为 JSON 格式），指定要使用的工具及其参数。随后，Agentic 系统处理此输出，执行工具，并将工具结果返回给模型，将其整合到持续交互中。</p>
+<ul>
+<li><p><strong>示例</strong>：<br>你可以访问一个天气工具，该工具可以获取指定城市的当前天气。该工具名为 ‘get_current_weather’，接受一个 ‘city’ 参数（字符串类型）。</p>
+<p>用户：伦敦现在的天气怎么样？</p>
+<ul>
+<li><em>预期模型输出（函数调用）</em>：<br>{<br>  “tool_code”: “get_current_weather”,<br>  “tool_name”: “get_current_weather”,<br>  “parameters”: {<br>“city”: “London”<br>  }<br>}</li>
+</ul>
+</li>
+</ul>
+<h2 id="ReAct（推理与行动）"><a href="#ReAct（推理与行动）" class="headerlink" title="ReAct（推理与行动）"></a>ReAct（推理与行动）</h2><p>ReAct 是”推理与行动”的缩写，是一种将思维链风格推理与使用工具执行操作交织结合的提示范式。ReAct 模拟人类的工作方式——我们通过口头推理并采取行动来收集更多信息或推进目标实现。</p>
+<p>ReAct 模式包含一个循环过程：</p>
+<ol>
+<li><strong>思考</strong>：模型生成思维过程，阐述其当前理解和计划。</li>
+<li><strong>行动</strong>：基于思考，模型决定执行操作，通常涉及使用工具（如搜索、计算器、API 调用）。它输出工具名称和所需输入。</li>
+<li><strong>观察</strong>：Agentic 系统执行工具并将结果（观察）反馈给模型。</li>
+<li>循环继续，模型基于最新”观察”生成新的”思考”，引发进一步的”行动”和”观察”，直至任务完成，模型输出”最终答案”。</li>
+</ol>
+<p>这种思考与行动的交错过程使 Agent 能够动态收集信息、响应工具输出并优化策略，特别适用于需要与动态环境或外部知识源交互的任务。</p>
+<ul>
+<li><p><strong>示例（说明性 ReAct 轨迹）</strong>：<br>用户：法国的首都是什么？当前人口是多少？</p>
+<p>思考：用户询问两个信息：法国首都及其人口。我可以使用搜索工具查找这些信息。我将从确认首都开始，尽管我可能已经知道。<br>行动：搜索({“query”: “法国首都”})<br>观察：巴黎</p>
+<p>思考：好的，首都是巴黎。现在我需要查找巴黎的人口。<br>行动：搜索({“query”: “巴黎当前人口”})<br>观察：巴黎人口在 2023 年估计约为 210 万人。</p>
+<p>思考：我已找到两条信息。现在可以向用户提供最终答案。<br>最终答案：法国的首都是巴黎，其 2023 年估计人口约为 210 万人。</p>
+</li>
+</ul>
+<p>这些技术对于构建能够主动与世界互动、检索实时信息并执行需要与外部系统交互任务的 Agent 至关重要。</p>
+<h2 id="高级技术"><a href="#高级技术" class="headerlink" title="高级技术"></a>高级技术</h2><p>除了基础、结构和推理模式外，还有多种其他提示技术可以进一步提升 Agentic 系统的能力和效率。这些技术涵盖从使用 AI 优化提示到整合外部知识和基于用户特征定制响应等多个方面。</p>
+<h2 id="自动提示工程（APE）"><a href="#自动提示工程（APE）" class="headerlink" title="自动提示工程（APE）"></a>自动提示工程（APE）</h2><p>认识到制作有效提示可能是一个复杂且迭代的过程，自动提示工程（APE）探索使用语言模型本身来生成、评估和改进提示。这种方法旨在自动化提示编写过程，有可能在无需大量人工设计投入的情况下提升模型性能。</p>
+<p>基本思路是构建一个”元模型”或流程，该流程接收任务描述并生成多个候选提示。然后根据这些提示在给定输入集上产生的输出质量进行评估（可能使用 BLEU 或 ROUGE 等指标，或人工评估）。表现最佳的提示可以被选择，进一步优化后用于目标任务。使用 LLM 生成用户查询变体以训练聊天机器人就是此类应用的一个实例。</p>
+<ul>
+<li><strong>示例（概念性）</strong>：开发者提供描述：”我需要一个能从电子邮件中提取日期和发件人的提示。”APE 系统生成若干候选提示。这些提示在样本电子邮件上测试，最终选择能稳定提取正确信息的提示。</li>
+</ul>
+<p>当然。以下是使用 DSPy 等框架进行程序化提示优化的重新表述和适度扩展说明：</p>
+<p>另一种强大的提示优化技术，尤其以 DSPy 框架为代表，将提示视为可自动优化的程序化模块，而非静态文本。这种方法超越了手动试错，进入了更系统化、数据驱动的方法论范畴。</p>
+<p>该技术的核心依赖于两个关键组件：</p>
+<ol>
+<li><strong>金标准集（或高质量数据集）</strong>：这是一组具有代表性的高质量输入-输出对。它作为”真实基准”，定义了特定任务下成功响应应具备的特征。</li>
+<li><strong>目标函数（或评分指标）</strong>：这是一个自动评估 LLM 输出与数据集中对应”黄金”输出的函数。它返回一个分数，指示响应的质量、准确性或正确性。</li>
+</ol>
+<p>利用这些组件，优化器（如贝叶斯优化器）系统性地改进提示。此过程通常涉及两种主要策略，可独立或协同使用：</p>
+<ul>
+<li><p><strong>Few-Shot 示例优化</strong>：优化器并非由开发者手动选择 few-shot 提示的示例，而是从金标准集中程序化地采样不同示例组合。随后测试这些组合，以识别最能有效引导模型生成期望输出的特定示例集合。</p>
+</li>
+<li><p><strong>指令提示优化</strong>：在此方法中，优化器自动优化提示的核心指令。它使用 LLM 作为”元模型”迭代地变异和重新表述提示文本——调整措辞、语气或结构——以发现能获得目标函数最高评分的表述方式。</p>
+</li>
+</ul>
+<p>两种策略的最终目标都是最大化目标函数的分数，实质上”训练”提示以产生与高质量金标准集持续接近的结果。通过结合这两种方法，系统能同时优化<em>给予模型的指令</em>和<em>展示给模型的示例</em>，从而获得为特定任务机器优化的高效且强大的提示。</p>
+<h2 id="迭代提示-改进"><a href="#迭代提示-改进" class="headerlink" title="迭代提示&#x2F;改进"></a>迭代提示&#x2F;改进</h2><p>此技术涉及从简单的基础提示开始，然后根据模型的初始响应迭代改进。如果模型输出不理想，您分析不足之处并修改提示以解决问题。这更侧重于人工驱动的迭代设计循环，而非自动化过程（如 APE）。</p>
+<ul>
+<li><strong>示例</strong>：<ul>
+<li><em>尝试 1</em>：”为新型咖啡机撰写产品描述。”（结果过于泛泛）。</li>
+<li><em>尝试 2</em>：”为新型咖啡机撰写产品描述。突出其速度和清洁便利性。”（结果改善，但缺乏细节）。</li>
+<li><em>尝试 3</em>：”为’SpeedClean Coffee Pro’撰写产品描述。强调其在 2 分钟内冲泡一壶咖啡的能力及自清洁循环。目标受众为忙碌的专业人士。”（结果更接近期望）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="提供负面示例"><a href="#提供负面示例" class="headerlink" title="提供负面示例"></a>提供负面示例</h2><p>尽管”指令优于约束”的原则普遍适用，但在某些情况下谨慎使用负面示例可能有所帮助。负面示例向模型展示输入与<em>不期望的</em>输出，或输入与<em>不应</em>生成的输出。这有助于明确边界或防止特定类型的错误响应。</p>
+<ul>
+<li><p><strong>示例</strong>：<br>生成巴黎热门旅游景点列表。不要包含埃菲尔铁塔。</p>
+<p>不应采取的做法示例：<br>输入：列出巴黎著名地标。<br>输出：埃菲尔铁塔、卢浮宫、巴黎圣母院。</p>
+</li>
+</ul>
+<h2 id="使用类比"><a href="#使用类比" class="headerlink" title="使用类比"></a>使用类比</h2><p>通过类比来框定任务，有时能通过将任务与熟悉概念关联，帮助模型理解期望的输出或过程。这对创意任务或解释复杂角色尤为有用。</p>
+<ul>
+<li><strong>示例</strong>：<br>扮演”数据厨师”角色。取用原始食材（数据点），为商务受众烹制一份”摘要菜肴”（报告），突出关键风味（趋势）。</li>
+</ul>
+<h2 id="因式认知-分解"><a href="#因式认知-分解" class="headerlink" title="因式认知&#x2F;分解"></a>因式认知&#x2F;分解</h2><p>对于极其复杂的任务，将总体目标分解为更小、更易管理的子任务，并对每个子任务分别提示模型，可能是有效的方法。子任务的结果随后被组合以实现最终成果。这与提示链和规划相关，但强调对问题的深思熟虑分解。</p>
+<ul>
+<li><strong>示例</strong>：撰写研究论文：<ul>
+<li>提示 1：”生成关于 AI 对就业市场影响的论文详细大纲。”</li>
+<li>提示 2：”基于此大纲撰写引言部分：[插入大纲引言]。”</li>
+<li>提示 3：”基于此大纲撰写’对白领工作的影响’部分：[插入大纲相关部分]。”（对其他部分重复此过程）。</li>
+<li>提示 N：”整合这些部分并撰写结论。”</li>
+</ul>
+</li>
+</ul>
+<h2 id="检索增强生成（RAG）"><a href="#检索增强生成（RAG）" class="headerlink" title="检索增强生成（RAG）"></a>检索增强生成（RAG）</h2><p>RAG 是一种强大技术，通过在提示过程中赋予语言模型访问外部、最新或领域特定信息的能力来增强模型。当用户提出问题时，系统首先从知识库（如数据库、文档集、网络）检索相关文档或数据。随后将此检索信息作为上下文纳入提示，使语言模型能够基于此外部知识生成响应。这有助于缓解幻觉问题，并提供模型未训练过或非常新的信息访问途径。这是需要处理动态或专有信息的 Agentic 系统的关键模式。</p>
+<ul>
+<li><strong>示例</strong>：<ul>
+<li><em>用户查询</em>：”Python 库’X’最新版本有哪些新功能？”</li>
+<li><em>系统操作</em>：在文档数据库中搜索”Python 库 X 最新功能”。</li>
+<li><em>对 LLM 的提示</em>：”基于以下文档片段：[插入检索到的文本]，解释 Python 库’X’最新版本的新功能。”</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户画像模式"><a href="#用户画像模式" class="headerlink" title="用户画像模式"></a>用户画像模式</h2><p>虽然角色提示为<em>模型</em>分配角色，用户画像模式则涉及描述用户或模型输出的目标受众。这有助于模型在语言、复杂度、语气和提供信息类型方面定制其响应。</p>
+<ul>
+<li><p><strong>示例</strong>：<br>你正在解释量子物理。目标受众是毫无该学科基础知识的高中生。请用简单语言解释，并使用他们可能理解的类比。</p>
+<p>解释量子物理：[插入基础解释请求]</p>
+</li>
+</ul>
+<p>这些高级和补充技术为提示工程师提供了额外工具，以优化模型行为、整合外部信息，并为 Agentic 工作流中的特定用户和任务定制交互。</p>
+<h2 id="使用-Google-Gems"><a href="#使用-Google-Gems" class="headerlink" title="使用 Google Gems"></a>使用 Google Gems</h2><p>Google 的 AI”Gems”（见图 1）代表其大型语言模型架构中的用户可配置功能。每个”Gem”作为核心 Gemini AI 的专门实例运行，为特定可重复任务量身定制。用户通过提供一组明确指令来创建 Gem，这确立了其操作参数。此初始指令集定义了 Gem 的指定目标、响应风格和知识领域。底层模型设计为在整个对话过程中始终遵循这些预定义指令。</p>
+<p>这允许为专注应用创建高度专业化的 AI Agent。例如，可配置 Gem 作为仅引用特定编程库的代码解释器。另一个可被指示分析数据集，生成摘要而不进行推测性评论。不同的 Gem 可能作为遵守特定正式风格指南的翻译器。此过程为 AI 创建了持久且特定于任务的上下文。</p>
+<p>因此，用户无需在每个新查询中重新建立相同上下文信息。这种方法减少了对话冗余，提升了任务执行效率。产生的交互更加专注，输出与用户初始要求保持高度一致。此框架允许对通用 AI 模型应用细粒度、持久的用户指导。最终，Gems 实现了从通用交互向专业化、预定义 AI 功能的转变。</p>
+<p><img src="/../images/appendix-a/image1.png"><br>图 1：Google Gem 使用示例。</p>
+<h2 id="使用-LLM-改进提示（元方法）"><a href="#使用-LLM-改进提示（元方法）" class="headerlink" title="使用 LLM 改进提示（元方法）"></a>使用 LLM 改进提示（元方法）</h2><p>我们已经探讨了多种制作有效提示的技术，强调清晰性、结构以及提供上下文或示例的重要性。然而，这一过程往往是迭代的，有时颇具挑战性。如果我们能利用大型语言模型（如 Gemini）的强大能力来帮助我们<em>优化</em>提示呢？这正是使用 LLM 进行提示改进的核心思想——一种”元”应用，即 AI 协助优化给 AI 的指令。</p>
+<p>这种能力尤为”精妙”，因为它代表了 AI 自我改进的一种形式，或至少是 AI 辅助人类改进与 AI 交互的方式。我们不再仅仅依赖人类直觉和试错，而是能借助 LLM 对语言、模式乃至常见提示陷阱的理解，获得改进提示的建议。它将 LLM 转变为提示工程过程中的协作伙伴。</p>
+<p>这种元级提示方法的优势包括：</p>
+<ul>
+<li><strong>加速迭代</strong>：相比纯手动试错，能更快获得改进建议。</li>
+<li><strong>识别盲点</strong>：LLM 可能发现您忽略的提示中的歧义或潜在误解。</li>
+<li><strong>学习机会</strong>：通过观察 LLM 提出的建议类型，您可更深入理解提示有效的要素，提升自身提示工程技能。</li>
+<li><strong>可扩展性</strong>：可能自动化部分提示优化流程，尤其在处理大量提示时优势明显。</li>
+</ul>
+<p>需注意，LLM 的建议并非总是完美的，应像对待任何手动设计的提示一样进行评估和测试。然而，它提供了一个强有力的起点，能显著简化优化过程。</p>
+<ul>
+<li><p><strong>改进提示的示例</strong>：<br>分析以下语言模型提示，并提出改进建议，以使其能稳定地从新闻文章中提取主题和关键实体（人物、组织、地点）。当前提示有时会遗漏实体或错误判断主题。</p>
+<p>现有提示：<br>“总结本文要点并列出重要名称和地点：[插入文章文本]“</p>
+<p>改进建议：</p>
+</li>
+</ul>
+<p>在此示例中，我们使用 LLM 来评审和增强另一个提示。这种元级交互展示了这些模型的灵活性与强大能力，使我们能通过首先优化给它们的基本指令来构建更有效的 Agentic 系统。这是一个迷人的循环：AI 帮助我们更有效地与 AI 对话。</p>
+<h2 id="特定任务的提示"><a href="#特定任务的提示" class="headerlink" title="特定任务的提示"></a>特定任务的提示</h2><p>尽管前述技术具有广泛适用性，但某些任务仍受益于特定的提示考量。这在代码和多模态输入领域尤为相关。</p>
+<h2 id="代码提示"><a href="#代码提示" class="headerlink" title="代码提示"></a>代码提示</h2><p>语言模型，尤其是在大型代码数据集上训练的模型，可成为开发者的强大助手。代码提示涉及使用 LLM 生成、解释、翻译或调试代码。存在多种应用场景：</p>
+<ul>
+<li><strong>代码编写提示</strong>：要求模型基于功能描述生成代码片段或函数。<ul>
+<li><strong>示例</strong>：”编写一个接受数字列表并返回平均值的 Python 函数。”</li>
+</ul>
+</li>
+<li><strong>代码解释提示</strong>：提供代码片段并要求模型逐行或整体解释其功能。<ul>
+<li><strong>示例</strong>：”解释以下 JavaScript 代码片段：[插入代码]。”</li>
+</ul>
+</li>
+<li><strong>代码翻译提示</strong>：要求模型将代码从一种编程语言转换为另一种。<ul>
+<li><strong>示例</strong>：”将以下 Java 代码翻译为 C++：[插入代码]。”</li>
+</ul>
+</li>
+<li><strong>代码调试与审查提示</strong>：提供存在错误或可优化代码，要求模型识别问题、建议修复或提供重构意见。<ul>
+<li><strong>示例</strong>：”以下 Python 代码出现’NameError’。问题何在？如何修复？[插入代码和错误回溯]。”</li>
+</ul>
+</li>
+</ul>
+<p>有效的代码提示通常需要提供充分上下文、明确指定语言和版本，并清晰阐述功能需求或问题描述。</p>
+<h2 id="多模态提示"><a href="#多模态提示" class="headerlink" title="多模态提示"></a>多模态提示</h2><p>尽管本附录重点及当前多数 LLM 交互基于文本，但该领域正迅速向能跨模态（文本、图像、音频、视频等）处理和生成信息的多模态模型发展。多模态提示涉及使用输入组合引导模型，即采用多种输入格式而非仅文本。</p>
+<ul>
+<li><strong>示例</strong>：提供图表图像并要求模型解释图中所示过程（图像输入 + 文本提示）。或提供图像并要求模型生成描述性标题（图像输入 + 文本提示 -&gt; 文本输出）。</li>
+</ul>
+<p>随着多模态能力日益复杂，提示技术将相应演进，以有效利用这些组合的输入与输出。</p>
+<h2 id="最佳实践与实验"><a href="#最佳实践与实验" class="headerlink" title="最佳实践与实验"></a>最佳实践与实验</h2><p>成为熟练的提示工程师是一个需要持续学习和实验的迭代过程。值得重申和强调若干有价值的最佳实践：</p>
+<ul>
+<li><strong>提供示例</strong>：提供 one-shot 或 few-shot 示例是最有效的模型引导方法之一。</li>
+<li><strong>设计简洁</strong>：保持提示简明、清晰且易于理解。避免不必要的专业术语或过度复杂措辞。</li>
+<li><strong>明确输出要求</strong>：清晰定义模型响应的期望格式、长度、风格和内容。</li>
+<li><strong>指令优于约束</strong>：聚焦于告知模型应做什么，而非不应做什么。</li>
+<li><strong>控制最大 Token 长度</strong>：使用模型配置或明确提示指令管理生成输出的长度。</li>
+<li><strong>提示中使用变量</strong>：对应用中使用的提示，采用变量使其动态可复用，避免硬编码特定值。</li>
+<li><strong>尝试输入格式与写作风格</strong>：试验不同提示措辞方式（疑问、陈述、指令）并探索不同语气或风格，以寻找最佳效果。</li>
+<li><strong>Few-Shot 分类任务提示中混合类别</strong>：随机化不同类别示例顺序，防止过拟合。</li>
+<li><strong>适应模型更新</strong>：语言模型持续更新。准备在新模型版本上测试现有提示，并调整以利用新功能或维持性能。</li>
+<li><strong>尝试输出格式</strong>：尤其对非创意任务，试验请求 JSON 或 XML 等结构化输出。</li>
+<li><strong>与其他提示工程师协作实验</strong>：合作可提供不同视角，有助于发现更有效提示。</li>
+<li><strong>CoT 最佳实践</strong>：牢记思维链特定实践，如答案置于推理后，以及对单一正确答案任务设置温度为 0。</li>
+<li><strong>记录各类提示尝试</strong>：对追踪何者有效、无效及原因至关重要。维护提示、配置和结果的结构化记录。</li>
+<li><strong>代码库中保存提示</strong>：集成提示至应用时，将其存储于独立、组织良好的文件中，便于维护和版本控制。</li>
+<li><strong>依赖自动化测试与评估</strong>：对生产系统，实施自动化测试和评估流程，监控提示性能并确保对新数据的泛化能力。</li>
+</ul>
+<p>提示工程是一项通过实践持续提升的技能。应用这些原则与技术，并保持对实验和文档的系统性方法，您将显著增强构建高效 Agentic 系统的能力。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>本附录全面概述了提示工程，将其重新定位为一项有纪律的工程实践，而非简单的提问行为。其核心目标是展示如何将通用语言模型转化为针对特定任务的专业化、可靠且高度能干的工具。这一旅程始于不容妥协的核心原则：清晰性、简洁性和迭代实验，这些是与 AI 有效沟通的基石。这些原则至关重要，因其减少了自然语言固有的歧义，帮助引导模型的概率输出朝向明确正确的意图。在此基础上，基础技术（如 zero-shot、one-shot 和 few-shot 提示）作为通过示例展示预期行为的主要手段。这些方法提供不同层级的上下文指导，有力塑造模型的响应风格、语气和格式。超越示例范畴，使用明确角色、系统级指令和清晰分隔符构建提示，为精细控制模型提供了必要的架构层次。</p>
+<p>这些技术在构建自主 Agent 的背景下变得至关重要，它们为复杂多步骤操作提供了必要的控制与可靠性。为使 Agent 有效创建和执行计划，必须利用高级推理模式，如思维链和思维树。这些复杂方法迫使模型外化其逻辑步骤，系统地将复杂目标分解为可管理的子任务序列。整个 Agentic 系统的运营可靠性依赖于各组件输出的可预测性。这正是为何请求 JSON 等结构化数据，并使用 Pydantic 等工具进行程序化验证，不仅是一种便利，更是强大自动化的绝对必要条件。缺乏这种纪律，Agent 的内部认知组件无法可靠通信，导致自动化工作流中的灾难性故障。最终，这些结构化与推理技术成功将模型的概率文本生成转化为 Agent 的确定、可信认知引擎。</p>
+<p>此外，这些提示赋予 Agent 感知环境并与之交互的关键能力，弥合数字思维与现实世界行动间的鸿沟。ReAct 和原生函数调用等行动导向框架作为 Agent 的”双手”，使其能使用工具、查询 API 和操作数据。同时，检索增强生成（RAG）及更广泛的上下文工程学科充当 Agent 的”感官”。它们主动从外部知识库检索相关实时信息，确保 Agent 决策基于当前事实现实。这一关键能力防止 Agent 在信息真空中运行，避免受限于其静态且可能过时的训练数据。因此，掌握完整的提示技术谱系，是将通用语言模型从简单文本生成器提升为真正复杂 Agent 的决定性技能，使其能以自主性、情境意识和智能执行复杂任务。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>以下是进一步阅读和深入探索提示工程技术的资源列表：</p>
+<ol>
+<li>Prompt Engineering, <a target="_blank" rel="noopener" href="https://www.kaggle.com/whitepaper-prompt-engineering">https://www.kaggle.com/whitepaper-prompt-engineering</a></li>
+<li>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models, <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2201.11903">https://arxiv.org/abs/2201.11903</a>   </li>
+<li>Self-Consistency Improves Chain of Thought Reasoning in Language Models,  <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2203.11171">https://arxiv.org/pdf/2203.11171</a>   </li>
+<li>ReAct: Synergizing Reasoning and Acting in Language Models, <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.03629">https://arxiv.org/abs/2210.03629</a>  </li>
+<li>Tree of Thoughts: Deliberate Problem Solving with Large Language Models,  <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2305.10601">https://arxiv.org/pdf/2305.10601</a>   </li>
+<li>Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models, <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2310.06117">https://arxiv.org/abs/2310.06117</a>   </li>
+<li>DSPy: Programming—not prompting—Foundation Models <a target="_blank" rel="noopener" href="https://github.com/stanfordnlp/dspy">https://github.com/stanfordnlp/dspy</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-A_%20Advanced%20Prompting%20Techniques/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2025年 10 月 27 日 - 2025年 10 月 31 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1221,312 +1733,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/ADP-16_%20Resource-Aware%20Optimization/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ADP-15_ Inter-Agent Communication (A2A)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-15_%20Inter-Agent%20Communication%20(A2A)/">Agentic Design Patterns - Chapter 15_ Inter-Agent Communication (A2A)</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-15_%20Inter-Agent%20Communication%20(A2A)/" class="archive-article-date">
-  	<time datetime="2025-10-20T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-15-章：Agent-间通信（A2A）"><a href="#第-15-章：Agent-间通信（A2A）" class="headerlink" title="第 15 章：Agent 间通信（A2A）"></a>第 15 章：Agent 间通信（A2A）</h1><p>即便拥有先进能力，单个 AI Agent 在处理复杂、多方面问题时仍常面临局限。为克服此限制，Agent 间通信（A2A）使不同 AI Agent（可能基于不同框架构建）能够有效协作。这种协作涉及无缝协调、任务委派和信息交换。</p>
-<p>Google A2A 协议是旨在促进此类通用通信的开放标准。本章将探讨 A2A、其实际应用以及在 Google ADK 中的实现。</p>
-<h2 id="Agent-间通信模式概述"><a href="#Agent-间通信模式概述" class="headerlink" title="Agent 间通信模式概述"></a>Agent 间通信模式概述</h2><p>Agent2Agent（A2A）协议是旨在实现不同 AI Agent 框架间通信与协作的开放标准。它确保互操作性，允许使用 LangGraph、CrewAI 或 Google ADK 等技术开发的 AI Agent 能够协同工作，无论其来源或框架差异如何。</p>
-<p>A2A 获得了众多技术公司和服务提供商支持，包括 Atlassian、Box、LangChain、MongoDB、Salesforce、SAP 和 ServiceNow。Microsoft 计划将 A2A 集成至 Azure AI Foundry 和 Copilot Studio，展示了其对开放协议的承诺。此外，Auth0 和 SAP 正在将 A2A 支持集成到其平台和 Agent 中。</p>
-<p>作为开源协议，A2A 欢迎社区贡献，以促进其发展和广泛采用。</p>
-<h2 id="A2A-的核心概念"><a href="#A2A-的核心概念" class="headerlink" title="A2A 的核心概念"></a>A2A 的核心概念</h2><p>A2A 协议为 Agent 交互提供结构化方法，建立在若干核心概念之上。深入理解这些概念对任何开发或集成 A2A 兼容系统者都至关重要。A2A 的基础支柱包括核心参与者、Agent 卡片、Agent 发现、通信和任务、交互机制及安全性，所有这些都将详细审查。</p>
-<p><strong>核心参与者</strong>：A2A 涉及三个主要实体：</p>
-<ul>
-<li>用户：发起对 Agent 协助的请求。</li>
-<li>A2A 客户端（客户端 Agent）：代表用户请求操作或信息的应用程序或 AI Agent。</li>
-<li>A2A 服务器（远程 Agent）：提供 HTTP 端点处理客户端请求并返回结果的 AI Agent 或系统。远程 Agent 作为”不透明”系统运行，意味着客户端无需了解其内部操作细节。</li>
-</ul>
-<p><strong>Agent 卡片</strong>：Agent 的数字身份由其 Agent 卡片定义，通常是 JSON 文件。此文件包含用于客户端交互和自动发现的关键信息，包括 Agent 身份、端点 URL 和版本。它还详细说明支持功能（如流式传输或推送通知）、特定技能、默认输入&#x2F;输出模式以及身份验证要求。以下是 WeatherBot 的 Agent 卡片示例。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;WeatherBot&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Provides accurate weather forecasts and historical data.&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://weather-service.example.com/a2a&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;capabilities&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;streaming&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pushNotifications&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stateTransitionHistory&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;authentication&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;schemes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="string">&quot;apiKey&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;defaultInputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;text&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;defaultOutputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;text&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;skills&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;get_current_weather&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Get Current Weather&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Retrieve real-time weather for any location.&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;inputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;text&quot;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;outputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;text&quot;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;examples&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;What&#x27;s the weather in Paris?&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;Current conditions in Tokyo&quot;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;weather&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;current&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;real-time&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;get_forecast&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Get Forecast&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Get 5-day weather predictions.&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;inputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;text&quot;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;outputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;text&quot;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;examples&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;5-day forecast for New York&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;Will it rain in London this weekend?&quot;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;weather&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;forecast&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;prediction&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>Agent 发现</strong>：它允许客户端找到描述可用 A2A 服务器能力的 Agent 卡片。此过程存在几种策略：</p>
-<ul>
-<li>知名 URI：Agent 在标准化路径（如 &#x2F;.well-known&#x2F;agent.json）托管其 Agent 卡片。此方法为公共或特定领域使用提供广泛、通常自动化的可访问性。</li>
-<li>策展注册表：这些注册表提供集中目录，其中发布 Agent 卡片，可根据特定标准查询。这非常适合需要集中管理和访问控制的企业环境。</li>
-<li>直接配置：Agent 卡片信息被嵌入或私下共享。此方法适用于紧密耦合或私有系统，其中动态发现并不重要。</li>
-</ul>
-<p>无论选择何种方法，保护 Agent 卡片端点都很重要。这可通过访问控制、双向 TLS（mTLS）或网络限制实现，特别是当卡片包含敏感（虽非秘密）信息时。</p>
-<p><strong>通信和任务</strong>：在 A2A 框架中，通信围绕异步任务结构化，这些任务代表长时间运行进程的基本工作单元。每个任务被分配唯一标识符，并通过一系列状态（如已提交、工作中或已完成）移动，此设计支持复杂操作中的并行处理。Agent 间通信通过消息进行。</p>
-<p>此通信包含属性（描述消息的键值元数据，如其优先级或创建时间）以及一个或多个部分（承载传递的实际内容，如纯文本、文件或结构化 JSON 数据）。Agent 在任务期间生成的有形输出称为工件。与消息类似，工件也由一个或多个部分组成，并可在结果可用时逐步流式传输。A2A 框架内所有通信都通过 HTTP(S) 进行，使用 JSON-RPC 2.0 协议作为有效载荷。为在多次交互中保持连续性，使用服务器生成的 contextId 来分组相关任务并保留上下文。</p>
-<p><strong>交互机制</strong>：请求&#x2F;响应（轮询）服务器发送事件（SSE）。A2A 提供多种交互方法以适应各种 AI 应用需求，每种方法都有独特机制：</p>
-<ul>
-<li>同步请求&#x2F;响应：用于快速、即时操作。在此模型中，客户端发送请求并主动等待服务器处理并在单个同步交换中返回完整响应。</li>
-<li>异步轮询：适用于需要更长时间处理的任务。客户端发送请求，服务器立即以”工作中”状态和任务 ID 确认。然后客户端可自由执行其他操作，并可通过发送新请求定期轮询服务器检查任务状态，直至标记为”已完成”或”失败”。</li>
-<li>流式更新（服务器发送事件 - SSE）：适用于接收实时、增量结果。此方法建立从服务器到客户端的持久单向连接。它允许远程 Agent 持续推送更新（如状态更改或部分结果），而无需客户端发出多个请求。</li>
-<li>推送通知（Webhook）：专为非常长时间运行或资源密集型任务设计，其中维护恒定连接或频繁轮询效率低下。客户端可注册 webhook URL，当任务状态发生重大变化（如完成时），服务器将向该 URL 发送异步通知（”推送”）。</li>
-</ul>
-<p>Agent 卡片指定 Agent 是否支持流式传输或推送通知功能。此外，A2A 是模态无关的，意味着它不仅可以为文本促进这些交互模式，还可为音频和视频等其他数据类型促进，从而实现丰富的多模态 AI 应用。流式传输和推送通知功能均在 Agent 卡片中指定。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## 同步请求示例</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;jsonrpc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;method&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sendTask&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;params&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;task-001&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;sessionId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;session-001&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;parts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;text&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;What is the exchange rate from USD to EUR?&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;acceptedOutputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;text/plain&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;historyLength&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>同步请求使用 sendTask 方法，其中客户端请求并期望对其查询的单个完整答案。相比之下，流式请求使用 sendTaskSubscribe 方法建立持久连接，允许 Agent 随时间发送多个增量更新或部分结果。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## 流式请求示例</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;jsonrpc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;method&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sendTaskSubscribe&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;params&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;task-002&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;sessionId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;session-001&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;parts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;text&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;What&#x27;s the exchange rate for JPY to GBP today?&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;acceptedOutputModes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;text/plain&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;historyLength&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>安全性</strong>：Agent 间通信（A2A）是系统架构的关键组成部分，能够在 Agent 间实现安全、无缝的数据交换。它通过多个内置机制确保稳健性和完整性。</p>
-<p>双向传输层安全（TLS）：建立加密和认证连接，防止未经授权访问和数据拦截，确保安全通信。</p>
-<p>全面审计日志：所有 Agent 间通信均被详细记录，明确信息流、涉及 Agent 和操作。此审计轨迹对问责、故障排除和安全分析至关重要。</p>
-<p>Agent 卡片声明：身份验证要求在 Agent 卡片中明确声明，这是概述 Agent 身份、能力和安全策略的配置工件。这集中并简化了身份验证管理。</p>
-<p>凭据处理：Agent 通常使用安全凭据（如 OAuth 2.0 令牌或 API 密钥）进行身份验证，通过 HTTP 头传递。此方法防止凭据在 URL 或消息正文中暴露，增强整体安全性。</p>
-<h2 id="A2A-与-MCP"><a href="#A2A-与-MCP" class="headerlink" title="A2A 与 MCP"></a>A2A 与 MCP</h2><p>A2A 是补充 Anthropic 模型上下文协议（MCP）的协议（见图 1）。MCP 专注于为 Agent 构建上下文及其与外部数据和工具的交互，而 A2A 则促进 Agent 间协调和通信，实现任务委派与协作。</p>
-<p><img src="/../images/chapter-15/image1.png"></p>
-<p>图 1：A2A 和 MCP 协议比较</p>
-<p>A2A 旨在提高效率、降低集成成本，并促进复杂多 Agent AI 系统开发中的创新和互操作性。因此，深入理解 A2A 的核心组件和操作方法对有效设计、实施和应用协作式、互操作 AI Agent 系统至关重要。</p>
-<h2 id="实际应用和用例"><a href="#实际应用和用例" class="headerlink" title="实际应用和用例"></a>实际应用和用例</h2><p>Agent 间通信对跨不同领域构建复杂 AI 解决方案不可或缺，实现模块化、可扩展性和增强智能。</p>
-<ul>
-<li><strong>多框架协作</strong>：A2A 主要用例是使独立 AI Agent 能够通信协作，无论其底层框架（如 ADK、LangChain、CrewAI）如何。这对构建复杂多 Agent 系统至关重要，不同 Agent 专门处理问题不同方面。</li>
-<li><strong>自动化工作流编排</strong>：在企业环境中，A2A 可通过使 Agent 委派和协调任务促进复杂工作流。例如，一个 Agent 可能处理初始数据收集，然后委派给另一 Agent 分析，最后委派给第三 Agent 生成报告，所有通信均通过 A2A 协议进行。</li>
-<li><strong>动态信息检索</strong>：Agent 可通信以检索和交换实时信息。主 Agent 可能从专门”数据获取 Agent”请求实时市场数据，后者然后使用外部 API 收集信息并发送回来。</li>
-</ul>
-<h2 id="实践代码示例"><a href="#实践代码示例" class="headerlink" title="实践代码示例"></a>实践代码示例</h2><p>让我们检查 A2A 协议的实际应用。位于 <a target="_blank" rel="noopener" href="https://github.com/google-a2a/a2a-samples/tree/main/samples">https://github.com/google-a2a/a2a-samples/tree/main/samples</a> 的存储库提供 Java、Go 和 Python 示例，说明各种 Agent 框架（如 LangGraph、CrewAI、Azure AI Foundry 和 AG2）如何使用 A2A 通信。此存储库中所有代码均在 Apache 2.0 许可证下发布。为进一步说明 A2A 核心概念，我们将审查代码摘录，重点是基于 ADK 的 Agent 和 Google 身份验证工具设置 A2A 服务器。查看 <a target="_blank" rel="noopener" href="https://github.com/google-a2a/a2a-samples/blob/main/samples/python/agents/birthday_planner_adk/calendar_agent/adk_agent.py">https://github.com/google-a2a/a2a-samples/blob/main/samples/python/agents/birthday_planner_adk&#x2F;calendar_agent&#x2F;adk_agent.py</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> LlmAgent  <span class="comment"># type: ignore[<span class="keyword">import</span>-untyped]</span></span><br><span class="line"><span class="keyword">from</span> google.adk.tools.google_api_tool <span class="keyword">import</span> CalendarToolset  <span class="comment"># type: ignore[<span class="keyword">import</span>-untyped]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">create_agent</span>(<span class="params">client_id, client_secret</span>) -&gt; LlmAgent:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;构造 ADK agent。&quot;&quot;&quot;</span></span><br><span class="line">    toolset = CalendarToolset(client_id=client_id, client_secret=client_secret)</span><br><span class="line">    <span class="keyword">return</span> LlmAgent(</span><br><span class="line">        model=<span class="string">&#x27;gemini-2.0-flash-001&#x27;</span>,</span><br><span class="line">        name=<span class="string">&#x27;calendar_agent&#x27;</span>,</span><br><span class="line">        description=<span class="string">&quot;An agent that can help manage a user&#x27;s calendar&quot;</span>,</span><br><span class="line">        instruction=<span class="string">f&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">您是一个可以帮助管理用户日历的Agent。用户将请求有关其日历状态的信息或对其日历进行更改。</span></span><br><span class="line"><span class="string">使用提供的工具与日历API交互。如果未指定，假定用户所需的日历是&quot;primary&quot;日历。</span></span><br><span class="line"><span class="string">使用日历API工具时，请使用格式正确的RFC3339时间戳。今天是 <span class="subst">&#123;datetime.datetime.now()&#125;</span>。</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span>,</span><br><span class="line">        tools=<span class="keyword">await</span> toolset.get_tools(),</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
-
-<p>此 Python 代码定义异步函数 <code>create_agent</code>，用于构造 ADK LlmAgent。它首先使用提供的客户端凭据初始化 <code>CalendarToolset</code> 以访问 Google Calendar API。随后创建 <code>LlmAgent</code> 实例，配置指定 Gemini 模型、描述性名称和管理用户日历的指令。Agent 配备来自 <code>CalendarToolset</code> 的日历工具，使其能与 Calendar API 交互并响应有关日历状态或修改的用户查询。Agent 指令动态合并当前日期以提供时间上下文。为说明如何构造 Agent，让我们检查 GitHub 上 A2A 示例中 calendar_agent 的关键部分。</p>
-<p>以下代码显示 Agent 如何使用其特定指令和工具定义。请注意，仅显示解释此功能所需代码；您可在此处访问完整文件：<a target="_blank" rel="noopener" href="https://github.com/a2aproject/a2a-samples/blob/main/samples/python/agents/birthday_planner_adk/calendar_agent/__main__.py">https://github.com/a2aproject/a2a-samples/blob/main/samples/python/agents/birthday_planner_adk&#x2F;calendar_agent&#x2F;__main__.py</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">host: <span class="built_in">str</span>, port: <span class="built_in">int</span></span>):</span><br><span class="line">    <span class="comment"># 验证是否设置了 API 密钥。</span></span><br><span class="line">    <span class="comment"># 如果使用 Vertex AI API，则不需要。</span></span><br><span class="line">    <span class="keyword">if</span> os.getenv(<span class="string">&#x27;GOOGLE_GENAI_USE_VERTEXAI&#x27;</span>) != <span class="string">&#x27;TRUE&#x27;</span> <span class="keyword">and</span> <span class="keyword">not</span> os.getenv(</span><br><span class="line">        <span class="string">&#x27;GOOGLE_API_KEY&#x27;</span></span><br><span class="line">    ):</span><br><span class="line">        <span class="keyword">raise</span> ValueError(</span><br><span class="line">            <span class="string">&#x27;GOOGLE_API_KEY environment variable not set and &#x27;</span></span><br><span class="line">            <span class="string">&#x27;GOOGLE_GENAI_USE_VERTEXAI is not TRUE.&#x27;</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    skill = AgentSkill(</span><br><span class="line">        <span class="built_in">id</span>=<span class="string">&#x27;check_availability&#x27;</span>,</span><br><span class="line">        name=<span class="string">&#x27;Check Availability&#x27;</span>,</span><br><span class="line">        description=<span class="string">&quot;Checks a user&#x27;s availability for a time using their Google Calendar&quot;</span>,</span><br><span class="line">        tags=[<span class="string">&#x27;calendar&#x27;</span>],</span><br><span class="line">        examples=[<span class="string">&#x27;Am I free from 10am to 11am tomorrow?&#x27;</span>],</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    agent_card = AgentCard(</span><br><span class="line">        name=<span class="string">&#x27;Calendar Agent&#x27;</span>,</span><br><span class="line">        description=<span class="string">&quot;An agent that can manage a user&#x27;s calendar&quot;</span>,</span><br><span class="line">        url=<span class="string">f&#x27;http://<span class="subst">&#123;host&#125;</span>:<span class="subst">&#123;port&#125;</span>/&#x27;</span>,</span><br><span class="line">        version=<span class="string">&#x27;1.0.0&#x27;</span>,</span><br><span class="line">        defaultInputModes=[<span class="string">&#x27;text&#x27;</span>],</span><br><span class="line">        defaultOutputModes=[<span class="string">&#x27;text&#x27;</span>],</span><br><span class="line">        capabilities=AgentCapabilities(streaming=<span class="literal">True</span>),</span><br><span class="line">        skills=[skill],</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    adk_agent = asyncio.run(create_agent(</span><br><span class="line">        client_id=os.getenv(<span class="string">&#x27;GOOGLE_CLIENT_ID&#x27;</span>),</span><br><span class="line">        client_secret=os.getenv(<span class="string">&#x27;GOOGLE_CLIENT_SECRET&#x27;</span>),</span><br><span class="line">    ))</span><br><span class="line"></span><br><span class="line">    runner = Runner(</span><br><span class="line">        app_name=agent_card.name,</span><br><span class="line">        agent=adk_agent,</span><br><span class="line">        artifact_service=InMemoryArtifactService(),</span><br><span class="line">        session_service=InMemorySessionService(),</span><br><span class="line">        memory_service=InMemoryMemoryService(),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    agent_executor = ADKAgentExecutor(runner, agent_card)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">handle_auth</span>(<span class="params">request: Request</span>) -&gt; PlainTextResponse:</span><br><span class="line">        <span class="keyword">await</span> agent_executor.on_auth_callback(</span><br><span class="line">            <span class="built_in">str</span>(request.query_params.get(<span class="string">&#x27;state&#x27;</span>)), <span class="built_in">str</span>(request.url)</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">return</span> PlainTextResponse(<span class="string">&#x27;Authentication successful.&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    request_handler = DefaultRequestHandler(</span><br><span class="line">        agent_executor=agent_executor, task_store=InMemoryTaskStore()</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    a2a_app = A2AStarletteApplication(</span><br><span class="line">        agent_card=agent_card, http_handler=request_handler</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    routes = a2a_app.routes()</span><br><span class="line">    routes.append(</span><br><span class="line">        Route(</span><br><span class="line">            path=<span class="string">&#x27;/authenticate&#x27;</span>,</span><br><span class="line">            methods=[<span class="string">&#x27;GET&#x27;</span>],</span><br><span class="line">            endpoint=handle_auth,</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    app = Starlette(routes=routes)</span><br><span class="line">    uvicorn.run(app, host=host, port=port)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p>此 Python 代码演示了设置符合 A2A 的”日历 Agent”，用于通过 Google Calendar 检查用户可用性。它涉及验证 API 密钥或 Vertex AI 配置以用于身份验证目的。Agent 能力（包括”check_availability”技能）在 AgentCard 中定义，该卡片还指定 Agent 网络地址。随后创建 ADK agent，配置内存服务以管理工件、会话和内存。然后代码初始化 Starlette Web 应用程序，合并身份验证回调和 A2A 协议处理程序，并使用 Uvicorn 执行它以通过 HTTP 公开 Agent。</p>
-<p>这些示例说明了构建符合 A2A 的 Agent 的过程，从定义其能力到将其作为 Web 服务运行。通过利用 Agent 卡片和 ADK，开发人员可创建能与 Google Calendar 等工具集成的互操作 AI Agent。此实用方法展示了 A2A 在建立多 Agent 生态系统中的应用。</p>
-<p>建议通过 <a target="_blank" rel="noopener" href="https://www.trickle.so/blog/how-to-build-google-a2a-project">https://www.trickle.so/blog/how-to-build-google-a2a-project</a> 上的代码演示进一步探索 A2A。此链接提供的资源包括 Python 和 JavaScript 中的示例 A2A 客户端和服务器、多 Agent Web 应用程序、命令行界面以及各种 Agent 框架的示例实现。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong>：单个 AI Agent（特别是基于不同框架构建的 Agent）在处理复杂、多方面问题时通常会遇到困难。主要挑战是缺乏允许它们有效通信协作的通用语言或协议。这种隔离阻止了创建复杂系统，其中多个专门 Agent 可结合独特技能解决更大任务。若无标准化方法，集成这些不同 Agent 既昂贵又耗时，并阻碍更强大、更具凝聚力 AI 解决方案的开发。</p>
-<p><strong>为什么</strong>：Agent 间通信（A2A）协议为此问题提供开放、标准化解决方案。它是基于 HTTP 的协议，能实现互操作性，允许不同 AI Agent 无缝协调、委派任务和共享信息，无论其底层技术如何。核心组件是 Agent 卡片，这是描述 Agent 能力、技能和通信端点的数字身份文件，促进发现和交互。A2A 定义各种交互机制，包括同步和异步通信，以支持不同用例。通过为 Agent 协作创建通用标准，A2A 促进了构建复杂、多 Agent Agentic 系统的模块化和可扩展生态系统。</p>
-<p><strong>经验法则</strong>：当您需要协调两个或多个 AI Agent 间协作时使用此模式，特别是如果它们使用不同框架（如 Google ADK、LangGraph、CrewAI）构建。它非常适合构建复杂、模块化应用程序，其中专门 Agent 处理工作流特定部分，例如将数据分析委派给一个 Agent，将报告生成委派给另一 Agent。当 Agent 需要动态发现和使用其他 Agent 能力完成任务时，此模式也必不可少。</p>
-<p><strong>视觉摘要</strong></p>
-<p><strong><img src="/../images/chapter-15/image2.png"></strong></p>
-<p>图 2：A2A Agent 间通信模式</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><p>关键要点：</p>
-<ul>
-<li>Google A2A 协议是开放、基于 HTTP 的标准，促进使用不同框架构建的 AI Agent 间通信协作。</li>
-<li>AgentCard 作为 Agent 数字标识符，允许其他 Agent 自动发现和理解其能力。</li>
-<li>A2A 提供同步请求-响应交互（使用 <code>tasks/send</code>）和流式更新（使用 <code>tasks/sendSubscribe</code>）以适应不同通信需求。</li>
-<li>该协议支持多轮对话，包括 <code>input-required</code> 状态，允许 Agent 请求额外信息并在交互期间维护上下文。</li>
-<li>A2A 鼓励模块化架构，其中专门 Agent 可在不同端口上独立运行，实现系统可扩展性和分布。</li>
-<li>Trickle AI 等工具有助于可视化和跟踪 A2A 通信，帮助开发人员监控、调试和优化多 Agent 系统。</li>
-<li>虽然 A2A 是用于管理不同 Agent 间任务和工作流的高级协议，但模型上下文协议（MCP）为 LLM 提供与外部资源交互的标准化接口。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Agent 间通信（A2A）协议建立了重要的开放标准，以克服单个 AI Agent 的固有隔离。通过提供通用的基于 HTTP 的框架，它确保在不同平台上构建的 Agent 间的无缝协作和互操作性，例如 Google ADK、LangGraph 或 CrewAI。核心组件是 Agent 卡片，它作为数字身份，清楚定义 Agent 能力并使其他 Agent 能够动态发现。协议灵活性支持各种交互模式，包括同步请求、异步轮询和实时流式传输，满足广泛应用需求。</p>
-<p>这使得能够创建模块化和可扩展架构，其中专门 Agent 可组合以编排复杂自动化工作流。安全性是基本方面，具有内置机制（如 mTLS 和明确身份验证要求）来保护通信。虽补充 MCP 等其他标准，但 A2A 的独特焦点是 Agent 间的高级协调和任务委派。主要技术公司的强大支持以及实际实现的可用性突显了其日益增长的重要性。该协议为开发人员构建更复杂、分布式和智能的多 Agent 系统铺平道路。最终，A2A 是促进创新和互操作的协作 AI 生态系统的基础支柱。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Chen, B. (2025, April 22). <em>How to Build Your First Google A2A Project: A Step-by-Step Tutorial</em>. Trickle.so Blog. <a target="_blank" rel="noopener" href="https://www.trickle.so/blog/how-to-build-google-a2a-project">https://www.trickle.so/blog/how-to-build-google-a2a-project</a></li>
-<li>Google A2A GitHub Repository. <a target="_blank" rel="noopener" href="https://github.com/google-a2a/A2A">https://github.com/google-a2a/A2A</a></li>
-<li>Google Agent Development Kit (ADK) <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/">https://google.github.io/adk-docs/</a></li>
-<li>Getting Started with Agent-to-Agent (A2A) Protocol: <a target="_blank" rel="noopener" href="https://codelabs.developers.google.com/intro-a2a-purchasing-concierge#0">https://codelabs.developers.google.com/intro-a2a-purchasing-concierge#0</a></li>
-<li>Google AgentDiscovery - <a target="_blank" rel="noopener" href="https://a2a-protocol.org/latest/">https://a2a-protocol.org/latest/</a></li>
-<li>Communication between different AI frameworks such as LangGraph, CrewAI, and Google ADK <a target="_blank" rel="noopener" href="https://www.trickle.so/blog/how-to-build-google-a2a-project#setting-up-your-a2a-development-environment">https://www.trickle.so/blog/how-to-build-google-a2a-project</a></li>
-<li>Designing Collaborative Multi-Agent Systems with the A2A Protocol <a target="_blank" rel="noopener" href="https://www.oreilly.com/radar/designing-collaborative-multi-agent-systems-with-the-a2a-protocol/">https://www.oreilly.com/radar/designing-collaborative-multi-agent-systems-with-the-a2a-protocol/</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-15_%20Inter-Agent%20Communication%20(A2A)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ADP-14_ Knowledge Retrieval (RAG)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/">Agentic Design Patterns - Chapter 14_ Knowledge Retrieval (RAG)</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/" class="archive-article-date">
-  	<time datetime="2025-10-19T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-14-章：知识检索（RAG）"><a href="#第-14-章：知识检索（RAG）" class="headerlink" title="第 14 章：知识检索（RAG）"></a>第 14 章：知识检索（RAG）</h1><p>LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。</p>
-<p>对于 AI Agent 来说，这一点至关重要，因为它允许它们在实时、可验证的数据中立足，而不仅仅是静态的训练数据。这种能力使它们能够准确执行复杂任务，例如访问最新的公司政策来回答特定问题，或在下订单前检查当前库存。通过整合外部知识，RAG 将 Agent 从简单的对话者转变为能够执行有意义工作的有效的、数据驱动的工具。</p>
-<h2 id="知识检索（RAG）模式概述"><a href="#知识检索（RAG）模式概述" class="headerlink" title="知识检索（RAG）模式概述"></a>知识检索（RAG）模式概述</h2><p>知识检索（RAG）模式通过在生成响应之前授予 LLM 访问外部知识库的权限，显著增强了它们的能力。RAG 不是仅依赖于其内部的预训练知识，而是允许 LLM “查找”信息，就像人类可能查阅书籍或搜索互联网一样。这个过程使 LLM 能够提供更准确、最新和可验证的答案。</p>
-<p>当用户向使用 RAG 的 AI 系统提出问题或给出提示时，查询不会直接发送到 LLM。相反，系统首先在一个庞大的外部知识库——一个高度组织化的文档、数据库或网页库——中搜索相关信息。这种搜索不是简单的关键字匹配；它是一种理解用户意图和词语背后含义的”语义搜索”。这个初始搜索提取出最相关的信息片段或”块”。然后这些提取的片段被”增强”或添加到原始提示中，创建一个更丰富、更有信息量的查询。最后，这个增强的提示被发送到 LLM。有了这些额外的上下文，LLM 可以生成一个不仅流畅自然，而且在事实上基于检索数据的响应。</p>
-<p>RAG 框架提供了几个重要的优势。它允许 LLM 访问最新信息，从而克服了其静态训练数据的限制。这种方法还通过将响应建立在可验证的数据上来减少”幻觉”（生成虚假信息）的风险。此外，LLM 可以利用在内部公司文档或维基中找到的专业知识。这个过程的一个重要优势是能够提供”引用”，即指出信息的确切来源，从而增强 AI 响应的可信度和可验证性。</p>
-<p>要充分理解 RAG 的工作原理，必须了解几个核心概念（见图 1）：</p>
-<p><strong>嵌入（Embeddings）</strong>：在 LLM 的上下文中，嵌入是文本的数值表示，例如单词、短语或整个文档。这些表示采用向量的形式，即一个数字列表。关键思想是在数学空间中捕捉不同文本片段的语义含义和关系。具有相似含义的单词或短语将在这个向量空间中彼此更接近。例如，想象一个简单的 2D 图。”cat”这个词可能用坐标 (2, 3) 表示，而”kitten”将非常接近，坐标为 (2.1, 3.1)。相比之下，”car”这个词将有一个远距离的坐标，如 (8, 1)，反映其不同的含义。实际上，这些嵌入存在于具有数百甚至数千个维度的更高维空间中，允许对语言有非常细致的理解。</p>
-<p><strong>文本相似度</strong>：文本相似度指的是两段文本相似程度的度量。这可以是表面层次的，查看单词的重叠（词汇相似度），或者是更深层次的、基于含义的层次。在 RAG 的上下文中，文本相似度对于在知识库中找到与用户查询最相关的信息至关重要。例如，考虑这些句子：”What is the capital of France?”和”Which city is the capital of France?”。虽然措辞不同，但它们问的是同一个问题。一个好的文本相似度模型会识别到这一点，并为这两个句子分配高相似度分数，即使它们只共享几个单词。这通常使用文本的嵌入来计算。</p>
-<p><strong>语义相似度和距离</strong>：语义相似度是文本相似度的一种更高级形式，纯粹关注文本的含义和上下文，而不仅仅是使用的单词。它旨在理解两段文本是否传达相同的概念或想法。语义距离是这个的逆；高语义相似度意味着低语义距离，反之亦然。在 RAG 中，语义搜索依赖于找到与用户查询语义距离最小的文档。例如，短语”a furry feline companion”和”a domestic cat”除了”a”之外没有共同的单词。然而，理解语义相似度的模型会识别到它们指的是同一件事，并认为它们高度相似。这是因为它们的嵌入在向量空间中会非常接近，表明语义距离很小。这就是允许 RAG 找到相关信息的”智能搜索”，即使用户的措辞与知识库中的文本不完全匹配。</p>
-<p><img src="/../images/chapter-14/image1.png"></p>
-<p>图 1：RAG 核心概念：分块、嵌入和向量数据库</p>
-<p><strong>文档分块</strong>：分块是将大型文档分解为更小、更易于管理的片段或”块”的过程。为了使 RAG 系统高效工作，它不能将整个大型文档输入 LLM。相反，它处理这些更小的块。文档分块的方式对于保持信息的上下文和含义很重要。例如，与其将 50 页的用户手册视为单个文本块，分块策略可能会将其分解为章节、段落甚至句子。例如，”故障排除”部分将是与”安装指南”分开的块。当用户询问特定问题时，RAG 系统可以检索最相关的故障排除块，而不是整个手册。这使检索过程更快，提供给 LLM 的信息更集中，更与用户的直接需求相关。一旦文档被分块，RAG 系统必须使用检索技术来找到给定查询的最相关片段。主要方法是向量搜索，它使用嵌入和语义距离来找到概念上与用户问题相似的块。一种较旧但仍然有价值的技术是 BM25，这是一种基于关键字的算法，根据词频对块进行排名，而不理解语义含义。为了获得两全其美，通常使用混合搜索方法，将 BM25 的关键字精度与语义搜索的上下文理解相结合。这种融合允许更强大和准确的检索，捕获字面匹配和概念相关性。</p>
-<p><strong>向量数据库</strong>：向量数据库是一种专门设计用于高效存储和查询嵌入的专用数据库类型。在文档被分块并转换为嵌入后，这些高维向量被存储在向量数据库中。传统的检索技术，如基于关键字的搜索，非常擅长找到包含查询中确切单词的文档，但缺乏对语言的深入理解。它们不会识别到”furry feline companion”意味着”cat”。这就是向量数据库的优势所在。它们专门为语义搜索而构建。通过将文本存储为数值向量，它们可以基于概念含义而不仅仅是关键字重叠来找到结果。当用户的查询也被转换为向量时，数据库使用高度优化的算法（如 HNSW - 分层可导航小世界）快速搜索数百万个向量，并找到在含义上”最接近”的向量。这种方法对于 RAG 来说要优越得多，因为即使用户的措辞与源文档完全不同，它也能发现相关上下文。本质上，虽然其他技术搜索单词，向量数据库搜索含义。这项技术以各种形式实现，从托管数据库如 Pinecone 和 Weaviate 到开源解决方案如 Chroma DB、Milvus 和 Qdrant。甚至现有数据库也可以增强向量搜索功能，如 Redis、Elasticsearch 和 Postgres（使用 pgvector 扩展）所示。核心检索机制通常由 Meta AI 的 FAISS 或 Google Research 的 ScaNN 等库提供支持，这些库对这些系统的效率至关重要。</p>
-<p><strong>RAG 的挑战</strong>：尽管功能强大，RAG 模式并非没有挑战。一个主要问题出现在回答查询所需的信息不局限于单个块，而是分散在文档的多个部分甚至多个文档中时。在这种情况下，检索器可能无法收集所有必要的上下文，导致答案不完整或不准确。系统的有效性还高度依赖于分块和检索过程的质量；如果检索到不相关的块，可能会引入噪声并混淆 LLM。此外，有效综合来自潜在矛盾来源的信息仍然是这些系统的一个重大障碍。除此之外，另一个挑战是 RAG 需要将整个知识库预处理并存储在专门的数据库中，如向量或图数据库，这是一项相当大的工作。因此，这些知识需要定期协调以保持最新，这在处理不断演变的来源（如公司维基）时是一项关键任务。整个过程可能对性能产生明显影响，增加延迟、运营成本和最终提示中使用的 token 数量。</p>
-<p>总之，检索增强生成（RAG）模式代表了使 AI 更加知识渊博和可靠的重大飞跃。通过将外部知识检索步骤无缝集成到生成过程中，RAG 解决了独立 LLM 的一些核心局限。嵌入和语义相似度的基础概念，结合关键字和混合搜索等检索技术，允许系统智能地找到相关信息，通过战略性分块使其可管理。这整个检索过程由专门的向量数据库提供支持，这些数据库旨在大规模存储和高效查询数百万个嵌入。虽然检索碎片化或矛盾信息的挑战仍然存在，RAG 使 LLM 能够产生不仅在上下文上适当而且建立在可验证事实基础上的答案，从而在 AI 中培养更大的信任和实用性。</p>
-<p><strong>图 RAG（Graph RAG）</strong>：GraphRAG 是检索增强生成的一种高级形式，它利用知识图谱而不是简单的向量数据库进行信息检索。它通过导航这个结构化知识库中数据实体（节点）之间的明确关系（边）来回答复杂查询。一个关键优势是它能够综合来自多个文档的碎片化信息的答案，这是传统 RAG 的常见失败之处。通过理解这些连接，GraphRAG 提供更多上下文准确和细致的响应。</p>
-<p>用例包括复杂的金融分析，将公司与市场事件联系起来，以及用于发现基因和疾病之间关系的科学研究。然而，主要缺点是构建和维护高质量知识图谱所需的显著复杂性、成本和专业知识。与更简单的向量搜索系统相比，这种设置也不太灵活，并且可能引入更高的延迟。系统的有效性完全取决于底层图结构的质量和完整性。因此，GraphRAG 为复杂问题提供了卓越的上下文推理，但实施和维护成本要高得多。总之，在深度、互联的洞察比标准 RAG 的速度和简单性更重要的情况下，它表现出色。</p>
-<p><strong>Agentic RAG</strong>：这种模式的演进，被称为 <strong>Agentic RAG</strong>（见图 2），引入了一个推理和决策层，以显著增强信息提取的可靠性。Agentic RAG 不仅仅是检索和增强，一个”agent”——一个专门的 AI 组件——充当知识的关键守门人和精炼者。这个 agent 不是被动地接受最初检索的数据，而是主动质疑其质量、相关性和完整性，如以下场景所示。</p>
-<p>首先，agent 擅长反思和源验证。如果用户问：”我们公司的远程工作政策是什么？”标准 RAG 可能会提取 2020 年的博客文章和官方的 2025 年政策文档。然而，agent 会分析文档的元数据，识别 2025 年政策为最新和最权威的来源，并在将正确的上下文发送到 LLM 以获得精确答案之前丢弃过时的博客文章。</p>
-<p><img src="/../images/chapter-14/image2.png"></p>
-<p>图 2：Agentic RAG 引入了一个推理 agent，它主动评估、协调和精炼检索的信息，以确保更准确和可信的最终响应。</p>
-<p>其次，agent 擅长协调知识冲突。想象一位金融分析师问：”Alpha 项目的第一季度预算是多少？”系统检索到两个文档：一个初始提案说明预算为 50,000 欧元，一个最终的财务报告列出为 65,000 欧元。Agentic RAG 会识别这种矛盾，将财务报告优先作为更可靠的来源，并向 LLM 提供经过验证的数字，确保最终答案基于最准确的数据。</p>
-<p>第三，agent 可以执行多步推理来综合复杂答案。如果用户问：”我们产品的功能和定价与竞争对手 X 相比如何？”agent 会将此分解为单独的子查询。它会为自己产品的功能、定价、竞争对手 X 的功能和竞争对手 X 的定价启动不同的搜索。在收集这些单独的信息片段后，agent 会将它们综合成结构化的比较上下文，然后再将其提供给 LLM，从而实现简单检索无法产生的全面响应。</p>
-<p>第四，agent 可以识别知识差距并使用外部工具。假设用户问：”市场对我们昨天推出的新产品的即时反应如何？”agent 搜索每周更新的内部知识库，没有找到相关信息。识别到这个差距，它可以激活一个工具——例如实时网络搜索 API——来查找最近的新闻文章和社交媒体情绪。然后 agent 使用这些新收集的外部信息来提供最新的答案，克服其静态内部数据库的限制。</p>
-<p><strong>Agentic RAG 的挑战</strong>：虽然功能强大，但 agentic 层引入了其自身的一系列挑战。主要缺点是复杂性和成本的显著增加。设计、实施和维护 agent 的决策逻辑和工具集成需要大量的工程工作，并增加了计算费用。这种复杂性也可能导致延迟增加，因为 agent 的反思、工具使用和多步推理循环比标准的直接检索过程需要更多时间。此外，agent 本身可能成为新的错误来源；有缺陷的推理过程可能导致它陷入无用的循环，误解任务，或不当丢弃相关信息，最终降低最终响应的质量。</p>
-<h3 id="总结：-Agentic-RAG-代表了标准检索模式的复杂演进，将其从被动的数据管道转变为主动的、解决问题的框架。通过嵌入一个可以评估来源、协调冲突、分解复杂问题和使用外部工具的推理层，agent-显著提高了生成答案的可靠性和深度。这一进步使-AI-更加可信和有能力，尽管它带来了必须仔细管理的系统复杂性、延迟和成本方面的重要权衡。"><a href="#总结：-Agentic-RAG-代表了标准检索模式的复杂演进，将其从被动的数据管道转变为主动的、解决问题的框架。通过嵌入一个可以评估来源、协调冲突、分解复杂问题和使用外部工具的推理层，agent-显著提高了生成答案的可靠性和深度。这一进步使-AI-更加可信和有能力，尽管它带来了必须仔细管理的系统复杂性、延迟和成本方面的重要权衡。" class="headerlink" title="总结： Agentic RAG 代表了标准检索模式的复杂演进，将其从被动的数据管道转变为主动的、解决问题的框架。通过嵌入一个可以评估来源、协调冲突、分解复杂问题和使用外部工具的推理层，agent 显著提高了生成答案的可靠性和深度。这一进步使 AI 更加可信和有能力，尽管它带来了必须仔细管理的系统复杂性、延迟和成本方面的重要权衡。"></a><strong>总结：</strong> Agentic RAG 代表了标准检索模式的复杂演进，将其从被动的数据管道转变为主动的、解决问题的框架。通过嵌入一个可以评估来源、协调冲突、分解复杂问题和使用外部工具的推理层，agent 显著提高了生成答案的可靠性和深度。这一进步使 AI 更加可信和有能力，尽管它带来了必须仔细管理的系统复杂性、延迟和成本方面的重要权衡。</h3><h2 id="实际应用和用例"><a href="#实际应用和用例" class="headerlink" title="实际应用和用例"></a>实际应用和用例</h2><p>知识检索（RAG）正在改变大语言模型（LLM）在各个行业中的使用方式，增强了它们提供更准确和上下文相关响应的能力。</p>
-<p>应用包括：</p>
-<ul>
-<li><strong>企业搜索和问答</strong>：组织可以开发内部聊天机器人，使用内部文档（如 HR 政策、技术手册和产品规格）响应员工查询。RAG 系统从这些文档中提取相关部分，为 LLM 的响应提供信息。</li>
-<li><strong>客户支持和帮助台</strong>：基于 RAG 的系统可以通过访问产品手册、常见问题解答（FAQ）和支持工单中的信息，为客户查询提供精确和一致的响应。这可以减少对常规问题的直接人工干预需求。</li>
-<li><strong>个性化内容推荐</strong>：与基本的关键字匹配不同，RAG 可以识别和检索与用户偏好或先前交互在语义上相关的内容（文章、产品），从而提供更相关的推荐。</li>
-<li><strong>新闻和时事摘要</strong>：LLM 可以与实时新闻源集成。当被提示关于时事时，RAG 系统检索最近的文章，使 LLM 能够生成最新的摘要。</li>
-</ul>
-<p>通过整合外部知识，RAG 将 LLM 的能力从简单通信扩展到作为知识处理系统发挥作用。</p>
-<h2 id="实践代码示例（ADK）"><a href="#实践代码示例（ADK）" class="headerlink" title="实践代码示例（ADK）"></a>实践代码示例（ADK）</h2><p>为了说明知识检索（RAG）模式，让我们看三个示例。</p>
-<p>首先，是如何使用 Google Search 进行 RAG 并将 LLM 建立在搜索结果上。由于 RAG 涉及访问外部信息，Google Search 工具是内置检索机制的直接示例，可以增强 LLM 的知识。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.adk.tools <span class="keyword">import</span> google_search</span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> Agent</span><br><span class="line"></span><br><span class="line">search_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;research_assistant&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash-exp&quot;</span>,</span><br><span class="line">    instruction=<span class="string">&quot;你帮助用户研究主题。当被问及时，请使用 Google Search 工具&quot;</span>,</span><br><span class="line">    tools=[google_search]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>其次，本节解释如何在 Google ADK 中利用 Vertex AI RAG 功能。提供的代码演示了从 ADK 初始化 VertexAiRagMemoryService。这允许建立到 Google Cloud Vertex AI RAG Corpus 的连接。该服务通过指定 corpus 资源名称和可选参数（如 SIMILARITY_TOP_K 和 VECTOR_DISTANCE_THRESHOLD）进行配置。这些参数影响检索过程。SIMILARITY_TOP_K 定义要检索的最相似结果的数量。VECTOR_DISTANCE_THRESHOLD 设置检索结果的语义距离限制。这种设置使 agent 能够从指定的 RAG Corpus 执行可扩展和持久的语义知识检索。该过程有效地将 Google Cloud 的 RAG 功能集成到 ADK agent 中，从而支持开发基于事实数据的响应。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 从 google.adk.memory 模块导入必要的 VertexAiRagMemoryService 类。</span></span><br><span class="line"><span class="keyword">from</span> google.adk.memory <span class="keyword">import</span> VertexAiRagMemoryService</span><br><span class="line"></span><br><span class="line">RAG_CORPUS_RESOURCE_NAME = <span class="string">&quot;projects/your-gcp-project-id/locations/us-central1/ragCorpora/your-corpus-id&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 为要检索的最相似结果的数量定义一个可选参数。</span></span><br><span class="line"><span class="comment">## 这控制 RAG 服务将返回多少相关文档块。</span></span><br><span class="line">SIMILARITY_TOP_K = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 为向量距离阈值定义一个可选参数。</span></span><br><span class="line"><span class="comment">## 此阈值确定检索结果允许的最大语义距离；</span></span><br><span class="line"><span class="comment">## 距离大于此值的结果可能会被过滤掉。</span></span><br><span class="line">VECTOR_DISTANCE_THRESHOLD = <span class="number">0.7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化 VertexAiRagMemoryService 的实例。</span></span><br><span class="line"><span class="comment">## 这设置了与您的 Vertex AI RAG Corpus 的连接。</span></span><br><span class="line"><span class="comment">## - rag_corpus: 指定您的 RAG Corpus 的唯一标识符。</span></span><br><span class="line"><span class="comment">## - similarity_top_k: 设置要获取的相似结果的最大数量。</span></span><br><span class="line"><span class="comment">## - vector_distance_threshold: 定义用于过滤结果的相似度阈值。</span></span><br><span class="line">memory_service = VertexAiRagMemoryService(</span><br><span class="line">    rag_corpus=RAG_CORPUS_RESOURCE_NAME,</span><br><span class="line">    similarity_top_k=SIMILARITY_TOP_K,</span><br><span class="line">    vector_distance_threshold=VECTOR_DISTANCE_THRESHOLD</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="实践代码示例（LangChain）"><a href="#实践代码示例（LangChain）" class="headerlink" title="实践代码示例（LangChain）"></a>实践代码示例（LangChain）</h2><p>第三，让我们使用 LangChain 走一遍完整的示例。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Dict</span>, <span class="type">Any</span>, TypedDict</span><br><span class="line"><span class="keyword">from</span> langchain_community.document_loaders <span class="keyword">import</span> TextLoader</span><br><span class="line"><span class="keyword">from</span> langchain_core.documents <span class="keyword">import</span> Document</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"><span class="keyword">from</span> langchain_community.embeddings <span class="keyword">import</span> OpenAIEmbeddings</span><br><span class="line"><span class="keyword">from</span> langchain_community.vectorstores <span class="keyword">import</span> Weaviate</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"><span class="keyword">from</span> langchain.text_splitter <span class="keyword">import</span> CharacterTextSplitter</span><br><span class="line"><span class="keyword">from</span> langchain.schema.runnable <span class="keyword">import</span> RunnablePassthrough</span><br><span class="line"><span class="keyword">from</span> langgraph.graph <span class="keyword">import</span> StateGraph, END</span><br><span class="line"><span class="keyword">import</span> weaviate</span><br><span class="line"><span class="keyword">from</span> weaviate.embedded <span class="keyword">import</span> EmbeddedOptions</span><br><span class="line"><span class="keyword">import</span> dotenv</span><br><span class="line"></span><br><span class="line"><span class="comment">## 加载环境变量（例如，OPENAI_API_KEY）</span></span><br><span class="line">dotenv.load_dotenv()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 设置您的 OpenAI API 密钥（确保从 .env 加载或在此处设置）</span></span><br><span class="line"><span class="comment">## os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;YOUR_OPENAI_API_KEY&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 1. 数据准备（预处理） ---</span></span><br><span class="line"><span class="comment">## 加载数据</span></span><br><span class="line">url = <span class="string">&quot;https://github.com/langchain-ai/langchain/blob/master/docs/docs/how_to/state_of_the_union.txt&quot;</span></span><br><span class="line">res = requests.get(url)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;state_of_the_union.txt&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(res.text)</span><br><span class="line">loader = TextLoader(<span class="string">&#x27;./state_of_the_union.txt&#x27;</span>)</span><br><span class="line">documents = loader.load()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 分块文档</span></span><br><span class="line">text_splitter = CharacterTextSplitter(chunk_size=<span class="number">500</span>, chunk_overlap=<span class="number">50</span>)</span><br><span class="line">chunks = text_splitter.split_documents(documents)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 嵌入并将块存储在 Weaviate 中</span></span><br><span class="line">client = weaviate.Client(</span><br><span class="line">    embedded_options = EmbeddedOptions()</span><br><span class="line">)</span><br><span class="line">vectorstore = Weaviate.from_documents(</span><br><span class="line">    client = client,</span><br><span class="line">    documents = chunks,</span><br><span class="line">    embedding = OpenAIEmbeddings(),</span><br><span class="line">    by_text = <span class="literal">False</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义检索器</span></span><br><span class="line">retriever = vectorstore.as_retriever()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化 LLM</span></span><br><span class="line">llm = ChatOpenAI(model_name=<span class="string">&quot;gpt-3.5-turbo&quot;</span>, temperature=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 2. 为 LangGraph 定义状态 ---</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RAGGraphState</span>(<span class="title class_ inherited__">TypedDict</span>):</span><br><span class="line">    question: <span class="built_in">str</span></span><br><span class="line">    documents: <span class="type">List</span>[Document]</span><br><span class="line">    generation: <span class="built_in">str</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 3. 定义节点（函数） ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">retrieve_documents_node</span>(<span class="params">state: RAGGraphState</span>) -&gt; RAGGraphState:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;基于用户的问题检索文档。&quot;&quot;&quot;</span></span><br><span class="line">    question = state[<span class="string">&quot;question&quot;</span>]</span><br><span class="line">    documents = retriever.invoke(question)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;documents&quot;</span>: documents, <span class="string">&quot;question&quot;</span>: question, <span class="string">&quot;generation&quot;</span>: <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_response_node</span>(<span class="params">state: RAGGraphState</span>) -&gt; RAGGraphState:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;基于检索的文档使用 LLM 生成响应。&quot;&quot;&quot;</span></span><br><span class="line">    question = state[<span class="string">&quot;question&quot;</span>]</span><br><span class="line">    documents = state[<span class="string">&quot;documents&quot;</span>]</span><br><span class="line">    <span class="comment"># PDF 中的提示模板</span></span><br><span class="line">    template = <span class="string">&quot;&quot;&quot;你是一个用于问答任务的助手。使用以下检索到的上下文来回答问题。如果你不知道答案，就直接说不知道。最多使用三句话，并保持回答简洁。</span></span><br><span class="line"><span class="string">问题：&#123;question&#125;</span></span><br><span class="line"><span class="string">上下文：&#123;context&#125;</span></span><br><span class="line"><span class="string">回答：&quot;&quot;&quot;</span></span><br><span class="line">    prompt = ChatPromptTemplate.from_template(template)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 从文档格式化上下文</span></span><br><span class="line">    context = <span class="string">&quot;\n\n&quot;</span>.join([doc.page_content <span class="keyword">for</span> doc <span class="keyword">in</span> documents])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建 RAG 链</span></span><br><span class="line">    rag_chain = prompt | llm | StrOutputParser()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 调用链</span></span><br><span class="line">    generation = rag_chain.invoke(&#123;<span class="string">&quot;context&quot;</span>: context, <span class="string">&quot;question&quot;</span>: question&#125;)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;question&quot;</span>: question, <span class="string">&quot;documents&quot;</span>: documents, <span class="string">&quot;generation&quot;</span>: generation&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 4. 构建 LangGraph 图 ---</span></span><br><span class="line">workflow = StateGraph(RAGGraphState)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加节点</span></span><br><span class="line">workflow.add_node(<span class="string">&quot;retrieve&quot;</span>, retrieve_documents_node)</span><br><span class="line">workflow.add_node(<span class="string">&quot;generate&quot;</span>, generate_response_node)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 设置入口点</span></span><br><span class="line">workflow.set_entry_point(<span class="string">&quot;retrieve&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加边（转换）</span></span><br><span class="line">workflow.add_edge(<span class="string">&quot;retrieve&quot;</span>, <span class="string">&quot;generate&quot;</span>)</span><br><span class="line">workflow.add_edge(<span class="string">&quot;generate&quot;</span>, END)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 编译图</span></span><br><span class="line">app = workflow.<span class="built_in">compile</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 5. 运行 RAG 应用程序 ---</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 运行 RAG 查询 ---&quot;</span>)</span><br><span class="line">    query = <span class="string">&quot;总统对布雷耶大法官说了什么&quot;</span></span><br><span class="line">    inputs = &#123;<span class="string">&quot;question&quot;</span>: query&#125;</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> app.stream(inputs):</span><br><span class="line">        <span class="built_in">print</span>(s)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 运行另一个 RAG 查询 ---&quot;</span>)</span><br><span class="line">    query_2 = <span class="string">&quot;总统对经济说了什么？&quot;</span></span><br><span class="line">    inputs_2 = &#123;<span class="string">&quot;question&quot;</span>: query_2&#125;</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> app.stream(inputs_2):</span><br><span class="line">        <span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
-
-<p>这段 Python 代码说明了使用 LangChain 和 LangGraph 实现的检索增强生成（RAG）管道。该过程从基于文本文档创建知识库开始，该文档被分割成块并转换为嵌入。然后将这些嵌入存储在 Weaviate 向量存储中，便于高效的信息检索。LangGraph 中的 StateGraph 用于管理两个关键函数之间的工作流：<code>retrieve_documents_node</code> 和 <code>generate_response_node</code>。<code>retrieve_documents_node</code> 函数查询向量存储，基于用户的输入识别相关文档块。随后，<code>generate_response_node</code> 函数利用检索的信息和预定义的提示模板，使用 OpenAI 大语言模型（LLM）生成响应。<code>app.stream</code> 方法允许通过 RAG 管道执行查询，展示系统生成上下文相关输出的能力。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong>：LLM 在文本生成方面具有令人印象深刻的能力，但从根本上受到其训练数据的限制。这些知识是静态的，这意味着它不包括实时信息或私有的、特定领域的数据。因此，它们的响应可能过时、不准确或缺乏专业任务所需的特定上下文。这一差距限制了它们对需要当前和事实答案的应用的可靠性。</p>
-<p><strong>为什么</strong>：检索增强生成（RAG）模式通过将 LLM 连接到外部知识源提供了标准化的解决方案。当收到查询时，系统首先从指定的知识库中检索相关信息片段。然后将这些片段附加到原始提示中，用及时和特定的上下文丰富它。然后将这个增强的提示发送到 LLM，使其能够生成准确、可验证且基于外部数据的响应。这个过程有效地将 LLM 从闭卷推理者转变为开卷推理者，显著增强其实用性和可信度。</p>
-<p><strong>经验法则</strong>：当您需要 LLM 基于特定的、最新的或专有信息（不属于其原始训练数据）回答问题或生成内容时，使用此模式。它非常适合在内部文档上构建问答系统、客户支持机器人，以及需要可验证的、基于事实的响应和引用的应用程序。</p>
-<p><strong>视觉摘要</strong></p>
-<p><strong><img src="/../images/chapter-14/image3.png"></strong></p>
-<p>知识检索模式：AI agent 从结构化数据库查询和检索信息</p>
-<p><strong><img src="/../images/chapter-14/image4.png"></strong></p>
-<p>图 3：知识检索模式：AI agent 响应用户查询，从公共互联网查找和综合信息。</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
-<li>知识检索（RAG）通过允许 LLM 访问外部的、最新的和特定的信息来增强它们。</li>
-<li>该过程涉及检索（在知识库中搜索相关片段）和增强（将这些片段添加到 LLM 的提示中）。</li>
-<li>RAG 帮助 LLM 克服过时训练数据等局限，减少”幻觉”，并实现特定领域知识集成。</li>
-<li>RAG 允许可归因的答案，因为 LLM 的响应基于检索的来源。</li>
-<li>GraphRAG 利用知识图谱来理解不同信息片段之间的关系，允许它回答需要从多个来源综合数据的复杂问题。</li>
-<li>Agentic RAG 超越了简单的信息检索，使用智能 agent 主动推理、验证和精炼外部知识，确保更准确和可靠的答案。</li>
-<li>实际应用涵盖企业搜索、客户支持、法律研究和个性化推荐。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总之，检索增强生成（RAG）通过将大语言模型连接到外部的、最新的数据源，解决了其静态知识的核心限制。该过程通过首先检索相关信息片段，然后增强用户的提示来工作，使 LLM 能够生成更准确和上下文感知的响应。这是通过嵌入、语义搜索和向量数据库等基础技术实现的，这些技术基于含义而不仅仅是关键字来查找信息。通过将输出建立在可验证的数据上，RAG 显著减少了事实错误，并允许使用专有信息，通过引用增强信任。</p>
-<p>一个高级演进，Agentic RAG，引入了一个推理层，主动验证、协调和综合检索的知识，以获得更大的可靠性。类似地，像 GraphRAG 这样的专门方法利用知识图谱来导航明确的数据关系，允许系统综合对高度复杂、互联查询的答案。这个 agent 可以解决冲突信息，执行多步查询，并使用外部工具查找缺失的数据。虽然这些高级方法增加了复杂性和延迟，但它们大大提高了最终响应的深度和可信度。这些模式的实际应用已经在改变各个行业，从企业搜索和客户支持到个性化内容交付。尽管存在挑战，RAG 是使 AI 更加知识渊博、可靠和有用的关键模式。最终，它将 LLM 从闭卷对话者转变为强大的、开卷推理工具。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Lewis, P., et al. (2020). <em>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</em>. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2005.11401">https://arxiv.org/abs/2005.11401</a></li>
-<li>Google AI for Developers Documentation.  <em>Retrieval Augmented Generation - <a target="_blank" rel="noopener" href="https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview">https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview</a></em></li>
-<li>Retrieval-Augmented Generation with Graphs (GraphRAG), <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.00309">https://arxiv.org/abs/2501.00309</a></li>
-<li>LangChain and LangGraph: Leonie Monigatti, “Retrieval-Augmented Generation (RAG): From Theory to LangChain Implementation,”  <a target="_blank" rel="noopener" href="https://medium.com/data-science/retrieval-augmented-generation-rag-from-theory-to-langchain-implementation-4e9bd5f6a4f2"><em>https://medium.com/data-science/retrieval-augmented-generation-rag-from-theory-to-langchain-implementation-4e9bd5f6a4f2</em></a></li>
-<li>Google Cloud Vertex AI RAG Corpus <a target="_blank" rel="noopener" href="https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/manage-your-rag-corpus#corpus-management"><em>https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/manage-your-rag-corpus#corpus-management</em></a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/">展开全文 >></a>
         </p>
       
 

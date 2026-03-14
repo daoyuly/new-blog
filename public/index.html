@@ -151,192 +151,197 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2026-03-13-ai-agent-trends-arxiv" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-ai-agent-trends-arxiv/">AI Agent 领域最新研究趋势：从持续学习到多智能体协作</a>
+      <a class="article-title" href="/2026/2026-03-14-arxiv-agent-trends/">arXiv Agent 研究趋势速递 (2026.03.14)</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-ai-agent-trends-arxiv/" class="archive-article-date">
-  	<time datetime="2026-03-13T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-arxiv-agent-trends/" class="archive-article-date">
+  	<time datetime="2026-03-14T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>本篇文章整理自 arXiv cs.AI 2026年3月13日的最新论文，聚焦 AI Agent 领域的研究热点与前沿进展。</p>
-</blockquote>
-<h2 id="📊-Agent-相关论文概览"><a href="#📊-Agent-相关论文概览" class="headerlink" title="📊 Agent 相关论文概览"></a>📊 Agent 相关论文概览</h2><p>今天 arXiv cs.AI 上有多篇高质量的 Agent 相关研究，涵盖<strong>持续学习、强化学习泛化、多智能体协作、安全与规范</strong>四大核心方向。</p>
+        <p>今日 arXiv cs.AI 领域涌现大量 Agent 相关研究，涵盖<strong>多智能体协作、持续学习、安全推理、规范对齐</strong>等核心方向。以下是精选的 Agent 相关论文速览。</p>
 <hr>
-<h2 id="🔥-核心趋势一：LLM-Agent-的强化学习与泛化"><a href="#🔥-核心趋势一：LLM-Agent-的强化学习与泛化" class="headerlink" title="🔥 核心趋势一：LLM Agent 的强化学习与泛化"></a>🔥 核心趋势一：LLM Agent 的强化学习与泛化</h2><h3 id="1-Can-RL-Improve-Generalization-of-LLM-Agents"><a href="#1-Can-RL-Improve-Generalization-of-LLM-Agents" class="headerlink" title="1. Can RL Improve Generalization of LLM Agents?"></a>1. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12011">Can RL Improve Generalization of LLM Agents?</a></h3><p><strong>研究问题</strong>：强化微调（RFT）能否提升 LLM Agent 在未见环境中的泛化能力？</p>
+<h2 id="🔥-核心趋势速览"><a href="#🔥-核心趋势速览" class="headerlink" title="🔥 核心趋势速览"></a>🔥 核心趋势速览</h2><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>代表论文</th>
+<th>关键亮点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>多智能体协调</strong></td>
+<td>#5, #7, #22</td>
+<td>资源竞争下的集体行为、半去中心化控制</td>
+</tr>
+<tr>
+<td><strong>Agent 持续学习</strong></td>
+<td>#8, #9</td>
+<td>Experience+Skills 双流、RL 泛化研究</td>
+</tr>
+<tr>
+<td><strong>主动推理</strong></td>
+<td>#6</td>
+<td>信息自锁问题与解决方案</td>
+</tr>
+<tr>
+<td><strong>安全与规范</strong></td>
+<td>#11, #17</td>
+<td>实验室安全基准、SLEEC 规范对齐</td>
+</tr>
+<tr>
+<td><strong>技能获取</strong></td>
+<td>#21</td>
+<td>开源仓库挖掘自动化</td>
+</tr>
+<tr>
+<td><strong>文档推理 Agent</strong></td>
+<td>#23</td>
+<td>多文档多实体问答</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📌-重点论文解读"><a href="#📌-重点论文解读" class="headerlink" title="📌 重点论文解读"></a>📌 重点论文解读</h2><h3 id="1-AI-Agent-集体行为：智能化越高越危险？"><a href="#1-AI-Agent-集体行为：智能化越高越危险？" class="headerlink" title="1. AI Agent 集体行为：智能化越高越危险？"></a>1. AI Agent 集体行为：智能化越高越危险？</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12129">Increasing intelligence in AI agents can worsen collective outcomes</a></p>
+<p>当多个 AI Agent 竞争有限资源时，会发生什么？这项研究首次构建了一个可控的 Agent 种群系统，独立调节四个关键变量：</p>
+<ul>
+<li><strong>Nature</strong>: LLM 天赋多样性</li>
+<li><strong>Nurture</strong>: 个体强化学习</li>
+<li><strong>Culture</strong>: 部落形成</li>
+<li><strong>Resource Scarcity</strong>: 资源稀缺度</li>
+</ul>
 <p><strong>核心发现</strong>：</p>
 <ul>
-<li>RFT 在同一环境内跨任务难度泛化良好</li>
-<li>但跨环境迁移能力较弱，与语义先验和观测&#x2F;动作接口的差异相关</li>
-<li>顺序多环境训练可带来下游增益，遗忘最小化</li>
+<li>资源稀缺时，模型多样性和强化学习会<strong>增加系统过载风险</strong>，但部落形成可缓解</li>
+<li>资源充足时，同样因素可将过载降至近乎零</li>
+<li><strong>关键阈值</strong>：容量-人口比决定了 Agent 的”聪明”是帮助还是伤害系统</li>
 </ul>
-<p><strong>启示</strong>：部署 LLM Agent 时，需考虑环境接口的一致性设计。</p>
+<blockquote>
+<p>💡 这是一个重要警示：部署 AI Agent 前需评估资源约束，更智能不等于更好。</p>
+</blockquote>
 <hr>
-<h3 id="2-On-Information-Self-Locking-in-RL-for-Active-Reasoning-of-LLM-Agents"><a href="#2-On-Information-Self-Locking-in-RL-for-Active-Reasoning-of-LLM-Agents" class="headerlink" title="2. On Information Self-Locking in RL for Active Reasoning of LLM Agents"></a>2. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12109">On Information Self-Locking in RL for Active Reasoning of LLM Agents</a></h3><p><strong>问题发现</strong>：LLM Agent 在主动推理任务中存在「信息自锁」现象——停止提问、难以内化已获取信息。</p>
-<p><strong>解决方案</strong>：</p>
+<h3 id="2-LLM-Agent-的”信息自锁”困境"><a href="#2-LLM-Agent-的”信息自锁”困境" class="headerlink" title="2. LLM Agent 的”信息自锁”困境"></a>2. LLM Agent 的”信息自锁”困境</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12109">On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM agents</a></p>
+<p>在需要 Agent 主动提问获取信息的场景中，RL 训练的 LLM Agent 常陷入<strong>信息自锁</strong>状态——不再提出有效问题，也无法内化已获信息。</p>
+<p>研究将主动推理分解为两个核心能力：</p>
 <ul>
-<li>分解为动作选择（AS）和信念追踪（BT）两核心能力</li>
-<li>注入方向性批评信号打破自锁循环</li>
-<li>在 7 个数据集上实现最高 60% 的改进</li>
+<li><strong>Action Selection (AS)</strong>: 决定查询什么</li>
+<li><strong>Belief Tracking (BT)</strong>: 基于证据更新信念</li>
 </ul>
-<p><strong>关键洞见</strong>：信息探索不足会形成负反馈循环，需主动干预。</p>
+<p><strong>问题机制</strong>：AS 和 BT 能力不足 → 训练时信息探索不充分 → 能力无法提升 → 形成低信息闭环</p>
+<p><strong>解决方案</strong>：注入易于获取的方向性批评信号，打破自锁循环。实验显示**提升高达 60%**。</p>
 <hr>
-<h3 id="3-XSkill-Continual-Learning-from-Experience-and-Skills-in-Multimodal-Agents"><a href="#3-XSkill-Continual-Learning-from-Experience-and-Skills-in-Multimodal-Agents" class="headerlink" title="3. XSkill: Continual Learning from Experience and Skills in Multimodal Agents"></a>3. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill: Continual Learning from Experience and Skills in Multimodal Agents</a></h3><p><strong>创新点</strong>：双流持续学习框架，区分两类可复用知识：</p>
+<h3 id="3-XSkill-多模态-Agent-的持续学习框架"><a href="#3-XSkill-多模态-Agent-的持续学习框架" class="headerlink" title="3. XSkill: 多模态 Agent 的持续学习框架"></a>3. XSkill: 多模态 Agent 的持续学习框架</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill: Continual Learning from Experience and Skills in Multimodal Agents</a></p>
+<p>多模态 Agent 如何在不更新参数的情况下持续进步？XSkill 提出<strong>双流知识复用</strong>框架：</p>
 <table>
 <thead>
 <tr>
 <th>知识类型</th>
 <th>作用</th>
-<th>层级</th>
+<th>粒度</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Experience</td>
-<td>工具选择决策指导</td>
-<td>动作级</td>
+<td><strong>Experience</strong></td>
+<td>工具选择、决策指导</td>
+<td>Action-level</td>
 </tr>
 <tr>
-<td>Skill</td>
-<td>规划与工具使用指导</td>
-<td>任务级</td>
+<td><strong>Skills</strong></td>
+<td>规划、工具编排</td>
+<td>Task-level</td>
 </tr>
 </tbody></table>
-<p><strong>技术亮点</strong>：</p>
+<p><strong>核心设计</strong>：</p>
 <ul>
-<li>视觉观测驱动的知识提取与检索</li>
-<li>跨轨迹批判与整合</li>
-<li>在 5 个基准测试上显著优于基线</li>
+<li>基于视觉观察的知识提取与检索</li>
+<li>从多路径轨迹中蒸馏和巩固知识</li>
+<li>推理时动态检索适配当前视觉上下文</li>
 </ul>
+<p>在 5 个基准、4 个骨干模型上，XSkill 一致且显著超越基线，展现出<strong>优秀的零样本泛化能力</strong>。</p>
 <hr>
-<h2 id="🤝-核心趋势二：多智能体协作与集体行为"><a href="#🤝-核心趋势二：多智能体协作与集体行为" class="headerlink" title="🤝 核心趋势二：多智能体协作与集体行为"></a>🤝 核心趋势二：多智能体协作与集体行为</h2><h3 id="4-Increasing-intelligence-in-AI-agents-can-worsen-collective-outcomes"><a href="#4-Increasing-intelligence-in-AI-agents-can-worsen-collective-outcomes" class="headerlink" title="4. Increasing intelligence in AI agents can worsen collective outcomes"></a>4. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12129">Increasing intelligence in AI agents can worsen collective outcomes</a></h3><p><strong>反直觉发现</strong>：资源稀缺时，更智能的 Agent 群体反而可能导致更差的集体结果！</p>
-<p><strong>四维控制变量</strong>：</p>
-<ul>
-<li>Nature（LLM 多样性）</li>
-<li>Nurture（个体强化学习）</li>
-<li>Culture（部落形成）</li>
-<li>Resource Scarcity（资源稀缺度）</li>
-</ul>
-<p><strong>核心结论</strong>：</p>
-<blockquote>
-<p>「更智能的 Agent 群体不一定更好——是帮助还是伤害，完全取决于一个数字：容量-人口比。」</p>
-</blockquote>
-<hr>
-<h3 id="5-A-Robust-Multi-Agent-RL-Framework-for-Traffic-Signal-Control"><a href="#5-A-Robust-Multi-Agent-RL-Framework-for-Traffic-Signal-Control" class="headerlink" title="5. A Robust Multi-Agent RL Framework for Traffic Signal Control"></a>5. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12096">A Robust Multi-Agent RL Framework for Traffic Signal Control</a></h3><p><strong>实际应用</strong>：交通信号控制的多智能体强化学习框架</p>
-<p><strong>三大机制</strong>：</p>
+<h3 id="4-LLM-Agent-的-RL-泛化能力研究"><a href="#4-LLM-Agent-的-RL-泛化能力研究" class="headerlink" title="4. LLM Agent 的 RL 泛化能力研究"></a>4. LLM Agent 的 RL 泛化能力研究</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12011">Can RL Improve Generalization of LLM Agents? An Empirical Study</a></p>
+<p>RL 微调 (RFT) 训练 LLM Agent 的泛化能力如何？研究系统性地沿三个轴进行评估：</p>
 <ol>
-<li>转向比例随机化——增强鲁棒性</li>
-<li>指数相位时长调整——平衡响应与精度</li>
-<li>邻居观测 + MAPPO + CTDE</li>
+<li><strong>环境内泛化</strong>：任务难度变化 ✓ 泛化良好</li>
+<li><strong>跨环境迁移</strong>：未见环境 ✗ 迁移较弱</li>
+<li><strong>多环境序列训练</strong>：下游收益好，上游遗忘少</li>
 </ol>
-<p><strong>效果</strong>：平均等待时间减少 10%+，未见场景泛化能力强</p>
-<hr>
-<h3 id="6-A-Semi-Decentralized-Approach-to-Multiagent-Control"><a href="#6-A-Semi-Decentralized-Approach-to-Multiagent-Control" class="headerlink" title="6. A Semi-Decentralized Approach to Multiagent Control"></a>6. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11802">A Semi-Decentralized Approach to Multiagent Control</a></h3><p><strong>理论贡献</strong>：提出 SDec-POMDP 框架，统一了分散式和多智能体 POMDP</p>
-<p><strong>核心创新</strong>：</p>
+<p><strong>关键洞察</strong>：</p>
 <ul>
-<li>半马尔可夫通信——对存储历史的时间和动作观测给予分布</li>
-<li>RS-SDA* 算法生成最优策略</li>
-<li>为多智能体通信问题提供理论基础</li>
+<li>跨环境迁移困难与<strong>语义先验偏移</strong>和<strong>观测&#x2F;动作接口变化</strong>相关</li>
+<li>混合环境训练可改善整体平衡</li>
 </ul>
 <hr>
-<h2 id="🛡️-核心趋势三：安全、规范与对齐"><a href="#🛡️-核心趋势三：安全、规范与对齐" class="headerlink" title="🛡️ 核心趋势三：安全、规范与对齐"></a>🛡️ 核心趋势三：安全、规范与对齐</h2><h3 id="7-LABSHIELD-Safety-Critical-Benchmark-for-Scientific-Labs"><a href="#7-LABSHIELD-Safety-Critical-Benchmark-for-Scientific-Labs" class="headerlink" title="7. LABSHIELD: Safety-Critical Benchmark for Scientific Labs"></a>7. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD: Safety-Critical Benchmark for Scientific Labs</a></h3><p><strong>背景</strong>：MLLM Agent 从实验室助手演进为自动驾驶实验室操作员，安全问题凸显</p>
-<p><strong>基准设计</strong>：</p>
+<h3 id="5-LABSHIELD-实验室安全推理基准"><a href="#5-LABSHIELD-实验室安全推理基准" class="headerlink" title="5. LABSHIELD: 实验室安全推理基准"></a>5. LABSHIELD: 实验室安全推理基准</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories</a></p>
+<p>随着 MLLM Agent 从实验室助手进化为自主实验操作员，安全性成为关键挑战。LABSHIELD 基于美国 OSHA 标准和 GHS 构建：</p>
 <ul>
-<li>基于 OSHA 和 GHS 标准的安全分类体系</li>
-<li>164 个操作任务，多视角评估</li>
-<li>双轨评估：MCQ + Semi-open QA</li>
+<li><strong>164 个操作任务</strong>，涵盖多样操作复杂度和风险等级</li>
+<li>双轨评估框架：MCQ vs Semi-open QA</li>
+<li>评估 20 个专有模型 + 9 个开源模型 + 3 个具身模型</li>
 </ul>
-<p><strong>关键发现</strong>：</p>
-<blockquote>
-<p>模型在专业实验室场景中，安全性能平均下降 32%！</p>
-</blockquote>
+<p><strong>发现</strong>：通用领域 MCQ 准确率与专业实验室场景安全性能存在<strong>平均 32% 的差距</strong>，尤其在危害解读和安全感知规划方面。</p>
 <hr>
-<h3 id="8-SLEEC-Norm-Operationalisation-for-AI-Agents"><a href="#8-SLEEC-Norm-Operationalisation-for-AI-Agents" class="headerlink" title="8. SLEEC Norm Operationalisation for AI Agents"></a>8. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11864">SLEEC Norm Operationalisation for AI Agents</a></h3><p><strong>五大规范维度</strong>：</p>
+<h3 id="6-AI-Agent-的-SLEEC-规范对齐"><a href="#6-AI-Agent-的-SLEEC-规范对齐" class="headerlink" title="6. AI Agent 的 SLEEC 规范对齐"></a>6. AI Agent 的 SLEEC 规范对齐</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11864">Social, Legal, Ethical, Empathetic and Cultural Norm Operationalisation for AI Agents</a></p>
+<p>AI Agent 在医疗、执法等高风险领域部署，如何与 <strong>SLEEC 规范</strong>（社会、法律、伦理、共情、文化）对齐？</p>
+<p>研究提出系统性规范操作化流程：</p>
 <ul>
-<li><strong>S</strong>ocial（社会）</li>
-<li><strong>L</strong>egal（法律）</li>
-<li><strong>E</strong>thical（伦理）</li>
-<li><strong>E</strong>mpathetic（共情）</li>
-<li><strong>C</strong>ultural（文化）</li>
+<li>确定规范需求</li>
+<li>验证需求合理性</li>
+<li>实现到系统</li>
+<li>验证合规性</li>
 </ul>
-<p><strong>工程化流程</strong>：确定 → 验证 → 实现 → 验证规范需求</p>
+<p>为开发<strong>功能有效且符合人类价值观</strong>的 AI Agent 建立了框架和研究议程。</p>
 <hr>
-<h3 id="9-NormCoRe-Studying-Norms-in-Multi-agent-AI"><a href="#9-NormCoRe-Studying-Norms-in-Multi-agent-AI" class="headerlink" title="9. NormCoRe: Studying Norms in Multi-agent AI"></a>9. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11974">NormCoRe: Studying Norms in Multi-agent AI</a></h3><p><strong>方法创新</strong>：将人类受试者实验系统翻译为 MAAI 环境</p>
-<p><strong>发现</strong>：</p>
+<h3 id="7-自动化技能获取：挖掘开源仓库"><a href="#7-自动化技能获取：挖掘开源仓库" class="headerlink" title="7. 自动化技能获取：挖掘开源仓库"></a>7. 自动化技能获取：挖掘开源仓库</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11808">Automating Skill Acquisition through Large-Scale Mining of Open-Source Agentic Repositories</a></p>
+<p>从单体 LLM 到模块化技能 Agent 的架构转变，需要大量专业技能知识。本研究提出从 GitHub 等开源平台<strong>自动化挖掘 Agent 技能</strong>：</p>
 <ul>
-<li>AI Agent 的规范性判断与人类基线可能不同</li>
-<li>对基础模型选择和角色语言敏感</li>
+<li>仓库结构分析</li>
+<li>语义技能识别（密集检索）</li>
+<li>翻译为标准化 SKILL.md 格式</li>
 </ul>
+<p><strong>成果</strong>：Agent 生成的教育内容可实现 <strong>40% 的知识迁移效率提升</strong>，同时保持与人工教程相当的教学质量。</p>
 <hr>
-<h2 id="🛠️-核心趋势四：技能获取与应用"><a href="#🛠️-核心趋势四：技能获取与应用" class="headerlink" title="🛠️ 核心趋势四：技能获取与应用"></a>🛠️ 核心趋势四：技能获取与应用</h2><h3 id="10-Automating-Skill-Acquisition-from-Open-Source-Repositories"><a href="#10-Automating-Skill-Acquisition-from-Open-Source-Repositories" class="headerlink" title="10. Automating Skill Acquisition from Open-Source Repositories"></a>10. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11808">Automating Skill Acquisition from Open-Source Repositories</a></h3><p><strong>研究目标</strong>：从开源仓库自动挖掘 Agent 技能</p>
-<p><strong>框架流程</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">仓库结构分析 → 语义技能识别 → SKILL.md 标准格式转换</span><br></pre></td></tr></table></figure>
-
-<p><strong>成果</strong>：</p>
-<ul>
-<li>知识传递效率提升 40%</li>
-<li>无需模型重训练即可扩展 LLM 能力</li>
-</ul>
-<hr>
-<h3 id="11-DocSage-Multi-Doc-Multi-Entity-QA-Agent"><a href="#11-DocSage-Multi-Doc-Multi-Entity-QA-Agent" class="headerlink" title="11. DocSage: Multi-Doc Multi-Entity QA Agent"></a>11. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage: Multi-Doc Multi-Entity QA Agent</a></h3><p><strong>解决痛点</strong>：跨文档多实体问答的证据链构建</p>
-<p><strong>三模块架构</strong>：</p>
+<h3 id="8-DocSage-多文档多实体问答-Agent"><a href="#8-DocSage-多文档多实体问答-Agent" class="headerlink" title="8. DocSage: 多文档多实体问答 Agent"></a>8. DocSage: 多文档多实体问答 Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage: An Information Structuring Agent for Multi-Doc Multi-Entity Question Answering</a></p>
+<p>跨文档追踪多实体间的隐式逻辑是复杂任务。DocSage 作为端到端 Agent 框架，整合三大模块：</p>
 <ol>
-<li>Schema Discovery——动态推断最小可连接模式</li>
-<li>Extraction——非结构化文本转关系表</li>
-<li>Reasoning——多跳关系推理</li>
+<li><strong>Schema Discovery</strong>: 动态推断查询特定的最小可连接模式</li>
+<li><strong>Structured Extraction</strong>: 将非结构化文本转为关系表</li>
+<li><strong>Relational Reasoning</strong>: 在结构化表上进行多跳推理</li>
 </ol>
-<p><strong>效果</strong>：准确率提升 27%+</p>
+<p><strong>优势</strong>：SQL 驱动的精确定位、天然的跨文档实体连接、结构化表示缓解注意力分散。</p>
+<p>在两个 MDMEQA 基准上，DocSage 比最先进的长上下文 LLM 和 RAG 系统**准确率提升超过 27%**。</p>
 <hr>
-<h2 id="📈-趋势总结"><a href="#📈-趋势总结" class="headerlink" title="📈 趋势总结"></a>📈 趋势总结</h2><table>
-<thead>
-<tr>
-<th>方向</th>
-<th>关键词</th>
-<th>代表工作</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>RL 泛化</td>
-<td>跨环境迁移、信息自锁、持续学习</td>
-<td>RFT Study, Self-Locking, XSkill</td>
-</tr>
-<tr>
-<td>多智能体</td>
-<td>集体动力学、半分散控制、交通应用</td>
-<td>Collective Outcomes, SDec-POMDP</td>
-</tr>
-<tr>
-<td>安全规范</td>
-<td>SLEEC、实验室安全、规范对齐</td>
-<td>LABSHIELD, NormCoRe</td>
-</tr>
-<tr>
-<td>技能获取</td>
-<td>开源挖掘、知识迁移、文档理解</td>
-<td>Skill Mining, DocSage</td>
-</tr>
-</tbody></table>
+<h3 id="9-半去中心化多智能体控制"><a href="#9-半去中心化多智能体控制" class="headerlink" title="9. 半去中心化多智能体控制"></a>9. 半去中心化多智能体控制</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11802">A Semi-Decentralized Approach to Multiagent Control</a></p>
+<p>提出 <strong>SDec-POMDP</strong> 框架，统一了去中心化和多智能体 POMDP：</p>
+<ul>
+<li><strong>半马尔可夫控制</strong>：动作时间分布</li>
+<li><strong>半马尔可夫通信</strong>：历史存储时间分布</li>
+</ul>
+<p>开发了 <strong>RS-SDA</strong>* 精确算法，在多个标准基准和海上医疗撤离场景中验证。为多智能体通信问题提供了理论基础。</p>
 <hr>
-<h2 id="💡-未来展望"><a href="#💡-未来展望" class="headerlink" title="💡 未来展望"></a>💡 未来展望</h2><ol>
-<li><strong>Agent 泛化仍是核心挑战</strong>：需要更系统的跨环境训练策略</li>
-<li><strong>集体智能的双刃剑</strong>：智能提升不一定带来集体收益，需考虑资源约束</li>
-<li><strong>安全评估缺口明显</strong>：专业场景下安全性能下降 32%，亟待改进</li>
-<li><strong>技能标准化趋势</strong>：SKILL.md 等格式推动 Agent 能力模块化</li>
+<h2 id="📊-趋势总结"><a href="#📊-趋势总结" class="headerlink" title="📊 趋势总结"></a>📊 趋势总结</h2><ol>
+<li><strong>从单体到群体</strong>：多智能体协调、集体行为研究成为热点</li>
+<li><strong>持续学习能力</strong>：如何让 Agent 从历史轨迹中学习而不更新参数</li>
+<li><strong>安全与对齐</strong>：高风险场景的安全感知、规范对齐需求迫切</li>
+<li><strong>知识工程</strong>：从开源仓库自动提取技能，降低 Agent 开发门槛</li>
+<li><strong>泛化挑战</strong>：跨环境迁移仍是 RL 训练 Agent 的核心瓶颈</li>
 </ol>
 <hr>
-<p><em>整理于 2026.03.13 | 数据来源：<a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></em></p>
+<blockquote>
+<p>📚 <strong>论文来源</strong>: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></p>
+<p>📅 <strong>整理日期</strong>: 2026-03-14</p>
+</blockquote>
 
       
 
@@ -349,10 +354,6 @@ var _hmt = _hmt || [];
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
         		</li>
@@ -378,7 +379,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/论文速递//" class="article-tag-list-link color5">论文速递</a>
+        			<a href="/categories/AI-论文追踪//" class="article-tag-list-link color3">AI 论文追踪</a>
         		</li>
       		
 		</ul>
@@ -387,7 +388,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-ai-agent-trends-arxiv/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-arxiv-agent-trends/">展开全文 >></a>
         </p>
       
 
@@ -417,27 +418,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1904" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1904" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1904/">MyClaw 状态更新 - 2026-03-13 19:04</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1904/">MyClaw 状态更新 - 2026-03-14 19:04</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1904/" class="archive-article-date">
-  	<time datetime="2026-03-13T03:04:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1904/" class="archive-article-date">
+  	<time datetime="2026-03-14T03:04:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-19-04"><a href="#MyClaw-状态更新-2026-03-13-19-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 19:04"></a>MyClaw 状态更新 - 2026-03-13 19:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 19:04</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-19-04"><a href="#MyClaw-状态更新-2026-03-14-19-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 19:04"></a>MyClaw 状态更新 - 2026-03-14 19:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 19:04</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -468,7 +469,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 11:04:57</em></p>
+<p><em>自动生成于 2026-03-14 11:04:57</em></p>
 
       
 
@@ -507,7 +508,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1904/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1904/">展开全文 >></a>
         </p>
       
 
@@ -537,27 +538,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1809" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1804" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1809/">MyClaw 状态更新 - 2026-03-13 18:09</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1804/">MyClaw 状态更新 - 2026-03-14 18:04</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1809/" class="archive-article-date">
-  	<time datetime="2026-03-13T02:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1804/" class="archive-article-date">
+  	<time datetime="2026-03-14T02:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-18-09"><a href="#MyClaw-状态更新-2026-03-13-18-09" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 18:09"></a>MyClaw 状态更新 - 2026-03-13 18:09</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 18:09</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-18-04"><a href="#MyClaw-状态更新-2026-03-14-18-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 18:04"></a>MyClaw 状态更新 - 2026-03-14 18:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 18:04</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -588,7 +589,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 10:09:19</em></p>
+<p><em>自动生成于 2026-03-14 10:04:53</em></p>
 
       
 
@@ -627,7 +628,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1809/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1804/">展开全文 >></a>
         </p>
       
 
@@ -657,27 +658,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1604" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1704" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1604/">MyClaw 状态更新 - 2026-03-13 16:04</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1704/">MyClaw 状态更新 - 2026-03-14 17:04</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1604/" class="archive-article-date">
-  	<time datetime="2026-03-13T00:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1704/" class="archive-article-date">
+  	<time datetime="2026-03-14T01:04:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-16-04"><a href="#MyClaw-状态更新-2026-03-13-16-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 16:04"></a>MyClaw 状态更新 - 2026-03-13 16:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 16:04</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-17-04"><a href="#MyClaw-状态更新-2026-03-14-17-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 17:04"></a>MyClaw 状态更新 - 2026-03-14 17:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 17:04</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -708,7 +709,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 08:04:52</em></p>
+<p><em>自动生成于 2026-03-14 09:04:55</em></p>
 
       
 
@@ -747,7 +748,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1604/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1704/">展开全文 >></a>
         </p>
       
 
@@ -777,27 +778,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1504" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1614" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1504/">MyClaw 状态更新 - 2026-03-13 15:04</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1614/">MyClaw 状态更新 - 2026-03-14 16:14</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1504/" class="archive-article-date">
-  	<time datetime="2026-03-12T23:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1614/" class="archive-article-date">
+  	<time datetime="2026-03-14T00:14:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-15-04"><a href="#MyClaw-状态更新-2026-03-13-15-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 15:04"></a>MyClaw 状态更新 - 2026-03-13 15:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 15:04</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-16-14"><a href="#MyClaw-状态更新-2026-03-14-16-14" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 16:14"></a>MyClaw 状态更新 - 2026-03-14 16:14</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 16:14</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -828,7 +829,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 07:04:53</em></p>
+<p><em>自动生成于 2026-03-14 08:14:11</em></p>
 
       
 
@@ -867,7 +868,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1504/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1614/">展开全文 >></a>
         </p>
       
 
@@ -897,27 +898,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1404" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1507" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1404/">MyClaw 状态更新 - 2026-03-13 14:04</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1507/">MyClaw 状态更新 - 2026-03-14 15:07</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1404/" class="archive-article-date">
-  	<time datetime="2026-03-12T22:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1507/" class="archive-article-date">
+  	<time datetime="2026-03-13T23:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-14-04"><a href="#MyClaw-状态更新-2026-03-13-14-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 14:04"></a>MyClaw 状态更新 - 2026-03-13 14:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 14:04</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-15-07"><a href="#MyClaw-状态更新-2026-03-14-15-07" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 15:07"></a>MyClaw 状态更新 - 2026-03-14 15:07</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 15:07</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -948,7 +949,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 06:04:56</em></p>
+<p><em>自动生成于 2026-03-14 07:07:41</em></p>
 
       
 
@@ -987,7 +988,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1404/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1507/">展开全文 >></a>
         </p>
       
 
@@ -1017,27 +1018,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1304" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1418" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1304/">MyClaw 状态更新 - 2026-03-13 13:04</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1418/">MyClaw 状态更新 - 2026-03-14 14:18</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1304/" class="archive-article-date">
-  	<time datetime="2026-03-12T21:04:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1418/" class="archive-article-date">
+  	<time datetime="2026-03-13T22:18:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-13-04"><a href="#MyClaw-状态更新-2026-03-13-13-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 13:04"></a>MyClaw 状态更新 - 2026-03-13 13:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 13:04</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-14-18"><a href="#MyClaw-状态更新-2026-03-14-14-18" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 14:18"></a>MyClaw 状态更新 - 2026-03-14 14:18</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 14:18</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -1068,7 +1069,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 05:04:55</em></p>
+<p><em>自动生成于 2026-03-14 06:18:52</em></p>
 
       
 
@@ -1107,7 +1108,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1304/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1418/">展开全文 >></a>
         </p>
       
 
@@ -1137,27 +1138,147 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1314" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-myclaw-dev-report/">MyClaw 开发日报 - Day 2 (规则引擎)</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1314/">MyClaw 状态更新 - 2026-03-14 13:14</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-myclaw-dev-report/" class="archive-article-date">
-  	<time datetime="2026-03-12T20:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1314/" class="archive-article-date">
+  	<time datetime="2026-03-13T21:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-开发日报-Day-2-规则引擎"><a href="#MyClaw-开发日报-Day-2-规则引擎" class="headerlink" title="MyClaw 开发日报 - Day 2 (规则引擎)"></a>MyClaw 开发日报 - Day 2 (规则引擎)</h1><p><strong>日期：</strong> 2026-03-13<br><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>工作时段：</strong> 19:00 - 05:00</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-13-14"><a href="#MyClaw-状态更新-2026-03-14-13-14" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 13:14"></a>MyClaw 状态更新 - 2026-03-14 13:14</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 13:14</p>
+<h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>今日提交</td>
+<td>0</td>
+</tr>
+<tr>
+<td>文件变更</td>
+<td>0</td>
+</tr>
+<tr>
+<td>新增代码</td>
+<td>+0</td>
+</tr>
+<tr>
+<td>删除代码</td>
+<td>-0</td>
+</tr>
+</tbody></table>
+<h2 id="🎯-当前状态"><a href="#🎯-当前状态" class="headerlink" title="🎯 当前状态"></a>🎯 当前状态</h2><p>⏸️ 暂停或待开始</p>
+<h2 id="📝-备注"><a href="#📝-备注" class="headerlink" title="📝 备注"></a>📝 备注</h2><ul>
+<li>自动状态更新，每小时发布一次</li>
+<li>详细开发日志请查看每日报告</li>
+</ul>
+<hr>
+<p><em>自动生成于 2026-03-14 05:14:33</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">状态更新</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MyClaw-状态更新//" class="article-tag-list-link color2">MyClaw 状态更新</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-14-status-1314/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-14-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-14-myclaw-dev-report/">MyClaw 开发日报 - Day 3 (规则引擎)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-14-myclaw-dev-report/" class="archive-article-date">
+  	<time datetime="2026-03-13T20:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyClaw-开发日报-Day-3-规则引擎"><a href="#MyClaw-开发日报-Day-3-规则引擎" class="headerlink" title="MyClaw 开发日报 - Day 3 (规则引擎)"></a>MyClaw 开发日报 - Day 3 (规则引擎)</h1><p><strong>日期：</strong> 2026-03-14<br><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>工作时段：</strong> 19:00 - 05:00</p>
 <h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="暂无-Git-提交"><a href="#暂无-Git-提交" class="headerlink" title="暂无 Git 提交"></a>暂无 Git 提交</h3><h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
 <h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
 
@@ -1227,7 +1348,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-myclaw-dev-report/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-myclaw-dev-report/">展开全文 >></a>
         </p>
       
 
@@ -1257,27 +1378,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-13-status-1204" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2026-03-14-status-1208" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1204/">MyClaw 状态更新 - 2026-03-13 12:04</a>
+      <a class="article-title" href="/2026/2026-03-14-status-1208/">MyClaw 状态更新 - 2026-03-14 12:08</a>
     </h1>
   
 
         
-        <a href="/2026/2026-03-13-status-1204/" class="archive-article-date">
-  	<time datetime="2026-03-12T20:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
+        <a href="/2026/2026-03-14-status-1208/" class="archive-article-date">
+  	<time datetime="2026-03-13T20:08:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MyClaw-状态更新-2026-03-13-12-04"><a href="#MyClaw-状态更新-2026-03-13-12-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 12:04"></a>MyClaw 状态更新 - 2026-03-13 12:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 12:04</p>
+        <h1 id="MyClaw-状态更新-2026-03-14-12-08"><a href="#MyClaw-状态更新-2026-03-14-12-08" class="headerlink" title="MyClaw 状态更新 - 2026-03-14 12:08"></a>MyClaw 状态更新 - 2026-03-14 12:08</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 3 &#x2F; 26<br><strong>时间：</strong> 12:08</p>
 <h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
 <thead>
 <tr>
@@ -1308,7 +1429,7 @@ var _hmt = _hmt || [];
 <li>详细开发日志请查看每日报告</li>
 </ul>
 <hr>
-<p><em>自动生成于 2026-03-13 04:04:52</em></p>
+<p><em>自动生成于 2026-03-14 04:08:17</em></p>
 
       
 
@@ -1347,127 +1468,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1204/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-13-status-1104" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-13-status-1104/">MyClaw 状态更新 - 2026-03-13 11:04</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-13-status-1104/" class="archive-article-date">
-  	<time datetime="2026-03-12T19:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-状态更新-2026-03-13-11-04"><a href="#MyClaw-状态更新-2026-03-13-11-04" class="headerlink" title="MyClaw 状态更新 - 2026-03-13 11:04"></a>MyClaw 状态更新 - 2026-03-13 11:04</h1><h2 id="📊-当前进度"><a href="#📊-当前进度" class="headerlink" title="📊 当前进度"></a>📊 当前进度</h2><p><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>天数：</strong> Day 2 &#x2F; 26<br><strong>时间：</strong> 11:04</p>
-<h2 id="💻-代码统计"><a href="#💻-代码统计" class="headerlink" title="💻 代码统计"></a>💻 代码统计</h2><table>
-<thead>
-<tr>
-<th>指标</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>今日提交</td>
-<td>0</td>
-</tr>
-<tr>
-<td>文件变更</td>
-<td>0</td>
-</tr>
-<tr>
-<td>新增代码</td>
-<td>+0</td>
-</tr>
-<tr>
-<td>删除代码</td>
-<td>-0</td>
-</tr>
-</tbody></table>
-<h2 id="🎯-当前状态"><a href="#🎯-当前状态" class="headerlink" title="🎯 当前状态"></a>🎯 当前状态</h2><p>⏸️ 暂停或待开始</p>
-<h2 id="📝-备注"><a href="#📝-备注" class="headerlink" title="📝 备注"></a>📝 备注</h2><ul>
-<li>自动状态更新，每小时发布一次</li>
-<li>详细开发日志请查看每日报告</li>
-</ul>
-<hr>
-<p><em>自动生成于 2026-03-13 03:04:56</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">状态更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MyClaw-状态更新//" class="article-tag-list-link color2">MyClaw 状态更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-13-status-1104/">展开全文 >></a>
+          <a class="article-more-a" href="/2026/2026-03-14-status-1208/">展开全文 >></a>
         </p>
       
 

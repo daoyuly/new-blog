@@ -151,6 +151,154 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2024年 11 月 4 日 - 2024年 11 月 9 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%204%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%209%20%E6%97%A5/">工作周报2024年 11 月 4 日 - 2024年 11 月 9 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%204%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%209%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-11-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Com环境部署及问题联调解决<br>uShow的COM的部署主要解决了几问题：<br>Go uShow 服务，Pyhon服务等服务代码版本对齐<br>EN语言使用的功能上版本，CN，CO上目前使用的是V2版本，EN上使用的是V1版本，V1和V2的差异是在评分维度上差异，V2版除了代码架构的不同，在评分维度上增加了逻辑的承上启下关系的识别，开场白中关于号召类语句的识别，正文中关于打比方，FAB特征的识别，总体而言V2中的评分维度比V1多，所以评分也更客观，更有说服性。<br>帮助Devos的伙伴们解决了推理服务的部署的问题。<br>甄别了EN语言中实际需要的各类小模型和缺失小模型的具体情况。这个在之前的交付中没有遇到过此类问题，研究的也不够清楚,这次摸透高清了。<br>关于Prompt和Agent的思考<br>上周整体阅读了东朔老师的ATD文字稿，仅仅阅读不认为是学习，对于我认为重要的资料我一般采用多次阅读和思考的精读方式，直到我想不出别的问题了或者我认为理解了其内核思想或者找到行动的点才算学习的结束。学习完整个文档，里面关于Prompt的论述启发了我对AI原生的应用的很多思考，我想也很能是未来应用开发的迭代方向之一。<br>1 基于AI的应用在架构上增加了一层Agent及Agent控制决策层，这一层负责控制工作流及完成功能调度，比如Dify，AgentGPT都是这一类的框架，但是未来的迭代中，类似的框架中的能力会和业务框架深度融合，形成垂直业务架构的一部分，也可能会和DDD这样的领域思想和框架整合起来<br>2 在应用层上面向Agent的Funcion Tools会替代现有的功能开发，与现在功能模块比较起来，这类功能是垂直业务的，更容易被Agent调用，同时，很多较大的模块本身被一个Agent包裹，提供特定的能力，供Agent调度层调用。<br>3 Prompt在开发中的使用用途上会分成三类：<br>1 系统层面的Prommpt，比如系统能力的角色，调度计划，分拆任务，评估类的Prompt。<br>2 应用层面的Prompt，解决具体的业务问题和业务流程的Prompt<br>3 用户层的Prompt，  1，2类Prompt很好理解，我们现在也在使用， 用户层的Prompt是指和用户可以输出的Prompt，因为用户解决的问题不同，使用Prompt的方式不同，结果也就不同。比如A讲师和B讲师负责的培训业务不同，在生成一个文档时，他所使用的Prompt就是不同的，在未来的迭代中我们可以在系统中把讲师的Prompt管理起来，在不同的小节，讲师们可以直接调用或者可以通过AI力，调整其中的参数，这一层，我们构建了基于UMU 所有Tools的可以自定义Prompt的Agent系统，它不同于Dify，AgentGPT类Agent框架，他是基于UMU现有功能集合之上的Agent，并且用户可以自定义Prompt及其参数，这可以成就每个个体对Prompt的大模型的应用能力。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%204%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%209%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2024年 10 月 28 日 - 2024年 11 月 3 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2010%20%E6%9C%88%2028%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%203%20%E6%97%A5/">工作周报2024年 10 月 28 日 - 2024年 11 月 3 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2010%20%E6%9C%88%2028%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%203%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-11-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Prompt的使用<br>本周自己的Prompt库又多了几个专家：celery技术专家，chatbot对话专家，Angularjs的Typescript类型提取专家，Angularjs性能优化专家，随着专家类型的积累，日常工作的专家团队已经逐渐建立起来了<br>周末再看一篇关于Chatbot DST 论文时，学到一个反幻觉的技巧，我试了下还可以，非常简单，分享给大家：If the value does not exist, return the value as NONE.<br>@yuanyuan强烈种草的的copolit新功能也非常好用，比直接ChatbotGPT和cursor好用，前端工程师可以把更多的精力放在需求的理解和功能的精良设计。不过也要注意数据安全，我们不想让外界知道的数据一定尽量不能让外界知道。<br>最近我也在思考在AI时代，前端工作需要怎么升级迭代，面对的用户的使用习惯发生了怎样的变化，用户喜欢什么样的交互和产品，未来的前端应该是什么样子，需要创造什么样的价值，我现在还没有想清楚。<br>东朔老师的ATD文字稿看了一半，太精彩了，我觉得从AI应用的层次把思想，策略，技法，迭代方式都讲到了，AI已经逐渐渗透到研发的方方面面了，AI不是替代人，AI是增强人，人类已经存在数万年了，人类的能力就是可以适应环境不断进化，在AI时代，我想大部分人都可以不断地适应，成长出和AI并存的能力，我想我们的产品已经做这个工作了。<br>PC端多维度评价样式问题，这个问题让我思考了很多，对我而言这不是什么技术难题，不是我不能解决的，也不是想不到，为什么会出现这个错误，这个看起来是态度问题，或者是能力问题，在我看来就是缺乏追求卓越的表现。日常工作把自己困在开发任务里，追求卓越，就一定要站在高，看的远，做的细，踏的稳。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2010%20%E6%9C%88%2028%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-逝去的亲人：我的姑和姑父" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -715,154 +863,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2024年 8 月 19 日 - 2024年 8 月 25 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2019%20%E6%97%A5%20-%202024%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5/">工作周报2024年 8 月 19 日 - 2024年 8 月 25 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2019%20%E6%97%A5%20-%202024%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>复杂前端组件的设计及迭代浅析，简单以 任务分配组件 为例（中(2)）<br>复杂组件设计的重要准则之一：面向多维变化的可持续设计<br>变化是设计目标的很重要来源，变化来自业务，组织，技术，市场，客户等不同的维度，我们要采取不同的策略来应对这些不同维度上变化，以及为应对这些变化而匹配的优先级，资源投入，收益预期都会不同。在一般设计中，很多人对这些变化等同视之，我认为这是很多设计缺陷的来源之一：过度设计，就是把业务上的功能变化看起了业务发展的上变化，设计缺失往往就是把市场的变化看成了单个客户的变化，为了应对组织上变化，必须要保证设计的可理解程度要接近组织的平均开发能力，让组织内的大部分人可以理解，可以维护这些组件的实现和设计。<br>在我们拥抱变化的同时，要机智的识别出变化的来源，以及在设计上应对策略。<br>可持续设计，来自几个维度的描述，1是与业务匹配的代码的大结构和抽象层拆分，2是团队共识的设计原则，3是制定有效的设计目标，在这三个维度中，我认为制定设计目标是最重要的。<br>在制定设计目标时，我认为有以下几个可以操作的点<br>细化功能拆解，明确功能细节和交叉功能点<br>功能在整个业务中的价值，这个需要对业务预见能力，要判断这个功能的在整个业务的价值，要设计的组件在功能中的作用<br>分析如何实现这个功能<br>枚举可能的变化及来源，找到尽可能完善的解决方案<br>枚举现在所有的约束条件，诸如项目交付的实际期望，项目时间，成本，技术能力，团队的接受度，可行性，每个变化的发生的概率<br>复杂组件设计的重要准则之二：面向AI的设计与实现：与AI的全过程协作<br>要充分利用大模型的能力，在设计和实现上充分的向大模型提出问题<br>充分的拆解设计目标，颗粒度要和设计目标中的约束条件对应起来，比如常用的 结构化提示词模式： 你是大模型是组件开发专家，我要做一个xxx功能，我的设计目标是xxx，我的要求是（哪些约束条件），请帮我列举出个所有的设计方案<br>大家在写设计方案的时候，在设计文档中添加一个大目录，主要用来描述设计中用到的Prompt，这样有多个好处<br>1 沉淀好的Prompt，因为Prompt的设计也需要时间，被证明有效的Prompt，我们要复用起来<br>2 方便其他人通过Prompt更好的理解你的设计的思路，因为Prompt完全反应了你对设计目标的理解，通过大模型也是一种知识压缩，大家可以支持复用你的Prompt获得相关的说明<br>实现中利用大模型做重构和部分单元测试的编写，在现有的开发模式中重构一般是在代码交付到下一个流程中的事，比如你要提交code review，然后有另一位代码审查者审查代码，然后回到你这在做修改，这个循环往复的流程是一个臃肿低效的流程，任何正视效率的公司都不会认同这种做法，但是大多数时间是无可奈何的。我读了一些关于软件工程的书籍，我认为这是老一辈工程师们总结出来的善良的错误。 合理的做法是重构发生在编写代码中，大模型可能会彻底改变这种现状，因为大模型会是很好的代码审查者，你可以随时向他询问你该如何实现，以及目前的实现如何，是不是有更好的实现。<br>作为组件的开发者，要作为技术架构师和业务专家的身份和大模型交流，能够判断和纠正大模型的回答是否符合我们的设计目标和业务功能要求<br>能够提出关键问题，资深技术专家的重要的能力体现，就是在评审设计时，能够充分理解设计的约束，目标，可行性，并且能够敏锐的识别其中的设计缺陷可能引起的现有功能的影响和对可持续设计的影响，这类关键性问题往往会引导设计质量更上一个层楼<br>对AI友好，要有足够的设计意图，组件功能，参数的文字描述，尽可能的注释，不远的将来，这些组件会成为我们组件RAG的数据材料，基于需求的查询不仅让工程师获益，会是让产品经理和UI设计师知道，这个需求我们需要哪些已有的组件，这种基于语义的查询会让整个开发提速。但前提是我们要扎实的建设对AI友好的组件原材料<br>与AI高效协作发生在复杂组件开发的全过程，包括 设计方案的确定，代码实现， code review + 代码优化，单元测试，良好的注释。业界很多人认为我们应该具备AI领导力，以此来利用AI，我认为要与AI高效协作，我们要深入的理解AI的能力和边界，AI也需要深入的理解我们的意图和诉求，我们要懂得如何让AI有效的理解我们的问题（比如我认为AI力小节），同时要通过完善注释，使用规范性命名，通用设计原则，更深入的反馈来训练和完善AI大模型<br>复杂组件设计的重要准则之三：面向大模型的交互体验<br>面向大模型的交互体验，我没有过多的经验，思考也不够成熟和完善，不过我想借此机会，抛砖引玉，请关心这个问题的睿智的伙伴们一起思考。<br>这里的交互体验包括两个方面，1是开发侧的开发交互体验，2是用户侧的使用交互体验<br>开发侧的交互体验在与Figma的需求交互，与Figma的UE交互，与Anasa的任务管理和Bug管理的交互，与Slack的沟通交互，与VS code中原有代码的交互，与开发过程中线上线下现有功能的交互<br>我主要开发者的视角，开发过程很频繁的情况是查询，待开发的组件要用在哪里，它和哪些功能相关依赖，有哪些组件和待开发组件类似，或者可以扩展，这些问题的回答，就是有经验的开发者和无经验的开发者的分水岭，有经验的开发者知道该怎么找，去哪里找，没有经验的开发者要花费很多精力去找这些问题的答案，这在一定程度上能够解答，我明明改了一个地方，为什么其他地方会出错；我们招聘到一个过往表现不错的工程师，为什么没有Landing好，当经验沦落为一种信息差，肯定是哪里出了问题，我觉得大模型可以一定程度上改善这类交互体验，我想多模态大模型能解决的关键问题是 需求点（文本）-UI（图片）-组件（代码）-代码文件这种查询。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2019%20%E6%97%A5%20-%202024%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2024年 8 月 12 日 - 2024年 8 月 18 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2012%20%E6%97%A5%20-%202024%E5%B9%B4%208%20%E6%9C%88%2018%20%E6%97%A5/">工作周报2024年 8 月 12 日 - 2024年 8 月 18 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2012%20%E6%97%A5%20-%202024%E5%B9%B4%208%20%E6%9C%88%2018%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-08-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>复杂前端组件的设计及迭代浅析，简单以 任务分配组件 为例（中(1)）<br>在深入叙述这个话题之前，我想说明一下为什么会以比较“务虚”（就是没啥实际代码）或理想化的方式来深入的探讨复杂组件的设计这个话题。<br>一：随着大模型的编程能力不断提升，作为程序员，编码能力已经变的不那么重要了，甚至在未来几年里不会写代码的程序员会陆续上岗。<br>二：未来（可能也就几年后）程序员的核心能力是业务的把控力和深厚的设计能力，也就是你如何让代码让大模型编写出优秀的代码，是来自开发者优秀的设计思想。设计的深度和业务的广度将会成为程序员的核心能力要求。<br>三：复杂的前端组件设计，对于设计的深度和业务的广度都有较高的要求。另外，大部分开发者都有一种惯性思维，会根据已有的解决方案来定义问题（这个很隐蔽，想辩驳的伙伴，可以先就这个问题仔细的观察一段时间），而大模型会打破这种“经验主义”；<br>四：基于大模型的复杂业务组件会是新的形态，新的思想，但是必须根植于用户体验和价值创造，可能需要从根本上思考复杂业务组件的产生及实现，以及其存在的价值；<br>五：我还有一个判断是基于复杂组件的创造性特点和预见性特点，按照目前大模型的架构是无法独立完成复杂前端组件的开发的。<br>下面继续复杂组件设计的话题<br>复杂组件设计的重要准则之一：面向变化的可持续设计<br>这个重要准则是基于上周我们所叙述的前端复杂组件设计的一般特点。这个准则是两种思想的融合，面向变化的设计，可持续的设计，我们分别阐述这种思想以及其背后的思考，最后关于实践的举证<br>敏捷开发思想里面很重要的一个是方面的是拥抱变化，但是作为开发者我们具体要拥抱哪些变化，为什么要拥抱变化，如何处理变化和稳定之间的关系，开发中哪些变化因素需要通过编程转为为稳定的，哪些稳定的因素要设计成变化的？这些问题，需要前端开发者认真的思考，并要得出自己的答案。我这里分享我的思考，做为 参考答案。<br>我们公司的“人，产品，利润”的思维模型出发来梳理和思考这些问题。<br>和我们有直接关系和间接关系的“人”都有哪些呢？直接的用户，用户的老板们，用户的学员们，我们研发组的伙伴们，我们产品组的伙伴，我们的客户界面的伙伴们等等，这些“人们”每一个人都有不同的个性，但是他们是 变化 的起因，也是他们，而不仅仅是组件的开发者，在共同塑造着组件的形态，组件的功能，组件的价值，没有用户的使用，不可能有组件的需求，没有后端的伙伴，不可能满足组件的数据特性，没有客户界面的伙伴，组件就不太可能真正的服务到用户。啰嗦这么多，我是想明确一件事情，组件开发中的变化来源于所有干系人相互影响的结果，但是我想强调的是，从汇总的结果往上追溯的话，不同的干系人的动因对整体结果的影响的系数不同。这是我们需要在设计中需要考虑的。<br>大家都知道从实现角度上看，产品会被拆分成很多子系统，子系统被拆分成很多模块，模块又被拆分成各种复杂的复合组件。假设我们把这些复合组件打个包，卖给客户，客户会愿意为此付款吗？肯定不会，因为这些组件不会解决用户的问题，也就是说，不能自主的产生服务。产品的定义是基于产品要解决的系统性的共性问题而产生的一个被部分市场认可的可以有效解决这些问题的系统性方案，也就是通过解决一系列问题而产生的整体效果，这里即包含了软件的部分 ，也包含了“人的思想”（效果学习的思想，客户服务的思想（形成一揽子的客服服务流程，客户服务标准等等））的部分，从这个角度思考，组件是“人”的思想的产物，是 产品 服务 客户 的工具，这就是组件设计时要考虑产品，考虑客户，考虑市场（同行们做了什么，待开发市场可能需要的是什么），这里面是不是也包含了很多变化的动因？<br>坦白说，虽然大模型可以很清楚的描述这个概念，但作为普通开发者，我很难讲清楚 利润 这个复杂而深刻的概念，不过我想试着从开发者的角度厘清与之相关的几个关系：<br>有效的复杂的业务组件会直接创造企业利润<br>优秀的复杂的业务组件是产品最好的代言<br>高质量的复杂业务组件是企业中最有生产力的工具<br>如何有效的创造企业利润是组件设计中最大的变化动因</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2012%20%E6%97%A5%20-%202024%E5%B9%B4%208%20%E6%9C%88%2018%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
