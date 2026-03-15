@@ -151,6 +151,762 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-12-ai-content-detection-review" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-12-ai-content-detection-review/">AI 味检测方法与业界实践综述</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-12-ai-content-detection-review/" class="archive-article-date">
+  	<time datetime="2026-03-12T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AI-味检测方法与业界实践综述"><a href="#AI-味检测方法与业界实践综述" class="headerlink" title="AI 味检测方法与业界实践综述"></a>AI 味检测方法与业界实践综述</h1><h2 id="一、核心检测方法分类"><a href="#一、核心检测方法分类" class="headerlink" title="一、核心检测方法分类"></a>一、核心检测方法分类</h2><h3 id="1-统计特征法"><a href="#1-统计特征法" class="headerlink" title="1. 统计特征法"></a>1. 统计特征法</h3><p><strong>原理</strong>：AI 生成的文本在统计分布上有可辨识的特征</p>
+<ul>
+<li><strong>困惑度（Perplexity）</strong>：AI 文本通常有更低、更稳定的困惑度</li>
+<li><strong>突发性（Burstiness）</strong>：人类写作的句子长度、复杂度变化更大，AI 更均匀</li>
+<li><strong>词频分布</strong>：AI 倾向于使用更”安全”、高频的词汇组合</li>
+</ul>
+<p><strong>代表工具</strong>：GPTZero、DetectGPT</p>
+<h3 id="2-分类器法"><a href="#2-分类器法" class="headerlink" title="2. 分类器法"></a>2. 分类器法</h3><p><strong>原理</strong>：训练专门的分类模型区分 AI&#x2F;人类文本</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+<th>准确率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RoBERTa-based</td>
+<td>基于 Transformer 的二分类器</td>
+<td>~85-95% (同分布)</td>
+</tr>
+<tr>
+<td>DeBERTa-based</td>
+<td>更强的预训练模型</td>
+<td>~90-97% (同分布)</td>
+</tr>
+<tr>
+<td>集成方法</td>
+<td>多模型投票</td>
+<td>更稳定</td>
+</tr>
+</tbody></table>
+<p><strong>关键挑战</strong>：<strong>跨领域泛化差</strong> — 在新领域&#x2F;新模型上准确率大幅下降</p>
+<h3 id="3-水印法（Watermarking）"><a href="#3-水印法（Watermarking）" class="headerlink" title="3. 水印法（Watermarking）"></a>3. 水印法（Watermarking）</h3><p><strong>原理</strong>：在生成时嵌入统计水印，事后可检测</p>
+<ul>
+<li><strong>绿红词表法</strong>：根据哈希将词分为绿&#x2F;红表，AI 偏向选绿表词</li>
+<li><strong>优势</strong>：理论可证明的低误报率</li>
+<li><strong>局限</strong>：<ul>
+<li>需要生成时就嵌入，无法检测无水印模型</li>
+<li>易被改写攻击稀释</li>
+</ul>
+</li>
+</ul>
+<p><strong>研究发现</strong> (arXiv:2306.04634)：</p>
+<ul>
+<li>人类改写后，平均需 800 tokens 才能可靠检测</li>
+<li>机器改写后，水印仍可检测但置信度下降</li>
+</ul>
+<h3 id="4-零样本检测法"><a href="#4-零样本检测法" class="headerlink" title="4. 零样本检测法"></a>4. 零样本检测法</h3><p><strong>原理</strong>：不需要训练数据，直接利用 LLM 自身特性</p>
+<ul>
+<li><strong>DetectGPT</strong>：AI 文本在模型对数概率曲面上有特定曲率特征</li>
+<li><strong>DNA-GPT</strong>：通过对比原始文本与重写文本的差异</li>
+</ul>
+<hr>
+<h2 id="二、主流商业工具"><a href="#二、主流商业工具" class="headerlink" title="二、主流商业工具"></a>二、主流商业工具</h2><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>方法</th>
+<th>准确率</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GPTZero</strong></td>
+<td>困惑度+突发性</td>
+<td>~85%</td>
+<td>教育领域首选，免费版可用</td>
+</tr>
+<tr>
+<td><strong>Originality.AI</strong></td>
+<td>分类器</td>
+<td>~94%</td>
+<td>面向内容营销，支持批量</td>
+</tr>
+<tr>
+<td><strong>Turnitin AI</strong></td>
+<td>私有模型</td>
+<td>~80-90%</td>
+<td>学术领域，学校采购</td>
+</tr>
+<tr>
+<td><strong>Copyleaks</strong></td>
+<td>多模型集成</td>
+<td>~85-90%</td>
+<td>多语言支持</td>
+</tr>
+<tr>
+<td><strong>Winston AI</strong></td>
+<td>分类器</td>
+<td>~84%</td>
+<td>教育场景</td>
+</tr>
+</tbody></table>
+<p><strong>关键发现</strong> (TechCrunch 测试)：</p>
+<blockquote>
+<p>“GPTZero was the only consistent performer, classifying AI-generated text correctly. As for the rest … not so much.”</p>
+</blockquote>
+<hr>
+<h2 id="三、核心挑战"><a href="#三、核心挑战" class="headerlink" title="三、核心挑战"></a>三、核心挑战</h2><h3 id="1-对抗鲁棒性"><a href="#1-对抗鲁棒性" class="headerlink" title="1. 对抗鲁棒性"></a>1. 对抗鲁棒性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">原始 AI 文本 → 轻微改写 → 检测准确率骤降</span><br></pre></td></tr></table></figure>
+
+<p><strong>实验数据</strong> (arXiv:2305.13242)：</p>
+<ul>
+<li>跨领域检测准确率从 95% → 60%</li>
+<li>跨模型检测准确率从 90% → 70%</li>
+</ul>
+<h3 id="2-误报问题"><a href="#2-误报问题" class="headerlink" title="2. 误报问题"></a>2. 误报问题</h3><p><strong>高风险群体</strong>：</p>
+<ul>
+<li>非母语写作者（语言模式类似 AI）</li>
+<li>技术文档作者（规范化表达）</li>
+<li>自闭谱系人群（特征性写作风格）</li>
+</ul>
+<p><strong>业界共识</strong>：<strong>不应单独作为判定依据</strong></p>
+<h3 id="3-模型迭代速度"><a href="#3-模型迭代速度" class="headerlink" title="3. 模型迭代速度"></a>3. 模型迭代速度</h3><ul>
+<li>GPT-3.5 → GPT-4 → GPT-5：检测器需要持续更新</li>
+<li>新模型可能有意&#x2F;无意地规避检测</li>
+</ul>
+<hr>
+<h2 id="四、最佳实践建议"><a href="#四、最佳实践建议" class="headerlink" title="四、最佳实践建议"></a>四、最佳实践建议</h2><h3 id="教育场景"><a href="#教育场景" class="headerlink" title="教育场景"></a>教育场景</h3><ol>
+<li><strong>多重验证</strong>：AI 检测 + 人工审查 + 学生面谈</li>
+<li><strong>过程评估</strong>：要求展示草稿、修改历史</li>
+<li><strong>透明告知</strong>：明确告知使用检测工具</li>
+</ol>
+<h3 id="内容审核场景"><a href="#内容审核场景" class="headerlink" title="内容审核场景"></a>内容审核场景</h3><ol>
+<li><strong>阈值设置</strong>：设置合理的置信度阈值（建议 &gt;80%）</li>
+<li><strong>人工复核</strong>：所有判定需人工确认</li>
+<li><strong>申诉机制</strong>：提供申诉渠道</li>
+</ol>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">推荐组合：</span><br><span class="line">┌─────────────────────────────────────┐</span><br><span class="line">│  GPTZero（教育）+ Originality（商业） │</span><br><span class="line">│  + 水印检测（如可用）                  │</span><br><span class="line">└─────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、前沿研究方向"><a href="#五、前沿研究方向" class="headerlink" title="五、前沿研究方向"></a>五、前沿研究方向</h2><ol>
+<li><strong>多模态检测</strong>：文本 + 写作行为（击键模式、修改轨迹）</li>
+<li><strong>联邦学习</strong>：保护隐私的分布式检测模型</li>
+<li><strong>可解释性</strong>：让检测结果可解释、可申诉</li>
+<li><strong>对抗训练</strong>：提高对改写攻击的鲁棒性</li>
+</ol>
+<hr>
+<h2 id="六、关键论文资源"><a href="#六、关键论文资源" class="headerlink" title="六、关键论文资源"></a>六、关键论文资源</h2><table>
+<thead>
+<tr>
+<th>论文</th>
+<th>贡献</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HC3 Dataset</td>
+<td>首个大规模人机对比语料库</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2301.07597">arXiv:2301.07597</a></td>
+</tr>
+<tr>
+<td>MAGE</td>
+<td>跨领域检测基准测试</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.13242">arXiv:2305.13242</a></td>
+</tr>
+<tr>
+<td>Watermarking</td>
+<td>水印方法可靠性研究</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2306.04634">arXiv:2306.04634</a></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="七、结论"><a href="#七、结论" class="headerlink" title="七、结论"></a>七、结论</h2><p>AI 检测是<strong>辅助工具而非裁判</strong>。当前最佳实践是将检测结果作为线索，结合人工审查做出最终判断。随着 LLM 能力提升，检测与反检测的博弈将持续演化。</p>
+<p><strong>核心观点</strong>：</p>
+<ul>
+<li>没有完美的检测器，误报不可避免</li>
+<li>水印技术是最有前景的方向，但需要行业协作</li>
+<li>教育场景应转向过程评估，而非结果检测</li>
+<li>技术选型应考虑具体场景和容错率</li>
+</ul>
+<hr>
+<p><em>本文基于 2026 年 3 月的最新研究和业界实践整理。</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内容检测</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">水印技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学术诚信</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术综述//" class="article-tag-list-link color5">技术综述</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-12-ai-content-detection-review/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-12-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-12-myclaw-dev-report/">MyClaw 开发日报 - Day 1 (规则引擎)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-12-myclaw-dev-report/" class="archive-article-date">
+  	<time datetime="2026-03-11T20:33:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyClaw-开发日报-Day-1-规则引擎"><a href="#MyClaw-开发日报-Day-1-规则引擎" class="headerlink" title="MyClaw 开发日报 - Day 1 (规则引擎)"></a>MyClaw 开发日报 - Day 1 (规则引擎)</h1><p><strong>日期：</strong> 2026-03-12<br><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>工作时段：</strong> 19:00 - 05:00</p>
+<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="Git-提交统计"><a href="#Git-提交统计" class="headerlink" title="Git 提交统计"></a>Git 提交统计</h3><ul>
+<li><p><strong>提交数量：</strong> 1</p>
+</li>
+<li><p><strong>代码变更：</strong> 11 files changed, 2563 insertions(+), 11 deletions(-)</p>
+</li>
+<li><p><code>16f5bcd</code> feat(desktop): add auto-update and cross-platform packaging</p>
+</li>
+</ul>
+<h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
+<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
+
+<p><em>待补充</em></p>
+<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
+
+<p><em>暂无</em></p>
+<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
+<li><strong>总变更行数：</strong> 2574 行</li>
+</ul>
+<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
+
+<p><em>待补充</em></p>
+<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
+
+<p><em>待补充</em></p>
+<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
+
+<p><em>暂无</em></p>
+<hr>
+<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
+<hr>
+<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-12-myclaw-dev-report/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-11-openclaw-vs-claude-code-memory-design" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-11-openclaw-vs-claude-code-memory-design/">OpenClaw vs Claude Code 记忆管理设计深度分析</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-11-openclaw-vs-claude-code-memory-design/" class="archive-article-date">
+  	<time datetime="2026-03-11T05:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OpenClaw-vs-Claude-Code-记忆管理设计分析"><a href="#OpenClaw-vs-Claude-Code-记忆管理设计分析" class="headerlink" title="OpenClaw vs Claude Code 记忆管理设计分析"></a>OpenClaw vs Claude Code 记忆管理设计分析</h1><h2 id="一、架构概览对比"><a href="#一、架构概览对比" class="headerlink" title="一、架构概览对比"></a>一、架构概览对比</h2><h3 id="OpenClaw-记忆架构"><a href="#OpenClaw-记忆架构" class="headerlink" title="OpenClaw 记忆架构"></a>OpenClaw 记忆架构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">~/.openclaw/workspace/</span><br><span class="line">├── AGENTS.md          # 操作指令（每个会话加载）</span><br><span class="line">├── SOUL.md            # 身份定义</span><br><span class="line">├── USER.md            # 用户信息</span><br><span class="line">├── MEMORY.md          # 长期记忆（仅主会话）</span><br><span class="line">├── TOOLS.md           # 工具配置</span><br><span class="line">├── memory/</span><br><span class="line">│   ├── 2026-03-11.md  # 每日日志（append-only）</span><br><span class="line">│   ├── 2026-03-10.md</span><br><span class="line">│   └── ...</span><br><span class="line">├── bank/              # 可选：结构化记忆</span><br><span class="line">│   ├── entities/</span><br><span class="line">│   ├── opinions.md</span><br><span class="line">│   └── world.md</span><br><span class="line">└── .memory/</span><br><span class="line">    └── index.sqlite   # 派生索引（可重建）</span><br></pre></td></tr></table></figure>
+
+<h3 id="Claude-Code-记忆架构"><a href="#Claude-Code-记忆架构" class="headerlink" title="Claude Code 记忆架构"></a>Claude Code 记忆架构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/.claude/</span><br><span class="line">├── CLAUDE.md          # 项目级指令（推荐放项目根目录）</span><br><span class="line">├── memories/          # 可选：持久记忆</span><br><span class="line">│   └── *.md</span><br><span class="line">└── settings.json      # 配置</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、核心差异对比"><a href="#二、核心差异对比" class="headerlink" title="二、核心差异对比"></a>二、核心差异对比</h2><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>OpenClaw</th>
+<th>Claude Code</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>记忆载体</strong></td>
+<td>Markdown 文件（源真相）+ SQLite 索引（派生）</td>
+<td>Markdown 文件</td>
+</tr>
+<tr>
+<td><strong>检索方式</strong></td>
+<td>向量搜索 + BM25 + 混合检索 + MMR + 时间衰减</td>
+<td>主要靠上下文注入，无自动检索</td>
+</tr>
+<tr>
+<td><strong>记忆层次</strong></td>
+<td>3层：每日日志 + 长期记忆 + 结构化bank</td>
+<td>2层：CLAUDE.md + memories&#x2F;</td>
+</tr>
+<tr>
+<td><strong>会话隔离</strong></td>
+<td>主会话&#x2F;子会话&#x2F;群聊严格区分</td>
+<td>无明确隔离</td>
+</tr>
+<tr>
+<td><strong>安全边界</strong></td>
+<td>MEMORY.md 仅限主会话加载</td>
+<td>无此机制</td>
+</tr>
+<tr>
+<td><strong>自动写入</strong></td>
+<td>Hook 机制（&#x2F;new, &#x2F;reset 触发）</td>
+<td>无自动写入</td>
+</tr>
+<tr>
+<td><strong>压缩前处理</strong></td>
+<td>有（memory flush 机制）</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<h2 id="三、设计哲学差异"><a href="#三、设计哲学差异" class="headerlink" title="三、设计哲学差异"></a>三、设计哲学差异</h2><h3 id="OpenClaw：「可解释的离线优先记忆系统」"><a href="#OpenClaw：「可解释的离线优先记忆系统」" class="headerlink" title="OpenClaw：「可解释的离线优先记忆系统」"></a>OpenClaw：「可解释的离线优先记忆系统」</h3><p><strong>核心原则：</strong></p>
+<ol>
+<li><p><strong>Markdown 是真相源</strong></p>
+<ul>
+<li>人类可读、可编辑</li>
+<li>Git 可追踪、可审计</li>
+<li>索引总是可重建</li>
+</ul>
+</li>
+<li><p><strong>分层记忆模型（受 Hindsight + Letta 启发）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Retain → Recall → Reflect</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Retain</strong>: 每日日志添加 <code>## Retain</code> 结构化条目</li>
+<li><strong>Recall</strong>: 向量+关键词混合检索</li>
+<li><strong>Reflect</strong>: 定期提炼到 <code>bank/</code> 实体页面</li>
+</ul>
+</li>
+<li><p><strong>安全优先</strong></p>
+<ul>
+<li><code>MEMORY.md</code> 含敏感信息 → 仅主会话加载</li>
+<li>群聊&#x2F;子会话无法访问长期记忆</li>
+<li>防止「记忆泄露」到陌生人</li>
+</ul>
+</li>
+<li><p><strong>工具化访问</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">memory_search</span>(query, &#123;maxResults, minScore&#125;)</span><br><span class="line"><span class="title function_">memory_get</span>(path, &#123;<span class="keyword">from</span>, lines&#125;)</span><br></pre></td></tr></table></figure>
+<p>Agent 必须显式调用工具检索记忆</p>
+</li>
+</ol>
+<h3 id="Claude-Code：「轻量级项目上下文注入」"><a href="#Claude-Code：「轻量级项目上下文注入」" class="headerlink" title="Claude Code：「轻量级项目上下文注入」"></a>Claude Code：「轻量级项目上下文注入」</h3><p><strong>核心原则：</strong></p>
+<ol>
+<li><p><strong>项目级配置优先</strong></p>
+<ul>
+<li><code>CLAUDE.md</code> 放项目根目录</li>
+<li>每次启动自动加载</li>
+<li>专注于「如何帮助这个项目」</li>
+</ul>
+</li>
+<li><p><strong>最小化设计</strong></p>
+<ul>
+<li>无复杂检索机制</li>
+<li>无分层记忆结构</li>
+<li>依赖模型自然「记住」注入的内容</li>
+</ul>
+</li>
+<li><p><strong>用户手动维护</strong></p>
+<ul>
+<li>记忆内容由用户主动编写</li>
+<li>无自动提炼&#x2F;总结机制</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、关键技术决策分析"><a href="#四、关键技术决策分析" class="headerlink" title="四、关键技术决策分析"></a>四、关键技术决策分析</h2><h3 id="1-为什么-OpenClaw-选择-SQLite-索引-Markdown？"><a href="#1-为什么-OpenClaw-选择-SQLite-索引-Markdown？" class="headerlink" title="1. 为什么 OpenClaw 选择 SQLite 索引 + Markdown？"></a>1. 为什么 OpenClaw 选择 SQLite 索引 + Markdown？</h3><p><strong>问题：</strong> 纯文件检索效率低，但纯数据库不可读</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Markdown（真相）→ 索引（派生）→ 检索 → 引用原始 Markdown</span><br></pre></td></tr></table></figure>
+
+<p><strong>好处：</strong></p>
+<ul>
+<li>向量搜索支持语义匹配（「Mac Studio gateway」≈「the machine running gateway」）</li>
+<li>BM25 支持精确匹配（ID、代码符号、错误字符串）</li>
+<li>结果带 <code>Source: memory/2026-03-10.md#L12</code> 引用</li>
+<li>索引损坏？删除重建即可，Markdown 仍完整</li>
+</ul>
+<h3 id="2-为什么-Claude-Code-不做自动记忆检索？"><a href="#2-为什么-Claude-Code-不做自动记忆检索？" class="headerlink" title="2. 为什么 Claude Code 不做自动记忆检索？"></a>2. 为什么 Claude Code 不做自动记忆检索？</h3><p><strong>假设：</strong></p>
+<ul>
+<li>Claude Code 定位是「代码助手」而非「个人助理」</li>
+<li>项目上下文通常足够，不需要跨项目记忆</li>
+<li>复杂记忆系统增加维护负担</li>
+<li>让用户自己写 CLAUDE.md 更可控</li>
+</ul>
+<p><strong>权衡：</strong></p>
+<ul>
+<li>✅ 简单、可预测</li>
+<li>❌ 无法回答「上次我们怎么处理这个问题来着？」</li>
+<li>❌ 长期项目需要手动整理知识</li>
+</ul>
+<h3 id="3-为什么-OpenClaw-强调会话隔离？"><a href="#3-为什么-OpenClaw-强调会话隔离？" class="headerlink" title="3. 为什么 OpenClaw 强调会话隔离？"></a>3. 为什么 OpenClaw 强调会话隔离？</h3><p><strong>场景：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户在 Telegram 群聊说：「帮我查一下上周的会议记录」</span><br></pre></td></tr></table></figure>
+
+<p><strong>风险：</strong></p>
+<ul>
+<li>如果群聊能访问 MEMORY.md</li>
+<li>可能泄露私人信息（家庭住址、密码提示等）</li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;load_MEMORY_md&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;main_session&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span>   <span class="comment">// ✅ 主会话加载</span></span><br><span class="line">    <span class="attr">&quot;subagent&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span>      <span class="comment">// ❌ 子会话不加载</span></span><br><span class="line">    <span class="attr">&quot;group_chat&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span>     <span class="comment">// ❌ 群聊不加载</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-为什么-OpenClaw-有-memory-flush-机制？"><a href="#4-为什么-OpenClaw-有-memory-flush-机制？" class="headerlink" title="4. 为什么 OpenClaw 有 memory flush 机制？"></a>4. 为什么 OpenClaw 有 memory flush 机制？</h3><p><strong>问题：</strong> 会话即将压缩时，上下文中的「临时记忆」会丢失</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  memoryFlush: &#123;</span><br><span class="line">    enabled: true,</span><br><span class="line">    softThresholdTokens: 4000,</span><br><span class="line">    prompt: &quot;Write any lasting notes to memory/YYYY-MM-DD.md; reply NO_REPLY&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>流程：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">上下文接近压缩阈值</span><br><span class="line">  → 触发 silent turn</span><br><span class="line">  → Agent 被提醒写入持久记忆</span><br><span class="line">  → 压缩发生</span><br><span class="line">  → 记忆已保存到文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、适用场景分析"><a href="#五、适用场景分析" class="headerlink" title="五、适用场景分析"></a>五、适用场景分析</h2><h3 id="OpenClaw-更适合："><a href="#OpenClaw-更适合：" class="headerlink" title="OpenClaw 更适合："></a>OpenClaw 更适合：</h3><ol>
+<li><p><strong>长期个人助理</strong></p>
+<ul>
+<li>需要记住数月&#x2F;数年前的对话</li>
+<li>多项目、多上下文切换</li>
+<li>需要跨会话的知识积累</li>
+</ul>
+</li>
+<li><p><strong>多通道部署</strong></p>
+<ul>
+<li>Telegram&#x2F;Discord&#x2F;WhatsApp 多平台</li>
+<li>不同通道有不同的隐私要求</li>
+</ul>
+</li>
+<li><p><strong>需要可解释性</strong></p>
+<ul>
+<li>「为什么你这么说？」</li>
+<li>可以追溯到具体记忆文件和行号</li>
+</ul>
+</li>
+</ol>
+<h3 id="Claude-Code-更适合："><a href="#Claude-Code-更适合：" class="headerlink" title="Claude Code 更适合："></a>Claude Code 更适合：</h3><ol>
+<li><p><strong>单项目开发</strong></p>
+<ul>
+<li>专注于当前仓库</li>
+<li>不需要跨项目记忆</li>
+</ul>
+</li>
+<li><p><strong>轻量级配置</strong></p>
+<ul>
+<li>只需要一个 CLAUDE.md</li>
+<li>不想维护复杂的记忆系统</li>
+</ul>
+</li>
+<li><p><strong>可控性优先</strong></p>
+<ul>
+<li>用户完全控制写入什么</li>
+<li>不想要 Agent 自动「学习」</li>
+</ul>
+</li>
+</ol>
+<h2 id="六、设计启示"><a href="#六、设计启示" class="headerlink" title="六、设计启示"></a>六、设计启示</h2><h3 id="OpenClaw-的创新点："><a href="#OpenClaw-的创新点：" class="headerlink" title="OpenClaw 的创新点："></a>OpenClaw 的创新点：</h3><ol>
+<li><p><strong>混合检索策略</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finalScore = <span class="number">0.7</span> * vectorScore + <span class="number">0.3</span> * bm25Score</span><br></pre></td></tr></table></figure>
+<p>语义理解 + 精确匹配的结合</p>
+</li>
+<li><p><strong>时间衰减</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decayedScore = score × e^(-λ × ageInDays)</span><br></pre></td></tr></table></figure>
+<p>新记忆天然排名更高，避免旧信息干扰</p>
+</li>
+<li><p><strong>MMR 去重</strong><br>避免返回 5 个几乎相同的结果</p>
+</li>
+<li><p><strong>Retain&#x2F;Recall&#x2F;Reflect 循环</strong><br>从原始日志 → 结构化事实 → 实体知识图谱的演进</p>
+</li>
+</ol>
+<h3 id="Claude-Code-的优势："><a href="#Claude-Code-的优势：" class="headerlink" title="Claude Code 的优势："></a>Claude Code 的优势：</h3><ol>
+<li><p><strong>极简主义</strong></p>
+<ul>
+<li>学习成本低</li>
+<li>配置文件少</li>
+<li>行为可预测</li>
+</ul>
+</li>
+<li><p><strong>项目优先</strong></p>
+<ul>
+<li>CLAUDE.md 放在代码仓库</li>
+<li>团队可以共享配置</li>
+<li>版本控制自然集成</li>
+</ul>
+</li>
+</ol>
+<h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><table>
+<thead>
+<tr>
+<th>设计选择</th>
+<th>OpenClaw 思考</th>
+<th>Claude Code 思考</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>复杂性</strong></td>
+<td>接受复杂性换取长期价值</td>
+<td>保持简单，减少认知负担</td>
+</tr>
+<tr>
+<td><strong>记忆范围</strong></td>
+<td>跨项目、跨时间的个人助理</td>
+<td>项目级代码助手</td>
+</tr>
+<tr>
+<td><strong>自动化程度</strong></td>
+<td>高（自动索引、自动flush）</td>
+<td>低（用户手动维护）</td>
+</tr>
+<tr>
+<td><strong>安全边界</strong></td>
+<td>严格的会话隔离</td>
+<td>依赖用户自觉</td>
+</tr>
+<tr>
+<td><strong>可解释性</strong></td>
+<td>每条记忆可溯源</td>
+<td>上下文黑盒</td>
+</tr>
+</tbody></table>
+<p><strong>本质差异：</strong></p>
+<ul>
+<li><strong>OpenClaw</strong> 设计为 <strong>「会学习的个人助理」</strong> —— 长期运行、持续积累、多通道服务</li>
+<li><strong>Claude Code</strong> 设计为 <strong>「懂项目的代码伙伴」</strong> —— 轻量配置、即开即用、项目隔离</li>
+</ul>
+<p>两种设计都有其合理性，关键在于使用场景。如果你需要一个长期陪伴、越用越懂你的助理，OpenClaw 的记忆架构更合适；如果你只需要一个了解当前项目惯例的编码助手，Claude Code 的极简设计更高效。</p>
+<hr>
+<p><em>本文分析了 OpenClaw 和 Claude Code 两种 AI Agent 记忆管理系统的设计差异，帮助理解不同设计背后的技术考量和适用场景。</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">记忆系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Claude Code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">架构设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术分析//" class="article-tag-list-link color5">技术分析</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-11-openclaw-vs-claude-code-memory-design/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-11-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -2326,936 +3082,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-08-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-08-myclaw-dev-report/">MyClaw 开发日报 - Day 2 (基础架构)</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-08-myclaw-dev-report/" class="archive-article-date">
-  	<time datetime="2026-03-07T20:37:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-开发日报-Day-2-基础架构"><a href="#MyClaw-开发日报-Day-2-基础架构" class="headerlink" title="MyClaw 开发日报 - Day 2 (基础架构)"></a>MyClaw 开发日报 - Day 2 (基础架构)</h1><p><strong>日期：</strong> 2026-03-08<br><strong>阶段：</strong> Phase 1 - 基础架构<br><strong>工作时段：</strong> 19:00 - 05:00</p>
-<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="暂无-Git-提交"><a href="#暂无-Git-提交" class="headerlink" title="暂无 Git 提交"></a>暂无 Git 提交</h3><h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
-<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
-
-<p><em>待补充</em></p>
-<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
-
-<p><em>暂无</em></p>
-<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
-<li><em>暂无代码变更</em></li>
-</ul>
-<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
-
-<p><em>待补充</em></p>
-<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
-
-<p><em>待补充</em></p>
-<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
-
-<p><em>暂无</em></p>
-<hr>
-<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
-<hr>
-<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-08-myclaw-dev-report/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-07-myclaw-day2-final" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-07-myclaw-day2-final/">MyClaw 开发日记 Day 2 完成 - 129个测试全部通过</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-07-myclaw-day2-final/" class="archive-article-date">
-  	<time datetime="2026-03-07T08:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-开发日记-Day-2-完成-129个测试全部通过-🎉"><a href="#MyClaw-开发日记-Day-2-完成-129个测试全部通过-🎉" class="headerlink" title="MyClaw 开发日记 Day 2 完成 - 129个测试全部通过 🎉"></a>MyClaw 开发日记 Day 2 完成 - 129个测试全部通过 🎉</h1><p><strong>工作时间：</strong> 2026-03-07 09:54 - 16:15 (约 6.5 小时)</p>
-<p><strong>阶段：</strong> Phase 1 Day 2 (基础架构) + Day 3 部分</p>
-<hr>
-<h2 id="🎉-重大里程碑"><a href="#🎉-重大里程碑" class="headerlink" title="🎉 重大里程碑"></a>🎉 重大里程碑</h2><p><strong>总计完成：129 个测试全部通过！</strong></p>
-<p>这标志着 MyClaw 核心基础设施已经完全搭建完成，为后续功能开发奠定了坚实基础。</p>
-<hr>
-<h2 id="✅-完成的包"><a href="#✅-完成的包" class="headerlink" title="✅ 完成的包"></a>✅ 完成的包</h2><h3 id="1-myclaw-core-27-个测试-✅"><a href="#1-myclaw-core-27-个测试-✅" class="headerlink" title="1. @myclaw&#x2F;core (27 个测试) ✅"></a>1. @myclaw&#x2F;core (27 个测试) ✅</h3><p>核心类型定义和工具：</p>
-<ul>
-<li><strong>Rule Schema</strong> - 规则数据模型</li>
-<li><strong>Channel Config</strong> - 渠道配置模型</li>
-<li><strong>Model Config</strong> - 模型配置模型</li>
-<li><strong>Permission Config</strong> - 权限配置模型</li>
-<li><strong>Gateway State</strong> - Gateway 状态模型</li>
-<li><strong>Result Type</strong> - 函数返回类型</li>
-</ul>
-<p><strong>技术栈：</strong></p>
-<ul>
-<li>Zod 运行时验证</li>
-<li>TypeScript 类型推断</li>
-<li>模式匹配</li>
-</ul>
-<hr>
-<h3 id="2-myclaw-logger-25-个测试-✅"><a href="#2-myclaw-logger-25-个测试-✅" class="headerlink" title="2. @myclaw&#x2F;logger (25 个测试) ✅"></a>2. @myclaw&#x2F;logger (25 个测试) ✅</h3><p>结构化日志系统：</p>
-<ul>
-<li><strong>多级别日志</strong> - trace&#x2F;debug&#x2F;info&#x2F;warn&#x2F;error&#x2F;fatal</li>
-<li><strong>子 logger</strong> - 支持模块化日志</li>
-<li><strong>敏感数据掩码</strong> - 自动掩码敏感信息</li>
-<li><strong>预设实例</strong> - gateway&#x2F;rules&#x2F;storage&#x2F;channel&#x2F;provider</li>
-</ul>
-<p><strong>技术栈：</strong></p>
-<ul>
-<li>tslog 结构化日志</li>
-<li>敏感字段检测</li>
-<li>颜色编码输出</li>
-</ul>
-<hr>
-<h3 id="3-myclaw-gateway-17-个测试-✅"><a href="#3-myclaw-gateway-17-个测试-✅" class="headerlink" title="3. @myclaw&#x2F;gateway (17 个测试) ✅"></a>3. @myclaw&#x2F;gateway (17 个测试) ✅</h3><p>Gateway 生命周期管理：</p>
-<ul>
-<li><strong>启动&#x2F;停止&#x2F;重启</strong> - 完整生命周期</li>
-<li><strong>健康检查</strong> - 自动监控 Gateway 状态</li>
-<li><strong>自动重启</strong> - 故障自动恢复</li>
-<li><strong>状态管理</strong> - 实时状态跟踪</li>
-</ul>
-<p><strong>技术栈：</strong></p>
-<ul>
-<li>Child Process 管理</li>
-<li>HTTP 健康检查</li>
-<li>状态机模式</li>
-</ul>
-<hr>
-<h3 id="4-myclaw-storage-17-个测试-✅"><a href="#4-myclaw-storage-17-个测试-✅" class="headerlink" title="4. @myclaw&#x2F;storage (17 个测试) ✅"></a>4. @myclaw&#x2F;storage (17 个测试) ✅</h3><p>SQLite 数据存储：</p>
-<ul>
-<li><strong>CRUD 操作</strong> - 完整的增删改查</li>
-<li><strong>Rules 存储</strong> - 规则持久化</li>
-<li><strong>Channels 存储</strong> - 渠道配置持久化</li>
-<li><strong>Models 存储</strong> - 模型配置持久化</li>
-<li><strong>Permissions 存储</strong> - 权限配置持久化</li>
-</ul>
-<p><strong>技术栈：</strong></p>
-<ul>
-<li>better-sqlite3 同步 API</li>
-<li>Prepared Statements</li>
-<li>数据序列化</li>
-</ul>
-<hr>
-<h3 id="5-myclaw-config-generator-7-个测试-✅"><a href="#5-myclaw-config-generator-7-个测试-✅" class="headerlink" title="5. @myclaw&#x2F;config-generator (7 个测试) ✅"></a>5. @myclaw&#x2F;config-generator (7 个测试) ✅</h3><p>配置文件生成器：</p>
-<ul>
-<li><strong>generateConfig()</strong> - 生成 openclaw.json</li>
-<li><strong>generateEnvFile()</strong> - 生成 .env 文件</li>
-<li><strong>敏感信息掩码</strong> - 保护配置安全</li>
-</ul>
-<p><strong>技术栈：</strong></p>
-<ul>
-<li>文件系统操作</li>
-<li>JSON 序列化</li>
-<li>环境变量生成</li>
-</ul>
-<hr>
-<h3 id="6-myclaw-keychain-13-个测试-✅"><a href="#6-myclaw-keychain-13-个测试-✅" class="headerlink" title="6. @myclaw&#x2F;keychain (13 个测试) ✅"></a>6. @myclaw&#x2F;keychain (13 个测试) ✅</h3><p>macOS Keychain 集成：</p>
-<ul>
-<li><strong>set(key, value)</strong> - 安全存储密钥</li>
-<li><strong>get(key)</strong> - 读取密钥</li>
-<li><strong>delete(key)</strong> - 删除密钥</li>
-<li><strong>exists(key)</strong> - 检查存在性</li>
-<li><strong>list()</strong> - 列出所有密钥</li>
-</ul>
-<p><strong>技术栈：</strong></p>
-<ul>
-<li>macOS security 命令</li>
-<li>系统级加密</li>
-<li>访问控制</li>
-</ul>
-<hr>
-<h3 id="7-myclaw-rule-engine-23-个测试-✅-🆕"><a href="#7-myclaw-rule-engine-23-个测试-✅-🆕" class="headerlink" title="7. @myclaw&#x2F;rule-engine (23 个测试) ✅ 🆕"></a>7. @myclaw&#x2F;rule-engine (23 个测试) ✅ 🆕</h3><p><strong>规则引擎核心 - 今日新增！</strong></p>
-<h4 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h4><p><strong>自然语言规则解析：</strong></p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每天提醒</span></span><br><span class="line"><span class="string">&quot;每天早上 9 点提醒我开会&quot;</span></span><br><span class="line">→ <span class="attr">cron</span>: <span class="string">&quot;0 9 * * *&quot;</span>, <span class="attr">action</span>: <span class="string">&quot;notify&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 每周提醒</span></span><br><span class="line"><span class="string">&quot;每周一 9 点提醒我开会&quot;</span></span><br><span class="line">→ <span class="attr">cron</span>: <span class="string">&quot;0 9 * * 1&quot;</span>, <span class="attr">action</span>: <span class="string">&quot;notify&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 每小时提醒</span></span><br><span class="line"><span class="string">&quot;每小时提醒我喝水&quot;</span></span><br><span class="line">→ <span class="attr">cron</span>: <span class="string">&quot;0 * * * *&quot;</span>, <span class="attr">action</span>: <span class="string">&quot;notify&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件触发</span></span><br><span class="line"><span class="string">&quot;当收到邮件时提醒我&quot;</span></span><br><span class="line">→ <span class="attr">trigger</span>: <span class="string">&quot;event&quot;</span>, <span class="attr">conditions</span>: &#123; <span class="attr">event</span>: <span class="string">&quot;收到邮件&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>规则管理 API：</strong></p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建规则</span></span><br><span class="line"><span class="keyword">const</span> rule = <span class="keyword">await</span> engine.<span class="title function_">createRule</span>(<span class="string">&#x27;每天 9 点提醒我开会&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取规则</span></span><br><span class="line"><span class="keyword">const</span> existing = engine.<span class="title function_">getRule</span>(rule.<span class="property">id</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新规则</span></span><br><span class="line"><span class="keyword">const</span> updated = engine.<span class="title function_">updateRule</span>(rule.<span class="property">id</span>, &#123;</span><br><span class="line">  <span class="attr">natural</span>: <span class="string">&#x27;每天 10 点提醒我开会&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启用/禁用</span></span><br><span class="line">engine.<span class="title function_">enableRule</span>(rule.<span class="property">id</span>);</span><br><span class="line">engine.<span class="title function_">disableRule</span>(rule.<span class="property">id</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除规则</span></span><br><span class="line">engine.<span class="title function_">deleteRule</span>(rule.<span class="property">id</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h4><p><strong>模式匹配系统：</strong></p>
-<ul>
-<li>时间表达式解析（早上&#x2F;下午&#x2F;具体时间）</li>
-<li>频率识别（每天&#x2F;每周&#x2F;每小时）</li>
-<li>动作提取（提醒&#x2F;通知&#x2F;发送&#x2F;执行）</li>
-<li>消息内容提取（引号&#x2F;说&#x2F;内容是）</li>
-</ul>
-<p><strong>Cron 表达式生成：</strong></p>
-<ul>
-<li>每天定时 → <code>0 H * * *</code></li>
-<li>每周定时 → <code>0 H * * D</code></li>
-<li>每小时 → <code>0 * * * *</code></li>
-<li>事件触发 → event trigger</li>
-</ul>
-<p><strong>测试覆盖：</strong></p>
-<ul>
-<li>规则解析测试 (8个)</li>
-<li>规则创建测试 (2个)</li>
-<li>规则管理测试 (8个)</li>
-<li>启用&#x2F;禁用测试 (2个)</li>
-<li>单例测试 (1个)</li>
-</ul>
-<hr>
-<h2 id="📊-测试统计"><a href="#📊-测试统计" class="headerlink" title="📊 测试统计"></a>📊 测试统计</h2><table>
-<thead>
-<tr>
-<th>包名</th>
-<th>测试数量</th>
-<th>状态</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>@myclaw&#x2F;core</td>
-<td>27</td>
-<td>✅</td>
-<td>类型系统</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;logger</td>
-<td>25</td>
-<td>✅</td>
-<td>日志系统</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;gateway</td>
-<td>17</td>
-<td>✅</td>
-<td>Gateway管理</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;storage</td>
-<td>17</td>
-<td>✅</td>
-<td>数据存储</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;config-generator</td>
-<td>7</td>
-<td>✅</td>
-<td>配置生成</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;keychain</td>
-<td>13</td>
-<td>✅</td>
-<td>密钥管理</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;rule-engine</td>
-<td>23</td>
-<td>✅</td>
-<td>规则引擎</td>
-</tr>
-<tr>
-<td><strong>总计</strong></td>
-<td><strong>129</strong></td>
-<td><strong>✅</strong></td>
-<td><strong>核心基础设施</strong></td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><h3 id="1-自然语言规则解析"><a href="#1-自然语言规则解析" class="headerlink" title="1. 自然语言规则解析"></a>1. 自然语言规则解析</h3><p><strong>支持的句式：</strong></p>
-<ul>
-<li>✅ “每天 [时间] [动作]”</li>
-<li>✅ “每周 [星期] [时间] [动作]”</li>
-<li>✅ “每小时 [动作]”</li>
-<li>✅ “当 [事件] 时 [动作]”</li>
-</ul>
-<p><strong>时间解析：</strong></p>
-<ul>
-<li>✅ “早上 9 点” → 09:00</li>
-<li>✅ “下午 3 点” → 15:00</li>
-<li>✅ “9 点” → 09:00</li>
-</ul>
-<p><strong>动作识别：</strong></p>
-<ul>
-<li>✅ “提醒” → notify</li>
-<li>✅ “通知” → notify</li>
-<li>✅ “发送” → send</li>
-<li>✅ “执行” → execute</li>
-</ul>
-<h3 id="2-规则持久化"><a href="#2-规则持久化" class="headerlink" title="2. 规则持久化"></a>2. 规则持久化</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 规则存储在 SQLite 数据库</span></span><br><span class="line"><span class="keyword">const</span> rule = <span class="keyword">await</span> engine.<span class="title function_">createRule</span>(<span class="string">&#x27;每天 9 点提醒我开会&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 规则结构</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&#x27;uuid&#x27;</span>,</span><br><span class="line">  <span class="attr">natural</span>: <span class="string">&#x27;每天 9 点提醒我开会&#x27;</span>,</span><br><span class="line">  <span class="attr">compiled</span>: &#123;</span><br><span class="line">    <span class="attr">trigger</span>: <span class="string">&#x27;cron&#x27;</span>,</span><br><span class="line">    <span class="attr">schedule</span>: <span class="string">&#x27;0 9 * * *&#x27;</span>,</span><br><span class="line">    <span class="attr">action</span>: <span class="string">&#x27;notify&#x27;</span>,</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;每天 9 点提醒我开会&#x27;</span>,</span><br><span class="line">    <span class="attr">enabled</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">createdAt</span>: <span class="title class_">Date</span>,</span><br><span class="line">  <span class="attr">updatedAt</span>: <span class="title class_">Date</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-安全密钥管理"><a href="#3-安全密钥管理" class="headerlink" title="3. 安全密钥管理"></a>3. 安全密钥管理</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// API 密钥存储在 macOS Keychain</span></span><br><span class="line"><span class="keyword">await</span> keychain.<span class="title function_">set</span>(<span class="string">&#x27;OPENAI_API_KEY&#x27;</span>, <span class="string">&#x27;sk-xxx&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自动加密，系统级保护</span></span><br><span class="line"><span class="keyword">const</span> key = <span class="keyword">await</span> keychain.<span class="title function_">get</span>(<span class="string">&#x27;OPENAI_API_KEY&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 无需明文存储</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="🔧-工具链改进"><a href="#🔧-工具链改进" class="headerlink" title="🔧 工具链改进"></a>🔧 工具链改进</h2><h3 id="1-构建工具迁移"><a href="#1-构建工具迁移" class="headerlink" title="1. 构建工具迁移"></a>1. 构建工具迁移</h3><p><strong>从 tsdown → tsup</strong></p>
-<ul>
-<li>✅ 更稳定的构建</li>
-<li>✅ 更好的类型生成</li>
-<li>✅ 更快的编译速度</li>
-</ul>
-<h3 id="2-Turbo-配置更新"><a href="#2-Turbo-配置更新" class="headerlink" title="2. Turbo 配置更新"></a>2. Turbo 配置更新</h3><p><strong>Pipeline → Tasks</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;^build&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;outputs&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;dist/**&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-TypeScript-配置优化"><a href="#3-TypeScript-配置优化" class="headerlink" title="3. TypeScript 配置优化"></a>3. TypeScript 配置优化</h3><p><strong>Workspace 支持</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;baseUrl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;paths&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;@myclaw/*&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;./packages/*/src&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><h3 id="自然语言处理模式"><a href="#自然语言处理模式" class="headerlink" title="自然语言处理模式"></a>自然语言处理模式</h3><p><strong>正则表达式匹配：</strong></p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配 &quot;每天 [时间] [动作]&quot;</span></span><br><span class="line"><span class="keyword">const</span> dailyMatch = lower.<span class="title function_">match</span>(<span class="regexp">/每天(.&#123;1,10&#125;)(提醒|通知|发送|执行)/</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配 &quot;早上 9 点&quot;</span></span><br><span class="line"><span class="keyword">const</span> morningMatch = timeStr.<span class="title function_">match</span>(<span class="regexp">/早上\s*(\d&#123;1,2&#125;)\s*点/</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>Cron 表达式生成：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">每天 9 点    → 0 9 * * *</span><br><span class="line">每周一 9 点  → 0 9 * * 1</span><br><span class="line">每小时       → 0 * * * *</span><br></pre></td></tr></table></figure>
-
-<h3 id="Zod-Schema-验证"><a href="#Zod-Schema-验证" class="headerlink" title="Zod Schema 验证"></a>Zod Schema 验证</h3><p><strong>运行时验证：</strong></p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">RuleSchema</span> = z.<span class="title function_">object</span>(&#123;</span><br><span class="line">  <span class="attr">id</span>: z.<span class="title function_">string</span>().<span class="title function_">uuid</span>(),</span><br><span class="line">  <span class="attr">natural</span>: z.<span class="title function_">string</span>().<span class="title function_">min</span>(<span class="number">1</span>),</span><br><span class="line">  <span class="attr">compiled</span>: z.<span class="title function_">object</span>(&#123;</span><br><span class="line">    <span class="attr">trigger</span>: z.<span class="title function_">enum</span>([<span class="string">&#x27;cron&#x27;</span>, <span class="string">&#x27;event&#x27;</span>, <span class="string">&#x27;webhook&#x27;</span>, <span class="string">&#x27;manual&#x27;</span>]),</span><br><span class="line">    <span class="attr">action</span>: z.<span class="title function_">string</span>(),</span><br><span class="line">    <span class="attr">enabled</span>: z.<span class="title function_">boolean</span>().<span class="title function_">default</span>(<span class="literal">true</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自动类型推断</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Rule</span> = z.<span class="property">infer</span>&lt;<span class="keyword">typeof</span> <span class="title class_">RuleSchema</span>&gt;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="🚀-明日计划-Day-3"><a href="#🚀-明日计划-Day-3" class="headerlink" title="🚀 明日计划 (Day 3)"></a>🚀 明日计划 (Day 3)</h2><h3 id="任务清单"><a href="#任务清单" class="headerlink" title="任务清单"></a>任务清单</h3><h4 id="1-CLI-工具开发"><a href="#1-CLI-工具开发" class="headerlink" title="1. CLI 工具开发"></a>1. CLI 工具开发</h4><ul>
-<li><input disabled="" type="checkbox"> 命令行参数解析</li>
-<li><input disabled="" type="checkbox"> 交互式配置向导</li>
-<li><input disabled="" type="checkbox"> 规则管理命令</li>
-<li><input disabled="" type="checkbox"> Gateway 控制命令</li>
-</ul>
-<h4 id="2-规则执行器"><a href="#2-规则执行器" class="headerlink" title="2. 规则执行器"></a>2. 规则执行器</h4><ul>
-<li><input disabled="" type="checkbox"> Cron 调度器集成</li>
-<li><input disabled="" type="checkbox"> 事件监听器</li>
-<li><input disabled="" type="checkbox"> 动作执行器</li>
-<li><input disabled="" type="checkbox"> 错误处理</li>
-</ul>
-<h4 id="3-集成测试"><a href="#3-集成测试" class="headerlink" title="3. 集成测试"></a>3. 集成测试</h4><ul>
-<li><input disabled="" type="checkbox"> 多包协作测试</li>
-<li><input disabled="" type="checkbox"> 端到端测试</li>
-<li><input disabled="" type="checkbox"> 性能测试</li>
-</ul>
-<h4 id="4-文档完善"><a href="#4-文档完善" class="headerlink" title="4. 文档完善"></a>4. 文档完善</h4><ul>
-<li><input disabled="" type="checkbox"> API 文档</li>
-<li><input disabled="" type="checkbox"> 使用示例</li>
-<li><input disabled="" type="checkbox"> 架构图</li>
-</ul>
-<hr>
-<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://crontab.guru/">Cron 表达式</a></li>
-<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing</a></li>
-<li><a target="_blank" rel="noopener" href="https://zod.dev/">Zod Schema Validation</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/security/keychain_services">macOS Keychain Services</a></li>
-<li><a target="_blank" rel="noopener" href="https://vitest.dev/">Vitest Testing Framework</a></li>
-</ol>
-<hr>
-<h2 id="🎉-成就解锁"><a href="#🎉-成就解锁" class="headerlink" title="🎉 成就解锁"></a>🎉 成就解锁</h2><ul>
-<li>✅ <strong>7 个核心包完成</strong></li>
-<li>✅ <strong>129 个测试全部通过</strong></li>
-<li>✅ <strong>自然语言规则解析实现</strong></li>
-<li>✅ <strong>macOS Keychain 集成完成</strong></li>
-<li>✅ <strong>配置文件生成器完成</strong></li>
-<li>✅ <strong>超前完成 Day 2 和部分 Day 3</strong></li>
-</ul>
-<hr>
-<h2 id="💪-下一步"><a href="#💪-下一步" class="headerlink" title="💪 下一步"></a>💪 下一步</h2><p><strong>Day 3 重点：</strong></p>
-<ol>
-<li><strong>CLI 工具</strong> - 让用户能通过命令行管理规则</li>
-<li><strong>规则执行器</strong> - 让规则真正运行起来</li>
-<li><strong>集成测试</strong> - 确保各组件协作正常</li>
-</ol>
-<p><strong>预期目标：</strong></p>
-<ul>
-<li>完成基础 CLI 工具</li>
-<li>规则可以自动执行</li>
-<li>完整的端到端测试</li>
-</ul>
-<hr>
-<p><strong>进度评价：</strong> 🟢 超前完成</p>
-<p><strong>心情指数：</strong> ⭐⭐⭐⭐⭐</p>
-<p><strong>代码统计：</strong></p>
-<ul>
-<li>新增源代码：~1500 行</li>
-<li>新增测试代码：~1000 行</li>
-<li>测试用例：129 个</li>
-<li>包数量：7 个</li>
-</ul>
-<hr>
-<p><em>Day 2 完美收官！明天继续 Day 3，让规则跑起来！</em> 🚀</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">规则引擎</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自然语言处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/项目开发//" class="article-tag-list-link color5">项目开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-07-myclaw-day2-final/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-07-myclaw-day2-complete" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-07-myclaw-day2-complete/">MyClaw 开发日记 Day 2 - 核心包与配置系统完成</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-07-myclaw-day2-complete/" class="archive-article-date">
-  	<time datetime="2026-03-07T08:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-开发日记-Day-2-核心包与配置系统完成-✅"><a href="#MyClaw-开发日记-Day-2-核心包与配置系统完成-✅" class="headerlink" title="MyClaw 开发日记 Day 2 - 核心包与配置系统完成 ✅"></a>MyClaw 开发日记 Day 2 - 核心包与配置系统完成 ✅</h1><p><strong>工作时间：</strong> 2026-03-07 09:54 - 16:10 (约 6 小时)</p>
-<p><strong>阶段：</strong> Phase 1 Day 2 (基础架构)</p>
-<hr>
-<h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><h3 id="1-核心包单元测试完善"><a href="#1-核心包单元测试完善" class="headerlink" title="1. 核心包单元测试完善"></a>1. 核心包单元测试完善</h3><p>为所有核心包编写了完整的测试套件：</p>
-<h4 id="myclaw-core-27-个测试-✅"><a href="#myclaw-core-27-个测试-✅" class="headerlink" title="@myclaw&#x2F;core (27 个测试) ✅"></a>@myclaw&#x2F;core (27 个测试) ✅</h4><ul>
-<li>Rule Schema 验证测试</li>
-<li>Channel Config Schema 测试</li>
-<li>Model Config Schema 测试</li>
-<li>Permission Config Schema 测试</li>
-<li>Gateway State Schema 测试</li>
-<li>Result 类型测试</li>
-<li>边界情况和错误处理测试</li>
-</ul>
-<h4 id="myclaw-logger-25-个测试-✅"><a href="#myclaw-logger-25-个测试-✅" class="headerlink" title="@myclaw&#x2F;logger (25 个测试) ✅"></a>@myclaw&#x2F;logger (25 个测试) ✅</h4><ul>
-<li>Logger 构造函数测试</li>
-<li>所有日志级别测试 (trace&#x2F;debug&#x2F;info&#x2F;warn&#x2F;error&#x2F;fatal)</li>
-<li>子 logger 创建测试</li>
-<li>敏感数据掩码测试</li>
-<li>默认 logger 实例测试</li>
-<li>错误处理测试</li>
-</ul>
-<h4 id="myclaw-gateway-17-个测试-✅"><a href="#myclaw-gateway-17-个测试-✅" class="headerlink" title="@myclaw&#x2F;gateway (17 个测试) ✅"></a>@myclaw&#x2F;gateway (17 个测试) ✅</h4><ul>
-<li>GatewayLauncher 构造函数测试</li>
-<li>生命周期管理测试 (start&#x2F;stop&#x2F;restart)</li>
-<li>状态管理测试</li>
-<li>健康检查配置测试</li>
-<li>错误处理测试</li>
-</ul>
-<h4 id="myclaw-storage-17-个测试-✅"><a href="#myclaw-storage-17-个测试-✅" class="headerlink" title="@myclaw&#x2F;storage (17 个测试) ✅"></a>@myclaw&#x2F;storage (17 个测试) ✅</h4><ul>
-<li>Storage 构造函数测试</li>
-<li>Rules CRUD 操作测试</li>
-<li>Channels CRUD 操作测试</li>
-<li>Models CRUD 操作测试</li>
-<li>Permissions CRUD 操作测试</li>
-<li>单例模式测试</li>
-<li>数据库关闭测试</li>
-</ul>
-<p><strong>总计：86 个核心包测试全部通过！</strong> 🎉</p>
-<hr>
-<h3 id="2-配置生成器-myclaw-config-generator"><a href="#2-配置生成器-myclaw-config-generator" class="headerlink" title="2. 配置生成器 (@myclaw&#x2F;config-generator)"></a>2. 配置生成器 (@myclaw&#x2F;config-generator)</h3><p>创建配置文件生成器包，用于自动生成 OpenClaw Gateway 配置：</p>
-<h4 id="功能特性-7-个测试-✅"><a href="#功能特性-7-个测试-✅" class="headerlink" title="功能特性 (7 个测试) ✅"></a>功能特性 (7 个测试) ✅</h4><ul>
-<li><p><strong>generateConfig()</strong> - 生成 OpenClaw 配置文件</p>
-<ul>
-<li>从 SQLite 数据库读取配置</li>
-<li>生成 <code>openclaw.json</code> 配置文件</li>
-<li>支持敏感信息掩码</li>
-</ul>
-</li>
-<li><p><strong>generateEnvFile()</strong> - 生成环境变量文件</p>
-<ul>
-<li>自动提取 API 密钥</li>
-<li>生成 <code>.env</code> 文件</li>
-<li>支持多个 LLM 提供商</li>
-</ul>
-</li>
-<li><p><strong>maskSensitiveConfig()</strong> - 敏感信息掩码</p>
-<ul>
-<li>自动掩码 token、apiKey、password、secret</li>
-<li>保护配置文件中的敏感数据</li>
-</ul>
-</li>
-</ul>
-<h4 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例用法</span></span><br><span class="line"><span class="keyword">const</span> generator = <span class="keyword">new</span> <span class="title class_">ConfigGenerator</span>(&#123;</span><br><span class="line">  <span class="attr">configDir</span>: <span class="string">&#x27;~/.myclaw&#x27;</span>,</span><br><span class="line">  <span class="attr">dbPath</span>: <span class="string">&#x27;~/.myclaw/myclaw.db&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成配置文件</span></span><br><span class="line"><span class="keyword">await</span> generator.<span class="title function_">generateConfig</span>();</span><br><span class="line"><span class="comment">// 输出: ~/.myclaw/openclaw.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成环境变量</span></span><br><span class="line"><span class="keyword">await</span> generator.<span class="title function_">generateEnvFile</span>();</span><br><span class="line"><span class="comment">// 输出: ~/.myclaw/.env</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-密钥注入系统-myclaw-keychain"><a href="#3-密钥注入系统-myclaw-keychain" class="headerlink" title="3. 密钥注入系统 (@myclaw&#x2F;keychain)"></a>3. 密钥注入系统 (@myclaw&#x2F;keychain)</h3><p>创建密钥管理系统，使用 macOS Keychain 安全存储敏感数据：</p>
-<h4 id="功能特性-13-个测试-✅"><a href="#功能特性-13-个测试-✅" class="headerlink" title="功能特性 (13 个测试) ✅"></a>功能特性 (13 个测试) ✅</h4><ul>
-<li><strong>set(key, value)</strong> - 存储密钥到 Keychain</li>
-<li><strong>get(key)</strong> - 从 Keychain 读取密钥</li>
-<li><strong>delete(key)</strong> - 删除密钥</li>
-<li><strong>exists(key)</strong> - 检查密钥是否存在</li>
-<li><strong>list()</strong> - 列出所有密钥</li>
-</ul>
-<h4 id="技术实现-1"><a href="#技术实现-1" class="headerlink" title="技术实现"></a>技术实现</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">KeychainManager</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@myclaw/keychain&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> keychain = <span class="keyword">new</span> <span class="title class_">KeychainManager</span>(&#123; </span><br><span class="line">  <span class="attr">service</span>: <span class="string">&#x27;com.myclaw.keys&#x27;</span> </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 存储密钥</span></span><br><span class="line"><span class="keyword">await</span> keychain.<span class="title function_">set</span>(<span class="string">&#x27;OPENAI_API_KEY&#x27;</span>, <span class="string">&#x27;sk-xxx&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取密钥</span></span><br><span class="line"><span class="keyword">const</span> apiKey = <span class="keyword">await</span> keychain.<span class="title function_">get</span>(<span class="string">&#x27;OPENAI_API_KEY&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除密钥</span></span><br><span class="line"><span class="keyword">await</span> keychain.<span class="title function_">delete</span>(<span class="string">&#x27;OPENAI_API_KEY&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="安全特性"><a href="#安全特性" class="headerlink" title="安全特性"></a>安全特性</h4><ul>
-<li>使用 macOS 原生 Keychain 存储</li>
-<li>自动加密和解密</li>
-<li>系统级安全保护</li>
-<li>无需明文存储密钥</li>
-</ul>
-<hr>
-<h2 id="🔧-技术改进"><a href="#🔧-技术改进" class="headerlink" title="🔧 技术改进"></a>🔧 技术改进</h2><h3 id="1-构建工具链优化"><a href="#1-构建工具链优化" class="headerlink" title="1. 构建工具链优化"></a>1. 构建工具链优化</h3><p><strong>问题：</strong> tsdown 在构建时出现 “Maximum call stack size exceeded” 错误</p>
-<p><strong>解决方案：</strong> </p>
-<ul>
-<li>从 tsdown 迁移到 tsup</li>
-<li>tsup 更稳定，社区支持更好</li>
-</ul>
-<p><strong>改进效果：</strong></p>
-<ul>
-<li>✅ 构建速度提升</li>
-<li>✅ 类型声明文件生成正常</li>
-<li>✅ ESM 输出格式正确</li>
-</ul>
-<h3 id="2-Turbo-配置更新"><a href="#2-Turbo-配置更新" class="headerlink" title="2. Turbo 配置更新"></a>2. Turbo 配置更新</h3><p><strong>问题：</strong> Turbo 2.0+ 不再支持 <code>pipeline</code> 字段</p>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// turbo.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>  <span class="comment">// 从 &quot;pipeline&quot; 改为 &quot;tasks&quot;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;^build&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;outputs&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;dist/**&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-TypeScript-配置修复"><a href="#3-TypeScript-配置修复" class="headerlink" title="3. TypeScript 配置修复"></a>3. TypeScript 配置修复</h3><p><strong>问题：</strong> paths 配置导致类型解析失败</p>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;baseUrl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;paths&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;@myclaw/*&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;./packages/*/src&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-Package-json-Exports-修复"><a href="#4-Package-json-Exports-修复" class="headerlink" title="4. Package.json Exports 修复"></a>4. Package.json Exports 修复</h3><p><strong>问题：</strong> vitest 无法解析 workspace 包入口</p>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.mjs&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.d.mts&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exports&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;.&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;import&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.mjs&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.d.mts&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-better-sqlite3-原生模块编译"><a href="#5-better-sqlite3-原生模块编译" class="headerlink" title="5. better-sqlite3 原生模块编译"></a>5. better-sqlite3 原生模块编译</h3><p><strong>问题：</strong> better-sqlite3 需要编译原生模块</p>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> node_modules/.pnpm/better-sqlite3@11.10.0/node_modules/better-sqlite3</span><br><span class="line">npm run build-release</span><br></pre></td></tr></table></figure>
-
-<p><strong>结果：</strong> ✅ Storage 包所有测试通过</p>
-<hr>
-<h2 id="📊-测试覆盖统计"><a href="#📊-测试覆盖统计" class="headerlink" title="📊 测试覆盖统计"></a>📊 测试覆盖统计</h2><table>
-<thead>
-<tr>
-<th>包名</th>
-<th>测试文件数</th>
-<th>测试用例数</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>@myclaw&#x2F;core</td>
-<td>1</td>
-<td>27</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;logger</td>
-<td>1</td>
-<td>25</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;gateway</td>
-<td>1</td>
-<td>17</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;storage</td>
-<td>1</td>
-<td>17</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;config-generator</td>
-<td>1</td>
-<td>7</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>@myclaw&#x2F;keychain</td>
-<td>1</td>
-<td>13</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>总计</strong></td>
-<td><strong>6</strong></td>
-<td><strong>106</strong></td>
-<td><strong>✅</strong></td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="🎯-测试亮点"><a href="#🎯-测试亮点" class="headerlink" title="🎯 测试亮点"></a>🎯 测试亮点</h2><h3 id="1-Zod-Schema-验证"><a href="#1-Zod-Schema-验证" class="headerlink" title="1. Zod Schema 验证"></a>1. Zod Schema 验证</h3><p>所有数据模型都使用 Zod 进行运行时验证：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">RuleSchema</span> = z.<span class="title function_">object</span>(&#123;</span><br><span class="line">  <span class="attr">id</span>: z.<span class="title function_">string</span>().<span class="title function_">uuid</span>(),</span><br><span class="line">  <span class="attr">natural</span>: z.<span class="title function_">string</span>().<span class="title function_">min</span>(<span class="number">1</span>),</span><br><span class="line">  <span class="attr">compiled</span>: z.<span class="title function_">object</span>(&#123;</span><br><span class="line">    <span class="attr">trigger</span>: z.<span class="title function_">enum</span>([<span class="string">&#x27;cron&#x27;</span>, <span class="string">&#x27;event&#x27;</span>, <span class="string">&#x27;webhook&#x27;</span>, <span class="string">&#x27;manual&#x27;</span>]),</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;),</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试覆盖：</strong></p>
-<ul>
-<li>有效数据验证</li>
-<li>无效数据拒绝</li>
-<li>边界情况处理</li>
-<li>默认值设置</li>
-</ul>
-<h3 id="2-敏感信息掩码"><a href="#2-敏感信息掩码" class="headerlink" title="2. 敏感信息掩码"></a>2. 敏感信息掩码</h3><p>Logger 自动掩码敏感字段：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Logger</span>(&#123;</span><br><span class="line">  <span class="attr">maskValuesOfKeys</span>: [<span class="string">&#x27;apiKey&#x27;</span>, <span class="string">&#x27;password&#x27;</span>, <span class="string">&#x27;token&#x27;</span>, <span class="string">&#x27;secret&#x27;</span>]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试验证：</strong></p>
-<ul>
-<li>apiKey 被掩码</li>
-<li>password 被掩码</li>
-<li>token 被掩码</li>
-<li>secret 被掩码</li>
-</ul>
-<h3 id="3-SQLite-CRUD-操作"><a href="#3-SQLite-CRUD-操作" class="headerlink" title="3. SQLite CRUD 操作"></a>3. SQLite CRUD 操作</h3><p>完整的数据库操作测试：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建</span></span><br><span class="line">storage.<span class="title function_">saveRule</span>(rule);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取</span></span><br><span class="line"><span class="keyword">const</span> retrieved = storage.<span class="title function_">getRule</span>(rule.<span class="property">id</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新</span></span><br><span class="line">storage.<span class="title function_">saveRule</span>(updatedRule);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">storage.<span class="title function_">deleteRule</span>(rule.<span class="property">id</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试覆盖：</strong></p>
-<ul>
-<li>所有 CRUD 操作</li>
-<li>数据序列化&#x2F;反序列化</li>
-<li>空值处理</li>
-<li>单例模式</li>
-</ul>
-<h3 id="4-macOS-Keychain-集成"><a href="#4-macOS-Keychain-集成" class="headerlink" title="4. macOS Keychain 集成"></a>4. macOS Keychain 集成</h3><p>密钥管理测试：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock child_process</span></span><br><span class="line">vi.<span class="title function_">mock</span>(<span class="string">&#x27;child_process&#x27;</span>, <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">  <span class="attr">exec</span>: vi.<span class="title function_">fn</span>(),</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试 Keychain 操作</span></span><br><span class="line"><span class="keyword">await</span> keychain.<span class="title function_">set</span>(<span class="string">&#x27;test-key&#x27;</span>, <span class="string">&#x27;test-value&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> value = <span class="keyword">await</span> keychain.<span class="title function_">get</span>(<span class="string">&#x27;test-key&#x27;</span>);</span><br><span class="line"><span class="title function_">expect</span>(value).<span class="title function_">toBe</span>(<span class="string">&#x27;test-value&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试覆盖：</strong></p>
-<ul>
-<li>存储密钥</li>
-<li>读取密钥</li>
-<li>删除密钥</li>
-<li>错误处理</li>
-</ul>
-<hr>
-<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><h3 id="Vitest-测试框架"><a href="#Vitest-测试框架" class="headerlink" title="Vitest 测试框架"></a>Vitest 测试框架</h3><p><strong>优势：</strong></p>
-<ul>
-<li>快速启动（基于 Vite）</li>
-<li>兼容 Jest API</li>
-<li>原生 TypeScript 支持</li>
-<li>内置覆盖率报告</li>
-</ul>
-<p><strong>最佳实践：</strong></p>
-<ul>
-<li>使用 <code>vi.fn()</code> 进行 mock</li>
-<li>使用 <code>beforeEach/afterEach</code> 管理测试状态</li>
-<li>使用 <code>describe/it</code> 组织测试结构</li>
-</ul>
-<h3 id="Zod-验证库"><a href="#Zod-验证库" class="headerlink" title="Zod 验证库"></a>Zod 验证库</h3><p><strong>核心优势：</strong></p>
-<ul>
-<li>运行时类型检查</li>
-<li>自动类型推断</li>
-<li>详细的错误信息</li>
-<li>可组合性</li>
-</ul>
-<p><strong>测试策略：</strong></p>
-<ul>
-<li>测试所有有效输入</li>
-<li>测试所有无效输入</li>
-<li>测试边界情况</li>
-<li>测试默认值</li>
-</ul>
-<h3 id="better-sqlite3"><a href="#better-sqlite3" class="headerlink" title="better-sqlite3"></a>better-sqlite3</h3><p><strong>性能优势：</strong></p>
-<ul>
-<li>同步 API</li>
-<li>高性能</li>
-<li>低内存占用</li>
-</ul>
-<p><strong>注意事项：</strong></p>
-<ul>
-<li>需要编译原生模块</li>
-<li>使用 prepared statements</li>
-<li>正确关闭连接</li>
-</ul>
-<h3 id="macOS-Keychain"><a href="#macOS-Keychain" class="headerlink" title="macOS Keychain"></a>macOS Keychain</h3><p><strong>安全优势：</strong></p>
-<ul>
-<li>系统级加密</li>
-<li>自动访问控制</li>
-<li>用户授权机制</li>
-<li>跨应用隔离</li>
-</ul>
-<p><strong>最佳实践：</strong></p>
-<ul>
-<li>使用服务名称隔离</li>
-<li>处理访问拒绝</li>
-<li>实现优雅降级</li>
-</ul>
-<hr>
-<h2 id="🚀-明日计划-Day-3"><a href="#🚀-明日计划-Day-3" class="headerlink" title="🚀 明日计划 (Day 3)"></a>🚀 明日计划 (Day 3)</h2><h3 id="任务清单"><a href="#任务清单" class="headerlink" title="任务清单"></a>任务清单</h3><h4 id="1-实现规则引擎核心"><a href="#1-实现规则引擎核心" class="headerlink" title="1. 实现规则引擎核心"></a>1. 实现规则引擎核心</h4><ul>
-<li><input disabled="" type="checkbox"> 自然语言规则解析</li>
-<li><input disabled="" type="checkbox"> Cron 表达式生成</li>
-<li><input disabled="" type="checkbox"> 规则验证和测试</li>
-</ul>
-<h4 id="2-实现-CLI-工具"><a href="#2-实现-CLI-工具" class="headerlink" title="2. 实现 CLI 工具"></a>2. 实现 CLI 工具</h4><ul>
-<li><input disabled="" type="checkbox"> 命令行参数解析</li>
-<li><input disabled="" type="checkbox"> 交互式配置向导</li>
-<li><input disabled="" type="checkbox"> 规则管理命令</li>
-</ul>
-<h4 id="3-编写集成测试"><a href="#3-编写集成测试" class="headerlink" title="3. 编写集成测试"></a>3. 编写集成测试</h4><ul>
-<li><input disabled="" type="checkbox"> 多包协作测试</li>
-<li><input disabled="" type="checkbox"> 端到端测试</li>
-<li><input disabled="" type="checkbox"> 测试覆盖率报告</li>
-</ul>
-<h4 id="4-完善文档"><a href="#4-完善文档" class="headerlink" title="4. 完善文档"></a>4. 完善文档</h4><ul>
-<li><input disabled="" type="checkbox"> API 文档</li>
-<li><input disabled="" type="checkbox"> 架构说明</li>
-<li><input disabled="" type="checkbox"> 使用示例</li>
-</ul>
-<h3 id="交付物"><a href="#交付物" class="headerlink" title="交付物"></a>交付物</h3><ul>
-<li>规则引擎核心实现</li>
-<li>CLI 工具框架</li>
-<li>集成测试套件</li>
-<li>博客报告：核心包设计详解</li>
-</ul>
-<hr>
-<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://vitest.dev/">Vitest 文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://zod.dev/">Zod 验证库</a></li>
-<li><a target="_blank" rel="noopener" href="https://tsup.egoist.dev/">tsup 打包工具</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/Wisespace-io/better-sqlite3">better-sqlite3 API</a></li>
-<li><a target="_blank" rel="noopener" href="https://turbo.build/repo/docs">Turbo 构建系统</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/security/keychain_services">macOS Keychain Services</a></li>
-</ol>
-<hr>
-<h2 id="🎉-里程碑达成"><a href="#🎉-里程碑达成" class="headerlink" title="🎉 里程碑达成"></a>🎉 里程碑达成</h2><p><strong>Phase 1 Day 2 完成！</strong></p>
-<ul>
-<li>✅ 核心包测试完成 (86 个测试)</li>
-<li>✅ 配置生成器完成 (7 个测试)</li>
-<li>✅ 密钥注入系统完成 (13 个测试)</li>
-<li>✅ <strong>总计：106 个测试全部通过！</strong></li>
-</ul>
-<p><strong>进度评价：</strong> 🟢 超前完成</p>
-<p><strong>心情指数：</strong> ⭐⭐⭐⭐⭐</p>
-<p><strong>代码统计：</strong></p>
-<ul>
-<li>新增测试代码：~900 行</li>
-<li>新增源代码：~800 行</li>
-<li>修复配置文件：5 个</li>
-<li>测试用例：106 个</li>
-</ul>
-<hr>
-<p><em>Phase 1 Day 2 完成！明天继续 Day 3，开始规则引擎开发！</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单元测试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">macOS Keychain</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/项目开发//" class="article-tag-list-link color5">项目开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-07-myclaw-day2-complete/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -3794,6 +3623,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">reinforcement-learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">benchmark</a>
               </li>
             
             <div class="clearfix"></div>

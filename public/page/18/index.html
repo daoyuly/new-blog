@@ -151,6 +151,228 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2024年 11 月 25 日 - 2024年 12 月 1 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2025%20%E6%97%A5%20-%202024%E5%B9%B4%2012%20%E6%9C%88%201%20%E6%97%A5/">工作周报2024年 11 月 25 日 - 2024年 12 月 1 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2025%20%E6%97%A5%20-%202024%E5%B9%B4%2012%20%E6%9C%88%201%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-11-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>关于团队异地协作开发的思考<br>最近的一些项目是和成都交付中心的伙伴们一起完成的，有不少Good Case，也有一些Bad Case，总体上说，随着项目的进行，相互了解的增进，整体工作效率上提升了很多。<br>Good Case上说，成都交付中心的伙伴们不定时的来北京工作，借着这个时间，也是多找些时间相互了解，聊聊共同关注的技术话题，各自的自我发展的认知，对公司文化和价值的理解等等。借着一些解决bug的，跟进线上问题的契机，相互了解了彼此的技术擅长点，思维方式和业务能力的长短板，通过这种立体性的了解， 形成的团队合力就非常有竞争力。Bad Case上就是缺乏直接的面对面的沟通，需要利用好远程会议，Slack等工具做好尽可能的沟通，比如一个优化点，改动的点和测试的点，很可能是不一致的，这个业务的学习过程可能缺少了随时的复盘思考，吃饭的时候，晚上下班的时候，如果是坐在一起，很可能会随时随地的彼此的聊一下，有时候这种非正式够沟通对技术的理解，对业务的学习都重要的推进作用。<br>三年的疫情让大家都极大的提高了跨地域工作的软&#x2F;硬能力，我觉得这是我们非常有利的一个基础条件。我记得很早我在中石油体系内工作的时候，跨地域工作主要通过邮件来驱动，哪怕是一个很小的事情，也要主要通过抄送不同级别的领导来驱动的，特别是涉及到兄弟部门时，比如涉及到分公司协作时，要抄送我的领导，我的领导的领导，对方的领导及对方领导的领导，这个从流程上来说是，是绝对的“政治正确”，因为新员工培训里就有对这个流程的完整说明。但实际上效率非常之慢，而且由此衍生出各种“大公司病”，当然不同的公司的性质，规模，阶段，发展侧重点不同，协作策略也有不同。对我们而言公司一直有一个价值观点：我们是一个团队，我们也是一个球队。踢过足球的伙伴们知道，合格的球员要守住自己的位置，护着队友的位置，防死对手的位置，这样才能整个球队赢球。<br>我觉得不同地域的伙伴们要有意识的相互靠拢，从个人发展来说，这是一个适应能力的体现， 也是一种职业素养的体现，从公司层面来说，设置不同的地域的办公室和团队是为了更好的适应市场，不同地域的办公室和团队都是公司发展过程中不可或缺的重要组成部分，有不同的组织定位和发展目标。不同地域的办公室和团队在积极相互靠拢的过程中也要积极的发展自己能力特色，以拓展公司的能力拼图。<br>Web Log排查<br>稳定性和可靠性一直作为长期的基础工作在进行。我们也一直把“问题解决在用户前面”作为这项工作的最终目标。<br>最近有几周在跟进Log的排查和分类，目前Web和Node的错误类型了做比较细致的分类，截止到目前，Nodejs上分出了36个较大的错误类型，Web上分出了112个错误分类，这个分类还比较大的分类，比如”系统未知错误”，”请刷新重试，如果反复出现当前错误，请联络<a href="mailto:&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#x74;&#64;&#117;&#x6d;&#117;&#x2e;&#x63;&#x6f;&#109;">&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#x74;&#64;&#117;&#x6d;&#117;&#x2e;&#x63;&#x6f;&#109;</a>反馈问题”这类错误有很多内部原因导致，这类问题的解决可能需要不少的代码上改动，这类问题的排查会综合考虑成本和损益。目前的思路就是逐渐解决代码改成成本较少，测试成本较少的问题。<br>日志排查上比较难的挑战是评估是否值得现在修复以及花费多的的时间去修复。很多日志上报出来的问题可能对用户是透明，也可能对用户影响很大，比如我们关注到一类问题，报的量比较大，但是技术上推测对用户影响很少，还一类问题是报的量很少，但是出现这类用报错的用户的影响确很大。<br>另外一个需要注意的观点就是，不是用户反馈的问题就不是大问题。用户作为服务的消费者，第一他们不一定有能力反馈问题，第二是他们不一定有意愿反馈问题，但是一定会影响他们使用服务的意愿度。所以对我们而言就要充分利用团队的能力尽可能的解决这这些类的问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2025%20%E6%97%A5%20-%202024%E5%B9%B4%2012%20%E6%9C%88%201%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2024年 11 月 18 日 - 2024年 11 月 24 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%2024%20%E6%97%A5/">工作周报2024年 11 月 18 日 - 2024年 11 月 24 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%2024%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>最近一直在探索Agent在开发中的使用。最近通过自己搭建和或者在豆包上尝试搭建自己开发助理有一些小小的思考。在前端开端开发中经常回到遇到一些常规性的任务，比如：-<br>后端API接口转成前端代码，小步骤包括<br>入参，输出类型化<br>fetch自动生成<br>文件名自动生成<br>前端自动化测试case函数生成<br>由Figma转PRD文本，转代码文件，小步骤包括<br>Figma生成PRD<br>文件名生成<br>变量名建议生成<br>组件分层<br>代码结构生成<br>PRD文档生成自测Case，多语开发流程等等。<br>这些常规的和程式化的开发任务借助大模型和Agent都应该可以实现自动化或者提高自动化程度，甚至可以打通内部vscode，gitlab，Jenkins，Chrome环境中的开发工具。但是使用外部的Agent平台是没有办法完全打通我们这些内部环节的。我建议内部搭建一个可以公司全员使用的Agent平台，大家在学习和使用过程中逐渐打造自己的Agent助理，进而提升公司整体的工作效率。<br>uShow礼来-唯泽的调优<br>因为客户对训练视频的打分做出了比较明确的说明，所以在这套片子上我和伟华做了比较细致的拟合，在伟华初版的拟合的基础上，我做了二次的拟合调整，主要是将高分和低分明显化，因为目前系统设计和模型的问题问题，目前系统Logic打分偏高，FAB打分偏低Logic，而产品知识点的区分度不明显，针对这些问题，在这次拟合中中，我尝试了使用手动的知识点矩阵分析法，调高高目标视频得分，压低低目标视频得分，目前看效果较好。当然这个和这套片子的训练视频的明确的高中低分档的要求有关，有明确的高分，低分，以及区分度不大的中档得分，这样就可以区分性调整标签，使其明确在高分区还是低分区。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%2024%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2024年 11 月 11 日 - 2024年 11 月 17 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%2017%20%E6%97%A5/">工作周报2024年 11 月 11 日 - 2024年 11 月 17 日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%2017%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2024-11-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Prompt的新理解&lt;提示词的道与术&gt;<br>2024AI创新者大会（文字版 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7425465495971807266%EF%BC%89%EF%BC%8C%E6%9C%89%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%AF%B9%E7%9A%84Prompt%E5%88%86%E4%BA%AB%E4%B8%AD%E6%9C%89%E4%B8%80%E4%B8%AA%E7%AE%80%E6%B4%81%E7%9A%84%E7%90%86%E8%A7%A3%E8%AF%B4%E6%98%8E%EF%BC%8CPrompt%E7%89%88%E4%B9%94%E5%93%88%E9%87%8C%E8%A7%86%E7%AA%97%EF%BC%8C%E4%B8%BA%E4%BA%86%E7%90%86%E8%A7%A3%E6%88%91%E8%87%AA%E5%B7%B1%E8%8D%89%E7%A8%BF%E4%BA%86%E4%B8%80%E4%B8%AA%E3%80%82">https://juejin.cn/post/7425465495971807266），有李继刚对的Prompt分享中有一个简洁的理解说明，Prompt版乔哈里视窗，为了理解我自己草稿了一个。</a><br>我在日常使用Prompt工作时，有不同的任务，有一些是深入的问题，比如如何理解React中fiber设计模式的优劣及日常开发中如何应用，再如请从设计角度深入讲解Saga.js的实现，请举例说明在那些开发场景适合使用Saga.js；还有一些比较浅显的问题，具体使用我不记得了，比如IntersectionObserver是怎么使用的。<br>从下面的图上我们可以看到很多内容，比如你知道的越多，你的Prompt可能就会越简单，Prompt中的简洁不是对所有人都适应，简洁是建立的精确的基础之上的，比如AI是知道IntersectionObserver的，但是你不知道，就要就要用很多的词，甚至是举例说明的方式来表达用什么方法表达Dom的显示和隐藏，所以知识&#x2F;经验越多越有利于你和AI高效的沟通，这显然对小白不友好，这从另一个角度说明，在AI时代，知识的掌握对自身发展依然是最有效的。<br>在专业知识上，我们可能会遇到AI知道的少，而我们知道的多情况，这时候few-shot（喂模式）的Prompt方法可能就会很有效。<br>用户体验的思考<br>这周在做页面迁移的时候，把个别页面的性能也做了一个overview，有的页面卡顿严重，线上和线下都有会出现类似的情况，目前前端也在针对性的解决一些这样的问题。<br>丹尼尔卡内曼认为，人们对体验的记忆有两个因素决定，巅峰时和结束时的感觉，这就是所谓的峰终定律。结合我们的日常的体验，重要的时间节点，事件节点也都会给我们留下深刻的记忆，比如我们Kickoff时考试时看自己得分的时候，当你有满分时，会有一个撒花的效果，我相信很多人不记得当时Kickoff的内容，可能记得你得满分看到的撒花的那个瞬间，这种记忆往往深刻而难忘的，而用户体验有时候是非理性的，往往是由这些或好或坏的感受的记忆瞬间决定的。在很多研究人类的思考和决策机制的书籍中，人们的很多决定很多时候来自“快思考”，体验感觉又是“快思考”重要素材和支撑。从这个角度理解， 用户体验 是“人，产品，利润”中非常重要的思考引线。<br>我理解良好的用户体验，应该由流畅的使用过程，令人难忘的瞬间和完美的结尾构成。<br>流畅的使用过程是指在产品使用过程中，交互过程和用户的思考过程保持一致，这有两个关键指标，1是交互逻辑是否符合用户的平均认知水平和预期，2是交互响应是否跟得上用户的敏捷度。在我们的研发工序中，交互逻辑主体由产品经理决定，交互的响应由工程师决定。在用户旅程中，用户刚开始主要是学习交互逻辑，交互逻辑熟悉后，用户的主要体验点在交互响应上。比如A企业的管理员和经理坐在一起就最近两个月的学习任务情况做一些业务分析，如果从点击查询按钮到数据展示是30s，那这个30s可能就是管理员和经理“相顾无言”的比较尴尬的30s，而如果是5s出数据，那么两个人的思路将不会受到任何限制，可以继续“头脑风暴”，所以流畅的使用是必须具备的品质。<br>令人难忘的瞬间，流畅的使用过程之上，如果适时的制造一些小的惊喜，出人意料的装饰，可能会获得日常紧张工作中的愉悦感和松弛感，这种情绪上的体验最是重要。<br>完美的结尾的指交互的结果要指向用户的业务结果或者绩效，这一点我觉得我在以前的工作中也思考的比较少，最近一两年我开始深入了解管理的一些理论的时候，我逐渐领悟到现代知识工作者的效率往往来源于他和工具的协作效率，我们的产品的有效性也体验在交互结果的有效，比如很多很多下载列表可以定义下载字段，这其实是提供了一种查询结果有效性的机制。当然其实我们也可以继续深入做下去，比如这次的复杂查询能不能保存有快捷查询，下次我可以直接查询使用。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5%20-%202024%E5%B9%B4%2011%20%E6%9C%88%2017%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2024年 11 月 4 日 - 2024年 11 月 9 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -670,231 +892,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2024年 9 月 9 日 - 2024年 9 月 18 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%209%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%2018%20%E6%97%A5/">工作周报2024年 9 月 9 日 - 2024年 9 月 18 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%209%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%2018%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-09-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>首页推荐多模块开发<br>该功能原来的功能是非常内聚的一种实现思路，当前的迭代功能和原来的实现思路完全不能兼容，除了基本的样式类组件，卡片类组件外，基本上要重新实现，另外涉及到原来功能的兼容，所以当前的实现比较新增一种功能更加复杂一些<br>基本思路是增加一种多模块的思路，和目前模块的思路完全兼容。现有实现还有一个问题是没有实现组件化，就是一个大组件实现了整体功能。所以在开发新功能前，需要使用组件化现有的实现，才能在此基础上迭代新的功能。<br>这块代码有六年左右没有彻底的迭代，从现有的开发思想和经验来复盘当时的设计和实现：<br>组件化的粒度要保证功能拆分一致<br>功能的拆分要遵守职责单一原则<br>设计一定要有可扩展性，在产品开发中，设计扩展性可能是最重要的和关键的开发能力</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%209%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%2018%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2024年 9 月 2 日 - 2024年 9 月 8 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%202%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%208%20%E6%97%A5/">工作周报2024年 9 月 2 日 - 2024年 9 月 8 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%202%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%208%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-09-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>复杂前端组件的设计及迭代浅析，简单以 任务分配组件 为例（中(3)）<br>复杂组件设计的重要准则之三：面向大模型的交互体验<br>这个准则我一直没有思考清楚，同时实践的和接触的也比较少，另外我觉得这个也是最让人所有期待的一个面向未来的设计准则。 我也一直在思考和观察如何利用AI技术改善现有的交互体验，语音交互，手势或身体交互，眼睛动作交互都有商业上比较成功的案例，也关注到很多新颖的交互方式，比如基于自然语言的业务表单生成和流程流转，基于语义的商业数据分析等等。结合现有技术和业务场景来说，特定的业务场景引入新的基于AI的交互方式会带来变革式的飞跃。最近iPhone16的预告中就透露出了一些端倪。回到企业学习和培训的这个大业务场景上说，学员端的听，说，读，写可能都会发生变化，简单的例子，随着Chrome上大模型类插件的增多，之前只能浏览英文类的文字，现在可以浏览更多的语言类的文字和视频了，这个思路其实也在启发我们思考未来的i18n方案。另一个例子，在考试，问卷等小节中，学员可用利用大模型工具根据相应的目标“针对性”回答这些问题，这也给了我们新的思考和新的挑战。当然，在类似文档，文章，音视频等内容小节上，大模型的会增加学员在这些内容的上多维度理解，这明显会促进学习效果，在学习圈，评论上我们可能会看到越来越多使用AI生成的内容，从更广义上说，我理解这些变化都会影响未来交互体验的设计。在大模型的加持下，未来我们都会面对“立体式的信息大爆炸”，而作为人类如何有效的吸收和判断对自己有价值的信息，换句话说，在大模型时代我们如何设计交互形式和信息展示形式，才能让学员们这些多种多样的信息中有效的吸收到企业需要学员必须学习到的内容，当然这也促使我们建设更深刻的业务模型来完善我们的产品。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%209%20%E6%9C%88%202%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%208%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2024年 8 月 26 日 - 2024年 9 月 1 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5/">工作周报2024年 8 月 26 日 - 2024年 9 月 1 日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-08-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>PDF 文件支持超链接<br>PDF文件目前在Web端上实现思路是解释PDf文件格式，利用Web端渲染方式，目前我们用到了三种渲染方式，Canvas， SVG 和 Image的方式，很多伙伴可能会问什么不是直接用HTML渲染，答案其实比较简单，就是目前常规的HTML标签无法完全描述复杂的PDF格式，特别是PDF中的高级用法，诸如不规则图形，图文混排，以及一些特效。不过，从另一个角度说Canvas 和 Image 也算是 HTML标签。<br>在以上三种渲染方式中，除了SVG，其他两种的都是单纯的渲染展示，交互需要额外的支持。这次优化的实现上考虑到简单性，采用一种方式适用这种三种方式。PDF.js 支持 annotation 方式，annotation 是一个修改PDF机制，它有不同的语言实现，JavaScript语言中常用的是 PDF.js。也有专门用于PDF修改的，比如 PDF-annotation.js这类小众的类库。配合其他类库，它们都能实现PDF的在线编辑。<br>超链接的交互动作相对简单，从我们的<a> 标签交付惯例上，我们一般只是使用点击跳转的交互。这次在方案上，没有采用专门的 pdf annotation 库，在PDF.js基础上使用 annotation Layer 层实现了对 <a>  标签的定位，渲染和交互动作。<br>简单来说，就是在 Canvas 外遮罩一个透明的Div，其大小和Canvas中的Pdf的Viewport相同，通过PDF.js的节点遍历方法，找到annotation的Link节点，读取节点的位置信息，转换到外层的Div上坐标系上，然后使用Link的 Rect 信息（Box信息，长宽）在Div上增加一个不带内容 A 标签，设置其Href 和 Display。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%208%20%E6%9C%88%2026%20%E6%97%A5%20-%202024%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/17/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/19/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/17/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/19/">Next &raquo;</a>
     </nav>
   
 
@@ -1433,6 +1433,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">reinforcement-learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">benchmark</a>
               </li>
             
             <div class="clearfix"></div>

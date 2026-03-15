@@ -151,6 +151,250 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2025年 6 月 2 日 - 2025年 6 月 8 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%206%20%E6%9C%88%202%20%E6%97%A5%20-%202025%E5%B9%B4%206%20%E6%9C%88%208%20%E6%97%A5/">工作周报2025年 6 月 2 日 - 2025年 6 月 8 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%206%20%E6%9C%88%202%20%E6%97%A5%20-%202025%E5%B9%B4%206%20%E6%9C%88%208%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-06-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>AI编程中的稳定性和可靠性评估思考<ol>
+<li>在需求明确清晰，业务逻辑严谨的情况下AI生成的代码基本上是可用的，但是能不能用来商用，或者经过功能测试后直接提供给客户使用，这种方案是否可行呢？这个问题我断断续续有过有很长的一段思考，在使用ChatGPT和VSCode Copilot时，我认为是不可行的，因为这个时候基本业务功能的实现还存在着很多不准确的问题，随着大模型编程能力的提升，我任务这个问题的答案是可行的，随着对AI编程的使用和学习，我现在的看法是，分情况看。</li>
+<li>情况一，如果是创新性的产品功能，产品目标和市场目标是抢占客户认知和市场趋势，在初期迭代是可以使用AI编程 + 功能测试的流程来发布的。如果市场反响良好，随着迭代的  必须加上 专家设计 + AI编程 + AI测试+专家测试。</li>
+<li>情况二，如果是成熟类产品，在存量市场抢占市场份额，这时候产品质量和服务质量至关重要，所以必须要加上 专家设计 + AI编程 + AI测试+专家测试 + 工程能力，这里多了工程能力，工程能力包含很多方面，从咱们实际出发举例，如CI&#x2F;CD，各类监控能力，技术升级换代的能力，极致性能优化能力，研发人员的团队协作能力，解决客户技术问题能力，快速迭代的能力等等。</li>
+<li>情况三，现有产品+更新迭代的情况，这种情况是持续提高服务质量的同时，不断降低服务成本，增加ARR，这时候在均衡提高服务质量降低服务成本的两个双目标驱动时，AI不一定能发挥出最大价值，原有系统要接入AI的工程体系，这个在本质上是重构的过程，重构过程意味着在一个时间段内保持服务质量不变的情况下优化代码的实现结构，这个时候工程成本是上升的。但是从长期来看，这个付出非常值得，在度过过这个成本高峰之后，随着AI大模型能力的提升，服务成本开始显著降低。</li>
+<li>情况四，随着AI编程能力在行业内所有工程团队的普及，大家在AI能力的配备上接近一致，对同类产品来说，AI提效的方向转换为谁用AI用的的最为彻底， AI降本的方向转换为谁用的AI产出的代码质量最高最可靠出错最小，  同时研发流程的全AI化将是研发团队的共同目标，对与小型研发团队来说，敏捷和灵活性依然是AI时代研发的优势所在，创新性和可靠的设计和实现依然产品取得市场成功的关键。</li>
+<li>目前看AI编程的未来是无限光明的，但从务实的角度来说AI整个研发体系里的渗透还远远不足，最大的问题，我认为还是大模型能力的问题和人类工程师和大模型协作分工的信任问题，举个常见的例子，我在完善现有代码的异常处理时，我使用了Cursor为我添加应该需要的异常log但是实际却被遗漏的log，我再Review的过程中，发现AI有几处是冗余的，然后我调整Prompt，让AI重新处理，这时我发现有一处错误，引用了不该引用的变量，由此我急忙在检查其他的几十处修改，其实只有这一处有问题，其实这让我对AI在这个问题上产生了信任危机，理性告诉我AI值得信任，但是从工作交付过程上说，我是交付者，我需要交付负责，我不得不重新Review AI的产出，从这角度出发，还需要另外的人来Review我的交付，从这个流程上说，工程上为保证可靠性需要多层的AI Review和评估机制，用直白的话说，1个AI程序员编码，需要至少2个AI编程助理做Review和评估，还需要1个AI工程经理Review和评估这两个AI编程助理的工作，到这里就完了吗？不，但这取决你对AI工程经理的信任程度，如果你信任你的AI工程经理，这个工作到此为止，如果你不太信任你的AI工程经理，那就需要一个AI工程总监了。很显然，这不是我们很多人想象中AI编程中应该有样子，一个任务我们需要的AI编程的Agent太多了。但本质上就是随着AI的加入，我们对工作的要求提高了，我们对AI的要求也提高了，在此过程中，客户是最大的受益者。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%206%20%E6%9C%88%202%20%E6%97%A5%20-%202025%E5%B9%B4%206%20%E6%9C%88%208%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 5 月 26 日 - 2025年 6 月 1 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2026%20%E6%97%A5%20-%202025%E5%B9%B4%206%20%E6%9C%88%201%20%E6%97%A5/">工作周报2025年 5 月 26 日 - 2025年 6 月 1 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2026%20%E6%97%A5%20-%202025%E5%B9%B4%206%20%E6%9C%88%201%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-05-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>上传流程的日志优化<ol>
+<li>在文档小节，视频小节，AI作业，语音微课，uShow，Chatbot等内容类产品中都会涉及到一个基础功能-上传功能，作为基础功能它的稳定性和可靠性是其上层功能的可靠性的坚实基础，一些此类线上问题，因为缺乏必要的关键性日志，从而导致反馈问题找不到root case，也就没有彻底根除，另外的问题是上传功能涉及到浏览器本身流处理、网络异常管理、资源管理等本身的能力，我们也需要有必要的监控能力从而制定针对性策略来规避此类情况。本周结合线上反馈问题和Sentry issue，针对上传组件调整了日志策略，丰富了日志内容，在关键环节、关键方法中增加了日志，区分了错误、异常、日志记录等三种情况，同时对增加了网络异常和网络状态的监控。</li>
+<li>考虑到线上稳定性要求、功能成本ROI和工作优先级安排，对现有流程和功能没有做深入优化，特别是本计划对分片逻辑优化，断网重试，弱网重试，分片重试，上传成功验证，异步调整为promise和await&#x2F;sync等工作，我们放在6月份按照计划展开。</li>
+<li>在开发设计中，监控的设计要需要予以特别的重视，特别是在AI类应用和基础功能的设计中，这类技术课题涉及如，如何保持日志的合理密度而保持最大的程序运行特征，如何准确的反馈异常情况，如何克服所在环境自身问题也就是如何极大的提高稳定性和可靠性，如何设计日志和业务逻辑的低耦合。在AI应用中通过基于监控能力的设计，是提高产品质量的重要保证，如设计评估系统保持AI的稳定可靠的输出，设计AI输出的安全防线（一旦AI输出了破坏我们安全防线的输出，系统如何做出应急措施），随着客户对AI应用的可靠性和安全性的要求的提高，监控能力会也会变得愈发重要，所以如何做好和应用好监控是我们日常开发中需要不断总结和实践的重要课题。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2026%20%E6%97%A5%20-%202025%E5%B9%B4%206%20%E6%9C%88%201%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-一个普通人眼里的战争思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9C%BC%E9%87%8C%E7%9A%84%E6%88%98%E4%BA%89%E6%80%9D%E8%80%83/">一个普通人眼里的战争思考</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9C%BC%E9%87%8C%E7%9A%84%E6%88%98%E4%BA%89%E6%80%9D%E8%80%83/" class="archive-article-date">
+  	<time datetime="2025-05-25T14:24:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近读了一些关于战争的书，完整的读完了《血战太平洋之决战冲绳岛》。</p>
+<p>近距离的体验一把短兵相接的战场，很难想象真实的战场是什么样子，我想人间地狱不过如此。</p>
+<p>对于作者来说，我觉的幸运的是他人在战场上，但是他的家庭都处在安全和富足之中。他的战斗行为有足够的现实意义。</p>
+<p>最不幸的是，人在战场上搏命，自己的家人也生活在水深火热之中。</p>
+<p>没有人希望有战争，但是战争离我们真的又很近。</p>
+<p>珍惜当下，好好生活。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生活随想</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9C%BC%E9%87%8C%E7%9A%84%E6%88%98%E4%BA%89%E6%80%9D%E8%80%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2025年 5 月 19 日 - 2025年 5 月 23 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -777,258 +1021,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 4 月 21日 - 2025年 4 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2025年 4 月 21日 - 2025年 4 月 26 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>部分前端库增加cursorignore文件的考虑<ol>
-<li>本周的处理线上问题和时候，把涉及到的仓库增加了cursor文件，主要是防止cursor的索引文件的时候去把安全敏感文件加到索引里面，这个事本身的处理比较简单，主要是从安全角度出发的考量。从Cursor的公布的技术文档上看，codebase会把编码后存储到其服务器上，本身不涉及到明文存储，不过其文档中也提示用户把敏感信息放在cursorignore里，尽管如此，cursor也不保证这类信息不会被大模型使用。</li>
-<li>对我们来说，尽量保证敏感数据不直接存储在需要使用Cursor的代码库中，我们是自己的数据安全的第一负责人。</li>
-<li>在MCP，A2A，各种Agent和各种大模型技术和工具井喷式出现的时候，各家工具商对用户数据的安全重视程度不同，特别存在很多黑盒的情况下，大模型如何利用这类敏感信息，我们只能按照这些供应商对外提供的协议或者技术文档上来的对策，或者说很多这些工具的提供商也没法明确，这就要求对数据安全有一定的敏感性和主动的防范意识。</li>
-</ol>
-</li>
-<li>本周Sentry问题排查进展<ol>
-<li>随着对Sentry使用深入理解，我们对Sentry的整体设置做了一些优化，增加了更多的Tag和用户信息，对Sentry的可观测性思想也有了深入的认知，在具体的使用上针对了基于umuI，企业ID，数据大盘都对用户的使用情况有了一定的观察和洞察，比如在遇到Issue时，我们可以判断用户是否还在继续使用，用户是否自我修复的能力，是否影响到了用户体验，用户的使用旅程到底是怎么样的。</li>
-<li>在问题修复上我们已经进入对困难问题的修复阶段，这类问题往往没有具体的错误的代码位置，或者有具体的代码位置但不知道怎么改，还有就是改动影响较大，特别是视频类（视频小节，视频作业，音视频录制），文档类（文档小节，图文小节）这类问题涉及到比较复杂的技术和业务，虽然知道问题在哪，但是真正解决还要做不少的代码分析和排查。我们目前基于报错数量和遇到此类问题的用户数量排序做优先级，踏踏实实的解决好这类难点问题。</li>
-<li>为了排查问题，除了和大模型聊，我也经常去翻阅网上相关资料获取去Sentry的论坛寻找一些线索和答案，我发现很多开发者也会面临着和我们一样的各类问题，大家通过Sentry或者其它工具都在不断地解决这些问题，不断提升各自公司的产品质量和用户体验，这也体现一个趋势：用户对互联网产品的质量和用户体验的要求是在不断提高的。</li>
-<li>Sentry问题的排查是一种事后解决策略，它的最好结果是减少损失，而不是避免损失。很多思考和经验也不断的提醒我们，重视事后解决的同时，更要重视事前预防，把需求理解透，挖清楚，代码设计好，大模型利用好切实提高业务和代码质量，这样才能让Sentry问题排查更有价值。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 4 月 14 日 - 2025年 4 月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2019%20%E6%97%A5/">工作周报2025年 4 月 14 日 - 2025年 4 月 19 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p><strong>脱敏处理</strong></p>
-<ul>
-<li>前端可观测性工程化改善及提效思考及实践<ol>
-<li>通过一段时间的Sentry问题的排查和解决，除了提高了线上系统的运行稳定性，我们也逐步对我们的系统有了更深的理解和把控。在功能上线、例行发版等方面，我们通过现有的可观测的基础设施Sentry，KIbana等，对提前发现一些js报错和线上运行情况，对一较大的功能的上线，我们也有了把控运行情况的信心基础。</li>
-<li>这两周投入的较多的时间在业务项目，这块投入的时间少了，有时看到Sentry上的问题没有时间改，还是着急的。下周会集中精力搞定这些问题，另外也要加深推进一些工程化能力，对问题发现、问题排查等减少人工介入，实现自动化的常规巡查等，这些工作的落地是我们Q2的重要工作之一。</li>
-</ol>
-</li>
-<li>uShow的交付<ol>
-<li>最近每周都有新的uShow部署需求，在过程中，逐步对uShow的交付工作做了一些自动化的工作，包括，PPT图片自动上传，上线SQL自动化生成，逐字稿测试视频的自动生成，这任务的自动化会让让每个uShow交付节省1个小时的时间。因为有了ChatGPT和Cursor的帮助，这些自动化任务的开发都是基于python的，使用很少的时间就能完成编码。</li>
-<li>这个过程中，我的一个体会是，以前没有能力做或者需要花费大量时间做的编码工作在AI的帮助下会很快完成，但是工作的难度和挑战变为工作流的设计、拆解、组装和Prompt能力。这类Prompt能力不仅是写Prompt本身的技术，更多的是对待开发系统的要有针对AI助手的框架性理解和拆分，其实也是我们说的AI力。</li>
-<li>AI编码能力提高，也是倒逼我们程序员们提高自己，Cursor在时刻提醒程序员：你有一个能力超强的助手，你要怎么给你的助手安排合理的工作，你要怎么给它授权，你做的不好它就会抢你的饭碗，所以程序员的一个重要的基础工作变化是，之前是努力利用技术和工具提高自己的效率和产出，现在是通过提高管理指挥AI助手的能力，让你的AI团队有更高效更有产出。这种转变就意味了程序员的能力矩阵发生了巨大的变化，比如你可以对Python，GO，JavaScript等语言细节不了解，但是只要能对架构，设计、性能、业务等有深有的理解，就能交付有一定质量代码，不过有时候AI也会糊弄你，所以不仅有高阶的能力要求， 还是要有一定的手写代码的经验和能力。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-北漂的日子（26）爷们儿，看见美女你还有冲动吗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8826%EF%BC%89%E7%88%B7%E4%BB%AC%E5%84%BF%EF%BC%8C%E7%9C%8B%E8%A7%81%E7%BE%8E%E5%A5%B3%E4%BD%A0%E8%BF%98%E6%9C%89%E5%86%B2%E5%8A%A8%E5%90%97/">爷们儿，看见美女你还有冲动吗</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8826%EF%BC%89%E7%88%B7%E4%BB%AC%E5%84%BF%EF%BC%8C%E7%9C%8B%E8%A7%81%E7%BE%8E%E5%A5%B3%E4%BD%A0%E8%BF%98%E6%9C%89%E5%86%B2%E5%8A%A8%E5%90%97/" class="archive-article-date">
-  	<time datetime="2025-04-16T14:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很多时候，我看见美女，没有了那种青春雄性的蠢蠢欲动，靠，我觉得我有点老了。不应该啊！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">北漂生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8826%EF%BC%89%E7%88%B7%E4%BB%AC%E5%84%BF%EF%BC%8C%E7%9C%8B%E8%A7%81%E7%BE%8E%E5%A5%B3%E4%BD%A0%E8%BF%98%E6%9C%89%E5%86%B2%E5%8A%A8%E5%90%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
     </nav>
   
 
@@ -1567,6 +1562,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">reinforcement-learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">benchmark</a>
               </li>
             
             <div class="clearfix"></div>
