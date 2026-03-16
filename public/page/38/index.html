@@ -151,508 +151,6 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-软件设计的哲学-ch18-代码应该是显而易见的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch18-%E4%BB%A3%E7%A0%81%E5%BA%94%E8%AF%A5%E6%98%AF%E6%98%BE%E8%80%8C%E6%98%93%E8%A7%81%E7%9A%84/">软件设计的哲学 - ch18</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch18-%E4%BB%A3%E7%A0%81%E5%BA%94%E8%AF%A5%E6%98%AF%E6%98%BE%E8%80%8C%E6%98%93%E8%A7%81%E7%9A%84/" class="archive-article-date">
-  	<time datetime="2021-02-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-18-章-代码应该是显而易见的"><a href="#第-18-章-代码应该是显而易见的" class="headerlink" title="第 18 章 代码应该是显而易见的"></a>第 18 章 代码应该是显而易见的</h1><blockquote>
-<p>Chapter 18 Code Should be Obvious</p>
-</blockquote>
-<p>Obscurity is one of the two main causes of complexity described in Section 2.3. Obscurity occurs when important information about a system is not obvious to new developers. The solution to the obscurity problem is to write code in a way that makes it obvious; this chapter discusses some of the factors that make code more or less obvious.</p>
-<blockquote>
-<p>晦涩难懂是第 2.3 节中描述的导致复杂性的两个主要原因之一。当有关系统的重要信息对于新开发人员而言并不明显时，就会发生模糊。解决晦涩问题的方法是以显而易见的方式编写代码。本章讨论使代码或多或少变得显而易见的一些因素。</p>
-</blockquote>
-<p>If code is obvious, it means that someone can read the code quickly, without much thought, and their first guesses about the behavior or meaning of the code will be correct. If code is obvious, a reader doesn’t need to spend much time or effort to gather all the information they need to work with the code. If code is not obvious, then a reader must expend a lot of time and energy to understand it. Not only does this reduce their efficiency, but it also increases the likelihood of misunderstanding and bugs. Obvious code needs fewer comments than nonobvious code.</p>
-<blockquote>
-<p>如果代码很明显，则意味着某人可以不加思索地快速阅读该代码，并且他们对代码的行为或含义的最初猜测将是正确的。如果代码很明显，那么读者就不需要花费很多时间或精力来收集他们使用代码所需的所有信息。如果代码不明显，那么读者必须花费大量时间和精力来理解它。这不仅降低了它们的效率，而且还增加了误解和错误的可能性。明显的代码比不明显的代码需要更少的注释。</p>
-</blockquote>
-<p>“Obvious” is in the mind of the reader: it’s easier to notice that someone else’s code is nonobvious than to see problems with your own code. Thus, the best way to determine the obviousness of code is through code reviews. If someone reading your code says it’s not obvious, then it’s not obvious, no matter how clear it may seem to you. By trying to understand what made the code nonobvious, you will learn how to write better code in the future.</p>
-<blockquote>
-<p>读者的想法是“显而易见”：注意到别人的代码不明显比发现自己的代码有问题要容易得多。因此，确定代码是否显而易见的最佳方法是通过代码审查。如果有人在阅读您的代码时说它并不明显，那么无论您看起来多么清晰，它也不是显而易见。通过尝试理解什么使代码变得不明显，您将学习如何在将来编写更好的代码。</p>
-</blockquote>
-<h2 id="18-1-Things-that-make-code-more-obvious"><a href="#18-1-Things-that-make-code-more-obvious" class="headerlink" title="18.1 Things that make code more obvious"></a>18.1 Things that make code more obvious</h2><p>Two of the most important techniques for making code obvious have already been discussed in previous chapters. The first is choosing good names (Chapter 14). Precise and meaningful names clarify the behavior of the code and reduce the need for documentation. If a name is vague or ambiguous, then readers will have read through the code in order to deduce the meaning of the named entity; this is time-consuming and error-prone. The second technique is consistency (Chapter 17). If similar things are always done in similar ways, then readers can recognize patterns they have seen before and immediately draw (safe) conclusions without analyzing the code in detail.</p>
-<blockquote>
-<p>在前面的章节中已经讨论了使代码显而易见的两种最重要的技术。首先是选择好名字（第 14 章）。精确而有意义的名称可以阐明代码的行为，并减少对文档的需求。如果名称含糊不清或含糊不清，那么读者将通读代码以推论命名实体的含义；这既费时又容易出错。第二种技术是一致性（第 17 章）。如果总是以相似的方式完成相似的事情，那么读者可以识别出他们以前所见过的模式，并立即得出（安全）结论，而无需详细分析代码。</p>
-</blockquote>
-<p>Here are a few other general-purpose techniques for making code more obvious:</p>
-<blockquote>
-<p>以下是使代码更明显的其他一些通用技术：</p>
-</blockquote>
-<p>Judicious use of white space. The way code is formatted can impact how easy it is to understand. Consider the following parameter documentation, in which whitespace has been squeezed out:</p>
-<blockquote>
-<p>明智地使用空白。代码格式化的方式会影响其理解的容易程度。考虑以下参数文档，其中空格已被压缩：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  ...</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span> numThreads The number of threads that this manager should</span></span><br><span class="line"><span class="comment"> *  spin up in order to manage ongoing connections. The MessageManager</span></span><br><span class="line"><span class="comment"> *  spins up at least one thread for every open connection, so this</span></span><br><span class="line"><span class="comment"> *  should be at least equal to the number of connections you expect</span></span><br><span class="line"><span class="comment"> *  to be open at once. This should be a multiple of that number if</span></span><br><span class="line"><span class="comment"> *  you expect to send a lot of messages in a short amount of time.</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span> handler Used as a callback in order to handle incoming</span></span><br><span class="line"><span class="comment"> *  messages on this MessageManager&#x27;s open connections. See</span></span><br><span class="line"><span class="comment"> *  &#123;<span class="doctag">@code</span> MessageHandler&#125; and &#123;<span class="doctag">@code</span> handleMessage&#125; for details.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<p>It’s hard to see where the documentation for one parameter ends and the next begins. It’s not even obvious how many parameters there are, or what their names are. If a little whitespace is added, the structure suddenly becomes clear and the documentation is easier to scan:</p>
-<blockquote>
-<p>很难看到一个参数的文档在哪里结束而下一个参数的文档在哪里开始。甚至不知道有多少个参数或它们的名称是什么。如果添加了一些空白，结构会突然变得清晰，文档也更容易扫描：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span> numThreads</span></span><br><span class="line"><span class="comment"> *           The number of threads that this manager should spin up in</span></span><br><span class="line"><span class="comment"> *           order to manage ongoing connections. The MessageManager spins</span></span><br><span class="line"><span class="comment"> *           up at least one thread for every open connection, so this</span></span><br><span class="line"><span class="comment"> *           should be at least equal to the number of connections you</span></span><br><span class="line"><span class="comment"> *           expect to be open at once. This should be a multiple of that</span></span><br><span class="line"><span class="comment"> *           number if you expect to send a lot of messages in a short</span></span><br><span class="line"><span class="comment"> *           amount of time.</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span> handler</span></span><br><span class="line"><span class="comment"> *           Used as a callback in order to handle incoming messages on</span></span><br><span class="line"><span class="comment"> *           this MessageManager&#x27;s open connections. See</span></span><br><span class="line"><span class="comment"> *           &#123;<span class="doctag">@code</span> MessageHandler&#125; and &#123;<span class="doctag">@code</span> handleMessage&#125; for details.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<p>Blank lines are also useful to separate major blocks of code within a method, such as in the following example:</p>
-<blockquote>
-<p>空行也可用于分隔方法中的主要代码块，例如以下示例：</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span>* <span class="title">Buffer::allocAux</span><span class="params">(<span class="type">size_t</span> numBytes)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//  Round up the length to a multiple of 8 bytes, to ensure alignment.</span></span><br><span class="line">    <span class="type">uint32_t</span> numBytes32 =  (<span class="built_in">downCast</span>&lt;<span class="type">uint32_t</span>&gt;(numBytes) + <span class="number">7</span>) &amp; ~<span class="number">0x7</span>;</span><br><span class="line">    <span class="built_in">assert</span>(numBytes32 != <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  If there is enough memory at firstAvailable, use that. Work down</span></span><br><span class="line">    <span class="comment">//  from the top, because this memory is guaranteed to be aligned</span></span><br><span class="line">    <span class="comment">//  (memory at the bottom may have been used for variable-size chunks).</span></span><br><span class="line">    <span class="keyword">if</span>  (availableLength &gt;= numBytes32) &#123;</span><br><span class="line">        availableLength -= numBytes32;</span><br><span class="line">        <span class="keyword">return</span> firstAvailable + availableLength;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  Next, see if there is extra space at the end of the last chunk.</span></span><br><span class="line">    <span class="keyword">if</span>  (extraAppendBytes &gt;= numBytes32) &#123;</span><br><span class="line">        extraAppendBytes -= numBytes32;</span><br><span class="line">        <span class="keyword">return</span> lastChunk-&gt;data + lastChunk-&gt;length + extraAppendBytes;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  Must create a new space allocation; allocate space within it.</span></span><br><span class="line">    <span class="type">uint32_t</span> allocatedLength;</span><br><span class="line">    firstAvailable = <span class="built_in">getNewAllocation</span>(numBytes32, &amp;allocatedLength);</span><br><span class="line">    availableLength = allocatedLength numBytes32;</span><br><span class="line">    <span class="keyword">return</span> firstAvailable + availableLength;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>This approach works particularly well if the first line after each blank line is a comment describing the next block of code: the blank lines make the comments more visible.</p>
-<blockquote>
-<p>如果每个空白行之后的第一行是描述下一个代码块的注释，则此方法特别有效：空白行使注释更可见。</p>
-</blockquote>
-<p>White space within a statement helps to clarify the structure of the statement. Compare the following two statements, one of which has whitespace and one of which doesn’t:</p>
-<blockquote>
-<p>语句中的空白有助于阐明语句的结构。比较以下两个语句，其中之一具有空格，而其中一个没有空格：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> pass=<span class="number">1</span>;pass&gt;=<span class="number">0</span>&amp;&amp;!empty;pass--) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">pass</span> <span class="operator">=</span> <span class="number">1</span>; pass &gt;= <span class="number">0</span> &amp;&amp; !empty; pass--) &#123;</span><br></pre></td></tr></table></figure>
-
-<p>Comments. Sometimes it isn’t possible to avoid code that is nonobvious. When this happens, it’s important to use comments to compensate by providing the missing information. To do this well, you must put yourself in the position of the reader and figure out what is likely to confuse them, and what information will clear up that confusion. The next section shows a few examples.</p>
-<blockquote>
-<p>注释。有时无法避免非显而易见的代码。发生这种情况时，重要的是使用注释来提供缺少的信息以进行补偿。要做到这一点，您必须使自己处于读者的位置，弄清楚什么可能会使他们感到困惑，以及哪些信息可以消除这种混乱。下一部分显示了一些示例。</p>
-</blockquote>
-<h2 id="18-2-Things-that-make-code-less-obvious-使代码不那么明显的事情"><a href="#18-2-Things-that-make-code-less-obvious-使代码不那么明显的事情" class="headerlink" title="18.2 Things that make code less obvious 使代码不那么明显的事情"></a>18.2 Things that make code less obvious 使代码不那么明显的事情</h2><p>There are many things that can make code nonobvious; this section provides a few examples. Some of these, such as event-driven programming, are useful in some situations, so you may end up using them anyway. When this happens, extra documentation can help to minimize reader confusion.</p>
-<blockquote>
-<p>有很多事情可以使代码变得不明显。本节提供了一些示例。其中某些功能（例如事件驱动的编程）在某些情况下很有用，因此您可能最终还是要使用它们。发生这种情况时，额外的文档可以帮助最大程度地减少读者的困惑。</p>
-</blockquote>
-<p>Event-driven programming. In event-driven programming, an application responds to external occurrences, such as the arrival of a network packet or the press of a mouse button. One module is responsible for reporting incoming events. Other parts of the application register interest in certain events by asking the event module to invoke a given function or method when those events occur.</p>
-<blockquote>
-<p>事件驱动的编程。在事件驱动的编程中，应用程序对外部事件做出响应，例如网络数据包的到来或按下鼠标按钮。一个模块负责报告传入事件。应用程序的其他部分通过在事件发生时要求事件模块调用给定的函数或方法来注册对某些事件的兴趣。</p>
-</blockquote>
-<p>Event-driven programming makes it hard to follow the flow of control. The event handler functions are never invoked directly; they are invoked indirectly by the event module, typically using a function pointer or interface. Even if you find the point of invocation in the event module, it still isn’t possible to tell which specific function will be invoked: this will depend on which handlers were registered at runtime. Because of this, it’s hard to reason about event-driven code or convince yourself that it works.</p>
-<blockquote>
-<p>事件驱动的编程使其很难遵循控制流程。永远不要直接调用事件处理函数。它们是由事件模块间接调用的，通常使用函数指针或接口。即使您在事件模块中找到了调用点，也仍然无法确定将调用哪个特定功能：这将取决于在运行时注册了哪些处理程序。因此，很难推理事件驱动的代码或说服自己相信它是可行的。</p>
-</blockquote>
-<p>To compensate for this obscurity, use the interface comment for each handler function to indicate when it is invoked, as in this example:</p>
-<blockquote>
-<p>为了弥补这种模糊性，请为每个处理程序函数使用接口注释，以指示何时调用该函数，如以下示例所示：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This method is invoked in the dispatch thread by a transport if a</span></span><br><span class="line"><span class="comment"> * transport-level error prevents an RPC from completing.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> Transport::RpcNotifier::failed() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>img Red Flag: Nonobvious Code img</p>
-<p>If the meaning and behavior of code cannot be understood with a quick reading, it is a red flag. Often this means that there is important information that is not immediately clear to someone reading the code.</p>
-<blockquote>
-<p>如果无法通过快速阅读来理解代码的含义和行为，则它是一个危险标记。通常，这意味着有些重要的信息对于阅读代码的人来说并不能立即清除。</p>
-</blockquote>
-<p>Generic containers. Many languages provide generic classes for grouping two or more items into a single object, such as Pair in Java or std::pair in C++. These classes are tempting because they make it easy to pass around several objects with a single variable. One of the most common uses is to return multiple values from a method, as in this Java example:</p>
-<blockquote>
-<p>通用容器。许多语言提供了用于将两个或多个项目组合到一个对象中的通用类，例如 Java 中的 Pair 或 C ++中的 std :: pair。这些类很诱人，因为它们使使用单个变量轻松传递多个对象变得容易。最常见的用途之一是从一个方法返回多个值，如以下 Java 示例所示：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Pair</span>&lt;Integer, Boolean&gt;(currentTerm, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Unfortunately, generic containers result in nonobvious code because the grouped elements have generic names that obscure their meaning. In the example above, the caller must reference the two returned values with result.getKey() and result.getValue(), which give no clue about the actual meaning of the values.</p>
-<blockquote>
-<p>不幸的是，通用容器导致代码不清晰，因为分组后的元素的通用名称模糊了它们的含义。在上面的示例中，调用者必须使用 result.getKey（）和 result.getValue（）引用两个返回的值，而这两个值都不提供这些值的实际含义。</p>
-</blockquote>
-<p>Thus, it’s better not to use generic containers. If you need a container, define a new class or structure that is specialized for the particular use. You can then use meaningful names for the elements, and you can provide additional documentation in the declaration, which is not possible with the generic container.</p>
-<blockquote>
-<p>因此，最好不要使用通用容器。如果需要容器，请定义专门用于特定用途的新类或结构。然后，您可以为元素使用有意义的名称，并且可以在声明中提供其他文档，而对于常规容器而言，这是不可能的。</p>
-</blockquote>
-<p>This example illustrates a general rule: software should be designed for ease of reading, not ease of writing. Generic containers are expedient for the person writing the code, but they create confusion for all the readers that follow. It’s better for the person writing the code to spend a few extra minutes to define a specific container structure, so that the resulting code is more obvious.</p>
-<blockquote>
-<p>此示例说明了一条通用规则：软件应设计为易于阅读而不是易于编写。通用容器对于编写代码的人来说是很方便的，但是它们会使随后的所有读者感到困惑。对于编写代码的人来说，花一些额外的时间来定义特定的容器结构是更好的选择，以便使生成的代码更加明显。</p>
-</blockquote>
-<p>Different types for declaration and allocation. Consider the following Java example:</p>
-<blockquote>
-<p>不同类型的声明和分配。考虑以下 Java 示例：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Message&gt; incomingMessageList;</span><br><span class="line">...</span><br><span class="line">incomingMessageList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Message&gt;();</span><br></pre></td></tr></table></figure>
-
-<p>The variable is declared as a List, but the actual value is an ArrayList. This code is legal, since List is a superclass of ArrayList, but it can mislead a reader who sees the declaration but not the actual allocation. The actual type may impact how the variable is used (ArrayLists have different performance and thread-safety properties than other subclasses of List), so it is better to match the declaration with the allocation.</p>
-<blockquote>
-<p>将该变量声明为 List，但实际值为 ArrayList。这段代码是合法的，因为 List 是 ArrayList 的超类，但是它会误导看到声明但不是实际分配的读者。实际类型可能会影响变量的使用方式（ArrayList 与 List 的其他子类相比，具有不同的性能和线程安全属性），因此最好将声明与分配匹配。</p>
-</blockquote>
-<p>Code that violates reader expectations. Consider the following code, which is the main program for a Java application</p>
-<blockquote>
-<p>违反读者期望的代码。考虑以下代码，这是 Java 应用程序的主程序</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">RaftClient</span>(myAddress, serverAddresses);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Most applications exit when their main programs return, so readers are likely to assume that will happen here. However, that is not the case. The constructor for RaftClient creates additional threads, which continue to operate even though the application’s main thread finishes. This behavior should be documented in the interface comment for the RaftClient constructor, but the behavior is nonobvious enough that it’s worth putting a short comment at the end of main as well. The comment should indicate that the application will continue executing in other threads. Code is most obvious if it conforms to the conventions that readers will be expecting; if it doesn’t, then it’s important to document the behavior so readers aren’t confused.</p>
-<blockquote>
-<p>大多数应用程序在其主程序返回时退出，因此读者可能会认为这将在此处发生。但是，事实并非如此。RaftClient 的构造函数创建其他线程，即使应用程序的主线程完成，该线程仍可继续运行。应该在 RaftClient 构造函数的接口注释中记录此行为，但是该行为不够明显，因此值得在 main 末尾添加简短注释。该注释应指示该应用程序将继续在其他线程中执行。如果代码符合读者期望的惯例，那么它是最明显的。如果没有，那么记录该行为很重要，以免使读者感到困惑。</p>
-</blockquote>
-<h2 id="18-3-Conclusion-结论"><a href="#18-3-Conclusion-结论" class="headerlink" title="18.3 Conclusion 结论"></a>18.3 Conclusion 结论</h2><p>Another way of thinking about obviousness is in terms of information. If code is nonobvious, that usually means there is important information about the code that the reader does not have: in the RaftClient example, the reader might not know that the RaftClient constructor created new threads; in the Pair example, the reader might not know that result.getKey() returns the number of the current term.</p>
-<blockquote>
-<p>关于显而易见性的另一种思考方式是信息。如果代码不是显而易见的，则通常意味着存在有关读者所不具备的代码的重要信息：在 RaftClient 示例中，读者可能不知道 RaftClient 构造函数创建了新线程；在“配对”示例中，读者可能不知道 result.getKey（）返回当前项的编号。</p>
-</blockquote>
-<p>To make code obvious, you must ensure that readers always have the information they need to understand it. You can do this in three ways. The best way is to reduce the amount of information that is needed, using design techniques such as abstraction and eliminating special cases. Second, you can take advantage of information that readers have already acquired in other contexts (for example, by following conventions and conforming to expectations) so readers don’t have to learn new information for your code. Third, you can present the important information to them in the code, using techniques such as good names and strategic comments.</p>
-<blockquote>
-<p>为了使代码清晰可见，您必须确保读者始终拥有理解它们所需的信息。您可以通过三种方式执行此操作。最好的方法是使用抽象等设计技术并消除特殊情况，以减少所需的信息量。其次，您可以利用读者在其他情况下已经获得的信息（例如，通过遵循约定并符合期望），从而使读者不必为代码学习新的信息。第三，您可以使用诸如好名和战略注释之类的技术在代码中向他们提供重要信息。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch18-%E4%BB%A3%E7%A0%81%E5%BA%94%E8%AF%A5%E6%98%AF%E6%98%BE%E8%80%8C%E6%98%93%E8%A7%81%E7%9A%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件设计的哲学-ch17-一致性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch17-%E4%B8%80%E8%87%B4%E6%80%A7/">软件设计的哲学 - ch17</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch17-%E4%B8%80%E8%87%B4%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2021-02-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-17-章-一致性"><a href="#第-17-章-一致性" class="headerlink" title="第 17 章 一致性"></a>第 17 章 一致性</h1><blockquote>
-<p>Chapter 17 Consistency</p>
-</blockquote>
-<p>Consistency is a powerful tool for reducing the complexity of a system and making its behavior more obvious. If a system is consistent, it means that similar things are done in similar ways, and dissimilar things are done in different ways. Consistency creates cognitive leverage: once you have learned how something is done in one place, you can use that knowledge to immediately understand other places that use the same approach. If a system is not implemented in a consistent fashion, developers must learn about each situation separately. This will take more time.</p>
-<blockquote>
-<p>一致性是降低系统复杂性并使其行为更明显的强大工具。如果系统是一致的，则意味着相似的事情以相似的方式完成，而不同的事情则以不同的方式完成。一致性会产生认知影响力：一旦您了解了某个地方的工作方式，就可以使用该知识立即了解其他使用相同方法的地方。如果系统的实施方式不一致，则开发人员必须分别了解每种情况。这将花费更多时间。</p>
-</blockquote>
-<p>Consistency reduces mistakes. If a system is not consistent, two situations may appear the same when in fact they are different. A developer may see a pattern that looks familiar and make incorrect assumptions based on previous encounters with that pattern. On the other hand, if the system is consistent, assumptions made based on familiar-looking situations will be safe. Consistency allows developers to work more quickly with fewer mistakes.</p>
-<blockquote>
-<p>一致性减少了错误。如果系统不一致，则实际上两种情况可能不同，但两种情况可能看起来相同。开发人员可能会看到一个看起来很熟悉的模式，并根据以前对该模式的遭遇做出错误的假设。另一方面，如果系统是一致的，则基于熟悉情况的假设将是安全的。一致性允许开发人员以更少的错误来更快地工作。</p>
-</blockquote>
-<h2 id="17-1-Examples-of-consistency-一致性示例"><a href="#17-1-Examples-of-consistency-一致性示例" class="headerlink" title="17.1 Examples of consistency 一致性示例"></a>17.1 Examples of consistency 一致性示例</h2><p>Consistency can be applied at many levels in a system; here are a few examples.</p>
-<blockquote>
-<p>一致性可以应用于系统中的许多级别。这里有一些例子。</p>
-</blockquote>
-<p>Names. Chapter 14 has already discussed the benefits of using names in a consistent way.</p>
-<blockquote>
-<p>名字。第 14 章已经讨论了以一致的方式使用名称的好处。</p>
-</blockquote>
-<p>Coding style. It is common nowadays for development organizations to have style guides that restrict program structure beyond the rules enforced by compilers. Modern style guides address a range of issues, such as indentation, curly-brace placement, order of declarations, naming, commenting, and restrictions on language features considered dangerous. Style guidelines make code easier to read and can reduce some kinds of errors.</p>
-<blockquote>
-<p>编码样式。如今，开发组织通常拥有样式指南，这些样式指南将程序结构限制在编译器所强制执行的规则之外。现代风格指南解决了一系列问题，例如缩进，大括号放置，声明顺序，命名，注释以及对认为危险的语言功能的限制。样式指南使代码更易于阅读，并且可以减少某些类型的错误。</p>
-</blockquote>
-<p>Interfaces. An interface with multiple implementations is another example of consistency. Once you understand one implementation of the interface, any other implementation becomes easier to understand because you already know the features it will have to provide.</p>
-<blockquote>
-<p>接口。具有多个实现的接口是一致性的另一个示例。一旦了解了接口的一种实现，其他任何实现都将变得更易于理解，因为您已经知道它将必须提供的功能。</p>
-</blockquote>
-<p>Design patterns. Design patterns are generally-accepted solutions to certain common problems, such as the model-view-controller approach to user interface design. If you can use an existing design pattern to solve the problem, the implementation will proceed more quickly, it is more likely to work, and your code will be more obvious to readers. Design patterns are discussed in more detail in Section 19.5.</p>
-<p>设计模式。设计模式是某些常见问题的普遍接受的解决方案，例如用于用户界面设计的模型视图控制器方法。如果您可以使用现有的设计模式来解决问题，则实现会更快地进行，更有可能起作用，并且您的代码对读者来说也会更明显。设计模式将在 19.5 节中详细讨论。</p>
-<p>Invariants. An invariant is a property of a variable or structure that is always true. For example, a data structure storing lines of text might enforce an invariant that each line is terminated by a newline character. Invariants reduce the number of special cases that must be considered in code and make it easier to reason about the code’s behavior.</p>
-<p>不变量。不变式是始终为真的变量或结构的属性。例如，存储文本行的数据结构可能会强制要求每行以换行符终止。不变式减少了代码中必须考虑的特殊情况的数量，并使推理行为的方式变得更加容易。</p>
-<h2 id="17-2-Ensuring-consistency-确保一致性"><a href="#17-2-Ensuring-consistency-确保一致性" class="headerlink" title="17.2 Ensuring consistency 确保一致性"></a>17.2 Ensuring consistency 确保一致性</h2><p>Consistency is hard to maintain, especially when many people work on a project over a long time. People in one group may not know about conventions established in another group. Newcomers don’t know the rules, so they unintentionally violate the conventions and create new conventions that conflict with existing ones. Here are a few tips for establishing and maintaining consistency:</p>
-<blockquote>
-<p>一致性很难维护，尤其是当许多人长时间从事一个项目时。一组人可能不了解另一组中建立的约定。新来者不了解规则，因此他们无意间违反了约定并创建了与现有约定冲突的新约定。以下是建立和保持一致性的一些技巧：</p>
-</blockquote>
-<p>Document. Create a document that lists the most important overall conventions, such as coding style guidelines. Place the document in a spot where developers are likely to see it, such as a conspicuous place on the project Wiki. Encourage new people joining the group to read the document, and encourage existing people to review it every once in a while. Several style guides from various organizations have been published on the Web; consider starting with one of these.</p>
-<blockquote>
-<p>文献。创建一个列出最重要的总体约定的文档，例如编码样式准则。将文档放置在开发人员可能会看到的位置，例如项目 Wiki 上的显眼位置。鼓励新成员加入小组阅读文档，并鼓励现有人员不时审阅该文档。Web 上已经发布了来自各个组织的一些样式指南；考虑从其中之一开始。</p>
-</blockquote>
-<p>For conventions that are more localized, such as invariants, find an appropriate spot in the code to document them. If you don’t write the conventions down, it’s unlikely that other people will follow them.</p>
-<blockquote>
-<p>对于局部性更强的约定，例如不变式，请在代码中找到合适的位置进行记录。如果您不写下约定，那么其他人不太可能会遵循它们。</p>
-</blockquote>
-<p>Enforce. Even with good documentation, it’s hard for developers to remember all of the conventions. The best way to enforce conventions is to write a tool that checks for violations, and make sure that code cannot be committed to the repository unless it passes the checker. Automated checkers work particularly well for low-level syntactic conventions.</p>
-<blockquote>
-<p>执行。即使有好的文档，开发人员也很难记住所有约定。实施约定的最佳方法是编写一个检查违规的工具，并确保除非通过检查程序，否则代码无法提交到存储库。自动检查器对于底层语法约定特别有用。</p>
-</blockquote>
-<p>One of my recent projects had problems with line termination characters. Some developers worked on Unix, where lines are terminated by newlines; others worked on Windows, where lines are normally terminated by a carriage-return followed by a newline. If a developer on one system made a small edit to a file previously edited on the other system, the editor would sometimes replace all of the line terminators with ones appropriate for that system. This gave the appearance that every line of the file had been modified, which made it hard to track the meaningful changes. We established a convention that files should contain newlines only, but it was hard to ensure that every tool used by every developer followed the convention. Every time a new developer joined the project, we would experience a rash of line termination problems while that developer adjusted to the convention.</p>
-<blockquote>
-<p>我最近的一个项目有行终止字符的问题。一些开发人员在 Unix 上工作，行被换行终止;其他的工作在 Windows 上，行通常由一个 carriage-return 后跟一个换行符来结束。如果一个系统上的开发人员对先前在另一个系统上编辑过的文件进行了小的编辑，那么编辑器有时会将所有行终止符替换为适合该系统的行终止符。这给人的感觉是文件的每一行都被修改了，这使得跟踪有意义的更改变得很困难。我们建立了一个约定，即文件应该只包含换行，但是很难确保每个开发人员使用的每个工具都遵循这个约定。每当一个新的开发人员加入这个项目，我们就会经历一连串的线路终止问题，而那个开发人员就会适应这个约定。</p>
-</blockquote>
-<p>We eventually solved this problem by writing a short script that was executed automatically before changes are committed to the source code repository. The script checks all of the files that have been modified and aborts the commit if any of them contain carriage returns. The script can also be run manually to repair damaged files by replacing carriage-return&#x2F;newline sequences with newlines. This instantly eliminated the problems, and it also helped train new developers.</p>
-<blockquote>
-<p>我们最终通过编写一个简短的脚本解决了这个问题，该脚本在更改提交到源代码存储库之前自动执行。该脚本检查所有已修改的文件，如果其中任何一个包含回车符，则中止提交。还可以通过用换行符替换回车&#x2F;换行符序列来手动运行脚本以修复损坏的文件。这立即消除了问题，并且还帮助培训了新开发人员。</p>
-</blockquote>
-<p>Code reviews provide another opportunity for enforcing conventions and for educating new developers about the conventions. The more nit-picky that code reviewers are, the more quickly everyone on the team will learn the conventions, and the cleaner the code will be.</p>
-<blockquote>
-<p>代码审查为实施约定和向新开发者提供有关约定的教育提供了另一个机会。代码审阅者越挑剔，团队中的每个人都将更快地学习约定，并且代码越干净。</p>
-</blockquote>
-<p>When in Rome … The most important convention of all is that every developer should follow the old adage “When in Rome, do as the Romans do.” When working in a new file, look around to see how the existing code is structured. Are all public variables and methods declared before private ones? Are the methods in alphabetical order? Do variables use “camel case,” as in firstServerName, or “snake case,” as in first_server_name? When you see anything that looks like it might possibly be a convention, follow it. When making a design decision, ask yourself if it’s likely that a similar decision was made elsewhere in the project; if so, find an existing example and use the same approach in your new code.</p>
-<blockquote>
-<p>在罗马时……最重要的约定是每个开发人员都应遵循古老的格言“在罗马时，就像罗马人一样。” 在处理新文件时，请环顾四周以了解现有代码的结构。是否在私有变量和方法之前声明了所有公共变量和方法？方法是否按字母顺序排列？变量是否使用 firstServerName 中的“ camel case”或使用 first_server_name 中的“ snake case”？当您看到任何看起来可能是约定的内容时，请遵循该约定。在做出设计决策时，请问自己是否有可能在项目的其他地方做出了类似的决策；如果是这样，请找到一个现有示例，并在新代码中使用相同的方法。</p>
-</blockquote>
-<p>Don’t change existing conventions. Resist the urge to “improve” on existing conventions. Having a “better idea” is not a sufficient excuse to introduce inconsistencies. Your new idea may indeed be better, but the value of consistency over inconsistency is almost always greater than the value of one approach over another. Before introducing inconsistent behavior, ask yourself two questions. First, do you have significant new information justifying your approach that wasn’t available when the old convention was established? Second, is the new approach so much better that it is worth taking the time to update all of the old uses? If your organization agrees that the answers to both questions are “yes,” then go ahead and make the upgrade; when you are done, there should be no sign of the old convention. However, you still run the risk that other developers will not know about the new convention, so they may reintroduce the old approach in the future. Overall, reconsidering established conventions is rarely a good use of developer time.</p>
-<blockquote>
-<p>不要更改现有约定。抵制“改善”现有公约的冲动。拥有一个“更好的主意”不足以引起矛盾。您的新想法可能确实更好，但是一致性胜于不一致的价值几乎总是大于一种方法胜过另一种方法的价值。在引入不一致的行为之前，请问自己两个问题。首先，您是否拥有大量的新信息来证明您的方法在建立旧约定时是不可用的？其次，新方法是否好得多，值得花时间更新所有旧用法？如果您的组织同意对两个问题的回答均为“是”，则继续进行升级；否则，请进行升级。完成后，应该没有旧约定的迹象。然而，您仍然冒着其他开发人员不了解新约定的风险，因此他们将来可能会重新引入旧方法。总体而言，重新考虑已建立的约定很少会很好地利用开发人员时间。</p>
-</blockquote>
-<h2 id="17-3-Taking-it-too-far-走得太远"><a href="#17-3-Taking-it-too-far-走得太远" class="headerlink" title="17.3 Taking it too far 走得太远"></a>17.3 Taking it too far 走得太远</h2><p>Consistency means not only that similar things should be done in similar ways, but that dissimilar things should be done in different ways. If you become overzealous about consistency and try to force dissimilar things into the same approach, such as by using the same variable name for things that are really different or using an existing design pattern for a task that doesn’t fit the pattern, you’ll create complexity and confusion. Consistency only provides benefits when developers have confidence that “if it looks like an x, it really is an x.”</p>
-<blockquote>
-<p>一致性不仅意味着相似的事情应该以相似的方式完成，而且不同的事情也应该以不同的方式完成。如果您对一致性过于热衷，并试图将不同的事物强制采用相同的方法，例如对确实不同的事物使用相同的变量名，或者对不适合该模式的任务使用现有的设计模式，那么会造成复杂性和混乱。一致性只有在开发人员确信“如果看起来像 x 时，它确实是 x”时才有好处。</p>
-</blockquote>
-<h2 id="17-4-Conclusion-结论"><a href="#17-4-Conclusion-结论" class="headerlink" title="17.4 Conclusion 结论"></a>17.4 Conclusion 结论</h2><p>Consistency is another example of the investment mindset. It will take a bit of extra work to ensure consistency: work to decide on conventions, work to create automated checkers, work to look for similar situations to mimic in new code, and work in code reviews to educate the team. The return on this investment is that your code will be more obvious. Developers will be able to understand the code’s behavior more quickly and accurately, and this will allow them to work faster, with fewer bugs.</p>
-<blockquote>
-<p>一致性是投资心态的另一个例子。确保一致性的工作将需要一些额外的工作：确定约定，创建自动检查程序，寻找类似情况以模仿新代码，以及进行代码审查以教育团队。这项投资的回报是您的代码将更加明显。开发人员将能够更快，更准确地了解代码的行为，这将使他们能够以更少的错误来更快地工作。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch17-%E4%B8%80%E8%87%B4%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件设计的哲学-ch16-修改现有的代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16-%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%A3%E7%A0%81/">软件设计的哲学 - ch16</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16-%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%A3%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2021-02-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-16-章-修改现有的代码"><a href="#第-16-章-修改现有的代码" class="headerlink" title="第 16 章 修改现有的代码"></a>第 16 章 修改现有的代码</h1><blockquote>
-<p>Chapter 16 Modifying Existing Code</p>
-</blockquote>
-<p>Chapter 1 described how software development is iterative and incremental. A large software system develops through a series of evolutionary stages, where each stage adds new capabilities and modifies existing modules. This means that a system’s design is constantly evolving. It isn’t possible to conceive the right design for a system at the outset; the design of a mature system is determined more by changes made during the system’s evolution than by any initial conception. Previous chapters described how to squeeze out complexity during the initial design and implementation; this chapter discusses how to keep complexity from creeping in as the system evolves.</p>
-<blockquote>
-<p>第 1 章介绍了软件开发是如何迭代和增量的。大型软件系统是通过一系列演化阶段开发的，其中每个阶段都添加了新功能并修改了现有模块。这意味着系统的设计在不断发展。一开始就不可能为系统设计正确的设计。一个成熟的系统的设计更多地取决于系统演化过程中所做的更改，而不是任何初始概念。前面的章节描述了如何在初始设计和实现过程中降低复杂性。本章讨论如何防止随着系统的发展而增加复杂性。</p>
-</blockquote>
-<h2 id="16-1-Stay-strategic-保持战略"><a href="#16-1-Stay-strategic-保持战略" class="headerlink" title="16.1 Stay strategic 保持战略"></a>16.1 Stay strategic 保持战略</h2><p>Chapter 3 introduced the distinction between tactical programming and strategic programming: in tactical programming, the primary goal is to get something working quickly, even if that results in additional complexity; in strategic programming, the most important goal is to produce a great system design. The tactical approach very quickly leads to a messy system design. If you want to have a system that is easy to maintain and enhance, then “working” isn’t a high enough standard; you have to prioritize design and think strategically. This idea also applies when you are modifying existing code.</p>
-<blockquote>
-<p>第 3 章介绍了战术编程和战略编程之间的区别：在战术编程中，主要目标是使某些事物快速工作，即使这会导致额外的复杂性；在战略编程中，最重要的目标是进行出色的系统设计。战术方法很快导致系统设计混乱。如果您想要一个易于维护和增强的系统，那么“工作”还不够高。您必须优先考虑设计并进行战略思考。当您修改现有代码时，此想法也适用。</p>
-</blockquote>
-<p>Unfortunately, when developers go into existing code to make changes such as bug fixes or new features, they don’t usually think strategically. A typical mindset is “what is the smallest possible change I can make that does what I need?” Sometimes developers justify this because they are not comfortable with the code being modified; they worry that larger changes carry a greater risk of introducing new bugs. However, this results in tactical programming. Each one of these minimal changes introduces a few special cases, dependencies, or other forms of complexity. As a result, the system design gets just a bit worse, and the problems accumulate with each step in the system’s evolution.</p>
-<blockquote>
-<p>不幸的是，当开发人员进入现有代码以进行更改（例如错误修复或新功能）时，他们通常不会从战略角度进行思考。一个典型的心态是“我能做出我需要做的最小的改变是什么？” 有时，开发人员证明这是合理的，因为他们对修改的代码不满意。他们担心较大的更改会带来更大的引入新错误的风险。但是，这导致了战术编程。这些最小的变化中的每一个都会引入一些特殊情况，依赖性或其他形式的复杂性。结果，系统设计变得更糟，并且问题随着系统发展的每个步骤而累积。</p>
-</blockquote>
-<p>If you want to maintain a clean design for a system, you must take a strategic approach when modifying existing code. Ideally, when you have finished with each change, the system will have the structure it would have had if you had designed it from the start with that change in mind. To achieve this goal, you must resist the temptation to make a quick fix. Instead, think about whether the current system design is still the best one, in light of the desired change. If not, refactor the system so that you end up with the best possible design. With this approach, the system design improves with every modification.</p>
-<blockquote>
-<p>如果要维护系统的简洁设计，则在修改现有代码时必须采取战略性方法。理想情况下，当您完成每次更改时，如果您从一开始就考虑到更改就设计了系统，那么系统将具有它应该具有的结构。为了实现此目标，您必须抵制诱惑以快速解决问题。相反，请根据所需的更改来考虑当前的系统设计是否仍然是最佳的。如果不是，请重构系统，以便最终获得最佳设计。通过这种方法，每次修改都会改善系统设计。</p>
-</blockquote>
-<p>This is also an example of the investment mindset introduced on page 15: if you invest a little extra time to refactor and improve the system design, you’ll end up with a cleaner system. This will speed up development, and you will recoup the effort that you invested in the refactoring. Even if your particular change doesn’t require refactoring, you should still be on the lookout for design imperfections that you can fix while you’re in the code. Whenever you modify any code, try to find a way to improve the system design at least a little bit in the process. If you’re not making the design better, you are probably making it worse.</p>
-<blockquote>
-<p>这也是第 15 页介绍的投资心态的一个示例：如果您花费一些额外的时间来重构和改善系统设计，您将得到一个更干净的系统。这将加快开发速度，您将收回在重构方面投入的精力。即使您的特定更改不需要重构，您仍然应该注意在代码中可以修复的设计缺陷。每当您修改任何代码时，都尝试在该过程中至少找到一点方法来改进系统设计。如果您没有使设计更好，则可能会使它变得更糟。</p>
-</blockquote>
-<p>As discussed in Chapter 3, an investment mindset sometimes conflicts with the realities of commercial software development. If refactoring the system “the right way” would take three months but a quick and dirty fix would take only two hours, you may have to take the quick and dirty approach, particularly if you are working against a tight deadline. Or, if refactoring the system would create incompatibilities that affect many other people and teams, then the refactoring may not be practical.</p>
-<blockquote>
-<p>如第 3 章所述，投资心态有时与商业软件开发的现实相冲突。如果“正确的方式”重构系统需要三个月，而快速且肮脏的修复仅需两个小时，则您可能必须采取快速而肮脏的方法，尤其是在紧迫的期限内工作时。或者，如果重构系统会造成影响许多其他人员和团队的不兼容性，则重构可能不切实际。</p>
-</blockquote>
-<p>Nonetheless, you should resist these compromises as much as possible. Ask yourself “Is this the best I can possibly do to create a clean system design, given my current constraints?” Perhaps there’s an alternative approach that would be almost as clean as the 3-month refactoring but could be done in a couple of days? Or, if you can’t afford to do a large refactoring now, get your boss to allocate time for you to come back to it after the current deadline. Every development organization should plan to spend a small fraction of its total effort on cleanup and refactoring; this work will pay for itself over the long run.</p>
-<blockquote>
-<p>但是，您应尽可能抵制这些妥协。问问自己：“考虑到我目前的限制，这是否是我能做的最好的工作来创建一个干净的系统设计？” 也许有一种替代方法几乎可以像 3 个月的重构一样干净，但是可以在几天内完成？或者，如果您现在负担不起大型重构，请让您的老板为您分配时间，让您在当前截止日期之后恢复到原来的水平。每个开发组织都应计划将其全部工作的一小部分用于清理和重构；从长远来看，这项工作将收回成本。</p>
-</blockquote>
-<h2 id="16-2-Maintaining-comments-keep-the-comments-near-the-code-维护注释：将注释保留在代码附近"><a href="#16-2-Maintaining-comments-keep-the-comments-near-the-code-维护注释：将注释保留在代码附近" class="headerlink" title="16.2 Maintaining comments: keep the comments near the code 维护注释：将注释保留在代码附近"></a>16.2 Maintaining comments: keep the comments near the code 维护注释：将注释保留在代码附近</h2><p>When you change existing code, there’s a good chance that the changes will invalidate some of the existing comments. It’s easy to forget to update comments when you modify code, which results in comments that are no longer accurate. Inaccurate comments are frustrating to readers, and if there are very many of them, readers begin to distrust all of the comments. Fortunately, with a little discipline and a couple of guiding rules, it’s possible to keep comments up-to-date without a huge effort. This section and the following ones put forth some specific techniques.</p>
-<blockquote>
-<p>当您更改现有代码时，更改很有可能会使某些现有注释无效。修改代码时，很容易忘记更新注释，从而导致注释不再准确。不准确的评论使读者感到沮丧，如果评论太多，读者就会开始不信任所有评论。幸运的是，只要有一点纪律和一些指导规则，就可以在不付出巨大努力的情况下使评论保持最新。本节及随后的部分提出了一些特定的技术。</p>
-</blockquote>
-<p>The best way to ensure that comments get updated is to position them close to the code they describe, so developers will see them when they change the code. The farther a comment is from its associated code, the less likely it is that it will be updated properly. For example, the best place for a method’s interface comment is in the code file, right next to the body of the method. Any changes to the method will involve this code, so the developer is likely to see the interface comments and update them if needed.</p>
-<blockquote>
-<p>确保注释更新的最佳方法是将注释放置在它们描述的代码附近，以便开发人员在更改代码时可以看到它们。注释离其关联的代码越远，正确更新的可能性就越小。例如，方法界面注释的最佳位置是在代码文件中，紧靠该方法主体的位置。对方法的任何更改都将涉及此代码，因此开发人员很可能会看到界面注释，并在需要时进行更新。</p>
-</blockquote>
-<p>An alternative for languages like C and C++ that have separate code and header files, is to place the interface comments next to the method’s declaration in the .h file. However, this is a long way from the code; developers won’t see those comments when modifying the method’s body, and it takes additional work to open a different file and find the interface comments to update them. Some might argue that interface comments should go in header files so that users can learn how to use an abstraction without having to look at the code file. However, users should not need to read either code or header files; they should get their information from documentation compiled by tools such as Doxygen or Javadoc. In addition, many IDEs will extract and present documentation to users, such as by displaying a method’s documentation when the method’s name is typed. Given tools such as these, the documentation should be located in the place that is most convenient for developers working on the code.</p>
-<blockquote>
-<p>对于 C 和 C ++等具有单独的代码和头文件的语言，一种替代方法是将接口注释放在.h 文件中方法声明的旁边。但是，这距离代码还有很长的路要走。开发人员在修改方法的主体时将看不到这些注释，因此需要打开其他文件并查找接口注释来更新它们，这需要额外的工作。有人可能会争辩说接口注释应该放在头文件中，以便用户可以不必看代码文件就可以学习如何使用抽象。但是，用户无需读取代码或头文件；他们应该从由 Doxygen 或 Javadoc 等工具编译的文档中获取信息。此外，许多 IDE 都会提取文档并将其呈现给用户，例如在键入方法名称时显示方法的文档。给定诸如此类的工具，文档应位于对开发人员进行代码开发最方便的位置。</p>
-</blockquote>
-<p>When writing implementation comments, don’t put all the comments for an entire method at the top of the method. Spread them out, pushing each comment down to the narrowest scope that includes all of the code referred to by the comment. For example, if a method has three major phases, don’t write one comment at the top of the method that describes all of the phases in detail. Instead, write a separate comment for each phase and position that comment just above the first line of code in that phase. On the other hand, it can also be helpful to have a comment at the top of a method’s implementation that describes the overall strategy, like this:</p>
-<blockquote>
-<p>在编写实现注释时，不要将整个方法的所有注释放在方法的顶部。展开它们，将每个注释推到最狭窄的范围，其中包括该注释所引用的所有代码。例如，如果一种方法具有三个主要阶段，则不要在方法的顶部写一个详细描述所有阶段的注释。而是为每个阶段编写一个单独的注释，并将该注释放置在该阶段的第一行代码的正上方。另一方面，在描述总体策略的方法实现的顶部添加注释也可能会有所帮助，例如：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  We proceed in three phases:</span></span><br><span class="line"><span class="comment">//  Phase 1: Find feasible candidates</span></span><br><span class="line"><span class="comment">//  Phase 2: Assign each candidate a score</span></span><br><span class="line"><span class="comment">//  Phase 3: Choose the best, and remove it</span></span><br></pre></td></tr></table></figure>
-
-<p>Additional details can be documented just above the code for each phase.</p>
-<blockquote>
-<p>每个阶段的代码上方都可以记录其他详细信息。</p>
-</blockquote>
-<p>In general, the farther a comment is from the code it describes, the more abstract it should be (this reduces the likelihood that the comment will be invalidated by code changes).</p>
-<blockquote>
-<p>通常，注释离描述的代码越远，注释应该越抽象（这减少了注释因代码更改而无效的可能性）。</p>
-</blockquote>
-<h2 id="16-3-Comments-belong-in-the-code-not-the-commit-log-注释属于代码，而不是提交日志"><a href="#16-3-Comments-belong-in-the-code-not-the-commit-log-注释属于代码，而不是提交日志" class="headerlink" title="16.3 Comments belong in the code, not the commit log 注释属于代码，而不是提交日志"></a>16.3 Comments belong in the code, not the commit log 注释属于代码，而不是提交日志</h2><p>A common mistake when modifying code is to put detailed information about the change in the commit message for the source code repository, but then not to document it in the code. Although commit messages can be browsed in the future by scanning the repository’s log, a developer who needs the information is unlikely to think of scanning the repository log. Even if they do scan the log, it will be tedious to find the right log message.</p>
-<blockquote>
-<p>修改代码时，常见的错误是将有关更改的详细信息放入源代码存储库的提交消息中，而不是将其记录在代码中。尽管将来可以通过扫描存储库的日志来浏览提交消息，但是需要该信息的开发人员不太可能考虑扫描存储库的日志。即使他们确实扫描了日志，也很难找到正确的日志消息。</p>
-</blockquote>
-<p>When writing a commit message, ask yourself whether developers will need to use that information in the future. If so, then document this information in the code. An example is a commit message describing a subtle problem that motivated a code change. If this isn’t documented in the code, then a developer might come along later and undo the change without realizing that they have re-created a bug. If you want to include a copy of this information in the commit message as well, that’s fine, but the most important thing is to get it in the code. This illustrates the principle of placing documentation in the place where developers are most likely to see it; the commit log is rarely that place.</p>
-<blockquote>
-<p>在编写提交消息时，请问自己将来开发人员是否需要使用该信息。如果是这样，则在代码中记录此信息。一个示例是提交消息，描述了导致代码更改的细微问题。如果代码中未对此进行记录，则开发人员可能会稍后再提出并撤消更改，而不会意识到他们已经重新创建了错误。如果您也想在提交消息中包含此信息的副本，那很好，但是最重要的是在代码中获取它。这说明了将文档放置在开发人员最有可能看到它的地方的原理；提交日志很少在那个地方。</p>
-</blockquote>
-<h2 id="16-4-Maintaining-comments-avoid-duplication-维护注释：避免重复"><a href="#16-4-Maintaining-comments-avoid-duplication-维护注释：避免重复" class="headerlink" title="16.4 Maintaining comments: avoid duplication 维护注释：避免重复"></a>16.4 Maintaining comments: avoid duplication 维护注释：避免重复</h2><p>The second technique for keeping comments up to date is to avoid duplication. If documentation is duplicated, it is more difficult for developers to find and update all of the relevant copies. Instead, try to document each design decision exactly once. If there are multiple places in the code that are affected by a particular decision, don’t repeat the documentation at each of these points. Instead, find the most obvious single place to put the documentation. For example, suppose there is tricky behavior related to a variable, which affects several different places where the variable is used. You can document that behavior in the comment next to the variable’s declaration. This is a natural place that developers are likely to check if they’re having trouble understanding code that uses the variable.</p>
-<blockquote>
-<p>保持评论最新的第二种技术是避免重复。如果文档重复，那么开发人员将很难找到并更新所有相关副本。相反，请尝试仅一次记录每个设计决策。如果代码中有多个地方受某个特定决定的影响，请不要在所有这些地方重复文档。相反，找到放置文档最明显的位置。例如，假设存在与变量相关的棘手行为，这会影响使用变量的几个不同位置。您可以在变量声明旁边的注释中记录该行为。这是很自然的地方，开发人员可能会检查他们是否在理解使用该变量的代码时遇到麻烦。</p>
-</blockquote>
-<p>If there is no “obvious” single place to put a particular piece of documentation where developers will find it, create a designNotes file as described in Section 13.7. Or, pick the best of the available places and put the documentation there. In addition, add short comments in the other places that refer to the central location: “See the comment in xyz for an explanation of the code below.” If the reference becomes obsolete because the master comment was moved or deleted, this inconsistency will be self-evident because developers won’t find the comment at the indicated place; they can use revision control history to find out what happened to the comment and then update the reference. In contrast, if the documentation is duplicated and some of the copies don’t get updated, there will be no indication to developers that they are using stale information.</p>
-<blockquote>
-<p>如果没有一个“明显的”地方来放置特定的文档，开发人员可以找到它，那么创建一个 designNotes 文件，如第 13.7 节所述。或者，选择最好的地方，把文档放在那里。另外，在引用中心位置的其他地方添加简短的注释:“查看 xyz 中的注释以了解下面代码的解释。“如果引用因为主注释被移动或删除而变得过时，这种不一致性将是不言而喻的，因为开发人员将无法在指定的位置找到注释;他们可以使用修订控制历史记录来查找注释发生了什么，然后更新引用。相反，如果文档是重复的，并且一些副本没有得到更新，那么开发人员就不会知道他们使用的是陈旧的信息。</p>
-</blockquote>
-<p>Don’t redocument one module’s design decisions in another module. For example, don’t put comments before a method call that explain what happens in the called method. If readers want to know, they should look at the interface comments for the method. Good development tools will usually provide this information automatically, for example, by displaying the interface comments for a method if you select the method’s name or hover the mouse over it. Try to make it easy for developers to find appropriate documentation, but don’t do it by repeating the documentation.</p>
-<blockquote>
-<p>不要在另一个模块中记录一个模块的设计决策。例如，不要在方法调用前添加注释，以解释被调用方法中发生的情况。如果读者想知道，他们应该查看该方法的界面注释。好的开发工具通常会自动提供此信息，例如，如果您选择了方法的名称或将鼠标悬停在该方法的名称上，则将显示该方法的界面注释。尝试使开发人员容易找到合适的文档，但是不要重复文档。</p>
-</blockquote>
-<p>If information is already documented someplace outside your program, don’t repeat the documentation inside the program; just reference the external documentation. For example, if you write a class that implements the HTTP protocol, there’s no need for you to describe the HTTP protocol inside your code. There are already numerous sources for this documentation on the Web; just add a short comment to your code with a URL for one of these sources. Another example is features that are already documented in a user manual. Suppose you are writing a program that implements a collection of commands, with one method responsible for implementing each command. If there is a user manual that describes those commands, there’s no need to duplicate this information in the code. Instead, include a short note like the following in the interface comment for each command method:</p>
-<blockquote>
-<p>如果信息已经在程序之外的某个地方记录了，不要在程序内部重复记录;只需参考外部文档。例如，如果您编写一个实现 HTTP 协议的类，那么就不需要在代码中描述 HTTP 协议。在网上已经有很多关于这个文档的来源;只需在您的代码中添加一个简短的注释，并为其中一个源添加一个 URL。另一个例子是已经在用户手册中记录的特性。假设您正在编写一个实现命令集合的程序，其中有一个负责实现每个命令的方法。如果有描述这些命令的用户手册，就不需要在代码中重复这些信息。相反，在每个命令方法的接口注释中包含如下简短说明:</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Implements the Foo command; see the user manual for details.</span></span><br></pre></td></tr></table></figure>
-
-<p>It’s important that readers can easily find all the documentation needed to understand your code, but that doesn’t mean you have to write all of that documentation.</p>
-<blockquote>
-<p>读者可以轻松找到理解代码所需的所有文档，这一点很重要，但这并不意味着您必须编写所有这些文档。</p>
-</blockquote>
-<h2 id="16-5-Maintaining-comments-check-the-diffs-维护注释：检查差异"><a href="#16-5-Maintaining-comments-check-the-diffs-维护注释：检查差异" class="headerlink" title="16.5 Maintaining comments: check the diffs 维护注释：检查差异"></a>16.5 Maintaining comments: check the diffs 维护注释：检查差异</h2><p>One good way to make sure documentation stays up to date is to take a few minutes before committing a change to your revision control system to scan over all the changes for that commit; make sure that each change is properly reflected in the documentation. These pre-commit scans will also detect several other problems, such as accidentally leaving debugging code in the system or failing to fix TODO items.</p>
-<blockquote>
-<p>确保文档保持最新状态的一种好方法是，在将更改提交到修订控制系统之前需要花费几分钟，以扫描该提交的所有更改。确保文档中正确反映了每个更改。这些预先提交的扫描还将检测其他一些问题，例如意外地将调试代码留在系统中或无法修复 TODO 项目。</p>
-</blockquote>
-<h2 id="16-6-Higher-level-comments-are-easier-to-maintain-更高级的注释更易于维护"><a href="#16-6-Higher-level-comments-are-easier-to-maintain-更高级的注释更易于维护" class="headerlink" title="16.6 Higher-level comments are easier to maintain 更高级的注释更易于维护"></a>16.6 Higher-level comments are easier to maintain 更高级的注释更易于维护</h2><p>One final thought on maintaining documentation: comments are easier to maintain if they are higher-level and more abstract than the code. These comments do not reflect the details of the code, so they will not be affected by minor code changes; only changes in overall behavior will affect these comments. Of course, as discussed in Chapter 13, some comments do need to be detailed and precise. But in general, the comments that are most useful (they don’t simply repeat the code) are also easiest to maintain.</p>
-<blockquote>
-<p>关于维护文档的最后一个想法：如果注释比代码更高级，更抽象，则注释更易于维护。这些注释不反映代码的详细信息，因此它们不会受到代码更改的影响；只有整体行为的变化才会影响这些评论。当然，正如第 13 章所讨论的那样，某些注释的确需要详细和精确。但总的来说，最有用的注释（它们不只是重复代码）也最容易维护。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch16-%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%A3%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-软件设计的哲学-ch15-先写评论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -2491,9 +1989,550 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-软件设计的哲学-ch8-降低复杂性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch8-%E9%99%8D%E4%BD%8E%E5%A4%8D%E6%9D%82%E6%80%A7/">软件设计的哲学 - ch8</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch8-%E9%99%8D%E4%BD%8E%E5%A4%8D%E6%9D%82%E6%80%A7/" class="archive-article-date">
+  	<time datetime="2021-02-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-8-章-降低复杂性"><a href="#第-8-章-降低复杂性" class="headerlink" title="第 8 章 降低复杂性"></a>第 8 章 降低复杂性</h1><blockquote>
+<p>Chapter 8 Pull Complexity Downwards</p>
+</blockquote>
+<p>This chapter introduces another way of thinking about how to create deeper classes. Suppose that you are developing a new module, and you discover a piece of unavoidable complexity. Which is better: should you let users of the module deal with the complexity, or should you handle the complexity internally within the module? If the complexity is related to the functionality provided by the module, then the second answer is usually the right one. Most modules have more users than developers, so it is better for the developers to suffer than the users. As a module developer, you should strive to make life as easy as possible for the users of your module, even if that means extra work for you. Another way of expressing this idea is that it is more important for a module to have a simple interface than a simple implementation.</p>
+<blockquote>
+<p>本章介绍了有关如何创建更深层类的另一种思考方式。假设您正在开发一个新模块，并且发现了一个不可避免的复杂性。哪个更好：应该让模块用户处理复杂性，还是应该在模块内部处理复杂性？如果复杂度与模块提供的功能有关，则第二个答案通常是正确的答案。大多数模块拥有的用户多于开发人员，因此开发人员遭受的苦难要大于用户。作为模块开发人员，您应该努力使模块用户的生活尽可能轻松，即使这对您来说意味着额外的工作。表达此想法的另一种方法是，模块具有简单的接口比简单的实现更为重要。</p>
+</blockquote>
+<p>As a developer, it’s tempting to behave in the opposite fashion: solve the easy problems and punt the hard ones to someone else. If a condition arises that you’re not certain how to deal with, the easiest thing is to throw an exception and let the caller handle it. If you are not certain what policy to implement, you can define a few configuration parameters to control the policy and leave it up to the system administrator to figure out the best values for them.</p>
+<blockquote>
+<p>作为开发人员，很容易以相反的方式行事：解决简单的问题，然后将困难的问题推给其他人。如果出现不确定如何处理的条件，最简单的方法是引发异常并让调用方处理它。如果不确定要实施什么策略，则可以定义一些配置参数来控制该策略，然后由系统管理员自行确定最佳策略。</p>
+</blockquote>
+<p>Approaches like these will make your life easier in the short term, but they amplify complexity, so that many people must deal with a problem, rather than just one person. For example, if a class throws an exception, every caller of the class will have to deal with it. If a class exports configuration parameters, every system administrator in every installation will have to learn how to set them.</p>
+<blockquote>
+<p>这样的方法短期内会使您的生活更轻松，但它们会加剧复杂性，因此许多人必须处理一个问题，而不仅仅是一个人。例如，如果一个类抛出异常，则该类的每个调用者都必须处理该异常。如果一个类导出配置参数，则每个安装中的每个系统管理员都必须学习如何设置它们。</p>
+</blockquote>
+<h2 id="8-1-Example-editor-text-class-示例：编辑器文本类"><a href="#8-1-Example-editor-text-class-示例：编辑器文本类" class="headerlink" title="8.1 Example: editor text class 示例：编辑器文本类"></a>8.1 Example: editor text class 示例：编辑器文本类</h2><p>Consider the class that manages the text of a file for a GUI text editor, which was discussed in Chapters 6 and 7. The class provides methods to read a file from disk into memory, query and modify the in-memory copy of the file, and write the modified version back to disk. When students had to implement this class, many of them chose a line-oriented interface, with methods to read, insert, and delete whole lines of text. This resulted in a simple implementation for the class, but it created complexity for higher level software. At the level of the user interface, operations rarely involve whole lines. For example, keystrokes cause individual characters to be inserted within an existing line; copying or deleting the selection can modify parts of several different lines. With the line-oriented text interface, higher-level software had to split and join lines in order to implement the user interface.</p>
+<blockquote>
+<p>考虑为 GUI 文本编辑器管理文件文本的类，这在第 6 章和第 7 章中讨论过。该类提供了将文件从磁盘读入内存、查询和修改文件在内存中的副本以及将修改后的版本写回磁盘的方法。当学生必须实现这个类时，他们中的许多人选择了一个面向行的接口，该接口具有读取、插入和删除整行文本的方法。这导致了类的简单实现，但也为更高级别的软件带来了复杂性。在用户界面级别，操作很少涉及整行。例如，击键会导致在现有行中插入单个字符;复制或删除选择项可以修改几个不同行的部分。使用面向行的文本界面，为了实现用户界面，高级软件必须分割和连接行。</p>
+</blockquote>
+<p>A character-oriented interface such as the one described in Section 6.3 pulls complexity downward. The user interface software can now insert and delete arbitrary ranges of text without splitting and merging lines, so it becomes simpler. The implementation of the text class probably becomes more complex: if it represents the text internally as a collection of lines, it will have to split and merge lines to implement the character-oriented operations. This approach is better because it encapsulates the complexity of splitting and merging within the text class, which reduces the overall complexity of the system.</p>
+<blockquote>
+<p>面向字符的界面（如 6.3 节中所述）降低了复杂性。用户界面软件现在可以插入和删除任意范围的文本，而无需分割和合并行，因此变得更加简单。文本类的实现可能会变得更加复杂：如果内部将文本表示为行的集合，则必须拆分和合并行以实现面向字符的操作。这种方法更好，因为它封装了在文本类中拆分和合并的复杂性，从而降低了系统的整体复杂性。</p>
+</blockquote>
+<h2 id="8-2-Example-configuration-parameters-示例：配置参数"><a href="#8-2-Example-configuration-parameters-示例：配置参数" class="headerlink" title="8.2 Example: configuration parameters 示例：配置参数"></a>8.2 Example: configuration parameters 示例：配置参数</h2><p>Configuration parameters are an example of moving complexity upwards instead of down. Rather than determining a particular behavior internally, a class can export a few parameters that control its behavior, such as the size of a cache or the number of times to retry a request before giving up. Users of the class must then specify appropriate values for the parameters. Configuration parameters have become very popular in systems today; some systems have hundreds of them.</p>
+<blockquote>
+<p>配置参数是提高复杂度而不是降低复杂度的一个示例。类可以在内部输出一些控制其行为的参数，而不是在内部确定特定的行为，例如高速缓存的大小或在放弃之前重试请求的次数。然后，该类的用户必须为参数指定适当的值。在当今的系统中，配置参数已变得非常流行。有些系统有数百个。</p>
+</blockquote>
+<p>Advocates argue that configuration parameters are good because they allow users to tune the system for their particular requirements and workloads. In some situations it is hard for low-level infrastructure code to know the best policy to apply, whereas users are much more familiar with their domains. For instance, a user might know that some requests are more time-critical than others, so it makes sense for the user to specify a higher priority for those requests. In situations like this, configuration parameters can result in better performance across a broader variety of domains.</p>
+<blockquote>
+<p>拥护者认为配置参数不错，因为它们允许用户根据他们的特定要求和工作负载来调整系统。在某些情况下，低级基础结构代码很难知道要应用的最佳策略，而用户则对其域更加熟悉。例如，用户可能知道某些请求比其他请求更紧迫，因此用户为这些请求指定更高的优先级是有意义的。在这种情况下，配置参数可以在更广泛的域中带来更好的性能。</p>
+</blockquote>
+<p>However, configuration parameters also provide an easy excuse to avoid dealing with important issues and pass them on to someone else. In many cases, it’s difficult or impossible for users or administrators to determine the right values for the parameters. In other cases, the right values could have been determined automatically with a little extra work in the system implementation. Consider a network protocol that must deal with lost packets. If it sends a request but doesn’t receive a response within a certain time period, it resends the request. One way to determine the retry interval is to introduce a configuration parameter. However, the transport protocol could compute a reasonable value on its own by measuring the response time for requests that succeed and then using a multiple of this for the retry interval. This approach pulls complexity downward and saves users from having to figure out the right retry interval. It has the additional advantage of computing the retry interval dynamically, so it will adjust automatically if operating conditions change. In contrast, configuration parameters can easily become out of date.</p>
+<blockquote>
+<p>但是，配置参数还提供了一个轻松的借口，可以避免处理重要问题并将其传递给其他人。在许多情况下，用户或管理员很难或无法确定参数的正确值。在其他情况下，可以通过在系统实现中进行一些额外的工作来自动确定正确的值。考虑必须处理丢失数据包的网络协议。如果它发送请求但在一定时间内未收到响应，则重新发送该请求。确定重试间隔的一种方法是引入配置参数。但是，传输协议可以通过测量成功请求的响应时间，然后将其倍数用于重试间隔，自己计算出一个合理的值。这种方法降低了复杂性，使用户不必找出正确的重试间隔。它具有动态计算重试间隔的其他优点，因此，如果操作条件发生变化，它将自动进行调整。相反，配置参数很容易过时。</p>
+</blockquote>
+<p>Thus, you should avoid configuration parameters as much as possible. Before exporting a configuration parameter, ask yourself: “will users (or higher-level modules) be able to determine a better value than we can determine here?” When you do create configuration parameters, see if you can compute reasonable defaults automatically, so users will only need to provide values under exceptional conditions. Ideally, each module should solve a problem completely; configuration parameters result in an incomplete solution, which adds to system complexity.</p>
+<blockquote>
+<p>因此，您应尽可能避免使用配置参数。在导出配置参数之前，请问自己：“用户（或更高级别的模块）是否能够确定比我们在此确定的更好的值？” 当您创建配置参数时，请查看是否可以自动计算合理的默认值，因此用户仅需在特殊情况下提供值即可。理想情况下，每个模块都应完全解决问题。配置参数导致解决方案不完整，从而增加了系统复杂性。</p>
+</blockquote>
+<h2 id="8-3-Taking-it-too-far-走得太远"><a href="#8-3-Taking-it-too-far-走得太远" class="headerlink" title="8.3 Taking it too far 走得太远"></a>8.3 Taking it too far 走得太远</h2><p>Use discretion when pulling complexity downward; this is an idea that can easily be overdone. An extreme approach would be to pull all of the functionality of the entire application down into a single class, which clearly doesn’t make sense. Pulling complexity down makes the most sense if (a) the complexity being pulled down is closely related to the class’s existing functionality, (b) pulling the complexity down will result in many simplifications elsewhere in the application, and (c) pulling the complexity down simplifies the class’s interface. Remember that the goal is to minimize overall system complexity.</p>
+<blockquote>
+<p>降低复杂性时要谨慎处理；这个想法很容易被夸大。一种极端的方法是将整个应用程序的所有功能归为一个类，这显然没有意义。如果（a）被降低的复杂度与该类的现有功能密切相关，（b）降低复杂度将导致应用程序中其他地方的许多简化，则降低复杂度最有意义。简化了类的界面。请记住，目标是最大程度地降低整体系统复杂性。</p>
+</blockquote>
+<p>Chapter 6 described how some students defined methods in the text class that reflected the user interface, such as a method that implements the functionality of the backspace key. It might seem that this is good, since it pulls complexity downward. However, adding knowledge of the user interface to the text class doesn’t simplify higher-level code very much, and the user-interface knowledge doesn’t relate to the core functions of the text class. In this case, pulling complexity down just resulted in information leakage.</p>
+<blockquote>
+<p>第 6 章介绍了一些学生如何在文本类中定义反映用户界面的方法，例如实现退格键功能的方法。这似乎很好，因为它可以降低复杂性。但是，将用户界面的知识添加到文本类中并不会大大简化高层代码，并且用户界面的知识与文本类的核心功能无关。在这种情况下，降低复杂度只会导致信息泄漏。</p>
+</blockquote>
+<h2 id="8-4-Conclusion-结论"><a href="#8-4-Conclusion-结论" class="headerlink" title="8.4 Conclusion 结论"></a>8.4 Conclusion 结论</h2><p>When developing a module, look for opportunities to take a little bit of extra suffering upon yourself in order to reduce the suffering of your users.</p>
+<blockquote>
+<p>在开发模块时，请寻找机会减轻自己的痛苦，以减轻用户的痛苦。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch8-%E9%99%8D%E4%BD%8E%E5%A4%8D%E6%9D%82%E6%80%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件设计的哲学-ch7-不同的层，不同的抽象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch7-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B1%82%EF%BC%8C%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%BD%E8%B1%A1/">软件设计的哲学 - ch7</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch7-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B1%82%EF%BC%8C%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%BD%E8%B1%A1/" class="archive-article-date">
+  	<time datetime="2021-02-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-7-章-不同的层，不同的抽象"><a href="#第-7-章-不同的层，不同的抽象" class="headerlink" title="第 7 章 不同的层，不同的抽象"></a>第 7 章 不同的层，不同的抽象</h1><blockquote>
+<p>Chapter 7 Different Layer, Different Abstraction</p>
+</blockquote>
+<p>Software systems are composed in layers, where higher layers use the facilities provided by lower layers. In a well-designed system, each layer provides a different abstraction from the layers above and below it; if you follow a single operation as it moves up and down through layers by invoking methods, the abstractions change with each method call. For example:</p>
+<blockquote>
+<p>软件系统由层组成，其中较高的层使用较低层提供的功能。在设计良好的系统中，每一层都提供与其上，下两层不同的抽象。如果您通过调用方法遵循单个操作在层中上下移动，则每个方法调用的抽象都会改变。例如：</p>
+</blockquote>
+<ul>
+<li>In a file system, the uppermost layer implements a file abstraction. A file consists of a variable-length array of bytes, which can be updated by reading and writing variable-length byte ranges. The next lower layer in the file system implements a cache in memory of fixed-size disk blocks; callers can assume that frequently used blocks will stay in memory where they can be accessed quickly. The lowest layer consists of device drivers, which move blocks between secondary storage devices and memory.</li>
+<li>In a network transport protocol such as TCP, the abstraction provided by the topmost layer is a stream of bytes delivered reliably from one machine to another. This level is built on a lower level that transmits packets of bounded size between machines on a best-effort basis: most packets will be delivered successfully, but some packets may be lost or delivered out of order.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>在文件系统中，最上层实现文件抽象。文件由可变长度的字节数组组成，可以通过读写可变长度的字节范围来更新该字节。文件系统的下一个下一层在固定大小的磁盘块的内存中实现了高速缓存。调用者可以假定经常使用的块将保留在内存中，以便可以快速访问它们。最低层由设备驱动程序组成，它们在辅助存储设备和内存之间移动块。</li>
+<li>在诸如 TCP 的网络传输协议中，最顶层提供的抽象是从一台机器可靠地传递到另一台机器的字节流。此级别在较低级别上构建，该级别可以尽最大努力在计算机之间传输有限大小的数据包：大多数数据包将成功交付，但某些数据包可能会丢失或乱序交付。</li>
+</ul>
+</blockquote>
+<p>If a system contains adjacent layers with similar abstractions, this is a red flag that suggests a problem with the class decomposition. This chapter discusses situations where this happens, the problems that result, and how to refactor to eliminate the problems.</p>
+<blockquote>
+<p>如果系统包含具有相似抽象的相邻层，则这是一个红色标记，表明类分解存在问题。本章讨论了发生这种情况的情况，导致的问题以及如何重构以消除问题。</p>
+</blockquote>
+<h2 id="7-1-Pass-through-methods-传递方法"><a href="#7-1-Pass-through-methods-传递方法" class="headerlink" title="7.1 Pass-through methods 传递方法"></a>7.1 Pass-through methods 传递方法</h2><p>When adjacent layers have similar abstractions, the problem often manifests itself in the form of pass-through methods. A pass-through method is one that does little except invoke another method, whose signature is similar or identical to that of the calling method. For example, a student project implementing a GUI text editor contained a class consisting almost entirely of pass-through methods. Here is an extract from that class:</p>
+<blockquote>
+<p>当相邻的层具有相似的抽象时，问题通常以直通方法的形式表现出来。传递方法是一种很少执行的方法，除了调用另一个方法（其签名与调用方法的签名相似或相同）之外。例如，一个实施 GUI 文本编辑器的学生项目包含一个几乎完全由传递方法组成的类。这是该类的摘录：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TextDocument</span> ... &#123;</span><br><span class="line">    <span class="keyword">private</span> TextArea textArea;</span><br><span class="line">    <span class="keyword">private</span> TextDocumentListener listener;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">public</span> Character <span class="title function_">getLastTypedCharacter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> textArea.getLastTypedCharacter();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getCursorOffset</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> textArea.getCursorOffset();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">insertString</span><span class="params">(String textToInsert, <span class="type">int</span> offset)</span> &#123;</span><br><span class="line">        textArea.insertString(textToInsert, offset);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">willInsertString</span><span class="params">(String stringToInsert, <span class="type">int</span> offset)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (listener != <span class="literal">null</span>) &#123;</span><br><span class="line">            listener.willInsertString(<span class="built_in">this</span>, stringToInsert, offset);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>13 of the 15 public methods in that class were pass-through methods.</p>
+<blockquote>
+<p>该类别中 15 个公共方法中的 13 个是传递方法。</p>
+</blockquote>
+<p>img Red Flag: Pass-Through Method img</p>
+<p>A pass-through method is one that does nothing except pass its arguments to another method, usually with the same API as the pass-through method. This typically indicates that there is not a clean division of responsibility between the classes.</p>
+<blockquote>
+<p>传递方法是一种不执行任何操作的方法，只是将其参数传递给另一个方法，通常使用与传递方法相同的 API。这通常表示各类之间没有明确的职责划分。</p>
+</blockquote>
+<p>Pass-through methods make classes shallower: they increase the interface complexity of the class, which adds complexity, but they don’t increase the total functionality of the system. Of the four methods above, only the last one has any functionality, and even there it is trivial: the method checks the validity of one variable. Pass-through methods also create dependencies between classes: if the signature changes for the insertString method in TextArea, then the insertString method in TextDocument will have to change to match.</p>
+<blockquote>
+<p>传递方法使类变浅：它们增加了类的接口复杂性，从而增加了复杂性，但是并没有增加系统的整体功能。在上述四个方法中，只有最后一个具有任何功能，甚至没有什么功能：该方法检查一个变量的有效性。直通方法还会在类之间创建依赖关系：如果针对 TextArea 中的 insertString 方法更改了签名，则必须更改 TextDocument 中的 insertString 方法以进行匹配。</p>
+</blockquote>
+<p>Pass-through methods indicate that there is confusion over the division of responsibility between classes. In the example above, the TextDocument class offers an insertString method, but the functionality for inserting text is implemented entirely in TextArea. This is usually a bad idea: the interface to a piece of functionality should be in the same class that implements the functionality. When you see pass-through methods from one class to another, consider the two classes and ask yourself “Exactly which features and abstractions is each of these classes responsible for?” You will probably notice that there is an overlap in responsibility between the classes.</p>
+<blockquote>
+<p>传递方法表明类之间的责任划分存在混淆。在上面的示例中，TextDocument 类提供了 insertString 方法，但是用于插入文本的功能完全在 TextArea 中实现。这通常是一个坏主意：某个功能的接口应该在实现该功能的同一类中。当您看到从一个类到另一个类的传递方法时，请考虑这两个类，并问自己“这些类分别负责哪些功能和抽象？” 您可能会注意到，各类之间的职责重叠。</p>
+</blockquote>
+<p>The solution is to refactor the classes so that each class has a distinct and coherent set of responsibilities. Figure 7.1 illustrates several ways to do this. One approach, shown in Figure 7.1(b), is to expose the lower level class directly to the callers of the higher level class, removing all responsibility for the feature from the higher level class. Another approach is to redistribute the functionality between the classes, as in Figure 7.1(c). Finally, if the classes can’t be disentangled, the best solution may be to merge them as in Figure 7.1(d).</p>
+<blockquote>
+<p>解决方案是重构类，以使每个类都有各自不同且连贯的职责。图 7.1 说明了几种方法。一种方法，如图 7.1（b）所示，是将较低级别的类直接暴露给较高级别的类的调用者，而从较高级别的类中删除对该功能的所有责任。另一种方法是在类之间重新分配功能，如图 7.1（c）所示。最后，如果无法解开这些类，最好的解决方案可能是如图 7.1（d）所示合并它们。</p>
+</blockquote>
+<p>In the example above, there were three classes with intertwined responsibilities: TextDocument, TextArea, and TextDocumentListener. The student eliminated the pass-through methods by moving methods between classes and collapsing the three classes into just two, whose responsibilities were more clearly differentiated.</p>
+<blockquote>
+<p>在上面的示例中，职责交织的三个类为：TextDocument，TextArea 和 TextDocumentListener。学生通过在班级之间移动方法并将三个班级缩减为两个班级来消除传递方法，这两个班级的职责更加明确。</p>
+</blockquote>
+<h2 id="7-2-When-is-interface-duplication-OK-接口复制何时可以？"><a href="#7-2-When-is-interface-duplication-OK-接口复制何时可以？" class="headerlink" title="7.2 When is interface duplication OK? 接口复制何时可以？"></a>7.2 When is interface duplication OK? 接口复制何时可以？</h2><p>Having methods with the same signature is not always bad. The important thing is that each new method should contribute significant functionality. Pass-through methods are bad because they contribute no new functionality.</p>
+<blockquote>
+<p>具有相同签名的方法并不总是不好的。重要的是，每种新方法都应贡献重要的功能。传递方法很糟糕，因为它们不提供任何新功能。</p>
+</blockquote>
+<p>One example where it’s useful for a method to call another method with the same signature is a dispatcher. A dispatcher is a method that uses its arguments to select one of several other methods to invoke; then it passes most or all of its arguments to the chosen method. The signature for the dispatcher is often the same as the signature for the methods that it calls. Even so, the dispatcher provides useful functionality: it chooses which of several other methods should carry out each task.</p>
+<blockquote>
+<p>分派器是一个示例，该示例对于一种方法调用具有相同签名的另一种方法很有用。调度程序是一种使用其参数选择要调用的其他方法之一的方法。然后将其大部分或所有参数传递给所选方法。调度程序的签名通常与其调用的方法的签名相同。即便如此，调度程序仍提供有用的功能：它可以选择其他几种方法中的哪一种来执行每个任务。</p>
+</blockquote>
+<p><img src="/../../img/figures/00015.jpeg"></p>
+<p>Figure 7.1: Pass-through methods. In (a), class C1 contains three pass-through methods, which do nothing but invoke methods with the same signature in C2 (each symbol represents a particular method signature). The pass-through methods can be eliminated by having C1’s callers invoke C2 directly as in (b), by redistributing functionality between C1 and C2 to avoid calls between the classes as in (c), or by combining the classes as in (d).</p>
+<blockquote>
+<p>图 7.1：直通方法。在（a）中，类 C1 包含三个直通方法，这些方法只调用 C2 中具有相同签名的方法（每个符号代表一个特定的方法签名）。可以通过使 C1 的调用方像在（b）中那样直接调用 C2，通过在 C1 和 C2 之间重新分配功能以避免在（c）中的类之间进行调用，或者通过组合在（d）中的类来消除传递方法。 。</p>
+</blockquote>
+<p>For example, when a Web server receives an incoming HTTP request from a Web browser, it invokes a dispatcher that examines the URL in the incoming request and selects a specific method to handle the request. Some URLs might be handled by returning the contents of a file on disk; others might be handled by invoking a procedure in a language such as PHP or JavaScript. The dispatch process can be quite intricate, and is usually driven by a set of rules that are matched against the incoming URL.</p>
+<blockquote>
+<p>例如，当 Web 服务器从 Web 浏览器接收到传入的 HTTP 请求时，它将调用一个调度程序，该调度程序检查传入请求中的 URL 并选择一种特定的方法来处理该请求。某些 URL 可以通过返回磁盘上文件的内容来处理。其他人则可以通过调用诸如 PHP 或 JavaScript 之类的语言的过程来处理。分发过程可能非常复杂，通常由与传入 URL 匹配的一组规则来驱动。</p>
+</blockquote>
+<p>It is fine for several methods to have the same signature as long as each of them provides useful and distinct functionality. The methods invoked by a dispatcher have this property. Another example is interfaces with multiple implementations, such as disk drivers in an operating system. Each driver provides support for a different kind of disk, but they all have the same interface. When several methods provide different implementations of the same interface, it reduces cognitive load. Once you have worked with one of these methods, it’s easier to work with the others, since you don’t need to learn a new interface. Methods like this are usually in the same layer and they don’t invoke each other.</p>
+<blockquote>
+<p>只要每种方法都提供有用且独特的功能，几种方法都应具有相同的签名。调度程序调用的方法具有此属性。另一个示例是具有多种实现方式的接口，例如操作系统中的磁盘驱动程序。每个驱动程序都支持不同类型的磁盘，但是它们都有相同的接口。当几种方法提供同一接口的不同实现时，它将减少认知负担。使用其中一种方法后，与其他方法一起使用会更容易，因为您无需学习新的界面。像这样的方法通常位于同一层，并且它们不会相互调用。</p>
+</blockquote>
+<h2 id="7-3-Decorators-装饰器"><a href="#7-3-Decorators-装饰器" class="headerlink" title="7.3 Decorators 装饰器"></a>7.3 Decorators 装饰器</h2><p>The decorator design pattern (also known as a “wrapper”) is one that encourages API duplication across layers. A decorator object takes an existing object and extends its functionality; it provides an API similar or identical to the underlying object, and its methods invoke the methods of the underlying object. In the Java I&#x2F;O example from Chapter 4, the BufferedInputStream class is a decorator: given an InputStream object, it provides the same API but introduces buffering. For example, when its read method is invoked to read a single character, it invokes read on the underlying InputStream to read a much larger block, and saves the extra characters to satisfy future read calls. Another example occurs in windowing systems: a Window class implements a simple form of window that is not scrollable, and a ScrollableWindow class decorates the Window class by adding horizontal and vertical scrollbars.</p>
+<blockquote>
+<p>装饰器设计模式(也称为“包装器”)是一种鼓励跨层复制 API 的模式。装饰对象接受现有对象并扩展其功能;它提供一个与底层对象相似或相同的 API，它的方法调用底层对象的方法。在第 4 章的 Java I&#x2F;O 示例中，BufferedInputStream 类是一个装饰器:给定一个 InputStream 对象，它提供了相同的 API，但是引入了缓冲。例如，当它的 read 方法被调用来读取单个字符时，它会调用底层 InputStream 上的 read 来读取更大的块，并保存额外的字符来满足未来的 read 调用。另一个例子出现在窗口系统中:Window 类实现了一个不能滚动的窗口的简单形式，而 ScrollableWindow 类通过添加水平和垂直滚动条来装饰窗口类。</p>
+</blockquote>
+<p>The motivation for decorators is to separate special-purpose extensions of a class from a more generic core. However, decorator classes tend to be shallow: they introduce a large amount of boilerplate for a small amount of new functionality. Decorator classes often contain many pass-through methods. It’s easy to overuse the decorator pattern, creating a new class for every small new feature. This results in an explosion of shallow classes, such as the Java I&#x2F;O example.</p>
+<blockquote>
+<p>装饰器的动机是将类的专用扩展与更通用的核心分开。但是，装饰器类往往很浅：它们引入了大量的样板，以实现少量的新功能。装饰器类通常包含许多传递方法。过度使用装饰器模式很容易，为每个小的新功能创建一个新类。这导致诸如 Java I&#x2F;O 示例之类的浅层类激增。</p>
+</blockquote>
+<p>Before creating a decorator class, consider alternatives such as the following:</p>
+<blockquote>
+<p>创建装饰器类之前，请考虑以下替代方法：</p>
+</blockquote>
+<ul>
+<li>Could you add the new functionality directly to the underlying class, rather than creating a decorator class? This makes sense if the new functionality is relatively general-purpose, or if it is logically related to the underlying class, or if most uses of the underlying class will also use the new functionality. For example, virtually everyone who creates a Java InputStream will also create a BufferedInputStream, and buffering is a natural part of I&#x2F;O, so these classes should have been combined.</li>
+<li>If the new functionality is specialized for a particular use case, would it make sense to merge it with the use case, rather than creating a separate class?</li>
+<li>Could you merge the new functionality with an existing decorator, rather than creating a new decorator? This would result in a single deeper decorator class rather than multiple shallow ones.</li>
+<li>Finally, ask yourself whether the new functionality really needs to wrap the existing functionality: could you implement it as a stand-alone class that is independent of the base class? In the windowing example, the scrollbars could probably be implemented separately from the main window, without wrapping all of its existing functionality.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>您能否将新功能直接添加到基础类，而不是创建装饰器类？如果新功能是相对通用的，或者在逻辑上与基础类相关，或者如果基础类的大多数使用也将使用新功能，则这是有意义的。例如，几乎每个创建 Java InputStream 的人都会创建一个 BufferedInputStream，并且缓冲是 I&#x2F;O 的自然组成部分，因此应该合并这些类。</li>
+<li>如果新功能专用于特定用例，将其与用例合并而不是创建单独的类是否有意义？</li>
+<li>您可以将新功能与现有的装饰器合并，而不是创建新的装饰器吗？这将导致一个更深的装饰器类，而不是多个浅的装饰器类。</li>
+<li>最后，问问自己新功能是否真的需要包装现有功能：是否可以将其实现为独立于基类的独立类？在窗口示例中，滚动条可能与主窗口分开实现，而无需包装其所有现有功能。</li>
+</ul>
+</blockquote>
+<p>Sometimes decorators make sense, but there is usually a better alternative.</p>
+<blockquote>
+<p>有时装饰者很有意义，但通常有更好的选择。</p>
+</blockquote>
+<h2 id="7-4-Interface-versus-implementation-接口与实现"><a href="#7-4-Interface-versus-implementation-接口与实现" class="headerlink" title="7.4 Interface versus implementation 接口与实现"></a>7.4 Interface versus implementation 接口与实现</h2><p>Another application of the “different layer, different abstraction” rule is that the interface of a class should normally be different from its implementation: the representations used internally should be different from the abstractions that appear in the interface. If the two have similar abstractions, then the class probably isn’t very deep. For example, in the text editor project discussed in Chapter 6, most of the teams implemented the text module in terms of lines of text, with each line stored separately. Some of the teams also designed the APIs for the text class around lines, with methods such as getLine and putLine. However, this made the text class shallow and awkward to use. In the higher-level user interface code, it’s common to insert text in the middle of a line (e.g., when the user is typing) or to delete a range of text that spans lines. With a line-oriented API for the text class, callers were forced to split and join lines to implement the user-interface operations. This code was nontrivial and it was duplicated and scattered across the implementation of the user interface.</p>
+<blockquote>
+<p>“不同层，不同抽象”规则的另一个应用是，类的接口通常应与其实现不同：内部使用的表示形式应与接口中出现的抽象形式不同。如果两者具有相似的抽象，则该类可能不是很深。例如，在第 6 章讨论的文本编辑器项目中，大多数团队都以文本行的形式实现了文本模块，每行分别存储。一些团队还使用 getLine 和 putLine 之类的方法围绕行设计了文本类的 API。但是，这使文本类使用起来较浅且笨拙。在较高级别的用户界面代码中，通常在行中间插入文本（例如，当用户键入内容时）或删除跨行的文本范围。通过用于文本类的面向行的 API，调用者被迫拆分和合并行以实现用户界面操作。这段代码很简单，并且在用户界面的实现中被复制和散布。</p>
+</blockquote>
+<p>The text classes were much easier to use when they provided a character-oriented interface, such as an insert method that inserts an arbitrary string of text (which may include newlines) at an arbitrary position in the text and a delete method that deletes the text between two arbitrary positions in the text. Internally, the text was still represented in terms of lines. A character-oriented interface encapsulates the complexity of line splitting and joining inside the text class, which makes the text class deeper and simplifies higher level code that uses the class. With this approach, the text API is quite different from the line-oriented storage mechanism; the difference represents valuable functionality provided by the class.</p>
+<blockquote>
+<p>文本类提供面向字符的接口时，使用起来要容易得多，例如，insert 方法可在文本的任意位置插入任意文本字符串（可能包括换行符），而 delete 方法则删除文本在文本中的两个任意位置之间。在内部，文本仍以行表示。面向字符的接口封装了文本类内部的行拆分和连接的复杂性，这使文本类更深，并简化了使用该类的高级代码。通过这种方法，文本 API 与面向行的存储机制大不相同。差异表示该类提供的有价值的功能。</p>
+</blockquote>
+<h2 id="7-5-Pass-through-variables-传递变量"><a href="#7-5-Pass-through-variables-传递变量" class="headerlink" title="7.5 Pass-through variables 传递变量"></a>7.5 Pass-through variables 传递变量</h2><p>Another form of API duplication across layers is a pass-through variable, which is a variable that is passed down through a long chain of methods. Figure 7.2(a) shows an example from a datacenter service. A command-line argument describes certificates to use for secure communication. This information is only needed by a low-level method m3, which calls a library method to open a socket, but it is passed down through all the methods on the path between main and m3. The cert variable appears in the signature of each of the intermediate methods.</p>
+<blockquote>
+<p>跨层 API 复制的另一种形式是传递变量，该变量是通过一长串方法向下传递的变量。图 7.2（a）显示了数据中心服务的示例。命令行参数描述用于安全通信的证书。只有底层方法 m3 才需要此信息，该方法调用一个库方法来打开套接字，但是该信息会通过 main 和 m3 之间路径上的所有方法向下传递。cert 变量出现在每个中间方法的签名中。</p>
+</blockquote>
+<p>Pass-through variables add complexity because they force all of the intermediate methods to be aware of their existence, even though the methods have no use for the variables. Furthermore, if a new variable comes into existence (for example, a system is initially built without support for certificates, but you later decide to add that support), you may have to modify a large number of interfaces and methods to pass the variable through all of the relevant paths.</p>
+<blockquote>
+<p>传递变量增加了复杂性，因为它们强制所有中间方法知道它们的存在，即使这些方法对变量没有用处。此外，如果存在一个新变量（例如，最初构建的系统不支持证书，但是您后来决定添加该支持），则可能必须修改大量的接口和方法才能将变量传递给所有相关路径。</p>
+</blockquote>
+<p>Eliminating pass-through variables can be challenging. One approach is to see if there is already an object shared between the topmost and bottommost methods. In the datacenter service example of Figure 7.2, perhaps there is an object containing other information about network communication, which is available to both main and m3. If so, main can store the certificate information in that object, so it needn’t be passed through all of the intervening methods on the path to m3 (see Figure 7.2(b)). However, if there is such an object, then it may itself be a pass-through variable (how else does m3 get access to it?).</p>
+<blockquote>
+<p>消除传递变量可能具有挑战性。一种方法是查看最顶层和最底层方法之间是否已共享对象。在图 7.2 的数据中心服务示例中，也许存在一个对象，其中包含有关网络通信的其他信息，这对于 main 和 m3 都是可用的。如果是这样，main 可以将证书信息存储在该对象中，因此不必通过通往 m3 的路径上的所有干预方法来传递证书（请参见图 7.2（b））。但是，如果存在这样的对象，则它本身可能是传递变量（m3 还将如何访问它？）。</p>
+</blockquote>
+<p>Another approach is to store the information in a global variable, as in Figure 7.2(c). This avoids the need to pass the information from method to method, but global variables almost always create other problems. For example, global variables make it impossible to create two independent instances of the same system in the same process, since accesses to the global variables will conflict. It may seem unlikely that you would need multiple instances in production, but they are often useful in testing.</p>
+<blockquote>
+<p>另一种方法是将信息存储在全局变量中，如图 7.2（c）所示。这避免了将信息从一个方法传递到另一个方法的需要，但是全局变量几乎总是会产生其他问题。例如，全局变量使得不可能在同一过程中创建同一系统的两个独立实例，因为对全局变量的访问会发生冲突。在生产中似乎不太可能需要多个实例，但是它们通常在测试中很有用。</p>
+</blockquote>
+<p>The solution I use most often is to introduce a context object as in Figure 7.2(d). A context stores all of the application’s global state (anything that would otherwise be a pass-through variable or global variable). Most applications have multiple variables in their global state, representing things such as configuration options, shared subsystems, and performance counters. There is one context object per instance of the system. The context allows multiple instances of the system to coexist in a single process, each with its own context.</p>
+<blockquote>
+<p>我最常使用的解决方案是引入一个上下文对象，如图 7.2（d）所示。上下文存储应用程序的所有全局状态（否则将是传递变量或全局变量的任何状态）。大多数应用程序在其全局状态下具有多个变量，这些变量表示诸如配置选项，共享子系统和性能计数器之类的内容。每个系统实例只有一个上下文对象。上下文允许系统的多个实例在单个进程中共存，每个实例都有自己的上下文。</p>
+</blockquote>
+<p>Unfortunately, the context will probably be needed in many places, so it can potentially become a pass-through variable. To reduce the number of methods that must be aware of it, a reference to the context can be saved in most of the system’s major objects. In the example of Figure 7.2(d), the class containing m3 stores a reference to the context as an instance variable in its objects. When a new object is created, the creating method retrieves the context reference from its object and passes it to the constructor for the new object. With this approach, the context is available everywhere, but it only appears as an explicit argument in constructors.</p>
+<blockquote>
+<p>不幸的是，在许多地方可能都需要上下文，因此它有可能成为传递变量。为了减少必须意识到的方法数量，可以将上下文的引用保存在系统的大多数主要对象中。在图 7.2（d）的示例中，包含 m3 的类将对上下文的引用作为实例变量存储在其对象中。创建新对象时，创建方法将从其对象中检索上下文引用，并将其传递给新对象的构造函数。使用这种方法，上下文随处可见，但在构造函数中仅作为显式参数出现。</p>
+</blockquote>
+<p><img src="/../../img/figures/00016.gif"></p>
+<p>Figure 7.2: Possible techniques for dealing with a pass-through variable. In (a), cert is passed through methods m1 and m2 even though they don’t use it. In (b), main and m3 have shared access to an object, so the variable can be stored there instead of passing it through m1 and m2. In (c), cert is stored as a global variable. In (d), cert is stored in a context object along with other system-wide information, such as a timeout value and performance counters; a reference to the context is stored in all objects whose methods need access to it.</p>
+<blockquote>
+<p>图 7.2：处理传递变量的可能技术。在（a）中，证书通过方法 m1 和 m2 传递，即使它们不使用它也是如此。在（b）中，main 和 m3 具有对一个对象的共享访问权，因此可以将变量存储在此处，而不用将其传递给 m1 和 m2。在（c）中，cert 存储为全局变量。在（d）中，证书与其他系统范围的信息（例如超时值和性能计数器）一起存储在上下文对象中；对上下文的引用存储在其方法需要访问它的所有对象中。</p>
+</blockquote>
+<p>The context object unifies the handling of all system-global information and eliminates the need for pass-through variables. If a new variable needs to be added, it can be added to the context object; no existing code is affected except for the constructor and destructor for the context. The context makes it easy to identify and manage the global state of the system, since it is all stored in one place. The context is also convenient for testing: test code can change the global configuration of the application by modifying fields in the context. It would be much more difficult to implement such changes if the system used pass-through variables.</p>
+<blockquote>
+<p>上下文对象统一了所有系统全局信息的处理，并且不需要传递变量。如果需要添加新变量，则可以将其添加到上下文对象；除了上下文的构造函数和析构函数外，现有代码均不受影响。由于上下文全部存储在一个位置，因此上下文可以轻松识别和管理系统的全局状态。上下文也便于测试：测试代码可以通过修改上下文中的字段来更改应用程序的全局配置。如果系统使用传递变量，则实施此类更改将更加困难。</p>
+</blockquote>
+<p>Contexts are far from an ideal solution. The variables stored in a context have most of the disadvantages of global variables; for example, it may not be obvious why a particular variable is present, or where it is used. Without discipline, a context can turn into a huge grab-bag of data that creates nonobvious dependencies throughout the system. Contexts may also create thread-safety issues; the best way to avoid problems is for variables in a context to be immutable. Unfortunately, I haven’t found a better solution than contexts.</p>
+<blockquote>
+<p>上下文远非理想的解决方案。存储在上下文中的变量具有全局变量的大多数缺点。例如，为什么存在特定变量或在何处使用特定变量可能并不明显。没有纪律，上下文会变成巨大的数据抓包，从而在整个系统中创建不明显的依赖关系。上下文也可能产生线程安全问题；避免问题的最佳方法是使上下文中的变量不可变。不幸的是，我没有找到比上下文更好的解决方案。</p>
+</blockquote>
+<h2 id="7-6-Conclusion-结论"><a href="#7-6-Conclusion-结论" class="headerlink" title="7.6 Conclusion 结论"></a>7.6 Conclusion 结论</h2><p>Each piece of design infrastructure added to a system, such as an interface, argument, function, class, or definition, adds complexity, since developers must learn about this element. In order for an element to provide a net gain against complexity, it must eliminate some complexity that would be present in the absence of the design element. Otherwise, you are better off implementing the system without that particular element. For example, a class can reduce complexity by encapsulating functionality so that users of the class needn’t be aware of it.</p>
+<blockquote>
+<p>界面，参数，函数，类或定义之类的添加到系统中的每个设计基础架构都会增加复杂性，因为开发人员必须了解该元素。为了使元素能够提供相对于复杂性的净收益，它必须消除在没有设计元素的情况下会出现的一些复杂性。否则，最好不要使用该特定元素来实施系统。例如，一个类可以通过封装功能来降低复杂性，以使该类的用户无需意识到这一点。</p>
+</blockquote>
+<p>The “different layer, different abstraction” rule is just an application of this idea: if different layers have the same abstraction, such as pass-through methods or decorators, then there’s a good chance that they haven’t provided enough benefit to compensate for the additional infrastructure they represent. Similarly, pass-through arguments require each of several methods to be aware of their existence (which adds to complexity) without contributing additional functionality.</p>
+<blockquote>
+<p>“不同的层，不同的抽象”规则只是此思想的一种应用：如果不同的层具有相同的抽象，例如传递方法或装饰器，则很有可能它们没有提供足够的利益来补偿它们代表的其他基础结构。类似地，传递参数要求几种方法中的每一种都知道它们的存在（这增加了复杂性），而又不提供其他功能。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch7-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B1%82%EF%BC%8C%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%BD%E8%B1%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件设计的哲学-ch6-通用模块更深入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch6-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%B7%B1%E5%85%A5/">软件设计的哲学 - ch6</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch6-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%B7%B1%E5%85%A5/" class="archive-article-date">
+  	<time datetime="2021-02-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-6-章-通用模块更深入"><a href="#第-6-章-通用模块更深入" class="headerlink" title="第 6 章 通用模块更深入"></a>第 6 章 通用模块更深入</h1><blockquote>
+<p>Chapter 6 General-Purpose Modules are Deeper</p>
+</blockquote>
+<p>One of the most common decisions that you will face when designing a new module is whether to implement it in a general-purpose or special-purpose fashion. Some might argue that you should take a general-purpose approach, in which you implement a mechanism that can be used to address a broad range of problems, not just the ones that are important today. In this case, the new mechanism may find unanticipated uses in the future, thereby saving time. The general-purpose approach seems consistent with the investment mindset discussed in Chapter 3, where you spend a bit more time up front to save time later on.</p>
+<blockquote>
+<p>设计新模块时，您将面临的最普遍的决定之一就是以通用还是专用方式实现它。有人可能会争辩说，您应该采用通用方法，在这种方法中，您将实现一种可用于解决广泛问题的机制，而不仅是当今重要的问题。在这种情况下，新机制可能会在将来发现意外用途，从而节省时间。通用方法似乎与第 3 章中讨论的投资思路一致，在这里您花了更多时间在前面，以节省以后的时间。</p>
+</blockquote>
+<p>On the other hand, we know that it’s hard to predict the future needs of a software system, so a general-purpose solution might include facilities that are never actually needed. Furthermore, if you implement something that is too general-purpose, it might not do a good job of solving the particular problem you have today. As a result, some might argue that it’s better to focus on today’s needs, building just what you know you need, and specializing it for the way you plan to use it today. If you take the special-purpose approach and discover additional uses later, you can always refactor it to make it general-purpose. The special-purpose approach seems consistent with an incremental approach to software development.</p>
+<blockquote>
+<p>另一方面，我们知道很难预测软件系统的未来需求，因此通用解决方案可能包含从未真正需要的功能。此外，如果您实现的东西过于通用，那么可能无法很好地解决您今天遇到的特定问题。结果，有些人可能会争辩说，最好只关注当今的需求，构建您所知道的需求，并针对您今天打算使用的方式进行专门化处理。如果您采用特殊用途的方法并在以后发现更多用途，则始终可以对其进行重构以使其通用。专用方法似乎与软件开发的增量方法一致。</p>
+</blockquote>
+<h2 id="6-1-Make-classes-somewhat-general-purpose-使类变得通用"><a href="#6-1-Make-classes-somewhat-general-purpose-使类变得通用" class="headerlink" title="6.1 Make classes somewhat general-purpose 使类变得通用"></a>6.1 Make classes somewhat general-purpose 使类变得通用</h2><p>In my experience, the sweet spot is to implement new modules in a somewhat general-purpose fashion. The phrase “somewhat general-purpose” means that the module’s functionality should reflect your current needs, but its interface should not. Instead, the interface should be general enough to support multiple uses. The interface should be easy to use for today’s needs without being tied specifically to them. The word “somewhat” is important: don’t get carried away and build something so general-purpose that it is difficult to use for your current needs.</p>
+<blockquote>
+<p>以我的经验，最有效的方法是以某种通用的方式实现新模块。短语“有点通用”表示该模块的功能应反映您当前的需求，但其接口则不应。相反，该接口应该足够通用以支持多种用途。该界面应易于使用，以满足当今的需求，而不必专门与它们联系在一起。“有点”这个词很重要：不要被带走并建造通用的东西，以致于很难满足当前的需求。</p>
+</blockquote>
+<p>The most important (and perhaps surprising) benefit of the general-purpose approach is that it results in simpler and deeper interfaces than a special-purpose approach. The general-purpose approach can also save you time in the future, if you reuse the class for other purposes. However, even if the module is only used for its original purpose, the general-purpose approach is still better because of its simplicity.</p>
+<blockquote>
+<p>通用方法最重要的（也许是令人惊讶的）好处是，与专用方法相比，它导致更简单，更深入的界面。如果您将该类用于其他目的，则通用方法还可以节省将来的时间。但是，即使该模块仅用于其原始用途，由于其简单性，通用方法仍然更好。</p>
+</blockquote>
+<h2 id="6-2-Example-storing-text-for-an-editor-示例：为编辑器存储文本"><a href="#6-2-Example-storing-text-for-an-editor-示例：为编辑器存储文本" class="headerlink" title="6.2 Example: storing text for an editor 示例：为编辑器存储文本"></a>6.2 Example: storing text for an editor 示例：为编辑器存储文本</h2><p>Let’s consider an example from a software design class in which students were asked to build simple GUI text editors. The editors had to display a file and allow users to point, click, and type to edit the file. The editors had to support multiple simultaneous views of the same file in different windows; they also had to support multi-level undo and redo for modifications to the file.</p>
+<blockquote>
+<p>让我们考虑一个软件设计课程的示例，其中要求学生构建简单的 GUI 文本编辑器。编辑器必须显示一个文件，并允许用户指向，单击并键入以编辑该文件。编辑者必须在不同的窗口中支持同一文件的多个同时视图。他们还必须支持多级撤消和重做以修改文件。</p>
+</blockquote>
+<p>Each of the student projects included a class that managed the underlying text of the file. The text classes typically provided methods for loading a file into memory, reading and modifying the text of the file, and writing the modified text back to a file.</p>
+<blockquote>
+<p>每个学生项目都包括一个管理文件的基础文本的类。文本类通常提供以下方法：将文件加载到内存，读取和修改文件的文本以及将修改后的文本写回到文件。</p>
+</blockquote>
+<p>Many of the student teams implemented special-purpose APIs for the text class. They knew that the class was going to be used in an interactive editor, so they thought about the features that the editor had to provide and tailored the API of the text class to those specific features. For example, if a user of the editor typed the backspace key, the editor deleted the character immediately to the left of the cursor; if the user typed the delete key, the editor deleted the character immediately to the right of the cursor. Knowing this, some of the teams created one method in the text class to support each of these specific features:</p>
+<blockquote>
+<p>许多学生团队为文本课实现了专用的 API。他们知道该类将在交互式编辑器中使用，因此他们考虑了编辑器必须提供的功能，并针对这些特定功能定制了文本类的 API。例如，如果编辑者的用户键入了退格键，则编辑者会立即删除光标左侧的字符；如果用户键入删除键，则编辑器立即删除光标右侧的字符。知道这一点后，一些团队在文本类中创建了一个方法来支持以下每个特定功能：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">backspace</span><span class="params">(Cursor cursor)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(Cursor cursor)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Each of these methods takes the cursor position as its argument; a special type Cursor represents this position. The editor also had to support a selection that could be copied or deleted. The students handled this by defining a Selection class and passing an object of this class to the text class during deletions:</p>
+<blockquote>
+<p>这些方法中的每一个都以光标位置作为参数。特殊类型的光标表示此位置。编辑器还必须支持可以复制或删除的选择。学生通过定义选择类并在删除过程中将该类的对象传递给文本类来解决此问题：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">deleteSelection</span><span class="params">(Selection selection)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>The students probably thought that it would be easier to implement the user interface if the methods of the text class corresponded to the features visible to users. In reality, however, this specialization provided little benefit for the user interface code, and it created a high cognitive load for developers working on either the user interface or the text class. The text class ended up with a large number of shallow methods, each of which was only suitable for one user interface operation. Many of the methods, such as delete, were only invoked in a single place. As a result, a developer working on the user interface had to learn about a large number of methods for the text class.</p>
+<blockquote>
+<p>学生们可能认为，如果文本类的方法与用户可见的功能相对应，则将更易于实现用户界面。但是，实际上，这种专业化对用户界面代码几乎没有好处，并且为使用用户界面或文本类的开发人员带来了很高的认知负担。文本类以大量浅层方法结束，每种浅层方法仅适用于一个用户界面操作。许多方法（例如 delete）仅在单个位置调用。结果，在用户界面上工作的开发人员必须学习大量有关文本类的方法。</p>
+</blockquote>
+<p>This approach created information leakage between the user interface and the text class. Abstractions related to the user interface, such as the selection or the backspace key, were reflected in the text class; this increased the cognitive load for developers working on the text class. Each new user interface operation required a new method to be defined in the text class, so a developer working on the user interface was likely to end up working on the text class as well. One of the goals in class design is to allow each class to be developed independently, but the specialized approach tied the user interface and text classes together.</p>
+<blockquote>
+<p>这种方法在用户界面和文本类之间造成了信息泄漏。与用户界面有关的抽象（例如选择或退格键）反映在文本类中；这增加了从事文本课的开发人员的认知负担。每个新的用户界面操作都需要在文本类中定义一个新方法，因此使用该用户界面的开发人员也可能最终也要使用该文本类。类设计的目标之一是允许每个类独立开发，但是专用方法将用户界面和文本类联系在一起。</p>
+</blockquote>
+<h2 id="6-3-A-more-general-purpose-API-更通用的-API"><a href="#6-3-A-more-general-purpose-API-更通用的-API" class="headerlink" title="6.3 A more general-purpose API 更通用的 API"></a>6.3 A more general-purpose API 更通用的 API</h2><p>A better approach is to make the text class more generic. Its API should be defined only in terms of basic text features, without reflecting the higher-level operations that will be implemented with it. For example, only two methods are needed for modifying text:</p>
+<blockquote>
+<p>更好的方法是使文本类更通用。仅应根据基本文本功能定义其 API，而不应反映将用其实现的更高级别的操作。例如，只需两种方法即可修改文本：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(Position position, String newText)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(Position start, Position end)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>The first method inserts an arbitrary string at an arbitrary position within the text, and the second method deletes all of the characters at positions greater than or equal to start but less than end. This API also uses a more generic type Position instead of Cursor, which reflects a specific user interface. The text class should also provide general-purpose facilities for manipulating positions within the text, such as the following:</p>
+<blockquote>
+<p>第一种方法在文本内的任意位置插入任意字符串，第二种方法删除大于或等于开始但小于结束的位置处的所有字符。此 API 还使用了更通用的 Position 类型来代替 Cursor，它反映了特定的用户界面。文本类还应该提供用于操纵文本中位置的通用工具，例如：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Position <span class="title function_">changePosition</span><span class="params">(Position position, <span class="type">int</span> numChars)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>This method returns a new position that is a given number of characters away from a given position. If the numChars argument is positive, the new position is later in the file than position; if numChars is negative, the new position is before position. The method automatically skips to the next or previous line when necessary. With these methods, the delete key can be implemented with the following code (assuming the cursor variable holds the current cursor position):</p>
+<blockquote>
+<p>此方法返回一个新位置，该位置与给定位置相距给定字符数。如果 numChars 参数为正，则新位置在文件中比位置晚；如果 numChars 为负，则新位置在位置之前。必要时，该方法会自动跳到下一行或上一行。使用这些方法，可以使用以下代码来实现删除键（假定 cursor 变量保留当前光标的位置）：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text.delete(cursor, text.changePosition(cursor, <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+
+<p>Similarly, the backspace key can be implemented as follows:</p>
+<blockquote>
+<p>同样，可以按以下方式实现退格键：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text.delete(text.changePosition(cursor, -<span class="number">1</span>), cursor);</span><br></pre></td></tr></table></figure>
+
+<p>With the general-purpose text API, the code to implement user interface functions such as delete and backspace is a bit longer than with the original approach using a specialized text API. However, the new code is more obvious than the old code. A developer working in the user interface module probably cares about which characters are deleted by the backspace key. With the new code, this is obvious. With the old code, the developer had to go to the text class and read the documentation and&#x2F;or code of the backspace method to verify the behavior. Furthermore, the general-purpose approach has less code overall than the specialized approach, since it replaces a large number of special-purpose methods in the text class with a smaller number of general-purpose ones.</p>
+<blockquote>
+<p>使用通用文本 API，实现用户界面功能（如删除和退格）的代码比使用专用文本 API 的原始方法要长一些。但是，新代码比旧代码更明显。在用户界面模块中工作的开发人员可能会关心由 Backspace 键删除哪些字符。使用新代码，这是显而易见的。使用旧代码，开发人员必须转到文本类并阅读退格方法的文档和&#x2F;或代码以验证行为。此外，通用方法总体上比专用方法具有更少的代码，因为它用较少数量的通用方法代替了文本类中的大量专用方法。</p>
+</blockquote>
+<p>A text class implemented with the general-purpose interface could potentially be used for other purposes besides an interactive editor. As one example, suppose you were building an application that modified a specified file by replacing all occurrences of a particular string with another string. Methods from the specialized text class, such as backspace and delete, would have little value for this application. However, the general-purpose text class would already have most of the functionality needed for the new application. All that is missing is a method to search for the next occurrence of a given string, such as this:</p>
+<blockquote>
+<p>使用通用接口实现的文本类除交互式编辑器外，还可以用于其他目的。作为一个示例，假设您正在构建一个应用程序，该应用程序通过将所有出现的特定字符串替换为另一个字符串来修改指定文件。专用文本类中的方法（例如，退格键和 Delete）对于此应用程序几乎没有价值。但是，通用文本类已经具有新应用程序所需的大多数功能。缺少的只是一种搜索给定字符串的下一个匹配项的方法，例如：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Position <span class="title function_">findNext</span><span class="params">(Position start, String string)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Of course, an interactive text editor is likely to have a mechanism for searching and replacing, in which case the text class would already include this method.</p>
+<blockquote>
+<p>当然，交互式文本编辑器可能具有搜索和替换的机制，在这种情况下，文本类将已经包含此方法。</p>
+</blockquote>
+<h2 id="6-4-Generality-leads-to-better-information-hiding-通用性可以更好地隐藏信息"><a href="#6-4-Generality-leads-to-better-information-hiding-通用性可以更好地隐藏信息" class="headerlink" title="6.4 Generality leads to better information hiding 通用性可以更好地隐藏信息"></a>6.4 Generality leads to better information hiding 通用性可以更好地隐藏信息</h2><p>The general-purpose approach provides a cleaner separation between the text and user interface classes, which results in better information hiding. The text class need not be aware of specifics of the user interface, such as how the backspace key is handled; these details are now encapsulated in the user interface class. New user interface features can be added without creating new supporting functions in the text class. The general-purpose interface also reduces cognitive load: a developer working on the user interface only needs to learn a few simple methods, which can be reused for a variety of purposes.</p>
+<blockquote>
+<p>通用方法在文本和用户界面类之间提供了更清晰的分隔，从而可以更好地隐藏信息。文本类不需要知道用户界面的详细信息，例如如何处理退格键。这些细节现在封装在用户界面类中。可以添加新的用户界面功能，而无需在文本类中创建新的支持功能。通用界面还减轻了认知负担：使用用户界面的开发人员只需要学习一些简单的方法，就可以将其重复用于各种目的。</p>
+</blockquote>
+<p>The backspace method in the original version of the text class was a false abstraction. It purported to hide information about which characters are deleted, but the user interface module really needs to know this; user interface developers are likely to read the code of the backspace method in order to confirm its precise behavior. Putting the method in the text class just makes it harder for user interface developers to get the information they need. One of the most important elements of software design is determining who needs to know what, and when. When the details are important, it is better to make them explicit and as obvious as possible, such as the revised implementation of the backspace operation. Hiding this information behind an interface just creates obscurity.</p>
+<blockquote>
+<p>文本类原始版本中的 backspace 方法是错误的抽象。它旨在隐藏有关删除哪些字符的信息，但是用户界面模块确实需要知道这一点。用户界面开发人员可能会阅读退格方法的代码，以确认其精确的行为。将方法放在文本类中只会使用户界面开发人员更难获得所需的信息。软件设计最重要的元素之一就是确定谁需要知道什么以及何时知道。当细节很重要时，最好使它们明确且尽可能明显，例如修订的 Backspace 操作实现。将这些信息隐藏在界面后面只会产生晦涩感。</p>
+</blockquote>
+<h2 id="6-5-Questions-to-ask-yourself-问自己的问题"><a href="#6-5-Questions-to-ask-yourself-问自己的问题" class="headerlink" title="6.5 Questions to ask yourself 问自己的问题"></a>6.5 Questions to ask yourself 问自己的问题</h2><p>It is easier to recognize a clean general-purpose class design than it is to create one. Here are some questions you can ask yourself, which will help you to find the right balance between general-purpose and special-purpose for an interface.</p>
+<blockquote>
+<p>识别干净的通用类设计要比创建一个简单。您可以问自己一些问题，这将帮助您在接口的通用和专用之间找到适当的平衡。</p>
+</blockquote>
+<p>What is the simplest interface that will cover all my current needs? If you reduce the number of methods in an API without reducing its overall capabilities, then you are probably creating more general-purpose methods. The special-purpose text API had at least three methods for deleting text: backspace, delete, and deleteSelection. The more general-purpose API had only one method for deleting text, which served all three purposes. Reducing the number of methods makes sense only as long as the API for each individual method stays simple; if you have to introduce lots of additional arguments in order to reduce the number of methods, then you may not really be simplifying things.</p>
+<blockquote>
+<p>满足我当前所有需求的最简单的界面是什么？如果减少 API 中的方法数量而不降低其整体功能，则可能正在创建更多通用的方法。专用文本 API 至少具有三种删除文本的方法：退格，删除和 deleteSelection。通用性更强的 API 只有一种删除文本的方法，可同时满足所有三个目的。仅在每种方法的 API 保持简单的前提下，减少方法的数量才有意义。如果您必须引入许多其他参数以减少方法数量，那么您可能并没有真正简化事情。</p>
+</blockquote>
+<p>In how many situations will this method be used? If a method is designed for one particular use, such as the backspace method, that is a red flag that it may be too special-purpose. See if you can replace several special-purpose methods with a single general-purpose method.</p>
+<blockquote>
+<p>在多少情况下会使用此方法？如果一种方法是为特定用途而设计的，例如退格方法，那是一个危险信号，它可能太特殊了。看看是否可以用一个通用方法替换几种专用方法。</p>
+</blockquote>
+<p>Is this API easy to use for my current needs? This question can help you to determine when you have gone too far in making an API simple and general-purpose. If you have to write a lot of additional code to use a class for your current purpose, that’s a red flag that the interface doesn’t provide the right functionality. For example, one approach for the text class would be to design it around single-character operations: insert inserts a single character and delete deletes a single character. This API is both simple and general-purpose. However, it would not be particularly easy to use for a text editor: higher-level code would contain lots of loops to insert or delete ranges of characters. The single-character approach would also be inefficient for large operations. Thus it’s better for the text class to have built-in support for operations on ranges of characters.</p>
+<blockquote>
+<p>这个 API 是否易于使用以满足我当前的需求？这个问题可以帮助您确定何时使 API 变得简单而通用。如果您必须编写许多其他代码才能将类用于当前用途，那么这是一个危险信号，即该接口未提供正确的功能。例如，针对文本类的一种方法是围绕单字符操作进行设计：insert 插入单个字符，而 delete 删除单个字符。该 API 既简单又通用。但是，对于文本编辑器来说并不是特别容易使用：更高级别的代码将包含许多循环，用于插入或删除字符范围。单字符方法对于大型操作也将是低效的。</p>
+</blockquote>
+<h2 id="6-6-Conclusion-结论"><a href="#6-6-Conclusion-结论" class="headerlink" title="6.6 Conclusion 结论"></a>6.6 Conclusion 结论</h2><p>General-purpose interfaces have many advantages over special-purpose ones. They tend to be simpler, with fewer methods that are deeper. They also provide a cleaner separation between classes, whereas special-purpose interfaces tend to leak information between classes. Making your modules somewhat general-purpose is one of the best ways to reduce overall system complexity.</p>
+<blockquote>
+<p>通用接口比专用接口具有许多优点。它们往往更简单，使用的方法更少。它们还提供了类之间的更清晰的分隔，而专用接口则倾向于在类之间泄漏信息。使模块具有某种通用性是降低整体系统复杂性的最佳方法之一。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch6-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%B7%B1%E5%85%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/37/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/39/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/37/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/39/">Next &raquo;</a>
     </nav>
   
 
