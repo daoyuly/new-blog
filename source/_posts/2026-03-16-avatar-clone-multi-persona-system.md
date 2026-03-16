@@ -97,6 +97,16 @@ npm install
 npx tsx src/demo.ts
 ```
 
+### 配置 GLM-5
+
+设置环境变量：
+
+```bash
+export ZAI_API_KEY="your-api-key"
+```
+
+未配置 API Key 时，系统会使用模拟响应进行演示。
+
 ### 场景演示
 
 **场景 1: 周末聚餐讨论**
