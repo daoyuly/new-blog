@@ -1,6 +1,5 @@
 ---
 title: 分身 Bot - 多身份真人分身对话系统
-date: 2026-03-16 21:15:00
 tags:
   - AI Agent
   - 多智能体
@@ -9,6 +8,8 @@ tags:
 categories:
   - 项目
   - AI开发
+abbrlink: 52937
+date: 2026-03-16 21:15:00
 ---
 
 ## 项目背景

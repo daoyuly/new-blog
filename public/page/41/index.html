@@ -151,30 +151,30 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-android手机执行go程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学习2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/android%E6%89%8B%E6%9C%BA%E6%89%A7%E8%A1%8Cgo%E7%A8%8B%E5%BA%8F/">android手机执行go程序</a>
+      <a class="article-title" href="/2020/%E5%AD%A6%E4%B9%A02/">学习方法论（2）</a>
     </h1>
   
 
         
-        <a href="/2020/android%E6%89%8B%E6%9C%BA%E6%89%A7%E8%A1%8Cgo%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-03-02T15:23:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
+        <a href="/2020/%E5%AD%A6%E4%B9%A02/" class="archive-article-date">
+  	<time datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文通过在root的android手机中执行一个go程序，来简单记录这基本过程和过程中使用的工具。</p>
-        
-          <a class="article-more-a" href="/2020/android%E6%89%8B%E6%9C%BA%E6%89%A7%E8%A1%8Cgo%E7%A8%8B%E5%BA%8F/#more">more >></a>
-        
+        <p>flutter的动画抽象出了4个概念以及对应的抽象类，相当于用这4个构建了一个动画实现的模型和框架，各个类的职责分明，，易于理解和使用。这种抽象出基本模型，或者抽象类的实现方法是很多框架的基本思路,比如yaf，koa。它们用有限的类构建了一类运行方式。</p>
+<p>这可以总结成一种思维模型 行为构建，就是在高层次上去定义和构建业务运行的基本形式，分析和识别里面内在的行为和联系，要习惯用概念之间的联系去推理和分析。</p>
+<p>在平时阅读代码的过程中也要善于使用这种思维模型，总结和抽象本身没有这种抽象的代码。只有有过这种总结，才能真正吸收代码的思想和其中的技巧。</p>
+
       
 
       
@@ -182,22 +182,11 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">go android linux 刷机 root</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/android%E6%89%8B%E6%9C%BA%E6%89%A7%E8%A1%8Cgo%E7%A8%8B%E5%BA%8F/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/%E5%AD%A6%E4%B9%A02/">展开全文 >></a>
         </p>
       
 
@@ -227,72 +216,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-EventBus源码解析(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学习1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/">EventBus源码解析(一)</a>
+      <a class="article-title" href="/2020/%E5%AD%A6%E4%B9%A01/">学习方法论（1）</a>
     </h1>
   
 
         
-        <a href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-02-26T16:51:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
+        <a href="/2020/%E5%AD%A6%E4%B9%A01/" class="archive-article-date">
+  	<time datetime="2020-06-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p>描述一对多的依赖的关系，当一个对象的状态发生变化时，所有依赖它的对象都会获得通知：</p>
-<h3 id="事件总线"><a href="#事件总线" class="headerlink" title="事件总线"></a>事件总线</h3><p>消息或者事件流动的通道，不同的组件或者模块通过这个通道获取获取和发布消息；<br>事件总线涉及到4个角色：</p>
-<ul>
-<li>订阅者，subscriber，获取指定类型的消息或者事件</li>
-<li>发布者，publisher，触发或者发布消息或者事件</li>
-<li>事件 Event，订阅者和发布者之间沟通的信息载体，普通的java类，只包括数据</li>
-<li>事件总线，EventBus，管理订阅者和信息的存储，同时负责事件的分发和流转；<br>通过事件总线 组件之间相互解耦，发布者不知道具体订阅者的存在。</li>
-</ul>
-<p><img src="/../../img/eventbus-1.png" alt="架构图"></p>
-<p>以上是事件总线的总体思想，如果我们设计一款EventBus，该考虑哪些设计呢？我觉得以下几个问题是比较核心的设计：</p>
-<ul>
-<li>如何管理订阅者</li>
-<li>如何存储事件</li>
-<li>如何触发事件</li>
-<li>如何分发事件</li>
-</ul>
-<p>我看下EventBus是如何处理这些问题的（版本3.2.0），</p>
-<h3 id="如何管理订阅者"><a href="#如何管理订阅者" class="headerlink" title="如何管理订阅者"></a>如何管理订阅者</h3><p>EventvBus的订阅者通过注解实现注册，有个两个方式：</p>
-<ul>
-<li><p>运行时加载订阅<br>基本思路是在register时，通过反射获取当前class的中所有使用了Subscriber注解的方法，把他们加到事件集合里；<br>我们重点分析注解查找方法SubscriberMethodFinder类的findUsingReflection方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// subscriberClass 就是通过EventBus.register的对象的类</span></span><br><span class="line"><span class="keyword">private</span> List&lt;SubscriberMethod&gt; <span class="title function_">findUsingReflection</span><span class="params">(Class&lt;?&gt; subscriberClass)</span> &#123;</span><br><span class="line">    <span class="comment">// 使用prepareFindState，在查找中限制类的实例个数，应该是基于性能的考虑，因为findState是存在多个map用于临时存储订阅者，订阅者所在的类及事件之间的关系</span></span><br><span class="line">  <span class="comment">// findState就是递归过程中共享数据的变量</span></span><br><span class="line">    <span class="type">FindState</span> <span class="variable">findState</span> <span class="operator">=</span> prepareFindState();</span><br><span class="line"><span class="comment">// 初始化findState</span></span><br><span class="line">    findState.initForSubscriber(subscriberClass);</span><br><span class="line"><span class="comment">// 开始递归</span></span><br><span class="line">    <span class="keyword">while</span> (findState.clazz != <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="comment">// 该方法包括查找注解的核心逻辑</span></span><br><span class="line"><span class="comment">// 1 获取subscriberClass里的所有方法</span></span><br><span class="line"><span class="comment">// 2 遍历这些方法，check是否是public，是否包含1个参数</span></span><br><span class="line"><span class="comment">// 3 解析参数类型，解析方法名，存入findState对应的关系中</span></span><br><span class="line">        findUsingReflectionInSingleClass(findState);</span><br><span class="line"><span class="comment">// 查找父类</span></span><br><span class="line">        findState.moveToSuperclass();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//释放findState, 返回查找结果，SubscriberMethod列表</span></span><br><span class="line">    <span class="keyword">return</span> getMethodsAndRelease(findState);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个里面有一个技巧需要注意，就是控制findState个数，以及在递归中使用。</p>
-</li>
-<li><p>编译时通过SubscriberIndex加载订阅<br>使用如例:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Subscribe(threadMode = ThreadMode.MAIN)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onMessageEvent</span><span class="params">(MessageEvent event)</span> &#123;<span class="comment">/* Do something */</span>&#125;;</span><br></pre></td></tr></table></figure>
-<p>基本实现是思路：使用注解生成器EventBusAnnotationProcessor编译时生成Subscribe的注册类。所以注册的整个过程由2个阶段构成，编译时和运行时。编译时负责收集所有了订阅的类及其类内的回调，运行时执行这些注册，并触发对应的回调。</p>
-</li>
-<li><p>EventBusAnnotationProcessor 负责解析注解类，收集并验证所有使用过Subscribe的方法和方法所在的类，基于收集到方法和类，生成Subscribe的注册类的java文件。<br>EventBusAnnotationProcessor 继承自AbstractProcessor类，AbstractProcessor类负责插入式注解处理器的注解处理过程，很多框架都使用这个技术，以后我会单独研究学习和大家分享，<a target="_blank" rel="noopener" href="https://juejin.im/post/5d35b8846fb9a07efd474a5a">可以看这里简单了解</a>。整体上这个类可以获取编译时环境，及注解的类型，使用注册的类型和方法，注解里使用方法等等，通过这个类我们基本上在编译时获取注解相关的所有信息；<br>需要注意的一点是，如果需要指定文件名和报名，可以在build.gradle 里做如下的声明：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">javaCompileOptions &#123;</span><br><span class="line">    annotationProcessorOptions &#123;</span><br><span class="line">        includeCompileClasspath <span class="type">true</span></span><br><span class="line">        <span class="variable">arguments</span> <span class="operator">=</span> [eventBusIndex: <span class="string">&#x27;com.demo.EventBusIndex&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>AbstractProcessor有很多虚方法，最重要的是process，注解的处理主要通过这个方法处理。重点分析这个方法的处理流程：</p>
-</li>
-<li><p>这个方法有2个输入参数，annotations，指定注解类型的集合，roundEnvironment，用于查询使用指定注解类型的类型的处理器；</p>
-</li>
-<li><p>获取build.gradle中指定的包名，该包名是通过注解生成类的包名；</p>
-</li>
-<li><p>收集使用过指定注解的所有类型，并把这些数据组织成ListMap&lt;TypeElement, ExecutableElement&gt; list的数据；</p>
-</li>
-<li><p>依据上一步的list，验证注解类型的可见性，public为可见，private和protect，检查回调方法的参数类型是否是可见类和可用类；</p>
-</li>
-<li><p>生成代码，主要依据list做字符串拼接，文件的路径是以声明的包名目录，比如com.demo.EventBusIndex，其文件所在的位置是,代码目录&#x2F;build&#x2F;generated&#x2F;ap_generated_sources&#x2F;版本变体&#x2F;out&#x2F;com&#x2F;demo&#x2F;EventBusIndex.java<br>生成的文件的大概是这样的</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** This class is generated by EventBus, do not edit. */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyEventBusIndex</span> <span class="keyword">implements</span> <span class="title class_">SubscriberInfoIndex</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;Class&lt;?&gt;, SubscriberInfo&gt; SUBSCRIBER_INDEX;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        SUBSCRIBER_INDEX = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Class&lt;?&gt;, SubscriberInfo&gt;();</span><br><span class="line"></span><br><span class="line">    putIndex(<span class="keyword">new</span> <span class="title class_">SimpleSubscriberInfo</span>(com.demo.MainActivity.class, <span class="literal">true</span>, <span class="keyword">new</span> <span class="title class_">SubscriberMethodInfo</span>[] &#123;</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">SubscriberMethodInfo</span>(<span class="string">&quot;setVolume&quot;</span>, com.demo.VolumeChangeEvent.class, ThreadMode.MAIN),</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">SubscriberMethodInfo</span>(<span class="string">&quot;onFinishEvent&quot;</span>, com.demo.FinishEvent.class, ThreadMode.MAIN),</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">SubscriberMethodInfo</span>(<span class="string">&quot;onCameraStateEvent&quot;</span>, com.umu.event.CameraStateEvent.class, ThreadMode.MAIN),</span><br><span class="line">    &#125;));&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">putIndex</span><span class="params">(SubscriberInfo info)</span> &#123;</span><br><span class="line">       SUBSCRIBER_INDEX.put(info.getSubscriberClass(), info);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> SubscriberInfo <span class="title function_">getSubscriberInfo</span><span class="params">(Class&lt;?&gt; subscriberClass)</span> &#123;</span><br><span class="line">    <span class="type">SubscriberInfo</span> <span class="variable">info</span> <span class="operator">=</span> SUBSCRIBER_INDEX.get(subscriberClass);</span><br><span class="line">        <span class="keyword">if</span> (info != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> info;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">       &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>其中需要仔细理解的是putIndex(SubscriberInfo info),SubscriberInfo描述了包含订阅的类，及其所有的订阅方法<br>同时要在Application种手动的将生成的EventBusIndex类提供给EventBus</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">EventBus</span> <span class="variable">eventBus</span> <span class="operator">=</span> EventBus.builder().addIndex(<span class="keyword">new</span> <span class="title class_">MyEventBusIndex</span>()).build();</span><br></pre></td></tr></table></figure>
-<p>以上，EventBus实现了订阅者的管理和订阅的注册</p>
+        <p>学习技术点时，搞清楚这个技术的前因后果，这个技术为解决什么问题而产生的，现在能解决什么问题，是怎么实现的，如何使用，有没有副作用。</p>
 
       
 
@@ -301,22 +245,11 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java android EventBus</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/%E5%AD%A6%E4%B9%A01/">展开全文 >></a>
         </p>
       
 
@@ -346,47 +279,29 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-发票的半自动填写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-随机与确定的随想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/">发票的半自动填写</a>
+      <a class="article-title" href="/2020/%E9%9A%8F%E6%9C%BA%E4%B8%8E%E7%A1%AE%E5%AE%9A%E7%9A%84%E9%9A%8F%E6%83%B3/">随机与确定的随想</a>
     </h1>
   
 
         
-        <a href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/" class="archive-article-date">
-  	<time datetime="2020-02-21T16:23:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+        <a href="/2020/%E9%9A%8F%E6%9C%BA%E4%B8%8E%E7%A1%AE%E5%AE%9A%E7%9A%84%E9%9A%8F%E6%83%B3/" class="archive-article-date">
+  	<time datetime="2020-06-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>每个月都有一天都会比较头疼，填写发票！每天的开发工作都要加班完成，这种琐碎的事情更不想做了，但是作为职场中，走报销是日常工作的一部分。作为写代码的手艺人，天天给客户赋能，为啥不利用技术给自己赋能呢？</p>
-<p>忙里偷闲，搞起来吧！</p>
-<p>描述下我们的报销流程：报销人整理票据，打印成纸质发票，打包，按照固定格式填写到google sheet上，将google sheet的链接共享给财务助理，报销人的流程就走完了；其中票据类型常用的是增值税发票，出租金发票；</p>
-<p>这个流程中, 可以自动化的过程：票据整理，填写，发送链接。本身这最少投入，最大产出的思路分析，发送链接就是粘贴复制，自动化不够麻烦的。票据整理需要人工参与，需要考虑一种自动化的整理方式，产出数据，填写需要数据。</p>
-<ul>
-<li><p>票据整理</p>
-<ul>
-<li>利用百度云文字识别的android sdk，给增值税发票拍照，识别获取发票的时间，金额及类型；<br>百度云文字识别还是很良心，一天有500次的免费试用；</li>
-<li>将以上识别到数据做排序，去重操作，输出一个json字符串；<br>涉及到ak和sk，暂不开源，如有需要请邮箱联系。</li>
-</ul>
-</li>
-<li><p>填写自动化</p>
-<ul>
-<li>google sheet支持在线编程修改其sheet，语言是JavaScript；</li>
-<li>利用票据整理出来的数据，自动生成sheet表格</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// type = 1, 五星酒店，type = 2, 航空旅费</span></span><br><span class="line"><span class="keyword">var</span> data = [&#123;<span class="attr">type</span>: <span class="number">1</span>, <span class="attr">amount</span>: <span class="number">150.00</span>, <span class="attr">date</span>: <span class="number">2020</span>-<span class="number">01</span>-<span class="number">19</span>&#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> baseRowIndex = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">var</span> activeSpreadSheet = <span class="title class_">SpreadsheetApp</span>.<span class="title function_">getActiveSpreadsheet</span>();</span><br><span class="line">  <span class="keyword">var</span> activeSheet = activeSpreadSheet.<span class="title function_">getActiveSheet</span>();</span><br><span class="line">  <span class="keyword">var</span> count = data.<span class="property">length</span>;</span><br><span class="line">  activeSheet.<span class="title function_">insertRows</span>(baseRowIndex, count);</span><br><span class="line">  <span class="keyword">var</span> range;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> rowIndex = <span class="number">0</span>; rowIndex &lt; count; rowIndex++) &#123;</span><br><span class="line">    <span class="keyword">var</span> rowData = data[rowIndex];</span><br><span class="line">    range = activeSheet.<span class="title function_">getRange</span>(baseRowIndex + rowIndex, <span class="number">1</span>);</span><br><span class="line">    range.<span class="title function_">setValue</span>(rowData[<span class="string">&quot;date&quot;</span>]);</span><br><span class="line"></span><br><span class="line">    range = activeSheet.<span class="title function_">getRange</span>(baseRowIndex + rowIndex, <span class="number">2</span>);</span><br><span class="line">    range.<span class="title function_">setValue</span>(<span class="string">&quot;华盛顿&quot;</span>);</span><br><span class="line"></span><br><span class="line">    range = activeSheet.<span class="title function_">getRange</span>(baseRowIndex + rowIndex, <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">if</span> (rowData[<span class="string">&quot;type&quot;</span>] == <span class="number">1</span>) &#123;</span><br><span class="line">      range.<span class="title function_">setValue</span>(<span class="string">&quot;五星酒店&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      range.<span class="title function_">setValue</span>(<span class="string">&quot;航空旅费&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    range = activeSheet.<span class="title function_">getRange</span>(baseRowIndex + rowIndex, <span class="number">4</span>);</span><br><span class="line">    range.<span class="title function_">setValue</span>(rowData[<span class="string">&quot;amount&quot;</span>]);</span><br><span class="line"></span><br><span class="line">    range = activeSheet.<span class="title function_">getRange</span>(baseRowIndex + rowIndex, <span class="number">5</span>);</span><br><span class="line">    range.<span class="title function_">setValue</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 合计</span></span><br><span class="line">  <span class="keyword">var</span> totalRowIndex = baseRowIndex + rowIndex;</span><br><span class="line">  activeSheet.<span class="title function_">insertRows</span>(totalRowIndex, <span class="number">1</span>);</span><br><span class="line">  range = activeSheet.<span class="title function_">getRange</span>(totalRowIndex, <span class="number">1</span>);</span><br><span class="line">  range.<span class="title function_">setValue</span>(<span class="string">&quot;合计&quot;</span>);</span><br><span class="line">  range = activeSheet.<span class="title function_">getRange</span>(totalRowIndex, <span class="number">2</span>);</span><br><span class="line">  range.<span class="title function_">setValue</span>(<span class="string">&quot;华盛顿&quot;</span>);</span><br><span class="line">  range = activeSheet.<span class="title function_">getRange</span>(totalRowIndex, <span class="number">4</span>);</span><br><span class="line">  range.<span class="title function_">setFormula</span>(<span class="string">&quot;=SUM(D&quot;</span> + baseRowIndex + <span class="string">&quot;:D&quot;</span> + (baseRowIndex + count - <span class="number">1</span>) + <span class="string">&quot;)&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 餐费合计</span></span><br><span class="line">  <span class="keyword">var</span> foodTotalRowIndex = totalRowIndex + <span class="number">1</span>;</span><br><span class="line">  activeSheet.<span class="title function_">insertRows</span>(foodTotalRowIndex, <span class="number">1</span>);</span><br><span class="line">  range = activeSheet.<span class="title function_">getRange</span>(foodTotalRowIndex, <span class="number">1</span>);</span><br><span class="line">  range.<span class="title function_">setValue</span>(<span class="string">&quot;航空旅费合计&quot;</span>);</span><br><span class="line">  range = activeSheet.<span class="title function_">getRange</span>(foodTotalRowIndex, <span class="number">2</span>);</span><br><span class="line">  range.<span class="title function_">setValue</span>(<span class="string">&quot;华盛顿&quot;</span>);</span><br><span class="line">  range = activeSheet.<span class="title function_">getRange</span>(foodTotalRowIndex, <span class="number">4</span>);</span><br><span class="line">  range.<span class="title function_">setFormula</span>(<span class="string">&#x27;=SUMIFS(D:D,C:C,&quot;*航空旅费&quot;)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> ui = <span class="title class_">SpreadsheetApp</span>.<span class="title function_">getUi</span>();</span><br><span class="line">  ui.<span class="title function_">alert</span>(<span class="string">&quot;done&quot;</span>, ui.<span class="property">ButtonSet</span>.<span class="property">OK</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>整个开发历时3个半小时，经过以上的流程改造，实现了半自动化，每次填报发票能省去看发票找数字及填写过程，能省一半的时间，收益足矣。</p>
+        <p>在种地靠天吃饭的年月，生存的所有…，都取决于’天老爷 ‘能否风调雨顺，但是 天老爷 的的心情谁能告诉你呢，几千年的农时经验都不能说清楚，于是不确定性根植很多农人的骨子里。现时代，一个人最大的天真就是认为自己生活在一个确定的和有规律的世界。农人即便遭遇颗粒无收，他也不会灰心，因为不确定，来年还有机会，还会继续努力耕种，天真的人一旦无所成，开始反思自己的付出，分析自己的努力，甚至开始怀疑这个世界，但是这个世界上很多大改变是这些天真的人促成的，而这个世界的基础则是那些’农人’。</p>
+<p>受历史唯物主义观的影响，大历史确实是有内在的客观原因和发展规律，当阅读鲜活的历史事件时，充满了大量的随机和偶然，很多个人的行为推动了历史的一小步， 而这一小步就成了撬动大历史发展的杠杆。</p>
+<p>从这个角度说，每个人类个体，活出独特的自我，才是个人对这个世界最大的贡献。</p>
 
       
 
@@ -395,22 +310,11 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件创意</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E5%8F%91%E7%A5%A8%E7%9A%84%E5%8D%8A%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/%E9%9A%8F%E6%9C%BA%E4%B8%8E%E7%A1%AE%E5%AE%9A%E7%9A%84%E9%9A%8F%E6%83%B3/">展开全文 >></a>
         </p>
       
 
@@ -440,41 +344,43 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-shell学习: 提取文本，升级版本号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-软件兴国" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/shell%E5%AD%A6%E4%B9%A0:%20%E6%8F%90%E5%8F%96%E6%96%87%E6%9C%AC%EF%BC%8C%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC%E5%8F%B7/">使用提取文本，升级版本号</a>
+      <a class="article-title" href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/">软件兴国</a>
     </h1>
   
 
         
-        <a href="/2020/shell%E5%AD%A6%E4%B9%A0:%20%E6%8F%90%E5%8F%96%E6%96%87%E6%9C%AC%EF%BC%8C%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC%E5%8F%B7/" class="archive-article-date">
-  	<time datetime="2020-02-19T16:38:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
+        <a href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/" class="archive-article-date">
+  	<time datetime="2020-05-24T15:51:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用shell写Android的自动构建脚本时，需要从build.gradle中读取当前的版本号，自动加1，最后写入build.gradle。其中使用到grep，sek命令，具体代码如下：</p>
-<p>基本思路：</p>
+        <p>如何思考软件在中国发展中的作用？</p>
+<p>最近美国特朗普政府对中国新一轮的科技绞杀开始了，我认为这不是最后一次，也不是最严重的一次，更多风雨还在后面。</p>
+<p>随着智能手机在国内的普及，软件已经和每个人息息相关，在我看来，社会文明发展的高低取决于软件化程度的高低。<br>极度发达的社会，必然有极度发达的软件，相应的，极度发达的软件促使社会文明程度的发达。软件影响了人类社会的方方面面，未来的黑客帝国，也是因为软件的兴起。</p>
+<p>美国对中国的新一轮制裁，归根结底是对中国高级软件技术的限制，新中国成立后，中国在老一辈科研人员的艰苦奋斗下，在核武器，航天技术的突破赢得了世界的认可。现在我们需要在软件上实现突破才能再次突破现有的地位，赢得世界对中国大国地位的认可。</p>
+<p>软件上的突破实际上对各个行业的系统化升级改造，需要完整的软件开发工具链的自主化，实现在软件技术上中国创新和中国影响力。</p>
+<p>我窃以为，国内软件业还非常落后，就像是洋务运动后的中国，我们会用洋钉，洋灯，洋车，洋机器，可是没有一个我们可以完整的自主造出来。从业十余年，用到的软件开发语言没有一个国产的，用到开发工具没有一个国产，用到的设计理念绝大部分也不是国内自主创新的，我们这些所谓的开发人员特别像那时候的买办，转卖洋人的东西给国人，顺手打了个国产的标签。从这个角度看，我们的软件行业被更高级的洋软件殖****民了， 软件现代化，我们还有很多路要走。</p>
+<p>我们常用 站在巨人的肩膀上 这句话来麻痹自己，其实站在巨人的肩膀是对的啊，关键是站在哪个巨人的肩膀上呢，我们站在美国这个巨人的肩膀上，人家要不要你站，还不是看人家的心情吗！所以艰苦奋斗，自力更生什么时候都不要扔。我们要坚决的发展自主的软件研发体系，各个行业的软件体系；</p>
+<p>软件行业为什么那么重要呢？</p>
 <ul>
-<li>通过grep获取版本号的位置，存到临时文件tmpshelldata.txt</li>
-<li>使用sed提取tmpshelldata.txt中的具体版本号，并且用命令替换赋值给一个变量version1</li>
-<li>通过 version1 加 1，计算新的版本号</li>
-<li>使用sed命令，用新版本号 代替 老版本号</li>
-<li>删除临时文件</li>
+<li>从全球来看，软件行业是相对更加是智力密集行业，这个行业的人员普遍高于其他行业，如果这个行业的平均智力水平不高，那么其他行业的平均智力水平可想而知。</li>
+<li>软件是硬件的生命和灵魂。硬件是机械的，有软件的硬件才够灵活和智能，才是能创造大价值的。</li>
+<li>软件行业的成长是不能复制的。硬件的生成其实是可以复制的，生产线可以组装产业工人可以培训，但是软件行业需要大量的协作，大量的普通开发人员，需要这些大量的普通开发人员付出自己的大量优质的智力活动，需要每个开发人员投入自己的智慧，经验，创造力和想象力。</li>
+<li>软件是最复杂的，它看不见，摸不着，但是它又实实在在控制着数以亿万计的硬件，它的生成过程就是智力活动的过程。</li>
 </ul>
-<p>sed的一些技巧：</p>
-<ul>
-<li>提取字符串 是使用正则替换的方法，用\1捕获到的字符串，替换其他的，\1其实要提取的字符串</li>
-<li>在mac上使用 -i替换，后面必须加个””, 否则不生效，这和linux上不同</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gradleSrc=./</span><br><span class="line"></span><br><span class="line">function updateVersionHomePatch()&#123;</span><br><span class="line">    touch ./tmpshelldata.txt</span><br><span class="line">    grep -o &quot;def versionHomePatch = \([0-9]*\)&quot; $gradleSrc &gt; ./tmpshelldata.txt</span><br><span class="line">    version1=`sed &#x27;s/.*def versionHomePatch = \([0-9]*\)/\1/&#x27; ./tmpshelldata.txt`</span><br><span class="line">    echo &quot;当前版本：$version1&quot;;</span><br><span class="line">    add=1</span><br><span class="line">    count=$[$version1+add]</span><br><span class="line">    echo &quot;打包版本：$count&quot;</span><br><span class="line">    new=&quot;def versionHomePatch = $count&quot;</span><br><span class="line">    sed -i &quot;&quot; &quot;s/def versionHomePatch = $version1/def versionHomePatch = $count/&quot; </span><br><span class="line">    cd $gradleSrc</span><br><span class="line">    rm -f ./tmpshelldata.txt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">updateVersionHomePatch</span><br></pre></td></tr></table></figure>
+<p>目前看，软件代表着一个国家最高的科技实力和科技行业的整体水平，软件兴，则中国兴！</p>
+<p>中国软件，加油！ 中国，加油！</p>
+
       
 
       
@@ -487,7 +393,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell 语言学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
         		</li>
       		
 		</ul>
@@ -497,7 +403,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/shell%E5%AD%A6%E4%B9%A0:%20%E6%8F%90%E5%8F%96%E6%96%87%E6%9C%AC%EF%BC%8C%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC%E5%8F%B7/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/">展开全文 >></a>
         </p>
       
 
@@ -527,30 +433,37 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-机会来的时候，你准备好了吗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-养娃日志2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E6%9C%BA%E4%BC%9A%E6%9D%A5%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E4%BD%A0%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97/">机会来的时候，你准备好了吗</a>
+      <a class="article-title" href="/2020/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%972/">养娃日志（2）</a>
     </h1>
   
 
         
-        <a href="/2020/%E6%9C%BA%E4%BC%9A%E6%9D%A5%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E4%BD%A0%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97/" class="archive-article-date">
-  	<time datetime="2020-02-10T12:31:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
+        <a href="/2020/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%972/" class="archive-article-date">
+  	<time datetime="2020-05-02T14:58:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>什么是机会？什么是运气？什么是实力？机会也是实力的一部分！</p>
-<p>疫情的发生，让在线教育，在线办公火了，今天是开学第一天，比双十一的量大多了，绝大部分学校都是使用的在线服务，大部分的在线服务基本在崩溃与缓慢之间切换。</p>
-<p>很多人练就了抓住机会的能力，可以当机会真的来的时候，我们是不是能够利用好机会呢。不积跬步无以至千里，同样的千里之堤毁于蚁穴，把握机会的能力是点滴积累的结果。</p>
-<p>我们不仅要活在当下，还要心怀信念，这个信念就是机会一定会来，当下要做的所有事，就是要为那个一定来的机会夯基础，做准备！</p>
+        <p>五一休假的第二天，与妻，娃一起午饭。</p>
+<p>娃摸着妻手腕上的一个疤痕，嫩声的问：妈妈，这是什么？</p>
+<p>妻吃了一口菜，悠悠说道：”当年真是SB，竟然为了前男友，用烟头烫自己！”。</p>
+<p>我哈哈大笑，”这不是刻骨铭心的爱情嘛！”。</p>
+<p>妻说：“谁还没点难忘的青春!”</p>
+<p>我突然想到一个问题，问妻：“等娃长大了，如果他失恋，为了前女友死去活来，然后问你：妈，为了表明我爱的决心，我要用烟头在手腕上留个痕迹。 你该怎么说？”。</p>
+<p>妻愤然道：“我就说，烫吧，反正你会后悔的…”</p>
+<p>当我们的老一辈告诉我们他们的人生经验时，我们内心总是听之任之，全然不会把这些话当做真理性的知识去记住去理解，同样当我们把我们的人生经验告诉下一辈时，他们肯定也是听之任之，是的，人生经验难以推广。</p>
+<p>人生难以复制，与其模仿别人，不如活成自己！</p>
+<p>别人的人生或苦难，或富贵，或卑贱，或荣耀，对我们来说都像是自己人生旅途上的风景，可停车赞叹，可扼腕叹息，抑或高山仰止，抑或报以不屑，但是都不会影响你旅途的目标，你可以参照他们，总结他们，但是你成不了他们，你只能成为你自己。</p>
+<p>所以我会对娃说：“我和你妈想法一样，烫不烫随你，反正我们说的你也不会听”</p>
 
       
 
@@ -564,7 +477,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">反思 个人成长</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">生活 养娃</a>
         		</li>
       		
 		</ul>
@@ -574,7 +487,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E6%9C%BA%E4%BC%9A%E6%9D%A5%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E4%BD%A0%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%972/">展开全文 >></a>
         </p>
       
 
@@ -604,30 +517,63 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-mac下解压报22错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python之禅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/mac%E4%B8%8B%E8%A7%A3%E5%8E%8B%E6%8A%A522%E9%94%99%E8%AF%AF/">mac下解压报22错误</a>
+      <a class="article-title" href="/2020/python%E4%B9%8B%E7%A6%85/">The Zen of Python</a>
     </h1>
   
 
         
-        <a href="/2020/mac%E4%B8%8B%E8%A7%A3%E5%8E%8B%E6%8A%A522%E9%94%99%E8%AF%AF/" class="archive-article-date">
-  	<time datetime="2020-02-09T04:59:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
+        <a href="/2020/python%E4%B9%8B%E7%A6%85/" class="archive-article-date">
+  	<time datetime="2020-04-26T18:29:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>mac升级到10.15.1，使用mac自带的归档使用工具解压zip文件时，有时会报错”错误22 - 无效的参数。“，</p>
-<p>第一次遇到时以为是zip文件问题，后来又遇到，开始怀疑是个普遍问题。查了下资料确实普遍存在，官网<a target="_blank" rel="noopener" href="https://discussionschinese.apple.com/thread/250728523">帖子</a>上很多网友在讨论这个问题，给出很多解决办法。不过亲测使用unar可以很好的解决这个问题。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo brew install unar</span><br><span class="line">unar -e GBK 出问题的zip文件</span><br></pre></td></tr></table></figure>
-
+        <p>Beautiful is better than ugly.</p>
+<p>Explicit is better than implicit.</p>
+<p>Simple is better than complex.</p>
+<p>Complex is better than complicated.</p>
+<p>Flat is better than nested.</p>
+<p>Sparse is better than dense.</p>
+<p>Readability counts.</p>
+<p>Special cases aren’t special enough<br>to break the rules.</p>
+<p>Although practicality beats purity.</p>
+<p>Errors should never pass silently.</p>
+<p>Unless explicitly silenced.</p>
+<p>In the face of ambiguity, refuse the temptation to guess.</p>
+<p>There should be one– and preferably only one –obvious way to do it.</p>
+<p>Although that way may not be obvious at first unless you’re Dutch.</p>
+<p>Now is better than never.</p>
+<p>Although never is often better than <em>right</em> now.</p>
+<p>If the implementation is hard to explain, it’s a bad idea.</p>
+<p>If the implementation is easy to explain, it may be a good idea.</p>
+<p>Namespaces are one honking great idea – let’s do more of those!</p>
+<hr>
+<p>优美优于丑陋；</p>
+<p>明了优于隐晦；</p>
+<p>简单优于复杂；</p>
+<p>复杂优于凌乱；</p>
+<p>扁平优于嵌套；</p>
+<p>稀疏优于稠密；</p>
+<p>可读性很重要；</p>
+<p>即使实用比纯粹更优，<br>特例亦不可违背原则。</p>
+<p>错误绝不能悄悄忽略，<br>除非它明确需要如此。</p>
+<p>面对不确定性，<br>拒绝妄加猜测。</p>
+<p>任何问题应有一种，<br>且最好只有一种，<br>显而易见的解决方法。</p>
+<p>尽管这方法一开始并非如此直观，<br>除非你是荷兰人。</p>
+<p>做优于不做，<br>然而不假思索还不如不做。</p>
+<p>很难解释的，必然是坏方法。</p>
+<p>很好解释的，可能是好方法。</p>
+<p>命名空间是个绝妙的主意，<br>我们应好好利用它。</p>
+<p><a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a></p>
 
       
 
@@ -641,7 +587,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python 语言学习</a>
         		</li>
       		
 		</ul>
@@ -651,7 +597,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/mac%E4%B8%8B%E8%A7%A3%E5%8E%8B%E6%8A%A522%E9%94%99%E8%AF%AF/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/python%E4%B9%8B%E7%A6%85/">展开全文 >></a>
         </p>
       
 
@@ -681,40 +627,35 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-公式相声之浅见" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-一起的一起" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%A3%B0%E4%B9%8B%E6%B5%85%E8%A7%81/">关于相声之浅见</a>
+      <a class="article-title" href="/2020/%E4%B8%80%E8%B5%B7%E7%9A%84%E4%B8%80%E8%B5%B7/">一起的一起</a>
     </h1>
   
 
         
-        <a href="/2020/%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%A3%B0%E4%B9%8B%E6%B5%85%E8%A7%81/" class="archive-article-date">
-  	<time datetime="2020-02-04T15:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
+        <a href="/2020/%E4%B8%80%E8%B5%B7%E7%9A%84%E4%B8%80%E8%B5%B7/" class="archive-article-date">
+  	<time datetime="2020-04-26T18:29:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我喜欢相声。</p>
-<p>小学初中时，听收音机，看综艺大观，唐爱国的懒汉糖葫芦是我最喜欢的相声，我们某个时候不就是那个懒汉吗，总是喜欢幻想，现实却是多么骨干。</p>
-<p>高中时，大概2002年前后，省吃俭用，攒了5块钱，买了一盒相声大全的磁带，主要是姜昆和唐杰忠相声，里面有姜昆的虎口遐想等等，还有一个侯宝林的原声录音，这个磁带我翻来覆去的听。很多段子我都能说下来，说实话我是很喜欢姜昆和唐杰忠的相声，他们给了我那个年代的快乐。</p>
-<p>在我大学的时候，睡前除了听中国之声的《天涯共此时》， 也开始听郭德纲的段子。MP3，MP4里面大部分是老郭的段子，那时候老郭还没有固定的“于谦”，段子的主角一般是“我”，里面的事都是自我的幻想，自我的讽刺，自我的挖苦，自我的乖张，自我的觉醒，自我的奋进，自我调侃，也不低俗，也不损人。那些段子就像是说我们自己的在学校或者刚工作时的挣扎，幻想，失落与调侃。</p>
-<p>后来工作了也怎么听相声了，再后来，就老郭和于谦的段子了，再听就没有之前有趣，也是境地换了，老郭的段子除了笑，也没有啥了，渐渐也就不听了。</p>
-<p>再后来就是老郭的各种八卦了，老郭其实不仅仅一个相声演员了，他更多的是个娱乐圈里的艺人了，电视，电影，综艺，没有他不参与的，这点有点像冯巩。其实我觉得也很难让他再拿出喜闻乐见的相声作品了。</p>
-<p>作为普通观众，我觉得文艺作品一定要有情感，这样才能打动人心, 才有生命力；情感是复杂，喜怒哀乐，悲伤，失落，快乐，痛苦等等…</p>
-<p>给我的感觉，这几年，老郭的段子只能给一类人看，就是缺”笑“的人，缺啥补啥。这类人慢慢成钢丝的主体，老郭也就越迎合他们，也就越来越没有雅俗共赏的元素了。</p>
-<p>以理科生的科研思维和工程思路，一切都可以“公式”化，其实这里的公式化，窃以为是产业化。有商业头脑的老郭肯定知道这个，要不然，他也不会办相声培训班了。相声公式化，意在解决相声创作难的问题，我认为这是一个有效的途径，这是让相声走进专业课堂的一个途径。</p>
-<p>这些年来，姜昆，冯巩等人都曾在相声人才的培养及相声教育上下了不少功夫，可是收效甚微，相声市场及人才还是萎靡不振。</p>
-<p>相声产业化是老郭现在正在做的事，当年老郭以一个草根的人设，其独特的语言风格在当时算是一声春雷，惊醒了那些靠体制吃饭，靠师承糊弄观众的缺乏新意的相声们。</p>
-<p>相声的其独特的语言特点，也让它的创新比较难，在当前网络传播快速的时代，一个包袱，甚至是包袱的思路，一经表演，就已经成为过去式，相声演员很难用一个段子一直表演，观众也不会买账。</p>
-<p>传统的相声演员显然没有看到这种传播速度的改变，也没有看到越来越越多的挑剔的观众。观众们的审美发生了根本的变化，跟过时候，观众贪图眼前的快乐，他们很少考虑段子背后的东西。然而师承严重的体制内相声，一直沿袭着建国后相声变革后的理念，寓教于乐，使得他们在创作上的约束太多，以至于很难在把日常，世俗，市侩，市井的元素放在创作里，从而使得他们的创作源泉越发枯竭。</p>
-<p>作为一个爱好者，我认为相声需要创新，我也不知道创新的方向在哪里，但我知道反正不应该是现在的这个样子；这种情况下，任何创新都是被容忍的，任何翻天覆地的创新都是从细微的改变而来。</p>
+        <p>有感最近所在公司有一起奋斗了很多年的老同志离职。</p>
+<p>就像是夫妻间的七年之痒。<br>总有一些委屈不想忍耐，总有一些原则不想将就，总有一些事情不再重要，总有一些未来不想等待，总有一些决定不再犹豫，总有一些结果不想回避；</p>
+<p>宴席散，酒留肚肠，沁入脾胃，化作心雨寄离伤；<br>夕阳西下，人各天涯，不敢见屏幕，默然线上代码数万行；</p>
+<p>闭眼回想，往事如昨，太多的经历，要加上“一起”这个词！</p>
+<p>一起跑步，一起午饭，一起晚饭，一起赶地铁；<br>一起聚餐，一起k歌，一起游船，一起看大海，<br>一起撩妹，一起游戏，一起写码，一起改bug，<br>一起熬夜，一起加班，一起上线，一起赶进度，<br>一起开会，一起争论，一起流泪，一起挨批评，<br>一起郁闷，一起沮丧，一起吐槽，一起想跳楼，<br>一起失败，一起成功，一起奋斗，一起赶项目，<br>一起走，一起玩，一起读书，一起进步，<br>一起吃，一起喝，一起回家，一起高兴，<br>一起疯，一起狂，一起犯二，一起癫狂，<br>一起的一起总是流淌在日常的生活里，<br>一起的一起总是泼洒在生活的阳光里，<br>一起的一起总是徜徉在阳光的沙滩上，<br>站在沙滩，面朝大海，背靠背的歌唱！<br>…</p>
+<p>人生就是这样，一起一起着，就各奔了西东，不知是迷路了，还是走散了，总之，我们是不在一起了；</p>
+<p>一起一起着，就成了一起的往事，一起的回忆；<br>一起一起着，就成了一起的遗憾，一起的怅然；<br>一起一起着，就成了一起的永远，一起的梦幻；</p>
+<p>人的出生就是伴随着和母体的分离，离别是人的宿命，可是不论怎样，母子连心。</p>
+<p>心若在，梦就在，一起追梦，向阳而生，就是一起的一起！</p>
 
       
 
@@ -728,7 +669,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">社会思考</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人生感悟</a>
         		</li>
       		
 		</ul>
@@ -738,7 +679,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E5%85%AC%E5%BC%8F%E7%9B%B8%E5%A3%B0%E4%B9%8B%E6%B5%85%E8%A7%81/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/%E4%B8%80%E8%B5%B7%E7%9A%84%E4%B8%80%E8%B5%B7/">展开全文 >></a>
         </p>
       
 
@@ -768,49 +709,39 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-git服务器搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-indexedDB杂想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/git%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">搭建git服务器</a>
+      <a class="article-title" href="/2020/indexedDB%E6%9D%82%E6%83%B3/">indexedDB杂想</a>
     </h1>
   
 
         
-        <a href="/2020/git%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-02-04T08:02:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
+        <a href="/2020/indexedDB%E6%9D%82%E6%83%B3/" class="archive-article-date">
+  	<time datetime="2020-04-06T06:44:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以centos为例，简单介绍如何搭建git服务器。</p>
-<h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel</span><br><span class="line">yum install git</span><br></pre></td></tr></table></figure>
-<h1 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h1><p>创建一个git用户组和用户，用于运行git服务，并设置密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd git</span><br><span class="line">sudo useradd -g git</span><br><span class="line">sudo passwd git</span><br></pre></td></tr></table></figure>
-<h1 id="创建登录证书"><a href="#创建登录证书" class="headerlink" title="创建登录证书"></a>创建登录证书</h1><p> 收集所有需要登录的用户的公钥，公钥位于id_rsa.pub, 把公钥导入到&#x2F;home&#x2F;git&#x2F;.ssh&#x2F;authorized_keys，如果需要创建：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home/git/</span><br><span class="line">mkdir .ssh</span><br><span class="line">chmod 755 .ssh</span><br><span class="line">touch .ssh/authorized_keys</span><br><span class="line">chmod 644 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<h1 id="初始化git仓库"><a href="#初始化git仓库" class="headerlink" title="初始化git仓库"></a>初始化git仓库</h1><p>需要选定一个目录作为git仓库，比如&#x2F;home&#x2F;gitrepo&#x2F;demo.git</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">mkdir gitrepo</span><br><span class="line">chown git:git gitrepo</span><br><span class="line">cd gitrepo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建仓库</span></span><br><span class="line">git init —bare demo.git</span><br></pre></td></tr></table></figure>
+        <h2 id="仔细理解下indexedDB的设计哲学："><a href="#仔细理解下indexedDB的设计哲学：" class="headerlink" title="仔细理解下indexedDB的设计哲学："></a>仔细理解下indexedDB的设计哲学：</h2><h3 id="indexedDB的数据基于键值对"><a href="#indexedDB的数据基于键值对" class="headerlink" title="indexedDB的数据基于键值对"></a>indexedDB的数据基于键值对</h3><p>value可以是任何复杂类型的object，键值就是这个这些对象的键值；</p>
+<h3 id="基于事务的操作模型"><a href="#基于事务的操作模型" class="headerlink" title="基于事务的操作模型"></a>基于事务的操作模型</h3><p>在indexedDB内的任何操作都是再事务内的；<br>这种基于事务的操作模型会很好的处理用户打开两个tab时的数据操作带来的不一致问题；</p>
+<h3 id="API都是异步的"><a href="#API都是异步的" class="headerlink" title="API都是异步的"></a>API都是异步的</h3><p>数据库数据读取，插入，删除等所有的数据库都是异步的。这些操作都需要请求（request），数据库接收请求，接收请求，并执行请求中callback操作，操作结果会以dom event的形式通知</p>
+<h3 id="基于请求对象模型"><a href="#基于请求对象模型" class="headerlink" title="基于请求对象模型"></a>基于请求对象模型</h3><p>请求本质上沟通用户层和数据库层的通信方式，请求上可以绑定事件，用以接收数据库层的操作结果。不同的数据库操作返回的请求对象也不同，包含的对象也是不同的；</p>
+<h3 id="当数据库操作结果可用时，数据库以dom-event的方式通知使用者"><a href="#当数据库操作结果可用时，数据库以dom-event的方式通知使用者" class="headerlink" title="当数据库操作结果可用时，数据库以dom event的方式通知使用者"></a>当数据库操作结果可用时，数据库以dom event的方式通知使用者</h3><p>在几乎所有的请求对象中，success和error都是可用的。需要注意的是success不能往上冒泡以及取消数据操作，而error却可以，error可以取消任何正在运行的数据库事务</p>
+<h3 id="对象数据，而不是关系数据库"><a href="#对象数据，而不是关系数据库" class="headerlink" title="对象数据，而不是关系数据库"></a>对象数据，而不是关系数据库</h3><h3 id="NoSql-数据库"><a href="#NoSql-数据库" class="headerlink" title="NoSql 数据库"></a>NoSql 数据库</h3><h3 id="遵循同一来源策略"><a href="#遵循同一来源策略" class="headerlink" title="遵循同一来源策略"></a>遵循同一来源策略</h3><h2 id="如何理解异步"><a href="#如何理解异步" class="headerlink" title="如何理解异步"></a>如何理解异步</h2><p>在用户端上的操作上，indexeddb的操作思想和ajax一致，他们都是异步的，发送请求，然后结束，通过事件的形式通知，js的单线程和浏览器的宿主环境决定操作上不宜使用同步操作，这种思想被借鉴到很多地方，比如nginx和nodesjs，实际上很多不同操作环境的交互越来越多的使用这种方式，前端最常用的js和webview交互，在本质上也是这种，再具体实现上，因为webview和js不能传递包装好的request的请求，所以以消息队列的方式实现request的包装，在js侧上看和request数据库的操作类似；</p>
+<p>在理解上，可以简单的看成请求-通知的模型，和观察者模式有异曲同工之妙；</p>
+<p>随着前端技术标准化的发展，很多异步通信会被归结为一种标准化的操作；</p>
+<h2 id="js的异步写法"><a href="#js的异步写法" class="headerlink" title="js的异步写法"></a>js的异步写法</h2><p>前端在异步上的写法也越来越方便快捷，常用的有 callback模式，promise模式，async-await模式，以及生成器；我之前限于浅薄的认识，没有思考过这些模式的组合带来的一些效果，但是在indexedDB的接口封装中，这些模式的组合使用会带来更便利的使用。简单的分析下idb-keyval的实现思路。 作者把indexedDB的异步封装成了promise的形式，使用callback的模式封装具体的对数据库的操作，而用户端端看到的完全是promise化的接口。仔细品味以下核心代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">_withIDBStore</span>(<span class="attr">type</span>: <span class="title class_">IDBTransactionMode</span>, <span class="attr">callback</span>: (<span class="function">(<span class="params">store: IDBObjectStore</span>) =&gt;</span> <span class="keyword">void</span>)): <span class="title class_">Promise</span>&lt;<span class="keyword">void</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_dbp</span>.<span class="title function_">then</span>(<span class="function"><span class="params">db</span> =&gt;</span> <span class="keyword">new</span> <span class="title class_">Promise</span>&lt;<span class="keyword">void</span>&gt;(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> transaction = db.<span class="title function_">transaction</span>(<span class="variable language_">this</span>.<span class="property">storeName</span>, type);</span><br><span class="line">        <span class="keyword">const</span> store = transaction.<span class="title function_">objectStore</span>(<span class="variable language_">this</span>.<span class="property">storeName</span>)</span><br><span class="line">        transaction.<span class="property">oncomplete</span> = <span class="function">() =&gt;</span> <span class="title function_">resolve</span>();</span><br><span class="line">        transaction.<span class="property">onabort</span> = transaction.<span class="property">onerror</span> = <span class="function">() =&gt;</span> <span class="title function_">reject</span>(transaction.<span class="property">error</span>);</span><br><span class="line">        <span class="title function_">callback</span>(store);</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在一个事务中，callback负责完成store的指定操作，比如get，put之类, oncomplete在事务完成后触发，这样就把一个transaction封装在了一个promise，而callback有留出了自定义操作的灵活。这种简洁的处理，有非常好借鉴意义。举个实际点的栗子：<br>封装一个用户购买游戏道具的标准流程：当用户发起购买时，1 请求接口，获取当前用户的等级；2 根据用户的等级，弹出不同的道具弹窗；3 用户选择关闭弹窗或者选择一个道具，发起支付，这个流程作为一个服务组件，弹不同的道具弹窗就是一个自定义动作，是不同的游戏关卡中自己定义的，核心代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">purchaseProps</span>(<span class="params">userId: string, openDialogCallback: (userInfo: any) =&gt; <span class="built_in">Promise</span>&lt;<span class="keyword">void</span>&gt;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">fetch</span>(<span class="string">`<span class="subst">$&#123;get_userinfo_url&#125;</span>`</span>).<span class="title function_">then</span>(<span class="function"><span class="params">userInfo</span> =&gt;</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> dialog = <span class="title function_">openDialogCallback</span>(userInfo);</span><br><span class="line">            dialog.<span class="title function_">then</span>(<span class="function"><span class="params">propId</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(propId);</span><br><span class="line">            <span class="comment">// doPay(); 继续封装道具购买流程</span></span><br><span class="line">        &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="title function_">reject</span>();</span><br><span class="line">        &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">reason</span> =&gt;</span> <span class="title function_">reject</span>(reason));</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用者</span></span><br><span class="line"><span class="title function_">purchaseProps</span>(<span class="string">&#x27;king&#x27;</span>, <span class="function"><span class="params">userInfo</span> =&gt;</span> <span class="title function_">openKingDialong</span>()).<span class="title function_">then</span>(<span class="function">(<span class="params">propId: string</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">doPay</span>(); <span class="comment">// 发起支付</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h1 id="修改仓库的用户组和用户"><a href="#修改仓库的用户组和用户" class="headerlink" title="修改仓库的用户组和用户"></a>修改仓库的用户组和用户</h1><p>Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git demo.git</span><br></pre></td></tr></table></figure>
-
-<h1 id="禁用用户git的shell登录"><a href="#禁用用户git的shell登录" class="headerlink" title="禁用用户git的shell登录"></a>禁用用户git的shell登录</h1><p>处于安全考虑，用户git禁用shell登录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/passwd</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">git:x:1001:1001:,,,:/home/git:/bin/bash 改成</span></span><br><span class="line">git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</span><br></pre></td></tr></table></figure>
-
-<h1 id="clone-远程仓库"><a href="#clone-远程仓库" class="headerlink" title="clone 远程仓库"></a>clone 远程仓库</h1><p>至此，git仓库就可以使用了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@192.168.1.1:/home/gitrepo/demo.git</span><br></pre></td></tr></table></figure>
-
-<p>参考</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664">搭建git服务器</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-server.html">git服务器搭建</a></li>
-</ul>
 
       
 
@@ -824,7 +755,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术杂想</a>
         		</li>
       		
 		</ul>
@@ -834,7 +765,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/git%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/indexedDB%E6%9D%82%E6%83%B3/">展开全文 >></a>
         </p>
       
 
@@ -864,113 +795,31 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020年4月4日·全国哀悼日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/nginx/">nginx 学习笔记</a>
+      <a class="article-title" href="/2020/2020%E5%B9%B44%E6%9C%884%E6%97%A5%C2%B7%E5%85%A8%E5%9B%BD%E5%93%80%E6%82%BC%E6%97%A5/">2020年4月4日·全国哀悼日</a>
     </h1>
   
 
         
-        <a href="/2020/nginx/" class="archive-article-date">
-  	<time datetime="2020-02-01T12:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
+        <a href="/2020/2020%E5%B9%B44%E6%9C%884%E6%97%A5%C2%B7%E5%85%A8%E5%9B%BD%E5%93%80%E6%82%BC%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2020-04-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于nginx使用的一些基本知识和实践，持续更新。</p>
-<ul>
-<li><p>nginx.config</p>
-<ul>
-<li>使用<code>nginx -t</code>验证配置文件</li>
-<li><code>/usr/local/etc/nginx/</code></li>
-<li>方便管理，可以使用软链的方式，把这些文件统一管理  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/etc/nginx /Users/xxx/xxx</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>配置</p>
-<ul>
-<li>配置类型<ul>
-<li>http块<ul>
-<li>包括 HTTP 全局块、Server 块</li>
-<li>HTTP 全局块<br>  HTTP 全局块配置的指令包括文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等。</li>
-<li>Server 块，虚拟服务器<br>  它描述的是一组根据不同server_name指令逻辑分割的资源，这些虚拟服务器响应 HTTP 请求，因此都包含在 HTTP 部分。</li>
-<li>Location 块<ul>
-<li>&#x3D; ：该修饰符使用精确匹配并且终止搜索</li>
-<li>~：该修饰符使用区分大小写的正则表达式匹配</li>
-<li>~*：该修饰符使用不区分大小写的正则表达式匹配</li>
-<li>^~：用于不含正则表达式的 URI 前，要求 Nginx 服务器找到标识 URI 和请求字符串匹配度最高的 Location 后，立即使用此 Location 处理请求，而不再使用 Location 块中的正则 URI 和请求字符串做匹配。</li>
-<li>注意：如果 URI 包含正则表达式，则必须要有 ~ 或者 ~* 标识。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>全局配置块<br>  全局配置部分用来配置对整个 Server 都有效的参数。主要会设置一些影响 Nginx 服务器整体运行的配置指令，包括配置运行 Nginx 服务器的用户（组）、允许生成的 Worker Process 数，进程 PID 存放路径、日志存放路径和类型以及配置文件的引入等。</li>
-<li>events配置块<br>  Events 块涉及的指令主要影响 Nginx 服务器与用户的网络连接，常用的设置包括是否开启对多 Work Process 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 Word Process 可以同时支持的最大连接数等。</li>
-</ul>
-</li>
-<li>配置语法<ul>
-<li>配置文件由指令和指令块构成</li>
-<li>每条指令以分号（;）结尾，指令和参数间以空格符分隔</li>
-<li>指令块以大括号{}将多条指令组织在一起</li>
-<li>include 语句允许组合多个配置文件以提高可维护性</li>
-<li>使用 # 添加注释</li>
-<li>使用 $ 定义变量</li>
-<li>部分指令的参数支持正则表达式<ul>
-<li>local</li>
-<li>server_name</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>灵活使用include</p>
-</li>
-<li><p>常用命令</p>
-<ul>
-<li>nginx -s stop</li>
-<li>nginx -s reload</li>
-<li>nginx -t</li>
-</ul>
-</li>
-<li><p>常用指令</p>
-<ul>
-<li>server_name<ul>
-<li>精确匹配</li>
-<li>通配符</li>
-<li>正则匹配，可以捕获匹配项</li>
-</ul>
-</li>
-<li>proxy_pass<ul>
-<li>使用变量时，必需要用resolver指令解析变量中的域名 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server_name www.fleven.com;</span><br><span class="line">server_name www.fleven.;</span><br><span class="line">server_name .fleven.com;</span><br><span class="line">server_name ~^[w]+.fleven.com$;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>匹配顺序</p>
-<ul>
-<li>nginx里面有很多需要匹配的地方，比如server_name,local, 这些匹配按照从上到下的顺序执行，一旦匹配成功就停止后续的匹配，所以这些匹配条件的顺序是越精确的越在前面，越模糊的越在后面；</li>
-</ul>
-</li>
-<li><p>demo</p>
- <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局配置</span></span><br><span class="line"><span class="comment">#定义Nginx运行的用户和用户组</span></span><br><span class="line"><span class="attribute">user</span> www www; </span><br><span class="line"></span><br><span class="line"><span class="comment">#nginx进程数，通常设置成和cpu的数量相等</span></span><br><span class="line"><span class="attribute">worker_processes</span> <span class="number">4</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">#全局错误日志定义类型，[debug | info | notice | warn | error | crit]</span></span><br><span class="line"><span class="comment">#error_log  /data/nginx/logs/error.log;</span></span><br><span class="line"><span class="comment">#error_log  /data/nginx/logs/error.log  notice;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#日志文件存放路径 access_log path [format [buffer=size | off]]</span></span><br><span class="line"><span class="attribute">access_log</span> /data/nginx/logs/lazyegg.com/web/access.log combinedio;</span><br><span class="line"></span><br><span class="line"><span class="comment">#进程pid文件</span></span><br><span class="line"><span class="comment">#pid        logs/nginx.pid;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#指定进程可以打开的最大描述符：数目</span></span><br><span class="line"><span class="comment">#工作模式与连接数上限</span></span><br><span class="line"><span class="comment">##这个指令是指当一个nginx进程打开的最多文件描述符数目，理论值应该是最多打开文件数（ulimit -n）与nginx进程数相除，但是nginx分配请求并不是那么均匀，所以最好与ulimit -n 的值保持一致。</span></span><br><span class="line"><span class="comment">#这是因为nginx调度时分配请求到进程并不是那么的均衡，所以假如填写10240，总并发量达到3-4万时就有进程可能超过10240了，这时会返回502错误。</span></span><br><span class="line"><span class="attribute">worker_rlimit_nofile</span> <span class="number">65535</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#################################  events  ###############################</span></span><br><span class="line"><span class="section">events</span> &#123;</span><br><span class="line">    <span class="comment">#参考事件模型，use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]; epoll模型</span></span><br><span class="line">    <span class="attribute">use</span> <span class="literal">epoll</span></span><br><span class="line">    <span class="comment">#单个进程最大连接数（最大连接数=连接数+进程数）</span></span><br><span class="line">    worker_connections  <span class="number">1024</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#keepalive 超时时间</span></span><br><span class="line">    <span class="attribute">keepalive_timeout</span> <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#客户端请求头部的缓冲区大小。</span></span><br><span class="line">    <span class="attribute">client_header_buffer_size</span> <span class="number">4k</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#这个将为打开文件指定缓存，默认是没有启用的，max指定缓存数量，建议和打开文件数一致，inactive是指经过多长时间文件没被请求后删除缓存。</span></span><br><span class="line">    <span class="attribute">open_file_cache</span> max=<span class="number">65535</span> inactive=<span class="number">60s</span>;</span><br><span class="line">    <span class="comment">#这个是指多长时间检查一次缓存的有效信息。</span></span><br><span class="line">    <span class="attribute">open_file_cache_valid</span> <span class="number">80s</span>;</span><br><span class="line">        <span class="comment">#open_file_cache指令中的inactive参数时间内文件的最少使用次数，如果超过这个数字，文件描述符一直是在缓存中打开的，如上例，如果有一个文件在inactive时间内一次没被使用，它将被移除。</span></span><br><span class="line">    <span class="attribute">open_file_cache_min_uses</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#语法:open_file_cache_errors on | off 默认值:open_file_cache_errors off 使用字段:http, server, location 这个指令指定是否在搜索一个文件是记录cache错误.</span></span><br><span class="line">    <span class="attribute">open_file_cache_errors</span> <span class="literal">on</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">##############################   http    ##################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设定http服务器，利用它的反向代理功能提供负载均衡支持</span></span><br><span class="line">http&#123;</span><br><span class="line">    <span class="comment">#文件扩展名与文件类型映射表</span></span><br><span class="line">    <span class="attribute">include</span> mime.types;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#默认文件类型</span></span><br><span class="line">    <span class="attribute">default_type</span> application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#默认编码</span></span><br><span class="line">    <span class="attribute">charset</span> utf-<span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#服务器名字的hash表大小</span></span><br><span class="line">    <span class="attribute">server_names_hash_bucket_size</span> <span class="number">128</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#客户端请求头部的缓冲区大小。</span></span><br><span class="line">    <span class="attribute">client_header_buffer_size</span> <span class="number">32k</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#客户请求头缓冲大小。</span></span><br><span class="line">    <span class="attribute">large_client_header_buffers</span> <span class="number">4</span> <span class="number">64k</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#允许客户端请求的最大单个文件字节数</span></span><br><span class="line">    <span class="attribute">client_max_body_size</span> <span class="number">8m</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。注意：如果图片显示不正常把这个改成off。</span></span><br><span class="line">    <span class="attribute">sendfile</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#开启目录列表访问，适合下载服务器，默认关闭。</span></span><br><span class="line">    <span class="attribute">autoindex</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#此选项允许或禁止使用socke的TCP_CORK的选项，此选项仅在使用sendfile的时候使用</span></span><br><span class="line">    <span class="attribute">tcp_nopush</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">tcp_nodelay</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#长连接超时时间，单位是秒</span></span><br><span class="line">    <span class="attribute">keepalive_timeout</span> <span class="number">120</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#FastCGI相关参数是为了改善网站的性能：减少资源占用，提高访问速度。下面参数看字面意思都能理解。</span></span><br><span class="line">    <span class="attribute">fastcgi_connect_timeout</span> <span class="number">300</span>;</span><br><span class="line">    <span class="attribute">fastcgi_send_timeout</span> <span class="number">300</span>;</span><br><span class="line">    <span class="attribute">fastcgi_read_timeout</span> <span class="number">300</span>;</span><br><span class="line">    <span class="attribute">fastcgi_buffer_size</span> <span class="number">64k</span>;</span><br><span class="line">    <span class="attribute">fastcgi_buffers</span> <span class="number">4</span> <span class="number">64k</span>;</span><br><span class="line">    <span class="attribute">fastcgi_busy_buffers_size</span> <span class="number">128k</span>;</span><br><span class="line">    <span class="attribute">fastcgi_temp_file_write_size</span> <span class="number">128k</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#gzip模块设置</span></span><br><span class="line">    <span class="attribute">gzip</span> <span class="literal">on</span>; <span class="comment">#开启gzip压缩输出</span></span><br><span class="line">    <span class="attribute">gzip_min_length</span> <span class="number">1k</span>;    <span class="comment">#最小压缩文件大小</span></span><br><span class="line">    <span class="attribute">gzip_buffers</span> <span class="number">4</span> <span class="number">16k</span>;    <span class="comment">#压缩缓冲区</span></span><br><span class="line">    <span class="attribute">gzip_http_version</span> <span class="number">1</span>.<span class="number">0</span>; <span class="comment">#压缩版本（默认1.1，前端如果是squid2.5请使用1.0）</span></span><br><span class="line">    <span class="attribute">gzip_comp_level</span> <span class="number">2</span>;     <span class="comment">#压缩等级</span></span><br><span class="line">    <span class="attribute">gzip_types</span> text/plain application/x-javascript text/css application/xml;    <span class="comment">#压缩类型，默认就已经包含textml，所以下面就不用再写了，写上去也不会有问题，但是会有一个warn。</span></span><br><span class="line">    <span class="attribute">gzip_vary</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#开启限制IP连接数的时候需要使用</span></span><br><span class="line">    <span class="comment">#limit_zone crawler $binary_remote_addr 10m;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#负载均衡配置</span></span><br><span class="line">    <span class="section">upstream</span> lazyegg.net &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#upstream的负载均衡，weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。</span></span><br><span class="line">        <span class="attribute">server</span> <span class="number">192.168.80.121:80</span> weight=<span class="number">3</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">192.168.80.122:80</span> weight=<span class="number">2</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">192.168.80.123:80</span> weight=<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#nginx的upstream目前支持4种方式的分配</span></span><br><span class="line">        <span class="comment">#1、轮询（默认）</span></span><br><span class="line">        <span class="comment">#每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。</span></span><br><span class="line">        <span class="comment">#2、weight</span></span><br><span class="line">        <span class="comment">#指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。</span></span><br><span class="line">        <span class="comment">#例如：</span></span><br><span class="line">        <span class="comment">#upstream bakend &#123;</span></span><br><span class="line">        <span class="comment">#    server 192.168.0.14 weight=10;</span></span><br><span class="line">        <span class="comment">#    server 192.168.0.15 weight=10;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line">        <span class="comment">#2、ip_hash</span></span><br><span class="line">        <span class="comment">#每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。</span></span><br><span class="line">        <span class="comment">#例如：</span></span><br><span class="line">        <span class="comment">#upstream bakend &#123;</span></span><br><span class="line">        <span class="comment">#    ip_hash;</span></span><br><span class="line">        <span class="comment">#    server 192.168.0.14:88;</span></span><br><span class="line">        <span class="comment">#    server 192.168.0.15:80;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line">        <span class="comment">#3、fair（第三方）</span></span><br><span class="line">        <span class="comment">#按后端服务器的响应时间来分配请求，响应时间短的优先分配。</span></span><br><span class="line">        <span class="comment">#upstream backend &#123;</span></span><br><span class="line">        <span class="comment">#    server server1;</span></span><br><span class="line">        <span class="comment">#    server server2;</span></span><br><span class="line">        <span class="comment">#    fair;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line">        <span class="comment">#4、url_hash（第三方）</span></span><br><span class="line">        <span class="comment">#按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，后端服务器为缓存时比较有效。</span></span><br><span class="line">        <span class="comment">#例：在upstream中加入hash语句，server语句中不能写入weight等其他的参数，hash_method是使用的hash算法</span></span><br><span class="line">        <span class="comment">#upstream backend &#123;</span></span><br><span class="line">        <span class="comment">#    server squid1:3128;</span></span><br><span class="line">        <span class="comment">#    server squid2:3128;</span></span><br><span class="line">        <span class="comment">#    hash $request_uri;</span></span><br><span class="line">        <span class="comment">#    hash_method crc32;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#tips:</span></span><br><span class="line">        <span class="comment">#upstream bakend&#123;#定义负载均衡设备的Ip及设备状态&#125;&#123;</span></span><br><span class="line">        <span class="comment">#    ip_hash;</span></span><br><span class="line">        <span class="comment">#    server 127.0.0.1:9090 down;</span></span><br><span class="line">        <span class="comment">#    server 127.0.0.1:8080 weight=2;</span></span><br><span class="line">        <span class="comment">#    server 127.0.0.1:6060;</span></span><br><span class="line">        <span class="comment">#    server 127.0.0.1:7070 backup;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line">        <span class="comment">#在需要使用负载均衡的server中增加 proxy_pass http://bakend/;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#每个设备的状态设置为:</span></span><br><span class="line">        <span class="comment">#1.down表示单前的server暂时不参与负载</span></span><br><span class="line">        <span class="comment">#2.weight为weight越大，负载的权重就越大。</span></span><br><span class="line">        <span class="comment">#3.max_fails：允许请求失败的次数默认为1.当超过最大次数时，返回proxy_next_upstream模块定义的错误</span></span><br><span class="line">        <span class="comment">#4.fail_timeout:max_fails次失败后，暂停的时间。</span></span><br><span class="line">        <span class="comment">#5.backup： 其它所有的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#nginx支持同时设置多组的负载均衡，用来给不用的server来使用。</span></span><br><span class="line">        <span class="comment">#client_body_in_file_only设置为On 可以讲client post过来的数据记录到文件中用来做debug</span></span><br><span class="line">        <span class="comment">#client_body_temp_path设置记录文件的目录 可以设置最多3层目录</span></span><br><span class="line">        <span class="comment">#location对URL进行匹配.可以进行重定向或者进行新的代理 负载均衡</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">#虚拟主机的配置</span></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="comment">#监听端口</span></span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#域名可以有多个，用空格隔开</span></span><br><span class="line">        <span class="attribute">server_name</span> lazyegg.net;</span><br><span class="line">        <span class="comment">#默认入口文件名称</span></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm index.php;</span><br><span class="line">        <span class="attribute">root</span> /data/www/lazyegg;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#对******进行负载均衡</span></span><br><span class="line">        <span class="section">location</span> <span class="regexp">~ .*.(php|php5)?$</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attribute">fastcgi_pass</span> <span class="number">127.0.0.1:9000</span>;</span><br><span class="line">            <span class="attribute">fastcgi_index</span> index.php;</span><br><span class="line">            <span class="attribute">include</span> fastcgi.conf;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#图片缓存时间设置</span></span><br><span class="line">        <span class="section">location</span> <span class="regexp">~ .*.(gif|jpg|jpeg|png|bmp|swf)$</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attribute">expires</span> <span class="number">10d</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#JS和CSS缓存时间设置</span></span><br><span class="line">        <span class="section">location</span> <span class="regexp">~ .*.(js|css)?$</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attribute">expires</span> <span class="number">1h</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#日志格式设定</span></span><br><span class="line">        <span class="comment">#$remote_addr与$http_x_forwarded_for用以记录客户端的ip地址；</span></span><br><span class="line">        <span class="comment">#$remote_user：用来记录客户端用户名称；</span></span><br><span class="line">        <span class="comment">#$time_local： 用来记录访问时间与时区；</span></span><br><span class="line">        <span class="comment">#$request： 用来记录请求的url与http协议；</span></span><br><span class="line">        <span class="comment">#$status： 用来记录请求状态；成功是200，</span></span><br><span class="line">        <span class="comment">#$body_bytes_sent ：记录发送给客户端文件主体内容大小；</span></span><br><span class="line">        <span class="comment">#$http_referer：用来记录从那个页面链接访问过来的；</span></span><br><span class="line">        <span class="comment">#$http_user_agent：记录客户浏览器的相关信息；</span></span><br><span class="line">        <span class="comment">#通常web服务器放在反向代理的后面，这样就不能获取到客户的IP地址了，通过$remote_add拿到的IP地址是反向代理服务器的iP地址。反向代理服务器在转发请求的http头信息中，可以增加x_forwarded_for信息，用以记录原有客户端的IP地址和原来客户端的请求的服务器地址。</span></span><br><span class="line">        <span class="attribute">log_format</span> access <span class="string">&#x27;<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] &quot;<span class="variable">$request</span>&quot; &#x27;</span></span><br><span class="line">        <span class="string">&#x27;<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> &quot;<span class="variable">$http_referer</span>&quot; &#x27;</span></span><br><span class="line">        <span class="string">&#x27;&quot;<span class="variable">$http_user_agent</span>&quot; <span class="variable">$http_x_forwarded_for</span>&#x27;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义本虚拟主机的访问日志</span></span><br><span class="line">        <span class="attribute">access_log</span>  /usr/local/nginx/logs/host.access.log  main;</span><br><span class="line">        <span class="attribute">access_log</span>  /usr/local/nginx/logs/host.access.<span class="number">404</span>.log  log404;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#对 &quot;/connect-controller&quot; 启用反向代理</span></span><br><span class="line">        <span class="section">location</span> /connect-controller &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> http://127.0.0.1:88; <span class="comment">#请注意此处端口号不能与虚拟主机监听的端口号一样（也就是server监听的端口）</span></span><br><span class="line">            <span class="attribute">proxy_redirect</span> <span class="literal">off</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</span></span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#以下是一些反向代理的配置，可选。</span></span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#允许客户端请求的最大单文件字节数</span></span><br><span class="line">            <span class="attribute">client_max_body_size</span> <span class="number">10m</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#缓冲区代理缓冲用户端请求的最大字节数，</span></span><br><span class="line">            <span class="comment">#如果把它设置为比较大的数值，例如256k，那么，无论使用firefox还是IE浏览器，来提交任意小于256k的图片，都很正常。如果注释该指令，使用默认的client_body_buffer_size设置，也就是操作系统页面大小的两倍，8k或者16k，问题就出现了。</span></span><br><span class="line">            <span class="comment">#无论使用firefox4.0还是IE8.0，提交一个比较大，200k左右的图片，都返回500 Internal Server Error错误</span></span><br><span class="line">            <span class="attribute">client_body_buffer_size</span> <span class="number">128k</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#表示使nginx阻止HTTP应答代码为400或者更高的应答。</span></span><br><span class="line">            <span class="attribute">proxy_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#后端服务器连接的超时时间_发起握手等候响应超时时间</span></span><br><span class="line">            <span class="comment">#nginx跟后端服务器连接超时时间(代理连接超时)</span></span><br><span class="line">            <span class="attribute">proxy_connect_timeout</span> <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#后端服务器数据回传时间(代理发送超时)</span></span><br><span class="line">            <span class="comment">#后端服务器数据回传时间_就是在规定时间之内后端服务器必须传完所有的数据</span></span><br><span class="line">            <span class="attribute">proxy_send_timeout</span> <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#连接成功后，后端服务器响应时间(代理接收超时)</span></span><br><span class="line">            <span class="comment">#连接成功后_等候后端服务器响应时间_其实已经进入后端的排队之中等候处理（也可以说是后端服务器处理请求的时间）</span></span><br><span class="line">            <span class="attribute">proxy_read_timeout</span> <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#设置代理服务器（nginx）保存用户头信息的缓冲区大小</span></span><br><span class="line">            <span class="comment">#设置从被代理服务器读取的第一部分应答的缓冲区大小，通常情况下这部分应答中包含一个小的应答头，默认情况下这个值的大小为指令proxy_buffers中指定的一个缓冲区的大小，不过可以将其设置为更小</span></span><br><span class="line">            <span class="attribute">proxy_buffer_size</span> <span class="number">4k</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#proxy_buffers缓冲区，网页平均在32k以下的设置</span></span><br><span class="line">            <span class="comment">#设置用于读取应答（来自被代理服务器）的缓冲区数目和大小，默认情况也为分页大小，根据操作系统的不同可能是4k或者8k</span></span><br><span class="line">            <span class="attribute">proxy_buffers</span> <span class="number">4</span> <span class="number">32k</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#高负荷下缓冲大小（proxy_buffers*2）</span></span><br><span class="line">            <span class="attribute">proxy_busy_buffers_size</span> <span class="number">64k</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#设置在写入proxy_temp_path时数据的大小，预防一个工作进程在传递文件时阻塞太长</span></span><br><span class="line">            <span class="comment">#设定缓存文件夹大小，大于这个值，将从upstream服务器传</span></span><br><span class="line">            <span class="attribute">proxy_temp_file_write_size</span> <span class="number">64k</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#本地动静分离反向代理配置</span></span><br><span class="line">        <span class="comment">#所有jsp的页面均交由tomcat或resin处理</span></span><br><span class="line">        <span class="section">location</span> <span class="regexp">~ .(jsp|jspx|do)?$</span> &#123;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">            <span class="attribute">proxy_pass</span> http://127.0.0.1:8080;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参考</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/s15ZvxkHrRXYblzwuqFW2g">Nginx的这些妙用，你肯定有不知道的！</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5c1616186fb9a049a42ef21d">nginx.conf 配置文件详解</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.51cto.com/onlyzq/535279">关于Nginx的server_name</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1370009">nginx配置自定义变量实现日志动态分发</a></li>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000008061457">proxy_pass的小说明</a></li>
-</ul>
-</li>
-</ul>
+        <p>疫情中逝去的每一个生命，都不只是一个简单的数字或名字。</p>
+<p>他们是父亲、母亲、儿女、兄妹，是我们血脉相连的骨肉同胞。</p>
+<p>我们向逝世同胞致哀，同时也向那些与死神不屈抗争的生命致敬，向那种生死瞬间的人间大爱致礼。</p>
+<p>全球确诊病例已经突破百万！祈祷他们早日康复！</p>
+<p>祝福健康与我们每一个人同在！</p>
 
       
 
@@ -984,7 +833,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会 感悟</a>
         		</li>
       		
 		</ul>
@@ -994,7 +843,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/nginx/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/2020%E5%B9%B44%E6%9C%884%E6%97%A5%C2%B7%E5%85%A8%E5%9B%BD%E5%93%80%E6%82%BC%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -1024,190 +873,42 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-shell学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-go入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/shell%E5%AD%A6%E4%B9%A0/">shell 学习笔记</a>
+      <a class="article-title" href="/2020/go%E5%85%A5%E9%97%A8/">Go入门学习笔记</a>
     </h1>
   
 
         
-        <a href="/2020/shell%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-01-30T04:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
+        <a href="/2020/go%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2020-03-02T15:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于shell使用的一些基本知识和实践，持续更新。</p>
-<ul>
-<li><p>#! 是一种约定的写法，指示使用何种解释器；</p>
-</li>
-<li><p>为什么使用.&#x2F;xx.sh的方式执行shell文件？<br>.&#x2F;xx.sh 指定目录会让系统从指定的目录寻找可以执行的文件。如果是xx.sh，系统会从PATH中寻找可执行文件；</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文件查找在很多系统中有存在，可以对比理解：</span><br><span class="line">    1 npm的路径寻找过程</span><br><span class="line">    2 java中class loader的依赖查找</span><br></pre></td></tr></table></figure></li>
-<li><p>反引号 和 $() 可以表示命令替换</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NPM_LOC_1=`which npm`</span><br><span class="line">NPM_LOC_2=$(which npm)</span><br><span class="line"></span><br><span class="line">if [ $NPM_LOC_1 = $NPM_LOC_1 ]; then</span><br><span class="line">    echo &quot;相同&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x3D; 之后有空格，可以表示命令替换</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a= ls ./</span><br><span class="line">echo &quot;$a&quot;</span><br></pre></td></tr></table></figure></li>
-<li><p>运算符和操作数之间要有空格</p>
-</li>
-<li><p>一般性输出使用echo，需要一定格式的可以使用printf</p>
-</li>
-<li><p>特殊符号</p>
-<ul>
-<li>$#</li>
-<li>$@</li>
-<li>$*</li>
+        <p>go入门学习笔记</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>demo的前提条件，本机上按照有go的编译环境。</li>
+<li>来一段代码测试下<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>调试方法<ul>
+<li>目前基本是打印的方式，如果熟悉PHP的话，你懂得这方式.</li>
+<li>常用的打印方式：fmt.Print&#x2F;fmt.Println&#x2F;fmt.Printf.</li>
+<li>使用fmt.Printf打印变量<ul>
+<li>%+v 打印包括字段在内的实例的完整信息</li>
+<li>%#v 打印包括字段和限定类型名称在内的实例的完整信息</li>
+<li>%T 打印某个类型的完整信息</li>
 </ul>
 </li>
-<li><p>注释</p>
-<ul>
-<li>单行注释   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br></pre></td></tr></table></figure></li>
-<li>多行注释  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这是注释</span></span><br><span class="line"></span><br><span class="line">:&lt;&lt;EOF</span><br><span class="line">这是注释</span><br><span class="line">这是注释</span><br><span class="line">这是注释</span><br><span class="line">EOF</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>使用panic, 获取执行点的堆栈信息</li>
+<li>使用defer来跟踪代码执行过程</li>
 </ul>
-</li>
-<li><p>变量</p>
-<ul>
-<li><p>合法的变量名，数字，字母，下划线，不能以数字开头;</p>
-</li>
-<li><p>变量名和&#x3D;之间不能有空格;</p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=`123`</span><br><span class="line">echo $&#123;name&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>类型：字符串, 数字, 数组</p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;test&#x27;</span><br><span class="line">echo $&#123;name&#125;</span><br><span class="line">name=1</span><br><span class="line">echo $&#123;name&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>变量使用，使用${变量名}，花括号可以省略，最佳实践是不要去掉花花括号；</p>
-</li>
-<li><p>使用readonly可以定义只读变量</p>
-</li>
-<li><p>删除变量</p>
-</li>
-<li><p>变量作用域</p>
-<ul>
-<li>局部变量</li>
-<li>环境变量</li>
-<li>shell 变量</li>
-</ul>
-</li>
-<li><p>字符串</p>
-<ul>
-<li>单引号和双引号的区别：单引号内都是字符串，双引号内可以包括变量的引用和转义字符</li>
-<li>拼接  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name1=&#x27;I love &#x27;</span><br><span class="line">name2=&#x27;shell&#x27;</span><br><span class="line">echo $&#123;name1&#125; $&#123;name2&#125; </span><br></pre></td></tr></table></figure></li>
-<li>长度  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;I love shell!&#x27;</span><br><span class="line">echo $&#123;#name&#125;</span><br></pre></td></tr></table></figure></li>
-<li>子串  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;I love shell!&#x27;</span><br><span class="line">echo $&#123;name:1:2&#125;</span><br></pre></td></tr></table></figure></li>
-<li>查找（有问题）  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&#x27;I love shell!&#x27;</span><br><span class="line">echo `expr index &quot;$&#123;name&#125;&quot; love`</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>数字</p>
-</li>
-<li><p>数组</p>
-<ul>
-<li>定义，使用圆括号包括，元素之间使用空格分隔   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br></pre></td></tr></table></figure></li>
-<li>赋值  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">list[5]=&#x27;c++&#x27;</span><br></pre></td></tr></table></figure></li>
-<li>使用   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">echo $&#123;list[1]&#125;</span><br></pre></td></tr></table></figure></li>
-<li>获取所有元素， 使用@或者*获取   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">echo $&#123;list[@]&#125;</span><br></pre></td></tr></table></figure></li>
-<li>获取长度   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=(&#x27;java&#x27; &#x27;c&#x27; &#x27;javascript&#x27; &#x27;c#&#x27;)</span><br><span class="line">echo $&#123;#list[@]&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>参数传递</p>
-<ul>
-<li>使用$n获取传入的第n个参数</li>
-</ul>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;执行的文件名：$0&quot;;</span><br><span class="line">echo &quot;参数个数 $#&quot;;</span><br><span class="line">echo &quot;所有参数 $*&quot;;</span><br><span class="line">echo &quot;所有参数 $@&quot;</span><br><span class="line">echo &quot;第一个参数为：$1&quot;;</span><br><span class="line">echo &quot;第二个参数为：$2&quot;;</span><br><span class="line">echo &quot;第三个参数为：$3&quot;; </span><br><span class="line">echo &quot;脚本运行的当前进程ID号 $$&quot;</span><br><span class="line">echo &quot;后台运行的最后一个进程的ID号 $!&quot;</span><br><span class="line">echo &quot;显示Shell使用的当前选项 $-&quot;      </span><br></pre></td></tr></table></figure></li>
-<li><p>基本运算符</p>
-<ul>
-<li><p>数学运算一般使用其他命令，如expr</p>
-</li>
-<li><p>数学运算也可以使用如下符号</p>
-<ul>
-<li>$(())</li>
-<li>$[]  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line">c=$[$a+$b]</span><br><span class="line">d=$(($a+$b))</span><br><span class="line">echo &quot;$c&quot;</span><br><span class="line">echo &quot;$d&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>算术运算， 加，减，乘，除，赋值，取余，相等，不等</p>
-<ul>
-<li>条件表达式需要使用方括号，并且需要空格, [ $a &#x3D;&#x3D; $b ]</li>
-<li>算术运算符两边需要加空格</li>
-<li>乘号(*)前边必须加反斜杠()才能实现乘法运算；  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">val=`expr $a + $b`</span><br><span class="line">echo &quot; a + b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a / $b`</span><br><span class="line">echo &quot; a / b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a - $b`</span><br><span class="line">echo &quot; a - b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a \* $b`</span><br><span class="line">echo &quot; a * b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a % $b`</span><br><span class="line">echo &quot; a % b: $&#123;val&#125;&quot;</span><br><span class="line"></span><br><span class="line">if [ $a == $b ]; then</span><br><span class="line">    echo &quot;a ==  b&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;a !=  b&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>关系运算</p>
-<ul>
-<li>只支持数字，不支持字符串</li>
-<li>-eq</li>
-<li>-ne</li>
-<li>-gt</li>
-<li>-lt</li>
-<li>-ge</li>
-<li>-le</li>
-</ul>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">if [ $a -eq $b ]; then</span><br><span class="line">    echo &quot;a -eq b: 相等&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -eq b: 不相等&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $a -ne $b ]; then</span><br><span class="line">    echo &quot;a -ne b: 不相等&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -ne b: 相等&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $a -gt $b ]; then</span><br><span class="line">    echo &quot;a -gt b: 大于&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -gt b: 小于等于&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $a -lt $b ]; then</span><br><span class="line">    echo &quot;a -lt b: 小于&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;a -lt b: 大于等于&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li>
-<li><p>布尔运算</p>
-<ul>
-<li>!</li>
-<li>-o</li>
-<li>-a  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">if [ $a -eq 1 -a $b -ne 2 ]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi  </span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>逻辑运算符，使用双中括号</p>
-<ul>
-<li>&amp;&amp;</li>
-<li>||   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line"></span><br><span class="line">if [[ $a -eq 1 &amp;&amp; $b -ne 2 ]]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi  </span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>字符串运算</p>
-<ul>
-<li>&#x3D; 两个字符串是否相等</li>
-<li>!&#x3D; 两个字符串是否不相等</li>
-<li>-z 字符串长度是否是0</li>
-<li>-n 字符串长度是否不为0</li>
-<li>$ 字符串是否为空</li>
-<li>字符串比较可以使用双中括号，双中括号提供了针对字符串比较的高级特性，使用双中括号 [[ ]] 进行字符串比较时，可以把右边的项看做一个模式，故而可以在 [[ ]] 中使用正则表达式：</li>
-</ul>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[ &quot;$script_location&quot; != /* ]]</span><br></pre></td></tr></table></figure>
-
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=&quot;1&quot;</span><br><span class="line">b=&quot;2&quot;</span><br><span class="line"></span><br><span class="line">if [ -n $a ]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi </span><br></pre></td></tr></table></figure>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=&quot;1&quot;</span><br><span class="line">b=&quot;2&quot;</span><br><span class="line"></span><br><span class="line">if [[ -n $a ]]; then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else </span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>文件测试运算</p>
-<ul>
-<li>-f file 判断文件是否是普通文件</li>
-<li>-r file 是否是可读文件</li>
-<li>-w file 是否是可写文件</li>
-<li>-x file 是否是可执行文件  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file=&quot;./test.sh&quot;</span><br><span class="line">if [ -f $file ]; then</span><br><span class="line">    echo &quot;$file 是普通文件&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>控制流</p>
-<ul>
-<li>if else fi</li>
-<li>if elif else fi</li>
-<li>for<ul>
-<li>in列表可以包含替换、字符串和文件名。</li>
-<li>command1 指任何有效的命令和语句  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for var in item1 item2 item3 ... itmeN; do</span><br><span class="line">    command1</span><br><span class="line">done</span><br><span class="line">for num in `ls .`; do</span><br><span class="line">    echo $&#123;num&#125;</span><br><span class="line">done</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>while  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while condition; do</span><br><span class="line">    command1</span><br><span class="line">done</span><br></pre></td></tr></table></figure></li>
-<li>case  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">case 值 in</span><br><span class="line">模式1)</span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    ;;</span><br><span class="line">模式2)</span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    ;;</span><br><span class="line">*)</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name=&quot;apple&quot;</span><br><span class="line">case $name in</span><br><span class="line">&quot;apple&quot;)</span><br><span class="line">    echo &quot;apple&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;bear&quot;)</span><br><span class="line">    echo &quot;bear&quot;</span><br><span class="line">;;</span><br><span class="line">esac    </span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>函数</p>
-<ul>
-<li>函数定义  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">demofun() &#123;</span><br><span class="line">    echo &quot;demo&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">demofun</span><br></pre></td></tr></table></figure></li>
-<li>返回值 $?</li>
-<li>函数参数 $n</li>
-<li>调用 函数名  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add() &#123;</span><br><span class="line">    return `expr $1 + $2`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add 1 2</span><br><span class="line">echo &quot;add 1 2: $?&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>输入输出重定向</p>
 </li>
 </ul>
 
@@ -1223,7 +924,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell 语言学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">go语言学习</a>
         		</li>
       		
 		</ul>
@@ -1233,7 +934,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/shell%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/go%E5%85%A5%E9%97%A8/">展开全文 >></a>
         </p>
       
 
@@ -1265,7 +966,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/40/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="page-number current">41</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/42/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/40/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="page-number current">41</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/42/">Next &raquo;</a>
     </nav>
   
 
@@ -1719,6 +1420,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">myclaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Memory</a>
               </li>
              
@@ -1812,6 +1521,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">benchmark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开源项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ChatDev</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CLI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sharp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多智能体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字分身</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数字人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">多智能体系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frontend</a>
               </li>
             
             <div class="clearfix"></div>

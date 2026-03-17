@@ -1,6 +1,5 @@
 ---
 title: ChatDev 2.0 - 零代码多智能体平台深度分析
-date: 2026-03-16 13:35:00
 tags:
   - AI Agent
   - Multi-Agent
@@ -9,6 +8,8 @@ tags:
 categories:
   - 开源分析
   - AI开发
+abbrlink: 23973
+date: 2026-03-16 13:35:00
 ---
 
 ## 项目简介

@@ -1,6 +1,5 @@
 ---
 title: VirtualPersona - 虚拟多人对话数字人系统
-date: 2026-03-16 13:20:00
 tags:
   - AI Agent
   - 数字人
@@ -9,6 +8,8 @@ tags:
 categories:
   - 项目
   - AI开发
+abbrlink: 16341
+date: 2026-03-16 13:20:00
 ---
 
 ## 项目背景

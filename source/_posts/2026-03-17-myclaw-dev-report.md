@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 3 (LLM 提供商集成)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 15243
 date: 2026-03-17 04:35:45
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 3 (LLM 提供商集成)

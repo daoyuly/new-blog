@@ -151,36 +151,207 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-北漂的日子（24）一口难得的热乎饭" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2025年 5 月 19 日 - 2025年 5 月 23 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8824%EF%BC%89%E4%B8%80%E5%8F%A3%E9%9A%BE%E5%BE%97%E7%9A%84%E7%83%AD%E4%B9%8E%E9%A5%AD/">一口难得的热乎饭</a>
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2019%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2023%20%E6%97%A5/">工作周报2025年 5 月 19 日 - 2025年 5 月 23 日</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8824%EF%BC%89%E4%B8%80%E5%8F%A3%E9%9A%BE%E5%BE%97%E7%9A%84%E7%83%AD%E4%B9%8E%E9%A5%AD/" class="archive-article-date">
-  	<time datetime="2025-04-16T14:52:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-16</time>
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2019%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2023%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-05-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>北漂的时间长了，总有那么一瞬间会有一个特别的渴望。上了一天班，晚上下班回家，和老婆孩子一起吃口热乎饭.</p>
-<p>自己下厨，在厨房里叮叮当当，老婆备菜，我烧菜，孩子不情愿地叽叽歪歪着赶写作业。</p>
-<p>电视里播放着狗血的剧情，但也是这个场景的一部分。</p>
-<p>窗外，万家灯火，莹莹流光。</p>
-<p>小区的广场上，吵吵闹闹。</p>
-<p>菜炒好了，饭做得了，孩子早早就坐到了桌子边，端上菜，盛上饭，我倒上了一杯自己喜欢的酒。</p>
-<p>老婆絮叨着小区里的超市卖的西瓜比小区外的贵了5毛钱。</p>
-<p>孩子插空的说想要去水上乐园。</p>
-<p>电视里是新闻联播的声音。</p>
-<p>我则咂一口小酒，品味着小小的酒香。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>Sentry性能排查相关工作思考<ol>
+<li>按照团队的安排，本周开始针对性的排查Sentry上的性能问题，在第一轮rspack 和 打包 优化的基础上，这次排查的重点是比较突出的重点页面的性能问题，如PC课程页、M端课程页，M端各个重点小节的主页面，主要关注的性能指标包括FP和LCP的p75，也会关注和处理重点客户的p95的指标。 这次优化思路上放在页面级组件、页面，接口上，结合Sentry性能指标和页面的Performance指标，针对性优化解决，通过快速迭代来分析性能提升效果，然后再总结性能优化方法以应用于同类的页面或者模块。</li>
+</ol>
+</li>
+<li>稳定性问题排查解决<ol>
+<li>通过前一阵子的集中式的问题解决，最近一个月Sentry上Crash Free Sessions指标平均保持在98.5%以上，Crash Free Users指标平均保持在95%左右，按照OKR的目标设计，我们希望Sentry上Crash Free Sessions指标能稳定的保持在99.9%以上，Crash Free Users保持在99%以上，对Web端来说，涉及平台多，浏览器和网络情况复杂，实现起来还有比较大的挑战，很多疑难问题，偶发问题，第三方库库的问题都需要继续深入的解决。目前按照专项的方式逐步对音视频播放器，PDF阅读器，上传等关键组件增加了非常多必要日志和异常处理，随着这些优化的陆续上线，我们一定能在Q2完成这个目标。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2019%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2023%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 5 月 12 日 - 2025年 5 月 18 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2018%20%E6%97%A5/">工作周报2025年 5 月 12 日 - 2025年 5 月 18 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2018%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-05-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>构建自助问题排查系统的探索和思考<ol>
+<li>随着前端稳定性项目的推进，代码报错类问题已经得到有效的监控和解决，按照现在的方式继续深入推荐，不管是新功能上线还老功能的深度使用，都得到了有效的控制</li>
+<li>目前项目的深入深入我们也注意几个点：一是我们目前没有完善自助问题排查工具，二是现在Sentry上的问题解决难度变大了，三是如何保持住这种治理效果</li>
+<li>在技术上，前端上深度依赖浏览器的能力，比如富文本编辑能力、Fetch&#x2F;Ajax为代表的短连接网络技术、以Web socket为为主要技术长连接能力、以Canvas为主要技术的前端绘制能力、音频播放能力、视频播放&#x2F;字幕能力、视频录制&#x2F;媒体管理能力、音频录制能力、PDF展示能力，需要和APP绑定使用的Webview技术，基于腾讯云和AWS的前端资源管理能力（Blob大文件上传下载等），当然这里还有其他的，比如部分功能会依赖web worker，webassembly，SVG，对浏览器来说，这些能力实现就是异常复杂，加之用户的环境千差万别，用户可能会遇到各种各种的问题，我们经常在Sentry上看到一个从来没见过的报错，观察一两周也就只有这一个报错，这类报错我们从现有的观测系统上判断用户是正常使用的，也就是说报错是偶然发生而且不影响用户的使用。当然也有一些这类报错，我们没法做出这样的判断，因为报错时间后，就没有相关日志了，我们没法判断用户是因为报错而无法使用了，还是在我们的观察窗口期用户只是没有使用而已，或者使用了，我们的日志因为未命中采样策略而没有上报，这类问题问题就是难度比较大的情况之一。还有这个报错频繁发生，但是因为报错是来浏览器的报错，或者没有任何代码信息和堆栈信息，我们也无法判断和排查这类报错，只能通过监控系统来判断这类报错有没有影响用户的使用</li>
+<li>在和CO的伙伴们在问题排查问题的时候，特别是一些疑难问题，我也发现问题排查效率不高的情况，这类情况我以前认为是流程问题，后来我仔细观察发现，很多情况是的原因是客观的，首先客户反馈的问题不一定是及时的，CO的伙伴收到反馈，然后理解，确认，整理，这个过程的时间也是必不可少的，最后到工程师这边，工程师理解，复现，排查，定位，也需要一定的时间，如果是简单的bug，到这一步，后面就是bug修复发布流程，这个时间是可控的。目前不少问题是无法复现的问题，为了解决问题，需要寻找客户复现的潜在因素，可能就需要和用户这确认信息，这个中间又需要经过CO伙伴和用户，其中CO伙伴可能要理解一些基本的专业知识，比如浏览器兼容性，视频录制等，因为CO伙伴可能要给用户解释工程师为什么需要这个信息，这个信息怎么提供，这个信息是否是隐私数据等等。基于这些情况，我觉得优化流程流程并不能解决问题，真正要解决这类问题，就需要自主化的排查诊断排除工具，CSS伙伴不应该为解决这类问题而去理解浏览器兼容性，视频录制的这些知识，她们应该将精力用在如何维护好客户关系，深度挖掘产品的使用价值上，从这个角度出发，我们在修复Sentry问题的同时，也开始利用现有的经验和AI编程能力逐步的开发和完善一些问题排查工具，总结常见问题排查步骤，利用工具实现问题排查，省去中间不必要的沟通，从而提高整个团队的专业性和服务效率。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2018%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-北漂的日子（25）写给十年后的自己" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8825%EF%BC%89%E5%86%99%E7%BB%99%E5%8D%81%E5%B9%B4%E5%90%8E%E7%9A%84%E8%87%AA%E5%B7%B1/">写给十年后的自己</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8825%EF%BC%89%E5%86%99%E7%BB%99%E5%8D%81%E5%B9%B4%E5%90%8E%E7%9A%84%E8%87%AA%E5%B7%B1/" class="archive-article-date">
+  	<time datetime="2025-05-16T14:52:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今年是2015年。</p>
+<p>我们正在使用用有点傻逼的大模型。</p>
+<p>我们的AI应用还没有现象级的。</p>
+<p>AI创业热火朝天。</p>
+<p>我们的出租车都是人开的。</p>
+<p>我们需要自己决定何时买何种商品来满足自己。</p>
+<p>我没有自己车。</p>
+<p>我在UMU工作。</p>
+<p>我的家在天津。</p>
+<p>孩子还在上小学二年级。</p>
+<p>我住在北京大兴。</p>
+<p>我还不胖，体重120斤。</p>
+<p>我再努力学习AI技术。</p>
+<p>我今年39岁。</p>
+<p>我的父母都健康，在老家务农。</p>
+<p>我老婆还是一点微胖。</p>
 
       
 
@@ -204,7 +375,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8824%EF%BC%89%E4%B8%80%E5%8F%A3%E9%9A%BE%E5%BE%97%E7%9A%84%E7%83%AD%E4%B9%8E%E9%A5%AD/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8825%EF%BC%89%E5%86%99%E7%BB%99%E5%8D%81%E5%B9%B4%E5%90%8E%E7%9A%84%E8%87%AA%E5%B7%B1/">展开全文 >></a>
         </p>
       
 
@@ -234,30 +405,86 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 4 月 7 日 - 2025年 4 月 13 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-关于二胎问题的思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%207%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2013%20%E6%97%A5/">工作周报2025年 4 月 7 日 - 2025年 4 月 13 日</a>
+      <a class="article-title" href="/2025/%E5%85%B3%E4%BA%8E%E4%BA%8C%E8%83%8E%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83/">要不要生二胎</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%207%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2013%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-13</time>
+        <a href="/2025/%E5%85%B3%E4%BA%8E%E4%BA%8C%E8%83%8E%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83/" class="archive-article-date">
+  	<time datetime="2025-05-13T14:04:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>这周的实际工作内容和优先级比原计划差异较大。 主要提前了增加了Sentry的动态设置采样率的功能开发及Web这块的可观测性的整体现状总结， 在Sentry问题排查和修复的投入的时间比较少，主要是在业务项目的投入时间较多：（1）排查和增加了了PC课程页的路由调整的代码的日志；（2）增加了Sentry的动态设置采样率的功能；（3）是支付项目的整体设计，设计上把之前的各类支付也做了一个简要的梳理，把AI Tools用到的支付功能也一并做了设计；主要考虑到支付这块平时改动较少，如果出现线上问题，方便没有接触过这类功能的伙伴快速上手，（4）在考虑线上问题排查的问题时，把前端可观测性的整体情况做了一下总结和梳理，明确这个工程方向的下一步工作计划和工作内容。我的一个思考问题和工作习惯是把当前目标和中长期目标综合起来考虑，这样产生的问题往往是想的过多，有因为资源有限和条件限制，不能把当前目标完成的很好，后面我会有意识调整这个工作逻辑。</li>
-<li>组会上我们内部讨论了如何有效的提高自己的积极主动性的问题，每个伙伴都针对自己的情况做了正反例子的总结。从我的角度来说，我觉得在认知上还要更深一步，认知破壁可能是我面临的一个很大的挑战，不管是Core Job还是团队里都要积极寻找切入点，主动落地计划，推动对团队有效的结果产生，都是需要我不断思考和实践的。站在工程师的角度，代码质量和设计质量提升，开发效率提升，AI提效，用户体验提升，系统稳定性提升，功能可靠性提升都要我们用心投入，积极主动的另一个方面就是求真务实，脚踏实地的做好自己的Core Job，不断追求卓越，目标指向自己的工作如何让公司有益，如何对客户有价值。</li>
-<li>Stripe支付在COM版订阅功能有接入使用，从我们的梳理来看，这块的支付流程和订阅逻辑耦合的比较深，从从这复用就要动之前的代码，我们认为这种方式弊大于利，ROI不高。对报名支付和AI Tools来说，各有各独特的业务逻辑和支付逻辑，基于以上的利弊权衡，Stripe支付做小的复用模块，复用倒不是说为了复用而复用，从功能质量和健壮性上考虑，复用是提高代码质量的有效工程技术。所以对COM版的报名支付来说，采取对现有业务最小侵入的设计策略。AI Tools采用最小复用越简单越好的设计策略。</li>
+        <p>这是一个很艰难的问题，也是很容易的问题。</p>
+<p>艰难的是，这是关于幸福，生命，未来的问题。</p>
+<p>容易的是，这完全有你决定，你可以听从父母的建议，朋友的建议，可以制造一些随机，甚至可以问问ChatGPT或者让Deepseek帮你深度思考一下。</p>
+<p>五一回家和母亲闲聊，说到最近姨姐姨哥家都有闺女要结婚的话题时，我有意的询问母亲说，我和小乔计划不要二胎了，没想到母亲说，你们决定就好，孩子多少，都差不多。接着母亲开始唠叨起家里的一些事情，我是认同母亲的想法的，孩子多少其实差不多。</p>
+<p>身边的好朋友基本上都是两三个孩子，小乔有时候会问我，你羡慕不？坦白说，我挺羡慕的。</p>
+<p>当刘牧山出生后，我就开始想要不要二胎这个问题，特别纠结，想要的原因很简单，因为特别想要一个闺女，另外就是多子多福嘛，还有一个就是从众心理，国家鼓励要二胎，身边亲朋好友也在劝要第二胎孩子。不想要的原因也很简单，二胎是男孩，意味着未来的抚养成本会急剧提升，我不一定能支撑住。</p>
+<p>后来随着对这个问题思考逐渐深入，我的观点发生了转变，我越来越不想要二胎了，我觉得一个孩子挺好的。</p>
+<p>在工作中设计方案的时候，会使用SWOT思路，对要不要二胎这件事，要需要SWOT分析一下，一孩 VS 二孩 方案。</p>
+<h1 id="先说说一孩方案"><a href="#先说说一孩方案" class="headerlink" title="先说说一孩方案"></a>先说说一孩方案</h1><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>家庭的资源最大力度上支撑和托举一孩，他未来的人生可能因此会增加一些机会，也可能会让他在求学阶段、就业阶段更加追随自己的想法一些。</li>
+<li>整体抚养成本不会很高，可以有更多的时间和精力追求自己的向往生活。</li>
+<li>对孩子来说，家里只有一个他孩子，心理成长上可能会更从容一些，个人成长也更自由一些。</li>
+<li>家庭关系上也更加简单，我是工程师，简洁简单一直是我追求的信念，所以我也希望我的家庭关系是简简单单的。</li>
+<li>家庭的生活压力、精神压力都会较小</li>
+<li>家庭的生活质量同比会较好一些</li>
+</ul>
+<h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ul>
+<li>孤独感会增强，不管是孩子还是父母，孤独感、寂寞感可能会更多，过年过节，红白喜事等活动在人力上会冷清不少</li>
+<li>家庭焦点压力，所有的关注点都在孩子身上，对孩子的期望可能也会更高，这样会增加孩子的压力</li>
+<li>社交环境受限，多孩子的家庭在孩子很小的时候就会体验和学习集体生活方式，如分享，忍耐，边界控制，合理对抗，只有一个孩子，就会让孩子无法再家庭中学习到这些，只能在学校和以后的工作中学习</li>
+<li>孩子的未来的赡养责任压力大，没有兄弟姐妹分担父母的赡养压力</li>
+<li>父母老年生活只能依赖一个孩子，老年的生活质量可能会不高</li>
+</ul>
+<h2 id="机会"><a href="#机会" class="headerlink" title="机会"></a>机会</h2><ul>
+<li>更灵活的家庭生活方式：可以选择更自由的居住、教育方式</li>
+<li>父母自我成长空间大：相对有更多时间发展职业或兴趣爱好。</li>
+<li>子女教育可更定制化：可根据孩子特点量身打造成长路径。</li>
+</ul>
+<h2 id="威胁"><a href="#威胁" class="headerlink" title="威胁"></a>威胁</h2><ul>
+<li>独生子女养老压力大：父母年老后责任集中在一个人身上，负担重。</li>
+<li>家庭抗风险能力弱：若孩子发生重大变故，家庭难以承受。</li>
+<li>社会竞争压力依然存在：即使资源集中，也不一定带来绝对优势。</li>
+</ul>
+<h1 id="再说说二孩方案"><a href="#再说说二孩方案" class="headerlink" title="再说说二孩方案"></a>再说说二孩方案</h1><h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>兄弟姐妹互助成长：孩子间相互陪伴，有助于社交能力、责任感和情绪发展。</li>
+<li>家庭活力更强：家庭氛围更热闹、有互动，父母老年生活更有依靠。</li>
+<li>心理支持系统更完整：孩子在遇到困难时有兄弟姐妹倾诉、商量。</li>
+</ul>
+<h2 id="劣势-1"><a href="#劣势-1" class="headerlink" title="劣势"></a>劣势</h2><ul>
+<li>资源分散：教育、经济等资源需在多个孩子间分配，可能降低单个孩子的支持度。</li>
+<li>父母压力大：时间和精力需分配在多个孩子之间，精细化育儿难度提升。</li>
+<li>孩子间竞争与冲突：容易产生偏爱争议、比较心理、争夺注意力等问题。</li>
+</ul>
+<h2 id="机会-1"><a href="#机会-1" class="headerlink" title="机会"></a>机会</h2><ul>
+<li>家庭多样性教育：可以在家庭内部模拟社会协作、竞争等环境。</li>
+<li>养老责任分担：将来可由多个子女共同照顾父母，减轻单一子女的压力。</li>
+<li>亲情纽带延续：兄弟姐妹之间的情感是家庭文化的延续，有利于代际凝聚。</li>
+</ul>
+<h2 id="威胁-1"><a href="#威胁-1" class="headerlink" title="威胁"></a>威胁</h2><ul>
+<li>教育与经济负担加重：双倍甚至更多的教育投入，对中低收入家庭是巨大挑战。</li>
+<li>政策、教育资源限制：部分地区对入学、医疗等配套资源不足，难以兼顾多个孩子。</li>
+<li>育儿焦虑加剧：父母对不同孩子的成长路径难以完全同步管理，容易出现育儿焦虑。</li>
+</ul>
+<h1 id="需要考虑的应对方案"><a href="#需要考虑的应对方案" class="headerlink" title="需要考虑的应对方案"></a>需要考虑的应对方案</h1><ul>
+<li>与孩子建设朋友关系、兄弟姐妹关系</li>
+<li>父母要做好养老贮备金，提前规划好老年生活，并对未来的疾病等风险做好管控</li>
+<li>提前做好身体健康，身体安全的准备</li>
+<li>失独家庭的预防机制建设<br>增加家庭资产，建立经济上基础支撑</li>
+<li>独生子女抗风险问题<br>万一孩子生病、成长遇阻，家庭如何应对？是否有心理与经济支持系统？</li>
+<li>提前布局家庭的社交关系建设</li>
 </ul>
 
       
@@ -272,7 +499,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人生思考</a>
         		</li>
       		
 		</ul>
@@ -282,7 +509,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%207%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2013%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%85%B3%E4%BA%8E%E4%BA%8C%E8%83%8E%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83/">展开全文 >></a>
         </p>
       
 
@@ -312,20 +539,20 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 3 月 31 日 - 2025年 4 月 6 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2025年 5 月 6 日 - 2025年 5 月 11 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2031%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%206%20%E6%97%A5/">工作周报2025年 3 月 31 日 - 2025年 4 月 6 日</a>
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%206%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2011%20%E6%97%A5/">工作周报2025年 5 月 6 日 - 2025年 5 月 11 日</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2031%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%206%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-04-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-06</time>
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%206%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2011%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-05-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-11</time>
 </a>
         
       </header>
@@ -333,114 +560,14 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Prompt技术在Cursor中的应用探索<ol>
-<li>最近在思考和探索Prompt相关技术在日常编程中的使用，因为最近的工作更多的是基于各种假设条件，验证，分析推导可能的bug原因，代码量不是很大，但是在排查问题时有时候会利用的Deepseek多一些，主要是利用它的推理过程找到一些启发，但是也有意识的利用Cursor提供的大模型解决编程问题，特别是用意识的使用不同的Prompt技术，体会它们在不同问题域上的不同效果。</li>
-<li>最常用的是Zero-shot Prompting，在Cursor中，编写逻辑过程，利用好注释，利用好全局rules和项目rules，直接描述清楚问题，或者明确指示任务， 部分加个上下文或者@下相关文件或代码，或者cmd + K就能比较好的完成编程任务</li>
-<li>Few-shot Prompting，这种比较少用，但是在一些场景比较有效，比如在特别的参数检测时，组件使用是，可以Prompt中加入：和@文件中的xx方法的组件使用一致，或者使用更为常规的用法：@a文件弹窗关闭时的处理逻辑是xxx，@b文件的弹窗关闭时的逻辑是xxx，@c文件的弹窗在此基础上添加了xxx，请实现该功能。</li>
-<li>CoT，这种在排查问题或者寻求解决方案时比较有效，比如，这个文件是视频播放器的实现，主要功能是不同格式视频的播放，暂停及进度管理，现在在Sentry中收到了play方法的报错，请分析代码，一步一步思考这个报错的原因，并提供原因说明，允许使用浏览器查询github上信息。</li>
-<li>Meta Prompting，这种提示技术我现在用到不多，不过很适合在Cursor中使用，我一般使用多次Prompt，比如在实现一个页面功能时，需要拆分几个组件或者主要步骤，在Cursor使用论坛里，有人把这种技术的变形用法作为全局Rules使用，或者作为推理框架使用。大家在写页面组件或写一个模块时，可以考虑使用这个技术，类似这种：我要设计一个实现xxx功能的模块，功能是1xxx，2xxx，3xxx，请按照如下步骤设计模块和编写代码<br>1：请一步一步思考需要实现功能的概要设计<br>2：按照概要设计，一步一步思考编码方案，设计函数式组件和方法，使用自定义hook解耦逻辑和UI，逻辑细节不明确的地方用 &#x2F;&#x2F; Todo 标识<br>3：确保所有的组件和方法按照编码方案完成，Review代码的逻辑和组件<br>4 对所有方法检测使用有参数检查，try-catch保护<br>这个提示作为全局性的提示，后面针对具体的细节在用zero-shot去完善</li>
-<li>Self-consistency，这种我一般用在法技术选型时，当然也可以用在其他地方，比如我要实现PDF文档在线编辑，需要兼容Safari，目前有哪些方案可以用，各自的优缺点有哪些，可以使用xxx（MCP的playwright或者其他的）查询最新的技术，请选择一个你认为最适合我的方案，并说出你的理由</li>
-<li>还有一些用到比较少的Prompt技术，比如Prompt-chain，ToT等等，目前用到次数很少，还有没有特别的体会，后续会陆续分享在编码上分享体会</li>
-<li>这些Prompt技术是可以组合使用的，在一些特别问题场景上，特定的Prompt技术会编写更符合需求的代码。目前被验证过的Prompt技术有很多种，需要编码实践中不断探索总结，才能更好的发挥Cursor的能力。</li>
+<li>uShow 博瑞纳2套的分数拟合<ol>
+<li>FAB打分对齐难的问题，FAB的分数向客户专家的对齐一直以来是一个比较棘手的问题，这个问题也和负责uShow交付的CSS伙伴们有过深入沟通，个别客户FAB的分数也提出这样或那样的问题。基于现有的工程实现，在实际交付中，FAB打分对齐确实存在一些固有的技术缺陷，如模型的优化、算法的优化等，但是这些调整都需要较完整的设计和实现，需要较长的开发路径和使用路劲进行迭代和验证。</li>
+<li>博瑞纳的这套uShow在打分对齐的也遇到的FAB对齐难的问题，之前在标签设计和打分逻辑上做了不少的探索，效果有好有坏，总体来说是模型对长句子的识别分类能力不足导致的，比如在说明“降低患者经济负担”这个利益的时候，一些销售人员的会对话术做比较丰富的发挥，并进行一些更深入的拆解说明，使之更利于医生医院角度的理解接受，但是这样往往被拆到了多于三四个句子的表述，这样导致FAB得分较低，而客户专家又比较认可这种说明，这样就导致了打分差异。</li>
+<li>基于这种考虑，这次增加了FAB分类识别的阈值控制的功能。对于此类情况，对零样本分类、多样本分类、语义相似度等阈值设定为高、标准、低等三组预设值，对于语义点分散的情况就是使用低预设值组合。而对于注重简练的uShow则使用高预设值组合。 为不影响过往的uShow的，这些预设值的配置和标签设置一起设置，这样就提高了对客户逐字稿的特征控制。从实际操作来看，这个办法确实提高打分的对齐程度。</li>
 </ol>
 </li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2031%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%206%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 3 月 24 日 - 2025年 3 月 30 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2030%20%E6%97%A5/">工作周报2025年 3 月 24 日 - 2025年 3 月 30 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2030%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-03-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>完善前端代码日志规范和异常处理规范<ol>
-<li>本周我完成了150多个问题排查，集中一部分按照ignore的问题解决，其他的部分是是常规性异常类的请求，边缘逻辑，设备兼容性问题。</li>
-<li>上周和本周开始计划性的重点解决某一类问题，本周是播放器相关的所有问题。现阶段的处理策略：基于现有实现，用最小的优化措施，尽可能的提高播放器的稳定性和兼容性。目前已经解决的问题包括：部分浏览器上视频播放完，完成状态触发的无限循环的问题；某些交互导致的play和pause冲突的问题；异常日志不充分不详细的问题；AI 字幕转换异常报错的问题等等，这些问题一部分经过验证已经彻底解决，另一部分还在验证中。</li>
-<li>本周对主要Repo（Course,Support_modules等）的异常信息做了修正和优化，主要是4点：<ul>
-<li>把所有的中文异常信息改成英文异常信息</li>
-<li>严格区分error，log，warn的使用，主要是为了更好在Sentry实现可观测性</li>
-<li>部分关键实现补充try-catch</li>
-<li>完善异常信息，所有的catch信息增加异常的title，以方便定位异常的位置</li>
-<li>下一周还要对其他Repo继续完善异常信息，这类工作在以前，是一个非常耗时的工作而且也是不太安全的事情，现在很大一部分重复工作是靠Cursor完成，我们要做的就是引导，审核，写例子性的代码，写注释性伪代码。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>构建MCP + Sentry的日常巡检体系<ol>
-<li>通过和张浩、袁圆等伙伴们的讨论沟通，我们会探索利用MCP技术建立Sentry的日常巡检报警机制，这样可以补充丰富目前Sentry上的查询，问题识别的不足，提升报警的时效性和精准度</li>
-<li>这个体系初步看需要3个关键组件，1是Issue数据库，存储我们已经识别和分类的问题，2 是Sentry的MCP相关的服务； 3 常见的Prompt和Slack报警，下周会建立初步的Demo的功能，评估其收益。</li>
-</ol>
-</li>
-<li>关于MCP的思考，本周和Web组的伙伴们一起分享学习了MCP的相关内容，除了相关的示例，我也从第一性原理的思路出发和大家伙儿讨论清楚MCP基本的机制和基本实现。<ol>
-<li>Cursor + Figma + MCP  这个组合确实会改变前端的开发模式，我觉的开发页面前把Figma的加在Prompt里，可能是一个微小的动作，但是结果非常不同，要让MCP成为日常开发的微习惯，对于一些项目，效率的提升是倍数级的。</li>
-<li>另外通过不同的尝试，我们也认识到MCP对设计师，也就对Figma的结构化设计提出了新的要求。但是什么样Figma数据更好的生成和我们对齐的代码，我们还在探索，相信通过一段时间使用，我们能找最佳实践。</li>
-<li>MCP产生的背景是AI要指向交付结果，要给使用者方来看得见的绩效提升，任何不交付结果的AI，都可以归类为玩具。我们现在用到了非常多的第三方工具，比如在开发页面阶段，需要在在Cursor，Figma，Chrome，Anasa，接口文档，有时还有Wiki，Json格式工具，PostMan等各种工具之间来回切换，本质上说，这些动作是对脑力和时间的极大浪费，很多开发阶段的问题的来源也出现在这些工具的协作产生的能力差缝隙。如何把这些工具所代表的能力整合在一起，可能是未来一个阶段我们工程效能提升的一个重要方向。</li>
+<li>构建自助问题排查系统的初步思考<ol>
+<li>随着我们对线上问题排查的深入，对稳定性和健壮性性的理解也在加深</li>
 </ol>
 </li>
 </ul>
@@ -467,7 +594,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2030%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%205%20%E6%9C%88%206%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%2011%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -497,20 +624,261 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 3 月 17 日 - 2025年 3 月 23 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2025年 4 月 28 日 - 2025年 5 月 5 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2017%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2023%20%E6%97%A5/">工作周报2025年 3 月 17 日 - 2025年 3 月 23 日</a>
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2028%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%205%20%E6%97%A5/">工作周报2025年 4 月 28 日 - 2025年 5 月 5 日</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2017%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2023%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-03-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-23</time>
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2028%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%205%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-05-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>提高线上疑难问题排查效率的实践和思考<ol>
+<li>目前线上问题排查一个最有挑战的点是复现用户的反馈的问题，深层的原因是不知道在用户那问题是怎么发生的，我们通过业界内的调研和自身实践都发现，有通用的解决方案，如KIbana，Sentry都是类似的系统，不同的技术体系通常有不同的工具。另外，不同的企业和业务技术有自己的独有的工具体系和一整套思路。</li>
+<li>目前我们内部的对如何快速发现和解决客户的问题有了比较稳定的基础设施，但是将这些工具应用提高问题的解决速度虽然比之前好了很多，但是我们依然有很大的提升空间，比如在解决速度，用户的体验，用户如何快速有效的反馈问题，这些指标我们还有更进一步的提升空间，从工业化的指标看，售后质量优良与否也体现ToB业务的工程能力和客户服务能力。</li>
+<li>我们最近也在一直思考和探索线上问题排查工具链，对于一些疑难问题，一旦接到用户反馈，通过一系列的工具组合，CSS侧或者测试侧的伙伴就能能在较短的时间内收集更多的问题的信息，甚至能初步定位问题的原因。特别是国际客户，相当一部分问题需要把应用层问题转化为工程层问题，这个装换过程目前有些耗时漫长，CO的用户 - 企业对接人-UTG对接 - 工程，这中间同时也有信息损失，后续虽然会有大连团队伙伴们的介入，依靠文本信息传递使用过程的中问题，依然会面临不少问题。</li>
+<li>健全和完善问题排查工具链应该是解决这类问题的有效办法，之前我们也曾经做过类似的工具，但是不够专业，还有就是针对特定的问题，我们现在在逐渐补全这个链条上的不同工具，也在考虑如何利用AI技术快速识别和诊断。本周我们也针对视频录制类的功能做了一个专门的诊断工具，尝试用新的专业性的思考和技术来完善这个解决方案。</li>
+<li>后续我们尝试对文档类问题，视频类问题，AI相关业务都针对性的使用类似的方案在开发功能的同时，也完善其稳定性相关的支撑工作。</li>
+</ol>
+</li>
+<li>《0423 UMU&amp;ATD直播: 东朔老师对话 ATD CEO Tony Bingham》<ol>
+<li>假期里结合其他视频又仔细理解了全文，其中东朔老师的观点”在安全第一的视角和工具的实用性之间取得平衡“我认为在企业端AI应用上很重要的洞察，在工作中我也深有体悟，企业内部产生的知识是企业都有的，也是企业的重要资产，在AI时代如何保护好这些知识资产是我们的ToB业务需要重点考虑的，这是所有AI业务的基础，如果没有数据安全，我相信很多企业甚至会舍弃AI的优势，至少会延缓AI在核心业务的应用。我们一直重视企业的数据安全和知识保护，这是我们长期以来的坚守的价值观和产品优势，我想我们未来也一定会坚守住，用户也会因此而更加认可我们的价值。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2028%20%E6%97%A5%20-%202025%E5%B9%B4%205%20%E6%9C%88%205%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-活在AI的阴影里" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E6%B4%BB%E5%9C%A8AI%E7%9A%84%E9%98%B4%E5%BD%B1%E9%87%8C/">活在AI的阴影里</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E6%B4%BB%E5%9C%A8AI%E7%9A%84%E9%98%B4%E5%BD%B1%E9%87%8C/" class="archive-article-date">
+  	<time datetime="2025-04-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从今天开始，AI的阴影会逼近每一个人。</p>
+<p>只有奔跑着创新的人，才能不被阴影罩住。</p>
+<p>AI给普通人提供了新的机会和方向。</p>
+<p>抓住AI的机会！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E6%B4%BB%E5%9C%A8AI%E7%9A%84%E9%98%B4%E5%BD%B1%E9%87%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 4 月 21日 - 2025年 4 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2025年 4 月 21日 - 2025年 4 月 26 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>部分前端库增加cursorignore文件的考虑<ol>
+<li>本周的处理线上问题和时候，把涉及到的仓库增加了cursor文件，主要是防止cursor的索引文件的时候去把安全敏感文件加到索引里面，这个事本身的处理比较简单，主要是从安全角度出发的考量。从Cursor的公布的技术文档上看，codebase会把编码后存储到其服务器上，本身不涉及到明文存储，不过其文档中也提示用户把敏感信息放在cursorignore里，尽管如此，cursor也不保证这类信息不会被大模型使用。</li>
+<li>对我们来说，尽量保证敏感数据不直接存储在需要使用Cursor的代码库中，我们是自己的数据安全的第一负责人。</li>
+<li>在MCP，A2A，各种Agent和各种大模型技术和工具井喷式出现的时候，各家工具商对用户数据的安全重视程度不同，特别存在很多黑盒的情况下，大模型如何利用这类敏感信息，我们只能按照这些供应商对外提供的协议或者技术文档上来的对策，或者说很多这些工具的提供商也没法明确，这就要求对数据安全有一定的敏感性和主动的防范意识。</li>
+</ol>
+</li>
+<li>本周Sentry问题排查进展<ol>
+<li>随着对Sentry使用深入理解，我们对Sentry的整体设置做了一些优化，增加了更多的Tag和用户信息，对Sentry的可观测性思想也有了深入的认知，在具体的使用上针对了基于umuI，企业ID，数据大盘都对用户的使用情况有了一定的观察和洞察，比如在遇到Issue时，我们可以判断用户是否还在继续使用，用户是否自我修复的能力，是否影响到了用户体验，用户的使用旅程到底是怎么样的。</li>
+<li>在问题修复上我们已经进入对困难问题的修复阶段，这类问题往往没有具体的错误的代码位置，或者有具体的代码位置但不知道怎么改，还有就是改动影响较大，特别是视频类（视频小节，视频作业，音视频录制），文档类（文档小节，图文小节）这类问题涉及到比较复杂的技术和业务，虽然知道问题在哪，但是真正解决还要做不少的代码分析和排查。我们目前基于报错数量和遇到此类问题的用户数量排序做优先级，踏踏实实的解决好这类难点问题。</li>
+<li>为了排查问题，除了和大模型聊，我也经常去翻阅网上相关资料获取去Sentry的论坛寻找一些线索和答案，我发现很多开发者也会面临着和我们一样的各类问题，大家通过Sentry或者其它工具都在不断地解决这些问题，不断提升各自公司的产品质量和用户体验，这也体现一个趋势：用户对互联网产品的质量和用户体验的要求是在不断提高的。</li>
+<li>Sentry问题的排查是一种事后解决策略，它的最好结果是减少损失，而不是避免损失。很多思考和经验也不断的提醒我们，重视事后解决的同时，更要重视事前预防，把需求理解透，挖清楚，代码设计好，大模型利用好切实提高业务和代码质量，这样才能让Sentry问题排查更有价值。</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2021%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 4 月 14 日 - 2025年 4 月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2019%20%E6%97%A5/">工作周报2025年 4 月 14 日 - 2025年 4 月 19 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-19</time>
 </a>
         
       </header>
@@ -519,10 +887,15 @@ var _hmt = _hmt || [];
       
         <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p><strong>脱敏处理</strong></p>
 <ul>
-<li>关于微工作流的思考<ol>
-<li>在最近一段时间的思考中，我觉得微工作流可能是类似Manus或者MCP这类Agent要解决的问题，通常意义的SOP &#x3D; 人类指挥控制 + AI执行</li>
-<li>微工作流是一连串的动作，比如在某个目录创建一个文件，文件内容是X，X之前的动作是一个微工作流，因为我们每天都在做类似的动作组合，但是X是另一微工作流，这个可能是人工介入，也能看是另外的AI Agent的输出，这两个之间需要协作和相关感知，这个过程基本上需要人工干预的重要的Checkpoint</li>
-<li>SOP需要分解成在细小的微工作流，这样在现有的大模型能力下，通过不同模型的组合，才能形成人工和AI的高效协作，有力的推动生产力的提升。</li>
+<li>前端可观测性工程化改善及提效思考及实践<ol>
+<li>通过一段时间的Sentry问题的排查和解决，除了提高了线上系统的运行稳定性，我们也逐步对我们的系统有了更深的理解和把控。在功能上线、例行发版等方面，我们通过现有的可观测的基础设施Sentry，KIbana等，对提前发现一些js报错和线上运行情况，对一较大的功能的上线，我们也有了把控运行情况的信心基础。</li>
+<li>这两周投入的较多的时间在业务项目，这块投入的时间少了，有时看到Sentry上的问题没有时间改，还是着急的。下周会集中精力搞定这些问题，另外也要加深推进一些工程化能力，对问题发现、问题排查等减少人工介入，实现自动化的常规巡查等，这些工作的落地是我们Q2的重要工作之一。</li>
+</ol>
+</li>
+<li>uShow的交付<ol>
+<li>最近每周都有新的uShow部署需求，在过程中，逐步对uShow的交付工作做了一些自动化的工作，包括，PPT图片自动上传，上线SQL自动化生成，逐字稿测试视频的自动生成，这任务的自动化会让让每个uShow交付节省1个小时的时间。因为有了ChatGPT和Cursor的帮助，这些自动化任务的开发都是基于python的，使用很少的时间就能完成编码。</li>
+<li>这个过程中，我的一个体会是，以前没有能力做或者需要花费大量时间做的编码工作在AI的帮助下会很快完成，但是工作的难度和挑战变为工作流的设计、拆解、组装和Prompt能力。这类Prompt能力不仅是写Prompt本身的技术，更多的是对待开发系统的要有针对AI助手的框架性理解和拆分，其实也是我们说的AI力。</li>
+<li>AI编码能力提高，也是倒逼我们程序员们提高自己，Cursor在时刻提醒程序员：你有一个能力超强的助手，你要怎么给你的助手安排合理的工作，你要怎么给它授权，你做的不好它就会抢你的饭碗，所以程序员的一个重要的基础工作变化是，之前是努力利用技术和工具提高自己的效率和产出，现在是通过提高管理指挥AI助手的能力，让你的AI团队有更高效更有产出。这种转变就意味了程序员的能力矩阵发生了巨大的变化，比如你可以对Python，GO，JavaScript等语言细节不了解，但是只要能对架构，设计、性能、业务等有深有的理解，就能交付有一定质量代码，不过有时候AI也会糊弄你，所以不仅有高阶的能力要求， 还是要有一定的手写代码的经验和能力。</li>
 </ol>
 </li>
 </ul>
@@ -549,7 +922,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2017%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2023%20%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%204%20%E6%9C%88%2014%20%E6%97%A5%20-%202025%E5%B9%B4%204%20%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -579,515 +952,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-创业-团队文化的隐喻设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-北漂的日子（26）爷们儿，看见美女你还有冲动吗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%9B%A2%E9%98%9F%E6%96%87%E5%8C%96%E7%9A%84%E9%9A%90%E5%96%BB%E8%AE%BE%E8%AE%A1/">创业公司-团队文化的隐喻设计</a>
+      <a class="article-title" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8826%EF%BC%89%E7%88%B7%E4%BB%AC%E5%84%BF%EF%BC%8C%E7%9C%8B%E8%A7%81%E7%BE%8E%E5%A5%B3%E4%BD%A0%E8%BF%98%E6%9C%89%E5%86%B2%E5%8A%A8%E5%90%97/">爷们儿，看见美女你还有冲动吗</a>
     </h1>
   
 
         
-        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%9B%A2%E9%98%9F%E6%96%87%E5%8C%96%E7%9A%84%E9%9A%90%E5%96%BB%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
-  	<time datetime="2025-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-22</time>
+        <a href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8826%EF%BC%89%E7%88%B7%E4%BB%AC%E5%84%BF%EF%BC%8C%E7%9C%8B%E8%A7%81%E7%BE%8E%E5%A5%B3%E4%BD%A0%E8%BF%98%E6%9C%89%E5%86%B2%E5%8A%A8%E5%90%97/" class="archive-article-date">
+  	<time datetime="2025-04-16T14:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-04-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以下讨论的不是“价值观墙”和口号，而是<strong>文化如何通过隐喻被设计、被感知、被强化</strong>。团队文化不是被宣讲出来的，而是被<strong>反复体验</strong>出来的。</p>
-<hr>
-<h2 id="一、文化不是理念，是可被感知的隐喻系统"><a href="#一、文化不是理念，是可被感知的隐喻系统" class="headerlink" title="一、文化不是理念，是可被感知的隐喻系统"></a>一、文化不是理念，是<strong>可被感知的隐喻系统</strong></h2><p><strong>核心判断：员工感知到的文化，来自他们每天“被如何对待”。</strong></p>
-<p>文化的真实载体包括：</p>
-<ul>
-<li>决策发生在哪里</li>
-<li>谁可以打断谁</li>
-<li>犯错后发生了什么</li>
-<li>资源向谁倾斜</li>
-</ul>
-<p>这些具体行为，本质上构成一套<strong>隐喻叙事</strong>，员工通过它理解：</p>
-<blockquote>
-<p>“这家公司到底相信什么？”</p>
-</blockquote>
-<hr>
-<h2 id="二、创业公司文化隐喻的三种底层母题"><a href="#二、创业公司文化隐喻的三种底层母题" class="headerlink" title="二、创业公司文化隐喻的三种底层母题"></a>二、创业公司文化隐喻的三种底层母题</h2><h3 id="1️⃣-战场隐喻（Battlefield）"><a href="#1️⃣-战场隐喻（Battlefield）" class="headerlink" title="1️⃣ 战场隐喻（Battlefield）"></a>1️⃣ 战场隐喻（Battlefield）</h3><p><strong>隐含叙事：</strong></p>
-<ul>
-<li>世界是残酷的</li>
-<li>时间是敌人</li>
-<li>犯错有代价</li>
-</ul>
-<p><strong>设计特征：</strong></p>
-<ul>
-<li>决策快、指令清晰</li>
-<li>强执行、弱讨论</li>
-<li>容忍高强度，不容忍低产出</li>
-</ul>
-<p><strong>适用阶段：</strong></p>
-<ul>
-<li>生死线附近</li>
-<li>产品尚未验证</li>
-<li>市场窗口极短</li>
-</ul>
-<p><strong>风险：</strong></p>
-<ul>
-<li>容易透支人</li>
-<li>长期必然组织疲劳</li>
-</ul>
-<hr>
-<h3 id="2️⃣-实验室隐喻（Laboratory）"><a href="#2️⃣-实验室隐喻（Laboratory）" class="headerlink" title="2️⃣ 实验室隐喻（Laboratory）"></a>2️⃣ 实验室隐喻（Laboratory）</h3><p><strong>隐含叙事：</strong></p>
-<ul>
-<li>世界是可被理解的</li>
-<li>错误是数据</li>
-<li>认知升级比速度重要</li>
-</ul>
-<p><strong>设计特征：</strong></p>
-<ul>
-<li>鼓励假设与验证</li>
-<li>容忍失败，重视复盘</li>
-<li>决策基于证据而非资历</li>
-</ul>
-<p><strong>适用阶段：</strong></p>
-<ul>
-<li>0–1 探索期</li>
-<li>技术 &#x2F; 产品驱动型团队</li>
-</ul>
-<p><strong>风险：</strong></p>
-<ul>
-<li>容易过度讨论</li>
-<li>决策拖延</li>
-</ul>
-<hr>
-<h3 id="3️⃣-工厂隐喻（Factory）"><a href="#3️⃣-工厂隐喻（Factory）" class="headerlink" title="3️⃣ 工厂隐喻（Factory）"></a>3️⃣ 工厂隐喻（Factory）</h3><p><strong>隐含叙事：</strong></p>
-<ul>
-<li>稳定胜过激情</li>
-<li>流程即效率</li>
-<li>个体服从系统</li>
-</ul>
-<p><strong>设计特征：</strong></p>
-<ul>
-<li>明确分工</li>
-<li>强流程、强指标</li>
-<li>弱个人英雄主义</li>
-</ul>
-<p><strong>适用阶段：</strong></p>
-<ul>
-<li>PMF 已验证</li>
-<li>规模化交付阶段</li>
-</ul>
-<p><strong>风险：</strong></p>
-<ul>
-<li>创新能力衰减</li>
-<li>人才吸引力下降</li>
-</ul>
-<hr>
-<h2 id="三、文化设计不是“选一个”，而是避免混乱叠加"><a href="#三、文化设计不是“选一个”，而是避免混乱叠加" class="headerlink" title="三、文化设计不是“选一个”，而是避免混乱叠加"></a>三、文化设计不是“选一个”，而是<strong>避免混乱叠加</strong></h2><h3 id="原则-1：隐喻必须单一主导"><a href="#原则-1：隐喻必须单一主导" class="headerlink" title="原则 1：隐喻必须单一主导"></a>原则 1：隐喻必须单一主导</h3><p>最危险的状态：</p>
-<ul>
-<li>口号是实验室</li>
-<li>管理是战场</li>
-<li>流程是工厂</li>
-</ul>
-<p>结果一定是：</p>
-<ul>
-<li>员工无所适从</li>
-<li>高认知人才流失</li>
-<li>中层开始自保</li>
-</ul>
-<p><strong>原则：一个阶段只能有一个主隐喻。</strong></p>
-<hr>
-<h2 id="四、创始人是“隐喻源头”"><a href="#四、创始人是“隐喻源头”" class="headerlink" title="四、创始人是“隐喻源头”"></a>四、创始人是“隐喻源头”</h2><h3 id="原则-2：创始人的行为比制度更具隐喻力量"><a href="#原则-2：创始人的行为比制度更具隐喻力量" class="headerlink" title="原则 2：创始人的行为比制度更具隐喻力量"></a>原则 2：创始人的行为比制度更具隐喻力量</h3><p>员工真正解读的是：</p>
-<ul>
-<li>你什么时候愤怒</li>
-<li>你什么时候妥协</li>
-<li>你对谁宽容、对谁严厉</li>
-</ul>
-<p><strong>创始人行为 &#x3D; 文化原型。</strong></p>
-<p>如果创始人：</p>
-<ul>
-<li>讨厌争论 → 组织会回避分歧</li>
-<li>临时改决定 → 组织会放弃长期规划</li>
-<li>偏爱救火英雄 → 组织会制造火灾</li>
-</ul>
-<hr>
-<h2 id="五、关键制度是“文化隐喻的放大器”"><a href="#五、关键制度是“文化隐喻的放大器”" class="headerlink" title="五、关键制度是“文化隐喻的放大器”"></a>五、关键制度是“文化隐喻的放大器”</h2><h3 id="原则-3：三类制度决定文化走向"><a href="#原则-3：三类制度决定文化走向" class="headerlink" title="原则 3：三类制度决定文化走向"></a>原则 3：三类制度决定文化走向</h3><h4 id="1-招聘标准"><a href="#1-招聘标准" class="headerlink" title="1. 招聘标准"></a>1. 招聘标准</h4><p>你招什么样的人，等于宣布：</p>
-<blockquote>
-<p>“我们欣赏哪种生存方式。”</p>
-</blockquote>
-<h4 id="2-晋升与奖励"><a href="#2-晋升与奖励" class="headerlink" title="2. 晋升与奖励"></a>2. 晋升与奖励</h4><p>被奖励的行为，会被复制；<br>被忽视的行为，会被淘汰。</p>
-<h4 id="3-容错机制"><a href="#3-容错机制" class="headerlink" title="3. 容错机制"></a>3. 容错机制</h4><p>一次错误后的处理方式，胜过十次文化宣讲。</p>
-<hr>
-<h2 id="六、文化必须服务于“阶段目标”"><a href="#六、文化必须服务于“阶段目标”" class="headerlink" title="六、文化必须服务于“阶段目标”"></a>六、文化必须服务于“阶段目标”</h2><h3 id="原则-4：文化不是永恒信仰，是阶段性工具"><a href="#原则-4：文化不是永恒信仰，是阶段性工具" class="headerlink" title="原则 4：文化不是永恒信仰，是阶段性工具"></a>原则 4：文化不是永恒信仰，是阶段性工具</h3><p>错误信念：</p>
-<ul>
-<li>“文化一旦定了就不能变”</li>
-</ul>
-<p>事实：</p>
-<ul>
-<li>不同阶段，需要不同隐喻</li>
-<li>不调整文化，本质是战略僵化</li>
-</ul>
-<p><strong>真正成熟的创始人，会主动“重构文化隐喻”。</strong></p>
-<hr>
-<h2 id="七、判断文化是否健康的三个信号"><a href="#七、判断文化是否健康的三个信号" class="headerlink" title="七、判断文化是否健康的三个信号"></a>七、判断文化是否健康的三个信号</h2><ol>
-<li><strong>新人是否快速理解“如何在这里成功”</strong></li>
-<li><strong>团队是否敢于暴露坏消息</strong></li>
-<li><strong>决策冲突是否被消化，而不是积压</strong></li>
-</ol>
-<p>如果这三点失效，文化已经在“反向工作”。</p>
-<hr>
-<h2 id="一句话总结"><a href="#一句话总结" class="headerlink" title="一句话总结"></a>一句话总结</h2><p><strong>团队文化不是你说它是什么，而是你通过隐喻，让每个人每天活在什么叙事里。</strong></p>
-<hr>
-<p>部分内容来自AI</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%9B%A2%E9%98%9F%E6%96%87%E5%8C%96%E7%9A%84%E9%9A%90%E5%96%BB%E8%AE%BE%E8%AE%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-创业-工位设计思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%B7%A5%E4%BD%8D%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%80%83/">创业公司-工位设计思考</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%B7%A5%E4%BD%8D%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%80%83/" class="archive-article-date">
-  	<time datetime="2025-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下不是“怎么摆桌子”，而是<strong>从经营原则出发</strong>看创业公司的工位设计。工位设计本质上是<strong>组织结构、成本纪律与工作方式的物化结果</strong>。</p>
-<hr>
-<h2 id="一、工位不是福利，是生产系统的一部分"><a href="#一、工位不是福利，是生产系统的一部分" class="headerlink" title="一、工位不是福利，是生产系统的一部分"></a>一、工位不是福利，是<strong>生产系统的一部分</strong></h2><p><strong>核心原则：工位设计服务于产出密度，而不是舒适度最大化。</strong></p>
-<p>创业公司最常见的错误：</p>
-<ul>
-<li>把工位当“文化展示”</li>
-<li>把办公环境当招聘卖点</li>
-<li>把舒适感当效率替代品</li>
-</ul>
-<p>现实是：</p>
-<ul>
-<li>好工位 ≠ 好产出</li>
-<li>差工位 ≠ 高效率<br>但<strong>错误的工位设计，一定会降低有效产出密度</strong>。</li>
-</ul>
-<hr>
-<h2 id="二、工位设计-对“协作方式”的一次强制假设"><a href="#二、工位设计-对“协作方式”的一次强制假设" class="headerlink" title="二、工位设计 &#x3D; 对“协作方式”的一次强制假设"></a>二、工位设计 &#x3D; 对“协作方式”的一次强制假设</h2><h3 id="原则-1：工位先假设“如何工作”，再谈“怎么坐”"><a href="#原则-1：工位先假设“如何工作”，再谈“怎么坐”" class="headerlink" title="原则 1：工位先假设“如何工作”，再谈“怎么坐”"></a>原则 1：工位先假设“如何工作”，再谈“怎么坐”</h3><p>每一种布局都在<strong>隐性规定</strong>：</p>
-<ul>
-<li>信息如何流动</li>
-<li>决策是否公开</li>
-<li>谁能随时打断谁</li>
-</ul>
-<p>典型映射关系：</p>
-<ul>
-<li><p><strong>开放工位</strong></p>
-<ul>
-<li>强化即时沟通</li>
-<li>削弱深度专注</li>
-<li>适合探索期、强协作任务</li>
-</ul>
-</li>
-<li><p><strong>半封闭 &#x2F; 分区工位</strong></p>
-<ul>
-<li>降低打断成本</li>
-<li>提高独立执行效率</li>
-<li>适合工程、内容、研究型角色</li>
-</ul>
-</li>
-<li><p><strong>完全独立工位</strong></p>
-<ul>
-<li>强个人效率</li>
-<li>协作成本极高</li>
-<li>不适合早期创业团队</li>
-</ul>
-</li>
-</ul>
-<p><strong>原则：工位是组织协作模式的硬编码。</strong></p>
-<hr>
-<h2 id="三、空间结构就是权力结构"><a href="#三、空间结构就是权力结构" class="headerlink" title="三、空间结构就是权力结构"></a>三、空间结构就是权力结构</h2><h3 id="原则-2：创始人的位置，比制度更有信号价值"><a href="#原则-2：创始人的位置，比制度更有信号价值" class="headerlink" title="原则 2：创始人的位置，比制度更有信号价值"></a>原则 2：创始人的位置，比制度更有信号价值</h3><ul>
-<li>创始人是否单独办公室？</li>
-<li>是否坐在团队核心区？</li>
-<li>是否“看得见 &#x2F; 够得着”？</li>
-</ul>
-<p>在创业公司里：</p>
-<ul>
-<li>工位位置 &#x3D; 可接近性</li>
-<li>可接近性 &#x3D; 决策影响力</li>
-</ul>
-<p><strong>如果创始人远离一线，组织一定会变慢。</strong></p>
-<hr>
-<h3 id="原则-3：会议室数量-≠-会议效率"><a href="#原则-3：会议室数量-≠-会议效率" class="headerlink" title="原则 3：会议室数量 ≠ 会议效率"></a>原则 3：会议室数量 ≠ 会议效率</h3><p>过多会议室意味着：</p>
-<ul>
-<li>过多同步沟通</li>
-<li>过少异步沉淀</li>
-<li>决策被会议绑架</li>
-</ul>
-<p>原则：</p>
-<ul>
-<li>少量高质量会议室</li>
-<li>明确“非会议问题不进会议室”</li>
-<li>工位附近应支持<strong>站立讨论、快速对齐</strong></li>
-</ul>
-<hr>
-<h2 id="四、成本不是问题，不可逆成本才是问题"><a href="#四、成本不是问题，不可逆成本才是问题" class="headerlink" title="四、成本不是问题，不可逆成本才是问题"></a>四、成本不是问题，<strong>不可逆成本才是问题</strong></h2><h3 id="原则-4：工位必须可快速扩张、收缩、重排"><a href="#原则-4：工位必须可快速扩张、收缩、重排" class="headerlink" title="原则 4：工位必须可快速扩张、收缩、重排"></a>原则 4：工位必须可快速扩张、收缩、重排</h3><p>创业公司最大的风险不是扩张，而是<strong>扩张后收不回来</strong>。</p>
-<p>设计原则：</p>
-<ul>
-<li>模块化工位（随拆随装）</li>
-<li>最少定制化</li>
-<li>尽量避免“为某个人量身打造”的布局</li>
-</ul>
-<p><strong>工位不该绑定人，而该绑定角色。</strong></p>
-<hr>
-<h3 id="原则-5：单位工位成本必须与单位产出挂钩"><a href="#原则-5：单位工位成本必须与单位产出挂钩" class="headerlink" title="原则 5：单位工位成本必须与单位产出挂钩"></a>原则 5：单位工位成本必须与单位产出挂钩</h3><p>隐性指标：</p>
-<ul>
-<li>每个工位平均对应多少产出？</li>
-<li>工位是否在为“非核心产出角色”占用资源？</li>
-</ul>
-<p>反例：</p>
-<ul>
-<li>高级装潢 + 低频到岗</li>
-<li>昂贵工位服务低杠杆岗位</li>
-</ul>
-<p>创业阶段，<strong>任何空间浪费，本质都是现金浪费</strong>。</p>
-<hr>
-<h2 id="五、工位设计要明确支持“状态切换”"><a href="#五、工位设计要明确支持“状态切换”" class="headerlink" title="五、工位设计要明确支持“状态切换”"></a>五、工位设计要明确支持“状态切换”</h2><h3 id="原则-6：支持三种核心工作状态"><a href="#原则-6：支持三种核心工作状态" class="headerlink" title="原则 6：支持三种核心工作状态"></a>原则 6：支持三种核心工作状态</h3><ol>
-<li><strong>深度独立工作</strong></li>
-<li><strong>小范围高频协作</strong></li>
-<li><strong>全员同步对齐</strong></li>
-</ol>
-<p>如果工位设计只支持其中一种，组织会自然倾斜，产生结构性低效。</p>
-<p>实践要点：</p>
-<ul>
-<li>工位 ≠ 唯一工作点</li>
-<li>必须存在“非工位工作区”（角落、白板区、站立区）</li>
-</ul>
-<hr>
-<h2 id="六、混合办公不是趋势，是约束条件"><a href="#六、混合办公不是趋势，是约束条件" class="headerlink" title="六、混合办公不是趋势，是约束条件"></a>六、混合办公不是趋势，是约束条件</h2><h3 id="原则-7：如果支持远程，工位就不能假设“人一定在”"><a href="#原则-7：如果支持远程，工位就不能假设“人一定在”" class="headerlink" title="原则 7：如果支持远程，工位就不能假设“人一定在”"></a>原则 7：如果支持远程，工位就不能假设“人一定在”</h3><p>很多公司表面支持混合办公，空间却仍以“全员在场”为前提，结果是：</p>
-<ul>
-<li>空置率高</li>
-<li>管理混乱</li>
-<li>决策碎片化</li>
-</ul>
-<p>原则：</p>
-<blockquote>
-<p>工位设计必须与实际出勤模型一致，而不是 HR 宣言一致。</p>
-</blockquote>
-<hr>
-<h2 id="七、工位设计的终极判断标准"><a href="#七、工位设计的终极判断标准" class="headerlink" title="七、工位设计的终极判断标准"></a>七、工位设计的终极判断标准</h2><h3 id="原则-8：最好的工位设计，是让人“忘记工位的存在”"><a href="#原则-8：最好的工位设计，是让人“忘记工位的存在”" class="headerlink" title="原则 8：最好的工位设计，是让人“忘记工位的存在”"></a>原则 8：最好的工位设计，是让人“忘记工位的存在”</h3><p>如果团队频繁讨论：</p>
-<ul>
-<li>坐哪儿</li>
-<li>谁的工位好</li>
-<li>环境是否公平</li>
-</ul>
-<p>说明设计已经<strong>干扰了组织注意力</strong>。</p>
-<p>好的工位设计具备三点：</p>
-<ul>
-<li>没有人觉得被特殊对待</li>
-<li>没有人因空间而无法工作</li>
-<li>没有人把空间当作权力象征</li>
-</ul>
-<hr>
-<h2 id="一句话总结（给创始人）"><a href="#一句话总结（给创始人）" class="headerlink" title="一句话总结（给创始人）"></a>一句话总结（给创始人）</h2><p><strong>工位不是装修问题，是组织效率问题，是现金消耗问题，是权力信号问题。</strong></p>
-<hr>
-<p>部分内容来自AI</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%B7%A5%E4%BD%8D%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%80%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-创业-确定性vs不确定性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E7%A1%AE%E5%AE%9A%E6%80%A7vs%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/">创业中的确定性vs不确定性</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A-%E7%A1%AE%E5%AE%9A%E6%80%A7vs%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2025-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="创业的过程就是把不确定性改造成确定性的过程"><a href="#创业的过程就是把不确定性改造成确定性的过程" class="headerlink" title="创业的过程就是把不确定性改造成确定性的过程"></a>创业的过程就是把不确定性改造成确定性的过程</h1><p>初创公司里的一切没有确定性。创业本质上是一种从0到1的过程，就是对抗不确定性的过程。</p>
-<p>创业上从本质上说，就是通过各种手段将不确定性变成确定性的一个过程。</p>
-<p>因为我们对未来的不确定性，对未来缺乏安全感，或者存在不在不稳定感，通过创业的过程，把这些不确定的事情变成尽可能确定性过程。</p>
-<p>在市场上，总有一部分商品是人们必需的，总有一部分老板是挣钱的，就是市场对合适产品的需求是必然存在的。</p>
-<p>把不确定因素通过技术手段、商业手段、管理手段等改造成可控的，确定的。这个过程企业收益人本身会带来金钱、社会地位、个人成就的极大发展。</p>
-<p>从另一个角度，社会秩序，商业秩序，包括金钱是熵变的过程，创业过程就是把无序的一盘散沙变成有序的组织，也就是把人，财，物有序的组织成一个整体。</p>
-<h1 id="不确定性孕育创富机会"><a href="#不确定性孕育创富机会" class="headerlink" title="不确定性孕育创富机会"></a>不确定性孕育创富机会</h1><p>正是因为有不确定性，才有创业的机会。</p>
-<p>创业过程拥抱变化，拥抱不确定性。</p>
-<h1 id="不确定性是双刃剑"><a href="#不确定性是双刃剑" class="headerlink" title="不确定性是双刃剑"></a>不确定性是双刃剑</h1><p>杀死创业者的也是不确定性，无法躲避。</p>
-<h1 id="如何面对不确定性"><a href="#如何面对不确定性" class="headerlink" title="如何面对不确定性"></a>如何面对不确定性</h1><p>扩大自己的控制能力和控制范围，在这个范围内是可控的。</p>
-<p>多做准备，未雨绸缪。顺势而为，借势发展。</p>
-<p>最好的防守就是攻击。</p>
-<p>建立有力的团队，整合资源，集中力量逐次化解不确定的因素。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E7%A1%AE%E5%AE%9A%E6%80%A7vs%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 3 月 10 日 - 2025年 3 月 16 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2016%20%E6%97%A5/">工作周报2025年 3 月 10 日 - 2025年 3 月 16 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2016%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周100%时间上周的计划的执行，超预期完成问题排查150+，代码上修复了100个类问题，大概有40个多个经排查后走ignore的方式先忽略掉。<ol>
-<li>增加了疑难问题分类。部分暂时无法解决，影响人数比较多的，不能确定问题原因暂时放入疑难问题分类，这类问题（1）在14天内持续观察，确认是否是经常性问题，且结合Kibana，对用户没有实际影响，列入ignore分类；（2）如果是新增问题，需要补充日志，能够增加更多的排查线索，以能够代码修复；</li>
-<li>增加待优化分类，部分问题产生的原因是实现逻辑边缘场景造成的，改动范围较大，修复成本较高的，又是非紧急问题，放入待优化分类，等待当前阶段完成目标后，以优化点的开发流程完成修复。</li>
-<li>问题的筛选上，本周调整为最近24小时的范围，同时和14天的问题做一些同类筛选，主要是找到新增问题，以快速找到线上的潜在问题。</li>
-<li>从难易度上说，很多问题的排查比较简单，10分钟能够找到问题所在，然后找到所在的代码，修复方案一般比较明确。目前80%问题是逻辑分支，方法入参检查缺失，数据可用性检查缺失导致。这类问题修复起来很简单，往往一行代码就能解决。另一类比较难的问题，是Sentry上的线索比较少，本地环境无法复现，特别是移动设备上的问题，没法模拟用户环境，这类问题大部分是靠逻辑推演和以及大量的假设去验证，往往需要多次修复，持续观察，这类花费时间比较多多。</li>
-<li>从流程上说，现在从Sentry上到Asana上创建任务，虽然没有走集成的方式，找到了一个比较快速的SOP办法，30分钟左右就能完成数百个任务的获取、筛选和任务创建。</li>
-</ol>
-</li>
-<li>养成良好的代码的原子习惯。<ol>
-<li>最近2周的Sentry问题排查和修复下来，我发现很多问题的产生是不好的编程习惯造成的。比如很多逻辑，代码里只写了if部分，没有else部分，也就是说，只处理了需求说明的部分，对于需求未说明或者需要挖掘的需求功能，代码上没有继续深挖处理。</li>
-<li>从编程的原则习惯上说，手写if后，肯定是有else部分，哪怕是看门狗模式，逻辑也应该是if-else闭合的，多分支的情况中，switch的default部分也需要数据异常的情况，比如参数错误，有了异常分类，程序要如何处理。写方法是，首先就是参数可用性和合法性检查，特别是公共方法。这些我觉得应该是形成自己的原则习惯，形成一写if，应该就else这种原则习惯。</li>
-<li>使用cursor在写提示词的时候，也要形成这类的原子习惯，比如生成方法的时候，“结合上下文必须对参数做合法性检查“这类提示词一定写上，然后可以补充参数异常的处理。虽然有时候不写，也能生成参数的代码，但是为了逻辑的完整性，一定要在提示词里加上，避免遗漏。当然也可以把这类提示词放在rules里</li>
-</ol>
-</li>
-</ul>
+        <p>很多时候，我看见美女，没有了那种青春雄性的蠢蠢欲动，靠，我觉得我有点老了。不应该啊！</p>
 
       
 
@@ -1101,7 +986,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">北漂生活</a>
         		</li>
       		
 		</ul>
@@ -1111,77 +996,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2016%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-创业-初创公司要怎么个活法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E8%A6%81%E6%80%8E%E4%B9%88%E4%B8%AA%E6%B4%BB%E6%B3%95/">初创公司要怎么个活法</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E8%A6%81%E6%80%8E%E4%B9%88%E4%B8%AA%E6%B4%BB%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2025-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>跟朋友聊起创业中的事，有些感触。</p>
-<p>初创公司活着很重要，但是怎么才能活着呢？</p>
-<p>明天要给员工发工资了，该借的都借了，还差20万，怎么办？你会怎么想？</p>
-<p>后天的短期拆借要还款了85万，手上没有一分钱，怎么办？你会怎么想？</p>
-<p>房子抵押了，生意赔的精光，银行下周来收房，手里的钱还不够租房子的，老婆已经把离婚合同送来了，怎么办？你会怎么想？</p>
-<p>贷款了200万，高利贷50万，研发一个产品，过了两个月，你发现这个项目不像你计划的的那样，现在账上还有50万，5个员工的工资还没法，产品研发还要半年才能上市，怎么办？这时你会怎么想？</p>
-<p>其实这是很多创业着曾经或者正在经历的事情。活下去太难了！</p>
-<p>创业前一定要想好各种情况做好应对办法。孤注一掷的代价太大了！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E8%A6%81%E6%80%8E%E4%B9%88%E4%B8%AA%E6%B4%BB%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2025/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8826%EF%BC%89%E7%88%B7%E4%BB%AC%E5%84%BF%EF%BC%8C%E7%9C%8B%E8%A7%81%E7%BE%8E%E5%A5%B3%E4%BD%A0%E8%BF%98%E6%9C%89%E5%86%B2%E5%8A%A8%E5%90%97/">展开全文 >></a>
         </p>
       
 
@@ -1213,7 +1028,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
     </nav>
   
 
@@ -1667,6 +1482,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">myclaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Memory</a>
               </li>
              
@@ -1760,6 +1583,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">benchmark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开源项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ChatDev</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CLI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sharp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多智能体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字分身</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数字人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">多智能体系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frontend</a>
               </li>
             
             <div class="clearfix"></div>

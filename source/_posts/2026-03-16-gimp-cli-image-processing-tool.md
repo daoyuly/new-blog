@@ -1,6 +1,5 @@
 ---
 title: GIMP CLI - 命令行图像处理工具
-date: 2026-03-16 13:25:00
 tags:
   - CLI
   - 图像处理
@@ -9,6 +8,8 @@ tags:
 categories:
   - 工具
   - 开源项目
+abbrlink: 47826
+date: 2026-03-16 13:25:00
 ---
 
 ## 简介

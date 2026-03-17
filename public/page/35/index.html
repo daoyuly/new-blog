@@ -151,27 +151,42 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-工作周报2022年 4月 18日 - 2022年 4月 23日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 6月 28日 - 2022年 7月 3日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2018%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2023%E6%97%A5/">工作周报2022年 4月 18日 - 2022年 4月 23日</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2028%E6%97%A5%20-%202022%E5%B9%B4%207%E6%9C%88%203%E6%97%A5/">工作周报2022年 6月 28日 - 2022年 7月 3日</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2018%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2023%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-04-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-23</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2028%E6%97%A5%20-%202022%E5%B9%B4%207%E6%9C%88%203%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-07-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>1 本周web录制遇到的问题比较多，在刘乐和晓刚的建议和推动下，开发和测试进入冲刺阶段，我专注跟进这个项目的开发及bug跟进，减少了零碎时间的打断，整体的效率更高，bug的修复及代码的优化也有较高的质量，这种排除非必需的干扰，专注与冲刺的工作方式值得在部分项目上推广和落地；<br>2 web录制目前还有一个需要系统性解决的问题，录制中中摄像头的处理，这个问题在测试初期没有被重视起来，后来我发现有点棘手，录制过程和操作过程比较一致，需要对任何录制内容的分辨率，摄像头组件的位置，大小需要精准控制，目前在代码架构设计上实现了联动，核心思路是基于tapable机制，关联摄像头和合成模块的动作联动，目前还在完善两个坐标系的转换，即录制坐标系和用户视图坐标系，映射关系基本定为线性关系，用户视图坐标系的（x,y） 通过y1 &#x3D; ax1+b的方式映射到录制坐标系；<br>3 圆形头像目前还在研究，录制过程中实现圆形头像，之前的思路放在基于canvas的裁切上，发现不能解决问题，这类问题网络上很少有资料，只能通过自己思考和demo调研，后来借鉴python的实现思路，（对python的元组操作不是很熟悉，请教了超超，感谢），转成js的实现，基本思路是原图转成全透明，再画一张单维的和原图同等尺寸的图，全透明，这个图上画一个最大内接圆，内接圆完全不透明，最后两张图合成透明度，主要是内接圆的透明度复制，但是js里实现单维图片和透明度都比较慢，还要进一步的研究实现。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周主要是优化点和bug修复为主，bug本身的修复方式方法和提升bug修复效率其实挺值得研究的<ul>
+<li><p>首先是问题分析，分析问题前先是要复现问题，最难的bug的找不到复现的规律，也就是我们常说的偶现的bug，排查过很多的偶现的问题，从我的实践经验来说，排查类问题，一定要有一个基本常识：代码里没有幽灵，一切都是代码的问题， 偶现的问题，在某个场景下一定是必现的，一定要找到那个场景， 一切问题都原因，可能多个原因碰在一起了，可能单个在实现的最容易被忽略的代码，而且绝大部分原因是是我们自身代码的使用或者误用引起的，最最困难的问题是多个原因在某一异常场景下串行碰撞在一起，最终出现了一个表现出来的bug。对于偶现的bug更多考验的QA伙伴的专业能力，包括细致的观察能力，敏锐的直觉判断力以及业务逻辑的深刻理解能力，这种专业能力的养成是需要很多的业务积累和长年累月的刻意练习沉淀下来的。对于开发来说，排查一个未知问题，最关键的一点是确定排查方向和分析出最有可能的两三个原因，基本上这两点明确了，bug的修复就是时间问题和成本问题了，那么该如何提升的bug修复的效率呢，这里面需要分析的情况很多，包括bug的级别的认定，投入情况，业务复杂度，实现技术复杂度等等，有些从技术角度来说，不太明确，有些确实需要一些积累，比如灵感，创意，但是我绝大部分的bug的我认为可以使用一些方法或者方法论，可以在整体上提升bug的解决效率。以下几个因素我认为非常影响bug的解决效率：</p>
+</li>
+<li><p>细节的把握程度，这个细节包括多方面的，比如线上是否有问题，其他账号是否问题，多语下是否有问题，不同的交互操作能不能触发这个问题等等，对细节的把握程度就像你手里的放大镜，你能够对这个问题放大多少倍，越放大，你可以观察的角度，你看到的现象就越多，就越容易看到问题的本质，其实这也是解决很多问题的一个思路，通过深入的观察，分析，多维度拆分，理解来变相的放大这个问题，进而解决。</p>
+</li>
+<li><p>实现原理和设计细节的理解程度，bug是不正常的存在，所以肯定要知道正常是什么样子，如何是别正常设计的和实现的，特别是基本定问题，在深入分析原因时，原理和设计是心中的地图和导航，这样才能保证自己不在茫茫代码中迷失自己的方向，准确有效找到“病灶”所在，有时候当遇到很棘手的问题或者陷入瓶颈时，不妨从原理出发，从梳理设计开始排查，也许会有全新的思路</p>
+</li>
+<li><p>业务的熟悉程度，我们有很多问题是业务迭代，模块组合，业务叠加过程中产生的，我很惊叹于代码的神奇，有时候它很像化学反应， 一个模块的代码加上一个模块，不是两个模块，是一个新的模块，而且是全新的功能，这不就是化学反应吗？我们很多bug是这一类的问题，如果你熟悉业务的前因后果，甚至就是你开发的，排查起来会很快进入有效时间，而不是一直在周围排雷了解。在碰到一个bug，对它所处的业务不熟悉时，务必先从了解业务开始，包括啥时候上线，主要解决的什么问题，谁开发的等等，甚至可以找当时需求文档和前后端的设计文档看看，这很重要。</p>
+</li>
+<li><p>善于观察和直觉，这个没有太多可以说的了，平时积累的多不多，内功深厚不深厚我觉得都会体现在敏锐的观察和直觉准确判断上了。我们得承认一小部分bug，是需要直觉的判断（这个有点不可知论，但是实践上确实如此，从逻辑推断要排查的地方太多了，直觉判断看起来更像是一种专家判断的方法论），找参与过开发的伙伴，找QA伙伴，找熟悉这块业务的伙伴，找你认为可以给你一些思路的伙伴，碰撞一下思路，梳理下你现有的思路，很可能会有茅塞顿开的感觉。</p>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -195,7 +210,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2018%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2023%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2028%E6%97%A5%20-%202022%E5%B9%B4%207%E6%9C%88%203%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -225,27 +240,307 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 4月 11日 - 2022年 4月 16日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-react学习-事件机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2016%E6%97%A5/">工作周报2022年 4月 11日 - 2022年 4月 16日</a>
+      <a class="article-title" href="/2022/react%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">react学习-事件机制</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2016%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-16</time>
+        <a href="/2022/react%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2022-07-01T14:20:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>1 web录制项目正式进入测试阶段，很多细节问题比我预想多，根据开发情况，我预期总bug数在80左右，现在是90多，估计要到140个左右，开发阶段主要关注在整理流程及录制sdk的开发和拆解，没有投入太多时间做产品和细节的确认打磨，在核心功能上现在除了美颜还是一块比较难啃的骨头外，其他的问题的解决没有技术风险，投入适当的时间既可以解决。<br>2 本周对Q2的OKR做了Maproad的分析和拆解，晓刚带着大家对OKR的管理和指标化管理给我了很好的思考和学习，深受启发。目标的Measurable制定非常考验大家对工作的把控能力，浮于表面，肯定制定不好可衡量的细化目标。<br>3 工程例会上大家就如何提升产能提出了很多思路。在人员构成不发生大的变化的情况下，基础工具没有大的改变的情况下，通过改造协作关系，改进工作机制提升每个人产能，提高团队整体产能，我觉得的不是一个简单的问题，但是大家都有很好的Insight，给出了很多的思路和方案，每个方案都值得学习和琢磨背后的逻辑， 比如如何制定关键的统计指标，如何分析现在的问题，如何根据不是很全面的信息输入，给出一个比较深刻的解决思路，根据现状，分析团队的问题，并给出解决方案，并执行落地，都让我受益匪浅，每位伙伴都有很多值得我学习的闪光点，真的很感恩大家毫无保留的贡献聪明才智，让我现场就学到很多。<br>4 React中业务逻辑和UI逻辑的分离还是需要在架构上的解决思路，需要持续跟进和关注。</p>
+        <p>以下是<strong>从“实现机制 + 历史包袱 + 真实执行路径”</strong>三个层面，对 <strong>React 事件机制（Synthetic Event System）</strong>的深入拆解。不是“怎么用”，而是<strong>为什么必须这样设计</strong>、以及<strong>它的代价是什么</strong>。</p>
+<hr>
+<h2 id="一、先给结论（避免一开始就走偏）"><a href="#一、先给结论（避免一开始就走偏）" class="headerlink" title="一、先给结论（避免一开始就走偏）"></a>一、先给结论（避免一开始就走偏）</h2><p><strong>React 的事件机制本质是：</strong></p>
+<blockquote>
+<p><strong>基于事件委托的跨平台事件适配层 + 调度入口</strong></p>
+</blockquote>
+<p>它解决的不是“监听事件”，而是：</p>
+<ol>
+<li><strong>跨浏览器一致性</strong></li>
+<li><strong>可控的更新调度（与 Fiber &#x2F; Scheduler 强绑定）</strong></li>
+<li><strong>事件优先级与批量更新</strong></li>
+<li><strong>可被中断、可恢复的渲染</strong></li>
+</ol>
+<p>DOM 事件只是输入信号。</p>
+<hr>
+<h2 id="二、为什么不能直接用-DOM-事件（历史-现实）"><a href="#二、为什么不能直接用-DOM-事件（历史-现实）" class="headerlink" title="二、为什么不能直接用 DOM 事件（历史 + 现实）"></a>二、为什么不能直接用 DOM 事件（历史 + 现实）</h2><h3 id="1️⃣-早期问题（React-16-之前）"><a href="#1️⃣-早期问题（React-16-之前）" class="headerlink" title="1️⃣ 早期问题（React 16 之前）"></a>1️⃣ 早期问题（React 16 之前）</h3><ul>
+<li>浏览器事件行为不一致</li>
+<li>IE 的 event 对象地狱</li>
+<li><code>this</code>、冒泡、默认行为不统一</li>
+</ul>
+<p>→ <strong>SyntheticEvent</strong> 诞生：做一层标准化。</p>
+<hr>
+<h3 id="2️⃣-真正原因（React-16-之后）"><a href="#2️⃣-真正原因（React-16-之后）" class="headerlink" title="2️⃣ 真正原因（React 16+ 之后）"></a>2️⃣ 真正原因（React 16+ 之后）</h3><p><strong>Fiber 架构要求：</strong></p>
+<ul>
+<li>更新是 <strong>可中断的</strong></li>
+<li>更新有 <strong>优先级</strong></li>
+<li>更新是 <strong>批量的</strong></li>
+</ul>
+<p>而原生 DOM 事件：</p>
+<ul>
+<li>不可控</li>
+<li>直接触发 setState → 同步执行</li>
+</ul>
+<p>❌ 这与 Fiber 冲突。</p>
+<hr>
+<h2 id="三、React-事件系统的整体结构（非常关键）"><a href="#三、React-事件系统的整体结构（非常关键）" class="headerlink" title="三、React 事件系统的整体结构（非常关键）"></a>三、React 事件系统的整体结构（非常关键）</h2><h3 id="高层结构图（逻辑）"><a href="#高层结构图（逻辑）" class="headerlink" title="高层结构图（逻辑）"></a>高层结构图（逻辑）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">浏览器 DOM Event</span><br><span class="line">        ↓</span><br><span class="line">顶层事件监听（root / document）</span><br><span class="line">        ↓</span><br><span class="line">React Event Plugin System</span><br><span class="line">        ↓</span><br><span class="line">SyntheticEvent 封装</span><br><span class="line">        ↓</span><br><span class="line">Scheduler（优先级）</span><br><span class="line">        ↓</span><br><span class="line">Fiber 更新调度</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、事件委托：不是“挂在-document”这么简单"><a href="#四、事件委托：不是“挂在-document”这么简单" class="headerlink" title="四、事件委托：不是“挂在 document”这么简单"></a>四、事件委托：不是“挂在 document”这么简单</h2><h3 id="React-17-的关键变化"><a href="#React-17-的关键变化" class="headerlink" title="React 17 的关键变化"></a>React 17 的关键变化</h3><table>
+<thead>
+<tr>
+<th>版本</th>
+<th>事件绑定位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>React ≤16</td>
+<td><code>document</code></td>
+</tr>
+<tr>
+<td>React 17+</td>
+<td><strong>root container</strong></td>
+</tr>
+</tbody></table>
+<p><strong>原因：</strong></p>
+<ul>
+<li>多 React Root 共存</li>
+<li>微前端 &#x2F; iframe</li>
+<li>避免全局污染</li>
+</ul>
+<hr>
+<h3 id="实际绑定方式（简化）"><a href="#实际绑定方式（简化）" class="headerlink" title="实际绑定方式（简化）"></a>实际绑定方式（简化）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">container.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, dispatchEvent, <span class="literal">false</span>);</span><br><span class="line">container.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, dispatchEvent, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<p>👉 <strong>同时监听捕获 + 冒泡</strong></p>
+<hr>
+<h2 id="五、事件触发后的真实执行路径（逐步）"><a href="#五、事件触发后的真实执行路径（逐步）" class="headerlink" title="五、事件触发后的真实执行路径（逐步）"></a>五、事件触发后的真实执行路径（逐步）</h2><p>以 <code>onClick</code> 为例。</p>
+<h3 id="Step-1：浏览器触发-DOM-事件"><a href="#Step-1：浏览器触发-DOM-事件" class="headerlink" title="Step 1：浏览器触发 DOM 事件"></a>Step 1：浏览器触发 DOM 事件</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOM click</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Step-2：进入-React-统一入口"><a href="#Step-2：进入-React-统一入口" class="headerlink" title="Step 2：进入 React 统一入口"></a>Step 2：进入 React 统一入口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">dispatchEvent</span>(nativeEvent)</span><br></pre></td></tr></table></figure>
+
+<p>React 此时 <strong>不会立刻执行你的 onClick</strong>。</p>
+<hr>
+<h3 id="Step-3：事件插件系统解析"><a href="#Step-3：事件插件系统解析" class="headerlink" title="Step 3：事件插件系统解析"></a>Step 3：事件插件系统解析</h3><p>React 内部维护一张映射表：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">click → onClick</span><br><span class="line">keydown → onKeyDown</span><br></pre></td></tr></table></figure>
+
+<p>插件负责：</p>
+<ul>
+<li>是否需要冒泡</li>
+<li>是否合成事件</li>
+<li>是否阻止默认行为</li>
+</ul>
+<hr>
+<h3 id="Step-4：构造-SyntheticEvent"><a href="#Step-4：构造-SyntheticEvent" class="headerlink" title="Step 4：构造 SyntheticEvent"></a>Step 4：构造 SyntheticEvent</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> syntheticEvent = <span class="keyword">new</span> <span class="title class_">SyntheticEvent</span>(</span><br><span class="line">  reactEventName,</span><br><span class="line">  nativeEvent</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>特性：</p>
+<ul>
+<li>标准化 API</li>
+<li><code>preventDefault</code></li>
+<li><code>stopPropagation</code></li>
+</ul>
+<blockquote>
+<p>React 17 之后 <strong>不再做事件池复用</strong>（这是个重要变化）</p>
+</blockquote>
+<hr>
+<h3 id="Step-5：事件优先级注入（关键）"><a href="#Step-5：事件优先级注入（关键）" class="headerlink" title="Step 5：事件优先级注入（关键）"></a>Step 5：事件优先级注入（关键）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DiscreteEvent（点击、键盘）</span><br><span class="line">→ 高优先级</span><br><span class="line"></span><br><span class="line">ContinuousEvent（mousemove、scroll）</span><br><span class="line">→ 可降级</span><br><span class="line"></span><br><span class="line">DefaultEvent</span><br><span class="line">→ 普通</span><br></pre></td></tr></table></figure>
+
+<p>这一步直接影响：</p>
+<ul>
+<li>setState 什么时候执行</li>
+<li>是否可被打断</li>
+</ul>
+<hr>
+<h3 id="Step-6：触发-Fiber-更新"><a href="#Step-6：触发-Fiber-更新" class="headerlink" title="Step 6：触发 Fiber 更新"></a>Step 6：触发 Fiber 更新</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setState → enqueueUpdate → scheduleUpdateOnFiber</span><br></pre></td></tr></table></figure>
+
+<p>此时：</p>
+<ul>
+<li><strong>不是同步渲染</strong></li>
+<li>而是进入调度系统</li>
+</ul>
+<hr>
+<h2 id="六、SyntheticEvent-不是“假事件”，而是“控制点”"><a href="#六、SyntheticEvent-不是“假事件”，而是“控制点”" class="headerlink" title="六、SyntheticEvent 不是“假事件”，而是“控制点”"></a>六、SyntheticEvent 不是“假事件”，而是“控制点”</h2><h3 id="SyntheticEvent-的真实价值"><a href="#SyntheticEvent-的真实价值" class="headerlink" title="SyntheticEvent 的真实价值"></a>SyntheticEvent 的真实价值</h3><p>❌ 不是为了“统一 API”</p>
+<p>✔️ 是为了：</p>
+<ul>
+<li>在事件边界 <strong>批量更新</strong></li>
+<li>控制 flush 时机</li>
+<li>与 Scheduler 对齐</li>
+</ul>
+<hr>
+<h3 id="自动批处理（React-18）"><a href="#自动批处理（React-18）" class="headerlink" title="自动批处理（React 18）"></a>自动批处理（React 18）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">setA</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="title function_">setB</span>(<span class="number">2</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>只触发一次 render</strong></p>
+<p>哪怕在：</p>
+<ul>
+<li>Promise</li>
+<li>setTimeout</li>
+<li>原生事件</li>
+</ul>
+<p>这是事件系统与调度系统深度耦合的结果。</p>
+<hr>
+<h2 id="七、捕获-冒泡：React-vs-DOM"><a href="#七、捕获-冒泡：React-vs-DOM" class="headerlink" title="七、捕获 &#x2F; 冒泡：React vs DOM"></a>七、捕获 &#x2F; 冒泡：React vs DOM</h2><h3 id="React-事件阶段"><a href="#React-事件阶段" class="headerlink" title="React 事件阶段"></a>React 事件阶段</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Capture phase</span><br><span class="line">→ Target</span><br><span class="line">→ Bubble phase</span><br></pre></td></tr></table></figure>
+
+<p>但注意：</p>
+<ul>
+<li>React 捕获 ≠ DOM 捕获</li>
+<li>React 冒泡 ≠ DOM 冒泡</li>
+</ul>
+<p>React 是：</p>
+<blockquote>
+<p><strong>在 Fiber 树上模拟事件传播</strong></p>
+</blockquote>
+<hr>
+<h3 id="stopPropagation-的真实效果"><a href="#stopPropagation-的真实效果" class="headerlink" title="stopPropagation 的真实效果"></a>stopPropagation 的真实效果</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.<span class="title function_">stopPropagation</span>();</span><br></pre></td></tr></table></figure>
+
+<p>阻止的是：</p>
+<ul>
+<li>React 合成事件的继续传播</li>
+</ul>
+<p>不一定阻止：</p>
+<ul>
+<li>原生 DOM 事件（除非显式）</li>
+</ul>
+<hr>
+<h2 id="八、为什么某些事件不能合成？"><a href="#八、为什么某些事件不能合成？" class="headerlink" title="八、为什么某些事件不能合成？"></a>八、为什么某些事件不能合成？</h2><h3 id="非冒泡事件"><a href="#非冒泡事件" class="headerlink" title="非冒泡事件"></a>非冒泡事件</h3><ul>
+<li><code>focus</code></li>
+<li><code>blur</code></li>
+<li><code>scroll</code></li>
+</ul>
+<p>React 的策略：</p>
+<ul>
+<li>捕获阶段监听</li>
+<li>或直接绑定到目标元素</li>
+</ul>
+<hr>
+<h2 id="九、React-事件机制的代价（实话实说）"><a href="#九、React-事件机制的代价（实话实说）" class="headerlink" title="九、React 事件机制的代价（实话实说）"></a>九、React 事件机制的代价（实话实说）</h2><h3 id="成本"><a href="#成本" class="headerlink" title="成本"></a>成本</h3><ol>
+<li>多一层抽象（性能）</li>
+<li>调试复杂（栈不直观）</li>
+<li>与原生事件混用容易踩坑</li>
+</ol>
+<hr>
+<h3 id="典型坑"><a href="#典型坑" class="headerlink" title="典型坑"></a>典型坑</h3><ul>
+<li>在 document 上监听，拿不到 React 状态</li>
+<li>stopPropagation 行为不符合预期</li>
+<li>在非 React 管理的节点绑定事件</li>
+</ul>
+<hr>
+<h2 id="十、工程级使用建议（严谨版）"><a href="#十、工程级使用建议（严谨版）" class="headerlink" title="十、工程级使用建议（严谨版）"></a>十、工程级使用建议（严谨版）</h2><h3 id="必须用-React-事件"><a href="#必须用-React-事件" class="headerlink" title="必须用 React 事件"></a>必须用 React 事件</h3><ul>
+<li>状态驱动 UI</li>
+<li>需要批量更新</li>
+<li>需要调度优先级</li>
+</ul>
+<h3 id="可以用原生事件"><a href="#可以用原生事件" class="headerlink" title="可以用原生事件"></a>可以用原生事件</h3><ul>
+<li>性能极限场景（canvas &#x2F; 拖拽）</li>
+<li>非 React 管理区域</li>
+</ul>
+<p>但要明确：</p>
+<blockquote>
+<p><strong>你绕过了 React 的调度系统</strong></p>
+</blockquote>
+<hr>
+<h2 id="十一、一句话总结"><a href="#十一、一句话总结" class="headerlink" title="十一、一句话总结"></a>十一、一句话总结</h2><blockquote>
+<p><strong>React 事件不是“监听”，而是“进入调度系统的门”。</strong></p>
+</blockquote>
+<p>如果你需要，下一步可以直接：</p>
+<ul>
+<li>逐行拆 <strong>dispatchEvent 源码</strong></li>
+<li>对比 <strong>Vue &#x2F; Solid &#x2F; Svelte 事件模型</strong></li>
+<li>分析 <strong>React 事件与 Concurrent Rendering 的冲突点</strong></li>
+<li>或结合 <strong>真实线上 bug</strong> 做机制级复盘</li>
+</ul>
+<hr>
+<p>更新于2025-07-10 22:35:59，部分内容来自ChatGPT</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/react%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 6月 20日 - 2022年 6月 26日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/">工作周报2022年 6月 20日 - 2022年 6月 26日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-06-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>课程市场1.4的项目的思考<ul>
+<li>课程市场1.4的前端开发是全力以赴的项目，我的目标是用最短的排期达成更好的交付，我们的结果要指向市场上的良好反应，让线上支付早日上线，早一天上线，就意味着更多的收入的机会，就意味着我们有更好的发展。 另外我希望团队有更好表现， 整个pod@武元@安然@柄蔚也为这个目标达成付出一定的超出预期的努力，对于Content-pod，我希望不单单是某个伙伴的最好表现，是团队每个伙伴的最好表现，并且形成合力，这样的pod或者项目组才能成为一个最强大脑，一个superman。海伦凯勒说， Alone we can do so little; together we can do so much. 一个人可以走的很快，一群人可以走的很远，对此我深信不疑，UMUer一定会成为走的更远的那群人。东朔老师常给我们说的一个关于ofo的CFO的故事，这是个无伤大雅的小插曲，但是我觉得这饱含了对公司的价值文化的判断，个人的成功不是真的成功，带着团队成功的人才是真正的成功，站在哲学角度，这也是共同富裕的底层哲学基础，我觉得这是值得遵循的一个根本逻辑。几年前，东朔老师还经常利用周末出去讲课，为的是给公司带来一些额外的收入，作为常人眼里的成功人士，我知道东朔老师个人有很强的吸金能力，可是他仍然选择直面各种问题带着公司一起往前奔，除去一些其他原因，我觉得对“成功”的这种比较深刻的理解，也是做出这种选择的原因之一。  带着团队成功并不是说单单是项目ower，pod lead，tech lead，业务owner，或是公司负责人的责任，这也是公司内每位伙伴的责任和义务，大家都知道公司内的倡导大家以伙伴彼此称呼，我们不是说同事，职员或者其他的，在工作这件事上，公司将每位伙伴看成是owner，是开拓者，是创业者，而不是跟从者，追随者，甚至是旁观者，人人有责和人人有效是相辅相成是一体两面，如果达成人人有责，人人有效，as result ，作为水到渠成的结果，人人有发展，人人有收获，人人有成长。伙伴意味着对UMU这份事业的责任和工作的担当，意味着彼此的成就，也意味我们要直面焦虑，压力，失败，挑战，甚至是一些委屈和不理解，当我们共享发展和伙伴的成就及成长时，这份独有的荣光才值得放在心底珍藏，成为一生历程中最有光亮的那颗珍珠。</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -269,7 +564,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2016%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -299,27 +594,47 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 4月 4日 - 2022年 4月 8日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 6月 13日 - 2022年 6月 19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%208%E6%97%A5/">工作周报2022年 4月 4日 - 2022年 4月 8日</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2013%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2019%E6%97%A5/">工作周报2022年 6月 13日 - 2022年 6月 19日</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%208%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-04-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-08</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2013%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2019%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-06-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周在自己使用产品时，发现了一些线上的细节问题，比如样式，文案这种会损耗用户体验，但是用户又不怎么跟你反馈的问题。对前端来说，这些细节决定品质，品质决定体验，体验决定客户的购买意愿，购买意愿决定续费率和订购率。很多时候我们要做自己的产品的产品体验官，好用不好用， 体感好不好，自己需要用心感受下。在项目开发中，用户体验也是我们决定一个功能是否可以上线的一个考虑因素，新增一个功能，如果带有损耗用户体验的副作用，那我们应该要再打磨打磨再上线，不要为了上线而上线，本质上上线为了客户价值，为了产品的续费率和订购率，如果上线的功能对这个目标是有损耗的，那么我们什么不hold一下，不打磨一下呢。务实求真的背后瞄准的是我们存在的意义：为客户创造价值，为公司带来利润，务实求真就是让我们遇到难以抉择的事情的时候，关注实实在在的能给公司创造真正价值的目标。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周的还是全力投入在课程市场1.4的开发上，整个项目的主体开发已经完成，初步做一个简单的回顾：</p>
+<ul>
+<li>功能相对完整，涉及到的新模块的开发，</li>
+<li>新开发5个完整功能的页面：(1)购物车，(2)结算页，(3)订单详情，(4)订单管理，(5)课程数据管理</li>
+<li>两个页面的较大改造，(1)智能课单，(2)课程市场的课程详情页，、</li>
+<li>涉及1个页面的优化，（1）课程管理页</li>
+<li>贯穿1业务流，（1）课程购买；</li>
+<li>1个较大的代码重构，（1）联系销售的组件的拆分</li>
+<li>设计上，重点考虑了列表表格的API设计和实现，新增对公汇款</li>
+<li>工程沉淀上，涉及到的基础组件有button，input，datepicker，list-table，tab-label-list，dialog，toast，这些组件有的是可以复用的，如button，dialog，input，有的需要适配的，如datepicker，有些是需要新写的，如list-table，tab-label-list，用到的业务组件有支付。</li>
+<li>在react上，复用到的模式或者解决方案</li>
+<li>（1）获取数据列表+分页+loading的模式，</li>
+<li>（2）接口中处理异常的模式，</li>
+<li>（3）if-else分支渲染的模式，</li>
+<li>（4）useConext+useReducer的状态管理模式，</li>
+<li>（5）业务状态流转的处理模式</li>
+<li>在angularjs上，复用到的模式或者解决方案，</li>
+<li>（1）多路由使用，</li>
+<li>（2）查询+列表的交互模式</li>
+<li>本月还有一个重要的工作就是按照@晓刚的总体规划，部分组件做一些比较成熟的沉淀</li>
+</ul>
 
       
 
@@ -343,7 +658,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%208%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2013%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2019%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -373,115 +688,51 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2022清明组诗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 6月 6日 - 2022年 6月 10日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/2022%E6%B8%85%E6%98%8E%E7%BB%84%E8%AF%97/">2022年清明组诗</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2010%E6%97%A5/">工作周报2022年 6月 6日 - 2022年 6月 10日</a>
     </h1>
   
 
         
-        <a href="/2022/2022%E6%B8%85%E6%98%8E%E7%BB%84%E8%AF%97/" class="archive-article-date">
-  	<time datetime="2022-04-05T13:20:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-05</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2010%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>今年这波疫情严重，山东老家各市地基本全部出现了确诊病例，听父母说老家那边严阵以待，封村封路。自2021年十一国庆假期回家至今，春节，清明都没有回去看望父母，双亲都已经七十多岁了，我常年工作在外，不提跟前尽孝，即便假期现在也不能回去，实在非常不安。另外一位多年同事的外婆离世因疫情而无法床前尽孝以致遗憾，树欲动而风不止，子欲养而亲不待，适逢清明假期，有感而发。</p>
-<p>是为序。</p>
-<h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p><strong>遭逢时疫乡难回</strong> </p>
-<p><strong>双亲来电问否归</strong> </p>
-<p><strong>千里无归经几岁</strong> </p>
-<p><strong>和风难抚心中愧</strong> </p>
-<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p><strong>春风微拂夜已深</strong> </p>
-<p><strong>下班无车徒步回</strong></p>
-<p><strong>路口纸火点点亮</strong> </p>
-<p><strong>又是谁家悼往岁</strong></p>
-<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p><strong>微雨细风过清明</strong> </p>
-<p><strong>杨柳徘徊踏青行</strong></p>
-<p><strong>绵绵春泥护远茔</strong> </p>
-<p><strong>悠悠近愁数归省</strong>  </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">创作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/2022%E6%B8%85%E6%98%8E%E7%BB%84%E8%AF%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 3月 28日 - 2022年 4月 2日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2028%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%202%E6%97%A5/">工作周报2022年 3月 28日 - 2022年 4月 2日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2028%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%202%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>1 关于组件设计中组件通用化思考<br>在录制开发中使用其他伙伴开发的组件，我发现个别组件的参数多达20多个，这些组件大多是高阶组件或者是聚合组件，从功能上看确实需要那么多参数，但是过多的参数带来的弊端也是显而易见的：不易理解，不易扩展，代码阅读困难，使用困难， 职责不清晰， 总的来说就是太过复杂不容易使用；当然优点也是显而易见的：功能集成度高，封装完整度高，使用灵活性更好，总的来说通用性更好；开发过程中，特别是基础组件开发中，我们总是要面对这种设计抉择，背后逻辑是基本开发原则，编程理念，软件工程思想以及团队软件开发能力的综合考量，我们在现有的基础上或者别人的开发成果上继续开荒拓展，不得不考虑现在的情况和未来的发展要求，找到一个适合的点需要现有的团队通过code review，技术分享，业务串讲，不断的磨合，相互学习和讨论，逐渐形成团队统一的开发原则及编程理念的认知，并落地为Master doc形成开发规范和设计最佳实践；<br>2 关于变化的一点思考<br>了解VUCA是在去年在修复太毅反馈一个视频bug，那边的伙伴提供了一个视频会播放中断的课，为了复现问题，我不得不花时间从头到尾的看这个视频课，刚开始没有注意，后来我注意到这个课是将如何应对VUCA的挑战（这个课是公开的，没有知识版权问题），这个也引起了我的兴趣，后面搜索了VUCA相关话题和书籍了解和学习。VUCA是四个词的首字母缩写，分别是波动性Volatility，不确定性Uncertainty，复杂性Complexity和模糊性Ambiguity，我挺认同的，现在学习的程度有限不敢妄谈，结合实际情况简单分享我的理解；我们现在比以往更处在一个不确定的复杂的环境，大了说疫情带来的变化，俄乌事件带来的变化，小了说我们周边的疫情变化，股票行情的变化，油价的变化，工作的变化等等，这些变化是不确定性，有些是深刻的变化，有些我们还看到这些变化给我们带来的影响，有很多书籍和专家在讨论如何应对这些问题，对我们个人来说，保持开放的心态和好奇心应该是以不变应万变的方法了，很多变化我们无法预测，无法控制，但是开放的心态的会让我们坦然的接受这一切，积极的拥抱变化，继续做好当前的事情，咬定我们的计划和初心不变，持续发展和学习；好奇心会让我们探究这些变化的根本原因，思考如何应对这些变化，以及如何“切己”，如何让我们在不确定的，模糊的环境保持某些东西是确定是清晰的。</p>
-<p>3 场景&amp;技术演示<br>前年末自己定了一个计划就每隔一两周利用工作间隙从技术角度思考尝试把新技术应用在产品场景里并产出一个简单的demo，之前因为工作安排确实很难抽出时间完成这个计划，很惭愧之前只完成了2次demo，一个是考试进度条的应用和思考，一个TensorFlow.js在web上融合应用场景。今年工作安排调整使得这个计划可以继续了。<br>游戏化是我们一直在思考的一个话题，从技术角度，游戏引擎和游戏剧本是游戏的关键因素，对我们来说从这两点切入有点过于复杂，我的思考是从游戏化的构成要素入手，对于一款游戏吸引我们的有哪些因素呢？巧妙的关卡设计，曲折有趣的游戏情节，精美的画面设计等等，甚至是或华丽或简洁音效设计都会让我们沉迷其中，我最近的思考是音效如何更好地在我们的产品场景落地，在操作系统设计中有音效的设计，比如window经典的开机音，游戏，短视频是我们常见的使用音效频繁的互联网产品，SaaS类产品似乎比较少的使用音效，同样开发团队的构成中，常见UI设计师，UE设计师等等，比较少见音效交互设计师这样的职责定位；<br>在适合的场景，加入音效可能会比鼠标，键盘的交互起到更好地效果，我之前思考如果在大屏幕加入音效会产生怎样的效果，比如词云，抽奖可以适当的加入音效，提升现场的感染力和交互增强。大屏幕场景比较特殊因为它有比较特定的使用场景，这次我选了考试这样一个功能性的场景，加入一些声音提示，抛砖引玉，供大家思考。想象一个业务场景，一个学员在学习一门课程，里面有语音微课，视频课，ai作业等，当然也有考试，TA需要带着耳机，耳朵是必然要参与的，当TA完成考试，考的不太好，这时如果有一句温柔的安慰和鼓励，是不是挺美的？我们想象另外一个业务场景，课堂上，老师使用UMU做随堂测试，考试完成，这时课堂上此起彼伏的响起“太棒了，您考了100分”，“加油哦，差一分就及格了”这样的声音，会不会让课堂体验更加活泼和深刻呢？随着AI微课的落地，我们也逐渐有了基于AI的语音和文本技术处理能力，有些场景尝试把文本转成语音，可能会起到学习体验的效果，比如对话式课程，比如文章小节， AI作业，部分性的文字转语音，这种混合式的感官参与可能会是另外一种学习体验。<br>开发环境内网且登录Demo:<a target="_blank" rel="noopener" href="http://m.dev10.umucdn.cn/session/quiz/2y8lj9c66?_r=0.193#/single">http://m.dev10.umucdn.cn/session/quiz/2y8lj9c66?_r=0.193#/single</a></p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>课程市场1.4的开发<ul>
+<li>组件和逻辑的封装与拆分<br>课程1.4的开发过程中，有部分功能需要之前的功能上迭代，有一个问题比较突出，就是业务组件拆分，逻辑封装和隔离的太差，本质上是在开发迭代过程中没有做好关注点隔离，典型的情况是一个业务组件里包含了不少于3个小的业务交互逻辑，产生这种情况的原因我分析主要原因有以下3个：</li>
+</ul>
+<ol>
+<li>迭代过程中直接在原有组件内填充式的增加新的功能和优化点，导致组件功能膨胀，这种情况常见，而不易发觉，越是迭代久的组件越容易出现这种情况，其直接后果就是组件代码膨胀，难以阅读和维护，功能繁杂，逻辑臃肿，使用成本提升，组件在系统中的价值急剧降低， 这类组件最终通过重构或“打入冷宫永不叙用”的方式，结束在系统中的生命延续。每个组件都是一个小生命，它希望被合理的迭代，每次迭代都要经过合理的设计，而不是每次被填充。</li>
+<li>组件起初设计不合理，设计不合理是一个表象，其真实因素又有不少，如，需求分析不深入，导致组件划分的时候，赋予组件过重的职责，随着开发深入，内部状态线性增多，而此时工期将近，没法完成设计的纠偏和优化，只能将错就错，导致巨型组件的产生，还有一个情况就是将就，本质上就不追求技术工程上的最优解，只求省事</li>
+<li>技术能力不足以将组件和逻辑拆分的足够可持续迭代，这种情况是冰山下的，可能没有工程师会承认自己在组件设计上会有大的系统性问题和认知上的问题，这个确实非常难评估，这个有很强的主观性，只有历经几个迭代之后才能证明当初的设计质量到底如何，不过通过一些浅显的信号，我们大概可以判断是否在业务组件迭代时可以进行逻辑拆分，设计纠偏或者组件拆分</li>
+<li>单个组件多余5个以上的状态判断，这个数字是我个人的判断，复杂业务组件5个状态比较常见，我觉得也是极限，当多于5个就非常不利于后续的理解和迭代，试想你在维护一个组件时，你同时要把握5个状态的各种变化时，其实挺费劲的</li>
+<li>出现推导状态时，在响应式编程范式里，状态驱动UI，这个状态应该是确保唯一的，且是最原始的，比如某个状态是从其他状态推导出来的，那这个状态就不要放在useState里或者Store里，而应该放在service里，helper里，业务obj里甚至是useEffect里</li>
+<li>组件里涉及到的UI功能占到了页面里的⅓， 这个也是我的经验值，我认为一个页面至少有3个组件构成，不管这个页面多么的简单，这也是极端情况，当你看到一个组件占到页面的⅓功能时，需要认真考虑下这个页面的组件划分思路了</li>
+<li>出现5个以上的useEffect，当时一个组件出现5个以上的useEffect，你需要认真考虑两件事，需要拆分自定义hooks，或者直接拆分组件</li>
+<li>某个组件你认真看了一遍，发现没有看懂，也不知道该如何增加代码，这个时候先不要自责，很可能是组件本身出了问题，因为组件存在的最大价值就是为了让代码好阅读好理解，如果这点没有做到，那就是组件的问题，不是你代码阅读能力问题，后面你需要做的就是多认真读几遍，看看能不能调优下；</li>
+</ol>
+<ul>
+<li>react组件内逻辑拆分的一些思考</li>
+<li>结合上面想到的，逻辑拆分和封装其实是一个很重要的问题，特别是我们这样的SaaS类的系统，因为它的一个很大的特点是需要长周期性的深耕和打磨业务，很多业务规则是行业内既有的趋于稳定成熟的规则，也有不少是快速变化的创新性规则，我们需要做大量的整合和快速的迭代，这样的特点给研发带来的一个原则就是既要坚持快速迭代交付，又要关注可持续迭代和合理的设计演化，这其实是比较有挑战的事情，也是软件开发领域内长久不衰的研究课题，不过我觉得还是有一些行动可以帮助我们应对这种挑战：</li>
+<li>多用自定义hooks，这其实是个意识问题，当有这个意识时，在逻辑封装上你会发现很多新玩法，新思路</li>
+<li>严格区分业务逻辑和UI逻辑，业务逻辑放在service，helper或者业务model类了里，复杂的组件在目录结构上除了典型的tsx，scss，需要增加useHoos文件和组件service文件，将逻辑分类是降低代码复杂度最有效的办法</li>
+<li>多用方法封装关注点，哪怕只有一行代码，只要就认为它和现有的业务不在一个逻辑层次，就可以放在方法里，方法的作用就是封装，隔离，复用，注释说明，不要担心方法多，很可能你设计这个这个一行代码的方法就是下次迭代的一扇方便之门</li>
+<li>用好hooks，多总结一些hooks的设计模式，我们对hooks使用还是比较浅，缺乏可自用的hooks工程沉淀，比如，获取数据，比如判断显隐，useCallbac，useMemo的最佳实践等等</li>
+<li>组件宜小不宜大，从原则上说，组件再小都不为过，这个我想大家都认可，在工程上可能欠缺快速创建组件或者重构组件的工具，影响了大家拆分小颗粒度组件的耐心和效率，不过组件粒度上还是要保持小巧</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -505,7 +756,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2028%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%202%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2010%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -535,27 +786,33 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 3月 21日 - 2022年 3月 25日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 5月 30日 - 2022年 6月 3日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2021%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%88%2025%E6%97%A5/">工作周报2022年 3月 21日 - 2022年 3月 25日</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2030%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%203%E6%97%A5/">工作周报2022年 5月 30日 - 2022年 6月 3日</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2021%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%88%2025%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2030%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%203%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-06-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>周一在调试录制流合成的时候发现一个问题，当tab页切换时，合成就失败了，表现就是用户头像暂停了，通过log发现当切换tab时，合成操作停止，具体跟进代码发现当时使用了requestAnimationFrame作为循环合成的计数器，查阅了requestAnimationFrame的MDN文档才意识到当页面Hidden时，浏览器从性能角度考虑requestAnimationFrame是停止的，所以合成就停止了，找到了问题原因，也就很好解决了，可以使用setTtimeout模拟了requestAnimationFrame执行。这个事给了我很大的一个反思，技术基础扎实不扎实，还是要看对基本技术知识的掌握程度，对浏览器提供的这样API掌握的怎么样，requestAnimationFrame的这个特性我之前看到过，但是确实没有掌握，在用的时候没有意识这方面的问题，假设我开发的时候充分了解这个特性的限制，我就不会用requestAnimationFrame，也就省去了这个排查的时间，其实也就是提升了工作效率，所以从这个角度来说，个人生产力的提升，其实也依赖于对基础专业知识的掌握程度，熟练的使用这些知识解决我们的业务问题，就构成了我们技术能力的基本要素。对我来说提升技术能力，除了在工作多总结和思考，还要扎扎实实的对专业内的基础知识加深理解和掌握；</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>课程市场1.4的开发<ul>
+<li>课程市场1.4的整体工作量比1.2,13都多不少，其难度就是用比较短的时间完成开发任务，提升开发效率是我们面对的最直接的问题，也是最大的问题，提升开发效率不仅仅是公司的事情或者是团队的事情，而是每个职场人最为核心的事情，工作中的成长，技术，技能，素质，人脉，影响力等等这一切可能都是指向一个事，用最少的时间，更好的完成一个任务，获取更多的收益。项目搭建阶段有很多模板类的代码来回，这块我写了2个工具自动完成从yapi到代码的生成，创建组件模板，软件开发活动中，自己制造工具从来都是必做的一件事情，这也是提升效率的一个很有效的手段。</li>
+<li>我记得没有参加工作以前，在家里跟着父亲学种地种菜，是的，种地种菜也需要学习，在没有大棚，蔬菜种植技术没有标准化的情况下，气候条件等同，同样缺水干旱，土地板结严重的情况下，如何提高蔬菜产量直接影响一个家庭的生计，大家不得不重视这个事，所以种菜也会有各种试验，因为周期长，用心的菜农会记录用水时间，施肥时间和量，然后汇总产量，以及找到最合适的出菜时间，他们会在田间地头交流种菜经验，所以这个时间谁足够有耐心有细心，善于总结经验，做的足够好，长期来说是能够养活家庭的。后来我记得有一年，隔壁村里有几个人从寿光打工回来，开始自己创业，用大棚技术，规模化种植，引入寿光&#x2F;济南那边的销售渠道，2年之后，这批人的富裕程度就完全碾压了按照以前种菜的人。当时回家听父亲说起这些事，我觉得是先进技术对落后技术的降维打击，其实现在想来是认知层面的降维打击，那时候去寿光学习种菜的不在少数，可是把大棚技术，规模化种植，引入销售渠道一套组合拳下来，需要的可不仅仅是技术。这个陈年的事，我经常想起，它告诉我，现在的事情做的不管有多好，你都不知道是不是还有一套你不知道的组合拳，能够对你现在所有的努力和成果形成降维打击，所以要始终保持兢兢业业的态度和危机感，要始终保持学习和开放的心态，组合拳来的时候，不要和它逆向，而要顺势而为，借势发展。</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -579,7 +836,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2021%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%88%2025%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2030%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%203%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -609,29 +866,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 3月 14日 - 2022年 3月19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 5月 23日 - 2022年 5月 28日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/">工作周报2022年 3月 14日 - 2022年 3月19日</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2023%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2028%E6%97%A5/">工作周报2022年 5月 23日 - 2022年 5月 28日</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-19</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2023%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2028%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-05-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Web录制本周已经完成了流程的主要架构设计开发和关键技术的开发和整合。架构基于tapable和web stream的事件合流的设计(参考数据流管道架构图)，主要解决两个关键问题：1 是录制，美颜，合成，上传等各个模块的耦合串联及扩展，通过tapable定义整个流程的钩子函数，让各个模块可以灵活通信及扩展，2 采用数据流管道的思想串联各个模块的数据，目的数据流生产和消费通过消息队列的方式生产录制流和消费录制流；<br>实现过程中比较花时间的是合成和美颜，合成选了两种技术方案，1是基于webassembly的FFmpeg多路视频流合成方案， 2是基于双video + canvas的画图方式；FFmpeg合流的方案比较成熟，现在涉及音视频合流的场景很多都是用FFmpeg实现的，web端的比较少见，@duanjun做了web端的技术预研，在录制项目我做完成了FFmpeg的接入，但是接入美颜后，涉及数据格式的转换，美颜基于opencv，返回的是帧图片，需要转成stream或者blob的形式使用FFmpeg ，所以从串联简单性考虑使用了canvas的方案，canvas方案是基本原理是每路流打入对应video并自动播放，同时捕获video帧数据，根据每路流的合成方式，使用canvas的绘制API绘制到canvas上，canvas的捕获流可以直接接入上传流；<br>web端FFmpeg的接入给我们带来了很多想象的地方，简单的如，上传的图片，音频，视频都可以在浏览器端加可见水印，这可以有效的保护讲师和企业的知识产权，复杂点的，我们可以在web端实现微课小节，视频小节，作业小节，直播回放的音视频材料的裁切及拼装等编辑，可以提升音视频内容小节的内容编辑能力和内容制作体验；<br>整个录制流程涉及的环节稍多，可以参考录制流程图，很多技术点在最初技术设计和技术预研上并未完全想到，这也是个比较大的教训，对与技术难点较多的项目，要比较完整的分析整体功能，对关键的代码结构，关键的技术实现有比较透彻的了解才能比较好的评估项目用时。</p>
-<p>录制流程图</p>
-<p>数据流管道架构图</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Web录制：感谢@浙波 @刘乐@晓刚@志通，感谢@琨琨 @徐老师在时间上给予了一些支持，整个项目做下来让我再次强烈感受到大家伙儿对产品品质和用户体验打磨的决心和对追求极致的坚守，我觉得这是我们最重要的价值观，也是给客户和用户创造价值的体现；<br>很多问题包括头像抗锯齿，黑屏的解决都不是很完美，在个别情况先还可能会存在这样或那样的问题，不过我也学到了很多应对这类技术复杂性较大的项目的一些设计思路和思考方式，比如在设计上保持迭代设计的意识和行动，这个看起来是正确的废话，却实实在在是有用，在开始没有比较完善的详细设计情况下，要保持不断的调整设计迭代这需要开发时了解系统全貌并且要有清晰的设计目标，保持设计和业务逻辑是匹配的；在思考方式上，技术推理和技术联想也非常重要，要有意识使用技术推理，来分析和预测问题的产生和解决思路。比如遇到页面卡顿，要观察清楚卡顿的表现都有哪些，根据这些症状，依次推断后面的各种技术因果关系，结合代码情况，再由各个因素的假设正向推导可能出现的症状。</p>
 
       
 
@@ -655,7 +910,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8819%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2023%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2028%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -685,27 +940,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2022年 3月 7日 - 2022年 3月11日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 5月 16日 - 2022年 5月 20日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%207%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8811%E6%97%A5/">工作周报2022年 3月 7日 - 2022年 3月11日</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2016%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2020%E6%97%A5/">工作周报2022年 5月 16日 - 2022年 5月 20日</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%207%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8811%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-11</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2016%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2020%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周集中精力做web录制，非常充实，除去一些现实的问题，工程师的快乐其实很简单。简单来说，非必要会议做合理的安排，特定的阶段要做特定的取舍，慢慢有点感悟到一位前辈跟我说过的一句话：“一辈子很长，能把一件事做好的时间其实不多”，偷你时间事太多，给你时间增价值的事又不多，其实很多时候是自己看不准，那些事真的重要，哪些事真的不那么重要。<br>web录制涉及到技术点其实挺多，回头看当初的技术方案，要完完整整的做2个月，不静下来心来做，很难发现里面的问题，特别是把这些可以技术验证的点转化成产品代码，也需要时间去打磨，之前靠零碎的时间去做，很多点想不全，离产品化还是有距离，比如我一直在思考的，之前设计的把合成和美颜都看成Effector（音视频效果器），但是我做的时候逐渐理解到合成可能看成是Transformer，转换器，职责是把单路的或者多路的，音频的或者视频的分片的Blob数据转换成任意数据，图片，或者视频，音频，或者格式的转换，输入是多路的stream，输出是调整后的多路stream，Effector在我的设计里可以分为视频效果和音频效果，关注视频内容本身或者音频内容本身，从技术上讲，Effector和Transformer有相似点，但是核心区别看是关注数据本身还是关注内容本身，关注数据的是Transformer，关注内容的事Effector，这个概念区分看似简单，需要对多媒体编程有足够的的经验才能体会到，很多技术靠看别人的代码只能学点皮毛和面上的东西，真正的技术要靠自己去摸索才能掌握，也才能体会到技术之美</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>重点项目品码已经进行了4场，从反馈来看效果还挺好，大家都有不同程度的技术收获，通过现场讨论和赏析，也逐渐的打通了大家的技术视野和技术思维，通过和晓刚和其他伙伴们聊，后面要专注和深入问题的挖掘，形成团队可复用资产和技术积累，形成看的见的有价值的结果，比如代码最佳实践，可执行的代码规范，可见的所有项目的设计水平的提升等；</p>
 
       
 
@@ -729,7 +984,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%207%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%8811%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2016%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2020%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -759,101 +1014,27 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-孤独之感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-工作周报2022年 4月 25日 - 2022年 4月 29日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%AD%A4%E7%8B%AC%E4%B9%8B%E6%84%9F/">孤独之感</a>
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2025%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2029%E6%97%A5/">工作周报2022年 4月 25日 - 2022年 4月 29日</a>
     </h1>
   
 
         
-        <a href="/2022/%E5%AD%A4%E7%8B%AC%E4%B9%8B%E6%84%9F/" class="archive-article-date">
-  	<time datetime="2022-03-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-07</time>
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2025%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2029%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-04-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>孤独时节，<br>一半清醒，<br>一半糊涂，<br>前路迷惘，<br>来路彷徨，<br>逢酒化梦，<br>不愿梦醒</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%AD%A4%E7%8B%AC%E4%B9%8B%E6%84%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 3月 1日 - 2022年 3月5日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%201%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%885%E6%97%A5/">工作周报2022年 3月 1日 - 2022年 3月5日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%201%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%885%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-03-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>越来越感觉Code Review是一个长周期较快反馈的过程，多人review时，每个人都有不同的review关注的点，多次review后，你发现你关注的点都已经没有了，当你review不出啥问题的时候，内心是挺慌的：是我的技术跟不上了，还是对方提升的太快了。提不出有价值的comments，其实对方也挺diss你的，对方内心OS可能是这样的：“我去，咋一个问题都没review出来，白瞎了我的MR申请…”；<br>Code Review 是发现问题的过程，需要站在更高的技术层面才能更好的审查代码，这其实是也是对代码审查者一种无形的压力；<br>借着改bug的机会，晚上回去又翻看《修改代码的艺术》，我一直觉得这本书书名挺招程序员讨厌的，有点标题党，啥啊就艺术艺术的，其实改过很多次bug，再回来看这本书，书名挺名副其实的，不过我觉得叫《修bug的艺术》应该会卖的更好，特别是最后一章“解依赖技术”，就是重构那本经典的实操版， 读完就可以用，好书知时节，建议改bug的伙伴们在bug清零阶段读一读。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>1 这周在开发过程中感受最深的还是专注的价值，特别是比较复杂点的项目，一定要整个过程全情的投入，以项目的形式作为产品交付的过程管理形式，应该就是从形式上要求以项目特点的安排自己时间，专事专做，直到拿到一个结果。<br>2 工程技术上需要从几个方面去做精做专，深入学习相关的不同技术，以专题的形式的研究学习，比如学习canvas，应该以图像或者动画或者游戏的角度学习和理解，这样让让学习过程涉猎html canvas，WebGL等工程相关的技术及架构相关知识，另外就是从产品和工程的整体角度思考技术知识的应用，否则，不成熟的技术和工程要构建优质的产品是非常难的。</p>
 
       
 
@@ -877,7 +1058,81 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%203%E6%9C%88%201%E6%97%A5%20-%202022%E5%B9%B4%203%E6%9C%885%E6%97%A5/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2025%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2029%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 5月 6日 - 2022年 4月 29日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2029%E6%97%A5/">工作周报2022年 5月 6日 - 2022年 4月 29日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2029%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-04-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>我觉得要善于干巧活，web录制项目中除了视频专业能力的提升以及工程上基础合成录制sdk的实现及完善，还有重要的收获就是增强了干巧活的意识，这个巧活，不是偷懒的意思，而是通过精巧设计来减少工作量，减少不必要的复杂度，进而提升效率。这个我目前做过的难度和复杂度比较高的项目之一，整个功能看起来简洁易用，但是内部的展示子系统，录制流程控制，视频播放控制等等各个部分花费大量的思考和设计，还有编码实现，难度体现在多媒体和WebRTC对我来说并不是很熟悉，平时我自认为对音视频技术算是小有理解，做这个项目是还是觉得这方面自己还是小学生，加之这块资料比较奇缺，很多功能需要自己设计和实现，项目前期花了不少时间调研和设计视频流的合成功能，在后面的功能开发和测试，这类问题就比较好解决，效率就比较高， 反而是展示子系统当时觉得这是平时经常做的，没有仔细设计，就出现了很多的系统性bug，这类bug牵一发而动全身，改起来也就举步维艰。软件工程里很重要的一个话题就是研究如何对抗复杂性的增加，也就是熵增，通过对抗复杂性来提高效率，提高软件的复用度和可扩展性，进而降低研发成本和工程管理成本，对工程师来说项目里每个设计决策都很重要因为它决定未来是如何被迭代的，也就影响了开发的成本和效率，所以对我来说善于干巧活，如何提升干巧活的能力是未来持续提升方向之一。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2029%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -909,7 +1164,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/34/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="page-number current">35</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/36/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/34/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="page-number current">35</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/36/">Next &raquo;</a>
     </nav>
   
 
@@ -1363,6 +1618,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">myclaw</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Memory</a>
               </li>
              
@@ -1456,6 +1719,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">benchmark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开源项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ChatDev</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CLI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sharp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多智能体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字分身</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数字人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">多智能体系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frontend</a>
               </li>
             
             <div class="clearfix"></div>

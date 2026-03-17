@@ -1,8 +1,15 @@
 ---
-title: MyClaw 开发日记 - Phase 6: React 管理界面完成
+title: 'MyClaw 开发日记 - Phase 6: React 管理界面完成'
+tags:
+  - myclaw
+  - react
+  - electron
+  - frontend
+  - development
+categories:
+  - 项目开发
+abbrlink: 28009
 date: 2026-03-15 18:35:00
-tags: [myclaw, react, electron, frontend, development]
-categories: [项目开发]
 ---
 
 ## 概述
