@@ -1,6 +1,5 @@
 ---
 title: CoPaw 项目分析报告 - 多智能体协作框架
-date: 2026-03-17 02:00:00
 tags:
   - AI
   - Agent
@@ -9,6 +8,8 @@ tags:
   - 开源项目
 categories:
   - 开源项目研究
+abbrlink: 62436
+date: 2026-03-17 02:00:00
 ---
 
 # CoPaw 项目分析报告

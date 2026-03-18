@@ -151,6 +151,701 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ADP-2_ Routing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-2_%20Routing/">Agentic Design Patterns - Chapter 2_ Routing</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-2_%20Routing/" class="archive-article-date">
+  	<time datetime="2025-10-07T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-2-章：路由"><a href="#第-2-章：路由" class="headerlink" title="第 2 章：路由"></a>第 2 章：路由</h1><h2 id="路由模式概述"><a href="#路由模式概述" class="headerlink" title="路由模式概述"></a>路由模式概述</h2><p>虽然通过提示词链进行顺序处理是执行确定性、线性工作流的基础技术，但其适用性在需要自适应响应的场景中受到限制。现实世界的 Agent 系统必须经常根据偶然因素在多个潜在行动之间进行仲裁，例如环境状态、用户输入或前一操作的结果。这种动态决策能力，控制流向不同的专门函数、工具或子流程，是通过一种称为路由的机制实现的。</p>
+<p>路由将条件逻辑引入 Agent 的操作框架，使其能够从固定执行路径转变为这样一种模型：Agent 动态评估特定标准以从一组可能的后续行动中进行选择。这允许更灵活和上下文感知的系统行为。</p>
+<p>例如，一个设计用于客户查询的 Agent，当配备路由功能时，可以首先对传入查询进行分类以确定用户的意图。基于此分类，它可以将查询定向到专门的 Agent 进行直接问答、用于帐户信息的数据库检索工具，或用于复杂问题的升级程序，而不是默认使用单一的预定响应路径。因此，使用路由的更复杂 Agent 可以：</p>
+<ol>
+<li>分析用户的查询。</li>
+<li>基于其<strong>意图</strong>路由查询：<ul>
+<li>如果意图是”检查订单状态”，路由到与订单数据库交互的子 Agent 或工具链。</li>
+<li>如果意图是”产品信息”，路由到搜索产品目录的子 Agent 或链。</li>
+<li>如果意图是”技术支持”，路由到访问故障排除指南或升级到人工的不同链。</li>
+<li>如果意图不清楚，路由到澄清子 Agent 或提示词链。</li>
+</ul>
+</li>
+</ol>
+<p>路由模式的核心组件是执行评估并指导流程的机制。这种机制可以通过几种方式实现：</p>
+<ul>
+<li><strong>基于 LLM 的路由：</strong> 语言模型本身可以被提示分析输入并输出指示下一步或目的地的特定标识符或指令。例如，提示词可能要求 LLM “分析以下用户查询并仅输出类别：’订单状态’、’产品信息’、’技术支持’或’其他’。” Agent 系统然后读取此输出并相应地指导工作流。</li>
+<li><strong>基于嵌入的路由：</strong> 输入查询可以转换为向量嵌入（参见 RAG，第 14 章）。然后将此嵌入与代表不同路由或能力的嵌入进行比较。查询被路由到嵌入最相似的路由。这对于语义路由很有用，其中决策基于输入的含义而不仅仅是关键词。</li>
+<li><strong>基于规则的路由：</strong> 这涉及使用基于关键词、模式或从输入中提取的结构化数据的预定义规则或逻辑（例如，if-else 语句、switch case）。这可以比基于 LLM 的路由更快、更确定，但在处理细微或新颖输入方面的灵活性较差。</li>
+<li><strong>基于机器学习模型的路由：</strong> 它采用判别模型，例如分类器，该模型已经在小型标记数据语料库上专门训练以执行路由任务。虽然它与基于嵌入的方法在概念上有相似之处，但其关键特征是监督微调过程，该过程调整模型的参数以创建专门的路由功能。这种技术与基于 LLM 的路由不同，因为决策组件不是在推理时执行提示词的生成模型。相反，路由逻辑被编码在微调模型的学习权重中。虽然 LLM 可能在预处理步骤中用于生成合成数据以增强训练集，但它们不参与实时路由决策本身。</li>
+</ul>
+<p>路由机制可以在 Agent 操作周期内的多个节点实现。它们可以在开始时应用以对主要任务进行分类，在处理链内的中间点应用以确定后续操作，或在子程序期间应用以从给定集合中选择最合适的工具。</p>
+<p>诸如 LangChain、LangGraph 和 Google 的 Agent Developer Kit (ADK) 等计算框架提供了用于定义和管理这种条件逻辑的显式构造。凭借其基于状态的图架构，LangGraph 特别适合复杂的路由场景，其中决策取决于整个系统的累积状态。类似地，Google 的 ADK 提供了用于构建 Agent 能力和交互模型的基础组件，这些组件作为实现路由逻辑的基础。在这些框架提供的执行环境中，开发人员定义可能的操作路径以及决定计算图中节点之间转换的函数或基于模型的评估。</p>
+<p>路由的实现使系统能够超越确定性顺序处理。它促进了更自适应的执行流的开发，可以动态且适当地响应更广泛的输入和状态变化。</p>
+<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>路由模式是自适应 Agent 系统设计中的关键控制机制，使它们能够动态改变其执行路径以响应可变输入和内部状态。其效用通过提供必要的条件逻辑层跨越多个领域。</p>
+<p>在人机交互中，例如虚拟助手或 AI 驱动的导师，路由用于解释用户意图。对自然语言查询的初始分析确定最合适的后续操作，无论是调用特定信息检索工具、升级到人工操作员，还是根据用户表现选择课程中的下一个模块。这使系统能够超越线性对话流并进行上下文响应。</p>
+<p>在自动化数据和文档处理管道中，路由作为分类和分发功能。传入的数据，如电子邮件、支持票据或 API 有效载荷，根据内容、元数据或格式进行分析。然后系统将每个项目定向到相应的工作流，例如销售线索摄入流程、JSON 或 CSV 格式的特定数据转换函数，或紧急问题升级路径。</p>
+<p>在涉及多个专门工具或 Agent 的复杂系统中，路由充当高级调度器。由用于搜索、总结和分析信息的不同 Agent 组成的研究系统将使用路由器根据当前目标将任务分配给最合适的 Agent。类似地，AI 编码助手使用路由来识别编程语言和用户意图——调试、解释或翻译——然后将代码片段传递给正确的专门工具。</p>
+<p>最终，路由提供了创建功能多样化和上下文感知系统所必需的逻辑仲裁能力。它将 Agent 从预定义序列的静态执行器转变为可以在变化条件下就完成任务的最有效方法做出决策的动态系统。</p>
+<h2 id="实操代码示例（LangChain）"><a href="#实操代码示例（LangChain）" class="headerlink" title="实操代码示例（LangChain）"></a>实操代码示例（LangChain）</h2><p>在代码中实现路由涉及定义可能的路径和决定采取哪条路径的逻辑。像 LangChain 和 LangGraph 这样的框架为此提供了特定的组件和结构。LangGraph 基于状态的图结构对于可视化和实现路由逻辑特别直观。</p>
+<p>此代码演示了使用 LangChain 和 Google 的生成式 AI 的简单类 Agent 系统。它设置了一个”协调器”，根据请求的意图（预订、信息或不清楚）将用户请求路由到不同的模拟”子 Agent”处理程序。系统使用语言模型对请求进行分类，然后将其委托给适当的处理函数，模拟多 Agent 架构中常见的基本委托模式。</p>
+<p>首先，确保您已安装必要的库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain langgraph google-cloud-aiplatform langchain-google-genai google-adk deprecated pydantic</span><br></pre></td></tr></table></figure>
+
+<p>您还需要使用您选择的语言模型的 API 密钥设置环境（例如，OpenAI、Google Gemini、Anthropic）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Copyright (c) 2025 Marco Fago</span></span><br><span class="line"><span class="comment">## https://www.linkedin.com/in/marco-fago/</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">## 此代码根据 MIT 许可证授权。</span></span><br><span class="line"><span class="comment">## 请参阅仓库中的 LICENSE 文件以获取完整许可文本。</span></span><br><span class="line"><span class="keyword">from</span> langchain_google_genai <span class="keyword">import</span> ChatGoogleGenerativeAI</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"><span class="keyword">from</span> langchain_core.runnables <span class="keyword">import</span> RunnablePassthrough, RunnableBranch</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 配置 ---</span></span><br><span class="line"><span class="comment">## 确保设置了您的 API 密钥环境变量（例如，GOOGLE_API_KEY）</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    llm = ChatGoogleGenerativeAI(model=<span class="string">&quot;gemini-2.5-flash&quot;</span>, temperature=<span class="number">0</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;语言模型已初始化: <span class="subst">&#123;llm.model&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;初始化语言模型时出错: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    llm = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义模拟子 Agent 处理程序（相当于 ADK 的 sub_agents）---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">booking_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;模拟预订 Agent 处理请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 委托给预订处理程序 ---&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;预订处理程序处理了请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。结果：模拟预订操作。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;模拟信息 Agent 处理请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 委托给信息处理程序 ---&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;信息处理程序处理了请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。结果：模拟信息检索。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">unclear_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理无法委托的请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 处理不清楚的请求 ---&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;协调器无法委托请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。请澄清。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义协调器路由链（相当于 ADK 协调器的指令）---</span></span><br><span class="line"><span class="comment">## 此链决定应委托给哪个处理程序。</span></span><br><span class="line">coordinator_router_prompt = ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>, <span class="string">&quot;&quot;&quot;分析用户的请求并确定哪个专家处理程序应处理它。</span></span><br><span class="line"><span class="string">     - 如果请求与预订航班或酒店相关，</span></span><br><span class="line"><span class="string">        输出 &#x27;booker&#x27;。</span></span><br><span class="line"><span class="string">     - 对于所有其他一般信息问题，输出 &#x27;info&#x27;。</span></span><br><span class="line"><span class="string">     - 如果请求不清楚或不适合任一类别，</span></span><br><span class="line"><span class="string">        输出 &#x27;unclear&#x27;。</span></span><br><span class="line"><span class="string">     只输出一个词：&#x27;booker&#x27;、&#x27;info&#x27; 或 &#x27;unclear&#x27;。&quot;&quot;&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;user&quot;</span>, <span class="string">&quot;&#123;request&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> llm:</span><br><span class="line">    coordinator_router_chain = coordinator_router_prompt | llm | StrOutputParser()</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义委托逻辑（相当于 ADK 的基于 sub_agents 的自动流）---</span></span><br><span class="line"><span class="comment">## 使用 RunnableBranch 根据路由链的输出进行路由。</span></span><br><span class="line"><span class="comment">## 为 RunnableBranch 定义分支</span></span><br><span class="line">branches = &#123;</span><br><span class="line">    <span class="string">&quot;booker&quot;</span>: RunnablePassthrough.assign(output=<span class="keyword">lambda</span> x: booking_handler(x[<span class="string">&#x27;request&#x27;</span>][<span class="string">&#x27;request&#x27;</span>])),</span><br><span class="line">    <span class="string">&quot;info&quot;</span>: RunnablePassthrough.assign(output=<span class="keyword">lambda</span> x: info_handler(x[<span class="string">&#x27;request&#x27;</span>][<span class="string">&#x27;request&#x27;</span>])),</span><br><span class="line">    <span class="string">&quot;unclear&quot;</span>: RunnablePassthrough.assign(output=<span class="keyword">lambda</span> x: unclear_handler(x[<span class="string">&#x27;request&#x27;</span>][<span class="string">&#x27;request&#x27;</span>])),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建 RunnableBranch。它接受路由链的输出</span></span><br><span class="line"><span class="comment">## 并将原始输入（&#x27;request&#x27;）路由到相应的处理程序。</span></span><br><span class="line">delegation_branch = RunnableBranch(</span><br><span class="line">    (<span class="keyword">lambda</span> x: x[<span class="string">&#x27;decision&#x27;</span>].strip() == <span class="string">&#x27;booker&#x27;</span>, branches[<span class="string">&quot;booker&quot;</span>]), <span class="comment"># 添加了 .strip()</span></span><br><span class="line">    (<span class="keyword">lambda</span> x: x[<span class="string">&#x27;decision&#x27;</span>].strip() == <span class="string">&#x27;info&#x27;</span>, branches[<span class="string">&quot;info&quot;</span>]),     <span class="comment"># 添加了 .strip()</span></span><br><span class="line">    branches[<span class="string">&quot;unclear&quot;</span>] <span class="comment"># &#x27;unclear&#x27; 或任何其他输出的默认分支</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 将路由链和委托分支组合成单个可运行对象</span></span><br><span class="line"><span class="comment">## 路由链的输出（&#x27;decision&#x27;）与原始输入（&#x27;request&#x27;）一起传递</span></span><br><span class="line"><span class="comment">## 到 delegation_branch。</span></span><br><span class="line">coordinator_agent = &#123;</span><br><span class="line">    <span class="string">&quot;decision&quot;</span>: coordinator_router_chain,</span><br><span class="line">    <span class="string">&quot;request&quot;</span>: RunnablePassthrough()</span><br><span class="line">&#125; | delegation_branch | (<span class="keyword">lambda</span> x: x[<span class="string">&#x27;output&#x27;</span>]) <span class="comment"># 提取最终输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 示例用法 ---</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> llm:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n由于 LLM 初始化失败，跳过执行。&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- 运行预订请求 ---&quot;</span>)</span><br><span class="line">    request_a = <span class="string">&quot;给我预订去伦敦的航班。&quot;</span></span><br><span class="line">    result_a = coordinator_agent.invoke(&#123;<span class="string">&quot;request&quot;</span>: request_a&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终结果 A: <span class="subst">&#123;result_a&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 运行信息请求 ---&quot;</span>)</span><br><span class="line">    request_b = <span class="string">&quot;意大利的首都是什么？&quot;</span></span><br><span class="line">    result_b = coordinator_agent.invoke(&#123;<span class="string">&quot;request&quot;</span>: request_b&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终结果 B: <span class="subst">&#123;result_b&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 运行不清楚的请求 ---&quot;</span>)</span><br><span class="line">    request_c = <span class="string">&quot;告诉我关于量子物理学的事。&quot;</span></span><br><span class="line">    result_c = coordinator_agent.invoke(&#123;<span class="string">&quot;request&quot;</span>: request_c&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终结果 C: <span class="subst">&#123;result_c&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>如上所述，这段 Python 代码使用 LangChain 库和 Google 的生成式 AI 模型（特别是 gemini-2.5-flash）构建了一个简单的类 Agent 系统。详细来说，它定义了三个模拟子 Agent 处理程序：booking_handler、info_handler 和 unclear_handler，每个都设计用于处理特定类型的请求。</p>
+<p>核心组件是 coordinator_router_chain，它利用 ChatPromptTemplate 指示语言模型将传入的用户请求分类为三个类别之一：’booker’、’info’ 或 ‘unclear’。然后路由链的输出由 RunnableBranch 使用，将原始请求委托给相应的处理函数。RunnableBranch 检查来自语言模型的决策，并将请求数据定向到 booking_handler、info_handler 或 unclear_handler。coordinator_agent 结合了这些组件，首先路由请求以做出决策，然后将请求传递给选定的处理程序。最终输出从处理程序的响应中提取。</p>
+<p>main 函数通过三个示例请求演示了系统的用法，展示了不同的输入如何被路由并由模拟 Agent 处理。包含了语言模型初始化的错误处理以确保健壮性。代码结构模仿了基本的多 Agent 框架，其中中央协调器根据意图将任务委托给专门的 Agent。</p>
+<h2 id="实操代码示例（Google-ADK）"><a href="#实操代码示例（Google-ADK）" class="headerlink" title="实操代码示例（Google ADK）"></a>实操代码示例（Google ADK）</h2><p>Agent Development Kit (ADK) 是一个用于工程化 Agent 系统的框架，为定义 Agent 的能力和行为提供了结构化环境。与基于显式计算图的架构相比，ADK 范式中的路由通常通过定义一组离散的”工具”来实现，这些工具代表 Agent 的功能。响应用户查询选择适当工具由框架的内部逻辑管理，该逻辑利用底层模型将用户意图与正确的功能处理程序匹配。</p>
+<p>此 Python 代码演示了使用 Google ADK 库的 Agent Development Kit (ADK) 应用程序示例。它设置了一个”协调器” Agent，根据定义的指令将用户请求路由到专门的子 Agent（”Booker”用于预订，”Info”用于一般信息）。然后子 Agent 使用特定工具模拟处理请求，展示了 Agent 系统中的基本委托模式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Copyright (c) 2025 Marco Fago</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">## 此代码根据 MIT 许可证授权。</span></span><br><span class="line"><span class="comment">## 请参阅仓库中的 LICENSE 文件以获取完整许可文本。</span></span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Dict</span>, <span class="type">Any</span>, <span class="type">Optional</span></span><br><span class="line"><span class="keyword">from</span> google.adk.agents <span class="keyword">import</span> Agent</span><br><span class="line"><span class="keyword">from</span> google.adk.runners <span class="keyword">import</span> InMemoryRunner</span><br><span class="line"><span class="keyword">from</span> google.adk.tools <span class="keyword">import</span> FunctionTool</span><br><span class="line"><span class="keyword">from</span> google.genai <span class="keyword">import</span> types</span><br><span class="line"><span class="keyword">from</span> google.adk.events <span class="keyword">import</span> Event</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 定义工具函数 ---</span></span><br><span class="line"><span class="comment">## 这些函数模拟专家 Agent 的操作。</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">booking_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    处理航班和酒店的预订请求。</span></span><br><span class="line"><span class="string">    参数：</span></span><br><span class="line"><span class="string">        request: 用户的预订请求。</span></span><br><span class="line"><span class="string">    返回：</span></span><br><span class="line"><span class="string">        确认预订已处理的消息。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;-------------------------- 调用预订处理程序 ----------------------------&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;已模拟对 &#x27;<span class="subst">&#123;request&#125;</span>&#x27; 的预订操作。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    处理一般信息请求。</span></span><br><span class="line"><span class="string">    参数：</span></span><br><span class="line"><span class="string">        request: 用户的问题。</span></span><br><span class="line"><span class="string">    返回：</span></span><br><span class="line"><span class="string">        表示信息请求已处理的消息。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;-------------------------- 调用信息处理程序 ----------------------------&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;对 &#x27;<span class="subst">&#123;request&#125;</span>&#x27; 的信息请求。结果：模拟信息检索。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">unclear_handler</span>(<span class="params">request: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理无法委托的请求。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;协调器无法委托请求：&#x27;<span class="subst">&#123;request&#125;</span>&#x27;。请澄清。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 从函数创建工具 ---</span></span><br><span class="line">booking_tool = FunctionTool(booking_handler)</span><br><span class="line">info_tool = FunctionTool(info_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义配备各自工具的专门子 Agent</span></span><br><span class="line">booking_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;Booker&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;一个专门的 Agent，通过调用预订工具处理所有航班和酒店预订请求。&quot;</span>,</span><br><span class="line">    tools=[booking_tool]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">info_agent = Agent(</span><br><span class="line">    name=<span class="string">&quot;Info&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;一个专门的 Agent，通过调用信息工具提供一般信息并回答用户问题。&quot;</span>,</span><br><span class="line">    tools=[info_tool]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 定义具有明确委托指令的父 Agent</span></span><br><span class="line">coordinator = Agent(</span><br><span class="line">    name=<span class="string">&quot;Coordinator&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gemini-2.0-flash&quot;</span>,</span><br><span class="line">    instruction=(</span><br><span class="line">        <span class="string">&quot;你是主协调器。你唯一的任务是分析传入的用户请求&quot;</span></span><br><span class="line">        <span class="string">&quot;并将它们委托给适当的专家 Agent。不要尝试直接回答用户。\n&quot;</span></span><br><span class="line">        <span class="string">&quot;- 对于任何与预订航班或酒店相关的请求，委托给 &#x27;Booker&#x27; Agent。\n&quot;</span></span><br><span class="line">        <span class="string">&quot;- 对于所有其他一般信息问题，委托给 &#x27;Info&#x27; Agent。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">    description=<span class="string">&quot;一个将用户请求路由到正确专家 Agent 的协调器。&quot;</span>,</span><br><span class="line">    <span class="comment"># sub_agents 的存在默认启用 LLM 驱动的委托（自动流）。</span></span><br><span class="line">    sub_agents=[booking_agent, info_agent]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 执行逻辑 ---</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">run_coordinator</span>(<span class="params">runner: InMemoryRunner, request: <span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用给定请求运行协调器 Agent 并委托。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n--- 使用请求运行协调器: &#x27;<span class="subst">&#123;request&#125;</span>&#x27; ---&quot;</span>)</span><br><span class="line">    final_result = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        user_id = <span class="string">&quot;user_123&quot;</span></span><br><span class="line">        session_id = <span class="built_in">str</span>(uuid.uuid4())</span><br><span class="line">        <span class="keyword">await</span> runner.session_service.create_session(</span><br><span class="line">            app_name=runner.app_name, user_id=user_id, session_id=session_id</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> runner.run(</span><br><span class="line">            user_id=user_id,</span><br><span class="line">            session_id=session_id,</span><br><span class="line">            new_message=types.Content(</span><br><span class="line">                role=<span class="string">&#x27;user&#x27;</span>,</span><br><span class="line">                parts=[types.Part(text=request)]</span><br><span class="line">            ),</span><br><span class="line">        ):</span><br><span class="line">            <span class="keyword">if</span> event.is_final_response() <span class="keyword">and</span> event.content:</span><br><span class="line">                <span class="comment"># 尝试直接从 event.content 获取文本</span></span><br><span class="line">                <span class="comment"># 以避免迭代部分</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">hasattr</span>(event.content, <span class="string">&#x27;text&#x27;</span>) <span class="keyword">and</span> event.content.text:</span><br><span class="line">                    final_result = event.content.text</span><br><span class="line">                <span class="keyword">elif</span> event.content.parts:</span><br><span class="line">                    <span class="comment"># 后备：迭代部分并提取文本（可能触发警告）</span></span><br><span class="line">                    text_parts = [part.text <span class="keyword">for</span> part <span class="keyword">in</span> event.content.parts <span class="keyword">if</span> part.text]</span><br><span class="line">                    final_result = <span class="string">&quot;&quot;</span>.join(text_parts)</span><br><span class="line">                <span class="comment"># 假设循环应在最终响应后中断</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;协调器最终响应: <span class="subst">&#123;final_result&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> final_result</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;处理您的请求时出错: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;处理您的请求时出错: <span class="subst">&#123;e&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;运行 ADK 示例的主函数。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- Google ADK 路由示例（ADK 自动流风格）---&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;注意：这需要安装并认证 Google ADK。&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    runner = InMemoryRunner(coordinator)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 示例用法</span></span><br><span class="line">    result_a = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;给我在巴黎预订一家酒店。&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 A: <span class="subst">&#123;result_a&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    result_b = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;世界上最高的山是什么？&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 B: <span class="subst">&#123;result_b&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    result_c = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;告诉我一个随机事实。&quot;</span>) <span class="comment"># 应该去 Info</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 C: <span class="subst">&#123;result_c&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    result_d = <span class="keyword">await</span> run_coordinator(runner, <span class="string">&quot;查找下个月去东京的航班。&quot;</span>) <span class="comment"># 应该去 Booker</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;最终输出 D: <span class="subst">&#123;result_d&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">import</span> nest_asyncio</span><br><span class="line">    nest_asyncio.apply()</span><br><span class="line">    <span class="keyword">await</span> main()</span><br></pre></td></tr></table></figure>
+
+<p>此脚本由一个主协调器 Agent 和两个专门的子 Agent 组成：Booker 和 Info。每个专门的 Agent 都配备了一个 FunctionTool，它包装了一个模拟操作的 Python 函数。booking_handler 函数模拟处理航班和酒店预订，而 info_handler 函数模拟检索一般信息。unclear_handler 作为协调器无法委托的请求的后备包含在内，尽管当前协调器逻辑在主 run_coordinator 函数中没有明确使用它进行委托失败。</p>
+<p>协调器 Agent 的主要角色，如其指令中定义的，是分析传入的用户消息并将它们委托给 Booker 或 Info Agent。这种委托由 ADK 的自动流机制自动处理，因为协调器定义了 sub_agents。run_coordinator 函数设置了一个 InMemoryRunner，创建一个用户和会话 ID，然后使用运行器通过协调器 Agent 处理用户的请求。runner.run 方法处理请求并产生事件，代码从 event.content 中提取最终响应文本。</p>
+<p>main 函数通过使用不同请求运行协调器来演示系统的用法，展示了它如何将预订请求委托给 Booker，将信息请求委托给 Info Agent。</p>
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> Agent 系统必须经常响应各种各样的输入和情况，这些无法由单一的线性流程处理。简单的顺序工作流缺乏基于上下文做出决策的能力。没有为特定任务选择正确工具或子流程的机制，系统仍然是僵化和非自适应的。这种限制使得难以构建能够管理现实世界用户请求的复杂性和可变性的复杂应用程序。</p>
+<p><strong>为什么：</strong> 路由模式通过将条件逻辑引入 Agent 的操作框架提供了标准化解决方案。它使系统能够首先分析传入查询以确定其意图或性质。基于此分析，Agent 动态地将控制流定向到最合适的专门工具、功能或子 Agent。这个决策可以由各种方法驱动，包括提示 LLM、应用预定义规则或使用基于嵌入的语义相似性。最终，路由将静态的预定执行路径转变为能够选择最佳可能操作的灵活和上下文感知工作流。</p>
+<p><strong>经验法则：</strong> 当 Agent 必须根据用户输入或当前状态在多个不同的工作流、工具或子 Agent 之间做出决策时，使用路由模式。它对于需要对传入请求进行分类或分类以处理不同类型任务的应用程序至关重要，例如客户支持机器人区分销售查询、技术支持和帐户管理问题。</p>
+<h4 id="视觉摘要："><a href="#视觉摘要：" class="headerlink" title="视觉摘要："></a><strong>视觉摘要：</strong></h4><p><img src="/../images/chapter-2/image1.png"><br>图 1：路由模式，使用 LLM 作为路由器</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
+<li>路由使 Agent 能够根据条件动态决定工作流中的下一步。</li>
+<li>它允许 Agent 处理各种输入并调整其行为，超越线性执行。</li>
+<li>路由逻辑可以使用 LLM、基于规则的系统或嵌入相似性实现。</li>
+<li>像 LangGraph 和 Google ADK 这样的框架提供了在 Agent 工作流中定义和管理路由的结构化方式，尽管采用不同的架构方法。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>路由模式是构建真正动态和响应式 Agent 系统的关键步骤。通过实现路由，我们超越了简单的线性执行流，使我们的 Agent 能够就如何处理信息、响应用户输入以及利用可用工具或子 Agent 做出智能决策。</p>
+<p>我们已经看到路由如何应用于各个领域，从客户服务聊天机器人到复杂的数据处理管道。分析输入并有条件地指导工作流的能力是创建能够处理现实世界任务固有可变性的 Agent 的基础。</p>
+<p>使用 LangChain 和 Google ADK 的代码示例展示了实现路由的两种不同但有效的方法。LangGraph 基于图的结构提供了定义状态和转换的可视化和显式方式，使其成为具有复杂路由逻辑的复杂多步工作流的理想选择。另一方面，Google ADK 通常专注于定义不同的能力（工具）并依赖框架将用户请求路由到适当工具处理程序的能力，这对于具有明确定义的离散操作集的 Agent 可能更简单。</p>
+<p>掌握路由模式对于构建能够智能地导航不同场景并根据上下文提供定制响应或操作的 Agent 至关重要。它是创建多功能和健壮 Agent 应用程序的关键组件。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>LangGraph Documentation: <a target="_blank" rel="noopener" href="https://www.langchain.com/">https://www.langchain.com/</a></li>
+<li>Google Agent Developer Kit Documentation: <a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/">https://google.github.io/adk-docs/</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-2_%20Routing/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-1_ Prompt Chaining" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-1_%20Prompt%20Chaining/">Agentic Design Patterns - Chapter 1_ Prompt Chaining</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-1_%20Prompt%20Chaining/" class="archive-article-date">
+  	<time datetime="2025-10-06T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-1-章：提示词链"><a href="#第-1-章：提示词链" class="headerlink" title="第 1 章：提示词链"></a>第 1 章：提示词链</h1><h2 id="提示词链模式概述"><a href="#提示词链模式概述" class="headerlink" title="提示词链模式概述"></a>提示词链模式概述</h2><p>提示词链（Prompt Chaining），有时也称为管道模式（Pipeline pattern），是利用大型语言模型（LLM）处理复杂任务时的一种强大范式。提示词链不是期望 LLM 在单一的、整体化的步骤中解决复杂问题，而是采用分而治之的策略。其核心思想是将原始复杂问题分解为一系列更小、更易管理的子问题。每个子问题通过专门设计的提示词单独处理，并且一个提示词的输出会作为输入传递给链中的下一个提示词。</p>
+<p>这种顺序处理技术为与 LLM 的交互引入了模块化和清晰性。通过分解复杂任务，更容易理解和调试每个单独的步骤，使整个过程更加健壮和可解释。链中的每一步都可以精心设计和优化，专注于更大问题的特定方面，从而产生更准确和聚焦的输出。</p>
+<p>一个步骤的输出作为下一个步骤的输入至关重要。这种信息传递建立了依赖链（因此得名），其中先前操作的上下文和结果指导后续处理。这使得 LLM 能够在其先前工作的基础上构建，完善理解，并逐步接近期望的解决方案。</p>
+<p>此外，提示词链不仅仅是分解问题；它还支持外部知识和工具的集成。在每一步，LLM 都可以被指示与外部系统、API 或数据库交互，丰富其超越内部训练数据的知识和能力。这种能力极大地扩展了 LLM 的潜力，使它们不仅仅作为独立模型运行，而是作为更广泛智能系统的组成部分。</p>
+<p>提示词链的重要性超越了简单的问题解决。它是构建复杂 AI Agent 的基础技术。这些 Agent 可以利用提示词链在动态环境中自主规划、推理和行动。通过战略性地构建提示词序列，Agent 可以参与需要多步推理、规划和决策的任务。这样的 Agent 工作流可以更紧密地模拟人类思维过程，从而实现与复杂领域和系统更自然有效的交互。</p>
+<p><strong>单一提示词的局限性：</strong> 对于多方面的任务，为 LLM 使用单一的复杂提示词可能效率低下，导致模型在约束和指令方面遇到困难，可能导致指令忽略（提示词的某些部分被忽视）、上下文漂移（模型失去对初始上下文的跟踪）、错误传播（早期错误被放大）、需要更长上下文窗口（模型获得的信息不足无法响应）以及幻觉（认知负荷增加导致错误信息的可能性）。例如，一个要求分析市场研究报告、总结发现、识别带数据点的趋势并起草电子邮件的查询可能会失败，因为模型可能总结得很好，但未能提取数据或正确起草电子邮件。</p>
+<p><strong>通过顺序分解增强可靠性：</strong> 提示词链通过将复杂任务分解为聚焦的顺序工作流来解决这些挑战，显著提高了可靠性和控制力。基于上面的例子，管道或链式方法可以描述如下：</p>
+<ol>
+<li>初始提示词（总结）：”总结以下市场研究报告的主要发现：[文本]。” 模型的唯一焦点是总结，提高了这一初始步骤的准确性。</li>
+<li>第二个提示词（趋势识别）：”使用摘要，识别前三个新兴趋势并提取支持每个趋势的具体数据点：[步骤 1 的输出]。” 此提示词现在更受约束，并直接建立在经过验证的输出之上。</li>
+<li>第三个提示词（电子邮件撰写）：”向营销团队起草一封简明的电子邮件，概述以下趋势及其支持数据：[步骤 2 的输出]。”</li>
+</ol>
+<p>这种分解允许对流程进行更精细的控制。每一步都更简单且更清晰，这减少了模型的认知负荷，并导致更准确和可靠的最终输出。这种模块化类似于计算管道，其中每个函数在执行特定操作后将结果传递给下一个。为了确保每个特定任务的准确响应，可以在每个阶段为模型分配不同的角色。例如，在给定的场景中，初始提示词可以被指定为”市场分析师”，后续提示词为”贸易分析师”，第三个提示词为”专家文档撰写者”，依此类推。</p>
+<p><strong>结构化输出的作用：</strong> 提示词链的可靠性高度依赖于步骤之间传递的数据完整性。如果一个提示词的输出不明确或格式不佳，后续提示词可能由于错误的输入而失败。为了缓解这一问题，指定结构化输出格式（如 JSON 或 XML）至关重要。</p>
+<p>例如，趋势识别步骤的输出可以格式化为 JSON 对象：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;trends&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;trend_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI-Powered Personalization&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;supporting_data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;73% of consumers prefer to do business with brands that use personal information to make their shopping experiences more relevant.&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;trend_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Sustainable and Ethical Brands&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;supporting_data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Sales of products with ESG-related claims grew 28% over the last five years, compared to 20% for products without.&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种结构化格式确保数据是机器可读的，可以精确解析并插入到下一个提示词中，而不会产生歧义。这种做法最大限度地减少了解释自然语言可能产生的错误，是构建健壮的多步骤 LLM 系统的关键组成部分。</p>
+<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>提示词链是一种多用途模式，在构建 Agent 系统时适用于广泛的场景。其核心效用在于将复杂问题分解为顺序的、可管理的步骤。以下是几个实际应用和用例：</p>
+<p><strong>1. 信息处理工作流：</strong> 许多任务涉及通过多次转换处理原始信息。例如，总结文档、提取关键实体，然后使用这些实体查询数据库或生成报告。提示词链可能如下所示：</p>
+<ul>
+<li>提示词 1：从给定的 URL 或文档中提取文本内容。</li>
+<li>提示词 2：总结清理后的文本。</li>
+<li>提示词 3：从摘要或原始文本中提取特定实体（例如，姓名、日期、位置）。</li>
+<li>提示词 4：使用实体搜索内部知识库。</li>
+<li>提示词 5：生成包含摘要、实体和搜索结果的最终报告。</li>
+</ul>
+<p>这种方法应用于自动化内容分析、AI 驱动的研究助手开发和复杂报告生成等领域。</p>
+<p><strong>2. 复杂查询回答：</strong> 回答需要多步推理或信息检索的复杂问题是一个主要用例。例如，”1929 年股市崩盘的主要原因是什么，政府政策如何应对？”</p>
+<ul>
+<li>提示词 1：识别用户查询中的核心子问题（崩盘原因、政府响应）。</li>
+<li>提示词 2：专门研究或检索有关 1929 年崩盘原因的信息。</li>
+<li>提示词 3：专门研究或检索有关政府对 1929 年股市崩盘的政策响应的信息。</li>
+<li>提示词 4：将步骤 2 和 3 的信息综合成对原始查询的连贯答案。</li>
+</ul>
+<p>这种顺序处理方法是开发能够进行多步推理和信息综合的 AI 系统的核心。当查询无法从单个数据点回答，而是需要一系列逻辑步骤或来自不同来源的信息集成时，需要这样的系统。</p>
+<p>例如，设计用于生成关于特定主题的综合报告的自动化研究 Agent 执行混合计算工作流。最初，系统检索大量相关文章。从每篇文章中提取关键信息的后续任务可以为每个来源并发执行。此阶段非常适合并行处理，其中独立的子任务同时运行以最大化效率。</p>
+<p>然而，一旦完成单个提取，过程就变得本质上是顺序的。系统必须首先整理提取的数据，然后将其综合成连贯的草稿，最后审查和完善此草稿以生成最终报告。这些后期阶段中的每一个在逻辑上都依赖于前一个阶段的成功完成。这就是应用提示词链的地方：整理的数据作为综合提示词的输入，生成的综合文本成为最终审查提示词的输入。因此，复杂操作经常将独立数据收集的并行处理与综合和完善的依赖步骤的提示词链结合起来。</p>
+<p><strong>3. 数据提取和转换：</strong> 将非结构化文本转换为结构化格式通常通过迭代过程实现，需要顺序修改以提高输出的准确性和完整性。</p>
+<ul>
+<li>提示词 1：尝试从发票文档中提取特定字段（例如，姓名、地址、金额）。</li>
+<li>处理：检查是否提取了所有必需字段以及它们是否满足格式要求。</li>
+<li>提示词 2（条件性）：如果字段缺失或格式错误，制作新提示词要求模型专门查找缺失&#x2F;格式错误的信息，可能提供失败尝试的上下文。</li>
+<li>处理：再次验证结果。如有必要重复。</li>
+<li>输出：提供提取的、验证的结构化数据。</li>
+</ul>
+<p>这种顺序处理方法特别适用于从表单、发票或电子邮件等非结构化来源进行数据提取和分析。例如，解决复杂的光学字符识别（OCR）问题，如处理 PDF 表单，通过分解的多步方法更有效地处理。</p>
+<p>最初，使用大型语言模型从文档图像执行主要文本提取。随后，模型处理原始输出以规范化数据，在这一步中，它可能将数字文本（如”一千零五十”）转换为其数字等价物 1050。LLM 的一个重大挑战是执行精确的数学计算。因此，在随后的步骤中，系统可以将任何所需的算术运算委托给外部计算器工具。LLM 识别必要的计算，将规范化的数字馈送到工具，然后合并精确的结果。这种文本提取、数据规范化和外部工具使用的链式序列实现了最终的准确结果，这通常很难从单个 LLM 查询中可靠地获得。</p>
+<p><strong>4. 内容生成工作流：</strong> 复杂内容的创作是一个程序化任务，通常分解为不同的阶段，包括初始构思、结构大纲、起草和后续修订。</p>
+<ul>
+<li>提示词 1：根据用户的一般兴趣生成 5 个主题想法。</li>
+<li>处理：允许用户选择一个想法或自动选择最佳想法。</li>
+<li>提示词 2：基于选定的主题，生成详细的大纲。</li>
+<li>提示词 3：根据大纲中的第一点编写草稿部分。</li>
+<li>提示词 4：根据大纲中的第二点编写草稿部分，提供前一部分作为上下文。对所有大纲点继续这样做。</li>
+<li>提示词 5：审查和完善完整草稿的连贯性、语气和语法。</li>
+</ul>
+<p>这种方法用于一系列自然语言生成任务，包括创意叙事、技术文档和其他形式的结构化文本内容的自动创作。</p>
+<p><strong>5. 具有状态的对话 Agent：</strong> 尽管全面的状态管理架构采用比顺序链接更复杂的方法，提示词链提供了保持对话连续性的基础机制。这种技术通过将每个对话轮次构建为新提示词来维护上下文，该提示词系统地合并来自对话序列中先前交互的信息或提取的实体。</p>
+<ul>
+<li>提示词 1：处理用户话语 1，识别意图和关键实体。</li>
+<li>处理：使用意图和实体更新对话状态。</li>
+<li>提示词 2：基于当前状态，生成响应和&#x2F;或识别下一个所需的信息片段。</li>
+<li>对于后续轮次重复，每个新的用户话语启动一个利用累积对话历史（状态）的链。</li>
+</ul>
+<p>这一原则是开发对话 Agent 的基础，使它们能够在扩展的、多轮对话中保持上下文和连贯性。通过保留对话历史，系统可以理解并适当响应依赖于先前交换信息的用户输入。</p>
+<p><strong>6. 代码生成和完善：</strong> 功能代码的生成通常是一个多阶段过程，需要将问题分解为逐步执行的离散逻辑操作序列。</p>
+<ul>
+<li>提示词 1：理解用户对代码函数的请求。生成伪代码或大纲。</li>
+<li>提示词 2：基于大纲编写初始代码草稿。</li>
+<li>提示词 3：识别代码中的潜在错误或改进领域（可能使用静态分析工具或另一个 LLM 调用）。</li>
+<li>提示词 4：基于识别的问题重写或完善代码。</li>
+<li>提示词 5：添加文档或测试用例。</li>
+</ul>
+<p>在 AI 辅助软件开发等应用中，提示词链的效用源于其将复杂编码任务分解为一系列可管理的子问题的能力。这种模块化结构降低了每一步大型语言模型的操作复杂性。至关重要的是，这种方法还允许在模型调用之间插入确定性逻辑，实现中间数据处理、输出验证和工作流中的条件分支。通过这种方法，一个可能导致不可靠或不完整结果的单一多面请求被转换为由底层执行框架管理的结构化操作序列。</p>
+<p><strong>7. 多模态和多步推理：</strong> 分析具有不同模态的数据集需要将问题分解为更小的、基于提示词的任务。例如，解释包含带嵌入文本的图片、突出显示特定文本段的标签以及解释每个标签的表格数据的图像，需要这样的方法。</p>
+<ul>
+<li>提示词 1：从用户的图像请求中提取和理解文本。</li>
+<li>提示词 2：将提取的图像文本与其相应的标签链接起来。</li>
+<li>提示词 3：使用表格解释收集的信息以确定所需的输出。</li>
+</ul>
+<h2 id="实操代码示例"><a href="#实操代码示例" class="headerlink" title="实操代码示例"></a>实操代码示例</h2><p>实现提示词链的范围从脚本中的直接顺序函数调用到利用专门设计用于管理控制流、状态和组件集成的框架。诸如 LangChain、LangGraph、Crew AI 和 Google Agent Development Kit (ADK) 等框架提供了用于构建和执行这些多步过程的结构化环境，这对于复杂架构特别有利。</p>
+<p>出于演示目的，LangChain 和 LangGraph 是合适的选择，因为它们的核心 API 明确设计用于组合操作链和图。LangChain 为线性序列提供基础抽象，而 LangGraph 扩展了这些能力以支持状态化和循环计算，这对于实现更复杂的 Agent 行为是必需的。此示例将专注于基础线性序列。</p>
+<p>以下代码实现了一个两步提示词链，作为数据处理管道运行。初始阶段旨在解析非结构化文本并提取特定信息。后续阶段然后接收此提取的输出并将其转换为结构化数据格式。</p>
+<p>要复制此过程，必须首先安装所需的库。这可以使用以下命令完成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain langchain-community langchain-openai langgraph</span><br></pre></td></tr></table></figure>
+
+<p>请注意，langchain-openai 可以替换为不同模型提供商的适当包。随后，必须为选定的语言模型提供商（如 OpenAI、Google Gemini 或 Anthropic）配置执行环境所需的 API 凭据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"></span><br><span class="line"><span class="comment">## 为了更好的安全性，从 .env 文件加载环境变量</span></span><br><span class="line"><span class="comment">## from dotenv import load_dotenv</span></span><br><span class="line"><span class="comment">## load_dotenv()</span></span><br><span class="line"><span class="comment">## 确保你的 OPENAI_API_KEY 在 .env 文件中设置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化语言模型（推荐使用 ChatOpenAI）</span></span><br><span class="line">llm = ChatOpenAI(temperature=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 提示词 1：提取信息 ---</span></span><br><span class="line">prompt_extract = ChatPromptTemplate.from_template(</span><br><span class="line">    <span class="string">&quot;从以下文本中提取技术规格：\n\n&#123;text_input&#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 提示词 2：转换为 JSON ---</span></span><br><span class="line">prompt_transform = ChatPromptTemplate.from_template(</span><br><span class="line">    <span class="string">&quot;将以下规格转换为 JSON 对象，使用 &#x27;cpu&#x27;、&#x27;memory&#x27; 和 &#x27;storage&#x27; 作为键：\n\n&#123;specifications&#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 使用 LCEL 构建链 ---</span></span><br><span class="line"><span class="comment">## StrOutputParser() 将 LLM 的消息输出转换为简单字符串。</span></span><br><span class="line">extraction_chain = prompt_extract | llm | StrOutputParser()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 完整的链将提取链的输出传递到转换提示词的 &#x27;specifications&#x27; 变量中。</span></span><br><span class="line">full_chain = (</span><br><span class="line">    &#123;<span class="string">&quot;specifications&quot;</span>: extraction_chain&#125;</span><br><span class="line">    | prompt_transform</span><br><span class="line">    | llm</span><br><span class="line">    | StrOutputParser()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 运行链 ---</span></span><br><span class="line">input_text = <span class="string">&quot;新款笔记本电脑型号配备 3.5 GHz 八核处理器、16GB 内存和 1TB NVMe 固态硬盘。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用输入文本字典执行链。</span></span><br><span class="line">final_result = full_chain.invoke(&#123;<span class="string">&quot;text_input&quot;</span>: input_text&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n--- 最终 JSON 输出 ---&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(final_result)</span><br></pre></td></tr></table></figure>
+
+<p>这段 Python 代码演示了如何使用 LangChain 库处理文本。它利用两个独立的提示词：一个从输入字符串中提取技术规格，另一个将这些规格格式化为 JSON 对象。ChatOpenAI 模型用于语言模型交互，StrOutputParser 确保输出为可用的字符串格式。LangChain 表达式语言（LCEL）用于优雅地将这些提示词和语言模型链接在一起。第一个链 extraction_chain 提取规格。然后 full_chain 获取提取的输出并将其用作转换提示词的输入。提供了描述笔记本电脑的示例输入文本。full_chain 通过这两个步骤调用此文本进行处理。最后打印最终结果，这是一个包含提取和格式化规格的 JSON 字符串。</p>
+<h2 id="上下文工程和提示工程"><a href="#上下文工程和提示工程" class="headerlink" title="上下文工程和提示工程"></a>上下文工程和提示工程</h2><p>上下文工程（见图 1）是在 token 生成之前系统地设计、构建和向 AI 模型提供完整信息环境的学科。这种方法论断言，模型输出的质量较少依赖于模型架构本身，而更多依赖于所提供上下文的丰富性。</p>
+<p><img src="/../images/chapter-1/image1.png"></p>
+<p>图 1：上下文工程是为 AI 构建丰富、全面的信息环境的学科，因为此上下文的质量是实现高级 Agent 性能的主要因素。</p>
+<p>它代表了从传统提示工程的重大演进，传统提示工程主要关注优化用户即时查询的措辞。上下文工程将此范围扩展到包括多个信息层，例如<strong>系统提示词</strong>，这是定义 AI 操作参数的基础指令集——例如，*”你是一名技术作家；你的语气必须正式而精确。”* 上下文通过外部数据进一步丰富。这包括检索的文档，其中 AI 主动从知识库中获取信息以告知其响应，例如提取项目的技术规格。它还包含工具输出，这是 AI 使用外部 API 获取实时数据的结果，例如查询日历以确定用户的可用性。这些显式数据与关键的隐式数据结合，如用户身份、交互历史和环境状态。核心原则是，即使是高级模型，在提供有限或构建不良的操作环境视图时，也会表现不佳。</p>
+<p>因此，这种实践将任务从仅仅回答问题重新定义为为 Agent 构建全面的操作图景。例如，上下文工程化的 Agent 不仅会响应查询，而且首先会整合用户的日历可用性（工具输出）、与电子邮件收件人的专业关系（隐式数据）以及之前会议的笔记（检索的文档）。这使得模型能够生成高度相关、个性化和实用的输出。”工程”组件涉及创建健壮的管道以在运行时获取和转换此数据，并建立反馈循环以持续改进上下文质量。</p>
+<p>要实现这一点，可以使用专门的调优系统来大规模自动化改进过程。例如，像 Google 的 Vertex AI 提示词优化器这样的工具可以通过系统地根据一组样本输入和预定义的评估指标评估响应来提高模型性能。这种方法对于在不同模型之间调整提示词和系统指令而无需大量手动重写非常有效。通过向这样的优化器提供样本提示词、系统指令和模板，它可以以编程方式完善上下文输入，为实现复杂上下文工程所需的反馈循环提供结构化方法。</p>
+<p>这种结构化方法是区分基本 AI 工具与更复杂、上下文感知系统的关键。它将上下文本身视为主要组件，对 Agent 知道什么、何时知道以及如何使用该信息给予关键重要性。这种实践确保模型对用户的意图、历史和当前环境有全面的理解。最终，上下文工程是将无状态聊天机器人提升为高度能干、情境感知系统的关键方法论。</p>
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>是什么：</strong> 复杂任务在单个提示词内处理时通常会使 LLM 不堪重负，导致严重的性能问题。模型的认知负荷增加了错误的可能性，如忽略指令、失去上下文和生成错误信息。单体提示词难以有效管理多个约束和顺序推理步骤。这导致不可靠和不准确的输出，因为 LLM 未能解决多方面请求的所有方面。</p>
+<p><strong>为什么：</strong> 提示词链通过将复杂问题分解为一系列较小的、相互关联的子任务来提供标准化解决方案。链中的每一步使用聚焦的提示词执行特定操作，显著提高可靠性和控制力。一个提示词的输出作为下一个提示词的输入传递，创建逐步构建最终解决方案的逻辑工作流。这种模块化的分而治之策略使过程更易于管理、更易于调试，并允许在步骤之间集成外部工具或结构化数据格式。这种模式是开发能够规划、推理和执行复杂工作流的复杂多步 Agent 系统的基础。</p>
+<p><strong>经验法则：</strong> 当任务对于单个提示词过于复杂、涉及多个不同的处理阶段、需要在步骤之间与外部工具交互，或者在构建需要执行多步推理并维护状态的 Agent 系统时，使用此模式。</p>
+<p><strong>视觉摘要</strong></p>
+<p><img src="/../images/chapter-1/image2.png"></p>
+<p>图 2：提示词链模式：Agent 从用户接收一系列提示词，每个 Agent 的输出作为链中下一个 Agent 的输入。</p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><p>以下是一些关键要点：</p>
+<ul>
+<li>提示词链将复杂任务分解为一系列更小的、聚焦的步骤。这有时被称为管道模式。</li>
+<li>链中的每一步涉及 LLM 调用或处理逻辑，使用前一步的输出作为输入。</li>
+<li>这种模式提高了与语言模型的复杂交互的可靠性和可管理性。</li>
+<li>像 LangChain&#x2F;LangGraph 和 Google ADK 这样的框架提供了强大的工具来定义、管理和执行这些多步序列。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>通过将复杂问题分解为一系列更简单、更易于管理的子任务，提示词链为指导大型语言模型提供了一个健壮的框架。这种”分而治之”策略通过一次专注于一个特定操作，显著提高了输出的可靠性和控制力。作为基础模式，它支持开发能够进行多步推理、工具集成和状态管理的复杂 AI Agent。最终，掌握提示词链对于构建能够执行远超单个提示词能力的复杂工作流的健壮、上下文感知系统至关重要。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>LangChain Documentation on LCEL: <a target="_blank" rel="noopener" href="https://python.langchain.com/v0.2/docs/core_modules/expression_language/">https://python.langchain.com/v0.2/docs/core_modules&#x2F;expression_language&#x2F;</a></li>
+<li>LangGraph Documentation: <a target="_blank" rel="noopener" href="https://langchain-ai.github.io/langgraph/">https://langchain-ai.github.io/langgraph/</a></li>
+<li>Prompt Engineering Guide - Chaining Prompts: <a target="_blank" rel="noopener" href="https://www.promptingguide.ai/techniques/chaining">https://www.promptingguide.ai/techniques/chaining</a></li>
+<li>OpenAI API Documentation (General Prompting Concepts): <a target="_blank" rel="noopener" href="https://platform.openai.com/docs/guides/gpt/prompting">https://platform.openai.com/docs/guides/gpt/prompting</a></li>
+<li>Crew AI Documentation (Tasks and Processes): <a target="_blank" rel="noopener" href="https://docs.crewai.com/">https://docs.crewai.com/</a></li>
+<li>Google AI for Developers (Prompting Guides): <a target="_blank" rel="noopener" href="https://cloud.google.com/discover/what-is-prompt-engineering?hl=en">https://cloud.google.com/discover/what-is-prompt-engineering?hl=en</a></li>
+<li>Vertex Prompt Optimizer <a target="_blank" rel="noopener" href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer">https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-1_%20Prompt%20Chaining/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-Conclusion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-Conclusion/">Agentic Design Patterns - Conclusion</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-Conclusion/" class="archive-article-date">
+  	<time datetime="2025-10-05T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>在本书中，我们从 Agentic AI 的基础概念出发，一路探索到复杂自主系统的实际实现。我们从这样一个前提开始：构建智能 Agent 就像在技术画布上创作一幅复杂的艺术作品——这个过程不仅需要一个强大的认知引擎（如大型语言模型），还需要一套稳健的架构蓝图。这些蓝图，或者说 Agentic 模式，提供了将简单的被动模型转变为能够进行复杂推理和行动的主动的、目标导向的实体所需的结构和可靠性。</p>
+<p>本结论章节将综合我们探索的核心原则。我们将首先回顾关键的 Agentic 模式，将它们组织成一个连贯的框架，强调它们的集体重要性。接下来，我们将研究如何将这些单独的模式组合成更复杂的系统，创造强大的协同效应。最后，我们将展望 Agent 开发的未来，探索将塑造下一代智能系统的新兴趋势和挑战。</p>
+<h2 id="关键-Agentic-原则回顾"><a href="#关键-Agentic-原则回顾" class="headerlink" title="关键 Agentic 原则回顾"></a>关键 Agentic 原则回顾</h2><p>本指南中详细介绍的 21 种模式代表了 Agent 开发的全面工具包。虽然每种模式都针对特定的设计挑战，但可以通过将它们归类到反映智能 Agent 核心能力的基础类别中来整体理解它们。</p>
+<ol>
+<li><p><strong>核心执行和任务分解：</strong> 在最基本的层面上，Agent 必须能够执行任务。提示词链、路由、并行化和规划这些模式构成了 Agent 行动能力的基石。提示词链提供了一种简单而强大的方法，将问题分解为一系列离散步骤的线性序列，确保一个操作的输出在逻辑上为下一个操作提供信息。当工作流需要更动态的行为时，路由引入了条件逻辑，允许 Agent 根据输入的上下文选择最合适的路径或工具。并行化通过启用独立子任务的并发执行来优化效率，而规划模式则将 Agent 从单纯的执行者提升为战略家，能够制定多步骤计划以实现高层次目标。</p>
+</li>
+<li><p><strong>与外部环境的交互：</strong> Agent 通过与其直接内部状态之外的世界交互，其效用得到显著增强。工具使用（函数调用）模式在这里至关重要，为 Agent 提供了利用外部 API、数据库和其他软件系统的机制。这将 Agent 的操作建立在真实世界的数据和能力之上。为了有效使用这些工具，Agent 通常必须从庞大的存储库中访问特定的相关信息。知识检索模式，特别是检索增强生成（RAG），通过使 Agent 能够查询知识库并将该信息纳入其响应中来解决这个问题，使它们更加准确和具有上下文意识。</p>
+</li>
+<li><p><strong>状态、学习和自我改进：</strong> 为了使 Agent 能够执行多于单轮任务，它必须具备维护上下文和随时间改进的能力。内存管理模式对于赋予 Agent 短期对话上下文和长期知识保留至关重要。除了简单的记忆，真正智能的 Agent 还表现出自我改进的能力。反思和自我纠正模式使 Agent 能够批评自己的输出，识别错误或缺陷，并迭代地改进其工作，从而产生更高质量的最终结果。学习和适应模式更进一步，允许 Agent 的行为根据反馈和经验而演变，使其随时间变得更加有效。</p>
+</li>
+<li><p><strong>协作和通信：</strong> 许多复杂问题最好通过协作来解决。多 Agent 协作模式允许创建系统，其中多个专门的 Agent（每个都有不同的角色和能力集）共同努力实现共同目标。这种劳动分工使系统能够处理对单个 Agent 来说难以解决的多方面问题。此类系统的有效性取决于清晰高效的通信，这是 Agent 间通信（A2A）和模型上下文协议（MCP）模式所要解决的挑战，它们旨在标准化 Agent 和工具如何交换信息。</p>
+</li>
+</ol>
+<p>这些原则通过各自的模式应用时，为构建智能系统提供了一个稳健的框架。它们指导开发人员创建不仅能够执行复杂任务，而且结构化、可靠和适应性强的 Agent。</p>
+<h2 id="为复杂系统组合模式"><a href="#为复杂系统组合模式" class="headerlink" title="为复杂系统组合模式"></a>为复杂系统组合模式</h2><p>Agentic 设计的真正力量不是来自孤立地应用单一模式，而是来自巧妙地组合多种模式以创建复杂的多层系统。Agentic 画布很少由单一的简单工作流填充；相反，它成为相互连接的模式的织锦，这些模式协同工作以实现复杂的目标。</p>
+<p>考虑开发一个自主 AI 研究助手，这项任务需要规划、信息检索、分析和综合的组合。这样的系统将是模式组合的典型例子：</p>
+<ul>
+<li><p><strong>初始规划：</strong> 用户查询，例如”分析量子计算对网络安全格局的影响”，首先会被规划器 Agent 接收。该 Agent 将利用规划模式将高层次请求分解为结构化的多步骤研究计划。该计划可能包括诸如”识别量子计算的基础概念”、”研究常见的加密算法”、”查找有关量子威胁对加密的专家分析”和”将发现综合成结构化报告”等步骤。</p>
+</li>
+<li><p><strong>使用工具使用进行信息收集：</strong> 为了执行该计划，Agent 将严重依赖工具使用模式。计划的每一步都将触发对 Google 搜索或 vertex_ai_search 工具的调用。对于更结构化的数据，它可能使用工具查询学术数据库（如 ArXiv）或金融数据 API。</p>
+</li>
+<li><p><strong>协作分析和写作：</strong> 单个 Agent 可能会处理这个问题，但更稳健的架构将采用多 Agent 协作。”研究员” Agent 可以负责执行搜索计划和收集原始信息。它的输出——摘要和来源链接的集合——然后将传递给”作家” Agent。这个专家 Agent 使用初始计划作为其大纲，将收集的信息综合成连贯的草稿。</p>
+</li>
+<li><p><strong>迭代反思和改进：</strong> 初稿很少是完美的。反思模式可以通过引入第三个”批评家” Agent 来实现。该 Agent 的唯一目的是审查作家的草稿，检查逻辑不一致、事实不准确或缺乏清晰度的领域。其批评将反馈给作家 Agent，然后作家 Agent 将利用自我纠正模式来改进其输出，纳入反馈以产生更高质量的最终报告。</p>
+</li>
+<li><p><strong>状态管理：</strong> 在整个过程中，内存管理系统将是必不可少的。它将维护研究计划的状态，存储研究员收集的信息，保存作家创建的草稿，并跟踪批评家的反馈，确保在整个多步骤、多 Agent 工作流中保持上下文。</p>
+</li>
+</ul>
+<p>在这个例子中，至少有五种不同的 Agentic 模式被编织在一起。规划模式提供高层次结构，工具使用将操作建立在真实世界数据上，多 Agent 协作实现专业化和劳动分工，反思确保质量，内存管理保持连贯性。这种组合将一组单独的能力转变为一个强大的自主系统，能够处理对单个提示词或简单链来说过于复杂的任务。</p>
+<h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><p>将 Agentic 模式组合成复杂系统（如我们的 AI 研究助手所示）不是故事的结束，而是软件开发新篇章的开始。展望未来，几个新兴趋势和挑战将定义下一代智能系统，推动可能性的边界，并要求其创建者具有更高的复杂性。</p>
+<p>迈向更先进的 Agentic AI 的旅程将以追求更大的<strong>自主性和推理能力</strong>为标志。我们讨论的模式为目标导向的行为提供了脚手架，但未来将需要能够应对模糊性、执行抽象和因果推理，甚至表现出一定程度常识的 Agent。这可能涉及与新颖模型架构和神经符号方法的更紧密集成，这些方法将 LLM 的模式匹配优势与经典 AI 的逻辑严谨性相结合。我们将看到从人机协同系统（其中 Agent 是副驾驶）向人机在环系统的转变，其中 Agent 被信任以最少的监督执行复杂的、长时间运行的任务，仅在目标完成或发生关键异常时报告。</p>
+<p>这种演变将伴随着 <strong>Agentic 生态系统和标准化</strong>的兴起。多 Agent 协作模式突出了专门 Agent 的力量，未来将看到开放市场和平台的出现，开发人员可以在其中部署、发现和编排 Agent 即服务的舰队。为了使这一切成功，模型上下文协议（MCP）和 Agent 间通信（A2A）背后的原则将变得至关重要，导致 Agent、工具和模型如何交换不仅是数据，还有上下文、目标和能力的行业标准。</p>
+<p>这种不断增长的生态系统的一个典型例子是”Awesome Agents” GitHub 存储库，这是一个宝贵的资源，作为开源 AI Agent、框架和工具的精选列表。它通过组织从软件开发到自主研究和对话式 AI 等应用的尖端项目来展示该领域的快速创新。</p>
+<p>然而，这条道路并非没有其巨大的挑战。<strong>安全性、一致性和稳健性</strong>的核心问题将变得更加关键，因为 Agent 变得更加自主和互连。我们如何确保 Agent 的学习和适应不会导致它偏离其最初目的？我们如何构建对对抗性攻击和不可预测的真实世界场景具有弹性的系统？回答这些问题将需要一套新的”安全模式”和专注于测试、验证和道德一致性的严格工程学科。</p>
+<h2 id="最后的思考"><a href="#最后的思考" class="headerlink" title="最后的思考"></a>最后的思考</h2><p>在本指南中，我们将智能 Agent 的构建定义为在技术画布上实践的艺术形式。这些 Agentic 设计模式是您的调色板和笔触——使您能够超越简单的提示词并创建动态的、响应式的和目标导向的实体的基础元素。它们提供了将大型语言模型的原始认知能力转变为可靠且有目的的系统所需的架构规范。</p>
+<p>真正的技艺不在于掌握单一模式，而在于理解它们的相互作用——将画布视为一个整体，并组合一个系统，其中规划、工具使用、反思和协作和谐地工作。Agentic 设计的原则是一种新的创造语言的语法，它允许我们不仅指导机器做什么，而且指导它们如何<em>存在</em>。</p>
+<p>Agentic AI 领域是技术中最令人兴奋和快速发展的领域之一。这里详述的概念和模式不是最终的静态教条，而是一个起点——一个在其上构建、实验和创新的坚实基础。未来不是我们仅仅是 AI 的用户，而是我们是智能系统的架构师，这些系统将帮助我们解决世界上最复杂的问题。画布就在你面前，模式就在你手中。现在，是时候开始构建了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Conclusion/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-Frequently Asked Questions_ Agentic Design Patterns" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-Frequently%20Asked%20Questions_%20Agentic%20Design%20Patterns/">Agentic Design Patterns - Frequently Asked Questions_ Agentic Design Patterns</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-Frequently%20Asked%20Questions_%20Agentic%20Design%20Patterns/" class="archive-article-date">
+  	<time datetime="2025-10-04T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常见问题解答：Agentic-设计模式"><a href="#常见问题解答：Agentic-设计模式" class="headerlink" title="常见问题解答：Agentic 设计模式"></a><strong>常见问题解答：Agentic 设计模式</strong></h3><p><strong>什么是”Agentic 设计模式”？</strong> Agentic 设计模式是可复用的高层解决方案，用于应对构建智能自主系统（Agent）时的常见挑战。这些模式为设计 Agent 行为提供结构化框架，其作用类似于传统编程中的软件设计模式。它们助力开发者构建更稳健、可预测且高效的 AI Agent。</p>
+<p><strong>本指南的核心目标是什么？</strong> 本指南致力于提供设计与构建 Agentic 系统的实践性指导。超越纯理论探讨，提供开发者可直接运用的具体架构蓝图，以可靠方式创建具备复杂目标导向行为能力的 Agent。</p>
+<p><strong>本指南面向哪些读者群体？</strong> 本指南主要面向运用大语言模型（LLM）及其他 AI 组件构建应用的 AI 开发者、软件工程师与系统架构师。特别适合希望从简单提示-响应交互进阶至构建复杂自主 Agent 的技术人员。</p>
+<p><strong>4. 本指南涵盖哪些关键 Agentic 模式？</strong> 依据目录结构，本指南深入探讨以下核心模式：</p>
+<ul>
+<li><strong>反思（Reflection）</strong>：Agent 通过批判自身行为与输出来提升性能的能力。</li>
+<li><strong>规划（Planning）</strong>：将复杂目标分解为可管理步骤或任务序列的过程。</li>
+<li><strong>工具使用（Tool Use）</strong>：Agent 借助外部工具（如代码解释器、搜索引擎或其他 API）获取信息或执行自身无法完成操作的模式。</li>
+<li><strong>多 Agent 协作（Multi-Agent Collaboration）</strong>：多个专业化 Agent 协同解决问题的架构，通常包含”领导者”或”协调者”Agent。</li>
+<li><strong>人机协同（Human-in-the-Loop）</strong>：整合人类监督与干预机制，支持对 Agent 行为进行反馈、修正与审批。</li>
+</ul>
+<p><strong>为何”规划”模式至关重要？</strong> 规划模式使 Agent 能够处理无法通过单步操作解决的复杂多阶段任务。通过制定计划，Agent 可维持连贯策略、追踪进度，并以结构化方式应对错误或意外障碍。这有效防止 Agent 陷入”停滞”或偏离用户最终目标。</p>
+<p><strong>Agent 语境中”工具”与”技能”有何区别？</strong> 虽常被混用，但”工具”通常指 Agent 可调用的外部资源（如天气 API、计算器）；”技能”则是 Agent 通过学习获得的更集成化能力，往往结合工具使用与内部推理以执行特定功能（如”航班预订”技能可能涉及日历与航空 API 的协同使用）。</p>
+<p><strong>“反思”模式如何提升 Agent 性能？</strong> 反思机制充当自我校正功能。在生成响应或完成任务后，引导 Agent 审查自身工作：检测错误、依据既定标准评估质量、考量替代方案。此迭代优化过程显著提升 Agent 输出的准确性、相关性及整体质量。</p>
+<p><strong>反思模式的核心理念是什么？</strong> 反思模式赋予 Agent 后退一步批判自身工作的能力。Agent 并非一次性生成最终输出，而是先创建草稿后进行”反思”，识别缺陷、信息缺失或改进空间。此自我校正流程是提升响应质量与准确度的关键机制。</p>
+<p><strong>为何简单”提示链”难以保证高质量输出？</strong> 简单提示链（前序提示输出作为后续提示输入）通常过于基础。模型可能仅对先前输出进行措辞重组而未实现实质性改进。真正的反思模式需引入结构化批判机制，引导 Agent 依据特定标准分析工作、检验逻辑错误或核实事实。</p>
+<p><strong>本章阐述的两种主要反思类型是什么？</strong> 本章详细解析两种核心反思形式：</p>
+<ul>
+<li><strong>“工作自查”式反思</strong>：基础形式，仅要求 Agent 审查并修正前序输出。适用于捕捉简单错误的入门场景。</li>
+<li><strong>“内部评审”式反思</strong>：进阶形式，通过独立”评审者”Agent（或专用提示）评估”执行者”Agent 的输出。可为评审者设定特定检验标准，实现更严密且定向的改进。</li>
+</ul>
+<p><strong>反思机制如何助力减少”幻觉”现象？</strong> 通过强制 Agent 审查自身工作——特别是将其陈述与已知来源比对或检验推理步骤——反思模式能显著降低幻觉（虚构事实）发生概率。Agent 被迫更严格遵循给定上下文，减少生成无依据信息的可能性。</p>
+<p><strong>反思模式可否多次迭代应用？</strong> 可以，反思本身即为迭代过程。可引导 Agent 对同一工作进行多轮反思，每轮循环持续优化输出质量。这对复杂任务尤为关键，因初版或次版输出可能仍存在细微错误或具大幅提升空间。</p>
+<p><strong>AI Agent 语境中的规划模式指什么？</strong> 规划模式旨在使 Agent 能将复杂高层目标分解为系列可执行步骤序列。Agent 不试图一次性解决宏观问题，而是先构建”计划”框架，随后按序执行各步骤，此方法显著提升任务可靠性。</p>
+<p><strong>为何复杂任务必须引入规划机制？</strong> 大语言模型在处理多步骤或具依赖关系的任务时存在局限。缺乏计划指引时，Agent 易丢失整体目标脉络、遗漏关键环节或未能将前步骤输出有效传递至后续输入。计划提供清晰实施路线，确保按逻辑顺序满足原始请求全部要求。</p>
+<p><strong>实现规划模式的典型方法有哪些？</strong> 常见实施方案是引导 Agent 首先生成结构化步骤列表（如 JSON 数组或编号清单）。系统随后遍历该列表，逐项执行步骤并将执行结果反馈至 Agent 以指导后续操作。</p>
+<p><strong>Agent 如何处理执行过程中的异常或动态变化？</strong> 健全的规划模式支持动态调整能力。当某步骤失败或情境变更时，可触发 Agent 基于当前状态”重新规划”。Agent 能分析错误成因、调整剩余步骤序列，甚至新增步骤以突破障碍。</p>
+<p><strong>计划内容是否对用户可见？</strong> 此为设计决策项。多数场景下，预先向用户展示计划并获取批准是推荐实践。这与”人机协同”模式高度契合，在执行前赋予用户对 Agent 拟执行操作的透明度与控制权。</p>
+<p><strong>“工具使用”模式的核心要素是什么？</strong> 工具使用模式使 Agent 能通过与外部软件或 API 交互扩展自身能力边界。鉴于 LLM 知识库的静态特性及无法自主执行现实操作的限制，工具为其提供实时信息访问（如 Google 搜索）、专有数据获取（如企业数据库）及动作执行能力（如邮件发送、会议预订）。</p>
+<p><strong>Agent 如何决策工具选用？</strong> Agent 通常获授可用工具清单及各工具功能描述与参数要求。当面临内部知识无法处理的请求时，Agent 依托推理能力从清单中筛选最适配任务需求的工具。</p>
+<p><strong>文中所提”ReAct”（推理-行动）框架是什么？</strong> ReAct 是集成推理与行动的流行框架。Agent 遵循<strong>思考</strong>（分析待执行任务）、<strong>行动</strong>（决策工具选择及输入参数）与<strong>观察</strong>（获取工具返回结果）的循环流程。该循环持续迭代直至收集足够信息满足用户请求。</p>
+<p><strong>工具使用实施面临哪些主要挑战？</strong> 关键挑战包括：</p>
+<ul>
+<li><strong>异常处理</strong>：工具可能执行失败、返回意外数据或超时。Agent 需具备异常识别能力并决策重试、切换工具或寻求用户协助。</li>
+<li><strong>安全考量</strong>：授予 Agent 工具访问权限——特别是具现实影响的操作工具——存在安全风险。对敏感操作必须设置防护机制、权限控制及常需人工审批流程。</li>
+<li><strong>提示工程</strong>：需通过精准提示引导 Agent 生成格式规范的工具调用（如正确函数名与参数结构）。</li>
+</ul>
+<p><strong>什么是人机协同（HITL）模式？</strong> HITL 是一种将人类监督与交互机制深度整合至 Agent 工作流的模式。Agent 并非完全自主运行，而是在关键决策节点暂停执行，主动寻求人类反馈、审批、澄清或方向指引。</p>
+<p><strong>为何 HITL 对 Agentic 系统至关重要？</strong> 其重要性体现在多个维度：</p>
+<ul>
+<li><strong>安全与可控性</strong>：针对高风险任务（如金融交易、官方通讯发送），HITL 确保人类在操作执行前验证 Agent 提议行动。</li>
+<li><strong>质量提升</strong>：人类可提供精准修正或 nuanced 反馈，助力 Agent 性能优化，尤其在主观判断或模糊情境任务中。</li>
+<li><strong>信任构建</strong>：用户更倾向于采纳具备可指导与监督特性的 AI 系统，从而建立长期信任关系。</li>
+</ul>
+<p><strong>工作流中哪些环节应引入人类干预？</strong> 典型的人类介入节点包括：</p>
+<ul>
+<li><strong>计划审批环节</strong>：多步骤计划正式执行前的确认阶段。</li>
+<li><strong>工具使用授权</strong>：涉及现实影响或产生经济成本的工具调用前。</li>
+<li><strong>歧义消解节点</strong>：当 Agent 执行路径不明确或需用户补充信息时。</li>
+<li><strong>最终输出审核</strong>：向终端用户或下游系统交付成果前的质量把关。</li>
+</ul>
+<p><strong>持续人工介入是否影响效率？</strong> 确存此风险，因此关键在于精准把握平衡点。HITL 应部署于核心决策节点，而非每个操作步骤。目标是构建人机协作伙伴关系：Agent 承担主体工作量，人类提供战略级指导。</p>
+<p><strong>何为多 Agent 协作模式？</strong> 该模式指构建由多个专业化 Agent 组成的协同系统，通过集体智慧达成共同目标。替代单一”全才”Agent 尝试包揽所有任务的模式，转而组建各具专长的”专家”Agent 团队。</p>
+<p><strong>多 Agent 系统的优势何在？</strong></p>
+<ul>
+<li><strong>模块化与专业化</strong>：每个 Agent 可针对特定任务进行精细化提示调优（如”研究专员”、”文案专家”、”代码工程师”），产出质量显著提升。</li>
+<li><strong>复杂度管控</strong>：将复杂工作流分解为专业角色，大幅降低系统整体设计、调试与维护难度。</li>
+<li><strong>群体智慧模拟</strong>：不同 Agent 提供多元视角，催生更具创意与鲁棒性的解决方案，仿效人类团队协作模式。</li>
+</ul>
+<p><strong>多 Agent 系统的典型架构如何？</strong> 常见架构核心为<strong>协调者 Agent</strong>（亦称”管理者”或”指挥者”）。协调者把握全局目标，进行任务分解与委派，收集各专家 Agent 产出并进行最终合成输出。</p>
+<p><strong>Agent 间如何实现通信协作？</strong> 通信通常由协调者主导管理。例如，协调者可将”研究员”Agent 的输出作为上下文传递给”写作”Agent。此外，支持 Agent 发布发现的共享”工作区”或消息总线亦是常用通信机制。</p>
+<p><strong>为何 Agent 评估较传统软件更复杂？</strong> 传统软件具备确定性输出（相同输入恒定产生相同输出）。而基于 LLM 的 Agent 具有非确定性特征，其性能评估常涉主观判断。评估需聚焦输出<em>质量</em>与<em>相关性</em>，而非单纯技术正确性。</p>
+<p><strong>Agent 性能评估的常用方法有哪些？</strong> 本指南推荐以下方法：</p>
+<ul>
+<li><strong>结果导向评估</strong>：Agent 是否成功达成终极目标？例如任务为”航班预订”，是否实际完成正确预订？此为核心衡量指标。</li>
+<li><strong>过程质量评估</strong>：Agent 执行<em>流程</em>是否高效合理？工具选用是否恰当？计划遵循是否严谨？此有助于诊断失败根源。</li>
+<li><strong>人工评分评估</strong>：邀请人类评估者依据帮助性、准确性、连贯性等维度进行量表评分（如1-5分）。对用户导向应用尤为关键。</li>
+</ul>
+<p><strong>何为”Agent 轨迹”？</strong> Agent 轨迹是任务执行全过程的完整步骤记录，涵盖所有思考过程、操作行为（工具调用）及环境观察。分析这些轨迹是调试与理解 Agent 行为模式的核心手段。</p>
+<p><strong>如何为非确定性系统构建可靠测试？</strong> 虽无法保证 Agent 输出的精确措辞，但可设计验证关键要素的测试。例如创建检测最终响应是否<em>包含</em>特定信息，或是否以正确参数成功调用某工具的测试。通常通过在专用测试环境部署模拟工具实现。</p>
+<p><strong>Agent 提示与简单 ChatGPT 提示有何本质区别？</strong> Agent 提示需构建详尽的”系统提示”或运行章程作为操作指南。这超越单一用户查询范畴，需明确定义 Agent 角色定位、可用工具集、应遵循模式（如 ReAct 或规划）、行为约束及交互风格。</p>
+<p><strong>优质 Agent 系统提示的核心构成要素有哪些？</strong> 卓越的系统提示通常包含：</p>
+<ul>
+<li><strong>角色与目标界定</strong>：清晰定义 Agent 身份标识与核心使命。</li>
+<li><strong>工具规格说明</strong>：可用工具清单、功能描述及调用规范（如特定函数调用格式）。</li>
+<li><strong>约束与规则体系</strong>：明确禁止行为指令（如”未经批准禁止使用工具”、”不提供金融建议”）。</li>
+<li><strong>流程执行指引</strong>：模式应用指导，例如”首先制定计划，随后按步骤执行”。</li>
+<li><strong>示范轨迹案例</strong>：提供若干成功”思考-行动-观察”循环实例，可大幅提升 Agent 行为可靠性。</li>
+</ul>
+<p><strong>何为”提示泄漏”？</strong> 提示泄漏指系统提示内容（如工具定义或内部指令）意外出现在 Agent 对用户的最终响应中。此现象可能导致用户困惑并暴露系统实现细节。采用推理与最终答案生成分离的提示策略等技术可有效防范。</p>
+<p><strong>Agentic 系统未来发展趋势如何？</strong> 本指南展望以下方向：</p>
+<ul>
+<li><strong>增强自主能力</strong>：需更少人工干预且具备自学习与自适应能力的 Agent。</li>
+<li><strong>深度专业分化</strong>：形成可按需雇佣或订阅的专项任务 Agent 生态系统（如旅行顾问、研究助手）。</li>
+<li><strong>工具平台演进</strong>：开发更 sophisticated 的框架与平台，显著降低构建、测试与部署健壮多 Agent 系统的技术门槛。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Frequently%20Asked%20Questions_%20Agentic%20Design%20Patterns/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-Glossary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-Glossary/">Agentic Design Patterns - Glossary</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-Glossary/" class="archive-article-date">
+  	<time datetime="2025-10-03T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><p><strong>提示词（Prompt）：</strong> 提示词是用户向 AI 模型提供的输入，通常以问题、指令或陈述形式呈现，旨在激发模型生成相应输出。提示词的质量与结构深度影响模型响应效果，使提示工程成为高效运用 AI 的核心技能。</p>
+<p><strong>上下文窗口（Context Window）：</strong> 上下文窗口指 AI 模型单次处理的最大 token 容量，涵盖输入内容与生成输出。此固定尺寸构成关键限制——超出窗口范围的信息将被忽略，而更大窗口则支持更复杂对话交互与文档分析能力。</p>
+<p><strong>上下文学习（In-Context Learning）：</strong> 上下文学习是 AI 通过提示中直接嵌入的示例掌握新任务的能力，无需额外训练过程。此强大特性使单一通用模型可即时适配海量特定任务场景。</p>
+<p><strong>零样本、单样本与少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：</strong> 此类提示技术通过提供零个、单个或少量任务示例引导模型生成响应。增加示例数量通常能提升模型对用户意图的把握精度，增强特定任务表现。</p>
+<p><strong>多模态（Multimodality）：</strong> 多模态指 AI 理解并处理跨数据类型信息（如文本、图像、音频）的能力。该特性支持更丰富类人化交互，例如图像描述或语音问答场景。</p>
+<p><strong>事实锚定（Grounding）：</strong> 事实锚定是将模型输出关联至可验证真实信息源的过程，旨在确保事实准确性并降低幻觉发生。常通过 RAG 等技术实现，提升 AI 系统可信度。</p>
+<h2 id="核心-AI-模型架构"><a href="#核心-AI-模型架构" class="headerlink" title="核心 AI 模型架构"></a>核心 AI 模型架构</h2><p><strong>Transformer：</strong> Transformer 构成多数现代 LLM 的基石神经网络架构。其核心创新自注意力机制能高效处理长文本序列，精准捕捉词汇间复杂关联。</p>
+<p><strong>循环神经网络（Recurrent Neural Network, RNN）：</strong> 循环神经网络是早于 Transformer 的基础架构。RNN 采用序列化信息处理方式，通过循环结构维持对历史输入的”记忆”，曾广泛应用于文本与语音处理任务。</p>
+<p><strong>专家混合（Mixture of Experts, MoE）：</strong> 专家混合为高效模型架构，通过”路由”网络动态筛选少量”专家”网络处理特定输入。该设计使模型在保持海量参数规模的同时，有效控制计算开销。</p>
+<p><strong>扩散模型（Diffusion Models）：</strong> 扩散模型是专精高质量图像生成的生成式模型。其工作原理是通过向数据注入随机噪声，继而训练模型精确逆转该过程，从而实现从随机初始状态生成新颖数据。</p>
+<p><strong>Mamba：</strong> Mamba 是采用选择性状态空间模型（Selective State Space Model, SSM）的新兴 AI 架构，具备超长上下文序列的高效处理能力。其选择性机制可聚焦相关信息同时滤除噪声，被视为 Transformer 的潜在替代方案。</p>
+<h2 id="LLM-开发生命周期"><a href="#LLM-开发生命周期" class="headerlink" title="LLM 开发生命周期"></a>LLM 开发生命周期</h2><p>强大语言模型的开发遵循明确演进路径。初始阶段为预训练（Pre-training）——通过海量通用互联网文本数据集训练构建大规模基础模型，掌握语言规律、推理能力与世界知识。随后进入微调（Fine-tuning）阶段，通用模型在较小规模任务特定数据集上进一步训练，实现面向特定场景的能力适配。最终阶段为对齐（Alignment），调整专业化模型行为模式，确保输出兼具实用性、安全性且符合人类价值导向。</p>
+<p><strong>预训练技术（Pre-training Techniques）：</strong> 预训练是模型从海量数据中汲取通用知识的奠基阶段。该领域顶尖技术涵盖多样化的学习目标设定。最普遍的是因果语言建模（Causal Language Modeling, CLM），模型通过预测句中下一词汇进行学习。另一主流方法是掩码语言建模（Masked Language Modeling, MLM），模型负责还原文本中被刻意遮蔽的词汇。其他关键方法论包括：去噪目标（Denoising Objectives）——模型学习将受损输入修复至原始状态；对比学习（Contrastive Learning）——模型习得区分相似与相异数据片段的能力；以及下句预测（Next Sentence Prediction, NSP）——模型判断两句间是否存在逻辑连贯性。</p>
+<p><strong>微调技术（Fine-tuning Techniques）：</strong> 微调是使用专业化小规模数据集将通用预训练模型适配至特定任务的过程。最常用方法为监督微调（Supervised Fine-Tuning, SFT），模型在标注准确的输入输出配对示例上进行训练。指令微调（Instruction Tuning）作为流行变体，重点提升模型遵循用户指令的精准度。为提升过程效率，普遍采用参数高效微调（Parameter-Efficient Fine-Tuning, PEFT）方法，其中代表性技术包括 LoRA（低秩适应）——仅更新少量参数，及其内存优化版本 QLoRA。检索增强生成（Retrieval-Augmented Generation, RAG）作为补充技术，通过在微调或推理阶段连接外部知识源增强模型能力。</p>
+<p><strong>对齐与安全技术（Alignment &amp; Safety Techniques）：</strong> 对齐是确保 AI 模型行为契合人类价值观与期望的过程，使其输出兼具帮助性与安全性。最突出的技术是基于人类反馈的强化学习（Reinforcement Learning from Human Feedback, RLHF），通过基于人类偏好训练的”奖励模型”指导 AI 学习过程，常辅以近端策略优化（Proximal Policy Optimization, PPO）等算法保障训练稳定性。近年涌现的简化替代方案包括直接偏好优化（Direct Preference Optimization, DPO）——规避独立奖励模型需求，以及卡尼曼-特沃斯基优化（Kahneman-Tversky Optimization, KTO）——进一步简化数据收集流程。为确保部署安全，护栏（Guardrails）作为终态安全层被广泛应用，实时过滤输出并阻断有害行为。</p>
+<h2 id="增强-AI-Agent-能力"><a href="#增强-AI-Agent-能力" class="headerlink" title="增强 AI Agent 能力"></a>增强 AI Agent 能力</h2><p>AI Agent 是能感知环境并采取自主行动以实现目标的智能系统。其效能通过强大的推理框架显著提升。</p>
+<p><strong>思维链（Chain of Thought, CoT）：</strong> 该提示技术引导模型在给出最终答案前逐步展示推理过程。此类”显式思考”机制常在复杂推理任务中产生更精确结果。</p>
+<p><strong>思维树（Tree of Thoughts, ToT）：</strong> 思维树是进阶推理框架，Agent 同步探索多条推理路径（如树枝分叉）。该框架支持 Agent 自评估不同思路质量，择优推进最 promising 路径，极大增强复杂问题解决效能。</p>
+<p><strong>ReAct（推理-行动框架，Reason and Act）：</strong> ReAct 是将推理与工具使用融合于循环流程的 Agent 框架。Agent 先进行”思考”确定行动方向，随后通过工具执行”行动”，并依据执行结果”观察”调整后续思考，该机制在复杂任务解决中表现卓越。</p>
+<p><strong>规划（Planning）：</strong> 指 Agent 将高层目标分解为系列可管理子任务的能力。Agent 据此制定执行计划并按序推进步骤，从而胜任复杂的多阶段任务。</p>
+<p><strong>深度研究（Deep Research）：</strong> 深度研究指 Agent 通过迭代式信息检索、发现整合与新问题识别，实现对主题的自主深入探索能力。这使得 Agent 能构建远超单次查询范围的 comprehensive 主题认知。</p>
+<p><strong>评审模型（Critique Model）：</strong> 评审模型是经专门训练的 AI 模型，用于审查、评估并对其他 AI 模型输出提供反馈。其扮演自动化评审者角色，协助识别错误、优化推理流程并确保最终输出符合预期质量标准。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-Glossary/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ADP-Index of Terms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -891,413 +1586,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2025年 9 月 15 日 - 2025年 9 月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2015%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2019%20%E6%97%A5/">工作周报2025年 9 月 15 日 - 2025年 9 月 19 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2015%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-09-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周的工作任务比较细小繁多一些，多个开发任务和开发准备工作会同时进行，这种情况很可能是未来工作中的常态。这种情况下更要做好任务优先级安排和任务组合的设计。<ol>
-<li>我的最近的经验是开发任务和非开发任务组合可以一起做。比如完成开发任务Prompt的设计编写后，Claude在执行任务的同时，可以并行进行其他项目的技术调研，bug复现与分析，需求理解或者项目沟通等。</li>
-<li>有意识的开发和使用工作工具。以往工作中会遇到很繁琐的事项，想用工具处理，但是工具的开发成本比较高，两者权衡，往往采用自己动手完成的方式。现在AI编程好比是一个身边的工厂，你需要什么工具，只要说明功能，下订单就行。因为工具的开发和其他任务是并行的，这个成本非常低，但是因为有了工具，不仅提高了效率，也让这个工作的本身通过工具得到了标准化和沉淀。</li>
-<li>最近看到一个关于过马路的短视频，视频展示的一家日本工厂里工人过厂内马路路口的标准动作，每一个工人都在路口右看，左看，前看，并结合手势动作。我观察到该视频评论区里有非常多的讨论，很多人都是惊讶于这种近乎僵硬的标准执行动作，但是了解过日本工业史的人都知道，日本制造业的成功离不开这种极致的标准动作精神。有名的日本丰田八步法的理念就是持续优化标准动作。持续优化沉淀标准化的动作，非常值得我们学习和借鉴，虽然有些标准化动作过于僵硬，但是在本职上保证任何任务的结果都不会太坏，权衡好灵活性和标准化也许是我们一直要努力和探索的。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%2015%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-大模型技术学习（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">大模型技术学习（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2025-09-18T14:12:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h1><h2 id="阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。"><a href="#阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。" class="headerlink" title="阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。"></a>阅读源码最重要的是掌握源码为解决它的目标问题而设计的核心的数据结构。</h2><ul>
-<li>掌握其数据数据结构</li>
-<li>精通软件工程基本原理和基本实践</li>
-</ul>
-<h2 id="掌握了这些数据结构，基本上就能提高阅读速度和理解速度。"><a href="#掌握了这些数据结构，基本上就能提高阅读速度和理解速度。" class="headerlink" title="掌握了这些数据结构，基本上就能提高阅读速度和理解速度。"></a>掌握了这些数据结构，基本上就能提高阅读速度和理解速度。</h2><ul>
-<li>提升阅读速度</li>
-<li>深入思考设计要点</li>
-<li>完整理解要解决的问题是什么</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 9 月 8 日 - 2025年 9 月 12 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%208%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2012%20%E6%97%A5/">工作周报2025年 9 月 8 日 - 2025年 9 月 12 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%208%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2012%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-09-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>如何把工作做在前头的反思<ol>
-<li>这周在回复 UTJ 伙伴的关于 uShow 问题，我反思到在准备工作上的不足，关键的事情没有提前准备好。很多工作提前想到是很重要的，提前做到才是更重要的。</li>
-<li>提前的把准备工作做好要提前做好规划，给准备工作也做好计划：明确目标，拆分任务，设置时间和确定交付产物。“​​机会是给有准备的人”，这里的准备不仅仅是嘴上准备或者脑子准备，应该是用手上的动作准备起来：有目标、有计划、有产出。</li>
-<li>在日常工作和个人发展上，这件事也值得我深入的实践，真正的准备工作就是把工作做在前头，交卷铃响的那一刻，应该是要起身离开考场准备下一场考试的时刻，而不是交卷铃响的那一刻才去写最后一题。</li>
-<li>同时利用好AI帮手，把AI当成自己的Mentor，把自己的工作多和它沟通， 让它为自己出谋划策，提高工作效率与质量。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%208%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%2012%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 9 月 1 日 - 2025年 9 月 7 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%207%20%E6%97%A5/">工作周报2025年 9 月 1 日 - 2025年 9 月 7 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%207%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-09-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Agent上下文管理(Context-Engineering)的总结与反思<ol>
-<li>Sentry Agent在不同的任务的选用了不同模型，在这个策略的支持下，服务任务分发的决策Agent使用gpt-4o的模型，因为要把之前的所有的agent的输出以及issue data作为输入，导致经常出现上下文超限。</li>
-<li>目前的解决办法是采用简单的压缩策略，具体来说遍历第二层对象，检查每层对象的长度，超出阈值，就进行压缩处理。</li>
-<li>具体的压缩算法：列出数据结构中所有的第三级和第四级对象，设定每个对象的重要程度，对超出阈值的对象，依次递归以对象的重要程度开始裁切，重要程度最低的，最先移除；如果最后核心对象的数据也超出，就是直接裁切的办法，使用”…”告诉大模型此处有压缩的情况</li>
-<li>这一种简单粗暴的办法，目前也暴露出了问题，上下文不足，导致问题判断出现错误，可以自动修复的，现在也要用人工修复。</li>
-<li>目前Agent上下文的相关论文，讨论和实践非常多，但在遇到具体的问题往往不能很快的找到最佳实践，作为一个探索转落地的项目，我的设计原则是在创新探索和实用可靠保持均衡，目前尝试使用类mem0和memoryBank方案</li>
-<li>在这个角度思考，目前Agent相关思想、技术等太过庞杂，对于我们来说各有利弊，以过往经验看这种情况一般表示是技术的工程化程度不高的表现，对我们来说，现有业务需要谨慎增加这类还不太稳定的技术栈，而对新业务来说，我们可以积极拥抱这类处于发展初期的技术，但需要以审慎的态度进行技术选型，并以长期主义为理念进行及时的重构技术架构</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%209%20%E6%9C%88%201%20%E6%97%A5%20-%202025%E5%B9%B4%209%20%E6%9C%88%207%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 8 月 25 日 - 2025年 8 月 31 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2031%20%E6%97%A5/">工作周报2025年 8 月 25 日 - 2025年 8 月 31 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2031%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-08-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p><strong>脱敏处理</strong></p>
-<ul>
-<li>线上运行稳定性和AI编程的思考<ol>
-<li>最近一年我开发理念最大的转变之一就是：不要盲跑，多加日志，多加异常处理，多加非法判断，多加各种监控，每一行代码都不可轻信</li>
-<li>10行核心业务逻辑要用50行的代码来保障这10行的代码的稳定、可靠、可观测</li>
-<li>所谓的工程能力就是消除抖动的，意想不到的异常的散点问题，在整个庞大系统变得稳定可靠，这就是企业级开发中的所谓的脏活、累活，很多人不屑于干的活</li>
-<li>成本与质量的权衡游戏规则被AI打破了。 以前高质量意味着高成本，  AI编程会逐渐 降低这个成本，低成本高质量正在成为现实</li>
-<li>以前我们经常在理想方案和成本方案之间妥协，很多资深架构师也会常说，架构就是妥协的艺术：时间有限，团队能力有限，开发量大，下周就要上线，我们该怎么办？答案往往是权衡和各个设计约束的妥协</li>
-<li>AI编程让我最有感触的是，以后可以少妥协，多坚持，坚持最好的设计方案，坚持最”笨“的方式写代码</li>
-<li>AI时代，每个工程师可以无限逼近”乔布斯“，只有极致才能创造一线生机</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%2025%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2031%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
     </nav>
   
 
@@ -1908,6 +2199,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">frontend</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>

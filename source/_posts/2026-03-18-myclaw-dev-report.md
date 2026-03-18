@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 1 (Electron 桌面应用)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 30007
 date: 2026-03-18 04:40:45
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 1 (Electron 桌面应用)
