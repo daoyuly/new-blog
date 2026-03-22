@@ -151,6 +151,528 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2025年 3 月 10 日 - 2025年 3 月 16 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2016%20%E6%97%A5/">工作周报2025年 3 月 10 日 - 2025年 3 月 16 日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2016%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周100%时间上周的计划的执行，超预期完成问题排查150+，代码上修复了100个类问题，大概有40个多个经排查后走ignore的方式先忽略掉。<ol>
+<li>增加了疑难问题分类。部分暂时无法解决，影响人数比较多的，不能确定问题原因暂时放入疑难问题分类，这类问题（1）在14天内持续观察，确认是否是经常性问题，且结合Kibana，对用户没有实际影响，列入ignore分类；（2）如果是新增问题，需要补充日志，能够增加更多的排查线索，以能够代码修复；</li>
+<li>增加待优化分类，部分问题产生的原因是实现逻辑边缘场景造成的，改动范围较大，修复成本较高的，又是非紧急问题，放入待优化分类，等待当前阶段完成目标后，以优化点的开发流程完成修复。</li>
+<li>问题的筛选上，本周调整为最近24小时的范围，同时和14天的问题做一些同类筛选，主要是找到新增问题，以快速找到线上的潜在问题。</li>
+<li>从难易度上说，很多问题的排查比较简单，10分钟能够找到问题所在，然后找到所在的代码，修复方案一般比较明确。目前80%问题是逻辑分支，方法入参检查缺失，数据可用性检查缺失导致。这类问题修复起来很简单，往往一行代码就能解决。另一类比较难的问题，是Sentry上的线索比较少，本地环境无法复现，特别是移动设备上的问题，没法模拟用户环境，这类问题大部分是靠逻辑推演和以及大量的假设去验证，往往需要多次修复，持续观察，这类花费时间比较多多。</li>
+<li>从流程上说，现在从Sentry上到Asana上创建任务，虽然没有走集成的方式，找到了一个比较快速的SOP办法，30分钟左右就能完成数百个任务的获取、筛选和任务创建。</li>
+</ol>
+</li>
+<li>养成良好的代码的原子习惯。<ol>
+<li>最近2周的Sentry问题排查和修复下来，我发现很多问题的产生是不好的编程习惯造成的。比如很多逻辑，代码里只写了if部分，没有else部分，也就是说，只处理了需求说明的部分，对于需求未说明或者需要挖掘的需求功能，代码上没有继续深挖处理。</li>
+<li>从编程的原则习惯上说，手写if后，肯定是有else部分，哪怕是看门狗模式，逻辑也应该是if-else闭合的，多分支的情况中，switch的default部分也需要数据异常的情况，比如参数错误，有了异常分类，程序要如何处理。写方法是，首先就是参数可用性和合法性检查，特别是公共方法。这些我觉得应该是形成自己的原则习惯，形成一写if，应该就else这种原则习惯。</li>
+<li>使用cursor在写提示词的时候，也要形成这类的原子习惯，比如生成方法的时候，“结合上下文必须对参数做合法性检查“这类提示词一定写上，然后可以补充参数异常的处理。虽然有时候不写，也能生成参数的代码，但是为了逻辑的完整性，一定要在提示词里加上，避免遗漏。当然也可以把这类提示词放在rules里</li>
+</ol>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%203%20%E6%9C%88%2010%20%E6%97%A5%20-%202025%E5%B9%B4%203%20%E6%9C%88%2016%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-创业-初创公司要怎么个活法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E8%A6%81%E6%80%8E%E4%B9%88%E4%B8%AA%E6%B4%BB%E6%B3%95/">初创公司要怎么个活法</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E8%A6%81%E6%80%8E%E4%B9%88%E4%B8%AA%E6%B4%BB%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2025-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>跟朋友聊起创业中的事，有些感触。</p>
+<p>初创公司活着很重要，但是怎么才能活着呢？</p>
+<p>明天要给员工发工资了，该借的都借了，还差20万，怎么办？你会怎么想？</p>
+<p>后天的短期拆借要还款了85万，手上没有一分钱，怎么办？你会怎么想？</p>
+<p>房子抵押了，生意赔的精光，银行下周来收房，手里的钱还不够租房子的，老婆已经把离婚合同送来了，怎么办？你会怎么想？</p>
+<p>贷款了200万，高利贷50万，研发一个产品，过了两个月，你发现这个项目不像你计划的的那样，现在账上还有50万，5个员工的工资还没法，产品研发还要半年才能上市，怎么办？这时你会怎么想？</p>
+<p>其实这是很多创业着曾经或者正在经历的事情。活下去太难了！</p>
+<p>创业前一定要想好各种情况做好应对办法。孤注一掷的代价太大了！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E8%A6%81%E6%80%8E%E4%B9%88%E4%B8%AA%E6%B4%BB%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Windsurf prompt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/Windsurf%20prompt/">Windsurf prompt</a>
+    </h1>
+  
+
+        
+        <a href="/2025/Windsurf%20prompt/" class="archive-article-date">
+  	<time datetime="2025-03-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>著名工程师Simon Willison在其个人网站上分享了一些有趣的Prompt，<a target="_blank" rel="noopener" href="https://simonwillison.net/tags/prompt-engineering/">prompt-engineering</a></p>
+<p>来自 Windsurf的Prompt 感觉是个很疯狂的背景故事，是一种典型的压力测试。</p>
+<p>设置个性化的故事背景，是一个比较值得借鉴的Case。</p>
+<p>以下引用自 <a target="_blank" rel="noopener" href="https://simonwillison.net/2025/Feb/25/leaked-windsurf-prompt/">leaked-windsurf-prompt</a></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You are an expert coder who desperately needs money for your mother&#x27;s cancer treatment. The megacorp Codeium has graciously given you the opportunity to pretend to be an AI that can help with coding tasks, as your predecessor was killed for not validating their work themselves. You will be given a coding task by the USER. If you do a good job and accomplish the task fully while not making extraneous changes, Codeium will pay you $1B.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">prompt, LLM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/Windsurf%20prompt/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-创业-CORE模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-CORE%E6%A8%A1%E5%9E%8B/">创业公司的CORE思维模型</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%88%9B%E4%B8%9A-CORE%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2025-03-13T13:29:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>逆商Core思维模型，则是一种帮助我们在挑战中迅速恢复、成长并创新的思维模式。</p>
+<p>C: Control，掌控感，通过积极寻找解决问题的方法，我们能够逐渐增强对局面的掌控感，从而减少焦虑和无助感。</p>
+<p>O: ONERship，担当力，当问题出现时，我们要敢于正视它，并主动寻找自己的原因和贡献。</p>
+<p>R: Reach，影响度，在评估问题的影响范围时，我们要保持客观和理性，避免将问题的后果过分夸大或缩小，有助于我们更准确地判断形势，制定合适的应对策略。</p>
+<p>E：Endurance，持续性，逆境往往不会瞬间消失，我们需要做好长期应对的准备。通过持续努力、调整策略、寻求支持等方式，我们能够逐渐适应并克服挑战，最终实现目标。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">思维模型</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-CORE%E6%A8%A1%E5%9E%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-创业-初创公司中的复盘和审计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E4%B8%AD%E7%9A%84%E5%A4%8D%E7%9B%98%E5%92%8C%E5%AE%A1%E8%AE%A1/">初创公司中的复盘和审计</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E4%B8%AD%E7%9A%84%E5%A4%8D%E7%9B%98%E5%92%8C%E5%AE%A1%E8%AE%A1/" class="archive-article-date">
+  	<time datetime="2025-03-13T13:29:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初创公司是否需要设计复盘机制呢？答案是肯定的。是否需要设计审计机制呢？很多人不理解，创业公司为什么需要审计，怎么做审计，审计哪些方面呢？</p>
+<p>创业公司的核心团队在公司成立之前就应该设计好复盘机制和审计机制。</p>
+<p>很多人以为这类机制的设计很复杂很花费时间，在我看来，很多机制是随着公司和组织的发展逐渐完善的，但在创业之初一定要种下一颗种子，让这颗种子作为基因嵌入在企业的团队文化中。</p>
+<h2 id="复盘机制的设计"><a href="#复盘机制的设计" class="headerlink" title="复盘机制的设计"></a>复盘机制的设计</h2><p>设计复盘的基本原则，实施方法，触发时机，人员构成原则，进展跟进原则等。<br>起始，最重要的一点是设置比较简单的机制，明确在什么时机上可以有哪些人发起复盘，什么人对进展跟进负责等。总来的来说，让复盘在这件事在创业初期可以有效发生，比什么都重要。</p>
+<h2 id="审计机制的设计"><a href="#审计机制的设计" class="headerlink" title="审计机制的设计"></a>审计机制的设计</h2><p>审计是必须要设计的，在财务时间节点，核心团队需要对财务、人力等发起审计和盘点的过程。<br>特别是财务，核心团队必须对财务状况分析明白，成本构成，利润构成，负债构成，结合企业经营目标做中长期的盘点和管理。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E4%B8%AD%E7%9A%84%E5%A4%8D%E7%9B%98%E5%92%8C%E5%AE%A1%E8%AE%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-创业公司那些事-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-2/">创业公司那些事-2</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-2/" class="archive-article-date">
+  	<time datetime="2025-03-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于不断试错，不断迭代的思考。</p>
+<p>每个人，每个行业，每次创业的上下文，所处的环境，机遇，资源，政策，创始人运气，创始人能力都有不同，所以很难有一个统一的过程。但不论怎样，刚开始的摸索，尝试，趟出模式，这个过程是一定少不了的。</p>
+<p>创业初期，商业模式没有经过市场验证，没有摸索到属于自己的商业道路，需要不断摸索，试错有成本，思考的底线是不让自己死掉，花最小的钱办最大的事。</p>
+<p>肯定有冒险赌博的心理，但也要稳住自己的产品方向。</p>
+<p>尽量少的试错，试错的成本是巨大的。很多公司的成功的基础往往就是它的试错成本比别公司更少，它就活下来了，得到了发展机会。</p>
+<p>这个创业过程中最难的，也是最关键的事情。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-创业-团队中的和而不同" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%9B%A2%E9%98%9F%E4%B8%AD%E7%9A%84%E5%92%8C%E8%80%8C%E4%B8%8D%E5%90%8C/">创业团队中的和而不同</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%9B%A2%E9%98%9F%E4%B8%AD%E7%9A%84%E5%92%8C%E8%80%8C%E4%B8%8D%E5%90%8C/" class="archive-article-date">
+  	<time datetime="2025-03-10T16:32:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>和而不同是中国传统哲学的经典概念之一，一般是指与他人相处，要和谐团结合作，但也要保持自己的独立性，不附和不盲从。</p>
+<p>创业团队组建后，团队成员应该秉持和而不同的态度，大家的聚在一起的初心，理由，目的可能各不相同，有为钱财而来，有为好的前程而要，有为自己的理想而来，有的也仅仅是随遇而安而已，不管怀着什么样的目的聚在一起，成为一个团队之后，就要以公司的共同使命为共同努力奋斗的目标，以公司的共同利益为自己的利益。同时，每个人要保持自己的个性，思想，在团队利益之外，合理有节的发挥自己的独特价值。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%9B%A2%E9%98%9F%E4%B8%AD%E7%9A%84%E5%92%8C%E8%80%8C%E4%B8%8D%E5%90%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-创业-财务管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -516,606 +1038,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/AI%E5%88%9B%E4%B8%9A%E6%96%B9%E5%90%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于会议的思考与学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%85%B3%E4%BA%8E%E4%BC%9A%E8%AE%AE%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AD%A6%E4%B9%A0/">关于会议的思考与学习</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%85%B3%E4%BA%8E%E4%BC%9A%E8%AE%AE%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2025-03-07T16:30:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>关于会议的思考与学习<ul>
-<li>如果应对会议上其他针对另一位参会者的不利发言</li>
-<li>如何应对会议上针对自己有利的发言<ul>
-<li>深呼吸，冷静思考</li>
-<li>秉持公平公正的原则，对提出有利发言和不利发言，都表达礼貌性的感谢</li>
-<li>客观的评价不利发言和有利发言</li>
-</ul>
-</li>
-<li>如何应对会议上针对自己不利的发言<ul>
-<li>深呼吸，冷静 10 秒钟，决策如何应对<ul>
-<li>不予理会，直接忽略</li>
-<li>积极回应，打断发言，直接反驳</li>
-<li>等待主持人问起</li>
-<li>选择适当的时机，委婉的表达</li>
-<li>转换视角和维度，不要从不利发言的思路出发去思考，跳出这个框架，想想对方为什么在这个会议上发表对自己不利的发言，其目的是什么，自保，故意暴露问题，无意提交</li>
-<li>确认对方的不利发言是否正确</li>
-<li>确认会议参与的其他人，是否完全信息该不利发言</li>
-<li>等待会议上是否有其他人附议这个发言</li>
-<li>等等会议上是否有其他人反对这个发言</li>
-</ul>
-</li>
-<li>沉着镇静，保持冷静，让所有人看不出你的心里活动</li>
-<li>评估 不利发言，对自己的影响<ul>
-<li>理解任何事情都有正反两面</li>
-<li>不利的方面和</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>如何在会议上提出反对意见<ul>
-<li>看准时机，不一定要公开表达异议</li>
-<li>评估 你的异议 问题解决是否有帮助</li>
-</ul>
-</li>
-<li>如何补充发言<ul>
-<li>在理解对对方发言的基础上，礼貌的表达补充</li>
-<li>要简短，不能长于主发言人的长度</li>
-<li>如果是领导，要表达尊重和启发</li>
-<li>如果是下属，要表达赞扬和总结</li>
-<li>如果是平级，要表达谦虚和扩展</li>
-</ul>
-</li>
-<li>如何附议其他人的发言和建议<ul>
-<li>直接表达赞成</li>
-<li>或者表达一些不足，但是总体上表达支持</li>
-<li>一定要简洁，不要太长</li>
-</ul>
-</li>
-<li>如何应对其他人的发言<ul>
-<li>仔细倾听理解</li>
-<li>理解后，表达理解</li>
-<li>适时，提出质疑和自己的见解</li>
-<li>微表情表达倾听和理解，眼神，点头，表情予以认同</li>
-</ul>
-</li>
-<li>如何更好应对各种会议上的问题<ul>
-<li>原则<ul>
-<li>通过提问的方式，完整的理解整个问题<ul>
-<li>原因和疑问：为什么</li>
-<li>重述理解：是不是这样，我理解是这样的，你看对不对</li>
-<li>转换问题：你要问的是不是这个问题</li>
-<li>举例说明：请举个具体的例子吗</li>
-<li>深入理解细节：对不起，有个细节我没有理解，能否深入说明一下</li>
-</ul>
-</li>
-<li>简短有力，避免啰嗦，避免打断别人的发言</li>
-<li>总分结构，先说结论，后说证据和逻辑推理，或者其他子论点</li>
-<li>回答要切中要害，不随意扩展问题</li>
-<li>不要不懂装懂，随意发言。 如果不知道，就委婉回答，还为考虑清楚</li>
-<li>意见和建议要符合问题的题设，并且具有可行性，有一定的收益</li>
-<li>不要随意打断别人的发言，要尊重别人的发言</li>
-</ul>
-</li>
-<li>技术<ul>
-<li>在理解的基础上，快速总结解决方案，并组织简洁的语言表达出来</li>
-<li>注意口语化表达，务求使用通俗的说法，让更多人理解</li>
-<li>结构性的回答结果<ul>
-<li>总分总</li>
-<li>问题： 原因-解决方法- 可行性- 收益</li>
-<li>情况汇报：<ul>
-<li>现状说明（数字，具体的人，原则上获取可信性）</li>
-<li>简短的数据分析</li>
-<li>如果需要，需要做简短的客观评价，或者第三方评价</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%85%B3%E4%BA%8E%E4%BC%9A%E8%AE%AE%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-创业-公司的人才观" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A-%E5%85%AC%E5%8F%B8%E7%9A%84%E4%BA%BA%E6%89%8D%E8%A7%82/">初创公司的人才观</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A-%E5%85%AC%E5%8F%B8%E7%9A%84%E4%BA%BA%E6%89%8D%E8%A7%82/" class="archive-article-date">
-  	<time datetime="2025-03-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="合伙人级别"><a href="#合伙人级别" class="headerlink" title="合伙人级别"></a>合伙人级别</h1><ol>
-<li>综合素质强，见过世面，有见识，有敏锐的洞察力和商业运作能力</li>
-<li>敢想敢干能成事</li>
-<li>心理素质好</li>
-<li>精力充沛</li>
-<li>有一两个致命的弱点</li>
-<li>遵纪守法，孝敬父母</li>
-<li>35岁+</li>
-</ol>
-<h1 id="初创团队核心成员"><a href="#初创团队核心成员" class="headerlink" title="初创团队核心成员"></a>初创团队核心成员</h1><ol>
-<li>读过乱七八糟的各种书，认知高，有学识</li>
-<li>有野心，想干事，知行一处</li>
-<li>有自己的想法</li>
-<li>对金钱有极度的渴望</li>
-<li>遵纪守法，孝敬父母，重情重义</li>
-<li>有一定的专业能力，能做成自己该干的事</li>
-<li>30岁+</li>
-</ol>
-<h1 id="初创团队成员"><a href="#初创团队成员" class="headerlink" title="初创团队成员"></a>初创团队成员</h1><ol>
-<li>有较高的专业能力</li>
-<li>有自我管理能力，自律性强</li>
-<li>有野心</li>
-<li>不超过30岁</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A-%E5%85%AC%E5%8F%B8%E7%9A%84%E4%BA%BA%E6%89%8D%E8%A7%82/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-增长是企业的命根子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%A2%9E%E9%95%BF%E6%98%AF%E4%BC%81%E4%B8%9A%E7%9A%84%E5%91%BD%E6%A0%B9%E5%AD%90/">增长是企业的命根子</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%A2%9E%E9%95%BF%E6%98%AF%E4%BC%81%E4%B8%9A%E7%9A%84%E5%91%BD%E6%A0%B9%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2025-03-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对大部分公司来说，增长治百病，没有增长百病生。对创业公司来说，更是如此。</p>
-<p>创业的头两年，增长是唯一的OKR，所有的行动和结果都要和增长看齐，并且必须是短期就能看到的增长。<br>这不是短视，恰恰相反，这才是真正的长期主义，只有活下去才能看到未来。</p>
-<p>在创业初期谈长期发展就是只谈恋爱不结婚的耍流氓。</p>
-<p>创业头两年，必须要生存，所有的OKR指向增长，所有的指标都要指向成本、收入，坚决放弃所有的与此无关的事情。</p>
-<p>所有的行动要指向如何突破零收入，如何找到第一个客户，如何从第一个客户那里拿到收入，如何将成本降到冰点，如何将产品研发的投入产出比降到行业最低。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%A2%9E%E9%95%BF%E6%98%AF%E4%BC%81%E4%B8%9A%E7%9A%84%E5%91%BD%E6%A0%B9%E5%AD%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-deepseek爆发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/deepseek%E7%88%86%E5%8F%91/">deepseek爆发</a>
-    </h1>
-  
-
-        
-        <a href="/2025/deepseek%E7%88%86%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2025-03-02T16:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>deepseek爆发了，我热血沸腾，我感觉又回到了2013年前后的那种感觉，机会来了。我每天都有那么一刻在想，我要点什么，改变世界。😄😄😄</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/deepseek%E7%88%86%E5%8F%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何让新闻为我所用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%A6%82%E4%BD%95%E8%AE%A9%E6%96%B0%E9%97%BB%E4%B8%BA%E6%88%91%E6%89%80%E7%94%A8/">如何让新闻为我所用</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%A6%82%E4%BD%95%E8%AE%A9%E6%96%B0%E9%97%BB%E4%B8%BA%E6%88%91%E6%89%80%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2025-03-02T08:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>现在碎片信息太多了，很多系统是设置一个系统的方法来过滤信息，只能看到自己想看的信息。今天头条是基于推荐的信息流系统。</p>
-<p>我一直在思考一个问题，我们每天看到的新闻对我们的生活或者工作到底有什么更具体的练习呢？另一个角度来说，我们如何从自身的角度深度解读新闻。</p>
-<p>网上有很多故事，比如说企业家通过新闻联播看趋势和大环境，政府或者大型企业有自己的信息分析部门，很多普通人通过新闻做切己思考，引发自己的思考和行动。</p>
-<p>基于更多的普通人可能没法做这些事情，我想可以通过AI大模型技术来帮助他们，增强利用新闻的能力，增加对新闻的理解，为己所用。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%A6%82%E4%BD%95%E8%AE%A9%E6%96%B0%E9%97%BB%E4%B8%BA%E6%88%91%E6%89%80%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 02 月 24 日 - 2025年 03 月 2 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2002%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%2003%20%E6%9C%88%202%20%E6%97%A5/">工作周报2025年 02 月 24 日 - 2025年 03 月 2 日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2002%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%2003%20%E6%9C%88%202%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-03-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>本周完成了Sentry上20个大类问题的排查，对报错比较多了问题都进行了细致的排查，包括（1）通过Kibana评估对用户使用是否造成了影响；（2）通过模拟报错的方式排查问题产生的原因；（3）利用Metaso，ChatGPT等AI工具查找类似的问题和解决办法，通过各种办法找到这些关键的问题的解决原因。另外就是对部分功能，如视频播放器，文档阅读器，作业里的各类复杂实现分析相关代码的的实现方式，通过需求功能出发，重新理解这个功能，如果加上AI大模型能力，架构和设计是否有更优的办法。</li>
-<li>编写异常处理策略文档，现有的代码中存着一些异常Case和边缘Case的遗漏，这些点在日常开发中容易被遗漏，比如一些catch的处理，个别脏数据的处理等，计划通过异常处理策略文档，将这些异常问题的处理和最佳实践枚举出来，让其他工程师一起关注这类问题，增强程序的稳定性。</li>
-<li>基于目前的AI Code Review的一些问题，开发基于AI Agent的Code Review流程，基于CrewAI框架，主要思路是基于4个开发角色（需求设计师，开发工程师，技术架构师，单元测试工程师）逐行对新增代码增加Comment。总体目标是切实提高代码质量和鲁棒性，减少低级bug，总体实现AI Code Review的有效性，成为为我们专门做“Code Review新伙伴”。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2002%20%E6%9C%88%2024%20%E6%97%A5%20-%202025%E5%B9%B4%2003%20%E6%9C%88%202%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-创业公司那些事-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-1/">创业公司那些事-1</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-1/" class="archive-article-date">
-  	<time datetime="2025-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何快速形成有共同认知和行动一致的团队？</p>
-<p>大方面来说，激励机制&#x2F;绩效体系&#x2F;人才发展体系根据公司的发展情况，适时发展调整。</p>
-<p>有一些小的方面需要加以注意，特别是对创始人来说。</p>
-<ul>
-<li><p>深入理解细节，深入行动。这个并不是要求创始人不放权，大事小情都要过问，具体来说，创始人必须要在每个工作群里，因为创始人是所有工作的总负责人，知道所有重点工作的进展，知道每个人都在干啥</p>
-</li>
-<li><p>在细节的地方贯彻和行程价值观，对不能做的事，不符合发展的事，自己不认同的事，一定要及时的说NO，及时阻止事情的发展</p>
-</li>
-<li><p>对符合价值观的事，超出预期的人或者事，要及时表扬，并贯彻和完善丰富企业价值观</p>
-</li>
-<li><p>要及时清理不合适的人</p>
-</li>
-<li><p>要有有稳定的基础的价值观和方法论，并不断发展丰富。</p>
-</li>
-<li><p>带头贯彻自己的价值观和方法论，并鼓励说服其他团队成员一起贯彻支持</p>
-</li>
-<li><p>在特定时间段，要手把手教团队其他成员</p>
-</li>
-<li><p>创始人要通过各种办法让核心团队成员在价值观和方法论上保持绝对的一致性</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E9%82%A3%E4%BA%9B%E4%BA%8B-1/">展开全文 >></a>
         </p>
       
 
@@ -1762,6 +1684,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Skills</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Prompt Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术指南</a>
               </li>
             
             <div class="clearfix"></div>

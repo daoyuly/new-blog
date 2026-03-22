@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 1 (React 管理界面)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 23322
 date: 2026-03-21 04:34:33
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 1 (React 管理界面)

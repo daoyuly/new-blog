@@ -151,6 +151,616 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2023年 12 月 4 日 - 2023年 12 月 10 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2010%20%E6%97%A5/">工作周报2023年 12 月 4 日 - 2023年 12 月 10 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2010%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-12-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>持续完善Chatbot项目的工程侧实施过程。 诺和诺德东南区Chatbot的项目做的不太顺利，最初的计划是按照老数据升级到新数据， 在UCS-v2版本上部署，基础数据准备好了，我们却低估了数据切换这个事的难度和时间。在不同的数据结构上切换数据有很多细节确实主要，@寅涛在这个该过程中做了很多细致的工作，比如勋章，积分，老的库表结构没有记录那么多的信息，需要老数据的拆分填充在现有的数据结构中。这个项目要改进的点有四个：<br>（1）虽然现在Chatbot的部署上线比较快，但是还是不能大意的预估时间， 这个项目和客户推迟了一次时间，那时就应该想到立即解决客户的需求的问题，而不是依赖内部的UCS的切换；<br>（2）早做准备，全面计划完备，虽然对脚本做了Review，上线后却发现客户提供的账号没有Chatbot权限，关卡的设置没有确认， 当天晚上又和年兰沟通确认，耽误了一些时间；<br>（3）代码的历史还是需要再深入理解一些，最后在老脚本上写的SQL脚本，我不得不把那个库表结构彻底的整体分析完整了，才完成脚本的编写，如果这个之前有了解，不至于当晚做的很匆忙。<br>（4）随着经验的积累和对Go代码，Python代码的熟悉，基于目前版本的Chatbot部署的自动化的思路也逐渐清晰，有了更深入的把控。<br>数据切换会让Chatbot彻底甩掉老版本兼容的这个包袱<br>建设和完善uShow实施部署的Master Doc。 AXA Life uShow的项目整个跟进下来，我基本掌握了整个部署和实施的基本过程，也在逐渐的建立和完善Master Doc，另外随着对uShow过程和Chatbot的理解的理解的深入，对整个架构体系有了一些初步的认知和理解，并已经开始独立承担具体AI业务的开发，思维模式也逐渐的切换回到了服务端开发角色，对与安全，性能，日志，监控，稳定性更加敏感。前端功能在架构和设计上更侧重扩展性，敏捷性和具象性，而服务端更侧重鲁棒性，可靠性和适度的抽象性，特别是AI类服务端开发对于性能，模型选择有更多的要求，比如HuggingFace有数万的模型可供选择，如何选择迭代最优的模型，如何评测模型效果，如何设计最优的模型组合，还都要不断的实践和学习。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2012%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%2010%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 11 月 27 日 - 2023年 12 月 3 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%203%20%E6%97%A5/">工作周报2023年 11 月 27 日 - 2023年 12 月 3 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%203%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在编写Chatbot脚本时学到了很多沟通的技术和一些固定话术，这些都是我以前不曾注意过的，之前也不曾总结过沟通的模式，联想到之前曾学过如何提问或者探询的书籍，但是确实没有掌握书中所讲的技术的，这其实也说明，我读的并不深刻：记忆，理解，应用，融会贯通这四个层次中，我似乎只在第一二个层次徘徊。回到Chatbot上的对话式训练，我理解背后其实是认知模式的固化，当时第一要形成嘴巴的肌肉记忆，训练达到在与客户的谈判和沟通中“信口拈来”，例如一个场景中AI说：医院管理政策限停了某些药物，而我们的药恰在其中。在遇到客观的障碍和限制时，如何应对，这是在不同的场景下，不同的企业里，不同的团队文化里，都是经常遇到的问题，且立场都是很不同的，有些要虎口夺食，有些要立即改弦更张，有些要长线跟进，这时候就特别需要Chatbot的这种剧本式的对话，在对话实操中将认知和价值观渗透到对话了。在深入思考Chatbot的对话形式时，我现在还没有想明白的一件事，在技术上如何将人的信念和立场统一的嵌入到对话过程中。<br>本周集中处理UTJ团队反馈的一批Chatbot上的问题，主要是性能，响应度的问题，有些是持续一段时间了，有些是新近发现的，针对这些问题我也做了一些总结和复盘，压测和性能监控已经在进行中了，常规的自动化测试和巡检需要运行起来，另外就是完善问题跟踪机制，提升对Chatbot运行状态的把控度。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%2012%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 11 月 20 日 - 2023年 11 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2023年 11 月 20 日 - 2023年 11 月 26 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-11-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>这周排查了AI微课&#x2F;AI字幕&#x2F;Chatbot等三个大功能的相关问题，问题各不相同，因为一部分问题的原因还没有最终确定，问题原因先不做复盘总结，不过可以复盘下自己在排查过程中的反思和总结：<br>在排查过程，我发现自己对服务端很多解决问题的心智模型缺乏足够的理解，也不够丰富，比如在任务调度，微服务架构实践，Devops实操等存在不少知识盲区，所以后续一段时间一定要把这些内容快速补齐。<br>和AI相关的业务比较复杂，和非AI业务相比，AI业务多了一层AI异步任务及其调用，为了有效的解耦AI服务层和具体的业务层，中间增加了基于Go的Gateway层，AI服务层天然的具有服务自治要求（安全，性能，稳定性，成本构成，第三方服务隔离等等），服务扩展需求高，AI算法服务的独特性，服务部署灵活高等隐性的架构需求；当AI服务需要依赖其他非AI类基础服务时，比如用户，业务权限等，基于Go的Gateway层又是聚合层。用户端侧因为要整合不同的业务接口（包括AI类接口，其实在用户端侧无需区分是AI类接口还是非AI类接口），所以增加了对用户端友好的Nodejs层作为BFF层。BFF是Backend for Frontend，字面意思能够很好说明其在整个架构中的作用，接近前端的后端层，说它接近前端指说它转为前端提供服务，对前端足够友好。这里所说的前端是指Web，APP，微信小程序，钉钉&#x2F;企微Hybird及小程序、客户服务对接层等，从这些前端的种类就可以得知，这一层的职责主要是适配，整合，路由等。用户端侧目前需要的服务调用方式有两类，1是Restful的http接口调用，2是websocket的长链接类的调用，但Nodejs层目前没有提供websocket类的调用能力，所以部分基于长链接的AI服务时通过Go层直接对外提供的。这里其实有两个重要的关于架构选型的上技术实践讨论，1是AI的gateway层为什么是Go而不是PHP，2是PHP层为什么不直接做BFF层。坦白说，要搞明白这两个架构问题非常之难，显然这些问题没有标准答案，甚至也没有参考答案，实际上我们在摸着石头过河，也就说我们在探索。脱离现实的业务和约束条件谈架构设计都是无意义的，实际上我们很难找到一个即懂AI及工程，又要懂PHP，又要懂GO，还要懂Nodejs，还必须理解我们的业务场景和既有的条件约束，更重要的是还要理解未来产品发展路径。所以当大家讨论这个问题，总是站在一个这样的位置：对某个或者某两个领域非常熟悉，对其他几个了解的基本情况下讨论这些问题，这样就会造成每个决策理由都很充分，但是整合起来的架构又不足以解决所有的需要被关注的关键问题，所以最好的方案是先关注优先级最高的关键问题，在迭代过程中不断丰富知识和总结经验，探索最佳方案，以解决所有的关键问题，这个其实很像寻路算法，在探寻中才能找到下一步，而且不管正确或者错误，必须前进一步。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 11 月 13 日 - 2023年 11 月 18 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2013%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5/">工作周报2023年 11 月 13 日 - 2023年 11 月 18 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2013%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-11-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在@柳祎的细心的指导下，比较全面的掌握了目前uShow产品的数据拟合和打分系数调校的整个流程，虽然对逻辑细节和服务端部署过程还不是很清晰，至少可以承接部分uShow项目中比较繁琐的工作，方便后续把这块工作自动化的设计开发。<br>近期uShow项目及Chatbot项目，也让我的成长的压力和动力越来越大，一个是要在比较短的时间内让自身的知识结构和能力需要发生剧大的变化的要求，从一名前端工程师要快速转变为擅长后端工程及业务且熟悉AI算法的优秀工程师。我印象最深的一次排查问题，从Flutter，Nodejs，Php，Go，一直看到Python，这里面我觉得最难的是理解每个技术栈背后的思想和要我们要解决的问题以及其独特的设计特点；另一个压力是基于目前的Chatbot和uShow产品形态，要建设比较完善的工程能力的紧迫性，每个自动化能力的建设都会比较有效的提升整个团队的效能，但是又要保证目前日渐增长的产能需求。我觉得要适应各种约束条件下继续保持专注的态度，以创业的心态，聚焦在当下投入产出比最高的事情上，给重要的紧急和重要不紧急的事情分配好时间，保持自律，把全部的精力放在低头做事上。“悲观者或许正确，但乐观者才能创造未来”。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%2013%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2018%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-读书笔记 六" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20%E5%85%AD/">读书笔记之《美丽的化学结构》</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20%E5%85%AD/" class="archive-article-date">
+  	<time datetime="2023-11-12T04:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近几周最有震撼的书籍：《美丽的化学结构》。</p>
+<p>最近断断续续读了很多书，因为大部分是在地铁上断断续续读的，很多书没有读完。小部分的在精读，但是能够分给读书的时间又实在太少了。</p>
+<p>坦白说，地铁上只能使用泛读。我曾经尝试在地铁上精读，我发现非常不爽，手写笔记就不说了，当你长时间思考，联想时，总是被打断。特别是读到精彩处，到了下车的地点，这时候真的是讨厌的很。</p>
+<p>《美丽的化学结构》是那种特别适合泛读，但是有很大程度上改变认知的这种书，看到这些奇妙的化学结构，无与伦比的美感冲击你的脑海，那种认知震撼真的太爽了。</p>
+<p>对于这本书，我觉得任何的读书笔记都是多余的，因为他里面都是化学结构的图片，一个结构一个图片。我们看不见的神奇分子，蛋白质都在他们那个度量尺寸上表现的有序而完美，真的感叹造物主的神奇与伟大。</p>
+<p>当你看到这篇唠叨的文章时。我推荐你去看一看。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20%E5%85%AD/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-腾讯音乐AIGC音频业务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/">腾讯音乐AIGC音频业创新应用技术交流-笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2023-11-12T03:42:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="低延迟高吞吐-同步，异步，流式"><a href="#低延迟高吞吐-同步，异步，流式" class="headerlink" title="低延迟高吞吐 -  同步，异步，流式"></a>低延迟高吞吐 -  同步，异步，流式</h1><h1 id="软件生态适配-插件化解耦兼容"><a href="#软件生态适配-插件化解耦兼容" class="headerlink" title="软件生态适配 - 插件化解耦兼容"></a>软件生态适配 - 插件化解耦兼容</h1><ul>
+<li>client </li>
+<li>inference protocol <ul>
+<li>rest &#x2F;grpc<br><a target="_blank" rel="noopener" href="https://www.ray.io/">ray.io</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="多云调度（sky-computing）-面向失败的对等设计"><a href="#多云调度（sky-computing）-面向失败的对等设计" class="headerlink" title="多云调度（sky-computing） - 面向失败的对等设计"></a>多云调度（sky-computing） - 面向失败的对等设计</h1><h1 id="胡克弹性计算平台的实践"><a href="#胡克弹性计算平台的实践" class="headerlink" title="胡克弹性计算平台的实践"></a>胡克弹性计算平台的实践</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>算法背后的力量</li>
+<li>低成本，高性能，异部署</li>
+</ul>
+<h2 id="模块构成"><a href="#模块构成" class="headerlink" title="模块构成"></a>模块构成</h2><ul>
+<li>模型管理，存储，复用，拉取，加载，版本，验证</li>
+<li>镜像管理，环境问题，各种兼容和组合，直接复用</li>
+<li>数据源管理，开源，闭源</li>
+<li>服务管理，离线，在线，推荐服务</li>
+<li>成本管理，监控，可视化，成本开源，模型市场</li>
+</ul>
+<h2 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h2><ul>
+<li>虚拟化技术 <ul>
+<li>qGPU</li>
+<li>离线在线混布</li>
+<li>全技术栈容器化</li>
+</ul>
+</li>
+<li>异构计算<ul>
+<li>cpu与gpu分离</li>
+<li>work flow能力</li>
+<li>多优先级调度</li>
+<li>跨地域多集群部署</li>
+</ul>
+</li>
+<li>推理加速<ul>
+<li>外部开源</li>
+<li>内部自研</li>
+<li>推理框架c++</li>
+</ul>
+</li>
+</ul>
+<h1 id="移动端神经网络框架的工程化落地的实践"><a href="#移动端神经网络框架的工程化落地的实践" class="headerlink" title="移动端神经网络框架的工程化落地的实践"></a>移动端神经网络框架的工程化落地的实践</h1><h1 id="K歌背景及问题"><a href="#K歌背景及问题" class="headerlink" title="K歌背景及问题"></a>K歌背景及问题</h1><ul>
+<li>算法模型的开发</li>
+<li>模型管理，下载， 加载，参数</li>
+<li>业务调用，推理引擎的引入，跨平台处理</li>
+<li>推理过程</li>
+<li>端侧加速</li>
+<li>效率分析</li>
+<li>优化</li>
+</ul>
+<h1 id="AI模型遇到的问题"><a href="#AI模型遇到的问题" class="headerlink" title="AI模型遇到的问题"></a>AI模型遇到的问题</h1><ul>
+<li>不同业务使用不同的模型，如何统一</li>
+<li>如何验证调优后的模型效果</li>
+<li>如何简化模型接入</li>
+<li>如何检测不同模型的效率</li>
+<li>如何在不同平台的硬件加速</li>
+<li>开箱即用AI模型的能力</li>
+</ul>
+<h1 id="自研的Tnet"><a href="#自研的Tnet" class="headerlink" title="自研的Tnet"></a>自研的Tnet</h1><ul>
+<li>一套平台，模型管理，性能管理，推理引擎管理，效率评估</li>
+<li>面向业务，model hub</li>
+<li>面向工程</li>
+</ul>
+<h1 id="Tnet的框架介绍"><a href="#Tnet的框架介绍" class="headerlink" title="Tnet的框架介绍"></a>Tnet的框架介绍</h1><ul>
+<li>模型生成</li>
+<li>模型管理</li>
+<li>模型评测</li>
+<li>模型调优</li>
+<li>模型开发</li>
+<li>模型使用</li>
+<li>推理引擎使用</li>
+<li>统一不同推理引擎的调用接口</li>
+<li>端侧模型加速</li>
+<li>效率分析和监控<ul>
+<li>perfdog</li>
+<li>TME</li>
+<li>benchmark</li>
+</ul>
+</li>
+<li>音频处理SDK统一</li>
+</ul>
+<h1 id="落地情况"><a href="#落地情况" class="headerlink" title="落地情况"></a>落地情况</h1><ul>
+<li>多维度打分</li>
+<li>录唱AEC的不断优化</li>
+</ul>
+<h1 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h1><p>模型训练<br>标签数据<br>模型管理平台<br>推理SDK<br>业务后台</p>
+<h1 id="业务层"><a href="#业务层" class="headerlink" title="业务层"></a>业务层</h1><ul>
+<li>AI评分<br>能力层</li>
+<li>AI歌声评价<br>基础库</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AIGC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 11 月 6 日 - 2023年 11 月 11 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/">工作周报2023年 11 月 6 日 - 2023年 11 月 11 日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-11-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在美敦力经理辅导和Fujipan配置脚本的编写中，因为涉及到的脚步量比较大，单就Fujipan配置脚本就有26个脚本，总共68轮对话的配置，整个看下来这些脚本有两个对话模式Call-Response（首先AI和Bot完成一轮对话, 引出第二轮用户对话）和User-First（用户发问，引出一轮的对话），对话模式比较固定，特别适合自动化生成，所以完成了这两种的模式的自动化生产程序，比手工写节省50%时间。目前还需要完全人工参与的是金句和近义词的处理。特别是日文的金句目前是使用第三方分词，但需要把近义词单独匹配，两个需求的约束下，就没有想到很完美的自动处理办法，目前的策略就是放弃一部分自动分词的情况，优先近义词的匹配。<br>另外一个麻烦的点在于目前的这些自动化工具来自两个技术栈，JavaScript和Python，这样整个生成过程的中的数据串联就要人工介入，柳祎建议用ChatGPT把JavaScript转成Python，省去一些中转环节，我尝试了一下，是个好办法。<br>我切身体会到的这个事情，就想到了东朔老师在All Hands上说的，做事前想想想能不能用AI。这个思考方式要彻底改变过往的思维方式。在未来很可能高效人士或者每一个人都会有一个根据自己的知识管理和思维习惯定制的私人大模型，就像现在大部分人都有自己的微信一样，这个数字分身就是每个人思想和自我认知的影子。其实对我们大部分人来说，AI像一个突然闯进房间的陌生人，我们能够快速的观察和试探，却不能很快的认识和熟悉，但是AI发展却足够快速，他似乎很快就熟悉里房间里的所有人，为了更好的交流和协作，我们必须要更深入的了解和学习他的来龙去脉以及内在机制，逐渐让自己具有同等的“大模型意识”，这样才能更好的了解他，才有更好的协作和使用。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2023年 10 月 23 日 - 2023年 11 月 5 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -451,674 +1061,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%889%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2023年 10 月 23 日 - 2023年 10 月 29 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2010%20%E6%9C%88%2029%20%E6%97%A5/">工作周报2023年 10 月 23 日 - 2023年 10 月 29 日</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2010%20%E6%9C%88%2029%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-10-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周在场景跳转优化点的花费的时间比较多，主要是深入了解现有实现逻辑，产品特性和代码，数据怎么一一对应的，如果修改，涉及到哪些方面的改动，另外我也在重新找回和升级开发服务端代码的能力和经验，在9月份的还有点略感生疏，现在除了一些新概念的细节，分布式开发的技术栈体系的理解不够深入外，开发上一些的感觉慢慢的回来了，周末回看起八九年前写的一些数据表设计，性能优化，线程设计开发的一些备忘录和blog，目前看还有一些参考意义。很多技能和能力是内化的，一种能力在不断的使用和反思提升之后，就会内化，哪怕有很长一段时间不再使用，似乎也能被激发起来，知识在被记忆，加工之后，内化成自己思考的依据和论据，应用在工作上就称之为能力。在学过很多学习技术之后我发现很多所谓的”笨方法“是最有效的，比如不断写笔记，不断的复习基础理论和基础概念，不断的结合实践经验反复思考，这些学习技术其实上小学的时候老师就讲过的，课前预习，课中练习，课后复习，晚上回顾，上课紧跟老师思路，课下多练习，根据练习反思总结，错题集多看几遍。我曾经在各种不同场合用不同的方式，向咱们公司不少伙伴了解他们学生时代的学习经验，特别是很多学霸，来自顶尖的高校，可能是我的理解力不高，我的总结是他们使用了最简单的方式，却用的最深，讲这些简单的学习方法用到了极致，在有意无意中直抵学习的本质，比如专注，比如认真，比如考试。带着这种思路回到Chatbot，对话式最自然的沟通方式，Chatbot的角色如果是老师，Chatbot的角色如果是学生，更甚者，如果Chatbot是柏拉图，这种场景下，我们就能用最自然的方式，直达人才培养的本质。从这一角度出发，未开的培训方式会持续的被新的技术手段改变，逐渐的让更多的人有更多的机会碰触到意识和能力构建的本源。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2010%20%E6%9C%88%2029%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-中国红色精神谱系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E4%B8%AD%E5%9B%BD%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E%E8%B0%B1%E7%B3%BB/">中国红色精神谱系大全</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E4%B8%AD%E5%9B%BD%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E%E8%B0%B1%E7%B3%BB/" class="archive-article-date">
-  	<time datetime="2023-10-28T15:11:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>伟大的事业需要伟大的精神，伟大的精神托举伟大的梦想。</p>
-<p>从历史上看，中国共产党在100年的光辉历程中，带领中国人民取得了革命、建设和改革的伟大胜利，同时铸就了具有丰富时代内涵和民族特征的伟大精神，形成了独特的精神谱系，这成为中国共产党人的精神支撑和宝贵财富。这也说明中国共产党的精神文明建设很成功，特别是在建国前，利用精神的力量在物质贫乏的情况，聚拢和团结了一大批有理想有抱负的知识分子，同时又把一大批没有接受过系统文化教育的农民，工人，小商业主，士兵等通过思想建设，培养成了具有较高思想水准，优秀工作能力的人才。从这一点出发，中国共产党的思想建设体系值得有志之士深入系统的研究和学习。同样对于构建自己的价值体系，企业的成体系的企业文化有很好的参考和借鉴意义。</p>
-<p>在学习及研究以下精神，可以从以下几个点着眼：</p>
-<p><strong>时代特征</strong></p>
-<p>建国前和建国后的主要矛盾发生了根本性的变化，但有些精神始终不变。艰苦奋斗精神在建国前的南泥湾还是解放后形成的各种精神都是不变。这个非常值得我们个人借鉴，不管日子过好了还是过差了，艰苦奋斗的精神底色不能丢，这是成功的重要支持。</p>
-<p><strong>局势理解及精神形成的独特性</strong></p>
-<p>同一抗战时期，为什么会形成独特的新四军精神，且首要的是“听党指挥，坚定信念”，这就需要对新四军成立的过程，内部发展的斗争有较深的理解。这种精神的形成和发展，1是来源于党中央的切实要求，也是形势发展的必然。2是各方斗争的结果。3是新四军在与敌人斗争中内部形成和发展的。</p>
-<p><strong>当时面对的主要矛盾</strong></p>
-<p>八一精神和新四军精神中首要的听党指挥，对于军队而言，我党的始终原则是军队是听党指挥，这是斗争的结晶，所以必需放在首位。</p>
-<p>在企业不同阶段，企业文化的内涵是不同的。在创业初期坚定信念，使命当担是必然的，这个信念就对创业成功的执着，使命就是市场价值的始终如一的贯彻。企业是一开始就想着以赚钱为最终目的，还是以提供市场价值赚钱利润，不同的目标价值取向很大程度上决定了未来企业的经营模式，产研建设，组织架构，企业文化等关键要素的构建。</p>
-<p>整个精神谱系就是非常丰富的精神宝藏，值得我们深入的持续的研究和践行。</p>
-        
-          <a class="article-more-a" href="/2023/%E4%B8%AD%E5%9B%BD%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E%E8%B0%B1%E7%B3%BB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E4%B8%AD%E5%9B%BD%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E%E8%B0%B1%E7%B3%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习之美（8）- 《学习之美》读后感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%888%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">学习之美（8） - 《学习之美》读后感</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%888%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/" class="archive-article-date">
-  	<time datetime="2023-10-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>读书如果只是读了，没让我们行为产生些许的变化，从实践角度没拿分。</p>
-<p>先完成再完美，放下担心写就好了。</p>
-<h1 id="一、参考答案思维模式"><a href="#一、参考答案思维模式" class="headerlink" title="一、参考答案思维模式"></a>一、参考答案思维模式</h1><p>学习科学家克莱尔库克说：“一般职场上真正有价值的能力，是能处理没有唯一正确解的疑难。”P29</p>
-<p>这件事放在生活里也一样，找什么样的工作可以很多样化，选伴侣，怎么继续提升精进，都充满不确定，也是我们大部分烦恼的来源。</p>
-<p>参考答案思维提醒了我们有两点：</p>
-<ul>
-<li><p>任何人的答案都是参考，无论他的身份地位学识，他同样有他的限制，这点也包含我们自己，眼界宽而不盲从。</p>
-</li>
-<li><p>尊重每一个参考答案，因为能给到我们启发的答案都非常有价值，而不是普遍层面的正确与否。</p>
-</li>
-</ul>
-<p>我会怎么实践：</p>
-<ul>
-<li><p>用好读书这个工具，保持每天15分钟阅读</p>
-</li>
-<li><p>在网络环境中不和对方争论</p>
-</li>
-</ul>
-<h1 id="二、洞见分类，我们来看看具体情况"><a href="#二、洞见分类，我们来看看具体情况" class="headerlink" title="二、洞见分类，我们来看看具体情况"></a>二、洞见分类，我们来看看具体情况</h1><p>我们常用的分类有重要紧急四象限。</p>
-<p>马斯洛的需求金字塔——生理需求、安全需求、社会需求、尊重需求和自我实现。对于不同需求的人来说，需求不同，激励方式也需要差异化。</p>
-<p>抓住本质是洞见分类的核心。</p>
-<p>有一个书友说了非常让我有启发的分类——深入浅出。</p>
-<p>深入代表着理论扎实层度，浅出代表着传达给他人的理解难度。用来对老师的讲解进行分类很厉害。比如爱因斯坦可能是深入不浅出的类型。</p>
-<p>人际交往里朋友间的交往可以从感受和收益出发。</p>
-<p>开心有收获，不开心有收获，开心没收获，不开心没收获。</p>
-<p>这么四象限区分后，看看自己和哪部分人可以继续深交，哪部分精力可以减少。</p>
-<h1 id="三、面对二选一问题，可以都不选或者都选"><a href="#三、面对二选一问题，可以都不选或者都选" class="headerlink" title="三、面对二选一问题，可以都不选或者都选"></a>三、面对二选一问题，可以都不选或者都选</h1><p>领导力课程中看到老师谈到最高级的智商——整合思考，就是“鱼和熊掌我要兼得”。</p>
-<p>在书里也有这样的例子，求职者既可以和强者共事，学习到做事方法，也可以跟需要自己的人工作，体现自身价值。（P120）</p>
-<p>自己曾在互联网行业工作，加班多，相对薪水高，时薪算下来不高。</p>
-<p>怎么实现收入不错又加班不多呢？</p>
-<p>想到了一个小姐姐，她刚毕业加入了大厂做游戏，疯狂加班，放假就去美容院通经络续命，后来去香港念书一年，毕业留下来做保险业，时间多了收入也更高。</p>
-<p>这是学习提升换了行业的解决办法。</p>
-<p>李永乐老师也从数学角度说过996问题。</p>
-<p>当一个人想收入最大化时（即尽可能加班），但收益不等于收入。</p>
-<p>如图所示最优点右边两个曲线线形成的面积就是自我剥削。</p>
-<p>作为个体我们要做的是根据自身情况适度加班并且自我提升进而提升生产力，右移生产可能曲线（投入同样时间资源获得更大收益）。</p>
-<h1 id="四、怎么用——把“如果-就”句式用好"><a href="#四、怎么用——把“如果-就”句式用好" class="headerlink" title="四、怎么用——把“如果 - 就”句式用好"></a>四、怎么用——把“如果 - 就”句式用好</h1><p>四问学习法 —— 听、想、变、用</p>
-<p>我在用的层面碰到了挑战。</p>
-<p>第二遍再看“如果 - 就”句式，突然多了一些领悟。</p>
-<p>如果闹铃响，我就起床，给10月份的早起带来了新气象。如果起床，就泡茶，新的一天热气腾腾。</p>
-<p>如果想买东西，就给亲友买。解决了我时不时涌起的购物欲。后面通过看《穷爸爸富爸爸》解决了部分对消费品的执着。</p>
-<p>如果周一，就和父母视频沟通。让周一有了新期待。</p>
-<p>这是读书使用的第一篇，预计会再更新1-2篇，看是否有新进展和收获。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%888%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习之美（7）- 《学习之美》读后感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%887%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">学习之美（7） -《学习之美》读后感</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%887%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/" class="archive-article-date">
-  	<time datetime="2023-10-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很高兴自己能够成为《学习之美》的前一百名读者，因为长期跟踪刘澜老师公众号的原因，对书中的很多内容都还比较熟悉，所以这本书读起来还是比较“轻松”的。</p>
-<p>看完全书，再回看了一遍目录，合上书，看着封面上的“学习之美”四个大字，我不禁感慨，这是一本写“创业之美”的书啊，同时也是写“生活之美”、“生命之美”的书，与其说这是一本教我们如何学习的书，倒不如说这是一本教我们如何“成为自己”的书。</p>
-<p>在跟老师学习的过程中，我觉得老师就像是一个大丹师，平时四处收集各种灵药；再对各种灵药加以分类区分，了解它们的各种特性；然后将合适的灵药进行一个搭配组合，炼成神丹；最后是用神丹去治病救人。收集，处理，加工，使用，老师这本书的成书过程，同样也是教我们如何将碎片化学习转换为模式化学习的过程。</p>
-<p>这一次看完这本书让我感觉收获最大的是四问学习法中的四个学习迁移模式：“近迁移，远迁移，应用性迁移，创造性迁移”和“中距离学习模式”。</p>
-<p>老师曾经很多次批评我四问学习法用的不对，我自己也感觉用起来非常地生涩别扭，但是得益于平时的刻意练习，看到四个迁移模式以后有一种茅舍顿开的感觉，以后我要用四种迁移模式来反复练习使用四问学习法，争取让这个学习脚手架发挥更大的作用。</p>
-<p>“中距离学习模式”一下子就引起了我的注意，也是因为自己的学习脱离实际，离真正落地应用太远，没有能够真正对自己的工作产生一个良性的影响，甚至有时候自欺欺人地把学习当做一件“对未来有用的事情”，实际上，学习如果当下没有用，未来也很难用得上，或者说未来也很难用得好。所以，我也一直在思考学习要如何对自己有用，而这一次的“中距离学习模式”，让我找到这个有用的点。</p>
-<p>这是得益于老师举的任正非要干部们学习哲学和文件的例子，学哲学，是远距离学习，学文件，是中距离学习，对于我来说，中距离学习更有用。那么我的中距离学习是什么？我所在的企业只是一家小小的民营企业，我该如何去寻找学习的目标呢？</p>
-<p>我在门企上班，对于我来说，学习门的知识，这是近距离学习，能够学到的东西也很少。结合我自己的投标工作来说，学习怎么做好门的投标工作，这也是一个近距离的学习，初期有效，现在来说也很难有什么大的进步了。</p>
-<p>我的中距离学习内容，目前应该是有关房企采购成本这一块的相关专业知识，特别是目前排名靠前的一些大房企他们的采购模式、成本控制模式，我要获得这样的学习资料并不难，也能够与我的工作相结合。另一方面，与房地产配套的上下游产业，特别是诸如建材五金这一块的内容，也应该是我要去学习和了解的对象，这是顺应目前的房地产的整装精装趋势的，公司未来也有往这个方向发展的可能性，提前学习，也是为将来提前做准备。</p>
-<p>正如老师在后记中所说：“对许多职场人士来说，这本书可能有些难。这可以是你放下这本书的理由，但也可以是你不放下这本书的理由——寻宝的过程，往往是有艰难险阻的”。</p>
-<p>没错，老师的这本书就是一个大宝库，等着我们去偷，但是谁能够偷到更好的东西，这真是一件非常令人期待的事情，我想，这也是老师建立《学习之美》学习交流群的意义吧。</p>
-<p>《学习之美》这本书确实很难，就跟老师的《极简管理学》一样，如果说书是我们学习者的武器的话，那么老师的这两本书就是核武器——高浓缩，高能量，想要引爆也是相当的难。</p>
-<p>为什么会这么难呢？主要是因为自己以前学习太少，基础太薄弱，所以很难让将书中的知识和已有的经验的形成联系。毋庸置疑，《学习之美》和《极简管理学》都是值得我们反复去研读和学习的书，特别是，以这两本书为参考去阅读其他的书，学习收获会更大。</p>
-<p>相对而言，老师的《管理十律》和《领导力就是说对十句话》学起来要更轻松一点，如果是刚开始跟随老师学习的人，我觉得可以考虑先从这两本书开始。</p>
-<p>这里面其实老师在书中也有一个非常重要的“欧姆定律”，我们学习越多老师的著作，我们学习的阻力就越小，学习成功的几率就越大。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%887%EF%BC%89-%20%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习之美（6）- 两个基本概念：去学习与元学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%886%EF%BC%89-%20%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A%E5%8E%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%85%83%E5%AD%A6%E4%B9%A0/">学习之美（6）- 两个基本概念：去学习与元学习。</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%886%EF%BC%89-%20%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A%E5%8E%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%85%83%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2023-10-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="两个基本概念：去学习与元学习。"><a href="#两个基本概念：去学习与元学习。" class="headerlink" title="两个基本概念：去学习与元学习。"></a>两个基本概念：去学习与元学习。</h1><h2 id="去学习"><a href="#去学习" class="headerlink" title="去学习"></a>去学习</h2><p>学习 —— Learning—答案、标准、—个人成功（学校）</p>
-<p>去学习 —— on learning —— 提问、社会</p>
-<p>学习是补人之短，去学习是取人之长。</p>
-<p>学校教育的四大危害：</p>
-<ol>
-<li><p>寻求标准答案</p>
-</li>
-<li><p>分科</p>
-</li>
-<li><p>碎片化学习</p>
-</li>
-<li><p>没有从经验中学</p>
-</li>
-</ol>
-<p>在社会中学习要剔除标准地图思维，必须拥有多张地图或航海图，也就是比较火热说法的跨学科思维模式。重要的是你懂得什么，学会了什么，你又能做到什么。读一百本书，不如将一本书读一百遍。</p>
-<h2 id="元学习"><a href="#元学习" class="headerlink" title="元学习"></a>元学习</h2><p>也就是提问——学习力，可以分为技术能力；人际能力；概念能力。</p>
-<p>现在无论什么不加上一个“元”字表现不出来高大尚，其实刘老师想要传递的信息是你要懂得学习怎么学习的能力。正如我的感觉沟通什么不重要，重要的是你如何沟通的；学习什么不重要，怎么学习才重要。</p>
-<h1 id="学习的六技巧"><a href="#学习的六技巧" class="headerlink" title="学习的六技巧"></a>学习的六技巧</h1><h2 id="技巧一：学通一个老师的底层思维模式"><a href="#技巧一：学通一个老师的底层思维模式" class="headerlink" title="技巧一：学通一个老师的底层思维模式"></a>技巧一：学通一个老师的底层思维模式</h2><p>刘老师拿著名管理大师马奇——《经验的疆界》一书作者——给出的底层思维。你可以成为鹅卵石人格：谦卑与自信的集合体。Π型知识：避免进入T型陷阱，在两个领域广泛涉猎。3&#x2F;3&#x2F;3感受法则：1&#x2F;3让人拍案叫绝，1&#x2F;3似懂非懂，1&#x2F;3完全不懂。</p>
-<h2 id="技巧二：搞懂一个问题"><a href="#技巧二：搞懂一个问题" class="headerlink" title="技巧二：搞懂一个问题"></a>技巧二：搞懂一个问题</h2><p>比如高考化学如何得高分？问题导向型学习，在《跃迁》一书中，古典老师提出得“问题树”。</p>
-<h2 id="技巧三：写好笔记"><a href="#技巧三：写好笔记" class="headerlink" title="技巧三：写好笔记"></a>技巧三：写好笔记</h2><p>我也看了基本介绍如何写好笔记的书，个人觉得《子弹笔记术》比较好一些。《如何高效阅读一本书》中给出的摘抄+感悟也不错。下面详细说一下《子弹笔记术》要求做笔记：条理化——让对方能够立刻了解笔记想要表达什么；剧情化——让对方能够保持兴趣，将笔记读完；信息化——用笔记打动对方的内心，让对方行动起来。</p>
-<h2 id="子弹笔记的三化"><a href="#子弹笔记的三化" class="headerlink" title="子弹笔记的三化"></a>子弹笔记的三化</h2><p>条理化的目的就是让信息接收者能够立刻了解你想要表达的什么。无论你的内容多么优秀，如果不能让对方迅速了解整体架构，就不会让人产生想要读下去的欲望。一旦笔记被信息接收者忽视，那么一切努力就前功尽弃。为了让笔记条理化，你需要将想要表达的内容按照主干和分支整理好。</p>
-<p>剧情化就是让信息接收者有兴趣一口气将笔记读到最后。即使信息接收者有兴趣读你的笔记，但如果他没能被内容吸引，中途放弃阅读的话，你想要表达的信息还是无法成功地传达给他。为了让信息接收者兴致勃勃地读到最后，你应该参考对方的思考模式来整理笔记的顺序。</p>
-<p>信息化就是使笔记拥有能够打动信息接收者的力量，让他按照你的想法行动。即使对方读完了你的笔记，如果你想要传达的信息没能清晰有力地传达，就只是将信息传递到了信息接收者的手边，而不是心里。</p>
-<p>虽然子弹笔记是针对别人的，你做笔记的时候可以参考这三点，想要打动别人，先学会打动自己，那么你就需要不断磨练自己的书写能力。</p>
-<h2 id="技巧四：模式化学习——抓规律、效率高，你要知道碎片拼不成花瓶。"><a href="#技巧四：模式化学习——抓规律、效率高，你要知道碎片拼不成花瓶。" class="headerlink" title="技巧四：模式化学习——抓规律、效率高，你要知道碎片拼不成花瓶。"></a>技巧四：模式化学习——抓规律、效率高，你要知道碎片拼不成花瓶。</h2><p>马奇指出学习悖论——普遍、简单、准确，然而此三者不可兼得。</p>
-<p>刘老师给出成功企业往往学不会，天才你学不会，运气你学不会，模式你学不会。权威集中化与活动结构化可以分成：家庭型——中国；金字塔——法国；机器型——德国；集市型——英美。</p>
-<p>怀特海——智慧增长，知识消减。</p>
-<h2 id="技巧五：三环学习"><a href="#技巧五：三环学习" class="headerlink" title="技巧五：三环学习"></a>技巧五：三环学习</h2><p>一、单环——改变行为，报什么班？也是软件升级；</p>
-<p>二、双环——改变目标，该不该？也是换软件；</p>
-<p>三、三环——改变心智模式，为什么要？改变操作系统。</p>
-<p>现在许多人的学习，主要是我的学习状态甚至单环的境界都没有达到，只是通过看书，学习一些课程缓解自己对未来的焦虑，增加自己的一些谈资。套用所有不以结婚为目的的恋爱都是耍流氓，所有不以改变行为的学习都是鸵鸟式的生活。</p>
-<h2 id="技巧六：教会别人"><a href="#技巧六：教会别人" class="headerlink" title="技巧六：教会别人"></a>技巧六：教会别人</h2><p>教会别人看似简单实则是用输出倒逼你的知识输入的方式，因为知道一个道理与能讲清楚一个道理，再到践行一个道理中间有许多事情要做。成甲老师在《好好学习》指出以教为学可以带来三个额外的价值：</p>
-<p>一、教别人可以督促自己发现知识阻塞，进一步打通已有的知识。</p>
-<p>二、教别人的过程，是一个强化记忆和认识的过程。</p>
-<p>三、教别人之后，别人提出疑问、质疑和新想法，会增强我们的认知。</p>
-<p>前一段时间，在一个私立中学教七年级数学，觉得很简单的道理，让再用更简单的道理给讲清楚，不是一件容易与轻松的事。</p>
-<h2 id="感想及感悟"><a href="#感想及感悟" class="headerlink" title="感想及感悟"></a>感想及感悟</h2><p>我该怎么面对未来呢？应对未来的不确定性？采取何种策略或方法？</p>
-<p>一、不要追求数量，而是追求效果。不停地、反复地看经典书籍，然后持续地在简书上输出文章与感悟。</p>
-<p>二、弄明白自己真正想要什么，能要什么，需要放弃什么、做什么才能达到自己的目标。</p>
-<p>三、勇敢迈出去，不停地努力向前，坚持住，耐心地做下去。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%886%EF%BC%89-%20%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A%E5%8E%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%85%83%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习之美（5）- 反学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%885%EF%BC%89-%20%E5%8F%8D%E5%AD%A6%E4%B9%A0/">学习之美（5）- 反学习</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%885%EF%BC%89-%20%E5%8F%8D%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2023-10-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="反学习包括12个学校教育带来的坏习惯，分别是："><a href="#反学习包括12个学校教育带来的坏习惯，分别是：" class="headerlink" title="反学习包括12个学校教育带来的坏习惯，分别是："></a>反学习包括12个学校教育带来的坏习惯，分别是：</h1><ul>
-<li><p>坏习惯1：标准答案思维方式</p>
-</li>
-<li><p>坏习惯2：被动学习</p>
-</li>
-<li><p>坏习惯3：害怕出错</p>
-</li>
-<li><p>坏习惯4：弥补短板</p>
-</li>
-<li><p>坏习惯5：缺乏规划</p>
-</li>
-<li><p>坏习惯6：期待老师提供答案</p>
-</li>
-<li><p>坏习惯7：单人学习</p>
-</li>
-<li><p>坏习惯8：学而不用</p>
-</li>
-<li><p>坏习惯9：碎片化学习</p>
-</li>
-<li><p>坏习惯10：为成绩而非成长</p>
-</li>
-<li><p>坏习惯11：只在学校学习</p>
-</li>
-<li><p>坏习惯12：厌恶学习</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%885%EF%BC%89-%20%E5%8F%8D%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-UNIX哲学" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/UNIX%E5%93%B2%E5%AD%A6/">UNIX哲学</a>
-    </h1>
-  
-
-        
-        <a href="/2023/UNIX%E5%93%B2%E5%AD%A6/" class="archive-article-date">
-  	<time datetime="2023-10-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mike Gancarz的《UNIX哲学》<br>1994年，X窗口系统开发组的成员Mike Gancarz根据他自己的Unix系统经验以及和其他领域使用Unix系统的资深程序员们的讨论结果，写成了The UNIX Philosophy，提出了9条训格之言：</p>
-<ul>
-<li>小即是美。</li>
-<li>让程序只做好一件事。</li>
-<li>尽可能早地建立原型。</li>
-<li>可移植性比效率更重要。</li>
-<li>数据应该保存为文本文件。</li>
-<li>尽可能地榨取软件的全部价值。</li>
-<li>使用shell脚本来提高效率和可移植性。</li>
-<li>避免使用可定制性低下的用户界面。</li>
-<li>所有程序都是数据的过滤器。</li>
-</ul>
-<p>此外还有十条原则则并不为所有人认同，甚至还是争论的焦点（如宏内核和微内核之争）：</p>
-<ul>
-<li>应该允许用户定制操作环境。</li>
-<li>让操作系统核心小而轻。</li>
-<li>使用小写字母并尽量简短。</li>
-<li>节约纸张，保护树林。</li>
-<li>沉默是金。</li>
-<li>并行地思考。</li>
-<li>部分加部分大于整体。</li>
-<li>寻找问题的帕雷托法则。</li>
-<li>程序随需求而增长（更糟就是更好）。</li>
-<li>层级地思考。</li>
-</ul>
-<p>我的编程哲学；</p>
-<ul>
-<li>软件皆可配置</li>
-<li>组合是软件开发的本质</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">UNIX哲学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/UNIX%E5%93%B2%E5%AD%A6/">展开全文 >></a>
         </p>
       
 
@@ -1765,6 +1707,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Skills</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Prompt Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术指南</a>
               </li>
             
             <div class="clearfix"></div>

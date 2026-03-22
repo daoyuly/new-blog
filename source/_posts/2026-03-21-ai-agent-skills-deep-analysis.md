@@ -1,6 +1,5 @@
 ---
 title: 深入解析 AI Agent Skills：从理论到实践的技术演进
-date: 2026-03-21 00:20:00
 tags:
   - AI
   - Agent
@@ -9,6 +8,8 @@ tags:
   - 技术分析
 categories:
   - 技术研究
+abbrlink: 18326
+date: 2026-03-21 00:20:00
 ---
 
 # 深入解析 AI Agent Skills：从理论到实践的技术演进

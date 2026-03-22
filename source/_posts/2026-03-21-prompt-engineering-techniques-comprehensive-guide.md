@@ -1,6 +1,5 @@
 ---
 title: 提示词工程完全指南：从基础到Agent应用的技术全景
-date: 2026-03-21 01:00:00
 tags:
   - Prompt Engineering
   - LLM
@@ -8,6 +7,8 @@ tags:
   - 技术指南
 categories:
   - 技术研究
+abbrlink: 57023
+date: 2026-03-21 01:00:00
 ---
 
 # 提示词工程完全指南：从基础到Agent应用的技术全景
