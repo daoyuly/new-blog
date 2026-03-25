@@ -1,6 +1,5 @@
 ---
 title: AI Agent 记忆召回机制深度分析
-date: 2026-03-24 13:30:00
 tags:
   - AI
   - Agent
@@ -9,6 +8,8 @@ tags:
   - RAG
 categories:
   - 技术研究
+abbrlink: 38759
+date: 2026-03-24 13:30:00
 ---
 
 > 分析时间: 2026-03-24

@@ -1,8 +1,16 @@
 ---
-title: "Agent Memory 每日论文速递 (2026-03-24)"
-date: 2026-03-24 18:00:00 +0800
-tags: [agent-memory, arxiv, daily-report, RAG, knowledge-management]
-categories: [AI Research, Agent Memory]
+title: Agent Memory 每日论文速递 (2026-03-24)
+date: '2026-03-24 18:00:00 +0800'
+tags:
+  - agent-memory
+  - arxiv
+  - daily-report
+  - RAG
+  - knowledge-management
+categories:
+  - AI Research
+  - Agent Memory
+abbrlink: 2005
 ---
 
 ## 📋 今日概览

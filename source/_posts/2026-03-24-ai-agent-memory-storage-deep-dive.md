@@ -1,6 +1,5 @@
 ---
 title: AI Agent 记忆存储机制深度分析
-date: 2026-03-24 13:20:00
 tags:
   - AI
   - Agent
@@ -9,6 +8,8 @@ tags:
   - 向量数据库
 categories:
   - 技术研究
+abbrlink: 38091
+date: 2026-03-24 13:20:00
 ---
 
 > 分析时间: 2026-03-24
