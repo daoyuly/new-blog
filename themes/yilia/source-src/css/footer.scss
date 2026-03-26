@@ -1,11 +1,15 @@
 #footer {
 	font-size: 12px;
 	text-shadow: 0 1px #fff;
-	position: absolute;
-	bottom: 30px;
+	// position: absolute;  // 移除绝对定位，让 footer 跟随内容
+	// bottom: 30px;        // 移除固定底部定位
+	position: static;        // 改为静态定位
+	margin-top: 40px;        // 添加上边距
+	padding: 20px 0;         // 添加内边距
 	opacity: 0.6;
 	width: 100%;
 	text-align: center;
+	clear: both;             // 清除浮动
 	.outer{
 		padding: 0 30px;
 	}

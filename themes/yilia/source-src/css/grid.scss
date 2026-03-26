@@ -32,6 +32,7 @@ html, body, #container {
 }
 .body-wrap{
   margin-bottom: 80px;
+  flex: 1;  // 占据剩余空间，让 footer 始终在底部
 }
 .mid-col {
 	position:absolute;
@@ -40,6 +41,8 @@ html, body, #container {
 	background:#eaeaea;
 	left: 300px;
 	width: auto;
+	display: flex;           // 添加 Flexbox 布局
+	flex-direction: column;  // 垂直方向排列
 	@extend %trans;
 	&.show {
 		background: none;

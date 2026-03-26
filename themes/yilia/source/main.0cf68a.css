@@ -909,7 +909,8 @@ html {
 }
 
 .body-wrap {
-    margin-bottom: 80px
+    margin-bottom: 80px;
+    flex: 1
 }
 
 .mid-col {
@@ -918,7 +919,9 @@ html {
     min-height: 100%;
     background: #fff;
     left: 300px;
-    width: auto
+    width: auto;
+    display: flex;
+    flex-direction: column
 }
 
 .mid-col.show {
@@ -3105,13 +3108,17 @@ pre .id {
 
 #footer {
     font-size: 12px;
-    
+
     text-shadow: 0 1px #fff;
-    position: absolute;
-    bottom: 30px;
+    /* position: absolute;  移除绝对定位 */
+    /* bottom: 30px;        移除固定底部 */
+    position: static;
+    margin-top: 40px;
+    padding: 20px 0;
     opacity: .6;
     width: 100%;
-    text-align: center
+    text-align: center;
+    clear: both
 }
 
 #footer .outer {

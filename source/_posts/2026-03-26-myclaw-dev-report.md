@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 2 (消息通道集成)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 19717
 date: 2026-03-26 04:40:38
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 2 (消息通道集成)

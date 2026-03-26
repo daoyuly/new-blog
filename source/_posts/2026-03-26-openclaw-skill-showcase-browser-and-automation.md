@@ -1,8 +1,14 @@
 ---
 title: OpenClaw Skill 每日推荐 - 浏览器与自动化
+tags:
+  - openclaw
+  - skill
+  - browser
+  - automation
+categories:
+  - 技术推荐
+abbrlink: 24707
 date: 2026-03-26 11:30:00
-tags: [openclaw, skill, browser, automation]
-categories: [技术推荐]
 ---
 
 # 浏览器与自动化 - 320 个自动化神器

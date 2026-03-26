@@ -174,7 +174,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>关于团队异地协作开发的思考<br>最近的一些项目是和成都交付中心的伙伴们一起完成的，有不少Good Case，也有一些Bad Case，总体上说，随着项目的进行，相互了解的增进，整体工作效率上提升了很多。<br>Good Case上说，成都交付中心的伙伴们不定时的来北京工作，借着这个时间，也是多找些时间相互了解，聊聊共同关注的技术话题，各自的自我发展的认知，对公司文化和价值的理解等等。借着一些解决bug的，跟进线上问题的契机，相互了解了彼此的技术擅长点，思维方式和业务能力的长短板，通过这种立体性的了解， 形成的团队合力就非常有竞争力。Bad Case上就是缺乏直接的面对面的沟通，需要利用好远程会议，Slack等工具做好尽可能的沟通，比如一个优化点，改动的点和测试的点，很可能是不一致的，这个业务的学习过程可能缺少了随时的复盘思考，吃饭的时候，晚上下班的时候，如果是坐在一起，很可能会随时随地的彼此的聊一下，有时候这种非正式够沟通对技术的理解，对业务的学习都重要的推进作用。<br>三年的疫情让大家都极大的提高了跨地域工作的软&#x2F;硬能力，我觉得这是我们非常有利的一个基础条件。我记得很早我在中石油体系内工作的时候，跨地域工作主要通过邮件来驱动，哪怕是一个很小的事情，也要主要通过抄送不同级别的领导来驱动的，特别是涉及到兄弟部门时，比如涉及到分公司协作时，要抄送我的领导，我的领导的领导，对方的领导及对方领导的领导，这个从流程上来说是，是绝对的“政治正确”，因为新员工培训里就有对这个流程的完整说明。但实际上效率非常之慢，而且由此衍生出各种“大公司病”，当然不同的公司的性质，规模，阶段，发展侧重点不同，协作策略也有不同。对我们而言公司一直有一个价值观点：我们是一个团队，我们也是一个球队。踢过足球的伙伴们知道，合格的球员要守住自己的位置，护着队友的位置，防死对手的位置，这样才能整个球队赢球。<br>我觉得不同地域的伙伴们要有意识的相互靠拢，从个人发展来说，这是一个适应能力的体现， 也是一种职业素养的体现，从公司层面来说，设置不同的地域的办公室和团队是为了更好的适应市场，不同地域的办公室和团队都是公司发展过程中不可或缺的重要组成部分，有不同的组织定位和发展目标。不同地域的办公室和团队在积极相互靠拢的过程中也要积极的发展自己能力特色，以拓展公司的能力拼图。<br>Web Log排查<br>稳定性和可靠性一直作为长期的基础工作在进行。我们也一直把“问题解决在用户前面”作为这项工作的最终目标。<br>最近有几周在跟进Log的排查和分类，目前Web和Node的错误类型了做比较细致的分类，截止到目前，Nodejs上分出了36个较大的错误类型，Web上分出了112个错误分类，这个分类还比较大的分类，比如”系统未知错误”，”请刷新重试，如果反复出现当前错误，请联络<a href="mailto:&#x73;&#117;&#112;&#112;&#x6f;&#x72;&#116;&#64;&#117;&#x6d;&#x75;&#x2e;&#x63;&#x6f;&#x6d;">&#x73;&#117;&#112;&#112;&#x6f;&#x72;&#116;&#64;&#117;&#x6d;&#x75;&#x2e;&#x63;&#x6f;&#x6d;</a>反馈问题”这类错误有很多内部原因导致，这类问题的解决可能需要不少的代码上改动，这类问题的排查会综合考虑成本和损益。目前的思路就是逐渐解决代码改成成本较少，测试成本较少的问题。<br>日志排查上比较难的挑战是评估是否值得现在修复以及花费多的的时间去修复。很多日志上报出来的问题可能对用户是透明，也可能对用户影响很大，比如我们关注到一类问题，报的量比较大，但是技术上推测对用户影响很少，还一类问题是报的量很少，但是出现这类用报错的用户的影响确很大。<br>另外一个需要注意的观点就是，不是用户反馈的问题就不是大问题。用户作为服务的消费者，第一他们不一定有能力反馈问题，第二是他们不一定有意愿反馈问题，但是一定会影响他们使用服务的意愿度。所以对我们而言就要充分利用团队的能力尽可能的解决这这些类的问题。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>关于团队异地协作开发的思考<br>最近的一些项目是和成都交付中心的伙伴们一起完成的，有不少Good Case，也有一些Bad Case，总体上说，随着项目的进行，相互了解的增进，整体工作效率上提升了很多。<br>Good Case上说，成都交付中心的伙伴们不定时的来北京工作，借着这个时间，也是多找些时间相互了解，聊聊共同关注的技术话题，各自的自我发展的认知，对公司文化和价值的理解等等。借着一些解决bug的，跟进线上问题的契机，相互了解了彼此的技术擅长点，思维方式和业务能力的长短板，通过这种立体性的了解， 形成的团队合力就非常有竞争力。Bad Case上就是缺乏直接的面对面的沟通，需要利用好远程会议，Slack等工具做好尽可能的沟通，比如一个优化点，改动的点和测试的点，很可能是不一致的，这个业务的学习过程可能缺少了随时的复盘思考，吃饭的时候，晚上下班的时候，如果是坐在一起，很可能会随时随地的彼此的聊一下，有时候这种非正式够沟通对技术的理解，对业务的学习都重要的推进作用。<br>三年的疫情让大家都极大的提高了跨地域工作的软&#x2F;硬能力，我觉得这是我们非常有利的一个基础条件。我记得很早我在中石油体系内工作的时候，跨地域工作主要通过邮件来驱动，哪怕是一个很小的事情，也要主要通过抄送不同级别的领导来驱动的，特别是涉及到兄弟部门时，比如涉及到分公司协作时，要抄送我的领导，我的领导的领导，对方的领导及对方领导的领导，这个从流程上来说是，是绝对的“政治正确”，因为新员工培训里就有对这个流程的完整说明。但实际上效率非常之慢，而且由此衍生出各种“大公司病”，当然不同的公司的性质，规模，阶段，发展侧重点不同，协作策略也有不同。对我们而言公司一直有一个价值观点：我们是一个团队，我们也是一个球队。踢过足球的伙伴们知道，合格的球员要守住自己的位置，护着队友的位置，防死对手的位置，这样才能整个球队赢球。<br>我觉得不同地域的伙伴们要有意识的相互靠拢，从个人发展来说，这是一个适应能力的体现， 也是一种职业素养的体现，从公司层面来说，设置不同的地域的办公室和团队是为了更好的适应市场，不同地域的办公室和团队都是公司发展过程中不可或缺的重要组成部分，有不同的组织定位和发展目标。不同地域的办公室和团队在积极相互靠拢的过程中也要积极的发展自己能力特色，以拓展公司的能力拼图。<br>Web Log排查<br>稳定性和可靠性一直作为长期的基础工作在进行。我们也一直把“问题解决在用户前面”作为这项工作的最终目标。<br>最近有几周在跟进Log的排查和分类，目前Web和Node的错误类型了做比较细致的分类，截止到目前，Nodejs上分出了36个较大的错误类型，Web上分出了112个错误分类，这个分类还比较大的分类，比如”系统未知错误”，”请刷新重试，如果反复出现当前错误，请联络<a href="mailto:&#115;&#117;&#x70;&#x70;&#x6f;&#x72;&#x74;&#64;&#117;&#x6d;&#117;&#46;&#x63;&#x6f;&#x6d;">&#115;&#117;&#x70;&#x70;&#x6f;&#x72;&#x74;&#64;&#117;&#x6d;&#117;&#46;&#x63;&#x6f;&#x6d;</a>反馈问题”这类错误有很多内部原因导致，这类问题的解决可能需要不少的代码上改动，这类问题的排查会综合考虑成本和损益。目前的思路就是逐渐解决代码改成成本较少，测试成本较少的问题。<br>日志排查上比较难的挑战是评估是否值得现在修复以及花费多的的时间去修复。很多日志上报出来的问题可能对用户是透明，也可能对用户影响很大，比如我们关注到一类问题，报的量比较大，但是技术上推测对用户影响很少，还一类问题是报的量很少，但是出现这类用报错的用户的影响确很大。<br>另外一个需要注意的观点就是，不是用户反馈的问题就不是大问题。用户作为服务的消费者，第一他们不一定有能力反馈问题，第二是他们不一定有意愿反馈问题，但是一定会影响他们使用服务的意愿度。所以对我们而言就要充分利用团队的能力尽可能的解决这这些类的问题。</p>
 
       
 
@@ -383,18 +383,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EasyClaw</a>
               </li>
              
@@ -407,7 +395,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,6 +416,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">trends</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,6 +563,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">内容创作</a>
               </li>
              
@@ -576,10 +580,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">伦理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,19 +671,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Prompt Engineering</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术指南</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">memory</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">daily-report</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Prompt Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术指南</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,19 +699,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">向量数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Recall</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">深度分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">向量数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,6 +731,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ai-trends</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">daily-insights</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">openclaw</a>
               </li>
              
@@ -747,6 +759,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">open-source</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ai-repo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">daily-research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">browser</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">automation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">AI agent 设计</a>
               </li>
              
@@ -755,11 +787,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java android EventBus</a>
+                <a href="javascript:void(0)" class="js-tag color3">go 语言学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go 语言学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">java android EventBus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,11 +799,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">prompt, LLM</a>
+                <a href="javascript:void(0)" class="js-tag color5">go android linux 刷机 root</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">go android linux 刷机 root</a>
+                <a href="javascript:void(0)" class="js-tag color2">prompt, LLM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,10 +819,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术杂想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
@@ -800,6 +828,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术杂想</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -895,19 +927,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">佛偈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">设计 有效需求分析 转载</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术思考</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思 个人成长</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">设计 有效需求分析 转载</a>
               </li>
              
               <li class="article-tag-list-item">

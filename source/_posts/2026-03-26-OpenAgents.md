@@ -1,12 +1,13 @@
 ---
-title: "OpenAgents 项目分析报告"
-date: 2026-03-26 11:00:00
+title: OpenAgents 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 46180
+date: 2026-03-26 11:00:00
 ---
 
 # OpenAgents 项目分析报告
