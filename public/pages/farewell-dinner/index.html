@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周五散伙饭聚会</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .poster {
+            background: white;
+            border-radius: 24px;
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .emoji-decoration {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '📍';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+        }
+
+        .restaurant-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2d3436;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e17055;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #636e72;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        .schedule {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .schedule-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            border: 3px solid #0984e3;
+        }
+
+        .time {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .activity {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        .message {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .message-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .message-text {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 15px 10px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .highlight-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .highlight-text {
+            font-size: 12px;
+            color: #636e72;
+            font-weight: 500;
+        }
+
+        .route {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .route-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2d3436;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .route-steps {
+            font-size: 14px;
+            color: #636e72;
+            line-height: 1.8;
+        }
+
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-names {
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .name-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .qr-placeholder {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlights {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="header">
+            <div class="emoji-decoration">🎉🍻</div>
+            <div class="title">周五散伙饭聚会</div>
+            <div class="subtitle">前程似锦 · 未来可期</div>
+        </div>
+
+        <div class="content">
+            <!-- 餐厅信息 -->
+            <div class="info-card">
+                <div class="restaurant-name">
+                    局气（西铁营万达店）
+                    <span class="tag">北京菜</span>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">📍 地址</div>
+                        <div class="info-value">西铁营万达广场4层</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">💰 人均</div>
+                        <div class="info-value">120-150元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">🚇 地铁</div>
+                        <div class="info-value">14号线西铁营站</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">⏱️ 距离</div>
+                        <div class="info-value">约3公里（8分钟）</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推荐亮点 -->
+            <div class="highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🏠</div>
+                    <div class="highlight-text">老北京特色</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌟</div>
+                    <div class="highlight-text">环境优雅</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">👥</div>
+                    <div class="highlight-text">适合聚餐</div>
+                </div>
+            </div>
+
+            <!-- 时间安排 -->
+            <div class="schedule">
+                <div class="schedule-title">
+                    ⏰ 时间安排
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">19:00</div>
+                        <div class="activity">丽泽商务区集合出发</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">19:10</div>
+                        <div class="activity">到达餐厅，入座点餐</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">19:30-21:30</div>
+                        <div class="activity">享用晚餐，畅聊时光</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">21:30</div>
+                        <div class="activity">合影留念，美好收尾</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 路线指引 -->
+            <div class="route">
+                <div class="route-title">
+                    🗺️ 路线指引
+                </div>
+                <div class="route-steps">
+                    <strong>方案一（推荐）：</strong><br>
+                    1. 从丽泽商务区步行至地铁14号线东管头站<br>
+                    2. 乘坐14号线（张郭庄方向）2站至西铁营站<br>
+                    3. B口出站，步行200米至万达广场<br>
+                    4. 乘坐电梯至4层局气餐厅<br><br>
+                    
+                    <strong>方案二：</strong><br>
+                    打车约8分钟，费用约15元
+                </div>
+            </div>
+
+            <!-- 寄语 -->
+            <div class="message">
+                <div class="message-title">💫 同事寄语</div>
+                <div class="message-text">
+                    感谢一路相伴的时光<br>
+                    愿你在新的征程中<br>
+                    一帆风顺，前程似锦<br>
+                    期待未来再相聚！
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">📅 2026年3月27日 周五晚 19:00</div>
+            <div class="footer-names">
+                <span class="name-tag">👨‍💼 同事A</span>
+                <span class="name-tag">👩‍💼 同事B</span>
+                <span class="name-tag">👨‍💼 离职同事</span>
+            </div>
+            <div class="qr-placeholder">
+                🎊 祝愿未来一切顺利 🎊
+            </div>
+        </div>
+    </div>
+</body>
+</html>

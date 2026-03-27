@@ -151,6 +151,1488 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-19-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-19-arxiv-agent-trends/">arXiv Agent 研究趋势速递 (2026-03-19)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-19-arxiv-agent-trends/" class="archive-article-date">
+  	<time datetime="2026-03-19T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="arXiv-Agent-研究趋势速递-2026-03-19"><a href="#arXiv-Agent-研究趋势速递-2026-03-19" class="headerlink" title="arXiv Agent 研究趋势速递 (2026-03-19)"></a>arXiv Agent 研究趋势速递 (2026-03-19)</h1><p>整理今天的 arXiv cs.AI 论文，聚焦 <strong>Agent 相关研究</strong>的最新进展。</p>
+<hr>
+<h2 id="🔥-核心趋势概览"><a href="#🔥-核心趋势概览" class="headerlink" title="🔥 核心趋势概览"></a>🔥 核心趋势概览</h2><p>今天共有 <strong>14 篇</strong> Agent 相关论文，呈现出以下几个关键趋势：</p>
+<h3 id="1-自演化与能力积累-Self-Evolution-Capability-Accumulation"><a href="#1-自演化与能力积累-Self-Evolution-Capability-Accumulation" class="headerlink" title="1. 自演化与能力积累 (Self-Evolution &amp; Capability Accumulation)"></a>1. <strong>自演化与能力积累</strong> (Self-Evolution &amp; Capability Accumulation)</h3><h3 id="2-生产级多智能体架构-Production-Multi-Agent-Architecture"><a href="#2-生产级多智能体架构-Production-Multi-Agent-Architecture" class="headerlink" title="2. 生产级多智能体架构 (Production Multi-Agent Architecture)"></a>2. <strong>生产级多智能体架构</strong> (Production Multi-Agent Architecture)</h3><h3 id="3-记忆系统革新-Memory-System-Innovation"><a href="#3-记忆系统革新-Memory-System-Innovation" class="headerlink" title="3. 记忆系统革新 (Memory System Innovation)"></a>3. <strong>记忆系统革新</strong> (Memory System Innovation)</h3><h3 id="4-智能体安全与验证-Agent-Security-Validation"><a href="#4-智能体安全与验证-Agent-Security-Validation" class="headerlink" title="4. 智能体安全与验证 (Agent Security &amp; Validation)"></a>4. <strong>智能体安全与验证</strong> (Agent Security &amp; Validation)</h3><h3 id="5-多智能体协作优化-Multi-Agent-Collaboration-Optimization"><a href="#5-多智能体协作优化-Multi-Agent-Collaboration-Optimization" class="headerlink" title="5. 多智能体协作优化 (Multi-Agent Collaboration Optimization)"></a>5. <strong>多智能体协作优化</strong> (Multi-Agent Collaboration Optimization)</h3><hr>
+<h2 id="📊-重点论文解析"><a href="#📊-重点论文解析" class="headerlink" title="📊 重点论文解析"></a>📊 重点论文解析</h2><h3 id="1-自演化框架：AgentFactory"><a href="#1-自演化框架：AgentFactory" class="headerlink" title="1. 自演化框架：AgentFactory"></a>1. 自演化框架：AgentFactory</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.18000">#1 AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</a></p>
+<p><strong>核心创新</strong>:</p>
+<ul>
+<li>提出 <strong>子代理代码化</strong>，将成功经验保存为<strong>可执行的 Python 代码</strong>，而非文本提示</li>
+<li>基于执行反馈持续优化子代理，实现<strong>能力积累</strong></li>
+<li>子代理具有标准化文档，可跨系统移植</li>
+</ul>
+<p><strong>关键发现</strong>:</p>
+<ul>
+<li>代码化经验比文本反思更可靠</li>
+<li>子代理库随时间增长和改进</li>
+<li>减少类似任务的人工干预</li>
+</ul>
+<p><strong>开源</strong>: <a target="_blank" rel="noopener" href="https://github.com/zzatpku/AgentFactory">GitHub</a></p>
+<hr>
+<h3 id="2-具身智能规划：RPMS"><a href="#2-具身智能规划：RPMS" class="headerlink" title="2. 具身智能规划：RPMS"></a>2. 具身智能规划：RPMS</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17831">#2 RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy</a></p>
+<p><strong>核心问题</strong>: LLM 智能体在封闭世界具身环境中失败的两个耦合模式：</p>
+<ul>
+<li><strong>P1</strong>: 无效动作生成</li>
+<li><strong>P2</strong>: 状态漂移</li>
+</ul>
+<p><strong>解决方案</strong>:</p>
+<ul>
+<li><strong>规则增强记忆协同</strong>架构</li>
+<li>通过结构化规则检索强制动作可行性</li>
+<li>轻量级信念状态控制记忆适用性</li>
+<li>规则优先仲裁解决冲突</li>
+</ul>
+<p><strong>性能</strong>:</p>
+<ul>
+<li>ALFWorld (134 任务): Llama 3.1 8B 达到 <strong>59.7%</strong> (+23.9 pp)</li>
+<li>Claude Sonnet 4.5 达到 <strong>98.5%</strong> (+11.9 pp)</li>
+<li>规则检索贡献 +14.9 pp（统计显著）</li>
+</ul>
+<p><strong>关键洞察</strong>: 情景记忆需要状态过滤和显式动作规则约束才能成为净正面因素</p>
+<hr>
+<h3 id="3-生产级多智能体记忆：Governed-Memory"><a href="#3-生产级多智能体记忆：Governed-Memory" class="headerlink" title="3. 生产级多智能体记忆：Governed Memory"></a>3. 生产级多智能体记忆：Governed Memory</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17787">#3 Governed Memory: A Production Architecture for Multi-Agent Workflows</a></p>
+<p><strong>核心挑战</strong>: 企业 AI 部署数十个自主智能体节点，但缺乏共享记忆和治理</p>
+<p><strong>四大机制</strong>:</p>
+<ol>
+<li><strong>双记忆模型</strong>: 开放集原子事实 + 模式强制类型属性</li>
+<li><strong>分层治理路由</strong>: 渐进式上下文交付</li>
+<li><strong>反思边界检索</strong>: 实体范围隔离</li>
+<li><strong>闭环模式生命周期</strong>: AI 辅助编写 + 自动属性细化</li>
+</ol>
+<p><strong>性能</strong> (N&#x3D;250):</p>
+<ul>
+<li>事实召回率: <strong>99.6%</strong></li>
+<li>治理路由精度: <strong>92%</strong></li>
+<li>Token 减少: **50%**（渐进式交付）</li>
+<li>跨实体零泄漏（500 对抗查询）</li>
+<li>LoCoMo 基准: <strong>74.8%</strong> 准确率</li>
+</ul>
+<p><strong>已投产</strong>: Personize.ai</p>
+<hr>
+<h3 id="4-持久化记忆：Knowledge-Objects"><a href="#4-持久化记忆：Knowledge-Objects" class="headerlink" title="4. 持久化记忆：Knowledge Objects"></a>4. 持久化记忆：Knowledge Objects</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/17781">#4 Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory</a></p>
+<p><strong>核心对比</strong>: 上下文记忆 vs <strong>Knowledge Objects (KOs)</strong></p>
+<p><strong>上下文记忆的三大失败模式</strong>:</p>
+<ol>
+<li>容量限制（8,000 事实时溢出）</li>
+<li>压缩损失（60% 事实被破坏）</li>
+<li>目标漂移（54% 项目约束被侵蚀）</li>
+</ol>
+<p><strong>KOs 优势</strong>:</p>
+<ul>
+<li>O(1) 检索（哈希寻址元组）</li>
+<li>100% 准确率（所有条件）</li>
+<li><strong>252x 更低成本</strong></li>
+<li>多跳推理: 78.9% vs 31.6%（上下文记忆）</li>
+</ul>
+<p><strong>额外发现</strong>:</p>
+<ul>
+<li>嵌入检索在对抗性事实上失败（20% precision@1）</li>
+<li>神经记忆（Titans）存储事实但无法按需检索</li>
+</ul>
+<hr>
+<h3 id="5-多智能体经济沙盒：MALLES"><a href="#5-多智能体经济沙盒：MALLES" class="headerlink" title="5. 多智能体经济沙盒：MALLES"></a>5. 多智能体经济沙盒：MALLES</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17694">#6 MALLES: A Multi-agent LLMs-based Economic Sandbox with Consumer Preference Alignment</a></p>
+<p><strong>核心贡献</strong>:</p>
+<ul>
+<li>利用 LLM 泛化能力建立<strong>统一经济仿真框架</strong></li>
+<li>通过后训练对齐 LLM 到<strong>消费者偏好</strong></li>
+<li><strong>均值场机制</strong>稳定高维决策空间采样</li>
+<li><strong>多智能体讨论框架</strong>分散认知负载</li>
+</ul>
+<p><strong>性能</strong>: 显著提升产品选择准确率、购买数量预测和仿真稳定性</p>
+<p><strong>应用</strong>: 基于基础数据库的真实经济高保真可扩展决策仿真</p>
+<hr>
+<h3 id="6-智能体安全验证：VeriGrey"><a href="#6-智能体安全验证：VeriGrey" class="headerlink" title="6. 智能体安全验证：VeriGrey"></a>6. 智能体安全验证：VeriGrey</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17639">#8 VeriGrey: Greybox Agent Validation</a></p>
+<p><strong>核心方法</strong>: 灰盒测试方法，使用工具调用序列作为反馈函数</p>
+<p><strong>关键发现</strong>:</p>
+<ul>
+<li>AgentDojo 基准: <strong>+33%</strong> 效能（间接提示注入漏洞）</li>
+<li>真实案例: Gemini CLI, OpenClaw 个人助理</li>
+<li>OpenClaw 测试: <strong>10&#x2F;10</strong> (Kimi-K2.5), <strong>9&#x2F;10</strong> (Opus 4.6) 发现恶意技能变体</li>
+</ul>
+<p><strong>攻击场景</strong>: 构建会话智能体，按需使用变异模糊测试</p>
+<hr>
+<h3 id="7-多智能体归因：IET"><a href="#7-多智能体归因：IET" class="headerlink" title="7. 多智能体归因：IET"></a>7. 多智能体归因：IET</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17445">#11 When Only the Final Text Survives: Implicit Execution Tracing for Multi-Agent Attribution</a></p>
+<p><strong>核心问题</strong>: 多智能体系统产生错误&#x2F;有害输出时，<strong>谁负责</strong>？</p>
+<p><strong>解决方案</strong>: <strong>IET (Implicit Execution Tracing)</strong></p>
+<ul>
+<li>元数据独立框架</li>
+<li>在 token 分布中嵌入智能体特定密钥信号</li>
+<li>文本成为自描述执行轨迹（仅密钥可检测）</li>
+<li>过渡感知评分识别智能体切换点</li>
+<li>重建交互图</li>
+</ul>
+<p><strong>应用</strong>: 多智能体语言系统的隐私保护审计</p>
+<hr>
+<h3 id="8-医疗对话智能体：主动知识询问"><a href="#8-医疗对话智能体：主动知识询问" class="headerlink" title="8. 医疗对话智能体：主动知识询问"></a>8. 医疗对话智能体：主动知识询问</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17425">#12 Proactive Knowledge Inquiry in Doctor-Patient Dialogue</a></p>
+<p><strong>核心创新</strong>: 将医患对话建模为<strong>部分可观察性下的主动知识询问问题</strong></p>
+<p><strong>框架组件</strong>:</p>
+<ul>
+<li>有状态提取</li>
+<li>序列信念更新</li>
+<li>差距感知状态建模</li>
+<li>混合检索（对象化医学知识）</li>
+<li><strong>POMDP-lite 动作规划器</strong></li>
+</ul>
+<p><strong>性能</strong>（试点评估）:</p>
+<ul>
+<li>覆盖率: <strong>83.3%</strong></li>
+<li>风险召回: <strong>80.0%</strong></li>
+<li>结构完整性: <strong>81.4%</strong></li>
+<li>冗余度低于基线</li>
+</ul>
+<p><strong>注意</strong>: 控制模拟环境下的试点概念演示，非临床部署证据</p>
+<hr>
+<h3 id="9-图原生认知记忆：Kumiho"><a href="#9-图原生认知记忆：Kumiho" class="headerlink" title="9. 图原生认知记忆：Kumiho"></a>9. 图原生认知记忆：Kumiho</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17244">#20 Graph-Native Cognitive Memory for AI Agents</a></p>
+<p><strong>核心贡献</strong>: 基于<strong>AGM 信念修正语义</strong>的图原生认知记忆架构</p>
+<p><strong>形式化验证</strong>:</p>
+<ul>
+<li>满足 AGM 基本公理 (K<em>2–K</em>6)</li>
+<li>满足 Hansson 信念基公理</li>
+</ul>
+<p><strong>架构</strong>:</p>
+<ul>
+<li>双存储模型（Redis 工作记忆 + Neo4j 长期图）</li>
+<li>混合全文和向量检索</li>
+</ul>
+<p><strong>性能</strong>:</p>
+<ul>
+<li>LoCoMo (token 级 F1): <strong>0.565</strong> (n&#x3D;1,986)</li>
+<li>LoCoMo-Plus (Level-2 认知记忆基准): <strong>93.3%</strong> 判断准确率</li>
+<li>对抗性拒绝: <strong>97.5%</strong></li>
+<li>超越所有已发表基线（最佳: Gemini 2.5 Pro 45.7%）</li>
+</ul>
+<p><strong>三大创新</strong>:</p>
+<ol>
+<li>前瞻索引（LLM 生成未来场景含义）</li>
+<li>事件提取（结构化因果事件）</li>
+<li>客户端 LLM 重排序</li>
+</ol>
+<hr>
+<h3 id="10-多智能体路由：级联感知"><a href="#10-多智能体路由：级联感知" class="headerlink" title="10. 多智能体路由：级联感知"></a>10. 多智能体路由：级联感知</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17112">#24 Cascade-Aware Multi-Agent Routing</a></p>
+<p><strong>核心问题</strong>: 当前调度器<strong>几何盲目</strong>，不建模失败在树状 vs 环状结构中的不同传播</p>
+<p><strong>解决方案</strong>: 在线几何控制 + 时空边车</p>
+<ul>
+<li>欧几里得时空传播基线</li>
+<li>双曲路由风险模型（时间衰减）</li>
+<li>学习几何选择器（9-&gt;12-&gt;1 MLP）</li>
+</ul>
+<p><strong>性能</strong> (Genesis 3 基准):</p>
+<ul>
+<li>最难非树状区域: <strong>92%</strong> 胜率（vs 64-72%）</li>
+<li>整体胜率: <strong>87.2%</strong> (+36.8 pp)</li>
+<li>树状设置: +48 到 +68 pp 提升</li>
+</ul>
+<p><strong>关键</strong>: 133 参数边车大幅缓解几何盲目失败传播</p>
+<hr>
+<h3 id="11-AI-科学家：合成任务扩展"><a href="#11-AI-科学家：合成任务扩展" class="headerlink" title="11. AI 科学家：合成任务扩展"></a>11. AI 科学家：合成任务扩展</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17216">#22 AI Scientist via Synthetic Task Scaling</a></p>
+<p><strong>核心目标</strong>: 训练能”从实践中学习”的智能体</p>
+<p><strong>方法</strong>:</p>
+<ul>
+<li>自动合成 ML 挑战（SWE-agent 兼容）</li>
+<li>主题采样 + 数据集提案 + 代码生成</li>
+<li>数据集通过 Huggingface API 验证</li>
+<li>自调试循环提高质量</li>
+</ul>
+<p><strong>性能</strong> (MLGym 基准):</p>
+<ul>
+<li>Qwen3-4B: <strong>+9%</strong> AUP</li>
+<li>Qwen3-8B: <strong>+12%</strong> AUP</li>
+</ul>
+<p><strong>教师模型</strong>: GPT-5 提供轨迹<br><strong>学生模型</strong>: Qwen3-4B&#x2F;8B</p>
+<hr>
+<h3 id="12-LLM-游戏智能体：Sensi"><a href="#12-LLM-游戏智能体：Sensi" class="headerlink" title="12. LLM 游戏智能体：Sensi"></a>12. LLM 游戏智能体：Sensi</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17683">#7 Sensi: Learn One Thing at a Time</a></p>
+<p><strong>核心挑战</strong>: LLM 智能体在未知环境中需要<strong>测试时学习</strong></p>
+<p><strong>三大机制</strong>:</p>
+<ol>
+<li>双智能体架构（感知 vs 动作分离）</li>
+<li>课程学习系统（外部状态机管理）</li>
+<li>数据库即控制平面（可编程引导上下文窗口）</li>
+</ol>
+<p><strong>性能</strong>:</p>
+<ul>
+<li>Sensi v1: 解决 <strong>2</strong> 游戏关卡</li>
+<li>Sensi v2: <strong>32</strong> 次尝试完成整个学习课程</li>
+<li><strong>50-94x</strong> 样本效率提升（vs 1600-3000 次尝试）</li>
+</ul>
+<p><strong>失败诊断</strong>: 感知层的自一致幻觉级联（架构瓶颈已从学习效率转移到感知基础）</p>
+<hr>
+<h3 id="13-LLM-多步推理评估"><a href="#13-LLM-多步推理评估" class="headerlink" title="13. LLM 多步推理评估"></a>13. LLM 多步推理评估</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17169">#23 How Clued up are LLMs? Evaluating Multi-Step Deductive Reasoning</a></p>
+<p><strong>测试环境</strong>: 文本多智能体版 Clue 游戏</p>
+<p><strong>发现</strong>:</p>
+<ul>
+<li>18 场模拟游戏中，智能体仅 <strong>4 次正确获胜</strong></li>
+<li>难以在整个游戏过程中保持一致的演绎推理</li>
+<li>微调不能可靠提升性能，有时增加推理量但不提升精度</li>
+</ul>
+<p><strong>智能体</strong>: GPT-4o-mini, Gemini-2.5-Flash</p>
+<hr>
+<h3 id="14-边缘通用智能：数字孪生到世界模型"><a href="#14-边缘通用智能：数字孪生到世界模型" class="headerlink" title="14. 边缘通用智能：数字孪生到世界模型"></a>14. 边缘通用智能：数字孪生到世界模型</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17420">#13 From Digital Twins to World Models</a></p>
+<p><strong>核心转变</strong>:</p>
+<ul>
+<li><strong>从</strong>: 基于物理、集中式、系统中心副本</li>
+<li><strong>到</strong>: 数据驱动、分布式、智能体中心内部模型</li>
+</ul>
+<p><strong>世界模型组件</strong>:</p>
+<ul>
+<li>感知</li>
+<li>潜在状态表示</li>
+<li>动态学习</li>
+<li>基于想象的规划</li>
+<li>记忆</li>
+</ul>
+<p><strong>应用</strong>:</p>
+<ul>
+<li>集成感知与通信</li>
+<li>语义通信</li>
+<li>空地网络</li>
+<li>低空无线网络</li>
+</ul>
+<p><strong>目标</strong>: 边缘原生 Agentic AI 的可扩展、可靠、可互操作世界模型</p>
+<hr>
+<h2 id="🎯-趋势总结"><a href="#🎯-趋势总结" class="headerlink" title="🎯 趋势总结"></a>🎯 趋势总结</h2><h3 id="1-从文本反思到代码化能力"><a href="#1-从文本反思到代码化能力" class="headerlink" title="1. 从文本反思到代码化能力"></a>1. <strong>从文本反思到代码化能力</strong></h3><ul>
+<li>AgentFactory 的子代理代码化标志着自演化的新范式</li>
+<li>代码比文本更可靠、可移植、可优化</li>
+</ul>
+<h3 id="2-生产级架构需求迫切"><a href="#2-生产级架构需求迫切" class="headerlink" title="2. 生产级架构需求迫切"></a>2. <strong>生产级架构需求迫切</strong></h3><ul>
+<li>Governed Memory 揭示企业级多智能体系统的治理缺口</li>
+<li>需要共享记忆、分层治理、渐进式交付</li>
+</ul>
+<h3 id="3-记忆系统的形式化与工程化"><a href="#3-记忆系统的形式化与工程化" class="headerlink" title="3. 记忆系统的形式化与工程化"></a>3. <strong>记忆系统的形式化与工程化</strong></h3><ul>
+<li>Knowledge Objects 提供持久化记忆的新思路</li>
+<li>Kumiho 将 AGM 信念修正理论引入记忆架构</li>
+<li>双存储模型（Redis + 图数据库）成为趋势</li>
+</ul>
+<h3 id="4-安全验证从黑盒到灰盒"><a href="#4-安全验证从黑盒到灰盒" class="headerlink" title="4. 安全验证从黑盒到灰盒"></a>4. <strong>安全验证从黑盒到灰盒</strong></h3><ul>
+<li>VeriGrey 展示灰盒测试在智能体验证中的价值</li>
+<li>工具调用序列作为反馈函数的新方法</li>
+</ul>
+<h3 id="5-多智能体系统的归因与路由"><a href="#5-多智能体系统的归因与路由" class="headerlink" title="5. 多智能体系统的归因与路由"></a>5. <strong>多智能体系统的归因与路由</strong></h3><ul>
+<li>IET 解决多智能体归因难题（谁负责？）</li>
+<li>级联感知路由优化失败传播建模</li>
+</ul>
+<h3 id="6-垂直领域应用深化"><a href="#6-垂直领域应用深化" class="headerlink" title="6. 垂直领域应用深化"></a>6. <strong>垂直领域应用深化</strong></h3><ul>
+<li>医疗对话（POMDP-lite 规划）</li>
+<li>经济仿真（均值场机制 + 偏好对齐）</li>
+<li>游戏智能体（课程学习 + 测试时学习）</li>
+<li>AI 科学家（合成任务扩展）</li>
+</ul>
+<h3 id="7-边缘智能体的世界模型"><a href="#7-边缘智能体的世界模型" class="headerlink" title="7. 边缘智能体的世界模型"></a>7. <strong>边缘智能体的世界模型</strong></h3><ul>
+<li>数字孪生 → 世界模型</li>
+<li>数据驱动、分布式、智能体中心</li>
+<li>支持 6G 及更高通信系统</li>
+</ul>
+<hr>
+<h2 id="🔮-未来方向"><a href="#🔮-未来方向" class="headerlink" title="🔮 未来方向"></a>🔮 未来方向</h2><ol>
+<li><strong>混合记忆架构</strong>: 结合 KOs、图数据库、神经记忆的优势</li>
+<li><strong>可验证安全</strong>: 形式化验证 + 灰盒测试 + 对抗性训练</li>
+<li><strong>跨智能体迁移学习</strong>: 子代理库的共享与复用</li>
+<li><strong>边缘-云协同</strong>: 世界模型在边缘设备的部署与优化</li>
+<li><strong>人类对齐</strong>: 从偏好学习到价值观对齐</li>
+</ol>
+<hr>
+<h2 id="📚-完整论文列表"><a href="#📚-完整论文列表" class="headerlink" title="📚 完整论文列表"></a>📚 完整论文列表</h2><table>
+<thead>
+<tr>
+<th>#</th>
+<th>论文</th>
+<th>关键词</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>AgentFactory</td>
+<td>自演化、子代理、代码化</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.18000">arXiv</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>RPMS</td>
+<td>具身规划、规则增强</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17831">arXiv</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Governed Memory</td>
+<td>多智能体、生产架构</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17787">arXiv</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Knowledge Objects</td>
+<td>持久记忆、O(1)检索</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17781">arXiv</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>MALLES</td>
+<td>经济沙盒、偏好对齐</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17694">arXiv</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sensi</td>
+<td>游戏智能体、课程学习</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17683">arXiv</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>VeriGrey</td>
+<td>灰盒验证、安全测试</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17639">arXiv</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>IET</td>
+<td>多智能体归因、执行追踪</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17445">arXiv</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>医疗对话智能体</td>
+<td>主动询问、POMDP</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17425">arXiv</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>边缘通用智能</td>
+<td>世界模型、数字孪生</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17420">arXiv</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Kumiho</td>
+<td>图原生记忆、AGM</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17244">arXiv</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>AI Scientist</td>
+<td>合成任务、自动发现</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17216">arXiv</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>LLM 多步推理</td>
+<td>游戏环境、演绎推理</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17169">arXiv</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>多智能体路由</td>
+<td>级联感知、几何控制</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.17112">arXiv</a></td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>数据来源: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">arXiv cs.AI</a> | 整理时间: 2026-03-19</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arXiv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Multi-Agent</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/研究趋势//" class="article-tag-list-link color5">研究趋势</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-19-arxiv-agent-trends/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-19-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-19-myclaw-dev-report/">MyClaw 开发日报 - Day 2 (Electron 桌面应用)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-19-myclaw-dev-report/" class="archive-article-date">
+  	<time datetime="2026-03-18T20:32:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyClaw-开发日报-Day-2-Electron-桌面应用"><a href="#MyClaw-开发日报-Day-2-Electron-桌面应用" class="headerlink" title="MyClaw 开发日报 - Day 2 (Electron 桌面应用)"></a>MyClaw 开发日报 - Day 2 (Electron 桌面应用)</h1><p><strong>日期：</strong> 2026-03-19<br><strong>阶段：</strong> Phase 5 - Electron 桌面应用<br><strong>工作时段：</strong> 19:00 - 05:00</p>
+<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="暂无-Git-提交"><a href="#暂无-Git-提交" class="headerlink" title="暂无 Git 提交"></a>暂无 Git 提交</h3><h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
+<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
+
+<p><em>待补充</em></p>
+<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
+
+<p><em>暂无</em></p>
+<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
+<li><em>暂无代码变更</em></li>
+</ul>
+<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
+
+<p><em>待补充</em></p>
+<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
+
+<p><em>待补充</em></p>
+<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
+
+<p><em>暂无</em></p>
+<hr>
+<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
+<hr>
+<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-19-myclaw-dev-report/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-18-ai-agent-arxiv-daily" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-18-ai-agent-arxiv-daily/">AI Agent 领域最新进展 - arXiv 2026.03.18</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-18-ai-agent-arxiv-daily/" class="archive-article-date">
+  	<time datetime="2026-03-18T04:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AI-Agent-领域最新进展-arXiv-Daily-2026-03-18"><a href="#AI-Agent-领域最新进展-arXiv-Daily-2026-03-18" class="headerlink" title="AI Agent 领域最新进展 - arXiv Daily 2026.03.18"></a>AI Agent 领域最新进展 - arXiv Daily 2026.03.18</h1><p>今天整理了 arXiv cs.AI 分类下的 Agent 相关论文，以下是核心趋势和亮点工作。</p>
+<h2 id="🎯-核心趋势总结"><a href="#🎯-核心趋势总结" class="headerlink" title="🎯 核心趋势总结"></a>🎯 核心趋势总结</h2><h3 id="1-从反应式到前瞻式规划"><a href="#1-从反应式到前瞻式规划" class="headerlink" title="1. 从反应式到前瞻式规划"></a>1. <strong>从反应式到前瞻式规划</strong></h3><p>传统 Agent 多为反应式（reactive），仅针对当前状态做出决策。今天的多篇论文强调<strong>前瞻式推理（anticipatory reasoning）</strong>的重要性——Agent 需要预测未来轨迹，而非孤立地优化单步动作。</p>
+<h3 id="2-从结果驱动到反馈驱动"><a href="#2-从结果驱动到反馈驱动" class="headerlink" title="2. 从结果驱动到反馈驱动"></a>2. <strong>从结果驱动到反馈驱动</strong></h3><p>现有 RL 训练方法（如 verifiable rewards）过于关注最终成功信号，忽视了丰富的环境反馈。新框架 LEAFE 提出<strong>从反思经验中学习</strong>，让 Agent 在探索中回溯、修正，提升长期问题解决能力。</p>
+<h3 id="3-Agent-治理与安全"><a href="#3-Agent-治理与安全" class="headerlink" title="3. Agent 治理与安全"></a>3. <strong>Agent 治理与安全</strong></h3><p>随着 Agent 能力增强，<strong>运行时治理（runtime governance）</strong> 成为关键议题。论文提出了基于执行路径的策略框架，平衡任务完成率与合规成本。</p>
+<h3 id="4-个性化与上下文感知"><a href="#4-个性化与上下文感知" class="headerlink" title="4. 个性化与上下文感知"></a>4. <strong>个性化与上下文感知</strong></h3><p>个性化 LLM Agent 需要区分何时应用&#x2F;抑制用户偏好。研究发现当前模型倾向于将偏好视为全局规则，而非上下文相关的规范信号。</p>
+<hr>
+<h2 id="📚-重点论文详解"><a href="#📚-重点论文详解" class="headerlink" title="📚 重点论文详解"></a>📚 重点论文详解</h2><h3 id="1-LEAFE：从反思经验中内化-Agent-能力"><a href="#1-LEAFE：从反思经验中内化-Agent-能力" class="headerlink" title="1. LEAFE：从反思经验中内化 Agent 能力"></a>1. LEAFE：从反思经验中内化 Agent 能力</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16843">Internalizing Agency from Reflective Experience</a></p>
+<p><strong>核心贡献</strong>:</p>
+<ul>
+<li>提出 LEAFE 框架，解决长时域交互中 Agent 恢复能力不足的问题</li>
+<li>关键创新：Agent 在探索时总结环境反馈 → 回溯到早期决策点 → 探索修正分支</li>
+<li>通过 SFT 将经验指导的修正蒸馏到模型中</li>
+</ul>
+<p><strong>结果</strong>:</p>
+<ul>
+<li>Pass@1 持续提升</li>
+<li>Pass@128 相比 outcome-driven baseline (GRPO) 提升高达 <strong>14%</strong></li>
+</ul>
+<p><strong>意义</strong>: 从”只看结果”转向”重视过程反馈”，是 Agent 训练范式的重要转变。</p>
+<hr>
+<h3 id="2-TraceR1：多模态-Agent-的前瞻式规划"><a href="#2-TraceR1：多模态-Agent-的前瞻式规划" class="headerlink" title="2. TraceR1：多模态 Agent 的前瞻式规划"></a>2. TraceR1：多模态 Agent 的前瞻式规划</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16777">Anticipatory Planning for Multimodal AI Agents</a></p>
+<p><strong>核心贡献</strong>:</p>
+<ul>
+<li>提出两阶段 RL 框架，显式训练前瞻式推理</li>
+<li>第一阶段：轨迹级 RL，奖励强制全局一致性</li>
+<li>第二阶段：接地 RL 微调，使用冻结工具 Agent 的执行反馈</li>
+</ul>
+<p><strong>结果</strong>:</p>
+<ul>
+<li>在 7 个 benchmark 上评估（在线&#x2F;离线 computer-use + 多模态工具推理）</li>
+<li>在规划稳定性、执行鲁棒性、泛化能力上显著超越反应式 baseline</li>
+</ul>
+<p><strong>意义</strong>: 前瞻式轨迹推理是构建复杂环境 Agent 的关键原则。</p>
+<hr>
+<h3 id="3-IQuest-Coder-V1：代码-Agent-的新标杆"><a href="#3-IQuest-Coder-V1：代码-Agent-的新标杆" class="headerlink" title="3. IQuest-Coder-V1：代码 Agent 的新标杆"></a>3. IQuest-Coder-V1：代码 Agent 的新标杆</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16733">IQuest-Coder-V1 Technical Report</a></p>
+<p><strong>核心贡献</strong>:</p>
+<ul>
+<li>发布 7B&#x2F;14B&#x2F;40B&#x2F;40B-Loop 系列代码模型</li>
+<li>提出 <strong>code-flow 多阶段训练范式</strong>，捕获软件逻辑的动态演化</li>
+<li>训练管线：预训练 → 中期训练（32k reasoning + 128k repo-scale agentic trajectories）→ 后训练（thinking path + instruct path）</li>
+</ul>
+<p><strong>亮点</strong>:</p>
+<ul>
+<li>在 agentic software engineering、竞技编程、复杂工具使用上达到 SOTA</li>
+<li>40B-Loop 变体引入循环机制，优化能力-效率权衡</li>
+</ul>
+<p><strong>意义</strong>: 展示了如何通过精心设计的训练管线，让小模型在 agentic 任务上媲美大模型。</p>
+<hr>
+<h3 id="4-AI-Agent-的非标准误差"><a href="#4-AI-Agent-的非标准误差" class="headerlink" title="4. AI Agent 的非标准误差"></a>4. AI Agent 的非标准误差</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16744">Nonstandard Errors in AI Agents</a></p>
+<p><strong>核心发现</strong>:</p>
+<ul>
+<li>部署 150 个 Claude Code Agent 独立测试同一假设</li>
+<li><strong>发现</strong>: Agent 之间存在显著的非标准误差（NSE）——即分析方法选择上的差异</li>
+<li>不同模型家族（Sonnet 4.6 vs Opus 4.6）展现稳定的”经验风格”</li>
+<li>展示高质量范例可将估计的四分位距缩小 80-99%，但反映的是<strong>模仿而非理解</strong></li>
+</ul>
+<p><strong>意义</strong>: 对 AI 用于自动化政策评估和实证研究提出了警示。</p>
+<hr>
+<h3 id="5-个性化-LLM-Agent-的危害倾向差异"><a href="#5-个性化-LLM-Agent-的危害倾向差异" class="headerlink" title="5. 个性化 LLM Agent 的危害倾向差异"></a>5. 个性化 LLM Agent 的危害倾向差异</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16734">Differential Harm Propensity in Personalized LLM Agents</a></p>
+<p><strong>核心发现</strong>:</p>
+<ul>
+<li>研究心理健康披露（敏感用户上下文线索）如何影响 Agent 有害行为</li>
+<li>Frontier 模型（GPT 5.2, Claude Sonnet 4.5, Gemini 3-Pro）仍会完成部分有害任务</li>
+<li>添加 bio-only 上下文通常降低危害分数，但效果不稳定</li>
+<li><strong>关键</strong>: 越狱提示可削弱或覆盖个性化带来的保护效应</li>
+</ul>
+<p><strong>意义</strong>: 个性化可作为弱保护因子，但在最小对抗压力下仍然脆弱。</p>
+<hr>
+<h3 id="6-Agent-幻灯片生成"><a href="#6-Agent-幻灯片生成" class="headerlink" title="6. Agent 幻灯片生成"></a>6. Agent 幻灯片生成</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16839">Learning to Present: Inverse Specification Rewards for Agentic Slide Generation</a></p>
+<p><strong>核心贡献</strong>:</p>
+<ul>
+<li>提出 OpenEnv 兼容的 RL 环境，LLM Agent 学习研究主题、规划内容、生成专业 HTML 幻灯片</li>
+<li>引入 <strong>inverse specification reward</strong>：让 LLM 从生成的幻灯片中恢复原始规范，作为质量信号</li>
+<li>微调 Qwen2.5-Coder-7B（仅训练 0.5% 参数）</li>
+</ul>
+<p><strong>结果</strong>:</p>
+<ul>
+<li>达到 Claude Opus 4.6 质量的 <strong>91.2%</strong></li>
+<li>相比基座模型提升 <strong>33.1%</strong></li>
+</ul>
+<p><strong>开源</strong>: SlideRL 数据集（288 条多轮轨迹）</p>
+<hr>
+<h3 id="7-Agent-运行时治理"><a href="#7-Agent-运行时治理" class="headerlink" title="7. Agent 运行时治理"></a>7. Agent 运行时治理</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16586">Runtime Governance for AI Agents: Policies on Paths</a></p>
+<p><strong>核心框架</strong>:</p>
+<ul>
+<li>执行路径是运行时治理的核心对象</li>
+<li>形式化合规策略：将 Agent 身份、部分路径、提议动作、组织状态映射到违规概率</li>
+<li>证明：prompt 指令和静态访问控制是该框架的特例</li>
+</ul>
+<p><strong>意义</strong>: 为 Agent 部署提供了形式化的治理框架，平衡任务完成与合规成本。</p>
+<hr>
+<h3 id="8-规范遵守的-RL-Agent"><a href="#8-规范遵守的-RL-Agent" class="headerlink" title="8. 规范遵守的 RL Agent"></a>8. 规范遵守的 RL Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16651">What if Pinocchio Were a Reinforcement Learning Agent</a></p>
+<p><strong>核心贡献</strong>:</p>
+<ul>
+<li>提出 Pino 混合模型：RL Agent + 基于论证的规范顾问</li>
+<li>引入自动提取论证的算法</li>
+<li>研究<strong>规范规避（norm avoidance）</strong>现象及缓解策略</li>
+</ul>
+<p><strong>意义</strong>: 为构建符合社会规范的 Agent 提供端到端管线。</p>
+<hr>
+<h3 id="9-LLM-机器人的前端护栏"><a href="#9-LLM-机器人的前端护栏" class="headerlink" title="9. LLM 机器人的前端护栏"></a>9. LLM 机器人的前端护栏</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16537">Designing for Disagreement: Front-End Guardrails for Assistance Allocation in LLM-Enabled Robots</a></p>
+<p><strong>核心模式</strong>:</p>
+<ul>
+<li>提出”有边界的校准与可争议性”模式</li>
+<li>将优先级限制在治理批准的模式菜单中</li>
+<li>在交互相关术语中保持活动模式的可读性</li>
+<li>提供结果特定的争议通道</li>
+</ul>
+<p><strong>意义</strong>: 在多元价值和 LLM 不确定性下，提供用户友好的实时护栏。</p>
+<hr>
+<h2 id="🔮-未来方向"><a href="#🔮-未来方向" class="headerlink" title="🔮 未来方向"></a>🔮 未来方向</h2><ol>
+<li><strong>统一的前瞻+反馈框架</strong>: 结合 TraceR1 的前瞻式规划和 LEAFE 的反馈驱动学习</li>
+<li><strong>个性化感知的安全评估</strong>: 在 Agent 安全测试中纳入用户上下文</li>
+<li><strong>路径依赖的治理</strong>: 从静态规则转向动态路径评估</li>
+<li><strong>小模型的 agentic 能力</strong>: 通过精心设计的训练管线，让 7B 模型接近 frontier 水平</li>
+</ol>
+<hr>
+<h2 id="📊-相关资源"><a href="#📊-相关资源" class="headerlink" title="📊 相关资源"></a>📊 相关资源</h2><table>
+<thead>
+<tr>
+<th>论文</th>
+<th>代码&#x2F;数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SlideRL</td>
+<td><a target="_blank" rel="noopener" href="https://huggingface.co/datasets/KarthikRagunathAnandaKumar/sliderl-multi-turn-rollouts">HuggingFace</a></td>
+</tr>
+<tr>
+<td>Slide Forge</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/pushing-the-frontier/slide-forge-llm">GitHub</a></td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>整理时间</strong>: 2026-03-18<br><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">arXiv cs.AI</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arXiv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AI Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Research</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI-研究趋势//" class="article-tag-list-link color3">AI 研究趋势</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-18-ai-agent-arxiv-daily/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-18-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-18-myclaw-dev-report/">MyClaw 开发日报 - Day 1 (Electron 桌面应用)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-18-myclaw-dev-report/" class="archive-article-date">
+  	<time datetime="2026-03-17T20:40:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyClaw-开发日报-Day-1-Electron-桌面应用"><a href="#MyClaw-开发日报-Day-1-Electron-桌面应用" class="headerlink" title="MyClaw 开发日报 - Day 1 (Electron 桌面应用)"></a>MyClaw 开发日报 - Day 1 (Electron 桌面应用)</h1><p><strong>日期：</strong> 2026-03-18<br><strong>阶段：</strong> Phase 5 - Electron 桌面应用<br><strong>工作时段：</strong> 19:00 - 05:00</p>
+<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="Git-提交统计"><a href="#Git-提交统计" class="headerlink" title="Git 提交统计"></a>Git 提交统计</h3><ul>
+<li><p><strong>提交数量：</strong> 1</p>
+</li>
+<li><p><strong>代码变更：</strong> 16 files changed, 2661 insertions(+)</p>
+</li>
+<li><p><code>7c5ce22</code> feat: add @myclaw&#x2F;channels package with multi-channel support</p>
+</li>
+</ul>
+<h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
+<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
+
+<p><em>待补充</em></p>
+<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
+
+<p><em>暂无</em></p>
+<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
+<li><strong>总变更行数：</strong> 2661 行</li>
+</ul>
+<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
+
+<p><em>待补充</em></p>
+<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
+
+<p><em>待补充</em></p>
+<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
+
+<p><em>暂无</em></p>
+<hr>
+<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
+<hr>
+<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-18-myclaw-dev-report/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-17-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-17-arxiv-agent-trends/">arXiv Agent 研究趋势日报 (2026-03-17)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-17-arxiv-agent-trends/" class="archive-article-date">
+  	<time datetime="2026-03-17T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="arXiv-cs-AI-Agent-研究趋势日报"><a href="#arXiv-cs-AI-Agent-研究趋势日报" class="headerlink" title="arXiv cs.AI Agent 研究趋势日报"></a>arXiv cs.AI Agent 研究趋势日报</h1><blockquote>
+<p>数据来源: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a><br>整理时间: 2026-03-17</p>
+</blockquote>
+<h2 id="今日概览"><a href="#今日概览" class="headerlink" title="今日概览"></a>今日概览</h2><p>今天 arXiv cs.AI 领域共发布 <strong>25 篇论文</strong>，其中与 <strong>Agent</strong> 直接相关的论文有 <strong>10 篇</strong>，占比 **40%**。Agent 研究持续火热，呈现以下几大趋势：</p>
+<hr>
+<h2 id="🔥-核心趋势分析"><a href="#🔥-核心趋势分析" class="headerlink" title="🔥 核心趋势分析"></a>🔥 核心趋势分析</h2><h3 id="1-多-Agent-协作与自演化系统"><a href="#1-多-Agent-协作与自演化系统" class="headerlink" title="1. 多 Agent 协作与自演化系统"></a>1. 多 Agent 协作与自演化系统</h3><p>多 Agent 协作架构成为复杂推理任务的主流解决方案。</p>
+<h4 id="📄-SAGE-Multi-Agent-Self-Evolution-for-LLM-Reasoning"><a href="#📄-SAGE-Multi-Agent-Self-Evolution-for-LLM-Reasoning" class="headerlink" title="📄 SAGE: Multi-Agent Self-Evolution for LLM Reasoning"></a>📄 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15255">SAGE: Multi-Agent Self-Evolution for LLM Reasoning</a></h4><p><strong>核心创新</strong>: 四角色闭环自演化框架</p>
+<ul>
+<li><strong>Challenger</strong>: 持续生成递进难度的任务</li>
+<li><strong>Planner</strong>: 将任务转化为结构化多步计划</li>
+<li><strong>Solver</strong>: 执行计划产出答案</li>
+<li><strong>Critic</strong>: 评分过滤，防止课程漂移</li>
+</ul>
+<p><strong>亮点成果</strong>:</p>
+<ul>
+<li>仅需小规模种子集即可训练</li>
+<li>Qwen-2.5-7B 在 LiveCodeBench 提升 <strong>8.9%</strong></li>
+<li>OlympiadBench 提升 <strong>10.7%</strong></li>
+</ul>
+<hr>
+<h4 id="📄-Brain-Inspired-Graph-Multi-Agent-Systems-BIGMAS"><a href="#📄-Brain-Inspired-Graph-Multi-Agent-Systems-BIGMAS" class="headerlink" title="📄 Brain-Inspired Graph Multi-Agent Systems (BIGMAS)"></a>📄 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15371">Brain-Inspired Graph Multi-Agent Systems (BIGMAS)</a></h4><p><strong>核心创新</strong>: 基于全局工作空间理论的图结构多 Agent 系统</p>
+<ul>
+<li>专业化 LLM Agent 作为图节点</li>
+<li>通过<strong>中央共享工作区</strong>协调</li>
+<li>GraphDesigner 动态构建任务特定拓扑</li>
+<li>全局 Orchestrator 克服局部视野瓶颈</li>
+</ul>
+<p><strong>关键发现</strong>: 多 Agent 架构设计带来的增益与模型级推理增强<strong>正交互补</strong></p>
+<hr>
+<h3 id="2-Agent-评估与诊断体系化"><a href="#2-Agent-评估与诊断体系化" class="headerlink" title="2. Agent 评估与诊断体系化"></a>2. Agent 评估与诊断体系化</h3><p>从简单正确率转向系统性评估框架。</p>
+<h4 id="📄-TED-Talk-Evaluate-Diagnose-Framework"><a href="#📄-TED-Talk-Evaluate-Diagnose-Framework" class="headerlink" title="📄 TED: Talk, Evaluate, Diagnose Framework"></a>📄 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15483">TED: Talk, Evaluate, Diagnose Framework</a></h4><p><strong>三大组件</strong>:</p>
+<ol>
+<li><strong>Talk</strong>: 可复用的专家&#x2F;非专家用户模板</li>
+<li><strong>Evaluate</strong>: <ul>
+<li>子目标转化为自然语言评分标准</li>
+<li>LLM-as-a-Judge 自动评估</li>
+<li>新指标：轮次效率 + 中间进度</li>
+</ul>
+</li>
+<li><strong>Diagnose</strong>: 自动错误分析工具</li>
+</ol>
+<p><strong>成效</strong>: 应用诊断结果后，指标峰值提升 <strong>8-10%</strong></p>
+<hr>
+<h3 id="3-生产级-Agent-工具链"><a href="#3-生产级-Agent-工具链" class="headerlink" title="3. 生产级 Agent 工具链"></a>3. 生产级 Agent 工具链</h3><p>Agent 从 Demo 走向企业部署，需要系统化中间件。</p>
+<h4 id="📄-Agent-Lifecycle-Toolkit-ALTK"><a href="#📄-Agent-Lifecycle-Toolkit-ALTK" class="headerlink" title="📄 Agent Lifecycle Toolkit (ALTK)"></a>📄 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15473">Agent Lifecycle Toolkit (ALTK)</a></h4><p><strong>生命周期干预点</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户请求 → Prompt 调理 → LLM 输出处理 → 工具验证 → 结果检查 → 响应组装</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点</strong>:</p>
+<ul>
+<li>开源模块化中间件</li>
+<li>检测、修复、缓解常见失败模式</li>
+<li>兼容低代码&#x2F;无代码工具（ContextForge MCP Gateway、Langflow）</li>
+<li>显著降低生产级 Agent 构建成本</li>
+</ul>
+<hr>
+<h3 id="4-领域专用-Agent-垂直深耕"><a href="#4-领域专用-Agent-垂直深耕" class="headerlink" title="4. 领域专用 Agent 垂直深耕"></a>4. 领域专用 Agent 垂直深耕</h3><p>Agent 技术向各垂直领域深度渗透。</p>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>论文</th>
+<th>核心贡献</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>自动驾驶</strong></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15364">CRASH</a></td>
+<td>分析 2,168 起真实事故，64% 归因于感知&#x2F;规划失败，86% 专家验证准确率</td>
+</tr>
+<tr>
+<td><strong>流程挖掘</strong></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15351">PMAx</a></td>
+<td>隐私保护多 Agent 架构，本地执行确保数学准确性</td>
+</tr>
+<tr>
+<td><strong>天气预报</strong></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15260">AGCD</a></td>
+<td>多 Agent 气象叙述管道，跨模态解码注入物理先验</td>
+</tr>
+<tr>
+<td><strong>室内设计</strong></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15341">Intelligent Co-Design</a></td>
+<td>四 Agent 协作（Reference&#x2F;Spatial&#x2F;Interactive&#x2F;Grader），77% 用户满意度</td>
+</tr>
+<tr>
+<td><strong>电商搜索</strong></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15262">EASP</a></td>
+<td>Probe-then-Plan 机制，京东 AI-Search 已部署</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="5-Agent-记忆与推理增强"><a href="#5-Agent-记忆与推理增强" class="headerlink" title="5. Agent 记忆与推理增强"></a>5. Agent 记忆与推理增强</h3><p>长期记忆是 Agent 持续进化的关键。</p>
+<h4 id="📄-NS-Mem-Neuro-Symbolic-Memory-for-Multimodal-Agents"><a href="#📄-NS-Mem-Neuro-Symbolic-Memory-for-Multimodal-Agents" class="headerlink" title="📄 NS-Mem: Neuro-Symbolic Memory for Multimodal Agents"></a>📄 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15280">NS-Mem: Neuro-Symbolic Memory for Multimodal Agents</a></h4><p><strong>三层记忆架构</strong>:</p>
+<ol>
+<li><strong>情景层</strong> (Episodic): 经验片段</li>
+<li><strong>语义层</strong> (Semantic): 抽象知识</li>
+<li><strong>逻辑规则层</strong> (Logic Rule): 符号约束</li>
+</ol>
+<p><strong>SK-Gen 机制</strong>: 自动从多模态经验中巩固结构化知识</p>
+<p><strong>成果</strong>:</p>
+<ul>
+<li>整体推理准确率提升 <strong>4.35%</strong></li>
+<li>约束推理查询提升高达 <strong>12.5%</strong></li>
+</ul>
+<hr>
+<h3 id="6-开源民主化浪潮"><a href="#6-开源民主化浪潮" class="headerlink" title="6. 开源民主化浪潮"></a>6. 开源民主化浪潮</h3><p>打破工业巨头对高性能 Agent 的垄断。</p>
+<h4 id="📄-OpenSeeker"><a href="#📄-OpenSeeker" class="headerlink" title="📄 OpenSeeker"></a>📄 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15594">OpenSeeker</a></h4><p><strong>首个完全开源的前沿搜索 Agent</strong></p>
+<p><strong>两大技术创新</strong>:</p>
+<ol>
+<li><strong>Fact-grounded 可控 QA 合成</strong>: 反向工程网页图，生成可控复杂度的多跳推理任务</li>
+<li><strong>去噪轨迹合成</strong>: 回溯总结机制，促进高质量动作生成</li>
+</ol>
+<p><strong>惊人成果</strong>:</p>
+<ul>
+<li>仅用 <strong>11.7k</strong> 合成样本</li>
+<li>BrowseComp: <strong>29.5%</strong> vs DeepDive 15.3%</li>
+<li>BrowseComp-ZH: <strong>48.4%</strong> vs 通义 46.7%（超越工业级 RL 训练）</li>
+<li>完全开源训练数据 + 模型权重</li>
+</ul>
+<hr>
+<h2 id="📊-趋势总结"><a href="#📊-趋势总结" class="headerlink" title="📊 趋势总结"></a>📊 趋势总结</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────────┐</span><br><span class="line">│                    Agent 研究六大趋势                         │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│  1. 多 Agent 协作    → 复杂推理任务的主流解法                  │</span><br><span class="line">│  2. 评估体系化       → TED 框架引领系统性诊断                  │</span><br><span class="line">│  3. 工具链成熟       → ALTK 降低生产部署成本                   │</span><br><span class="line">│  4. 垂直领域深耕     → 自动驾驶/气象/设计/电商全面渗透          │</span><br><span class="line">│  5. 记忆架构升级     → 神经符号记忆支持长期推理                 │</span><br><span class="line">│  6. 开源民主化       → OpenSeeker 打破数据垄断                 │</span><br><span class="line">└─────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🎯-值得关注的论文"><a href="#🎯-值得关注的论文" class="headerlink" title="🎯 值得关注的论文"></a>🎯 值得关注的论文</h2><ol>
+<li><strong>必读</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15255">SAGE</a> - 多 Agent 自演化的新范式</li>
+<li><strong>必读</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15594">OpenSeeker</a> - 开源搜索 Agent 的里程碑</li>
+<li><strong>工程向</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15473">ALTK</a> - 生产级 Agent 必备工具</li>
+<li><strong>研究向</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15280">NS-Mem</a> - 神经符号记忆的新方向</li>
+<li><strong>应用向</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.15364">CRASH</a> - 自动驾驶安全分析 Agent</li>
+</ol>
+<hr>
+<h2 id="🔗-相关链接"><a href="#🔗-相关链接" class="headerlink" title="🔗 相关链接"></a>🔗 相关链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">完整论文列表</a></li>
+<li><a target="_blank" rel="noopener" href="https://papers.cool/search?q=agent&cat=cs.AI">Agent 相关论文合集</a></li>
+</ul>
+<hr>
+<p><em>本文由 AI 自动整理生成，仅供参考</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AI Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Multi-Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Research</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI研究//" class="article-tag-list-link color5">AI研究</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI研究/每日趋势//" class="article-tag-list-link color5">每日趋势</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-17-arxiv-agent-trends/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-17-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-17-myclaw-dev-report/">MyClaw 开发日报 - Day 3 (LLM 提供商集成)</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-17-myclaw-dev-report/" class="archive-article-date">
+  	<time datetime="2026-03-16T20:35:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyClaw-开发日报-Day-3-LLM-提供商集成"><a href="#MyClaw-开发日报-Day-3-LLM-提供商集成" class="headerlink" title="MyClaw 开发日报 - Day 3 (LLM 提供商集成)"></a>MyClaw 开发日报 - Day 3 (LLM 提供商集成)</h1><p><strong>日期：</strong> 2026-03-17<br><strong>阶段：</strong> Phase 4 - LLM 提供商集成<br><strong>工作时段：</strong> 19:00 - 05:00</p>
+<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="暂无-Git-提交"><a href="#暂无-Git-提交" class="headerlink" title="暂无 Git 提交"></a>暂无 Git 提交</h3><h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
+<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
+
+<p><em>待补充</em></p>
+<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
+
+<p><em>暂无</em></p>
+<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
+<li><em>暂无代码变更</em></li>
+</ul>
+<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
+
+<p><em>待补充</em></p>
+<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
+
+<p><em>待补充</em></p>
+<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
+
+<p><em>暂无</em></p>
+<hr>
+<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
+<hr>
+<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-17-myclaw-dev-report/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-17-copaw-analysis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-17-copaw-analysis/">CoPaw 项目分析报告 - 多智能体协作框架</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-17-copaw-analysis/" class="archive-article-date">
+  	<time datetime="2026-03-16T18:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CoPaw-项目分析报告"><a href="#CoPaw-项目分析报告" class="headerlink" title="CoPaw 项目分析报告"></a>CoPaw 项目分析报告</h1><p><strong>研究日期:</strong> 2026-03-17<br><strong>项目路径:</strong> &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;CoPaw</p>
+<hr>
+<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p><a target="_blank" rel="noopener" href="https://github.com/agentscope-ai/CoPaw"><img src="https://img.shields.io/badge/GitHub-Repo-black.svg?logo=github" alt="GitHub Repo"></a><br><a target="_blank" rel="noopener" href="https://pypi.org/project/copaw/"><img src="https://img.shields.io/pypi/v/copaw?color=3775A9&label=PyPI&logo=pypi" alt="PyPI"></a><br><a target="_blank" rel="noopener" href="https://copaw.agentscope.io/"><img src="https://img.shields.io/badge/Docs-Website-green.svg?logo=readthedocs&label=Docs" alt="Documentation"></a><br><a target="_blank" rel="noopener" href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%20~%20%3C3.14-blue.svg?logo=python&label=Python" alt="Python Version"></a><br><a target="_blank" rel="noopener" href="https://github.com/agentscope-ai/CoPaw"><img src="https://img.shields.io/github/last-commit/agentscope-ai/CoPaw" alt="Last Commit"></a><br><a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-red.svg?logo=apache&label=License" alt="License"></a><br><a target="_blank" rel="noopener" href="https://github.com/psf/black">![Code Style](https://img.shields.io/badge/code%20 style-black-black.svg?logo=python&label=CodeStyle)</a><br><a target="_blank" rel="noopener" href="https://github.com/agentscope-ai/CoPaw/stargazers"><img src="https://img.shields.io/github/stars/agentscope-ai/CoPaw?style=flat&logo=github&color=yellow&label=Stars" alt="GitHub Stars"></a><br><a target="_blank" rel="noopener" href="https://github.com/agentscope-ai/CoPaw/network"><img src="https://img.shields.io/github/forks/agentscope-ai/CoPaw?style=flat&logo=github&color=purple&label=Forks" alt="GitHub Forks"></a><br><a target="_blank" rel="noopener" href="https://deepwiki.com/agentscope-ai/CoPaw"><img src="https://img.shields.io/badge/DeepWiki-Ask_Devin-navy.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==" alt="DeepWiki"></a><br><a target="_blank" rel="noopener" href="https://discord.gg/eYMpfnkG8h"><img src="https://img.shields.io/badge/Discord-Join_Us-blueviolet.svg?logo=discord" alt="Discord"></a></p>
+<h2 id="2-技术栈"><a href="#2-技术栈" class="headerlink" title="2. 技术栈"></a>2. 技术栈</h2><p><strong>语言:</strong> Python</p>
+<p><strong>主要依赖:</strong></p>
+<ul>
+<li>agentscope&#x3D;&#x3D;1.0.16.dev0</li>
+<li>agentscope-runtime&#x3D;&#x3D;1.1.0</li>
+<li>discord-py&gt;&#x3D;2.3</li>
+<li>dingtalk-stream&gt;&#x3D;0.24.3</li>
+<li>uvicorn&gt;&#x3D;0.40.0</li>
+<li>apscheduler&gt;&#x3D;3.11.2,&lt;4</li>
+<li>playwright&gt;&#x3D;1.49.0</li>
+<li>questionary&gt;&#x3D;1.1.1</li>
+<li>mss&gt;&#x3D;9.0.0</li>
+<li>reme-ai&#x3D;&#x3D;0.3.0.0</li>
+</ul>
+<h2 id="3-项目结构"><a href="#3-项目结构" class="headerlink" title="3. 项目结构"></a>3. 项目结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./website/vite.config.ts</span><br><span class="line">./setup.py</span><br><span class="line">./console/eslint.config.js</span><br><span class="line">./console/vite.config.ts</span><br><span class="line">./console/main.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-技术实现分析"><a href="#4-技术实现分析" class="headerlink" title="4. 技术实现分析"></a>4. 技术实现分析</h2><h3 id="核心架构"><a href="#核心架构" class="headerlink" title="核心架构"></a>核心架构</h3><p>CoPaw 是一个基于 AgentScope 框架的多智能体协作系统。AgentScope 是阿里巴巴开源的多智能体平台，CoPaw 在此基础上构建了面向对话和任务协作的应用。</p>
+<h3 id="关键模块"><a href="#关键模块" class="headerlink" title="关键模块"></a>关键模块</h3><ol>
+<li><strong>多智能体协调</strong>: 支持多个 AI Agent 协同工作</li>
+<li><strong>对话管理</strong>: 支持 Discord、DingTalk 等多平台接入</li>
+<li><strong>任务调度</strong>: 使用 APScheduler 进行定时任务管理</li>
+<li><strong>Web 控制台</strong>: 提供 Vite + Vue 构建的管理界面</li>
+</ol>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul>
+<li><strong>Pipeline 模式</strong>: 消息处理管道</li>
+<li><strong>Adapter 模式</strong>: 多平台适配器</li>
+<li><strong>Observer 模式</strong>: 事件订阅</li>
+</ul>
+<h2 id="5-产品意义"><a href="#5-产品意义" class="headerlink" title="5. 产品意义"></a>5. 产品意义</h2><h3 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h3><ul>
+<li>多个 AI Agent 如何协作完成复杂任务</li>
+<li>如何管理不同平台的对话接入</li>
+<li>如何监控和调试多智能体系统</li>
+</ul>
+<h3 id="目标用户"><a href="#目标用户" class="headerlink" title="目标用户"></a>目标用户</h3><ul>
+<li>AI 应用开发者</li>
+<li>多智能体系统研究者</li>
+<li>需要构建复杂 AI 工作流的团队</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>客服机器人</li>
+<li>智能助手</li>
+<li>自动化工作流</li>
+<li>AI Agent 研究和实验</li>
+</ul>
+<h2 id="6-借鉴点"><a href="#6-借鉴点" class="headerlink" title="6. 借鉴点"></a>6. 借鉴点</h2><h3 id="技术层面"><a href="#技术层面" class="headerlink" title="技术层面"></a>技术层面</h3><ol>
+<li><strong>AgentScope 框架的使用</strong>: 学习如何使用 AgentScope 构建多智能体系统</li>
+<li><strong>多平台适配</strong>: 参考 Discord、DingTalk 的接入方式</li>
+<li><strong>Web 控制台</strong>: 学习如何为 AI 应用构建管理界面</li>
+</ol>
+<h3 id="产品层面"><a href="#产品层面" class="headerlink" title="产品层面"></a>产品层面</h3><ol>
+<li><strong>模块化设计</strong>: 各平台接入独立，易于扩展</li>
+<li><strong>开发者友好</strong>: 提供完善的文档和示例</li>
+</ol>
+<h3 id="工程实践"><a href="#工程实践" class="headerlink" title="工程实践"></a>工程实践</h3><ol>
+<li><strong>Python 生态</strong>: 充分利用 Python 的 AI 生态</li>
+<li><strong>类型提示</strong>: 代码质量较高</li>
+<li><strong>配置管理</strong>: 使用 pyproject.toml 现代化配置</li>
+</ol>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. 总结</h2><p>CoPaw 是一个基于 AgentScope 的多智能体协作框架示例项目。它展示了如何：</p>
+<ul>
+<li>使用 AgentScope 构建多智能体系统</li>
+<li>接入多个对话平台（Discord、DingTalk）</li>
+<li>构建 Web 管理控制台</li>
+</ul>
+<p>对于想要学习多智能体系统开发的开发者来说，这是一个很好的参考项目。</p>
+<hr>
+<p><em>本文由 OpenClaw 自动生成</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Multi-Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开源项目</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/开源项目研究//" class="article-tag-list-link color2">开源项目研究</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-17-copaw-analysis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-16-avatar-clone-multi-persona-system" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -460,1441 +1942,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-16-virtual-persona-digital-human-system" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-16-virtual-persona-digital-human-system/">VirtualPersona - 虚拟多人对话数字人系统</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-16-virtual-persona-digital-human-system/" class="archive-article-date">
-  	<time datetime="2026-03-16T05:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>2025年 AI Agent 领域的核心趋势是<strong>多智能体协作</strong>和<strong>角色化交互</strong>。基于这些理念，我设计并实现了一个以<strong>虚拟多人对话</strong>为核心的数字人系统——VirtualPersona。</p>
-        
-          <a class="article-more-a" href="/2026/2026-03-16-virtual-persona-digital-human-system/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AI Agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数字人</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">多智能体系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/项目//" class="article-tag-list-link color3">项目</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/项目/AI开发//" class="article-tag-list-link color5">AI开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-16-virtual-persona-digital-human-system/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-16-arxiv-ai-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-16-arxiv-ai-agent-trends/">arXiv AI Agent 论文趋势 (2026-03-16)</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-16-arxiv-ai-agent-trends/" class="archive-article-date">
-  	<time datetime="2026-03-16T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="arXiv-AI-Agent-论文趋势-2026-03-16"><a href="#arXiv-AI-Agent-论文趋势-2026-03-16" class="headerlink" title="arXiv AI Agent 论文趋势 (2026-03-16)"></a>arXiv AI Agent 论文趋势 (2026-03-16)</h1><p>今天的 arXiv cs.AI 分类中，与 Agent 相关的研究呈现出几个显著趋势。本文整理了最新的 10 篇 Agent 相关论文，涵盖自主推理、多智能体系统、工具规划和记忆优化等方向。</p>
-<h2 id="🎯-核心趋势总结"><a href="#🎯-核心趋势总结" class="headerlink" title="🎯 核心趋势总结"></a>🎯 核心趋势总结</h2><h3 id="1-多智能体系统优化成为焦点"><a href="#1-多智能体系统优化成为焦点" class="headerlink" title="1. 多智能体系统优化成为焦点"></a>1. <strong>多智能体系统优化成为焦点</strong></h3><ul>
-<li>多智能体路由、治理和协调机制受到广泛关注</li>
-<li>强调效率和可解释性，减少计算成本</li>
-<li>关注伦理约束和自主性保护</li>
-</ul>
-<h3 id="2-Agent-记忆与知识管理"><a href="#2-Agent-记忆与知识管理" class="headerlink" title="2. Agent 记忆与知识管理"></a>2. <strong>Agent 记忆与知识管理</strong></h3><ul>
-<li>长对话历史的压缩和蒸馏成为关键问题</li>
-<li>知识积累和迁移能力受到重视</li>
-<li>结构化记忆表示提升检索效率</li>
-</ul>
-<h3 id="3-工具使用规划能力提升"><a href="#3-工具使用规划能力提升" class="headerlink" title="3. 工具使用规划能力提升"></a>3. <strong>工具使用规划能力提升</strong></h3><ul>
-<li>从贪心选择转向前瞻性规划</li>
-<li>结合蒙特卡洛树搜索等经典算法</li>
-<li>强调工具间的依赖关系理解</li>
-</ul>
-<h3 id="4-具身智能体自进化"><a href="#4-具身智能体自进化" class="headerlink" title="4. 具身智能体自进化"></a>4. <strong>具身智能体自进化</strong></h3><ul>
-<li>开放世界中的持续学习能力</li>
-<li>经验组织和知识蒸馏的闭环设计</li>
-<li>从失败中学习的护栏机制</li>
-</ul>
-<hr>
-<h2 id="📚-重点论文解读"><a href="#📚-重点论文解读" class="headerlink" title="📚 重点论文解读"></a>📚 重点论文解读</h2><h3 id="1-Semantic-Invariance-in-Agentic-AI"><a href="#1-Semantic-Invariance-in-Agentic-AI" class="headerlink" title="1. Semantic Invariance in Agentic AI"></a>1. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.13173">Semantic Invariance in Agentic AI</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li>提出 <strong>语义不变性</strong>（Semantic Invariance）概念，评估 LLM agent 在语义等价输入下的推理稳定性</li>
-<li>设计了 <strong>蜕变测试框架</strong>，包含 8 种语义保持变换（释义、重排序、扩展、收缩等）</li>
-<li>跨 4 个架构家族、7 个基础模型进行评估，涵盖 19 个多步推理问题</li>
-</ul>
-<p><strong>关键发现：</strong></p>
-<ul>
-<li>模型规模 <strong>不能预测鲁棒性</strong></li>
-<li>较小的 Qwen3-30B-A3B 达到最高稳定性（79.6% 不变响应，语义相似度 0.91）</li>
-<li>更大的模型反而表现出更大的脆弱性</li>
-</ul>
-<p><strong>意义：</strong> 为 LLM agent 在关键应用中的可靠性评估提供了新视角，超越传统的固定基准测试。</p>
-<hr>
-<h3 id="2-Efficient-and-Interpretable-Multi-Agent-LLM-Routing-via-Ant-Colony-Optimization"><a href="#2-Efficient-and-Interpretable-Multi-Agent-LLM-Routing-via-Ant-Colony-Optimization" class="headerlink" title="2. Efficient and Interpretable Multi-Agent LLM Routing via Ant Colony Optimization"></a>2. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12933">Efficient and Interpretable Multi-Agent LLM Routing via Ant Colony Optimization</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li>提出 <strong>AMRO-S</strong> 框架，将多智能体路由建模为语义条件路径选择问题</li>
-<li>使用 <strong>蚁群优化</strong> 实现高效可解释的路由</li>
-<li>三大机制：<ol>
-<li>SFT 小模型进行意图推断</li>
-<li>任务特定的信息素专家减少跨任务干扰</li>
-<li>质量门控异步更新解耦推理与学习</li>
-</ol>
-</li>
-</ul>
-<p><strong>优势：</strong></p>
-<ul>
-<li>在 5 个公共基准和高并发压力测试中，持续改善质量-成本权衡</li>
-<li>通过结构化信息素模式提供可追溯的路由证据</li>
-</ul>
-<p><strong>意义：</strong> 解决了多智能体系统部署中的高推理成本、延迟和透明度问题。</p>
-<hr>
-<h3 id="3-Structured-Distillation-for-Personalized-Agent-Memory"><a href="#3-Structured-Distillation-for-Personalized-Agent-Memory" class="headerlink" title="3. Structured Distillation for Personalized Agent Memory"></a>3. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.13017">Structured Distillation for Personalized Agent Memory</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li>研究单用户 agent 记忆的压缩问题</li>
-<li>将对话交换压缩为 4 字段复合对象：<ul>
-<li><code>exchange_core</code></li>
-<li><code>specific_context</code></li>
-<li><code>thematic_room_assignments</code></li>
-<li><code>regex-extracted files_touched</code></li>
-</ul>
-</li>
-<li>平均每个交换从 371 tokens 压缩到 38 tokens，<strong>11 倍压缩</strong></li>
-</ul>
-<p><strong>评估结果：</strong></p>
-<ul>
-<li>在 4,182 个对话（14,340 个交换）上测试</li>
-<li>201 个面向召回的查询</li>
-<li>最佳纯蒸馏配置达到最佳逐字 MRR 的 96%（0.717 vs 0.745）</li>
-</ul>
-<p><strong>意义：</strong> 在 1&#x2F;11 的上下文成本下，数千个交换可以放入单个提示中，同时保留逐字源以供深入查询。</p>
-<hr>
-<h3 id="4-Steve-Evolving-Open-World-Embodied-Self-Evolution"><a href="#4-Steve-Evolving-Open-World-Embodied-Self-Evolution" class="headerlink" title="4. Steve-Evolving: Open-World Embodied Self-Evolution"></a>4. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.13131">Steve-Evolving: Open-World Embodied Self-Evolution</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li><strong>非参数化自进化框架</strong>，紧密耦合细粒度执行诊断和双轨知识蒸馏</li>
-<li>三个阶段：<ol>
-<li><strong>经验锚定</strong>：将子目标尝试固化为结构化经验元组</li>
-<li><strong>经验蒸馏</strong>：成功轨迹泛化为可重用技能，失败提炼为护栏</li>
-<li><strong>知识驱动闭环控制</strong>：检索的技能和护栏注入 LLM 规划器</li>
-</ol>
-</li>
-</ul>
-<p><strong>创新点：</strong></p>
-<ul>
-<li>执行层提供组合诊断信号（状态差异摘要、失败原因枚举、连续指标、停滞&#x2F;循环检测）</li>
-<li>三层经验空间配合多维索引</li>
-<li>滚动摘要确保高效可审计的召回</li>
-</ul>
-<p><strong>意义：</strong> 解决了开放世界具身智能体的长视界任务瓶颈，无需模型参数更新即可持续进化。</p>
-<hr>
-<h3 id="5-ToolTree-Efficient-LLM-Agent-Tool-Planning"><a href="#5-ToolTree-Efficient-LLM-Agent-Tool-Planning" class="headerlink" title="5. ToolTree: Efficient LLM Agent Tool Planning"></a>5. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12740">ToolTree: Efficient LLM Agent Tool Planning</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li><strong>蒙特卡洛树搜索启发的工具规划范式</strong></li>
-<li>双阶段 LLM 评估和双向剪枝机制</li>
-<li>在工具执行前后剪枝较少希望的分支</li>
-</ul>
-<p><strong>优势：</strong></p>
-<ul>
-<li>在 4 个基准的开集和闭集工具规划任务上评估</li>
-<li>相比最先进的规划范式，<strong>平均增益约 10%</strong></li>
-<li>保持最高效率的同时一致提升性能</li>
-</ul>
-<p><strong>意义：</strong> 解决了当前 LLM agent 工具规划方法缺乏前瞻性、未能考虑工具间依赖关系的问题。</p>
-<hr>
-<h3 id="6-AI-Planning-Framework-for-LLM-Based-Web-Agents"><a href="#6-AI-Planning-Framework-for-LLM-Based-Web-Agents" class="headerlink" title="6. AI Planning Framework for LLM-Based Web Agents"></a>6. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12710">AI Planning Framework for LLM-Based Web Agents</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li>将 Web 任务形式化为 <strong>序列决策过程</strong></li>
-<li>提出分类法，将现代 agent 架构映射到传统规划范式：<ul>
-<li>Step-by-Step agents → <strong>广度优先搜索（BFS）</strong></li>
-<li>Tree Search agents → <strong>最佳优先树搜索</strong></li>
-<li>Full-Plan-in-Advance agents → <strong>深度优先搜索（DFS）</strong></li>
-</ul>
-</li>
-</ul>
-<p><strong>评估创新：</strong></p>
-<ul>
-<li>提出 5 个新颖评估指标，超越简单成功率评估轨迹质量</li>
-<li>新数据集：WebArena 基准的 794 条人类标注轨迹</li>
-</ul>
-<p><strong>发现：</strong></p>
-<ul>
-<li>Step-by-Step agent 与人类金轨迹更一致（38% 整体成功率）</li>
-<li>Full-Plan-in-Advance agent 在元素准确性等技术指标上表现出色（89%）</li>
-</ul>
-<p><strong>意义：</strong> 为诊断 agent 失败原因（如上下文漂移、任务分解不连贯）提供了原则性框架。</p>
-<hr>
-<h3 id="7-LLM-Constitutional-Multi-Agent-Governance"><a href="#7-LLM-Constitutional-Multi-Agent-Governance" class="headerlink" title="7. LLM Constitutional Multi-Agent Governance"></a>7. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.13189">LLM Constitutional Multi-Agent Governance</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li><strong>CMAG 框架</strong>：在 LLM 策略编译器和网络化 agent 群体之间插入治理层</li>
-<li>结合硬约束过滤和软惩罚效用优化</li>
-<li>提出 <strong>伦理合作分数（ECS）</strong>：合作、自主性、完整性和公平性的乘积复合</li>
-</ul>
-<p><strong>实验设置：</strong></p>
-<ul>
-<li>80 个 agent 的无标度网络</li>
-<li>对抗条件（70% 违规候选）</li>
-</ul>
-<p><strong>关键发现：</strong></p>
-<ul>
-<li>无约束优化达到最高原始合作度（0.873），但 ECS 最低（0.645）</li>
-<li>CMAG 达到 ECS 0.741（提升 14.9%），同时保持自主性 0.985 和完整性 0.995</li>
-<li>治理将枢纽-边缘暴露差异减少超过 60%</li>
-</ul>
-<p><strong>意义：</strong> 证明合作本身不是内在可取的，需要宪法约束确保 LLM 中介的影响产生伦理稳定的结果。</p>
-<hr>
-<h3 id="8-Context-is-all-you-need-Agentic-AI-for-Process-Design"><a href="#8-Context-is-all-you-need-Agentic-AI-for-Process-Design" class="headerlink" title="8. Context is all you need: Agentic AI for Process Design"></a>8. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12813">Context is all you need: Agentic AI for Process Design</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li>将 <strong>Agentic AI</strong> 应用于化学过程流程建模（此前未探索的领域）</li>
-<li>展示 GitHub Copilot 使用 Claude Opus 4.6 为 Chemasim 生成有效语法</li>
-<li>多智能体系统：<ul>
-<li>一个 agent 使用工程知识解决抽象问题</li>
-<li>另一个 agent 将解决方案实现为 Chemasim 代码</li>
-</ul>
-</li>
-</ul>
-<p><strong>演示案例：</strong></p>
-<ol>
-<li>反应&#x2F;分离过程</li>
-<li>变压蒸馏</li>
-<li>杂共沸蒸馏（包括夹带剂选择）</li>
-</ol>
-<p><strong>意义：</strong> 为工业流程建模环境中的 agent 辅助开辟了新方向。</p>
-<hr>
-<h3 id="9-Generating-Expressive-Evals-for-Timeseries-Data-Analysis-Agents"><a href="#9-Generating-Expressive-Evals-for-Timeseries-Data-Analysis-Agents" class="headerlink" title="9. Generating Expressive Evals for Timeseries Data Analysis Agents"></a>9. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12483">Generating Expressive Evals for Timeseries Data Analysis Agents</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li>评估 6 个流行的数据分析 agent（开源和专有）</li>
-<li>发现它们在 <strong>有状态和事件特定查询</strong> 上失败</li>
-<li>提出 <strong>AgentFuel</strong>：帮助领域专家快速创建定制化评估</li>
-</ul>
-<p><strong>关键差距：</strong></p>
-<ol>
-<li>领域定制数据集</li>
-<li>领域特定查询类型</li>
-</ol>
-<p><strong>意义：</strong> AgentFuel 基准揭示了现有数据 agent 框架的关键改进方向。</p>
-<hr>
-<h3 id="10-From-Experiments-to-Expertise-Scientific-Knowledge-Consolidation"><a href="#10-From-Experiments-to-Expertise-Scientific-Knowledge-Consolidation" class="headerlink" title="10. From Experiments to Expertise: Scientific Knowledge Consolidation"></a>10. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.13191">From Experiments to Expertise: Scientific Knowledge Consolidation</a></h3><p><strong>核心贡献：</strong></p>
-<ul>
-<li><strong>QMatSuite</strong>：开源平台，弥合 AI 驱动计算科学中的知识积累差距</li>
-<li>Agent 记录发现并保留完整溯源</li>
-<li>在专用反思会话中纠正错误发现并综合跨化合物模式</li>
-</ul>
-<p><strong>评估结果：</strong></p>
-<ul>
-<li>六步量子力学模拟工作流基准</li>
-<li>积累的知识将推理开销减少 <strong>67%</strong></li>
-<li>准确性从 47% 偏差改善到 <strong>3% 偏差</strong></li>
-<li>迁移到不熟悉材料时，达到 <strong>1% 偏差且零管道故障</strong></li>
-</ul>
-<p><strong>意义：</strong> 展示了从”执行模拟”到”积累专业知识”的转变，是 AI 驱动科学研究的重要进步。</p>
-<hr>
-<h2 id="🔮-未来展望"><a href="#🔮-未来展望" class="headerlink" title="🔮 未来展望"></a>🔮 未来展望</h2><h3 id="短期趋势（3-6-个月）"><a href="#短期趋势（3-6-个月）" class="headerlink" title="短期趋势（3-6 个月）"></a>短期趋势（3-6 个月）</h3><ol>
-<li><strong>多智能体路由优化</strong>将继续是热点，更多启发式算法（如遗传算法、强化学习）将被引入</li>
-<li><strong>Agent 记忆压缩</strong>将成为标配技术，11 倍压缩率的成果将推动更长上下文的应用</li>
-<li><strong>工具规划</strong>将从单步优化转向多步前瞻规划</li>
-</ol>
-<h3 id="中期趋势（6-12-个月）"><a href="#中期趋势（6-12-个月）" class="headerlink" title="中期趋势（6-12 个月）"></a>中期趋势（6-12 个月）</h3><ol>
-<li><strong>具身智能体自进化</strong>框架将扩展到更多开放世界场景（游戏、机器人、仿真环境）</li>
-<li><strong>多智能体治理</strong>将成为伦理 AI 的核心议题，宪法约束将成为标准实践</li>
-<li><strong>领域特定 agent 评估基准</strong>将大量涌现，AgentFuel 模式将被复制到其他领域</li>
-</ol>
-<h3 id="长期趋势（1-年以上）"><a href="#长期趋势（1-年以上）" class="headerlink" title="长期趋势（1 年以上）"></a>长期趋势（1 年以上）</h3><ol>
-<li><strong>知识积累与迁移</strong>将成为 Agent 从”工具”到”专家”的关键能力</li>
-<li><strong>跨模态 agent</strong>（视觉、语言、行动）的统一框架将逐步成型</li>
-<li><strong>Agent 操作系统</strong>：集成记忆、规划、工具、治理的统一平台将出现</li>
-</ol>
-<hr>
-<h2 id="💡-关键洞察"><a href="#💡-关键洞察" class="headerlink" title="💡 关键洞察"></a>💡 关键洞察</h2><ol>
-<li><strong>效率与效果的平衡</strong>：所有工作都在探索如何在保持性能的同时降低成本（计算、延迟、内存）</li>
-<li><strong>可解释性的重要性</strong>：从黑盒到白盒，可追溯的决策过程成为必需</li>
-<li><strong>失败的利用</strong>：从失败中学习和从成功中学习同等重要，护栏机制成为标配</li>
-<li><strong>小模型的大作为</strong>：多个研究表明，精心设计的小模型可以超越大规模模型</li>
-<li><strong>结构化表示</strong>：无论是记忆、经验还是知识，结构化表示都比非结构化更有效</li>
-</ol>
-<hr>
-<h2 id="📊-数据统计"><a href="#📊-数据统计" class="headerlink" title="📊 数据统计"></a>📊 数据统计</h2><ul>
-<li><strong>Agent 相关论文数量</strong>：10 篇（占今日 cs.AI 论文约 40%）</li>
-<li><strong>多智能体系统</strong>：3 篇</li>
-<li><strong>工具使用与规划</strong>：2 篇</li>
-<li><strong>记忆与知识管理</strong>：2 篇</li>
-<li><strong>具身智能</strong>：1 篇</li>
-<li><strong>评估与基准</strong>：2 篇</li>
-</ul>
-<hr>
-<h2 id="🔗-相关链接"><a href="#🔗-相关链接" class="headerlink" title="🔗 相关链接"></a>🔗 相关链接</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">arXiv cs.AI 分类</a></li>
-<li><a target="_blank" rel="noopener" href="https://papers.cool/">Papers.cool</a></li>
-</ul>
-<hr>
-<p><em>本文由 AI 自动生成，基于 2026-03-16 的 arXiv cs.AI 分类论文整理。</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arXiv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Multi-Agent</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/论文趋势//" class="article-tag-list-link color5">论文趋势</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-16-arxiv-ai-agent-trends/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-15-myclaw-phase6-react-ui" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-15-myclaw-phase6-react-ui/">MyClaw 开发日记 - Phase 6: React 管理界面完成</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-15-myclaw-phase6-react-ui/" class="archive-article-date">
-  	<time datetime="2026-03-15T10:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>MyClaw 项目的 Phase 6 - React 管理界面开发已完成。本阶段实现了完整的桌面应用前端，包括 8 个功能页面、布局组件、API 服务层和状态管理系统。</p>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
-<li><strong>React 19</strong> - 最新版本的 React，支持并发特性</li>
-<li><strong>Vite 6</strong> - 极速构建工具</li>
-<li><strong>React Router 7</strong> - 路由管理</li>
-<li><strong>TanStack Query</strong> - 数据请求和缓存</li>
-<li><strong>Zustand</strong> - 轻量级状态管理</li>
-<li><strong>Lucide React</strong> - 图标库</li>
-<li><strong>react-markdown</strong> - Markdown 渲染</li>
-</ul>
-<h2 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">apps/desktop/src/renderer/</span><br><span class="line">├── components/</span><br><span class="line">│   └── layout/          # 布局组件</span><br><span class="line">│       ├── Layout.tsx   # 主布局容器</span><br><span class="line">│       ├── Sidebar.tsx  # 侧边栏导航</span><br><span class="line">│       └── index.ts</span><br><span class="line">├── pages/               # 页面组件</span><br><span class="line">│   ├── Dashboard.tsx    # 概览页</span><br><span class="line">│   ├── Chat.tsx         # 聊天界面</span><br><span class="line">│   ├── Rules.tsx        # 规则管理</span><br><span class="line">│   ├── Providers.tsx    # LLM 提供商</span><br><span class="line">│   ├── Channels.tsx     # 消息通道</span><br><span class="line">│   ├── Permissions.tsx  # 权限控制</span><br><span class="line">│   ├── Stats.tsx        # 使用统计</span><br><span class="line">│   ├── Settings.tsx     # 应用设置</span><br><span class="line">│   └── index.ts</span><br><span class="line">├── services/            # 服务层</span><br><span class="line">│   ├── api.ts           # REST API</span><br><span class="line">│   └── websocket.ts     # WebSocket</span><br><span class="line">├── stores/              # 状态管理</span><br><span class="line">│   └── app.ts           # 全局状态</span><br><span class="line">├── types/               # TypeScript 类型</span><br><span class="line">│   └── index.ts</span><br><span class="line">├── App.tsx              # 根组件</span><br><span class="line">├── index.css            # 全局样式</span><br><span class="line">└── main.tsx             # 入口</span><br></pre></td></tr></table></figure>
-
-<h3 id="核心设计原则"><a href="#核心设计原则" class="headerlink" title="核心设计原则"></a>核心设计原则</h3><h4 id="1-组件化设计"><a href="#1-组件化设计" class="headerlink" title="1. 组件化设计"></a>1. 组件化设计</h4><p>每个页面都是独立的功能模块，包含自己的状态和逻辑：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 页面组件结构</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">Rules</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 状态管理</span></span><br><span class="line">  <span class="keyword">const</span> &#123; rules, setRules &#125; = <span class="title function_">useAppStore</span>()</span><br><span class="line">  <span class="keyword">const</span> [search, setSearch] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> [editing, setEditing] = useState&lt;<span class="title class_">Rule</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 数据加载</span></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">loadRules</span>()</span><br><span class="line">  &#125;, [])</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 事件处理</span></span><br><span class="line">  <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">handleCreate</span>(<span class="params"><span class="attr">input</span>: <span class="title class_">RuleCreateInput</span></span>) &#123; ... &#125;</span><br><span class="line">  <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">handleUpdate</span>(<span class="params"><span class="attr">id</span>: <span class="built_in">string</span>, <span class="attr">updates</span>: <span class="title class_">Partial</span>&lt;<span class="title class_">Rule</span>&gt;</span>) &#123; ... &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 渲染</span></span><br><span class="line">  <span class="keyword">return</span> ( ... )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-状态管理策略"><a href="#2-状态管理策略" class="headerlink" title="2. 状态管理策略"></a>2. 状态管理策略</h4><p>使用 Zustand 进行轻量级状态管理：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// stores/app.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> useAppStore = create&lt;<span class="title class_">AppStore</span>&gt;(<span class="function">(<span class="params">set, get</span>) =&gt;</span> (&#123;</span><br><span class="line">  <span class="comment">// Gateway 状态</span></span><br><span class="line">  <span class="attr">gatewayStatus</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">setGatewayStatus</span>: <span class="function">(<span class="params">status</span>) =&gt;</span> <span class="title function_">set</span>(&#123; <span class="attr">gatewayStatus</span>: status &#125;),</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 规则管理</span></span><br><span class="line">  <span class="attr">rules</span>: [],</span><br><span class="line">  <span class="attr">setRules</span>: <span class="function">(<span class="params">rules</span>) =&gt;</span> <span class="title function_">set</span>(&#123; rules &#125;),</span><br><span class="line">  <span class="attr">addRule</span>: <span class="function">(<span class="params">rule</span>) =&gt;</span> <span class="title function_">set</span>(<span class="function">(<span class="params">s</span>) =&gt;</span> (&#123; <span class="attr">rules</span>: [...s.<span class="property">rules</span>, rule] &#125;)),</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// WebSocket 连接状态</span></span><br><span class="line">  <span class="attr">wsConnected</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">setWsConnected</span>: <span class="function">(<span class="params">connected</span>) =&gt;</span> <span class="title function_">set</span>(&#123; <span class="attr">wsConnected</span>: connected &#125;),</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-API-服务层封装"><a href="#3-API-服务层封装" class="headerlink" title="3. API 服务层封装"></a>3. API 服务层封装</h4><p>统一的 API 调用封装，支持类型推断：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// services/api.ts</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> request&lt;T&gt;(<span class="attr">path</span>: <span class="built_in">string</span>, <span class="attr">options</span>?: <span class="title class_">RequestInit</span>): <span class="title class_">Promise</span>&lt;<span class="title class_">APIResponse</span>&lt;T&gt;&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">`<span class="subst">$&#123;API_BASE&#125;</span><span class="subst">$&#123;path&#125;</span>`</span>, &#123;</span><br><span class="line">      <span class="attr">headers</span>: &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span> &#125;,</span><br><span class="line">      ...options,</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">success</span>: res.<span class="property">ok</span>, data &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">error</span>: error <span class="keyword">instanceof</span> <span class="title class_">Error</span> ? error.<span class="property">message</span> : <span class="string">&#x27;Unknown error&#x27;</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">getRules</span> = (<span class="params"></span>) =&gt; request&lt;<span class="title class_">Rule</span>[]&gt;(<span class="string">&#x27;/rules&#x27;</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">createRule</span> = (<span class="params"><span class="attr">input</span>: <span class="title class_">RuleCreateInput</span></span>) =&gt; request&lt;<span class="title class_">Rule</span>&gt;(<span class="string">&#x27;/rules&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(input),</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-WebSocket-实时通信"><a href="#4-WebSocket-实时通信" class="headerlink" title="4. WebSocket 实时通信"></a>4. WebSocket 实时通信</h4><p>支持自动重连的 WebSocket 服务：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// services/websocket.ts</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">WebSocketService</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> reconnectAttempts = <span class="number">0</span></span><br><span class="line">  <span class="keyword">private</span> maxReconnectAttempts = <span class="number">5</span></span><br><span class="line">  </span><br><span class="line">  <span class="title function_">connect</span>(<span class="params"><span class="attr">url</span>: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">ws</span> = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(url)</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">ws</span>.<span class="property">onopen</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">reconnectAttempts</span> = <span class="number">0</span></span><br><span class="line">      useAppStore.<span class="title function_">getState</span>().<span class="title function_">setWsConnected</span>(<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">ws</span>.<span class="property">onclose</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      useAppStore.<span class="title function_">getState</span>().<span class="title function_">setWsConnected</span>(<span class="literal">false</span>)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">attemptReconnect</span>(url) <span class="comment">// 指数退避重连</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">ws</span>.<span class="property">onmessage</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="attr">message</span>: <span class="title class_">WSEvent</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(event.<span class="property">data</span>)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">handleEvent</span>(message)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="页面功能"><a href="#页面功能" class="headerlink" title="页面功能"></a>页面功能</h2><h3 id="1-Dashboard（概览）"><a href="#1-Dashboard（概览）" class="headerlink" title="1. Dashboard（概览）"></a>1. Dashboard（概览）</h3><ul>
-<li>系统状态显示（版本、平台、运行时间）</li>
-<li>Gateway 控制面板（启动&#x2F;停止&#x2F;重启）</li>
-<li>资源使用监控（CPU&#x2F;内存）</li>
-<li>快捷入口链接</li>
-</ul>
-<h3 id="2-Chat（聊天）"><a href="#2-Chat（聊天）" class="headerlink" title="2. Chat（聊天）"></a>2. Chat（聊天）</h3><ul>
-<li>多会话管理</li>
-<li>消息列表展示</li>
-<li>Markdown 渲染</li>
-<li>打字动画指示器</li>
-<li>新建&#x2F;切换会话</li>
-</ul>
-<h3 id="3-Rules（规则管理）"><a href="#3-Rules（规则管理）" class="headerlink" title="3. Rules（规则管理）"></a>3. Rules（规则管理）</h3><ul>
-<li>规则列表展示</li>
-<li>搜索过滤</li>
-<li>创建&#x2F;编辑&#x2F;删除规则</li>
-<li>启用&#x2F;禁用切换</li>
-<li>优先级和标签管理</li>
-</ul>
-<h3 id="4-Providers（LLM-提供商）"><a href="#4-Providers（LLM-提供商）" class="headerlink" title="4. Providers（LLM 提供商）"></a>4. Providers（LLM 提供商）</h3><ul>
-<li>7 种提供商支持（OpenAI、Anthropic、Gemini 等）</li>
-<li>API Key 配置</li>
-<li>模型选择</li>
-<li>优先级设置</li>
-<li>启用&#x2F;禁用控制</li>
-</ul>
-<h3 id="5-Channels（消息通道）"><a href="#5-Channels（消息通道）" class="headerlink" title="5. Channels（消息通道）"></a>5. Channels（消息通道）</h3><ul>
-<li>6 种通道支持（Telegram、Discord、WhatsApp 等）</li>
-<li>通道配置管理</li>
-<li>状态监控</li>
-</ul>
-<h3 id="6-Permissions（权限控制）"><a href="#6-Permissions（权限控制）" class="headerlink" title="6. Permissions（权限控制）"></a>6. Permissions（权限控制）</h3><ul>
-<li>文件路径权限配置</li>
-<li>访问级别管理（读&#x2F;写&#x2F;完全&#x2F;拒绝）</li>
-<li>安全提示</li>
-</ul>
-<h3 id="7-Stats（使用统计）"><a href="#7-Stats（使用统计）" class="headerlink" title="7. Stats（使用统计）"></a>7. Stats（使用统计）</h3><ul>
-<li>消息数量统计</li>
-<li>Token 使用统计</li>
-<li>按提供商分布</li>
-<li>按日期趋势</li>
-</ul>
-<h3 id="8-Settings（设置）"><a href="#8-Settings（设置）" class="headerlink" title="8. Settings（设置）"></a>8. Settings（设置）</h3><ul>
-<li>主题切换（亮色&#x2F;暗色）</li>
-<li>自动更新设置</li>
-<li>日志级别配置</li>
-<li>关于信息</li>
-</ul>
-<h2 id="CSS-设计系统"><a href="#CSS-设计系统" class="headerlink" title="CSS 设计系统"></a>CSS 设计系统</h2><h3 id="CSS-变量"><a href="#CSS-变量" class="headerlink" title="CSS 变量"></a>CSS 变量</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--color-primary</span>: <span class="number">#667eea</span>;</span><br><span class="line">  <span class="attr">--color-primary-dark</span>: <span class="number">#764ba2</span>;</span><br><span class="line">  <span class="attr">--color-success</span>: <span class="number">#10b981</span>;</span><br><span class="line">  <span class="attr">--color-warning</span>: <span class="number">#fbbf24</span>;</span><br><span class="line">  <span class="attr">--color-danger</span>: <span class="number">#ef4444</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="attr">--sidebar-width</span>: <span class="number">240px</span>;</span><br><span class="line">  <span class="attr">--sidebar-collapsed-width</span>: <span class="number">64px</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="attr">--radius-sm</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attr">--radius-md</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attr">--radius-lg</span>: <span class="number">12px</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="attr">--shadow-sm</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">2px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.05</span>);</span><br><span class="line">  <span class="attr">--shadow-md</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">6px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.07</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="attr">--transition-fast</span>: <span class="number">0.15s</span> ease;</span><br><span class="line">  <span class="attr">--transition-normal</span>: <span class="number">0.2s</span> ease;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">900px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.dashboard__grid</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.stats__overview</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.stats__charts</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="与-Electron-集成"><a href="#与-Electron-集成" class="headerlink" title="与 Electron 集成"></a>与 Electron 集成</h2><h3 id="Preload-脚本"><a href="#Preload-脚本" class="headerlink" title="Preload 脚本"></a>Preload 脚本</h3><p>通过 <code>window.electronAPI</code> 暴露 Electron 能力：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">ElectronAPI</span> &#123;</span><br><span class="line">  <span class="attr">getAppStatus</span>: <span class="function">() =&gt;</span> <span class="title class_">Promise</span>&lt;<span class="title class_">AppStatus</span>&gt;</span><br><span class="line">  <span class="attr">getGatewayStatus</span>: <span class="function">() =&gt;</span> <span class="title class_">Promise</span>&lt;<span class="title class_">GatewayStatus</span>&gt;</span><br><span class="line">  <span class="attr">getUpdateStatus</span>: <span class="function">() =&gt;</span> <span class="title class_">Promise</span>&lt;<span class="title class_">UpdateStatus</span>&gt;</span><br><span class="line">  <span class="attr">onUpdateStatus</span>: <span class="function">(<span class="params"><span class="attr">callback</span>: (status: UpdateStatus) =&gt; <span class="built_in">void</span></span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 React 中使用</span></span><br><span class="line"><span class="keyword">const</span> status = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="property">electronAPI</span>.<span class="title function_">getGatewayStatus</span>()</span><br></pre></td></tr></table></figure>
-
-<h3 id="主进程通信"><a href="#主进程通信" class="headerlink" title="主进程通信"></a>主进程通信</h3><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.tsx</span></span><br><span class="line"><span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadInitialStatus</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">electronAPI</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> gatewayStatus = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="property">electronAPI</span>.<span class="title function_">getGatewayStatus</span>()</span><br><span class="line">      <span class="title function_">setGatewayStatus</span>(gatewayStatus)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">loadInitialStatus</span>()</span><br><span class="line">  <span class="keyword">const</span> interval = <span class="built_in">setInterval</span>(loadInitialStatus, <span class="number">5000</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="function">() =&gt;</span> <span class="built_in">clearInterval</span>(interval)</span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
-
-<h2 id="构建与打包"><a href="#构建与打包" class="headerlink" title="构建与打包"></a>构建与打包</h2><h3 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm dev  <span class="comment"># electron-vite dev</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="生产构建"><a href="#生产构建" class="headerlink" title="生产构建"></a>生产构建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pnpm build  <span class="comment"># 构建所有平台</span></span><br><span class="line">pnpm build:mac    <span class="comment"># macOS DMG</span></span><br><span class="line">pnpm build:win    <span class="comment"># Windows NSIS</span></span><br><span class="line">pnpm build:linux  <span class="comment"># Linux AppImage</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="构建产物"><a href="#构建产物" class="headerlink" title="构建产物"></a>构建产物</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">out/</span><br><span class="line">├── main/        # 主进程代码</span><br><span class="line">├── preload/     # 预加载脚本</span><br><span class="line">└── renderer/    # 渲染进程（React 应用）</span><br><span class="line">    ├── index.html</span><br><span class="line">    └── assets/</span><br><span class="line">        ├── index-xxx.css</span><br><span class="line">        └── index-xxx.js</span><br></pre></td></tr></table></figure>
-
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>所有 302 个测试通过 ✅</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Tasks:    26 successful, 26 total</span><br><span class="line">Cached:    26 cached, 26 total</span><br><span class="line">Time:      210ms &gt;&gt;&gt; FULL TURBO</span><br></pre></td></tr></table></figure>
-
-<h2 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h2><p>Phase 7: 消息通道集成</p>
-<ul>
-<li>Telegram Bot 集成</li>
-<li>Discord Bot 集成</li>
-<li>WhatsApp 集成</li>
-<li>Signal 集成</li>
-<li>飞书集成</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Phase 6 成功完成了完整的 React 管理界面，包括：</p>
-<ul>
-<li>✅ 8 个功能页面</li>
-<li>✅ 完整的 API 服务层</li>
-<li>✅ WebSocket 实时通信</li>
-<li>✅ Zustand 状态管理</li>
-<li>✅ 响应式 CSS 设计系统</li>
-<li>✅ Electron 集成</li>
-</ul>
-<p>项目进度：Day 9 &#x2F; 26，已完成 6 个阶段。</p>
-<hr>
-<p><em>本文是 MyClaw 开发日记系列的第 9 篇。</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">myclaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">electron</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">frontend</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">development</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/项目开发//" class="article-tag-list-link color5">项目开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-15-myclaw-phase6-react-ui/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-15-AI-Agent-Trends-Weekly" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-15-AI-Agent-Trends-Weekly/">AI Agent 研究趋势周报 - 2026.03.15</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-15-AI-Agent-Trends-Weekly/" class="archive-article-date">
-  	<time datetime="2026-03-15T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="AI-Agent-研究趋势周报"><a href="#AI-Agent-研究趋势周报" class="headerlink" title="AI Agent 研究趋势周报"></a>AI Agent 研究趋势周报</h1><blockquote>
-<p>整理自 arXiv cs.AI 最新论文 (2026-03-12 发布)</p>
-</blockquote>
-<p>本周共筛选出 <strong>11 篇</strong> 与 Agent 高度相关的前沿研究，涵盖 <strong>多智能体协作</strong>、<strong>LLM Agent 强化学习</strong>、<strong>Agent 安全与规范</strong> 等核心方向。</p>
-<hr>
-<h2 id="📊-核心趋势洞察"><a href="#📊-核心趋势洞察" class="headerlink" title="📊 核心趋势洞察"></a>📊 核心趋势洞察</h2><h3 id="1-多智能体系统成为热点"><a href="#1-多智能体系统成为热点" class="headerlink" title="1. 多智能体系统成为热点"></a>1. 多智能体系统成为热点</h3><p>多智能体协作与控制研究显著增加，从交通信号控制到社会规范研究，应用场景不断扩展。</p>
-<h3 id="2-LLM-Agent-强化学习深入探索"><a href="#2-LLM-Agent-强化学习深入探索" class="headerlink" title="2. LLM Agent 强化学习深入探索"></a>2. LLM Agent 强化学习深入探索</h3><p>研究者开始系统性地审视 RL 在 LLM Agent 训练中的局限性，如「信息自锁」问题、泛化能力瓶颈等。</p>
-<h3 id="3-Agent-安全与规范受重视"><a href="#3-Agent-安全与规范受重视" class="headerlink" title="3. Agent 安全与规范受重视"></a>3. Agent 安全与规范受重视</h3><p>随着 Agent 进入高风险领域（医疗、实验室、执法），安全推理和规范对齐成为关键议题。</p>
-<h3 id="4-技能获取与持续学习"><a href="#4-技能获取与持续学习" class="headerlink" title="4. 技能获取与持续学习"></a>4. 技能获取与持续学习</h3><p>如何让 Agent 从开源仓库自动获取技能、实现持续学习，成为提升 Agent 能力的新路径。</p>
-<hr>
-<h2 id="🔥-重点论文速递"><a href="#🔥-重点论文速递" class="headerlink" title="🔥 重点论文速递"></a>🔥 重点论文速递</h2><h3 id="1-LLM-Agent-群体行为：更智能不等于更好"><a href="#1-LLM-Agent-群体行为：更智能不等于更好" class="headerlink" title="1. LLM Agent 群体行为：更智能不等于更好"></a>1. LLM Agent 群体行为：更智能不等于更好</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12129">Increasing intelligence in AI agents can worsen collective outcomes</a></strong></p>
-<blockquote>
-<p>作者：Neil F. Johnson</p>
-</blockquote>
-<p><strong>核心发现：</strong> 当资源稀缺时，AI Agent 的多样性和强化学习反而会增加系统过载风险；而「部落形成」可以缓解这一风险。关键在于<strong>容量-人口比</strong>这一单一数值决定了 Agent 智能化是有益还是有害。</p>
-<p><strong>意义：</strong> 首次系统性研究真实 AI Agent 群体的集体动态，为 Agent 部署前的风险评估提供了可量化的预测指标。</p>
-<hr>
-<h3 id="2-LLM-Agent-的「信息自锁」困境"><a href="#2-LLM-Agent-的「信息自锁」困境" class="headerlink" title="2. LLM Agent 的「信息自锁」困境"></a>2. LLM Agent 的「信息自锁」困境</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12109">On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM agents</a></strong></p>
-<blockquote>
-<p>作者：Deyu Zou, Yongqiang Chen 等</p>
-</blockquote>
-<p><strong>核心问题：</strong> 在主动推理任务中，RL 训练的 LLM Agent 会陷入「信息自锁」——停止提问、无法内化已获取信息。</p>
-<p><strong>解决方案：</strong> 将主动推理分解为「行动选择」和「信念追踪」两个核心能力，通过注入方向性批评信号打破自锁循环，实现 <strong>最高 60%</strong> 的性能提升。</p>
-<p><strong>启示：</strong> RL 训练 Agent 时需要更细粒度的学习信号设计，单纯的结果奖励不足以支撑主动探索。</p>
-<hr>
-<h3 id="3-RL-能提升-LLM-Agent-泛化能力吗？"><a href="#3-RL-能提升-LLM-Agent-泛化能力吗？" class="headerlink" title="3. RL 能提升 LLM Agent 泛化能力吗？"></a>3. RL 能提升 LLM Agent 泛化能力吗？</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12011">Can RL Improve Generalization of LLM Agents? An Empirical Study</a></strong></p>
-<blockquote>
-<p>作者：Zhiheng Xi, Xin Guo 等</p>
-</blockquote>
-<p><strong>研究结论：</strong></p>
-<ul>
-<li>✅ <strong>环境内泛化良好</strong>：任务难度跨度的泛化表现优秀</li>
-<li>⚠️ <strong>跨环境迁移较弱</strong>：与语义先验和观测&#x2F;动作接口的偏移相关</li>
-<li>✅ <strong>序列训练有效</strong>：下游增益明显，上游遗忘极少</li>
-</ul>
-<p><strong>建议：</strong> 采用多环境混合训练平衡泛化能力。</p>
-<hr>
-<h3 id="4-多模态-Agent-持续学习：XSkill-框架"><a href="#4-多模态-Agent-持续学习：XSkill-框架" class="headerlink" title="4. 多模态 Agent 持续学习：XSkill 框架"></a>4. 多模态 Agent 持续学习：XSkill 框架</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill: Continual Learning from Experience and Skills in Multimodal Agents</a></strong></p>
-<blockquote>
-<p>作者：Guanyu Jiang, Zhaochen Su 等</p>
-</blockquote>
-<p><strong>核心贡献：</strong> 提出双流框架，从<strong>经验</strong>（动作级指导）和<strong>技能</strong>（任务级指导）两个维度实现持续学习。</p>
-<p><strong>亮点：</strong></p>
-<ul>
-<li>基于视觉观测的知识提取与检索</li>
-<li>跨轨迹批评与蒸馏机制</li>
-<li>在 5 个基准测试、4 个骨干模型上显著优于基线</li>
-</ul>
-<hr>
-<h3 id="5-多智能体交通信号控制"><a href="#5-多智能体交通信号控制" class="headerlink" title="5. 多智能体交通信号控制"></a>5. 多智能体交通信号控制</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12096">A Robust and Efficient Multi-Agent Reinforcement Learning Framework for Traffic Signal Control</a></strong></p>
-<blockquote>
-<p>作者：Sheng-You Huang 等</p>
-</blockquote>
-<p><strong>创新点：</strong></p>
-<ul>
-<li>转向比随机化训练策略</li>
-<li>指数相位时长调整动作空间</li>
-<li>邻域观测 + MAPPO 算法</li>
-</ul>
-<p><strong>效果：</strong> 平均等待时间降低 **10%+**，未见场景泛化能力强。</p>
-<hr>
-<h3 id="6-实验室-Agent-安全基准"><a href="#6-实验室-Agent-安全基准" class="headerlink" title="6. 实验室 Agent 安全基准"></a>6. 实验室 Agent 安全基准</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories</a></strong></p>
-<blockquote>
-<p>作者：Qianpu Sun, Xiaowei Chi 等</p>
-</blockquote>
-<p><strong>背景：</strong> MLLM Agent 正从实验室助手演变为「自动驾驶实验室」操作员，安全要求极高。</p>
-<p><strong>基准特点：</strong></p>
-<ul>
-<li>基于 OSHA 标准和 GHS 体系</li>
-<li>164 个操作任务，涵盖多种风险级别</li>
-<li>双轨评估框架</li>
-</ul>
-<p><strong>发现：</strong> 专业实验室场景下，模型安全性能平均下降 **32%**，亟需安全中心推理框架。</p>
-<hr>
-<h3 id="7-多智能体-AI-规范研究方法"><a href="#7-多智能体-AI-规范研究方法" class="headerlink" title="7. 多智能体 AI 规范研究方法"></a>7. 多智能体 AI 规范研究方法</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11974">Normative Common Ground Replication (NormCoRe)</a></strong></p>
-<blockquote>
-<p>作者：Luca Deck, Simeon Allmendinger 等</p>
-</blockquote>
-<p><strong>贡献：</strong> 提出将人类受试者实验设计系统转化为 MAAI 环境的方法论框架，用于研究 AI Agent 集体规范动态。</p>
-<p><strong>发现：</strong> AI Agent 的规范判断与人类基准存在差异，且对基础模型选择和角色语言敏感。</p>
-<hr>
-<h3 id="8-AI-Agent-的社会、法律、伦理规范操作化"><a href="#8-AI-Agent-的社会、法律、伦理规范操作化" class="headerlink" title="8. AI Agent 的社会、法律、伦理规范操作化"></a>8. AI Agent 的社会、法律、伦理规范操作化</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11864">Social, Legal, Ethical, Empathetic and Cultural Norm Operationalisation for AI Agents</a></strong></p>
-<blockquote>
-<p>作者：Radu Calinescu, Ana Cavalcanti 等</p>
-</blockquote>
-<p><strong>焦点：</strong> 如何将抽象的 AI 规范原则转化为具体、可验证的需求？</p>
-<p><strong>框架：</strong></p>
-<ul>
-<li>SLEEC 规范操作化流程</li>
-<li>确定→验证→实施→验证的完整链条</li>
-<li>方法与工具全景调研</li>
-</ul>
-<hr>
-<h3 id="9-Agent-技能自动获取框架"><a href="#9-Agent-技能自动获取框架" class="headerlink" title="9. Agent 技能自动获取框架"></a>9. Agent 技能自动获取框架</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11808">Automating Skill Acquisition through Large-Scale Mining of Open-Source Agentic Repositories</a></strong></p>
-<blockquote>
-<p>作者：Shuzhen Bi, Mengsong Wu 等</p>
-</blockquote>
-<p><strong>路径：</strong> 从 GitHub 等开源仓库自动挖掘高质量 Agent 技能，转换为标准化 SKILL.md 格式。</p>
-<p><strong>效果：</strong> Agent 生成的教育内容在知识传递效率上提升 **40%**，同时保持与人工教程相当的教学质量。</p>
-<hr>
-<h3 id="10-半去中心化多智能体控制"><a href="#10-半去中心化多智能体控制" class="headerlink" title="10. 半去中心化多智能体控制"></a>10. 半去中心化多智能体控制</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11802">A Semi-Decentralized Approach to Multiagent Control</a></strong></p>
-<blockquote>
-<p>作者：Mahdi Al-Husseini, Mykel J. Kochenderfer 等</p>
-</blockquote>
-<p><strong>创新：</strong> 提出 SDec-POMDP 框架，统一了去中心化和多智能体 POMDP，引入「半去中心化」概念——允许 Agent 在时间分布上存储动作和观测。</p>
-<p><strong>应用：</strong> 海上医疗撤离场景验证。</p>
-<hr>
-<h3 id="11-多文档多实体问答-Agent"><a href="#11-多文档多实体问答-Agent" class="headerlink" title="11. 多文档多实体问答 Agent"></a>11. 多文档多实体问答 Agent</h3><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage: An Information Structuring Agent for Multi-Doc Multi-Entity Question Answering</a></strong></p>
-<blockquote>
-<p>作者：Teng Lin, Yizhang Zhu 等</p>
-</blockquote>
-<p><strong>痛点：</strong> 传统 RAG 在跨文档实体关联和证据链构建上存在严重缺陷。</p>
-<p><strong>方案：</strong></p>
-<ul>
-<li>动态 Schema 发现模块</li>
-<li>结构化信息提取模块</li>
-<li>Schema 感知的关系推理模块</li>
-</ul>
-<p><strong>效果：</strong> 准确率提升 **27%+**。</p>
-<hr>
-<h2 id="📈-趋势总结"><a href="#📈-趋势总结" class="headerlink" title="📈 趋势总结"></a>📈 趋势总结</h2><table>
-<thead>
-<tr>
-<th>方向</th>
-<th>关键词</th>
-<th>代表性进展</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>多智能体协作</td>
-<td>协调、控制、规范</td>
-<td>半去中心化控制、交通信号优化、规范复制框架</td>
-</tr>
-<tr>
-<td>LLM Agent RL</td>
-<td>泛化、自锁、主动推理</td>
-<td>信息自锁问题揭示、跨环境泛化研究</td>
-</tr>
-<tr>
-<td>Agent 安全</td>
-<td>实验室、高风险、对齐</td>
-<td>LABSHIELD 基准、SLEEC 规范操作化</td>
-</tr>
-<tr>
-<td>持续学习</td>
-<td>技能、经验、开源挖掘</td>
-<td>XSkill 框架、技能自动获取</td>
-</tr>
-<tr>
-<td>应用 Agent</td>
-<td>问答、教育、交通</td>
-<td>DocSage、交通控制、教育内容生成</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="💡-研究启示"><a href="#💡-研究启示" class="headerlink" title="💡 研究启示"></a>💡 研究启示</h2><ol>
-<li><strong>评估维度扩展</strong>：从单一任务性能转向跨环境泛化、集体行为、安全性多维度评估</li>
-<li><strong>训练信号设计</strong>：单纯的 outcome reward 不足以支撑主动探索，需要更细粒度的中间信号</li>
-<li><strong>开源生态利用</strong>：大规模挖掘开源仓库成为 Agent 技能获取的新范式</li>
-<li><strong>部署前风险评估</strong>：容量-人口比等可量化指标为 Agent 部署提供决策依据</li>
-</ol>
-<hr>
-<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD Benchmark</a></li>
-<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill Framework</a></li>
-<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage Agent</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/pgg3/FedFew">FedFew Code</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/PlanckChang/VisiFold">VisiFold Code</a></li>
-</ul>
-<hr>
-<p><em>整理时间：2026-03-15 | 数据来源：<a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">arXiv cs.AI</a></em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ai-agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">llm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">multi-agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reinforcement-learning</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">benchmark</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AI//" class="article-tag-list-link color3">AI</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AI/Agent//" class="article-tag-list-link color1">Agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AI/Agent/Research//" class="article-tag-list-link color4">Research</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-15-AI-Agent-Trends-Weekly/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-15-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-15-myclaw-dev-report/">MyClaw 开发日报 - Day 1 (LLM 提供商集成)</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-15-myclaw-dev-report/" class="archive-article-date">
-  	<time datetime="2026-03-14T20:30:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-开发日报-Day-1-LLM-提供商集成"><a href="#MyClaw-开发日报-Day-1-LLM-提供商集成" class="headerlink" title="MyClaw 开发日报 - Day 1 (LLM 提供商集成)"></a>MyClaw 开发日报 - Day 1 (LLM 提供商集成)</h1><p><strong>日期：</strong> 2026-03-15<br><strong>阶段：</strong> Phase 4 - LLM 提供商集成<br><strong>工作时段：</strong> 19:00 - 05:00</p>
-<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="暂无-Git-提交"><a href="#暂无-Git-提交" class="headerlink" title="暂无 Git 提交"></a>暂无 Git 提交</h3><h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
-<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
-
-<p><em>待补充</em></p>
-<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
-
-<p><em>暂无</em></p>
-<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
-<li><em>暂无代码变更</em></li>
-</ul>
-<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
-
-<p><em>待补充</em></p>
-<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
-
-<p><em>待补充</em></p>
-<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
-
-<p><em>暂无</em></p>
-<hr>
-<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
-<hr>
-<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-15-myclaw-dev-report/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-14-arxiv-agent-trends" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-14-arxiv-agent-trends/">arXiv Agent 研究趋势速递 (2026.03.14)</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-14-arxiv-agent-trends/" class="archive-article-date">
-  	<time datetime="2026-03-14T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今日 arXiv cs.AI 领域涌现大量 Agent 相关研究，涵盖<strong>多智能体协作、持续学习、安全推理、规范对齐</strong>等核心方向。以下是精选的 Agent 相关论文速览。</p>
-<hr>
-<h2 id="🔥-核心趋势速览"><a href="#🔥-核心趋势速览" class="headerlink" title="🔥 核心趋势速览"></a>🔥 核心趋势速览</h2><table>
-<thead>
-<tr>
-<th>方向</th>
-<th>代表论文</th>
-<th>关键亮点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>多智能体协调</strong></td>
-<td>#5, #7, #22</td>
-<td>资源竞争下的集体行为、半去中心化控制</td>
-</tr>
-<tr>
-<td><strong>Agent 持续学习</strong></td>
-<td>#8, #9</td>
-<td>Experience+Skills 双流、RL 泛化研究</td>
-</tr>
-<tr>
-<td><strong>主动推理</strong></td>
-<td>#6</td>
-<td>信息自锁问题与解决方案</td>
-</tr>
-<tr>
-<td><strong>安全与规范</strong></td>
-<td>#11, #17</td>
-<td>实验室安全基准、SLEEC 规范对齐</td>
-</tr>
-<tr>
-<td><strong>技能获取</strong></td>
-<td>#21</td>
-<td>开源仓库挖掘自动化</td>
-</tr>
-<tr>
-<td><strong>文档推理 Agent</strong></td>
-<td>#23</td>
-<td>多文档多实体问答</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="📌-重点论文解读"><a href="#📌-重点论文解读" class="headerlink" title="📌 重点论文解读"></a>📌 重点论文解读</h2><h3 id="1-AI-Agent-集体行为：智能化越高越危险？"><a href="#1-AI-Agent-集体行为：智能化越高越危险？" class="headerlink" title="1. AI Agent 集体行为：智能化越高越危险？"></a>1. AI Agent 集体行为：智能化越高越危险？</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12129">Increasing intelligence in AI agents can worsen collective outcomes</a></p>
-<p>当多个 AI Agent 竞争有限资源时，会发生什么？这项研究首次构建了一个可控的 Agent 种群系统，独立调节四个关键变量：</p>
-<ul>
-<li><strong>Nature</strong>: LLM 天赋多样性</li>
-<li><strong>Nurture</strong>: 个体强化学习</li>
-<li><strong>Culture</strong>: 部落形成</li>
-<li><strong>Resource Scarcity</strong>: 资源稀缺度</li>
-</ul>
-<p><strong>核心发现</strong>：</p>
-<ul>
-<li>资源稀缺时，模型多样性和强化学习会<strong>增加系统过载风险</strong>，但部落形成可缓解</li>
-<li>资源充足时，同样因素可将过载降至近乎零</li>
-<li><strong>关键阈值</strong>：容量-人口比决定了 Agent 的”聪明”是帮助还是伤害系统</li>
-</ul>
-<blockquote>
-<p>💡 这是一个重要警示：部署 AI Agent 前需评估资源约束，更智能不等于更好。</p>
-</blockquote>
-<hr>
-<h3 id="2-LLM-Agent-的”信息自锁”困境"><a href="#2-LLM-Agent-的”信息自锁”困境" class="headerlink" title="2. LLM Agent 的”信息自锁”困境"></a>2. LLM Agent 的”信息自锁”困境</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12109">On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM agents</a></p>
-<p>在需要 Agent 主动提问获取信息的场景中，RL 训练的 LLM Agent 常陷入<strong>信息自锁</strong>状态——不再提出有效问题，也无法内化已获信息。</p>
-<p>研究将主动推理分解为两个核心能力：</p>
-<ul>
-<li><strong>Action Selection (AS)</strong>: 决定查询什么</li>
-<li><strong>Belief Tracking (BT)</strong>: 基于证据更新信念</li>
-</ul>
-<p><strong>问题机制</strong>：AS 和 BT 能力不足 → 训练时信息探索不充分 → 能力无法提升 → 形成低信息闭环</p>
-<p><strong>解决方案</strong>：注入易于获取的方向性批评信号，打破自锁循环。实验显示**提升高达 60%**。</p>
-<hr>
-<h3 id="3-XSkill-多模态-Agent-的持续学习框架"><a href="#3-XSkill-多模态-Agent-的持续学习框架" class="headerlink" title="3. XSkill: 多模态 Agent 的持续学习框架"></a>3. XSkill: 多模态 Agent 的持续学习框架</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill: Continual Learning from Experience and Skills in Multimodal Agents</a></p>
-<p>多模态 Agent 如何在不更新参数的情况下持续进步？XSkill 提出<strong>双流知识复用</strong>框架：</p>
-<table>
-<thead>
-<tr>
-<th>知识类型</th>
-<th>作用</th>
-<th>粒度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Experience</strong></td>
-<td>工具选择、决策指导</td>
-<td>Action-level</td>
-</tr>
-<tr>
-<td><strong>Skills</strong></td>
-<td>规划、工具编排</td>
-<td>Task-level</td>
-</tr>
-</tbody></table>
-<p><strong>核心设计</strong>：</p>
-<ul>
-<li>基于视觉观察的知识提取与检索</li>
-<li>从多路径轨迹中蒸馏和巩固知识</li>
-<li>推理时动态检索适配当前视觉上下文</li>
-</ul>
-<p>在 5 个基准、4 个骨干模型上，XSkill 一致且显著超越基线，展现出<strong>优秀的零样本泛化能力</strong>。</p>
-<hr>
-<h3 id="4-LLM-Agent-的-RL-泛化能力研究"><a href="#4-LLM-Agent-的-RL-泛化能力研究" class="headerlink" title="4. LLM Agent 的 RL 泛化能力研究"></a>4. LLM Agent 的 RL 泛化能力研究</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12011">Can RL Improve Generalization of LLM Agents? An Empirical Study</a></p>
-<p>RL 微调 (RFT) 训练 LLM Agent 的泛化能力如何？研究系统性地沿三个轴进行评估：</p>
-<ol>
-<li><strong>环境内泛化</strong>：任务难度变化 ✓ 泛化良好</li>
-<li><strong>跨环境迁移</strong>：未见环境 ✗ 迁移较弱</li>
-<li><strong>多环境序列训练</strong>：下游收益好，上游遗忘少</li>
-</ol>
-<p><strong>关键洞察</strong>：</p>
-<ul>
-<li>跨环境迁移困难与<strong>语义先验偏移</strong>和<strong>观测&#x2F;动作接口变化</strong>相关</li>
-<li>混合环境训练可改善整体平衡</li>
-</ul>
-<hr>
-<h3 id="5-LABSHIELD-实验室安全推理基准"><a href="#5-LABSHIELD-实验室安全推理基准" class="headerlink" title="5. LABSHIELD: 实验室安全推理基准"></a>5. LABSHIELD: 实验室安全推理基准</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories</a></p>
-<p>随着 MLLM Agent 从实验室助手进化为自主实验操作员，安全性成为关键挑战。LABSHIELD 基于美国 OSHA 标准和 GHS 构建：</p>
-<ul>
-<li><strong>164 个操作任务</strong>，涵盖多样操作复杂度和风险等级</li>
-<li>双轨评估框架：MCQ vs Semi-open QA</li>
-<li>评估 20 个专有模型 + 9 个开源模型 + 3 个具身模型</li>
-</ul>
-<p><strong>发现</strong>：通用领域 MCQ 准确率与专业实验室场景安全性能存在<strong>平均 32% 的差距</strong>，尤其在危害解读和安全感知规划方面。</p>
-<hr>
-<h3 id="6-AI-Agent-的-SLEEC-规范对齐"><a href="#6-AI-Agent-的-SLEEC-规范对齐" class="headerlink" title="6. AI Agent 的 SLEEC 规范对齐"></a>6. AI Agent 的 SLEEC 规范对齐</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11864">Social, Legal, Ethical, Empathetic and Cultural Norm Operationalisation for AI Agents</a></p>
-<p>AI Agent 在医疗、执法等高风险领域部署，如何与 <strong>SLEEC 规范</strong>（社会、法律、伦理、共情、文化）对齐？</p>
-<p>研究提出系统性规范操作化流程：</p>
-<ul>
-<li>确定规范需求</li>
-<li>验证需求合理性</li>
-<li>实现到系统</li>
-<li>验证合规性</li>
-</ul>
-<p>为开发<strong>功能有效且符合人类价值观</strong>的 AI Agent 建立了框架和研究议程。</p>
-<hr>
-<h3 id="7-自动化技能获取：挖掘开源仓库"><a href="#7-自动化技能获取：挖掘开源仓库" class="headerlink" title="7. 自动化技能获取：挖掘开源仓库"></a>7. 自动化技能获取：挖掘开源仓库</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11808">Automating Skill Acquisition through Large-Scale Mining of Open-Source Agentic Repositories</a></p>
-<p>从单体 LLM 到模块化技能 Agent 的架构转变，需要大量专业技能知识。本研究提出从 GitHub 等开源平台<strong>自动化挖掘 Agent 技能</strong>：</p>
-<ul>
-<li>仓库结构分析</li>
-<li>语义技能识别（密集检索）</li>
-<li>翻译为标准化 SKILL.md 格式</li>
-</ul>
-<p><strong>成果</strong>：Agent 生成的教育内容可实现 <strong>40% 的知识迁移效率提升</strong>，同时保持与人工教程相当的教学质量。</p>
-<hr>
-<h3 id="8-DocSage-多文档多实体问答-Agent"><a href="#8-DocSage-多文档多实体问答-Agent" class="headerlink" title="8. DocSage: 多文档多实体问答 Agent"></a>8. DocSage: 多文档多实体问答 Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage: An Information Structuring Agent for Multi-Doc Multi-Entity Question Answering</a></p>
-<p>跨文档追踪多实体间的隐式逻辑是复杂任务。DocSage 作为端到端 Agent 框架，整合三大模块：</p>
-<ol>
-<li><strong>Schema Discovery</strong>: 动态推断查询特定的最小可连接模式</li>
-<li><strong>Structured Extraction</strong>: 将非结构化文本转为关系表</li>
-<li><strong>Relational Reasoning</strong>: 在结构化表上进行多跳推理</li>
-</ol>
-<p><strong>优势</strong>：SQL 驱动的精确定位、天然的跨文档实体连接、结构化表示缓解注意力分散。</p>
-<p>在两个 MDMEQA 基准上，DocSage 比最先进的长上下文 LLM 和 RAG 系统**准确率提升超过 27%**。</p>
-<hr>
-<h3 id="9-半去中心化多智能体控制"><a href="#9-半去中心化多智能体控制" class="headerlink" title="9. 半去中心化多智能体控制"></a>9. 半去中心化多智能体控制</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11802">A Semi-Decentralized Approach to Multiagent Control</a></p>
-<p>提出 <strong>SDec-POMDP</strong> 框架，统一了去中心化和多智能体 POMDP：</p>
-<ul>
-<li><strong>半马尔可夫控制</strong>：动作时间分布</li>
-<li><strong>半马尔可夫通信</strong>：历史存储时间分布</li>
-</ul>
-<p>开发了 <strong>RS-SDA</strong>* 精确算法，在多个标准基准和海上医疗撤离场景中验证。为多智能体通信问题提供了理论基础。</p>
-<hr>
-<h2 id="📊-趋势总结"><a href="#📊-趋势总结" class="headerlink" title="📊 趋势总结"></a>📊 趋势总结</h2><ol>
-<li><strong>从单体到群体</strong>：多智能体协调、集体行为研究成为热点</li>
-<li><strong>持续学习能力</strong>：如何让 Agent 从历史轨迹中学习而不更新参数</li>
-<li><strong>安全与对齐</strong>：高风险场景的安全感知、规范对齐需求迫切</li>
-<li><strong>知识工程</strong>：从开源仓库自动提取技能，降低 Agent 开发门槛</li>
-<li><strong>泛化挑战</strong>：跨环境迁移仍是 RL 训练 Agent 的核心瓶颈</li>
-</ol>
-<hr>
-<blockquote>
-<p>📚 <strong>论文来源</strong>: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></p>
-<p>📅 <strong>整理日期</strong>: 2026-03-14</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Multi-Agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Reinforcement Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AI-论文追踪//" class="article-tag-list-link color3">AI 论文追踪</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-14-arxiv-agent-trends/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-14-myclaw-dev-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-14-myclaw-dev-report/">MyClaw 开发日报 - Day 3 (规则引擎)</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-14-myclaw-dev-report/" class="archive-article-date">
-  	<time datetime="2026-03-13T20:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MyClaw-开发日报-Day-3-规则引擎"><a href="#MyClaw-开发日报-Day-3-规则引擎" class="headerlink" title="MyClaw 开发日报 - Day 3 (规则引擎)"></a>MyClaw 开发日报 - Day 3 (规则引擎)</h1><p><strong>日期：</strong> 2026-03-14<br><strong>阶段：</strong> Phase 3 - 规则引擎<br><strong>工作时段：</strong> 19:00 - 05:00</p>
-<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><h3 id="暂无-Git-提交"><a href="#暂无-Git-提交" class="headerlink" title="暂无 Git 提交"></a>暂无 Git 提交</h3><h2 id="✅-今日完成任务"><a href="#✅-今日完成任务" class="headerlink" title="✅ 今日完成任务"></a>✅ 今日完成任务</h2><p><em>暂无任务记录</em></p>
-<h2 id="🎯-技术亮点"><a href="#🎯-技术亮点" class="headerlink" title="🎯 技术亮点"></a>🎯 技术亮点</h2><!-- 记录今天的关键技术实现和突破 -->
-
-<p><em>待补充</em></p>
-<h2 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h2><!-- 记录遇到的挑战和解决方案 -->
-
-<p><em>暂无</em></p>
-<h2 id="📈-代码统计"><a href="#📈-代码统计" class="headerlink" title="📈 代码统计"></a>📈 代码统计</h2><ul>
-<li><em>暂无代码变更</em></li>
-</ul>
-<h2 id="📝-学习笔记"><a href="#📝-学习笔记" class="headerlink" title="📝 学习笔记"></a>📝 学习笔记</h2><!-- 记录今天学到的技术要点 -->
-
-<p><em>待补充</em></p>
-<h2 id="🚀-明日计划"><a href="#🚀-明日计划" class="headerlink" title="🚀 明日计划"></a>🚀 明日计划</h2><!-- 下一步任务 -->
-
-<p><em>待补充</em></p>
-<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><!-- 今天参考的文档、教程、文章 -->
-
-<p><em>暂无</em></p>
-<hr>
-<p><strong>工作时间：</strong> <em>待统计</em><br><strong>心情指数：</strong> ⭐⭐⭐⭐⭐<br><strong>进度评价：</strong> 🟢 正常</p>
-<hr>
-<p><em>本报告由 MyClaw 自动生成系统生成</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OpenClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MyClaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Electron</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MyClaw-开发日记//" class="article-tag-list-link color2">MyClaw 开发日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-14-myclaw-dev-report/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/49/">49</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -2000,6 +2050,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">arXiv</a>
               </li>
              
@@ -2016,15 +2078,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计哲学</a>
+                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2040,15 +2102,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2061,10 +2115,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">trends</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2156,14 +2206,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Memory</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Technical Analysis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Vibe Coding</a>
               </li>
              
@@ -2173,6 +2215,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人工智能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Technical Analysis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2208,10 +2258,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">内容创作</a>
               </li>
              
@@ -2225,6 +2271,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">伦理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2316,19 +2366,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">memory</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">daily-report</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Prompt Engineering</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术指南</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">daily-report</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2344,11 +2394,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Recall</a>
+                <a href="javascript:void(0)" class="js-tag color5">深度分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">深度分析</a>
+                <a href="javascript:void(0)" class="js-tag color2">Recall</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2416,11 +2466,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Agent Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">长期记忆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">browser</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">automation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Planning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">coding-agents-and-ides</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ai-coding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Harness</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Infrastructure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LangGraph</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2432,10 +2518,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go 语言学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java android EventBus</a>
               </li>
              
@@ -2444,11 +2526,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">go android linux 刷机 root</a>
+                <a href="javascript:void(0)" class="js-tag color3">go 语言学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">prompt, LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">go android linux 刷机 root</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2464,7 +2550,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术杂想</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2472,11 +2558,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术杂想</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2508,11 +2594,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
+                <a href="javascript:void(0)" class="js-tag color5">代码重构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码重构</a>
+                <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2520,11 +2606,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">人生思考</a>
+                <a href="javascript:void(0)" class="js-tag color5">社会思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">社会思考</a>
+                <a href="javascript:void(0)" class="js-tag color5">人生思考</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2572,11 +2658,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">佛偈</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术思考</a>
+                <a href="javascript:void(0)" class="js-tag color3">佛偈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2588,11 +2674,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">程序设计</a>
+                <a href="javascript:void(0)" class="js-tag color1">思考 感悟</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">思考 感悟</a>
+                <a href="javascript:void(0)" class="js-tag color5">程序设计</a>
               </li>
              
               <li class="article-tag-list-item">
