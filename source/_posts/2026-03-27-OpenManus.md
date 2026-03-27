@@ -1,12 +1,13 @@
 ---
-title: "OpenManus 项目分析报告"
-date: 2026-03-27 11:00:00
+title: OpenManus 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 4415
+date: 2026-03-27 11:00:00
 ---
 
 # OpenManus 项目分析报告
