@@ -151,6 +151,380 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2024-03-29-agent-memory-arxiv-daily" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/2024-03-29-agent-memory-arxiv-daily/">Agent Memory领域最新研究进展 - 2024年3月29日</a>
+    </h1>
+  
+
+        
+        <a href="/2024/2024-03-29-agent-memory-arxiv-daily/" class="archive-article-date">
+  	<time datetime="2024-03-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Agent-Memory领域最新研究进展综合报告"><a href="#Agent-Memory领域最新研究进展综合报告" class="headerlink" title="Agent Memory领域最新研究进展综合报告"></a>Agent Memory领域最新研究进展综合报告</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>今日（2024年3月29日）在arXiv人工智能领域的最新论文中，我们识别出多篇与Agent Memory、记忆增强系统、多模态推理等相关的前沿研究。这些论文涵盖了从知识库训练、检索增强生成到智能代理技能蒸馏等关键方向。</p>
+<h2 id="今日相关论文列表"><a href="#今日相关论文列表" class="headerlink" title="今日相关论文列表"></a>今日相关论文列表</h2><h3 id="1-基于证据蒸馏和写回增强的知识库训练"><a href="#1-基于证据蒸馏和写回增强的知识库训练" class="headerlink" title="1. 基于证据蒸馏和写回增强的知识库训练"></a>1. 基于证据蒸馏和写回增强的知识库训练</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25737">Training the Knowledge Base through Evidence Distillation and Write-Back Enrichment</a><br><strong>arXiv ID</strong>: 2603.25737<br><strong>发布时间</strong>: 2024-03-26 17:59:49 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>提出WriteBack-RAG框架，将知识库视为可训练组件</li>
+<li>使用标记示例识别检索成功的位置，隔离相关文档</li>
+<li>将文档提炼为紧凑的知识单元并与原始语料库一起索引</li>
+<li>在四种RAG方法、六个基准测试和两种LLM骨干模型上平均提升2.14%</li>
+<li>跨方法迁移实验证明提炼的知识有利于其他RAG管道</li>
+</ul>
+<p><strong>关键词</strong>: RAG, 知识库, 知识蒸馏, 写回机制</p>
+<h3 id="2-多模态推理的周期一致性强化学习"><a href="#2-多模态推理的周期一致性强化学习" class="headerlink" title="2. 多模态推理的周期一致性强化学习"></a>2. 多模态推理的周期一致性强化学习</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25720">R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning</a><br><strong>arXiv ID</strong>: 2603.25720<br><strong>发布时间</strong>: 2024-03-26 17:58:04 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>引入RC2框架，通过强制跨模态周期一致性解决内部冲突</li>
+<li>要求模型进行反向推理，切换模态，通过前向推理可靠重建答案</li>
+<li>获得密集的无标签奖励信号，促进模型自主对齐内部表示</li>
+<li>优化该结构可减轻模态特定错误，推理准确度提升高达7.6分</li>
+</ul>
+<p><strong>关键词</strong>: 多模态推理, 强化学习, 周期一致性, 内部冲突解决</p>
+<h3 id="3-可转移代理技能的轨迹蒸馏框架"><a href="#3-可转移代理技能的轨迹蒸馏框架" class="headerlink" title="3. 可转移代理技能的轨迹蒸馏框架"></a>3. 可转移代理技能的轨迹蒸馏框架</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25158">Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills</a><br><strong>arXiv ID</strong>: 2603.25158<br><strong>发布时间</strong>: 2024-03-26 08:26:38 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>提出Trace2Skill框架，模拟人类专家编写技能的方式</li>
+<li>并行调度子代理分析多样化执行经验，提取轨迹特定教训</li>
+<li>通过归纳推理层次化整合成统一、无冲突的技能目录</li>
+<li>在spreadsheet、VisionQA和数学推理等复杂领域显著提升性能</li>
+<li>演化的技能可跨LLM规模转移并泛化到OOD设置</li>
+</ul>
+<p><strong>关键词</strong>: 代理技能, 轨迹蒸馏, 转移学习, 强化学习</p>
+<h3 id="4-文档引导的语义DAG构建框架"><a href="#4-文档引导的语义DAG构建框架" class="headerlink" title="4. 文档引导的语义DAG构建框架"></a>4. 文档引导的语义DAG构建框架</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25293">DAGverse: Building Document-Grounded Semantic DAGs from Scientific Papers</a><br><strong>arXiv ID</strong>: 2603.25293<br><strong>发布时间</strong>: 2024-03-26 10:33:12 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>研究Doc2SemDAG构建问题：从文档中恢复首选语义DAG及其引用证据</li>
+<li>引入DAGverse框架，从在线科学论文构建文档引导的语义DAG</li>
+<li>核心组件DAGverse-Pipeline通过图形分类、图形重建、语义定位和验证产生高精度语义DAG示例</li>
+<li>发布DAGverse-1数据集，包含108个专家验证的语义DAG</li>
+<li>为文档引导的DAG基准奠定基础，为基于真实世界证据的结构化推理开辟新方向</li>
+</ul>
+<p><strong>关键词</strong>: 语义DAG, 文档引导, 结构化推理, 科学论文分析</p>
+<h3 id="5-绿色自适应推理框架"><a href="#5-绿色自适应推理框架" class="headerlink" title="5. 绿色自适应推理框架"></a>5. 绿色自适应推理框架</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25498">EcoThink: A Green Adaptive Inference Framework for Sustainable and Accessible Agents</a><br><strong>arXiv ID</strong>: 2603.25498<br><strong>发布时间</strong>: 2024-03-26 14:37:46 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>提出EcoThink，能源感知的自适应推理框架</li>
+<li>针对知识检索跳过不必要的推理，为复杂逻辑保留深度计算</li>
+<li>轻量级的蒸馏路由器动态评估查询复杂性</li>
+<li>在9个多样化基准上平均减少推理能耗40.4%（网络知识检索最高81.9%）</li>
+<li>为可持续、包容、节能的生成式AI代理提供可扩展路径</li>
+</ul>
+<p><strong>关键词</strong>: 自适应推理, 能源效率, 智能代理, 可持续AI</p>
+<h3 id="6-基于强化学习的语义场景图生成导航"><a href="#6-基于强化学习的语义场景图生成导航" class="headerlink" title="6. 基于强化学习的语义场景图生成导航"></a>6. 基于强化学习的语义场景图生成导航</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25415">Modernising Reinforcement Learning-Based Navigation for Embodied Semantic Scene Graph Generation</a><br><strong>arXiv ID</strong>: 2603.25415<br><strong>发布时间</strong>: 2024-03-26 13:10:08 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>研究智能体语义场景图生成的导航策略</li>
+<li>现代化决策制定，替换策略优化方法并重新审视离散动作公式</li>
+<li>研究紧凑和细粒度的更大离散动作集</li>
+<li>评估课程学习和可选的基于深度的碰撞监督</li>
+<li>结果显示结合现代优化和细粒化分解动作表示产生最强的完整性-效率权衡</li>
+</ul>
+<p><strong>关键词</strong>: 强化学习, 语义场景图, 导航策略, 智能体</p>
+<h3 id="7-推理漏洞的实时监控"><a href="#7-推理漏洞的实时监控" class="headerlink" title="7. 推理漏洞的实时监控"></a>7. 推理漏洞的实时监控</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25412">Beyond Content Safety: Real-Time Monitoring for Reasoning Vulnerabilities in Large Language Models</a><br><strong>arXiv ID</strong>: 2603.25412<br><strong>发布时间</strong>: 2024-03-26 13:08:56 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>识别推理安全作为正交且同样关键的安全维度</li>
+<li>引入九类不安全推理行为的分类法</li>
+<li>对4111个推理链进行大规模流行病学研究，涵盖自然推理基准和四种对抗攻击方法</li>
+<li>提出推理安全监控器：与目标模型并行运行的LLM组件</li>
+<li>在450链静态基准测试中达到84.88%的步骤级定位准确率和85.37%的错误类型分类准确率</li>
+</ul>
+<p><strong>关键词</strong>: 推理安全, 实时监控, 大型语言模型, 对抗攻击</p>
+<h3 id="8-跨模型不一致性作为无标签正确性信号"><a href="#8-跨模型不一致性作为无标签正确性信号" class="headerlink" title="8. 跨模型不一致性作为无标签正确性信号"></a>8. 跨模型不一致性作为无标签正确性信号</h3><p><strong>论文标题</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.25450">Cross-Model Disagreement as a Label-Free Correctness Signal</a><br><strong>arXiv ID</strong>: 2603.25450<br><strong>发布时间</strong>: 2024-03-26 13:46:22 UTC<br><strong>摘要要点</strong>:</p>
+<ul>
+<li>引入跨模型不一致性作为正确性指标，可在现有生产系统中使用</li>
+<li>跨模型困惑度(CMP)测量验证模型对生成模型答案标记的惊讶程度</li>
+<li>跨模型熵(CME)测量这些位置的不确定性</li>
+<li>在推理、检索和数学问题解决基准上超越基线</li>
+<li>在MMLU上CMP达到0.75的平均AUROC，显著优于基线0.59</li>
+</ul>
+<p><strong>关键词</strong>: 跨模型验证, 无标签正确性, 部署监控, 选择性预测</p>
+<h2 id="研究趋势分析"><a href="#研究趋势分析" class="headerlink" title="研究趋势分析"></a>研究趋势分析</h2><h3 id="热门研究方向"><a href="#热门研究方向" class="headerlink" title="热门研究方向"></a>热门研究方向</h3><ol>
+<li><p><strong>知识库与RAG系统优化</strong></p>
+<ul>
+<li>知识库从静态构建向动态训练演进</li>
+<li>证据蒸馏和写回增强成为关键技术</li>
+<li>跨方法迁移验证知识库优化效果</li>
+</ul>
+</li>
+<li><p><strong>多模态与跨模态记忆</strong></p>
+<ul>
+<li>跨模态周期一致性成为推理优化的新范式</li>
+<li>多模态内部冲突的自动对齐机制</li>
+<li>模态间信息一致性的强化学习框架</li>
+</ul>
+</li>
+<li><p><strong>代理技能与经验管理</strong></p>
+<ul>
+<li>轨迹到技能的蒸馏框架解决技能碎片化问题</li>
+<li>跨模型、跨场景的技能迁移能力</li>
+<li>经验的结构化表示与层次化管理</li>
+</ul>
+</li>
+<li><p><strong>可持续与高效的记忆系统</strong></p>
+<ul>
+<li>绿色推理框架减少能耗</li>
+<li>自适应推理机制平衡性能与效率</li>
+<li>面向资源受限环境的优化策略</li>
+</ul>
+</li>
+<li><p><strong>推理安全与监控</strong></p>
+<ul>
+<li>推理级别的实时监控成为新的安全关注点</li>
+<li>跨模型验证机制提升系统可靠性</li>
+<li>推理漏洞的自动化检测与分类</li>
+</ul>
+</li>
+</ol>
+<h3 id="技术发展趋势"><a href="#技术发展趋势" class="headerlink" title="技术发展趋势"></a>技术发展趋势</h3><ol>
+<li><strong>从静态到动态</strong>：知识库从一次性构建向持续演进转变</li>
+<li><strong>从单模态到多模态</strong>：跨模态一致性成为记忆系统的核心要求</li>
+<li><strong>从单一技能到技能体系</strong>：技能的组织、迁移和进化成为研究重点</li>
+<li><strong>从纯粹性能到综合优化</strong>：性能、能耗、安全的协同优化</li>
+</ol>
+<h2 id="关键洞察和创新点"><a href="#关键洞察和创新点" class="headerlink" title="关键洞察和创新点"></a>关键洞察和创新点</h2><h3 id="核心创新突破"><a href="#核心创新突破" class="headerlink" title="核心创新突破"></a>核心创新突破</h3><ol>
+<li><p><strong>WriteBack-RAG框架</strong></p>
+<ul>
+<li>创新性地将知识库视为可训练组件</li>
+<li>通过标记示例识别和隔离相关信息</li>
+<li>跨方法迁移验证了改进的可迁移性</li>
+</ul>
+</li>
+<li><p><strong>R-C2周期一致性强化学习</strong></p>
+<ul>
+<li>将跨模态不一致性转化为学习信号</li>
+<li>自动对齐内部表示的周期约束机制</li>
+<li>无标签奖励信号的引入解决了标注问题</li>
+</ul>
+</li>
+<li><p><strong>Trace2Skill技能蒸馏框架</strong></p>
+<ul>
+<li>模拟人类专家的技能创作过程</li>
+<li>轨迹教训到可转移技能的结构化转换</li>
+<li>跨LLM规模和OOD设置的技能迁移验证</li>
+</ul>
+</li>
+<li><p><strong>推理安全监控器</strong></p>
+<ul>
+<li>定义了推理安全的新维度</li>
+<li>九类不安全推理行为的系统性分类</li>
+<li>实时监控与中断信号的高效实现</li>
+</ul>
+</li>
+</ol>
+<h3 id="技术融合创新"><a href="#技术融合创新" class="headerlink" title="技术融合创新"></a>技术融合创新</h3><ol>
+<li><strong>多模态推理与记忆的融合</strong>：不同模态间的信息一致性成为记忆系统的基础</li>
+<li><strong>强化学习与知识蒸馏的结合</strong>：通过强化学习优化记忆系统的性能</li>
+<li><strong>安全与效率的平衡</strong>：在保证安全的同时优化系统能耗和性能</li>
+<li><strong>理论与实践的结合</strong>：既有理论框架也有实验验证</li>
+</ol>
+<h2 id="与开源记忆项目的关联"><a href="#与开源记忆项目的关联" class="headerlink" title="与开源记忆项目的关联"></a>与开源记忆项目的关联</h2><p>基于以上论文分析，Agent Memory领域的研究与现有开源记忆项目存在以下关联：</p>
+<h3 id="1-与LangChain框架的关联"><a href="#1-与LangChain框架的关联" class="headerlink" title="1. 与LangChain框架的关联"></a>1. 与LangChain框架的关联</h3><ul>
+<li>WriteBack-RAG框架验证了LangChain中RAG管道优化的有效性</li>
+<li>跨模态一致性学习为LangChain的多模态组件提供了新思路</li>
+<li>推理安全监控可集成到LangChain的代理系统中</li>
+</ul>
+<h3 id="2-与LlamaIndex的关联"><a href="#2-与LlamaIndex的关联" class="headerlink" title="2. 与LlamaIndex的关联"></a>2. 与LlamaIndex的关联</h3><ul>
+<li>DAG框架与LlamaIndex的索引机制高度契合</li>
+<li>轨迹到技能的蒸馏为LlamaIndex的技能系统提供参考</li>
+<li>文档引导的语义构建可优化LlamaIndex的文档处理</li>
+</ul>
+<h3 id="3-与MemGPT的关联"><a href="#3-与MemGPT的关联" class="headerlink" title="3. 与MemGPT的关联"></a>3. 与MemGPT的关联</h3><ul>
+<li>长期记忆管理的研究为MemGPT的上下文窗口优化提供方向</li>
+<li>技能蒸馏框架可应用于MemGPT的经验管理</li>
+<li>自适应推理机制可优化MemGPT的资源使用</li>
+</ul>
+<h3 id="4-与AutoGPT的关联"><a href="#4-与AutoGPT的关联" class="headerlink" title="4. 与AutoGPT的关联"></a>4. 与AutoGPT的关联</h3><ul>
+<li>代理技能蒸馏框架直接适用于AutoGPT的任务执行</li>
+<li>推理安全监控为AutoGPT的自主决策提供保障</li>
+<li>跨模态学习增强AutoGPT的环境理解能力</li>
+</ul>
+<h3 id="5-与CrewAI的关联"><a href="#5-与CrewAI的关联" class="headerlink" title="5. 与CrewAI的关联"></a>5. 与CrewAI的关联</h3><ul>
+<li>协作推理研究为CrewAI的团队合作机制提供启发</li>
+<li>技能共享和迁移框架优化CrewAI的多代理协作</li>
+<li>推理一致性保证提升CrewAI的整体性能</li>
+</ul>
+<h2 id="未来发展方向"><a href="#未来发展方向" class="headerlink" title="未来发展方向"></a>未来发展方向</h2><h3 id="1-统一记忆架构"><a href="#1-统一记忆架构" class="headerlink" title="1. 统一记忆架构"></a>1. 统一记忆架构</h3><ul>
+<li>整合多种记忆形式（长期、短期、工作记忆）</li>
+<li>建立跨模态记忆的一致性保证机制</li>
+<li>开发可扩展的记忆组织与检索框架</li>
+</ul>
+<h3 id="2-自主记忆进化"><a href="#2-自主记忆进化" class="headerlink" title="2. 自主记忆进化"></a>2. 自主记忆进化</h3><ul>
+<li>记忆系统的自我更新和优化能力</li>
+<li>基于反馈的动态知识蒸馏</li>
+<li>记忆质量评估与改进机制</li>
+</ul>
+<h3 id="3-多智能体记忆共享"><a href="#3-多智能体记忆共享" class="headerlink" title="3. 多智能体记忆共享"></a>3. 多智能体记忆共享</h3><ul>
+<li>分布式智能体间的记忆共享机制</li>
+<li>记忆的一致性保证与冲突解决</li>
+<li>协作推理的记忆支持框架</li>
+</ul>
+<h3 id="4-伦理与安全"><a href="#4-伦理与安全" class="headerlink" title="4. 伦理与安全"></a>4. 伦理与安全</h3><ul>
+<li>记忆系统的隐私保护机制</li>
+<li>记忆内容的审核与过滤</li>
+<li>记忆偏差的检测与纠正</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>今日Agent Memory领域的研究展示了多个关键创新方向，从知识库的动态优化到多模态推理的一致性保证，从技能的跨模型迁移到推理安全的实时监控。这些研究不仅推动了Agent Memory理论框架的发展，也为实际应用提供了可行的技术方案。</p>
+<p>未来的研究方向将更加注重统一记忆架构的构建、记忆系统的自主进化、多智能体记忆的协同以及伦理安全保障。随着这些研究的深入，Agent Memory将在更广泛的应用场景中发挥关键作用，为人工智能的可持续发展奠定坚实基础。</p>
+<hr>
+<p><em>生成时间：2024年3月29日</em><br><em>数据来源：arXiv cs.AI 最新论文</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RAG</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Agent Memory</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">知识库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">多模态推理</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">强化学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能//" class="article-tag-list-link color5">人工智能</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能/Agent技术//" class="article-tag-list-link color3">Agent技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能/Agent技术/知识管理//" class="article-tag-list-link color5">知识管理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/2024-03-29-agent-memory-arxiv-daily/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ChatGPT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/ChatGPT/">ChatGPT</a>
+    </h1>
+  
+
+        
+        <a href="/2024/ChatGPT/" class="archive-article-date">
+  	<time datetime="2024-03-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一个让我产生了一种又爱又恨的产品。</p>
+<p>ChatGPT像是星星之火，必将点燃人类未知的AI大森林。</p>
+<p>未来的一两百年，人类的历史恐将发生巨大的变化。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/ChatGPT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2024年 3 月 18 日 - 2024年 3 月 23 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -714,154 +1088,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2029%20%E6%97%A5%20-%202024%E5%B9%B4%202%20%E6%9C%88%203%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2024年 1 月 22 日 - 2024年 1 月 28 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2022%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2028%20%E6%97%A5/">工作周报2024年1 月22 日 - 2024年1 月28日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2022%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2028%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>脚本编辑器设计和开发<br>随着AI开发组新伙伴的加入，人多力量大，很多工作量的进展推进的快了起来，我手里各项工作也慢慢的有序了，做模板管理的项目过程中，我对整个现在的Chatbot实现有了更多的认识，现在的设计思路，业务逻辑组织关系，模块结构和层次也有了新的认识，回过头来看之前脚本编辑器设计有点过于粗糙，比如没有考虑清楚部署里的流程，模板和大小关卡在实现上的依赖关系。其实整个脚本编辑器的整体业务复杂度不大，与过往的很多项目比，业务规模，业务复杂度和技术难度都属于中等，这个也是初期项目评估的出发点，在时间比较仓促的情况下，我过于乐观的估计了排期。经过这两周折腾的经验和思考，结合对go开发速度的认知，和新宇重新评估了后面的工作量和之前没有想到的问题。另外一个复盘得到的一个深刻认知是如何在自己优势不佳和资源不足的领域较快的取得有效结果，首先看机会，要谨慎珍惜，其次需要动脑子，想路子，多参考其他项目和其他人的经验，避免冒进，稳重求胜。在没有太多总结和认知的项目里，先慢后快节奏要优于先快后慢的节奏。另外就是对新的认知领域，能力迁移要限于认知重建和认知拓展，也就是要先认知重建，然后是认知拓展，再是能力迁移，再是能力发展，最后形成闭环。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2022%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2028%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2024年 1 月 15 日 - 2024年 1 月 21 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2021%20%E6%97%A5/">工作周报2024年1 月15 日 - 2024年1 月21日</a>
-    </h1>
-  
-
-        
-        <a href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2021%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2024-01-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Chatbot模板管理本周底层实现重新写了一版<br>主要原因有4个，1是原来的实现的bug比较多，细节上不满足业务需求，2是原来的设计实现比较难维护和扩展，3是重新实现的成本相对于之前实现的维护和修复bug的成本，是可以接受的，且也方便脚本编辑器的开发，4使用新宇熟悉的权限设计思路，权限部分能较快实现，而且能和学习平台的设计思路保持一致。<br>这个项目我复盘了一下，1是我对Chatbot go的细节深入度不够，在细节实现上花费了不少时间，2是对go grpc缺乏经验，在上面踩了2个坑，花费数小时才搞定，3是决定重新实现的时间太晚了，上上周五就应该看到关键的问题，做出技术结论和决定，犹豫了一下，导致时间很紧张。<br>以后还要多花一些时间练习下go的大型产品类项目，对于技术决定一定要审慎思考，果断决定，当然这样也依赖于对整个项目和技术的掌握程度，所以在做好项目的同时，也要做好技术总结和思考。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52024%E5%B9%B4%201%20%E6%9C%88%2015%20%E6%97%A5%20-%202024%E5%B9%B4%201%20%E6%9C%88%2021%20%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -1728,6 +1954,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">多模态推理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">强化学习</a>
               </li>
             
             <div class="clearfix"></div>

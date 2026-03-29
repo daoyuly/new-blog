@@ -151,6 +151,171 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2022年 2月 14日 - 2022年 2月18日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%202%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%202%E6%9C%8818%E6%97%A5/">工作周报2022年2月14日 - 2022年2月18日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%202%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%202%E6%9C%8818%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-02-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>最近4个月，通过I18n项目组的巨大努力，以及公司决策层的强大支持和所有产研伙伴们的全力协作，i18n项目集在com和cn上成功完整上线，实现了比较彻底的业务模块拆分及重组，编译构建升级，模板node化，多语能力升级等，这些基础能力的升级为我们的2022的业务迭代，产能提升，到点交卷能力，质量体系建设，web侧的技术架构和业务架构升级打下了比较坚实的基础。</p>
+<p>允许我简单回顾下umu web的技术架构发展里程碑事件，2014和215年web端逐渐构建起了angular.js 1.3 + jQuery + zepto + fis  + PHP + 基于百度云存储的运行时多语言机制部署发布为底层基础的技术栈，2016年我们在web移动端引入react的swap，2017年我们逐渐研究和引入webpack，同时我们针对课程创建模块基于angularjs采用了完全面向对象的思想和写法，实现了web pc侧的技术架构升级， 2018引入 typescript，2019年我们完成了除考试外的所有课程和小节的typescript化， 至此在web移动端我们构建起了和业界主流技术一致的技术栈，2021下半年到现在完成react技术栈的所有业务模块的拆分和重组；</p>
+<p>这次的整体技术架构升级是我认为从 umu web arch 1.0 进入到umu web arch 2.0，当然我们还一些业务近两年没有做技术的重点升级，比如小程序，会议客户端，大屏幕，h5和和客户端融合等，不过随着业务的发展，这些技术也会很快迎来重点升级，有些是规划中，有些待落地中，但是整体i18n的推进都为这些事情打下技术架构和组织建设上的基础；web arch 2.0 相对于umu web arch 1.0，会给我带来什么呢？@duanjun在周报曾经从技术角度阐述过，我今天拾人牙慧，从技术，产品和团队的结合点再重述一下：</p>
+<p>1 推动无感知的持续发布的完善<br>大家都知道，2021年我们基本实现了百度云到腾讯云的切换，这个过程不仅仅是功能资源转移个地方，devops和前后端都在这个项目中对不合理的，不清晰的做了不少基本的梳理，更重要的是，我们比较全面的系统的了解了云在我们这大系统中或大或小的各种依赖，以及我们所面对的一些基本性的问题，比如在私有化可能会遇到的问题，我们知道我们的问题所在和基本的可行性方案，其中一个就是前端的编译部署问题，i18n项目采用微应用和分布式部署的思想，基于业务领域在代码层面实现业务拆分和重组，重新设计页面静态资源的组装方式，静态资源全部上传cdn， 模板全部node化， 使得发布单元更小更可控，可以针对某一具体业务单独实现预览发布，灰度发布，比如搜索相关页面的独立预览发布，使得上线的影响范围最小化</p>
+<p>2 逐渐解耦开发生命周期中各技术专业组的依赖<br>开发生命周期包括产品kickoff，设计，开发，测试，发布等主要环节，其中涉及到产研团队的各个专业小组，如，产品，交互，翻译，UI设计，前端，后端，QA，devops等，各个小组的联动现在还有较多耦合，提高效率的很重要的一个方法是减少各组的耦合，标准化各组的输入和输出，减少不必要的协作，各组专注自己的的专业能力和高质量产出。正式基于这样的原则， i18n项目集会逐渐解耦翻译和前端交互，前端和devops的交互，前端内各pod不同项目组之间的代码依赖，UI及UE和前端的交互，这个背后的逻辑是因为代码的隔离和公共组件的规范化，会减少很多样式污染 ，样式规范的不统一；通过模板node化，web端和服务端主要的依赖就是API接口了，基本实现先前后端专业技术的真正分离；</p>
+<p>减少个专业组的不必要的协作，这样的方式也会推动各组在链接上下游的方式，收敛接触面，强化交互效率和交互深度，逐渐完善交付和结果验收的规范</p>
+<p>3 支持Pod和业务领域全自治开发模式<br>模块拆分和重组为Pod机制的深入发展，提供了代码级别的支持，目前按照业务模块和基础功能的层次拆分，大概有20个大业务repo，这些repo会分到对应的pod，由具体的pod对特定的repo的业务的迭代，技术升级，质量保证负责，这些repo除了依赖公共模块，相互之间可以独立发展迭代，解决我们业务多样化对代码的不同要求，比如基础模块可能要严格的质量，需要更深入的设计，它们可以独立发布部署，不要依赖整个项目的上线发布，有些模块需要一些更敏捷的做法，可以灵活的快速开发快速上线；不同的业务代可以使用不同的开发策略和CI&#x2F;CD策略</p>
+<p>需要说明的是，代码级别的隔离不代表权限和基础原则规范的隔离，我们目前是所有的前端伙伴，对绝大部分前端repo拥有查看和提交权限，但是要走统一的code review规范，自治是在统一的基础架构，工程能力，产品开发原则之上的；</p>
+<p>4 面临新的问题和挑战<br>当然我们也会面临这个阶段的问题和挑战，比如多模块的开发发布的管理问题，基础repo和业务repo的依赖管理问题，各repo技术架构各自独立演进的问题，新业务放在哪个repo的问题以repo本身的管理问题等等，但是我也相信这些问题是我们进入umu web arch 3.0的垫脚石；未来几年Web AI，Web 3.0，元宇宙中的技术细项都会逐渐的进入我们的各项业务，我相信我们现在做的是支持它们的最好的基础；</p>
+<p>这些重大升级的背后是公司层面对技术的无比重视，公司最早亮点产品大屏幕骨子里就透着对技术的追求和信任，我们相信先进的技术能给公司带来强大的生命力，东朔老师在2017年用户端的一次会议上，针对flutter的引入和推进就表达过这样的思想：新技术的红利会给我们带来更多的成功机会，我们要积极的推动和引入合适的新技术，用技术赋能产品，提升我们在市场上的价值及表现。我们一直是秉承这种思想，flutter，微信小程序，web客户端，nodejs，go，AI等新技术的能快速的引入和落地都是基于这个思想的指引，我们也始终以我们当下的研发能力使用当下条件允许的技术，保证整体技术不落后，重点技术有突破的节奏。其实每次重大技术升级都会面临很多的现实问题和挑战，这个过程从公司决策层到产品和研发都经历了很多的权衡，调整和困难，甚至是汗水和泪水，但是我觉得更多是不懈奋斗的意识，任何从0到1的事情，没有奋斗是绝对完成不了的，从14年到现在我们不断的通过这样的奋斗过程实现了技术上层层升级，公司的可持续发展，未来随着公司业务规模的不断增长，这种升级会越来越有挑战，只要我们坚守这种思想，立足当下，着眼未来，一定能实现技术和产品的可持续同频发展。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%202%E6%9C%88%2014%E6%97%A5%20-%202022%E5%B9%B4%202%E6%9C%8818%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-北漂的日子（15）写在2022年的开头" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8815%EF%BC%89%E5%86%99%E5%9C%A82022%E5%B9%B4%E7%9A%84%E5%BC%80%E5%A4%B4/">北漂的日子(十五) 写在2022年的开头</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8815%EF%BC%89%E5%86%99%E5%9C%A82022%E5%B9%B4%E7%9A%84%E5%BC%80%E5%A4%B4/" class="archive-article-date">
+  	<time datetime="2022-01-30T17:22:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我出生在1985年或者1986年，在计划生育的年代，我的父母东躲西藏的在山里的姑奶奶家生下了我，又是各种凑钱缴了超生费，我才能上的户口，我虽然那个时候不记得任何事情，幸好我对那段历史有足够的理解和认知，我大概能想象的出我出生时，我的父母及我的家人的艰难境地，所以对于我到底是哪年的出生的我的确不太在乎。从法律上说，我是1986年出生的，因为身份证上这么记的，这么算，2022年是我的本命年，也在35岁之后的第一个年。</p>
+<p>啰嗦这么多，是为了纪念《北漂的日子(十四) 》7年，我老婆是这个系列的忠实读者，怎奈时间有限和工作繁忙。另外也是因为公司的交流用QQ，在QQ上更新日志会让大家看到我赤裸的灵魂，这可能是所谓的职场大忌，羞愧之，惭愧之。现在公司的交流切到slack上，QQ已经和工作关系不大，又慢慢成为了我的个人小窝了。</p>
+<p>现在是2021年最后一天的凌晨，窗外刚下过一场小雪，小区里静谧祥和，看不太出来疫情带来的影响。疫情的这两年了，有很多天，这个点（2022-01-31 01:39:17），我都还在公司，或者在回家的路上，回想过往有很多感慨，展望未来又深感任重道远。</p>
+<p>2017年2月份，老婆给我生了一个孩子，男孩，刚出生时七斤多点，现在已经快5岁了，二三十斤了。</p>
+<p>我给孩子取名为 刘牧山。我出生于山东费县，蒙山之下，沂水之滨，我妻子出生于重庆云阳，长江之滨，山水环绕，孩子的名字本意来源于此，其意蕴为：“观云卷舒，听江水拍岸，牧于自然，不负山川”。 我们都是大山大河之子女，这个名字寄托了我们对祖国山川江河的敬畏与崇尚，也希望刘牧山将来能御险岭，登高峰，自成其志，不负时代。按照老家族谱的辈分排序，刘牧山的辈分是“学”字辈，也就是说名字应该带有“学”，我的很多侄子辈的名字都带有“学”，不过考虑到时代的变化，名字中辈分越来越失去了其原有的伦理意义，还有就是“刘学X”，可能是我能力有限，这个X太不好确定了，于是孩子起名时，我征询了我父亲的意见，也和我一位好朋友的父亲做了生辰八字的咨询，最终确定了这个名字。孩子总是父母的心头肉，从起名上可见一斑。</p>
+<p>小名 MUMU，则是我对曾经在 UMU 工作岁月的一种纪念，也带着一点像王建军、李重庆式的命名风格，既有亲昵之感，又带有个性的时间印记。回重庆云阳时，mumu的外公外婆用云阳土话喊刘牧山，我就听成是刘牧三。</p>
+<p>2020年底的疫情，改变了很多事情，也改变了很多观念，戴口罩，健康码，核酸检测，已经成为生活中不可或缺的一部分</p>
+<p>父母已经年过古稀，对我来说特别想多陪陪他们，在我观念里，所谓“漂”就是和父母的距离太远。</p>
+<p>对于新的一年，我想要多花时间在父母和家庭上；在工作和事业上，脚踏实地的做工作，坚持长期主义做事业，更上层楼；在个人发展上开阔视野，提升格局和做事的能力，锤炼思想和信念，坚守初心，坚持奋斗；</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">北漂生活</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%8815%EF%BC%89%E5%86%99%E5%9C%A82022%E5%B9%B4%E7%9A%84%E5%BC%80%E5%A4%B4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2022年 1月 24日 - 2022年 1月29日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -790,174 +955,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2030%E6%97%A5%20-%202021%E5%B9%B4%2012%E6%9C%883%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2021年 11月 22日 - 2021年 11月27日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2022%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8827%E6%97%A5/">工作周报2021年11月22日 - 2021年11月27日</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2022%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8827%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2021-11-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>基于rxjs+web component的组件开发<ul>
-<li>camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点：</li>
-<li>封装性好，html，style可以封装在组件内，可以独立使用；</li>
-<li>不依赖第三方库，chrome本身很好的支持；</li>
-<li>使用方便，如<camera-device></camera-device></li>
-<li>在状态和流程管理上目前尝试使用了rxjs + react + hooks作为数据流和订阅通知的管理器，在录制项目的界面上涉及多个步骤的数据转换，比如从开始页到录制页，另外是录制页面的各种状态rxjs的响应式可以录制时的状态通过observeable传递给其他关注的组件；这样会比较方便的避免过多的状态通知的情况；</li>
-<li>努力向身边优秀的伙伴们学习</li>
-<li>有一次和@元峰吃饭，我就问@元峰是怎样做到高中清华的，@元峰说了一个细节让我获益匪浅，他告诉我他高中做数学试卷的时候，往往是从后往前做的，也就是是先从所谓的压轴题开始做起，我听完有点震惊，毕业后我就没有关注过考试技巧的话题了，但我隐约记得十多年我上高中的时候，我的老师告诉我们不会的题目先跳过去，先易后难，这成了我的定式思维，而@元峰的做法是先难而后易，我倒是不觉得这个方法本身很惊奇，而是用这个方法背后该是怎样的思考，真的有大开大合的开阔思维方式；我记得我也曾请教过@熊瑛Candice认为什么样的学习方法最有效？@Candice说，专注最重要，专注学习了，很多内容就搞明白了，那一刻，我对专注有更多的理解；今天通过周报又和彤烨一起复习了下如何写邮件&lt;IF规范-邮件沟通&gt;，其实身边的很多伙伴都在有意无意间成了我的良师益友，身边有这么多优秀的伙伴有时候感觉很幸福，有时候也感觉特别有压力，但是更多的时候是动力，是学习和成长的动力。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2022%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8827%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2021年 11月 15日 - 2021年 11月19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2015%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8819%E6%97%A5/">工作周报2021年11月15日 - 2021年11月19日</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2015%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8819%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2021-11-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>排查log问题的简单总结<ul>
-<li>最近每天会抽点时间关注线上log问题，坦白来说，近一年来，log采集的及展示的基础设施建设上我们已经越过了0的阶段，现在正在往1的方向上奔</li>
-<li>目前最大的痛点是对线上问题来说，用户反馈比我们自己发现比例大， 如何前置bug的发现，就是如何缩短发版后到线上bug被发现的时间是我们需要解决的问题；</li>
-<li>我们现有已经拥有了sentry和kibana的能力，对web端来说，如何利用好这两个能力，可能是未来半年内我们要解决的问题；</li>
-<li>稳定的服务质量对我们来说非常重要，随着客户使用的持续扩大和深入，需要更深入的思考质量建设，从设计开发到上线后持续跟进，都要纳入整个质量建设体系的考虑；</li>
-<li>在日常的log跟进中，有一些关键log确实存在欠缺的情况，对于发现有欠缺的业务，可以随时补充，另外也要多想办法规避log不足带来的问题，最近在排查log的时候也有一些感触；kibana的监控里经常报BJ_report未定义的问题，其实在代码里是找不到直接引用BJ_report对象的情况，但是有if(BJ_report)的类似使用，虽然在chrome上没有报错，但是在一些低版本的浏览器里，对全局变量的使用可能会有差异，我们觉得大部分的时间都使用chrome，所以对兼容性的认识并不深刻，基于这些例子，我总结基本思路是大胆假设，认真推导和求证，log里总会有一些蛛丝马迹供我们参考和旁证，另外一个感触就是，自己的知识和经验还是太欠缺了，知识的欠缺就会导致推导和分析过程是错误的，还需要更加的深入学习，思考和沉淀；</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2015%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8819%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -1824,6 +1821,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">多模态推理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">强化学习</a>
               </li>
             
             <div class="clearfix"></div>

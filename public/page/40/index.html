@@ -151,6 +151,360 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react学习-事件机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/react%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">react学习-事件机制</a>
+    </h1>
+  
+
+        
+        <a href="/2022/react%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2022-07-01T14:20:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下是<strong>从“实现机制 + 历史包袱 + 真实执行路径”</strong>三个层面，对 <strong>React 事件机制（Synthetic Event System）</strong>的深入拆解。不是“怎么用”，而是<strong>为什么必须这样设计</strong>、以及<strong>它的代价是什么</strong>。</p>
+<hr>
+<h2 id="一、先给结论（避免一开始就走偏）"><a href="#一、先给结论（避免一开始就走偏）" class="headerlink" title="一、先给结论（避免一开始就走偏）"></a>一、先给结论（避免一开始就走偏）</h2><p><strong>React 的事件机制本质是：</strong></p>
+<blockquote>
+<p><strong>基于事件委托的跨平台事件适配层 + 调度入口</strong></p>
+</blockquote>
+<p>它解决的不是“监听事件”，而是：</p>
+<ol>
+<li><strong>跨浏览器一致性</strong></li>
+<li><strong>可控的更新调度（与 Fiber &#x2F; Scheduler 强绑定）</strong></li>
+<li><strong>事件优先级与批量更新</strong></li>
+<li><strong>可被中断、可恢复的渲染</strong></li>
+</ol>
+<p>DOM 事件只是输入信号。</p>
+<hr>
+<h2 id="二、为什么不能直接用-DOM-事件（历史-现实）"><a href="#二、为什么不能直接用-DOM-事件（历史-现实）" class="headerlink" title="二、为什么不能直接用 DOM 事件（历史 + 现实）"></a>二、为什么不能直接用 DOM 事件（历史 + 现实）</h2><h3 id="1️⃣-早期问题（React-16-之前）"><a href="#1️⃣-早期问题（React-16-之前）" class="headerlink" title="1️⃣ 早期问题（React 16 之前）"></a>1️⃣ 早期问题（React 16 之前）</h3><ul>
+<li>浏览器事件行为不一致</li>
+<li>IE 的 event 对象地狱</li>
+<li><code>this</code>、冒泡、默认行为不统一</li>
+</ul>
+<p>→ <strong>SyntheticEvent</strong> 诞生：做一层标准化。</p>
+<hr>
+<h3 id="2️⃣-真正原因（React-16-之后）"><a href="#2️⃣-真正原因（React-16-之后）" class="headerlink" title="2️⃣ 真正原因（React 16+ 之后）"></a>2️⃣ 真正原因（React 16+ 之后）</h3><p><strong>Fiber 架构要求：</strong></p>
+<ul>
+<li>更新是 <strong>可中断的</strong></li>
+<li>更新有 <strong>优先级</strong></li>
+<li>更新是 <strong>批量的</strong></li>
+</ul>
+<p>而原生 DOM 事件：</p>
+<ul>
+<li>不可控</li>
+<li>直接触发 setState → 同步执行</li>
+</ul>
+<p>❌ 这与 Fiber 冲突。</p>
+<hr>
+<h2 id="三、React-事件系统的整体结构（非常关键）"><a href="#三、React-事件系统的整体结构（非常关键）" class="headerlink" title="三、React 事件系统的整体结构（非常关键）"></a>三、React 事件系统的整体结构（非常关键）</h2><h3 id="高层结构图（逻辑）"><a href="#高层结构图（逻辑）" class="headerlink" title="高层结构图（逻辑）"></a>高层结构图（逻辑）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">浏览器 DOM Event</span><br><span class="line">        ↓</span><br><span class="line">顶层事件监听（root / document）</span><br><span class="line">        ↓</span><br><span class="line">React Event Plugin System</span><br><span class="line">        ↓</span><br><span class="line">SyntheticEvent 封装</span><br><span class="line">        ↓</span><br><span class="line">Scheduler（优先级）</span><br><span class="line">        ↓</span><br><span class="line">Fiber 更新调度</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、事件委托：不是“挂在-document”这么简单"><a href="#四、事件委托：不是“挂在-document”这么简单" class="headerlink" title="四、事件委托：不是“挂在 document”这么简单"></a>四、事件委托：不是“挂在 document”这么简单</h2><h3 id="React-17-的关键变化"><a href="#React-17-的关键变化" class="headerlink" title="React 17 的关键变化"></a>React 17 的关键变化</h3><table>
+<thead>
+<tr>
+<th>版本</th>
+<th>事件绑定位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>React ≤16</td>
+<td><code>document</code></td>
+</tr>
+<tr>
+<td>React 17+</td>
+<td><strong>root container</strong></td>
+</tr>
+</tbody></table>
+<p><strong>原因：</strong></p>
+<ul>
+<li>多 React Root 共存</li>
+<li>微前端 &#x2F; iframe</li>
+<li>避免全局污染</li>
+</ul>
+<hr>
+<h3 id="实际绑定方式（简化）"><a href="#实际绑定方式（简化）" class="headerlink" title="实际绑定方式（简化）"></a>实际绑定方式（简化）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">container.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, dispatchEvent, <span class="literal">false</span>);</span><br><span class="line">container.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, dispatchEvent, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<p>👉 <strong>同时监听捕获 + 冒泡</strong></p>
+<hr>
+<h2 id="五、事件触发后的真实执行路径（逐步）"><a href="#五、事件触发后的真实执行路径（逐步）" class="headerlink" title="五、事件触发后的真实执行路径（逐步）"></a>五、事件触发后的真实执行路径（逐步）</h2><p>以 <code>onClick</code> 为例。</p>
+<h3 id="Step-1：浏览器触发-DOM-事件"><a href="#Step-1：浏览器触发-DOM-事件" class="headerlink" title="Step 1：浏览器触发 DOM 事件"></a>Step 1：浏览器触发 DOM 事件</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOM click</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Step-2：进入-React-统一入口"><a href="#Step-2：进入-React-统一入口" class="headerlink" title="Step 2：进入 React 统一入口"></a>Step 2：进入 React 统一入口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">dispatchEvent</span>(nativeEvent)</span><br></pre></td></tr></table></figure>
+
+<p>React 此时 <strong>不会立刻执行你的 onClick</strong>。</p>
+<hr>
+<h3 id="Step-3：事件插件系统解析"><a href="#Step-3：事件插件系统解析" class="headerlink" title="Step 3：事件插件系统解析"></a>Step 3：事件插件系统解析</h3><p>React 内部维护一张映射表：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">click → onClick</span><br><span class="line">keydown → onKeyDown</span><br></pre></td></tr></table></figure>
+
+<p>插件负责：</p>
+<ul>
+<li>是否需要冒泡</li>
+<li>是否合成事件</li>
+<li>是否阻止默认行为</li>
+</ul>
+<hr>
+<h3 id="Step-4：构造-SyntheticEvent"><a href="#Step-4：构造-SyntheticEvent" class="headerlink" title="Step 4：构造 SyntheticEvent"></a>Step 4：构造 SyntheticEvent</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> syntheticEvent = <span class="keyword">new</span> <span class="title class_">SyntheticEvent</span>(</span><br><span class="line">  reactEventName,</span><br><span class="line">  nativeEvent</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>特性：</p>
+<ul>
+<li>标准化 API</li>
+<li><code>preventDefault</code></li>
+<li><code>stopPropagation</code></li>
+</ul>
+<blockquote>
+<p>React 17 之后 <strong>不再做事件池复用</strong>（这是个重要变化）</p>
+</blockquote>
+<hr>
+<h3 id="Step-5：事件优先级注入（关键）"><a href="#Step-5：事件优先级注入（关键）" class="headerlink" title="Step 5：事件优先级注入（关键）"></a>Step 5：事件优先级注入（关键）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DiscreteEvent（点击、键盘）</span><br><span class="line">→ 高优先级</span><br><span class="line"></span><br><span class="line">ContinuousEvent（mousemove、scroll）</span><br><span class="line">→ 可降级</span><br><span class="line"></span><br><span class="line">DefaultEvent</span><br><span class="line">→ 普通</span><br></pre></td></tr></table></figure>
+
+<p>这一步直接影响：</p>
+<ul>
+<li>setState 什么时候执行</li>
+<li>是否可被打断</li>
+</ul>
+<hr>
+<h3 id="Step-6：触发-Fiber-更新"><a href="#Step-6：触发-Fiber-更新" class="headerlink" title="Step 6：触发 Fiber 更新"></a>Step 6：触发 Fiber 更新</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setState → enqueueUpdate → scheduleUpdateOnFiber</span><br></pre></td></tr></table></figure>
+
+<p>此时：</p>
+<ul>
+<li><strong>不是同步渲染</strong></li>
+<li>而是进入调度系统</li>
+</ul>
+<hr>
+<h2 id="六、SyntheticEvent-不是“假事件”，而是“控制点”"><a href="#六、SyntheticEvent-不是“假事件”，而是“控制点”" class="headerlink" title="六、SyntheticEvent 不是“假事件”，而是“控制点”"></a>六、SyntheticEvent 不是“假事件”，而是“控制点”</h2><h3 id="SyntheticEvent-的真实价值"><a href="#SyntheticEvent-的真实价值" class="headerlink" title="SyntheticEvent 的真实价值"></a>SyntheticEvent 的真实价值</h3><p>❌ 不是为了“统一 API”</p>
+<p>✔️ 是为了：</p>
+<ul>
+<li>在事件边界 <strong>批量更新</strong></li>
+<li>控制 flush 时机</li>
+<li>与 Scheduler 对齐</li>
+</ul>
+<hr>
+<h3 id="自动批处理（React-18）"><a href="#自动批处理（React-18）" class="headerlink" title="自动批处理（React 18）"></a>自动批处理（React 18）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">setA</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="title function_">setB</span>(<span class="number">2</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>只触发一次 render</strong></p>
+<p>哪怕在：</p>
+<ul>
+<li>Promise</li>
+<li>setTimeout</li>
+<li>原生事件</li>
+</ul>
+<p>这是事件系统与调度系统深度耦合的结果。</p>
+<hr>
+<h2 id="七、捕获-冒泡：React-vs-DOM"><a href="#七、捕获-冒泡：React-vs-DOM" class="headerlink" title="七、捕获 &#x2F; 冒泡：React vs DOM"></a>七、捕获 &#x2F; 冒泡：React vs DOM</h2><h3 id="React-事件阶段"><a href="#React-事件阶段" class="headerlink" title="React 事件阶段"></a>React 事件阶段</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Capture phase</span><br><span class="line">→ Target</span><br><span class="line">→ Bubble phase</span><br></pre></td></tr></table></figure>
+
+<p>但注意：</p>
+<ul>
+<li>React 捕获 ≠ DOM 捕获</li>
+<li>React 冒泡 ≠ DOM 冒泡</li>
+</ul>
+<p>React 是：</p>
+<blockquote>
+<p><strong>在 Fiber 树上模拟事件传播</strong></p>
+</blockquote>
+<hr>
+<h3 id="stopPropagation-的真实效果"><a href="#stopPropagation-的真实效果" class="headerlink" title="stopPropagation 的真实效果"></a>stopPropagation 的真实效果</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.<span class="title function_">stopPropagation</span>();</span><br></pre></td></tr></table></figure>
+
+<p>阻止的是：</p>
+<ul>
+<li>React 合成事件的继续传播</li>
+</ul>
+<p>不一定阻止：</p>
+<ul>
+<li>原生 DOM 事件（除非显式）</li>
+</ul>
+<hr>
+<h2 id="八、为什么某些事件不能合成？"><a href="#八、为什么某些事件不能合成？" class="headerlink" title="八、为什么某些事件不能合成？"></a>八、为什么某些事件不能合成？</h2><h3 id="非冒泡事件"><a href="#非冒泡事件" class="headerlink" title="非冒泡事件"></a>非冒泡事件</h3><ul>
+<li><code>focus</code></li>
+<li><code>blur</code></li>
+<li><code>scroll</code></li>
+</ul>
+<p>React 的策略：</p>
+<ul>
+<li>捕获阶段监听</li>
+<li>或直接绑定到目标元素</li>
+</ul>
+<hr>
+<h2 id="九、React-事件机制的代价（实话实说）"><a href="#九、React-事件机制的代价（实话实说）" class="headerlink" title="九、React 事件机制的代价（实话实说）"></a>九、React 事件机制的代价（实话实说）</h2><h3 id="成本"><a href="#成本" class="headerlink" title="成本"></a>成本</h3><ol>
+<li>多一层抽象（性能）</li>
+<li>调试复杂（栈不直观）</li>
+<li>与原生事件混用容易踩坑</li>
+</ol>
+<hr>
+<h3 id="典型坑"><a href="#典型坑" class="headerlink" title="典型坑"></a>典型坑</h3><ul>
+<li>在 document 上监听，拿不到 React 状态</li>
+<li>stopPropagation 行为不符合预期</li>
+<li>在非 React 管理的节点绑定事件</li>
+</ul>
+<hr>
+<h2 id="十、工程级使用建议（严谨版）"><a href="#十、工程级使用建议（严谨版）" class="headerlink" title="十、工程级使用建议（严谨版）"></a>十、工程级使用建议（严谨版）</h2><h3 id="必须用-React-事件"><a href="#必须用-React-事件" class="headerlink" title="必须用 React 事件"></a>必须用 React 事件</h3><ul>
+<li>状态驱动 UI</li>
+<li>需要批量更新</li>
+<li>需要调度优先级</li>
+</ul>
+<h3 id="可以用原生事件"><a href="#可以用原生事件" class="headerlink" title="可以用原生事件"></a>可以用原生事件</h3><ul>
+<li>性能极限场景（canvas &#x2F; 拖拽）</li>
+<li>非 React 管理区域</li>
+</ul>
+<p>但要明确：</p>
+<blockquote>
+<p><strong>你绕过了 React 的调度系统</strong></p>
+</blockquote>
+<hr>
+<h2 id="十一、一句话总结"><a href="#十一、一句话总结" class="headerlink" title="十一、一句话总结"></a>十一、一句话总结</h2><blockquote>
+<p><strong>React 事件不是“监听”，而是“进入调度系统的门”。</strong></p>
+</blockquote>
+<p>如果你需要，下一步可以直接：</p>
+<ul>
+<li>逐行拆 <strong>dispatchEvent 源码</strong></li>
+<li>对比 <strong>Vue &#x2F; Solid &#x2F; Svelte 事件模型</strong></li>
+<li>分析 <strong>React 事件与 Concurrent Rendering 的冲突点</strong></li>
+<li>或结合 <strong>真实线上 bug</strong> 做机制级复盘</li>
+</ul>
+<hr>
+<p>更新于2025-07-10 22:35:59，部分内容来自ChatGPT</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/react%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 6月 20日 - 2022年 6月 26日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/">工作周报2022年6月20日 - 2022年6月26日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-06-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>课程市场1.4的项目的思考<ul>
+<li>课程市场1.4的前端开发是全力以赴的项目，我的目标是用最短的排期达成更好的交付，我们的结果要指向市场上的良好反应，让线上支付早日上线，早一天上线，就意味着更多的收入的机会，就意味着我们有更好的发展。 另外我希望团队有更好表现， 整个pod@武元@安然@柄蔚也为这个目标达成付出一定的超出预期的努力，对于Content-pod，我希望不单单是某个伙伴的最好表现，是团队每个伙伴的最好表现，并且形成合力，这样的pod或者项目组才能成为一个最强大脑，一个superman。海伦凯勒说， Alone we can do so little; together we can do so much. 一个人可以走的很快，一群人可以走的很远，对此我深信不疑，UMUer一定会成为走的更远的那群人。东朔老师常给我们说的一个关于ofo的CFO的故事，这是个无伤大雅的小插曲，但是我觉得这饱含了对公司的价值文化的判断，个人的成功不是真的成功，带着团队成功的人才是真正的成功，站在哲学角度，这也是共同富裕的底层哲学基础，我觉得这是值得遵循的一个根本逻辑。几年前，东朔老师还经常利用周末出去讲课，为的是给公司带来一些额外的收入，作为常人眼里的成功人士，我知道东朔老师个人有很强的吸金能力，可是他仍然选择直面各种问题带着公司一起往前奔，除去一些其他原因，我觉得对“成功”的这种比较深刻的理解，也是做出这种选择的原因之一。  带着团队成功并不是说单单是项目ower，pod lead，tech lead，业务owner，或是公司负责人的责任，这也是公司内每位伙伴的责任和义务，大家都知道公司内的倡导大家以伙伴彼此称呼，我们不是说同事，职员或者其他的，在工作这件事上，公司将每位伙伴看成是owner，是开拓者，是创业者，而不是跟从者，追随者，甚至是旁观者，人人有责和人人有效是相辅相成是一体两面，如果达成人人有责，人人有效，as result ，作为水到渠成的结果，人人有发展，人人有收获，人人有成长。伙伴意味着对UMU这份事业的责任和工作的担当，意味着彼此的成就，也意味我们要直面焦虑，压力，失败，挑战，甚至是一些委屈和不理解，当我们共享发展和伙伴的成就及成长时，这份独有的荣光才值得放在心底珍藏，成为一生历程中最有光亮的那颗珍珠。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2022年 6月 13日 - 2022年 6月 19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -764,154 +1118,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2018%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2023%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 4月 11日 - 2022年 4月 16日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2016%E6%97%A5/">工作周报2022年4月11日 - 2022年4月16日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2016%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>1 web录制项目正式进入测试阶段，很多细节问题比我预想多，根据开发情况，我预期总bug数在80左右，现在是90多，估计要到140个左右，开发阶段主要关注在整理流程及录制sdk的开发和拆解，没有投入太多时间做产品和细节的确认打磨，在核心功能上现在除了美颜还是一块比较难啃的骨头外，其他的问题的解决没有技术风险，投入适当的时间既可以解决。<br>2 本周对Q2的OKR做了Maproad的分析和拆解，晓刚带着大家对OKR的管理和指标化管理给我了很好的思考和学习，深受启发。目标的Measurable制定非常考验大家对工作的把控能力，浮于表面，肯定制定不好可衡量的细化目标。<br>3 工程例会上大家就如何提升产能提出了很多思路。在人员构成不发生大的变化的情况下，基础工具没有大的改变的情况下，通过改造协作关系，改进工作机制提升每个人产能，提高团队整体产能，我觉得的不是一个简单的问题，但是大家都有很好的Insight，给出了很多的思路和方案，每个方案都值得学习和琢磨背后的逻辑， 比如如何制定关键的统计指标，如何分析现在的问题，如何根据不是很全面的信息输入，给出一个比较深刻的解决思路，根据现状，分析团队的问题，并给出解决方案，并执行落地，都让我受益匪浅，每位伙伴都有很多值得我学习的闪光点，真的很感恩大家毫无保留的贡献聪明才智，让我现场就学到很多。<br>4 React中业务逻辑和UI逻辑的分离还是需要在架构上的解决思路，需要持续跟进和关注。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%2011%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%2016%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 4月 4日 - 2022年 4月 8日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%208%E6%97%A5/">工作周报2022年4月4日 - 2022年4月8日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%208%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-04-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周在自己使用产品时，发现了一些线上的细节问题，比如样式，文案这种会损耗用户体验，但是用户又不怎么跟你反馈的问题。对前端来说，这些细节决定品质，品质决定体验，体验决定客户的购买意愿，购买意愿决定续费率和订购率。很多时候我们要做自己的产品的产品体验官，好用不好用， 体感好不好，自己需要用心感受下。在项目开发中，用户体验也是我们决定一个功能是否可以上线的一个考虑因素，新增一个功能，如果带有损耗用户体验的副作用，那我们应该要再打磨打磨再上线，不要为了上线而上线，本质上上线为了客户价值，为了产品的续费率和订购率，如果上线的功能对这个目标是有损耗的，那么我们什么不hold一下，不打磨一下呢。务实求真的背后瞄准的是我们存在的意义：为客户创造价值，为公司带来利润，务实求真就是让我们遇到难以抉择的事情的时候，关注实实在在的能给公司创造真正价值的目标。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%204%E6%9C%88%204%E6%97%A5%20-%202022%E5%B9%B4%204%E6%9C%88%208%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -1778,6 +1984,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">多模态推理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">强化学习</a>
               </li>
             
             <div class="clearfix"></div>
