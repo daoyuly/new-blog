@@ -151,6 +151,316 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2023年 5 月 15 日 - 2023年 5 月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%205%20%E6%9C%88%2015%20%E6%97%A5%20-%202023%E5%B9%B4%205%20%E6%9C%88%2019%20%E6%97%A5/">工作周报2023年5 月15 日 - 2023年5 月19日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%205%20%E6%9C%88%2015%20%E6%97%A5%20-%202023%E5%B9%B4%205%20%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-05-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>IE问题修复总结<br>IE目前总体的使用量比较少，从我们的统计结果上看，少于我们总使用的0.1%，但是部分用户是我Tier1的大客户，为了支持这部分用户，我们目前还是在核心功能上兼容IE11，基本原则是核心功能支持，其他功能尽可能完全支持，支持不了就是降级支持，使用新特性的新功能引导用户使用Chrome或者Edge，即样式可能存在问题，但是不影响功能使用。IE上的兼容性bug，JP站点重点支持，CN站使用IE的用户量少于JP站，所以CN站IE兼容性问题的优先级会较低。<br>从几个月的趋势看，IE11的使用量在逐渐减少，虽然幅度很小，Edge的使用量逐渐增加，我们周期性的观察这个数据以响应我们对IE的支持力度。<br>目前IE上遇到问题主要来源于2个，1是第三方依赖包不支持IE，引入了一些ES6的语法，导致页面和基于phantomjs的分享卡页面白屏，2是因为我们的js代码量比较大，导致了IE上打开页面的性能比较差，特别是一些硬件性能不是特别好的电脑，初次打开要等很长时间。<br>目前的解决思路是在每个项目里增加ie相关的polyfill，部分仓库使用core-js，typescrip编译高版本语法，但是一些js特性是全局特性且是第三方已经打包好的代码，就没有被编译处理，导致出现bug，基于这种情况，在需要适配IE的应用里增加polyfill，而不是在基础库或者自研依赖里增加polyfill，保证基础库的纯粹，另外 随着微软官方停止IE更新个支持，未来2年内，绝大部分目前使用IE的客户会转向Edge或其他浏览器。<br>钉钉飞书企业微信的支持问题<br>随着我们对接的钉钉、飞书、企业微信的客户越来越多，相关问题的反馈也多起来，流转到我们研发这边的也变多的趋势。<br>从数据的另一个角度上说这是一个好事，说明用户的使用量再提升，用户类型更加丰富，也促使我们更加重视在这些平台上使用体验， 从过往经验总结上来说，使用次数和bug数成正比，比如针对某功能，使用10000次，平均会产生1个反馈问题，0.2个线上bug。<br>钉钉、飞书、企业微信的桌面目前都是基于Election的，从页面应用来说，和浏览器一致，但是因为不用的平台上的交互策略有所不同，所以有些功能上可能需要做适应性的匹配，比如这些平台对打开新窗口做了限制，需要调用其sdk提供的方法打开，目前我们除了引用了dingding的sdk外，飞书，企微的sdk我们暂时没有引入，所以对于这类打开，我们使用当前窗口的打开的方式。<br>兼容的平台多了，对我们的技术设计有了一定的约束，技术设计时，需要考虑这些平台的兼容性，这就需要我们更多的熟悉这些平台的技术特性和交互特性，才能针对的性的做出合理的技术设计。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%205%20%E6%9C%88%2015%20%E6%97%A5%20-%202023%E5%B9%B4%205%20%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 5 月 4 日 - 2023年 5 月 12 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%205%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5/">工作周报2023年5 月4 日 - 2023年5 月12日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%205%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-05-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>AI生成课程介绍的功能中，文本编辑器是很重要的技术支撑，目前方案有2个，1是textarea的plain text编辑，另一个rich text的富文本编辑，通过调研发现现在涉及文本自由编辑的工具基本都实现了富文本编辑，还有一部分内容工具实现了协同编辑，对目前这需求来说，plain text也能勉强满足功能，从功能实现的完整度，难易度上看不如rich text方案。因为目前使用的ueditor编辑器从二次开发，性能，复杂度，稳定性上已经远远落后于现在市面上的同类产品，这次调研了ProseMirror，tinyMCE，slate.js等三款富文本编辑器，分别从技术原理及先进性，发展脉络，社区情况，哪些大厂在用，定制扩展能力，开箱即用的能力， TS支持，上手能力，中文开发资料的丰富度，和我们远期目标的匹配度上，ProseMirror无疑更适合我们，同时大家天天用的Anasa上的富文本编辑器也基于ProseMirror开发，后续我们也会基于proseMirror开发属于UMU产品的富文本编辑器。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%205%20%E6%9C%88%204%20%E6%97%A5%20-%202023%E5%B9%B4%205%20%E6%9C%88%2012%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-保持童真" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E4%BF%9D%E6%8C%81%E7%AB%A5%E7%9C%9F/">保持童真</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E4%BF%9D%E6%8C%81%E7%AB%A5%E7%9C%9F/" class="archive-article-date">
+  	<time datetime="2023-05-02T15:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天是2024年的儿童节。距离上次写点六一儿童节的文字已经过去了整整10年<a target="_blank" rel="noopener" href="http://www.daoyuly.cn/2014/%E5%8C%97%E6%BC%82%E7%9A%84%E6%97%A5%E5%AD%90%EF%BC%88%E5%8D%81%EF%BC%89%E8%87%B4%E6%88%91%E4%BB%AC%E7%BB%88%E5%B0%86%E9%80%9D%E5%8E%BB%E7%9A%84%E7%AB%A5%E8%B4%9E/">北漂的日子（十）- 致我们终将逝去的童贞</a>。</p>
+<p>十年转瞬即逝，自己长大了许多，感慨却少了很多。这个日子不能说特别，只是很卡点，在这一天晒晒自己的内心，抒发些情绪，虽然没有别人在乎这些小心情，不过我想未来的自己也有想了解过去的自己的时候吧。现实中童真童趣离我们很远，很多的空闲时间被各种短视频充满，让我停止了思考，停止了回忆，甚至停止了发牢骚。扔掉手机，回到自己的世界，我想起20年春节，父亲带着他的孙女孙子们堆雪人的场景，我第一次在一个七十多岁的老人脸上看到了童趣。我希望当我是老年人的时候，也能保有一份童趣。</p>
+<p>似乎很多节日都是为了纪念。但是很多节日的内涵在时间中的嬗变巨大，人们可能已经忘了节日的初衷。不过节日赋予了时间以具象，让时间可以被触摸，让时间可以被度量，让时间可以被回忆，也让平凡的人生多了一些可视化的褶皱。</p>
+<p>今年的儿童节，让我多了很多思考。这个世界现在非常不太平，各种剧烈的矛盾开始显露出水面，俄乌战争，巴以战争正在进行，战争的乌云已经慢慢的聚拢，我不知道十年后的六一儿童节我们的孩子们会不会在战争中度过。</p>
+<p>每个人都渴望和平，但是历史告诉我，和平和战争是整个人类的双胞胎孩子，这两个孩子都是被人类在细心呵护着成长。人类不止有和平，还有战争，和平和战争都是人类这个物种进化发展的方式。身为个体的我们，要在战争中保护好自己的孩子，要在和平中教育好的自己的孩子。</p>
+<p>今天我送给孩子的礼物是，一个关于中国老一代顶尖科学家们的传记系列书籍。</p>
+<p>希望他能通过了解学习老一辈科学家们波澜壮阔的的一生，过好自己的一生。</p>
+<p>我希望他能通过经历过战争的老一辈科学家，老一辈的人们在面临战争，面临生死存亡之际，让自己如何追寻求知之路，如何坚定生存发展之念，如何秉持爱国爱家之心。我希望他能理解世界的复杂残酷，但是求知却又是那样的单纯，享受和平，不能忘却战争。我们不只有和平的生活，也会面对实实在在的战争的残酷。</p>
+<p>生存，求知，发展，奉献，这才是孩子真正需要建立的大世界观，也是人类能在这个蓝色星球上能够存在的最高法则。</p>
+<p>我给自己的礼物是一句话，保持童真。</p>
+<p>人到中年，不管是身体还是灵魂都包裹了一层盔甲，这层盔甲能让我们这个世界上能够存活下去。保持童真就是让我们时不时的卸下这层盔甲，看看盔甲里面的自己。</p>
+<p>保持童真，可能就是要保持初心。初心是自己所欲所求最根本的看法和出发点，初心是最有力量的，它不受现有世界规则运行的束缚，它是内心里的主宰，你站在灵魂之外审视自己的处境，审视自己的所思所想。初心会看着你的身体，看着你的精神。让你不迷失这个大森林，让你对生存充满大智慧。</p>
+<p>保持童真，可能就是要坚定信仰。人生路上，苦难，挫折，顺遂，失败，成功，病痛，死亡都会一路相随，坚定信仰，不要让这些把自己打倒。</p>
+<p>保持童真，可能就是要保持快乐。快乐是人生的动力源泉。童真是快乐的源泉，用清澈的心灵思考这个世界，才会让你在看清这个世界的真实之后仍然能坚定而乐观的生活下去。</p>
+<p>不管环境如何变化，保持童真，才能勇敢的挑战那些不期而遇的磨难。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">感悟</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E4%BF%9D%E6%8C%81%E7%AB%A5%E7%9C%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 4 月 23 日 - 2023年 4 月 28 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%204%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%204%20%E6%9C%88%2028%20%E6%97%A5/">工作周报2023年4 月23 日 - 2023年4 月28日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%204%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%204%20%E6%9C%88%2028%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-04-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>提升保持专注的能力，本周的有了更多可以自己控制的时间专注的做开发上工作，感觉很充实，也很有效率，如何让自己保持专注，如何让团队保持专注，我觉得是一项非常重要的能力，我尝试过很多的方法，比如训练自己快速的切换工作模式，早上或者或晚上让自己有足够的时间，给自己设置工作计划，日历上设置工作排期等等，效果有一些，没有特别突出的，现在想想，我觉得可能有时候缺乏从容的态度，从容的专注，才能让自己既放松又紧张，保持较好的记忆力和创造力，同时又比较有激情，这样能比较轻松的解决有挑战有难度的问题，而这种状态产生结果又会让自己更加从容和专注，所以以后还要让想办法让自己变的更从容一些。<br>从团队角度上看，我还注意到一个情况，有时候保持专注不是一个人的事，我们部分工作需要即时性的协作和沟通才能做好，并且有的是需要立即响应并且出结果，很多时候时候我们在沟通和协作的机制里，你很难为了让自己保持专注手头的上工作，因为事情的优先级不同并且我们身处在某个需要快速处理的协作流程里，很难对这个协作流程Say No，会被推着放下手里正在做的工作，转向去做另外这件事情。可能的解决办法之一就是尽可能少的让自己身处这种需要及时响应处理的协作工作流里，当然也不能因为自己要专注工作，而影响了需要即时协作的其他伙伴的工作。<br>团队作为一个整体要有排除干扰的组织能力，保证整个团队的专注度最佳，这是保证团队按照计划进行的强执行力和高产出的重要基础。所以在团队内每个月有一两位伙伴可以解决各种需要即时响应的工作，让团队的其他伙伴保持专注按照计划确定性的工作，是一个最佳实践，目的就是让保证计划的执行。<br>另外的一个思考是一个月有4个周，至少要保证2个周的处于计划执行时间，所以我倾向于需要大量协作，沟通，会议，多人协同的工作放在第1周和第3周，而第2周和第4周保证90%的时间由自己控制，专注的完成OKR的工作。从敏捷开发的经验来看，一个sprint两周，大部分情况是一周的协调，会议，设计，评审，计划，另外一周就是完全的执行和少量的沟通，当然团队必须有一两位伙伴随时切入需要即时性的工作给大部分伙伴留出这种专注性的可能性。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%204%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%204%20%E6%9C%88%2028%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2023年 4 月 16 日 - 2023年 4 月 21 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -602,305 +912,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-工作周报2023年 3 月 6 日 - 2023年 3 月 12 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%203%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%203%20%E6%9C%88%2012%20%E6%97%A5/">工作周报2023年3 月6 日 - 2023年3 月12日</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%203%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%203%20%E6%9C%88%2012%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-03-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>关于MVC模式的思考<br>最近在修改视频播放器组件的过程中，目前的设计和实现存在一些不合理的地方，1是代码分层不清晰，UI层和Native层没有合理的分开，UI层中的各个UI部分没有合理的解耦；2是扩展点不清晰，设计意图模糊，如果要做一个需求迭代，不太好快速搞清楚如何迭代既有设计；3 修改麻烦， UI部分和Native解耦过度，分拆到了不同的包里，导致一个一处修改，多处部署；<br>前端H5播放器是很典型符合MVC的架构模式的例子，使用这种模式的关键点是主要三个分离，1是UI和Model的分离，2是UI和Controller分离，3是基础功能和扩展功能分离， 这里的Model就是播放进度，倍速， 播放时间，资源URL，码率，视频宽高比，字幕展示，播放状态，全屏状态等数据，UI包括，整体控制条，播放屏，字幕展示条，倍速控制，播放状态控制条，播放进度控制条，已经对对应Native Video的对应API调用等；UI很好理解， 就是界面布局，各种可以操作的元素，Controller不是很好理解，很多可见逻辑和不可见逻辑都在Controller里，主要职责是更改Model，同时同步更新UI；基础功能和扩展功能的分离这个比较难把握，首先哪些功能是基础功能，哪些功能是扩展功能不好界定，其实我们可以参照浏览器自带的默认浏览器功能为基础功能，其他都是扩展功能，从这个思路出发，字幕，倍速等都是扩展功能；扩展功能都应该以独立模块（插件）的形式注册到播放器系统，以类似微内核的机制运行插件实现功能扩展；<br>目前很多复杂功能的设计意图不清晰，导致很多功能无法实现设计的演进，进而导致所谓的“大泥团”的架构技术债的产生，在我看来，前端的React提供了很成熟的视图设计模式，对于我们绝大多数复杂些的前端功能来说，把握两个基本设计准则就能解决很多设计困境：合理的分层和合适的命名，合理分层解决的关注点的分离就是扩展的问题，合适的命名体现了开发者对业务逻辑的理解程度和设计意图，分层包括组件内部的函数层次，组件间的调用，功能间的依赖设计，逻辑和逻辑之间的抽象和封装；命名则包括业务常量命名，重要组件，重要方法，重要服务类的命名，这两个设计准则虽然简单朴素却也能量巨大，与其花时间学习很艰深的设计模式和设计架构，不如把这两个设计准则吃透很准；</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%203%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%203%20%E6%9C%88%2012%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2023年 2 月 27 日 - 2023年 3 月 5 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%203%20%E6%9C%88%205%20%E6%97%A5/">工作周报2023年2 月27 日 - 2023年3 月5日</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%203%20%E6%9C%88%205%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-03-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>PDF渲染的技术方案迭代思考<br>最近一两周都在解决PDF使用Canvas渲染带来的问题，涉及到Chrome渲染的源码过程及底层图像图形，需要花费较多的积累和时间，暂时没有从底层机制上搞清楚是具体是什么原因导致的部分字体模糊的问题，通过Canvas和SVG相互切换的方式可以比较有效解决的这个问题来个，应该是图像栅格化的过程出现的问题，SVG底层的渲染和Canvas的不同是，SVG使用的图形方式（称之为矢量的原因），我们看到的任何形状，文字，图像，都是以图形的形式实现渲染，在转换成像素的过程中问题会更少。当然两者都会存在一些问题，比如大麦网曾经分享过其选座系统在涉及到大型体育场馆中数万座位渲染中会遇到的性能问题。目前我们的方式使用的是单页展示的方式，目前不存在这些性能。结合这个专项，我也对pdf以及文档小节有了更深的理解。<br>我注意到有一些企业大量使用文档小节，我猜测的原因可能是，PDF标准文件格式不依赖具体的软件平台，是很多企业，政府，事业单位等大型组织的文档标准之一，所以对于这类组织历经多年积累了大量的PDF文档作为其知识管理的媒体，所以在企业学习中这类文档会成为首要的学习材料和学习内容。而我们的数据也可以说明，文档小节是用户使用最频繁的小节之一。基于此我也简要设想了基于PDF技术的文档小节的功能可能性，比如：<br>文档小节PDF文本提取转AI语音 或者 自动转AI微课<br>PDF目录展示<br>UMU PDF数字水印<br>PDF文本选择及同步圈画<br>PDF单页快捷分享+评论<br>在U课指数的Kickoff的时候，我设想和思考过一个问题，我们的小节类型会越来越多，过往优秀的课程总是缺少我们新增加的小节类型，我们能不能实现小节类型之间的自动转换，或者自动生成呢？比如某页PDF内容我想生成一个讨论，或者生成拍照小节，每类小节因应用场景不同导致其学习效果和学习形式不同，但内容可能是相同的或者相近的，我们基于相同的内容构建不同小节类型的草稿，可能会给用户的课程创建带来不一样的体验或者价值。从技术侧考虑，图文小节转语音微课，文档小节转AI微课，都是有一定的技术可行性的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%2027%20%E6%97%A5%20-%202023%E5%B9%B4%203%20%E6%9C%88%205%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2023年 2 月 20 日 - 2023年 2 月 26 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%202%20%E6%9C%88%2026%20%E6%97%A5/">工作周报2023年2 月20 日 - 2023年2 月26日</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%202%20%E6%9C%88%2026%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-02-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>IE的问题回顾及思考<br>作为一名工作近15年的软件工程师来说，对IE的感情非常深厚，2007年还在上大学就是使用ASP.Net开发基于IE6的网页，我当时开发的功能是大学里的网上选课系统的一部分，主要的查询登录学生的某学期的课程信息，教室信息，上课信息，教师信息，考试信息等等，有一个核心页面是选课页面，是当时带着我的开发的指导老师开发，是一个巨型表格，有不同的颜色，性能巨慢，当时看非常复杂，虽然当时的页面的交互和样式非常简陋，放在那个年代确实非常好用。当时的请求是纯页面级的，ASP.Net里有个ViewState的技术，可以让页面刷新后，保存已经填写的数据，所以看起来和现在的AJAX请求差不多，当时AJAX在IE6上还是非常高端和小众的技术，我当时仅限于知道（当时图书馆有各种介绍AJAX的书籍，我觉得用不着就没咋看，现在想来，认知的局限性害人不浅呢），有点类似现在WebAssembly，看起来很有用，但是实际场景好像又不太怎么用，当时的开发是CSS1.0+的样式，我当时会用不多，多数是字体和颜色，HTML也不敢多用，表格就是table，列表就是ul，html完全语义化，其他不敢用，不知道会出啥莫名其妙的的布局问题， 也没啥div和span啥事。如果你能写个页面，用图片拼个页面出来，稍微漂亮大气点就是大神级别的了。我当时开发IE6遇到的最大问题是性能慢，开发巨慢，没有调试工具，遇到问题只能一行代码一行代码连猜带蒙的排查，只要页面不白屏，数据能出来，按钮能点击就可以交付上线了。还好Visual Studio支持的开发视图有非常完美的低代码工具，只要理解了需求， 拖拖拽拽，从组件库里脱出这几个组件就能搞定一个查询页面， 数据源组件+ DataView + 分页组件 + Button组件 + OnClick，配置上数据库连接字符串，然后编译生成一个dll文件， 放在Windows 2000的IIS服务器上，重启服务，就上线了。IE的很多问题有时候真的很多不好搞定，所以当时很多人就转到客户端方向了，比如WinForm, Flash, Delphi，VB，JAVA Servlet 等等；<br>09年到13年，Firefox和IE8，IE9出现了而且带有开发者工具，B&#x2F;S架构火的一塌糊涂，特别是Firefox的那个小飘虫，简直好的的不得了，我都是用Firefox开发和调试完，再放在IE8上跑，IE8的渲染和运行效率比IE6好太多了，能够支持越来越漂亮，越来越复杂的页面，加上微软的商业策略，我当时开发的项目基本上都要以IE8为基准开发页面；<br>后来Chrome横空出世，逐渐抢占IE和Firefox的市场，加上Chrome真的对开发者非常非常友好，开发效率和开发体验都是指数级的提升，以至于很多单位切换Chrome浏览器是由工程师极力推动的；<br>简单的回顾，有几个思考一直启发着我，1技术是持续的默默的升级的，一定要有技术和商业需求的敏锐感，要及时抓住技术的窗口期；2不要抗拒技术的发展，没有一招鲜吃遍天的事情发生；3应用技术被淘汰的惨烈程度不亚于朝代的更迭，作为工程师，顺势发展尤为重要；IE后续的版本拒绝技术理念的升级，以至于存在了二十多年的产品要被下线，它可是有着辉煌的技术、产品和商业表现，可是现在被迅速的全面淘汰。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%2020%20%E6%97%A5%20-%202023%E5%B9%B4%202%20%E6%9C%88%2026%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2023年 2 月 6 日 - 2023年 2 月 12 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%202%20%E6%9C%88%2012%20%E6%97%A5/">工作周报2023年2 月6 日 - 2023年2 月12日</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%202%20%E6%9C%88%2012%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2023-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>工作聚焦，时间段聚焦，提高效率，最近二三周的工作不够聚焦，琐碎的事有点多，每个事的时间段被分割的有点碎，没有放到统一的时间段去处理；<br>最近一个月有意识的关注项目中代码质量和设计的想一些问题，也会关注重点业务的code，并review一些代码和业务，从中发现了不少问题，主要集中在代码结构比较松散，每人的写法风格不够统一，业务逻辑分散，缺乏业务规则流程和模型设计意识，各种逻辑分支判断组合分别在代码里，业务规则隐晦，业务知识在代码里体现不够清晰；样式、交互、业务逻辑、数据等处理很多是放在糅杂在一个文件里，对业务迭代和多人协作， 特别是需要业务熟悉度参差不齐多人协作，这些都是看不见的直接的开发效率损失，也极大的影响了工程师们的开发体验，因为提高的一些不必要的代码学习时间，也间接影响了个人工作效率；<br>3月份的OKR除了围绕项目，优化点和bug的相关工作外，需要在代码风格，设计思路，业务设计方法，架构设计思路上做一些能力建设，尽量保证团队再这些核心业务技术上所有保障<br>跟进大家周报里提到和总结的一些开发上问题，先针对的解决，做好短期和长期的解决思路的权衡<br>2月份过半，部分工程技术还需要加速一些，node相关的技术改造是后续工程技术提升的基础，7-11保证专注度并做好协作，在保证项目的同时也做了部分私有化能力建设的计划</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%202%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%202%20%E6%9C%88%2012%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/49/">49</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/50/">50</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
     </nav>
   
 
@@ -1663,6 +1677,50 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Knowledge Management</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Memory-Augmented Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Long-term Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Episodic Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">AI Research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ArXiv Papers</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">评估指标</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KPI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">最佳实践</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">评估框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工程实践</a>
               </li>
             
             <div class="clearfix"></div>

@@ -151,6 +151,1326 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2026-03-27-agent-harness-deep-dive" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-27-agent-harness-deep-dive/">Agent Harness 深度调研：AI Agent 的运行时基础设施</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-27-agent-harness-deep-dive/" class="archive-article-date">
+  	<time datetime="2026-03-27T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Agent-Harness-深度调研：AI-Agent-的运行时基础设施"><a href="#Agent-Harness-深度调研：AI-Agent-的运行时基础设施" class="headerlink" title="Agent Harness 深度调研：AI Agent 的运行时基础设施"></a>Agent Harness 深度调研：AI Agent 的运行时基础设施</h1><blockquote>
+<p><strong>核心观点</strong>：Agent Harness 是 AI Agent 的”操作系统”，它不只是执行代码的容器，更是管理状态、工具、安全和生命周期的完整基础设施。从 LangGraph 到 E2B，从 OpenAgents 到 NanoClaw，每一代 Harness 都在解决同样的核心问题：如何让 AI Agent 可靠、安全、可观测地运行。</p>
+</blockquote>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-agent-harness">什么是 Agent Harness？</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B%E7%9F%A9%E9%98%B5">核心能力矩阵</a></li>
+<li><a href="#%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F%E6%BC%94%E8%BF%9B">架构模式演进</a></li>
+<li><a href="#%E4%BB%A3%E8%A1%A8%E9%A1%B9%E7%9B%AE%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90">代表项目深度分析</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97">技术选型指南</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%8F%8D%E6%A8%A1%E5%BC%8F">最佳实践与反模式</a></li>
+<li><a href="#%E6%9C%AA%E6%9D%A5%E8%B6%8B%E5%8A%BF%E4%B8%8E%E6%8C%91%E6%88%98">未来趋势与挑战</a></li>
+<li><a href="#%E5%B7%A5%E7%A8%8B%E8%90%BD%E5%9C%B0%E5%BB%BA%E8%AE%AE">工程落地建议</a></li>
+</ol>
+<hr>
+<h2 id="什么是-Agent-Harness？"><a href="#什么是-Agent-Harness？" class="headerlink" title="什么是 Agent Harness？"></a>什么是 Agent Harness？</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>Agent Harness</strong> 是 AI Agent 的运行时基础设施（Runtime Infrastructure），提供：</p>
+<ul>
+<li><strong>执行环境</strong>：隔离的沙箱，安全运行 agent 代码</li>
+<li><strong>状态管理</strong>：持久化、恢复、checkpoint</li>
+<li><strong>工具集成</strong>：文件系统、API、代码执行、外部服务</li>
+<li><strong>编排能力</strong>：多 agent 协作、工作流调度</li>
+<li><strong>监控调试</strong>：可观测性、trace、debug</li>
+<li><strong>安全控制</strong>：权限管理、资源限制、审计日志</li>
+</ul>
+<h3 id="与-Agent-Framework-的区别"><a href="#与-Agent-Framework-的区别" class="headerlink" title="与 Agent Framework 的区别"></a>与 Agent Framework 的区别</h3><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Agent Framework</th>
+<th>Agent Harness</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>关注点</strong></td>
+<td>Agent 逻辑和推理</td>
+<td>运行时和基础设施</td>
+</tr>
+<tr>
+<td><strong>示例</strong></td>
+<td>LangChain, LlamaIndex</td>
+<td>LangGraph, E2B, OpenClaw</td>
+</tr>
+<tr>
+<td><strong>提供什么</strong></td>
+<td>组件、抽象、API</td>
+<td>执行、监控、安全</td>
+</tr>
+<tr>
+<td><strong>类比</strong></td>
+<td>Web 框架（Django&#x2F;Express）</td>
+<td>容器运行时（Docker&#x2F;K8s）</td>
+</tr>
+<tr>
+<td><strong>价值</strong></td>
+<td>快速开发</td>
+<td>生产级部署</td>
+</tr>
+</tbody></table>
+<p><strong>关键洞察</strong>：Framework 帮你”写” Agent，Harness 帮你”跑” Agent。</p>
+<h3 id="为什么需要-Harness？"><a href="#为什么需要-Harness？" class="headerlink" title="为什么需要 Harness？"></a>为什么需要 Harness？</h3><h4 id="问题-1：执行不可靠"><a href="#问题-1：执行不可靠" class="headerlink" title="问题 1：执行不可靠"></a>问题 1：执行不可靠</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ❌ 没有 harness：失败就全完了</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_agent</span>():</span><br><span class="line">    result = llm.generate(prompt)  <span class="comment"># 可能超时、失败</span></span><br><span class="line">    execute_tool(result)           <span class="comment"># 可能崩溃、死循环</span></span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 有 harness：durable execution</span></span><br><span class="line"><span class="meta">@harness.task(<span class="params">checkpoint=<span class="literal">True</span>, retry=<span class="number">3</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_agent</span>():</span><br><span class="line">    result = llm.generate(prompt)</span><br><span class="line">    execute_tool(result)</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line"><span class="comment"># 自动恢复、重试、checkpoint</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="问题-2：安全隔离"><a href="#问题-2：安全隔离" class="headerlink" title="问题 2：安全隔离"></a>问题 2：安全隔离</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ❌ 没有 harness：直接执行用户代码</span></span><br><span class="line"><span class="built_in">exec</span>(user_code)  <span class="comment"># 危险！</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 有 harness：沙箱隔离</span></span><br><span class="line"><span class="keyword">with</span> Sandbox.create() <span class="keyword">as</span> sbx:</span><br><span class="line">    sbx.run_code(user_code)  <span class="comment"># 安全！</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="问题-3：可观测性"><a href="#问题-3：可观测性" class="headerlink" title="问题 3：可观测性"></a>问题 3：可观测性</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ❌ 没有 harness：黑盒执行</span></span><br><span class="line">agent.run()  <span class="comment"># 不知道内部发生了什么</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 有 harness：全链路追踪</span></span><br><span class="line"><span class="keyword">with</span> tracer.start_as_current_span(<span class="string">&quot;agent.run&quot;</span>):</span><br><span class="line">    agent.run()  <span class="comment"># trace、metrics、logs 全部记录</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="核心能力矩阵"><a href="#核心能力矩阵" class="headerlink" title="核心能力矩阵"></a>核心能力矩阵</h2><h3 id="1-执行环境（Execution-Environment）"><a href="#1-执行环境（Execution-Environment）" class="headerlink" title="1. 执行环境（Execution Environment）"></a>1. 执行环境（Execution Environment）</h3><h4 id="沙箱隔离"><a href="#沙箱隔离" class="headerlink" title="沙箱隔离"></a>沙箱隔离</h4><p><strong>代表项目</strong>：<a target="_blank" rel="noopener" href="https://github.com/e2b-dev/code-interpreter">E2B Code Interpreter</a></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Sandbox</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@e2b/code-interpreter&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sbx = <span class="keyword">await</span> <span class="title class_">Sandbox</span>.<span class="title function_">create</span>()</span><br><span class="line"><span class="keyword">await</span> sbx.<span class="title function_">runCode</span>(<span class="string">&#x27;x = 1&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> execution = <span class="keyword">await</span> sbx.<span class="title function_">runCode</span>(<span class="string">&#x27;x+=1; x&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(execution.<span class="property">text</span>) <span class="comment">// outputs 2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>核心特性</strong>：</p>
+<ul>
+<li><strong>隔离性</strong>：每个 agent 在独立容器中运行</li>
+<li><strong>资源限制</strong>：CPU、内存、磁盘、网络限制</li>
+<li><strong>快照和恢复</strong>：保存和恢复执行状态</li>
+<li><strong>文件系统</strong>：独立的虚拟文件系统</li>
+</ul>
+<h4 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h4><table>
+<thead>
+<tr>
+<th>资源类型</th>
+<th>限制方式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CPU</td>
+<td>cgroups</td>
+<td><code>cpu_quota: 50%</code></td>
+</tr>
+<tr>
+<td>内存</td>
+<td>cgroups</td>
+<td><code>memory_limit: 512MB</code></td>
+</tr>
+<tr>
+<td>磁盘</td>
+<td>quota</td>
+<td><code>disk_limit: 1GB</code></td>
+</tr>
+<tr>
+<td>网络</td>
+<td>iptables</td>
+<td><code>network: isolated</code></td>
+</tr>
+<tr>
+<td>时间</td>
+<td>timeout</td>
+<td><code>timeout: 30s</code></td>
+</tr>
+</tbody></table>
+<h3 id="2-状态管理（State-Management）"><a href="#2-状态管理（State-Management）" class="headerlink" title="2. 状态管理（State Management）"></a>2. 状态管理（State Management）</h3><h4 id="Durable-Execution"><a href="#Durable-Execution" class="headerlink" title="Durable Execution"></a>Durable Execution</h4><p><strong>代表项目</strong>：<a target="_blank" rel="noopener" href="https://github.com/langchain-ai/langgraph">LangGraph</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langgraph.graph <span class="keyword">import</span> StateGraph, MessagesState, START, END</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mock_llm</span>(<span class="params">state: MessagesState</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;messages&quot;</span>: [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;ai&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;hello world&quot;</span>&#125;]&#125;</span><br><span class="line"></span><br><span class="line">graph = StateGraph(MessagesState)</span><br><span class="line">graph.add_node(mock_llm)</span><br><span class="line">graph.add_edge(START, <span class="string">&quot;mock_llm&quot;</span>)</span><br><span class="line">graph.add_edge(<span class="string">&quot;mock_llm&quot;</span>, END)</span><br><span class="line">graph = graph.<span class="built_in">compile</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动持久化、恢复</span></span><br><span class="line">graph.invoke(&#123;<span class="string">&quot;messages&quot;</span>: [&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;hi!&quot;</span>&#125;]&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>核心机制</strong>：</p>
+<ul>
+<li><strong>Checkpoint</strong>：每个节点执行后自动保存状态</li>
+<li><strong>Resume</strong>：失败后从最后一个 checkpoint 恢复</li>
+<li><strong>Time Travel</strong>：回到任意历史状态</li>
+<li><strong>State Schema</strong>：Pydantic 模型保证类型安全</li>
+</ul>
+<h4 id="State-Schema-设计"><a href="#State-Schema-设计" class="headerlink" title="State Schema 设计"></a>State Schema 设计</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> Annotated</span><br><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AgentState</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    <span class="comment"># 消息历史（自动追加）</span></span><br><span class="line">    messages: Annotated[<span class="built_in">list</span>[AnyMessage], add_messages]</span><br><span class="line">    <span class="comment"># 当前任务</span></span><br><span class="line">    current_task: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line">    <span class="comment"># 已完成步骤</span></span><br><span class="line">    completed_steps: <span class="built_in">list</span>[<span class="built_in">str</span>] = []</span><br><span class="line">    <span class="comment"># 上下文数据</span></span><br><span class="line">    context: <span class="built_in">dict</span>[<span class="built_in">str</span>, <span class="type">Any</span>] = &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-工具集成（Tool-Integration）"><a href="#3-工具集成（Tool-Integration）" class="headerlink" title="3. 工具集成（Tool Integration）"></a>3. 工具集成（Tool Integration）</h3><h4 id="Tool-Definition"><a href="#Tool-Definition" class="headerlink" title="Tool Definition"></a>Tool Definition</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.tools <span class="keyword">import</span> tool</span><br><span class="line"></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">search_web</span>(<span class="params">query: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Search the web for information.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> web_search(query)</span><br><span class="line"></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_file</span>(<span class="params">path: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Read file contents.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">return</span> f.read()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Tool-Execution"><a href="#Tool-Execution" class="headerlink" title="Tool Execution"></a>Tool Execution</h4><p><strong>安全模式</strong>：</p>
+<ul>
+<li><strong>白名单</strong>：只允许预定义的工具</li>
+<li><strong>权限检查</strong>：执行前检查权限</li>
+<li><strong>审计日志</strong>：记录所有工具调用</li>
+<li><strong>结果过滤</strong>：过滤敏感信息</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安全执行</span></span><br><span class="line"><span class="meta">@harness.tool(<span class="params">requires_approval=<span class="literal">True</span>, audit=<span class="literal">True</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete_file</span>(<span class="params">path: <span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Delete a file (requires approval).&quot;&quot;&quot;</span></span><br><span class="line">    os.remove(path)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-编排能力（Orchestration）"><a href="#4-编排能力（Orchestration）" class="headerlink" title="4. 编排能力（Orchestration）"></a>4. 编排能力（Orchestration）</h3><h4 id="单-Agent-循环"><a href="#单-Agent-循环" class="headerlink" title="单 Agent 循环"></a>单 Agent 循环</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User → Agent → Tool → Agent → Tool → ... → Result</span><br></pre></td></tr></table></figure>
+
+<h4 id="多-Agent-协作"><a href="#多-Agent-协作" class="headerlink" title="多 Agent 协作"></a>多 Agent 协作</h4><p><strong>代表项目</strong>：<a target="_blank" rel="noopener" href="https://github.com/langchain-ai/swe-agent">SWE-agent</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────┐</span><br><span class="line">│  Architect  │  ← 规划</span><br><span class="line">└──────┬──────┘</span><br><span class="line">       │</span><br><span class="line">       ↓</span><br><span class="line">┌─────────────┐</span><br><span class="line">│  Developer  │  ← 实现</span><br><span class="line">└──────┬──────┘</span><br><span class="line">       │</span><br><span class="line">       ↓</span><br><span class="line">┌─────────────┐</span><br><span class="line">│   Reviewer  │  ← 审查</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure>
+
+<p><strong>Workflow 模式</strong>：</p>
+<ul>
+<li><strong>Sequential</strong>：顺序执行（Architect → Developer → Reviewer）</li>
+<li><strong>Parallel</strong>：并行执行（多个 Worker 同时工作）</li>
+<li><strong>Conditional</strong>：条件分支（if-else 逻辑）</li>
+<li><strong>Loop</strong>：循环执行（迭代优化）</li>
+</ul>
+<h4 id="Graph-based-Workflow"><a href="#Graph-based-Workflow" class="headerlink" title="Graph-based Workflow"></a>Graph-based Workflow</h4><p><strong>LangGraph 的核心</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langgraph.graph <span class="keyword">import</span> StateGraph</span><br><span class="line"></span><br><span class="line">workflow = StateGraph(AgentState)</span><br><span class="line">workflow.add_node(<span class="string">&quot;research&quot;</span>, research_agent)</span><br><span class="line">workflow.add_node(<span class="string">&quot;plan&quot;</span>, planning_agent)</span><br><span class="line">workflow.add_node(<span class="string">&quot;execute&quot;</span>, execution_agent)</span><br><span class="line"></span><br><span class="line">workflow.add_edge(<span class="string">&quot;research&quot;</span>, <span class="string">&quot;plan&quot;</span>)</span><br><span class="line">workflow.add_edge(<span class="string">&quot;plan&quot;</span>, <span class="string">&quot;execute&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 条件分支</span></span><br><span class="line">workflow.add_conditional_edges(</span><br><span class="line">    <span class="string">&quot;execute&quot;</span>,</span><br><span class="line">    should_continue,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;continue&quot;</span>: <span class="string">&quot;research&quot;</span>,  <span class="comment"># 需要更多研究</span></span><br><span class="line">        <span class="string">&quot;finish&quot;</span>: END            <span class="comment"># 完成</span></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-监控调试（Observability）"><a href="#5-监控调试（Observability）" class="headerlink" title="5. 监控调试（Observability）"></a>5. 监控调试（Observability）</h3><h4 id="Tracing"><a href="#Tracing" class="headerlink" title="Tracing"></a>Tracing</h4><p><strong>LangSmith 集成</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_TRACING&quot;</span>] = <span class="string">&quot;true&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>] = <span class="string">&quot;...&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动追踪所有 agent 执行</span></span><br><span class="line">agent.run()  <span class="comment"># trace、metrics、logs 全部记录到 LangSmith</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>关键指标</strong>：</p>
+<ul>
+<li><strong>Latency</strong>：每个步骤的耗时</li>
+<li><strong>Token Usage</strong>：LLM 调用的 token 数</li>
+<li><strong>Tool Calls</strong>：工具调用次数和成功率</li>
+<li><strong>Error Rate</strong>：错误率和类型</li>
+</ul>
+<h4 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h4><p><strong>Human-in-the-Loop</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在任意点暂停，等待人工干预</span></span><br><span class="line"><span class="meta">@harness.task(<span class="params">interrupt_before=<span class="literal">True</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">critical_operation</span>(<span class="params">state</span>):</span><br><span class="line">    <span class="comment"># 人工审查 state</span></span><br><span class="line">    approved = <span class="built_in">input</span>(<span class="string">&quot;Approve? (y/n)&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> approved == <span class="string">&#x27;y&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> execute()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> abort()</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-安全控制（Security）"><a href="#6-安全控制（Security）" class="headerlink" title="6. 安全控制（Security）"></a>6. 安全控制（Security）</h3><h4 id="权限模型"><a href="#权限模型" class="headerlink" title="权限模型"></a>权限模型</h4><table>
+<thead>
+<tr>
+<th>权限级别</th>
+<th>能力</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Read-only</strong></td>
+<td>只读文件系统</td>
+<td><code>read_file</code>, <code>search_web</code></td>
+</tr>
+<tr>
+<td><strong>Sandboxed</strong></td>
+<td>沙箱内写操作</td>
+<td><code>write_file</code>, <code>run_code</code></td>
+</tr>
+<tr>
+<td><strong>Host Access</strong></td>
+<td>访问宿主机</td>
+<td><code>execute_shell</code>, <code>install_package</code></td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td>网络访问</td>
+<td><code>http_request</code>, <code>database_query</code></td>
+</tr>
+</tbody></table>
+<h4 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OpenClaw 的安全模型</span></span><br><span class="line">security:</span><br><span class="line">  default: deny           <span class="comment"># 默认拒绝</span></span><br><span class="line">  allowlist:              <span class="comment"># 白名单</span></span><br><span class="line">    - read_file</span><br><span class="line">    - search_web</span><br><span class="line">  sandboxed:              <span class="comment"># 沙箱操作</span></span><br><span class="line">    - write_file</span><br><span class="line">    - execute_code</span><br><span class="line">  elevated:               <span class="comment"># 需要提升权限</span></span><br><span class="line">    - shell_command</span><br><span class="line">    - install_package</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="架构模式演进"><a href="#架构模式演进" class="headerlink" title="架构模式演进"></a>架构模式演进</h2><h3 id="第一代：简单循环（Simple-Loop）"><a href="#第一代：简单循环（Simple-Loop）" class="headerlink" title="第一代：简单循环（Simple Loop）"></a>第一代：简单循环（Simple Loop）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┌─────────┐</span><br><span class="line">│   LLM   │</span><br><span class="line">└────┬────┘</span><br><span class="line">     │</span><br><span class="line">     ↓</span><br><span class="line">┌─────────┐</span><br><span class="line">│  Tools  │</span><br><span class="line">└────┬────┘</span><br><span class="line">     │</span><br><span class="line">     └──→ Loop</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点</strong>：</p>
+<ul>
+<li>✅ 简单直接</li>
+<li>❌ 无状态管理</li>
+<li>❌ 无错误恢复</li>
+<li>❌ 无监控</li>
+</ul>
+<p><strong>代表</strong>：早期 LangChain Agent</p>
+<h3 id="第二代：编排框架（Orchestration-Framework）"><a href="#第二代：编排框架（Orchestration-Framework）" class="headerlink" title="第二代：编排框架（Orchestration Framework）"></a>第二代：编排框架（Orchestration Framework）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────┐</span><br><span class="line">│ Orchestrator │</span><br><span class="line">└──────┬───────┘</span><br><span class="line">       │</span><br><span class="line">       ├──→ Agent 1</span><br><span class="line">       ├──→ Agent 2</span><br><span class="line">       └──→ Agent 3</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点</strong>：</p>
+<ul>
+<li>✅ 多 agent 协作</li>
+<li>✅ 工作流编排</li>
+<li>⚠️ 状态管理有限</li>
+<li>⚠️ 监控不完善</li>
+</ul>
+<p><strong>代表</strong>：LangChain Multi-Agent, CrewAI</p>
+<h3 id="第三代：Durable-Execution（持久化执行）"><a href="#第三代：Durable-Execution（持久化执行）" class="headerlink" title="第三代：Durable Execution（持久化执行）"></a>第三代：Durable Execution（持久化执行）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">┌───────────────────┐</span><br><span class="line">│  State Manager    │</span><br><span class="line">│  ├─ Checkpoint    │</span><br><span class="line">│  ├─ Resume        │</span><br><span class="line">│  └─ Time Travel   │</span><br><span class="line">└───────────────────┘</span><br><span class="line">         │</span><br><span class="line">         ↓</span><br><span class="line">┌───────────────────┐</span><br><span class="line">│  Execution Graph  │</span><br><span class="line">│  ├─ Node 1 ──┐    │</span><br><span class="line">│  ├─ Node 2 ←─┘    │</span><br><span class="line">│  └─ Node 3        │</span><br><span class="line">└───────────────────┘</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点</strong>：</p>
+<ul>
+<li>✅ 完整的状态管理</li>
+<li>✅ 自动恢复</li>
+<li>✅ 可观测性</li>
+<li>✅ Human-in-the-loop</li>
+</ul>
+<p><strong>代表</strong>：LangGraph, Temporal</p>
+<h3 id="第四代：云原生-Harness（Cloud-Native）"><a href="#第四代：云原生-Harness（Cloud-Native）" class="headerlink" title="第四代：云原生 Harness（Cloud-Native）"></a>第四代：云原生 Harness（Cloud-Native）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────┐</span><br><span class="line">│         Control Plane           │</span><br><span class="line">│  ├─ Scheduler                   │</span><br><span class="line">│  ├─ State Store                 │</span><br><span class="line">│  └─ Monitoring                  │</span><br><span class="line">└─────────────────────────────────┘</span><br><span class="line">         │</span><br><span class="line">         ├──→ Sandbox Pod 1</span><br><span class="line">         ├──→ Sandbox Pod 2</span><br><span class="line">         └──→ Sandbox Pod N</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点</strong>：</p>
+<ul>
+<li>✅ 水平扩展</li>
+<li>✅ 资源隔离</li>
+<li>✅ 多租户</li>
+<li>✅ 云原生部署</li>
+</ul>
+<p><strong>代表</strong>：E2B Cloud, Modal, Fly.io</p>
+<hr>
+<h2 id="代表项目深度分析"><a href="#代表项目深度分析" class="headerlink" title="代表项目深度分析"></a>代表项目深度分析</h2><h3 id="1-LangGraph：Durable-Execution-的标杆"><a href="#1-LangGraph：Durable-Execution-的标杆" class="headerlink" title="1. LangGraph：Durable Execution 的标杆"></a>1. LangGraph：Durable Execution 的标杆</h3><p><strong>核心理念</strong>：<strong>Graph-based Workflow + Durable Execution</strong></p>
+<h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># State Graph</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StateGraph</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, state_schema</span>):</span><br><span class="line">        <span class="variable language_">self</span>.nodes = &#123;&#125;</span><br><span class="line">        <span class="variable language_">self</span>.edges = &#123;&#125;</span><br><span class="line">        <span class="variable language_">self</span>.state_schema = state_schema</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add_node</span>(<span class="params">self, name, action</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;添加节点&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.nodes[name] = action</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add_edge</span>(<span class="params">self, from_node, to_node</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;添加边&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.edges[from_node] = to_node</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">compile</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;编译为可执行图&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> CompiledGraph(<span class="variable language_">self</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Durable-Execution-实现"><a href="#Durable-Execution-实现" class="headerlink" title="Durable Execution 实现"></a>Durable Execution 实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Checkpointer</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;状态检查点&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">self, thread_id, checkpoint</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;保存状态&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">load</span>(<span class="params">self, thread_id</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;加载状态&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">list</span>(<span class="params">self, thread_id</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;列出所有历史状态&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h4><ol>
+<li><strong>Stateful</strong>：每个节点执行后自动保存状态</li>
+<li><strong>Resumable</strong>：失败后从最后一个 checkpoint 恢复</li>
+<li><strong>Debuggable</strong>：可视化执行路径</li>
+<li><strong>Interruptible</strong>：任意点暂停等待人工干预</li>
+</ol>
+<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4><ul>
+<li>✅ 长时间运行的任务（几分钟到几小时）</li>
+<li>✅ 需要人工审核的流程</li>
+<li>✅ 复杂的多步骤工作流</li>
+<li>❌ 简单的问答（杀鸡用牛刀）</li>
+</ul>
+<h3 id="2-E2B：安全沙箱的标杆"><a href="#2-E2B：安全沙箱的标杆" class="headerlink" title="2. E2B：安全沙箱的标杆"></a>2. E2B：安全沙箱的标杆</h3><p><strong>核心理念</strong>：<strong>Secure Sandboxed Execution</strong></p>
+<h4 id="架构-1"><a href="#架构-1" class="headerlink" title="架构"></a>架构</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────┐</span><br><span class="line">│     Host Machine         │</span><br><span class="line">│  ┌────────────────────┐  │</span><br><span class="line">│  │   E2B Runtime      │  │</span><br><span class="line">│  │  ┌──────────────┐  │  │</span><br><span class="line">│  │  │   Sandbox    │  │  │</span><br><span class="line">│  │  │  ├─ FS       │  │  │</span><br><span class="line">│  │  │  ├─ Network  │  │  │</span><br><span class="line">│  │  │  └─ Process  │  │  │</span><br><span class="line">│  │  └──────────────┘  │  │</span><br><span class="line">│  └────────────────────┘  │</span><br><span class="line">└──────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h4 id="核心能力"><a href="#核心能力" class="headerlink" title="核心能力"></a>核心能力</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建沙箱</span></span><br><span class="line"><span class="keyword">const</span> sbx = <span class="keyword">await</span> <span class="title class_">Sandbox</span>.<span class="title function_">create</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行代码</span></span><br><span class="line"><span class="keyword">await</span> sbx.<span class="title function_">runCode</span>(<span class="string">`</span></span><br><span class="line"><span class="string">import pandas as pd</span></span><br><span class="line"><span class="string">df = pd.read_csv(&#x27;data.csv&#x27;)</span></span><br><span class="line"><span class="string">print(df.head())</span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件操作</span></span><br><span class="line"><span class="keyword">await</span> sbx.<span class="property">filesystem</span>.<span class="title function_">write</span>(<span class="string">&#x27;/app/data.csv&#x27;</span>, csvData)</span><br><span class="line"><span class="keyword">const</span> files = <span class="keyword">await</span> sbx.<span class="property">filesystem</span>.<span class="title function_">list</span>(<span class="string">&#x27;/app&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 网络访问</span></span><br><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> sbx.<span class="title function_">runCode</span>(<span class="string">`</span></span><br><span class="line"><span class="string">import requests</span></span><br><span class="line"><span class="string">response = requests.get(&#x27;https://api.example.com&#x27;)</span></span><br><span class="line"><span class="string">print(response.json())</span></span><br><span class="line"><span class="string">`</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="安全特性"><a href="#安全特性" class="headerlink" title="安全特性"></a>安全特性</h4><ol>
+<li><strong>隔离性</strong>：Firecracker microVM</li>
+<li><strong>资源限制</strong>：CPU、内存、磁盘、网络</li>
+<li><strong>快照</strong>：保存和恢复状态</li>
+<li><strong>网络策略</strong>：可选的网络隔离</li>
+</ol>
+<h4 id="适用场景-1"><a href="#适用场景-1" class="headerlink" title="适用场景"></a>适用场景</h4><ul>
+<li>✅ 执行用户提供的代码</li>
+<li>✅ 数据分析和可视化</li>
+<li>✅ 代码解释器（Code Interpreter）</li>
+<li>❌ 简单的文件操作（太重）</li>
+</ul>
+<h3 id="3-OpenAgents：Plan-First-Workflow"><a href="#3-OpenAgents：Plan-First-Workflow" class="headerlink" title="3. OpenAgents：Plan-First Workflow"></a>3. OpenAgents：Plan-First Workflow</h3><p><strong>核心理念</strong>：<strong>Plan → Approve → Execute</strong></p>
+<h4 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. Agent proposes plan</span><br><span class="line">   ↓</span><br><span class="line">2. User approves/rejects</span><br><span class="line">   ↓</span><br><span class="line">3. Agent executes step-by-step</span><br><span class="line">   ↓</span><br><span class="line">4. Automatic testing</span><br><span class="line">   ↓</span><br><span class="line">5. User review</span><br></pre></td></tr></table></figure>
+
+<h4 id="核心价值"><a href="#核心价值" class="headerlink" title="核心价值"></a>核心价值</h4><ol>
+<li><strong>可控性</strong>：用户审批每一步</li>
+<li><strong>可预测</strong>：先看计划再执行</li>
+<li><strong>可逆</strong>：每步都可以回滚</li>
+<li><strong>质量保证</strong>：自动测试</li>
+</ol>
+<h4 id="适用场景-2"><a href="#适用场景-2" class="headerlink" title="适用场景"></a>适用场景</h4><ul>
+<li>✅ 代码生成和修改</li>
+<li>✅ 需要用户确认的操作</li>
+<li>✅ 生产环境变更</li>
+<li>❌ 自动化程度高的任务</li>
+</ul>
+<h3 id="4-SWE-agent：Multi-Agent-Workflow"><a href="#4-SWE-agent：Multi-Agent-Workflow" class="headerlink" title="4. SWE-agent：Multi-Agent Workflow"></a>4. SWE-agent：Multi-Agent Workflow</h3><p><strong>核心理念</strong>：<strong>Architect → Developer → Reviewer</strong></p>
+<h4 id="架构-2"><a href="#架构-2" class="headerlink" title="架构"></a>架构</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">AgentState</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    <span class="comment"># Architect 状态</span></span><br><span class="line">    research_scratchpad: <span class="built_in">list</span>[AnyMessage] = []</span><br><span class="line">    implementation_plan: <span class="type">Optional</span>[ImplementationPlan] = <span class="literal">None</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Developer 状态</span></span><br><span class="line">    completed_steps: <span class="built_in">list</span>[<span class="built_in">str</span>] = []</span><br><span class="line">    current_task: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Reviewer 状态</span></span><br><span class="line">    review_comments: <span class="built_in">list</span>[<span class="built_in">str</span>] = []</span><br><span class="line">    approved: <span class="built_in">bool</span> = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="工作流-1"><a href="#工作流-1" class="headerlink" title="工作流"></a>工作流</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">User Request</span><br><span class="line">     ↓</span><br><span class="line">┌─────────────┐</span><br><span class="line">│  Architect  │  ← 研究代码库，生成计划</span><br><span class="line">└──────┬──────┘</span><br><span class="line">       ↓</span><br><span class="line">┌─────────────┐</span><br><span class="line">│  Developer  │  ← 执行计划，修改代码</span><br><span class="line">└──────┬──────┘</span><br><span class="line">       ↓</span><br><span class="line">┌─────────────┐</span><br><span class="line">│  Reviewer   │  ← 审查代码，确保质量</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure>
+
+<h4 id="关键特性-1"><a href="#关键特性-1" class="headerlink" title="关键特性"></a>关键特性</h4><ol>
+<li><strong>分离关注点</strong>：规划、实现、审查分离</li>
+<li><strong>类型安全</strong>：Pydantic 模型保证状态一致性</li>
+<li><strong>可追溯</strong>：每个决策都有记录</li>
+<li><strong>原子操作</strong>：细粒度的文件修改</li>
+</ol>
+<h3 id="5-NanoClaw：Best-Harness-Best-Model"><a href="#5-NanoClaw：Best-Harness-Best-Model" class="headerlink" title="5. NanoClaw：Best Harness + Best Model"></a>5. NanoClaw：Best Harness + Best Model</h3><p><strong>核心理念</strong>：<strong>Claude Code SDK + 最佳实践</strong></p>
+<blockquote>
+<p>“Best harness, best model.” - NanoClaw</p>
+</blockquote>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li><strong>Claude Agent SDK</strong>：直接使用 Claude Code</li>
+<li><strong>自我进化</strong>：NanoClaw 可以修改和扩展自己</li>
+<li><strong>用户定制</strong>：为每个用户量身定制</li>
+</ol>
+<h4 id="适用场景-3"><a href="#适用场景-3" class="headerlink" title="适用场景"></a>适用场景</h4><ul>
+<li>✅ 高质量代码生成</li>
+<li>✅ 复杂问题解决</li>
+<li>✅ 自我改进的 agent</li>
+<li>❌ 低成本场景（Claude 很贵）</li>
+</ul>
+<h3 id="6-OpenClaw：开源-Harness-平台"><a href="#6-OpenClaw：开源-Harness-平台" class="headerlink" title="6. OpenClaw：开源 Harness 平台"></a>6. OpenClaw：开源 Harness 平台</h3><p><strong>核心理念</strong>：<strong>Personal Assistant with Harness Capabilities</strong></p>
+<blockquote>
+<p>“Better computer-use and agent harness capabilities.” - OpenClaw Vision</p>
+</blockquote>
+<h4 id="架构-3"><a href="#架构-3" class="headerlink" title="架构"></a>架构</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────┐</span><br><span class="line">│    OpenClaw Gateway     │</span><br><span class="line">│  ├─ LLM Provider        │</span><br><span class="line">│  ├─ Tool Registry       │</span><br><span class="line">│  ├─ Security Layer      │</span><br><span class="line">│  └─ State Manager       │</span><br><span class="line">└─────────────────────────┘</span><br><span class="line">         │</span><br><span class="line">         ├──→ Desktop App</span><br><span class="line">         ├──→ CLI</span><br><span class="line">         └──→ Messaging Channels</span><br></pre></td></tr></table></figure>
+
+<h4 id="关键特性-2"><a href="#关键特性-2" class="headerlink" title="关键特性"></a>关键特性</h4><ol>
+<li><strong>多通道</strong>：Web、CLI、Desktop、Messaging</li>
+<li><strong>安全优先</strong>：默认拒绝，白名单机制</li>
+<li><strong>可扩展</strong>：Plugin 和 Skill 系统</li>
+<li><strong>开源</strong>：完全开源，可自托管</li>
+</ol>
+<hr>
+<h2 id="技术选型指南"><a href="#技术选型指南" class="headerlink" title="技术选型指南"></a>技术选型指南</h2><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">需要 Agent Harness？</span><br><span class="line">     │</span><br><span class="line">     ├─ 是 → 任务类型？</span><br><span class="line">     │       │</span><br><span class="line">     │       ├─ 长时间运行 ──→ LangGraph</span><br><span class="line">     │       │</span><br><span class="line">     │       ├─ 执行代码 ──→ E2B</span><br><span class="line">     │       │</span><br><span class="line">     │       ├─ 需要审批 ──→ OpenAgents</span><br><span class="line">     │       │</span><br><span class="line">     │       └─ 多 agent 协作 ──→ SWE-agent</span><br><span class="line">     │</span><br><span class="line">     └─ 否 → 简单任务？</span><br><span class="line">             │</span><br><span class="line">             ├─ 是 → 直接用 LLM API</span><br><span class="line">             │</span><br><span class="line">             └─ 否 → 用 Agent Framework (LangChain)</span><br></pre></td></tr></table></figure>
+
+<h3 id="对比矩阵"><a href="#对比矩阵" class="headerlink" title="对比矩阵"></a>对比矩阵</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>状态管理</th>
+<th>沙箱隔离</th>
+<th>编排能力</th>
+<th>监控</th>
+<th>学习曲线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>LangGraph</strong></td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>❌</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>中</td>
+</tr>
+<tr>
+<td><strong>E2B</strong></td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>低</td>
+</tr>
+<tr>
+<td><strong>OpenAgents</strong></td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+<td>低</td>
+</tr>
+<tr>
+<td><strong>SWE-agent</strong></td>
+<td>⭐⭐⭐⭐</td>
+<td>❌</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>高</td>
+</tr>
+<tr>
+<td><strong>NanoClaw</strong></td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐</td>
+<td>低</td>
+</tr>
+<tr>
+<td><strong>OpenClaw</strong></td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>中</td>
+</tr>
+</tbody></table>
+<h3 id="成本分析"><a href="#成本分析" class="headerlink" title="成本分析"></a>成本分析</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>开源</th>
+<th>自托管成本</th>
+<th>云服务成本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>LangGraph</strong></td>
+<td>✅</td>
+<td>中（需要数据库）</td>
+<td>LangSmith Cloud</td>
+</tr>
+<tr>
+<td><strong>E2B</strong></td>
+<td>✅</td>
+<td>高（需要集群）</td>
+<td>$0.05&#x2F;小时&#x2F;sandbox</td>
+</tr>
+<tr>
+<td><strong>OpenAgents</strong></td>
+<td>✅</td>
+<td>低</td>
+<td>无</td>
+</tr>
+<tr>
+<td><strong>SWE-agent</strong></td>
+<td>✅</td>
+<td>中</td>
+<td>无</td>
+</tr>
+<tr>
+<td><strong>NanoClaw</strong></td>
+<td>✅</td>
+<td>低</td>
+<td>Claude API</td>
+</tr>
+<tr>
+<td><strong>OpenClaw</strong></td>
+<td>✅</td>
+<td>低</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="最佳实践与反模式"><a href="#最佳实践与反模式" class="headerlink" title="最佳实践与反模式"></a>最佳实践与反模式</h2><h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><h4 id="1-状态设计"><a href="#1-状态设计" class="headerlink" title="1. 状态设计"></a>1. 状态设计</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 好的状态设计</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AgentState</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    messages: Annotated[<span class="built_in">list</span>[Message], add_messages]</span><br><span class="line">    current_task: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line">    completed_steps: <span class="built_in">list</span>[<span class="built_in">str</span>] = []</span><br><span class="line">    context: <span class="built_in">dict</span>[<span class="built_in">str</span>, <span class="type">Any</span>] = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 不存储大对象</span></span><br><span class="line">    <span class="comment"># large_data: bytes  # ❌ 不要这样做</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ❌ 坏的状态设计</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BadState</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    everything: <span class="built_in">dict</span>  <span class="comment"># 太泛化</span></span><br><span class="line">    huge_file: <span class="built_in">str</span>    <span class="comment"># 太大</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-错误处理"><a href="#2-错误处理" class="headerlink" title="2. 错误处理"></a>2. 错误处理</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 分层错误处理</span></span><br><span class="line"><span class="meta">@harness.task(<span class="params">retry=<span class="number">3</span>, timeout=<span class="number">30</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">call_llm</span>(<span class="params">prompt</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> llm.generate(prompt)</span><br><span class="line">    <span class="keyword">except</span> TimeoutError:</span><br><span class="line">        <span class="comment"># 重试</span></span><br><span class="line">        <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">except</span> RateLimitError:</span><br><span class="line">        <span class="comment"># 指数退避</span></span><br><span class="line">        time.sleep(<span class="number">2</span> ** retry_count)</span><br><span class="line">        <span class="keyword">raise</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ❌ 吞掉错误</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">call_llm</span>(<span class="params">prompt</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> llm.generate(prompt)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span>  <span class="comment"># 错误被隐藏</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-工具设计"><a href="#3-工具设计" class="headerlink" title="3. 工具设计"></a>3. 工具设计</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 小而专注的工具</span></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_file</span>(<span class="params">path: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Read a single file.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">open</span>(path).read()</span><br><span class="line"></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write_file</span>(<span class="params">path: <span class="built_in">str</span>, content: <span class="built_in">str</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Write content to a file.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">open</span>(path, <span class="string">&#x27;w&#x27;</span>).write(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ❌ 大而全的工具</span></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">file_operations</span>(<span class="params">operation: <span class="built_in">str</span>, **kwargs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Do any file operation.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> operation == <span class="string">&#x27;read&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> read_file(kwargs[<span class="string">&#x27;path&#x27;</span>])</span><br><span class="line">    <span class="keyword">elif</span> operation == <span class="string">&#x27;write&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> write_file(kwargs[<span class="string">&#x27;path&#x27;</span>], kwargs[<span class="string">&#x27;content&#x27;</span>])</span><br><span class="line">    <span class="comment"># ... 太多职责</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Human-in-the-Loop"><a href="#4-Human-in-the-Loop" class="headerlink" title="4. Human-in-the-Loop"></a>4. Human-in-the-Loop</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ✅ 在关键决策点暂停</span></span><br><span class="line"><span class="meta">@harness.task(<span class="params">interrupt_before=<span class="literal">True</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete_files</span>(<span class="params">files: <span class="built_in">list</span>[<span class="built_in">str</span>]</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Delete files (requires approval).&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">        os.remove(file)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ❌ 无脑执行</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete_files</span>(<span class="params">files: <span class="built_in">list</span>[<span class="built_in">str</span>]</span>):</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">        os.remove(file)  <span class="comment"># 危险！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="反模式"><a href="#反模式" class="headerlink" title="反模式"></a>反模式</h3><h4 id="1-过度抽象"><a href="#1-过度抽象" class="headerlink" title="1. 过度抽象"></a>1. 过度抽象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ❌ 过度抽象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UniversalAgent</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">do_anything</span>(<span class="params">self, task: <span class="built_in">str</span></span>):</span><br><span class="line">        <span class="comment"># 试图做所有事情</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ✅ 专注的 agent</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CodeReviewer</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">review_code</span>(<span class="params">self, code: <span class="built_in">str</span></span>) -&gt; ReviewResult:</span><br><span class="line">        <span class="comment"># 只做代码审查</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-无状态设计"><a href="#2-无状态设计" class="headerlink" title="2. 无状态设计"></a>2. 无状态设计</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ❌ 无状态</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_agent</span>(<span class="params">prompt</span>):</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        response = llm.generate(prompt)</span><br><span class="line">        <span class="keyword">if</span> is_done(response):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line">    <span class="comment"># 失败后无法恢复</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ✅ 有状态</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_agent</span>(<span class="params">prompt, state: AgentState</span>):</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> state.is_done:</span><br><span class="line">        response = llm.generate(prompt, state)</span><br><span class="line">        state.update(response)</span><br><span class="line">        save_checkpoint(state)  <span class="comment"># 保存状态</span></span><br><span class="line">    <span class="keyword">return</span> state.result</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-忽视安全"><a href="#3-忽视安全" class="headerlink" title="3. 忽视安全"></a>3. 忽视安全</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ❌ 不安全的工具</span></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">execute_command</span>(<span class="params">cmd: <span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Execute any shell command.&quot;&quot;&quot;</span></span><br><span class="line">    os.system(cmd)  <span class="comment"># 危险！</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ✅ 安全的工具</span></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">execute_command</span>(<span class="params">cmd: <span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Execute whitelisted shell commands.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> cmd <span class="keyword">not</span> <span class="keyword">in</span> ALLOWED_COMMANDS:</span><br><span class="line">        <span class="keyword">raise</span> PermissionError(<span class="string">f&quot;Command not allowed: <span class="subst">&#123;cmd&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> subprocess.run(cmd, shell=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="未来趋势与挑战"><a href="#未来趋势与挑战" class="headerlink" title="未来趋势与挑战"></a>未来趋势与挑战</h2><h3 id="趋势-1：从单机到云原生"><a href="#趋势-1：从单机到云原生" class="headerlink" title="趋势 1：从单机到云原生"></a>趋势 1：从单机到云原生</h3><p><strong>当前</strong>：本地运行，资源有限<br><strong>未来</strong>：云原生，无限扩展</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">单机 Harness → 云原生 Harness</span><br><span class="line">     ↓              ↓</span><br><span class="line">  1-10 agents   1000s agents</span><br><span class="line">  Limited res   Unlimited res</span><br><span class="line">  Manual scale  Auto scale</span><br></pre></td></tr></table></figure>
+
+<h3 id="趋势-2：从被动到主动"><a href="#趋势-2：从被动到主动" class="headerlink" title="趋势 2：从被动到主动"></a>趋势 2：从被动到主动</h3><p><strong>当前</strong>：Agent 等待用户指令<br><strong>未来</strong>：Agent 主动思考和行动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Passive Agent → Proactive Agent</span><br><span class="line">     ↓              ↓</span><br><span class="line">  Wait for cmd   Anticipate needs</span><br><span class="line">  Single task    Continuous improvement</span><br><span class="line">  Short-term     Long-term goals</span><br></pre></td></tr></table></figure>
+
+<h3 id="趋势-3：从通用到专用"><a href="#趋势-3：从通用到专用" class="headerlink" title="趋势 3：从通用到专用"></a>趋势 3：从通用到专用</h3><p><strong>当前</strong>：一个 agent 做所有事<br><strong>未来</strong>：专业化的 agent 协作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">General Agent → Specialized Agents</span><br><span class="line">     ↓              ↓</span><br><span class="line">  Jack of all   Master of one</span><br><span class="line">  Shallow       Deep expertise</span><br><span class="line">  Generic       Domain-specific</span><br></pre></td></tr></table></figure>
+
+<h3 id="挑战-1：成本控制"><a href="#挑战-1：成本控制" class="headerlink" title="挑战 1：成本控制"></a>挑战 1：成本控制</h3><p><strong>问题</strong>：LLM 调用昂贵<br><strong>方向</strong>：</p>
+<ul>
+<li>更小、更便宜的模型</li>
+<li>智能缓存</li>
+<li>批处理</li>
+<li>量化</li>
+</ul>
+<h3 id="挑战-2：可解释性"><a href="#挑战-2：可解释性" class="headerlink" title="挑战 2：可解释性"></a>挑战 2：可解释性</h3><p><strong>问题</strong>：Agent 决策不透明<br><strong>方向</strong>：</p>
+<ul>
+<li>Thought chain visualization</li>
+<li>Decision tree logging</li>
+<li>Human-readable traces</li>
+<li>Explainable AI</li>
+</ul>
+<h3 id="挑战-3：安全性"><a href="#挑战-3：安全性" class="headerlink" title="挑战 3：安全性"></a>挑战 3：安全性</h3><p><strong>问题</strong>：Agent 可能执行危险操作<br><strong>方向</strong>：</p>
+<ul>
+<li>形式化验证</li>
+<li>安全沙箱</li>
+<li>权限最小化</li>
+<li>审计日志</li>
+</ul>
+<hr>
+<h2 id="工程落地建议"><a href="#工程落地建议" class="headerlink" title="工程落地建议"></a>工程落地建议</h2><h3 id="阶段-1：MVP（1-2-周）"><a href="#阶段-1：MVP（1-2-周）" class="headerlink" title="阶段 1：MVP（1-2 周）"></a>阶段 1：MVP（1-2 周）</h3><p><strong>目标</strong>：验证概念，快速上线</p>
+<p><strong>技术栈</strong>：</p>
+<ul>
+<li>Framework: LangChain</li>
+<li>LLM: OpenAI&#x2F;Claude</li>
+<li>Harness: 无（直接调用）</li>
+<li>监控: 无</li>
+</ul>
+<p><strong>代码量</strong>：&lt;500 行</p>
+<p><strong>关键指标</strong>：</p>
+<ul>
+<li>功能是否可用</li>
+<li>用户是否愿意用</li>
+<li>基本的错误处理</li>
+</ul>
+<h3 id="阶段-2：生产化（1-2-月）"><a href="#阶段-2：生产化（1-2-月）" class="headerlink" title="阶段 2：生产化（1-2 月）"></a>阶段 2：生产化（1-2 月）</h3><p><strong>目标</strong>：稳定、可靠、可监控</p>
+<p><strong>技术栈</strong>：</p>
+<ul>
+<li>Framework: LangChain</li>
+<li>LLM: OpenAI&#x2F;Claude&#x2F;本地模型</li>
+<li>Harness: LangGraph（状态管理）</li>
+<li>监控: LangSmith&#x2F;自定义</li>
+<li>沙箱: E2B（如果需要执行代码）</li>
+</ul>
+<p><strong>代码量</strong>：1000-3000 行</p>
+<p><strong>关键指标</strong>：</p>
+<ul>
+<li>可用性 &gt; 99%</li>
+<li>平均响应时间 &lt; 10s</li>
+<li>错误率 &lt; 5%</li>
+</ul>
+<h3 id="阶段-3：规模化（3-6-月）"><a href="#阶段-3：规模化（3-6-月）" class="headerlink" title="阶段 3：规模化（3-6 月）"></a>阶段 3：规模化（3-6 月）</h3><p><strong>目标</strong>：高性能、低成本、多租户</p>
+<p><strong>技术栈</strong>：</p>
+<ul>
+<li>Framework: LangChain&#x2F;LangGraph</li>
+<li>LLM: 多模型（根据任务选择）</li>
+<li>Harness: 自建（基于 LangGraph + K8s）</li>
+<li>监控: Prometheus + Grafana</li>
+<li>沙箱: 自建（基于 Firecracker）</li>
+</ul>
+<p><strong>代码量</strong>：5000+ 行</p>
+<p><strong>关键指标</strong>：</p>
+<ul>
+<li>支持 100+ 并发 agent</li>
+<li>成本降低 50%</li>
+<li>可观测性覆盖 100%</li>
+</ul>
+<h3 id="阶段-4：智能化（6-12-月）"><a href="#阶段-4：智能化（6-12-月）" class="headerlink" title="阶段 4：智能化（6-12 月）"></a>阶段 4：智能化（6-12 月）</h3><p><strong>目标</strong>：自主优化、持续学习</p>
+<p><strong>技术栈</strong>：</p>
+<ul>
+<li>Framework: 自研</li>
+<li>LLM: 专用微调模型</li>
+<li>Harness: 云原生（K8s + Serverless）</li>
+<li>监控: AI-driven</li>
+<li>优化: 自动调参</li>
+</ul>
+<p><strong>关键指标</strong>：</p>
+<ul>
+<li>Agent 自主优化能力</li>
+<li>长期记忆和学习</li>
+<li>跨任务知识迁移</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="核心观点"><a href="#核心观点" class="headerlink" title="核心观点"></a>核心观点</h3><ol>
+<li><strong>Agent Harness 是基础设施</strong>：不是可选的优化，而是必需的基础</li>
+<li><strong>选择比努力重要</strong>：根据场景选择合适的 Harness</li>
+<li><strong>安全第一</strong>：默认拒绝，最小权限</li>
+<li><strong>可观测性是生命线</strong>：没有 trace 的 agent 是黑盒</li>
+<li><strong>渐进式演进</strong>：从简单开始，逐步增强</li>
+</ol>
+<h3 id="推荐路径"><a href="#推荐路径" class="headerlink" title="推荐路径"></a>推荐路径</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Week 1-2: MVP</span><br><span class="line">  ↓</span><br><span class="line">Month 1-2: + LangGraph（状态管理）</span><br><span class="line">  ↓</span><br><span class="line">Month 3-6: + E2B（沙箱）+ 监控</span><br><span class="line">  ↓</span><br><span class="line">Month 6-12: 自建 Harness（云原生）</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终建议"><a href="#最终建议" class="headerlink" title="最终建议"></a>最终建议</h3><ul>
+<li><strong>不要重复造轮子</strong>：优先使用成熟的开源项目</li>
+<li><strong>从小开始</strong>：先解决核心问题，再考虑扩展</li>
+<li><strong>关注成本</strong>：LLM 很贵，优化每一步</li>
+<li><strong>安全优先</strong>：宁可慢，不可不安全</li>
+<li><strong>持续学习</strong>：Agent 领域变化很快，保持学习</li>
+</ul>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.langchain.com/oss/python/langgraph/overview">LangGraph Documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://e2b.dev/docs">E2B Documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/darrenhinde/OpenAgents">OpenAgents GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/langchain-ai/swe-agent">SWE-agent GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.openclaw.ai/">OpenClaw Documentation</a></li>
+</ul>
+<h3 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2302.02551">Toolformer: Language Models Can Teach Themselves to Use Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2201.11903">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</a></li>
+</ul>
+<h3 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/langchain-ai/langchain">LangChain</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/run-llama/llama_index">LlamaIndex</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/joaomdmoura/crewAI">CrewAI</a></li>
+</ul>
+<hr>
+<p><em>本文由 OpenClaw 生成</em><br><em>发布日期：2026-03-27</em><br><em>字数：约 10,000 字</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Harness</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Infrastructure</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">LangGraph</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Runtime</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI架构//" class="article-tag-list-link color5">AI架构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AI架构/Agent系统//" class="article-tag-list-link color3">Agent系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-27-agent-harness-deep-dive/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-27-openclaw-skill-showcase-coding-agents-and-ides" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-27-openclaw-skill-showcase-coding-agents-and-ides/">OpenClaw Skill 每日推荐 - 编码代理与 IDE</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-27-openclaw-skill-showcase-coding-agents-and-ides/" class="archive-article-date">
+  	<time datetime="2026-03-27T03:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OpenClaw-Skill-每日推荐-编码代理与-IDE"><a href="#OpenClaw-Skill-每日推荐-编码代理与-IDE" class="headerlink" title="OpenClaw Skill 每日推荐 - 编码代理与 IDE"></a>OpenClaw Skill 每日推荐 - 编码代理与 IDE</h1><h2 id="📊-今日分类概述"><a href="#📊-今日分类概述" class="headerlink" title="📊 今日分类概述"></a>📊 今日分类概述</h2><p>今天介绍的是 <strong>Coding Agents &amp; IDEs（编码代理与 IDE）</strong> 分类，这是 OpenClaw 生态系统中<strong>最大的技能分类</strong>，包含 <strong>1200+ 个技能</strong>！</p>
+<p>这个分类涵盖了从 AI 编码助手、多代理协作系统、记忆管理、安全治理到开发工具集成的完整工具链。无论你是想提升个人编码效率，还是构建复杂的多代理开发团队，这个分类都有你需要的工具。</p>
+<h3 id="分类特点"><a href="#分类特点" class="headerlink" title="分类特点"></a>分类特点</h3><ul>
+<li><strong>技能数量</strong>：1200+ skills（所有分类中最多）</li>
+<li><strong>主要领域</strong>：AI 编码助手、多代理系统、记忆管理、安全治理、IDE 集成</li>
+<li><strong>适用场景</strong>：个人开发者、团队协作、自动化开发、安全审计</li>
+</ul>
+<hr>
+<h2 id="🌟-精选-Skill-详解"><a href="#🌟-精选-Skill-详解" class="headerlink" title="🌟 精选 Skill 详解"></a>🌟 精选 Skill 详解</h2><h3 id="1-claude-code-orchestrator-⭐⭐⭐⭐⭐"><a href="#1-claude-code-orchestrator-⭐⭐⭐⭐⭐" class="headerlink" title="1. claude-code-orchestrator ⭐⭐⭐⭐⭐"></a>1. claude-code-orchestrator ⭐⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/yaxuan42/claude-code-orchestrator/SKILL.md">yaxuan42&#x2F;claude-code-orchestrator</a></p>
+<h4 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h4><p>Claude Code Orchestrator 是一个强大的 Claude Code 任务编排器，可以在可观察的 tmux 会话中触发开发任务，提供稳定的启动和进度可见性。</p>
+<h4 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
+<li><strong>会话管理</strong>：使用 tmux 创建独立的可观察会话</li>
+<li><strong>进度追踪</strong>：实时监控任务执行状态</li>
+<li><strong>稳定启动</strong>：确保任务可靠启动和恢复</li>
+<li><strong>日志记录</strong>：完整的执行日志和错误追踪</li>
+</ul>
+<h4 id="实用场景"><a href="#实用场景" class="headerlink" title="实用场景"></a>实用场景</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：在后台启动一个复杂重构任务</span></span><br><span class="line">claude-code-orchestrator start --task <span class="string">&quot;refactor-auth-module&quot;</span> --session <span class="string">&quot;auth-refactor&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监控任务进度</span></span><br><span class="line">claude-code-orchestrator monitor --session <span class="string">&quot;auth-refactor&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看任务日志</span></span><br><span class="line">claude-code-orchestrator logs --session <span class="string">&quot;auth-refactor&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="推荐理由"><a href="#推荐理由" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
+<li>✅ 解决了长时间运行任务的管理问题</li>
+<li>✅ 提供完整的进度可见性</li>
+<li>✅ 支持任务恢复和重试</li>
+<li>✅ 适合复杂的代码重构和大型项目</li>
+</ul>
+<p><strong>推荐指数</strong>: ⭐⭐⭐⭐⭐ (5&#x2F;5)</p>
+<hr>
+<h3 id="2-multi-agent-blueprint-⭐⭐⭐⭐⭐"><a href="#2-multi-agent-blueprint-⭐⭐⭐⭐⭐" class="headerlink" title="2. multi-agent-blueprint ⭐⭐⭐⭐⭐"></a>2. multi-agent-blueprint ⭐⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/neal-collab/multi-agent-blueprint/SKILL.md">neal-collab&#x2F;multi-agent-blueprint</a></p>
+<h4 id="核心功能-1"><a href="#核心功能-1" class="headerlink" title="核心功能"></a>核心功能</h4><p>这是一个生产级的多代理团队蓝图，提供了构建 5-10 代理团队的完整指南，包括跨代理路由、Telegram 集成和最佳实践。</p>
+<h4 id="技术实现-1"><a href="#技术实现-1" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
+<li><strong>代理架构</strong>：定义清晰的代理角色和职责</li>
+<li><strong>通信协议</strong>：跨代理消息路由和协调</li>
+<li><strong>任务分配</strong>：智能任务分发和负载均衡</li>
+<li><strong>监控仪表板</strong>：实时团队状态监控</li>
+</ul>
+<h4 id="实用场景-1"><a href="#实用场景-1" class="headerlink" title="实用场景"></a>实用场景</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：配置一个 5 代理开发团队</span></span><br><span class="line"><span class="attr">team:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">role:</span> <span class="string">&quot;architect&quot;</span></span><br><span class="line">    <span class="attr">model:</span> <span class="string">&quot;claude-opus&quot;</span></span><br><span class="line">    <span class="attr">responsibilities:</span> [<span class="string">&quot;design&quot;</span>, <span class="string">&quot;review&quot;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">role:</span> <span class="string">&quot;frontend-dev&quot;</span></span><br><span class="line">    <span class="attr">model:</span> <span class="string">&quot;claude-sonnet&quot;</span></span><br><span class="line">    <span class="attr">responsibilities:</span> [<span class="string">&quot;ui&quot;</span>, <span class="string">&quot;testing&quot;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">role:</span> <span class="string">&quot;backend-dev&quot;</span></span><br><span class="line">    <span class="attr">model:</span> <span class="string">&quot;gpt-4&quot;</span></span><br><span class="line">    <span class="attr">responsibilities:</span> [<span class="string">&quot;api&quot;</span>, <span class="string">&quot;database&quot;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">role:</span> <span class="string">&quot;devops&quot;</span></span><br><span class="line">    <span class="attr">model:</span> <span class="string">&quot;claude-sonnet&quot;</span></span><br><span class="line">    <span class="attr">responsibilities:</span> [<span class="string">&quot;deployment&quot;</span>, <span class="string">&quot;monitoring&quot;</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">role:</span> <span class="string">&quot;qa&quot;</span></span><br><span class="line">    <span class="attr">model:</span> <span class="string">&quot;gpt-3.5-turbo&quot;</span></span><br><span class="line">    <span class="attr">responsibilities:</span> [<span class="string">&quot;testing&quot;</span>, <span class="string">&quot;validation&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="推荐理由-1"><a href="#推荐理由-1" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
+<li>✅ 经过生产环境验证的架构</li>
+<li>✅ 详细的实施指南和代码示例</li>
+<li>✅ 支持多种模型混用</li>
+<li>✅ 内置监控和日志系统</li>
+</ul>
+<p><strong>推荐指数</strong>: ⭐⭐⭐⭐⭐ (5&#x2F;5)</p>
+<hr>
+<h3 id="3-agent-context-⭐⭐⭐⭐⭐"><a href="#3-agent-context-⭐⭐⭐⭐⭐" class="headerlink" title="3. agent-context ⭐⭐⭐⭐⭐"></a>3. agent-context ⭐⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/andreagriffiths11/agent-context/SKILL.md">andreagriffiths11&#x2F;agent-context</a></p>
+<h4 id="核心功能-2"><a href="#核心功能-2" class="headerlink" title="核心功能"></a>核心功能</h4><p>为 AI 编码代理提供持久化的本地内存系统，确保跨会话的上下文连续性和知识积累。</p>
+<h4 id="技术实现-2"><a href="#技术实现-2" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
+<li><strong>三层存储</strong>：短期、中期、长期记忆分层</li>
+<li><strong>语义搜索</strong>：基于向量的智能检索</li>
+<li><strong>自动压缩</strong>：历史对话智能摘要</li>
+<li><strong>增量更新</strong>：实时记忆更新和同步</li>
+</ul>
+<h4 id="实用场景-2"><a href="#实用场景-2" class="headerlink" title="实用场景"></a>实用场景</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：使用 agent-context 记住项目决策</span></span><br><span class="line"><span class="keyword">from</span> agent_context <span class="keyword">import</span> ContextManager</span><br><span class="line"></span><br><span class="line">ctx = ContextManager(project=<span class="string">&quot;my-app&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 记录重要决策</span></span><br><span class="line">ctx.remember(<span class="string">&quot;decision&quot;</span>, &#123;</span><br><span class="line">    <span class="string">&quot;topic&quot;</span>: <span class="string">&quot;database choice&quot;</span>,</span><br><span class="line">    <span class="string">&quot;choice&quot;</span>: <span class="string">&quot;PostgreSQL&quot;</span>,</span><br><span class="line">    <span class="string">&quot;reason&quot;</span>: <span class="string">&quot;better JSON support and ACID compliance&quot;</span>,</span><br><span class="line">    <span class="string">&quot;date&quot;</span>: <span class="string">&quot;2026-03-27&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询历史决策</span></span><br><span class="line">past_decisions = ctx.query(<span class="string">&quot;database architecture decisions&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="推荐理由-2"><a href="#推荐理由-2" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
+<li>✅ 解决了 AI 代理”健忘”问题</li>
+<li>✅ 支持复杂项目的长期维护</li>
+<li>✅ 本地优先，保护隐私</li>
+<li>✅ 零配置开箱即用</li>
+</ul>
+<p><strong>推荐指数</strong>: ⭐⭐⭐⭐⭐ (5&#x2F;5)</p>
+<hr>
+<h3 id="4-skill-factory-⭐⭐⭐⭐"><a href="#4-skill-factory-⭐⭐⭐⭐" class="headerlink" title="4. skill-factory ⭐⭐⭐⭐"></a>4. skill-factory ⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/jeremysommerfeld8910-cpu/skill-factory/SKILL.md">jeremysommerfeld8910-cpu&#x2F;skill-factory</a></p>
+<h4 id="核心功能-3"><a href="#核心功能-3" class="headerlink" title="核心功能"></a>核心功能</h4><p>一个完整的技能工厂，可以创建、评估、改进、基准测试和发布 OpenClaw 技能。</p>
+<h4 id="技术实现-3"><a href="#技术实现-3" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
+<li><strong>模板系统</strong>：标准化技能结构生成</li>
+<li><strong>质量评估</strong>：自动化技能质量检查</li>
+<li><strong>性能基准</strong>：技能性能测试框架</li>
+<li><strong>发布流程</strong>：一键发布到 ClawHub</li>
+</ul>
+<h4 id="实用场景-3"><a href="#实用场景-3" class="headerlink" title="实用场景"></a>实用场景</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：创建一个新技能</span></span><br><span class="line">skill-factory create --name <span class="string">&quot;my-custom-skill&quot;</span> --template <span class="string">&quot;api-integration&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 评估技能质量</span></span><br><span class="line">skill-factory evaluate --skill <span class="string">&quot;./my-custom-skill&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行性能基准测试</span></span><br><span class="line">skill-factory benchmark --skill <span class="string">&quot;./my-custom-skill&quot;</span> --iterations 100</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发布到 ClawHub</span></span><br><span class="line">skill-factory publish --skill <span class="string">&quot;./my-custom-skill&quot;</span> --registry clawhub</span><br></pre></td></tr></table></figure>
+
+<h4 id="推荐理由-3"><a href="#推荐理由-3" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
+<li>✅ 标准化技能开发流程</li>
+<li>✅ 内置质量保证机制</li>
+<li>✅ 自动化测试和发布</li>
+<li>✅ 适合技能开发者</li>
+</ul>
+<p><strong>推荐指数</strong>: ⭐⭐⭐⭐ (4&#x2F;5)</p>
+<hr>
+<h3 id="5-security-operator-⭐⭐⭐⭐"><a href="#5-security-operator-⭐⭐⭐⭐" class="headerlink" title="5. security-operator ⭐⭐⭐⭐"></a>5. security-operator ⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/kevjade/security-operator/SKILL.md">kevjade&#x2F;security-operator</a></p>
+<h4 id="核心功能-4"><a href="#核心功能-4" class="headerlink" title="核心功能"></a>核心功能</h4><p>为 OpenClaw 代理提供运行时安全护栏，防止危险操作和潜在安全风险。</p>
+<h4 id="技术实现-4"><a href="#技术实现-4" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
+<li><strong>权限控制</strong>：细粒度的操作权限管理</li>
+<li><strong>风险评估</strong>：实时操作风险评估</li>
+<li><strong>审计日志</strong>：完整的操作审计追踪</li>
+<li><strong>熔断机制</strong>：异常行为自动阻断</li>
+</ul>
+<h4 id="实用场景-4"><a href="#实用场景-4" class="headerlink" title="实用场景"></a>实用场景</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：配置安全策略</span></span><br><span class="line"><span class="attr">security_policies:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">action:</span> <span class="string">&quot;file_write&quot;</span></span><br><span class="line">    <span class="attr">constraints:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">path_pattern:</span> <span class="string">&quot;/etc/*&quot;</span></span><br><span class="line">        <span class="attr">allowed:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">reason:</span> <span class="string">&quot;System files protection&quot;</span></span><br><span class="line">      </span><br><span class="line">      <span class="bullet">-</span> <span class="attr">path_pattern:</span> <span class="string">&quot;~/.ssh/*&quot;</span></span><br><span class="line">        <span class="attr">allowed:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">reason:</span> <span class="string">&quot;SSH keys protection&quot;</span></span><br><span class="line">  </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">action:</span> <span class="string">&quot;shell_exec&quot;</span></span><br><span class="line">    <span class="attr">constraints:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">command_pattern:</span> <span class="string">&quot;rm -rf /&quot;</span></span><br><span class="line">        <span class="attr">allowed:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">reason:</span> <span class="string">&quot;Prevent system destruction&quot;</span></span><br><span class="line">      </span><br><span class="line">      <span class="bullet">-</span> <span class="attr">command_pattern:</span> <span class="string">&quot;curl * | bash&quot;</span></span><br><span class="line">        <span class="attr">allowed:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">reason:</span> <span class="string">&quot;Prevent remote code execution&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="推荐理由-4"><a href="#推荐理由-4" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
+<li>✅ 生产环境必备安全层</li>
+<li>✅ 可配置的安全策略</li>
+<li>✅ 详细的审计日志</li>
+<li>✅ 防止常见安全漏洞</li>
+</ul>
+<p><strong>推荐指数</strong>: ⭐⭐⭐⭐ (4&#x2F;5)</p>
+<hr>
+<h2 id="🎯-应用场景总结"><a href="#🎯-应用场景总结" class="headerlink" title="🎯 应用场景总结"></a>🎯 应用场景总结</h2><h3 id="1-个人开发者"><a href="#1-个人开发者" class="headerlink" title="1. 个人开发者"></a>1. 个人开发者</h3><ul>
+<li><strong>推荐技能</strong>：<code>claude-code-orchestrator</code> + <code>agent-context</code></li>
+<li><strong>使用场景</strong>：日常编码、代码重构、项目维护</li>
+<li><strong>收益</strong>：提升 3-5 倍编码效率，避免重复劳动</li>
+</ul>
+<h3 id="2-团队协作"><a href="#2-团队协作" class="headerlink" title="2. 团队协作"></a>2. 团队协作</h3><ul>
+<li><strong>推荐技能</strong>：<code>multi-agent-blueprint</code> + <code>security-operator</code></li>
+<li><strong>使用场景</strong>：多项目并行开发、代码审查、部署自动化</li>
+<li><strong>收益</strong>：24&#x2F;7 自动化开发，降低人力成本 60%+</li>
+</ul>
+<h3 id="3-技能开发者"><a href="#3-技能开发者" class="headerlink" title="3. 技能开发者"></a>3. 技能开发者</h3><ul>
+<li><strong>推荐技能</strong>：<code>skill-factory</code></li>
+<li><strong>使用场景</strong>：创建自定义技能、发布到社区</li>
+<li><strong>收益</strong>：标准化开发流程，快速迭代</li>
+</ul>
+<h3 id="4-企业级应用"><a href="#4-企业级应用" class="headerlink" title="4. 企业级应用"></a>4. 企业级应用</h3><ul>
+<li><strong>推荐技能</strong>：全部 5 个技能组合</li>
+<li><strong>使用场景</strong>：生产环境 AI 代理部署</li>
+<li><strong>收益</strong>：安全可控的 AI 辅助开发</li>
+</ul>
+<hr>
+<h2 id="📈-推荐指数排名"><a href="#📈-推荐指数排名" class="headerlink" title="📈 推荐指数排名"></a>📈 推荐指数排名</h2><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>Skill 名称</th>
+<th>推荐指数</th>
+<th>核心价值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🥇</td>
+<td>multi-agent-blueprint</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>生产级多代理系统</td>
+</tr>
+<tr>
+<td>🥇</td>
+<td>claude-code-orchestrator</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>稳定的任务编排</td>
+</tr>
+<tr>
+<td>🥇</td>
+<td>agent-context</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>持久化记忆系统</td>
+</tr>
+<tr>
+<td>🥈</td>
+<td>skill-factory</td>
+<td>⭐⭐⭐⭐</td>
+<td>技能开发工具链</td>
+</tr>
+<tr>
+<td>🥈</td>
+<td>security-operator</td>
+<td>⭐⭐⭐⭐</td>
+<td>运行时安全护栏</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="💡-实用建议"><a href="#💡-实用建议" class="headerlink" title="💡 实用建议"></a>💡 实用建议</h2><h3 id="新手入门"><a href="#新手入门" class="headerlink" title="新手入门"></a>新手入门</h3><ol>
+<li>从 <code>agent-context</code> 开始，建立持久记忆系统</li>
+<li>使用 <code>claude-code-orchestrator</code> 管理复杂任务</li>
+<li>逐步学习 <code>multi-agent-blueprint</code> 构建团队</li>
+</ol>
+<h3 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h3><ol>
+<li>组合多个技能构建完整工作流</li>
+<li>使用 <code>skill-factory</code> 创建自定义技能</li>
+<li>部署 <code>security-operator</code> 保护生产环境</li>
+</ol>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ol>
+<li><strong>记忆优先</strong>：先建立记忆系统，再扩展功能</li>
+<li><strong>安全第一</strong>：生产环境必须启用安全护栏</li>
+<li><strong>渐进式采用</strong>：从一个技能开始，逐步添加更多</li>
+</ol>
+<hr>
+<h2 id="🔗-相关资源"><a href="#🔗-相关资源" class="headerlink" title="🔗 相关资源"></a>🔗 相关资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.openclaw.ai/">OpenClaw 官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://clawhub.com/">ClawHub 技能市场</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/openclaw/openclaw">OpenClaw GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://discord.com/invite/clawd">社区 Discord</a></li>
+</ul>
+<hr>
+<h2 id="📝-总结"><a href="#📝-总结" class="headerlink" title="📝 总结"></a>📝 总结</h2><p>Coding Agents &amp; IDEs 分类是 OpenClaw 生态系统的核心，1200+ 技能覆盖了 AI 辅助开发的方方面面。今天推荐的 5 个技能代表了该分类的最高水平，从个人编码到团队协作，从记忆管理到安全治理，为开发者提供了完整的工具链。</p>
+<p><strong>关键要点</strong>：</p>
+<ul>
+<li>✅ 编码代理是 OpenClaw 最重要的应用场景之一</li>
+<li>✅ 多代理协作是未来的趋势</li>
+<li>✅ 记忆和安全是生产环境的必备要素</li>
+<li>✅ 技能开发生态日益成熟</li>
+</ul>
+<p>明天我们将介绍下一个分类，敬请期待！</p>
+<hr>
+<p><em>本文是 OpenClaw Skill 每日推荐系列的第 3 篇，共 30 篇。</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">multi-agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">openclaw</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">skill</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">coding-agents-and-ides</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ai-coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术推荐//" class="article-tag-list-link color5">技术推荐</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-27-openclaw-skill-showcase-coding-agents-and-ides/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-27-agent-memory-arxiv-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-27-agent-memory-arxiv-report/">Agent Memory 每日论文综述 - 2026-03-27</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-27-agent-memory-arxiv-report/" class="archive-article-date">
+  	<time datetime="2026-03-27T03:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Agent-Memory-每日论文综述"><a href="#Agent-Memory-每日论文综述" class="headerlink" title="Agent Memory 每日论文综述"></a>Agent Memory 每日论文综述</h1><blockquote>
+<p>本报告自动生成自 <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></p>
+<p>筛选标准：标题或摘要包含 agent、memory、RAG 等关键词</p>
+<p>生成时间：2026&#x2F;3&#x2F;27 11:30:05</p>
+</blockquote>
+<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><ul>
+<li><strong>总论文数</strong>: 14 篇</li>
+<li><strong>相关论文</strong>: 0 篇</li>
+</ul>
+<hr>
+<h2 id="📝-相关论文列表"><a href="#📝-相关论文列表" class="headerlink" title="📝 相关论文列表"></a>📝 相关论文列表</h2><h3 id="1-The-Stochastic-Gap-A-Markovian-Framework-for-Pre-Deployment-Reliability-and-Oversight-Cost-Auditing-in-Agentic-Artificial-Intelligence"><a href="#1-The-Stochastic-Gap-A-Markovian-Framework-for-Pre-Deployment-Reliability-and-Oversight-Cost-Auditing-in-Agentic-Artificial-Intelligence" class="headerlink" title="1. The Stochastic Gap: A Markovian Framework for Pre-Deployment Reliability and Oversight-Cost Auditing in Agentic Artificial Intelligence"></a>1. The Stochastic Gap: A Markovian Framework for Pre-Deployment Reliability and Oversight-Cost Auditing in Agentic Artificial Intelligence</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.24582</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.24582">https://arxiv.org/abs/2603.24582</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>oversight, workflow, agentic, blind, tau, intelligence, reliability, governable, cost, framework</p>
+<hr>
+<h3 id="2-Multi-Agent-Reasoning-with-Consistency-Verification-Improves-Uncertainty-Calibration-in-Medical-MCQA"><a href="#2-Multi-Agent-Reasoning-with-Consistency-Verification-Improves-Uncertainty-Calibration-in-Medical-MCQA" class="headerlink" title="2. Multi-Agent Reasoning with Consistency Verification Improves Uncertainty Calibration in Medical MCQA"></a>2. Multi-Agent Reasoning with Consistency Verification Improves Uncertainty Calibration in Medical MCQA</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.24481</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.24481">https://arxiv.org/abs/2603.24481</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>specialist, verification, medmcqa, calibration, deferral, medqa, confidence, ece, mcqa, agent</p>
+<hr>
+<h3 id="3-AI-Supervisor-Autonomous-AI-Research-Supervision-via-a-Persistent-Research-World-Model"><a href="#3-AI-Supervisor-Autonomous-AI-Research-Supervision-via-a-Persistent-Research-World-Model" class="headerlink" title="3. AI-Supervisor: Autonomous AI Research Supervision via a Persistent Research World Model"></a>3. AI-Supervisor: Autonomous AI Research Supervision via a Persistent Research World Model</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.24402</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.24402">https://arxiv.org/abs/2603.24402</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>research, autoprof, agents, autonomous, supervision, persistent, discovery, pipelines, correcting, supervisor</p>
+<hr>
+<h3 id="4-ELITE-Experiential-Learning-and-Intent-Aware-Transfer-for-Self-improving-Embodied-Agents"><a href="#4-ELITE-Experiential-Learning-and-Intent-Aware-Transfer-for-Self-improving-Embodied-Agents" class="headerlink" title="4. ELITE: Experiential Learning and Intent-Aware Transfer for Self-improving Embodied Agents"></a>4. ELITE: Experiential Learning and Intent-Aware Transfer for Self-improving Embodied Agents</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.24018</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.24018">https://arxiv.org/abs/2603.24018</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>elite, vlms, embodied, intent, aware, agents, tasks, knowledge, reflective, experiential</p>
+<hr>
+<h3 id="5-Language-Grounded-Multi-Agent-Planning-for-Personalized-and-Fair-Participatory-Urban-Sensing"><a href="#5-Language-Grounded-Multi-Agent-Planning-for-Personalized-and-Fair-Participatory-Urban-Sensing" class="headerlink" title="5. Language-Grounded Multi-Agent Planning for Personalized and Fair Participatory Urban Sensing"></a>5. Language-Grounded Multi-Agent Planning for Personalized and Fair Participatory Urban Sensing</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.24014</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.24014">https://arxiv.org/abs/2603.24014</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>urban, sensing, participatory, mapus, agent, personalized, fair, participants, fairness, grounded</p>
+<hr>
+<h3 id="6-From-Pixels-to-Digital-Agents-An-Empirical-Study-on-the-Taxonomy-and-Technological-Trends-of-Reinforcement-Learning-Environments"><a href="#6-From-Pixels-to-Digital-Agents-An-Empirical-Study-on-the-Taxonomy-and-Technological-Trends-of-Reinforcement-Learning-Environments" class="headerlink" title="6. From Pixels to Digital Agents: An Empirical Study on the Taxonomy and Technological Trends of Reinforcement Learning Environments"></a>6. From Pixels to Digital Agents: An Empirical Study on the Taxonomy and Technological Trends of Reinforcement Learning Environments</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23964</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23964">https://arxiv.org/abs/2603.23964</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>agents, taxonomy, environments, ecosystem, reinforcement, cognitive, semantic, empirical, programmatically, quantitative</p>
+<hr>
+<h3 id="7-AnalogAgent-Self-Improving-Analog-Circuit-Design-Automation-with-LLM-Agents"><a href="#7-AnalogAgent-Self-Improving-Analog-Circuit-Design-Automation-with-LLM-Agents" class="headerlink" title="7. AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents"></a>7. AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23910</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23910">https://arxiv.org/abs/2603.23910</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>analogagent, analog, automation, pass, circuit, llm, design, sem, playbook, curator</p>
+<hr>
+<h3 id="8-DUPLEX-Agentic-Dual-System-Planning-via-LLM-Driven-Information-Extraction"><a href="#8-DUPLEX-Agentic-Dual-System-Planning-via-LLM-Driven-Information-Extraction" class="headerlink" title="8. DUPLEX: Agentic Dual-System Planning via LLM-Driven Information Extraction"></a>8. DUPLEX: Agentic Dual-System Planning via LLM-Driven Information Extraction</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23909</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23909">https://arxiv.org/abs/2603.23909</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>llm, planning, duplex, agentic, plan, symbolic, end, planner, system, extraction</p>
+<hr>
+<h3 id="9-VehicleMemBench-An-Executable-Benchmark-for-Multi-User-Long-Term-Memory-in-In-Vehicle-Agents"><a href="#9-VehicleMemBench-An-Executable-Benchmark-for-Multi-User-Long-Term-Memory-in-In-Vehicle-Agents" class="headerlink" title="9. VehicleMemBench: An Executable Benchmark for Multi-User Long-Term Memory in In-Vehicle Agents"></a>9. VehicleMemBench: An Executable Benchmark for Multi-User Long-Term Memory in In-Vehicle Agents</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23840</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23840">https://arxiv.org/abs/2603.23840</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>vehicle, vehiclemembench, memory, user, executable, preferences, agents, benchmark, term, multi</p>
+<hr>
+<h3 id="10-Learning-guided-Prioritized-Planning-for-Lifelong-Multi-Agent-Path-Finding-in-Warehouse-Automation"><a href="#10-Learning-guided-Prioritized-Planning-for-Lifelong-Multi-Agent-Path-Finding-in-Warehouse-Automation" class="headerlink" title="10. Learning-guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation"></a>10. Learning-guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23838</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23838">https://arxiv.org/abs/2603.23838</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>warehouse, lifelong, planning, mapf, prioritized, automation, agent, priority, throughput, guided</p>
+<hr>
+<h3 id="11-Efficient-Benchmarking-of-AI-Agents"><a href="#11-Efficient-Benchmarking-of-AI-Agents" class="headerlink" title="11. Efficient Benchmarking of AI Agents"></a>11. Efficient Benchmarking of AI Agents</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23749</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23749">https://arxiv.org/abs/2603.23749</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>scaffold, agents, evaluation, rankings, benchmarks, agent, shift, rollouts, rank, reliable</p>
+<hr>
+<h3 id="12-Can-LLM-Agents-Be-CFOs-A-Benchmark-for-Resource-Allocation-in-Dynamic-Enterprise-Environments"><a href="#12-Can-LLM-Agents-Be-CFOs-A-Benchmark-for-Resource-Allocation-in-Dynamic-Enterprise-Environments" class="headerlink" title="12. Can LLM Agents Be CFOs? A Benchmark for Resource Allocation in Dynamic Enterprise Environments"></a>12. Can LLM Agents Be CFOs? A Benchmark for Resource Allocation in Dynamic Enterprise Environments</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23638</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23638">https://arxiv.org/abs/2603.23638</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>enterprise, allocation, agents, horizon, cfos, resource, llm, resources, scarce, benchmark</p>
+<hr>
+<h3 id="13-Evaluating-a-Multi-Agent-Voice-Enabled-Smart-Speaker-for-Care-Homes-A-Safety-Focused-Framework"><a href="#13-Evaluating-a-Multi-Agent-Voice-Enabled-Smart-Speaker-for-Care-Homes-A-Safety-Focused-Framework" class="headerlink" title="13. Evaluating a Multi-Agent Voice-Enabled Smart Speaker for Care Homes: A Safety-Focused Framework"></a>13. Evaluating a Multi-Agent Voice-Enabled Smart Speaker for Care Homes: A Safety-Focused Framework</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23625</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23625">https://arxiv.org/abs/2603.23625</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>care, reminder, homes, end, reminders, voice, enabled, home, spoken, resident</p>
+<hr>
+<h3 id="14-Environment-Maps-Structured-Environmental-Representations-for-Long-Horizon-Agents"><a href="#14-Environment-Maps-Structured-Environmental-Representations-for-Long-Horizon-Agents" class="headerlink" title="14. Environment Maps: Structured Environmental Representations for Long-Horizon Agents"></a>14. Environment Maps: Structured Environmental Representations for Long-Horizon Agents</h3><ul>
+<li><strong>arXiv ID</strong>: 2603.23610</li>
+<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23610">https://arxiv.org/abs/2603.23610</a></li>
+<li><strong>作者</strong>: 待补充</li>
+</ul>
+<p>environment, agents, maps, structured, horizon, environmental, workflows, misstep, webarena, persistent</p>
+<hr>
+<h2 id="💡-总结"><a href="#💡-总结" class="headerlink" title="💡 总结"></a>💡 总结</h2><!-- 这里可以后续用 LLM 自动生成 -->
+
+<p><em>本报告由 MyClaw 自动生成</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arxiv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">memory</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">daily-report</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/论文综述//" class="article-tag-list-link color5">论文综述</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-27-agent-memory-arxiv-report/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-03-27-OpenManus" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/2026-03-27-OpenManus/">OpenManus 项目分析报告</a>
+    </h1>
+  
+
+        
+        <a href="/2026/2026-03-27-OpenManus/" class="archive-article-date">
+  	<time datetime="2026-03-27T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OpenManus-项目分析报告"><a href="#OpenManus-项目分析报告" class="headerlink" title="OpenManus 项目分析报告"></a>OpenManus 项目分析报告</h1><blockquote>
+<p>本报告由 OpenClaw 自动生成</p>
+<p>研究日期: 2026-03-27</p>
+<p>项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;OpenManus</p>
+</blockquote>
+<hr>
+<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p>Manus is incredible, but OpenManus can achieve any idea without an <em>Invite Code</em> 🛫!<br>Our team members <a target="_blank" rel="noopener" href="https://github.com/mannaandpoem">@Xinbin Liang</a> and <a target="_blank" rel="noopener" href="https://github.com/XiangJinyu">@Jinyu Xiang</a> (core authors), along with <a target="_blank" rel="noopener" href="https://github.com/MoshiQAQ">@Zhaoyang Yu</a>, <a target="_blank" rel="noopener" href="https://github.com/didiforgithub">@Jiayi Zhang</a>, and <a target="_blank" rel="noopener" href="https://github.com/stellaHSR">@Sirui Hong</a>, we are from <a target="_blank" rel="noopener" href="https://github.com/geekan/MetaGPT">@MetaGPT</a>. The prototype is launched within 3 hours and we are keeping building!<br>It’s a simple implementation, so we welcome any suggestions, contributions, and feedback!<br>Enjoy your own agent with OpenManus!<br>We’re also excited to introduce <a target="_blank" rel="noopener" href="https://github.com/OpenManus/OpenManus-RL">OpenManus-RL</a>, an open-source project dedicated to reinforcement learning (RL)- based (such as GRPO) tuning methods for LLM agents, developed collaboratively by researchers from UIUC and OpenManus.</p>
+<h2 id="Project-Demo"><a href="#Project-Demo" class="headerlink" title="Project Demo"></a>Project Demo</h2><p><video src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" data-canonical-src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>We provide two installation methods. Method 2 (using uv) is recommended for faster installation and better dependency management.</p>
+<h3 id="Method-1-Using-conda"><a href="#Method-1-Using-conda" class="headerlink" title="Method 1: Using conda"></a>Method 1: Using conda</h3><ol>
+<li>Create a new conda environment:</li>
+</ol>
+<h2 id="2-技术栈"><a href="#2-技术栈" class="headerlink" title="2. 技术栈"></a>2. 技术栈</h2><h2 id="3-项目结构"><a href="#3-项目结构" class="headerlink" title="3. 项目结构"></a>3. 项目结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">./run_mcp.py</span><br><span class="line">./app/config.py</span><br><span class="line">./app/__init__.py</span><br><span class="line">./app/llm.py</span><br><span class="line">./app/logger.py</span><br><span class="line">./app/exceptions.py</span><br><span class="line">./app/bedrock.py</span><br><span class="line">./app/schema.py</span><br><span class="line">./setup.py</span><br><span class="line">./run_mcp_server.py</span><br><span class="line">./run_flow.py</span><br><span class="line">./sandbox_main.py</span><br><span class="line">./main.py</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-技术实现分析"><a href="#4-技术实现分析" class="headerlink" title="4. 技术实现分析"></a>4. 技术实现分析</h2><h3 id="核心架构"><a href="#核心架构" class="headerlink" title="核心架构"></a>核心架构</h3><p><em>待深入分析</em></p>
+<h3 id="关键模块"><a href="#关键模块" class="headerlink" title="关键模块"></a>关键模块</h3><p><em>待深入分析</em></p>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><p><em>待深入分析</em></p>
+<h2 id="5-产品意义"><a href="#5-产品意义" class="headerlink" title="5. 产品意义"></a>5. 产品意义</h2><h3 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h3><p><em>待分析</em></p>
+<h3 id="目标用户"><a href="#目标用户" class="headerlink" title="目标用户"></a>目标用户</h3><p><em>待分析</em></p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p><em>待分析</em></p>
+<h2 id="6-借鉴点"><a href="#6-借鉴点" class="headerlink" title="6. 借鉴点"></a>6. 借鉴点</h2><h3 id="技术层面"><a href="#技术层面" class="headerlink" title="技术层面"></a>技术层面</h3><ol>
+<li><em>待分析</em></li>
+<li><em>待分析</em></li>
+</ol>
+<h3 id="产品层面"><a href="#产品层面" class="headerlink" title="产品层面"></a>产品层面</h3><ol>
+<li><em>待分析</em></li>
+<li><em>待分析</em></li>
+</ol>
+<h3 id="工程实践"><a href="#工程实践" class="headerlink" title="工程实践"></a>工程实践</h3><ol>
+<li><em>待分析</em></li>
+<li><em>待分析</em></li>
+</ol>
+<h2 id="7-待深入研究"><a href="#7-待深入研究" class="headerlink" title="7. 待深入研究"></a>7. 待深入研究</h2><ul>
+<li><input disabled="" type="checkbox"> 阅读核心源码</li>
+<li><input disabled="" type="checkbox"> 运行示例</li>
+<li><input disabled="" type="checkbox"> 分析测试用例</li>
+<li><input disabled="" type="checkbox"> 研究 API 设计</li>
+</ul>
+<hr>
+<p><em>本报告由 OpenClaw 自动生成，需要进一步人工补充</em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">open-source</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ai-repo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">daily-research</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/开源项目研究//" class="article-tag-list-link color2">开源项目研究</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2026/2026-03-27-OpenManus/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-03-26-agent-insights" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -2137,885 +3457,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2026-03-25-agent-insights" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-25-agent-insights/">Agent 前沿趋势洞察 - 2026-03-25</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-25-agent-insights/" class="archive-article-date">
-  	<time datetime="2026-03-25T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Agent-前沿趋势洞察"><a href="#Agent-前沿趋势洞察" class="headerlink" title="Agent 前沿趋势洞察"></a>Agent 前沿趋势洞察</h1><blockquote>
-<p>数据源: <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">arXiv cs.AI</a> + <a target="_blank" rel="noopener" href="https://github.com/trending">GitHub Trending</a></p>
-<p>生成时间: 2026&#x2F;3&#x2F;25 20:33:51</p>
-</blockquote>
-<h2 id="📊-今日概览"><a href="#📊-今日概览" class="headerlink" title="📊 今日概览"></a>📊 今日概览</h2><table>
-<thead>
-<tr>
-<th>分类</th>
-<th>数量</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>框架&#x2F;工具</td>
-<td>0</td>
-</tr>
-<tr>
-<td>技术方向</td>
-<td>7</td>
-</tr>
-<tr>
-<td>应用场景</td>
-<td>0</td>
-</tr>
-<tr>
-<td>理论研究</td>
-<td>4</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="🔬-技术方向"><a href="#🔬-技术方向" class="headerlink" title="🔬 技术方向"></a>🔬 技术方向</h2><h3 id="1-MemCollab-Cross-Agent-Memory-Collaboration-via-Contrastive-Trajectory-Distillation"><a href="#1-MemCollab-Cross-Agent-Memory-Collaboration-via-Contrastive-Trajectory-Distillation" class="headerlink" title="1. MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation"></a>1. MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23234">2603.23234</a></p>
-<p>memory,memcollab,agents,agent,reasoning,task,contrastive,shared,llm,knowledge</p>
-<h3 id="2-PERMA-Benchmarking-Personalized-Memory-Agents-via-Event-Driven-Preference-and-Realistic-Task-Environments"><a href="#2-PERMA-Benchmarking-Personalized-Memory-Agents-via-Event-Driven-Preference-and-Realistic-Task-Environments" class="headerlink" title="2. PERMA: Benchmarking Personalized Memory Agents via Event-Driven Preference and Realistic Task Environments"></a>2. PERMA: Benchmarking Personalized Memory Agents via Event-Driven Preference and Realistic Task Environments</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23231">2603.23231</a></p>
-<p>perma,preference,persona,memory,preferences,agents,dialogues,personalized,idiolects,related</p>
-<h3 id="3-MedCausalX-Adaptive-Causal-Reasoning-with-Self-Reflection-for-Trustworthy-Medical-Vision-Language-Models"><a href="#3-MedCausalX-Adaptive-Causal-Reasoning-with-Self-Reflection-for-Trustworthy-Medical-Vision-Language-Models" class="headerlink" title="3. MedCausalX: Adaptive Causal Reasoning with Self-Reflection for Trustworthy Medical Vision-Language Models"></a>3. MedCausalX: Adaptive Causal Reasoning with Self-Reflection for Trustworthy Medical Vision-Language Models</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23085">2603.23085</a></p>
-<p>causal,reasoning,medcausalx,medical,crmed,vlms,cot,reflection,spurious,langle</p>
-<h3 id="4-Can-Large-Language-Models-Reason-and-Optimize-Under-Constraints"><a href="#4-Can-Large-Language-Models-Reason-and-Optimize-Under-Constraints" class="headerlink" title="4. Can Large Language Models Reason and Optimize Under Constraints?"></a>4. Can Large Language Models Reason and Optimize Under Constraints?</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23004">2603.23004</a></p>
-<p>llms,constraints,reason,reasoning,language,optimize,optimization,structured,fail,scarcely</p>
-<h3 id="5-ProGRank-Probe-Gradient-Reranking-to-Defend-Dense-Retriever-RAG-from-Corpus-Poisoning"><a href="#5-ProGRank-Probe-Gradient-Reranking-to-Defend-Dense-Retriever-RAG-from-Corpus-Poisoning" class="headerlink" title="5. ProGRank: Probe-Gradient Reranking to Defend Dense-Retriever RAG from Corpus Poisoning"></a>5. ProGRank: Probe-Gradient Reranking to Defend Dense-Retriever RAG from Corpus Poisoning</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.22934">2603.22934</a></p>
-<p>retriever,progrank,poisoning,rag,corpus,reranking,defence,dense,probe,defend</p>
-<hr>
-<h2 id="📚-理论研究"><a href="#📚-理论研究" class="headerlink" title="📚 理论研究"></a>📚 理论研究</h2><h3 id="1-Beyond-Preset-Identities-How-Agents-Form-Stances-and-Boundaries-in-Generative-Societies"><a href="#1-Beyond-Preset-Identities-How-Agents-Form-Stances-and-Boundaries-in-Generative-Societies" class="headerlink" title="1. Beyond Preset Identities: How Agents Form Stances and Boundaries in Generative Societies"></a>1. Beyond Preset Identities: How Agents Form Stances and Boundaries in Generative Societies</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23406">2603.23406</a></p>
-<p>stances,tad,agents,ivb,trust,preset,interventions,societies,innate,persuasion</p>
-<h3 id="2-Describe-Then-Act-Proactive-Agent-Steering-via-Distilled-Language-Action-World-Models"><a href="#2-Describe-Then-Act-Proactive-Agent-Steering-via-Distilled-Language-Action-World-Models" class="headerlink" title="2. Describe-Then-Act: Proactive Agent Steering via Distilled Language-Action World Models"></a>2. Describe-Then-Act: Proactive Agent Steering via Distilled Language-Action World Models</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23149">2603.23149</a></p>
-<p>dillo,act,proactive,distilled,language,steering,visual,prevention,action,world</p>
-<h3 id="3-Optimizing-Small-Language-Models-for-NL2SQL-via-Chain-of-Thought-Fine-Tuning"><a href="#3-Optimizing-Small-Language-Models-for-NL2SQL-via-Chain-of-Thought-Fine-Tuning" class="headerlink" title="3. Optimizing Small Language Models for NL2SQL via Chain-of-Thought Fine-Tuning"></a>3. Optimizing Small Language Models for NL2SQL via Chain-of-Thought Fine-Tuning</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.22942">2603.22942</a></p>
-<p>nl2sql,gemini,tuning,language,fine,models,thought,small,chain,accuracy</p>
-<h3 id="4-Separating-Diagnosis-from-Control-Auditable-Policy-Adaptation-in-Agent-Based-Simulations-with-LLM-Based-Diagnostics"><a href="#4-Separating-Diagnosis-from-Control-Auditable-Policy-Adaptation-in-Agent-Based-Simulations-with-LLM-Based-Diagnostics" class="headerlink" title="4. Separating Diagnosis from Control: Auditable Policy Adaptation in Agent-Based Simulations with LLM-Based Diagnostics"></a>4. Separating Diagnosis from Control: Auditable Policy Adaptation in Agent-Based Simulations with LLM-Based Diagnostics</h3><p>📄 <strong>arXiv</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.22904">2603.22904</a></p>
-<p>auditability,llm,elderly,policy,diagnosis,auditable,control,inspectable,agent,loneliness</p>
-<hr>
-<h2 id="🎯-今日洞察"><a href="#🎯-今日洞察" class="headerlink" title="🎯 今日洞察"></a>🎯 今日洞察</h2><h3 id="值得关注"><a href="#值得关注" class="headerlink" title="值得关注"></a>值得关注</h3><ol>
-<li><em>待补充</em></li>
-<li><em>待补充</em></li>
-</ol>
-<h3 id="技术趋势"><a href="#技术趋势" class="headerlink" title="技术趋势"></a>技术趋势</h3><ul>
-<li><em>待分析</em></li>
-</ul>
-<h3 id="推荐深入"><a href="#推荐深入" class="headerlink" title="推荐深入"></a>推荐深入</h3><ul>
-<li><em>待推荐</em></li>
-</ul>
-<hr>
-<p><em>本报告由 OpenClaw 自动生成，人工洞察部分待补充</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 关键词列表</span><br><span class="line">agent, multi-agent, autonomous agent, AI agent, LLM agent, langchain, llamaindex, autogpt, crewai, metagpt, agentverse, semantic kernel, haystack, dify, fastgpt</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arxiv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ai-trends</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">daily-insights</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前沿洞察//" class="article-tag-list-link color5">前沿洞察</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-25-agent-insights/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-25-agent-memory-arxiv-daily" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-25-agent-memory-arxiv-daily/">Agent Memory 每日论文速递 (2026-03-25)</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-25-agent-memory-arxiv-daily/" class="archive-article-date">
-  	<time datetime="2026-03-25T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        今日 arXiv cs.AI 上关于 Agent Memory 的最新论文分析，包括跨智能体记忆协作 MemCollab、个性化记忆基准 PERMA，以及与开源记忆项目的关联分析。
-        
-          <a class="article-more-a" href="/2026/2026-03-25-agent-memory-arxiv-daily/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arxiv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">memory</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">daily-report</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AI研究//" class="article-tag-list-link color5">AI研究</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-25-agent-memory-arxiv-daily/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-25-agent-memory-arxiv-report" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-25-agent-memory-arxiv-report/">Agent Memory 每日论文综述 - 2026-03-25</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-25-agent-memory-arxiv-report/" class="archive-article-date">
-  	<time datetime="2026-03-25T03:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Agent-Memory-每日论文综述"><a href="#Agent-Memory-每日论文综述" class="headerlink" title="Agent Memory 每日论文综述"></a>Agent Memory 每日论文综述</h1><blockquote>
-<p>本报告自动生成自 <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></p>
-<p>筛选标准：标题或摘要包含 agent、memory、RAG 等关键词</p>
-<p>生成时间：2026&#x2F;3&#x2F;25 11:30:05</p>
-</blockquote>
-<h2 id="📊-今日概况"><a href="#📊-今日概况" class="headerlink" title="📊 今日概况"></a>📊 今日概况</h2><ul>
-<li><strong>总论文数</strong>: 6 篇</li>
-<li><strong>相关论文</strong>: 0 篇</li>
-</ul>
-<hr>
-<h2 id="📝-相关论文列表"><a href="#📝-相关论文列表" class="headerlink" title="📝 相关论文列表"></a>📝 相关论文列表</h2><h3 id="1-Beyond-Preset-Identities-How-Agents-Form-Stances-and-Boundaries-in-Generative-Societies"><a href="#1-Beyond-Preset-Identities-How-Agents-Form-Stances-and-Boundaries-in-Generative-Societies" class="headerlink" title="1. Beyond Preset Identities: How Agents Form Stances and Boundaries in Generative Societies"></a>1. Beyond Preset Identities: How Agents Form Stances and Boundaries in Generative Societies</h3><ul>
-<li><strong>arXiv ID</strong>: 2603.23406</li>
-<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23406">https://arxiv.org/abs/2603.23406</a></li>
-<li><strong>作者</strong>: 待补充</li>
-</ul>
-<p>stances, tad, agents, ivb, trust, preset, interventions, societies, innate, persuasion</p>
-<hr>
-<h3 id="2-MemCollab-Cross-Agent-Memory-Collaboration-via-Contrastive-Trajectory-Distillation"><a href="#2-MemCollab-Cross-Agent-Memory-Collaboration-via-Contrastive-Trajectory-Distillation" class="headerlink" title="2. MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation"></a>2. MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation</h3><ul>
-<li><strong>arXiv ID</strong>: 2603.23234</li>
-<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23234">https://arxiv.org/abs/2603.23234</a></li>
-<li><strong>作者</strong>: 待补充</li>
-</ul>
-<p>memory, memcollab, agents, agent, reasoning, task, contrastive, shared, llm, knowledge</p>
-<hr>
-<h3 id="3-PERMA-Benchmarking-Personalized-Memory-Agents-via-Event-Driven-Preference-and-Realistic-Task-Environments"><a href="#3-PERMA-Benchmarking-Personalized-Memory-Agents-via-Event-Driven-Preference-and-Realistic-Task-Environments" class="headerlink" title="3. PERMA: Benchmarking Personalized Memory Agents via Event-Driven Preference and Realistic Task Environments"></a>3. PERMA: Benchmarking Personalized Memory Agents via Event-Driven Preference and Realistic Task Environments</h3><ul>
-<li><strong>arXiv ID</strong>: 2603.23231</li>
-<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23231">https://arxiv.org/abs/2603.23231</a></li>
-<li><strong>作者</strong>: 待补充</li>
-</ul>
-<p>perma, preference, persona, memory, preferences, agents, dialogues, personalized, idiolects, related</p>
-<hr>
-<h3 id="4-Describe-Then-Act-Proactive-Agent-Steering-via-Distilled-Language-Action-World-Models"><a href="#4-Describe-Then-Act-Proactive-Agent-Steering-via-Distilled-Language-Action-World-Models" class="headerlink" title="4. Describe-Then-Act: Proactive Agent Steering via Distilled Language-Action World Models"></a>4. Describe-Then-Act: Proactive Agent Steering via Distilled Language-Action World Models</h3><ul>
-<li><strong>arXiv ID</strong>: 2603.23149</li>
-<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.23149">https://arxiv.org/abs/2603.23149</a></li>
-<li><strong>作者</strong>: 待补充</li>
-</ul>
-<p>dillo, act, proactive, distilled, language, steering, visual, prevention, action, world</p>
-<hr>
-<h3 id="5-ProGRank-Probe-Gradient-Reranking-to-Defend-Dense-Retriever-RAG-from-Corpus-Poisoning"><a href="#5-ProGRank-Probe-Gradient-Reranking-to-Defend-Dense-Retriever-RAG-from-Corpus-Poisoning" class="headerlink" title="5. ProGRank: Probe-Gradient Reranking to Defend Dense-Retriever RAG from Corpus Poisoning"></a>5. ProGRank: Probe-Gradient Reranking to Defend Dense-Retriever RAG from Corpus Poisoning</h3><ul>
-<li><strong>arXiv ID</strong>: 2603.22934</li>
-<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.22934">https://arxiv.org/abs/2603.22934</a></li>
-<li><strong>作者</strong>: 待补充</li>
-</ul>
-<p>retriever, progrank, poisoning, rag, corpus, reranking, defence, dense, probe, defend</p>
-<hr>
-<h3 id="6-Separating-Diagnosis-from-Control-Auditable-Policy-Adaptation-in-Agent-Based-Simulations-with-LLM-Based-Diagnostics"><a href="#6-Separating-Diagnosis-from-Control-Auditable-Policy-Adaptation-in-Agent-Based-Simulations-with-LLM-Based-Diagnostics" class="headerlink" title="6. Separating Diagnosis from Control: Auditable Policy Adaptation in Agent-Based Simulations with LLM-Based Diagnostics"></a>6. Separating Diagnosis from Control: Auditable Policy Adaptation in Agent-Based Simulations with LLM-Based Diagnostics</h3><ul>
-<li><strong>arXiv ID</strong>: 2603.22904</li>
-<li><strong>链接</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.22904">https://arxiv.org/abs/2603.22904</a></li>
-<li><strong>作者</strong>: 待补充</li>
-</ul>
-<p>auditability, llm, elderly, policy, diagnosis, auditable, control, inspectable, agent, loneliness</p>
-<hr>
-<h2 id="💡-总结"><a href="#💡-总结" class="headerlink" title="💡 总结"></a>💡 总结</h2><!-- 这里可以后续用 LLM 自动生成 -->
-
-<p><em>本报告由 MyClaw 自动生成</em></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">arxiv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">memory</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">daily-report</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/论文综述//" class="article-tag-list-link color5">论文综述</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-25-agent-memory-arxiv-report/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-03-25-openclaw-skill-showcase-ai-and-llms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/2026-03-25-openclaw-skill-showcase-ai-and-llms/">OpenClaw Skill 每日推荐 - AI 与大语言模型</a>
-    </h1>
-  
-
-        
-        <a href="/2026/2026-03-25-openclaw-skill-showcase-ai-and-llms/" class="archive-article-date">
-  	<time datetime="2026-03-25T03:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="OpenClaw-Skill-每日推荐-AI-与大语言模型"><a href="#OpenClaw-Skill-每日推荐-AI-与大语言模型" class="headerlink" title="OpenClaw Skill 每日推荐 - AI 与大语言模型"></a>OpenClaw Skill 每日推荐 - AI 与大语言模型</h1><p>欢迎来到 OpenClaw Skill 每日推荐系列！今天我们探索 <strong>AI 与大语言模型</strong> 分类，这是 OpenClaw 生态中最庞大的分类，包含 <strong>184 个精选 Skills</strong>，覆盖了从模型推理到智能体协作的完整技术栈。</p>
-<h2 id="📊-分类概览"><a href="#📊-分类概览" class="headerlink" title="📊 分类概览"></a>📊 分类概览</h2><p>AI &amp; LLMs 分类是 OpenClaw 的核心领域之一，涵盖了：</p>
-<ul>
-<li><strong>智能体记忆与认知</strong>：持久化存储、自我反思、元认知</li>
-<li><strong>模型路由与优化</strong>：硬件适配、成本优化、多模型协作</li>
-<li><strong>多智能体协作</strong>：团队协同、任务分解、结果聚合</li>
-<li><strong>专用能力增强</strong>：语音识别、图像生成、金融分析</li>
-<li><strong>安全与防护</strong>：提示注入防御、模型验证、访问控制</li>
-</ul>
-<hr>
-<h2 id="🌟-精选-Skill-详解"><a href="#🌟-精选-Skill-详解" class="headerlink" title="🌟 精选 Skill 详解"></a>🌟 精选 Skill 详解</h2><h3 id="1-LLMFit-智能硬件适配器-⭐⭐⭐⭐⭐"><a href="#1-LLMFit-智能硬件适配器-⭐⭐⭐⭐⭐" class="headerlink" title="1. LLMFit - 智能硬件适配器 ⭐⭐⭐⭐⭐"></a>1. LLMFit - 智能硬件适配器 ⭐⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/alexsjones/llmfit">openclaw&#x2F;skills&#x2F;llmfit</a></p>
-<h4 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h4><p>LLMFit 是一个硬件感知的本地 LLM 推荐工具，能够：</p>
-<ul>
-<li>自动检测系统硬件（RAM、CPU、GPU&#x2F;VRAM）</li>
-<li>智能推荐最佳适配的本地模型</li>
-<li>提供最优量化方案和速度预估</li>
-<li>生成适配度评分（完美&#x2F;良好&#x2F;勉强&#x2F;过紧）</li>
-</ul>
-<h4 id="实用场景"><a href="#实用场景" class="headerlink" title="实用场景"></a>实用场景</h4><p><strong>场景 1：新手入门</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检测硬件配置</span></span><br><span class="line">llmfit --json system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取前 5 个推荐模型</span></span><br><span class="line">llmfit recommend --json --<span class="built_in">limit</span> 5</span><br></pre></td></tr></table></figure>
-
-<p>输出示例：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meta-llama/Llama-3.1-8B-Instruct&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;score&quot;</span><span class="punctuation">:</span> <span class="number">87</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;fit_level&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Perfect&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;best_quant&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Q5_K_M&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;estimated_tps&quot;</span><span class="punctuation">:</span> <span class="number">45</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;memory_required_gb&quot;</span><span class="punctuation">:</span> <span class="number">6.2</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>场景 2：按用途筛选</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编程专用模型</span></span><br><span class="line">llmfit recommend --json --use-case coding --<span class="built_in">limit</span> 3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推理增强模型</span></span><br><span class="line">llmfit recommend --json --use-case reasoning --<span class="built_in">limit</span> 3</span><br></pre></td></tr></table></figure>
-
-<h4 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
-<li><strong>硬件检测</strong>：支持 NVIDIA（nvidia-smi）、AMD（rocm-smi）、Apple Silicon（统一内存）</li>
-<li><strong>多 GPU 聚合</strong>：自动聚合多卡显存</li>
-<li><strong>量化优化</strong>：根据显存自动选择最佳量化级别（Q4_K_M 到 Q8_0）</li>
-<li><strong>运行模式</strong>：GPU 全速 &#x2F; CPU+GPU 混合 &#x2F; CPU 仅用</li>
-</ul>
-<h4 id="推荐理由"><a href="#推荐理由" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
-<li>✅ 零配置：自动检测，无需手动输入硬件参数</li>
-<li>✅ 智能量化：根据显存动态选择最优方案</li>
-<li>✅ 多平台支持：NVIDIA、AMD、Apple Silicon 全覆盖</li>
-<li>✅ 实用评分：综合质量、速度、适配度、上下文长度</li>
-</ul>
-<p><strong>推荐指数：⭐⭐⭐⭐⭐</strong></p>
-<hr>
-<h3 id="2-Multi-Agent-Collab-多智能体协作方法论-⭐⭐⭐⭐⭐"><a href="#2-Multi-Agent-Collab-多智能体协作方法论-⭐⭐⭐⭐⭐" class="headerlink" title="2. Multi-Agent Collab - 多智能体协作方法论 ⭐⭐⭐⭐⭐"></a>2. Multi-Agent Collab - 多智能体协作方法论 ⭐⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/vdc-k/multi-agent-collab">openclaw&#x2F;skills&#x2F;multi-agent-collab</a></p>
-<h4 id="核心功能-1"><a href="#核心功能-1" class="headerlink" title="核心功能"></a>核心功能</h4><p>这是一个通用的多智能体协作方法论，适用于任何多智能体系统（Claude Code、Cursor、LangChain、OpenAI Assistants 等）：</p>
-<ol>
-<li><strong>模型分层协作</strong>：贵的想，便宜的干，更便宜的归档</li>
-<li><strong>文档驱动同步</strong>：TASK &#x2F; CHANGELOG &#x2F; CONTEXT &#x3D; 协作协议</li>
-<li><strong>按需检索</strong>：QMD 索引，不全量注入</li>
-<li><strong>自演化</strong>：重复模式 → 候选技能</li>
-</ol>
-<h4 id="实用场景-1"><a href="#实用场景-1" class="headerlink" title="实用场景"></a>实用场景</h4><p><strong>场景：大型项目开发</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化项目</span></span><br><span class="line">./scripts/init.sh my-ai-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引文档（需要 qmd 工具）</span></span><br><span class="line">qmd index .</span><br></pre></td></tr></table></figure>
-
-<p><strong>工作流程：</strong></p>
-<p><strong>开始前：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询项目当前任务</span></span><br><span class="line">qmd query <span class="string">&quot;项目 X 当前任务&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或直接读取 TASK.md（小项目）</span></span><br><span class="line"><span class="built_in">cat</span> TASK.md</span><br></pre></td></tr></table></figure>
-
-<p><strong>工作后：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 更新 TASK.md（完成 → 移到最近完成）</span></span><br><span class="line"><span class="section"># 追加 CHANGELOG 条目（一行，带 #标签 + 身份）</span></span><br><span class="line">2026-03-25 完成用户认证模块 #feature @agent-lead</span><br><span class="line"></span><br><span class="line"><span class="section"># 重大决策 → 更新 CONTEXT.md</span></span><br><span class="line">决策：使用 JWT 而非 Session（考虑微服务架构）</span><br></pre></td></tr></table></figure>
-
-<p><strong>周报时：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 按 #标签 聚合 CHANGELOG</span></span><br><span class="line"><span class="section"># 填充&quot;模式发现&quot;板块</span></span><br><span class="line"><span class="section"># 出现 3+ 次的操作 → 标记为候选技能</span></span><br><span class="line"><span class="section"># 归档旧数据到 archive/</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="模型分工"><a href="#模型分工" class="headerlink" title="模型分工"></a>模型分工</h4><table>
-<thead>
-<tr>
-<th>角色</th>
-<th>模型示例</th>
-<th>职责</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Lead</strong></td>
-<td>Opus &#x2F; GPT-4 &#x2F; 高能力模型</td>
-<td>架构设计、决策、任务拆解</td>
-</tr>
-<tr>
-<td><strong>Engineer</strong></td>
-<td>Sonnet &#x2F; GPT-4o-mini &#x2F; 平衡型</td>
-<td>执行、编码、Review</td>
-</tr>
-<tr>
-<td><strong>Maintainer</strong></td>
-<td>Flash &#x2F; GPT-3.5 &#x2F; 成本优化型</td>
-<td>归档、清理、周报聚合</td>
-</tr>
-</tbody></table>
-<h4 id="技术实现-1"><a href="#技术实现-1" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
-<li><strong>文档协议</strong>：标准化 TASK.md、CHANGELOG.md、CONTEXT.md</li>
-<li><strong>QMD 索引</strong>：语义检索，避免全量上下文注入</li>
-<li><strong>模式识别</strong>：自动发现重复操作，转化为候选技能</li>
-<li><strong>跨平台兼容</strong>：方法论可应用于任何多智能体系统</li>
-</ul>
-<h4 id="推荐理由-1"><a href="#推荐理由-1" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
-<li>✅ 方法论而非工具：适用于所有多智能体系统</li>
-<li>✅ 成本优化：通过模型分层显著降低成本</li>
-<li>✅ 自演化：系统能力随时间自动增强</li>
-<li>✅ 标准化：统一的协作协议，易于团队协作</li>
-</ul>
-<p><strong>推荐指数：⭐⭐⭐⭐⭐</strong></p>
-<hr>
-<h3 id="3-MoA-Mixture-of-Agents-多模型辩论合成器-⭐⭐⭐⭐⭐"><a href="#3-MoA-Mixture-of-Agents-多模型辩论合成器-⭐⭐⭐⭐⭐" class="headerlink" title="3. MoA (Mixture of Agents) - 多模型辩论合成器 ⭐⭐⭐⭐⭐"></a>3. MoA (Mixture of Agents) - 多模型辩论合成器 ⭐⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/jscianna/moa">openclaw&#x2F;skills&#x2F;moa</a></p>
-<h4 id="核心功能-2"><a href="#核心功能-2" class="headerlink" title="核心功能"></a>核心功能</h4><p>MoA 让 3 个前沿模型”辩论”，然后综合它们的最佳见解，生成超越任何单一模型的答案。成本约 $0.03&#x2F;查询。</p>
-<p><strong>工作流程：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">PROMPT</span><br><span class="line">   │</span><br><span class="line">   ├─────┬─────┬─────┐</span><br><span class="line">   ▼     ▼     ▼     │</span><br><span class="line">Kimi  GLM  MiniMax  │（并行&quot;辩论&quot;）</span><br><span class="line">   │     │     │     │</span><br><span class="line">   └─────┴─────┴─────┘</span><br><span class="line">         ▼</span><br><span class="line">    AGGREGATOR</span><br><span class="line">    (Kimi 2.5)</span><br><span class="line">         │</span><br><span class="line">         ▼</span><br><span class="line">   FINAL ANSWER</span><br></pre></td></tr></table></figure>
-
-<h4 id="实用场景-2"><a href="#实用场景-2" class="headerlink" title="实用场景"></a>实用场景</h4><p><strong>场景 1：VC 尽职调查</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node scripts/moa.js <span class="string">&quot;分析 AI 代码生成领域的竞争格局。</span></span><br><span class="line"><span class="string">谁有可防御的护城河？谁可能被商品化？请具体说明。&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>场景 2：技术评估</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node scripts/moa.js <span class="string">&quot;比较 RLHF vs DPO vs RLAIF 用于 LLM 对齐。</span></span><br><span class="line"><span class="string">哪个扩展性更好？各自的失败模式是什么？&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>场景 3：市场研究</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node scripts/moa.js <span class="string">&quot;2026 年实体 AI 的新兴用例有哪些？</span></span><br><span class="line"><span class="string">重点关注机器人、无人机和自动驾驶系统。包括具体公司。&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="模型配置（付费层）"><a href="#模型配置（付费层）" class="headerlink" title="模型配置（付费层）"></a>模型配置（付费层）</h4><table>
-<thead>
-<tr>
-<th>角色</th>
-<th>模型</th>
-<th>延迟</th>
-<th>优势</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Proposer 1</strong></td>
-<td><code>moonshotai/kimi-k2.5</code></td>
-<td>23s</td>
-<td>长上下文，强推理</td>
-</tr>
-<tr>
-<td><strong>Proposer 2</strong></td>
-<td><code>z-ai/glm-5</code></td>
-<td>36s</td>
-<td>技术深度，不同训练语料</td>
-</tr>
-<tr>
-<td><strong>Proposer 3</strong></td>
-<td><code>minimax/minimax-m2.5</code></td>
-<td>64s</td>
-<td>细节捕捉，全面分析</td>
-</tr>
-<tr>
-<td><strong>Aggregator</strong></td>
-<td><code>moonshotai/kimi-k2.5</code></td>
-<td>15s</td>
-<td>快速合成</td>
-</tr>
-</tbody></table>
-<p><strong>成本分解：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 proposers × ~$0.008 = $0.024</span><br><span class="line">1 aggregator × ~$0.005 = $0.005</span><br><span class="line">─────────────────────────────</span><br><span class="line">Total: ~$0.029/query</span><br></pre></td></tr></table></figure>
-
-<h4 id="技术实现-2"><a href="#技术实现-2" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
-<li><strong>并行调用</strong>：3 个模型同时推理，避免串行延迟</li>
-<li><strong>智能聚合</strong>：识别共同点，解决冲突，合成最佳见解</li>
-<li><strong>容错机制</strong>：1-2 个模型失败仍能返回部分结果</li>
-<li><strong>成本控制</strong>：选择前沿但非拥堵的模型，成本低于单一 Opus 调用</li>
-</ul>
-<h4 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h4><table>
-<thead>
-<tr>
-<th>指标</th>
-<th>付费层</th>
-<th>免费层</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>P50 延迟</strong></td>
-<td>~45s</td>
-<td>~60s</td>
-</tr>
-<tr>
-<td><strong>P95 延迟</strong></td>
-<td>~90s</td>
-<td>~120s+</td>
-</tr>
-<tr>
-<td><strong>成功率</strong></td>
-<td>&gt;99%</td>
-<td>~80%（限流）</td>
-</tr>
-<tr>
-<td><strong>成本&#x2F;查询</strong></td>
-<td>~$0.03</td>
-<td>$0.00</td>
-</tr>
-</tbody></table>
-<h4 id="推荐理由-2"><a href="#推荐理由-2" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
-<li>✅ 质量提升：综合多个模型，超越任何单一模型</li>
-<li>✅ 成本合理：$0.03&#x2F;查询，比单一 Opus 更便宜</li>
-<li>✅ 容错性强：部分失败仍能返回结果</li>
-<li>✅ 适用场景明确：复杂分析、高决策风险、创意头脑风暴</li>
-</ul>
-<p><strong>推荐指数：⭐⭐⭐⭐⭐</strong></p>
-<hr>
-<h3 id="4-Metacognition-智能体自我反思引擎-⭐⭐⭐⭐"><a href="#4-Metacognition-智能体自我反思引擎-⭐⭐⭐⭐" class="headerlink" title="4. Metacognition - 智能体自我反思引擎 ⭐⭐⭐⭐"></a>4. Metacognition - 智能体自我反思引擎 ⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/meimakes/metacognition">openclaw&#x2F;skills&#x2F;metacognition</a></p>
-<h4 id="核心功能-3"><a href="#核心功能-3" class="headerlink" title="核心功能"></a>核心功能</h4><p>Metacognition 是一个 AI 智能体的自我反思引擎，从会话转录中提取模式，构建加权图谱，使用赫布学习（Hebbian learning）和时间衰减：</p>
-<ol>
-<li><strong>模式提取</strong>：从会话中提取洞察（感知、覆盖、保护、自我观察、决策、好奇）</li>
-<li><strong>赫布强化</strong>：重复的洞察变强，未使用的衰减</li>
-<li><strong>图谱构建</strong>：在相关洞察间建立连接</li>
-<li><strong>聚类发现</strong>：找到可能代表高级原则的知识簇</li>
-<li><strong>镜头编译</strong>：生成令牌预算内的活跃自我知识摘要</li>
-</ol>
-<h4 id="实用场景-3"><a href="#实用场景-3" class="headerlink" title="实用场景"></a>实用场景</h4><p><strong>场景：智能体自我进化</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置定时任务（每 4 小时运行）</span></span><br><span class="line"><span class="comment"># 1. 应用时间衰减</span></span><br><span class="line">python3 scripts/metacognition.py decay</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 分析主会话最近对话</span></span><br><span class="line"><span class="comment"># （使用 sessions_list + sessions_history）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 添加洞察（1-3 个，质量优先）</span></span><br><span class="line">python3 scripts/metacognition.py add perceptions <span class="string">&quot;用户更偏好简洁的代码示例而非冗长解释&quot;</span></span><br><span class="line">python3 scripts/metacognition.py add decisions <span class="string">&quot;优先使用 Python 而非 Bash 进行复杂逻辑&quot;</span></span><br><span class="line">python3 scripts/metacognition.py add curiosities <span class="string">&quot;为什么用户在晚上 10 点后提问频率降低？&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 构建图谱连接</span></span><br><span class="line">python3 scripts/metacognition.py reweave</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 编译镜头</span></span><br><span class="line">python3 scripts/metacognition.py compile</span><br></pre></td></tr></table></figure>
-
-<h4 id="CLI-命令"><a href="#CLI-命令" class="headerlink" title="CLI 命令"></a>CLI 命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">python3 metacognition.py add &lt;<span class="built_in">type</span>&gt; &lt;text&gt;       <span class="comment"># 添加或合并条目</span></span><br><span class="line">python3 metacognition.py list [<span class="built_in">type</span>]             <span class="comment"># 列出条目</span></span><br><span class="line">python3 metacognition.py feedback &lt;<span class="built_in">id</span>&gt; &lt;pos|neg&gt; <span class="comment"># 强化或减弱</span></span><br><span class="line">python3 metacognition.py decay                   <span class="comment"># 应用时间衰减</span></span><br><span class="line">python3 metacognition.py compile                 <span class="comment"># 编译镜头</span></span><br><span class="line">python3 metacognition.py extract &lt;path&gt;          <span class="comment"># 从每日笔记提取</span></span><br><span class="line">python3 metacognition.py resolve &lt;<span class="built_in">id</span>&gt;            <span class="comment"># 标记好奇已解决</span></span><br><span class="line">python3 metacognition.py reweave                 <span class="comment"># 构建图谱连接</span></span><br><span class="line">python3 metacognition.py graph                   <span class="comment"># 显示图谱统计</span></span><br><span class="line">python3 metacognition.py integrate               <span class="comment"># 完整周期</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h4><table>
-<thead>
-<tr>
-<th>常量</th>
-<th>默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>HALF_LIFE_DAYS</code></td>
-<td>7.0</td>
-<td>未强化条目衰减速度</td>
-</tr>
-<tr>
-<td><code>STRENGTH_CAP</code></td>
-<td>3.0</td>
-<td>条目最大强度</td>
-</tr>
-<tr>
-<td><code>LENS_TOKEN_BUDGET</code></td>
-<td>500</td>
-<td>编译镜头的令牌预算</td>
-</tr>
-<tr>
-<td><code>EMBEDDING_SIM_THRESHOLD</code></td>
-<td>0.85</td>
-<td>合并相似度阈值（嵌入）</td>
-</tr>
-<tr>
-<td><code>FALLBACK_SIM_THRESHOLD</code></td>
-<td>0.72</td>
-<td>合并相似度阈值（字符串匹配）</td>
-</tr>
-<tr>
-<td><code>EDGE_SIM_THRESHOLD</code></td>
-<td>0.35</td>
-<td>创建图谱边的阈值</td>
-</tr>
-</tbody></table>
-<h4 id="条目类型"><a href="#条目类型" class="headerlink" title="条目类型"></a>条目类型</h4><ul>
-<li><strong>perceptions</strong>：从经验中学到的东西</li>
-<li><strong>overrides</strong>：对先前信念的修正</li>
-<li><strong>protections</strong>：防止已知失败模式的规则</li>
-<li><strong>self-observations</strong>：自身行为的模式</li>
-<li><strong>decisions</strong>：未来行为的策略决策</li>
-<li><strong>curiosities</strong>：开放问题（生命周期：出生 → 活跃 → 演化 → 解决）</li>
-</ul>
-<h4 id="技术实现-3"><a href="#技术实现-3" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
-<li><strong>赫布学习</strong>：”一起激发的神经元连接在一起”——重复模式强化连接</li>
-<li><strong>时间衰减</strong>：未使用的洞察逐渐减弱，避免过时信息积累</li>
-<li><strong>语义相似度</strong>：可选的本地嵌入端点，用于语义匹配（默认字符串匹配）</li>
-<li><strong>安全设计</strong>：仅允许本地网络（127.0.0.1&#x2F;localhost），无外部请求</li>
-</ul>
-<h4 id="推荐理由-3"><a href="#推荐理由-3" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
-<li>✅ 真正的自我进化：智能体能力随时间增强</li>
-<li>✅ 科学的学习机制：赫布学习 + 时间衰减</li>
-<li>✅ 令牌友好：500 令牌预算，不影响上下文</li>
-<li>✅ 安全第一：仅本地网络，无数据外泄</li>
-</ul>
-<p><strong>推荐指数：⭐⭐⭐⭐</strong></p>
-<hr>
-<h3 id="5-Agent-Memory-持久化记忆系统-⭐⭐⭐⭐"><a href="#5-Agent-Memory-持久化记忆系统-⭐⭐⭐⭐" class="headerlink" title="5. Agent Memory - 持久化记忆系统 ⭐⭐⭐⭐"></a>5. Agent Memory - 持久化记忆系统 ⭐⭐⭐⭐</h3><p><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/dennis-da-menace/agent-memory">openclaw&#x2F;skills&#x2F;agent-memory</a></p>
-<h4 id="核心功能-4"><a href="#核心功能-4" class="headerlink" title="核心功能"></a>核心功能</h4><p>Agent Memory 为 AI 智能体提供持久化记忆系统，让智能体能够跨会话记住重要信息。</p>
-<h4 id="实用场景-4"><a href="#实用场景-4" class="headerlink" title="实用场景"></a>实用场景</h4><ul>
-<li><strong>用户偏好记忆</strong>：记住用户的编程语言偏好、工作习惯</li>
-<li><strong>项目上下文</strong>：记住项目的架构决策、技术栈</li>
-<li><strong>错误历史</strong>：记住之前犯过的错误，避免重复</li>
-<li><strong>知识积累</strong>：逐步积累领域知识</li>
-</ul>
-<h4 id="技术实现-4"><a href="#技术实现-4" class="headerlink" title="技术实现"></a>技术实现</h4><ul>
-<li>持久化存储（文件系统或数据库）</li>
-<li>语义检索（基于嵌入向量）</li>
-<li>重要性排序（优先记住关键信息）</li>
-<li>自动清理（移除过时信息）</li>
-</ul>
-<h4 id="推荐理由-4"><a href="#推荐理由-4" class="headerlink" title="推荐理由"></a>推荐理由</h4><ul>
-<li>✅ 基础能力：记忆是智能体的核心能力</li>
-<li>✅ 跨会话持久：重启后仍能记住</li>
-<li>✅ 语义检索：快速找到相关信息</li>
-<li>✅ 自动管理：无需手动维护</li>
-</ul>
-<p><strong>推荐指数：⭐⭐⭐⭐</strong></p>
-<hr>
-<h2 id="🎯-应用场景总结"><a href="#🎯-应用场景总结" class="headerlink" title="🎯 应用场景总结"></a>🎯 应用场景总结</h2><h3 id="1-个人开发者"><a href="#1-个人开发者" class="headerlink" title="1. 个人开发者"></a>1. <strong>个人开发者</strong></h3><ul>
-<li><strong>LLMFit</strong>：选择最适合本地硬件的模型</li>
-<li><strong>Agent Memory</strong>：记住项目上下文和个人偏好</li>
-</ul>
-<h3 id="2-团队协作"><a href="#2-团队协作" class="headerlink" title="2. 团队协作"></a>2. <strong>团队协作</strong></h3><ul>
-<li><strong>Multi-Agent Collab</strong>：标准化团队协作流程</li>
-<li><strong>MoA</strong>：复杂决策时获得多模型视角</li>
-</ul>
-<h3 id="3-智能体开发"><a href="#3-智能体开发" class="headerlink" title="3. 智能体开发"></a>3. <strong>智能体开发</strong></h3><ul>
-<li><strong>Metacognition</strong>：让智能体自我进化</li>
-<li><strong>Agent Memory</strong>：构建持久化记忆</li>
-</ul>
-<h3 id="4-研究与决策"><a href="#4-研究与决策" class="headerlink" title="4. 研究与决策"></a>4. <strong>研究与决策</strong></h3><ul>
-<li><strong>MoA</strong>：高决策风险场景下的多模型验证</li>
-<li><strong>Metacognition</strong>：从历史中学习模式</li>
-</ul>
-<hr>
-<h2 id="📊-推荐指数排名"><a href="#📊-推荐指数排名" class="headerlink" title="📊 推荐指数排名"></a>📊 推荐指数排名</h2><ol>
-<li><strong>⭐⭐⭐⭐⭐ LLMFit</strong> - 硬件适配必备，零配置智能推荐</li>
-<li><strong>⭐⭐⭐⭐⭐ Multi-Agent Collab</strong> - 方法论层面，适用于所有多智能体系统</li>
-<li><strong>⭐⭐⭐⭐⭐ MoA</strong> - 质量提升显著，成本合理</li>
-<li><strong>⭐⭐⭐⭐ Metacognition</strong> - 前沿技术，自我进化能力</li>
-<li><strong>⭐⭐⭐⭐ Agent Memory</strong> - 基础能力，智能体必备</li>
-</ol>
-<hr>
-<h2 id="🚀-快速开始"><a href="#🚀-快速开始" class="headerlink" title="🚀 快速开始"></a>🚀 快速开始</h2><h3 id="安装-Skill"><a href="#安装-Skill" class="headerlink" title="安装 Skill"></a>安装 Skill</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法 1: 使用 ClawHub（推荐）</span></span><br><span class="line">clawhub install llmfit</span><br><span class="line">clawhub install multi-agent-collab</span><br><span class="line">clawhub install moa</span><br><span class="line">clawhub install metacognition</span><br><span class="line">clawhub install agent-memory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法 2: 手动安装</span></span><br><span class="line"><span class="built_in">cd</span> ~/clawd/skills/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/openclaw/skills.git</span><br><span class="line"><span class="built_in">cp</span> -r skills/skills/alexsjones/llmfit ./</span><br><span class="line"><span class="comment"># ... 其他 skill</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MoA 需要 OpenRouter API Key</span></span><br><span class="line"><span class="built_in">export</span> OPENROUTER_API_KEY=<span class="string">&quot;your-key-here&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Metacognition 可选本地嵌入端点</span></span><br><span class="line"><span class="built_in">export</span> EMBEDDINGS_URL=<span class="string">&quot;http://localhost:4821/v1/embeddings&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 测试 LLMFit</span></span><br><span class="line">llmfit --json system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试 MoA</span></span><br><span class="line">node scripts/moa.js <span class="string">&quot;测试问题&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试 Metacognition</span></span><br><span class="line">python3 scripts/metacognition.py list</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="💡-实用建议"><a href="#💡-实用建议" class="headerlink" title="💡 实用建议"></a>💡 实用建议</h2><h3 id="1-从-LLMFit-开始"><a href="#1-从-LLMFit-开始" class="headerlink" title="1. 从 LLMFit 开始"></a>1. <strong>从 LLMFit 开始</strong></h3><p>如果你刚开始使用本地模型，先用 LLMFit 检测硬件并获取推荐，避免盲目下载大模型。</p>
-<h3 id="2-组合使用-Skills"><a href="#2-组合使用-Skills" class="headerlink" title="2. 组合使用 Skills"></a>2. <strong>组合使用 Skills</strong></h3><ul>
-<li><strong>LLMFit + Multi-Agent Collab</strong>：硬件适配 + 团队协作</li>
-<li><strong>MoA + Metacognition</strong>：多模型决策 + 自我反思</li>
-<li><strong>Agent Memory + Metacognition</strong>：持久记忆 + 模式提取</li>
-</ul>
-<h3 id="3-成本优化策略"><a href="#3-成本优化策略" class="headerlink" title="3. 成本优化策略"></a>3. <strong>成本优化策略</strong></h3><ul>
-<li>使用 Multi-Agent Collab 的模型分层：贵的想，便宜的干</li>
-<li>MoA 虽然调用 4 个模型，但总成本仍低于单一 Opus</li>
-<li>LLMFit 帮你选择最适合硬件的模型，避免资源浪费</li>
-</ul>
-<h3 id="4-安全注意事项"><a href="#4-安全注意事项" class="headerlink" title="4. 安全注意事项"></a>4. <strong>安全注意事项</strong></h3><ul>
-<li>Metacognition 仅允许本地网络，确保数据安全</li>
-<li>MoA 需要 API Key，妥善保管</li>
-<li>Agent Memory 存储敏感信息时注意加密</li>
-</ul>
-<hr>
-<h2 id="📚-延伸阅读"><a href="#📚-延伸阅读" class="headerlink" title="📚 延伸阅读"></a>📚 延伸阅读</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://docs.openclaw.ai/">OpenClaw 官方文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://clawhub.com/">ClawHub Skills 市场</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/openclaw/openclaw">OpenClaw GitHub</a></li>
-<li><a target="_blank" rel="noopener" href="https://discord.com/invite/clawd">OpenClaw 社区</a></li>
-</ul>
-<hr>
-<h2 id="🔗-相关资源"><a href="#🔗-相关资源" class="headerlink" title="🔗 相关资源"></a>🔗 相关资源</h2><ul>
-<li><strong>LLMFit</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/alexsjones/llmfit">GitHub</a></li>
-<li><strong>Multi-Agent Collab</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/vdc-k/multi-agent-collab">GitHub</a></li>
-<li><strong>MoA</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/jscianna/moa">GitHub</a></li>
-<li><strong>Metacognition</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/meimakes/metacognition">GitHub</a></li>
-<li><strong>Agent Memory</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/skills/tree/main/skills/dennis-da-menace/agent-memory">GitHub</a></li>
-</ul>
-<hr>
-<p><strong>明日预告</strong>：我们将探索 <strong>浏览器与自动化</strong> 分类，介绍如何用 Skills 实现浏览器自动化、网页抓取和 UI 测试！</p>
-<hr>
-<p><em>本文是 OpenClaw Skill 每日推荐系列的第 1 篇，共 30 篇。关注本博客，每天解锁一个新分类！</em></p>
-<p><strong>标签</strong>: #OpenClaw #Skill #AI #LLM #大语言模型 #人工智能 #智能体 #多模型协作</p>
-<p><strong>分类</strong>: 技术推荐</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人工智能</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">openclaw</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">skill</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ai-and-llms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">大语言模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术推荐//" class="article-tag-list-link color5">技术推荐</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2026/2026-03-25-openclaw-skill-showcase-ai-and-llms/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/49/">49</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/50/">50</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -3778,6 +4222,50 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Knowledge Management</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Memory-Augmented Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Long-term Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Episodic Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">AI Research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ArXiv Papers</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">评估指标</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KPI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">最佳实践</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">评估框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工程实践</a>
               </li>
             
             <div class="clearfix"></div>
