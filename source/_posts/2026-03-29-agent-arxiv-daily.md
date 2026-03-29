@@ -2,7 +2,8 @@
 
 _筛选论文：14；检索召回：8；辩论轮次：3_
 
-[stub-llm] 未配置 OPENAI_API_KEY，以下为占位。
+[stub-llm] 未配置 OPENAI_API_KEY 或 ZHIPU_API_KEY，或已开启 AI_SCIENTIST_STUB_LLM；以下为占位。
+真实调用时将使用模型：glm-5（与 OPENAI_MODEL / 智谱 OpenAI 兼容接口一致）。
 请根据 user 提示中的结构化摘要自行撰写报告。
 
 --- user ---
