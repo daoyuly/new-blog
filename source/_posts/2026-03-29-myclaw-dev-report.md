@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 2 (权限系统)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 24381
 date: 2026-03-29 04:30:35
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 2 (权限系统)

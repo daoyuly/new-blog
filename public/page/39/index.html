@@ -151,6 +151,324 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-工作周报2022年 8月 15 日 - 2022年 8月 19 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2015%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2019%20%E6%97%A5/">工作周报2022年8月15 日 - 2022年8月19日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2015%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2019%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-08-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周的绝大部分时间在在跟进拖拽的问题，主要遇到了几类问题：<ul>
+<li>非可拖拽目标区的定位，拖拽的API中对drop事件和dropend分别对应可放置区域和拖拽目标，小节列表在定义上把除去右侧导航和顶部导航的区域都是可放置目标区域，但是实际dom上没有触发事件，所以使用代码模拟实现这个功能，其实这个也是我个人认为HTML5 Drag API设计的太过抽象，对来说拖拽目标有 drag start，drag end，可放置区域上有drag over，drag enter，drag leave，drop，有一种情况是拖拽目标飞到非可放置区域释放了，这个时候只触发drag end，此时程序无法拿到可放置区域的任何信息。从拖拽本身来说，离开区域应该是不做任何操作，实际上对更易用的交互来说，比如我们这种交互需求，需要默认的操作，所以API，应该有一个类似 drag abort的事件，应对这种拖拽在非放置取的情况，从更广泛的场景上来说 ，浏览器Tab和Tab之间， 两个Chrome之间的拖拽就非常适合这个API的使用，当然还有不同程序和浏览器的拖拽交互，不同浏览器之间的拖拽目前看似乎都有技术硬伤的存在；当然目前API的也具有相对的先进性，比如我们有一个小的需求是在非置顶区章节拖拽到非置顶区域时，拖拽预设图像要变成红色，之前在技术预研的时候，我发现不能实现，就和@贾琨说了这个技术上问题，这周随着最这块技术的深入掌握，我发现是可以自定义这个图像，甚至可以直接使用Canvas或者Video，具有相对高的可定制性，但也有一定的复杂性；</li>
+<li>IE兼容上，对于施加了dragable的元素来说，其内部input的的焦点触发和光标，有明显的bug，可能也是IE浏览器的地方方言，焦点触发后其光标是不展示的，需要二次激活，这个问题只改了一行代码，实际上查了将近一天的时间，只为修复这个莫名其妙的问题，通过这个bug，我很理解Microsoft为什么放弃IE了，因为类似的问题我们遇到好几个了，我的理解是IE已经修不过来这些bug了，比如自定义标签了加入disabled属性，自定义标签里的事件触发机制，带有非常明显的IE的特色，不能完全说IE有明显的bug，但是从浏览器的发展来看，不符合标准就是bug，这个行业里事实上的规则了；</li>
+<li>还有其他疑难问题，根本上都是现有拖拽dom实现的问题，基于树状的拖拽，硬要在结构上做成一维数据，还是有一些复杂的，在课程分类，组织架构有过类似的树状拖拽排序，从交互上看相对简单，限制条件较少，相对这次的实现，前期的设计没有做好，很多bug在填设计上的坑，这是一个很大的教训，中间有想过重新设计，我发现成本也是比较大，并且也不见得是最好的设计给后期扩展和测试都会带来极大的风险，就放弃了这个方向。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%2015%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2019%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 8月 8 日 - 2022年 8月 12 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%208%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2012%20%E6%97%A5/">工作周报2022年8月8 日 - 2022年8月12日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%208%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2012%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周在小节排序上花费了较多的时间和精力，类似的排序我们之前有做过很多，思路也比较成熟，但是实际做下来，还是有一些比较特别的地方，小节排序实际上是整合了三种排序交互，1是拖拽排序，2是数字排序，3是步进式上下移动排序，在三种排序之上增加了章节的排序，使整个排序的复杂增加了一半。拖动排序是现有功能，但是和优化方向的差距比较大，基本上是对完全改变的了之前的实现思路，针对这个问题对拖拽的第三方模块做了修改适配，使之能够处理无placeholder，限制拖拽编译，章节进出交互的改变，在最初做这个优化的时候，没有想清楚完整的思路，只有一个大概的思路和场景假设，基于现有拖拽实现按照需求逐条优化，后来随着编码深入，发现这个思路太窄了，现有的拖拽对置顶和非置顶的区分提示，placeholder的适配都存在根本上的问题，另外还有一些不问题我认为是以前就存在的问题，这时我需要切换会线上代码验证是否是现有问题，并排查这类问题产生的原因；数字排序和上下移动排序 的实现是我想比较完整的，最初的想法是两这个是一个事，整个算法的实现大概用了一天时间，主要思路是使用show index和item index 做数组的变换，但是这种实现思路在遇到移入章节，移出章节时遇到了问题，因为章节没有数组上的界限，最章节内的一个，最后一个，最后一个章节，第一个章节都要额外判断，因为这些位置是不可见是逻辑位置，也就是说通过逻辑计算才能得出章节内的第一个元素上移要出章节，很明显这个算法存在一些逻辑覆盖的问题，另外一个比较完美的办法是把逻辑位置物理化，简单来说，把所有可以移动的位置显示的标识出来，这些位置和实际的元素映射，但是我又有点纠结这种实现过于复杂，因为要维护一个位置数组，维护一个元素数组，还要维护一个两者映射的管理器，实际上是一个完整的树排序算法，所以最终的实现是第一个思路，补充了异常情况的排序。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%208%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%2012%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 8月 1 日 - 2022年 8月 5 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%201%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%205%20%E6%97%A5/">工作周报2022年8月1 日 - 2022年8月5日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%201%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%205%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-08-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>这种主要是根据优化点和线上bug。课程市场1.5报名报出了2个线上bug，1是清空按钮的展示逻辑问题，2是课程卡片上报名数据兼容导致的展示问题。清空按钮的展示需要细致区分报名小节和非报名小节，产生的bug原因是逻辑不清晰造成的，这个bug再次告诉我业务规则的逻辑关系务必要梳理清楚，特别是0和1的判断逻辑，使用check的办法的来规避，就是写完这段逻辑，要有意识的回过头来重新梳理一下，看看有没有漏掉的情况，保证逻辑的准确，完整，自洽；<ul>
+<li>报名数据展示的问题原因是对数据的类型的多样式识别导致的，在pc上涉及历史数据以及特殊数据的业务的定义，需要以枚举性的包含所有可能的情况，这次情况就要明确null，undefined，0，-1，’’，正整数，这六组数字分别代表的意义，这类问题给我的学习是认真梳理所有的可能，保证数据的严谨和代码的可靠；这两个问题给了我一个警示，要警惕个人编程能力的下降，一定要有意识的保持和提升基础能力，随着个人的成长，往往会逐渐失去一些能力，逐渐突出一些能力，但是编程能力始终要保持一个较高的水平状态才能应对现用的复杂业务研发。</li>
+<li>最近读书读少了，感觉脑子里比较贫乏，十分危险的信号。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%208%E6%9C%88%201%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%205%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2022年 7月 25 日 - 2022年 8月 1日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%207%E6%9C%88%2025%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%201%E6%97%A5/">工作周报2022年7月25 日 - 2022年8月1日</a>
+    </h1>
+  
+
+        
+        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%207%E6%9C%88%2025%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%201%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2022-07-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>课程市场1.5<ul>
+<li>报名的问题超出我的预期，名额和时间展示，在报名流程的所有节点都展示，对报名流程的所有业务知识不是很特别清晰，大部分报名的代码是5年前左右开发的，开发理念和工具有了非常大的变化，现在拿起来开发都有点不适应了，由此来看，技术和业务同步升级迭代是很有必要的做的。</li>
+<li>我今天偶然发现综艺节目《极限挑战》出现了元宇宙游戏的玩法，我感觉噱头的成分更多一些，不可否认的是，各行各业都开始了解元宇宙，或者开始逐渐认识和探索元宇宙了，我联想到在10年前左右，在当时工作的公司曾经听过当时的用友集团董事长王文京先生一场关于用友云的现场分享，当时绝大部分的身边的同事包括我，都认为是这个炒作概念，但是近十年的发展，越来越多的企业开始全面拥抱云，甚至政府内部系统都开始逐渐上云，可见其发展之快， 现在看来其实是当时没有足够的认知和思考，大家比较片面的认识信息安全和算力的使用。对我们UMU来说，我们也是云时代的受益者，我们现在只专注业务，其他基础设施的相对比较省心， 十多年前的大部分互联网公司和软件公司是要自己管理服务器资源，特别是大部分非IT类行业，实现信息化必需要有自己的机房，托管都非常少见，云计算的出现，极大的推动了非IT类行业的信息化和数字化的进程。通过对这个发展的简单理解，类比元宇宙，我们可能也是处于当时对云的认知，元宇宙是数字化和智能化的集中体现，在企业学习这个领域，企业要投入企业要收益的特点决定了，企业学习工具必须要成本低，见效快，效果好，管理手段全，现在很多企业学习产品关注成本低，管理手段全这两个方向，见效快和效果好这两个点突出的比较少或者说不太好达成，元宇宙的很多概念天然的和见效快，效果好这两个点是贴合的，在元宇宙里，学习这件事被拆解成自然生存的一部分，它可能像是逍遥子的”北冥神功“，可以快速吸收元宇宙的“内力”为己所用，而不需要传统的头悬梁锥刺股那种传统学习方法要自修内力，虽然这种思维方式的转变主要时间验证，但是对于需要企业学习工具的知识密集度和智力密集度较高的企业，这种学习培训方式是未来的趋势和必然的选择。同样对于学校教育来说，从小学开始，一名普通本科毕业生要经历大概16年的学校教育具备基本的专业知识和技能，医学类甚至需要20年才基本具有专业技能，这个会消耗巨大的社会资源和人力成本，我们简单想象一下，如果纯经济角度考量，以中国的学校教育为例，在教育指标不变的情况，如果通过元宇宙的学习方式将9年义务教育缩短为8年，4年本科教育缩短为3.5年，高中教育，硕士教育和博士教育不变，所有的毕业生都将提前1-2年毕业，这个会给社会带来多少价值和潜在的创新机会，从这个角度考虑元宇宙学习必将是未来的趋势和方向。</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%207%E6%9C%88%2025%20%E6%97%A5%20-%202022%E5%B9%B4%208%E6%9C%88%201%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-工作周报2022年 7月 11日 - 2022年 7月 17日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -811,352 +1129,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2020%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2026%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 6月 13日 - 2022年 6月 19日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2013%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2019%E6%97%A5/">工作周报2022年6月13日 - 2022年6月19日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2013%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2019%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-06-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>本周的还是全力投入在课程市场1.4的开发上，整个项目的主体开发已经完成，初步做一个简单的回顾：</p>
-<ul>
-<li>功能相对完整，涉及到的新模块的开发，</li>
-<li>新开发5个完整功能的页面：(1)购物车，(2)结算页，(3)订单详情，(4)订单管理，(5)课程数据管理</li>
-<li>两个页面的较大改造，(1)智能课单，(2)课程市场的课程详情页，、</li>
-<li>涉及1个页面的优化，（1）课程管理页</li>
-<li>贯穿1业务流，（1）课程购买；</li>
-<li>1个较大的代码重构，（1）联系销售的组件的拆分</li>
-<li>设计上，重点考虑了列表表格的API设计和实现，新增对公汇款</li>
-<li>工程沉淀上，涉及到的基础组件有button，input，datepicker，list-table，tab-label-list，dialog，toast，这些组件有的是可以复用的，如button，dialog，input，有的需要适配的，如datepicker，有些是需要新写的，如list-table，tab-label-list，用到的业务组件有支付。</li>
-<li>在react上，复用到的模式或者解决方案</li>
-<li>（1）获取数据列表+分页+loading的模式，</li>
-<li>（2）接口中处理异常的模式，</li>
-<li>（3）if-else分支渲染的模式，</li>
-<li>（4）useConext+useReducer的状态管理模式，</li>
-<li>（5）业务状态流转的处理模式</li>
-<li>在angularjs上，复用到的模式或者解决方案，</li>
-<li>（1）多路由使用，</li>
-<li>（2）查询+列表的交互模式</li>
-<li>本月还有一个重要的工作就是按照@晓刚的总体规划，部分组件做一些比较成熟的沉淀</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%2013%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2019%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 6月 6日 - 2022年 6月 10日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2010%E6%97%A5/">工作周报2022年6月6日 - 2022年6月10日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2010%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>课程市场1.4的开发<ul>
-<li>组件和逻辑的封装与拆分<br>课程1.4的开发过程中，有部分功能需要之前的功能上迭代，有一个问题比较突出，就是业务组件拆分，逻辑封装和隔离的太差，本质上是在开发迭代过程中没有做好关注点隔离，典型的情况是一个业务组件里包含了不少于3个小的业务交互逻辑，产生这种情况的原因我分析主要原因有以下3个：</li>
-</ul>
-<ol>
-<li>迭代过程中直接在原有组件内填充式的增加新的功能和优化点，导致组件功能膨胀，这种情况常见，而不易发觉，越是迭代久的组件越容易出现这种情况，其直接后果就是组件代码膨胀，难以阅读和维护，功能繁杂，逻辑臃肿，使用成本提升，组件在系统中的价值急剧降低， 这类组件最终通过重构或“打入冷宫永不叙用”的方式，结束在系统中的生命延续。每个组件都是一个小生命，它希望被合理的迭代，每次迭代都要经过合理的设计，而不是每次被填充。</li>
-<li>组件起初设计不合理，设计不合理是一个表象，其真实因素又有不少，如，需求分析不深入，导致组件划分的时候，赋予组件过重的职责，随着开发深入，内部状态线性增多，而此时工期将近，没法完成设计的纠偏和优化，只能将错就错，导致巨型组件的产生，还有一个情况就是将就，本质上就不追求技术工程上的最优解，只求省事</li>
-<li>技术能力不足以将组件和逻辑拆分的足够可持续迭代，这种情况是冰山下的，可能没有工程师会承认自己在组件设计上会有大的系统性问题和认知上的问题，这个确实非常难评估，这个有很强的主观性，只有历经几个迭代之后才能证明当初的设计质量到底如何，不过通过一些浅显的信号，我们大概可以判断是否在业务组件迭代时可以进行逻辑拆分，设计纠偏或者组件拆分</li>
-<li>单个组件多余5个以上的状态判断，这个数字是我个人的判断，复杂业务组件5个状态比较常见，我觉得也是极限，当多于5个就非常不利于后续的理解和迭代，试想你在维护一个组件时，你同时要把握5个状态的各种变化时，其实挺费劲的</li>
-<li>出现推导状态时，在响应式编程范式里，状态驱动UI，这个状态应该是确保唯一的，且是最原始的，比如某个状态是从其他状态推导出来的，那这个状态就不要放在useState里或者Store里，而应该放在service里，helper里，业务obj里甚至是useEffect里</li>
-<li>组件里涉及到的UI功能占到了页面里的⅓， 这个也是我的经验值，我认为一个页面至少有3个组件构成，不管这个页面多么的简单，这也是极端情况，当你看到一个组件占到页面的⅓功能时，需要认真考虑下这个页面的组件划分思路了</li>
-<li>出现5个以上的useEffect，当时一个组件出现5个以上的useEffect，你需要认真考虑两件事，需要拆分自定义hooks，或者直接拆分组件</li>
-<li>某个组件你认真看了一遍，发现没有看懂，也不知道该如何增加代码，这个时候先不要自责，很可能是组件本身出了问题，因为组件存在的最大价值就是为了让代码好阅读好理解，如果这点没有做到，那就是组件的问题，不是你代码阅读能力问题，后面你需要做的就是多认真读几遍，看看能不能调优下；</li>
-</ol>
-<ul>
-<li>react组件内逻辑拆分的一些思考</li>
-<li>结合上面想到的，逻辑拆分和封装其实是一个很重要的问题，特别是我们这样的SaaS类的系统，因为它的一个很大的特点是需要长周期性的深耕和打磨业务，很多业务规则是行业内既有的趋于稳定成熟的规则，也有不少是快速变化的创新性规则，我们需要做大量的整合和快速的迭代，这样的特点给研发带来的一个原则就是既要坚持快速迭代交付，又要关注可持续迭代和合理的设计演化，这其实是比较有挑战的事情，也是软件开发领域内长久不衰的研究课题，不过我觉得还是有一些行动可以帮助我们应对这种挑战：</li>
-<li>多用自定义hooks，这其实是个意识问题，当有这个意识时，在逻辑封装上你会发现很多新玩法，新思路</li>
-<li>严格区分业务逻辑和UI逻辑，业务逻辑放在service，helper或者业务model类了里，复杂的组件在目录结构上除了典型的tsx，scss，需要增加useHoos文件和组件service文件，将逻辑分类是降低代码复杂度最有效的办法</li>
-<li>多用方法封装关注点，哪怕只有一行代码，只要就认为它和现有的业务不在一个逻辑层次，就可以放在方法里，方法的作用就是封装，隔离，复用，注释说明，不要担心方法多，很可能你设计这个这个一行代码的方法就是下次迭代的一扇方便之门</li>
-<li>用好hooks，多总结一些hooks的设计模式，我们对hooks使用还是比较浅，缺乏可自用的hooks工程沉淀，比如，获取数据，比如判断显隐，useCallbac，useMemo的最佳实践等等</li>
-<li>组件宜小不宜大，从原则上说，组件再小都不为过，这个我想大家都认可，在工程上可能欠缺快速创建组件或者重构组件的工具，影响了大家拆分小颗粒度组件的耐心和效率，不过组件粒度上还是要保持小巧</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%206%E6%9C%88%206%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%2010%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 5月 30日 - 2022年 6月 3日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2030%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%203%E6%97%A5/">工作周报2022年5月30日 - 2022年6月3日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2030%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%203%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-06-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>课程市场1.4的开发<ul>
-<li>课程市场1.4的整体工作量比1.2,13都多不少，其难度就是用比较短的时间完成开发任务，提升开发效率是我们面对的最直接的问题，也是最大的问题，提升开发效率不仅仅是公司的事情或者是团队的事情，而是每个职场人最为核心的事情，工作中的成长，技术，技能，素质，人脉，影响力等等这一切可能都是指向一个事，用最少的时间，更好的完成一个任务，获取更多的收益。项目搭建阶段有很多模板类的代码来回，这块我写了2个工具自动完成从yapi到代码的生成，创建组件模板，软件开发活动中，自己制造工具从来都是必做的一件事情，这也是提升效率的一个很有效的手段。</li>
-<li>我记得没有参加工作以前，在家里跟着父亲学种地种菜，是的，种地种菜也需要学习，在没有大棚，蔬菜种植技术没有标准化的情况下，气候条件等同，同样缺水干旱，土地板结严重的情况下，如何提高蔬菜产量直接影响一个家庭的生计，大家不得不重视这个事，所以种菜也会有各种试验，因为周期长，用心的菜农会记录用水时间，施肥时间和量，然后汇总产量，以及找到最合适的出菜时间，他们会在田间地头交流种菜经验，所以这个时间谁足够有耐心有细心，善于总结经验，做的足够好，长期来说是能够养活家庭的。后来我记得有一年，隔壁村里有几个人从寿光打工回来，开始自己创业，用大棚技术，规模化种植，引入寿光&#x2F;济南那边的销售渠道，2年之后，这批人的富裕程度就完全碾压了按照以前种菜的人。当时回家听父亲说起这些事，我觉得是先进技术对落后技术的降维打击，其实现在想来是认知层面的降维打击，那时候去寿光学习种菜的不在少数，可是把大棚技术，规模化种植，引入销售渠道一套组合拳下来，需要的可不仅仅是技术。这个陈年的事，我经常想起，它告诉我，现在的事情做的不管有多好，你都不知道是不是还有一套你不知道的组合拳，能够对你现在所有的努力和成果形成降维打击，所以要始终保持兢兢业业的态度和危机感，要始终保持学习和开放的心态，组合拳来的时候，不要和它逆向，而要顺势而为，借势发展。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2030%E6%97%A5%20-%202022%E5%B9%B4%206%E6%9C%88%203%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2022年 5月 23日 - 2022年 5月 28日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2023%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2028%E6%97%A5/">工作周报2022年5月23日 - 2022年5月28日</a>
-    </h1>
-  
-
-        
-        <a href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2023%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2028%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2022-05-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Web录制：感谢@浙波 @刘乐@晓刚@志通，感谢@琨琨 @徐老师在时间上给予了一些支持，整个项目做下来让我再次强烈感受到大家伙儿对产品品质和用户体验打磨的决心和对追求极致的坚守，我觉得这是我们最重要的价值观，也是给客户和用户创造价值的体现；<br>很多问题包括头像抗锯齿，黑屏的解决都不是很完美，在个别情况先还可能会存在这样或那样的问题，不过我也学到了很多应对这类技术复杂性较大的项目的一些设计思路和思考方式，比如在设计上保持迭代设计的意识和行动，这个看起来是正确的废话，却实实在在是有用，在开始没有比较完善的详细设计情况下，要保持不断的调整设计迭代这需要开发时了解系统全貌并且要有清晰的设计目标，保持设计和业务逻辑是匹配的；在思考方式上，技术推理和技术联想也非常重要，要有意识使用技术推理，来分析和预测问题的产生和解决思路。比如遇到页面卡顿，要观察清楚卡顿的表现都有哪些，根据这些症状，依次推断后面的各种技术因果关系，结合代码情况，再由各个因素的假设正向推导可能出现的症状。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%205%E6%9C%88%2023%E6%97%A5%20-%202022%E5%B9%B4%205%E6%9C%88%2028%E6%97%A5/">展开全文 >></a>
         </p>
       
 
@@ -1995,6 +1967,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工程实践</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">硬件优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">语音识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">devops</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cloud</a>
               </li>
             
             <div class="clearfix"></div>

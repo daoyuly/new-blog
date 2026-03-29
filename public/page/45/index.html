@@ -151,6 +151,345 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-软件设计的哲学-ch2-复杂性的本质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">软件设计的哲学 - ch2</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/" class="archive-article-date">
+  	<time datetime="2021-02-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-2-章-复杂性的本质"><a href="#第-2-章-复杂性的本质" class="headerlink" title="第 2 章 复杂性的本质"></a>第 2 章 复杂性的本质</h1><p>这本书是关于如何设计软件系统以最小化其复杂性。第一步是了解敌人。究竟什么是“复杂性”？您如何判断系统是否过于复杂？是什么导致系统变得复杂？本章将在较高层次上解决这些问题。后续章节将向您展示如何从较低的层次上根据特定的结构特征来识别复杂性。</p>
+<p>识别复杂性的能力是至关重要的设计技能。它使您可以先找出问题，然后再付出大量努力，并可以在其他选择中做出正确的选择。判断一个设计是否简单比创建一个简单的设计要容易得多，但是一旦您认识到一个系统过于复杂，就可以使用该功能指导您的设计哲学走向简单。如果设计看起来很复杂，请尝试其他方法，看看是否更简单。随着时间的流逝，您会注意到某些技术往往会导致设计更简单，而其他技术则与复杂性相关。这将使您更快地制作更简单的设计。</p>
+<p>本章还列出了一些基本假设，这些基本假设为本书的其余部分奠定了基础。后面的章节将采用本章的内容，并用其论证各种改进和结论。</p>
+<h2 id="2-1-Complexity-defined-复杂性的定义"><a href="#2-1-Complexity-defined-复杂性的定义" class="headerlink" title="2.1 Complexity defined 复杂性的定义"></a>2.1 Complexity defined 复杂性的定义</h2><p>出于本书的目的，我以实用的方式定义“复杂性”。复杂性与软件系统的结构有关，这使它很难理解和修改系统。复杂性可以采取多种形式。例如，可能很难理解一段代码是如何工作的。可能需要花费很多精力才能实现较小的改进，或者可能不清楚必须修改系统的哪些部分才能进行改进；如果不引入其他错误，可能很难修复。如果一个软件系统难以理解和修改，那就很复杂。如果很容易理解和修改，那就很简单。</p>
+<p>您还可以考虑成本和收益方面的复杂性。在复杂的系统中，要实施甚至很小的改进都需要大量的工作。在一个简单的系统中，可以用更少的精力实现更大的改进。</p>
+<p>复杂性是开发人员在尝试实现特定目标时在特定时间点所经历的。它不一定与系统的整体大小或功能有关。人们通常使用“复杂”一词来描述具有复杂功能的大型系统，但是如果这样的系统易于使用，那么就本书而言，它并不复杂。当然，实际上几乎所有大型复杂的软件系统都很难使用，因此它们也符合我对复杂性的定义，但这不一定是事实。小型而不复杂的系统也可能非常复杂。</p>
+<p>复杂性取决于最常见的活动。如果系统中有一些非常复杂的部分，但是几乎不需要触摸这些部分，那么它们对系统的整体复杂性不会有太大影响。为了用粗略的数学方法来表征：</p>
+<p><img src="/../../img/figures/00009.gif"></p>
+<p>系统的总体复杂度（C）由每个部分的复杂度（cp）乘以开发人员在该部分上花费的时间（tp）加权。在一个永远不会被看到的地方隔离复杂性几乎和完全消除复杂性一样好。</p>
+<p>读者比作家更容易理解复杂性。如果您编写了一段代码，对您来说似乎很简单，但是其他人则认为它很复杂，那么它就是复杂的。当您遇到这种情况时，有必要对其他开发人员进行调查，以找出为什么代码对他们而言似乎很复杂；从您的观点与观点之间的脱节中可能可以学习一些有趣的课程。作为开发人员，您的工作不仅是创建可以轻松使用的代码，而且还要创建其他人也可以轻松使用的代码。</p>
+<h2 id="2-2-Symptoms-of-complexity-复杂性的症状"><a href="#2-2-Symptoms-of-complexity-复杂性的症状" class="headerlink" title="2.2 Symptoms of complexity 复杂性的症状"></a>2.2 Symptoms of complexity 复杂性的症状</h2><p>复杂性通过以下三种段落中描述的三种一般方式体现出来。这些表现形式中的每一个都使执行开发任务变得更加困难。</p>
+<p>变更放大：复杂性的第一个征兆是，看似简单的变更需要在许多不同地方进行代码修改。例如，考虑一个包含几个页面的网站，每个页面显示带有背景色的横幅。在许多早期的网站中，颜色是在每个页面上明确指定的，如图 2.1（a）所示。为了更改此类网站的背景，开发人员可能必须手动修改每个现有页面；对于拥有数千个页面的大型网站而言，这几乎是不可能的。幸运的是，现代网站使用的方法类似于图 2.1（b），其中横幅颜色一次在中心位置指定，并且所有各个页面均引用该共享值。使用这种方法，可以通过一次修改来更改整个网站的标题颜色。</p>
+<p>认知负荷：复杂性的第二个症状是认知负荷，这是指开发人员需要多少知识才能完成一项任务。较高的认知负担意味着开发人员必须花更多的时间来学习所需的信息，并且由于错过了重要的东西而导致错误的风险也更大。例如，假设 C 中的一个函数分配了内存，返回了指向该内存的指针，并假定调用者将释放该内存。这增加了使用该功能的开发人员的认知负担。如果开发人员无法释放内存，则会发生内存泄漏。如果可以对系统进行重组，以使调用者不必担心释放内存（分配内存的同一模块也负责释放内存），它将减少认知负担。</p>
+<p>系统设计人员有时会假设可以通过代码行来衡量复杂性。他们认为，如果一个实现比另一个实现短，那么它必须更简单；如果只需要几行代码就可以进行更改，那么更改必须很容易。但是，这种观点忽略了与认知负荷相关的成本。我已经看到了仅允许使用几行代码编写应用程序的框架，但是要弄清楚这些行是什么极其困难。有时，需要更多代码行的方法实际上更简单，因为它减少了认知负担。</p>
+<p><img src="/../../img/figures/00010.jpeg"></p>
+<p>图 2.1：网站中的每个页面都显示一个彩色横幅。在（a）中，横幅的背景色在每页中都明确指定。在（b）中，共享变量保留背景色，并且每个页面都引用该变量。在（c）中，某些页面会显示其他用于强调的颜色，即横幅背景颜色的暗色；如果背景颜色改变，则强调颜色也必须改变。</p>
+<p>未知的未知:复杂性的第三个症状是，必须修改哪些代码才能完成任务，或者开发人员必须获得哪些信息才能成功地执行任务，这些都是不明显的。图 2.1(c)说明了这个问题。网站使用一个中心变量来确定横幅的背景颜色，所以它看起来很容易改变。但是，一些 Web 页面使用较暗的背景色来强调，并且在各个页面中明确指定了较暗的颜色。如果背景颜色改变，那么强调的颜色必须改变以匹配。不幸的是，开发人员不太可能意识到这一点，所以他们可能会更改中央 bannerBg 变量而不更新强调颜色。即使开发人员意识到这个问题，也不清楚哪些页面使用了强调色，因此开发人员可能必须搜索 Web 站点中的每个页面。</p>
+<p>在复杂性的三种表现形式中，未知的未知是最糟糕的。一个未知的未知意味着你需要知道一些事情，但是你没有办法找到它是什么，甚至是否有一个问题。你不会发现它，直到错误出现后，你做了一个改变。更改放大是令人恼火的，但是只要清楚哪些代码需要修改，一旦更改完成，系统就会工作。同样，高的认知负荷会增加改变的成本，但如果明确要阅读哪些信息，改变仍然可能是正确的。对于未知的未知，不清楚该做什么，或者提出的解决方案是否有效。唯一确定的方法是读取系统中的每一行代码，这对于任何大小的系统都是不可能的。甚至这可能还不够，因为更改可能依赖于一个从未记录的细微设计决策。</p>
+<p>良好设计的最重要目标之一就是使系统显而易见。这与高认知负荷和未知未知数相反。在一个显而易见的系统中，开发人员可以快速了解现有代码的工作方式以及进行更改所需的内容。一个显而易见的系统是，开发人员可以在不费力地思考的情况下快速猜测要做什么，同时又可以确信该猜测是正确的。第 18 章讨论使代码更明显的技术。</p>
+<h2 id="2-3-Causes-of-complexity-复杂性的原因"><a href="#2-3-Causes-of-complexity-复杂性的原因" class="headerlink" title="2.3 Causes of complexity 复杂性的原因"></a>2.3 Causes of complexity 复杂性的原因</h2><p>既然您已经了解了复杂性的高级症状以及为什么复杂性会使软件开发变得困难，那么下一步就是了解导致复杂性的原因，以便我们设计系统来避免这些问题。复杂性是由两件事引起的：依赖性和模糊性。本节从高层次讨论这些因素。随后的章节将讨论它们与低级设计决策之间的关系。</p>
+<p>就本书而言，当无法孤立地理解和修改给定的一段代码时，便存在依赖关系。该代码以某种方式与其他代码相关，如果更改了给定代码，则必须考虑和&#x2F;或修改其他代码。在图 2.1（a）的网站示例中，背景色在所有页面之间创建了依赖关系。所有页面都必须具有相同的背景，因此，如果更改一页的背景，则必须更改所有背景。依赖关系的另一个示例发生在网络协议中。通常，协议的发送方和接收方有单独的代码，但是它们必须分别符合协议。更改发送方的代码几乎总是需要在接收方进行相应的更改，反之亦然。</p>
+<p>考虑网站示例。在每个页面分别指定背景的旧网站中，所有网页都是相互依赖的。新的网站通过在中心位置指定背景色并提供一个 API，供各个页面在呈现它们时检索该颜色，从而解决了该问题。新的网站消除了页面之间的依赖关系，但是它围绕 API 创建了一个新的依赖关系以检索背景色。幸运的是，新的依赖性更加明显：很明显，每个单独的网页都取决于 bannerBg 颜色，并且开发人员可以通过搜索其名称轻松找到使用该变量的所有位置。此外，编译器还有助于管理 API 依赖性：如果共享变量的名称发生变化，任何仍使用旧名称的代码都将发生编译错误。新的网站用一种更简单，更明显的方式代替了一种不明显且难以管理的依赖性。</p>
+<p>复杂性的第二个原因是晦涩。当重要的信息不明显时，就会发生模糊。一个简单的例子是一个变量名，它是如此的通用，以至于它没有携带太多有用的信息(例如，时间)。或者，一个变量的文档可能没有指定它的单位，所以找到它的惟一方法是扫描代码，查找使用该变量的位置。晦涩常常与依赖项相关联，在这种情况下，依赖项的存在并不明显。例如，如果向系统添加了一个新的错误状态，可能需要向一个包含每个状态的字符串消息的表添加一个条目，但是对于查看状态声明的程序员来说，消息表的存在可能并不明显。不一致性也是造成不透明性的一个主要原因:如果同一个变量名用于两个不同的目的，那么开发人员就无法清楚地知道某个特定变量的目的是什么。</p>
+<p>在许多情况下，由于文档不足而导致模糊不清。第 13 章讨论了这个主题。但是，模糊性也是设计问题。如果系统设计简洁明了，则所需的文档将更少。对大量文档的需求通常是一个警告，即设计不正确。减少模糊性的最佳方法是简化系统设计。</p>
+<p>依赖性和模糊性共同构成了第 2.2 节中描述的三种复杂性表现。依赖性导致变化放大和高认知负荷。晦涩会产生未知的未知数，还会增加认知负担。如果我们找到最小化依赖关系和模糊性的设计技术，那么我们就可以降低软件的复杂性。</p>
+<h2 id="2-4-Complexity-is-incremental-复杂度是递增的"><a href="#2-4-Complexity-is-incremental-复杂度是递增的" class="headerlink" title="2.4 Complexity is incremental 复杂度是递增的"></a>2.4 Complexity is incremental 复杂度是递增的</h2><p>复杂性不是由单个灾难性错误引起的；它堆积成许多小块。单个依赖项或模糊性本身不太可能显着影响软件系统的可维护性。之所以会出现复杂性，是因为随着时间的流逝，成千上万的小依赖性和模糊性逐渐形成。最终，这些小问题太多了，以至于对系统的每次可能更改都会受到其中几个问题的影响。</p>
+<p>复杂性的增量性质使其难以控制。可以很容易地说服自己，当前更改所带来的一点点复杂性没什么大不了的。但是，如果每个开发人员对每种更改都采用这种方法，那么复杂性就会迅速累积。一旦积累了复杂性，就很难消除它，因为修复单个依赖项或模糊性本身不会产生很大的变化。为了减缓复杂性的增长，您必须采用第 3 章中讨论的“零容忍”理念。</p>
+<h2 id="2-5-Conclusion-结论"><a href="#2-5-Conclusion-结论" class="headerlink" title="2.5 Conclusion 结论"></a>2.5 Conclusion 结论</h2><p>复杂性来自于依赖性和模糊性的积累。随着复杂性的增加，它会导致变化放大，高认知负荷和未知的未知数。结果，需要更多的代码修改才能实现每个新功能。此外，开发人员花费更多时间获取足够的信息以安全地进行更改，在最坏的情况下，他们甚至找不到所需的所有信息。最重要的是，复杂性使得修改现有代码库变得困难且冒险。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件设计的哲学-ch1-介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch1-%E4%BB%8B%E7%BB%8D/">软件设计的哲学 - ch1</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch1-%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
+  	<time datetime="2021-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>严正声明：<br>该系列是从github上搬运而来，仅为自己阅读学习使用，请勿商用，请不要从此处搬运到别处！如对原作者造成不必要的版权侵害，敬请告知，我将立即删除该副本。<br>我将保留合理使用开源软件的法律解释的权力。</p>
+<h1 id="第-1-章-介绍"><a href="#第-1-章-介绍" class="headerlink" title="第 1 章 介绍"></a>第 1 章 介绍</h1><p>编写计算机软件是人类历史上最纯粹的创作活动之一。程序员不受诸如物理定律等实际限制的约束。我们可以用现实世界中永远不会存在的行为创建令人兴奋的虚拟世界。编程不需要很高的身体技能或协调能力，例如芭蕾或篮球。所有编程都需要具有创造力的头脑和组织思想的能力。如果您可以可视化系统，则可以在计算机程序中实现它。</p>
+<p>这意味着编写软件的最大限制是我们了解所创建系统的能力。随着程序的发展和获得更多功能，它变得复杂，其组件之间具有微妙的依赖性。随着时间的流逝，复杂性不断累积，程序员在修改系统时将所有相关因素牢记在心中变得越来越难。这会减慢开发速度并导致错误，从而进一步延缓开发速度并增加成本。在任何程序的生命周期中，复杂性都会不可避免地增加。程序越大，工作的人越多，管理复杂性就越困难。</p>
+<p>好的开发工具可以帮助我们应对复杂性，并且在过去的几十年中已经创建了许多出色的工具。但是，仅凭工具我们只能做些事情。如果我们想简化编写软件的过程，从而可以更便宜地构建功能更强大的系统，则必须找到简化软件的方法。尽管我们尽了最大努力，但复杂度仍会随着时间的推移而增加，但是更简单的设计使我们能够在复杂性压倒性优势之前构建更大，功能更强大的系统。</p>
+<p>有两种解决复杂性的通用方法，这两种方法都将在本书中进行讨论。第一种方法是通过使代码更简单和更明显来消除复杂性。例如，可以通过消除特殊情况或以一致的方式使用标识符来降低复杂性。</p>
+<p>解决复杂性的第二种方法是封装它，以便程序员可以在系统上工作而不会立即暴露其所有复杂性。这种方法称为模块化设计。在模块化设计中，软件系统分为模块，例如面向对象语言的类。这些模块被设计为彼此相对独立，以便程序员可以在一个模块上工作而不必了解其他模块的细节。</p>
+<p>由于软件具有很好的延展性，因此软件设计是一个贯穿软件系统整个生命周期的连续过程。这使得软件设计与诸如建筑物，船舶或桥梁的物理系统的设计不同。但是，并非总是以这种方式查看软件设计。在编程的大部分历史中，设计都集中在项目的开始，就像其他工程学科一样。这种方法的极端称为瀑布模型，该模型将项目划分为离散的阶段，例如需求定义，设计，编码，测试和维护。在瀑布模型中，每个阶段都在下一阶段开始之前完成；在许多情况下，每个阶段都由不同的人负责。在设计阶段，立即设计整个系统。</p>
+<p>不幸的是，瀑布模型很少适用于软件。软件系统本质上比物理系统复杂。在构建任何东西之前，不可能充分可视化大型软件系统的设计，以了解其所有含义。结果，初始设计将有许多问题。在实施良好之前，问题不会变得明显。但是，瀑布模型的结构此时无法适应主要的设计更改（例如，设计师可能已转移到其他项目）。因此，开发人员尝试在不改变整体设计的情况下解决问题。这导致复杂性的爆炸式增长。</p>
+<p>由于这些问题，当今大多数软件开发项目都使用诸如敏捷开发之类的增量方法，其中初始设计着重于整体功能的一小部分。设计，实施和评估此子集。发现和纠正原始设计的问题，然后设计，实施和评估更多功能。每次迭代都会暴露现有设计的问题，这些问题在设计下一组功能之前就已得到解决。通过以这种方式扩展设计，可以在系统仍然很小的情况下解决初始设计的问题。较新的功能受益于较早功能的实施过程中获得的经验，因此问题较少。</p>
+<p>增量方法适用于软件，因为软件具有足够的延展性，可以在实施过程中进行重大的设计更改。相比之下，对物理系统而言，主要的设计更改更具挑战性：例如，在建筑过程中更改支撑桥梁的塔架数量不切实际。</p>
+<p>增量开发意味着永远不会完成软件设计。设计在系统的整个生命周期中不断发生：开发人员应始终在思考设计问题。增量开发还意味着不断的重新设计。系统或组件的初始设计几乎从来都不是最好的。经验不可避免地显示出更好的做事方式。作为软件开发人员，您应该始终在寻找机会来改进正在开发的系统的设计，并且应该计划将部分时间花费在设计改进上。</p>
+<p>如果软件开发人员应始终考虑设计问题，而降低复杂性是软件设计中最重要的要素，则软件开发人员应始终考虑复杂性。这本书是关于如何使用复杂性来指导软件设计的整个生命周期。</p>
+<p>这本书有两个总体目标。首先是描述软件复杂性的性质：“复杂性”是什么意思，为什么重要，以及当程序具有不必要的复杂性时如何识别？本书的第二个也是更具挑战性的目标是介绍可在软件开发过程中使用的技术，以最大程度地减少复杂性。不幸的是，没有简单的方法可以保证出色的软件设计。取而代之的是，我将提出一些与哲学紧密相关的高级概念，例如“类应该很深”或“定义不存在的错误”。这些概念可能不会立即确定最佳设计，但您可以使用它们来比较设计备选方案并指导您探索设计空间。</p>
+<h2 id="1-1-How-to-use-this-book-如何使用这本书"><a href="#1-1-How-to-use-this-book-如何使用这本书" class="headerlink" title="1.1 How to use this book 如何使用这本书"></a>1.1 How to use this book 如何使用这本书</h2><p>这里描述的许多设计原则有些抽象，因此如果不看实际的代码，可能很难理解它们。找到足够小的示例以包含在书中，但是又足够大以说明真实系统的问题是一个挑战（如果遇到好的示例，请发给我）。因此，这本书可能不足以让您学习如何应用这些原理。</p>
+<p>使用本书的最佳方法是与代码审查结合使用。阅读其他人的代码时，请考虑它是否符合此处讨论的概念，以及它与代码的复杂性之间的关系。在别人的代码中比在您的代码中更容易看到设计问题。您可以使用此处描述的红色标记来发现问题并提出改进建议。查看代码还将使您接触到新的设计方法和编程技术。</p>
+<p>改善设计技能的最好方法之一就是学会识别危险信号：信号表明一段代码可能比需要的复杂。在本书的过程中，我将指出一些危险信号，这些危险信号指示与每个主要设计问题有关的问题；最重要的内容总结在书的后面。然后，您可以在编码时使用它们：当看到红色标记时，停下来寻找可消除问题的替代设计。当您第一次尝试这种方法时，您可能必须尝试几种设计替代方案，然后才能找到消除危险信号的方案。不要轻易放弃：解决问题之前尝试的替代方法越多，您就会学到更多。随着时间的流逝，您会发现代码中的危险信号越来越少，并且您的设计越来越清晰。</p>
+<p>在应用本书中的思想时，务必要节制和谨慎。每条规则都有例外，每条原则都有其局限性。如果您将任何设计创意都发挥到极致，那么您可能会陷入困境。精美的设计反映了相互竞争的思想和方法之间的平衡。有几章的标题为“太过分”，它们描述了如何在做得过大的事情上识别自己。</p>
+<p>本书中几乎所有示例都是使用 Java 或 C ++编写的，并且大部分讨论都是针对以面向对象的语言设计类的。但是，这些想法也适用于其他领域。几乎所有与方法有关的思想也可以应用于没有面向对象功能的语言中的功能，例如 C。设计思想还适用于除类之外的模块，例如子系统或网络服务。</p>
+<p>在这种背景下，让我们详细讨论导致复杂性的原因以及如何简化软件系统。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch1-%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-逝去的亲人：大娘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/%E9%80%9D%E5%8E%BB%E7%9A%84%E4%BA%B2%E4%BA%BA%EF%BC%9A%E5%A4%A7%E5%A8%98/">逝去的亲人：大爷和大娘</a>
+    </h1>
+  
+
+        
+        <a href="/2020/%E9%80%9D%E5%8E%BB%E7%9A%84%E4%BA%B2%E4%BA%BA%EF%BC%9A%E5%A4%A7%E5%A8%98/" class="archive-article-date">
+  	<time datetime="2020-09-24T15:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阳历二零二零年九月二十日，星期天，上午十时左右，接父亲电话，我的大娘郭庆芝以糖尿病及并发症的发作，该日时因医治无效病故，享年七十九岁。大娘的一生勤劳俭朴，敦厚持家，值得我们后辈深切缅怀！</p>
+<p>在我的老家山东费县，大娘是我大爷的妻子，大爷是我父亲的亲哥，很多地方叫大伯，我老家的老叫法是大大爷，二大爷…, 也就是说，大娘是我父母的嫂子。</p>
+<p>在父母他们年轻的时候，因为各种原因，他们之间有过不少不快，以至于两家吵架相互没有往来，不过随着他们年龄阅历的增多,关系趋于缓和，在我开始记事情的时候，两家的关系已经很正常，他们的关系没有很亲密，也没有很冷淡，就是农村特有的那种兄弟关系。好在他们他们都是遵循古训，有父从父，无父从兄，很多事情，我父亲都找我大爷商量。两家在很多事也相互帮忙和照顾，当然两家也各有各自的盘算和生活。他们经历过最贫穷的时代，所以很多事情上他们对生活算计的太多，过度节俭。</p>
+<p>我上学的时候，家里困难有一次学费是找大爷借的，小时候去大爷家，大爷也会拿一些好吃的给我，我印象最深的是，很小的时候，去臧家庄姑奶奶家，晚上住了一宿，大爷不会骑车，用独轮小推车推着我和我的一个小侄女，步行走了将近12公里的山路。凡此种种，不一一道来，存在心里，待成回忆。大爷在我记忆里是永远闲不住的人，永远温和待人。</p>
+<p>大爷已经不在了，父亲和大爷的关系是比较典型的农村的兄弟关系，他们之间从不表达感情之类的话，甚至连”谢谢“这类的话我也没有见到过，农村很多的情感都是处事处出来的，比较实实在在的，不像现在很多人际关系，嘴上一套，做的一套，脑子想的还是一套。现在很多人对人际关系的处理至少有三套账要算，很多人就觉得活的很累，中年人这么做，他们的孩子们自小就接触到长辈们这些人际关系账算来算去，也就烦了，反而去追求简单的，甚至是极端的人际关系。</p>
+<p>人际关系有很多类，很多人的的人际关系错综复杂，工作关系，亲戚关系，朋友关系，上下级关系，再加上公开关系，秘密关系，半公开关系，涉及切身利益的关系等等，普通人要把这些关系管理好，真的非常考虑管理能力，情商，智商和财商了。</p>
+<p>有时候，我觉得我父亲和我大爷之前的关系是最和谐的关系，不过不少，彼此关注，遇事合作，没事各过各的，有来有往，长少有序。从这个角度想，孔子该是伟大的，数千年前就规范了复杂的人际关系管理。 人际关系要追求简单，合乎礼节，彼此尊重各自的核心利益，适当隔离不同关系的过度耦合。</p>
+<p>谨此沉痛悼念我的大爷和大娘！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生活感悟</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/%E9%80%9D%E5%8E%BB%E7%9A%84%E4%BA%B2%E4%BA%BA%EF%BC%9A%E5%A4%A7%E5%A8%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于横财" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/%E5%85%B3%E4%BA%8E%E6%A8%AA%E8%B4%A2/">关于横财</a>
+    </h1>
+  
+
+        
+        <a href="/2020/%E5%85%B3%E4%BA%8E%E6%A8%AA%E8%B4%A2/" class="archive-article-date">
+  	<time datetime="2020-09-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下是这个时代（2020-09-06 13:38:01）关于赚钱的一种认知：</p>
+<p>你永远赚不到超出你认知范围之外的钱，除非靠着运气；但是运气赚到的钱，往往又会靠着实力亏掉。这是一种必然。<br>你所赚的每一分钱，都是你对这个世界认知的变现。你所亏的每一分钱，都是因为对这个世界认知有缺陷。</p>
+<p>这个世界最大的公平在于：当你的财富大于自己认知的时候，这个社会就会有100种方法来收割你；直到你的认知和财富匹配为止。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/%E5%85%B3%E4%BA%8E%E6%A8%AA%E8%B4%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-何为领袖之国" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -661,371 +1000,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/%E9%9A%8F%E6%9C%BA%E4%B8%8E%E7%A1%AE%E5%AE%9A%E7%9A%84%E9%9A%8F%E6%83%B3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件兴国" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/">软件兴国</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/" class="archive-article-date">
-  	<time datetime="2020-05-24T15:51:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何思考软件在中国发展中的作用？</p>
-<p>最近美国特朗普政府对中国新一轮的科技绞杀开始了，我认为这不是最后一次，也不是最严重的一次，更多风雨还在后面。</p>
-<p>随着智能手机在国内的普及，软件已经和每个人息息相关，在我看来，社会文明发展的高低取决于软件化程度的高低。<br>极度发达的社会，必然有极度发达的软件，相应的，极度发达的软件促使社会文明程度的发达。软件影响了人类社会的方方面面，未来的黑客帝国，也是因为软件的兴起。</p>
-<p>美国对中国的新一轮制裁，归根结底是对中国高级软件技术的限制，新中国成立后，中国在老一辈科研人员的艰苦奋斗下，在核武器，航天技术的突破赢得了世界的认可。现在我们需要在软件上实现突破才能再次突破现有的地位，赢得世界对中国大国地位的认可。</p>
-<p>软件上的突破实际上对各个行业的系统化升级改造，需要完整的软件开发工具链的自主化，实现在软件技术上中国创新和中国影响力。</p>
-<p>我窃以为，国内软件业还非常落后，就像是洋务运动后的中国，我们会用洋钉，洋灯，洋车，洋机器，可是没有一个我们可以完整的自主造出来。从业十余年，用到的软件开发语言没有一个国产的，用到开发工具没有一个国产，用到的设计理念绝大部分也不是国内自主创新的，我们这些所谓的开发人员特别像那时候的买办，转卖洋人的东西给国人，顺手打了个国产的标签。从这个角度看，我们的软件行业被更高级的洋软件殖****民了， 软件现代化，我们还有很多路要走。</p>
-<p>我们常用 站在巨人的肩膀上 这句话来麻痹自己，其实站在巨人的肩膀是对的啊，关键是站在哪个巨人的肩膀上呢，我们站在美国这个巨人的肩膀上，人家要不要你站，还不是看人家的心情吗！所以艰苦奋斗，自力更生什么时候都不要扔。我们要坚决的发展自主的软件研发体系，各个行业的软件体系；</p>
-<p>软件行业为什么那么重要呢？</p>
-<ul>
-<li>从全球来看，软件行业是相对更加是智力密集行业，这个行业的人员普遍高于其他行业，如果这个行业的平均智力水平不高，那么其他行业的平均智力水平可想而知。</li>
-<li>软件是硬件的生命和灵魂。硬件是机械的，有软件的硬件才够灵活和智能，才是能创造大价值的。</li>
-<li>软件行业的成长是不能复制的。硬件的生成其实是可以复制的，生产线可以组装产业工人可以培训，但是软件行业需要大量的协作，大量的普通开发人员，需要这些大量的普通开发人员付出自己的大量优质的智力活动，需要每个开发人员投入自己的智慧，经验，创造力和想象力。</li>
-<li>软件是最复杂的，它看不见，摸不着，但是它又实实在在控制着数以亿万计的硬件，它的生成过程就是智力活动的过程。</li>
-</ul>
-<p>目前看，软件代表着一个国家最高的科技实力和科技行业的整体水平，软件兴，则中国兴！</p>
-<p>中国软件，加油！ 中国，加油！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E8%BD%AF%E4%BB%B6%E5%85%B4%E5%9B%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-养娃日志2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%972/">养娃日志（2）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%972/" class="archive-article-date">
-  	<time datetime="2020-05-02T14:58:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>五一休假的第二天，与妻，娃一起午饭。</p>
-<p>娃摸着妻手腕上的一个疤痕，嫩声的问：妈妈，这是什么？</p>
-<p>妻吃了一口菜，悠悠说道：”当年真是SB，竟然为了前男友，用烟头烫自己！”。</p>
-<p>我哈哈大笑，”这不是刻骨铭心的爱情嘛！”。</p>
-<p>妻说：“谁还没点难忘的青春!”</p>
-<p>我突然想到一个问题，问妻：“等娃长大了，如果他失恋，为了前女友死去活来，然后问你：妈，为了表明我爱的决心，我要用烟头在手腕上留个痕迹。 你该怎么说？”。</p>
-<p>妻愤然道：“我就说，烫吧，反正你会后悔的…”</p>
-<p>当我们的老一辈告诉我们他们的人生经验时，我们内心总是听之任之，全然不会把这些话当做真理性的知识去记住去理解，同样当我们把我们的人生经验告诉下一辈时，他们肯定也是听之任之，是的，人生经验难以推广。</p>
-<p>人生难以复制，与其模仿别人，不如活成自己！</p>
-<p>别人的人生或苦难，或富贵，或卑贱，或荣耀，对我们来说都像是自己人生旅途上的风景，可停车赞叹，可扼腕叹息，抑或高山仰止，抑或报以不屑，但是都不会影响你旅途的目标，你可以参照他们，总结他们，但是你成不了他们，你只能成为你自己。</p>
-<p>所以我会对娃说：“我和你妈想法一样，烫不烫随你，反正我们说的你也不会听”</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">生活 养娃</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E5%85%BB%E5%A8%83%E6%97%A5%E5%BF%972/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python之禅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/python%E4%B9%8B%E7%A6%85/">The Zen of Python</a>
-    </h1>
-  
-
-        
-        <a href="/2020/python%E4%B9%8B%E7%A6%85/" class="archive-article-date">
-  	<time datetime="2020-04-26T18:29:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Beautiful is better than ugly.</p>
-<p>Explicit is better than implicit.</p>
-<p>Simple is better than complex.</p>
-<p>Complex is better than complicated.</p>
-<p>Flat is better than nested.</p>
-<p>Sparse is better than dense.</p>
-<p>Readability counts.</p>
-<p>Special cases aren’t special enough<br>to break the rules.</p>
-<p>Although practicality beats purity.</p>
-<p>Errors should never pass silently.</p>
-<p>Unless explicitly silenced.</p>
-<p>In the face of ambiguity, refuse the temptation to guess.</p>
-<p>There should be one– and preferably only one –obvious way to do it.</p>
-<p>Although that way may not be obvious at first unless you’re Dutch.</p>
-<p>Now is better than never.</p>
-<p>Although never is often better than <em>right</em> now.</p>
-<p>If the implementation is hard to explain, it’s a bad idea.</p>
-<p>If the implementation is easy to explain, it may be a good idea.</p>
-<p>Namespaces are one honking great idea – let’s do more of those!</p>
-<hr>
-<p>优美优于丑陋；</p>
-<p>明了优于隐晦；</p>
-<p>简单优于复杂；</p>
-<p>复杂优于凌乱；</p>
-<p>扁平优于嵌套；</p>
-<p>稀疏优于稠密；</p>
-<p>可读性很重要；</p>
-<p>即使实用比纯粹更优，<br>特例亦不可违背原则。</p>
-<p>错误绝不能悄悄忽略，<br>除非它明确需要如此。</p>
-<p>面对不确定性，<br>拒绝妄加猜测。</p>
-<p>任何问题应有一种，<br>且最好只有一种，<br>显而易见的解决方法。</p>
-<p>尽管这方法一开始并非如此直观，<br>除非你是荷兰人。</p>
-<p>做优于不做，<br>然而不假思索还不如不做。</p>
-<p>很难解释的，必然是坏方法。</p>
-<p>很好解释的，可能是好方法。</p>
-<p>命名空间是个绝妙的主意，<br>我们应好好利用它。</p>
-<p><a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python 语言学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/python%E4%B9%8B%E7%A6%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-一起的一起" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E4%B8%80%E8%B5%B7%E7%9A%84%E4%B8%80%E8%B5%B7/">一起的一起</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E4%B8%80%E8%B5%B7%E7%9A%84%E4%B8%80%E8%B5%B7/" class="archive-article-date">
-  	<time datetime="2020-04-26T18:29:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有感最近所在公司有一起奋斗了很多年的老同志离职。</p>
-<p>就像是夫妻间的七年之痒。<br>总有一些委屈不想忍耐，总有一些原则不想将就，总有一些事情不再重要，总有一些未来不想等待，总有一些决定不再犹豫，总有一些结果不想回避；</p>
-<p>宴席散，酒留肚肠，沁入脾胃，化作心雨寄离伤；<br>夕阳西下，人各天涯，不敢见屏幕，默然线上代码数万行；</p>
-<p>闭眼回想，往事如昨，太多的经历，要加上“一起”这个词！</p>
-<p>一起跑步，一起午饭，一起晚饭，一起赶地铁；<br>一起聚餐，一起k歌，一起游船，一起看大海，<br>一起撩妹，一起游戏，一起写码，一起改bug，<br>一起熬夜，一起加班，一起上线，一起赶进度，<br>一起开会，一起争论，一起流泪，一起挨批评，<br>一起郁闷，一起沮丧，一起吐槽，一起想跳楼，<br>一起失败，一起成功，一起奋斗，一起赶项目，<br>一起走，一起玩，一起读书，一起进步，<br>一起吃，一起喝，一起回家，一起高兴，<br>一起疯，一起狂，一起犯二，一起癫狂，<br>一起的一起总是流淌在日常的生活里，<br>一起的一起总是泼洒在生活的阳光里，<br>一起的一起总是徜徉在阳光的沙滩上，<br>站在沙滩，面朝大海，背靠背的歌唱！<br>…</p>
-<p>人生就是这样，一起一起着，就各奔了西东，不知是迷路了，还是走散了，总之，我们是不在一起了；</p>
-<p>一起一起着，就成了一起的往事，一起的回忆；<br>一起一起着，就成了一起的遗憾，一起的怅然；<br>一起一起着，就成了一起的永远，一起的梦幻；</p>
-<p>人的出生就是伴随着和母体的分离，离别是人的宿命，可是不论怎样，母子连心。</p>
-<p>心若在，梦就在，一起追梦，向阳而生，就是一起的一起！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人生感悟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E4%B8%80%E8%B5%B7%E7%9A%84%E4%B8%80%E8%B5%B7/">展开全文 >></a>
         </p>
       
 
@@ -1864,6 +1838,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工程实践</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">硬件优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">语音识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">devops</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cloud</a>
               </li>
             
             <div class="clearfix"></div>
