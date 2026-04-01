@@ -1,6 +1,5 @@
 ---
 title: Agent 反思记忆：理论基础与工程实践综述
-date: 2026-03-29 21:16:00
 tags:
   - AI Agent
   - Memory Systems
@@ -15,7 +14,11 @@ keywords:
   - Metacognition
   - Self-Improvement
   - LLM Agent
-description: 深度解析 Agent 反思记忆系统的理论基础、架构设计、工程实现和评估方法，涵盖认知科学、机器学习、Agent 理论三大基础，提供分层反思、图结构反思等多种架构模式，以及完整的工程实践指南。
+description: >-
+  深度解析 Agent 反思记忆系统的理论基础、架构设计、工程实现和评估方法，涵盖认知科学、机器学习、Agent
+  理论三大基础，提供分层反思、图结构反思等多种架构模式，以及完整的工程实践指南。
+abbrlink: 37007
+date: 2026-03-29 21:16:00
 ---
 
 # Agent 反思记忆：理论基础与工程实践综述

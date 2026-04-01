@@ -1,6 +1,5 @@
 ---
 title: Agent记忆系统综述 - 从短期记忆到终身学习的完整架构
-date: 2026-03-31 18:35:00
 tags:
   - AI Agent
   - Agent Memory
@@ -9,6 +8,8 @@ tags:
   - RAG
 categories:
   - AI技术研究
+abbrlink: 29719
+date: 2026-03-31 18:35:00
 ---
 
 # Agent记忆系统综述 - 从短期记忆到终身学习的完整架构

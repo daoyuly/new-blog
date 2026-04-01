@@ -1,6 +1,5 @@
 ---
 title: AI Agent设计模式与系统架构完全指南 - 从理论到工程实践
-date: 2026-04-01 09:45:00
 tags:
   - AI Agent
   - Design Patterns
@@ -18,6 +17,8 @@ keywords:
   - Reflection Pattern
   - Multi-Agent Architecture
   - Human-in-the-Loop
+abbrlink: 41096
+date: 2026-04-01 09:45:00
 ---
 
 # AI Agent设计模式与系统架构完全指南 - 从理论到工程实践

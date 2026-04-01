@@ -1,6 +1,5 @@
 ---
 title: Agent工具调用与编排综述 - 从单一工具到复杂工作流的完整指南
-date: 2026-03-31 18:52:00
 tags:
   - AI Agent
   - Tool Calling
@@ -9,6 +8,8 @@ tags:
   - Tool Composition
 categories:
   - AI技术研究
+abbrlink: 5179
+date: 2026-03-31 18:52:00
 ---
 
 # Agent工具调用与编排综述 - 从单一工具到复杂工作流的完整指南

@@ -1,6 +1,5 @@
 ---
 title: OpenClaw多Agent机制与系统架构深度解析 - 开源个人AI助手的技术内幕
-date: 2026-04-01 10:45:00
 tags:
   - OpenClaw
   - Open Source
@@ -17,6 +16,8 @@ keywords:
   - Personal AI Assistant
   - Agent Routing
   - Sub-Agent
+abbrlink: 31769
+date: 2026-04-01 10:45:00
 ---
 
 # OpenClaw多Agent机制与系统架构深度解析 - 开源个人AI助手的技术内幕

@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 1 (测试与优化)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 3329
 date: 2026-03-30 04:43:00
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 1 (测试与优化)

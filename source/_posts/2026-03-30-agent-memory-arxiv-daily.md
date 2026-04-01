@@ -1,8 +1,16 @@
 ---
-title: "Agent Memory研究前沿日报 - 2026年3月27日"
-date: 2026-03-30
-tags: [Agent Memory, AI Research, RAG, Knowledge Graph, Retrieval-Augmented]
-categories: [AI Research, Agent Memory]
+title: Agent Memory研究前沿日报 - 2026年3月27日
+tags:
+  - Agent Memory
+  - AI Research
+  - RAG
+  - Knowledge Graph
+  - Retrieval-Augmented
+categories:
+  - AI Research
+  - Agent Memory
+abbrlink: 21901
+date: 2026-03-30 00:00:00
 ---
 
 # Agent Memory研究前沿日报 - 2026年3月27日

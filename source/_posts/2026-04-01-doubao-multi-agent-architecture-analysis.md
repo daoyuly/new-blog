@@ -1,6 +1,5 @@
 ---
 title: 豆包多Agent技术实现与系统架构深度解析
-date: 2026-04-01 10:15:00
 tags:
   - Doubao
   - ByteDance
@@ -16,6 +15,8 @@ keywords:
   - Multi-Agent Architecture
   - Agent Collaboration
   - Production System
+abbrlink: 51180
+date: 2026-04-01 10:15:00
 ---
 
 # 豆包多Agent技术实现与系统架构深度解析

@@ -1,6 +1,5 @@
 ---
 title: 如何设计有用的多Agent系统 - 实战指南与架构设计方法论
-date: 2026-04-01 10:00:00
 tags:
   - AI Agent
   - System Design
@@ -16,6 +15,8 @@ keywords:
   - Production Systems
   - Design Methodology
   - Best Practices
+abbrlink: 64595
+date: 2026-04-01 10:00:00
 ---
 
 # 如何设计有用的多Agent系统 - 实战指南与架构设计方法论

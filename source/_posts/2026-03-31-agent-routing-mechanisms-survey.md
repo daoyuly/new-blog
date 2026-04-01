@@ -1,6 +1,5 @@
 ---
 title: Agent路由机制综述 - 智能分发与负载均衡的完整指南
-date: 2026-03-31 15:52:00
 tags:
   - AI Agent
   - Agent Routing
@@ -9,6 +8,8 @@ tags:
   - Orchestration
 categories:
   - AI技术研究
+abbrlink: 763
+date: 2026-03-31 15:52:00
 ---
 
 # Agent路由机制综述 - 智能分发与负载均衡的完整指南

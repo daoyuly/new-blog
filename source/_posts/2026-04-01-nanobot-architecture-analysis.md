@@ -1,6 +1,5 @@
 ---
 title: Nanobot多Agent机制与系统架构深度解析 - 港大DS开源的超轻量级AI助手
-date: 2026-04-01 11:30:00
 tags:
   - Nanobot
   - HKUDS
@@ -17,6 +16,8 @@ keywords:
   - Ultra-Lightweight
   - Sub-Agent
   - Multi-Channel
+abbrlink: 19726
+date: 2026-04-01 11:30:00
 ---
 
 # Nanobot多Agent机制与系统架构深度解析 - 港大DS开源的超轻量级AI助手

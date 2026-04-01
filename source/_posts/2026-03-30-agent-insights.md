@@ -1,6 +1,5 @@
 ---
-title: "Agent 前沿趋势洞察 - 2026-03-30"
-date: 2026-03-30 18:00:00
+title: Agent 前沿趋势洞察 - 2026-03-30
 tags:
   - agent
   - ai-trends
@@ -9,6 +8,8 @@ tags:
   - github
 categories:
   - 前沿洞察
+abbrlink: 34325
+date: 2026-03-30 18:00:00
 ---
 
 # Agent 前沿趋势洞察

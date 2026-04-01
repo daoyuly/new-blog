@@ -1,6 +1,5 @@
 ---
 title: Agent规划技术综述 - 从经典方法到现代LLM驱动的任务编排
-date: 2026-03-31 15:15:00
 tags:
   - AI Agent
   - Task Planning
@@ -9,6 +8,8 @@ tags:
   - ToT
 categories:
   - AI技术研究
+abbrlink: 1056
+date: 2026-03-31 15:15:00
 ---
 
 # Agent规划技术综述 - 从经典方法到现代LLM驱动的任务编排

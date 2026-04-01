@@ -1,6 +1,5 @@
 ---
 title: Agent协作机制综述 - 从单兵作战到团队协同的完整指南
-date: 2026-03-31 16:27:00
 tags:
   - AI Agent
   - Multi-Agent Collaboration
@@ -9,6 +8,8 @@ tags:
   - Consensus
 categories:
   - AI技术研究
+abbrlink: 3342
+date: 2026-03-31 16:27:00
 ---
 
 # Agent协作机制综述 - 从单兵作战到团队协同的完整指南

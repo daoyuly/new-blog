@@ -1,6 +1,5 @@
 ---
 title: 多Agent协作框架与系统架构综述 - 2025-2026趋势深度解析
-date: 2026-04-01 09:30:00
 tags:
   - AI Agent
   - Multi-Agent Systems
@@ -18,6 +17,8 @@ keywords:
   - CrewAI
   - Event Sourcing
   - 可验证性
+abbrlink: 3607
+date: 2026-04-01 09:30:00
 ---
 
 # 多Agent协作框架与系统架构综述 - 2025-2026趋势深度解析
