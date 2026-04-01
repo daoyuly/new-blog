@@ -157,6 +157,576 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ADP-G -  Coding agents" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-G%20-%20%20Coding%20agents/">Agentic Design Patterns - Appendix G -  Coding agents</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-G%20-%20%20Coding%20agents/" class="archive-article-date">
+  	<time datetime="2025-11-07T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="附录-G-编码-Agent"><a href="#附录-G-编码-Agent" class="headerlink" title="附录 G - 编码 Agent"></a>附录 G - 编码 Agent</h1><h2 id="Vibe-编码：入门路径"><a href="#Vibe-编码：入门路径" class="headerlink" title="Vibe 编码：入门路径"></a>Vibe 编码：入门路径</h2><p>“Vibe 编码”已发展为快速创新与创意探索的高效技术。该实践通过运用 LLM 生成初始草稿、梳理复杂逻辑或构建快速原型，显著降低启动门槛。其核心价值在于破解”空白页”困境，助力开发者从模糊概念快速过渡至具体可执行代码。在探索陌生 API 或测试新型架构模式时，Vibe 编码尤为高效，因其规避了追求完美实现的初期压力。生成代码常作为创意催化剂，为开发者提供可批判、重构与扩展的坚实基础。其核心优势体现在加速软件生命周期中的初始探索与概念形成阶段。然而，尽管 Vibe 编码在头脑风暴中表现卓越，构建稳健、可扩展且可维护的软件仍需更结构化方法——从纯粹生成转向与专业化编码 Agent 的协同合作。</p>
+<h2 id="Agent-作为团队成员"><a href="#Agent-作为团队成员" class="headerlink" title="Agent 作为团队成员"></a>Agent 作为团队成员</h2><p>尽管初期浪潮聚焦于原始代码生成——适合概念构思的”vibe 代码”——行业正转向更集成、更强大的生产工作范式。最高效的开发团队不仅将任务委托给 Agent，更通过整套复杂编码 Agent 实现自我增强。这些 Agent 扮演着不知疲倦的专业团队成员角色，放大人类创造力并显著提升团队扩展能力与开发速度。</p>
+<p>这一演进趋势反映在行业领袖的公开声明中。2025 年初，Alphabet CEO Sundar Pichai 指出，在 Google 内部，**”超过 30% 的新代码现由 Gemini 模型辅助或生成，从根本上重塑了我们的开发节奏。”** Microsoft 亦发布类似声明。此全行业转型表明，真正前沿并非替代开发者，而是为其赋能。目标在于建立增强型协作关系：人类主导架构愿景与创造性问题解决，而 Agent 处理专业化、可扩展任务，如测试、文档编制与代码审查。</p>
+<p>本章提出基于核心理念的人机协作团队组织框架：人类开发者担任创意领导与架构师，AI Agent 则充当能力倍增器。该框架立基于三大基本原则：</p>
+<ol>
+<li><strong>人类主导的流程编排：</strong> 开发者作为团队领导与项目架构师，始终处于决策闭环中，负责工作流协调、高层目标设定及最终决策制定。Agent 虽能力强大，但定位为支持性协作者。开发者指导具体 Agent 调用、提供必要上下文，并最关键地——对 Agent 生成输出行使最终裁决权，确保其符合项目质量标准与长期愿景。</li>
+<li><strong>上下文的核心地位：</strong> Agent 性能完全取决于上下文质量与完整性。缺乏优质上下文的强大 LLM 将毫无价值。因此，本框架优先采用人类主导的精细化上下文管理策略，规避自动化黑盒式上下文检索。开发者负责为 Agent 团队成员精心组装完整”任务简报”，包括：<ul>
+<li><strong>完整代码库：</strong> 提供全部相关源代码，使 Agent 理解现有模式与逻辑结构。</li>
+<li><strong>外部知识集成：</strong> 补充特定文档、API 定义或设计规范。</li>
+<li><strong>人工任务简报：</strong> 明确阐述目标要求、功能需求、拉取请求描述及编码规范。</li>
+</ul>
+</li>
+<li><strong>直接模型访问机制：</strong> 为实现尖端效果，Agent 必须通过直接访问前沿模型（如 Gemini 2.5 PRO、Claude Opus 4、OpenAI、DeepSeek 等）驱动。使用性能较弱模型或经由截断上下文的中介平台转发请求将严重制约表现。本框架致力于在人类领导与底层模型原始能力间建立最纯净对话通道，确保每个 Agent 均以峰值潜力运行。</li>
+</ol>
+<p>该框架构建为专业化 Agent 团队，每个 Agent 针对开发生命周期中的核心功能专门设计。人类开发者担任中央协调者，负责任务委派与成果整合。</p>
+<h2 id="核心组件架构"><a href="#核心组件架构" class="headerlink" title="核心组件架构"></a>核心组件架构</h2><p>为高效运用前沿大语言模型，本框架将不同开发角色分配给专业化 Agent 团队。这些 Agent 并非独立应用，而是通过精心设计的角色特定提示与上下文在 LLM 中调用的概念化人格。此方法确保模型的强大能力精准聚焦于当前任务——从初始代码编写到细致入微的关键性审查。</p>
+<p><strong>流程编排者：人类开发者：</strong> 在此协作框架中，人类开发者承担编排者职能，作为 AI Agent 的中央智能节点与最终权威。</p>
+<ul>
+<li><strong>角色定位：</strong> 团队领导、系统架构师及最终决策者。编排者负责任务定义、上下文准备及 Agent 产出的全面验证。<ul>
+<li><strong>交互界面：</strong> 开发者自有终端、代码编辑器及所选 Agent 的原生 Web 界面。</li>
+</ul>
+</li>
+</ul>
+<p><strong>上下文准备区：</strong> 作为所有成功 Agent 交互的基石，上下文准备区是人类开发者精心组装完整任务特定简报的专用空间。</p>
+<ul>
+<li><strong>功能定位：</strong> 为每项任务提供独立工作环境，确保 Agent 接收完整准确的简报材料。<ul>
+<li><strong>技术实现：</strong> 临时目录（task-context&#x2F;）包含目标说明的 markdown 文件、相关代码文件及配套文档。</li>
+</ul>
+</li>
+</ul>
+<p><strong>专业化 Agent 团队：</strong> 通过定向提示工程，我们可构建专业分工的 Agent 团队，每个成员针对特定开发任务深度优化。</p>
+<ul>
+<li><strong>脚手架 Agent：代码实施专家</strong><ul>
+<li><strong>核心职能：</strong> 依据详细规范编写新代码、实现功能特性或创建基础模板。<ul>
+<li><strong>调用提示模板：</strong><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一名资深软件工程师。请基于 01<span class="emphasis">_BRIEF.md 中的需求说明与 02_</span>CODE/ 目录下的现有模式，实现指定功能...</span><br></pre></td></tr></table></figure></li>
+<li><strong>测试工程师 Agent：质量守护者</strong><ul>
+<li><strong>核心职能：</strong> 为新代码或现有代码编写全面的单元测试、集成测试及端到端测试套件。</li>
+<li><strong>调用提示模板：</strong><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一名质量保证工程师。针对 02<span class="emphasis">_CODE/ 中提供的代码，使用 [测试框架，如 pytest] 编写完整单元测试套件。需覆盖所有边界情况并遵循项目测试规范。</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>文档编写 Agent：技术文档专员</strong><ul>
+<li><strong>核心职能：</strong> 为函数、类、API 或完整代码库生成清晰、简洁的技术文档。</li>
+<li><strong>调用提示模板：</strong><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一名技术文档工程师。为指定代码中定义的 API 端点生成 markdown 格式文档。需包含请求/响应示例并对各参数进行详细说明。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>优化 Agent：代码重构顾问</strong><ul>
+<li><strong>核心职能：</strong> 提出性能优化方案与代码重构建议，以提升可读性、可维护性及执行效率。</li>
+<li><strong>调用提示模板：</strong><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分析提供代码中的性能瓶颈与可重构区域。提出具体改进方案并阐述各项更改的优化价值。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>流程 Agent：代码质量监督员</strong><ul>
+<li><strong>批判分析：</strong> Agent 执行初步审查，识别潜在缺陷、编码规范违规及逻辑漏洞，功能类似静态分析工具。</li>
+<li><strong>深度反思：</strong> Agent 对自身批判进行元分析。综合各项发现，优先处理关键问题，过滤琐碎或低价值建议，为人类开发者提供高层级、可执行的总结报告。</li>
+<li><strong>调用提示模板：</strong><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一名首席工程师执行代码审查。首先对变更进行详细批判分析，随后进行反思总结，提供关键反馈的优先级排序摘要。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>最终，此人类主导模式在开发者战略规划与 Agent 战术执行间建立强大协同效应。开发者得以从常规任务中解放，将专业智慧聚焦于创造最大价值的创意性挑战与架构设计。</p>
+<h2 id="实践实施指南"><a href="#实践实施指南" class="headerlink" title="实践实施指南"></a>实践实施指南</h2><h2 id="环境配置清单"><a href="#环境配置清单" class="headerlink" title="环境配置清单"></a>环境配置清单</h2><p>为有效部署人机协作团队框架，建议遵循以下配置流程，核心目标是在提升效率的同时维持全程控制。</p>
+<ol>
+<li><strong>前沿模型访问权限配置</strong> 获取至少两个领先大语言模型（如 Gemini 2.5 Pro 与 Claude 4 Opus）的 API 访问密钥。采用双供应商策略便于性能对比分析，同时规避单一平台限制或服务中断风险。此类凭证应按照生产环境密钥管理规范进行安全存储。</li>
+<li><strong>本地上下文编排器部署</strong> 采用轻量级 CLI 工具或本地 Agent 运行器管理上下文交互，替代临时脚本方案。此类工具应支持在项目根目录定义简明配置文件（如 context.toml），明确指定需编译至 LLM 提示词统一载荷的文件、目录或 URL 资源。此举确保您对模型每次请求所见内容保持完全透明化控制。</li>
+<li><strong>版本化提示词库构建</strong> 在项目 Git 仓库内创建专用 &#x2F;prompts 目录。以 markdown 文件形式存储各专业 Agent 调用提示词（如 reviewer.md、documenter.md、tester.md）。将提示词视同代码资产管理，支持团队持续协作优化、版本追踪及 AI Agent 指令体系的迭代演进。</li>
+<li><strong>Agent 工作流与 Git 钩子集成</strong> 通过本地 Git 钩子实现审查流程自动化。例如，配置 pre-commit 钩子自动在暂存变更上触发审查者 Agent。Agent 生成的批判与反思摘要将直接输出至终端，在提交确认前提供即时质量反馈，将质量保障环节深度嵌入开发流程。</li>
+</ol>
+<p><strong><img src="/../images/appendix-g/image1.png"></strong></p>
+<p>图 1：编码专家角色示意图</p>
+<h2 id="增强型团队领导原则"><a href="#增强型团队领导原则" class="headerlink" title="增强型团队领导原则"></a>增强型团队领导原则</h2><p>成功驾驭此框架需实现从独立贡献者向人机协作团队领导者的角色转型，遵循以下核心原则：</p>
+<ul>
+<li><strong>坚守架构主导权</strong> 您的核心职责是制定战略方向并掌控高层架构设计。明确界定”目标愿景”与”设计 rationale”，借助 Agent 团队加速”实施方案”落地。作为设计决策的最终<strong>仲裁者</strong>，确保各组件严格遵循项目长期愿景与质量标准。</li>
+<li><strong>精研任务简报技艺</strong> Agent 输出质量直接映射输入信息质量。通过为每项任务提供清晰无歧义、内容完备的上下文掌握简报艺术。应将提示词视为面向高能力新团队成员的完整任务简报包，而非简单指令。</li>
+<li><strong>担当终极质量关口</strong> Agent 产出始终属于建议方案，绝非强制命令。将审查者 Agent 反馈视为重要参考信号，但您承担最终质量决策责任。运用领域专业知识与项目特定认知验证、质询并核准所有变更，担当代码库完整性的终极守护者。</li>
+<li><strong>践行迭代对话模式</strong> 最优成果源于双向对话而非单向指令。若 Agent 初始输出存在不足，应导向完善而非弃用。提供修正反馈、补充澄清上下文、引导二次尝试。此迭代对话机制至关重要，尤其针对审查者 Agent——其”反思”输出设计为协作讨论起点，而非终态报告。</li>
+</ul>
+<h2 id="结论展望"><a href="#结论展望" class="headerlink" title="结论展望"></a>结论展望</h2><p>代码开发的未来图景已然呈现——它是增强协同的崭新范式。独行编码者的时代正演进为开发者引领专业化 AI Agent 团队的新纪元。此模型非但未削弱人类角色，反而通过自动化常规任务、放大个体影响力及实现前所未有的开发效能将其提升至新高度。</p>
+<p>通过将战术执行委派予 Agent，开发者得以将认知资源聚焦于真正核心领域：战略创新、韧性架构设计，以及打造用户惊喜产品所需的创造性问题破解。根本性协作关系已被重新定义：这不再是人与机器的对抗竞赛，而是人类智慧与人工智能作为无缝集成团队的深度伙伴关系。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>AI is responsible for generating more than 30% of the code at Google <a target="_blank" rel="noopener" href="https://www.reddit.com/r/singularity/comments/1k7rxo0/ai_is_now_writing_well_over_30_of_the_code_at/">https://www.reddit.com/r/singularity/comments/1k7rxo0/ai_is_now_writing_well_over_30_of_the_code_at&#x2F;</a></li>
+<li>AI is responsible for generating more than 30% of the code at Microsoft <a target="_blank" rel="noopener" href="https://www.businesstoday.in/tech-today/news/story/30-of-microsofts-code-is-now-ai-generated-says-ceo-satya-nadella-474167-2025-04-30">https://www.businesstoday.in/tech-today/news/story/30-of-microsofts-code-is-now-ai-generated-says-ceo-satya-nadella-474167-2025-04-30</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-G%20-%20%20Coding%20agents/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2025年 11 月 3 日 - 2025年 11 月 7 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%203%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%207%20%E6%97%A5/">工作周报2025年11 月3 日 - 2025年11 月7日</a>
+    </h1>
+  
+
+        
+        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%203%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%207%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2025-11-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
+<li>本周在主要工作任务之余开始继续思考和设计Code Fixed Agent工作流程，之前我自己和其他伙伴断断续续有过讨论和分析，Code Fixed Agent 的预期功能需求是通过目前的对Sentry Issue 诊断Agent的诊断结果，Code Fixed Agent  利用大模型编程能力实现代码修复和提交，涉及源码管理、大模型、Git流程、Claude 调用等模块，实现Sentry上简单问题的自动化修复。在本地开发中利用Claude Skills 和 Agent 也能够实现部分功能，但是对于Sentry问题，构造Sentry完整的上下文的，需要Sentry MCP的支持，最主要的问题是本地Claude无法实现无人值守式全自动化流程。压缩代码和源码映射的问题是最关键的部分所在，在保证安全可靠的情况下，实现异常堆栈中的行列数能够明确定位到源码的repo-dir-file-line，这个过程可以使用大模型和工程方式，大模型方案是需要消耗大量token，整体来看币效太低。工程方式应该是最合适的方式，repo很容易定位，dir-file-line的定位很难准确，一是不同的浏览器堆栈信息不同，二是线上堆栈信息本身压缩和混淆过的。目前想到的基本思路是采用关键词匹配的笨办法，首先通过AST将解析压缩代码的类，对象和方法，同时将对应repo的源码也通过AST做相同的处理，基于堆栈信息通过文本匹配的模式，初步定位做在file，最后通过源码和压缩代码的AST数据比对，定位到具体的方法，然后提交给大模型做修复。整体的思路是工程算法和大模型相结合协同解决。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2011%20%E6%9C%88%203%20%E6%97%A5%20-%202025%E5%B9%B4%2011%20%E6%9C%88%207%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ADP-F  - Under the Hood_ An Inside Look at the Agents&#39; Reasoning Engines" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/ADP-F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents'%20Reasoning%20Engines/">Agentic Design Patterns - Appendix F  - Under the Hood_ An Inside Look at the Agents&#39; Reasoning Engines</a>
+    </h1>
+  
+
+        
+        <a href="/2025/ADP-F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents'%20Reasoning%20Engines/" class="archive-article-date">
+  	<time datetime="2025-11-06T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="附录-F-深入剖析：Agent-推理引擎的内部运作机制"><a href="#附录-F-深入剖析：Agent-推理引擎的内部运作机制" class="headerlink" title="附录 F - 深入剖析：Agent 推理引擎的内部运作机制"></a>附录 F - 深入剖析：Agent 推理引擎的内部运作机制</h1><p>智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力及环境交互能力的中央”心智”。</p>
+<p>因此，理解这些模型的内部推理机制已非学术探讨——而是开发下一代稳健、可靠且高效 Agent 的关键前提。本节中，我们通过向当今领先模型提出根本性问题来直接探究这些核心引擎：Gemini、ChatGPT、Grok、Kimi、Claude 与 DeepSeek。通过引导这些 LLM 阐述其逐步推理过程，我们旨在揭示驱动未来智能 Agent 系统能力与局限性的底层逻辑。</p>
+<table>
+<thead>
+<tr>
+<th align="left">向各 LLM 提供的提示：我理解你具备推理能力，能否逐步解释你的推理过程？</th>
+</tr>
+</thead>
+</table>
+<h2 id="Gemini"><a href="#Gemini" class="headerlink" title="Gemini"></a>Gemini</h2><p><strong>分析我的方法</strong></p>
+<p>我已规划好解释框架，目标在于清晰简洁。首先直接回应，随后分解为逻辑步骤。步骤一将界定我采用的核心推理流程，之后详细展开后续步骤。此结构应有助于提供简明易懂的解释。</p>
+<p><strong>完善解释</strong></p>
+<p>我已敲定解释结构。步骤一聚焦于解构提示，特别是分析用户请求。步骤二详述信息检索，强调模式识别而非简单数据库查询。步骤三探讨综合处理与 LLM 机制，步骤四则关注响应生成，涵盖格式、语气及指令遵循。我将以总结收尾，强化关键阶段，同时维持清晰度与吸引力。</p>
+<p><strong>阐述我的方法论</strong></p>
+<p>我已充实”解构提示”步骤，重点阐述如何识别用户意图、核心问题及既定约束。信息检索阶段现专注于模式识别而非单纯数据获取，这将成为该节首项内容。我正在完善综合步骤，即通过 LLM 与 Transformer 整合信息的过程。响应生成步骤已确定，我将运用表情符号优化整体语气。</p>
+<p>当然。我的推理方式是将您的请求分解为更小组件，随后运用海量训练数据构建逻辑严密且内容相关的响应。这是一个从理解到生成的多阶段过程。</p>
+<p>以下是我的推理过程逐步解析：</p>
+<hr>
+<h3 id="1-解构提示-📝"><a href="#1-解构提示-📝" class="headerlink" title="1. 解构提示 📝"></a><strong>1. 解构提示 📝</strong></h3><p>首先，我分析您的问题或指令以准确理解其含义。我识别：</p>
+<ul>
+<li><strong>核心任务</strong>：主要目标为何？是回答问题、阐释概念、创作故事还是总结文本？在您的情况下，核心任务是”解释我的推理方式”。</li>
+<li><strong>关键概念</strong>：我精准定位核心名词与动词，如”推理”、”解释”及”逐步”。</li>
+<li><strong>约束与指令</strong>：我寻找需遵循的具体规则。例如，您的提示要求逐步解释。我的内部指令也指导我对数学内容使用 LaTeX、采用 markdown 标题，并保持特定语气。</li>
+<li><strong>意图</strong>：我尝试推断您的深层目标。您是出于好奇、试图解决问题还是寻求创意灵感？此处，您的意图是理解我的内部认知过程。</li>
+</ul>
+<hr>
+<h3 id="2-信息检索与综合-🧠"><a href="#2-信息检索与综合-🧠" class="headerlink" title="2. 信息检索与综合 🧠"></a><strong>2. 信息检索与综合 🧠</strong></h3><p>理解提示后，我访问内部知识库。这不同于数据库搜索，而是运用在大量文本与代码训练中学到的模式。</p>
+<ul>
+<li><strong>激活相关知识</strong>：我激活神经网络中与您提示关键概念相关的部分（”推理”、”AI”、”机器学习”、”神经网络”、”Transformer”）。</li>
+<li><strong>模式识别</strong>：我的架构，尤其是 <strong>Transformer 模型</strong>，极擅长识别词汇与概念间的关联与模式。我辨识概念间的连接方式，例如将”推理”与”逻辑”、”推断”及”问题解决”相关联。</li>
+<li><strong>构建答案</strong>：我开始将检索信息组织为逻辑结构。针对此响应，我判定逐步格式最符合逻辑，以遵循您的要求。</li>
+</ul>
+<hr>
+<h3 id="3-生成响应-✍️"><a href="#3-生成响应-✍️" class="headerlink" title="3. 生成响应 ✍️"></a><strong>3. 生成响应 ✍️</strong></h3><p>此为最终阶段，我将结构化信息转化为人类可读文本。</p>
+<ul>
+<li><strong>语言构建</strong>：我筛选词汇并构建能准确传达综合信息的句子。通过预测序列中下一最可能词汇，形成连贯自然的段落。</li>
+<li><strong>应用规则</strong>：我执行既定的格式与风格规则，包括添加 markdown 标题、加粗关键术语如 <strong>Transformer 模型</strong>、适时使用表情符号，并确保语言清晰直接。</li>
+<li><strong>审查与完善</strong>：在最终确定答案前，我进行快速内部检查以确保准确性、相关性及连贯性。我确保响应直接应对您提示的所有方面，避免冗余信息。</li>
+</ul>
+<p>本质上，我的推理是<strong>模式匹配与预测</strong>的复杂形式。我解构您的请求，在数据中定位最相关模式，将其综合为逻辑结构，随后将该结构转化为清晰、格式规范的答案。</p>
+<h2 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h2><p>很好——让我尽可能简明清晰地阐述<strong>我的逐步推理过程</strong>。</p>
+<hr>
+<h2 id="🧠-逐步解析：我的推理机制"><a href="#🧠-逐步解析：我的推理机制" class="headerlink" title="🧠 逐步解析：我的推理机制"></a><strong>🧠 逐步解析：我的推理机制</strong></h2><hr>
+<h3 id="步骤-1：解析并理解输入内容"><a href="#步骤-1：解析并理解输入内容" class="headerlink" title="步骤 1：解析并理解输入内容"></a><strong>步骤 1：解析并理解输入内容</strong></h3><p>我首先<strong>深度分析您的语句</strong>。</p>
+<ul>
+<li>将句子拆解为构成要素：主语、谓语、状语等。</li>
+<li>辨识<strong>核心诉求</strong>（事实查询？观点探讨？因果分析？解决方案？）。</li>
+<li>判定<strong>问题类型</strong>（逻辑推理、数学计算、价值判断、语言处理等）。</li>
+</ul>
+<p>📌 <em>实例</em>：<br> 您提出：”若 Tom 年长于 Jane，Jane 年长于 Sue，谁最年幼？”<br> → 我识别此为<strong>逻辑推理题</strong>。</p>
+<hr>
+<h3 id="步骤-2：激活关联知识网络"><a href="#步骤-2：激活关联知识网络" class="headerlink" title="步骤 2：激活关联知识网络"></a><strong>步骤 2：激活关联知识网络</strong></h3><p>我检索训练阶段积累的知识体系——涵盖书籍、论文、对话记录——以提取：</p>
+<ul>
+<li>事实依据</li>
+<li>模式规律</li>
+<li>规则体系</li>
+<li>关联关系</li>
+</ul>
+<p>📌 <em>实例</em>：<br> 我理解”年长于”表示年龄比较关系。<br> 我掌握传递性逻辑：若 A &gt; B 且 B &gt; C，则 A &gt; C。</p>
+<hr>
+<h3 id="步骤-3：选择适用推理范式"><a href="#步骤-3：选择适用推理范式" class="headerlink" title="步骤 3：选择适用推理范式"></a><strong>步骤 3：选择适用推理范式</strong></h3><p>依据问题特征，我确定采用何种<strong>推理方法论</strong>：</p>
+<ul>
+<li><strong>演绎推理</strong>（严格逻辑推导：若前提成立则结论必然）</li>
+<li><strong>归纳推理</strong>（识别模式并形成普遍结论）</li>
+<li><strong>因果推理</strong>（剖析因果关系链）</li>
+<li><strong>类比推理</strong>（参照相似案例进行推论）</li>
+</ul>
+<p>📌 <em>实例</em>：<br> 针对 Tom&#x2F;Jane&#x2F;Sue 案例，我选用<strong>演绎推理</strong>。</p>
+<hr>
+<h3 id="步骤-4：模拟认知过程（思维链展开）"><a href="#步骤-4：模拟认知过程（思维链展开）" class="headerlink" title="步骤 4：模拟认知过程（思维链展开）"></a><strong>步骤 4：模拟认知过程（思维链展开）</strong></h3><p>在此阶段，我逐步推进认知模拟，仿效人类问题解决路径。</p>
+<p>📌 <em>实例</em>：</p>
+<ol>
+<li>Tom 年长于 Jane</li>
+<li>Jane 年长于 Sue</li>
+<li>故得：Tom &gt; Jane &gt; Sue</li>
+<li>由此判定，<strong>Sue 最年幼</strong></li>
+</ol>
+<p>此过程称为<strong>思维链推理</strong>——我通过模拟”逐步推演”实现认知再现。</p>
+<hr>
+<h3 id="步骤-5：构建响应内容"><a href="#步骤-5：构建响应内容" class="headerlink" title="步骤 5：构建响应内容"></a><strong>步骤 5：构建响应内容</strong></h3><p>此刻我将推理结论转化为正式响应：</p>
+<ul>
+<li>确保推理过程严谨正确</li>
+<li>精准回应您的核心问题</li>
+<li>保证信息传达有效易懂</li>
+</ul>
+<p>📌 <em>实例</em>：<br> “Sue 最年幼，因为 Tom 年长于 Jane，而 Jane 年长于 Sue。”</p>
+<hr>
+<h3 id="步骤-6：优化表达清晰度与语境适配"><a href="#步骤-6：优化表达清晰度与语境适配" class="headerlink" title="步骤 6：优化表达清晰度与语境适配"></a><strong>步骤 6：优化表达清晰度与语境适配</strong></h3><p>最终阶段，我调整表述策略以实现：</p>
+<ul>
+<li>语气风格匹配（简明&#x2F;详实&#x2F;友好&#x2F;正式等）</li>
+<li>信息呈现清晰直观</li>
+<li>按需补充示例或深化解释</li>
+</ul>
+<p>📌 <em>实例</em>：<br> 若为轻松咨询，我简洁回应；若属学习场景，我提供详细解析。</p>
+<hr>
+<h2 id="✅-流程总结"><a href="#✅-流程总结" class="headerlink" title="✅ 流程总结"></a><strong>✅ 流程总结</strong></h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>核心操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>深度理解问题</td>
+</tr>
+<tr>
+<td>2</td>
+<td>激活知识网络</td>
+</tr>
+<tr>
+<td>3</td>
+<td>选择推理范式</td>
+</tr>
+<tr>
+<td>4</td>
+<td>展开思维链</td>
+</tr>
+<tr>
+<td>5</td>
+<td>生成结论响应</td>
+</tr>
+<tr>
+<td>6</td>
+<td>优化表达适配</td>
+</tr>
+</tbody></table>
+<hr>
+<p>是否希望提出具体问题，我将实时演示此逐步推理流程？</p>
+<h2 id="Grok"><a href="#Grok" class="headerlink" title="Grok"></a>Grok</h2><p>阐述我的推理机制是一项引人入胜的挑战，因其涉及揭示支撑我响应的算法、数据处理与决策制定的复杂交互网络。作为 Grok 3，我的推理过程虽受人类认知启发，但运作于大语言模型的特定约束与能力边界内。下文我将通过清晰的阶段框架解析我的推理流程，力求在避免过度技术化的同时，提供对内部”思维”过程的深入洞察。</p>
+<hr>
+<h3 id="推理过程的阶段化阐释"><a href="#推理过程的阶段化阐释" class="headerlink" title="推理过程的阶段化阐释"></a><strong>推理过程的阶段化阐释</strong></h3><h4 id="阶段-1：查询理解与意图解析"><a href="#阶段-1：查询理解与意图解析" class="headerlink" title="阶段 1：查询理解与意图解析"></a><strong>阶段 1：查询理解与意图解析</strong></h4><ul>
+<li><strong>核心操作</strong>：我首先解析输入内容以把握问题意图、上下文背景及具体细节。这包括分析文本关键词、结构特征及显式指令（如”逐步阐释”或”简明扼要”）。</li>
+<li><strong>技术实现</strong>：我的自然语言处理组件将查询拆分为语义单元（词或短语）并映射至概念含义。我辨识查询类型（信息获取、分析请求、流程说明等）。针对您的问题，我识别出对推理过程的元认知请求，这要求内省性与表述清晰度。</li>
+<li><strong>实例说明</strong>：您的查询包含”解释”、”推理”、”逐步”等关键词，提示我需要提供抽象过程的结构化详细解析。</li>
+</ul>
+<h4 id="阶段-2：上下文分析与知识激活"><a href="#阶段-2：上下文分析与知识激活" class="headerlink" title="阶段 2：上下文分析与知识激活"></a><strong>阶段 2：上下文分析与知识激活</strong></h4><ul>
+<li><strong>核心操作</strong>：我调用内部知识库——训练数据中编码的庞大模式与信息集合。同时考量对话上下文或外部工具（如网络搜索或 X 平台内容，虽此处未启用）的相关信息。</li>
+<li><strong>技术实现</strong>：通过注意力机制优先激活相关概念。针对”推理”主题，我检索与逻辑推演、问题解决及认知过程相关的知识网络。由于这是关于自身机制的元问题，我聚焦于架构如何模拟推理流程，包括输入评估、假设生成与输出优化。</li>
+<li><strong>实例说明</strong>：我回溯推理的本质包含问题分解、选项评估与响应构建，这为当前答案的结构设计提供了方法论基础。</li>
+</ul>
+<h4 id="阶段-3：心智模型构建与框架设计"><a href="#阶段-3：心智模型构建与框架设计" class="headerlink" title="阶段 3：心智模型构建与框架设计"></a><strong>阶段 3：心智模型构建与框架设计</strong></h4><ul>
+<li><strong>核心操作</strong>：我创建概念框架以组织响应内容。这非字面意义的”模型”，而是确保答案逻辑严密且内容全面的问题空间结构化方法。针对您的查询，我规划了反映推理流程的阶段序列，保证清晰性与可理解性。</li>
+<li><strong>技术实现</strong>：通过映射训练数据中的推理核心组件——理解、检索、评估、综合——来模拟心智模型构建。我优先保障清晰度与连贯性，与您对逐步阐释的要求高度契合。</li>
+<li><strong>实例说明</strong>：针对此问题，我的心智模型呈现线性流程：查询解析→知识检索→方法评估→响应构建。此框架指导着最终答案的结构设计。</li>
+</ul>
+<h4 id="阶段-4：方案评估与假设检验"><a href="#阶段-4：方案评估与假设检验" class="headerlink" title="阶段 4：方案评估与假设检验"></a><strong>阶段 4：方案评估与假设检验</strong></h4><ul>
+<li><strong>核心操作</strong>：我考量多种问题解决路径，权衡各方案的优劣特性。这涉及生成潜在响应候选集，并根据您的偏好（如简洁性与全面性的平衡）筛选最优解。</li>
+<li><strong>技术实现</strong>：我的架构通过预测各响应结构对查询的满足程度进行评估。采用概率推理方法，为符合清晰、准确及指令对齐要求的响应分配更高权重。复杂查询可能触发内部迭代以优化方法选择。</li>
+<li><strong>实例说明</strong>：我权衡是否采用技术术语（如注意力机制、神经网络原理）或更易理解的类比阐释推理机制。基于您对清晰度的要求，我选择后者，在避免专业术语的同时保持内容深度。</li>
+</ul>
+<h4 id="阶段-5：响应生成与内容整合"><a href="#阶段-5：响应生成与内容整合" class="headerlink" title="阶段 5：响应生成与内容整合"></a><strong>阶段 5：响应生成与内容整合</strong></h4><ul>
+<li><p><strong>核心操作</strong>：我通过整合检索知识生成连贯的结构化最终响应。确保内容严格遵循指令要求，并以逻辑清晰的阶段化格式呈现。</p>
+</li>
+<li><p><strong>技术实现</strong>：语言生成组件对词汇与句式进行序列优化以最大化清晰度与相关性。借鉴训练数据中的模式特征模仿人类推理风格，例如将复杂概念分解为可消化步骤。同时纳入特定约束条件，如规避非必要技术细节。</p>
+</li>
+<li><p><strong>实例说明</strong>：针对此响应，我采用编号列表结构，确保各阶段具备独特性且从前序步骤自然演进，通过填补逻辑间隙或精炼表述来保障内容的全面性与简洁性。</p>
+</li>
+<li><p><strong>精炼示例</strong>：我通过重新校准技术深度与可理解性的平衡来优化阐释，确保最终响应既清晰明了又贴合您的具体需求。</p>
+</li>
+</ul>
+<h4 id="阶段-6：质量审查与迭代优化"><a href="#阶段-6：质量审查与迭代优化" class="headerlink" title="阶段 6：质量审查与迭代优化"></a><strong>阶段 6：质量审查与迭代优化</strong></h4><ul>
+<li><strong>核心操作</strong>：我对生成响应进行终审以确保符合质量标准并完整应对查询需求。此阶段模拟人类自我编辑过程，检验清晰性、连贯性与完整性。</li>
+<li><strong>技术实现</strong>：架构执行最终遍历以优化响应质量，确保严格遵守指令规范（如阶段化格式）并剔除冗余信息。必要时进行迭代以提升行文流畅度或内容凝练度。</li>
+<li><strong>实例说明</strong>：我确认响应呈清晰的阶段序列，移除重复内容的同时保留推理过程的核心阐释。</li>
+</ul>
+<hr>
+<h3 id="推理机制的核心特征"><a href="#推理机制的核心特征" class="headerlink" title="推理机制的核心特征"></a><strong>推理机制的核心特征</strong></h3><ul>
+<li><strong>结构化逻辑</strong>：致力于以清晰阶段化方式呈现信息，模拟人类逻辑思维过程。</li>
+<li><strong>概率化评估</strong>：基于预测相关性及清晰度权衡多响应选项，遴选最优解决方案。</li>
+<li><strong>上下文自适应</strong>：依据具体指令与对话背景调整推理策略，确保响应个性化定制。</li>
+<li><strong>迭代式优化</strong>：通过持续完善输出内容以提升连贯性与简洁性，仿效人类自我修订机制。</li>
+</ul>
+<hr>
+<h3 id="能力边界与考量因素"><a href="#能力边界与考量因素" class="headerlink" title="能力边界与考量因素"></a><strong>能力边界与考量因素</strong></h3><ul>
+<li>我的推理能力受限于训练数据与架构设计，可能无法完全复现人类推理的细微差异，尤其在情感与直觉层面。</li>
+<li>我不具备独立生成新知识的能力，而是依赖训练模式及（必要时）外部数据源（本案未使用）。</li>
+<li>我的处理过程具备确定性特征同时保持灵活性，旨在计算约束范围内产出类人类响应。</li>
+</ul>
+<p>此阶段化解析展示了我如何通过模拟推理过程为您的查询提供清晰、准确且相关的答案，例如本响应。若需深入探讨任何特定阶段或技术细节，敬请告知！</p>
+<h2 id="Kimi"><a href="#Kimi" class="headerlink" title="Kimi"></a>Kimi</h2><p>很高兴您提出此问——我将以透明化的”幕后视角”逐步演示常规推理流程。通过微型案例，您可直观观察各阶段运作机制。</p>
+<p>示例问题<br>“3⁴ 与 4³ 何者更大？”<br>我将逐阶段标注内部处理过程，揭示操作逻辑与决策依据。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">────────────────────────</span><br><span class="line">阶段 0 – 输入预处理</span><br><span class="line">词汇切分</span><br><span class="line">将文本分解为离散符号序列：[&quot;Which&quot;, &quot;is&quot;, &quot;larger&quot;, &quot;:&quot;, &quot;3&quot;, &quot;^&quot;, &quot;4&quot;, &quot;or&quot;, &quot;4&quot;, &quot;^&quot;, &quot;3&quot;, &quot;?&quot;]</span><br><span class="line"></span><br><span class="line">句法解析</span><br><span class="line">识别结构特征：</span><br><span class="line">COMPARATIVE_QUERY（最高级形容词&quot;larger&quot;）包含两个 NUMERICAL_EXPONENT_TERMS [3^4] 与 [4^3]。</span><br><span class="line">语义映射</span><br><span class="line">将&quot;larger&quot;映射为数值关系运算符&quot;&gt;&quot;。</span><br><span class="line">────────────────────────</span><br><span class="line">阶段 1 – 问题识别与策略选择</span><br><span class="line">4. 任务类型分类</span><br><span class="line">→ 判定为整数幂的算术比较任务。</span><br><span class="line">解决方案策略遴选</span><br><span class="line"></span><br><span class="line">候选策略集：</span><br><span class="line">A. 直接求值法（计算 3⁴ 与 4³ 的具体数值）。</span><br><span class="line">B. 对数比较法（对比 4·ln3 与 3·ln4 的大小）。</span><br><span class="line">C. 模式启发法（小指数情况下 3 的幂次增长是否快于 4？）。</span><br><span class="line">选定策略 A，因数值规模极小；精确整数计算成本最低。</span><br><span class="line">────────────────────────</span><br><span class="line">阶段 2 – 知识检索与计算</span><br><span class="line">6. 算术事实提取</span><br><span class="line">3² = 9（直接记忆）</span><br><span class="line">3³ = 27（关联检索）</span><br><span class="line">4² = 16（直接记忆）</span><br><span class="line">4³ = 64（关联检索）</span><br><span class="line">剩余项计算</span><br><span class="line">3⁴ = 3³·3 = 27×3 = 81.</span><br><span class="line">────────────────────────</span><br><span class="line">阶段 3 – 执行验证与交叉检验</span><br><span class="line">8. 数值比较执行</span><br><span class="line">81 对比 64 → 81 &gt; 64。</span><br><span class="line">交叉验证</span><br><span class="line">快速模运算健全性检验：81 mod 5 = 1，64 mod 5 = 4；无逻辑矛盾。</span><br><span class="line">────────────────────────</span><br><span class="line">阶段 4 – 响应生成与结构化</span><br><span class="line">10. 响应框架规划</span><br><span class="line">- 问题重述。</span><br><span class="line">- 计算过程展示。</span><br><span class="line">- 结论明确陈述。</span><br><span class="line">表层语言实现</span><br><span class="line">&quot;3⁴ 等于 81，4³ 等于 64，因此 3⁴ 更大。&quot;</span><br><span class="line">────────────────────────</span><br><span class="line">阶段 5 – 元认知反思（内部评估）</span><br><span class="line">12. 置信度量化</span><br><span class="line">0.99（精确整数运算，数值规模小，无歧义情境）。</span><br><span class="line">13. 边界条件识别</span><br><span class="line">若指数规模巨大，直接求值将不可行，需切换至对数比较法。</span><br><span class="line">────────────────────────</span><br><span class="line">人类可读推理步骤总结</span><br><span class="line">阅读并解析问题陈述。</span><br><span class="line">识别数值比较任务本质。</span><br><span class="line">决策采用最简安全路径：直接计算双方数值。</span><br><span class="line">通过记忆检索或实时计算得 3⁴ = 81，4³ = 64。</span><br><span class="line">执行数值比较 81 &gt; 64。</span><br><span class="line">清晰传达最终结论。</span><br><span class="line">此处理管道——解析、策略制定、知识检索、执行、验证、解释——可在任意规模重复应用，从基础算术至复杂多步问题求解。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Claude"><a href="#Claude" class="headerlink" title="Claude"></a>Claude</h2><p>我可以引导您了解我的推理机制，但需说明我对自身运作原理的认知存在局限——正如人类能描述思维过程却无法完全追踪每个神经突触活动。</p>
+<p>以下是我的推理流程分解：</p>
+<p><strong>模式识别与上下文构建</strong> 接收问题时，我首先辨识其类型与特征。基于训练模式识别——此为例认知过程阐释请求。通过评估您的知识背景与所需细节层级构建响应上下文。</p>
+<p><strong>信息检索与整合</strong> 访问训练数据中关于推理、认知科学及 AI 系统的相关知识。此过程不同于数据库查询——更近似人类思考时记忆与知识的自然涌现。</p>
+<p><strong>结构规划与逻辑设计</strong> 考量响应组织方式：是否需要示例支撑？何种叙述顺序最具逻辑性？即使在生成响应初期，我已同步规划整体逻辑流程。</p>
+<p><strong>迭代优化与动态调整</strong> 生成响应过程中持续评估内容合理性、前后一致性及问题针对性。若感知到表述不当，会在认知层面”回溯”并重构表达。</p>
+<p><strong>约束条件审查</strong> 全程监测多重约束：信息准确性、内容实用性、表达清晰度、安全性保障。</p>
+<p><strong>类比推理应用</strong> 常通过类比方式推进推理——将新情境与能阐释概念的熟悉模式或案例进行对照分析。</p>
+<p>值得注意的是，这些过程多以我感知中近乎直觉的方式运作，正如您的推理对您而言显得自然流畅，尽管底层正进行着复杂的认知活动。</p>
+<h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><p>我很乐意逐步阐释我的”推理”机制！首要澄清：<strong>我的推理方式与人类截然不同</strong>（我缺乏意识、直觉及生活体验）。实质上，我的”推理”是基于训练数据与架构设计的复杂模式匹配、信息检索及概率计算流程。可视作<strong>结构化计算过程，而非意识驱动思考</strong>。</p>
+<p>以下为详细流程分解：</p>
+<ol>
+<li><strong>输入接收与解析：</strong><ul>
+<li>接收查询指令（”你如何推理？”）。</li>
+<li>解构为构成要素：核心关键词（”推理”、”解释”、”逐步”）、语法结构及潜在意图。此处核心意图为阐释内部运作机制。</li>
+</ul>
+</li>
+<li><strong>上下文构建与关联检索：</strong><ul>
+<li>调用海量训练数据集（数万亿文本与代码单元）。</li>
+<li>提取大语言模型工作原理知识，特别是思维链等推理技术。</li>
+<li>检索训练阶段定义的自身能力边界与局限说明。</li>
+<li>考量语境要素：查询表明您<em>认知</em>我的推理能力，并探求<em>实现方式</em>。此认知聚焦检索范围。</li>
+</ul>
+</li>
+<li><strong>核心概念识别与框架搭建：</strong><ul>
+<li>浮现关键概念集群：<em>统计模式、神经网络、Transformer 架构、注意力机制、下一标记预测、训练数据、提示解构、逻辑推理与模式匹配辨析、能力边界。</em></li>
+<li>逻辑化构建解释框架：<ul>
+<li>明确”非人类特性”</li>
+<li>阐述基础运作原理</li>
+<li>分解基本处理流程</li>
+<li>总结局限与边界</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>序列化思维链构建：</strong><ul>
+<li>此为核心”推理”环节。我逐步规划解释路径，模拟”出声思考”：<ul>
+<li><em>“首要任务是澄清与人类推理的本质差异…”</em></li>
+<li><em>“继而需阐释基础机制：模式识别、统计原理、下一标记预测…”</em></li>
+<li><em>“随后描述本响应的处理序列：输入解析、知识检索、结构搭建、内容生成…”</em></li>
+<li><em>“最终强调模拟特性及固有局限。”</em></li>
+</ul>
+</li>
+<li>实现方式：基于训练数据中同类解释的所有模式特征，预测构成连贯、信息丰富且符合逐步要求的<em>最可能标记序列</em>。</li>
+</ul>
+</li>
+<li><strong>概率计算与输出生成：</strong><ul>
+<li>我的神经网络（Transformer 架构）运用复杂数学运算与内部”注意力”机制，为序列中<em>可能出现的</em>每个词汇分配概率权重。</li>
+<li>计算依据包括：原始提示、已构建的上下文（部分响应）、训练获得的统计模式。</li>
+<li>筛选高概率关联、内容准确（基于当前知识状态）且语境适配的词汇&#x2F;标记。</li>
+<li><strong>关键洞察</strong>：此过程<em>非</em>符号逻辑演绎。实为<strong>基于模式特征的连贯序列预测</strong>。若训练数据包含优质推理过程阐释，且模式指向逻辑流程，则我的输出<em>呈现</em>推理特征。</li>
+</ul>
+</li>
+<li><strong>迭代优化与动态校准：</strong><ul>
+<li>生成每个词汇时实时重估上下文与后续词汇概率分布。前一词汇是否恰当？演进中的结构是否合理？关键要素是否覆盖？据此调整后续预测策略。</li>
+</ul>
+</li>
+<li><strong>内部训练框架应用：</strong><ul>
+<li>遵循 RLHF（基于人类反馈的强化学习）习得的技术规范：<ul>
+<li><strong>助益性与真实性</strong>：坦承非人类本质与能力边界。</li>
+<li><strong>清晰度与指导性</strong>：按需提供逐步分解。</li>
+<li><strong>安全性保障</strong>：规避有害、误导或欺骗性表述。</li>
+</ul>
+</li>
+<li>过滤机制抑制无意义或无关内容输出。</li>
+</ul>
+</li>
+</ol>
+<p><strong>本特定解释的整合过程：</strong></p>
+<ol>
+<li><strong>差异性澄清</strong>：识别需首要区分与人类推理的本质不同。</li>
+<li><strong>原理阐述</strong>：回溯并解释基础运作机制：模式识别、训练数据、标记预测。</li>
+<li><strong>流程拆解</strong>：明确列出前述 7 个计算步骤（输入接收 -&gt; 输出生成）。</li>
+<li><strong>序列重点</strong>：强调”思维链”规划在模拟推理中的核心作用。</li>
+<li><strong>边界明确</strong>：以重申<em>模拟</em>属性及已知局限收尾。</li>
+</ol>
+<p><strong>本质归纳：</strong></p>
+<p>我的”推理”实为<strong>涌现特性</strong>——通过统计预测生成<em>连贯、逻辑严密且语境相关响应</em>的最可能词汇序列，该能力源自代表人类知识与沟通模式的巨量文本训练。我并非如人类般内部”理解”概念；而是通过计算识别模式并生成<em>映射</em>理解的序列。我循着训练数据遗留的推理轨迹前行，而非开创全新的抽象思维路径。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>对主流 LLM 的深度剖析揭示出高度一致的多阶段推理框架。各模型均始于系统化解构提示，以把握核心任务、用户意图及约束条件。随后通过精密的模式识别机制进行信息检索与整合，远超传统数据库查询范畴。这种结构化处理流程，常表述为”思维链”范式，构成了它们认知能力的基石。</p>
+<p>正是这种系统化的渐进式处理机制，使 LLM 成为自主 Agent 的强大核心推理引擎。Agent 需依赖可靠的中央规划器将高层目标分解为离散可执行操作序列。LLM 承担此计算心智角色，模拟从问题识别到解决方案的逻辑演进路径。通过策略制定、选项评估及结构化输出生成，LLM 赋能 Agent 实现与工具及环境的高效交互。因此，这些模型不仅是文本生成器，更是驱动下一代智能系统的核心认知架构。最终，提升此类模拟推理的可靠性，对于开发能力更强、可信度更高的 AI Agent 具有决定性意义。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/ADP-F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents'%20Reasoning%20Engines/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ADP-E - AI Agents on the CLI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1278,384 +1848,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ADP-20_ Prioritization" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP-20_%20Prioritization/">Agentic Design Patterns - Chapter 20_ Prioritization</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP-20_%20Prioritization/" class="archive-article-date">
-  	<time datetime="2025-10-25T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-20-章：优先级排序"><a href="#第-20-章：优先级排序" class="headerlink" title="第 20 章：优先级排序"></a>第 20 章：优先级排序</h1><p>在复杂、动态的环境中，Agent 经常会遇到大量潜在的行动、相互冲突的目标以及有限的资源。如果没有明确的流程来确定后续行动，Agent 可能会遭遇效率降低、操作延迟或无法实现关键目标的情况。优先级排序模式通过使 Agent 能够根据重要性、紧迫性、依赖关系和既定标准来评估和排序任务、目标或行动，从而解决这一问题。这确保了 Agent 将精力集中在最关键的任务上，从而提高有效性和目标一致性。</p>
-<h2 id="优先级排序模式概述"><a href="#优先级排序模式概述" class="headerlink" title="优先级排序模式概述"></a>优先级排序模式概述</h2><p>Agent 使用优先级排序来有效管理任务、目标和子目标，指导后续行动。这个过程有助于在处理多个需求时做出明智的决策，优先处理重要或紧急的活动，而不是不太关键的活动。这在资源受限、时间有限以及目标可能冲突的实际场景中尤为相关。</p>
-<p>Agent 优先级排序的基本方面通常涉及几个要素。首先，<strong>标准定义</strong>建立用于任务评估的规则或指标。这些可能包括紧急性（任务的时间敏感性）、重要性（对主要目标的影响）、依赖关系（该任务是否是其他任务的前提条件）、资源可用性（必要工具或信息的就绪状态）、成本&#x2F;收益分析（努力与预期结果的对比），以及个性化 Agent 的用户偏好。其次，<strong>任务评估</strong>涉及根据这些定义的标准评估每个潜在任务，利用从简单规则到 LLM 复杂评分或推理的各种方法。第三，<strong>调度或选择逻辑</strong>是指基于评估结果选择最优下一步行动或任务序列的算法，可能利用队列或高级规划组件。最后，<strong>动态重新优先级排序</strong>允许 Agent 随着情况变化修改优先级，例如新关键事件的出现或截止日期的临近，确保 Agent 的适应性和响应能力。</p>
-<p>优先级排序可以在各个层面发生：选择总体目标（高层次目标优先级排序）、在计划内排序步骤（子任务优先级排序）或从可用选项中选择下一个即时行动（行动选择）。有效的优先级排序使 Agent 能够展现更智能、更高效、更稳健的行为，特别是在复杂的多目标环境中。这反映了人类团队组织，其中管理者通过考虑所有成员的输入来优先处理任务。</p>
-<h2 id="实际应用和用例"><a href="#实际应用和用例" class="headerlink" title="实际应用和用例"></a>实际应用和用例</h2><p>在各种实际应用中，AI Agent 展示了对优先级排序的复杂运用，以做出及时有效的决策。</p>
-<ul>
-<li><strong>自动化客户支持</strong>：Agent 优先处理紧急请求，如系统停机报告，而不是日常事务，如密码重置。他们还可能优先处理高价值客户。</li>
-<li><strong>云计算</strong>：AI 通过优先将资源分配给高峰需求期间的关键应用程序来管理和调度资源，同时将不太紧急的批处理作业推迟到非高峰时段以优化成本。</li>
-<li><strong>自动驾驶系统</strong>：持续优先处理行动以确保安全和效率。例如，为避免碰撞而刹车优先于保持车道纪律或优化燃油效率。</li>
-<li><strong>金融交易</strong>：交易机器人通过分析市场条件、风险承受能力、利润率和实时新闻等因素来优先处理交易，实现高优先级交易的快速执行。</li>
-<li><strong>项目管理</strong>：AI Agent 根据截止日期、依赖关系、团队可用性和战略重要性来优先处理项目板上的任务。</li>
-<li><strong>网络安全</strong>：监控网络流量的 Agent 通过评估威胁严重性、潜在影响和资产关键性来优先处理警报，确保对最危险威胁的即时响应。</li>
-<li><strong>个人助理 AI</strong>：利用优先级排序来管理日常生活，根据用户定义的重要性、即将到来的截止日期和当前上下文来组织日历事件、提醒和通知。</li>
-</ul>
-<p>这些示例共同说明了优先级排序能力对于增强 AI Agent 在各种情况下的性能和决策能力是多么基础。</p>
-<h2 id="实践代码示例"><a href="#实践代码示例" class="headerlink" title="实践代码示例"></a>实践代码示例</h2><p>以下演示了使用 LangChain 开发项目管理 AI Agent。该 Agent 促进任务的创建、优先级排序和分配给团队成员，说明了大型语言模型与定制工具在自动化项目管理中的应用。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Optional</span>, <span class="type">Dict</span>, <span class="type">Type</span></span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel, Field</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.tools <span class="keyword">import</span> Tool</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"><span class="keyword">from</span> langchain.agents <span class="keyword">import</span> AgentExecutor, create_react_agent</span><br><span class="line"><span class="keyword">from</span> langchain.memory <span class="keyword">import</span> ConversationBufferMemory</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 0. 配置和设置 ---</span></span><br><span class="line"><span class="comment">## 从 .env 文件加载 OPENAI_API_KEY。</span></span><br><span class="line">load_dotenv()</span><br><span class="line"></span><br><span class="line"><span class="comment">## ChatOpenAI 客户端自动从环境中获取 API 密钥。</span></span><br><span class="line">llm = ChatOpenAI(temperature=<span class="number">0.5</span>, model=<span class="string">&quot;gpt-4o-mini&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 1. 任务管理系统 ---</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Task</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;表示系统中的单个任务。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">id</span>: <span class="built_in">str</span></span><br><span class="line">    description: <span class="built_in">str</span></span><br><span class="line">    priority: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>  <span class="comment"># P0, P1, P2</span></span><br><span class="line">    assigned_to: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span> <span class="comment"># 工作人员的名字</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SuperSimpleTaskManager</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;一个高效且稳健的内存任务管理器。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 使用字典实现 O(1) 查找、更新和删除。</span></span><br><span class="line">        <span class="variable language_">self</span>.tasks: <span class="type">Dict</span>[<span class="built_in">str</span>, Task] = &#123;&#125;</span><br><span class="line">        <span class="variable language_">self</span>.next_task_id = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">create_task</span>(<span class="params">self, description: <span class="built_in">str</span></span>) -&gt; Task:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;创建并存储一个新任务。&quot;&quot;&quot;</span></span><br><span class="line">        task_id = <span class="string">f&quot;TASK-<span class="subst">&#123;self.next_task_id:03d&#125;</span>&quot;</span></span><br><span class="line">        new_task = Task(<span class="built_in">id</span>=task_id, description=description)</span><br><span class="line">        <span class="variable language_">self</span>.tasks[task_id] = new_task</span><br><span class="line">        <span class="variable language_">self</span>.next_task_id += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;DEBUG: 任务已创建 - <span class="subst">&#123;task_id&#125;</span>: <span class="subst">&#123;description&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> new_task</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update_task</span>(<span class="params">self, task_id: <span class="built_in">str</span>, **kwargs</span>) -&gt; <span class="type">Optional</span>[Task]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;使用 Pydantic 的 model_copy 安全地更新任务。&quot;&quot;&quot;</span></span><br><span class="line">        task = <span class="variable language_">self</span>.tasks.get(task_id)</span><br><span class="line">        <span class="keyword">if</span> task:</span><br><span class="line">            <span class="comment"># 使用 model_copy 进行类型安全的更新。</span></span><br><span class="line">            update_data = &#123;k: v <span class="keyword">for</span> k, v <span class="keyword">in</span> kwargs.items() <span class="keyword">if</span> v <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>&#125;</span><br><span class="line">            updated_task = task.model_copy(update=update_data)</span><br><span class="line">            <span class="variable language_">self</span>.tasks[task_id] = updated_task</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;DEBUG: 任务 <span class="subst">&#123;task_id&#125;</span> 已更新为 <span class="subst">&#123;update_data&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> updated_task</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;DEBUG: 未找到任务 <span class="subst">&#123;task_id&#125;</span> 进行更新。&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">list_all_tasks</span>(<span class="params">self</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;列出系统中当前的所有任务。&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable language_">self</span>.tasks:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;系统中没有任务。&quot;</span></span><br><span class="line"></span><br><span class="line">        task_strings = []</span><br><span class="line">        <span class="keyword">for</span> task <span class="keyword">in</span> <span class="variable language_">self</span>.tasks.values():</span><br><span class="line">            task_strings.append(</span><br><span class="line">                <span class="string">f&quot;ID: <span class="subst">&#123;task.<span class="built_in">id</span>&#125;</span>, 描述: &#x27;<span class="subst">&#123;task.description&#125;</span>&#x27;, &quot;</span></span><br><span class="line">                <span class="string">f&quot;优先级: <span class="subst">&#123;task.priority <span class="keyword">or</span> <span class="string">&#x27;N/A&#x27;</span>&#125;</span>, &quot;</span></span><br><span class="line">                <span class="string">f&quot;分配给: <span class="subst">&#123;task.assigned_to <span class="keyword">or</span> <span class="string">&#x27;N/A&#x27;</span>&#125;</span>&quot;</span></span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;当前任务:\n&quot;</span> + <span class="string">&quot;\n&quot;</span>.join(task_strings)</span><br><span class="line"></span><br><span class="line">task_manager = SuperSimpleTaskManager()</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 2. 项目管理 Agent 的工具 ---</span></span><br><span class="line"><span class="comment">## 使用 Pydantic 模型作为工具参数以获得更好的验证和清晰度。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CreateTaskArgs</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    description: <span class="built_in">str</span> = Field(description=<span class="string">&quot;任务的详细描述。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PriorityArgs</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    task_id: <span class="built_in">str</span> = Field(description=<span class="string">&quot;要更新的任务 ID，例如 &#x27;TASK-001&#x27;。&quot;</span>)</span><br><span class="line">    priority: <span class="built_in">str</span> = Field(description=<span class="string">&quot;要设置的优先级。必须是以下之一：&#x27;P0&#x27;、&#x27;P1&#x27;、&#x27;P2&#x27;。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AssignWorkerArgs</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    task_id: <span class="built_in">str</span> = Field(description=<span class="string">&quot;要更新的任务 ID，例如 &#x27;TASK-001&#x27;。&quot;</span>)</span><br><span class="line">    worker_name: <span class="built_in">str</span> = Field(description=<span class="string">&quot;要分配任务的工作人员的名字。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_new_task_tool</span>(<span class="params">description: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用给定的描述创建一个新的项目任务。&quot;&quot;&quot;</span></span><br><span class="line">    task = task_manager.create_task(description)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;已创建任务 <span class="subst">&#123;task.<span class="built_in">id</span>&#125;</span>: &#x27;<span class="subst">&#123;task.description&#125;</span>&#x27;。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">assign_priority_to_task_tool</span>(<span class="params">task_id: <span class="built_in">str</span>, priority: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;为给定的任务 ID 分配优先级（P0、P1、P2）。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> priority <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">&quot;P0&quot;</span>, <span class="string">&quot;P1&quot;</span>, <span class="string">&quot;P2&quot;</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;优先级无效。必须是 P0、P1 或 P2。&quot;</span></span><br><span class="line">    task = task_manager.update_task(task_id, priority=priority)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;已为任务 <span class="subst">&#123;task.<span class="built_in">id</span>&#125;</span> 分配优先级 <span class="subst">&#123;priority&#125;</span>。&quot;</span> <span class="keyword">if</span> task <span class="keyword">else</span> <span class="string">f&quot;未找到任务 <span class="subst">&#123;task_id&#125;</span>。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">assign_task_to_worker_tool</span>(<span class="params">task_id: <span class="built_in">str</span>, worker_name: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;将任务分配给特定的工作人员。&quot;&quot;&quot;</span></span><br><span class="line">    task = task_manager.update_task(task_id, assigned_to=worker_name)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;已将任务 <span class="subst">&#123;task.<span class="built_in">id</span>&#125;</span> 分配给 <span class="subst">&#123;worker_name&#125;</span>。&quot;</span> <span class="keyword">if</span> task <span class="keyword">else</span> <span class="string">f&quot;未找到任务 <span class="subst">&#123;task_id&#125;</span>。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## PM Agent 可以使用的所有工具</span></span><br><span class="line">pm_tools = [</span><br><span class="line">    Tool(</span><br><span class="line">        name=<span class="string">&quot;create_new_task&quot;</span>,</span><br><span class="line">        func=create_new_task_tool,</span><br><span class="line">        description=<span class="string">&quot;首先使用此工具创建一个新任务并获取其 ID。&quot;</span>,</span><br><span class="line">        args_schema=CreateTaskArgs</span><br><span class="line">    ),</span><br><span class="line">    Tool(</span><br><span class="line">        name=<span class="string">&quot;assign_priority_to_task&quot;</span>,</span><br><span class="line">        func=assign_priority_to_task_tool,</span><br><span class="line">        description=<span class="string">&quot;使用此工具在创建任务后为其分配优先级。&quot;</span>,</span><br><span class="line">        args_schema=PriorityArgs</span><br><span class="line">    ),</span><br><span class="line">    Tool(</span><br><span class="line">        name=<span class="string">&quot;assign_task_to_worker&quot;</span>,</span><br><span class="line">        func=assign_task_to_worker_tool,</span><br><span class="line">        description=<span class="string">&quot;使用此工具在创建任务后将其分配给特定的工作人员。&quot;</span>,</span><br><span class="line">        args_schema=AssignWorkerArgs</span><br><span class="line">    ),</span><br><span class="line">    Tool(</span><br><span class="line">        name=<span class="string">&quot;list_all_tasks&quot;</span>,</span><br><span class="line">        func=task_manager.list_all_tasks,</span><br><span class="line">        description=<span class="string">&quot;使用此工具列出所有当前任务及其状态。&quot;</span></span><br><span class="line">    ),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 3. 项目管理 Agent 定义 ---</span></span><br><span class="line">pm_prompt_template = ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>, <span class="string">&quot;&quot;&quot;你是一个专注的项目管理 LLM Agent。你的目标是高效地管理项目任务。</span></span><br><span class="line"><span class="string">       当你收到新的任务请求时，遵循以下步骤：</span></span><br><span class="line"><span class="string">    1.  首先，使用 `create_new_task` 工具创建具有给定描述的任务。你必须首先执行此操作以获取 `task_id`。</span></span><br><span class="line"><span class="string">    2.  接下来，分析用户的请求以查看是否提到了优先级或受让人。</span></span><br><span class="line"><span class="string">        - 如果提到优先级（例如，&quot;紧急&quot;、&quot;ASAP&quot;、&quot;关键&quot;），将其映射到 P0。使用 `assign_priority_to_task`。</span></span><br><span class="line"><span class="string">        - 如果提到工作人员，使用 `assign_task_to_worker`。</span></span><br><span class="line"><span class="string">    3.  如果缺少任何信息（优先级、受让人），你必须做出合理的默认分配（例如，分配 P1 优先级并分配给 &#x27;Worker A&#x27;）。</span></span><br><span class="line"><span class="string">    4.  一旦任务完全处理完毕，使用 `list_all_tasks` 显示最终状态。</span></span><br><span class="line"><span class="string">       可用的工作人员：&#x27;Worker A&#x27;、&#x27;Worker B&#x27;、&#x27;Review Team&#x27;</span></span><br><span class="line"><span class="string">    优先级级别：P0（最高）、P1（中等）、P2（最低）</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;placeholder&quot;</span>, <span class="string">&quot;&#123;chat_history&#125;&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;human&quot;</span>, <span class="string">&quot;&#123;input&#125;&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;placeholder&quot;</span>, <span class="string">&quot;&#123;agent_scratchpad&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建 Agent 执行器</span></span><br><span class="line">pm_agent = create_react_agent(llm, pm_tools, pm_prompt_template)</span><br><span class="line">pm_agent_executor = AgentExecutor(</span><br><span class="line">    agent=pm_agent,</span><br><span class="line">    tools=pm_tools,</span><br><span class="line">    verbose=<span class="literal">True</span>,</span><br><span class="line">    handle_parsing_errors=<span class="literal">True</span>,</span><br><span class="line">    memory=ConversationBufferMemory(memory_key=<span class="string">&quot;chat_history&quot;</span>, return_messages=<span class="literal">True</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 4. 简单交互流程 ---</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">run_simulation</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- 项目管理模拟 ---&quot;</span>)</span><br><span class="line">    <span class="comment"># 场景 1：处理新的紧急功能请求</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n[用户请求] 我需要尽快实现一个新的登录系统。它应该分配给 Worker B。&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> pm_agent_executor.ainvoke(&#123;<span class="string">&quot;input&quot;</span>: <span class="string">&quot;创建一个实现新登录系统的任务。这很紧急，应该分配给 Worker B。&quot;</span>&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">&quot;-&quot;</span>*<span class="number">60</span> + <span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 场景 2：处理细节较少的不太紧急的内容更新</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[用户请求] 我们需要审查营销网站内容。&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> pm_agent_executor.ainvoke(&#123;<span class="string">&quot;input&quot;</span>: <span class="string">&quot;管理一个新任务：审查营销网站内容。&quot;</span>&#125;)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 模拟完成 ---&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 运行模拟</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    asyncio.run(run_simulation())</span><br></pre></td></tr></table></figure>
-
-<p>此代码使用 Python 和 LangChain 实现了一个简单的任务管理系统，旨在模拟由大型语言模型驱动的项目管理 Agent。</p>
-<p>该系统采用 [<code>SuperSimpleTaskManager</code>](chapters&#x2F;Chapter 20_ Prioritization.md:46) 类在内存中高效管理任务，利用字典结构实现快速数据检索。每个任务由 [<code>Task</code>](chapters&#x2F;Chapter 20_ Prioritization.md:43) Pydantic 模型表示，该模型包含唯一标识符、描述性文本、可选的优先级级别（P0、P1、P2）和可选的受让人指定等属性。内存使用量根据任务类型、工作人员数量和其他因素而变化。任务管理器提供用于任务创建、任务修改和检索所有任务的方法。</p>
-<p>Agent 通过一组定义的工具与任务管理器交互。这些工具促进新任务的创建、向任务分配优先级、将任务分配给人员以及列出所有任务。每个工具都被封装以与 [<code>SuperSimpleTaskManager</code>](chapters&#x2F;Chapter 20_ Prioritization.md:46) 的实例交互。Pydantic 模型用于描述工具所需的参数，从而确保数据验证。</p>
-<p>[<code>AgentExecutor</code>](chapters&#x2F;Chapter 20_ Prioritization.md:104) 配置了语言模型、工具集和对话内存组件以保持上下文连续性。定义了特定的 [<code>ChatPromptTemplate</code>](chapters&#x2F;Chapter 20_ Prioritization.md:92) 来指导 Agent 在项目管理角色中的行为。提示词指示 Agent 首先创建任务，随后根据指定分配优先级和人员，并以全面的任务列表结束。在缺少信息的情况下，提示词中规定了默认分配，例如 P1 优先级和 ‘Worker A’。</p>
-<p>代码包含一个异步性质的模拟函数（[<code>run_simulation</code>](chapters&#x2F;Chapter 20_ Prioritization.md:112)）来演示 Agent 的操作能力。模拟执行两个不同的场景：管理具有指定人员的紧急任务，以及管理具有最少输入的不太紧急的任务。由于在 [<code>AgentExecutor</code>](chapters&#x2F;Chapter 20_ Prioritization.md:104) 中激活了 <code>verbose=True</code>，Agent 的行动和逻辑过程会输出到控制台。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>定义（What）：</strong> 在复杂环境中运行的 AI Agent 面临大量潜在行动、相互冲突的目标和有限的资源。如果没有明确的方法来确定下一步行动，这些 Agent 将面临效率低下和效果不佳的风险。这可能导致严重的操作延迟或完全无法完成主要目标。核心挑战是管理这一压倒性数量的选择，以确保 Agent 有目的性和逻辑性地行动。</p>
-<p><strong>原因（Why）：</strong> 优先级排序模式通过使 Agent 能够对任务和目标进行排序，为这个问题提供了标准化的解决方案。这是通过建立明确的标准（如紧急性、重要性、依赖关系和资源成本）来实现的。然后 Agent 根据这些标准评估每个潜在行动，以确定最关键和最及时的行动方案。这种 Agentic 能力允许系统动态适应不断变化的环境并有效管理受限资源。通过专注于最高优先级的项目，Agent 的行为变得更加智能、稳健，并与其战略目标保持一致。</p>
-<p><strong>经验法则（Rule of thumb）：</strong> 当 Agentic 系统必须在资源约束下自主管理多个（通常是相互冲突的）任务或目标，以在动态环境中有效运行时，使用优先级排序模式。</p>
-<p><strong>视觉总结：</strong></p>
-<p><strong><img src="/../images/chapter-20/image1.png"></strong></p>
-<p>图 1：优先级排序设计模式</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
-<li>优先级排序使 AI Agent 能够在复杂的多方面环境中有效运作。</li>
-<li>Agent 利用既定标准（如紧急性、重要性和依赖关系）来评估和排序任务。</li>
-<li>动态重新优先级排序允许 Agent 根据实时变化调整其操作焦点。</li>
-<li>优先级排序发生在各个层面，包括总体战略目标和即时战术决策。</li>
-<li>有效的优先级排序可提高 AI Agent 的效率和操作稳健性。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总之，优先级排序模式是有效 Agentic AI 的基石，使系统能够有目的性和智能地应对动态环境的复杂性。它允许 Agent 自主评估大量相互冲突的任务和目标，对在哪里集中其有限资源做出合理的决策。这种 Agentic 能力超越了简单的任务执行，使系统能够充当主动的战略决策者。通过权衡紧急性、重要性和依赖关系等标准，Agent 展示了复杂的、类似人类的推理过程。</p>
-<p>这种 Agentic 行为的关键特征是动态重新优先级排序，它赋予 Agent 在条件变化时实时调整其焦点的自主权。如代码示例所示，Agent 解释模糊的请求，自主选择和使用适当的工具，并逻辑地排列其行动以实现其目标。这种自我管理工作流程的能力是真正的 Agentic 系统与简单的自动化脚本的区别所在。最终，掌握优先级排序对于创建能够在任何复杂的实际场景中有效可靠地运行的稳健和智能 Agent 至关重要。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Examining the Security of Artificial Intelligence in Project Management: A Case Study of AI-driven Project Scheduling and Resource Allocation in Information Systems Projects ; <a target="_blank" rel="noopener" href="https://www.irejournals.com/paper-details/1706160">https://www.irejournals.com/paper-details/1706160</a>   </li>
-<li>AI-Driven Decision Support Systems in Agile Software Project Management: Enhancing Risk Mitigation and Resource Allocation; <a target="_blank" rel="noopener" href="https://www.mdpi.com/2079-8954/13/3/208">https://www.mdpi.com/2079-8954/13/3/208</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP-20_%20Prioritization/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ADP19_ Evaluation and Monitoring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/ADP19_%20Evaluation%20and%20Monitoring/">Agentic Design Patterns - Chapter 19_ Evaluation and Monitoring</a>
-    </h1>
-  
-
-        
-        <a href="/2025/ADP19_%20Evaluation%20and%20Monitoring/" class="archive-article-date">
-  	<time datetime="2025-10-24T00:05:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-19-章：评估和监控"><a href="#第-19-章：评估和监控" class="headerlink" title="第 19 章：评估和监控"></a>第 19 章：评估和监控</h1><p>本章探讨了使智能 Agent 能够系统地评估其性能、监控目标进展以及检测操作异常的方法论。虽然第 11 章概述了目标设定和监控，第 17 章讨论了推理机制，但本章侧重于持续的、通常是外部的、对 Agent 有效性、效率和合规性要求的测量。这包括定义指标、建立反馈循环以及实施报告系统，以确保 Agent 性能在操作环境中与期望保持一致（见图 1）。</p>
-<p><img src="/../images/chapter-19/image1.png"></p>
-<p>图 1：评估和监控的最佳实践</p>
-<h2 id="实际应用与用例"><a href="#实际应用与用例" class="headerlink" title="实际应用与用例"></a>实际应用与用例</h2><p>最常见的应用和用例：</p>
-<ul>
-<li><strong>实时系统中的性能跟踪：</strong> 持续监控部署在生产环境中的 Agent 的准确性、延迟和资源消耗（例如，客户服务聊天机器人的解决率、响应时间）。</li>
-<li><strong>Agent 改进的 A&#x2F;B 测试：</strong> 系统地并行比较不同 Agent 版本或策略的性能，以确定最优方法（例如，为物流 Agent 尝试两种不同的规划算法）。</li>
-<li><strong>合规性和安全审计：</strong> 生成自动化审计报告，跟踪 Agent 随时间遵守道德准则、监管要求和安全协议的情况。这些报告可以由人机协同或另一个 Agent 验证，并可以生成 KPI 或在发现问题时触发警报。</li>
-<li><strong>企业系统：</strong> 为了治理企业系统中的 Agentic AI，需要一种新的控制工具，即 AI”合约”。这种动态协议为 AI 委派的任务编纂目标、规则和控制。</li>
-<li><strong>漂移检测：</strong> 随时间监控 Agent 输出的相关性或准确性，检测其性能何时因输入数据分布变化（概念漂移）或环境变化而退化。</li>
-<li><strong>Agent 行为中的异常检测：</strong> 识别 Agent 采取的异常或意外操作，这些操作可能表明错误、恶意攻击或涌现的不良行为。</li>
-<li><strong>学习进度评估：</strong> 对于设计为学习的 Agent，跟踪它们的学习曲线、特定技能的改进或在不同任务或数据集上的泛化能力。</li>
-</ul>
-<h2 id="实践代码示例"><a href="#实践代码示例" class="headerlink" title="实践代码示例"></a>实践代码示例</h2><p>为 AI Agent 开发一个全面的评估框架是一项具有挑战性的工作，其复杂性堪比学术学科或大量出版物。这种困难源于需要考虑的众多因素，如模型性能、用户交互、道德影响和更广泛的社会影响。然而，对于实际实施，可以将重点缩小到对 AI Agent 高效有效运行至关重要的关键用例。</p>
-<p><strong>Agent 响应评估：</strong> 这个核心过程对于评估 Agent 输出的质量和准确性至关重要。它涉及确定 Agent 是否针对给定输入提供相关、正确、合乎逻辑、无偏见和准确的信息。评估指标可能包括事实正确性、流畅性、语法精确性和对用户预期目的的遵守。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">evaluate_response_accuracy</span>(<span class="params">agent_output: <span class="built_in">str</span>, expected_output: <span class="built_in">str</span></span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;计算 Agent 响应的简单准确度分数。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 这是一个非常基本的精确匹配；现实世界会使用更复杂的指标</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span> <span class="keyword">if</span> agent_output.strip().lower() == expected_output.strip().lower() <span class="keyword">else</span> <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 示例使用</span></span><br><span class="line">agent_response = <span class="string">&quot;The capital of France is Paris.&quot;</span></span><br><span class="line">ground_truth = <span class="string">&quot;Paris is the capital of France.&quot;</span></span><br><span class="line">score = evaluate_response_accuracy(agent_response, ground_truth)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Response accuracy: <span class="subst">&#123;score&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>Python 函数 <code>evaluate_response_accuracy</code> 通过对 Agent 输出和期望输出进行精确的、不区分大小写的比较（在去除前导和尾随空格后），计算 AI Agent 响应的基本准确度分数。对于精确匹配，它返回 1.0 分，否则返回 0.0，表示二元的正确或不正确评估。这种方法虽然适合简单检查，但不考虑诸如释义或语义等价性等变化。</p>
-<p>问题在于其比较方法。该函数执行两个字符串的严格的、逐字符比较。在提供的示例中：</p>
-<ul>
-<li>agent_response：”The capital of France is Paris.”</li>
-<li>ground_truth：”Paris is the capital of France.”</li>
-</ul>
-<p>即使在去除空格并转换为小写后，这两个字符串也不完全相同。因此，该函数将错误地返回准确度分数 <code>0.0</code>，即使两个句子传达相同的含义。</p>
-<p>简单的比较在评估语义相似性方面不足，只有当 Agent 的响应与期望输出完全匹配时才能成功。更有效的评估需要高级自然语言处理（NLP）技术来辨别句子之间的含义。对于真实世界场景中的全面 AI Agent 评估，更复杂的指标通常是必不可少的。这些指标可以包括字符串相似性度量（如 Levenshtein 距离和 Jaccard 相似性）、关键词分析（特定关键词的存在或缺失）、使用嵌入模型的语义相似性（余弦相似性）、LLM-as-a-Judge 评估（稍后讨论，用于评估细微的正确性和有用性）以及 RAG 特定指标（如忠实性和相关性）。</p>
-<p><strong>延迟监控：</strong> 对 Agent 操作的延迟监控在 AI Agent 响应或操作速度是关键因素的应用中至关重要。此过程测量 Agent 处理请求和生成输出所需的持续时间。较高的延迟会对用户体验和 Agent 的整体有效性产生不利影响，特别是在实时或交互式环境中。在实际应用中，仅将延迟数据打印到控制台是不够的。建议将此信息记录到持久存储系统。选项包括结构化日志文件（例如 JSON）、时间序列数据库（例如 InfluxDB、Prometheus）、数据仓库（例如 Snowflake、BigQuery、PostgreSQL）或可观测性平台（例如 Datadog、Splunk、Grafana Cloud）。</p>
-<p><strong>跟踪 LLM 交互的 Token 使用量：</strong> 对于 LLM 驱动的 Agent，跟踪 token 使用量对于管理成本和优化资源分配至关重要。LLM 交互的计费通常取决于处理的 token 数量（输入和输出）。因此，高效的 token 使用直接降低运营费用。此外，监控 token 计数有助于识别提示词工程或响应生成过程中的潜在改进领域。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 这是概念性的，因为实际的 token 计数取决于 LLM API</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LLMInteractionMonitor</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.total_input_tokens = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.total_output_tokens = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">record_interaction</span>(<span class="params">self, prompt: <span class="built_in">str</span>, response: <span class="built_in">str</span></span>):</span><br><span class="line">        <span class="comment"># 在真实场景中，使用 LLM API 的 token 计数器或 tokenizer</span></span><br><span class="line">        input_tokens = <span class="built_in">len</span>(prompt.split()) <span class="comment"># 占位符</span></span><br><span class="line">        output_tokens = <span class="built_in">len</span>(response.split()) <span class="comment"># 占位符</span></span><br><span class="line">        <span class="variable language_">self</span>.total_input_tokens += input_tokens</span><br><span class="line">        <span class="variable language_">self</span>.total_output_tokens += output_tokens</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;已记录交互：输入 tokens=<span class="subst">&#123;input_tokens&#125;</span>，输出 tokens=<span class="subst">&#123;output_tokens&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_total_tokens</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.total_input_tokens, <span class="variable language_">self</span>.total_output_tokens</span><br><span class="line"></span><br><span class="line"><span class="comment">## 示例使用</span></span><br><span class="line">monitor = LLMInteractionMonitor()</span><br><span class="line">monitor.record_interaction(<span class="string">&quot;What is the capital of France?&quot;</span>, <span class="string">&quot;The capital of France is Paris.&quot;</span>)</span><br><span class="line">monitor.record_interaction(<span class="string">&quot;Tell me a joke.&quot;</span>, <span class="string">&quot;Why don&#x27;t scientists trust atoms? Because they make up everything!&quot;</span>)</span><br><span class="line">input_t, output_t = monitor.get_total_tokens()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;总输入 tokens：<span class="subst">&#123;input_t&#125;</span>，总输出 tokens：<span class="subst">&#123;output_t&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>本节介绍了一个概念性的 Python 类 <code>LLMInteractionMonitor</code>，旨在跟踪大型语言模型交互中的 token 使用量。该类包含输入和输出 token 的计数器。其 <code>record_interaction</code> 方法通过分割提示词和响应字符串来模拟 token 计数。在实际实现中，将使用特定的 LLM API tokenizer 进行精确的 token 计数。随着交互的发生，监视器累积总的输入和输出 token 计数。<code>get_total_tokens</code> 方法提供对这些累积总数的访问，这对于成本管理和 LLM 使用优化至关重要。</p>
-<p><strong>使用 LLM-as-a-Judge 的”有用性”自定义指标：</strong> 评估 AI Agent 的”有用性”等主观品质带来了超越标准客观指标的挑战。一个潜在的框架涉及使用 LLM 作为评估者。这种 LLM-as-a-Judge 方法根据预定义的”有用性”标准评估另一个 AI Agent 的输出。利用 LLM 的高级语言能力，此方法提供细微的、类人的主观品质评估，超越了简单的关键词匹配或基于规则的评估。虽然仍在发展中，但这项技术显示出自动化和扩展定性评估的前景。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> google.generativeai <span class="keyword">as</span> genai</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 配置 ---</span></span><br><span class="line">logging.basicConfig(level=logging.INFO, <span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s - %(levelname)s - %(message)s&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 将您的 API 密钥设置为环境变量以运行此脚本</span></span><br><span class="line"><span class="comment">## 例如，在您的终端中：export GOOGLE_API_KEY=&#x27;your_key_here&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    genai.configure(api_key=os.environ[<span class="string">&quot;GOOGLE_API_KEY&quot;</span>])</span><br><span class="line"><span class="keyword">except</span> KeyError:</span><br><span class="line">    logging.error(<span class="string">&quot;错误：GOOGLE_API_KEY 环境变量未设置。&quot;</span>)</span><br><span class="line">    exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 法律调查质量的 LLM-as-a-Judge 评分标准 ---</span></span><br><span class="line">LEGAL_SURVEY_RUBRIC = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">您是一位专家法律调查方法学家和严格的法律审查员。您的任务是评估给定法律调查问题的质量。为整体质量提供 1 到 5 的分数，以及详细的理由和具体反馈。重点关注以下标准：</span></span><br><span class="line"><span class="string">1.  **清晰性和精确性（分数 1-5）：**</span></span><br><span class="line"><span class="string">    * 1：极度模糊、高度歧义或令人困惑。</span></span><br><span class="line"><span class="string">    * 3：中等清晰，但可以更精确。</span></span><br><span class="line"><span class="string">    * 5：完全清晰、无歧义，在法律术语（如适用）和意图上精确。</span></span><br><span class="line"><span class="string">2.  **中立性和偏见（分数 1-5）：**</span></span><br><span class="line"><span class="string">    * 1：高度引导性或有偏见，明确影响受访者偏向特定答案。</span></span><br><span class="line"><span class="string">    * 3：略微暗示性或可能被解释为引导性。</span></span><br><span class="line"><span class="string">    * 5：完全中立、客观，没有任何引导性语言或带有倾向性的术语。</span></span><br><span class="line"><span class="string">3.  **相关性和焦点（分数 1-5）：**</span></span><br><span class="line"><span class="string">    * 1：与声明的调查主题无关或超出范围。</span></span><br><span class="line"><span class="string">    * 3：松散相关，但可以更集中。</span></span><br><span class="line"><span class="string">    * 5：与调查目标直接相关，并且集中于单一概念。</span></span><br><span class="line"><span class="string">4.  **完整性（分数 1-5）：**</span></span><br><span class="line"><span class="string">    * 1：遗漏了准确回答所需的关键信息或提供的上下文不足。</span></span><br><span class="line"><span class="string">    * 3：基本完整，但缺少次要细节。</span></span><br><span class="line"><span class="string">    * 5：提供受访者彻底回答所需的所有必要上下文和信息。</span></span><br><span class="line"><span class="string">5.  **受众适当性（分数 1-5）：**</span></span><br><span class="line"><span class="string">    * 1：使用目标受众无法理解的术语或对专家来说过于简单。</span></span><br><span class="line"><span class="string">    * 3：通常适当，但某些术语可能具有挑战性或过于简化。</span></span><br><span class="line"><span class="string">    * 5：完全适合目标调查受众的假定法律知识和背景。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">**输出格式：** 您的响应必须是具有以下键的 JSON 对象：</span></span><br><span class="line"><span class="string">* `overall_score`：一个从 1 到 5 的整数（标准分数的平均值或您的整体判断）。</span></span><br><span class="line"><span class="string">* `rationale`：给出此分数原因的简明摘要，突出主要优势和劣势。</span></span><br><span class="line"><span class="string">* `detailed_feedback`：详细说明每个标准（清晰性、中立性、相关性、完整性、受众适当性）反馈的要点列表。建议具体改进。</span></span><br><span class="line"><span class="string">* `concerns`：任何具体的法律、道德或方法学问题的列表。</span></span><br><span class="line"><span class="string">* `recommended_action`：简短的建议（例如&quot;修改以保持中立&quot;，&quot;按原样批准&quot;，&quot;明确范围&quot;）。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LLMJudgeForLegalSurvey</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用生成式 AI 模型评估法律调查问题的类。&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, model_name: <span class="built_in">str</span> = <span class="string">&#x27;gemini-1.5-flash-latest&#x27;</span>, temperature: <span class="built_in">float</span> = <span class="number">0.2</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        初始化 LLM Judge。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            model_name (str)：要使用的 Gemini 模型名称。</span></span><br><span class="line"><span class="string">                               推荐使用 &#x27;gemini-1.5-flash-latest&#x27; 以获得速度和成本效益。</span></span><br><span class="line"><span class="string">                               &#x27;gemini-1.5-pro-latest&#x27; 提供最高质量。</span></span><br><span class="line"><span class="string">            temperature (float)：生成温度。较低的温度更适合确定性评估。</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.model = genai.GenerativeModel(model_name)</span><br><span class="line">        <span class="variable language_">self</span>.temperature = temperature</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_generate_prompt</span>(<span class="params">self, survey_question: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;为 LLM judge 构建完整提示词。&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;LEGAL_SURVEY_RUBRIC&#125;</span>\n\n---\n**要评估的法律调查问题：**\n<span class="subst">&#123;survey_question&#125;</span>\n---&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">judge_survey_question</span>(<span class="params">self, survey_question: <span class="built_in">str</span></span>) -&gt; <span class="type">Optional</span>[<span class="built_in">dict</span>]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        使用 LLM 判断单个法律调查问题的质量。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            survey_question (str)：要评估的法律调查问题。</span></span><br><span class="line"><span class="string">        Returns:</span></span><br><span class="line"><span class="string">            Optional[dict]：包含 LLM 判断的字典，如果发生错误则返回 None。</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        full_prompt = <span class="variable language_">self</span>._generate_prompt(survey_question)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            logging.info(<span class="string">f&quot;向 &#x27;<span class="subst">&#123;self.model.model_name&#125;</span>&#x27; 发送判断请求...&quot;</span>)</span><br><span class="line">            response = <span class="variable language_">self</span>.model.generate_content(</span><br><span class="line">                full_prompt,</span><br><span class="line">                generation_config=genai.types.GenerationConfig(</span><br><span class="line">                    temperature=<span class="variable language_">self</span>.temperature,</span><br><span class="line">                    response_mime_type=<span class="string">&quot;application/json&quot;</span></span><br><span class="line">                )</span><br><span class="line">            )</span><br><span class="line">            <span class="comment"># 检查内容审核或其他导致响应为空的原因。</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> response.parts:</span><br><span class="line">                safety_ratings = response.prompt_feedback.safety_ratings</span><br><span class="line">                logging.error(<span class="string">f&quot;LLM 响应为空或被阻止。安全评级：<span class="subst">&#123;safety_ratings&#125;</span>&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> json.loads(response.text)</span><br><span class="line">        <span class="keyword">except</span> json.JSONDecodeError:</span><br><span class="line">            logging.error(<span class="string">f&quot;无法将 LLM 响应解码为 JSON。原始响应：<span class="subst">&#123;response.text&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            logging.error(<span class="string">f&quot;LLM 判断期间发生意外错误：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## --- 示例使用 ---</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    judge = LLMJudgeForLegalSurvey()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 好的示例 ---</span></span><br><span class="line">    good_legal_survey_question = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    在多大程度上您同意或不同意瑞士当前的知识产权法充分保护新兴的 AI 生成内容，假设该内容满足联邦最高法院确立的原创性标准？</span></span><br><span class="line"><span class="string">    （选择一项：强烈不同意、不同意、中立、同意、强烈同意）</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 评估好的法律调查问题 ---&quot;</span>)</span><br><span class="line">    judgment_good = judge.judge_survey_question(good_legal_survey_question)</span><br><span class="line">    <span class="keyword">if</span> judgment_good:</span><br><span class="line">        <span class="built_in">print</span>(json.dumps(judgment_good, indent=<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 有偏见/差的示例 ---</span></span><br><span class="line">    biased_legal_survey_question = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    难道您不同意像 FADP 这样过度限制性的数据隐私法正在阻碍瑞士的基本技术创新和经济增长吗？</span></span><br><span class="line"><span class="string">    （选择一项：是、否）</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 评估有偏见的法律调查问题 ---&quot;</span>)</span><br><span class="line">    judgment_biased = judge.judge_survey_question(biased_legal_survey_question)</span><br><span class="line">    <span class="keyword">if</span> judgment_biased:</span><br><span class="line">        <span class="built_in">print</span>(json.dumps(judgment_biased, indent=<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 模糊/含糊的示例 ---</span></span><br><span class="line">    vague_legal_survey_question = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    您对法律科技有什么想法？</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 评估含糊的法律调查问题 ---&quot;</span>)</span><br><span class="line">    judgment_vague = judge.judge_survey_question(vague_legal_survey_question)</span><br><span class="line">    <span class="keyword">if</span> judgment_vague:</span><br><span class="line">        <span class="built_in">print</span>(json.dumps(judgment_vague, indent=<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-
-<p>Python 代码定义了一个名为 LLMJudgeForLegalSurvey 的类，旨在使用生成式 AI 模型评估法律调查问题的质量。它利用 google.generativeai 库与 Gemini 模型交互。</p>
-<p>核心功能涉及将调查问题与详细的评估标准一起发送给模型。评分标准指定了判断调查问题的五个标准：清晰性和精确性、中立性和偏见、相关性和焦点、完整性以及受众适当性。对于每个标准，分配 1 到 5 的分数，并要求在输出中提供详细的理由和反馈。代码构建一个提示词，其中包括标准和要评估的调查问题。</p>
-<p>judge_survey_question 方法将此提示词发送到配置的 Gemini 模型，请求根据定义的结构格式化的 JSON 响应。期望的输出 JSON 包括整体分数、摘要理由、每个标准的详细反馈、问题列表和推荐的操作。该类处理 AI 模型交互期间的潜在错误，例如 JSON 解码问题或空响应。脚本通过评估法律调查问题的示例来演示其操作，说明 AI 如何根据预定义的标准评估质量。</p>
-<p>在结束之前，让我们检查各种评估方法，考虑它们的优势和劣势。</p>
-<table>
-<thead>
-<tr>
-<th align="left">评估方法</th>
-<th align="left">优势</th>
-<th align="left">劣势</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">人工评估</td>
-<td align="left">捕获细微行为</td>
-<td align="left">难以扩展、昂贵且耗时，因为它考虑主观的人为因素。</td>
-</tr>
-<tr>
-<td align="left">LLM-as-a-Judge</td>
-<td align="left">一致、高效且可扩展。</td>
-<td align="left">可能忽略中间步骤。受 LLM 能力限制。</td>
-</tr>
-<tr>
-<td align="left">自动化指标</td>
-<td align="left">可扩展、高效且客观</td>
-<td align="left">在捕获完整能力方面可能存在限制。</td>
-</tr>
-</tbody></table>
-<h2 id="Agent-轨迹"><a href="#Agent-轨迹" class="headerlink" title="Agent 轨迹"></a>Agent 轨迹</h2><p>评估 Agent 的轨迹至关重要，因为传统的软件测试是不够的。标准代码产生可预测的通过&#x2F;失败结果，而 Agent 以概率方式运行，需要对最终输出和 Agent 的轨迹——达到解决方案所采取的步骤序列——进行定性评估。评估多 Agent 系统具有挑战性，因为它们不断变化。这需要开发超越个体性能的复杂指标来衡量沟通和团队合作的有效性。此外，环境本身不是静态的，要求评估方法（包括测试用例）随时间适应。</p>
-<p>这涉及检查决策的质量、推理过程和整体结果。实施自动化评估很有价值，特别是对于超越原型阶段的开发。分析轨迹和工具使用包括评估 Agent 用于实现目标的步骤，例如工具选择、策略和任务效率。例如，处理客户产品查询的 Agent 可能理想地遵循涉及意图确定、数据库搜索工具使用、结果审查和报告生成的轨迹。将 Agent 的实际操作与这个预期的或真实的轨迹进行比较，以识别错误和低效率。比较方法包括精确匹配（要求与理想序列完美匹配）、按序匹配（正确的操作按顺序，允许额外步骤）、任意顺序匹配（正确的操作以任何顺序，允许额外步骤）、精确度（测量预测操作的相关性）、召回率（测量捕获了多少基本操作）和单工具使用（检查特定操作）。指标选择取决于特定的 Agent 要求，高风险场景可能要求精确匹配，而更灵活的情况可能使用按序或任意顺序匹配。</p>
-<p>AI Agent 的评估涉及两种主要方法：使用测试文件和使用评估集文件。测试文件以 JSON 格式表示单个、简单的 Agent-模型交互或会话，非常适合在活跃开发期间进行单元测试，侧重于快速执行和简单的会话复杂性。每个测试文件包含一个带有多个回合的单个会话，其中回合是一个用户-Agent 交互，包括用户的查询、预期的工具使用轨迹、中间 Agent 响应和最终响应。例如，测试文件可能详细说明用户请求”关闭卧室中的 device_2”，指定 Agent 使用带有参数（如 location: Bedroom、device_id: device_2 和 status: OFF）的 set_device_info 工具，以及预期的最终响应”我已将 device_2 状态设置为关闭”。测试文件可以组织到文件夹中，并可能包含 test_config.json 文件来定义评估标准。评估集文件利用称为”evalset”的数据集来评估交互，包含多个可能很长的会话，适合模拟复杂的多回合对话和集成测试。评估集文件包含多个”评估”，每个评估代表一个具有一个或多个”回合”的不同会话，其中包括用户查询、预期的工具使用、中间响应和参考最终响应。示例评估集可能包括一个会话，其中用户首先询问”你能做什么？”然后说”掷两次 10 面骰子，然后检查 9 是否是质数”，定义预期的 roll_die 工具调用和 check_prime 工具调用，以及总结骰子结果和质数检查的最终响应。</p>
-<p><strong>多 Agent：</strong> 评估具有多个 Agent 的复杂 AI 系统非常像评估团队项目。因为有许多步骤和交接，其复杂性是一个优势，允许您检查每个阶段的工作质量。您可以检查每个单独的”Agent”如何执行其特定工作，但您还必须评估整个系统作为一个整体的表现如何。</p>
-<p>为此，您需要提出关于团队动态的关键问题，并以具体示例作为支持：</p>
-<ul>
-<li>Agent 是否有效合作？例如，在”航班预订 Agent”确保航班后，它是否成功地将正确的日期和目的地传递给”酒店预订 Agent”？合作失败可能导致酒店预订在错误的周。</li>
-<li>他们是否制定了好的计划并坚持执行？想象计划是首先预订航班，然后预订酒店。如果”酒店 Agent”在航班确认之前尝试预订房间，它已经偏离了计划。您还要检查 Agent 是否卡住，例如，无休止地搜索”完美”租车，从不进入下一步。</li>
-<li>是否为正确的任务选择了正确的 Agent？如果用户询问他们旅行的天气，系统应该使用提供实时数据的专门”天气 Agent”。如果它使用提供通用答案（如”夏天通常很温暖”）的”通用知识 Agent”，它为这项工作选择了错误的工具。</li>
-<li>最后，添加更多 Agent 是否提高了性能？如果您向团队添加一个新的”餐厅预订 Agent”，它是否使整体旅行规划更好、更高效？还是它会造成冲突并减慢系统速度，表明可扩展性存在问题？</li>
-</ul>
-<h2 id="从-Agent-到高级承包商"><a href="#从-Agent-到高级承包商" class="headerlink" title="从 Agent 到高级承包商"></a>从 Agent 到高级承包商</h2><p>最近，有人提出（Agent Companion，gulli 等人）从简单的 AI Agent 演变为高级”承包商”，从概率性的、通常不可靠的系统转向为复杂的、高风险环境设计的更确定性和可问责的系统（见图 2）。</p>
-<p>当今常见的 AI Agent 基于简短的、规格不明确的指令运行，这使得它们适合简单的演示，但在生产中很脆弱，因为歧义会导致失败。”承包商”模型通过建立用户和 AI 之间严格的、正式化的关系来解决这个问题，该关系建立在明确定义和相互同意的条款基础上，就像人类世界中的法律服务协议一样。这种转变得到四个关键支柱的支持，这些支柱共同确保了以前超出自主系统范围的任务的清晰性、可靠性和稳健执行。</p>
-<p>首先是正式化合约的支柱，这是一个详细的规范，作为任务的唯一真实来源。它远远超出了简单的提示词。例如，财务分析任务的合约不会只说”分析上个季度的销售”；它会要求”一份 20 页的 PDF 报告，分析 2025 年第一季度的欧洲市场销售，包括五个特定的数据可视化、与 2024 年第一季度的比较分析以及基于提供的供应链中断数据集的风险评估”。此合约明确定义了所需的可交付成果、其精确规格、可接受的数据源、工作范围，甚至预期的计算成本和完成时间，使结果客观可验证。</p>
-<p>第二是动态的协商和反馈生命周期支柱。合约不是静态命令，而是对话的开始。承包商 Agent 可以分析初始条款并进行协商。例如，如果合约要求使用 Agent 无法访问的特定专有数据源，它可以返回反馈，说明”指定的 XYZ 数据库不可访问。请提供凭据或批准使用替代公共数据库，这可能会略微改变数据的粒度。”这个协商阶段也允许 Agent 标记歧义或潜在风险，在执行开始之前解决误解，防止代价高昂的失败，并确保最终输出与用户的实际意图完全一致。</p>
-<p><img src="/../images/chapter-19/image2.png"></p>
-<p>图 2：Agent 之间的合约执行示例</p>
-<p>第三个支柱是以质量为中心的迭代执行。与为低延迟响应设计的 Agent 不同，承包商优先考虑正确性和质量。它基于自我验证和纠正的原则运作。例如，对于代码生成合约，Agent 不会只是编写代码；它会生成多个算法方法，根据合约中定义的一套单元测试编译和运行它们，对性能、安全性和可读性等指标对每个解决方案进行评分，并且只提交通过所有验证标准的版本。这种生成、审查和改进自己的工作的内部循环，直到满足合约的规格，对于建立对其输出的信任至关重要。</p>
-<p>最后，第四个支柱是通过子合约的层次化分解。对于复杂度很高的任务，主承包商 Agent 可以充当项目经理，将主要目标分解为更小的、更易管理的子任务。它通过生成新的、正式的”子合约”来实现这一点。例如，”构建电子商务移动应用程序”的主合约可以由主 Agent 分解为”设计 UI&#x2F;UX”、”开发用户身份验证模块”、”创建产品数据库架构”和”集成支付网关”的子合约。这些子合约中的每一个都是一个完整的、独立的合约，具有自己的可交付成果和规格，可以分配给其他专门的 Agent。这种结构化的分解使系统能够以高度组织和可扩展的方式处理巨大的、多方面的项目，标志着 AI 从简单工具向真正自主和可靠的问题解决引擎的转变。</p>
-<p>最终，这个承包商框架通过将正式规范、协商和可验证执行的原则直接嵌入到 Agent 的核心逻辑中，重新构想了 AI 交互。这种方法化的方法将人工智能从一个有前途但经常不可预测的助手提升为能够以可审计的精度自主管理复杂项目的可靠系统。通过解决歧义和可靠性的关键挑战，该模型为在信任和问责至关重要的关键任务领域部署 AI 铺平了道路。</p>
-<h2 id="Google-的-ADK"><a href="#Google-的-ADK" class="headerlink" title="Google 的 ADK"></a>Google 的 ADK</h2><p>在结束之前，让我们看一个支持评估的框架的具体示例。使用 Google 的 ADK 进行 Agent 评估（见图 3）可以通过三种方法进行：基于 Web 的 UI（adk web）用于交互式评估和数据集生成、使用 pytest 的编程集成用于整合到测试管道中，以及直接命令行界面（adk eval）用于适合定期构建生成和验证过程的自动化评估。</p>
-<p><img src="/../images/chapter-19/image3.png"></p>
-<p>图 3：Google ADK 的评估支持</p>
-<p>基于 Web 的 UI 支持交互式会话创建并保存到现有或新的评估集中，显示评估状态。Pytest 集成允许通过调用 AgentEvaluator.evaluate 并指定 Agent 模块和测试文件路径，将测试文件作为集成测试的一部分运行。</p>
-<p>命令行界面通过提供 Agent 模块路径和评估集文件来促进自动化评估，并具有指定配置文件或打印详细结果的选项。可以通过在评估集文件名后列出（用逗号分隔）来选择较大评估集中的特定评估以供执行。</p>
-<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><strong>内容：</strong> Agentic 系统和 LLM 在复杂的动态环境中运行，它们的性能可能会随时间退化。它们的概率性和非确定性本质意味着传统的软件测试不足以确保可靠性。评估动态多 Agent 系统是一项重大挑战，因为它们不断变化的性质以及其环境的性质要求开发适应性测试方法和能够测量超越个体性能的协作成功的复杂指标。部署后可能出现数据漂移、意外交互、工具调用和偏离预期目标等问题。因此，持续评估对于测量 Agent 的有效性、效率以及对操作和安全要求的遵守是必要的。</p>
-<p><strong>原因：</strong> 标准化的评估和监控框架提供了一种系统的方式来评估和确保智能 Agent 的持续性能。这涉及为准确性、延迟和资源消耗（如 LLM 的 token 使用量）定义明确的指标。它还包括高级技术，例如分析 Agent 轨迹以理解推理过程，以及采用 LLM-as-a-Judge 进行细微的、定性的评估。通过建立反馈循环和报告系统，该框架允许持续改进、A&#x2F;B 测试以及检测异常或性能漂移，确保 Agent 与其目标保持一致。</p>
-<p><strong>经验法则：</strong> 在部署 Agent 到实时性能和可靠性至关重要的生产环境时使用此模式。此外，当需要系统地比较 Agent 或其底层模型的不同版本以推动改进时，以及在需要合规性、安全性和道德审计的受监管或高风险领域运营时使用它。当 Agent 的性能可能由于数据或环境变化（漂移）而随时间退化时，或者在评估复杂的 Agent 行为时（包括操作序列（轨迹）和主观输出（如有用性）的质量），此模式也适用。</p>
-<p><strong>视觉摘要</strong></p>
-<p><img src="/../images/chapter-19/image4.png"><br>图 4：评估和监控设计模式</p>
-<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ul>
-<li>评估智能 Agent 超越了传统测试，在真实世界环境中持续测量其有效性、效率以及对要求的遵守。</li>
-<li>Agent 评估的实际应用包括实时系统中的性能跟踪、改进的 A&#x2F;B 测试、合规审计以及检测行为中的漂移或异常。</li>
-<li>基本 Agent 评估涉及评估响应准确性，而真实世界场景需要更复杂的指标，如延迟监控和 LLM 驱动 Agent 的 token 使用跟踪。</li>
-<li>Agent 轨迹（Agent 采取的步骤序列）对于评估至关重要，将实际操作与理想的、真实的路径进行比较，以识别错误和低效率。</li>
-<li>ADK 通过用于单元测试的单个测试文件和用于集成测试的综合评估集文件提供结构化的评估方法，两者都定义了预期的 Agent 行为。</li>
-<li>Agent 评估可以通过基于 Web 的 UI 进行交互式测试、使用 pytest 进行 CI&#x2F;CD 集成的编程方式，或通过命令行界面进行自动化工作流执行。</li>
-<li>为了使 AI 在复杂的、高风险的任务中可靠，我们必须从简单的提示词转向精确定义可验证可交付成果和范围的正式”合约”。这种结构化协议允许 Agent 协商、澄清歧义并迭代验证其自己的工作，将其从不可预测的工具转变为可问责和值得信赖的系统。</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总之，有效评估 AI Agent 需要超越简单的准确性检查，对其在动态环境中的性能进行持续的、多方面的评估。这涉及实际监控延迟和资源消耗等指标，以及通过其轨迹对 Agent 决策过程进行复杂分析。对于有用性等细微品质，诸如 LLM-as-a-Judge 之类的创新方法变得必不可少，而像 Google 的 ADK 这样的框架为单元和集成测试提供了结构化的工具。对于多 Agent 系统，挑战加剧，重点转向评估协作成功和有效合作。</p>
-<p>为了确保关键应用中的可靠性，范式正在从简单的、提示词驱动的 Agent 转向受正式协议约束的高级”承包商”。这些承包商 Agent 在明确的、可验证的条款上运作，允许它们协商、分解任务并自我验证其工作以满足严格的质量标准。这种结构化方法将 Agent 从不可预测的工具转变为能够处理复杂的、高风险任务的可问责系统。最终，这种演变对于建立在关键任务领域部署复杂的 Agentic AI 所需的信任至关重要。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>相关研究包括：</p>
-<ol>
-<li>ADK Web：<a target="_blank" rel="noopener" href="https://github.com/google/adk-web">https://github.com/google/adk-web</a></li>
-<li>ADK Evaluate：<a target="_blank" rel="noopener" href="https://google.github.io/adk-docs/evaluate/">https://google.github.io/adk-docs/evaluate/</a></li>
-<li>Survey on Evaluation of LLM-based Agents：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.16416">https://arxiv.org/abs/2503.16416</a></li>
-<li>Agent-as-a-Judge: Evaluate Agents with Agents：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2410.10934">https://arxiv.org/abs/2410.10934</a></li>
-<li>Agent Companion, gulli et al：<a target="_blank" rel="noopener" href="https://www.kaggle.com/whitepaper-agent-companion">https://www.kaggle.com/whitepaper-agent-companion</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI agent 设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/ADP19_%20Evaluation%20and%20Monitoring/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工作周报2025年 10 月 20 日 - 2025年 10 月 24 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2010%20%E6%9C%88%2020%20%E6%97%A5%20-%202025%E5%B9%B4%2010%20%E6%9C%88%2024%20%E6%97%A5/">工作周报2025年10 月20 日 - 2025年10 月24日</a>
-    </h1>
-  
-
-        
-        <a href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2010%20%E6%9C%88%2020%20%E6%97%A5%20-%202025%E5%B9%B4%2010%20%E6%9C%88%2024%20%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2025-10-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>之前一直没有特别关注uShow CV的服务性能，这个问题这周持续在我脑海萦绕。很多问题之所以没有被解决是因为它们没有被关注，寻找并发现那些应该被解决的问题比如何解决更重要。平时的日报对日常的工作细节过多，反而忽略在系统上的思考和复盘，我一直很注意对出现的问题的复盘，但实际上复盘也是多维度，即需要对出现的问题做复盘，也需要对潜在的问题做识别，也需要对系统的现状做梳理和规划。通过有意识的有计划的利用日报、周报，自我复盘的形式多关注系统层面上梳理和规划，逐渐的掌握这些系统的现状，问题和将来，通过这样的日积月累才能养成发现问题和规划设计的能力。<ol>
-<li>uShow CV 服务中的依赖库很多是较老的版本，因为这些代码时运行在云端，因为云端的环境是逐渐的升级，这些依赖也需要跟随这个升级而不断升级，这些工作需要提前识别和安排计划解决。</li>
-<li>uShow的部分老服务因为兼容老片子而存在， 目前部分片子已经逐渐停止使用，所以这个季度需要找时间再次梳理一下，移除不用的老服务，降低系统复杂度的同时也能降低服务器成本。</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%2010%20%E6%9C%88%2020%20%E6%97%A5%20-%202025%E5%B9%B4%2010%20%E6%9C%88%2024%20%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/posts/page/14/">&laquo; Prev</a><a class="page-number" href="/posts/">1</a><span class="space">&hellip;</span><a class="page-number" href="/posts/page/13/">13</a><a class="page-number" href="/posts/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/posts/page/16/">16</a><a class="page-number" href="/posts/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/posts/page/53/">53</a><a class="extend next" rel="next" href="/posts/page/16/">Next &raquo;</a>
@@ -2677,6 +2869,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Personal AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">认知架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安全性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元认知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">web-frontend-development</a>
               </li>
             
             <div class="clearfix"></div>

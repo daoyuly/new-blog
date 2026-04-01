@@ -157,6 +157,315 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-腾讯音乐AIGC音频业务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/">腾讯音乐AIGC音频业创新应用技术交流-笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2023-11-12T03:42:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="低延迟高吞吐-同步，异步，流式"><a href="#低延迟高吞吐-同步，异步，流式" class="headerlink" title="低延迟高吞吐 -  同步，异步，流式"></a>低延迟高吞吐 -  同步，异步，流式</h1><h1 id="软件生态适配-插件化解耦兼容"><a href="#软件生态适配-插件化解耦兼容" class="headerlink" title="软件生态适配 - 插件化解耦兼容"></a>软件生态适配 - 插件化解耦兼容</h1><ul>
+<li>client </li>
+<li>inference protocol <ul>
+<li>rest &#x2F;grpc<br><a target="_blank" rel="noopener" href="https://www.ray.io/">ray.io</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="多云调度（sky-computing）-面向失败的对等设计"><a href="#多云调度（sky-computing）-面向失败的对等设计" class="headerlink" title="多云调度（sky-computing） - 面向失败的对等设计"></a>多云调度（sky-computing） - 面向失败的对等设计</h1><h1 id="胡克弹性计算平台的实践"><a href="#胡克弹性计算平台的实践" class="headerlink" title="胡克弹性计算平台的实践"></a>胡克弹性计算平台的实践</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>算法背后的力量</li>
+<li>低成本，高性能，异部署</li>
+</ul>
+<h2 id="模块构成"><a href="#模块构成" class="headerlink" title="模块构成"></a>模块构成</h2><ul>
+<li>模型管理，存储，复用，拉取，加载，版本，验证</li>
+<li>镜像管理，环境问题，各种兼容和组合，直接复用</li>
+<li>数据源管理，开源，闭源</li>
+<li>服务管理，离线，在线，推荐服务</li>
+<li>成本管理，监控，可视化，成本开源，模型市场</li>
+</ul>
+<h2 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h2><ul>
+<li>虚拟化技术 <ul>
+<li>qGPU</li>
+<li>离线在线混布</li>
+<li>全技术栈容器化</li>
+</ul>
+</li>
+<li>异构计算<ul>
+<li>cpu与gpu分离</li>
+<li>work flow能力</li>
+<li>多优先级调度</li>
+<li>跨地域多集群部署</li>
+</ul>
+</li>
+<li>推理加速<ul>
+<li>外部开源</li>
+<li>内部自研</li>
+<li>推理框架c++</li>
+</ul>
+</li>
+</ul>
+<h1 id="移动端神经网络框架的工程化落地的实践"><a href="#移动端神经网络框架的工程化落地的实践" class="headerlink" title="移动端神经网络框架的工程化落地的实践"></a>移动端神经网络框架的工程化落地的实践</h1><h1 id="K歌背景及问题"><a href="#K歌背景及问题" class="headerlink" title="K歌背景及问题"></a>K歌背景及问题</h1><ul>
+<li>算法模型的开发</li>
+<li>模型管理，下载， 加载，参数</li>
+<li>业务调用，推理引擎的引入，跨平台处理</li>
+<li>推理过程</li>
+<li>端侧加速</li>
+<li>效率分析</li>
+<li>优化</li>
+</ul>
+<h1 id="AI模型遇到的问题"><a href="#AI模型遇到的问题" class="headerlink" title="AI模型遇到的问题"></a>AI模型遇到的问题</h1><ul>
+<li>不同业务使用不同的模型，如何统一</li>
+<li>如何验证调优后的模型效果</li>
+<li>如何简化模型接入</li>
+<li>如何检测不同模型的效率</li>
+<li>如何在不同平台的硬件加速</li>
+<li>开箱即用AI模型的能力</li>
+</ul>
+<h1 id="自研的Tnet"><a href="#自研的Tnet" class="headerlink" title="自研的Tnet"></a>自研的Tnet</h1><ul>
+<li>一套平台，模型管理，性能管理，推理引擎管理，效率评估</li>
+<li>面向业务，model hub</li>
+<li>面向工程</li>
+</ul>
+<h1 id="Tnet的框架介绍"><a href="#Tnet的框架介绍" class="headerlink" title="Tnet的框架介绍"></a>Tnet的框架介绍</h1><ul>
+<li>模型生成</li>
+<li>模型管理</li>
+<li>模型评测</li>
+<li>模型调优</li>
+<li>模型开发</li>
+<li>模型使用</li>
+<li>推理引擎使用</li>
+<li>统一不同推理引擎的调用接口</li>
+<li>端侧模型加速</li>
+<li>效率分析和监控<ul>
+<li>perfdog</li>
+<li>TME</li>
+<li>benchmark</li>
+</ul>
+</li>
+<li>音频处理SDK统一</li>
+</ul>
+<h1 id="落地情况"><a href="#落地情况" class="headerlink" title="落地情况"></a>落地情况</h1><ul>
+<li>多维度打分</li>
+<li>录唱AEC的不断优化</li>
+</ul>
+<h1 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h1><p>模型训练<br>标签数据<br>模型管理平台<br>推理SDK<br>业务后台</p>
+<h1 id="业务层"><a href="#业务层" class="headerlink" title="业务层"></a>业务层</h1><ul>
+<li>AI评分<br>能力层</li>
+<li>AI歌声评价<br>基础库</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AIGC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90AIGC%E9%9F%B3%E9%A2%91%E4%B8%9A%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 11 月 6 日 - 2023年 11 月 11 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/">工作周报2023年11 月6 日 - 2023年11 月11日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-11-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在美敦力经理辅导和Fujipan配置脚本的编写中，因为涉及到的脚步量比较大，单就Fujipan配置脚本就有26个脚本，总共68轮对话的配置，整个看下来这些脚本有两个对话模式Call-Response（首先AI和Bot完成一轮对话, 引出第二轮用户对话）和User-First（用户发问，引出一轮的对话），对话模式比较固定，特别适合自动化生成，所以完成了这两种的模式的自动化生产程序，比手工写节省50%时间。目前还需要完全人工参与的是金句和近义词的处理。特别是日文的金句目前是使用第三方分词，但需要把近义词单独匹配，两个需求的约束下，就没有想到很完美的自动处理办法，目前的策略就是放弃一部分自动分词的情况，优先近义词的匹配。<br>另外一个麻烦的点在于目前的这些自动化工具来自两个技术栈，JavaScript和Python，这样整个生成过程的中的数据串联就要人工介入，柳祎建议用ChatGPT把JavaScript转成Python，省去一些中转环节，我尝试了一下，是个好办法。<br>我切身体会到的这个事情，就想到了东朔老师在All Hands上说的，做事前想想想能不能用AI。这个思考方式要彻底改变过往的思维方式。在未来很可能高效人士或者每一个人都会有一个根据自己的知识管理和思维习惯定制的私人大模型，就像现在大部分人都有自己的微信一样，这个数字分身就是每个人思想和自我认知的影子。其实对我们大部分人来说，AI像一个突然闯进房间的陌生人，我们能够快速的观察和试探，却不能很快的认识和熟悉，但是AI发展却足够快速，他似乎很快就熟悉里房间里的所有人，为了更好的交流和协作，我们必须要更深入的了解和学习他的来龙去脉以及内在机制，逐渐让自己具有同等的“大模型意识”，这样才能更好的了解他，才有更好的协作和使用。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2011%20%E6%9C%88%206%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%2011%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工作周报2023年 10 月 23 日 - 2023年 11 月 5 日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%205%20%E6%97%A5/">工作周报2023年10 月23 日 - 2023年11 月5日</a>
+    </h1>
+  
+
+        
+        <a href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%205%20%E6%97%A5/" class="archive-article-date">
+  	<time datetime="2023-11-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>经过上个月份的工作，已经能够独立完成Chatbot的完整的上线流程和相关工作，能够排查相关问题，在此过程中也整理、收集、开发了一系列的小工具和脚本，虽然还不能完整自动实现配置化脚本生成-&gt;配置化脚本部署–新增数据落盘，这些工具也在较大提升了脚本生成速度，基本能够cover住来自客户的部署上线的时间约束。工具的不成熟也造成了一些问题，比如自动生成的脚本中的跳转逻辑就导致过一次问题，复盘下来的改进点，1是要提高回归的覆盖率，从目前实际情况看，多分配一些自测的时间，基于目前的运行情况，每个脚本上线后用标准回答回复确保运行正常，2是提高自动化测试的工程能力，除了一般的接口的准确性，稳定性和压力测试外，还需要探索语音类的测试及评测，3是持续总结上线的细节流程标准化，目的上尽量明确每个过程的细节、输入输出，4是提升工具化和平台化程度，尽量少的减少人为参与过程， 即使现阶段无法实现高平台化，也要通过流程的标准化，每个人工参与的工作可控，减少失误。目前这4个点都在进行中，其中第一步在后续的脚步上中都要严格做到。2,3,4个点都在OKR和路线图里有计划的进行。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">周报</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52023%E5%B9%B4%2010%20%E6%9C%88%2023%20%E6%97%A5%20-%202023%E5%B9%B4%2011%20%E6%9C%88%205%20%E6%97%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-养娃日志3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -849,315 +1158,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%886%EF%BC%89-%20%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A%E5%8E%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%85%83%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习之美（5）- 反学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%885%EF%BC%89-%20%E5%8F%8D%E5%AD%A6%E4%B9%A0/">学习之美（5）- 反学习</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%885%EF%BC%89-%20%E5%8F%8D%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2023-10-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="反学习包括12个学校教育带来的坏习惯，分别是："><a href="#反学习包括12个学校教育带来的坏习惯，分别是：" class="headerlink" title="反学习包括12个学校教育带来的坏习惯，分别是："></a>反学习包括12个学校教育带来的坏习惯，分别是：</h1><ul>
-<li><p>坏习惯1：标准答案思维方式</p>
-</li>
-<li><p>坏习惯2：被动学习</p>
-</li>
-<li><p>坏习惯3：害怕出错</p>
-</li>
-<li><p>坏习惯4：弥补短板</p>
-</li>
-<li><p>坏习惯5：缺乏规划</p>
-</li>
-<li><p>坏习惯6：期待老师提供答案</p>
-</li>
-<li><p>坏习惯7：单人学习</p>
-</li>
-<li><p>坏习惯8：学而不用</p>
-</li>
-<li><p>坏习惯9：碎片化学习</p>
-</li>
-<li><p>坏习惯10：为成绩而非成长</p>
-</li>
-<li><p>坏习惯11：只在学校学习</p>
-</li>
-<li><p>坏习惯12：厌恶学习</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%885%EF%BC%89-%20%E5%8F%8D%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-UNIX哲学" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/UNIX%E5%93%B2%E5%AD%A6/">UNIX哲学</a>
-    </h1>
-  
-
-        
-        <a href="/2023/UNIX%E5%93%B2%E5%AD%A6/" class="archive-article-date">
-  	<time datetime="2023-10-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mike Gancarz的《UNIX哲学》<br>1994年，X窗口系统开发组的成员Mike Gancarz根据他自己的Unix系统经验以及和其他领域使用Unix系统的资深程序员们的讨论结果，写成了The UNIX Philosophy，提出了9条训格之言：</p>
-<ul>
-<li>小即是美。</li>
-<li>让程序只做好一件事。</li>
-<li>尽可能早地建立原型。</li>
-<li>可移植性比效率更重要。</li>
-<li>数据应该保存为文本文件。</li>
-<li>尽可能地榨取软件的全部价值。</li>
-<li>使用shell脚本来提高效率和可移植性。</li>
-<li>避免使用可定制性低下的用户界面。</li>
-<li>所有程序都是数据的过滤器。</li>
-</ul>
-<p>此外还有十条原则则并不为所有人认同，甚至还是争论的焦点（如宏内核和微内核之争）：</p>
-<ul>
-<li>应该允许用户定制操作环境。</li>
-<li>让操作系统核心小而轻。</li>
-<li>使用小写字母并尽量简短。</li>
-<li>节约纸张，保护树林。</li>
-<li>沉默是金。</li>
-<li>并行地思考。</li>
-<li>部分加部分大于整体。</li>
-<li>寻找问题的帕雷托法则。</li>
-<li>程序随需求而增长（更糟就是更好）。</li>
-<li>层级地思考。</li>
-</ul>
-<p>我的编程哲学；</p>
-<ul>
-<li>软件皆可配置</li>
-<li>组合是软件开发的本质</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">UNIX哲学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/UNIX%E5%93%B2%E5%AD%A6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习之美（4）- 洞见分类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%884%EF%BC%89-%20%E6%B4%9E%E8%A7%81%E5%88%86%E7%B1%BB/">学习之美（4）- 洞见分类</a>
-    </h1>
-  
-
-        
-        <a href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%884%EF%BC%89-%20%E6%B4%9E%E8%A7%81%E5%88%86%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2023-10-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们很少有单纯的朋友或者单纯的敌人，非友非敌之外的大多数关系，似乎都可以归为友敌关系。</p>
-<p>我们习惯二元对立的思考方式，也就是把事物分为互相对立的两类：好人与坏人，白天与黑夜，上升与下降，赢利与亏损……</p>
-<p>一般说来，二元对立的两分法不是洞见分类。我们可以用三个方法来改造两分法。</p>
-<h1 id="1-把二分法变为多分法"><a href="#1-把二分法变为多分法" class="headerlink" title="1 把二分法变为多分法"></a>1 把二分法变为多分法</h1><p>二分法只考虑了对立的两个极端，多分法则是把这两个极端连成一条线。比如，把好人和坏人连成一条线，你就发现，在100%的好人和0%的好人（也就是坏人）之间，还有很多不同的情况，比如有99%的好人和1%的好人。</p>
-<p>战略咨询顾问罗伯特·凯德尔认为可以用这种方式来思考产品战略比如，航空公司推出的超级经济舱就是把以前的三分法（头等舱、公务舱和经济舱）连成了一条线，然后考虑这条线上的其他可能性。</p>
-<p>著名科幻作家阿西莫夫写过一篇题为《错误的相对性》的文章。他认为，思想并非简单地分为对与错。认为地球是平的，这是错的；认为地球是球状的，这也是错的。但是前者比后者更错误，因为地球非常接近球状。阿西莫夫说：如果你认为前面两个关于地球形状的错误是同等的错误，那你比那两个错误加在一起还要更错误！</p>
-<p>为什么呢？阿西莫夫没有明确说。我替他说一下：因为你犯了一个认为错误和正确是二分法的元错误（关于错误的错误）。</p>
-<h1 id="2-引入另一个维度"><a href="#2-引入另一个维度" class="headerlink" title="2 引入另一个维度"></a>2 引入另一个维度</h1><p>二元对立只考虑了一个维度。即使变为多分法，也是只考虑了一个维度。如果引入另一个同样重要、但是相关性不强的维度，就有可能把二分法变成了洞见分类。</p>
-<p>比如，评估员工的一个重要维度是个人业绩。我们是否应该考虑员工在团队中起到的作用呢？评估企业的一个重要指标是赢利还是亏损。我们是否应该也考虑其他重要指标，比如市场占有率、客户满意度和市场潜力呢？</p>
-<h1 id="3-把原来的二元对立变成兼容的两个维度"><a href="#3-把原来的二元对立变成兼容的两个维度" class="headerlink" title="3 把原来的二元对立变成兼容的两个维度"></a>3 把原来的二元对立变成兼容的两个维度</h1><p>比如，阳刚和温柔往往被视为二元对立。即使我们用刚才讲过的第一种方法，把两者连成一条线段，它们也是在线段的两个端点上。如果我们认为它们不是对立的二元，而是可以兼容的二元呢？然后我们可以把人从二分法（阳刚者与温柔者）变为四分法：</p>
-<ul>
-<li><p>兼具阳刚与温柔的成熟者</p>
-</li>
-<li><p>阳刚而不温柔的大男人</p>
-</li>
-<li><p>温柔而不阳刚的小女人</p>
-</li>
-<li><p>既不阳刚又不温柔的不成熟者</p>
-</li>
-</ul>
-<p>心理学家已经发现了这个四分法的实用价值，比如用来回答哪两种人在一起谈恋爱比较合适这个问题。如果你猜是大男人和小女人的话，那就大错特错了。他们之间完全缺乏共鸣，其实是最不合适的！</p>
-<p>又比如，朋友和敌人往往被视为二元对立的一对。如果我们认为这是彼此兼容的二元呢？这样，原本的两分法（不是朋友，就是敌人）变成了四种人：</p>
-<ul>
-<li><p>“友敌”</p>
-</li>
-<li><p>单纯的朋友</p>
-</li>
-<li><p>单纯的敌人</p>
-</li>
-<li><p>非友非敌</p>
-</li>
-</ul>
-<p>我们很少有单纯的朋友或者单纯的敌人，非友非敌之外的大多数关系，似乎都可以归为友敌关系。“友敌”还可以细分为两类：同时是朋友和敌人的人；有时是朋友、有时是敌人的人。用这个视角看关系，有没有给你带来新的启发呢？</p>
-<p>刚才讲到的三个方法之中，第二和第三个方法更可能把二元对立改造为洞见分类。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习之美</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BE%8E%EF%BC%884%EF%BC%89-%20%E6%B4%9E%E8%A7%81%E5%88%86%E7%B1%BB/">展开全文 >></a>
         </p>
       
 
@@ -2208,6 +2208,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Personal AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">认知架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安全性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元认知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">web-frontend-development</a>
               </li>
             
             <div class="clearfix"></div>

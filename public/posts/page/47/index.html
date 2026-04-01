@@ -157,6 +157,638 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-软件设计的哲学-ch12-为什么写评论呢？四个理由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch12-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%AF%84%E8%AE%BA%E5%91%A2%EF%BC%9F%E5%9B%9B%E4%B8%AA%E7%90%86%E7%94%B1/">软件设计的哲学 - ch12</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch12-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%AF%84%E8%AE%BA%E5%91%A2%EF%BC%9F%E5%9B%9B%E4%B8%AA%E7%90%86%E7%94%B1/" class="archive-article-date">
+  	<time datetime="2021-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-12-章-为什么写评论呢？四个理由"><a href="#第-12-章-为什么写评论呢？四个理由" class="headerlink" title="第 12 章 为什么写评论呢？四个理由"></a>第 12 章 为什么写评论呢？四个理由</h1><blockquote>
+<p>Chapter 12 Why Write Comments? The Four Excuses</p>
+</blockquote>
+<p>In-code documentation plays a crucial role in software design. Comments are essential to help developers understand a system and work efficiently, but the role of comments goes beyond this. Documentation also plays an important role in abstraction; without comments, you can’t hide complexity. Finally, the process of writing comments, if done correctly, will actually improve a system’s design. Conversely, a good software design loses much of its value if it is poorly documented.</p>
+<blockquote>
+<p>代码内文档在软件设计中起着至关重要的作用。注释对于帮助开发人员理解系统和有效工作至关重要，但是注释的作用不止于此。文档在抽象中也起着重要作用。没有评论，您就无法隐藏复杂性。最后，编写注释的过程（如果正确完成）将实际上改善系统的设计。相反，如果没有很好的文档记录，那么好的软件设计会失去很多价值。</p>
+</blockquote>
+<p>Unfortunately, this view is not universally shared. A significant fraction of production code contains essentially no comments. Many developers think that comments are a waste of time; others see the value in comments, but somehow never get around to writing them. Fortunately, many development teams recognize the value of documentation, and it feels like the prevalence of these teams is gradually increasing. However, even in teams that encourage documentation, comments are often viewed as drudge work and many developers don’t understand how to write them, so the resulting documentation is often mediocre. Inadequate documentation creates a huge and unnecessary drag on software development.</p>
+<blockquote>
+<p>不幸的是，这种观点并未得到普遍认同。生产代码的很大一部分基本上不包含任何注释。许多开发人员认为评论是浪费时间。其他人则看到了注释中的价值，但不知何故从不动手编写它们。幸运的是，许多开发团队认识到了文档的价值，并且感觉这些团队的普及率正在逐渐提高。但是，即使在鼓励文档的团队中，注释也经常被视为繁琐的工作，而且许多开发人员也不了解如何编写注释，因此生成的文档通常是平庸的。文档不足会给软件开发带来巨大且不必要的拖累。</p>
+</blockquote>
+<p>In this chapter I will discuss the excuses developers use to avoid writing comments, and the reasons why comments really do matter. Chapter 13 will then describe how to write good comments and the next few chapters after that will discuss related issues such as choosing variable names and how to use documentation to improve a system’s design. I hope these chapters will convince you of three things: good comments can make a big difference in the overall quality of software; it isn’t hard to write good comments; and (this may be hard to believe) writing comments can actually be fun.</p>
+<blockquote>
+<p>在本章中，我将讨论开发人员避免写评论的借口，以及评论真正重要的原因。然后，第 13 章将描述如何编写好的注释，其后的几章将讨论相关问题，例如选择变量名以及如何使用文档来改进系统的设计。我希望这些章节能使您相信三件事：好的评论可以对软件的整体质量产生很大的影响；写好评论并不难；并且（可能很难相信）写评论实际上很有趣。</p>
+</blockquote>
+<p>When developers don’t write comments, they usually justify their behavior with one or more of the following excuses:</p>
+<blockquote>
+<p>当开发人员不发表评论时，他们通常会以以下一种或多种借口为自己的行为辩护：</p>
+</blockquote>
+<ul>
+<li>“Good code is self-documenting.”</li>
+<li>“I don’t have time to write comments.”</li>
+<li>“Comments get out of date and become misleading.”</li>
+<li>“The comments I have seen are all worthless; why bother?” In the sections below I will address each of these excuses in turn.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>“好的代码可以自我记录。”</li>
+<li>“我没有时间写评论。”</li>
+<li>“评论过时，并会产生误导。”</li>
+<li>“我所看到的评论都是毫无价值的；何必？” 在以下各节中，我将依次讨论这些借口。</li>
+</ul>
+</blockquote>
+<h2 id="12-1-Good-code-is-self-documenting-好的代码可以自我记录"><a href="#12-1-Good-code-is-self-documenting-好的代码可以自我记录" class="headerlink" title="12.1 Good code is self-documenting 好的代码可以自我记录"></a>12.1 Good code is self-documenting 好的代码可以自我记录</h2><p>Some people believe that if code is written well, it is so obvious that no comments are needed. This is a delicious myth, like a rumor that ice cream is good for your health: we’d really like to believe it! Unfortunately, it’s simply not true. To be sure, there are things you can do when writing code to reduce the need for comments, such as choosing good variable names (see Chapter 14). Nonetheless, there is still a significant amount of design information that can’t be represented in code. For example, only a small part of a class’s interface, such as the signatures of its methods, can be specified formally in the code. The informal aspects of an interface, such as a high-level description of what each method does or the meaning of its result, can only be described in comments. There are many other examples of things that can’t be described in the code, such as the rationale for a particular design decision, or the conditions under which it makes sense to call a particular method.</p>
+<blockquote>
+<p>有人认为，如果代码编写得当，那么显而易见，不需要注释。这是一个美味的神话，就像谣言说冰淇淋对您的健康有益：我们真的很想相信！不幸的是，事实并非如此。可以肯定的是，在编写代码时可以做一些事情来减少对注释的需求，例如选择好的变量名（请参阅第 14 章）。尽管如此，仍有大量设计信息无法用代码表示。例如，只能在代码中正式指定类接口的一小部分，例如其方法的签名。界面的非正式方面，例如对每种方法的作用或其结果含义的高级描述，只能在注释中描述。</p>
+</blockquote>
+<p>Some developers argue that if others want to know what a method does, they should just read the code of the method: this will be more accurate than any comment. It’s possible that a reader could deduce the abstract interface of the method by reading its code, but it would be time-consuming and painful. In addition, if you write code with the expectation that users will read method implementations, you will try to make each method as short as possible, so that it’s easy to read. If the method does anything nontrivial, you will break it up into several smaller methods. This will result in a large number of shallow methods. Furthermore, it doesn’t really make the code easier to read: in order to understand the behavior of the top-level method, readers will probably need to understand the behaviors of the nested methods. For large systems it isn’t practical for users to read the code to learn the behavior.</p>
+<blockquote>
+<p>一些开发人员认为，如果其他人想知道某个方法的作用，那么他们应该只阅读该方法的代码：这将比任何注释都更准确。读者可能会通过阅读其代码来推断该方法的抽象接口，但这既费时又痛苦。另外，如果在编写代码时期望用户会阅读方法实现，则将尝试使每个方法尽可能短，以便于阅读。如果该方法执行了一些重要操作，则将其分解为几个较小的方法。这将导致大量浅层方法。此外，它并没有真正使代码更易于阅读：为了理解顶层方法的行为，读者可能需要了解嵌套方法的行为。</p>
+</blockquote>
+<p>Moreover, comments are fundamental to abstractions. Recall from Chapter 4 that the goal of abstractions is to hide complexity: an abstraction is a simplified view of an entity, which preserves essential information but omits details that can safely be ignored. If users must read the code of a method in order to use it, then there is no abstraction: all of the complexity of the method is exposed. Without comments, the only abstraction of a method is its declaration, which specifies its name and the names and types of its arguments and results. The declaration is missing too much essential information to provide a useful abstraction by itself. For example, a method to extract a substring might have two arguments, start and end, indicating the range of characters to extract. From the declaration alone, it isn’t possible to tell whether the extracted substring will include the character indicated by end, or what happens if start &gt; end. Comments allow us to capture the additional information that callers need, thereby completing the simplified view while hiding implementation details. It’s also important that comments are written in a human language such as English; this makes them less precise than code, but it provides more expressive power, so we can create simple, intuitive descriptions. If you want to use abstractions to hide complexity, comments are essential.</p>
+<blockquote>
+<p>此外，注释是抽象的基础。回顾第四章，抽象的目的是隐藏复杂性：抽象是实体的简化视图，该实体保留必要的信息，但忽略了可以安全忽略的细节。如果用户必须阅读方法的代码才能使用它，则没有任何抽象：方法的所有复杂性都将暴露出来。没有注释，方法的唯一抽象就是其声明，该声明指定其名称以及其参数和结果的名称和类型。该声明缺少太多基本信息，无法单独提供有用的抽象。例如，提取子字符串的方法可能有两个参数，开始和结束，表示要提取的字符范围。仅凭宣言，无法确定提取的子字符串是否将包含 end 指示的字符，或者如果 start&gt; end 会发生什么。注释使我们能够捕获调用者所需的其他信息，从而在隐藏实现细节的同时完成简化的视图。用人类语言（例如英语）写评论也很重要；这使它们不如代码精确，但提供了更多的表达能力，因此我们可以创建简单直观的描述。如果要使用抽象来隐藏复杂性，则注释必不可少。用人类语言（例如英语）写评论也很重要；这使它们不如代码精确，但提供了更多的表达能力，因此我们可以创建简单直观的描述。如果要使用抽象来隐藏复杂性，则注释必不可少。用人类语言（例如英语）写评论也很重要；这使它们不如代码精确，但提供了更多的表达能力，因此我们可以创建简单直观的描述。如果要使用抽象来隐藏复杂性，则注释必不可少。</p>
+</blockquote>
+<h2 id="12-2-I-don’t-have-time-to-write-comments-我没有时间写评论"><a href="#12-2-I-don’t-have-time-to-write-comments-我没有时间写评论" class="headerlink" title="12.2 I don’t have time to write comments 我没有时间写评论"></a>12.2 I don’t have time to write comments 我没有时间写评论</h2><p>It’s tempting to prioritize comments lower than other development tasks. Given a choice between adding a new feature and documenting an existing feature, it seems logical to choose the new feature. However, software projects are almost always under time pressure, and there will always be things that seem higher priority than writing comments. Thus, if you allow documentation to be de-prioritized, you’ll end up with no documentation.</p>
+<blockquote>
+<p>优先考虑低于其他开发任务的注释是很诱人的。在添加新功能和记录现有功能之间做出选择之后，选择新功能似乎合乎逻辑。但是，软件项目几乎总是处于时间压力之下，并且总会有比编写注释优先级更高的事情。因此，如果您允许取消对文档的优先级，则最终将没有文档。</p>
+</blockquote>
+<p>The counter-argument to this excuse is the investment mindset discussed on page 15. If you want a clean software structure, which will allow you to work efficiently over the long-term, then you must take some extra time up front in order to create that structure. Good comments make a huge difference in the maintainability of software, so the effort spent on them will pay for itself quickly. Furthermore, writing comments needn’t take a lot of time. Ask yourself how much of your development time you spend typing in code (as opposed to designing, compiling, testing, etc.), assuming you don’t include any comments; I doubt that the answer is more than 10%. Now suppose that you spend as much time typing comments as typing code; this should be a safe upper bound. With these assumptions, writing good comments won’t add more than about 10% to your development time. The benefits of having good documentation will quickly offset this cost.</p>
+<blockquote>
+<p>与该借口相反的是第 15 页上讨论的投资思路。如果您想要一个干净的软件结构，可以长期有效地工作，那么您必须花一些额外的时间才能创建该结构。好的评论对软件的可维护性有很大的影响，因此花费在它们上面的精力将很快收回成本。此外，撰写评论不需要花费很多时间。询问自己，假设您不包含任何注释，那么您花费了多少开发时间来键入代码（与设计，编译，测试等相对）。我怀疑答案是否超过 10％。现在假设您花在输入注释上的时间与输入代码所花费的时间一样多。这应该是一个安全的上限。基于这些假设，撰写好的评论不会增加您的开发时间约 10％。拥有良好文档的好处将迅速抵消这一成本。</p>
+</blockquote>
+<p>Furthermore, many of the most important comments are those related to abstractions, such as the top-level documentation for classes and methods. Chapter 15 will argue that these comments should be written as part of the design process, and that the act of writing the documentation serves as an important design tool that improves the overall design. These comments pay for themselves immediately.</p>
+<blockquote>
+<p>此外，许多最重要的注释是与抽象有关的注释，例如类和方法的顶级文档。第 15 章认为，这些注释应作为设计过程的一部分编写，并且编写文档的行为是改善整体设计的重要设计工具。这些评论立即付诸行动。</p>
+</blockquote>
+<h2 id="12-3-Comments-get-out-of-date-and-become-misleading-评论过时并产生误导"><a href="#12-3-Comments-get-out-of-date-and-become-misleading-评论过时并产生误导" class="headerlink" title="12.3 Comments get out of date and become misleading 评论过时并产生误导"></a>12.3 Comments get out of date and become misleading 评论过时并产生误导</h2><p>Comments do sometimes get out of date, but this need not be a major problem in practice. Keeping documentation up-to-date does not require an enormous effort. Large changes to the documentation are only required if there have been large changes to the code, and the code changes will take more time than the documentation changes. Chapter 16 discusses how to organize documentation so that it is as easy as possible to keep it updated after code modifications (the key ideas are to avoid duplicated documentation and keep the documentation close to the corresponding code). Code reviews provide a great mechanism for detecting and fixing stale comments.</p>
+<blockquote>
+<p>注释有时确实会过时，但这实际上并不是主要问题。使文档保持最新状态并不需要付出巨大的努力。仅当对代码进行了较大的更改时才需要对文档进行大的更改，并且代码更改将比文档的更改花费更多的时间。第 16 章讨论了如何组织文档，以便在修改代码后尽可能容易地对其进行更新（主要思想是避免重复的文档并使文档与相应的代码保持一致）。代码审查提供了一种检测和修复陈旧注释的强大机制。</p>
+</blockquote>
+<h2 id="12-4-All-the-comments-I-have-seen-are-worthless-我所看到的所有评论都是毫无价值的"><a href="#12-4-All-the-comments-I-have-seen-are-worthless-我所看到的所有评论都是毫无价值的" class="headerlink" title="12.4 All the comments I have seen are worthless 我所看到的所有评论都是毫无价值的"></a>12.4 All the comments I have seen are worthless 我所看到的所有评论都是毫无价值的</h2><p>Of the four excuses, this is probably the one with the most merit. Every software developer has seen comments that provide no useful information, and most existing documentation is so-so at best. Fortunately, this problem is solvable; writing solid documentation is not hard, once you know how. The next chapters will lay out a framework for how to write good documentation and maintain it over time.</p>
+<blockquote>
+<p>在这四个借口中，这可能是最有价值的借口。每个软件开发人员都看到没有提供有用信息的注释，并且大多数现有文档充其量都是这样。幸运的是，这个问题是可以解决的。一旦知道了如何编写可靠的文档并不难。下一章将为如何编写良好的文档并随时间进行维护提供一个框架。</p>
+</blockquote>
+<h2 id="12-5-Benefits-of-well-written-comments"><a href="#12-5-Benefits-of-well-written-comments" class="headerlink" title="12.5 Benefits of well-written comments"></a>12.5 Benefits of well-written comments</h2><p>Now that I have discussed (and, hopefully, debunked) the arguments against writing comments, let’s consider the benefits that you will get from good comments. The overall idea behind comments is to capture information that was in the mind of the designer but couldn’t be represented in the code. This information ranges from low-level details, such as a hardware quirk that motivates a particularly tricky piece of code, up to high-level concepts such as the rationale for a class. When other developers come along later to make modifications, the comments will allow them to work more quickly and accurately. Without documentation, future developers will have to rederive or guess at the developer’s original knowledge; this will take additional time, and there is a risk of bugs if the new developer misunderstands the original designer’s intentions. Comments are valuable even when the original designer is the one making the changes: if it has been more than a few weeks since you last worked in a piece of code, you will have forgotten many of the details of the original design.</p>
+<blockquote>
+<p>既然我已经讨论了（并希望揭穿了这些）反对撰写评论的论点，让我们考虑一下从良好评论中将获得的好处。注释背后的总体思想是捕获设计者所想但不能在代码中表示的信息。这些信息从低级详细信息（例如，激发特殊代码的硬件怪癖）到高级概念（例如，类的基本原理）。当其他开发人员稍后进行修改时，这些注释将使他们能够更快，更准确地工作。没有文档，未来的开发人员将不得不重新编写或猜测开发人员的原始知识。这将花费额外的时间，并且如果新开发者误解了原始设计者的意图，则存在错误的风险。</p>
+</blockquote>
+<p>Chapter 2 described three ways in which complexity manifests itself in software systems:</p>
+<blockquote>
+<p>第 2 章介绍了在软件系统中表现出复杂性的三种方式：</p>
+</blockquote>
+<ul>
+<li>Change amplification: a seemingly simple change requires code modifications in many places.</li>
+<li>Cognitive load: in order to make a change, the developer must accumulate a large amount of information.</li>
+<li>Unknown unknowns: it is unclear what code needs to be modified, or what information must be considered in order to make those modifications.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>变更放大：看似简单的变更需要在许多地方进行代码修改。</li>
+<li>认知负荷：为了进行更改，开发人员必须积累大量信息。</li>
+<li>未知未知数：尚不清楚需要修改哪些代码，或必须考虑哪些信息才能进行这些修改。</li>
+</ul>
+</blockquote>
+<p>Good documentation helps with the last two of these issues. Documentation can reduce cognitive load by providing developers with the information they need to make changes and by making it easy for developers to ignore information that is irrelevant. Without adequate documentation, developers may have to read large amounts of code to reconstruct what was in the designer’s mind. Documentation can also reduce the unknown unknowns by clarifying the structure of the system, so that it is clear what information and code is relevant for any given change.</p>
+<blockquote>
+<p>好的文档可以帮助解决最后两个问题。通过为开发人员提供他们进行更改所需的信息，并使开发人员容易忽略不相关的信息，文档可以减轻认知负担。没有足够的文档，开发人员可能必须阅读大量代码才能重构设计人员的想法。文档还可以通过阐明系统的结构来减少未知的未知数，从而可以清楚地了解与任何给定更改相关的信息和代码。</p>
+</blockquote>
+<p>Chapter 2 pointed out that the primary causes of complexity are dependencies and obscurity. Good documentation can clarify dependencies, and it fills in gaps to eliminate obscurity.</p>
+<blockquote>
+<p>第 2 章指出，导致复杂性的主要原因是依赖性和模糊性。好的文档可以阐明依赖关系，并且可以填补空白以消除模糊性。</p>
+</blockquote>
+<p>The next few chapters will show you how to write good documentation. They will also discuss how to integrate documentation-writing into the design process so that it improves the design of your software.</p>
+<blockquote>
+<p>接下来的几章将向您展示如何编写好的文档。他们还将讨论如何将文档编写集成到设计过程中，从而改善软件设计。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch12-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%AF%84%E8%AE%BA%E5%91%A2%EF%BC%9F%E5%9B%9B%E4%B8%AA%E7%90%86%E7%94%B1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件设计的哲学-ch11-设计它两次" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch11-%E8%AE%BE%E8%AE%A1%E5%AE%83%E4%B8%A4%E6%AC%A1/">软件设计的哲学 - ch11</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch11-%E8%AE%BE%E8%AE%A1%E5%AE%83%E4%B8%A4%E6%AC%A1/" class="archive-article-date">
+  	<time datetime="2021-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-11-章-设计它两次"><a href="#第-11-章-设计它两次" class="headerlink" title="第 11 章 设计它两次"></a>第 11 章 设计它两次</h1><blockquote>
+<p>Chapter 11 Design it Twice</p>
+</blockquote>
+<p>Designing software is hard, so it’s unlikely that your first thoughts about how to structure a module or system will produce the best design. You’ll end up with a much better result if you consider multiple options for each major design decision: design it twice.</p>
+<blockquote>
+<p>设计软件非常困难，因此您对如何构造模块或系统的初步思考不太可能会产生最佳的设计。如果为每个主要设计决策考虑多个选项，最终将获得更好的结果：设计两次。</p>
+</blockquote>
+<p>Suppose you are designing the class that will manage the text of a file for a GUI text editor. The first step is to define the interface that the class will present to the rest of the editor; rather than picking the first idea that comes to mind, consider several possibilities. One choice is a line-oriented interface, with operations to insert, modify, and delete whole lines of text. Another option is an interface based on individual character insertions and deletions. A third choice is a string-oriented interface, which operates on arbitrary ranges of characters that may cross line boundaries. You don’t need to pin down every feature of each alternative; it’s sufficient at this point to sketch out a few of the most important methods.</p>
+<blockquote>
+<p>假设您正在设计用于管理 GUI 文本编辑器文件文本的类。第一步是定义该类将呈现给编辑器其余部分的接口。与其选择想到的第一个想法，不如考虑几种可能性。一种选择是面向行的界面，该界面具有插入，修改和删除整行文本的操作。另一个选择是基于单个字符插入和删除的接口。第三种选择是面向字符串的接口，该接口可对可能跨越线边界的任意范围的字符进行操作。您无需确定每个替代方案的每个功能；在这一点上，勾勒出一些最重要的方法就足够了。</p>
+</blockquote>
+<p>Try to pick approaches that are radically different from each other; you’ll learn more that way. Even if you are certain that there is only one reasonable approach, consider a second design anyway, no matter how bad you think it will be. It will be instructive to think about the weaknesses of that design and contrast them with the features of other designs.</p>
+<blockquote>
+<p>尝试选择彼此根本不同的方法；这样您将学到更多。即使您确定只有一种合理的方法，无论您认为有多糟糕，都应该考虑第二种设计。考虑该设计的弱点并将它们与其他设计的特征进行对比将很有启发性。</p>
+</blockquote>
+<p>After you have roughed out the designs for the alternatives, make a list of the pros and cons of each one. The most important consideration for an interface is ease of use for higher level software. In the example above, both the line-oriented interface and the character-oriented interface will require extra work in software that uses the text class. The line-oriented interface will require higher level software to split and join lines during partial-line and multi-line operations such as cutting and pasting the selection. The character-oriented interface will require loops to implement operations that modify more than a single character. It is also worth considering other factors:</p>
+<blockquote>
+<p>在对备选方案进行粗略设计之后，列出每个方案的优缺点。接口最重要的考虑因素是高级软件的易用性。在上面的示例中，面向行的界面和面向字符的界面都需要使用文本类的软件中的额外工作。面向行的界面将需要更高级别的软件来在部分行和多行操作（例如剪切和粘贴所选内容）期间拆分和合并行。面向字符的接口将需要循环来实现修改多个字符的操作。还值得考虑其他因素：</p>
+</blockquote>
+<ul>
+<li>Does one alternative have a simpler interface than another? In the text example, all of the text interfaces are relatively simple.</li>
+<li>Is one interface more general-purpose than another?</li>
+<li>Does one interface enable a more efficient implementation than another? In the text example, the character-oriented approach is likely to be significantly slower than the others, because it requires a separate call into the text module for each character.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>一种选择是否具有比另一种更简单的界面？在文本示例中，所有文本界面都相对简单。</li>
+<li>一个接口比另一个接口更通用吗？</li>
+<li>一个接口是否比另一个接口更有效地实现？在文本示例中，面向字符的方法可能比其他方法慢得多，因为它需要为每个字符单独调用文本模块。</li>
+</ul>
+</blockquote>
+<p>Once you have compared alternative designs, you will be in a better position to identify the best design. The best choice may be one of the alternatives, or you may discover that you can combine features of multiple alternatives into a new design that is better than any of the original choices.</p>
+<blockquote>
+<p>比较了备选设计之后，您将可以更好地确定最佳设计。最佳选择可能是这些选择之一，或者您可能发现可以将多个选择的功能组合到一个比任何原始选择都要好的新设计中。</p>
+</blockquote>
+<p>Sometimes none of the alternatives is particularly attractive; when this happens, see if you can come up with additional schemes. Use the problems you identified with the original alternatives to drive the new design(s). If you were designing the text class and considered only the line-oriented and character-oriented approaches, you might notice that each of the alternatives is awkward because it requires higher level software to perform additional text manipulations. That’s a red flag: if there’s going to be a text class, it should handle all of the text manipulation. In order to eliminate the additional text manipulations, the text interface needs to match more closely the operations happening in higher level software. These operations don’t always correspond to single characters or single lines. This line of reasoning should lead you to a range-oriented API for text, which eliminates the problem with the earlier designs.</p>
+<blockquote>
+<p>有时，没有其他选择特别有吸引力。发生这种情况时，请查看是否可以提出其他方案。使用您在原始替代方案中发现的问题来推动新设计。如果您在设计文本类并且仅考虑面向行和面向字符的方法，则可能会注意到每个替代方案都比较笨拙，因为它需要更高级别的软件来执行其他文本操作。那是一个危险信号：如果要有一个文本类，它应该处理所有文本操作。为了消除其他文本操作，文本界面需要更紧密地匹配高级软件中发生的操作。这些操作并不总是对应于单个字符或一行。</p>
+</blockquote>
+<p>The design-it-twice principle can be applied at many levels in a system. For a module, you can use this approach first to pick the interface, as described above. Then you can apply it again when you are designing the implementation: for the text class, you might consider implementations such as a linked list of lines, fixed-size blocks of characters, or a “gap buffer.” The goals will be different for the implementation than for the interface: for the implementation, the most important things are simplicity and performance. It’s also useful to explore multiple designs at higher levels in the system, such as when choosing features for a user interface, or when decomposing a system into major modules. In each case, it’s easier to identify the best approach if you can compare a few alternatives.</p>
+<blockquote>
+<p>两次设计原则可以在系统的许多级别上应用。对于模块，您可以首先使用此方法来选择接口，如上所述。然后，您可以在设计实现时再次应用它：对于文本类，您可以考虑实现这些实现，例如行的链接列表，固定大小的字符块或“间隙缓冲区”。实现的目标与接口的目标是不同的：对于实现，最重要的是简单性和性能。在系统的更高层次上探索多种设计也很有用，例如在为用户界面选择功能或将系统分解为主要模块时。在每种情况下，如果您可以比较几种选择，则更容易确定最佳方法。</p>
+</blockquote>
+<p>Designing it twice does not need to take a lot of extra time. For a smaller module such as a class, you may not need more than an hour or two to consider alternatives. This is a small amount of time compared to the days or weeks you will spend implementing the class. The initial design experiments will probably result in a significantly better design, which will more than pay for the time spent designing it twice. For larger modules you’ll spend more time in the initial design explorations, but the implementation will also take longer, and the benefits of a better design will also be higher.</p>
+<blockquote>
+<p>对其进行两次设计不需要花费很多额外的时间。对于较小的模块（如课程），您可能不需要一两个小时就能考虑替代方法。与您将花费数天或数周时间来实施该课程相比，这是很少的时间。最初的设计实验可能会导致明显更好的设计，这将比花两次设计时间所花的时间多。对于较大的模块，您将花费更多的时间进行初始设计探索，但是实现也将花费更长的时间，并且更好的设计所带来的好处也会更高。</p>
+</blockquote>
+<p>I have noticed that the design-it-twice principle is sometimes hard for really smart people to embrace. When they are growing up, smart people discover that their first quick idea about any problem is sufficient for a good grade; there is no need to consider a second or third possibility. This makes it easy to develop bad work habits. However, as these people get older, they get promoted into environments with harder and harder problems. Eventually, everyone reaches a point where your first ideas are no longer good enough; if you want to get really great results, you have to consider a second possibility, or perhaps a third, no matter how smart you are. The design of large software systems falls in this category: no-one is good enough to get it right with their first try.</p>
+<blockquote>
+<p>我已经注意到，真正聪明的人有时很难接受两次设计原则。当他们长大后，聪明的人会发现，他们对任何问题的第一个快速构想就足以取得良好的成绩。无需考虑第二种或第三种可能性。这使得容易养成不良的工作习惯。但是，随着这些人变老，他们将被提升到越来越困难的环境中。最终，每个人 ​​ 都达到了您的第一个想法不再足够好的地步。如果您想获得非常好的结果，那么无论您多么聪明，都必须考虑第二种可能性，或者第三种可能性。大型软件系统的设计属于此类：没有人能很好地在首次尝试时就将其正确。</p>
+</blockquote>
+<p>Unfortunately, I often see smart people who insist on implementing the first idea that comes to mind, and this causes them to underperform their true potential (it also makes them frustrating to work with). Perhaps they subconsciously believe that “smart people get it right the first time,” so if they try multiple designs it would mean they are not smart after all. This is not the case. It isn’t that you aren’t smart; it’s that the problems are really hard! Furthermore, that’s a good thing: it’s much more fun to work on a difficult problem where you have to think carefully, rather than an easy problem where you don’t have to think at all.</p>
+<blockquote>
+<p>不幸的是，我经常看到聪明的人坚持要实现第一个想到的想法，这会使他们无法发挥其真正的潜力（这也使他们沮丧地工作）。也许他们下意识地相信“聪明的人第一次就能做到”，因此，如果他们尝试多种设计，那将意味着他们毕竟并不聪明。不是这种情况。不是说你不聪明；问题真的很难解决！此外，这是一件好事：处理一个必须认真思考的难题比处理一个根本不需要思考的难题更有趣。</p>
+</blockquote>
+<p>The design-it-twice approach not only improves your designs, but it also improves your design skills. The process of devising and comparing multiple approaches will teach you about the factors that make designs better or worse. Over time, this will make it easier for you to rule out bad designs and hone in on really great ones.</p>
+<blockquote>
+<p>“两次设计”方法不仅可以改善您的设计，而且可以提高您的设计技能。设计和比较多种方法的过程将教您使设计更好或更坏的因素。随着时间的流逝，这将使您更容易排除不良的设计并磨练真正的出色设计。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch11-%E8%AE%BE%E8%AE%A1%E5%AE%83%E4%B8%A4%E6%AC%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-软件设计的哲学-ch10-定义不存在的错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch10-%E5%AE%9A%E4%B9%89%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E9%94%99%E8%AF%AF/">软件设计的哲学 - ch10</a>
+    </h1>
+  
+
+        
+        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch10-%E5%AE%9A%E4%B9%89%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E9%94%99%E8%AF%AF/" class="archive-article-date">
+  	<time datetime="2021-02-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第-10-章-定义不存在的错误"><a href="#第-10-章-定义不存在的错误" class="headerlink" title="第 10 章 定义不存在的错误"></a>第 10 章 定义不存在的错误</h1><blockquote>
+<p>Chapter 10 Define Errors Out Of Existence</p>
+</blockquote>
+<p>Exception handling is one of the worst sources of complexity in software systems. Code that deals with special conditions is inherently harder to write than code that deals with normal cases, and developers often define exceptions without considering how they will be handled. This chapter discusses why exceptions contribute disproportionately to complexity, then it shows how to simplify exception handling. The key overall lesson from this chapter is to reduce the number of places where exceptions must be handled; in many cases the semantics of operations can be modified so that the normal behavior handles all situations and there is no exceptional condition to report (hence the title of this chapter).</p>
+<blockquote>
+<p>异常处理是软件系统中最糟糕的复杂性来源之一。处理特殊情况的代码在本质上比处理正常情况的代码更难编写，并且开发人员经常在定义异常时不考虑异常的处理方式。本章讨论了为什么异常对复杂性的贡献不成比例，然后说明了如何简化异常处理。本章总的主要教训是减少必须处理异常的地方的数量。在许多情况下，可以修改操作的语义，以便正常行为可以处理所有情况，并且没有要报告的特殊条件（因此，本章标题）。</p>
+</blockquote>
+<h2 id="10-1-Why-exceptions-add-complexity-为什么异常会增加复杂性"><a href="#10-1-Why-exceptions-add-complexity-为什么异常会增加复杂性" class="headerlink" title="10.1 Why exceptions add complexity 为什么异常会增加复杂性"></a>10.1 Why exceptions add complexity 为什么异常会增加复杂性</h2><p>I use the term exception to refer to any uncommon condition that alters the normal flow of control in a program. Many programming languages include a formal exception mechanism that allows exceptions to be thrown by lower-level code and caught by enclosing code. However, exceptions can occur even without using a formal exception reporting mechanism, such as when a method returns a special value indicating that it didn’t complete its normal behavior. All of these forms of exceptions contribute to complexity.</p>
+<blockquote>
+<p>我使用“异常”一词来指代任何会改变程序中正常控制流程的不常见条件。许多编程语言都包含一种正式的异常机制，该机制允许异常由低级代码引发并由封闭代码捕获。但是，即使不使用正式的异常报告机制，异常也可能发生，例如，当某个方法返回一个特殊值指示其未完成其正常行为时。所有这些形式的异常都会增加复杂性。</p>
+</blockquote>
+<p>A particular piece of code may encounter exceptions in several different ways:</p>
+<blockquote>
+<p>一段特定的代码可能会以几种不同的方式遇到异常：</p>
+</blockquote>
+<ul>
+<li>A caller may provide bad arguments or configuration information.</li>
+<li>An invoked method may not be able to complete a requested operation. For example, an I&#x2F;O operation may fail, or a required resource may not be available.</li>
+<li>In a distributed system, network packets may be lost or delayed, servers may not respond in a timely fashion, or peers may communicate in unexpected ways.</li>
+<li>The code may detect bugs, internal inconsistencies, or situations it is not prepared to handle.</li>
+</ul>
+<hr>
+<blockquote>
+<ul>
+<li>调用方可能会提供错误的参数或配置信息。</li>
+<li>调用的方法可能无法完成请求的操作。例如，I&#x2F;O 操作可能失败，或者所需的资源可能不可用。</li>
+<li>在分布式系统中，网络数据包可能会丢失或延迟，服务器可能无法及时响应，或者对等方可能会以意想不到的方式进行通信。</li>
+<li>该代码可能会检测到错误，内部不一致或未准备处理的情况。</li>
+</ul>
+</blockquote>
+<p>Large systems have to deal with many exceptional conditions, particularly if they are distributed or need to be fault-tolerant. Exception handling can account for a significant fraction of all the code in a system.</p>
+<blockquote>
+<p>大型系统必须应对许多特殊情况，特别是在它们是分布式的或需要容错的情况下。异常处理可以占系统中所有代码的很大一部分。</p>
+</blockquote>
+<p>Exception handling code is inherently more difficult to write than normal-case code. An exception disrupts the normal flow of the code; it usually means that something didn’t work as expected. When an exception occurs, the programmer can deal with it in two ways, each of which can be complicated. The first approach is to move forward and complete the work in progress in spite of the exception. For example, if a network packet is lost, it can be resent; if data is corrupted, perhaps it can be recovered from a redundant copy. The second approach is to abort the operation in progress and report the exception upwards. However, aborting can be complicated because the exception may have occurred at a point where system state is inconsistent (a data structure might have been partially initialized); the exception handling code must restore consistency, such as by unwinding any changes made before the exception occurred.</p>
+<blockquote>
+<p>异常处理代码天生就比正常情况下的代码更难写。异常中断了正常的代码流;它通常意味着某事没有像预期的那样工作。当异常发生时，程序员可以用两种方法处理它，每种方法都很复杂。第一种方法是向前推进并完成正在进行的工作，尽管存在例外。例如，如果一个网络数据包丢失，它可以被重发;如果数据损坏了，也许可以从冗余副本中恢复数据。第二种方法是中止正在进行的操作，向上报告异常。但是，中止可能很复杂，因为异常可能发生在系统状态不一致的地方(数据结构可能已经部分初始化);异常处理代码必须恢复一致性，例如通过撤销发生异常之前所做的任何更改。</p>
+</blockquote>
+<p>Furthermore, exception handling code creates opportunities for more exceptions. Consider the case of resending a lost network packet. Perhaps the packet wasn’t actually lost, but was simply delayed. In this case, resending the packet will result in duplicate packets arriving at the peer; this introduces a new exceptional condition that the peer must handle. Or, consider the case of recovering lost data from a redundant copy: what if the redundant copy has also been lost? Secondary exceptions occurring during recovery are often more subtle and complex than the primary exceptions. If an exception is handled by aborting the operation in progress, then this must be reported to the caller as another exception. To prevent an unending cascade of exceptions, the developer must eventually find a way to handle exceptions without introducing more exceptions.</p>
+<blockquote>
+<p>此外，异常处理代码为更多异常创造了机会。考虑重新发送丢失的网络数据包的情况。也许该数据包实际上并没有丢失，但是只是被延迟了。在这种情况下，重新发送数据包将导致重复的数据包到达对等方；这引入了对等方必须处理的新的例外条件。或者，考虑从冗余副本恢复丢失的数据的情况：如果冗余副本也丢失了怎么办？在恢复期间发生的次要异常通常比主要异常更加微妙和复杂。如果通过中止正在进行的操作来处理异常，则必须将此异常作为另一个异常报告给调用方。为了防止无休止的异常级联，开发人员最终必须找到一种在不引入更多异常的情况下处理异常的方法。</p>
+</blockquote>
+<p>Language support for exceptions tends to be verbose and clunky, which makes exception handling code hard to read. For example, consider the following code, which reads a collection of tweets from a file using Java’s support for object serialization and deserialization:</p>
+<blockquote>
+<p>语言对异常的支持往往是冗长而笨拙的，这使得异常处理代码难以阅读。例如，考虑以下代码，该代码使用 Java 对对象序列化和反序列化的支持从文件中读取 tweet 的集合：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (</span><br><span class="line">    <span class="type">FileInputStream</span> <span class="variable">fileStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(fileName);</span><br><span class="line">    <span class="type">BufferedInputStream</span> <span class="variable">bufferedStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(fileStream);</span><br><span class="line">    <span class="type">ObjectInputStream</span> <span class="variable">objectStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(bufferedStream);</span><br><span class="line">) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; tweetsPerFile; i++) &#123;</span><br><span class="line">        tweets.add((Tweet) objectStream.readObject());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (EOFException e) &#123;</span><br><span class="line">    <span class="comment">// Not a problem: not all tweet files have full</span></span><br><span class="line">    <span class="comment">// set of tweets.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (ClassCastException e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Just the basic try-catch boilerplate accounts for more lines of code than the code for normal-case operation, without even considering the code that actually handles the exceptions. It is hard to relate the exception handling code to the normal-case code: for example, it’s not obvious where each exception is generated. An alternative approach is to break up the code into many distinct try blocks; in the extreme case there could be a try for each line of code that can generate an exception. This would make it clear where exceptions occur, but the try blocks themselves break up the flow of the code and make it harder to read; in addition, some exception handling code might end up duplicated in multiple try blocks.</p>
+<blockquote>
+<p>只是基本的 try-catch 样板代码比正常情况下的操作代码所占的代码行更多，甚至没有考虑实际处理异常的代码。很难将异常处理代码与普通情况代码相关联：例如，每个异常的生成位置都不明显。另一种方法是将代码分解为许多不同的 try 块。在极端情况下，可能会尝试尝试每行可能产生异常的代码。这样可以清楚地说明异常发生的位置，但是 try 块本身会破坏代码流，并使代码难以阅读。此外，某些异常处理代码可能最终会在多个 try 块中重复。</p>
+</blockquote>
+<p>It’s difficult to ensure that exception handling code really works. Some exceptions, such as I&#x2F;O errors, can’t easily be generated in a test environment, so it’s hard to test the code that handles them. Exceptions don’t occur very often in running systems, so exception handling code rarely executes. Bugs can go undetected for a long time, and when the exception handling code is finally needed, there’s a good chance that it won’t work (one of my favorite sayings: “code that hasn’t been executed doesn’t work”). A recent study found that more than 90% of catastrophic failures in distributed data-intensive systems were caused by incorrect error handling1. When exception handling code fails, it’s difficult to debug the problem, since it occurs so infrequently.</p>
+<blockquote>
+<p>确保异常处理代码真正起作用是困难的。某些异常（例如 I&#x2F;O 错误）在测试环境中不易生成，因此很难测试处理它们的代码。异常在运行的系统中很少发生，因此异常处理代码很少执行。错误可能会长时间未被发现，并且当最终需要异常处理代码时，它很有可能无法正常工作（我最喜欢的一句话是：“未执行的代码无效”） 。最近的一项研究发现，分布式数据密集型系统中超过 90％的灾难性故障是由错误的错误处理引起的 1。当异常处理代码失败时，很难调试该问题，因为它很少发生。</p>
+</blockquote>
+<h2 id="10-2-Too-many-exceptions-异常过多"><a href="#10-2-Too-many-exceptions-异常过多" class="headerlink" title="10.2 Too many exceptions 异常过多"></a>10.2 Too many exceptions 异常过多</h2><p>Programmers exacerbate the problems related to exception handling by defining unnecessary exceptions. Most programmers are taught that it’s important to detect and report errors; they often interpret this to mean “the more errors detected, the better.” This leads to an over-defensive style where anything that looks even a bit suspicious is rejected with an exception, which results in a proliferation of unnecessary exceptions that increase the complexity of the system.</p>
+<blockquote>
+<p>程序员通过定义不必要的异常加剧了与异常处理有关的问题。告诉大多数程序员，检测和报告错误很重要。他们通常将其解释为“检测到的错误越多越好”。这导致了一种过分防御的风格，其中任何看起来甚至有点可疑的东西都被拒绝，并带有异常，这导致了不必要的异常的泛滥，从而增加了系统的复杂性。</p>
+</blockquote>
+<p>I made this mistake myself in the design of the Tcl scripting language. Tcl contains an unset command that can be used to remove a variable. I defined unset so that it throws an error if the variable doesn’t exist. At the time I thought that it must be a bug if someone tries to delete a variable that doesn’t exist, so Tcl should report it. However, one of the most common uses of unset is to clean up temporary state created by some previous operation. It’s often hard to predict exactly what state was created, particularly if the operation aborted partway through. Thus, the simplest thing is to delete all of the variables that might possibly have been created. The definition of unset makes this awkward: developers end up enclosing calls to unset in catch statements to catch and ignore errors thrown by unset. In retrospect, the definition of the unset command is one of the biggest mistakes I made in the design of Tcl.</p>
+<blockquote>
+<p>在设计 Tcl 脚本语言时，我自己就犯了这个错误。Tcl 包含一个未设置的命令，可用于删除变量。我定义了 unset 以便在变量不存在时抛出错误。当时我认为，如果有人试图删除一个不存在的变量，那么它一定是一个 bug，所以 Tcl 应该报告它。然而，unset 最常见的用途之一是清理以前操作创建的临时状态。通常很难准确地预测创建了什么状态，特别是在操作中途中止的情况下。因此，最简单的方法是删除可能已经创建的所有变量。unset 的定义使得这种情况很尴尬:开发人员最终会在 catch 语句中封装对 unset 的调用，以捕获并忽略 unset 抛出的错误。回顾过去，unset 命令的定义是我在 Tcl 设计中犯下的最大错误之一。</p>
+</blockquote>
+<p>It’s tempting to use exceptions to avoid dealing with difficult situations: rather than figuring out a clean way to handle it, just throw an exception and punt the problem to the caller. Some might argue that this approach empowers callers, since it allows each caller to handle the exception in a different way. However, if you are having trouble figuring out what to do for the particular situation, there’s a good chance that the caller won’t know what to do either. Generating an exception in a situation like this just passes the problem to someone else and adds to the system’s complexity.</p>
+<blockquote>
+<p>试图使用异常来避免处理困难的情况很诱人：与其想出一种干净的方法来处理它，不如抛出一个异常并将问题平移给调用者。有人可能会争辩说，这种方法可以赋予调用者权力，因为它允许每个调用者以不同的方式处理异常。但是，如果您在确定特定情况下该怎么做时遇到困难，则呼叫者很可能都不知道该怎么办。在这种情况下生成异常只会将问题传递给其他人，并增加系统的复杂性。</p>
+</blockquote>
+<p>The exceptions thrown by a class are part of its interface; classes with lots of exceptions have complex interfaces, and they are shallower than classes with fewer exceptions. An exception is a particularly complex element of an interface. It can propagate up through several stack levels before being caught, so it affects not just the method’s caller, but potentially also higher-level callers (and their interfaces).</p>
+<blockquote>
+<p>类抛出的异常是其接口的一部分；具有大量异常的类具有复杂的接口，并且比具有较少异常的类浅。异常是接口中特别复杂的元素。它可以在被捕获之前通过多个堆栈级别向上传播，因此它不仅影响方法的调用者，而且还可能影响更高级别的调用者（及其接口）。</p>
+</blockquote>
+<p>Throwing exceptions is easy; handling them is hard. Thus, the complexity of exceptions comes from the exception handling code. The best way to reduce the complexity damage caused by exception handling is to reduce the number of places where exceptions have to be handled. The rest of this chapter will discuss four techniques for reducing the number of exception handlers.</p>
+<blockquote>
+<p>抛出异常很容易；处理它们很困难。因此，异常的复杂性来自异常处理代码。减少由异常处理引起的复杂性破坏的最佳方法是减少必须处理异常的位置的数量。本章的其余部分将讨论减少异常处理程序数量的四种技术。</p>
+</blockquote>
+<h2 id="10-3-Define-errors-out-of-existence-定义错误不存在"><a href="#10-3-Define-errors-out-of-existence-定义错误不存在" class="headerlink" title="10.3 Define errors out of existence 定义错误不存在"></a>10.3 Define errors out of existence 定义错误不存在</h2><p>The best way to eliminate exception handling complexity is to define your APIs so that there are no exceptions to handle: define errors out of existence. This may seem sacrilegious, but it is very effective in practice. Consider the Tcl unset command discussed above. Rather than throwing an error when unset is asked to delete an unknown variable, it should have simply returned without doing anything. I should have changed the definition of unset slightly: rather than deleting a variable, unset should ensure that a variable no longer exists. With the first definition, unset can’t do its job if the variable doesn’t exist, so generating an exception makes sense. With the second definition, it is perfectly natural for unset to be invoked with the name of a variable that doesn’t exist. In this case, its work is already done, so it can simply return. There is no longer an error case to report.</p>
+<blockquote>
+<p>消除异常处理复杂性的最好方法是定义您的 API，以便没有异常要处理：定义错误而已。这似乎是牺牲品，但在实践中非常有效。考虑上面讨论的 Tcl unset 命令。而不是在要求 unset 删除未知变量时引发错误，它应该只是返回而无需执行任何操作。我应该稍微修改一下 unset 的定义：与其删除一个变量，不应该删除 unset 来确保一个变量不再存在。根据第一个定义，如果变量不存在，则 unset 不能执行其工作，因此生成异常是有意义的。使用第二个定义，使用不存在的变量名调用 unset 是很自然的。在这种情况下，它的工作已经完成，因此可以简单地返回。</p>
+</blockquote>
+<h2 id="10-4-Example-file-deletion-in-Windows-示例：Windows-中的文件删除"><a href="#10-4-Example-file-deletion-in-Windows-示例：Windows-中的文件删除" class="headerlink" title="10.4 Example: file deletion in Windows 示例：Windows 中的文件删除"></a>10.4 Example: file deletion in Windows 示例：Windows 中的文件删除</h2><p>File deletion provides another example of how errors can be defined away. The Windows operating system does not permit a file to be deleted if it is open in a process. This is a continual source of frustration for developers and users. In order to delete a file that is in use, the user must search through the system to find the process that has the file open, and then kill that process. Sometimes users give up and reboot their system, just so they can delete a file.</p>
+<blockquote>
+<p>文件删除提供了如何定义错误的另一个示例。Windows 操作系统不允许删除文件（如果已在进程中打开文件）。对于开发人员和用户来说，这是不断沮丧的根源。为了删除正在使用的文件，用户必须在系统中搜索以找到已打开文件的进程，然后终止该进程。有时用户放弃并重新启动系统，只是为了删除文件。</p>
+</blockquote>
+<p>The Unix operating system defines file deletion more elegantly. In Unix, if a file is open when it is deleted, Unix does not delete the file immediately. Instead, it marks the file for deletion, then the delete operation returns successfully. The file name has been removed from its directory, so no other processes can open the old file and a new file with the same name can be created, but the existing file data persists. Processes that already have the file open can continue to read it and write it normally. Once the file has been closed by all of the accessing processes, its data is freed.</p>
+<blockquote>
+<p>Unix 操作系统更优雅地定义了文件删除。在 Unix 中，如果在删除文件时打开了文件，则 Unix 不会立即删除该文件。而是将文件标记为删除，然后删除操作成功返回。该文件名已从其目录中删除，因此其他进程无法打开该旧文件，并且可以创建具有相同名称的新文件，但现有文件数据将保留。已经打开文件的进程可以继续读取和正常写入文件。一旦所有访问进程都关闭了文件，便释放其数据。</p>
+</blockquote>
+<p>The Unix approach defines away two different kinds of errors. First, the delete operation no longer returns an error if the file is currently in use; the delete succeeds, and the file will eventually be deleted. Second, deleting a file that’s in use does not create exceptions for the processes using the file. One possible approach to this problem would have been to delete the file immediately and mark all of the opens of the file to disable them; any attempts by other processes to read or write the deleted file would fail. However, this approach would create new errors for those processes to handle. Instead, Unix allows them to keep accessing the file normally; delaying the file deletion defines errors out of existence.</p>
+<blockquote>
+<p>Unix 方法定义了两种不同的错误。首先，如果文件当前正在使用中，则删除操作不再返回错误；删除成功，该文件最终将被删除。其次，删除正在使用的文件不会为使用该文件的进程创建例外。解决此问题的一种可能方法是立即删除文件并标记文件的所有打开以禁用它们。其他进程读取或写入已删除文件的任何尝试均将失败。但是，此方法将为那些要处理的过程创建新的错误。相反，Unix 允许他们继续正常访问文件。延迟文件删除将定义错误不存在。</p>
+</blockquote>
+<p>It may seem strange that Unix allows a process to continue to read and write a doomed file, but I have never encountered a situation where this caused significant problems. The Unix definition of file deletion is much simpler to work with, both for developers and users, than the Windows definition.</p>
+<blockquote>
+<p>Unix 允许进程继续读取和写入已损坏的文件可能看起来很奇怪，但是我从未遇到过引起严重问题的情况。对于开发人员和用户，Unix 删除文件的定义比 Windows 定义要容易得多。</p>
+</blockquote>
+<h2 id="10-5-Example-Java-substring-method-示例：Java-子字符串方法"><a href="#10-5-Example-Java-substring-method-示例：Java-子字符串方法" class="headerlink" title="10.5 Example: Java substring method 示例：Java 子字符串方法"></a>10.5 Example: Java substring method 示例：Java 子字符串方法</h2><p>As a final example, consider the Java String class and its substring method. Given two indexes into a string, substring returns the substring starting at the character given by the first index and ending with the character just before the second index. However, if either index is outside the range of the string, then substring throws IndexOutOfBoundsException. This exception is unnecessary and complicates the use of this method. I often find myself in a situation where one or both of the indices may be outside the range of the string, and I would like to extract all of the characters in the string that overlap the specified range. Unfortunately, this requires me to check each of the indices and round them up to zero or down to the end of the string; a one-line method call now becomes 5–10 lines of code.</p>
+<blockquote>
+<p>作为最后一个示例，请考虑 Java String 类及其子字符串方法。给定一个字符串中的两个索引，substring 返回该子字符串，该字符串从第一个索引给定的字符开始，以第二个索引之前的字符结束。但是，如果两个索引中的任何一个都超出字符串的范围，则子字符串将引发 IndexOutOfBoundsException。此异常是不必要的，并且会使此方法的使用复杂化。我经常发现自己处于一个或两个索引可能不在字符串范围内的情况，并且我想提取字符串中与指定范围重叠的所有字符。不幸的是，这要求我检查每个索引并将它们向上舍入为零或向下舍入到字符串的末尾。现在，单行方法调用变成 5-10 行代码。</p>
+</blockquote>
+<p>The Java substring method would be easier to use if it performed this adjustment automatically, so that it implemented the following API: “returns the characters of the string (if any) with index greater than or equal to beginIndex and less than endIndex.” This is a simple and natural API, and it defines the IndexOutOfBoundsException exception out of existence. The method’s behavior is now well-defined even if one or both of the indexes are negative, or if beginIndex is greater than endIndex. This approach simplifies the API for the method while increasing its functionality, so it makes the method deeper. Many other languages have taken the error-free approach; for example, Python returns an empty result for out-of-range list slices.</p>
+<blockquote>
+<p>如果 Java 子字符串方法自动执行此调整，则将更易于使用，因此它实现了以下 API：“返回索引大于或等于 beginIndex 且小于 endIndex 的字符串的字符（如果有）。” 这是一个简单自然的 API，它定义了 IndexOutOfBoundsException 异常。现在，即使一个或两个索引均为负，或者 beginIndex 大于 endIndex，该方法的行为也已明确定义。这种方法简化了方法的 API，同时增加了其功能，因此使方法更深。许多其他语言都采用了无错误的方法。例如，Python 对于超出范围的列表切片返回空结果。</p>
+</blockquote>
+<p>When I argue for defining errors out of existence, people sometimes counter that throwing errors will catch bugs; if errors are defined out of existence, won’t that result in buggier software? Perhaps this is why the Java developers decided that substring should throw exceptions. The error-ful approach may catch some bugs, but it also increases complexity, which results in other bugs. In the error-ful approach, developers must write additional code to avoid or ignore the errors, and this increases the likelihood of bugs; or, they may forget to write the additional code, in which case unexpected errors may be thrown at runtime. In contrast, defining errors out of existence simplifies APIs and it reduces the amount of code that must be written.</p>
+<blockquote>
+<p>当我主张定义错误而不再存在时，人们有时会反驳说抛出错误会捕获错误。如果错误定义不存在，那会不会导致 Buggier 软件出现？也许这就是 Java 开发人员决定子字符串应引发异常的原因。错误的方法可能会捕获一些错误，但也会增加复杂性，从而导致其他错误。在错误有效的方法中，开发人员必须编写额外的代码来避免或忽略错误，这增加了发生错误的可能性。或者，他们可能会忘记编写其他代码，在这种情况下，运行时可能会引发意外错误。相反，定义错误而不存在将简化 API，并减少必须编写的代码量。</p>
+</blockquote>
+<p>Overall, the best way to reduce bugs is to make software simpler.</p>
+<blockquote>
+<p>总体而言，减少错误的最好方法是简化软件。</p>
+</blockquote>
+<h2 id="10-6-Mask-exceptions-掩码异常"><a href="#10-6-Mask-exceptions-掩码异常" class="headerlink" title="10.6 Mask exceptions 掩码异常"></a>10.6 Mask exceptions 掩码异常</h2><p>The second technique for reducing the number of places where exceptions must be handled is exception masking. With this approach, an exceptional condition is detected and handled at a low level in the system, so that higher levels of software need not be aware of the condition. Exception masking is particularly common in distributed systems. For instance, in a network transport protocol such as TCP, packets can be dropped for various reasons such as corruption and congestion. TCP masks packet loss by resending lost packets within its implementation, so all data eventually gets through and clients are unaware of the dropped packets.</p>
+<blockquote>
+<p>减少必须处理异常的地方数量的第二种技术是异常屏蔽。使用这种方法，可以在系统的较低级别上检测和处理异常情况，因此，更高级别的软件无需知道该情况。异常屏蔽在分布式系统中尤其常见。例如，在诸如 TCP 的网络传输协议中，由于各种原因（例如损坏和拥塞），可能会丢弃数据包。TCP 通过在其实现中重新发送丢失的数据包来掩盖数据包的丢失，因此所有数据最终都将通过，并且客户端不知道丢失的数据包。</p>
+</blockquote>
+<p>A more controversial example of masking occurs in the NFS network file system. If an NFS file server crashes or fails to respond for any reason, clients reissue their requests to the server over and over again until the problem is eventually resolved. The low-level file system code on the client does not report any exceptions to the invoking application. The operation in progress (and hence the application) just hangs until the operation can complete successfully. If the hang lasts more than a short time, the NFS client prints messages on the user’s console of the form “NFS server xyzzy not responding still trying.”</p>
+<blockquote>
+<p>NFS 网络文件系统中出现了一个更具争议性的屏蔽示例。如果 NFS 文件服务器由于任何原因崩溃或无法响应，客户端将一遍又一遍地向服务器发出请求，直到问题最终得到解决。客户端上的低级文件系统代码不会向调用应用程序报告任何异常。正在进行的操作（以及因此的应用程序）只是挂起，直到操作可以成功完成。如果挂起持续的时间不超过一小段时间，则 NFS 客户端将在用户控制台上以“ NFS 服务器 xyzzy 无法响应仍在尝试响应”的形式打印消息。</p>
+</blockquote>
+<p>NFS users often complain about the fact that their applications hang while waiting for an NFS server to resume normal operation. Many people have suggested that NFS should abort operations with an exception rather than hanging. However, reporting exceptions would make things worse, not better. There’s not much an application can do if it loses access to its files. One possibility would be for the application to retry the file operation, but this would still hang the application, and it’s easier to perform the retry in one place in the NFS layer, rather than at every file system call in every application (a compiler shouldn’t have to worry about this!). The other alternative is for applications to abort and return errors to their callers. It’s unlikely that the callers would know what to do either, so they would abort as well, resulting in a collapse of the user’s working environment. Users still wouldn’t be able to get any work done while the file server was down, and they would have to restart all of their applications once the file server came back to life.</p>
+<blockquote>
+<p>NFS 用户经常抱怨这样的事实，即他们的应用程序在等待 NFS 服务器恢复正常运行时挂起。许多人建议 NFS 应该异常终止操作而不是挂起。但是，报告异常会使情况更糟，而不是更好。如果应用程序无法访问其文件，则无能为力。一种可能性是应用程序重试文件操作，但这仍然会使应用程序挂起，并且在 NFS 层中的一个位置执行重试会比在每个应用程序中的每个文件系统调用处执行重试更容易（编译器应不必为此担心！）。另一种选择是让应用程序中止并将错误返回给调用者。呼叫者不太可能知道该怎么做，因此他们也将中止，导致用户工作环境崩溃。用户在文件服务器关闭时仍然无法完成任何工作，并且一旦文件服务器恢复工作，他们将不得不重新启动所有应用程序。</p>
+</blockquote>
+<p>Thus, the best alternative is for NFS to mask the errors and hang applications. With this approach, applications don’t need any code to deal with server problems, and they can resume seamlessly once the server comes back to life. If users get tired of waiting, they can always abort applications manually.</p>
+<blockquote>
+<p>因此，最好的替代方法是让 NFS 掩盖错误并挂起应用程序。通过这种方法，应用程序不需要任何代码来处理服务器问题，并且一旦服务器恢复运行，它们就可以无缝恢复。如果用户厌倦了等待，他们总是可以手动中止应用程序。</p>
+</blockquote>
+<p>Exception masking doesn’t work in all situations, but it is a powerful tool in the situations where it works. It results in deeper classes, since it reduces the class’s interface (fewer exceptions for users to be aware of) and adds functionality in the form of the code that masks the exception. Exception masking is an example of pulling complexity downward.</p>
+<blockquote>
+<p>异常屏蔽并非在所有情况下都有效，但是在它起作用的情况下它是一个强大的工具。它导致了更深的类，因为它减少了类的界面（用户需要注意的异常更少）并以掩盖异常的代码形式添加了功能。异常屏蔽是降低复杂性的一个例子。</p>
+</blockquote>
+<h2 id="10-7-Exception-aggregation-异常聚集"><a href="#10-7-Exception-aggregation-异常聚集" class="headerlink" title="10.7 Exception aggregation 异常聚集"></a>10.7 Exception aggregation 异常聚集</h2><p>The third technique for reducing complexity related to exceptions is exception aggregation. The idea behind exception aggregation is to handle many exceptions with a single piece of code; rather than writing distinct handlers for many individual exceptions, handle them all in one place with a single handler.</p>
+<blockquote>
+<p>减少与异常相关的复杂性的第三种技术是异常聚合。异常聚合的思想是用一个代码段处理许多异常。与其为多个单独的异常编写不同的处理程序，不如用一个处理程序将它们全部处理在一个地方。</p>
+</blockquote>
+<p>Consider how to handle missing parameters in a Web server. A Web server implements a collection of URLs. When the server receives an incoming URL, it dispatches to a URL-specific service method to process that URL and generate a response. The URL contains various parameters that are used to generate the response. Each service method will call a lower-level method (let’s call it getParameter) to extract the parameters that it needs from the URL. If the URL does not contain the desired parameter, getParameter throws an exception.</p>
+<blockquote>
+<p>考虑如何处理 Web 服务器中缺少的参数。Web 服务器实现 URL 的集合。服务器收到传入的 URL 时，将分派到特定于 URL 的服务方法来处理该 URL 并生成响应。该 URL 包含用于生成响应的各种参数。每个服务方法都将调用一个较低层的方法（将其称为 getParameter）以从 URL 中提取所需的参数。如果 URL 不包含所需的参数，则 getParameter 会引发异常。</p>
+</blockquote>
+<p>When students in a software design class implemented such a server, many of them wrapped each distinct call to getParameter in a separate exception handler to catch NoSuchParameter exceptions, as in Figure 10.1. This resulted in a large number of handlers, all of which did essentially the same thing (generate an error response).</p>
+<blockquote>
+<p>当参加软件设计课程的学生实现这样的服务器时，他们中的许多人将对 getParameter 的每个不同调用包装在单独的异常处理程序中以捕获 NoSuchParameter 异常，如图 10.1 所示。这导致大量的处理程序，所有这些处理程序基本上都执行相同的操作（生成错误响应）。</p>
+</blockquote>
+<p><img src="/../../img/figures/00020.jpeg"></p>
+<p>Figure 10.1: The code at the top dispatches to one of several methods in a Web server, each of which handles a particular URL. Each of those methods (bottom) uses parameters from the incoming HTTP request. In this figure, there is a separate exception handler for each call to getParameter; this results in duplicated code.</p>
+<blockquote>
+<p>图 10.1：顶部的代码将分派给 Web 服务器中的几种方法之一，每种方法都处理一个特定的 URL。每个方法（底部）都使用传入 HTTP 请求中的参数。在此图中，每个对 getParameter 的调用都有一个单独的异常处理程序。这导致重复的代码。</p>
+</blockquote>
+<p>A better approach is to aggregate the exceptions. Instead of catching the exceptions in the individual service methods, let them propagate up to the top-level dispatch method for the Web server, as in Figure 10.2. A single handler in this method can catch all of the exceptions and generate an appropriate error response for missing parameters.</p>
+<blockquote>
+<p>更好的方法是汇总异常。让它们传播到 Web 服务器的顶级调度方法，而不是在单个服务方法中捕获异常，如图 10.2 所示。此方法中的单个处理程序可以捕获所有异常，并为丢失的参数生成适当的错误响应。</p>
+</blockquote>
+<p>The aggregation approach can be taken even further in the Web example. There are many other errors besides missing parameters that can occur while processing a Web page; for example, a parameter might not have the right syntax (the service method expected an integer, but the value was “xyz”), or the user might not have permission for the requested operation. In each case, the error should result in an error response; the errors differ only in the error message to include in the response (“parameter ‘quantity’ not present in URL” or “bad value ‘xyz’ for ‘quantity’ parameter; must be positive integer”). Thus, all conditions resulting in an error response can be handled with a single top-level exception handler. The error message can be generated at the time the exception is thrown and included as a variable in the exception record; for example, getParameter will generate the “parameter ‘quantity’ not present in URL” message. The top-level handler extracts the message from the exception and incorporates it into the error response.</p>
+<blockquote>
+<p>在 Web 示例中甚至可以采用聚合方法。处理网页时，除了缺少参数外，还有许多其他错误；例如，参数可能没有正确的语法（服务方法应为整数，但值为“ xyz”），或者用户可能无权执行所请求的操作。在每种情况下，错误都应导致错误响应。错误仅在响应中包含的错误消息中有所不同（“ URL 中不存在参数’数量’”或“’数量’参数的错误值’xyz’；必须为正整数”）。因此，所有导致错误响应的条件都可以使用单个顶级异常处理程序进行处理。错误消息可以在引发异常时生成，并作为变量包含在异常记录中。例如，getParameter 将生成“ URL 中不存在的参数’数量’”消息。顶级处理程序从异常中提取消息，并将其合并到错误响应中。</p>
+</blockquote>
+<p><img src="/../../img/figures/00021.jpeg"></p>
+<p>Figure 10.2: This code is functionally equivalent to Figure 10.1, but exception handling has been aggregated: a single exception handler in the dispatcher catches all of the NoSuchParameter exceptions from all of the URL-specific methods.</p>
+<blockquote>
+<p>图 10.2：此代码在功能上等效于图 10.1，但是异常处理已聚合：分派器中的单个异常处理程序从所有特定于 URL 的方法中捕获所有 NoSuchParameter 异常。</p>
+</blockquote>
+<p>The aggregation described in the preceding paragraph has good properties from the standpoint of encapsulation and information hiding. The top-level exception handler encapsulates knowledge about how to generate error responses, but it knows nothing about specific errors; it just uses the error message provided in the exception. The getParameter method encapsulates knowledge about how to extract a parameter from a URL, and it also knows how to describe extraction errors in a human-readable form. These two pieces of information are closely related, so it makes sense for them to be in the same place. However, getParameter knows nothing about the syntax of an HTTP error response. As new functionality is added to the Web server, new methods like getParameter may be created with their own errors. If the new methods throw exceptions in the same way as getParameter (by generating exceptions that inherit from the same superclass and including an error message in each exception), they can plug into the existing system with no other changes: the top-level handler will automatically generate error responses for them.</p>
+<blockquote>
+<p>从封装和信息隐藏的角度来看，上一段中描述的聚合具有良好的属性。顶级异常处理程序封装了有关如何生成错误响应的知识，但对特定错误一无所知。它仅使用异常中提供的错误消息。getParameter 方法封装了有关如何从 URL 提取参数的知识，并且还知道如何以人类可读的形式描述提取错误。这两个信息密切相关，因此将它们放在同一位置是很有意义的。但是，getParameter 对 HTTP 错误响应的语法一无所知。随着向 Web 服务器中添加了新功能，可能会创建具有类似自身错误的新方法，如 getParameter。</p>
+</blockquote>
+<p>This example illustrates a generally-useful design pattern for exception handling. If a system processes a series of requests, it’s useful to define an exception that aborts the current request, cleans up the system’s state, and continues with the next request. The exception is caught in a single place near the top of the system’s request-handling loop. This exception can be thrown at any point in the processing of a request to abort the request; different subclasses of the exception can be defined for different conditions. Exceptions of this type should be clearly distinguished from exceptions that are fatal to the entire system.</p>
+<blockquote>
+<p>此示例说明了用于异常处理的通用设计模式。如果系统处理一系列请求，则定义一个异常以中止当前请求，清除系统状态并继续下一个请求非常有用。异常被捕获在系统请求处理循环顶部附近的单个位置。在处理中止请求的任何时候都可以抛出该异常。可以为不同的条件定义异常的不同子类。应该将这种类型的异常与对整个系统致命的异常区分开来。</p>
+</blockquote>
+<p>Exception aggregation works best if an exception propagates several levels up the stack before it is handled; this allows more exceptions from more methods to be handled in the same place. This is the opposite of exception masking: masking usually works best if an exception is handled in a low-level method. For masking, the low-level method is typically a library method used by many other methods, so allowing the exception to propagate would increase the number of places where it is handled. Masking and aggregation are similar in that both approaches position an exception handler where it can catch the most exceptions, eliminating many handlers that would otherwise need to be created.</p>
+<blockquote>
+<p>如果异常在处理之前在堆栈中传播了多个级别，则异常聚集最有效。这样可以在同一位置处理更多方法的更多异常。这与异常屏蔽相反：如果使用低级方法处理异常，则屏蔽通常效果最好。对于屏蔽，低级方法通常是许多其他方法使用的库方法，因此，允许传播异常会增加处理该异常的位置数。掩码和聚合的相似之处在于，这两种方法都将异常处理程序置于可以捕获最多异常的位置，从而消除了许多本来需要创建的处理程序。</p>
+</blockquote>
+<p>Another example of exception aggregation occurs in the RAMCloud storage system for crash recovery. A RAMCloud system consists of a collection of storage servers that keep multiple copies of each object, so the system can recover from a variety of failures. For example, if a server crashes and loses all of its data, RAMCloud reconstructs the lost data using copies stored on other servers. Errors can also happen on a smaller scale; for example, a server may discover that an individual object is corrupted.</p>
+<blockquote>
+<p>RAMCloud 存储系统中发生异常聚集的另一个示例是崩溃恢复。RAMCloud 系统由一组存储服务器组成，这些存储服务器保留每个对象的多个副本，因此系统可以从各种故障中恢复。例如，如果服务器崩溃并丢失其所有数据，RAMCloud 会使用存储在其他服务器上的副本来重建丢失的数据。错误也可能在较小的范围内发生。例如，服务器可能发现单个对象已损坏。</p>
+</blockquote>
+<p>RAMCloud does not have separate recovery mechanisms for each different kind of error. Instead, RAMCloud “promotes” many smaller errors into larger ones. RAMCloud could, in principle, handle a corrupted object by restoring that one object from a backup copy. However, it doesn’t do this. Instead, if it discovers a corrupted object it crashes the server containing the object. RAMCloud uses this approach because crash recovery is quite complex and this approach minimized the number of different recovery mechanisms that had to be created. Creating a recovery mechanism for crashed servers was unavoidable, so RAMCloud uses the same mechanism for other kinds of recovery as well. This reduced the amount of code that had to be written, and it also meant that server crash recovery gets invoked more often. As a result, bugs in recovery are more likely to be discovered and fixed.</p>
+<blockquote>
+<p>对于每种不同类型的错误，RAMCloud 没有单独的恢复机制。相反，RAMCloud 将许多较小的错误“提升”为较大的错误。原则上，RAMCloud 可以通过从备份副本中恢复一个损坏的对象来处理这个损坏的对象。然而，它并不这样做。相反，如果它发现一个损坏的对象，它会使包含该对象的服务器崩溃。RAMCloud 使用这种方法是因为崩溃恢复非常复杂，而且这种方法最小化了必须创建的不同恢复机制的数量。为崩溃的服务器创建恢复机制是不可避免的，因此 RAMCloud 对其他类型的恢复也使用相同的机制。这减少了必须编写的代码量，而且这还意味着服务器崩溃恢复将更频繁地被调用。因此，恢复中的 bug 更有可能被发现和修复。</p>
+</blockquote>
+<p>One disadvantage of promoting a corrupted object into a server crash is that it increases the cost of recovery considerably. This is not a problem in RAMCloud, since object corruption is quite rare. However, error promotion may not make sense for errors that happen frequently. As one example, it would not be practical to crash a server anytime one of its network packets is lost.</p>
+<blockquote>
+<p>将损坏的对象升级为服务器崩溃的一个缺点是，它大大增加了恢复成本。这在 RAMCloud 中不是问题，因为对象损坏非常罕见。但是，错误升级对于经常发生的错误可能没有意义。举一个例子，在服务器的任何网络数据包丢失时使服务器崩溃是不切实际的。</p>
+</blockquote>
+<p>One way of thinking about exception aggregation is that it replaces several special-purpose mechanisms, each tailored for a particular situation, with a single general-purpose mechanism that can handle multiple situations. This provides another illustration of the benefits of general-purpose mechanisms.</p>
+<blockquote>
+<p>考虑异常聚合的一种方法是，它用可以处理多种情况的单个通用机制替换了几种针对特定情况而量身定制的特殊用途的机制。这再次说明了通用机制的好处。</p>
+</blockquote>
+<h2 id="10-8-Just-crash-崩溃了吗？"><a href="#10-8-Just-crash-崩溃了吗？" class="headerlink" title="10.8 Just crash? 崩溃了吗？"></a>10.8 Just crash? 崩溃了吗？</h2><p>The fourth technique for reducing complexity related to exception handling is to crash the application. In most applications there will be certain errors that it’s not worth trying to handle. Typically, these errors are difficult or impossible to handle and don’t occur very often. The simplest thing to do in response to these errors is to print diagnostic information and then abort the application.</p>
+<blockquote>
+<p>减少与异常处理相关的复杂性的第四种技术是使应用程序崩溃。在大多数应用程序中，有些错误是不值得尝试的。通常，这些错误很难或不可能处理，而且很少发生。针对这些错误的最简单的操作是打印诊断信息，然后中止应用程序。</p>
+</blockquote>
+<p>One example is “out of memory” errors that occur during storage allocation. Consider the malloc function in C, which returns NULL if it cannot allocate the desired block of memory. This is an unfortunate behavior, because it assumes that every single caller of malloc will check the return value and take appropriate action if there is no memory. Applications contain numerous calls to malloc, so checking the result after each call would add significant complexity. If a programmer forgets the check (which is fairly likely), then the application will dereference a null pointer if memory runs out, resulting in a crash that camouflages the real problem.</p>
+<blockquote>
+<p>一个示例是在存储分配期间发生的“内存不足”错误。考虑一下 C 语言中的 malloc 函数，如果它无法分配所需的内存块，则该函数将返回 NULL。这是一个不幸的行为，因为它假定 malloc 的每个调用者都将检查返回值并在没有内存的情况下采取适当的措施。应用程序包含许多对 malloc 的调用，因此在每次调用后检查结果将增加相当大的复杂性。如果程序员忘记了检查（这很有可能），那么如果内存用完，应用程序将取消引用空指针，从而导致崩溃，从而掩盖了实际问题。</p>
+</blockquote>
+<p>Furthermore, there isn’t much an application can do when it discovers that memory is exhausted. In principle the application could look for unneeded memory to free, but if the application had unneeded memory it could already have freed it, which would have prevented the out-of-memory error in the first place. Today’s systems have so much memory that memory almost never runs out; if it does, it usually indicates a bug in the application. Thus, it rarely make sense to try to handle out-of-memory errors; this creates too much complexity for too little benefit.</p>
+<blockquote>
+<p>此外，当应用程序发现内存已用完时，它无能为力。原则上，应用程序可以寻找不需要的内存以释放它，但是如果应用程序有不需要的内存，它可以已经释放它，这首先可以防止内存不足错误。当今的系统具有如此大的内存，以至于内存几乎永远不会耗尽。如果是这样，通常表明应用程序中存在错误。因此，尝试处理内存不足错误几乎没有道理。这会带来太多的复杂性，而带来的收益却太少。</p>
+</blockquote>
+<p>A better approach is to define a new method ckalloc, which calls malloc, checks the result, and aborts the application with an error message if memory is exhausted. The application never invokes malloc directly; it always invokes ckalloc.</p>
+<blockquote>
+<p>更好的方法是定义一个新的 ckalloc 方法，该方法调用 malloc，检查结果，并在内存耗尽时通过错误消息中止应用程序。该应用程序从不直接调用 malloc。它总是调用 ckalloc。</p>
+</blockquote>
+<p>In newer languages such as C++ and Java, the new operator throws an exception if memory is exhausted. There’s not much point in catching this exception, since there’s a good chance that the exception handler will also try to allocate memory, which will also fail. Dynamically allocated memory is such a fundamental element of any modern application that it doesn’t make sense for the application to continue if memory is exhausted; it’s better to crash as soon as the error is detected.</p>
+<blockquote>
+<p>在较新的语言（例如 C ++和 Java）中，如果内存耗尽，则 new 运算符将引发异常。捕获此异常没有什么意义，因为异常处理程序很有可能还会尝试分配内存，这也会失败。动态分配的内存是任何现代应用程序中的基本元素，如果内存耗尽，则继续应用程序是没有意义的。最好在检测到错误后立即崩溃。</p>
+</blockquote>
+<p>There are many other examples of errors where crashing the application makes sense. For most programs, if an I&#x2F;O error occurs while reading or writing an open file (such as a disk hard error), or if a network socket cannot be opened, there’s not much the application can do to recover, so aborting with a clear error message is a sensible approach. These errors are infrequent, so they are unlikely to affect the overall usability of the application. Aborting with an error message is also appropriate if an application encounters an internal error such as an inconsistent data structure. Conditions like this probably indicate bugs in the program.</p>
+<blockquote>
+<p>还有许多其他错误示例，这些错误会使应用程序崩溃很有意义。对于大多数程序，如果在读取或写入打开的文件时发生 I&#x2F;O 错误（例如磁盘硬错误），或者无法打开网络套接字，则应用程序无济于事，因此中止了操作。清除错误消息是一种明智的方法。这些错误很少发生，因此它们不太可能影响应用程序的整体可用性。如果应用程序遇到内部错误（如数据结构不一致），则错误消息中止也是合适的。这样的条件可能表明程序中存在错误。</p>
+</blockquote>
+<p>Whether or not it is acceptable to crash on a particular error depends on the application. For a replicated storage system, it isn’t appropriate to abort on an I&#x2F;O error. Instead, the system must use replicated data to recover any information that was lost. The recovery mechanisms will add considerable complexity to the program, but recovering lost data is an essential part of the value the system provides to its users.</p>
+<blockquote>
+<p>在特定错误上崩溃是否可以接受取决于应用程序。对于复制的存储系统，不适合因 I&#x2F;O 错误而中止。相反，系统必须使用复制的数据来恢复丢失的任何信息。恢复机制将给程序增加相当大的复杂性，但是恢复丢失的数据是系统为用户提供的价值的重要组成部分。</p>
+</blockquote>
+<h2 id="10-9-Design-special-cases-out-of-existence-设计特殊情况不存在"><a href="#10-9-Design-special-cases-out-of-existence-设计特殊情况不存在" class="headerlink" title="10.9 Design special cases out of existence 设计特殊情况不存在"></a>10.9 Design special cases out of existence 设计特殊情况不存在</h2><p>For the same reason that it makes sense to define errors out of existence, it also makes sense to define other special cases out of existence. Special cases can result in code that is riddled with if statements, which make the code hard to understand and lead to bugs. Thus, special cases should be eliminated wherever possible. The best way to do this is by designing the normal case in a way that automatically handles the special cases without any extra code.</p>
+<blockquote>
+<p>出于同样的原因，定义不存在的错误是有意义的，而定义其他不存在的特殊情况也是有意义的。特殊情况可能导致代码中混入 if 语句，这使代码难以理解并导致错误。因此，应尽可能消除特殊情况。做到这一点的最佳方法是设计一种普通情况，这种方式可以自动处理特殊情况而无需任何额外的代码。</p>
+</blockquote>
+<p>In the text editor project described in Chapter 6, students had to implement a mechanism for selecting text and copying or deleting the selection. Most students introduced a state variable in their selection implementation to indicate whether or not the selection exists. They probably chose this approach because there are times when no selection is visible on the screen, so it seemed natural to represent this notion in the implementation. However, this approach resulted in numerous checks to detect the “no selection” condition and handle it specially.</p>
+<blockquote>
+<p>在第 6 章中描述的文本编辑器项目中，学生必须实现一种选择文本以及复制或删除所选内容的机制。大多数学生在他们的选择实现中引入了状态变量，以表明选择是否存在。他们之所以选择这种方法，是因为有时屏幕上看不到任何选择，因此在实现中似乎很自然地代表了这一概念。但是，这种方法导致大量检查以检测“无选择”条件并进行特殊处理。</p>
+</blockquote>
+<p>The selection handling code can be simplified by eliminating the “no selection” special case, so that the selection always exists. When there is no selection visible on the screen, it can be represented internally with an empty selection, whose starting and ending positions are the same. With this approach, the selection management code can be written without any checks for “no selection”. When copying the selection, if the selection is empty then 0 bytes will be inserted at the new location (if implemented correctly, there will be no need to check for 0 bytes as a special case). Similarly, it should be possible to design the code for deleting the selection so that the empty case is handled without any special-case checks. Consider a selection all on a single line. To delete the selection, extract the portion of the line preceding the selection and concatenate it with the portion of the line following the selection to form the new line. If the selection is empty, this approach will regenerate the original line.</p>
+<blockquote>
+<p>通过消除“不选择”的特殊情况，可以简化选择处理代码，从而使选择始终存在。当屏幕上没有可见的选择时，可以在内部用空的选择表示，其开始和结束位置相同。使用这种方法，可以编写选择管理代码，而无需对“不选择”进行任何检查。复制所选内容时，如果所选内容为空，则将在新位置插入 0 字节（如果正确实现，则在特殊情况下无需检查 0 字节）。同样，应该有可能设计用于删除选择的代码，以便无需任何特殊情况检查就可以处理空情况。在一行上考虑所有选择。要删除选择，提取选择之前的行的一部分，并将其与选择之后的行的部分连接起来以形成新行。如果选择为空，则此方法将重新生成原始行。</p>
+</blockquote>
+<p>This example also illustrates the “different layer, different abstraction” idea from Chapter 7. The notion of “no selection” makes sense in terms of how the user thinks about the application’s interface, but that doesn’t mean it has to be represented explicitly inside the application. Having a selection that always exists, but is sometimes empty and thus invisible, results in a simpler implementation.</p>
+<blockquote>
+<p>此示例还说明了第 7 章中的“不同的层，不同的抽象”概念。“无选择”的概念在用户对应用程序界面的看法方面很有意义，但这并不意味着必须明确表示它在应用程序内部。选择总是存在的，但有时是空的，因此是不可见的，这样可以简化实现。</p>
+</blockquote>
+<h2 id="10-10-Taking-it-too-far-走得太远"><a href="#10-10-Taking-it-too-far-走得太远" class="headerlink" title="10.10 Taking it too far 走得太远"></a>10.10 Taking it too far 走得太远</h2><p>Defining away exceptions, or masking them inside a module, only makes sense if the exception information isn’t needed outside the module. This was true for the examples in this chapter, such the Tcl unset command and the Java substring method; in the rare situations where a caller cares about the special cases detected by the exceptions, there are other ways for it to get this information.</p>
+<blockquote>
+<p>定义异常或将其屏蔽在模块内部，仅在模块外部不需要异常信息时才有意义。对于本章中的示例，例如 Tcl unset 命令和 Java 子字符串方法，都是如此。在极少数情况下，呼叫者关心异常检测到的特殊情况，还有其他方法可以获取此信息。</p>
+</blockquote>
+<p>However, it is possible to take this idea too far. In a module for network communication, a student team masked all network exceptions: if a network error occurred, the module caught it, discarded it, and continued as if there were no problem. This meant that applications using the module had no way to find out if messages were lost or a peer server failed; without this information, it was impossible to build robust applications. In this case, it is essential for the module to expose the exceptions, even though they add complexity to the module’s interface.</p>
+<blockquote>
+<p>但是，有可能使这个想法太过分。在用于网络通信的模块中，一个学生团队掩盖了所有网络异常：如果发生网络错误，则模块将其捕获，丢弃并继续进行，就好像没有问题一样。这意味着使用该模块的应用程序无法确定消息是否丢失或对等服务器是否发生故障；没有这些信息，就不可能构建健壮的应用程序。在这种情况下，模块必须公开异常，即使它们增加了模块接口的复杂性。</p>
+</blockquote>
+<p>With exceptions, as with many other areas in software design, you must determine what is important and what is not important. Things that are not important should be hidden, and the more of them the better. But when something is important, it must be exposed.</p>
+<blockquote>
+<p>与软件设计中的许多其他领域一样，您必须确定哪些是重要的，哪些是不重要的。不重要的事物应该被隐藏起来，它们越多越好。但是，当某件事很重要时，必须将其暴露出来。</p>
+</blockquote>
+<h2 id="10-11-Conclusion-结论"><a href="#10-11-Conclusion-结论" class="headerlink" title="10.11 Conclusion 结论"></a>10.11 Conclusion 结论</h2><p>Special cases of any form make code harder to understand and increase the likelihood of bugs. This chapter focused on exceptions, which are one of the most significant sources of special-case code, and discussed how to reduce the number of places where exceptions must be handled. The best way to do this is by redefining semantics to eliminate error conditions. For exceptions that can’t be defined away, you should look for opportunities to mask them at a low level, so their impact is limited, or aggregate several special-case handlers into a single more generic handler. Together, these techniques can have a significant impact on overall system complexity.</p>
+<blockquote>
+<p>任何形式的特殊情况都使代码更难以理解，并增加了发生错误的可能性。本章重点讨论异常，异常是特殊情况代码的最重要来源之一，并讨论了如何减少必须处理异常的地方的数量。做到这一点的最佳方法是重新定义语义以消除错误条件。对于无法定义的异常，您应该寻找机会将它们掩盖到较低的水平，以免影响有限，或者将多个特殊情况的处理程序聚合到一个更通用的处理程序中。总之，这些技术可能会对整体系统复杂性产生重大影响。</p>
+</blockquote>
+<p>1Ding Yuan et. al., “Simple Testing Can Prevent Most Critical Failures: An Analysis of Production Failures in Distributed Data-Intensive Systems,” 2014 USENIX Conference on Operating System Design and Implementation.</p>
+<blockquote>
+<p>1 丁元等 等人，“简单的测试可以防止最关键的故障：对分布式数据密集型系统中的生产故障的分析”，2014 USENIX 操作系统设计和实施大会。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch10-%E5%AE%9A%E4%B9%89%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E9%94%99%E8%AF%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-软件设计的哲学-ch9-在一起更好还是分开更好" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1473,280 +2105,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-软件设计的哲学-ch2-复杂性的本质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">软件设计的哲学 - ch2</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/" class="archive-article-date">
-  	<time datetime="2021-02-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第-2-章-复杂性的本质"><a href="#第-2-章-复杂性的本质" class="headerlink" title="第 2 章 复杂性的本质"></a>第 2 章 复杂性的本质</h1><p>这本书是关于如何设计软件系统以最小化其复杂性。第一步是了解敌人。究竟什么是“复杂性”？您如何判断系统是否过于复杂？是什么导致系统变得复杂？本章将在较高层次上解决这些问题。后续章节将向您展示如何从较低的层次上根据特定的结构特征来识别复杂性。</p>
-<p>识别复杂性的能力是至关重要的设计技能。它使您可以先找出问题，然后再付出大量努力，并可以在其他选择中做出正确的选择。判断一个设计是否简单比创建一个简单的设计要容易得多，但是一旦您认识到一个系统过于复杂，就可以使用该功能指导您的设计哲学走向简单。如果设计看起来很复杂，请尝试其他方法，看看是否更简单。随着时间的流逝，您会注意到某些技术往往会导致设计更简单，而其他技术则与复杂性相关。这将使您更快地制作更简单的设计。</p>
-<p>本章还列出了一些基本假设，这些基本假设为本书的其余部分奠定了基础。后面的章节将采用本章的内容，并用其论证各种改进和结论。</p>
-<h2 id="2-1-Complexity-defined-复杂性的定义"><a href="#2-1-Complexity-defined-复杂性的定义" class="headerlink" title="2.1 Complexity defined 复杂性的定义"></a>2.1 Complexity defined 复杂性的定义</h2><p>出于本书的目的，我以实用的方式定义“复杂性”。复杂性与软件系统的结构有关，这使它很难理解和修改系统。复杂性可以采取多种形式。例如，可能很难理解一段代码是如何工作的。可能需要花费很多精力才能实现较小的改进，或者可能不清楚必须修改系统的哪些部分才能进行改进；如果不引入其他错误，可能很难修复。如果一个软件系统难以理解和修改，那就很复杂。如果很容易理解和修改，那就很简单。</p>
-<p>您还可以考虑成本和收益方面的复杂性。在复杂的系统中，要实施甚至很小的改进都需要大量的工作。在一个简单的系统中，可以用更少的精力实现更大的改进。</p>
-<p>复杂性是开发人员在尝试实现特定目标时在特定时间点所经历的。它不一定与系统的整体大小或功能有关。人们通常使用“复杂”一词来描述具有复杂功能的大型系统，但是如果这样的系统易于使用，那么就本书而言，它并不复杂。当然，实际上几乎所有大型复杂的软件系统都很难使用，因此它们也符合我对复杂性的定义，但这不一定是事实。小型而不复杂的系统也可能非常复杂。</p>
-<p>复杂性取决于最常见的活动。如果系统中有一些非常复杂的部分，但是几乎不需要触摸这些部分，那么它们对系统的整体复杂性不会有太大影响。为了用粗略的数学方法来表征：</p>
-<p><img src="/../../img/figures/00009.gif"></p>
-<p>系统的总体复杂度（C）由每个部分的复杂度（cp）乘以开发人员在该部分上花费的时间（tp）加权。在一个永远不会被看到的地方隔离复杂性几乎和完全消除复杂性一样好。</p>
-<p>读者比作家更容易理解复杂性。如果您编写了一段代码，对您来说似乎很简单，但是其他人则认为它很复杂，那么它就是复杂的。当您遇到这种情况时，有必要对其他开发人员进行调查，以找出为什么代码对他们而言似乎很复杂；从您的观点与观点之间的脱节中可能可以学习一些有趣的课程。作为开发人员，您的工作不仅是创建可以轻松使用的代码，而且还要创建其他人也可以轻松使用的代码。</p>
-<h2 id="2-2-Symptoms-of-complexity-复杂性的症状"><a href="#2-2-Symptoms-of-complexity-复杂性的症状" class="headerlink" title="2.2 Symptoms of complexity 复杂性的症状"></a>2.2 Symptoms of complexity 复杂性的症状</h2><p>复杂性通过以下三种段落中描述的三种一般方式体现出来。这些表现形式中的每一个都使执行开发任务变得更加困难。</p>
-<p>变更放大：复杂性的第一个征兆是，看似简单的变更需要在许多不同地方进行代码修改。例如，考虑一个包含几个页面的网站，每个页面显示带有背景色的横幅。在许多早期的网站中，颜色是在每个页面上明确指定的，如图 2.1（a）所示。为了更改此类网站的背景，开发人员可能必须手动修改每个现有页面；对于拥有数千个页面的大型网站而言，这几乎是不可能的。幸运的是，现代网站使用的方法类似于图 2.1（b），其中横幅颜色一次在中心位置指定，并且所有各个页面均引用该共享值。使用这种方法，可以通过一次修改来更改整个网站的标题颜色。</p>
-<p>认知负荷：复杂性的第二个症状是认知负荷，这是指开发人员需要多少知识才能完成一项任务。较高的认知负担意味着开发人员必须花更多的时间来学习所需的信息，并且由于错过了重要的东西而导致错误的风险也更大。例如，假设 C 中的一个函数分配了内存，返回了指向该内存的指针，并假定调用者将释放该内存。这增加了使用该功能的开发人员的认知负担。如果开发人员无法释放内存，则会发生内存泄漏。如果可以对系统进行重组，以使调用者不必担心释放内存（分配内存的同一模块也负责释放内存），它将减少认知负担。</p>
-<p>系统设计人员有时会假设可以通过代码行来衡量复杂性。他们认为，如果一个实现比另一个实现短，那么它必须更简单；如果只需要几行代码就可以进行更改，那么更改必须很容易。但是，这种观点忽略了与认知负荷相关的成本。我已经看到了仅允许使用几行代码编写应用程序的框架，但是要弄清楚这些行是什么极其困难。有时，需要更多代码行的方法实际上更简单，因为它减少了认知负担。</p>
-<p><img src="/../../img/figures/00010.jpeg"></p>
-<p>图 2.1：网站中的每个页面都显示一个彩色横幅。在（a）中，横幅的背景色在每页中都明确指定。在（b）中，共享变量保留背景色，并且每个页面都引用该变量。在（c）中，某些页面会显示其他用于强调的颜色，即横幅背景颜色的暗色；如果背景颜色改变，则强调颜色也必须改变。</p>
-<p>未知的未知:复杂性的第三个症状是，必须修改哪些代码才能完成任务，或者开发人员必须获得哪些信息才能成功地执行任务，这些都是不明显的。图 2.1(c)说明了这个问题。网站使用一个中心变量来确定横幅的背景颜色，所以它看起来很容易改变。但是，一些 Web 页面使用较暗的背景色来强调，并且在各个页面中明确指定了较暗的颜色。如果背景颜色改变，那么强调的颜色必须改变以匹配。不幸的是，开发人员不太可能意识到这一点，所以他们可能会更改中央 bannerBg 变量而不更新强调颜色。即使开发人员意识到这个问题，也不清楚哪些页面使用了强调色，因此开发人员可能必须搜索 Web 站点中的每个页面。</p>
-<p>在复杂性的三种表现形式中，未知的未知是最糟糕的。一个未知的未知意味着你需要知道一些事情，但是你没有办法找到它是什么，甚至是否有一个问题。你不会发现它，直到错误出现后，你做了一个改变。更改放大是令人恼火的，但是只要清楚哪些代码需要修改，一旦更改完成，系统就会工作。同样，高的认知负荷会增加改变的成本，但如果明确要阅读哪些信息，改变仍然可能是正确的。对于未知的未知，不清楚该做什么，或者提出的解决方案是否有效。唯一确定的方法是读取系统中的每一行代码，这对于任何大小的系统都是不可能的。甚至这可能还不够，因为更改可能依赖于一个从未记录的细微设计决策。</p>
-<p>良好设计的最重要目标之一就是使系统显而易见。这与高认知负荷和未知未知数相反。在一个显而易见的系统中，开发人员可以快速了解现有代码的工作方式以及进行更改所需的内容。一个显而易见的系统是，开发人员可以在不费力地思考的情况下快速猜测要做什么，同时又可以确信该猜测是正确的。第 18 章讨论使代码更明显的技术。</p>
-<h2 id="2-3-Causes-of-complexity-复杂性的原因"><a href="#2-3-Causes-of-complexity-复杂性的原因" class="headerlink" title="2.3 Causes of complexity 复杂性的原因"></a>2.3 Causes of complexity 复杂性的原因</h2><p>既然您已经了解了复杂性的高级症状以及为什么复杂性会使软件开发变得困难，那么下一步就是了解导致复杂性的原因，以便我们设计系统来避免这些问题。复杂性是由两件事引起的：依赖性和模糊性。本节从高层次讨论这些因素。随后的章节将讨论它们与低级设计决策之间的关系。</p>
-<p>就本书而言，当无法孤立地理解和修改给定的一段代码时，便存在依赖关系。该代码以某种方式与其他代码相关，如果更改了给定代码，则必须考虑和&#x2F;或修改其他代码。在图 2.1（a）的网站示例中，背景色在所有页面之间创建了依赖关系。所有页面都必须具有相同的背景，因此，如果更改一页的背景，则必须更改所有背景。依赖关系的另一个示例发生在网络协议中。通常，协议的发送方和接收方有单独的代码，但是它们必须分别符合协议。更改发送方的代码几乎总是需要在接收方进行相应的更改，反之亦然。</p>
-<p>考虑网站示例。在每个页面分别指定背景的旧网站中，所有网页都是相互依赖的。新的网站通过在中心位置指定背景色并提供一个 API，供各个页面在呈现它们时检索该颜色，从而解决了该问题。新的网站消除了页面之间的依赖关系，但是它围绕 API 创建了一个新的依赖关系以检索背景色。幸运的是，新的依赖性更加明显：很明显，每个单独的网页都取决于 bannerBg 颜色，并且开发人员可以通过搜索其名称轻松找到使用该变量的所有位置。此外，编译器还有助于管理 API 依赖性：如果共享变量的名称发生变化，任何仍使用旧名称的代码都将发生编译错误。新的网站用一种更简单，更明显的方式代替了一种不明显且难以管理的依赖性。</p>
-<p>复杂性的第二个原因是晦涩。当重要的信息不明显时，就会发生模糊。一个简单的例子是一个变量名，它是如此的通用，以至于它没有携带太多有用的信息(例如，时间)。或者，一个变量的文档可能没有指定它的单位，所以找到它的惟一方法是扫描代码，查找使用该变量的位置。晦涩常常与依赖项相关联，在这种情况下，依赖项的存在并不明显。例如，如果向系统添加了一个新的错误状态，可能需要向一个包含每个状态的字符串消息的表添加一个条目，但是对于查看状态声明的程序员来说，消息表的存在可能并不明显。不一致性也是造成不透明性的一个主要原因:如果同一个变量名用于两个不同的目的，那么开发人员就无法清楚地知道某个特定变量的目的是什么。</p>
-<p>在许多情况下，由于文档不足而导致模糊不清。第 13 章讨论了这个主题。但是，模糊性也是设计问题。如果系统设计简洁明了，则所需的文档将更少。对大量文档的需求通常是一个警告，即设计不正确。减少模糊性的最佳方法是简化系统设计。</p>
-<p>依赖性和模糊性共同构成了第 2.2 节中描述的三种复杂性表现。依赖性导致变化放大和高认知负荷。晦涩会产生未知的未知数，还会增加认知负担。如果我们找到最小化依赖关系和模糊性的设计技术，那么我们就可以降低软件的复杂性。</p>
-<h2 id="2-4-Complexity-is-incremental-复杂度是递增的"><a href="#2-4-Complexity-is-incremental-复杂度是递增的" class="headerlink" title="2.4 Complexity is incremental 复杂度是递增的"></a>2.4 Complexity is incremental 复杂度是递增的</h2><p>复杂性不是由单个灾难性错误引起的；它堆积成许多小块。单个依赖项或模糊性本身不太可能显着影响软件系统的可维护性。之所以会出现复杂性，是因为随着时间的流逝，成千上万的小依赖性和模糊性逐渐形成。最终，这些小问题太多了，以至于对系统的每次可能更改都会受到其中几个问题的影响。</p>
-<p>复杂性的增量性质使其难以控制。可以很容易地说服自己，当前更改所带来的一点点复杂性没什么大不了的。但是，如果每个开发人员对每种更改都采用这种方法，那么复杂性就会迅速累积。一旦积累了复杂性，就很难消除它，因为修复单个依赖项或模糊性本身不会产生很大的变化。为了减缓复杂性的增长，您必须采用第 3 章中讨论的“零容忍”理念。</p>
-<h2 id="2-5-Conclusion-结论"><a href="#2-5-Conclusion-结论" class="headerlink" title="2.5 Conclusion 结论"></a>2.5 Conclusion 结论</h2><p>复杂性来自于依赖性和模糊性的积累。随着复杂性的增加，它会导致变化放大，高认知负荷和未知的未知数。结果，需要更多的代码修改才能实现每个新功能。此外，开发人员花费更多时间获取足够的信息以安全地进行更改，在最坏的情况下，他们甚至找不到所需的所有信息。最重要的是，复杂性使得修改现有代码库变得困难且冒险。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch2-%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软件设计的哲学-ch1-介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch1-%E4%BB%8B%E7%BB%8D/">软件设计的哲学 - ch1</a>
-    </h1>
-  
-
-        
-        <a href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch1-%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-  	<time datetime="2021-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>严正声明：<br>该系列是从github上搬运而来，仅为自己阅读学习使用，请勿商用，请不要从此处搬运到别处！如对原作者造成不必要的版权侵害，敬请告知，我将立即删除该副本。<br>我将保留合理使用开源软件的法律解释的权力。</p>
-<h1 id="第-1-章-介绍"><a href="#第-1-章-介绍" class="headerlink" title="第 1 章 介绍"></a>第 1 章 介绍</h1><p>编写计算机软件是人类历史上最纯粹的创作活动之一。程序员不受诸如物理定律等实际限制的约束。我们可以用现实世界中永远不会存在的行为创建令人兴奋的虚拟世界。编程不需要很高的身体技能或协调能力，例如芭蕾或篮球。所有编程都需要具有创造力的头脑和组织思想的能力。如果您可以可视化系统，则可以在计算机程序中实现它。</p>
-<p>这意味着编写软件的最大限制是我们了解所创建系统的能力。随着程序的发展和获得更多功能，它变得复杂，其组件之间具有微妙的依赖性。随着时间的流逝，复杂性不断累积，程序员在修改系统时将所有相关因素牢记在心中变得越来越难。这会减慢开发速度并导致错误，从而进一步延缓开发速度并增加成本。在任何程序的生命周期中，复杂性都会不可避免地增加。程序越大，工作的人越多，管理复杂性就越困难。</p>
-<p>好的开发工具可以帮助我们应对复杂性，并且在过去的几十年中已经创建了许多出色的工具。但是，仅凭工具我们只能做些事情。如果我们想简化编写软件的过程，从而可以更便宜地构建功能更强大的系统，则必须找到简化软件的方法。尽管我们尽了最大努力，但复杂度仍会随着时间的推移而增加，但是更简单的设计使我们能够在复杂性压倒性优势之前构建更大，功能更强大的系统。</p>
-<p>有两种解决复杂性的通用方法，这两种方法都将在本书中进行讨论。第一种方法是通过使代码更简单和更明显来消除复杂性。例如，可以通过消除特殊情况或以一致的方式使用标识符来降低复杂性。</p>
-<p>解决复杂性的第二种方法是封装它，以便程序员可以在系统上工作而不会立即暴露其所有复杂性。这种方法称为模块化设计。在模块化设计中，软件系统分为模块，例如面向对象语言的类。这些模块被设计为彼此相对独立，以便程序员可以在一个模块上工作而不必了解其他模块的细节。</p>
-<p>由于软件具有很好的延展性，因此软件设计是一个贯穿软件系统整个生命周期的连续过程。这使得软件设计与诸如建筑物，船舶或桥梁的物理系统的设计不同。但是，并非总是以这种方式查看软件设计。在编程的大部分历史中，设计都集中在项目的开始，就像其他工程学科一样。这种方法的极端称为瀑布模型，该模型将项目划分为离散的阶段，例如需求定义，设计，编码，测试和维护。在瀑布模型中，每个阶段都在下一阶段开始之前完成；在许多情况下，每个阶段都由不同的人负责。在设计阶段，立即设计整个系统。</p>
-<p>不幸的是，瀑布模型很少适用于软件。软件系统本质上比物理系统复杂。在构建任何东西之前，不可能充分可视化大型软件系统的设计，以了解其所有含义。结果，初始设计将有许多问题。在实施良好之前，问题不会变得明显。但是，瀑布模型的结构此时无法适应主要的设计更改（例如，设计师可能已转移到其他项目）。因此，开发人员尝试在不改变整体设计的情况下解决问题。这导致复杂性的爆炸式增长。</p>
-<p>由于这些问题，当今大多数软件开发项目都使用诸如敏捷开发之类的增量方法，其中初始设计着重于整体功能的一小部分。设计，实施和评估此子集。发现和纠正原始设计的问题，然后设计，实施和评估更多功能。每次迭代都会暴露现有设计的问题，这些问题在设计下一组功能之前就已得到解决。通过以这种方式扩展设计，可以在系统仍然很小的情况下解决初始设计的问题。较新的功能受益于较早功能的实施过程中获得的经验，因此问题较少。</p>
-<p>增量方法适用于软件，因为软件具有足够的延展性，可以在实施过程中进行重大的设计更改。相比之下，对物理系统而言，主要的设计更改更具挑战性：例如，在建筑过程中更改支撑桥梁的塔架数量不切实际。</p>
-<p>增量开发意味着永远不会完成软件设计。设计在系统的整个生命周期中不断发生：开发人员应始终在思考设计问题。增量开发还意味着不断的重新设计。系统或组件的初始设计几乎从来都不是最好的。经验不可避免地显示出更好的做事方式。作为软件开发人员，您应该始终在寻找机会来改进正在开发的系统的设计，并且应该计划将部分时间花费在设计改进上。</p>
-<p>如果软件开发人员应始终考虑设计问题，而降低复杂性是软件设计中最重要的要素，则软件开发人员应始终考虑复杂性。这本书是关于如何使用复杂性来指导软件设计的整个生命周期。</p>
-<p>这本书有两个总体目标。首先是描述软件复杂性的性质：“复杂性”是什么意思，为什么重要，以及当程序具有不必要的复杂性时如何识别？本书的第二个也是更具挑战性的目标是介绍可在软件开发过程中使用的技术，以最大程度地减少复杂性。不幸的是，没有简单的方法可以保证出色的软件设计。取而代之的是，我将提出一些与哲学紧密相关的高级概念，例如“类应该很深”或“定义不存在的错误”。这些概念可能不会立即确定最佳设计，但您可以使用它们来比较设计备选方案并指导您探索设计空间。</p>
-<h2 id="1-1-How-to-use-this-book-如何使用这本书"><a href="#1-1-How-to-use-this-book-如何使用这本书" class="headerlink" title="1.1 How to use this book 如何使用这本书"></a>1.1 How to use this book 如何使用这本书</h2><p>这里描述的许多设计原则有些抽象，因此如果不看实际的代码，可能很难理解它们。找到足够小的示例以包含在书中，但是又足够大以说明真实系统的问题是一个挑战（如果遇到好的示例，请发给我）。因此，这本书可能不足以让您学习如何应用这些原理。</p>
-<p>使用本书的最佳方法是与代码审查结合使用。阅读其他人的代码时，请考虑它是否符合此处讨论的概念，以及它与代码的复杂性之间的关系。在别人的代码中比在您的代码中更容易看到设计问题。您可以使用此处描述的红色标记来发现问题并提出改进建议。查看代码还将使您接触到新的设计方法和编程技术。</p>
-<p>改善设计技能的最好方法之一就是学会识别危险信号：信号表明一段代码可能比需要的复杂。在本书的过程中，我将指出一些危险信号，这些危险信号指示与每个主要设计问题有关的问题；最重要的内容总结在书的后面。然后，您可以在编码时使用它们：当看到红色标记时，停下来寻找可消除问题的替代设计。当您第一次尝试这种方法时，您可能必须尝试几种设计替代方案，然后才能找到消除危险信号的方案。不要轻易放弃：解决问题之前尝试的替代方法越多，您就会学到更多。随着时间的流逝，您会发现代码中的危险信号越来越少，并且您的设计越来越清晰。</p>
-<p>在应用本书中的思想时，务必要节制和谨慎。每条规则都有例外，每条原则都有其局限性。如果您将任何设计创意都发挥到极致，那么您可能会陷入困境。精美的设计反映了相互竞争的思想和方法之间的平衡。有几章的标题为“太过分”，它们描述了如何在做得过大的事情上识别自己。</p>
-<p>本书中几乎所有示例都是使用 Java 或 C ++编写的，并且大部分讨论都是针对以面向对象的语言设计类的。但是，这些想法也适用于其他领域。几乎所有与方法有关的思想也可以应用于没有面向对象功能的语言中的功能，例如 C。设计思想还适用于除类之外的模块，例如子系统或网络服务。</p>
-<p>在这种背景下，让我们详细讨论导致复杂性的原因以及如何简化软件系统。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">软件设计的哲学 软件开发 方法论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%93%B2%E5%AD%A6-ch1-%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-逝去的亲人：大娘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/%E9%80%9D%E5%8E%BB%E7%9A%84%E4%BA%B2%E4%BA%BA%EF%BC%9A%E5%A4%A7%E5%A8%98/">逝去的亲人：大爷和大娘</a>
-    </h1>
-  
-
-        
-        <a href="/2020/%E9%80%9D%E5%8E%BB%E7%9A%84%E4%BA%B2%E4%BA%BA%EF%BC%9A%E5%A4%A7%E5%A8%98/" class="archive-article-date">
-  	<time datetime="2020-09-24T15:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>阳历二零二零年九月二十日，星期天，上午十时左右，接父亲电话，我的大娘郭庆芝以糖尿病及并发症的发作，该日时因医治无效病故，享年七十九岁。大娘的一生勤劳俭朴，敦厚持家，值得我们后辈深切缅怀！</p>
-<p>在我的老家山东费县，大娘是我大爷的妻子，大爷是我父亲的亲哥，很多地方叫大伯，我老家的老叫法是大大爷，二大爷…, 也就是说，大娘是我父母的嫂子。</p>
-<p>在父母他们年轻的时候，因为各种原因，他们之间有过不少不快，以至于两家吵架相互没有往来，不过随着他们年龄阅历的增多,关系趋于缓和，在我开始记事情的时候，两家的关系已经很正常，他们的关系没有很亲密，也没有很冷淡，就是农村特有的那种兄弟关系。好在他们他们都是遵循古训，有父从父，无父从兄，很多事情，我父亲都找我大爷商量。两家在很多事也相互帮忙和照顾，当然两家也各有各自的盘算和生活。他们经历过最贫穷的时代，所以很多事情上他们对生活算计的太多，过度节俭。</p>
-<p>我上学的时候，家里困难有一次学费是找大爷借的，小时候去大爷家，大爷也会拿一些好吃的给我，我印象最深的是，很小的时候，去臧家庄姑奶奶家，晚上住了一宿，大爷不会骑车，用独轮小推车推着我和我的一个小侄女，步行走了将近12公里的山路。凡此种种，不一一道来，存在心里，待成回忆。大爷在我记忆里是永远闲不住的人，永远温和待人。</p>
-<p>大爷已经不在了，父亲和大爷的关系是比较典型的农村的兄弟关系，他们之间从不表达感情之类的话，甚至连”谢谢“这类的话我也没有见到过，农村很多的情感都是处事处出来的，比较实实在在的，不像现在很多人际关系，嘴上一套，做的一套，脑子想的还是一套。现在很多人对人际关系的处理至少有三套账要算，很多人就觉得活的很累，中年人这么做，他们的孩子们自小就接触到长辈们这些人际关系账算来算去，也就烦了，反而去追求简单的，甚至是极端的人际关系。</p>
-<p>人际关系有很多类，很多人的的人际关系错综复杂，工作关系，亲戚关系，朋友关系，上下级关系，再加上公开关系，秘密关系，半公开关系，涉及切身利益的关系等等，普通人要把这些关系管理好，真的非常考虑管理能力，情商，智商和财商了。</p>
-<p>有时候，我觉得我父亲和我大爷之前的关系是最和谐的关系，不过不少，彼此关注，遇事合作，没事各过各的，有来有往，长少有序。从这个角度想，孔子该是伟大的，数千年前就规范了复杂的人际关系管理。 人际关系要追求简单，合乎礼节，彼此尊重各自的核心利益，适当隔离不同关系的过度耦合。</p>
-<p>谨此沉痛悼念我的大爷和大娘！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生活感悟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/%E9%80%9D%E5%8E%BB%E7%9A%84%E4%BA%B2%E4%BA%BA%EF%BC%9A%E5%A4%A7%E5%A8%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/posts/page/46/">&laquo; Prev</a><a class="page-number" href="/posts/">1</a><span class="space">&hellip;</span><a class="page-number" href="/posts/page/45/">45</a><a class="page-number" href="/posts/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/posts/page/48/">48</a><a class="page-number" href="/posts/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/posts/page/53/">53</a><a class="extend next" rel="next" href="/posts/page/48/">Next &raquo;</a>
@@ -2768,6 +3126,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Personal AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">认知架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安全性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元认知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">web-frontend-development</a>
               </li>
             
             <div class="clearfix"></div>
