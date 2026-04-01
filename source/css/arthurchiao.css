@@ -275,9 +275,13 @@ a:hover {
 
 /* 首页：主栏中的 search-ul（与侧栏结构一致，配色适配白底正文区） */
 .home-search-list-wrap {
-  margin: 0 30px;
-  padding: 24px 0 80px;
+  width: 100%;
   max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 1.25rem 80px;
+  box-sizing: border-box;
+  text-align: left;
 }
 .home-search-list-wrap .home-search-ul.search-ul {
   margin: 0;
