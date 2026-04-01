@@ -1,0 +1,21 @@
+<header class="site-top-nav" role="banner">
+  <div class="site-top-nav__inner">
+    <div class="site-top-nav__brand">
+      <a href="<%- url_for('/') %>"><%= config.title %></a>
+    </div>
+    <% if (theme.menu && Object.keys(theme.menu).length) { %>
+    <nav class="site-top-nav__links" aria-label="站点导航">
+      <% for (var label in theme.menu) { %>
+      <a href="<%- url_for(theme.menu[label]) %>"><%= label %></a>
+      <% } %>
+      <% if (theme.subnav && theme.subnav.github) { %>
+      <a href="<%- url_for(theme.subnav.github) %>" target="_blank" rel="noopener noreferrer" class="site-top-nav__github">GitHub</a>
+      <% } %>
+    </nav>
+    <% } else if (theme.subnav && theme.subnav.github) { %>
+    <nav class="site-top-nav__links" aria-label="社交">
+      <a href="<%- url_for(theme.subnav.github) %>" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+    <% } %>
+  </div>
+</header>

@@ -5,23 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.fleven.com">
+  <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>EventBus源码解析(一) | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="观察者模式描述一对多的依赖的关系，当一个对象的状态发生变化时，所有依赖它的对象都会获得通知： 事件总线消息或者事件流动的通道，不同的组件或者模块通过这个通道获取获取和发布消息；事件总线涉及到4个角色：  订阅者，subscriber，获取指定类型的消息或者事件 发布者，publisher，触发或者发布消息或者事件 事件 Event，订阅者和发布者之间沟通的信息载体，普通的java类，只包括数据 事">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EventBus源码解析(一)">
-<meta property="og:url" content="http://www.fleven.com/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/index.html">
+<meta property="og:url" content="https://www.daoyuly.cn/2020/EventBus%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="盗愚书斋">
 <meta property="og:description" content="观察者模式描述一对多的依赖的关系，当一个对象的状态发生变化时，所有依赖它的对象都会获得通知： 事件总线消息或者事件流动的通道，不同的组件或者模块通过这个通道获取获取和发布消息；事件总线涉及到4个角色：  订阅者，subscriber，获取指定类型的消息或者事件 发布者，publisher，触发或者发布消息或者事件 事件 Event，订阅者和发布者之间沟通的信息载体，普通的java类，只包括数据 事">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.fleven.com/img/eventbus-1.png">
+<meta property="og:image" content="https://www.daoyuly.cn/img/eventbus-1.png">
 <meta property="article:published_time" content="2020-02-26T16:51:19.000Z">
 <meta property="article:modified_time" content="2025-12-20T09:19:52.918Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="java android EventBus">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.fleven.com/img/eventbus-1.png">
+<meta name="twitter:image" content="https://www.daoyuly.cn/img/eventbus-1.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -91,9 +91,11 @@ var _hmt = _hmt || [];
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/daoyuly/cv" title="github"><i class="icon-github"></i></a>
+					
 		        
+					
 					<a class="mail" target="_blank" href="mailto:liudaoyu@outlook.com" title="mail"><i class="icon-mail"></i></a>
+					
 		        
 			</div>
 		</nav>
@@ -102,6 +104,26 @@ var _hmt = _hmt || [];
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      <header class="site-top-nav" role="banner">
+  <div class="site-top-nav__inner">
+    <div class="site-top-nav__brand">
+      <a href="/">盗愚书斋</a>
+    </div>
+    
+    <nav class="site-top-nav__links" aria-label="站点导航">
+      
+      <a href="/">主页</a>
+      
+      <a href="/editor/">随想</a>
+      
+      
+      <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer" class="site-top-nav__github">GitHub</a>
+      
+    </nav>
+    
+  </div>
+</header>
+
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #fff"></div>
@@ -128,9 +150,11 @@ var _hmt = _hmt || [];
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/daoyuly/cv" title="github"><i class="icon-github"></i></a>
+						
 			        
+						
 						<a class="mail" target="_blank" href="mailto:liudaoyu@outlook.com" title="mail"><i class="icon-mail"></i></a>
+						
 			        
 				</div>
 			</nav>
@@ -306,6 +330,22 @@ var _hmt = _hmt || [];
       </div>
       <footer id="footer">
   <div class="outer">
+    
+    <nav class="footer-nav" aria-label="站点导航">
+      
+      
+        
+        <a href="/">主页</a>
+      
+        <span class="footer-nav-sep">·</span>
+        <a href="/editor/">随想</a>
+      
+      
+        <span class="footer-nav-sep">·</span>
+        <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer">GitHub</a>
+      
+    </nav>
+    
     <div id="footer-info">
       <div class="footer-left">
         &copy; 2026 盗愚书斋

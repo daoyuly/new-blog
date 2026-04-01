@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.fleven.com">
+  <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>indexedDB杂想 | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="仔细理解下indexedDB的设计哲学：indexedDB的数据基于键值对value可以是任何复杂类型的object，键值就是这个这些对象的键值； 基于事务的操作模型在indexedDB内的任何操作都是再事务内的；这种基于事务的操作模型会很好的处理用户打开两个tab时的数据操作带来的不一致问题； API都是异步的数据库数据读取，插入，删除等所有的数据库都是异步的。这些操作都需要请求（request">
 <meta property="og:type" content="article">
 <meta property="og:title" content="indexedDB杂想">
-<meta property="og:url" content="http://www.fleven.com/2020/indexedDB%E6%9D%82%E6%83%B3/index.html">
+<meta property="og:url" content="https://www.daoyuly.cn/2020/indexedDB%E6%9D%82%E6%83%B3/index.html">
 <meta property="og:site_name" content="盗愚书斋">
 <meta property="og:description" content="仔细理解下indexedDB的设计哲学：indexedDB的数据基于键值对value可以是任何复杂类型的object，键值就是这个这些对象的键值； 基于事务的操作模型在indexedDB内的任何操作都是再事务内的；这种基于事务的操作模型会很好的处理用户打开两个tab时的数据操作带来的不一致问题； API都是异步的数据库数据读取，插入，删除等所有的数据库都是异步的。这些操作都需要请求（request">
 <meta property="og:locale" content="en_US">
@@ -89,9 +89,11 @@ var _hmt = _hmt || [];
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/daoyuly/cv" title="github"><i class="icon-github"></i></a>
+					
 		        
+					
 					<a class="mail" target="_blank" href="mailto:liudaoyu@outlook.com" title="mail"><i class="icon-mail"></i></a>
+					
 		        
 			</div>
 		</nav>
@@ -100,6 +102,26 @@ var _hmt = _hmt || [];
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      <header class="site-top-nav" role="banner">
+  <div class="site-top-nav__inner">
+    <div class="site-top-nav__brand">
+      <a href="/">盗愚书斋</a>
+    </div>
+    
+    <nav class="site-top-nav__links" aria-label="站点导航">
+      
+      <a href="/">主页</a>
+      
+      <a href="/editor/">随想</a>
+      
+      
+      <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer" class="site-top-nav__github">GitHub</a>
+      
+    </nav>
+    
+  </div>
+</header>
+
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #fff"></div>
@@ -126,9 +148,11 @@ var _hmt = _hmt || [];
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/daoyuly/cv" title="github"><i class="icon-github"></i></a>
+						
 			        
+						
 						<a class="mail" target="_blank" href="mailto:liudaoyu@outlook.com" title="mail"><i class="icon-mail"></i></a>
+						
 			        
 				</div>
 			</nav>
@@ -271,6 +295,22 @@ var _hmt = _hmt || [];
       </div>
       <footer id="footer">
   <div class="outer">
+    
+    <nav class="footer-nav" aria-label="站点导航">
+      
+      
+        
+        <a href="/">主页</a>
+      
+        <span class="footer-nav-sep">·</span>
+        <a href="/editor/">随想</a>
+      
+      
+        <span class="footer-nav-sep">·</span>
+        <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer">GitHub</a>
+      
+    </nav>
+    
     <div id="footer-info">
       <div class="footer-left">
         &copy; 2026 盗愚书斋

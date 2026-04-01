@@ -43,7 +43,73 @@ a:hover {
   color: white;
 }
 
-/* 左侧栏主题色 */
+/* 隐藏左侧栏、文章抽屉与打开抽屉的按钮；主栏全宽 */
+.left-col,
+.tools-col {
+  display: none !important;
+}
+.mid-col {
+  left: 0 !important;
+}
+.btnctn.js-mobile-btnctn {
+  display: none !important;
+}
+
+/* 顶栏 */
+.site-top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e1e4e8;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+.site-top-nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.site-top-nav__brand {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.site-top-nav__brand a {
+  color: var(--ac-primary-dark);
+  text-decoration: none;
+}
+.site-top-nav__brand a:hover {
+  color: var(--ac-primary-darker);
+}
+.site-top-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.15rem;
+  font-size: 0.95rem;
+}
+.site-top-nav__links a {
+  color: var(--ac-text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-top-nav__links a:hover {
+  color: var(--ac-primary-dark);
+}
+.site-top-nav__links .site-top-nav__github {
+  color: var(--ac-primary);
+  font-weight: 500;
+}
+.site-top-nav__links .site-top-nav__github:hover {
+  color: var(--ac-primary-darker);
+}
+
+/* 左侧栏主题色（侧栏隐藏时以下不影响布局） */
 .left-col .overlay {
   background: var(--ac-primary);
 }
@@ -190,6 +256,21 @@ a:hover {
   text-align: center;
   font-size: 0.9em;
   color: var(--ac-text-muted);
+}
+
+#footer .footer-nav {
+  margin-bottom: 1rem;
+  font-size: 0.95em;
+}
+#footer .footer-nav a {
+  color: var(--ac-primary);
+}
+#footer .footer-nav a:hover {
+  color: var(--ac-primary-darker);
+}
+#footer .footer-nav-sep {
+  margin: 0 0.5em;
+  color: #ccc;
 }
 
 /* 首页：主栏中的 search-ul（与侧栏结构一致，配色适配白底正文区） */

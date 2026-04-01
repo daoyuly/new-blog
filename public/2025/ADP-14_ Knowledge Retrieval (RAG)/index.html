@@ -5,26 +5,26 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.fleven.com">
+  <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>Agentic Design Patterns - Chapter 14_ Knowledge Retrieval (RAG) | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="第 14 章：知识检索（RAG）LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。 对于 AI Agent 来说，这一点至关重要，因为它允许">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Chapter 14_ Knowledge Retrieval (RAG)">
-<meta property="og:url" content="http://www.fleven.com/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/index.html">
+<meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/index.html">
 <meta property="og:site_name" content="盗愚书斋">
 <meta property="og:description" content="第 14 章：知识检索（RAG）LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。 对于 AI Agent 来说，这一点至关重要，因为它允许">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.fleven.com/images/chapter-14/image1.png">
-<meta property="og:image" content="http://www.fleven.com/images/chapter-14/image2.png">
-<meta property="og:image" content="http://www.fleven.com/images/chapter-14/image3.png">
-<meta property="og:image" content="http://www.fleven.com/images/chapter-14/image4.png">
+<meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image1.png">
+<meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image2.png">
+<meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image3.png">
+<meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image4.png">
 <meta property="article:published_time" content="2025-10-19T00:05:02.000Z">
 <meta property="article:modified_time" content="2025-12-20T09:19:52.915Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.fleven.com/images/chapter-14/image1.png">
+<meta name="twitter:image" content="https://www.daoyuly.cn/images/chapter-14/image1.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -94,9 +94,11 @@ var _hmt = _hmt || [];
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/daoyuly/cv" title="github"><i class="icon-github"></i></a>
+					
 		        
+					
 					<a class="mail" target="_blank" href="mailto:liudaoyu@outlook.com" title="mail"><i class="icon-mail"></i></a>
+					
 		        
 			</div>
 		</nav>
@@ -105,6 +107,26 @@ var _hmt = _hmt || [];
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      <header class="site-top-nav" role="banner">
+  <div class="site-top-nav__inner">
+    <div class="site-top-nav__brand">
+      <a href="/">盗愚书斋</a>
+    </div>
+    
+    <nav class="site-top-nav__links" aria-label="站点导航">
+      
+      <a href="/">主页</a>
+      
+      <a href="/editor/">随想</a>
+      
+      
+      <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer" class="site-top-nav__github">GitHub</a>
+      
+    </nav>
+    
+  </div>
+</header>
+
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #fff"></div>
@@ -131,9 +153,11 @@ var _hmt = _hmt || [];
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/daoyuly/cv" title="github"><i class="icon-github"></i></a>
+						
 			        
+						
 						<a class="mail" target="_blank" href="mailto:liudaoyu@outlook.com" title="mail"><i class="icon-mail"></i></a>
+						
 			        
 				</div>
 			</nav>
@@ -334,6 +358,22 @@ var _hmt = _hmt || [];
       </div>
       <footer id="footer">
   <div class="outer">
+    
+    <nav class="footer-nav" aria-label="站点导航">
+      
+      
+        
+        <a href="/">主页</a>
+      
+        <span class="footer-nav-sep">·</span>
+        <a href="/editor/">随想</a>
+      
+      
+        <span class="footer-nav-sep">·</span>
+        <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer">GitHub</a>
+      
+    </nav>
+    
     <div id="footer-info">
       <div class="footer-left">
         &copy; 2026 盗愚书斋

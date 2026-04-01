@@ -29,7 +29,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				<% for (var i in theme.subnav){ %>
+					<% if (i !== 'github') { %>
 					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
+					<% } %>
 		        <%}%>
 			</div>
 		</nav>
