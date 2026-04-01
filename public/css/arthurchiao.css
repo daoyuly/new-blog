@@ -191,3 +191,63 @@ a:hover {
   font-size: 0.9em;
   color: var(--ac-text-muted);
 }
+
+/* 首页：主栏中的 search-ul（与侧栏结构一致，配色适配白底正文区） */
+.home-search-list-wrap {
+  margin: 0 30px;
+  padding: 24px 0 80px;
+  max-width: 1024px;
+}
+.home-search-list-wrap .home-search-ul.search-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #4d4d4d;
+}
+.home-search-list-wrap .search-li {
+  padding: 12px 0;
+  border-bottom: 1px dotted #dcdcdc;
+}
+.home-search-list-wrap .search-li:hover {
+  background: rgba(46, 139, 87, 0.06);
+}
+.home-search-list-wrap .search-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  color: #333;
+  font-size: 16px;
+}
+.home-search-list-wrap .search-title .icon {
+  margin-right: 8px;
+  color: var(--ac-text-muted);
+}
+.home-search-list-wrap .search-title:hover {
+  color: var(--ac-primary-dark);
+}
+.home-search-list-wrap .search-time,
+.home-search-list-wrap .search-tag {
+  font-size: 12px;
+  color: var(--ac-text-muted);
+  margin: 6px 10px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.home-search-list-wrap .search-time .icon,
+.home-search-list-wrap .search-tag .icon {
+  margin-right: 4px;
+}
+.home-search-list-wrap .search-tag span {
+  margin-right: 6px;
+}
+.home-search-list-wrap .search-tag a {
+  color: var(--ac-primary);
+}
+.home-search-list-wrap .search-tag a:hover {
+  color: var(--ac-primary-darker);
+}
+.home-search-list-wrap #page-nav {
+  margin-top: 2rem;
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+<%# 首页：与侧栏「所有文章」相同的 search-ul 列表，作为主内容区 %>
+<section class="home-search-list-wrap">
+  <ul class="search-ul home-search-ul">
+    <% page.posts.each(function(post){ %>
+    <li class="search-li">
+      <a href="<%- url_for(post.path) %>" class="search-title"><i class="icon-quo-left icon"></i><span><%= post.title %></span></a>
+      <p class="search-time">
+        <i class="icon-calendar icon"></i>
+        <span><%= date(post.date, config.date_format) %></span>
+      </p>
+      <p class="search-tag">
+        <i class="icon-price-tags icon"></i>
+        <% post.tags.forEach(function(tag){ %>
+        <span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></span>
+        <% }) %>
+      </p>
+      <div class="clearfix"></div>
+    </li>
+    <% }) %>
+  </ul>
+  <% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <%- paginator({
+      prev_text: '&laquo; Prev',
+      next_text: 'Next &raquo;'
+    }) %>
+  </nav>
+  <% } %>
+</section>
