@@ -3,13 +3,15 @@
   <ul class="search-ul home-search-ul">
     <% page.posts.each(function(post){ %>
     <li class="search-li">
-      <a href="<%- url_for(post.path) %>" class="search-title"><i class="icon-quo-left icon"></i><span><%= post.title %></span></a>
+      <a href="<%- url_for(post.path) %>" class="search-title">
+        <span><%= post.title %></span>
+      </a>
       <p class="search-time">
-        <i class="icon-calendar icon"></i>
+        
         <span><%= date(post.date, config.date_format) %></span>
       </p>
       <p class="search-tag">
-        <i class="icon-price-tags icon"></i>
+        
         <% post.tags.forEach(function(tag){ %>
         <span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></span>
         <% }) %>
