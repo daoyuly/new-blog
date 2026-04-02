@@ -1,6 +1,5 @@
 ---
 title: 自动化Prompt评估最新趋势与洞察深度综述 - 从人工评审到AI驱动的质量保证
-date: 2026-04-01 20:45:00
 tags:
   - Prompt Evaluation
   - LLM Evaluation
@@ -16,6 +15,8 @@ keywords:
   - Auto-evaluation
   - RAGAS
   - TruLens
+abbrlink: 52027
+date: 2026-04-01 20:45:00
 ---
 
 # 自动化Prompt评估最新趋势与洞察深度综述 - 从人工评审到AI驱动的质量保证

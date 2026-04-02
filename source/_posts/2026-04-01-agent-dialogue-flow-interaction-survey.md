@@ -1,6 +1,5 @@
 ---
 title: 基于Agent对话流的交互方式深度综述 - 从单轮对话到多模态协作
-date: 2026-04-01 16:45:00
 tags:
   - Agent Dialogue
   - Conversation Flow
@@ -16,6 +15,8 @@ keywords:
   - Streaming Response
   - State Management
   - Human-in-the-Loop
+abbrlink: 57570
+date: 2026-04-01 16:45:00
 ---
 
 # 基于Agent对话流的交互方式深度综述 - 从单轮对话到多模态协作

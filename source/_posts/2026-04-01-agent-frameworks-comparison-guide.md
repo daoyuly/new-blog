@@ -1,6 +1,5 @@
 ---
 title: 流行Agent框架系统对比与选型指南 - 异同、优劣势及适用场景深度分析
-date: 2026-04-01 13:30:00
 tags:
   - Agent Framework
   - Comparison
@@ -18,6 +17,8 @@ keywords:
   - CrewAI vs MetaGPT
   - Framework Selection
   - Architecture Analysis
+abbrlink: 1210
+date: 2026-04-01 13:30:00
 ---
 
 # 流行Agent框架系统对比与选型指南 - 异同、优劣势及适用场景深度分析

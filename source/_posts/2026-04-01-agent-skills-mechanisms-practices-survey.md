@@ -1,6 +1,5 @@
 ---
 title: Agent Skills机制与业界实践深度综述 - 技能系统设计与实现完全指南
-date: 2026-04-01 16:50:00
 tags:
   - Agent Skills
   - Skill System
@@ -16,6 +15,8 @@ keywords:
   - Tool Composition
   - MCP Protocol
   - Skill Discovery
+abbrlink: 6642
+date: 2026-04-01 16:50:00
 ---
 
 # Agent Skills机制与业界实践深度综述 - 技能系统设计与实现完全指南
