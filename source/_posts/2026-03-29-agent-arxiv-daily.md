@@ -1,6 +1,17 @@
 ---
-abbrlink: 0
+title: AI Scientist 研究报告 demo
+tags:
+  - agent
+  - ai-trends
+  - daily-insights
+  - arxiv
+  - github
+categories:
+  - 前沿洞察
+abbrlink: 4308
+date: 2026-03-29 18:00:00
 ---
+
 # AI Scientist 研究报告
 
 _筛选论文：14；检索召回：0；辩论轮次：0_

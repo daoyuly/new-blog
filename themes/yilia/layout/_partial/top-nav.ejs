@@ -1,7 +1,7 @@
 <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="<%- url_for('/') %>"><%= config.title %></a>
+      <p href="<%- url_for('/') %>"><%= config.title %></p>
     </div>
     <% if (theme.menu && Object.keys(theme.menu).length) { %>
     <nav class="site-top-nav__links" aria-label="站点导航">
