@@ -1,6 +1,5 @@
 ---
 title: OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析
-date: 2026-04-03 14:20:00
 tags:
   - OpenClaw
   - Architecture
@@ -9,6 +8,8 @@ tags:
   - Multi-Agent
 categories:
   - 技术深度分析
+abbrlink: 56510
+date: 2026-04-03 14:20:00
 ---
 
 # OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析

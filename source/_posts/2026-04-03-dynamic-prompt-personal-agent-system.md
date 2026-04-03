@@ -1,6 +1,5 @@
 ---
 title: 动态 Prompt 在个人 Agent 助理系统的可行性与应用深度分析
-date: 2026-04-03 09:55:00
 tags:
   - AI
   - Prompt Engineering
@@ -9,6 +8,8 @@ tags:
   - Architecture
 categories:
   - 技术深度分析
+abbrlink: 22328
+date: 2026-04-03 09:55:00
 ---
 
 # 动态 Prompt 在个人 Agent 助理系统的可行性与应用深度分析

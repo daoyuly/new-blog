@@ -1,6 +1,7 @@
 ---
-title: AI Agent Research Trends - March 26, 2026
+title: 'AI Agent Research Trends - March 26, 2026'
 tags: Agent
+abbrlink: 34210
 date: 2025-03-26 23:07:18
 ---
 

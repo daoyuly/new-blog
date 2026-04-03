@@ -1,6 +1,5 @@
 ---
 title: Genspark 多 Agent 架构深度解析：AI 搜索引擎的系统设计
-date: 2026-04-03 09:30:00
 tags:
   - AI
   - Multi-Agent
@@ -9,6 +8,8 @@ tags:
   - Genspark
 categories:
   - 技术深度分析
+abbrlink: 34545
+date: 2026-04-03 09:30:00
 ---
 
 # Genspark 多 Agent 架构深度解析：AI 搜索引擎的系统设计
