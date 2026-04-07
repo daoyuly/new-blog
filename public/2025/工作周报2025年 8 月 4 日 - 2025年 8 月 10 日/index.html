@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>工作周报2025年8 月4 日 - 2025年8 月10日 | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本周工作思考 Sentry-Agent 开发和使用的一点思考 从应用来看，还有不少需要完善的细节，比如异常堆栈信息不足，线上是压缩代码等情况，导致AI分析的有效性不高，只能给出比较粗略的分析和可能的问题分析 根因分析是后续这个Agent系统的关键点，现在很多Sentry的解决点在是否能够有比较清晰的根因分析图，假设根因分析有效，这个问题是需要自动解决，还是人工解决等这类的AI决策有效性会大大提高">
+  <meta name="description" content="本周工作思考Sentry-Agent 开发和使用的一点思考 从应用来看，还有不少需要完善的细节，比如异常堆栈信息不足，线上是压缩代码等情况，导致AI分析的有效性不高，只能给出比较粗略的分析和可能的问题分析 根因分析是后续这个Agent系统的关键点，现在很多Sentry的解决点在是否能够有比较清晰的根因分析图，假设根因分析有效，这个问题是需要自动解决，还是人工解决等这类的AI决策有效性会大大提高 从">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工作周报2025年8 月4 日 - 2025年8 月10日">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52025%E5%B9%B4%208%20%E6%9C%88%204%20%E6%97%A5%20-%202025%E5%B9%B4%208%20%E6%9C%88%2010%20%E6%97%A5/index.html">
 <meta property="og:site_name" content="盗愚书斋">
-<meta property="og:description" content="本周工作思考 Sentry-Agent 开发和使用的一点思考 从应用来看，还有不少需要完善的细节，比如异常堆栈信息不足，线上是压缩代码等情况，导致AI分析的有效性不高，只能给出比较粗略的分析和可能的问题分析 根因分析是后续这个Agent系统的关键点，现在很多Sentry的解决点在是否能够有比较清晰的根因分析图，假设根因分析有效，这个问题是需要自动解决，还是人工解决等这类的AI决策有效性会大大提高">
+<meta property="og:description" content="本周工作思考Sentry-Agent 开发和使用的一点思考 从应用来看，还有不少需要完善的细节，比如异常堆栈信息不足，线上是压缩代码等情况，导致AI分析的有效性不高，只能给出比较粗略的分析和可能的问题分析 根因分析是后续这个Agent系统的关键点，现在很多Sentry的解决点在是否能够有比较清晰的根因分析图，假设根因分析有效，这个问题是需要自动解决，还是人工解决等这类的AI决策有效性会大大提高 从">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.998Z">
+<meta property="article:modified_time" content="2026-04-02T11:43:38.711Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,16 +198,13 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Sentry-Agent 开发和使用的一点思考<ol>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><h2 id="Sentry-Agent-开发和使用的一点思考"><a href="#Sentry-Agent-开发和使用的一点思考" class="headerlink" title="Sentry-Agent 开发和使用的一点思考"></a>Sentry-Agent 开发和使用的一点思考</h2><ol>
 <li>从应用来看，还有不少需要完善的细节，比如异常堆栈信息不足，线上是压缩代码等情况，导致AI分析的有效性不高，只能给出比较粗略的分析和可能的问题分析</li>
 <li>根因分析是后续这个Agent系统的关键点，现在很多Sentry的解决点在是否能够有比较清晰的根因分析图，假设根因分析有效，这个问题是需要自动解决，还是人工解决等这类的AI决策有效性会大大提高</li>
 <li>从成本上看，目前100个Sentry问题的排查需要大约25美元（gpt-4o），一个问题大约需要0.25美元，后面加上代码排查，根因分析（0.5美元），各类MCP工具的调用（0.5美元），结合现在的token使用情况，预估一个问题的解决上线能到1 ~ 1.5 美元，如果问题能到得到有效解决，这个就值得做。</li>
 <li>这周对Sentry-Agent 的开发较少，一直再思考和编写设计的prompt，现在写代码最重要的是对问题的深刻理解，并把任务拆分成专业有效的prompt，开发习惯已经完全转变了。</li>
 </ol>
-</li>
-<li>很荣幸参加冉冉的十周年入职庆祝会，作为共事多年老伙计，钦佩他低调内敛但丰盈通透的个性和静心但不含糊的做事心气，从他身上我学习到了少说话多做事的一种行事风格，也学习到了他身上那种不争不抢但是专业要求极高的职业态度。也感谢东朔老师和公司为我们提供了一个海纳百川的坚实平台，让具有不同个性的人们成为伙伴，彼此成就，共筑UMU大品牌。</li>
-</ul>
+<h2 id="冉冉的十周年入职庆祝会"><a href="#冉冉的十周年入职庆祝会" class="headerlink" title="冉冉的十周年入职庆祝会"></a>冉冉的十周年入职庆祝会</h2><p>很荣幸参加冉冉的十周年入职庆祝会，作为共事多年老伙计，钦佩他低调内敛但丰盈通透的个性和静心但不含糊的做事心气，从他身上我学习到了少说话多做事的一种行事风格，也学习到了他身上那种不争不抢但是专业要求极高的职业态度。也感谢东朔老师和公司为我们提供了一个海纳百川的坚实平台，让具有不同个性的人们成为伙伴，彼此成就，共筑UMU大品牌。</p>
 
       
 
@@ -1409,6 +1406,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>

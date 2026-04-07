@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>工作周报2021年12月6日 - 2021年12月10日 | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本周工作思考 iPhone6s语音微课卡顿问题排查 这个问题存在很长时间了，综合各种情况其优先级没有得到优先处理，随着web组的整体产能的扩充，现在可以把一些疑难问题花时间处理也跟进处理 本来计划这个排查需要一下午的时间，实际上断断续续用了近1天多的时间，排查的方法是还是通过打log的方式看是否有报错或者性能瓶颈，通过排查和排除发现， 只有iPhone 6s上的app录制的语音微课在iPhone">
+  <meta name="description" content="本周工作思考iPhone6s语音微课卡顿问题排查 这个问题存在很长时间了，综合各种情况其优先级没有得到优先处理，随着web组的整体产能的扩充，现在可以把一些疑难问题花时间处理也跟进处理 本来计划这个排查需要一下午的时间，实际上断断续续用了近1天多的时间，排查的方法是还是通过打log的方式看是否有报错或者性能瓶颈，通过排查和排除发现， 只有iPhone 6s上的app录制的语音微课在iPhone 6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工作周报2021年12月6日 - 2021年12月10日">
 <meta property="og:url" content="https://www.daoyuly.cn/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2012%E6%9C%88%206%E6%97%A5%20-%202021%E5%B9%B4%2012%E6%9C%8810%E6%97%A5/index.html">
 <meta property="og:site_name" content="盗愚书斋">
-<meta property="og:description" content="本周工作思考 iPhone6s语音微课卡顿问题排查 这个问题存在很长时间了，综合各种情况其优先级没有得到优先处理，随着web组的整体产能的扩充，现在可以把一些疑难问题花时间处理也跟进处理 本来计划这个排查需要一下午的时间，实际上断断续续用了近1天多的时间，排查的方法是还是通过打log的方式看是否有报错或者性能瓶颈，通过排查和排除发现， 只有iPhone 6s上的app录制的语音微课在iPhone">
+<meta property="og:description" content="本周工作思考iPhone6s语音微课卡顿问题排查 这个问题存在很长时间了，综合各种情况其优先级没有得到优先处理，随着web组的整体产能的扩充，现在可以把一些疑难问题花时间处理也跟进处理 本来计划这个排查需要一下午的时间，实际上断断续续用了近1天多的时间，排查的方法是还是通过打log的方式看是否有报错或者性能瓶颈，通过排查和排除发现， 只有iPhone 6s上的app录制的语音微课在iPhone 6">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.962Z">
+<meta property="article:modified_time" content="2026-04-02T11:39:57.067Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,8 +198,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>iPhone6s语音微课卡顿问题排查<ul>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><h2 id="iPhone6s语音微课卡顿问题排查"><a href="#iPhone6s语音微课卡顿问题排查" class="headerlink" title="iPhone6s语音微课卡顿问题排查"></a>iPhone6s语音微课卡顿问题排查</h2><ul>
 <li>这个问题存在很长时间了，综合各种情况其优先级没有得到优先处理，随着web组的整体产能的扩充，现在可以把一些疑难问题花时间处理也跟进处理</li>
 <li>本来计划这个排查需要一下午的时间，实际上断断续续用了近1天多的时间，排查的方法是还是通过打log的方式看是否有报错或者性能瓶颈，通过排查和排除发现，</li>
 <li>只有iPhone 6s上的app录制的语音微课在iPhone 6s的app或者Safari上存在问题</li>
@@ -212,8 +211,6 @@ var _hmt = _hmt || [];
 <li>通过以上排查发现，卡顿和react setState性能有明显正相关，目前初步推测造成性能问题的原因是有2个，1是音频文件解码性能，2 khtml内核和react在渲染上性能损耗；目前暂未发现特别消耗性能的业务操作，因为通过日志发现，播放卡顿时，业务逻辑展示的性能消耗无明显规律，在统计各处都有发现较大的性能消耗，也都有无明显性能消耗的地方</li>
 <li>目前还未想到特别有效可落地的办法，onTimeUpdate控制slides的更新，必须保证音画同步，所以不能使用异步的方式，但是mp3文件的解码比较费时间但是涉及浏览器内部，没法触及优化；目前在验证的方法是重新编码LAME3.99的mp3文件，周四在通过FFmpeg做转换试验，暂时没有较大的进展；</li>
 <li>1</li>
-</ul>
-</li>
 </ul>
 
       
@@ -1416,6 +1413,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>

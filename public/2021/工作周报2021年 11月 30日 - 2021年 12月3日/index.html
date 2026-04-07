@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>工作周报2021年11月30日 - 2021年12月3日 | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本周工作思考 Code review的思考 目前最大感受是时间不够用，在google的工程实践中建议，代码审核要尽快完成，但是实际工作中特别像是私信和测评2.2这样业务复杂的较大项目，2个小时完全review完，确实很有难度，我有着这样的想法，较大项目的代码提测时，详情代码提交的伙伴用半个小时以内串讲一下整个实现思路和功能，然后再具体的做cr，这样做的好处是在做好cr和花费时间之间做一个折中，让c">
+  <meta name="description" content="本周工作思考Code review的思考 目前最大感受是时间不够用，在google的工程实践中建议，代码审核要尽快完成，但是实际工作中特别像是私信和测评2.2这样业务复杂的较大项目，2个小时完全review完，确实很有难度，我有着这样的想法，较大项目的代码提测时，详情代码提交的伙伴用半个小时以内串讲一下整个实现思路和功能，然后再具体的做cr，这样做的好处是在做好cr和花费时间之间做一个折中，让co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工作周报2021年11月30日 - 2021年12月3日">
 <meta property="og:url" content="https://www.daoyuly.cn/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2030%E6%97%A5%20-%202021%E5%B9%B4%2012%E6%9C%883%E6%97%A5/index.html">
 <meta property="og:site_name" content="盗愚书斋">
-<meta property="og:description" content="本周工作思考 Code review的思考 目前最大感受是时间不够用，在google的工程实践中建议，代码审核要尽快完成，但是实际工作中特别像是私信和测评2.2这样业务复杂的较大项目，2个小时完全review完，确实很有难度，我有着这样的想法，较大项目的代码提测时，详情代码提交的伙伴用半个小时以内串讲一下整个实现思路和功能，然后再具体的做cr，这样做的好处是在做好cr和花费时间之间做一个折中，让c">
+<meta property="og:description" content="本周工作思考Code review的思考 目前最大感受是时间不够用，在google的工程实践中建议，代码审核要尽快完成，但是实际工作中特别像是私信和测评2.2这样业务复杂的较大项目，2个小时完全review完，确实很有难度，我有着这样的想法，较大项目的代码提测时，详情代码提交的伙伴用半个小时以内串讲一下整个实现思路和功能，然后再具体的做cr，这样做的好处是在做好cr和花费时间之间做一个折中，让co">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.961Z">
+<meta property="article:modified_time" content="2026-04-02T11:39:41.701Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,13 +198,12 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Code review的思考<ul>
-<li>目前最大感受是时间不够用，在google的工程实践中建议，代码审核要尽快完成，但是实际工作中特别像是私信和测评2.2这样业务复杂的较大项目，2个小时完全review完，确实很有难度，我有着这样的想法，较大项目的代码提测时，详情代码提交的伙伴用半个小时以内串讲一下整个实现思路和功能，然后再具体的做cr，这样做的好处是在做好cr和花费时间之间做一个折中，让code review对代码深入的理解，这样才能保证cr更有效，保证代码库中代码质量是持续改进的，而不是越来越来糟糕；</li>
-<li>在代码质量和设计守护是上我们必须秉持长期主义，一开始就把代码的设计和实现做的足够好，在代码扩展中，保证必要的重构，从编写代码的一开始就消除本可以避免的重构；</li>
-<li>随着业务的深化迭代，我越来越觉得前端代码的可扩展性，易理解性及稳定性是最重要的三个开发原则，并且它们的权重是，可扩 展性 &gt; 易理解性 &gt;稳定性, 可扩展性和稳定性两者之前在开发过程中有时候会纠结，该以倾向那个，在review私信的代码时，我看到兴旺在私信列表实现时，我想到一些我自己的实现，但是我比较了一下，似乎兴旺的实现在当前更合适一些，因为当前的实现比较简洁，用常规的做法，比较容易理解和实现，也覆盖住了当前需求，就没必要为了追求高性能的原则做其他的设计，这里不是说性能不重要，当我们没有找到一个既有较好性能又有较好的扩展性的方法，就先放弃为追求性能而造成扩展性差的方案，基于长期主义，可以持续优化的方式才是正确的，不要从一开始就减少了可持续优化的可能性， 我们在设计时应该优先考虑这三个原则，如果有些设计很富有巧思构想，却和这三条原则相违背，建议大家再想一想，再讨论一下；</li>
-<li></li>
-</ul>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><h2 id="Code-review的思考"><a href="#Code-review的思考" class="headerlink" title="Code review的思考"></a>Code review的思考</h2><ul>
+<li><p>目前最大感受是时间不够用，在google的工程实践中建议，代码审核要尽快完成，但是实际工作中特别像是私信和测评2.2这样业务复杂的较大项目，2个小时完全review完，确实很有难度，我有着这样的想法，较大项目的代码提测时，详情代码提交的伙伴用半个小时以内串讲一下整个实现思路和功能，然后再具体的做cr，这样做的好处是在做好cr和花费时间之间做一个折中，让code review对代码深入的理解，这样才能保证cr更有效，保证代码库中代码质量是持续改进的，而不是越来越来糟糕；</p>
+</li>
+<li><p>在代码质量和设计守护是上我们必须秉持长期主义，一开始就把代码的设计和实现做的足够好，在代码扩展中，保证必要的重构，从编写代码的一开始就消除本可以避免的重构；</p>
+</li>
+<li><p>随着业务的深化迭代，我越来越觉得前端代码的可扩展性，易理解性及稳定性是最重要的三个开发原则，并且它们的权重是，可扩 展性 &gt; 易理解性 &gt;稳定性, 可扩展性和稳定性两者之前在开发过程中有时候会纠结，该以倾向那个，在review私信的代码时，我看到兴旺在私信列表实现时，我想到一些我自己的实现，但是我比较了一下，似乎兴旺的实现在当前更合适一些，因为当前的实现比较简洁，用常规的做法，比较容易理解和实现，也覆盖住了当前需求，就没必要为了追求高性能的原则做其他的设计，这里不是说性能不重要，当我们没有找到一个既有较好性能又有较好的扩展性的方法，就先放弃为追求性能而造成扩展性差的方案，基于长期主义，可以持续优化的方式才是正确的，不要从一开始就减少了可持续优化的可能性， 我们在设计时应该优先考虑这三个原则，如果有些设计很富有巧思构想，却和这三条原则相违背，建议大家再想一想，再讨论一下</p>
 </li>
 </ul>
 
@@ -1408,6 +1407,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>

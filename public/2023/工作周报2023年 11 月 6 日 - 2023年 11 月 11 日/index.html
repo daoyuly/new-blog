@@ -16,7 +16,7 @@
 <meta property="og:description" content="本周工作思考在美敦力经理辅导和Fujipan配置脚本的编写中，因为涉及到的脚步量比较大，单就Fujipan配置脚本就有26个脚本，总共68轮对话的配置，整个看下来这些脚本有两个对话模式Call-Response（首先AI和Bot完成一轮对话, 引出第二轮用户对话）和User-First（用户发问，引出一轮的对话），对话模式比较固定，特别适合自动化生成，所以完成了这两种的模式的自动化生产程序，比手工">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-11-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.977Z">
+<meta property="article:modified_time" content="2026-04-02T11:49:19.321Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,7 +198,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在美敦力经理辅导和Fujipan配置脚本的编写中，因为涉及到的脚步量比较大，单就Fujipan配置脚本就有26个脚本，总共68轮对话的配置，整个看下来这些脚本有两个对话模式Call-Response（首先AI和Bot完成一轮对话, 引出第二轮用户对话）和User-First（用户发问，引出一轮的对话），对话模式比较固定，特别适合自动化生成，所以完成了这两种的模式的自动化生产程序，比手工写节省50%时间。目前还需要完全人工参与的是金句和近义词的处理。特别是日文的金句目前是使用第三方分词，但需要把近义词单独匹配，两个需求的约束下，就没有想到很完美的自动处理办法，目前的策略就是放弃一部分自动分词的情况，优先近义词的匹配。<br>另外一个麻烦的点在于目前的这些自动化工具来自两个技术栈，JavaScript和Python，这样整个生成过程的中的数据串联就要人工介入，柳祎建议用ChatGPT把JavaScript转成Python，省去一些中转环节，我尝试了一下，是个好办法。<br>我切身体会到的这个事情，就想到了东朔老师在All Hands上说的，做事前想想想能不能用AI。这个思考方式要彻底改变过往的思维方式。在未来很可能高效人士或者每一个人都会有一个根据自己的知识管理和思维习惯定制的私人大模型，就像现在大部分人都有自己的微信一样，这个数字分身就是每个人思想和自我认知的影子。其实对我们大部分人来说，AI像一个突然闯进房间的陌生人，我们能够快速的观察和试探，却不能很快的认识和熟悉，但是AI发展却足够快速，他似乎很快就熟悉里房间里的所有人，为了更好的交流和协作，我们必须要更深入的了解和学习他的来龙去脉以及内在机制，逐渐让自己具有同等的“大模型意识”，这样才能更好的了解他，才有更好的协作和使用。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>在美敦力经理辅导和Fujipan配置脚本的编写中，因为涉及到的脚步量比较大，单就Fujipan配置脚本就有26个脚本，总共68轮对话的配置，整个看下来这些脚本有两个对话模式Call-Response（首先AI和Bot完成一轮对话, 引出第二轮用户对话）和User-First（用户发问，引出一轮的对话），对话模式比较固定，特别适合自动化生成，所以完成了这两种的模式的自动化生产程序，比手工写节省50%时间。目前还需要完全人工参与的是金句和近义词的处理。特别是日文的金句目前是使用第三方分词，但需要把近义词单独匹配，两个需求的约束下，就没有想到很完美的自动处理办法，目前的策略就是放弃一部分自动分词的情况，优先近义词的匹配。</p>
+<p>另外一个麻烦的点在于目前的这些自动化工具来自两个技术栈，JavaScript和Python，这样整个生成过程的中的数据串联就要人工介入，柳祎建议用ChatGPT把JavaScript转成Python，省去一些中转环节，我尝试了一下，是个好办法。</p>
+<p>我切身体会到的这个事情：做事前想想想能不能用AI。这个思考方式要彻底改变过往的思维方式。在未来很可能高效人士或者每一个人都会有一个根据自己的知识管理和思维习惯定制的私人大模型，就像现在大部分人都有自己的微信一样，这个数字分身就是每个人思想和自我认知的影子。其实对我们大部分人来说，AI像一个突然闯进房间的陌生人，我们能够快速的观察和试探，却不能很快的认识和熟悉，但是AI发展却足够快速，他似乎很快就熟悉里房间里的所有人，为了更好的交流和协作，我们必须要更深入的了解和学习他的来龙去脉以及内在机制，逐渐让自己具有同等的“大模型意识”，这样才能更好的了解他，才有更好的协作和使用。</p>
 
       
 
@@ -1400,6 +1402,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>

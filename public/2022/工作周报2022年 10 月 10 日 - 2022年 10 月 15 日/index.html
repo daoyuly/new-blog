@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>工作周报2022年10 月10 日 - 2022年10 月15日 | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本周工作思考 Web端Tab组件开发和替换 这个项目比我预想的要复杂一些，整体来说技术复杂度较低，业务复杂度一般，涉及到的面太多，有些tabs是统一组件，有一些统一组件，对于改动频次非常少的tabs使用暂时使用样式上优化。二级Tabs和三级Tabs使用量比较大，组件替换1是要处理样式和布局问题，比如原来的布局或者布局不合适；2是要验证逻辑的正确性，tab的点击处理存在不一致的情况，所以所有需要替换">
+  <meta name="description" content="本周工作思考Web端Tab组件开发和替换 这个项目比我预想的要复杂一些，整体来说技术复杂度较低，业务复杂度一般，涉及到的面太多，有些tabs是统一组件，有一些统一组件，对于改动频次非常少的tabs使用暂时使用样式上优化。二级Tabs和三级Tabs使用量比较大，组件替换1是要处理样式和布局问题，比如原来的布局或者布局不合适；2是要验证逻辑的正确性，tab的点击处理存在不一致的情况，所以所有需要替换的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工作周报2022年10 月10 日 - 2022年10 月15日">
 <meta property="og:url" content="https://www.daoyuly.cn/2022/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52022%E5%B9%B4%2010%20%E6%9C%88%2010%20%E6%97%A5%20-%202022%E5%B9%B4%2010%20%E6%9C%88%2015%20%E6%97%A5/index.html">
 <meta property="og:site_name" content="盗愚书斋">
-<meta property="og:description" content="本周工作思考 Web端Tab组件开发和替换 这个项目比我预想的要复杂一些，整体来说技术复杂度较低，业务复杂度一般，涉及到的面太多，有些tabs是统一组件，有一些统一组件，对于改动频次非常少的tabs使用暂时使用样式上优化。二级Tabs和三级Tabs使用量比较大，组件替换1是要处理样式和布局问题，比如原来的布局或者布局不合适；2是要验证逻辑的正确性，tab的点击处理存在不一致的情况，所以所有需要替换">
+<meta property="og:description" content="本周工作思考Web端Tab组件开发和替换 这个项目比我预想的要复杂一些，整体来说技术复杂度较低，业务复杂度一般，涉及到的面太多，有些tabs是统一组件，有一些统一组件，对于改动频次非常少的tabs使用暂时使用样式上优化。二级Tabs和三级Tabs使用量比较大，组件替换1是要处理样式和布局问题，比如原来的布局或者布局不合适；2是要验证逻辑的正确性，tab的点击处理存在不一致的情况，所以所有需要替换的">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-10-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.964Z">
+<meta property="article:modified_time" content="2026-04-02T11:54:22.810Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,11 +198,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>Web端Tab组件开发和替换<ul>
-<li>这个项目比我预想的要复杂一些，整体来说技术复杂度较低，业务复杂度一般，涉及到的面太多，有些tabs是统一组件，有一些统一组件，对于改动频次非常少的tabs使用暂时使用样式上优化。二级Tabs和三级Tabs使用量比较大，组件替换1是要处理样式和布局问题，比如原来的布局或者布局不合适；2是要验证逻辑的正确性，tab的点击处理存在不一致的情况，所以所有需要替换的地方都要验证到；3是要走UI review，对部分页面整体效果做一些微调；目前web端大概有70处二级Tabs和三级Tabs。</li>
-<li>CEO talk上东朔老师提到了做事的思想对我触动很大：把重复的事提炼成流程，而流程则需要持续的改进，这是概括了6sigma里很多的理念，像我们开发中的很多事情其实是存在大量的重复，小到文案样式，大到页面设计，有很多技术是解决重复这类问题，比如组件化技术，动态化技术，跨端技术，脚本化技术等，但是开发过程也有很多的小的重复，比如代码拉取合并、发布部署等等，这类动作日常做的多了，就习以为常了，恰恰是这类事情最需要做成流程化的，另外对开发组织来说，能流程化的才能真正的固化下来，形成组织能力的一部分。以后的工作中增强这种意识把重复的事情尽可能以流程的形式固化下来，提升研发效率。</li>
-</ul>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><h2 id="Web端Tab组件开发和替换"><a href="#Web端Tab组件开发和替换" class="headerlink" title="Web端Tab组件开发和替换"></a>Web端Tab组件开发和替换</h2><ul>
+<li><p>这个项目比我预想的要复杂一些，整体来说技术复杂度较低，业务复杂度一般，涉及到的面太多，有些tabs是统一组件，有一些统一组件，对于改动频次非常少的tabs使用暂时使用样式上优化。二级Tabs和三级Tabs使用量比较大，组件替换1是要处理样式和布局问题，比如原来的布局或者布局不合适；2是要验证逻辑的正确性，tab的点击处理存在不一致的情况，所以所有需要替换的地方都要验证到；3是要走UI review，对部分页面整体效果做一些微调；目前web端大概有70处二级Tabs和三级Tabs。</p>
+</li>
+<li><p>把重复的事提炼成流程，而流程则需要持续的改进，这是概括了6sigma里很多的理念，像我们开发中的很多事情其实是存在大量的重复，小到文案样式，大到页面设计，有很多技术是解决重复这类问题，比如组件化技术，动态化技术，跨端技术，脚本化技术等，但是开发过程也有很多的小的重复，比如代码拉取合并、发布部署等等，这类动作日常做的多了，就习以为常了，恰恰是这类事情最需要做成流程化的，另外对开发组织来说，能流程化的才能真正的固化下来，形成组织能力的一部分。以后的工作中增强这种意识把重复的事情尽可能以流程的形式固化下来，提升研发效率。</p>
 </li>
 </ul>
 
@@ -1406,6 +1405,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>

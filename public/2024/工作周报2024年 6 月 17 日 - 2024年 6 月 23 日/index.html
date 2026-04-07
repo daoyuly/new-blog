@@ -16,7 +16,7 @@
 <meta property="og:description" content="本周工作思考Chatbot增加命中后的提示功能开发Python部分处理NLP相关的逻辑，Go&#x2F;PHP&#x2F;Node.js处理业务逻辑相关的职责。原来我想的在Go中引入语言处理的相关的库，比如jieba，后来在不断思考这个事情，觉得不妥，原因是Go和Python的优势不同，Go的技术栈优势不在NLP上，而NLP恰恰是Python技术栈的优势。Prompt管理设计思考从架构上考虑，Pr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.989Z">
+<meta property="article:modified_time" content="2026-04-02T11:46:48.375Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><p>Chatbot增加命中后的提示功能开发<br>Python部分处理NLP相关的逻辑，Go&#x2F;PHP&#x2F;Node.js处理业务逻辑相关的职责。<br>原来我想的在Go中引入语言处理的相关的库，比如jieba，后来在不断思考这个事情，觉得不妥，原因是Go和Python的优势不同，Go的技术栈优势不在NLP上，而NLP恰恰是Python技术栈的优势。<br>Prompt管理设计思考<br>从架构上考虑，Prompt适合多层管理，系统层和业务层的分开，且可以支持非上线部署和测试评估，支持多模型的业务适配。<br>从工程上考虑，我个人认为Prompt的难点在评估数据的管理和应用，评估决定了Prompt的性能要求，评估指标的建立也是对AI能力理解应用的过程。<br>最近关注的行业相关的大会<br>最近Qcon北京，鸿蒙开发者大会，掘金社区的开发者大会，世界智能产业博览会等都有关注，大家都在谈论AI，但是我们感觉还没有现象级潜力的产品出现，很多是AI平台级的基础设施类产品，其实这个很好理解，这些产品的背后都是和学术圈接近或者从学术圈出来的研究人员主导参与的，他们对底层技术和基础设施更理解，很多的应该是感觉上是从实验室的流程标准化和产品化。<br>另外一个点是AI和大模型开始越来越快向传统细分行业渗透，比如中医，医疗，装备制造，电力，化工，汽车，兵工等，中石油的一款AR头盔已经投入使用，主要用于模拟训练虽然这类产品在其他行业早有落地，中石油作为央企的头部企业在使用这类产品，我觉得是对AR和VR有很大的促进作用，这个和东朔老师两三年前设想是一致的，未来的教育和培训必须是基于元宇宙的，让我们拭目以待。<br>我觉得大家都在探讨的话题是AI时代我们该做什么？随着C端用户和B端用户对AI的认知逐渐加深，他们对AI的需求和期望也越来越多，越来越高，很可能会体现企业的明年的采购预算上，体现在对在用产品在AI能力的表现上，以及对AI解决方案的预期上。<br>在AI的技术和产品上，我觉得有两类用法，一种现有业务形态加入AI能力，改善现有业务形态，另一种是AI产品乘以现有业务形态，创造新的业务形态，有点拗口，但确实是两个完全不同的思路。</p>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><h2 id="Chatbot增加命中后的提示功能开发"><a href="#Chatbot增加命中后的提示功能开发" class="headerlink" title="Chatbot增加命中后的提示功能开发"></a>Chatbot增加命中后的提示功能开发</h2><p>Python部分处理NLP相关的逻辑，Go&#x2F;PHP&#x2F;Node.js处理业务逻辑相关的职责。<br>原来我想的在Go中引入语言处理的相关的库，比如jieba，后来在不断思考这个事情，觉得不妥，原因是Go和Python的优势不同，Go的技术栈优势不在NLP上，而NLP恰恰是Python技术栈的优势。<br>Prompt管理设计思考<br>从架构上考虑，Prompt适合多层管理，系统层和业务层的分开，且可以支持非上线部署和测试评估，支持多模型的业务适配。<br>从工程上考虑，我个人认为Prompt的难点在评估数据的管理和应用，评估决定了Prompt的性能要求，评估指标的建立也是对AI能力理解应用的过程。<br>最近关注的行业相关的大会<br>最近Qcon北京，鸿蒙开发者大会，掘金社区的开发者大会，世界智能产业博览会等都有关注，大家都在谈论AI，但是我们感觉还没有现象级潜力的产品出现，很多是AI平台级的基础设施类产品，其实这个很好理解，这些产品的背后都是和学术圈接近或者从学术圈出来的研究人员主导参与的，他们对底层技术和基础设施更理解，很多的应该是感觉上是从实验室的流程标准化和产品化。<br>另外一个点是AI和大模型开始越来越快向传统细分行业渗透，比如中医，医疗，装备制造，电力，化工，汽车，兵工等，中石油的一款AR头盔已经投入使用，主要用于模拟训练虽然这类产品在其他行业早有落地，中石油作为央企的头部企业在使用这类产品，我觉得是对AR和VR有很大的促进作用。<br>我觉得大家都在探讨的话题是AI时代我们该做什么？随着C端用户和B端用户对AI的认知逐渐加深，他们对AI的需求和期望也越来越多，越来越高，很可能会体现企业的明年的采购预算上，体现在对在用产品在AI能力的表现上，以及对AI解决方案的预期上。<br>在AI的技术和产品上，我觉得有两类用法，一种现有业务形态加入AI能力，改善现有业务形态，另一种是AI产品乘以现有业务形态，创造新的业务形态，有点拗口，但确实是两个完全不同的思路。</p>
 
       
 
@@ -1400,6 +1400,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>

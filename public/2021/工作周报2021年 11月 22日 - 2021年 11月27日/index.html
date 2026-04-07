@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>工作周报2021年11月22日 - 2021年11月27日 | 盗愚书斋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本周工作思考 基于rxjs+web component的组件开发 camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点： 封装性好，html，style可以封装在组件内，可以独立使用； 不依赖第三方库，chrome本身很好的支持； 使用方便，如 在状态和流程管理上目前尝试使用了rxjs + react +">
+  <meta name="description" content="本周工作思考基于rxjs+web component的组件开发camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点：  封装性好，html，style可以封装在组件内，可以独立使用； 不依赖第三方库，chrome本身很好的支持； 使用方便，如 在状态和流程管理上目前尝试使用了rxjs + react +">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工作周报2021年11月22日 - 2021年11月27日">
 <meta property="og:url" content="https://www.daoyuly.cn/2021/%E5%B7%A5%E4%BD%9C%E5%91%A8%E6%8A%A52021%E5%B9%B4%2011%E6%9C%88%2022%E6%97%A5%20-%202021%E5%B9%B4%2011%E6%9C%8827%E6%97%A5/index.html">
 <meta property="og:site_name" content="盗愚书斋">
-<meta property="og:description" content="本周工作思考 基于rxjs+web component的组件开发 camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点： 封装性好，html，style可以封装在组件内，可以独立使用； 不依赖第三方库，chrome本身很好的支持； 使用方便，如 在状态和流程管理上目前尝试使用了rxjs + react +">
+<meta property="og:description" content="本周工作思考基于rxjs+web component的组件开发camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点：  封装性好，html，style可以封装在组件内，可以独立使用； 不依赖第三方库，chrome本身很好的支持； 使用方便，如 在状态和流程管理上目前尝试使用了rxjs + react +">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-24T11:37:07.960Z">
+<meta property="article:modified_time" content="2026-04-02T11:39:10.528Z">
 <meta property="article:author" content="盗愚书斋">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <header class="site-top-nav" role="banner">
   <div class="site-top-nav__inner">
     <div class="site-top-nav__brand">
-      <a href="/">盗愚书斋</a>
+      <p href="/">盗愚书斋</p>
     </div>
     
     <nav class="site-top-nav__links" aria-label="站点导航">
@@ -198,18 +198,14 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><ul>
-<li>基于rxjs+web component的组件开发<ul>
-<li>camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点：</li>
+        <h1 id="本周工作思考"><a href="#本周工作思考" class="headerlink" title="本周工作思考"></a>本周工作思考</h1><h2 id="基于rxjs-web-component的组件开发"><a href="#基于rxjs-web-component的组件开发" class="headerlink" title="基于rxjs+web component的组件开发"></a>基于rxjs+web component的组件开发</h2><p>camera侦测组件和mic侦测组件实现逻辑上相对简单，把它们抽到umu_media_lib中，使用web component做了实现，主要考虑点：</p>
+<ul>
 <li>封装性好，html，style可以封装在组件内，可以独立使用；</li>
 <li>不依赖第三方库，chrome本身很好的支持；</li>
 <li>使用方便，如<camera-device></camera-device></li>
 <li>在状态和流程管理上目前尝试使用了rxjs + react + hooks作为数据流和订阅通知的管理器，在录制项目的界面上涉及多个步骤的数据转换，比如从开始页到录制页，另外是录制页面的各种状态rxjs的响应式可以录制时的状态通过observeable传递给其他关注的组件；这样会比较方便的避免过多的状态通知的情况；</li>
-<li>努力向身边优秀的伙伴们学习</li>
-<li>有一次和@元峰吃饭，我就问@元峰是怎样做到高中清华的，@元峰说了一个细节让我获益匪浅，他告诉我他高中做数学试卷的时候，往往是从后往前做的，也就是是先从所谓的压轴题开始做起，我听完有点震惊，毕业后我就没有关注过考试技巧的话题了，但我隐约记得十多年我上高中的时候，我的老师告诉我们不会的题目先跳过去，先易后难，这成了我的定式思维，而@元峰的做法是先难而后易，我倒是不觉得这个方法本身很惊奇，而是用这个方法背后该是怎样的思考，真的有大开大合的开阔思维方式；我记得我也曾请教过@熊瑛Candice认为什么样的学习方法最有效？@Candice说，专注最重要，专注学习了，很多内容就搞明白了，那一刻，我对专注有更多的理解；今天通过周报又和彤烨一起复习了下如何写邮件&lt;IF规范-邮件沟通&gt;，其实身边的很多伙伴都在有意无意间成了我的良师益友，身边有这么多优秀的伙伴有时候感觉很幸福，有时候也感觉特别有压力，但是更多的时候是动力，是学习和成长的动力。</li>
 </ul>
-</li>
-</ul>
+<h2 id="努力向身边优秀的伙伴们学习"><a href="#努力向身边优秀的伙伴们学习" class="headerlink" title="努力向身边优秀的伙伴们学习"></a>努力向身边优秀的伙伴们学习</h2><p>有一次和@元峰吃饭，我就问@元峰是怎样做到高中清华的，@元峰说了一个细节让我获益匪浅，他告诉我他高中做数学试卷的时候，往往是从后往前做的，也就是是先从所谓的压轴题开始做起，我听完有点震惊，毕业后我就没有关注过考试技巧的话题了，但我隐约记得十多年我上高中的时候，我的老师告诉我们不会的题目先跳过去，先易后难，这成了我的定式思维，而@元峰的做法是先难而后易，我倒是不觉得这个方法本身很惊奇，而是用这个方法背后该是怎样的思考，真的有大开大合的开阔思维方式；我记得我也曾请教过@熊瑛Candice认为什么样的学习方法最有效？@Candice说，专注最重要，专注学习了，很多内容就搞明白了，那一刻，我对专注有更多的理解；今天通过周报又和彤烨一起复习了下如何写邮件&lt;IF规范-邮件沟通&gt;，其实身边的很多伙伴都在有意无意间成了我的良师益友，身边有这么多优秀的伙伴有时候感觉很幸福，有时候也感觉特别有压力，但是更多的时候是动力，是学习和成长的动力。</p>
 
       
 
@@ -1411,6 +1407,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MCP Protocol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Personal Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plugin System</a>
               </li>
             
             <div class="clearfix"></div>
