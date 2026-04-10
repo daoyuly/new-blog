@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 每日论文综述 - 2026-04-08"
-date: 2026-04-08 11:30:00
+title: Agent Memory 每日论文综述 - 2026-04-08
 tags:
   - agent
   - memory
@@ -8,6 +7,8 @@ tags:
   - daily-report
 categories:
   - 论文综述
+abbrlink: 43077
+date: 2026-04-08 11:30:00
 ---
 
 

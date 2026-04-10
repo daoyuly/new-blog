@@ -1,12 +1,13 @@
 ---
-title: "aigcpanel 项目分析报告"
-date: 2026-04-09 11:00:00
+title: aigcpanel 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 10951
+date: 2026-04-09 11:00:00
 ---
 
 # aigcpanel 项目分析报告
