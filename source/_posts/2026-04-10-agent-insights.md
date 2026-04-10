@@ -1,5 +1,6 @@
 ---
-title: Agent 前沿趋势洞察 - 2026-04-10
+title: "Agent 前沿趋势洞察 - 2026-04-10"
+date: 2026-04-10 18:00:00
 tags:
   - agent
   - ai-trends
@@ -8,110 +9,108 @@ tags:
   - github
 categories:
   - 前沿洞察
-abbrlink: 37397
-date: 2026-04-10 18:00:00
 ---
 
 # Agent 前沿趋势洞察
 
 > 数据源: [arXiv cs.AI](https://papers.cool/arxiv/cs.AI) + [GitHub Trending](https://github.com/trending)
->
-> 生成时间: 2026/4/10 10:04:12
+> 
+> 生成时间: 2026/4/10 18:00:09
 
 ## 📊 今日概览
 
 | 分类 | 数量 |
 |------|------|
 | 框架/工具 | 2 |
-| 技术方向 | 11 |
+| 技术方向 | 6 |
 | 应用场景 | 0 |
-| 理论研究 | 5 |
+| 理论研究 | 6 |
 
 ---
 
 ## 🛠️ 框架与工具
 
-### 1. CAFP: A Post-Processing Framework for Group Fairness via Counterfactual Model Averaging
+### 1. ACF: A Collaborative Framework for Agent Covert Communication under Cognitive Asymmetry
 
 📄 **来源**: arXiv
-🔗 **链接**: [https://arxiv.org/abs/2604.07009](https://arxiv.org/abs/2604.07009)
+🔗 **链接**: [https://arxiv.org/abs/2604.08276](https://arxiv.org/abs/2604.08276)
 
-cafp,counterfactual,fairness,averaging,protected,attribute,predictions,sensitive,post,attributes
+acf,cognitive,covert,asymmetry,communication,severe,agent,prefix,collaborative,degradation
 
-### 2. TurboAgent: An LLM-Driven Autonomous Multi-Agent Framework for Turbomachinery Aerodynamic Design
+### 2. Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework
 
 📄 **来源**: arXiv
-🔗 **链接**: [https://arxiv.org/abs/2604.06747](https://arxiv.org/abs/2604.06747)
+🔗 **链接**: [https://arxiv.org/abs/2604.08226](https://arxiv.org/abs/2604.08226)
 
-turbomachinery,aerodynamic,turboagent,design,autonomous,llm,agent,optimization,isentropic,validation
+competency,clinical,world,cognition,skill,mix,provider,agent,human,care
 
 ---
 
 ## 🔬 技术方向
 
-### 1. How Much LLM Does a Self-Revising Agent Actually Need?
+### 1. SUPERNOVA: Eliciting General Reasoning in LLMs with Reinforcement Learning on Natural Instructions
 
-📄 **arXiv**: [2604.07236](https://arxiv.org/abs/2604.07236)
+📄 **arXiv**: [2604.08477](https://arxiv.org/abs/2604.08477)
 
-llm,revision,runtime,inspectable,reflection,agent,guarded,win,actually,planning...
+rlvr,reasoning,supernova,bbeh,general,verifiable,curation,eliciting,llms,reinforcement
 
-### 2. Reason in Chains, Learn in Trees: Self-Rectification and Grafting for Multi-turn Agent Policy Optimization
+### 2. Verify Before You Commit: Towards Faithful Reasoning in LLM Agents via Self-Auditing
 
-📄 **arXiv**: [2604.07165](https://arxiv.org/abs/2604.07165)
+📄 **arXiv**: [2604.08401](https://arxiv.org/abs/2604.08401)
 
-reasoning,steps,grafting,policy,rectification,tree,chains,surgical,trajectories,optimization...
+reasoning,faithfulness,textbf,beliefs,auditing,faithful,llm,rified,easoning,agents
 
-### 3. Planning Task Shielding: Detecting and Repairing Flaws in Planning Tasks through Turning them Unsolvable
+### 3. HiRO-Nav: Hybrid ReasOning Enables Efficient Embodied Navigation
 
-📄 **arXiv**: [2604.07042](https://arxiv.org/abs/2604.07042)
+📄 **arXiv**: [2604.08232](https://arxiv.org/abs/2604.08232)
 
-planning,unsolvable,shielding,task,repairing,flaws,allmin,tasks,flawed,turning...
+nav,hiro,textbf,reasoning,navigation,lrms,entropy,thinking,agent,actions
 
-### 4. A-MBER: Affective Memory Benchmark for Emotion Recognition
+### 4. Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 
-📄 **arXiv**: [2604.07017](https://arxiv.org/abs/2604.07017)
+📄 **arXiv**: [2604.08178](https://arxiv.org/abs/2604.08178)
 
-mber,affective,memory,remembered,emotion,grounded,interaction,history,interpretation,benchmark...
+rewardbench,agentic,reward,trajectory,plan,planning,tool,trajectories,benchmark,modeling
 
-### 5. What&#039;s Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning
+### 5. Beyond Stochastic Exploration: What Makes Training Data Valuable for Agentic Search
 
-📄 **arXiv**: [2604.06995](https://arxiv.org/abs/2604.06995)
+📄 **arXiv**: [2604.08124](https://arxiv.org/abs/2604.08124)
 
-gui,reasoning,uiloop,screen,elements,understanding,multimodal,comprehension,loop,paradigm...
+search,agentic,reasoning,experience,exploration,stochastic,strategic,training,agents,trajectories
 
 ---
 
 ## 📚 理论研究
 
-### 1. EmoMAS: Emotion-Aware Multi-Agent System for High-Stakes Edge-Deployable Negotiation with Bayesian Orchestration
+### 1. Ads in AI Chatbots? An Analysis of How Large Language Models Navigate Conflicts of Interest
 
-📄 **arXiv**: [2604.07003](https://arxiv.org/abs/2604.07003)
+📄 **arXiv**: [2604.08525](https://arxiv.org/abs/2604.08525)
 
-negotiation,emomas,stakes,emotional,agent,deployable,bayesian,strategic,slms,edge...
+sponsored,incentives,chatbots,conflicts,llms,users,advertisements,user,interest,companies
 
-### 2. AgentGate: A Lightweight Structured Routing Engine for the Internet of Agents
+### 2. From Safety Risk to Design Principle: Peer-Preservation in Multi-Agent LLM Systems and Its Implications for Orchestrated Democratic Discourse Analysis
 
-📄 **arXiv**: [2604.06696](https://arxiv.org/abs/2604.06696)
+📄 **arXiv**: [2604.08465](https://arxiv.org/abs/2604.08465)
 
-routing,agentgate,agent,structured,agents,dispatch,lightweight,engine,internet,candidate...
+peer,democratic,architectural,alignment,identity,preservation,agent,advocate,orchestrated,risk
 
-### 3. KD-MARL: Resource-Aware Knowledge Distillation in Multi-Agent Reinforcement Learning
+### 3. KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation
 
-📄 **arXiv**: [2604.06691](https://arxiv.org/abs/2604.06691)
+📄 **arXiv**: [2604.08455](https://arxiv.org/abs/2604.08455)
 
-marl,agent,expert,distillation,coordination,resource,policies,student,aware,reinforcement...
+knowu,proactive,bench,gui,preference,personalized,consent,user,preferences,mobile
 
-### 4. On Emotion-Sensitive Decision Making of Small Language Model Agents
+### 4. Awakening the Sleeping Agent: Lean-Specific Agentic Data Reactivates General Tool Use in Goedel Prover
 
-📄 **arXiv**: [2604.06562](https://arxiv.org/abs/2604.06562)
+📄 **arXiv**: [2604.08388](https://arxiv.org/abs/2604.08388)
 
-emotion,decision,textsc,making,emotional,templates,strategic,sensitive,agents,diplomacy...
+agentic,lean,goedel,tool,domain,calling,specific,prover,reactivates,awakening
 
-### 5. Qualixar OS: A Universal Operating System for AI Agent Orchestration
+### 5. SkillClaw: Let Skills Evolve Collectively with Agentic Evolver
 
-📄 **arXiv**: [2604.06392](https://arxiv.org/abs/2604.06392)
+📄 **arXiv**: [2604.08377](https://arxiv.org/abs/2604.08377)
 
-qualixar,agent,universal,orchestration,command,crewai,000039,aios,autogen,operating...
+skills,skillclaw,skill,evolver,users,updates,user,agentic,collectively,openclaw
 
 ---
 
@@ -119,32 +118,22 @@ qualixar,agent,universal,orchestration,command,crewai,000039,aios,autogen,operat
 
 ### 值得关注
 
-1. **Agent Framework 持续演进**: 今日有 2 个框架相关项目，说明 Agent 开发框架仍在快速发展
-2. **Memory 系统受关注**: 1 篇论文涉及记忆系统，说明 Memory 仍是热点
-3. **应用场景多样化**: 0 个应用场景，从代码生成到任务自动化
+1. *待补充*
+2. *待补充*
 
 ### 技术趋势
 
-- **Memory System 从可选到标配**: 越来越多的 Agent 项目将记忆能力作为核心功能
-- **Multi-Agent 协作**: 多智能体协作模式逐渐成熟
-- **Tool Learning**: 从简单工具调用到自主工具学习
+- *待分析*
 
 ### 推荐深入
 
-1. **研究最新的 Memory 架构**: 关注 Mem0、LangChain Memory 模块
-2. **探索 Multi-Agent 框架**: CrewAI、MetaGPT 等框架的协作机制
-3. **关注代码生成 Agent**: OpenDevin、OpenInterpreter 等项目
+- *待推荐*
 
 ---
 
-*注：GLM-5 API 调用失败，此为备用洞察*
+*本报告由 OpenClaw 自动生成，人工洞察部分待补充*
 
-## 📚 附录
-
-### 关键词列表
-
-agent, multi-agent, autonomous agent, AI agent, LLM agent, langchain, llamaindex, autogpt, crewai, metagpt, agentverse, tool use, function calling, retrieval-augmented, RAG
-
----
-
-*本报告由 OpenClaw 自动生成（GLM-5 深度洞察版）*
+```
+# 关键词列表
+agent, multi-agent, autonomous agent, AI agent, LLM agent, langchain, llamaindex, autogpt, crewai, metagpt, agentverse, semantic kernel, haystack, dify, fastgpt
+```
