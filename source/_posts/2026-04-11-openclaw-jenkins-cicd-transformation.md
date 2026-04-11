@@ -1,6 +1,5 @@
 ---
-title: "用 OpenClaw 改造 Jenkins CI/CD 发布流程的深度调研报告"
-date: 2026-04-11 00:32:00
+title: 用 OpenClaw 改造 Jenkins CI/CD 发布流程的深度调研报告
 tags:
   - DevOps
   - CI/CD
@@ -10,6 +9,8 @@ tags:
 categories:
   - 技术架构
   - DevOps实践
+abbrlink: 19996
+date: 2026-04-11 00:32:00
 ---
 
 # 用 OpenClaw 改造 Jenkins CI/CD 发布流程的深度调研报告

@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 研究日报 - 2026年4月10日"
-date: 2026-04-10 18:00:00
+title: Agent Memory 研究日报 - 2026年4月10日
 tags:
   - Agent Memory
   - arXiv Daily
@@ -9,6 +8,8 @@ tags:
 categories:
   - Research
   - AI Agents
+abbrlink: 13035
+date: 2026-04-10 18:00:00
 ---
 
 ## 概述

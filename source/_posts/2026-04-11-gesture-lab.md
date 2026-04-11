@@ -1,12 +1,13 @@
 ---
-title: "gesture-lab 项目分析报告"
-date: 2026-04-11 11:00:00
+title: gesture-lab 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 18442
+date: 2026-04-11 11:00:00
 ---
 
 # gesture-lab 项目分析报告
