@@ -1,8 +1,15 @@
 ---
 title: OpenClaw Skill 每日推荐 - DevOps & Cloud
-date: 2026-04-12
-tags: [openclaw, skill, devops, cloud, devops-and-cloud]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - devops
+  - cloud
+  - devops-and-cloud
+categories:
+  - 技术推荐
+abbrlink: 5236
+date: 2026-04-12 00:00:00
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 - DevOps & Cloud

@@ -1,8 +1,13 @@
 ---
-title: "Agent Memory 最新论文日报（2026-04-11）"
+title: Agent Memory 最新论文日报（2026-04-11）
+tags:
+  - Agent Memory
+  - AI
+  - 论文分析
+categories:
+  - AI 研究
+abbrlink: 2368
 date: 2026-04-11 18:00:00
-tags: [Agent Memory, AI, 论文分析]
-categories: [AI 研究]
 ---
 
 # Agent Memory 最新论文日报
