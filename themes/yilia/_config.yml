@@ -1,4 +1,7 @@
 # Header
+# 侧栏与移动顶栏标题（与站点 _config.yml 的 author/title 保持一致即可）
+author: 盗愚书斋
+subtitle: ''
 
 menu:
   主页: /
@@ -30,7 +33,7 @@ subnav:
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: 
+root: /
 
 # Content
 
@@ -65,13 +68,14 @@ toc_empty_wording: '目录，不存在的…'
 top: true
 
 # Miscellaneous
+# 百度统计（tongji.baidu.com）：代码管理 → 复制统计代码中的 hm.js?id= 即下方 ID。大陆访客一般可上报；海外/VPN 可能无法加载 hm.baidu.com，属网络环境。
 baidu_analytics: 'facfd4f76d54ff7926737426211f3d89'
 google_analytics: ''
 favicon: /favicon.png
 
-#你的头像url
+#你的头像url（设为 false 不显示头像）
 #avatar: "https://raw.githubusercontent.com/daoyuly/daoyuly.github.io/master/images/daoyu.png"
-avatar: "http://www.fleven.com/img/avatar.png"
+avatar: false
 
 #是否开启分享
 share_jia: false
