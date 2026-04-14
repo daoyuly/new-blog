@@ -1,6 +1,7 @@
 ---
 title: AI Agent设计指南-工具集成和API设计
 tags: Agent设计指南 多智能体 协作机制
+abbrlink: 52180
 date: 2026-04-14 22:17:07
 ---
 

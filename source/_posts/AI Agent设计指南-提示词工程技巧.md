@@ -1,6 +1,7 @@
 ---
-title: 'AI Agent设计指南-提示词工程技巧'
+title: AI Agent设计指南-提示词工程技巧
 tags: Agent设计指南 多智能体 提示词工程技巧
+abbrlink: 55432
 date: 2026-04-14 22:17:07
 ---
 

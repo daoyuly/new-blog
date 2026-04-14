@@ -1,6 +1,7 @@
 ---
-title: 'AI Agent设计指南-多智能体协作机制'
+title: AI Agent设计指南-多智能体协作机制
 tags: Agent设计指南 多智能体 协作机制
+abbrlink: 32222
 date: 2026-04-14 16:17:07
 ---
 

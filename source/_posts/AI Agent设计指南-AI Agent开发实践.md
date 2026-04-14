@@ -1,6 +1,7 @@
 ---
-title: 'AI Agent设计指南-AI Agent开发实践'
+title: AI Agent设计指南-AI Agent开发实践
 tags: Agent设计指南 Agent开发实践
+abbrlink: 31550
 date: 2026-04-14 22:17:07
 ---
 
