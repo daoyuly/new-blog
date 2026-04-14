@@ -1,6 +1,5 @@
 ---
 title: 淘宝店老板必读：用OpenClaw挖掘销售机会，提升业务效率
-date: 2026-04-15 01:03:00
 tags:
   - AI Agent
   - 电商运营
@@ -9,6 +8,8 @@ tags:
   - 自动化
 categories:
   - 实战指南
+abbrlink: 25444
+date: 2026-04-15 01:03:00
 ---
 
 # 淘宝店老板必读：用OpenClaw挖掘销售机会，提升业务效率
