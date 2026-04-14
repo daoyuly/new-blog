@@ -8,7 +8,7 @@ noDate: true
 
 <div class="biz-page">
 
-<p class="biz-lead">面向企业与团队的 <strong>AI 应用与智能体（Agent）</strong>相关咨询、定制开发与知识赋能。技术导向、交付可落地，沟通透明。</p>
+<p class="biz-lead">面向企业\团队\个人的 <strong>AI 应用与智能体（Agent）</strong>相关咨询、定制开发与知识赋能。技术导向、交付可落地，沟通透明。</p>
 
 <section class="biz-section">
   <h2 id="scope">合作范围</h2>
