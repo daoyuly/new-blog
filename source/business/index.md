@@ -51,6 +51,21 @@ noDate: true
   <p class="biz-note">具体案例与产出形式可在初步沟通后根据场景脱敏说明。</p>
 </section>
 
+<section class="biz-section">
+  <h2 id="process">合作流程</h2>
+  <ol class="biz-steps">
+    <li>邮件沟通基本需求，确定初步意向。</li>
+    <li>面聊详细需求与交付目标。</li>
+    <li>交付方案沟通。</li>
+    <li>签订商务合同，支付定金 20%。</li>
+    <li>项目执行。</li>
+    <li>项目中期交付与检查。</li>
+    <li>交付约 85% 时，累计付款至 70%。</li>
+    <li>交付完整项目，付清余款（累计付款 100%，发票）。</li>
+  </ol>
+  <p class="biz-note">具体比例与节点可在合同中按项目类型约定，上表为常见约定示例。</p>
+</section>
+
 <section class="biz-section biz-section--contact" id="contact">
   <h2>联系方式</h2>
   <p>商务与合作请发邮件（请注明公司与需求概要，通常在几个工作日内回复）：</p>

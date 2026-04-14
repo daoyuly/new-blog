@@ -403,6 +403,45 @@ a:hover {
   letter-spacing: -0.01em;
 }
 
+/* 合作流程：有序步骤 */
+.biz-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: biz-step;
+}
+
+.biz-steps li {
+  position: relative;
+  margin: 0;
+  padding: 0.65rem 0 0.65rem 2.6rem;
+  border-bottom: 1px dotted #e1e4e8;
+  line-height: 1.65;
+  color: #333;
+  counter-increment: biz-step;
+}
+
+.biz-steps li:last-child {
+  border-bottom: none;
+}
+
+.biz-steps li::before {
+  content: counter(biz-step);
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 1.65rem;
+  height: 1.65rem;
+  line-height: 1.65rem;
+  text-align: center;
+  font-family: var(--biz-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--biz-accent);
+  border-radius: 4px;
+}
+
 .biz-cards {
   display: grid;
   grid-template-columns: 1fr;
