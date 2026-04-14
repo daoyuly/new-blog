@@ -51,7 +51,7 @@ noDate: true
   <p class="biz-note">具体案例与产出形式可在初步沟通后根据场景脱敏说明。</p>
 </section>
 
-<section class="biz-section">
+<section class="biz-section" style="disaplay:none">
   <h2 id="process">合作流程</h2>
   <ol class="biz-steps">
     <li>邮件沟通基本需求，确定初步意向。</li>
@@ -70,6 +70,11 @@ noDate: true
   <h2>联系方式</h2>
   <p>商务与合作请发邮件（请注明公司与需求概要，通常在几个工作日内回复）：</p>
   <p class="biz-email"><a href="mailto:liudaoyu@outlook.com">liudaoyu@outlook.com</a></p>
+  <p class="biz-contact-sub">微信</p>
+  <div class="biz-wechat">
+    <img src="/img/liudaoyu.jpg" alt="微信二维码" width="220" height="220" loading="lazy" decoding="async" />
+  </div>
+  <p class="biz-wechat-hint">添加时请备注公司与来意。</p>
   <p class="biz-meta">代码与公开资料见 <a href="https://github.com/daoyuly/cv" target="_blank" rel="noopener noreferrer">GitHub</a>；本站「随想」栏为个人文字，与商业报价无绑定。</p>
 </section>
 
