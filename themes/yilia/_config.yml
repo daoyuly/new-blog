@@ -1,12 +1,15 @@
 # Header
 # 侧栏与移动顶栏标题（与站点 _config.yml 的 author/title 保持一致即可）
-author: 盗愚书斋
+author: 刘道玉 AI 工作坊
 subtitle: ''
 
 menu:
   主页: /
   合作: /business/
   随想: /editor/
+  Openclaw工作坊:
+    6月20日淘宝店老板线下工作坊-北京: /openclaw-workshop/june20-beijing-taobao/
+    9月19日短视频创作者线下工作坊-郑州: /openclaw-workshop/sept19-zhengzhou-creator/
   #随笔: /tags/随笔/
 
 # SubNav

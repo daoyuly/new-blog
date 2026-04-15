@@ -1,6 +1,5 @@
 ---
 title: 深度第三方审计实践指南：以 Vibe Coding 项目为例
-date: 2026-04-15 11:00:00
 tags:
   - 软件工程
   - 安全审计
@@ -8,6 +7,8 @@ tags:
   - Vibe Coding
 categories:
   - 技术实践
+abbrlink: 56191
+date: 2026-04-15 11:00:00
 ---
 
 ## 前言

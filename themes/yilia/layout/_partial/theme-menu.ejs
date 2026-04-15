@@ -1,0 +1,70 @@
+<% var items = theme_menu_parsed(); %>
+<% if (mode === 'sidebar') { %>
+  <% items.forEach(function (item) { %>
+    <% if (item.type === 'link') { %>
+    <li><a href="<%- url_for(item.path) %>"><%= item.label %></a></li>
+    <% } else { %>
+    <li class="header-menu__group">
+      <span class="header-menu__group-label"><%= item.label %></span>
+      <ul class="header-menu__sub">
+        <% item.children.forEach(function (c) { %>
+        <li><a href="<%- url_for(c.path) %>"><%= c.label %></a></li>
+        <% }); %>
+      </ul>
+    </li>
+    <% } %>
+  <% }); %>
+<% } else if (mode === 'top') { %>
+  <% items.forEach(function (item) { %>
+    <% if (item.type === 'link') { %>
+    <a href="<%- url_for(item.path) %>"><%= item.label %></a>
+    <% } else { %>
+    <div class="site-top-nav__dropdown" tabindex="0">
+      <span class="site-top-nav__dropdown-label"><%= item.label %></span>
+      <div class="site-top-nav__dropdown-panel" role="menu">
+        <% item.children.forEach(function (c) { %>
+        <a role="menuitem" href="<%- url_for(c.path) %>"><%= c.label %></a>
+        <% }); %>
+      </div>
+    </div>
+    <% } %>
+  <% }); %>
+<% } else if (mode === 'footer') { %>
+  <% var fi = 0 %>
+  <% items.forEach(function (item) { %>
+    <% if (item.type === 'link') { %>
+      <% if (fi++ > 0) { %><span class="footer-nav-sep">·</span><% } %>
+    <a href="<%- url_for(item.path) %>"><%= item.label %></a>
+    <% } else { %>
+      <% item.children.forEach(function (c) { %>
+        <% if (fi++ > 0) { %><span class="footer-nav-sep">·</span><% } %>
+    <a href="<%- url_for(c.path) %>"><%= c.label %></a>
+      <% }); %>
+    <% } %>
+  <% }); %>
+<% } else if (mode === 'mobile') { %>
+  <% var w = typeof divide !== 'undefined' ? divide : '25%' %>
+  <% items.forEach(function (item) { %>
+    <% if (item.type === 'link') { %>
+    <li style="width: <%= w %>"><a href="<%- url_for(item.path) %>"><%= item.label %></a></li>
+    <% } else { %>
+    <li class="header-menu__group header-menu__group--mobile" style="width: <%= w %>">
+      <span class="header-menu__group-label"><%= item.label %></span>
+      <% item.children.forEach(function (c) { %>
+      <a class="header-menu__sub-link" href="<%- url_for(c.path) %>"><%= c.label %></a>
+      <% }); %>
+    </li>
+    <% } %>
+  <% }); %>
+<% } else if (mode === 'classic') { %>
+  <% items.forEach(function (item) { %>
+    <% if (item.type === 'link') { %>
+    <a class="main-nav-link" href="<%- url_for(item.path) %>"><%= item.label %></a>
+    <% } else { %>
+    <span class="main-nav-link main-nav-link--parent"><%= item.label %></span>
+      <% item.children.forEach(function (c) { %>
+    <a class="main-nav-link main-nav-link--sub" href="<%- url_for(c.path) %>"><%= c.label %></a>
+      <% }); %>
+    <% } %>
+  <% }); %>
+<% } %>

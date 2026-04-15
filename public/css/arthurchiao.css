@@ -109,6 +109,106 @@ a:hover {
   color: var(--ac-primary-darker);
 }
 
+/* 顶栏下拉菜单（Openclaw 工作坊等嵌套项） */
+.site-top-nav__dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-top-nav__dropdown-label {
+  cursor: default;
+  color: var(--ac-text-muted);
+  user-select: none;
+}
+.site-top-nav__dropdown:hover .site-top-nav__dropdown-label,
+.site-top-nav__dropdown:focus-within .site-top-nav__dropdown-label {
+  color: var(--ac-primary-dark);
+}
+.site-top-nav__dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.35rem;
+  min-width: 16rem;
+  max-width: 22rem;
+  padding: 0.4rem 0;
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 1001;
+}
+.site-top-nav__dropdown:hover .site-top-nav__dropdown-panel,
+.site-top-nav__dropdown:focus-within .site-top-nav__dropdown-panel {
+  display: block;
+}
+.site-top-nav__dropdown-panel a {
+  display: block;
+  padding: 0.45rem 1rem;
+  white-space: normal;
+  line-height: 1.35;
+  color: var(--ac-text-muted);
+}
+.site-top-nav__dropdown-panel a:hover {
+  color: var(--ac-primary-dark);
+  background: #f6f8fa;
+}
+
+/* 侧栏与移动菜单中的分组子项（与主题 menu-dropdown 一致，便于未重打 webpack 包时仍可用） */
+.left-col #header .header-menu .header-menu__group {
+  list-style: none;
+  text-align: center;
+}
+.left-col #header .header-menu .header-menu__group-label {
+  display: block;
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+  cursor: default;
+}
+.left-col #header .header-menu .header-menu__sub {
+  list-style: none;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+.left-col #header .header-menu .header-menu__sub li {
+  margin: 4px 0;
+}
+.left-col #header .header-menu .header-menu__sub a {
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: normal;
+}
+.header-menu__group--mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 2px;
+  border-left: 1px solid #a0a0a0;
+  box-sizing: border-box;
+}
+.header-menu__group--mobile .header-menu__group-label {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.header-menu__group--mobile .header-menu__sub-link {
+  font-size: 11px;
+  line-height: 1.25;
+  color: #a0a0a0;
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+  padding: 2px 0;
+}
+.header-menu__group--mobile .header-menu__sub-link:hover,
+.header-menu__group--mobile .header-menu__sub-link.active {
+  color: #eaeaea;
+}
+
 /* 左侧栏主题色（侧栏隐藏时以下不影响布局） */
 .left-col .overlay {
   background: var(--ac-primary);

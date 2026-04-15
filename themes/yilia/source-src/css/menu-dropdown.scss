@@ -1,0 +1,69 @@
+/* 主题菜单：支持 YAML 中的嵌套子菜单（下拉/侧栏子列表） */
+
+.left-col #header .header-menu {
+	.header-menu__group {
+		list-style: none;
+		text-align: center;
+	}
+	.header-menu__group-label {
+		display: block;
+		font-size: 13px;
+		color: #999;
+		letter-spacing: 0.02em;
+		margin-bottom: 6px;
+		cursor: default;
+	}
+	.header-menu__sub {
+		list-style: none;
+		margin: 0 0 8px 0;
+		padding: 0;
+		li {
+			margin: 4px 0;
+		}
+		a {
+			font-size: 13px;
+			line-height: 1.45;
+			white-space: normal;
+		}
+	}
+}
+
+.header-menu__group--mobile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 6px 2px;
+	border-left: 1px solid #a0a0a0;
+	box-sizing: border-box;
+	.header-menu__group-label {
+		font-size: 11px;
+		color: #888;
+		line-height: 1.2;
+		margin-bottom: 4px;
+	}
+	.header-menu__sub-link {
+		font-size: 11px;
+		line-height: 1.25;
+		color: #a0a0a0;
+		text-decoration: none;
+		white-space: normal;
+		text-align: center;
+		padding: 2px 0;
+		&:hover,
+		&.active {
+			color: #eaeaea;
+		}
+	}
+}
+
+#main-nav .main-nav-link--parent {
+	margin-right: 0.25em;
+	color: #999;
+	cursor: default;
+	pointer-events: none;
+}
+#main-nav .main-nav-link--sub {
+	margin-left: 0.35em;
+	font-size: 0.92em;
+}

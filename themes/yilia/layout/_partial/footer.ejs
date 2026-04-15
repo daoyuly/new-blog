@@ -2,11 +2,7 @@
   <div class="outer">
     <% if (theme.menu && Object.keys(theme.menu).length) { %>
     <nav class="footer-nav" aria-label="站点导航">
-      <% var mi = 0 %>
-      <% for (var label in theme.menu) { %>
-        <% if (mi++ > 0) { %><span class="footer-nav-sep">·</span><% } %>
-        <a href="<%- url_for(theme.menu[label]) %>"><%= label %></a>
-      <% } %>
+      <%- partial('_partial/theme-menu', { mode: 'footer' }) %>
       <% if (theme.subnav && theme.subnav.github) { %>
         <span class="footer-nav-sep">·</span>
         <a href="<%- url_for(theme.subnav.github) %>" target="_blank" rel="noopener noreferrer">GitHub</a>
