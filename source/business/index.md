@@ -53,20 +53,7 @@ noDate: true
 
 <section class="biz-section">
   <h2 id="cases">项目案例</h2>
-  <div class="biz-cards">
-    <article class="biz-card">
-      <h3 class="biz-card__title">智能指环 · 健康洞察</h3>
-      <p class="biz-card__desc">某企业智能指环项目：围绕体征与行为数据，构建智能健康洞察与提醒能力（已脱敏展示）。</p>
-    </article>
-    <article class="biz-card">
-      <h3 class="biz-card__title">医疗设备企业 · 官网</h3>
-      <p class="biz-card__desc">某医疗设备企业企业官网：品牌呈现、合规动线与内容结构一体化落地。</p>
-    </article>
-    <article class="biz-card">
-      <h3 class="biz-card__title">数字人 · 个人版口播</h3>
-      <p class="biz-card__desc">某企业老板个人版数字人口播系统：形象与话术资产沉淀，便于持续输出口播内容。</p>
-    </article>
-  </div>
+  <p>代表性交付已整理为卡片展示，详见 <a href="/cases/">项目案例</a> 页面（与顶栏「项目案例」入口一致）。</p>
   <p class="biz-note">客户与数据已脱敏；更细交付范围与周期可在沟通后说明。</p>
 </section>
 
