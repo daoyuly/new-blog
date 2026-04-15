@@ -109,10 +109,16 @@ a:hover {
   color: var(--ac-primary-darker);
 }
 
-/* 顶栏下拉菜单（Openclaw 工作坊等嵌套项） */
+/* 顶栏下拉菜单（Openclaw 工作坊等嵌套项）
+   父级 padding-bottom 作为「悬停桥」，避免 margin 在标签与面板间形成死区导致 :hover 丢失 */
 .site-top-nav__dropdown {
   position: relative;
   display: inline-block;
+  padding-bottom: 0.45rem;
+}
+.site-top-nav__dropdown:hover,
+.site-top-nav__dropdown:focus-within {
+  z-index: 1002;
 }
 .site-top-nav__dropdown-label {
   cursor: default;
@@ -128,7 +134,7 @@ a:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 0.35rem;
+  margin-top: 0;
   min-width: 16rem;
   max-width: 22rem;
   padding: 0.4rem 0;
