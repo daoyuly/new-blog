@@ -10,6 +10,11 @@
   --ac-text-muted: #6a737d;
   --ac-blockquote-border: #dfe2e5;
   --ac-code-bg: #f6f8fa;
+  /* 顶栏 / 页脚等站点导航：悬停与强调用偏稳重的红色（正文链接等仍用 --ac-primary） */
+  --nav-accent: #b83246;
+  --nav-accent-hover: #9a2a3c;
+  --nav-accent-active: #7d2230;
+  --nav-accent-soft-bg: rgba(184, 50, 70, 0.08);
 }
 
 /* 全局字体与排版 */
@@ -80,11 +85,11 @@ a:hover {
   letter-spacing: -0.02em;
 }
 .site-top-nav__brand a {
-  color: var(--ac-primary-dark);
+  color: #24292f;
   text-decoration: none;
 }
 .site-top-nav__brand a:hover {
-  color: var(--ac-primary-darker);
+  color: var(--nav-accent-hover);
 }
 .site-top-nav__links {
   display: flex;
@@ -99,14 +104,14 @@ a:hover {
   white-space: nowrap;
 }
 .site-top-nav__links a:hover {
-  color: var(--ac-primary-dark);
+  color: var(--nav-accent-hover);
 }
 .site-top-nav__links .site-top-nav__github {
-  color: var(--ac-primary);
+  color: var(--nav-accent);
   font-weight: 500;
 }
 .site-top-nav__links .site-top-nav__github:hover {
-  color: var(--ac-primary-darker);
+  color: var(--nav-accent-active);
 }
 
 /* 顶栏下拉菜单（Openclaw 工作坊等嵌套项）
@@ -127,7 +132,7 @@ a:hover {
 }
 .site-top-nav__dropdown:hover .site-top-nav__dropdown-label,
 .site-top-nav__dropdown:focus-within .site-top-nav__dropdown-label {
-  color: var(--ac-primary-dark);
+  color: var(--nav-accent-hover);
 }
 .site-top-nav__dropdown-panel {
   display: none;
@@ -156,8 +161,8 @@ a:hover {
   color: var(--ac-text-muted);
 }
 .site-top-nav__dropdown-panel a:hover {
-  color: var(--ac-primary-dark);
-  background: #f6f8fa;
+  color: var(--nav-accent-hover);
+  background: var(--nav-accent-soft-bg);
 }
 
 /* 侧栏与移动菜单中的分组子项（与主题 menu-dropdown 一致，便于未重打 webpack 包时仍可用） */
@@ -369,10 +374,10 @@ a:hover {
   font-size: 0.95em;
 }
 #footer .footer-nav a {
-  color: var(--ac-primary);
+  color: var(--ac-text-muted);
 }
 #footer .footer-nav a:hover {
-  color: var(--ac-primary-darker);
+  color: var(--nav-accent-hover);
 }
 #footer .footer-nav-sep {
   margin: 0 0.5em;
