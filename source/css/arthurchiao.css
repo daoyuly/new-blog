@@ -4,17 +4,16 @@
  */
 
 :root {
-  --ac-primary: #2e8b57;
-  --ac-primary-dark: #21653f;
-  --ac-primary-darker: #1b5233;
+  /* 全站强调色：稳重红（正文链接、标签、合作页点缀、选中等） */
+  --ac-primary: #b83246;
+  --ac-primary-dark: #9a2a3c;
+  --ac-primary-darker: #7d2230;
+  --ac-accent-soft: rgba(184, 50, 70, 0.08);
+  --ac-accent-softer: rgba(184, 50, 70, 0.06);
+  --ac-accent-border: rgba(184, 50, 70, 0.35);
   --ac-text-muted: #6a737d;
   --ac-blockquote-border: #dfe2e5;
   --ac-code-bg: #f6f8fa;
-  /* 顶栏 / 页脚等站点导航：悬停与强调用偏稳重的红色（正文链接等仍用 --ac-primary） */
-  --nav-accent: #b83246;
-  --nav-accent-hover: #9a2a3c;
-  --nav-accent-active: #7d2230;
-  --nav-accent-soft-bg: rgba(184, 50, 70, 0.08);
 }
 
 /* 全局字体与排版 */
@@ -89,7 +88,7 @@ a:hover {
   text-decoration: none;
 }
 .site-top-nav__brand a:hover {
-  color: var(--nav-accent-hover);
+  color: var(--ac-primary-dark);
 }
 .site-top-nav__links {
   display: flex;
@@ -104,14 +103,14 @@ a:hover {
   white-space: nowrap;
 }
 .site-top-nav__links a:hover {
-  color: var(--nav-accent-hover);
+  color: var(--ac-primary-dark);
 }
 .site-top-nav__links .site-top-nav__github {
-  color: var(--nav-accent);
+  color: var(--ac-primary);
   font-weight: 500;
 }
 .site-top-nav__links .site-top-nav__github:hover {
-  color: var(--nav-accent-active);
+  color: var(--ac-primary-darker);
 }
 
 /* 顶栏下拉菜单（Openclaw 工作坊等嵌套项）
@@ -132,7 +131,7 @@ a:hover {
 }
 .site-top-nav__dropdown:hover .site-top-nav__dropdown-label,
 .site-top-nav__dropdown:focus-within .site-top-nav__dropdown-label {
-  color: var(--nav-accent-hover);
+  color: var(--ac-primary-dark);
 }
 .site-top-nav__dropdown-panel {
   display: none;
@@ -161,8 +160,8 @@ a:hover {
   color: var(--ac-text-muted);
 }
 .site-top-nav__dropdown-panel a:hover {
-  color: var(--nav-accent-hover);
-  background: var(--nav-accent-soft-bg);
+  color: var(--ac-primary-dark);
+  background: var(--ac-accent-soft);
 }
 
 /* 侧栏与移动菜单中的分组子项（与主题 menu-dropdown 一致，便于未重打 webpack 包时仍可用） */
@@ -222,7 +221,7 @@ a:hover {
 
 /* 左侧栏主题色（侧栏隐藏时以下不影响布局） */
 .left-col .overlay {
-  background: var(--ac-primary);
+  background: #4d4d4d;
 }
 .left-col .header-menu a:hover,
 .left-col .header-smart-menu a:hover {
@@ -377,7 +376,7 @@ a:hover {
   color: var(--ac-text-muted);
 }
 #footer .footer-nav a:hover {
-  color: var(--nav-accent-hover);
+  color: var(--ac-primary-dark);
 }
 #footer .footer-nav-sep {
   margin: 0 0.5em;
@@ -405,7 +404,7 @@ a:hover {
   border-bottom: 1px dotted #dcdcdc;
 }
 .home-search-list-wrap .search-li:hover {
-  background: rgba(46, 139, 87, 0.06);
+  background: var(--ac-accent-softer);
 }
 .home-search-list-wrap .search-title {
   overflow: hidden;
@@ -485,7 +484,7 @@ a:hover {
   color: #24292f;
   padding: 1rem 1.15rem;
   margin: 0 0 1.75rem;
-  background: linear-gradient(135deg, rgba(46, 139, 87, 0.06) 0%, rgba(30, 41, 55, 0.04) 100%);
+  background: linear-gradient(135deg, var(--ac-accent-softer) 0%, rgba(30, 41, 55, 0.04) 100%);
   border: 1px solid var(--biz-panel-border);
   border-left: 3px solid var(--biz-accent);
   border-radius: 4px;
@@ -595,7 +594,7 @@ a:hover {
 }
 
 .biz-card:hover {
-  border-color: rgba(46, 139, 87, 0.35);
+  border-color: var(--ac-accent-border);
   box-shadow: 0 2px 8px rgba(30, 41, 55, 0.06);
 }
 
