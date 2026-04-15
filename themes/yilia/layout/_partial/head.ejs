@@ -24,6 +24,15 @@
   <link rel="dns-prefetch" href="<%= config.url %>">
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%
+  var siteKeywords = typeof page.keywords !== 'undefined' && page.keywords !== null && page.keywords !== ''
+    ? page.keywords
+    : config.keywords;
+  if (siteKeywords) {
+    var keywordsContent = Array.isArray(siteKeywords) ? siteKeywords.join(', ') : String(siteKeywords);
+  %>
+  <meta name="keywords" content="<%= keywordsContent %>">
+  <% } %>
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
     <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">

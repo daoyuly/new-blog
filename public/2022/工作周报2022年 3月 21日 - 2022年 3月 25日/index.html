@@ -8,6 +8,9 @@
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
   <title>工作周报2022年3月21日 - 2022年3月25日 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊">
+  
   <meta name="description" content="本周工作思考周一在调试录制流合成的时候发现一个问题，当tab页切换时，合成就失败了，表现就是用户头像暂停了，通过log发现当切换tab时，合成操作停止，具体跟进代码发现当时使用了requestAnimationFrame作为循环合成的计数器，查阅了requestAnimationFrame的MDN文档才意识到当页面Hidden时，浏览器从性能角度考虑requestAnimationFrame是停止">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工作周报2022年3月21日 - 2022年3月25日">
