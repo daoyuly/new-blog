@@ -1,6 +1,5 @@
 ---
 title: Agent Token 优化完全指南：在保证效果的前提下降低成本提升性能
-date: 2026-04-15 16:00:00
 tags:
   - Agent
   - 成本优化
@@ -8,6 +7,8 @@ tags:
   - 提示词工程
 categories:
   - AI 工程实践
+abbrlink: 47121
+date: 2026-04-15 16:00:00
 ---
 
 ## 前言

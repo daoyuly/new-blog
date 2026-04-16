@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 研究日报（2026-04-15）- arXiv cs.AI 最新论文分析"
-date: 2026-04-15 18:00:00
+title: Agent Memory 研究日报（2026-04-15）- arXiv cs.AI 最新论文分析
 tags:
   - Agent Memory
   - LLM Agents
@@ -8,6 +7,8 @@ tags:
   - Research
 categories:
   - Research
+abbrlink: 30085
+date: 2026-04-15 18:00:00
 ---
 
 ## 今日论文概览
