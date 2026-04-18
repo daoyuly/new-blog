@@ -1,6 +1,5 @@
 ---
 title: AI Agent 赋能短视频直播电商：Hermes 与 OpenClaw 的解决方案
-date: 2026-04-18 11:00:00
 tags:
   - AI Agent
   - Hermes
@@ -12,6 +11,8 @@ tags:
 categories:
   - AI 应用
   - 电商研究
+abbrlink: 62224
+date: 2026-04-18 11:00:00
 ---
 
 # AI Agent 赋能短视频直播电商：Hermes 与 OpenClaw 的解决方案

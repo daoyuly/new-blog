@@ -1,6 +1,5 @@
 ---
 title: Agent Token 优化完全指南
-date: 2026-04-15 00:00:00
 tags:
   - Token 优化
   - 成本优化
@@ -8,6 +7,8 @@ tags:
   - LLM 优化
 categories:
   - Agent 实践
+abbrlink: 57300
+date: 2026-04-15 00:00:00
 ---
 
 # Agent Token 优化完全指南

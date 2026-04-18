@@ -1,6 +1,5 @@
 ---
 title: Hermes vs OpenClaw：两大 AI Agent 平台深度对比分析
-date: 2026-04-17 13:41:00
 tags:
   - AI Agent
   - Hermes
@@ -10,6 +9,8 @@ tags:
   - 记忆系统
 categories:
   - 平台分析
+abbrlink: 31384
+date: 2026-04-17 13:41:00
 ---
 
 # Hermes vs OpenClaw：两大 AI Agent 平台深度对比分析

@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 交通出行
+tags:
+  - openclaw
+  - skill
+  - transportation
+categories:
+  - 技术推荐
+abbrlink: 24888
 date: 2026-04-18 11:30:00
-tags: [openclaw, skill, transportation]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 - 交通出行

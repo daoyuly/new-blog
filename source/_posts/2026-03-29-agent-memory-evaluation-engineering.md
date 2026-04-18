@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 评估的工程化解决方案综述
-date: 2026-03-29 00:00:00
 tags:
   - Agent Memory
   - RAG 评估
@@ -8,6 +7,8 @@ tags:
   - 工程实践
 categories:
   - Agent 研究
+abbrlink: 29046
+date: 2026-03-29 00:00:00
 ---
 
 # Agent Memory 评估的工程化解决方案综述

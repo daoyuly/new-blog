@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 领域最新论文速递（2026-04-16）"
-date: 2026-04-16 18:00:00
+title: Agent Memory 领域最新论文速递（2026-04-16）
 tags:
   - Agent Memory
   - AI Research
@@ -8,6 +7,8 @@ tags:
   - Transfer Learning
 categories:
   - AI Research
+abbrlink: 35526
+date: 2026-04-16 18:00:00
 ---
 
 # Agent Memory 领域最新论文速递（2026-04-16）

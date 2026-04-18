@@ -1,6 +1,5 @@
 ---
 title: 多 Agent 协作框架与 2025-2026 发展趋势深度调研
-date: 2026-03-31 00:00:00
 tags:
   - Multi-Agent
   - 协作框架
@@ -8,6 +7,8 @@ tags:
   - 技术趋势
 categories:
   - Agent 研究
+abbrlink: 52462
+date: 2026-03-31 00:00:00
 ---
 
 # 多 Agent 协作框架与 2025-2026 发展趋势深度调研

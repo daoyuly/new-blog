@@ -1,6 +1,5 @@
 ---
 title: Agent 系统交付的可量化指标研究
-date: 2026-03-28 00:00:00
 tags:
   - AI Agent
   - 评估指标
@@ -8,6 +7,8 @@ tags:
   - 工程实践
 categories:
   - Agent 研究
+abbrlink: 60349
+date: 2026-03-28 00:00:00
 ---
 
 # Agent 系统交付的可量化指标研究

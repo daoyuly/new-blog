@@ -1,6 +1,5 @@
 ---
 title: Hermes Agent 进化机制深度分析
-date: 2026-04-13 00:00:00
 tags:
   - Hermes Agent
   - 自我改进
@@ -9,6 +8,8 @@ tags:
   - Agent 架构
 categories:
   - Agent 研究
+abbrlink: 16026
+date: 2026-04-13 00:00:00
 ---
 
 # Hermes Agent 进化机制深度分析

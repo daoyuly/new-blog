@@ -1,6 +1,5 @@
 ---
 title: Agent 反思记忆研究综述
-date: 2026-03-29 00:00:00
 tags:
   - Agent Memory
   - 反思记忆
@@ -8,6 +7,8 @@ tags:
   - 评估方法
 categories:
   - Agent 研究
+abbrlink: 4230
+date: 2026-03-29 00:00:00
 ---
 
 # Agent 反思记忆研究综述

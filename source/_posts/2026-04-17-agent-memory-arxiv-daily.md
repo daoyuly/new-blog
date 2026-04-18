@@ -1,8 +1,15 @@
 ---
 title: arXiv Agent Memory 论文日报 - 2026-04-17
+tags:
+  - Agent Memory
+  - arXiv Daily
+  - VSA
+  - RAG
+  - Hyperdimensional Computing
+categories:
+  - Research
+abbrlink: 2222
 date: 2026-04-17 18:00:00
-tags: [Agent Memory, arXiv Daily, VSA, RAG, Hyperdimensional Computing]
-categories: [Research]
 ---
 
 ## 概述
