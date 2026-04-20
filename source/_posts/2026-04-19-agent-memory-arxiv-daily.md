@@ -1,6 +1,5 @@
 ---
 title: arXiv Agent Memory 论文日报 (2026-04-19)
-date: 2026-04-19 18:00:00
 tags:
   - Agent Memory
   - arXiv
@@ -10,6 +9,8 @@ tags:
   - 智能体系统
 categories:
   - AI Research
+abbrlink: 15196
+date: 2026-04-19 18:00:00
 ---
 
 # arXiv Agent Memory 论文日报

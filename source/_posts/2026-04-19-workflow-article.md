@@ -1,10 +1,11 @@
 ---
-title: "企业级 Data Agent 落地基石：统一元数据与数据治理实践"
+title: 企业级 Data Agent 落地基石：统一元数据与数据治理实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 45683
 date: 2026-04-19 01:22:11
 ---
 

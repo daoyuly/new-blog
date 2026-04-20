@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory arXiv 日报 | 2026-04-18 - 超维度记忆突破与自演化协议"
-date: 2026-04-18 18:00:00
+title: Agent Memory arXiv 日报 | 2026-04-18 - 超维度记忆突破与自演化协议
 tags:
   - Agent Memory
   - arXiv
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI Research
   - Agent Memory
+abbrlink: 27117
+date: 2026-04-18 18:00:00
 ---
 
 ## 📊 日报概览

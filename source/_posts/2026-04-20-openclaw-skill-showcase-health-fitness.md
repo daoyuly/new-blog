@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Health & Fitness
-date: 2026-04-20
-tags: [openclaw, skill, health-fitness]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - health-fitness
+categories:
+  - 技术推荐
+abbrlink: 13261
+date: 2026-04-20 00:00:00
 ---
 
 # OpenClaw Skill 每日推荐 - Health & Fitness
