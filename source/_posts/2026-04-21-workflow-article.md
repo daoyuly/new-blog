@@ -1,10 +1,11 @@
 ---
-title: "TiDB面向大模型与信创的All-in-One数据库实践"
+title: TiDB面向大模型与信创的All-in-One数据库实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 3472
 date: 2026-04-21 10:45:12
 ---
 

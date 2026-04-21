@@ -1,6 +1,5 @@
 ---
 title: OpenClaw 直播销售数据分析完整方案
-date: 2026-04-20 15:34:00
 tags:
   - OpenClaw
   - 电商分析
@@ -9,6 +8,8 @@ tags:
   - 智能分析
 categories:
   - 技术实践
+abbrlink: 26169
+date: 2026-04-20 15:34:00
 ---
 
 # OpenClaw 直播销售数据分析完整方案

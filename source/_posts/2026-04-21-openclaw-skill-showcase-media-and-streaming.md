@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 媒体与流媒体 (Media & Streaming)
-date: 2026-04-21
-tags: [openclaw, skill, media-and-streaming]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - media-and-streaming
+categories:
+  - 技术推荐
+abbrlink: 16144
+date: 2026-04-21 00:00:00
 ---
 
 # 媒体与流媒体 (Media & Streaming) - OpenClaw Skill 每日推荐

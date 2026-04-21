@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 每日速递：经验压缩谱系与技能优化"
-date: 2026-04-20
+title: Agent Memory 每日速递：经验压缩谱系与技能优化
 tags:
   - AI Agents
   - Memory Systems
@@ -8,6 +7,8 @@ tags:
   - Research
 categories:
   - Research Notes
+abbrlink: 36782
+date: 2026-04-20 00:00:00
 ---
 
 ## 📋 今日论文概览
