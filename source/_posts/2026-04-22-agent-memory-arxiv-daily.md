@@ -1,8 +1,14 @@
 ---
-title: "Agent Memory 研究日报 - 2026年4月22日"
-date: 2026-04-22 18:00:00 +0800
-tags: [Agent Memory, RAG, Long-term Memory, AI Research]
-categories: [Research Daily]
+title: Agent Memory 研究日报 - 2026年4月22日
+date: '2026-04-22 18:00:00 +0800'
+tags:
+  - Agent Memory
+  - RAG
+  - Long-term Memory
+  - AI Research
+categories:
+  - Research Daily
+abbrlink: 35502
 ---
 
 ## 今日相关论文列表

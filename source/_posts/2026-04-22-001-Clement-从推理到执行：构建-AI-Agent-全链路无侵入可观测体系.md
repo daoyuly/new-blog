@@ -1,10 +1,11 @@
 ---
-title: "AI Agent无侵入全链路可观测体系：从黑盒盲区到进化闭环"
+title: AI Agent无侵入全链路可观测体系：从黑盒盲区到进化闭环
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 50130
 date: 2026-04-22 12:54:32
 ---
 

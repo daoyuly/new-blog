@@ -1,6 +1,7 @@
 ---
 title: n8n在CICD应用的探索
 tags: n8n
+abbrlink: 61870
 date: 2026-04-21 23:46:40
 ---
 

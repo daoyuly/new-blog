@@ -1,12 +1,13 @@
 ---
-title: "travel-agent 项目分析报告"
-date: 2026-04-23 11:00:00
+title: travel-agent 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 19881
+date: 2026-04-23 11:00:00
 ---
 
 # travel-agent 项目分析报告

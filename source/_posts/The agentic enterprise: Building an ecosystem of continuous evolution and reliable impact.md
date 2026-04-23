@@ -1,6 +1,9 @@
 ---
-title: The agentic enterprise：Building an ecosystem of continuous evolution and reliable impact
+title: >-
+  The agentic enterprise：Building an ecosystem of continuous evolution and
+  reliable impact
 tags: agentic enterprise evolution
+abbrlink: 41350
 date: 2026-04-21 23:08:18
 ---
 

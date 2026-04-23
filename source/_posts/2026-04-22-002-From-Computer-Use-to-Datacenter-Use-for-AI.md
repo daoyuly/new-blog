@@ -1,10 +1,11 @@
 ---
-title: "从 Computer Use 到 Datacenter Use：AKernel 的 AI 原生基础设施实践"
+title: 从 Computer Use 到 Datacenter Use：AKernel 的 AI 原生基础设施实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 936
 date: 2026-04-22 13:46:37
 ---
 

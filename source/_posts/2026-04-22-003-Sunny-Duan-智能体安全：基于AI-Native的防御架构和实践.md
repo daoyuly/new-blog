@@ -1,10 +1,11 @@
 ---
-title: "基于AI Native的Agent防御架构与实践：从配置加固到认知层零信任"
+title: 基于AI Native的Agent防御架构与实践：从配置加固到认知层零信任
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 13394
 date: 2026-04-22 15:00:09
 ---
 

@@ -1,8 +1,16 @@
 ---
-title: "2026-04-21 arXiv Agent Memory 论文日报"
+title: 2026-04-21 arXiv Agent Memory 论文日报
+tags:
+  - Agent Memory
+  - arXiv
+  - 论文跟踪
+  - RAG
+  - Long-term Memory
+categories:
+  - AI 研究
+  - 论文综述
+abbrlink: 18727
 date: 2026-04-21 18:00:00
-tags: [Agent Memory, arXiv, 论文跟踪, RAG, Long-term Memory]
-categories: [AI 研究, 论文综述]
 ---
 
 # 2026-04-21 arXiv Agent Memory 论文日报
