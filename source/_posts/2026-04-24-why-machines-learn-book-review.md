@@ -1,6 +1,6 @@
 ---
 title: 《Why Machines Learn: The Elegant Math Behind Modern AI》深度书评
-tag: AI书评 机器学习 数学 科普
+tags: AI书评 机器学习 数学 科普
 abbrlink: 68742
 date: 2026-04-24 20:45:00
 ---
