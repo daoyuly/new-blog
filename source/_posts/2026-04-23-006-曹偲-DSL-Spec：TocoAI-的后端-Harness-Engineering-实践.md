@@ -1,10 +1,11 @@
 ---
-title: "AI时代的DSL-Spec与Harness Engineering实践"
+title: AI时代的DSL-Spec与Harness Engineering实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 60880
 date: 2026-04-23 23:28:51
 ---
 

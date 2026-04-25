@@ -1,12 +1,13 @@
 ---
-title: "trip_planner_agent 项目分析报告"
-date: 2026-04-24 11:00:00
+title: trip_planner_agent 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 10693
+date: 2026-04-24 11:00:00
 ---
 
 # trip_planner_agent 项目分析报告
