@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 领域 arXiv 日报：2026-04-28"
-date: 2026-04-28 18:00:00
+title: Agent Memory 领域 arXiv 日报：2026-04-28
 tags:
   - Agent Memory
   - arXiv
@@ -11,6 +10,8 @@ tags:
 categories:
   - AI Research
   - Memory Systems
+abbrlink: 62352
+date: 2026-04-28 18:00:00
 ---
 
 ## 概览

@@ -1,10 +1,11 @@
 ---
-title: "企业级 Agent 架构演进：ZillizTown 的工程实践与思考"
+title: 企业级 Agent 架构演进：ZillizTown 的工程实践与思考
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 2043
 date: 2026-04-27 17:42:53
 ---
 

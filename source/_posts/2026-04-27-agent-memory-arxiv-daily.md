@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 论文日报：Memanto 挑战知识图必要性，语义记忆新范式"
-date: 2026-04-27 18:00:00
+title: Agent Memory 论文日报：Memanto 挑战知识图必要性，语义记忆新范式
 tags:
   - Agent Memory
   - Long-Horizon Agents
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI Research
   - Agent Memory
+abbrlink: 9238
+date: 2026-04-27 18:00:00
 ---
 
 ## 📋 今日论文概览

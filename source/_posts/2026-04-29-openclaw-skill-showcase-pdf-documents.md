@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - PDF 与文档处理
-date: 2026-04-29
-tags: [openclaw, skill, pdf-documents]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - pdf-documents
+categories:
+  - 技术推荐
+abbrlink: 40539
+date: 2026-04-29 00:00:00
 ---
 
 ## 今日分类：PDF 与文档处理

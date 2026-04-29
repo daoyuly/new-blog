@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 个人发展（Personal Development）
-date: 2026-04-28
-tags: [openclaw, skill, personal-development]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - personal-development
+categories:
+  - 技术推荐
+abbrlink: 34173
+date: 2026-04-28 00:00:00
 ---
 
 ## 今日分类概述：个人发展（Personal Development）
