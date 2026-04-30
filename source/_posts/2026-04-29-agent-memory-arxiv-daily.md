@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 每日洞察：2026年4月29日 arXiv cs.AI 论文分析"
-date: 2026-04-29 18:00:00
+title: Agent Memory 每日洞察：2026年4月29日 arXiv cs.AI 论文分析
 tags:
   - Agent Memory
   - RAG
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI Research
   - Memory Systems
+abbrlink: 58420
+date: 2026-04-29 18:00:00
 ---
 
 ## 概述

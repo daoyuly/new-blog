@@ -1,8 +1,16 @@
 ---
 title: OpenClaw Skill 每日推荐 - 安全与密码
-date: 2026-04-30
-tags: [openclaw, skill, security, password, 安全, 密码]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - security
+  - password
+  - 安全
+  - 密码
+categories:
+  - 技术推荐
+abbrlink: 55785
+date: 2026-04-30 00:00:00
 ---
 
 # 🛡️ OpenClaw Skill 每日推荐 - 安全与密码
