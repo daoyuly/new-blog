@@ -1,12 +1,13 @@
 ---
-title: "IntentGraph 项目分析报告"
-date: 2026-05-02 11:00:00
+title: IntentGraph 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 8832
+date: 2026-05-02 11:00:00
 ---
 
 # IntentGraph 项目分析报告

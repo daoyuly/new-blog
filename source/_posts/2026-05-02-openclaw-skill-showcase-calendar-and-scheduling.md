@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 日历与调度
+tags:
+  - openclaw
+  - skill
+  - 日历与调度
+categories:
+  - 技术推荐
+abbrlink: 24518
 date: 2026-05-02 11:30:00
-tags: [openclaw, skill, 日历与调度]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 - 日历与调度 (Calendar & Scheduling)

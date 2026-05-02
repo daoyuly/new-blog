@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 研究日报：arXiv cs.AI 2026-04-30 新论文洞察"
-date: 2026-04-30 18:00:00
+title: Agent Memory 研究日报：arXiv cs.AI 2026-04-30 新论文洞察
 tags:
   - Agent Memory
   - arXiv
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI Research
   - Agent Systems
+abbrlink: 61021
+date: 2026-04-30 18:00:00
 ---
 
 ## 概述
