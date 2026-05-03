@@ -1,8 +1,16 @@
 ---
-title: "Agent Memory 前沿论文日报 - 2026年5月2日"
+title: Agent Memory 前沿论文日报 - 2026年5月2日
+tags:
+  - Agent Memory
+  - AI Research
+  - arXiv
+  - LLM
+  - RAG
+categories:
+  - AI Research
+  - Daily Report
+abbrlink: 17033
 date: 2026-05-02 18:00:00
-tags: [Agent Memory, AI Research, arXiv, LLM, RAG]
-categories: [AI Research, Daily Report]
 ---
 
 ## 概述

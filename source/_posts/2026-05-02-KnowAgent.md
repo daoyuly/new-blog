@@ -1,6 +1,5 @@
 ---
-title: "KnowAgent 项目深度分析报告"
-date: 2026-05-02 11:00:00
+title: KnowAgent 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,6 +7,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+abbrlink: 64955
+date: 2026-05-02 11:00:00
 ---
 
 # KnowAgent 项目深度分析报告
