@@ -1,10 +1,11 @@
 ---
-title: "企业级AI编码可控实践：从Vibe Coding到Spec Coding的全栈演进"
+title: 企业级AI编码可控实践：从Vibe Coding到Spec Coding的全栈演进
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 44270
 date: 2026-05-05 13:17:03
 ---
 

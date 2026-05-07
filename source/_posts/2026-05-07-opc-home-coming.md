@@ -1,6 +1,5 @@
 ---
 title: 从一人公司（OPC）到家庭回归：AI Agent 时代的生产力革命
-date: 2026-05-07 11:00:00
 tags:
   - AI Agent
   - 一人公司
@@ -9,6 +8,8 @@ tags:
   - 社会变革
 categories:
   - 深度观察
+abbrlink: 6604
+date: 2026-05-07 11:00:00
 ---
 
 # 从一人公司（OPC）到家庭回归：AI Agent 时代的生产力革命

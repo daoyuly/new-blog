@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 每日速递 (2026-05-06): arXiv cs.AI 相关论文分析"
-date: 2026-05-06 18:00:00
+title: 'Agent Memory 每日速递 (2026-05-06): arXiv cs.AI 相关论文分析'
 tags:
   - Agent Memory
   - arXiv
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI Research
   - Paper Review
+abbrlink: 56453
+date: 2026-05-06 18:00:00
 ---
 
 ## 概览

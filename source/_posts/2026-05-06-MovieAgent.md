@@ -1,12 +1,13 @@
 ---
-title: "MovieAgent 项目分析报告"
-date: 2026-05-06 11:00:00
+title: MovieAgent 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 64770
+date: 2026-05-06 11:00:00
 ---
 
 # MovieAgent 项目分析报告

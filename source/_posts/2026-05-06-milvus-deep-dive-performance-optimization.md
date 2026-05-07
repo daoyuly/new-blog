@@ -1,6 +1,5 @@
 ---
 title: Milvus 向量数据库深度指南：从入门到性能优化
-date: 2026-05-06 11:13:00
 tags:
   - Vector Database
   - Milvus
@@ -9,6 +8,8 @@ tags:
   - Performance Optimization
 categories:
   - 技术深度分析
+abbrlink: 14962
+date: 2026-05-06 11:13:00
 ---
 
 # Milvus 向量数据库深度指南：从入门到性能优化

@@ -1,10 +1,11 @@
 ---
-title: "K8s与Ray协同：大模型时代的AI基础设施调度范式"
+title: K8s与Ray协同：大模型时代的AI基础设施调度范式
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 48818
 date: 2026-05-05 12:09:38
 ---
 

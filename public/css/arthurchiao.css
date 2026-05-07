@@ -686,3 +686,60 @@ a:hover {
   font-size: 0.85rem !important;
   color: var(--ac-text-muted) !important;
 }
+
+/* ---------- 全智能家庭档案馆：略放宽版式 + 开篇张力 ---------- */
+.biz-page.family-archive-page {
+  max-width: 780px;
+}
+
+.family-archive-page .biz-manifesto {
+  margin: 0 0 1.25rem;
+  padding: 1.15rem 1.25rem;
+  font-size: 1.08rem;
+  line-height: 1.82;
+  color: #1a1f26;
+  background: linear-gradient(145deg, rgba(30, 41, 55, 0.07) 0%, rgba(255, 255, 255, 0.92) 55%);
+  border: 1px solid var(--biz-panel-border);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(30, 41, 55, 0.05);
+}
+
+.family-archive-page .biz-manifesto strong {
+  color: var(--biz-panel);
+}
+
+.family-archive-page .biz-cards--family {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .family-archive-page .biz-cards--family {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.family-archive-page .biz-section--family-cta {
+  margin-bottom: 0;
+  padding: 1rem 1.15rem 1.15rem;
+  background: var(--biz-bg);
+  border: 1px solid var(--biz-panel-border);
+  border-radius: 6px;
+}
+
+.family-archive-page .biz-section--family-cta h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.65rem;
+}
+
+.family-archive-page .biz-section--family-cta p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: #333;
+}
+
+.family-archive-page .biz-section--family-cta a {
+  font-weight: 600;
+}
+

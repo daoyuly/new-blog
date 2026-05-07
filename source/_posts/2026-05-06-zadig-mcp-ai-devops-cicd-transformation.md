@@ -1,6 +1,5 @@
 ---
 title: 基于 Zadig MCP 的 AI DevOps CI/CD 改造方案：从理论到落地
-date: 2026-05-06 16:46:00
 tags:
   - AI DevOps
   - Zadig
@@ -9,6 +8,8 @@ tags:
   - Model Context Protocol
 categories:
   - 技术深度分析
+abbrlink: 8168
+date: 2026-05-06 16:46:00
 ---
 
 # 基于 Zadig MCP 的 AI DevOps CI/CD 改造方案：从理论到落地
