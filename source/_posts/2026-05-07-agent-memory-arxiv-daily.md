@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 论文日报 - 2026年5月7日
-date: 2026-05-07 18:07:00
 tags:
   - Agent Memory
   - Long-Horizon Reasoning
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI Research
   - Paper Review
+abbrlink: 27748
+date: 2026-05-07 18:07:00
 ---
 
 ## 概述

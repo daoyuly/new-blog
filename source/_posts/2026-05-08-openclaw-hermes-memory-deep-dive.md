@@ -1,6 +1,5 @@
 ---
 title: OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示
-date: 2026-05-08 00:12:00
 tags:
   - AI Agent
   - 记忆系统
@@ -10,6 +9,8 @@ tags:
   - Agent Memory
 categories:
   - 深度技术分析
+abbrlink: 4285
+date: 2026-05-08 00:12:00
 ---
 
 # OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示
