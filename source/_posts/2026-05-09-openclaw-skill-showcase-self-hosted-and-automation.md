@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 自托管与自动化
+tags:
+  - openclaw
+  - skill
+  - 自托管与自动化
+categories:
+  - 技术推荐
+abbrlink: 58029
 date: 2026-05-09 11:30:00
-tags: [openclaw, skill, 自托管与自动化]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 - 自托管与自动化

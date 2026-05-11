@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 研究日报：2026年5月9日 arXiv cs.AI 论文分析"
-date: 2026-05-09 18:00:00
+title: Agent Memory 研究日报：2026年5月9日 arXiv cs.AI 论文分析
 tags:
   - Agent Memory
   - Long-term Memory
@@ -10,6 +9,8 @@ tags:
   - AI Research
 categories:
   - Research Report
+abbrlink: 57162
+date: 2026-05-09 18:00:00
 ---
 
 ## 概述
