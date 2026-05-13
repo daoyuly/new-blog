@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Shopping & E-commerce（购物与电商）
-date: 2026-05-13
-tags: [openclaw, skill, shopping-and-e-commerce]
-categories: [技术推荐]
+tags:
+  - openclaw
+  - skill
+  - shopping-and-e-commerce
+categories:
+  - 技术推荐
+abbrlink: 43344
+date: 2026-05-13 00:00:00
 ---
 
 # OpenClaw Skill 每日推荐 - Shopping & E-commerce（购物与电商）

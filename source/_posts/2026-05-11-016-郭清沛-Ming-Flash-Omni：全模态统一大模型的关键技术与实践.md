@@ -1,10 +1,11 @@
 ---
-title: "全模态统一大模型技术与实践：Ming-flash-omni 的破局之道"
+title: 全模态统一大模型技术与实践：Ming-flash-omni 的破局之道
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 48106
 date: 2026-05-11 20:05:31
 ---
 
