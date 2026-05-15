@@ -1,6 +1,5 @@
 ---
 title: 'Agent Memory ArXiv 日报 #10 — 2026-05-14'
-date: 2026-05-14 18:00:00
 tags:
   - agent-memory
   - arxiv-daily
@@ -9,6 +8,8 @@ tags:
   - episodic-memory
 categories:
   - Agent Memory 研究
+abbrlink: 60205
+date: 2026-05-14 18:00:00
 ---
 
 > 本报告自动扫描 ArXiv cs.AI / cs.CL 最新论文，筛选与 Agent Memory 相关的研究并生成分析。

@@ -1,0 +1,140 @@
+---
+title: Agent 最新研究趋势（2026-05-15）
+tags:
+  - Agent
+  - LLM
+  - Multi-Agent
+  - Workflow
+  - Reasoning
+  - Memory
+categories:
+  - AI架构
+  - Agent系统
+abbrlink: 15116
+date: 2026-05-15 12:00:00
+---
+
+# Agent 最新研究趋势（2026-05-15）
+
+> 本报告自动生成自 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)
+> 
+> 筛选标准：AI Agent 系统相关论文
+> 
+> 生成时间：2026/5/15 12:00
+
+---
+
+## 📊 今日概况
+
+- **cs.AI 新论文数**: 22+ 篇
+- **Agent 相关**: 14 篇
+
+---
+
+## 🔥 核心趋势
+
+### 趋势一：从「自由规划」到「确定性工作流」
+
+今天的论文出现了一个明显的转向——**用确定性工作流替代自规划 Agent**。
+
+- **GraphFlow** 提出「workflow diagram 即可执行规约」的理念，在编译期做形式化验证，运行时只允许有限范围内的 LLM 调用。一年期临床试验跑了 8,728 次工作流，完成率 97.08%。
+- **HS Tariff Classification** 明确提出 "deterministic agentic workflow vs self-planning agents"：固定控制流，LLM 只在狭窄阶段介入，反思和验证作为局部机制。在 6 位 HS 编码分类上达到 64.2% top-1 准确率。
+
+**趋势解读**：社区开始意识到，在关键任务场景中，让 Agent 自由规划的风险太高。确定性框架 + 局部 AI 决策正在成为更可靠的选择。
+
+---
+
+### 趋势二：开源 Agent 训练框架的成熟
+
+**Orchard** 是今天最重磅的论文之一（来自 Jianfeng Gao 团队）。它提供了完整的开源 Agent 建模方案：
+
+| 模型 | 任务 | 数据量 | 核心成绩 |
+|------|------|--------|----------|
+| Orchard-SWE | 代码 Agent | 107K 蒸馏轨迹 | SWE-bench Verified 67.5%（开源同尺寸 SOTA） |
+| Orchard-GUI | 计算机使用 Agent | 0.4K 蒸馏 + 2.2K 开放任务 | WebVoyager 74.1%，竞争力接近闭源 |
+| Orchard-Claw | 个人助手 Agent | 仅 0.2K 合成任务 | Claw-Eval 59.6% → 73.9%（配更强 harness） |
+
+关键创新：
+- 轻量级 **Orchard Env** 环境服务层，横跨任务域和训练阶段复用
+- **Credit-assignment SFT**：从未解决的轨迹中学习有价值的片段
+- **Balanced Adaptive Rollout**：RL 阶段的平衡探索
+
+---
+
+### 趋势三：推理时计算（Test-Time Compute）的新范式
+
+两条路线在并行推进：
+
+**路线 A：广度优先 + 群体进化**
+- **OpenDeepThink** 用 Bradley-Terry 配对比较做多候选排序，每轮淘汰底部 1/4、变异顶部 3/4。让 Gemini 3.1 Pro 的 Codeforces Elo 提升了 **+405 分**。
+
+**路线 B：宽度-深度联合优化**
+- **DDC (Dual-Dimensional Consistency)** 把采样宽度和推理深度作为联合目标，用置信加权贝叶斯 + 趋势感知分层剪枝。token 消耗降低 **10 倍以上**，准确率不降反升。
+
+---
+
+### 趋势四：Agent 评估从「结果打分」走向「过程诊断」
+
+**Agent Failure Diagnosis** 论文提出分层的诊断框架：
+- **Top-down**：Agent 级别的故障归因
+- **Bottom-up**：Span 级别的独立评估 + 判决理由
+
+在 TRAIL benchmark 上：
+- 类别 F1 提升 38%
+- **定位准确率提升 3.5 倍**
+- **联合定位-分类准确率提升 12.5 倍**
+
+关键发现：同一个前沿模型在该框架内的定位准确率比直接用 monolithic judge 高数倍——**瓶颈是评估方法论，不是模型能力**。
+
+---
+
+### 趋势五：多 Agent 系统的「自我进化」闭环
+
+**LIFE Survey** 提出了一个四阶段因果链模型：
+
+```
+L (Lay capability) → I (Integrate via collaboration) → F (Find faults) → E (Evolve)
+```
+
+这个综述系统性地揭示了之前被忽视的问题：多 Agent 系统中**错误会跨 Agent 传播**，而且很少能转化为结构性自我改进。论文提出了跨阶段的闭环研究议程。
+
+---
+
+### 趋势六：Agent 记忆与个性化进入「治理」阶段
+
+两篇论文从不同角度解决了长期交互一致性问题：
+
+- **EASM**（情绪感知状态记忆）：在推理时动态构建用户上下文，记忆锚定提升 95%，计划清晰度提升 57%。即使在涉及悲伤、痛苦的对抗性对话中也保持一致。
+
+- **ARPM**（异构时序记忆治理）：把长期人设一致性分解为可治理的组件——静态知识记忆 vs 动态对话记忆分离，向量检索 + BM25 + RRF 融合，双时序重排。在 510 万字噪声基底 + 周期性上下文清除 + 跨模型切换下仍维持人设一致。
+
+---
+
+## 📋 Agent 相关论文速览
+
+| # | 论文 | 核心主题 | 亮点 |
+|---|------|---------|------|
+| 1 | [OpenDeepThink](https://arxiv.org/abs/2605.15177) | 并行推理 + BT 排序 | Codeforces Elo +405 |
+| 2 | [APWA](https://arxiv.org/abs/2605.15132) | 分布式多 Agent 架构 | 工作流自动分解为并行子问题 |
+| 3 | [Agentic GraphRAG](https://arxiv.org/abs/2605.15109) | Agent 知识图谱检索 | 引用忠实性 → 轨迹级溯源 |
+| 4 | [DDC](https://arxiv.org/abs/2605.15100) | 推理时计算缩放 | token 消耗降低 10x+ |
+| 5 | [CAST](https://arxiv.org/abs/2605.15041) | LLM 工具使用校准 | 执行准确率 +5.85pp，推理长度 -26% |
+| 6 | **[Orchard](https://arxiv.org/abs/2605.15040)** | 开源 Agent 建模框架 | 三个 recipe 均达开源 SOTA |
+| 7 | [GraphFlow](https://arxiv.org/abs/2605.14968) | 可验证 Agent 工作流 | 临床试验 97.08% 完成率 |
+| 8 | **[LIFE Survey](https://arxiv.org/abs/2605.14892)** | 多 Agent 自进化综述 | 四阶段因果链：L→I→F→E |
+| 9 | [Agent Evaluation](https://arxiv.org/abs/2605.14865) | Agent 失败诊断 | 定位准确率 3.5x 提升 |
+| 10 | [Deterministic Workflow](https://arxiv.org/abs/2605.14857) | 确定性 Agent 工作流 | HS 编码分类 6 位 top-1 64.2% |
+| 11 | [EASM](https://arxiv.org/abs/2605.14833) | 情感状态记忆 | 记忆锚定 +95% |
+| 12 | [ARPM](https://arxiv.org/abs/2605.14802) | 时序记忆治理 | 510 万字噪声下维持人设 |
+| 13 | [MediaClaw](https://arxiv.org/abs/2605.14771) | 多模态 Agent 平台 | 基于 OpenClaw 生态的三层架构 |
+| 14 | [AI Alignment PRS](https://arxiv.org/abs/2605.14912) | 多元对齐 | 从「讨好共识」到「建设性分歧」 |
+
+---
+
+## 💡 值得关注
+
+1. **Orchard 是今天的必读论文**。它提供了一个完整的、可复现的 Agent 训练方案，从数据蒸馏到 SFT 到 RL，覆盖代码、GUI、个人助手三个方向。特别是仅用 0.2K 合成任务就能训练出可用的个人助手 Agent，说明数据效率正在快速提升。
+
+2. **确定性工作流 vs 自由规划 Agent** 的讨论正在升温。今天的两篇论文（GraphFlow + HS Tax）都选择了「固定流程 + 局部 AI」的模式，这可能是 Agent 在生产环境中落地的关键设计决策。
+
+3. **Agent 评估方法论**的重要性被严重低估。Agent Failure Diagnosis 论文证明，同样的模型用更好的评估框架，诊断准确率可以提升数倍。这意味着很多「模型能力不足」的问题，其实可能是「评估方法不对」。

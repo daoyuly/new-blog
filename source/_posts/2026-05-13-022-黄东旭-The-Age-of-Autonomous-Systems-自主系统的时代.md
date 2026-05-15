@@ -1,10 +1,11 @@
 ---
-title: "Agent 时代的软件重构：从代码载体到意图驱动"
+title: Agent 时代的软件重构：从代码载体到意图驱动
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 38532
 date: 2026-05-13 20:06:16
 ---
 

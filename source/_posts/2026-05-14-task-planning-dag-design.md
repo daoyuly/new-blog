@@ -1,6 +1,5 @@
 ---
 title: AI Agent 任务规划的 DAG 设计：从理论到工程实践
-date: 2026-05-14 14:00:00
 tags:
   - AI Agent
   - DAG
@@ -12,6 +11,8 @@ tags:
 categories:
   - 技术深度分析
   - 系统设计
+abbrlink: 37626
+date: 2026-05-14 14:00:00
 ---
 
 # AI Agent 任务规划的 DAG 设计：从理论到工程实践
