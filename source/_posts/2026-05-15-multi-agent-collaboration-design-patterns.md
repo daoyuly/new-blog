@@ -10,6 +10,7 @@ tags:
   - 技术综述
 categories:
   - 技术研究
+abbrlink: 5328
 date: 2026-05-15 20:25:00
 ---
 
