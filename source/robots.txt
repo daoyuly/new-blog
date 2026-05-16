@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /editor/
+Disallow: /pages/
+
+Sitemap: https://www.daoyuly.cn/sitemap.xml
+Sitemap: https://www.daoyuly.cn/baidusitemap.xml

@@ -4,15 +4,18 @@
 
 # Site
 title: 刘道玉 AI 工作坊
-subtitle: ''
-description: ''
+subtitle: 'AI 赋能个人与企业效率提升'
+description: '刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。'
 keywords:
   - 刘道玉
   - 刘道玉 AI 工作坊
   - OpenClaw
   - AI 工作坊
+  - AI 应用
+  - 大模型
+  - 具身智能
 author: 刘道玉 AI 工作坊
-language: en
+language: zh-CN
 timezone: ''
 
 # URL
@@ -125,3 +128,11 @@ jsonContent:
       excerpt: false
       categories: false
       tags: true
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  rel: true
+
+baidusitemap:
+  path: baidusitemap.xml
