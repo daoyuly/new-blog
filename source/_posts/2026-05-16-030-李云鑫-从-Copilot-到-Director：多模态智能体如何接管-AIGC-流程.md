@@ -1,10 +1,11 @@
 ---
-title: "从 Copilot 到 Director：多模态智能体如何接管 AIGC 流程"
+title: 从 Copilot 到 Director：多模态智能体如何接管 AIGC 流程
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 62206
 date: 2026-05-16 14:05:54
 ---
 
