@@ -1,10 +1,11 @@
 ---
-title: "从 Copilot 到 DataAgent：企业级数据开发治理平台的 AI Native 演进与实践"
+title: 从 Copilot 到 DataAgent：企业级数据开发治理平台的 AI Native 演进与实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 64121
 date: 2026-05-18 11:06:12
 ---
 
