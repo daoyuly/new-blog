@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - AI 与大语言模型
-date: 2026-05-19 11:30:00
 tags:
   - openclaw
   - skill
   - ai-and-llms
 categories:
   - 技术推荐
+abbrlink: 14077
+date: 2026-05-19 11:30:00
 ---
 
 # 🤖 OpenClaw Skill 每日推荐 — AI 与大语言模型
