@@ -1,6 +1,5 @@
 ---
 title: 禅宗拆解自我的视角：AI Agent 如何拆解"用户结构"
-date: 2026-05-19 12:40:00
 tags:
   - 禅宗
   - AI Agent
@@ -10,6 +9,8 @@ tags:
   - 无我
 categories:
   - 技术哲学
+abbrlink: 54552
+date: 2026-05-19 12:40:00
 ---
 
 # 禅宗拆解自我的视角：AI Agent 如何拆解"用户结构"

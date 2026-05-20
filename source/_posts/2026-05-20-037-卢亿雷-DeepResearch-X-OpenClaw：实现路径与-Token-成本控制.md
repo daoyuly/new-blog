@@ -1,10 +1,11 @@
 ---
-title: "OpenClaw与DeepResearch架构实战：从工程落地到Token全栈降本"
+title: OpenClaw与DeepResearch架构实战：从工程落地到Token全栈降本
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 60671
 date: 2026-05-20 11:07:25
 ---
 

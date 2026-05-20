@@ -1,10 +1,11 @@
 ---
-title: "基于假设-验证闭环的RCA Agent实践：让排障告别“脑补”"
+title: 基于假设-验证闭环的RCA Agent实践：让排障告别“脑补”
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 64143
 date: 2026-05-19 20:07:07
 ---
 

@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-05-19-arxiv-cs-ai-agent-trends/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-05-20-arxiv-agent-trends/</loc>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-20-openclaw-skill-showcase-apple-apps-and-services/</loc>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-20-agent-memory-arxiv-report/</loc>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-20-037-%E5%8D%A2%E4%BA%BF%E9%9B%B7-DeepResearch-X-OpenClaw%EF%BC%9A%E5%AE%9E%E7%8E%B0%E8%B7%AF%E5%BE%84%E4%B8%8E-Token-%E6%88%90%E6%9C%AC%E6%8E%A7%E5%88%B6/</loc>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-20-larksuite-node-sdk/</loc>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-20-myclaw-dev-report/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-036-%E5%88%98%E8%87%B3%E6%B5%A9-%E5%9F%BA%E4%BA%8E-&ldquo;%E5%81%87%E8%AE%BE-%E9%AA%8C%E8%AF%81&rdquo;-%E9%97%AD%E7%8E%AF%E7%9A%84-RCA-Agent-%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-agent-memory-arxiv-daily/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-agent-arxiv-daily/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-no-self-mirror-zen-neuroscience-agent/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-zen-deconstructing-self-agent-deconstructing-user/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-myclaw-dev-report/</loc>
     <lastmod>2026-05-19</lastmod>
   </url>
   <url>
@@ -13,32 +57,32 @@
     <lastmod>2026-05-19</lastmod>
   </url>
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-05-19-035-%E5%88%98%E6%9D%A8-%E8%AE%A9%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E%E5%8F%AF%E8%A2%AB&ldquo;%E7%9C%8B%E8%A7%81&rdquo;%EF%BC%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E7%AB%AF%E5%88%B0%E7%AB%AF-Token-%E7%BA%A7%E5%8F%AF%E8%A7%82%E6%B5%8B%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2026-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://www.daoyuly.cn/2026/2026-05-19-intentkit/</loc>
     <lastmod>2026-05-19</lastmod>
   </url>
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-05-19-myclaw-dev-report/</loc>
-    <lastmod>2026-05-18</lastmod>
-  </url>
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-05-18-034-%E5%88%98%E5%88%9A-%E6%9C%89%E9%81%93%E9%BE%99%E8%99%BELobsterAI%E7%9A%84%E5%85%BB%E6%88%90%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2026-05-18</lastmod>
-  </url>
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-05-18-agent-memory-arxiv-daily/</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-arxiv-cs-ai-agent-trends/</loc>
+    <lastmod>2026-05-19</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-05-18-agent-arxiv-daily/</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-19-035-%E5%88%98%E6%9D%A8-%E8%AE%A9%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E%E5%8F%AF%E8%A2%AB&ldquo;%E7%9C%8B%E8%A7%81&rdquo;%EF%BC%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E7%AB%AF%E5%88%B0%E7%AB%AF-Token-%E7%BA%A7%E5%8F%AF%E8%A7%82%E6%B5%8B%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-18-agent-memory-arxiv-daily/</loc>
+    <lastmod>2026-05-19</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-05-18-033-%E6%9E%97%E7%91%9E%E8%99%B9-%E7%94%9F%E6%88%90%E5%BC%8F-UI-%EF%BC%9AAI-%E4%BA%A4%E4%BA%92%E6%96%B0%E6%A8%A1%E5%BC%8F%E6%8E%A2%E7%B4%A2/</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-05-18-034-%E5%88%98%E5%88%9A-%E6%9C%89%E9%81%93%E9%BE%99%E8%99%BELobsterAI%E7%9A%84%E5%85%BB%E6%88%90%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2026-05-19</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-05-18-arxiv-agent-trends/</loc>
