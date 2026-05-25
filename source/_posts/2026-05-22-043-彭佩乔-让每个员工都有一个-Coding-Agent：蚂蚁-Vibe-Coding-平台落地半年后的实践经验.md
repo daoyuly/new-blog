@@ -1,10 +1,11 @@
 ---
-title: "蚂蚁 Vibe Coding 平台实践：让非技术员工“说”出全栈应用"
+title: 蚂蚁 Vibe Coding 平台实践：让非技术员工“说”出全栈应用
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 28452
 date: 2026-05-22 20:07:08
 ---
 

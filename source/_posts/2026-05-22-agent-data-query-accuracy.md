@@ -1,8 +1,15 @@
 ---
 title: 利用 Agent 技术解决数据查询准确性问题的深度实践
-date: 2026-05-22
-tags: [AI Agent, Data Query, RAG, Text-to-SQL, 数据准确性]
-categories: [技术深度分析]
+tags:
+  - AI Agent
+  - Data Query
+  - RAG
+  - Text-to-SQL
+  - 数据准确性
+categories:
+  - 技术深度分析
+abbrlink: 18034
+date: 2026-05-22 00:00:00
 ---
 
 # 利用 Agent 技术解决数据查询准确性问题的深度实践

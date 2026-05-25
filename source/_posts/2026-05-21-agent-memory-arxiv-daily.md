@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 论文日报 — 2026-05-21
-date: 2026-05-21 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -10,6 +9,8 @@ tags:
 categories:
   - 论文追踪
   - Agent Memory
+abbrlink: 58774
+date: 2026-05-21 18:00:00
 ---
 
 # Agent Memory 论文日报 — 2026-05-21

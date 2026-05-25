@@ -1,8 +1,15 @@
 ---
-title: "Agent Memory 日报 | 2026-05-20：上下文缓存、信念状态与跨轮经验演化"
-date: 2026-05-20 18:00:00 +0800
-tags: [agent-memory, arxiv-daily, RAG, episodic-memory, belief-state]
-categories: [Agent Memory 日报]
+title: Agent Memory 日报 | 2026-05-20：上下文缓存、信念状态与跨轮经验演化
+date: '2026-05-20 18:00:00 +0800'
+tags:
+  - agent-memory
+  - arxiv-daily
+  - RAG
+  - episodic-memory
+  - belief-state
+categories:
+  - Agent Memory 日报
+abbrlink: 26258
 ---
 
 ## 📋 今日概览

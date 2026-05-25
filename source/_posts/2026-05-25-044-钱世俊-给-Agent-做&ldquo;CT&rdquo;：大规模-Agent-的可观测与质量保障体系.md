@@ -1,10 +1,11 @@
 ---
-title: "构建大规模 Agent 的“CT系统”：可观测性实践与闭环演进"
+title: 构建大规模 Agent 的“CT系统”：可观测性实践与闭环演进
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 28912
 date: 2026-05-25 11:06:32
 ---
 

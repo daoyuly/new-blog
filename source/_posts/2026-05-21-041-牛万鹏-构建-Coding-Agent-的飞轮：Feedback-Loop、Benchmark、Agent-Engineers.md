@@ -1,10 +1,11 @@
 ---
-title: "构建 Coding Agent 的飞轮：从状态感知到人机共生"
+title: 构建 Coding Agent 的飞轮：从状态感知到人机共生
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 13337
 date: 2026-05-21 20:06:00
 ---
 

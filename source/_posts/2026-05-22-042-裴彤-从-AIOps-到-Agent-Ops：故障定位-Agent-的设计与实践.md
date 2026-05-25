@@ -1,10 +1,11 @@
 ---
-title: "从 AIOps 到 Agent Ops：故障定位 Agent 的设计与实践"
+title: 从 AIOps 到 Agent Ops：故障定位 Agent 的设计与实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 46727
 date: 2026-05-22 11:05:41
 ---
 

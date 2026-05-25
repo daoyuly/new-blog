@@ -1,10 +1,11 @@
 ---
-title: "AIOps Agent 研发范式与数据飞轮实践"
+title: AIOps Agent 研发范式与数据飞轮实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 37809
 date: 2026-05-21 11:06:32
 ---
 
