@@ -1,0 +1,468 @@
+---
+title: "Agent 最新研究综述（2026-05-28）"
+date: 2026-05-28 17:30:00
+tags:
+  - Agent
+  - LLM
+  - Multi-Agent
+  - Memory
+  - Planning
+categories:
+  - AI架构
+  - Agent系统
+---
+
+# Agent 最新研究综述（2026-05-28）
+
+> 本报告自动生成自 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)
+> 筛选标准：AI Agent 系统相关论文
+> 生成时间：2026/5/28 17:30:06
+
+---
+
+## 📊 今日概况
+
+- **总论文数**: 25 篇
+- **Agent 相关**: 14 篇
+
+### 研究方向分布
+
+| 方向 | 论文数 | 趋势 |
+|------|--------|------|
+| planning | 8 | 🔥 热点 |
+| evaluation | 4 | 🔥 热点 |
+| other | 3 | 📈 活跃 |
+| multi_agent | 2 | 📈 活跃 |
+| evolution | 2 | 📈 活跃 |
+| tool | 1 | ➡️ 关注 |
+| engineering | 1 | ➡️ 关注 |
+
+### 应用场景覆盖
+
+| 场景 | 论文数 |
+|------|--------|
+| 信息检索与问答 | 2 |
+| 决策支持 | 2 |
+| 科学研究 | 1 |
+| 代码开发 | 1 |
+| 企业自动化 | 1 |
+| 创意与内容 | 1 |
+
+
+---
+
+## 1️⃣ 今日论文列表（按研究方向）
+
+### 🎯 Planning / 规划推理（8 篇）
+
+#### 1. CORE: Contrastive Reflection Enables Rapid Improvements in Reasoning
+
+- **arXiv**: [2605.28742](https://arxiv.org/abs/2605.28742)
+- **标签**: planning, tool, evaluation, evolution
+- **要点**:
+  - reasoning,parametric,core,rollouts,prompt,traces,unsuccessful,contrastive,reflection,insights
+
+#### 2. Thinking as Compression: Your Reasoning Model is Secretly a Context Compressor
+
+- **arXiv**: [2605.28713](https://arxiv.org/abs/2605.28713)
+- **标签**: planning
+- **要点**:
+  - thinking,compression,tac,context,compressor,secretly,compressed,intrinsic,shorten,long
+
+#### 3. Beyond Binary Moral Judgment: Modeling Ethical Pluralism in AI
+
+- **arXiv**: [2605.28707](https://arxiv.org/abs/2605.28707)
+- **标签**: planning
+- **要点**:
+  - ethical,normative,pluralism,moral,reasoning,contextual,ethics,simplex,stacking,consequentialism
+
+#### 4. TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning
+
+- **arXiv**: [2605.28699](https://arxiv.org/abs/2605.28699)
+- **标签**: planning, multi_agent
+- **要点**:
+  - tracer,credit,reinforcement,regret,rewards,riding,gsm8k,speak,turn,reasoning
+
+#### 5. VeriTrip: A Verifiable Benchmark for Travel Planning Agents over Unstructured Web Corpora
+
+- **arXiv**: [2605.28683](https://arxiv.org/abs/2605.28683)
+- **标签**: planning, evaluation | 场景: 决策支持
+- **要点**:
+  - veritrip,verifiable,agents,planning,multimodal,travel,unstructured,web,factual,corpora
+
+#### 6. DREAM-R: Multimodal Speculative Reasoning with RL-Based Refined Drafting, Precise Verification, and Fully Parallel Execution
+
+- **arXiv**: [2605.28678](https://arxiv.org/abs/2605.28678)
+- **标签**: planning
+- **要点**:
+  - speculative,reasoning,dream,draft,verification,target,multimodal,drafting,sapo,parallel
+
+#### 7. An LLM-Based Assistance System for Intuitive and Flexible Capability-Based Planning
+
+- **arXiv**: [2605.28666](https://arxiv.org/abs/2605.28666)
+- **标签**: planning | 场景: 信息检索与问答, 决策支持
+- **要点**:
+  - planning,llm,assistance,capability,knowledge,adaptation,satisfiable,system,based,plans
+
+#### 8. Satisfiability Solving with LLMs: A Matched-Pair Evaluation of Reasoning Capability
+
+- **arXiv**: [2605.28602](https://arxiv.org/abs/2605.28602)
+- **标签**: planning, evaluation
+- **要点**:
+  - sat,adr,reasoning,cnf,packing,satisfiable,satisfiability,llms,metrics,instances
+
+---
+
+### 📊 Evaluation / 评估基准（4 篇）
+
+#### 1. CORE: Contrastive Reflection Enables Rapid Improvements in Reasoning
+
+- **arXiv**: [2605.28742](https://arxiv.org/abs/2605.28742)
+- **标签**: planning, tool, evaluation, evolution
+- **要点**:
+  - reasoning,parametric,core,rollouts,prompt,traces,unsuccessful,contrastive,reflection,insights
+
+#### 2. VeriTrip: A Verifiable Benchmark for Travel Planning Agents over Unstructured Web Corpora
+
+- **arXiv**: [2605.28683](https://arxiv.org/abs/2605.28683)
+- **标签**: planning, evaluation | 场景: 决策支持
+- **要点**:
+  - veritrip,verifiable,agents,planning,multimodal,travel,unstructured,web,factual,corpora
+
+#### 3. Satisfiability Solving with LLMs: A Matched-Pair Evaluation of Reasoning Capability
+
+- **arXiv**: [2605.28602](https://arxiv.org/abs/2605.28602)
+- **标签**: planning, evaluation
+- **要点**:
+  - sat,adr,reasoning,cnf,packing,satisfiable,satisfiability,llms,metrics,instances
+
+#### 4. MUSE: Benchmarking Manufacturable, Functional, and Assemblable Text-to-CAD Generation
+
+- **arXiv**: [2605.28579](https://arxiv.org/abs/2605.28579)
+- **标签**: evaluation | 场景: 创意与内容
+- **要点**:
+  - muse,cad,assemblability,design,text,assemblable,manufacturability,manufacturable,engineering,generation
+
+---
+
+### 📎 Other / 其他（3 篇）
+
+#### 1. LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?
+
+- **arXiv**: [2605.28721](https://arxiv.org/abs/2605.28721)
+- **标签**: other | 场景: 信息检索与问答
+- **要点**:
+  - livebrowsecomp,agents,browsecomp,search,know,already,searching,intrinsic,rather,book
+
+#### 2. AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation
+
+- **arXiv**: [2605.28655](https://arxiv.org/abs/2605.28655)
+- **标签**: other | 场景: 科学研究
+- **要点**:
+  - autoscientists,proteingym,agents,spearman,agent,teams,running,scientific,experimentation,improves
+
+#### 3. LACUNA: Safe Agents as Recursive Program Holes
+
+- **arXiv**: [2605.28617](https://arxiv.org/abs/2605.28617)
+- **标签**: other | 场景: 代码开发
+- **要点**:
+  - lacuna,agents,agent,code,runtime,rejected,browsecomp,reaches,expresses,action
+
+---
+
+### 👥 Multi-Agent / 多智能体（2 篇）
+
+#### 1. SwarmHarness: Skill-Based Task Routing via Decentralized Incentive-Aligned AI Agent Networks
+
+- **arXiv**: [2605.28764](https://arxiv.org/abs/2605.28764)
+- **标签**: multi_agent
+- **要点**:
+  - swarmharness,credits,incentive,nodes,routing,compute,skill,idle,aligned,brokerchain
+
+#### 2. TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning
+
+- **arXiv**: [2605.28699](https://arxiv.org/abs/2605.28699)
+- **标签**: planning, multi_agent
+- **要点**:
+  - tracer,credit,reinforcement,regret,rewards,riding,gsm8k,speak,turn,reasoning
+
+---
+
+### 🧬 Evolution / 自我进化（2 篇）
+
+#### 1. CORE: Contrastive Reflection Enables Rapid Improvements in Reasoning
+
+- **arXiv**: [2605.28742](https://arxiv.org/abs/2605.28742)
+- **标签**: planning, tool, evaluation, evolution
+- **要点**:
+  - reasoning,parametric,core,rollouts,prompt,traces,unsuccessful,contrastive,reflection,insights
+
+#### 2. Adaptive Multimodal Agents-Based Framework for Automatic Workflow Execution
+
+- **arXiv**: [2605.28607](https://arxiv.org/abs/2605.28607)
+- **标签**: evolution, engineering | 场景: 企业自动化
+- **要点**:
+  - agents,execution,workflow,multimodal,adaptive,automatic,guis,framework,mllms,navigating
+
+---
+
+### 🔧 Tool Use / 工具使用（1 篇）
+
+#### 1. CORE: Contrastive Reflection Enables Rapid Improvements in Reasoning
+
+- **arXiv**: [2605.28742](https://arxiv.org/abs/2605.28742)
+- **标签**: planning, tool, evaluation, evolution
+- **要点**:
+  - reasoning,parametric,core,rollouts,prompt,traces,unsuccessful,contrastive,reflection,insights
+
+---
+
+### 🏗️ Engineering / 工程架构（1 篇）
+
+#### 1. Adaptive Multimodal Agents-Based Framework for Automatic Workflow Execution
+
+- **arXiv**: [2605.28607](https://arxiv.org/abs/2605.28607)
+- **标签**: evolution, engineering | 场景: 企业自动化
+- **要点**:
+  - agents,execution,workflow,multimodal,adaptive,automatic,guis,framework,mllms,navigating
+
+---
+
+## 2️⃣ 应用场景深度分析
+
+### 信息检索与问答
+
+**相关论文**: [2605.28721](https://arxiv.org/abs/2605.28721), [2605.28666](https://arxiv.org/abs/2605.28666)
+
+**当前瓶颈**: 复杂查询的意图理解偏差，多跳推理的幻觉累积，实时性保证不足
+
+**突破方向**: 多跳推理链的可信度传播、检索策略的自适应调整、知识时效性管理
+
+**工程落地难点**: 索引更新的实时性、多源数据的去重与融合、检索延迟与质量的平衡
+
+---
+
+### 决策支持
+
+**相关论文**: [2605.28683](https://arxiv.org/abs/2605.28683), [2605.28666](https://arxiv.org/abs/2605.28666)
+
+**当前瓶颈**: 决策可解释性不足，风险量化评估粗糙，人类偏好对齐不精确
+
+**突破方向**: 因果推理增强的决策解释、多目标优化的帕累托前沿探索、决策敏感度分析
+
+**工程落地难点**: 数据新鲜度与推理延迟的权衡、决策过程的可审计性、多维度指标聚合
+
+---
+
+### 科学研究
+
+**相关论文**: [2605.28655](https://arxiv.org/abs/2605.28655)
+
+**当前瓶颈**: 假设生成与实验验证之间的鸿沟，跨领域知识迁移困难，可重复性保证不足
+
+**突破方向**: Agent驱动的假设-验证循环、跨领域知识图谱集成、自动化实验设计
+
+**工程落地难点**: 计算资源的弹性调度、实验数据的版本管理、跨团队协作的可复现性
+
+---
+
+### 代码开发
+
+**相关论文**: [2605.28617](https://arxiv.org/abs/2605.28617)
+
+**当前瓶颈**: 代码上下文理解深度不足，长范围依赖追踪困难，调试循环缺乏自主验证能力
+
+**突破方向**: 基于强化学习的代码自验证、多Agent代码审查、代码意图的形式化验证
+
+**工程落地难点**: 代码沙箱的隔离性与灵活性平衡、大仓库的索引与检索效率、CI/CD集成中的权限管理
+
+---
+
+### 企业自动化
+
+**相关论文**: [2605.28607](https://arxiv.org/abs/2605.28607)
+
+**当前瓶颈**: 非标准化流程的泛化能力弱，异常处理覆盖不全，人工接管机制粗糙
+
+**突破方向**: 工作流的动态编排与自修复、异常检测与智能降级、人在回路中的精细控制
+
+**工程落地难点**: 遗留系统的API兼容性、流程变更的灰度发布、审计日志的完整性
+
+---
+
+### 创意与内容
+
+**相关论文**: [2605.28579](https://arxiv.org/abs/2605.28579)
+
+**当前瓶颈**: 原创性评估标准缺失，长程一致性维护困难，个性化与多样性的平衡
+
+**突破方向**: 创意评估的自动化指标、风格一致性建模、人机协作的创意增强
+
+**工程落地难点**: 内容安全审核的自动化、版权合规检测、A/B测试与效果归因
+
+---
+
+### 场景交叉洞察
+
+- **跨场景论文**: 1 篇论文覆盖多个应用场景，表明通用 Agent 能力正在成为研究焦点
+  - [2605.28666](https://arxiv.org/abs/2605.28666) 覆盖: 信息检索与问答 + 决策支持
+- **通用与专用的张力**: 6 个应用场景共享 Memory、Planning、Tool Use 等基础能力，但每个场景对它们的侧重不同——这要求架构层面做好「核心能力复用 + 场景特化扩展」的分层设计
+- **生产力场景先行**: 代码和数据分析场景的研究密度最高，因为这些场景有明确的评估指标和丰富的结构化数据，是 Agent 技术最容易验证和落地的方向
+- **AI for Science 加速**: Agent 正在从辅助工具升级为科研流程的核心驱动力，但「AI 做假设、人类做验证」的分工模式短期内不会改变
+
+
+
+## 3️⃣ 思想、趋势与方法论
+
+### 范式层面的思想转变
+
+**从单体到社会**: 多智能体研究不再只是「并行执行」，而是真正关注协作、分工、制衡等社会性议题。这暗示我们可能需要借鉴组织设计和社会学的理论框架来设计 Agent 系统——角色定义、权责边界、冲突解决机制、信息共享协议，这些都是传统软件架构未曾面对的问题。
+
+**从规则到涌现**: 强化学习在 Agent 训练中的应用表明，我们正在从「人类编写规则」转向「Agent 从交互中学习策略」。这是一个认识论层面的转变——我们不再试图穷举所有规则，而是设计奖励函数让 Agent 自行探索。但这也带来了新的挑战：奖励函数的设计本身就是一项需要领域专家知识的创造性工作。
+
+### 方法论演进
+
+**规划方法论**: 从 ReAct 的简单 interleaving，到 Tree of Thought 的搜索式规划，再到今天的层次化/自适应规划，规划方法论正在从「prompt 技巧」进化为「系统化算法」。关键趋势：(1) 规划不再是一次性的，而是持续修正的；(2) 规划粒度根据任务复杂度自适应调整；(3) 规划过程本身可以被学习和优化。
+
+**评估方法论**: 评估正在从「单一任务准确率」走向「多维度能力画像」。新趋势包括：(1) 过程评估而不仅是结果评估；(2) 长程任务中的累积误差评估；(3) 安全边界与鲁棒性的系统性评估；(4) 人类偏好对齐的量化评估。这要求评估框架从静态测试集进化为动态评测环境。
+
+### 技术趋势研判
+
+🔥 **Agent 自进化**: Agent 正在获得修改自身行为代码或策略的能力。这不仅是「学习」，而是「自我重写」——Agent 可以调整自己的 prompt、工具定义、甚至决策逻辑。工程上这带来了新问题：如何确保自进化方向与人类意图一致？如何回滚有害的自行修改？如何评估自进化的收益？
+
+📈 **多智能体组织形态**: 从简单的「轮询协作」到「层级指挥」，再到「市场竞价」和「民主投票」，多智能体的组织形态正在丰富。核心问题是：什么任务适合什么组织形态？工程上需要可插拔的编排框架，允许根据任务动态切换组织模式。
+
+📊 **评估驱动开发**: 无论具体方向，今日论文共同反映的趋势是——评估正在前置。不再是「先做系统再找 benchmark」，而是「基于 benchmark 设计系统」。这种评估驱动的开发方式将加速 Agent 能力的可衡量进步。
+
+🔧 **工具生态标准化**: MCP 等协议的出现暗示工具接口正在走向标准化。这类似于 API 标准化对微服务架构的推动——当工具接口有了统一标准，Agent 就可以从「预定义工具集」升级为「动态发现和使用工具」，极大地扩展了能力边界。
+
+
+## 4️⃣ 关键洞察
+
+2. **Planning 的瓶颈从「生成计划」转向「执行监控」** — 生成一个看起来合理的计划已经不难，难的是在执行过程中持续监控偏差、动态调整、优雅降级。这要求 Planning 系统与 Execution 系统之间有紧密的反馈回路，而非一次规划全程执行。
+
+3. **Multi-Agent 的核心挑战从「通信协议」转向「组织设计」** — Agent 之间怎么传递消息已经有成熟方案，关键问题变成：谁来决策？如何分配任务？如何处理冲突？这本质上是组织设计问题，需要借鉴管理学和社会学的理论。
+
+5. **Evaluation 正在从「评分」进化为「诊断」** — 好的评估不只是给一个分数，而是告诉你「哪里好、哪里差、差的原因是什么」。这种诊断式评估才能指导有效的改进。工程上意味着评估系统需要输出结构化的诊断报告，而非单一的 accuracy 数值。
+
+6. **Self-Evolution 的双刃剑** — Agent 自我改进能力是效率的提升，也是可控性的挑战。关键问题：自进化的边界在哪里？谁来审核自行修改的代码/策略？如何建立自进化的审计追踪？这不是纯技术问题，需要治理框架的同步建设。
+
+7. **Tool Use 从「调用」进化为「编排」** — 单个工具的调用已基本解决，新挑战是多工具的编排：工具间的依赖关系、执行顺序、错误传播、结果聚合。这本质上是一个分布式系统问题，需要借鉴工作流引擎和数据流编程的思想。
+
+## 5️⃣ 工程实践深挖
+
+### 系统架构实践
+
+**规划架构**: 实践中有效的规划架构是「分层规划 + 执行反馈」：
+- **战略层**: 将目标分解为子目标序列（低频更新）
+- **战术层**: 将子目标分解为可执行步骤（中频更新）
+- **执行层**: 逐步执行并收集反馈（高频更新）
+- **监控层**: 检测偏差并触发重规划（事件驱动）
+
+关键设计：每层有独立的超时和重试策略，避免单层失败导致整个计划崩溃。
+
+**多智能体架构**: 工程实践中最可靠的模式是「中心化编排 + 去中心化执行」：
+- Orchestrator 负责任务分解、分配和结果汇总
+- Worker Agent 各自独立执行，通过消息队列通信
+- 共享状态通过分布式存储同步，避免直接状态共享
+
+教训：完全去中心化的多 Agent 系统在工程上很难保证一致性和可调试性，中心化编排虽然单点风险，但可观测性和可控性远优于纯 P2P 模式。
+
+### 数据与训练工程
+
+**强化学习训练管线**: RL 在 Agent 训练中的工程挑战：
+- **奖励信号设计**: 奖励函数的缺陷会被 Agent 利用（reward hacking），需要多轮对抗测试
+- **训练稳定性**: LLM + RL 的训练不稳定，需要 KL 散度约束和梯度裁剪
+- **数据效率**: 每条人类反馈的成本极高，应通过主动学习选择最有信息量的样本
+- **评估频率**: 不能等训练完再评估，需要在线评估和早停机制
+
+**评估数据工程**: 构建有效评估集的工程要点：
+- **难度梯度**: 从简单到困难的梯度分布，避免全是简单或全是难题
+- **多样性覆盖**: 覆盖不同子能力、不同场景、不同边界条件
+- **抗污染**: 训练数据和评估数据的严格隔离，防止数据泄露
+- **版本管理**: 评估集需要版本化和增量更新，避免对固定测试集过拟合
+
+### 部署与运维考量
+
+**监控与可观测性**: Agent 系统的监控比传统软件更复杂：
+- **行为监控**: 不仅监控延迟/错误率，还要监控 Agent 的决策路径和工具使用模式
+- **漂移检测**: Agent 行为可能随时间漂移（prompt 磨损、数据分布变化），需要基线对比
+- **成本追踪**: LLM 调用成本是可变成本，需要按任务/用户/时段的成本分摊
+- **安全审计**: 所有对外操作（API 调用、消息发送）需要完整审计日志
+
+**弹性设计**: Agent 系统必须具备弹性：
+- **LLM 降级**: 主模型不可用时切换备用模型，接受质量下降但保证可用性
+- **工具降级**: 外部 API 失败时使用缓存结果或简化方案
+- **记忆降级**: 向量数据库不可用时回退到关键词检索
+- **优雅超时**: 长时间运行的任务需要检查点和恢复机制
+
+### 性能与成本权衡
+
+**延迟优化**: Agent 系统的延迟主要来自 LLM 推理和工具调用：
+- **流式输出**: 使用 streaming 让用户尽早看到中间结果
+- **推测执行**: 对可能需要的工具调用做预取，减少串行等待
+- **缓存策略**: 相似查询的 LLM 响应可以做语义缓存（embedding 相似度 > 阈值则复用）
+- **模型路由**: 简单任务用小模型，复杂任务用大模型，降低平均延迟和成本
+
+**成本控制**: LLM 调用成本是 Agent 系统最大的可变成本：
+- **Token 预算**: 为每个任务设定 token 上限，避免无限循环消耗
+- **Prompt 优化**: 精简 system prompt，减少每次调用的固定开销
+- **批处理**: 非实时任务可以攒批后用更便宜的 batch API
+- **模型蒸馏**: 对高频场景，用大模型生成训练数据蒸馏小模型
+
+## 6️⃣ 架构级结论
+
+1. **Agent 架构的第一性原理是「感知-决策-行动-反馈」循环** — 任何 Agent 子系统（记忆、规划、工具）都应遵循这个闭环。开环设计（只管输出不管结果）是工程事故的主要来源。
+
+3. **Planning 的价值不在完美计划，而在快速适应** — 追求完美的初始规划是徒劳的，因为真实环境充满不确定性。更好的策略是：快速生成满意计划 → 执行 → 检测偏差 → 快速调整。Planning 系统的核心指标不是计划质量，而是适应速度。
+
+4. **多 Agent 系统的本质是组织设计** — 技术上，Agent 间通信已不是瓶颈。真正的挑战是组织设计：权责划分、信息共享边界、冲突升级机制、绩效评估标准。这些问题的答案不在计算机科学，而在管理学和社会学。
+
+6. **评估是架构决策的基石** — 没有评估，所有架构决策都是猜测。建立持续评估机制，用数据而非直觉驱动架构演进。评估框架本身也是架构的一部分，需要与系统同步迭代。
+
+## 7️⃣ 行动建议
+
+### 规划系统
+- [ ] 实现分层规划：战略/战术/执行三层，各自独立更新
+- [ ] 添加执行监控系统：偏差检测 → 告警 → 自动重规划
+- [ ] 设计规划超时和降级策略，避免陷入无限规划循环
+- [ ] 建立规划效果回溯机制，用执行结果反哺规划策略优化
+
+### 工具系统
+- [ ] 建立工具注册表，支持运行时动态发现和加载
+- [ ] 实现工具编排引擎：支持 DAG 依赖、并行执行、错误隔离
+- [ ] 设计工具使用审计日志，追踪每次调用的输入/输出/耗时/成本
+- [ ] 建立工具健康检查机制，自动禁用不可用的工具并通知下游
+
+### 多智能体系统
+- [ ] 定义标准化的 Agent 通信协议（消息格式 + 语义约定）
+- [ ] 实现任务分配策略：基于能力匹配 + 负载均衡
+- [ ] 设计冲突解决机制：优先级仲裁 + 人工升级通道
+- [ ] 建立多 Agent 运行的可观测性：分布式追踪 + 因果分析
+
+### 通用建议
+- [ ] 建立持续评估流水线，每次架构变更都自动运行核心评估集
+- [ ] 实现 LLM 调用的成本追踪和预算控制
+- [ ] 设计统一的可观测性框架：行为日志 + 决策追踪 + 性能指标
+- [ ] 建立 Agent 行为的回放和调试工具，支持时间旅行调试
+
+## 📚 附录：论文完整列表
+
+1. [SwarmHarness: Skill-Based Task Routing via Decentralized Incentive-Aligned AI Agent Networks](https://arxiv.org/abs/2605.28764) — multi_agent
+2. [CORE: Contrastive Reflection Enables Rapid Improvements in Reasoning](https://arxiv.org/abs/2605.28742) — planning, tool, evaluation, evolution
+3. [LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?](https://arxiv.org/abs/2605.28721) — other | 信息检索与问答
+4. [Thinking as Compression: Your Reasoning Model is Secretly a Context Compressor](https://arxiv.org/abs/2605.28713) — planning
+5. [Beyond Binary Moral Judgment: Modeling Ethical Pluralism in AI](https://arxiv.org/abs/2605.28707) — planning
+6. [TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning](https://arxiv.org/abs/2605.28699) — planning, multi_agent
+7. [VeriTrip: A Verifiable Benchmark for Travel Planning Agents over Unstructured Web Corpora](https://arxiv.org/abs/2605.28683) — planning, evaluation | 决策支持
+8. [DREAM-R: Multimodal Speculative Reasoning with RL-Based Refined Drafting, Precise Verification, and Fully Parallel Execution](https://arxiv.org/abs/2605.28678) — planning
+9. [An LLM-Based Assistance System for Intuitive and Flexible Capability-Based Planning](https://arxiv.org/abs/2605.28666) — planning | 信息检索与问答, 决策支持
+10. [AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation](https://arxiv.org/abs/2605.28655) — other | 科学研究
+11. [LACUNA: Safe Agents as Recursive Program Holes](https://arxiv.org/abs/2605.28617) — other | 代码开发
+12. [Adaptive Multimodal Agents-Based Framework for Automatic Workflow Execution](https://arxiv.org/abs/2605.28607) — evolution, engineering | 企业自动化
+13. [Satisfiability Solving with LLMs: A Matched-Pair Evaluation of Reasoning Capability](https://arxiv.org/abs/2605.28602) — planning, evaluation
+14. [MUSE: Benchmarking Manufacturable, Functional, and Assemblable Text-to-CAD Generation](https://arxiv.org/abs/2605.28579) — evaluation | 创意与内容
+
+---
+
+*本报告由 OpenClaw 自动生成 · 面向 Agent 架构师与工程师，提供决策与工程参考*
