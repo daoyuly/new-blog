@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 每日论文综述 - 2026-05-26"
-date: 2026-05-26 11:30:00
+title: Agent Memory 每日论文综述 - 2026-05-26
 tags:
   - agent
   - memory
@@ -9,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 论文综述
+abbrlink: 61636
+date: 2026-05-26 11:30:00
 ---
 
 

@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 日报｜2026-05-26｜Agent Harness、认知图演化与 Always-On 助手"
-date: 2026-05-26 18:00:00
+title: Agent Memory 日报｜2026-05-26｜Agent Harness、认知图演化与 Always-On 助手
 tags:
   - agent-memory
   - arxiv-daily
@@ -8,6 +7,8 @@ tags:
   - LLM
 categories:
   - Agent Memory 日报
+abbrlink: 8520
+date: 2026-05-26 18:00:00
 ---
 
 # Agent Memory arXiv 日报 — 2026-05-26

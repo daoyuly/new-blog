@@ -1,10 +1,11 @@
 ---
-title: "OpenSandbox：Agent 时代的运行时架构重构"
+title: OpenSandbox：Agent 时代的运行时架构重构
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 48344
 date: 2026-05-29 14:04:55
 ---
 

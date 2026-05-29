@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 每日 arXiv 速递 (2026-05-25)
-date: 2026-05-25 18:00:00
 tags:
   - agent
   - memory
@@ -10,6 +9,8 @@ tags:
 categories:
   - Agent Memory
   - 论文速递
+abbrlink: 15505
+date: 2026-05-25 18:00:00
 ---
 
 # Agent Memory 每日 arXiv 速递 (2026-05-25)

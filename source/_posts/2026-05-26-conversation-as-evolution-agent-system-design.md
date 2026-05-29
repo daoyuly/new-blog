@@ -1,6 +1,5 @@
 ---
 title: 对话即进化：Agent 的状态轨迹与认知收敛
-date: 2026-05-26 13:00:00
 tags:
   - AI Agent
   - 系统设计
@@ -11,6 +10,8 @@ tags:
 categories:
   - AI 理论
   - 系统设计
+abbrlink: 7740
+date: 2026-05-26 13:00:00
 ---
 
 # 对话即进化：Agent 的状态轨迹与认知收敛
