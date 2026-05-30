@@ -1,8 +1,16 @@
 ---
 title: OpenClaw Skill 每日推荐 - Communication 通信工具
+tags:
+  - openclaw
+  - skill
+  - communication
+  - 通信
+  - 邮件
+  - 社交
+categories:
+  - 技术推荐
+abbrlink: 44971
 date: 2026-05-30 11:30:00
-tags: [openclaw, skill, communication, 通信, 邮件, 社交]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 - Communication 通信工具
