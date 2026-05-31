@@ -1,6 +1,5 @@
 ---
-title: "Agent 最新研究综述（2026-05-30）"
-date: 2026-05-30 17:30:00
+title: Agent 最新研究综述（2026-05-30）
 tags:
   - Agent
   - LLM
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 46562
+date: 2026-05-30 17:30:00
 ---
 
 # Agent 最新研究综述（2026-05-30）

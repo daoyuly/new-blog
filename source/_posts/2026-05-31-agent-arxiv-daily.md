@@ -1,0 +1,445 @@
+---
+title: "Agent 最新研究综述（2026-05-31）"
+date: 2026-05-31 17:30:00
+tags:
+  - Agent
+  - LLM
+  - Multi-Agent
+  - Memory
+  - Planning
+categories:
+  - AI架构
+  - Agent系统
+---
+
+# Agent 最新研究综述（2026-05-31）
+
+> 本报告自动生成自 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)
+> 筛选标准：AI Agent 系统相关论文
+> 生成时间：2026/5/31 17:30:05
+
+---
+
+## 📊 今日概况
+
+- **总论文数**: 25 篇
+- **Agent 相关**: 12 篇
+
+### 研究方向分布
+
+| 方向 | 论文数 | 趋势 |
+|------|--------|------|
+| planning | 3 | 📈 活跃 |
+| multi_agent | 3 | 📈 活跃 |
+| evaluation | 2 | 📈 活跃 |
+| other | 2 | 📈 活跃 |
+| memory | 2 | 📈 活跃 |
+| tool | 1 | ➡️ 关注 |
+| engineering | 1 | ➡️ 关注 |
+| evolution | 1 | ➡️ 关注 |
+
+### 应用场景覆盖
+
+| 场景 | 论文数 |
+|------|--------|
+| 科学研究 | 3 |
+| 决策支持 | 2 |
+| 代码开发 | 1 |
+| 信息检索与问答 | 1 |
+| 企业自动化 | 1 |
+
+
+---
+
+## 1️⃣ 今日论文列表（按研究方向）
+
+### 🎯 Planning / 规划推理（3 篇）
+
+#### 1. Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection
+
+- **arXiv**: [2605.30344](https://arxiv.org/abs/2605.30344)
+- **标签**: planning, evaluation
+- **要点**:
+  - visanomreasoner,anomaly,vlms,visanombench,language,benchmark,series,percentage,vision,fine
+
+#### 2. ProjectionBench: Evaluating Scientific Hypothesis Generation in LLMs Under Progressive Information Disclosure
+
+- **arXiv**: [2605.30284](https://arxiv.org/abs/2605.30284)
+- **标签**: planning | 场景: 科学研究
+- **要点**:
+  - scientific,discovery,reasoning,gpt,gemini,pro,disclosure,conclusions,scientist,evaluating
+
+#### 3. Conformal Certification of Reasoning Trace Prefixes
+
+- **arXiv**: [2605.30085](https://arxiv.org/abs/2605.30085)
+- **标签**: planning
+- **要点**:
+  - prefix,crop,certification,reasoning,prefixes,repair,conformal,trace,step,uncertified
+
+---
+
+### 👥 Multi-Agent / 多智能体（3 篇）
+
+#### 1. AgentSchool: An LLM-Powered Multi-Agent Simulation for Education
+
+- **arXiv**: [2605.30144](https://arxiv.org/abs/2605.30144)
+- **标签**: multi_agent
+- **要点**:
+  - agentschool,agent,llm,educational,classrooms,simulator,institutional,education,agents,teacher
+
+#### 2. Enhancing Multi-Agent Communication through Attention Steering with Context Relevance
+
+- **arXiv**: [2605.30136](https://arxiv.org/abs/2605.30136)
+- **标签**: multi_agent
+- **要点**:
+  - agent,radar,context,lengthen,steering,attention,steers,relevance,performance,accumulate
+
+#### 3. Learning to Choose: An Empowerment-Guided Multi-Agent System with semantic communication for Adaptive Method Selection
+
+- **arXiv**: [2605.30042](https://arxiv.org/abs/2605.30042)
+- **标签**: multi_agent, evolution | 场景: 企业自动化
+- **要点**:
+  - empowerment,agent,toscano,semantic,2025,adaptive,workflows,yiu,multi,drift
+
+---
+
+### 📊 Evaluation / 评估基准（2 篇）
+
+#### 1. Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software
+
+- **arXiv**: [2605.30353](https://arxiv.org/abs/2605.30353)
+- **标签**: evaluation | 场景: 代码开发, 科学研究
+- **要点**:
+  - physicist,oracle,agent,sessions,supervision,tests,physics,changelogs,could,fudge
+
+#### 2. Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection
+
+- **arXiv**: [2605.30344](https://arxiv.org/abs/2605.30344)
+- **标签**: planning, evaluation
+- **要点**:
+  - visanomreasoner,anomaly,vlms,visanombench,language,benchmark,series,percentage,vision,fine
+
+---
+
+### 📎 Other / 其他（2 篇）
+
+#### 1. Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents
+
+- **arXiv**: [2605.30335](https://arxiv.org/abs/2605.30335)
+- **标签**: other
+- **要点**:
+  - llm,coherent,component,locally,incoherent,eps,cliques,panel,globally,compositional
+
+#### 2. Modularizing Educational LLM-Agency for Fostering Responsible Learning Assistance
+
+- **arXiv**: [2605.30187](https://arxiv.org/abs/2605.30187)
+- **标签**: other
+- **要点**:
+  - modularizing,educational,responsible,agentic,pedagogical,exercise,llm,agency,fostering,education
+
+---
+
+### 🧠 Memory / 记忆系统（2 篇）
+
+#### 1. Persona Conditioning of Brand Recommendations in Retrieval-Augmented Commercial Chat: A Prominence-Stratified Cross-Provider Audit
+
+- **arXiv**: [2605.30207](https://arxiv.org/abs/2605.30207)
+- **标签**: memory | 场景: 决策支持
+- **要点**:
+  - persona,audit,sonnet,openai,prompt,brand,personas,anthropic,prominence,brands
+
+#### 2. Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents
+
+- **arXiv**: [2605.30159](https://arxiv.org/abs/2605.30159)
+- **标签**: memory, engineering | 场景: 决策支持
+- **要点**:
+  - mmpo,memory,horizon,summaries,belief,llm,optimization,proxy,long,derailing
+
+---
+
+### 🔧 Tool Use / 工具使用（1 篇）
+
+#### 1. mcp-proto-okn: Natural-language access to open scientific knowledge graphs through the Model Context Protocol
+
+- **arXiv**: [2605.30283](https://arxiv.org/abs/2605.30283)
+- **标签**: tool | 场景: 科学研究, 信息检索与问答
+- **要点**:
+  - okn,mcp,proto,server,scientific,knowledge,sdsc,protocol,python,graph
+
+---
+
+### 🏗️ Engineering / 工程架构（1 篇）
+
+#### 1. Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents
+
+- **arXiv**: [2605.30159](https://arxiv.org/abs/2605.30159)
+- **标签**: memory, engineering | 场景: 决策支持
+- **要点**:
+  - mmpo,memory,horizon,summaries,belief,llm,optimization,proxy,long,derailing
+
+---
+
+### 🧬 Evolution / 自我进化（1 篇）
+
+#### 1. Learning to Choose: An Empowerment-Guided Multi-Agent System with semantic communication for Adaptive Method Selection
+
+- **arXiv**: [2605.30042](https://arxiv.org/abs/2605.30042)
+- **标签**: multi_agent, evolution | 场景: 企业自动化
+- **要点**:
+  - empowerment,agent,toscano,semantic,2025,adaptive,workflows,yiu,multi,drift
+
+---
+
+## 2️⃣ 应用场景深度分析
+
+### 科学研究
+
+**相关论文**: [2605.30353](https://arxiv.org/abs/2605.30353), [2605.30284](https://arxiv.org/abs/2605.30284), [2605.30283](https://arxiv.org/abs/2605.30283)
+
+**当前瓶颈**: 假设生成与实验验证之间的鸿沟，跨领域知识迁移困难，可重复性保证不足
+
+**突破方向**: Agent驱动的假设-验证循环、跨领域知识图谱集成、自动化实验设计
+
+**工程落地难点**: 计算资源的弹性调度、实验数据的版本管理、跨团队协作的可复现性
+
+---
+
+### 决策支持
+
+**相关论文**: [2605.30207](https://arxiv.org/abs/2605.30207), [2605.30159](https://arxiv.org/abs/2605.30159)
+
+**当前瓶颈**: 决策可解释性不足，风险量化评估粗糙，人类偏好对齐不精确
+
+**突破方向**: 因果推理增强的决策解释、多目标优化的帕累托前沿探索、决策敏感度分析
+
+**工程落地难点**: 数据新鲜度与推理延迟的权衡、决策过程的可审计性、多维度指标聚合
+
+---
+
+### 代码开发
+
+**相关论文**: [2605.30353](https://arxiv.org/abs/2605.30353)
+
+**当前瓶颈**: 代码上下文理解深度不足，长范围依赖追踪困难，调试循环缺乏自主验证能力
+
+**突破方向**: 基于强化学习的代码自验证、多Agent代码审查、代码意图的形式化验证
+
+**工程落地难点**: 代码沙箱的隔离性与灵活性平衡、大仓库的索引与检索效率、CI/CD集成中的权限管理
+
+---
+
+### 信息检索与问答
+
+**相关论文**: [2605.30283](https://arxiv.org/abs/2605.30283)
+
+**当前瓶颈**: 复杂查询的意图理解偏差，多跳推理的幻觉累积，实时性保证不足
+
+**突破方向**: 多跳推理链的可信度传播、检索策略的自适应调整、知识时效性管理
+
+**工程落地难点**: 索引更新的实时性、多源数据的去重与融合、检索延迟与质量的平衡
+
+---
+
+### 企业自动化
+
+**相关论文**: [2605.30042](https://arxiv.org/abs/2605.30042)
+
+**当前瓶颈**: 非标准化流程的泛化能力弱，异常处理覆盖不全，人工接管机制粗糙
+
+**突破方向**: 工作流的动态编排与自修复、异常检测与智能降级、人在回路中的精细控制
+
+**工程落地难点**: 遗留系统的API兼容性、流程变更的灰度发布、审计日志的完整性
+
+---
+
+### 场景交叉洞察
+
+- **跨场景论文**: 2 篇论文覆盖多个应用场景，表明通用 Agent 能力正在成为研究焦点
+  - [2605.30353](https://arxiv.org/abs/2605.30353) 覆盖: 代码开发 + 科学研究
+  - [2605.30283](https://arxiv.org/abs/2605.30283) 覆盖: 科学研究 + 信息检索与问答
+- **通用与专用的张力**: 5 个应用场景共享 Memory、Planning、Tool Use 等基础能力，但每个场景对它们的侧重不同——这要求架构层面做好「核心能力复用 + 场景特化扩展」的分层设计
+- **生产力场景先行**: 代码和数据分析场景的研究密度最高，因为这些场景有明确的评估指标和丰富的结构化数据，是 Agent 技术最容易验证和落地的方向
+- **AI for Science 加速**: Agent 正在从辅助工具升级为科研流程的核心驱动力，但「AI 做假设、人类做验证」的分工模式短期内不会改变
+
+
+
+## 3️⃣ 思想、趋势与方法论
+
+### 范式层面的思想转变
+
+**从无状态到有状态**: Memory 研究的持续升温揭示了一个根本认知——智能不是单次推理的产物，而是经验积累的结果。从工程角度看，这意味着 Agent 系统必须有持久化的状态管理，包括经验存储、失败记忆、成功模式沉淀。架构上需要回答：记忆何时写入、如何压缩、何时遗忘、如何检索。
+
+**从单体到社会**: 多智能体研究不再只是「并行执行」，而是真正关注协作、分工、制衡等社会性议题。这暗示我们可能需要借鉴组织设计和社会学的理论框架来设计 Agent 系统——角色定义、权责边界、冲突解决机制、信息共享协议，这些都是传统软件架构未曾面对的问题。
+
+### 方法论演进
+
+**规划方法论**: 从 ReAct 的简单 interleaving，到 Tree of Thought 的搜索式规划，再到今天的层次化/自适应规划，规划方法论正在从「prompt 技巧」进化为「系统化算法」。关键趋势：(1) 规划不再是一次性的，而是持续修正的；(2) 规划粒度根据任务复杂度自适应调整；(3) 规划过程本身可以被学习和优化。
+
+**记忆方法论**: RAG 作为记忆的初级形态正在被更系统化的记忆架构取代。方法论演进路径：简单向量检索 → 混合检索（向量+关键词+图谱）→ 分层记忆（工作记忆/情景记忆/语义记忆）→ 主动记忆管理（遗忘、压缩、整合）。工程上，这意味着 Memory 不再是一个 embedding 查询，而是一个有写入策略、检索策略、管理策略的完整子系统。
+
+**评估方法论**: 评估正在从「单一任务准确率」走向「多维度能力画像」。新趋势包括：(1) 过程评估而不仅是结果评估；(2) 长程任务中的累积误差评估；(3) 安全边界与鲁棒性的系统性评估；(4) 人类偏好对齐的量化评估。这要求评估框架从静态测试集进化为动态评测环境。
+
+### 技术趋势研判
+
+🔥 **Agent 自进化**: Agent 正在获得修改自身行为代码或策略的能力。这不仅是「学习」，而是「自我重写」——Agent 可以调整自己的 prompt、工具定义、甚至决策逻辑。工程上这带来了新问题：如何确保自进化方向与人类意图一致？如何回滚有害的自行修改？如何评估自进化的收益？
+
+📈 **多智能体组织形态**: 从简单的「轮询协作」到「层级指挥」，再到「市场竞价」和「民主投票」，多智能体的组织形态正在丰富。核心问题是：什么任务适合什么组织形态？工程上需要可插拔的编排框架，允许根据任务动态切换组织模式。
+
+📊 **评估驱动开发**: 无论具体方向，今日论文共同反映的趋势是——评估正在前置。不再是「先做系统再找 benchmark」，而是「基于 benchmark 设计系统」。这种评估驱动的开发方式将加速 Agent 能力的可衡量进步。
+
+🔧 **工具生态标准化**: MCP 等协议的出现暗示工具接口正在走向标准化。这类似于 API 标准化对微服务架构的推动——当工具接口有了统一标准，Agent 就可以从「预定义工具集」升级为「动态发现和使用工具」，极大地扩展了能力边界。
+
+
+## 4️⃣ 关键洞察
+
+1. **Memory 正在从「检索」走向「推理」** — 单纯的向量相似度检索已不够用，新研究关注记忆的推理整合：什么时候该用哪段记忆、多段记忆之间如何推理、记忆冲突如何消解。这对工程架构的启示是：Memory 模块需要一个「推理层」而非仅仅是「存储+检索」。
+
+2. **Planning 的瓶颈从「生成计划」转向「执行监控」** — 生成一个看起来合理的计划已经不难，难的是在执行过程中持续监控偏差、动态调整、优雅降级。这要求 Planning 系统与 Execution 系统之间有紧密的反馈回路，而非一次规划全程执行。
+
+3. **Multi-Agent 的核心挑战从「通信协议」转向「组织设计」** — Agent 之间怎么传递消息已经有成熟方案，关键问题变成：谁来决策？如何分配任务？如何处理冲突？这本质上是组织设计问题，需要借鉴管理学和社会学的理论。
+
+5. **Evaluation 正在从「评分」进化为「诊断」** — 好的评估不只是给一个分数，而是告诉你「哪里好、哪里差、差的原因是什么」。这种诊断式评估才能指导有效的改进。工程上意味着评估系统需要输出结构化的诊断报告，而非单一的 accuracy 数值。
+
+6. **Self-Evolution 的双刃剑** — Agent 自我改进能力是效率的提升，也是可控性的挑战。关键问题：自进化的边界在哪里？谁来审核自行修改的代码/策略？如何建立自进化的审计追踪？这不是纯技术问题，需要治理框架的同步建设。
+
+7. **Tool Use 从「调用」进化为「编排」** — 单个工具的调用已基本解决，新挑战是多工具的编排：工具间的依赖关系、执行顺序、错误传播、结果聚合。这本质上是一个分布式系统问题，需要借鉴工作流引擎和数据流编程的思想。
+
+## 5️⃣ 工程实践深挖
+
+### 系统架构实践
+
+**记忆架构**: 分层记忆已从理论走向实践。推荐架构：
+```
+Working Memory (对话上下文, 窗口内)
+    ↓ 压缩/摘要
+Episodic Memory (事件序列, 向量+时序索引)
+    ↓ 抽象/泛化
+Semantic Memory (知识图谱, 结构化)
+```
+工程关键：每层有不同的写入频率、检索策略和遗忘策略。Working Memory 随会话清除，Episodic Memory 需要定期压缩（保留关键转折点），Semantic Memory 需要一致性校验。
+
+**规划架构**: 实践中有效的规划架构是「分层规划 + 执行反馈」：
+- **战略层**: 将目标分解为子目标序列（低频更新）
+- **战术层**: 将子目标分解为可执行步骤（中频更新）
+- **执行层**: 逐步执行并收集反馈（高频更新）
+- **监控层**: 检测偏差并触发重规划（事件驱动）
+
+关键设计：每层有独立的超时和重试策略，避免单层失败导致整个计划崩溃。
+
+**多智能体架构**: 工程实践中最可靠的模式是「中心化编排 + 去中心化执行」：
+- Orchestrator 负责任务分解、分配和结果汇总
+- Worker Agent 各自独立执行，通过消息队列通信
+- 共享状态通过分布式存储同步，避免直接状态共享
+
+教训：完全去中心化的多 Agent 系统在工程上很难保证一致性和可调试性，中心化编排虽然单点风险，但可观测性和可控性远优于纯 P2P 模式。
+
+### 数据与训练工程
+
+**评估数据工程**: 构建有效评估集的工程要点：
+- **难度梯度**: 从简单到困难的梯度分布，避免全是简单或全是难题
+- **多样性覆盖**: 覆盖不同子能力、不同场景、不同边界条件
+- **抗污染**: 训练数据和评估数据的严格隔离，防止数据泄露
+- **版本管理**: 评估集需要版本化和增量更新，避免对固定测试集过拟合
+
+**记忆数据工程**: Memory 系统的数据管线要点：
+- **写入质量控制**: 不是所有交互都值得记忆，需要相关性/重要性过滤
+- **去重与合并**: 相似记忆需要合并而非重复存储，避免检索结果冗余
+- **时效性标注**: 记忆需要时间戳和有效期，过时信息应降权或归档
+- **索引策略**: 多模态索引（向量、关键词、图谱）各有优劣，混合索引是工程最优解
+
+### 部署与运维考量
+
+**监控与可观测性**: Agent 系统的监控比传统软件更复杂：
+- **行为监控**: 不仅监控延迟/错误率，还要监控 Agent 的决策路径和工具使用模式
+- **漂移检测**: Agent 行为可能随时间漂移（prompt 磨损、数据分布变化），需要基线对比
+- **成本追踪**: LLM 调用成本是可变成本，需要按任务/用户/时段的成本分摊
+- **安全审计**: 所有对外操作（API 调用、消息发送）需要完整审计日志
+
+**多智能体部署**: 多 Agent 系统的部署需要额外关注：
+- **资源隔离**: 不同 Agent 的计算资源需要隔离，避免一个 Agent 的异常影响整体
+- **通信可靠性**: Agent 间通信需要消息确认和重试机制，处理网络分区场景
+- **一致性保证**: 共享状态的并发修改需要冲突解决机制
+- **灰度发布**: 新版 Agent 应逐步替换旧版，保留快速回滚能力
+
+**弹性设计**: Agent 系统必须具备弹性：
+- **LLM 降级**: 主模型不可用时切换备用模型，接受质量下降但保证可用性
+- **工具降级**: 外部 API 失败时使用缓存结果或简化方案
+- **记忆降级**: 向量数据库不可用时回退到关键词检索
+- **优雅超时**: 长时间运行的任务需要检查点和恢复机制
+
+### 性能与成本权衡
+
+**延迟优化**: Agent 系统的延迟主要来自 LLM 推理和工具调用：
+- **流式输出**: 使用 streaming 让用户尽早看到中间结果
+- **推测执行**: 对可能需要的工具调用做预取，减少串行等待
+- **缓存策略**: 相似查询的 LLM 响应可以做语义缓存（embedding 相似度 > 阈值则复用）
+- **模型路由**: 简单任务用小模型，复杂任务用大模型，降低平均延迟和成本
+
+**成本控制**: LLM 调用成本是 Agent 系统最大的可变成本：
+- **Token 预算**: 为每个任务设定 token 上限，避免无限循环消耗
+- **Prompt 优化**: 精简 system prompt，减少每次调用的固定开销
+- **批处理**: 非实时任务可以攒批后用更便宜的 batch API
+- **模型蒸馏**: 对高频场景，用大模型生成训练数据蒸馏小模型
+
+## 6️⃣ 架构级结论
+
+1. **Agent 架构的第一性原理是「感知-决策-行动-反馈」循环** — 任何 Agent 子系统（记忆、规划、工具）都应遵循这个闭环。开环设计（只管输出不管结果）是工程事故的主要来源。
+
+2. **Memory 不是数据库，是认知系统** — 把 Memory 当数据库设计（只管存取）会错失核心价值。Memory 需要主动管理：写入过滤、压缩整合、遗忘机制、冲突消解。这些认知层面的操作才是 Memory 系统区分于存储系统的关键。
+
+3. **Planning 的价值不在完美计划，而在快速适应** — 追求完美的初始规划是徒劳的，因为真实环境充满不确定性。更好的策略是：快速生成满意计划 → 执行 → 检测偏差 → 快速调整。Planning 系统的核心指标不是计划质量，而是适应速度。
+
+4. **多 Agent 系统的本质是组织设计** — 技术上，Agent 间通信已不是瓶颈。真正的挑战是组织设计：权责划分、信息共享边界、冲突升级机制、绩效评估标准。这些问题的答案不在计算机科学，而在管理学和社会学。
+
+6. **评估是架构决策的基石** — 没有评估，所有架构决策都是猜测。建立持续评估机制，用数据而非直觉驱动架构演进。评估框架本身也是架构的一部分，需要与系统同步迭代。
+
+## 7️⃣ 行动建议
+
+### 记忆系统
+- [ ] 设计分层记忆架构：Working → Episodic → Semantic，每层独立的写入/检索/遗忘策略
+- [ ] 实现记忆质量评分机制，低质量记忆自动降权或归档
+- [ ] 建立记忆一致性校验，防止矛盾记忆共存
+- [ ] 设计记忆压缩策略：保留关键转折点，丢弃冗余细节
+
+### 规划系统
+- [ ] 实现分层规划：战略/战术/执行三层，各自独立更新
+- [ ] 添加执行监控系统：偏差检测 → 告警 → 自动重规划
+- [ ] 设计规划超时和降级策略，避免陷入无限规划循环
+- [ ] 建立规划效果回溯机制，用执行结果反哺规划策略优化
+
+### 工具系统
+- [ ] 建立工具注册表，支持运行时动态发现和加载
+- [ ] 实现工具编排引擎：支持 DAG 依赖、并行执行、错误隔离
+- [ ] 设计工具使用审计日志，追踪每次调用的输入/输出/耗时/成本
+- [ ] 建立工具健康检查机制，自动禁用不可用的工具并通知下游
+
+### 多智能体系统
+- [ ] 定义标准化的 Agent 通信协议（消息格式 + 语义约定）
+- [ ] 实现任务分配策略：基于能力匹配 + 负载均衡
+- [ ] 设计冲突解决机制：优先级仲裁 + 人工升级通道
+- [ ] 建立多 Agent 运行的可观测性：分布式追踪 + 因果分析
+
+### 通用建议
+- [ ] 建立持续评估流水线，每次架构变更都自动运行核心评估集
+- [ ] 实现 LLM 调用的成本追踪和预算控制
+- [ ] 设计统一的可观测性框架：行为日志 + 决策追踪 + 性能指标
+- [ ] 建立 Agent 行为的回放和调试工具，支持时间旅行调试
+
+## 📚 附录：论文完整列表
+
+1. [Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](https://arxiv.org/abs/2605.30353) — evaluation | 代码开发, 科学研究
+2. [Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection](https://arxiv.org/abs/2605.30344) — planning, evaluation
+3. [Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents](https://arxiv.org/abs/2605.30335) — other
+4. [ProjectionBench: Evaluating Scientific Hypothesis Generation in LLMs Under Progressive Information Disclosure](https://arxiv.org/abs/2605.30284) — planning | 科学研究
+5. [mcp-proto-okn: Natural-language access to open scientific knowledge graphs through the Model Context Protocol](https://arxiv.org/abs/2605.30283) — tool | 科学研究, 信息检索与问答
+6. [Persona Conditioning of Brand Recommendations in Retrieval-Augmented Commercial Chat: A Prominence-Stratified Cross-Provider Audit](https://arxiv.org/abs/2605.30207) — memory | 决策支持
+7. [Modularizing Educational LLM-Agency for Fostering Responsible Learning Assistance](https://arxiv.org/abs/2605.30187) — other
+8. [Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents](https://arxiv.org/abs/2605.30159) — memory, engineering | 决策支持
+9. [AgentSchool: An LLM-Powered Multi-Agent Simulation for Education](https://arxiv.org/abs/2605.30144) — multi_agent
+10. [Enhancing Multi-Agent Communication through Attention Steering with Context Relevance](https://arxiv.org/abs/2605.30136) — multi_agent
+11. [Conformal Certification of Reasoning Trace Prefixes](https://arxiv.org/abs/2605.30085) — planning
+12. [Learning to Choose: An Empowerment-Guided Multi-Agent System with semantic communication for Adaptive Method Selection](https://arxiv.org/abs/2605.30042) — multi_agent, evolution | 企业自动化
+
+---
+
+*本报告由 OpenClaw 自动生成 · 面向 Agent 架构师与工程师，提供决策与工程参考*
