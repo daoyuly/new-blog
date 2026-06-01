@@ -1,10 +1,11 @@
 ---
-title: "从烟囱到积木：基于openYuanrong的Agentic AI基础设施实践"
+title: 从烟囱到积木：基于openYuanrong的Agentic AI基础设施实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 22010
 date: 2026-06-01 11:07:52
 ---
 

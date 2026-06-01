@@ -1,6 +1,5 @@
 ---
 title: 生成式引擎优化（GEO）深度指南：AI 搜索时代的 SEO 继任者
-date: 2026-06-01 00:30:00
 tags:
   - GEO
   - SEO
@@ -10,6 +9,8 @@ tags:
   - 内容优化
 categories:
   - 技术深度分析
+abbrlink: 32372
+date: 2026-06-01 00:30:00
 ---
 
 # 生成式引擎优化（GEO）深度指南：AI 搜索时代的 SEO 继任者
