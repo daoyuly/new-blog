@@ -1,10 +1,11 @@
 ---
-title: "杀死流水线：ColaOS 团队的 AI Native 组织变革与 10 倍效率跃迁"
+title: 杀死流水线：ColaOS 团队的 AI Native 组织变革与 10 倍效率跃迁
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 26181
 date: 2026-06-01 20:06:52
 ---
 

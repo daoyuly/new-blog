@@ -1,10 +1,11 @@
 ---
-title: "尽在上下文：JoyCode企业级AI编码与上下文工程实践"
+title: 尽在上下文：JoyCode企业级AI编码与上下文工程实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 5884
 date: 2026-06-02 11:06:35
 ---
 

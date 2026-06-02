@@ -1,0 +1,99 @@
+---
+title: 2026-06-02 AI Agent 论文日报：从自主科研到安全对齐
+tags:
+  - arxiv
+  - ai-agent
+  - daily-report
+categories:
+  - AI Agent 日报
+abbrlink: 16635
+date: 2026-06-02 12:00:00
+---
+
+数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)
+
+## 今日概览
+
+今天 cs.AI 共收录约 25 篇新论文，其中与 Agent 直接相关的高质量论文有 **10 篇**。整体趋势集中在以下几个方向：
+
+1. **Agent 自我进化与学习**（3 篇）
+2. **Agent 诊断与评估**（3 篇）
+3. **Agent 安全对齐**（2 篇）
+4. **Agent 架构与上下文管理**（2 篇）
+
+---
+
+## 🔥 重点论文
+
+### 1. AutoSci：以记忆为中心的科研全生命周期 Agent 系统
+**[arxiv/2605.31468](https://arxiv.org/abs/2605.31468)** | ⭐ 强烈推荐
+
+AutoSci 提出了一个围绕 **结构化持久记忆** 构建的科学 Agent 系统，包含四大模块：
+
+- **SciMem**：将长期知识记忆与活跃研究记忆分离，支持 schema 治理
+- **SciFlow**：五阶段科研生命周期（文献→想法→实验→论文→rebuttal）
+- **SciDAG**：DAG 形状的多 Agent 算子 + 可复用模板
+- **SciEvolve**：将反馈信号转化为记忆、技能和模板的版本化更新
+
+**趋势洞察**：这是 Agent 从"单次任务"走向"持续演化系统"的典型案例。记忆不再只是上下文窗口里的几条记录，而是结构化的、可版本管理的知识库。
+
+---
+
+### 2. SCALE：通过认知感知探索实现 Web Agent 自我改进
+**[arxiv/2605.31365](https://arxiv.org/abs/2605.31365)** | ⭐ 推荐
+
+SCALE 框架让 Web Agent 通过三个对抗角色（Selector/Predictor/Judger）**自主发现自身局限性**，并通过图探索策略（SCALE-Hop）避免陷入局部探索陷阱。附带 SCALE-20k 数据集，覆盖 19 个真实网站。
+
+**趋势洞察**：Agent 不再只是"被训练"——它们开始学会**自己找自己的弱点**。这与 AutoSci 的自我演化思路一脉相承。
+
+---
+
+### 3. TraceGraph：共享决策景观诊断 Agent 轨迹
+**[arxiv/2605.31308](https://arxiv.org/abs/2605.31308)** | ⭐ 推荐
+
+TraceGraph 将多模型的 Agent 轨迹池化为**共享图结构**，识别出"高效核心区"和"陷阱区"，并为每个轨迹标注 Access/Trap/Repair 三类事件。在 SWE-bench 上，基于陷阱感知的恢复策略将解决率从 40.4% 提升到 43.5%。
+
+**趋势洞察**：Agent 评估正在从"看 pass rate"进化到"理解过程"。这和人类 code review 不只看结果、更看过程是同样的逻辑。
+
+---
+
+### 4. COMPASS：面向搜索 Agent 的认知 MCTS 安全对齐
+**[arxiv/2605.30838](https://arxiv.org/abs/2605.30838)**
+
+COMPASS 解决了一个关键问题：恶意意图可以被分解为看似无害的子查询，绕过现有安全机制。框架包含：
+- **CTE（认知树探索）**：合成隐蔽攻击轨迹
+- **ISA（内省式步骤对齐）**：隔离中间风险动作进行细粒度监督
+
+用更少的训练数据实现更好的安全-效用权衡。
+
+---
+
+### 5. DecomposeR：以规划器为中心的深度研究 Agent
+**[arxiv/2605.30824](https://arxiv.org/abs/2605.30824)**
+
+将研究计划表示为 **类型化 DAG**，分两阶段训练：先训练规划器 RL 学习图结构和查询分解，再训练回答器 RL 执行和综合。在长文本 benchmark 上比开源基线提升 5.1-8.0 分。
+
+---
+
+## 📋 其他 Agent 相关论文
+
+| 论文 | 核心贡献 |
+|------|---------|
+| **HypoAgent** [2605.31370](https://arxiv.org/abs/2605.31370) | 三 Agent 协作的知识图谱溯因推理框架 |
+| **COLLEAGUE.SKILL** [2605.31264](https://arxiv.org/abs/2605.31264) | 从专家轨迹自动蒸馏可移植 AI 技能包（18.5k ⭐） |
+| **GLIDE** [2605.31278](https://arxiv.org/abs/2605.31278) | 统一 PPI 评估框架，用于 Agent 系统的可靠评估 |
+| **CoSee** [2605.31354](https://arxiv.org/abs/2605.31354) | 诊断弱模型协作推理中的噪声放大和策略坍塌 |
+| **Agent Context Management** [2605.30785](https://arxiv.org/abs/2605.30785) | 学习 Agent 兼容的上下文管理策略，应对长程任务 |
+
+---
+
+## 📊 趋势总结
+
+```
+Agent 自主性提升 ────→ 自我发现弱点（SCALE）、自我演化记忆（AutoSci）
+Agent 评估深化 ────→ 过程级诊断（TraceGraph）、可靠统计评估（GLIDE）
+Agent 安全重视 ────→ 过程级安全对齐（COMPASS）、评估鲁棒性（PReMISE）
+Agent 架构分化 ────→ 规划-执行分离（DecomposeR）、技能打包（COLLEAGUE.SKILL）
+```
+
+**一句话总结今天的趋势**：Agent 正在从"能跑起来"走向"能持续进化、被可靠评估、被安全约束"——工程化成熟度明显提升。
