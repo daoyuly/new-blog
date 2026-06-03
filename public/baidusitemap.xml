@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-03-arxiv-agent-trends/</loc>
-    <lastmod>2026-06-03</lastmod>
-  </url>
-  <url>
     <loc>https://www.daoyuly.cn/2026/2026-06-03-openclaw-skill-showcase-devops-and-cloud/</loc>
-    <lastmod>2026-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-03-agent-memory-arxiv-report/</loc>
     <lastmod>2026-06-03</lastmod>
   </url>
   <url>
@@ -17,20 +9,28 @@
     <lastmod>2026-06-03</lastmod>
   </url>
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-03-zeroclaw/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-06-03-agent-memory-arxiv-report/</loc>
     <lastmod>2026-06-03</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-06-03-myclaw-dev-report/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-03</lastmod>
   </url>
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-02-agent-memory-arxiv-daily/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <loc>https://www.daoyuly.cn/2026/2026-06-03-zeroclaw/</loc>
+    <lastmod>2026-06-03</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-06-02-agent-harness-daily/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-02-agent-memory-arxiv-daily/</loc>
+    <lastmod>2026-06-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-03-arxiv-agent-trends/</loc>
+    <lastmod>2026-06-03</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-06-02-trip_planner_agent/</loc>
