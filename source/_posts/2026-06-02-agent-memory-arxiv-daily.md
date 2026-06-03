@@ -1,8 +1,16 @@
 ---
-title: "Agent Memory arXiv 日报 (2026-06-02)"
-date: 2026-06-02 18:00:00 +0800
-tags: [agent-memory, arxiv, daily-report, LLM, RAG, continual-learning]
-categories: [AI论文日报]
+title: Agent Memory arXiv 日报 (2026-06-02)
+date: '2026-06-02 18:00:00 +0800'
+tags:
+  - agent-memory
+  - arxiv
+  - daily-report
+  - LLM
+  - RAG
+  - continual-learning
+categories:
+  - AI论文日报
+abbrlink: 50162
 ---
 
 ## 今日 Agent Memory 相关论文

@@ -1,10 +1,11 @@
 ---
-title: "让开关自我消亡：AI赋能的Feature Flag全生命周期治理"
+title: 让开关自我消亡：AI赋能的Feature Flag全生命周期治理
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 39421
 date: 2026-06-03 11:08:52
 ---
 
