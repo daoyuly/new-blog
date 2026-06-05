@@ -1,6 +1,6 @@
 ---
-title: "Agent Memory 日报 | 2026-06-04"
-date: 2026-06-04 18:00:00 +0800
+title: Agent Memory 日报 | 2026-06-04
+date: '2026-06-04 18:00:00 +0800'
 tags:
   - agent
   - memory
@@ -10,6 +10,7 @@ tags:
 categories:
   - Agent Memory
   - ArXiv Daily
+abbrlink: 36583
 ---
 
 # Agent Memory ArXiv 日报 — 2026年6月4日

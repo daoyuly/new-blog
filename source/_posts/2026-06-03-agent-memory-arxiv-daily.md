@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 日报 (2026-06-03)：确定性记忆、信息增益驱动的记忆训练与自演化技能系统
-date: 2026-06-03 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -10,6 +9,8 @@ tags:
   - self-evolving-agent
 categories:
   - Agent Memory 研究追踪
+abbrlink: 50982
+date: 2026-06-03 18:00:00
 ---
 
 # Agent Memory 日报 — 2026年6月3日
