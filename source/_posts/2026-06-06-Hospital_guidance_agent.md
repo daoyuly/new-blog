@@ -1,12 +1,13 @@
 ---
-title: "Hospital_guidance_agent 项目分析报告"
-date: 2026-06-06 11:00:00
+title: Hospital_guidance_agent 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 1601
+date: 2026-06-06 11:00:00
 ---
 
 # Hospital_guidance_agent 项目分析报告

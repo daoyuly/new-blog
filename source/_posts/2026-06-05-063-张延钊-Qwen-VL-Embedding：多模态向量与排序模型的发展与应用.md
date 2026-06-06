@@ -1,10 +1,11 @@
 ---
-title: "Qwen3-VL多模态表征与排序：基于MLLM的统一检索架构实践"
+title: Qwen3-VL多模态表征与排序：基于MLLM的统一检索架构实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 14415
 date: 2026-06-05 14:06:20
 ---
 

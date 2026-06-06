@@ -1,6 +1,5 @@
 ---
 title: Agent Memory arXiv 日报 — 2026-06-05
-date: 2026-06-05 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -9,6 +8,8 @@ tags:
   - memory-systems
 categories:
   - Agent Memory 日报
+abbrlink: 17562
+date: 2026-06-05 18:00:00
 ---
 
 # Agent Memory arXiv 日报 — 2026-06-05
