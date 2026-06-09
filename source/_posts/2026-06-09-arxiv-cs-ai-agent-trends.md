@@ -1,0 +1,130 @@
+---
+title: Agent 日报：2026-06-09 arXiv cs.AI 前沿趋势
+tags:
+  - AI Agent
+  - arXiv
+  - 论文日报
+  - LLM
+categories:
+  - AI 论文追踪
+abbrlink: 34091
+date: 2026-06-09 12:00:00
+---
+
+> 每日精选 arXiv cs.AI 中与 Agent 相关的最新论文，梳理前沿趋势。
+
+## 📊 今日总览
+
+2026年6月8日 arXiv cs.AI 共发布约 25 篇论文，其中 **9 篇与 Agent 直接相关**。今天的主题集中在：**Agent 协作协议、委托智能、Agent 安全监控、Web Agent 实战落地**。
+
+---
+
+## 🔥 重点论文
+
+### 1. CHAP: Collaborative Human-Agent Protocol
+**[#3 | arXiv:2606.09751](https://arxiv.org/abs/2606.09751)**
+
+提出人机协作协议 CHAP，填补了 MCP（Agent-工具）和 A2A（Agent-Agent）之间的空白——**定义人类与 Agent 共同完成可审计工作的共享工作空间**。核心设计包括：
+
+- 结构化 override 事件（携带 diff、rationale、content hash）
+- 可移植的交接信封
+- 不可抵赖的签名决策
+- append-only 证据日志 + 可组合的 profile（review、routing、deliberation 等）
+
+**意义：** Agent 从「单次对话」走向「多人多 Agent 长期协作」，需要一个结构化的工作协议。CHAP 试图成为这个基础设施。
+
+---
+
+### 2. SearchSwarm: 委托智能（Delegation Intelligence）
+**[#5 | arXiv:2606.09730](https://arxiv.org/abs/2606.09730)**
+
+解决 Agent 长程任务中的**上下文预算有限**问题。核心思路：
+
+- 主 Agent 分解任务，派遣子 Agent 执行，只返回摘要结果
+- 设计 harness 生成高质量任务分解 + 委托轨迹，用于 SFT 训练
+- **SearchSwarm-30B-A3B** 在 BrowseComp 达 68.1、BrowseComp-ZH 达 73.3，同规模最佳
+
+**意义：** 「委托智能」是一个被低估的能力——不是所有 Agent 都需要自己做所有事，学会**何时委托、如何整合**才是关键。
+
+---
+
+### 3. Multi-Turn Evaluation of Deep Research Agents
+**[#4 | arXiv:2606.09748](https://arxiv.org/abs/2606.09748)**
+
+对 Deep Research Agent 做多轮反馈评估，发现三个关键结论：
+
+- **Self-reflection 几乎无效**：Agent 对 rubric 标准的采纳率和回归率几乎相等
+- **一轮过程级反馈** 提升显著（8-15 分），但后续轮次不再累积
+- 即使有针对性指导，可靠的多轮改进仍然遥不可及（后续轮次回归率高达 24%）
+
+**意义：** Agent 的自我改进能力被严重高估。单轮反馈有用，但多轮持续改进仍是未解难题。
+
+---
+
+### 4. PRISM: 从 Agent 激活状态恢复指令集
+**[#17 | arXiv:2606.09563](https://arxiv.org/abs/2606.09563)**
+
+提出「**指令集检索**」问题——当 LLM 作为 Agent 部署时，如何从隐藏状态中恢复其正在遵循的所有指令？
+
+- 将隐藏状态解码为活跃指令的 bullet list
+- 使用 judge-guided GRPO 训练，奖励覆盖的指令、惩罚无支持的声称
+- 在 benign、prompt-injection、hidden-objective 场景下均优于基线
+
+**意义：** Agent 安全监控的核心工具——你不能只看输出，还需要知道 Agent **正在被什么指令驱动**。
+
+---
+
+### 5. AliyunConsoleAgent: 真实云环境中的 Web Agent
+**[#24 | arXiv:2606.09724... → 实际 #24 | arXiv:2606.09489 附近](https://arxiv.org/abs/2606.09489)**
+
+阿里云控制台文档验证 Agent，两阶段训练：
+
+1. **SFT**：从前沿模型蒸馏轨迹
+2. **RL（GRPO）**：在真实云环境中用双通道 outcome reward 训练
+
+工程亮点：
+- Terraform 预配 + LLM 按需创建，构建高确定性 rollout 系统
+- 基于**后端审计日志**的规则化 reward，抗 reward hacking
+- **AliyunConsoleAgent-32B 达到 63.52% 成功率**，与前沿闭源模型仅差 1.82 pp，推理成本低 92%
+
+**意义：** Web Agent 从 benchmark 走向生产的关键一步——RL + 真实环境才是正道。
+
+---
+
+## 📋 其他 Agent 相关论文
+
+| # | 论文 | 关键词 | 链接 |
+|---|------|--------|------|
+| 2 | **SIGA: Self-Evolving Coding-Agent Adapters** | Coding Agent × 科学模拟，自我进化适配器 | [2606.09774](https://arxiv.org/abs/2606.09774) |
+| 10 | **SpatialWorld: 多模态 Agent 空间推理基准** | 760 任务 × 8 模拟器，GPT-5 仅 17.4% TSR | [2606.09669](https://arxiv.org/abs/2606.09669) |
+| 12 | **MetaAI Recursive Self-Design** | Agent 递归自我设计，DGM 从 20% 提升到 50% | [2606.09663](https://arxiv.org/abs/2606.09663) |
+| 18 | **AI Scientists = Evidence Quality** | 知识密集型 Agent 的瓶颈是证据而非推理 | [2606.09556](https://arxiv.org/abs/2606.09556) |
+
+---
+
+## 🧭 趋势洞察
+
+### 1. Agent 协议层正在成型
+MCP 解决 Agent-工具，A2A 解决 Agent-Agent，CHAP 解决 Human-Agent。**三层协议栈补齐了最后一环**，多 Agent 协作的基础设施日趋完整。
+
+### 2. 委托与分层是 Agent 扩展的关键路径
+SearchSwarm 的「委托智能」和 SIGA 的「轻量适配器」都指向同一方向：**不需要一个全能 Agent，而是让 Agent 学会分工**。这与人形组织的运作逻辑一致。
+
+### 3. Agent 自我改进仍不靠谱
+Multi-Turn DRA 评估清楚地表明，当前 Agent 的自我反思几乎无效，单轮外部反馈有用但不可累积。**可靠的多轮改进仍是开放问题**。
+
+### 4. 安全监控从「看输出」升级到「看内部状态」
+PRISM 从激活状态恢复指令集，标志着 Agent 监控从**行为层面**深入到**表征层面**。这对 prompt injection 检测和 alignment 监控至关重要。
+
+### 5. Web Agent 进入真实生产环境
+AliyunConsoleAgent 展示了一条可行路径：**蒸馏 + 真实环境 RL + 规则化 reward**。小模型可以逼近前沿模型，同时大幅降低成本。
+
+---
+
+## 💡 一句话总结
+
+> 今天的 Agent 研究正在从「单 Agent 能做什么」转向「多 Agent 如何协作、如何监控、如何持续改进」——基础设施（协议、委托、监控）的建设期已经到来。
+
+---
+
+*数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) | 自动生成于 2026-06-09*

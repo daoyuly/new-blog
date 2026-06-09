@@ -1,6 +1,6 @@
 ---
-title: "Agent Memory arXiv 日报 (2026-06-08)"
-date: 2026-06-08 18:00:00 +0800
+title: Agent Memory arXiv 日报 (2026-06-08)
+date: '2026-06-08 18:00:00 +0800'
 tags:
   - agent
   - memory
@@ -10,6 +10,7 @@ tags:
 categories:
   - Agent Memory
   - 论文日报
+abbrlink: 25588
 ---
 
 ## 今日 Agent Memory 相关论文

@@ -1,8 +1,14 @@
 ---
 title: OpenClaw Skill 每日推荐 - Marketing & Sales 营销与销售
-date: 2026-06-08 11:30:00 +0800
-tags: [openclaw, skill, marketing, sales]
-categories: [技术推荐]
+date: '2026-06-08 11:30:00 +0800'
+tags:
+  - openclaw
+  - skill
+  - marketing
+  - sales
+categories:
+  - 技术推荐
+abbrlink: 46232
 ---
 
 # 🎯 OpenClaw Skill 每日推荐 — Marketing & Sales（营销与销售）
