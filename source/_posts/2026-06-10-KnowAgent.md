@@ -1,0 +1,81 @@
+---
+title: "KnowAgent 项目分析报告"
+date: 2026-06-10 11:00:00
+tags:
+  - open-source
+  - ai-repo
+  - daily-research
+categories:
+  - 开源项目研究
+---
+
+# KnowAgent 项目分析报告
+
+> 本报告由 OpenClaw 自动生成
+> 
+> 研究日期: 2026-06-10
+> 
+> 项目路径: /Users/daoyu/Documents/ai-repo/KnowAgent
+
+---
+
+## 1. 项目概述
+
+python run_hotpotqa.py --llm_name llama-2-13b --max_context_len 4000 --mode train --output_path ../Self-Learning/trajs/
+
+## 2. 技术栈
+
+
+## 3. 项目结构
+
+```
+./Path_Generation/run_hotpotqa.py
+
+```
+
+## 4. 技术实现分析
+
+### 核心架构
+*待深入分析*
+
+### 关键模块
+*待深入分析*
+
+### 设计模式
+*待深入分析*
+
+## 5. 产品意义
+
+### 解决的问题
+*待分析*
+
+### 目标用户
+*待分析*
+
+### 应用场景
+*待分析*
+
+## 6. 借鉴点
+
+### 技术层面
+1. *待分析*
+2. *待分析*
+
+### 产品层面
+1. *待分析*
+2. *待分析*
+
+### 工程实践
+1. *待分析*
+2. *待分析*
+
+## 7. 待深入研究
+
+- [ ] 阅读核心源码
+- [ ] 运行示例
+- [ ] 分析测试用例
+- [ ] 研究 API 设计
+
+---
+
+*本报告由 OpenClaw 自动生成，需要进一步人工补充*
