@@ -1,5 +1,5 @@
 ---
-title: "code as harness agent"
+title: "Code as Harness Agent"
 date: 2026-06-11 23:16:55
 tags: 
   - harness
