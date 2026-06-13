@@ -1,6 +1,5 @@
 ---
 title: 智能穿戴设备的 Agent 记忆、上下文与 Harness 架构综述
-date: 2026-06-10 10:00:00
 tags:
   - AI Agent
   - 智能穿戴
@@ -13,6 +12,8 @@ tags:
 categories:
   - AI Agent
   - 智能硬件
+abbrlink: 40139
+date: 2026-06-10 10:00:00
 ---
 
 # 智能穿戴设备的 Agent 记忆、上下文与 Harness 架构综述

@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 日报 (2026-06-10) — arXiv cs.AI 论文速递
-date: 2026-06-10 18:14:00
 tags:
   - agent-memory
   - arxiv
@@ -9,6 +8,8 @@ tags:
   - RAG
 categories:
   - 研究日报
+abbrlink: 11717
+date: 2026-06-10 18:14:00
 ---
 
 # Agent Memory 日报 (2026-06-10)

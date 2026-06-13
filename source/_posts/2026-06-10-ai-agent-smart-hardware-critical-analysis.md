@@ -1,6 +1,5 @@
 ---
 title: AI Agent 在智能硬件中的正反辨析：不是所有硬件都需要一个 Agent
-date: 2026-06-10 14:30:00
 tags:
   - AI Agent
   - 智能硬件
@@ -12,6 +11,8 @@ tags:
 categories:
   - AI Agent
   - 智能硬件
+abbrlink: 39054
+date: 2026-06-10 14:30:00
 ---
 
 # AI Agent 在智能硬件中的正反辨析：不是所有硬件都需要一个 Agent

@@ -1,6 +1,5 @@
 ---
 title: 智能耳机发展现状综述：从音频外设到 AI Agent 入口
-date: 2026-06-10 11:00:00
 tags:
   - 智能耳机
   - AI耳机
@@ -12,6 +11,8 @@ tags:
 categories:
   - 智能硬件
   - AI Agent
+abbrlink: 27014
+date: 2026-06-10 11:00:00
 ---
 
 # 智能耳机发展现状综述：从音频外设到 AI Agent 入口

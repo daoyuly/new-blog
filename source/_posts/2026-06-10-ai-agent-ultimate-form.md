@@ -1,6 +1,5 @@
 ---
 title: AI Agent 的最终形态：从工具到数字物种的演化推演
-date: 2026-06-10 17:00:00
 tags:
   - AI Agent
   - 终极形态
@@ -12,6 +11,8 @@ tags:
 categories:
   - AI Agent
   - 技术哲学
+abbrlink: 63671
+date: 2026-06-10 17:00:00
 ---
 
 # AI Agent 的最终形态：从工具到数字物种的演化推演

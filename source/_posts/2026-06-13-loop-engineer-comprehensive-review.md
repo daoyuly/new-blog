@@ -1,6 +1,5 @@
 ---
 title: Loop Engineer 综述：AI Agent 时代增长最快的工程角色
-date: 2026-06-13 09:15:00
 tags:
   - AI Agent
   - Loop Engineering
@@ -10,6 +9,8 @@ tags:
 categories:
   - AI
   - Engineering
+abbrlink: 62941
+date: 2026-06-13 09:15:00
 ---
 
 # Loop Engineer 综述：AI Agent 时代增长最快的工程角色

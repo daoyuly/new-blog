@@ -1,6 +1,5 @@
 ---
 title: 大模型图形用户界面操作智能体（GUI Agents）综述：数据、架构、分类、应用、挑战
-date: 2026-06-11 15:28:00
 tags:
   - GUI Agents
   - LLM
@@ -10,6 +9,8 @@ tags:
   - 综述
 categories:
   - AI 综述
+abbrlink: 64421
+date: 2026-06-11 15:28:00
 ---
 
 # 大模型图形用户界面操作智能体（GUI Agents）综述：数据、架构、分类、应用、挑战

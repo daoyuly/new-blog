@@ -1,6 +1,5 @@
 ---
 title: 神经科学与 Agent 记忆：从大脑到人工智能的记忆架构演进
-date: 2026-06-09 17:00:00
 tags:
   - neuroscience
   - agent-memory
@@ -10,6 +9,8 @@ tags:
   - thousand-brains
 categories:
   - AI研究
+abbrlink: 30114
+date: 2026-06-09 17:00:00
 ---
 
 # 神经科学与 Agent 记忆：从大脑到人工智能的记忆架构演进

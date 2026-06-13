@@ -1,10 +1,11 @@
 ---
-title: "Agent Harness Engineering: A Survey"
-date: 2026-06-13 10:00:00
+title: 'Agent Harness Engineering: A Survey'
 tags:
   - Harness
 categories:
   - 论文研究
+abbrlink: 19189
+date: 2026-06-13 10:00:00
 ---
 
 

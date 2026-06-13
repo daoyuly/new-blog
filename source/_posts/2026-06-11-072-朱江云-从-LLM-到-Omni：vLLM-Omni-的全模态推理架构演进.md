@@ -1,10 +1,11 @@
 ---
-title: "vLLM-Omni：突破全模态推理瓶颈的原生解耦架构实践"
+title: vLLM-Omni：突破全模态推理瓶颈的原生解耦架构实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 24472
 date: 2026-06-11 11:05:42
 ---
 

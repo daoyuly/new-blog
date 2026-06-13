@@ -1,12 +1,13 @@
 ---
-title: "KnowAgent 项目分析报告"
-date: 2026-06-10 11:00:00
+title: KnowAgent 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 6783
+date: 2026-06-10 11:00:00
 ---
 
 # KnowAgent 项目分析报告

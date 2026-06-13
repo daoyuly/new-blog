@@ -1,6 +1,5 @@
 ---
 title: Vibe Coding 时代，真正重要的能力是什么
-date: 2026-06-10 17:30:00
 tags:
   - Vibe Coding
   - AI编程
@@ -11,6 +10,8 @@ tags:
 categories:
   - 软件工程
   - AI编程
+abbrlink: 43015
+date: 2026-06-10 17:30:00
 ---
 
 # Vibe Coding 时代，真正重要的能力是什么

@@ -1,9 +1,10 @@
 ---
-title: "14篇 Agent 前沿论文深度解析：evaluation与other方向最新进展"
-description: "2026-06-10 arXiv cs.AI 共 25 篇论文，14 篇 Agent 相关。Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Agent 安全从外部围栏走向安全内化；Agent 自进化需要受控框架（沙盒进化 + 人工审核）。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-06-10 17:30:00
+title: 14篇 Agent 前沿论文深度解析：evaluation与other方向最新进展
+description: >-
+  2026-06-10 arXiv cs.AI 共 25 篇论文，14 篇 Agent 相关。Planning
+  瓶颈从「生成计划」转向「执行监控与动态调整」；Agent 安全从外部围栏走向安全内化；Agent 自进化需要受控框架（沙盒进化 + 人工审核）。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,6 +14,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 59830
+date: 2026-06-10 17:30:00
 ---
 
 # 14篇 Agent 前沿论文深度解析：evaluation与other方向最新进展

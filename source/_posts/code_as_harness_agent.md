@@ -1,11 +1,12 @@
 ---
-title: "Code as Harness Agent"
-date: 2026-06-11 23:16:55
-tags: 
+title: Code as Harness Agent
+tags:
   - harness
   - agent
 categories:
   - 论文学习
+abbrlink: 58358
+date: 2026-06-11 23:16:55
 ---
 
 # 代码即智能体 Harness

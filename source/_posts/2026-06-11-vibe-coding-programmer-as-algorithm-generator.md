@@ -1,6 +1,5 @@
 ---
 title: Vibe Coding：程序员是生成算法的算法生成器
-date: 2026-06-11 11:19:00
 tags:
   - 编程思维
   - Vibe Coding
@@ -8,6 +7,8 @@ tags:
   - 软件工程
 categories:
   - 思考
+abbrlink: 55931
+date: 2026-06-11 11:19:00
 ---
 
 # Vibe Coding：程序员是生成算法的算法生成器

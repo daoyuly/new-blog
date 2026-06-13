@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory arXiv 日报 (2026-06-09)：记忆系统百花齐放"
-date: 2026-06-09 18:00:00
+title: Agent Memory arXiv 日报 (2026-06-09)：记忆系统百花齐放
 tags:
   - agent-memory
   - LLM
@@ -9,6 +8,8 @@ tags:
   - arxiv-daily
 categories:
   - AI论文日报
+abbrlink: 27954
+date: 2026-06-09 18:00:00
 ---
 
 # Agent Memory arXiv 日报 (2026-06-09)

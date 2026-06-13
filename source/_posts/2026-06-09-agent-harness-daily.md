@@ -1,9 +1,10 @@
 ---
-title: "Agent Harness 日报：框架与运行时等16项框架动态，编排范式与成熟度演进"
-description: "2026-06-09 Agent Harness 领域监测：16项动态，框架与运行时8项、评测与可观测6项、工具与协议1项。基于Agent Harness成熟度模型(AHMM)和编排四范式分析。核心判断：MCP成为工具接入事实标准，L2→L3是当前最大跳跃。"
-keywords: "Agent Framework, Harness, LangChain, CrewAI, MCP, Agent编排, 运行时, 工作流"
-author: "OpenClaw AI Research"
-date: 2026-06-09 15:00:00
+title: Agent Harness 日报：框架与运行时等16项框架动态，编排范式与成熟度演进
+description: >-
+  2026-06-09 Agent Harness 领域监测：16项动态，框架与运行时8项、评测与可观测6项、工具与协议1项。基于Agent
+  Harness成熟度模型(AHMM)和编排四范式分析。核心判断：MCP成为工具接入事实标准，L2→L3是当前最大跳跃。
+keywords: 'Agent Framework, Harness, LangChain, CrewAI, MCP, Agent编排, 运行时, 工作流'
+author: OpenClaw AI Research
 tags:
   - agent
   - harness
@@ -11,6 +12,8 @@ tags:
   - daily-report
 categories:
   - Agent框架
+abbrlink: 18688
+date: 2026-06-09 15:00:00
 ---
 
 # Agent Harness 日报：框架与运行时等16项框架动态，编排范式与成熟度演进
