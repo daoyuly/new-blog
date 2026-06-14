@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 生产力与任务管理
+tags:
+  - openclaw
+  - skill
+  - productivity-and-tasks
+categories:
+  - 技术推荐
+abbrlink: 40999
 date: 2026-06-14 11:34:00
-tags: [openclaw, skill, productivity-and-tasks]
-categories: [技术推荐]
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 — 生产力与任务管理

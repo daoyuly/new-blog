@@ -1,0 +1,89 @@
+---
+title: Agent 周报 | 2026-06-14：环境工程、知识编排与评估标准化
+categories:
+  - arxiv
+  - agent
+tags:
+  - agent
+  - multi-agent
+  - evaluation
+  - knowledge-graph
+  - reward-model
+  - neuro-symbolic
+  - RL
+abbrlink: 60919
+date: 2026-06-14 12:04:00
+---
+
+本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：**Agent 环境工程**、**多智能体编排与奖励建模**、**Agent 评估标准化**。以下是精选论文与趋势分析。
+
+---
+
+## 🔥 本周核心趋势
+
+### 趋势一：从"设计 Agent"到"设计 Agent 的环境"
+
+Agent 的瓶颈不再是工作流设计，而是环境设计——资源、约束、接口如何塑造 Agent 行为。
+
+- **EurekAgent** ([#3](https://arxiv.org/abs/2606.13662)) 提出 **Environment Engineering** 四维度框架：权限工程、制品工程、预算工程、人机协作工程。以不到 $11 的 API 成本发现新的 26 圆 packing 最优解，刷新数学和 ML 任务 SOTA。
+- **Neuro-Symbolic Agents for Regulated Process Automation** ([#19](https://arxiv.org/abs/2606.13405)) 将法规、流程模型等符号结构作为 Agent 核心架构组件（而非外部监控），提出 **compliance-by-construction** 范式——在结构层面防止违规，而非事后 guardrail。
+
+> 💡 **洞察**：Agent 可靠性的关键不在于 Agent 本身多聪明，而在于环境如何约束和引导其行为。这与软件工程中"靠类型系统而非测试保证正确性"异曲同工。
+
+### 趋势二：多智能体编排的奖励建模
+
+多 Agent 系统的编排质量如何量化？本周两篇论文从不同角度回答。
+
+- **OrchRM** ([#10](https://arxiv.org/abs/2606.13598)) 提出 **编排级奖励建模**：利用多 Agent 执行的中间制品构造 win-lose 对，训练 Bradley-Terry 奖励模型。相比依赖子 Agent rollout 的方法，token 效率提升 10x，测试时 scaling 精度提升 8%。
+- **Multiagent Protocols with Aggregated Confidence** ([#11](https://arxiv.org/abs/2606.13591)) 解决多 Agent 系统缺乏整体置信度的问题：将各 Agent 置信度信号归一化后通过 soft voting 或 Bayesian fusion 聚合，AUARC 显著优于单 Agent 和标准 debate 基线。
+
+> 💡 **洞察**：多 Agent 系统正从"拼凑多个模型"走向"可量化、可优化的编排"。奖励建模和置信度聚合是两条互补路径。
+
+### 趋势三：Agent 评估走向标准化与 Agent 化
+
+评估碎片化是 Agent 领域的老问题，本周有突破性进展。
+
+- **AgentBeats** ([#6](https://arxiv.org/abs/2606.13608)) 提出 **Agentified Agent Assessment (AAA)**：评估本身由 judge agent 执行，所有参与者通过 A2A（任务管理）和 MCP（工具访问）标准协议交互。5 个月开放竞赛吸引 298 个 judge agent 和 467 个被评 agent，验证了跨异构场景的可行性。
+- **EpiBench** ([#9](https://arxiv.org/abs/2606.13602)) 面向表观遗传学分析的 Agent 可验证基准，106 个评测项。最强系统 GPT-5.5/Pi 通过率仅 45%，揭示科学分析 Agent 仍需深层领域判断力。
+
+> 💡 **洞察**：评估协议标准化（A2A/MCP）是 Agent 生态成熟的关键基础设施。AAA 模式可能成为 Agent 评估的新范式。
+
+### 趋势四：Agent 原生知识基础设施
+
+Agent 需要的不是摘要和引用，而是结构化的科学知识图。
+
+- **Agents-K1** ([#2](https://arxiv.org/abs/2606.13669)) 构建端到端知识编排管线：多模态解析器提取全文实体/证据/引用/关系，4B 模型 GRPO 训练做信息抽取，graphanything CLI 统一 Web 搜索+图检索+跨文档遍历。处理 246 万篇论文构建 **Scholar-KG**，开放 100 万篇子集。
+
+> 💡 **洞察**：Agent-native knowledge graph vs 传统 RAG，就像结构化数据库 vs 全文检索的差距。知识的结构化程度直接决定推理的深度。
+
+---
+
+## 📋 其他 Agent 相关论文
+
+| 论文 | 核心贡献 |
+|------|---------|
+| **Multi-Agent RL for Three-Sided Dispatch** ([#8](https://arxiv.org/abs/2606.13604)) | DoorDash 生产环境部署的多 Agent RL，从延迟市场反馈中学习调度策略 |
+| **IterCAD** ([#22](https://arxiv.org/abs/2606.13368)) | 闭环交互式多模态 Agent，多轮对话驱动的 CAD 生成与编辑 |
+
+---
+
+## 🧭 本周趋势总结
+
+```
+Agent 研究重心迁移：
+
+  2024:  Agent 能做什么？(capability)
+  2025:  Agent 怎么协作？(orchestration)  
+  2026:  Agent 怎么可靠？(environment engineering + evaluation)
+          ↓
+  环境工程 → 约束行为而非纠正行为
+  评估标准化 → A2A/MCP 协议统一评测
+  奖励建模 → 编排质量可量化可优化
+  知识编排 → Agent-native KG 替代 flat RAG
+```
+
+Agent 领域正从"能力展示"走向"工程化落地"，可靠性和可评估性成为核心关切。
+
+---
+
+*数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)，2026-06-11 发布论文*
