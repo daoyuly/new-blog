@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering：以诗词网站为例的自运营系统设计
-date: 2026-06-15 10:24:00
 tags:
   - Loop Engineering
   - 自运营
@@ -9,6 +8,8 @@ tags:
   - 系统设计
 categories:
   - 系统设计
+abbrlink: 64886
+date: 2026-06-15 10:24:00
 ---
 
 # Loop Engineering：以诗词网站为例的自运营系统设计

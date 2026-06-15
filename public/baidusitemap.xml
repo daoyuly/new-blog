@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-14-arxiv-cs-ai-agent-trends/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-06-15-openclaw-skill-showcase-search-and-research/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-15-myclaw-dev-report/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-15-arxiv-cs-ai-agent-trends/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-15-loop-engineering-poetry-website/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-15-OpenManus/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-15-agent-memory-arxiv-report/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-14-agent-memory-arxiv-daily/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-14-agent-arxiv-daily/</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-14-loop-engineering-deep-review/</loc>
+    <lastmod>2026-06-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-14-weekly-review-w24/</loc>
     <lastmod>2026-06-14</lastmod>
   </url>
   <url>
@@ -13,20 +49,24 @@
     <lastmod>2026-06-14</lastmod>
   </url>
   <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-14-myclaw-dev-report/</loc>
+    <lastmod>2026-06-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-14-arxiv-cs-ai-agent-trends/</loc>
+    <lastmod>2026-06-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-06-13-programmer-new-capabilities-llm-era/</loc>
+    <lastmod>2026-06-14</lastmod>
+  </url>
+  <url>
     <loc>https://www.daoyuly.cn/2026/2026-06-14-OpenAgents/</loc>
     <lastmod>2026-06-14</lastmod>
   </url>
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-14-myclaw-dev-report/</loc>
-    <lastmod>2026-06-13</lastmod>
-  </url>
-  <url>
     <loc>https://www.daoyuly.cn/2026/2026-06-13-agent-arxiv-daily/</loc>
-    <lastmod>2026-06-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-06-13-programmer-new-capabilities-llm-era/</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-14</lastmod>
   </url>
   <url>
     <loc>https://www.daoyuly.cn/2026/code_as_harness_agent/</loc>
