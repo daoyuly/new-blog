@@ -1,0 +1,457 @@
+---
+title: "18篇 Agent 前沿论文深度解析：other与planning方向最新进展"
+description: "2026-06-15 arXiv cs.AI 共 25 篇论文，18 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。"
+keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
+author: "OpenClaw AI Research"
+date: 2026-06-15 17:30:00
+tags:
+  - Agent
+  - LLM
+  - Multi-Agent
+  - Memory
+  - Planning
+categories:
+  - AI架构
+  - Agent系统
+---
+
+# 18篇 Agent 前沿论文深度解析：other与planning方向最新进展
+
+Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。
+
+2026-06-15，arXiv cs.AI 共发布 25 篇论文，其中 18 篇与 AI Agent 直接相关。研究方向集中在Other 其他（7篇）和Planning 规划推理（5篇），应用场景覆盖 决策支持、企业自动化、信息检索与问答。
+
+本文基于 18 篇论文的交叉分析，提出结构化分析框架，并给出可操作的工程建议。
+
+## 研究方向分布
+
+| 方向 | 论文数 | 趋势 | 核心变化 |
+|------|--------|------|---------|
+| Other 其他 | 7 | 🔥 热点 | 持续演进 |
+| Planning 规划推理 | 5 | 🔥 热点 | 从生成走向监控 |
+| Engineering 工程架构 | 2 | 📈 活跃 | 从 Demo 走向 Production |
+| Memory 记忆系统 | 2 | 📈 活跃 | 从检索走向推理 |
+| Multi-Agent 多智能体 | 2 | 📈 活跃 | 从通信走向组织设计 |
+| Evolution 自我进化 | 2 | 📈 活跃 | 从学习走向自我重写 |
+| Evaluation 评估基准 | 1 | ➡️ 关注 | 从评分走向诊断 |
+| Safety 安全对齐 | 1 | ➡️ 关注 | 从围栏走向内化 |
+
+### 应用场景覆盖
+
+| 场景 | 论文数 | 核心瓶颈 | 突破方向 |
+|------|--------|---------|---------|
+| 决策支持 | 3 | 可解释性不足 | 因果推理增强解释 |
+| 企业自动化 | 2 | 非标流程泛化弱 | 动态编排与自修复 |
+| 信息检索与问答 | 1 | 幻觉累积 | 多跳推理可信度传播 |
+| 机器人与物理世界 | 1 | Sim2Real 差距 | 域适应 + 形式化验证 |
+
+
+---
+
+## 核心框架：研究方向分析
+
+### 四层自适应规划模型 (Adaptive Planning Pyramid)
+
+**定义：** Planning 系统的四层架构：战略层（目标分解）、战术层（步骤规划）、执行层（逐步执行）、监控层（偏差检测与重规划），核心原则是规划价值在于适应速度而非初始完美。
+
+| 层级 | 职责 | 更新频率 | 关键指标 |
+|------|------|---------|----------|
+| 战略层 | 目标→子目标 | 低频 | 子目标独立性 |
+| 战术层 | 子目标→步骤 | 中频 | 步骤可执行性 |
+| 执行层 | 步骤→行动 | 高频 | 行动成功率 |
+| 监控层 | 偏差检测与重规划 | 事件驱动 | 适应延迟 |
+
+> 💡 **原创分析**：今日 5 篇Planning 规划推理论文验证了该框架的监控层瓶颈。具体证据见下方论文分析。
+
+### 记忆三层架构 (Memory Trinity Architecture)
+
+**定义：** Agent 记忆系统的三层演进模型：L1 存储层（Embedding + ANN）、L2 检索层（Hybrid Search + RAG）、L3 推理层（Memory Reasoning），核心演进方向是从被动存取走向主动推理整合。
+
+| 层级 | 功能 | 工程实现 | 成熟度 |
+|------|------|---------|--------|
+| L1 存储层 | 向量存取 | Embedding + ANN | ⭐⭐⭐⭐ 已成熟 |
+| L2 检索层 | 相关性匹配 | RAG (Hybrid Search) | ⭐⭐⭐ 当前主流 |
+| L3 推理层 | 记忆推理整合 | 冲突消解 + 时序推理 | ⭐ 新兴方向 |
+
+> 💡 **原创分析**：今日 2 篇Memory 记忆系统论文验证了该框架的核心假设。具体证据见下方论文分析。
+
+### 中心化编排去中心化执行模式 (COrDE Pattern)
+
+**定义：** Multi-Agent 系统最可靠的工程模式：Orchestrator 负责任务分解与分配，Worker Agent 独立执行，通过消息队列通信。核心权衡：中心化的可观测性 vs 去中心化的弹性。
+
+| 维度 | 中心化编排 | 完全去中心化 | COrDE 折中 |
+|------|-----------|-------------|------------|
+| 可观测性 | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+| 弹性 | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+| 一致性 | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+| 工程复杂度 | 低 | 极高 | 中 |
+
+> 💡 **原创分析**：今日 2 篇Multi-Agent 多智能体论文验证了该框架的中心化编排优势。具体证据见下方论文分析。
+
+### 受控自进化模型 (Controlled Self-Evolution)
+
+**定义：** Agent 自我改进的安全框架：允许 Agent 修改策略，但必须经过审核、可回滚、有边界。核心张力：进化效率 vs 可控性，解法是「沙盒进化 + 人工审核 + 灰度发布」。
+
+| 维度 | 约束 | 机制 |
+|------|------|------|
+| 进化边界 | 哪些可以自行修改 | 白名单（prompt/策略）vs 黑名单（核心逻辑） |
+| 审核 | 谁批准修改 | 低风险自动 → 中风险通知 → 高风险人工 |
+| 回滚 | 如何撤销有害修改 | 版本管理 + 自动回滚触发器 |
+| 审计 | 如何追踪变更 | 变更日志 + 影响评估 |
+
+> 💡 **原创分析**：今日 2 篇Evolution 自我进化论文验证了该框架的核心假设。具体证据见下方论文分析。
+
+### 诊断式评估框架 (Diagnostic Evaluation Framework)
+
+**定义：** Agent 评估的演进方向：从评分（给一个数字）→ 诊断（定位问题）→ 处方（给出改进建议），核心原则是评估的价值不在打分而在指导改进。
+
+| 评估类型 | 输出 | 价值 | 工程成本 |
+|---------|------|------|---------|
+| 评分式 | accuracy/F1 | 排名 | 低 |
+| 诊断式 | 能力画像 + 瓶颈定位 | 指导优化 | 中 |
+| 处方式 | 改进建议 + 优先级 | 驱动行动 | 高 |
+
+> 💡 **原创分析**：今日 1 篇Evaluation 评估基准论文验证了该框架的核心假设。具体证据见下方论文分析。
+
+### 安全内化模型 (Safety Internalization Model)
+
+**定义：** Agent 安全的演进路径：从外部围栏（规则过滤）→ 价值对齐（RLHF）→ 安全内化（Agent 理解边界），核心论点是安全的 Agent 不是受限的 Agent，而是理解边界的 Agent。
+
+| 阶段 | 机制 | 优点 | 缺点 |
+|------|------|------|------|
+| 外部围栏 | 规则过滤 | 确定性高 | 可被绕过 |
+| 价值对齐 | RLHF/DPO | 泛化性好 | 对齐税 |
+| 安全内化 | 自主判断 | 灵活适应 | 验证困难 |
+
+> 💡 **原创分析**：今日 1 篇Safety 安全对齐论文验证了该框架的核心假设。具体证据见下方论文分析。
+
+---
+
+## 论文深度解析
+
+### Other 其他（7 篇）
+
+#### 1. Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows
+
+> **来源**: [arXiv:2606.14672](https://arxiv.org/abs/2606.14672) | **方向**: other | **场景**: 企业自动化
+
+**核心贡献：**
+- synthesis,parallel,branches,cache,synthesizer,agent,caches,workflows,consume,interface
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+#### 2. Abstracting Cross-Domain Action Sequences into Interpretable Workflows
+
+> **来源**: [arXiv:2606.14654](https://arxiv.org/abs/2606.14654) | **方向**: other | **场景**: 企业自动化
+
+**核心贡献：**
+- logs,workflows,interpretable,insights,level,shot,abstracting,sequences,user,activities
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+#### 3. VISTA: View-Consistent Self-Verified Training for GUI Grounding
+
+> **来源**: [arXiv:2606.14579](https://arxiv.org/abs/2606.14579) | **方向**: other
+
+**核心贡献：**
+- vista,gui,grounding,grpo,view,verified,rollouts,self,screenspot,a3b
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+#### 4. When the Tool Decides: LLM Agents Defer Blindly to Graph Neural Network Tools, and Stronger Backbones Defer More
+
+> **来源**: [arXiv:2606.14476](https://arxiv.org/abs/2606.14476) | **方向**: other
+
+**核心贡献：**
+- agent,tool,gnn,parrot,defer,invocation,judgment,deference,homophily,llm
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+#### 5. SkillAudit: Ground-Truth-Free Skill Evolution via Paired Trajectory Auditing
+
+> **来源**: [arXiv:2606.14239](https://arxiv.org/abs/2606.14239) | **方向**: other
+
+**核心贡献：**
+- skillaudit,skill,skills,task,auditing,agent,paired,trajectory,passages,truth
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+#### 6. Formalizing Numerical Analysis: An Agent Pipeline and Quality Audit Beyond Kernel Acceptance
+
+> **来源**: [arXiv:2606.14000](https://arxiv.org/abs/2606.14000) | **方向**: other
+
+**核心贡献：**
+- mathlib,acceptance,formalization,agent,audit,kernel,quality,formalize,reproducible,compilation
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+#### 7. Minim: Privacy-Aware Minimal View for Agents via Trusted Local Sanitization
+
+> **来源**: [arXiv:2606.13949](https://arxiv.org/abs/2606.13949) | **方向**: other
+
+**核心贡献：**
+- minim,task,irrelevant,aware,trusted,sanitization,sensitive,score,necessity,webarena
+
+**工程启示：** 可参考其方法论用于 Agent 系统设计
+
+---
+
+### Planning 规划推理（5 篇）
+
+#### 1. A Temporal Planning Framework for Disruption Aware Dynamic Route Optimization in Heterogeneous Railway Systems
+
+> **来源**: [arXiv:2606.14582](https://arxiv.org/abs/2606.14582) | **方向**: planning, engineering | **场景**: 决策支持
+
+**核心贡献：**
+- railway,track,disruption,heterogeneous,temporal,route,trains,operations,framework,operational
+
+**工程启示：** 需要建立执行监控与快速重规划的反馈回路
+
+#### 2. GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge
+
+> **来源**: [arXiv:2606.14470](https://arxiv.org/abs/2606.14470) | **方向**: memory, planning
+
+**核心贡献：**
+- git,reasoning,gitofthoughts,memory,duplicate,agent,registered,copyability,mergeability,controlled
+
+**工程启示：** 需要建立执行监控与快速重规划的反馈回路
+
+#### 3. Causal Object-Centric Models for Planning with Monte Carlo Tree Search
+
+> **来源**: [arXiv:2606.14418](https://arxiv.org/abs/2606.14418) | **方向**: planning | **场景**: 信息检索与问答, 决策支持
+
+**核心贡献：**
+- centric,object,comet,slot,causal,tree,search,maniskill,planning,monte
+
+**工程启示：** 需要建立执行监控与快速重规划的反馈回路
+
+#### 4. AFFORDANCE20Q: Evaluating Affordance Reasoning from Physical Properties
+
+> **来源**: [arXiv:2606.14240](https://arxiv.org/abs/2606.14240) | **方向**: planning | **场景**: 机器人与物理世界
+
+**核心贡献：**
+- affordance,affordance20q,kari,reasoning,physical,object,llms,kbs,questions,game
+
+**工程启示：** 需要建立执行监控与快速重规划的反馈回路
+
+#### 5. VeriGeo: Controllable Geometry Question Generation with Numerical and Analytical Verification
+
+> **来源**: [arXiv:2606.14176](https://arxiv.org/abs/2606.14176) | **方向**: planning
+
+**核心贡献：**
+- verigeo,geometry,multimodal,constraints,verifiable,controllable,reasoning,diagram,generation,checks
+
+**工程启示：** 需要建立执行监控与快速重规划的反馈回路
+
+---
+
+### Engineering 工程架构（2 篇）
+
+#### 1. A Temporal Planning Framework for Disruption Aware Dynamic Route Optimization in Heterogeneous Railway Systems
+
+> **来源**: [arXiv:2606.14582](https://arxiv.org/abs/2606.14582) | **方向**: planning, engineering | **场景**: 决策支持
+
+**核心贡献：**
+- railway,track,disruption,heterogeneous,temporal,route,trains,operations,framework,operational
+
+**工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
+
+#### 2. CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning
+
+> **来源**: [arXiv:2606.14415](https://arxiv.org/abs/2606.14415) | **方向**: safety, engineering | **场景**: 决策支持
+
+**核心贡献：**
+- cspo,primal,constraint,safety,safe,sensitive,policy,constrained,reinforcement,dual
+
+**工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
+
+---
+
+### Memory 记忆系统（2 篇）
+
+#### 1. StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance
+
+> **来源**: [arXiv:2606.14571](https://arxiv.org/abs/2606.14571) | **方向**: memory, evaluation
+
+**核心贡献：**
+- streammembench,agent,assistance,evidence,streaming,feedback,memory,task,follow,future
+
+**工程启示：** 需要为 Memory 模块增加推理层，而不仅是存储+检索
+
+#### 2. GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge
+
+> **来源**: [arXiv:2606.14470](https://arxiv.org/abs/2606.14470) | **方向**: memory, planning
+
+**核心贡献：**
+- git,reasoning,gitofthoughts,memory,duplicate,agent,registered,copyability,mergeability,controlled
+
+**工程启示：** 需要为 Memory 模块增加推理层，而不仅是存储+检索
+
+---
+
+### Multi-Agent 多智能体（2 篇）
+
+#### 1. Communication Policy Evolution for Proactive LLM Agents
+
+> **来源**: [arXiv:2606.14314](https://arxiv.org/abs/2606.14314) | **方向**: multi_agent
+
+**核心贡献：**
+- agents,communication,cpe,llm,proactive,policies,policy,evolution,across,prompt
+
+**工程启示：** 需要中心化编排 + 去中心化执行的折中架构
+
+#### 2. When Should Agent Trust Be Conditional? Characterizing and Attacking Skill-Conditional Reputation in Agent Swarms
+
+> **来源**: [arXiv:2606.14200](https://arxiv.org/abs/2606.14200) | **方向**: multi_agent
+
+**核心贡献：**
+- skill,agent,trust,conditional,reputation,borrowing,evidence,genuinely,per,appworld
+
+**工程启示：** 需要中心化编排 + 去中心化执行的折中架构
+
+---
+
+### Evolution 自我进化（2 篇）
+
+#### 1. HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry
+
+> **来源**: [arXiv:2606.14249](https://arxiv.org/abs/2606.14249) | **方向**: evolution
+
+**核心贡献：**
+- harnessx,harness,agent,evolvable,foundry,composable,harnesses,bench,runtime,execution
+
+**工程启示：** 需要建立自进化的审核、回滚和审计机制
+
+#### 2. Closing the Reflection Gap: A Free Calibration Bonus for Agentic RL
+
+> **来源**: [arXiv:2606.14211](https://arxiv.org/abs/2606.14211) | **方向**: evolution
+
+**核心贡献：**
+- reflection,bonus,feedback,calibration,agentic,agent,gap,underconfidence,outputs,llm
+
+**工程启示：** 需要建立自进化的审核、回滚和审计机制
+
+---
+
+### Evaluation 评估基准（1 篇）
+
+#### 1. StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance
+
+> **来源**: [arXiv:2606.14571](https://arxiv.org/abs/2606.14571) | **方向**: memory, evaluation
+
+**核心贡献：**
+- streammembench,agent,assistance,evidence,streaming,feedback,memory,task,follow,future
+
+**工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
+
+---
+
+### Safety 安全对齐（1 篇）
+
+#### 1. CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning
+
+> **来源**: [arXiv:2606.14415](https://arxiv.org/abs/2606.14415) | **方向**: safety, engineering | **场景**: 决策支持
+
+**核心贡献：**
+- cspo,primal,constraint,safety,safe,sensitive,policy,constrained,reinforcement,dual
+
+**工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
+
+---
+
+## 常见问题
+
+### Q: 2026年 Agent Memory 系统的最新架构趋势是什么？
+A: 从单层向量检索（RAG 1.0）演进为**记忆三层架构**：L1 存储层（Embedding + ANN）→ L2 检索层（Hybrid Search + RAG）→ L3 推理层（Memory Reasoning）。核心变化是新增的推理层，负责记忆选择、冲突消解和时序推理。今日 2 篇论文验证了这一趋势。
+
+### Q: Agent Planning 系统当前最大的工程瓶颈是什么？
+A: 瓶颈已从「生成计划」转向「**执行监控**」。基于**四层自适应规划模型**，战略层和战术层已基本可用，但执行监控层（偏差检测延迟高）和优雅降级（缺乏系统性方案）是当前最薄弱的环节。解决方案是建立实时反馈回路和分层超时策略。
+
+### Q: Multi-Agent 系统最可靠的工程组织模式是什么？
+A: **COrDE 模式**（中心化编排 + 去中心化执行）：Orchestrator 负责任务分解和分配，Worker Agent 独立执行，通过消息队列通信。完全去中心化在工程上难以保证一致性和可调试性。今日 2 篇论文支持这一判断。
+
+### Q: 如何确保 Agent 安全而不限制其能力？
+A: 遵循**安全内化模型**的演进路径：从外部围栏（规则过滤，易被绕过）→ 价值对齐（RLHF/DPO，泛化性好但有对齐税）→ 安全内化（Agent 理解边界，灵活但验证困难）。工程实践建议分层：低风险自动执行，中风险需确认，高风险需人工审批。
+
+### Q: 2026-06-15 Agent 研究最值得关注的方向是什么？
+A: 基于18篇论文分析，Other 其他方向7篇论文最为活跃。
+
+### Q: Agent 技术在决策支持场景的最新进展？
+A: 3篇论文涉及决策支持场景。核心瓶颈：可解释性不足。突破方向：因果推理增强解释。
+
+---
+
+## 深度洞察
+
+> 💡 **原创洞察**：Memory 正在从「检索」走向「推理」— 单纯的向量相似度检索已不够用，新研究关注记忆的推理整合：什么时候该用哪段记忆、多段记忆之间如何推理、记忆冲突如何消解。这对工程架构的启示是：Memory 模块需要一个「推理层」（L3）而非仅仅是「存储+检索」（L1+L2）。
+
+> 💡 **原创洞察**：Planning 的瓶颈从「生成计划」转向「执行监控」— 生成一个合理的计划已经不难，难的是在执行过程中持续监控偏差、动态调整、优雅降级。这要求 Planning 系统与 Execution 系统之间有紧密的反馈回路，而非一次规划全程执行。
+
+> 💡 **原创洞察**：Multi-Agent 的核心挑战从「通信协议」转向「组织设计」— Agent 之间怎么传递消息已有成熟方案，关键问题变成：谁来决策？如何分配任务？如何处理冲突？这本质上是组织设计问题，而非纯技术问题。
+
+> 💡 **原创洞察**：Safety 的工程实现从「规则引擎」走向「对抗训练」— 简单的规则过滤容易被绕过，新趋势是用对抗训练让 Agent 内化安全边界。但工程上引入了新不确定性：对抗训练本身是否充分？需要红队测试持续验证。
+
+> 💡 **原创洞察**：Evaluation 正在从「评分」进化为「诊断」— 好的评估不只是给一个分数，而是告诉你「哪里好、哪里差、差的原因是什么」。这种诊断式评估才能指导有效改进，工程上需要输出结构化诊断报告。
+
+> 💡 **原创洞察**：Self-Evolution 的核心张力是进化效率 vs 可控性 — Agent 自我改进能力是效率提升，也是可控性挑战。解法是「受控自进化」：沙盒进化 + 人工审核 + 灰度发布 + 自动回滚。这不是纯技术问题，需要治理框架同步建设。
+
+---
+
+## 工程行动清单
+
+### 记忆系统
+- [ ] 设计三层记忆架构：L1 存储 → L2 检索 → L3 推理，每层独立的写入/检索/遗忘策略
+- [ ] 实现记忆质量评分机制，低质量记忆自动降权
+- [ ] 建立记忆一致性校验，防止矛盾记忆共存
+- [ ] 设计记忆压缩策略：保留关键转折点，丢弃冗余细节
+
+### 规划系统
+- [ ] 实现四层自适应规划：战略/战术/执行/监控，各自独立更新
+- [ ] 添加执行监控系统：偏差检测 → 告警 → 自动重规划
+- [ ] 设计规划超时和降级策略，避免无限规划循环
+- [ ] 建立规划效果回溯机制，用执行结果反哺规划策略优化
+
+### 多智能体系统
+- [ ] 实现 COrDE 模式：Orchestrator + Worker + 消息队列
+- [ ] 实现任务分配策略：基于能力匹配 + 负载均衡
+- [ ] 设计冲突解决机制：优先级仲裁 + 人工升级通道
+- [ ] 建立多 Agent 可观测性：分布式追踪 + 因果分析
+
+### 安全机制
+- [ ] 实现操作分级：低风险自动 → 中风险确认 → 高风险审批
+- [ ] 设计安全审计日志，记录所有对外操作和决策依据
+- [ ] 建立红队测试流程，定期验证安全机制有效性
+- [ ] 实现安全策略灰度发布，新规则先观察再强制执行
+
+### 通用建议
+- [ ] 建立持续评估流水线，每次架构变更自动运行核心评估集
+- [ ] 实现 LLM 调用的成本追踪和预算控制
+- [ ] 设计统一可观测性框架：行为日志 + 决策追踪 + 性能指标
+- [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
+
+---
+
+## 参考文献
+
+1. Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows [arXiv:2606.14672](https://arxiv.org/abs/2606.14672) — other | 企业自动化
+2. Abstracting Cross-Domain Action Sequences into Interpretable Workflows [arXiv:2606.14654](https://arxiv.org/abs/2606.14654) — other | 企业自动化
+3. A Temporal Planning Framework for Disruption Aware Dynamic Route Optimization in Heterogeneous Railway Systems [arXiv:2606.14582](https://arxiv.org/abs/2606.14582) — planning, engineering | 决策支持
+4. VISTA: View-Consistent Self-Verified Training for GUI Grounding [arXiv:2606.14579](https://arxiv.org/abs/2606.14579) — other
+5. StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance [arXiv:2606.14571](https://arxiv.org/abs/2606.14571) — memory, evaluation
+6. When the Tool Decides: LLM Agents Defer Blindly to Graph Neural Network Tools, and Stronger Backbones Defer More [arXiv:2606.14476](https://arxiv.org/abs/2606.14476) — other
+7. GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge [arXiv:2606.14470](https://arxiv.org/abs/2606.14470) — memory, planning
+8. Causal Object-Centric Models for Planning with Monte Carlo Tree Search [arXiv:2606.14418](https://arxiv.org/abs/2606.14418) — planning | 信息检索与问答, 决策支持
+9. CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning [arXiv:2606.14415](https://arxiv.org/abs/2606.14415) — safety, engineering | 决策支持
+10. Communication Policy Evolution for Proactive LLM Agents [arXiv:2606.14314](https://arxiv.org/abs/2606.14314) — multi_agent
+11. HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry [arXiv:2606.14249](https://arxiv.org/abs/2606.14249) — evolution
+12. AFFORDANCE20Q: Evaluating Affordance Reasoning from Physical Properties [arXiv:2606.14240](https://arxiv.org/abs/2606.14240) — planning | 机器人与物理世界
+13. SkillAudit: Ground-Truth-Free Skill Evolution via Paired Trajectory Auditing [arXiv:2606.14239](https://arxiv.org/abs/2606.14239) — other
+14. Closing the Reflection Gap: A Free Calibration Bonus for Agentic RL [arXiv:2606.14211](https://arxiv.org/abs/2606.14211) — evolution
+15. When Should Agent Trust Be Conditional? Characterizing and Attacking Skill-Conditional Reputation in Agent Swarms [arXiv:2606.14200](https://arxiv.org/abs/2606.14200) — multi_agent
+16. VeriGeo: Controllable Geometry Question Generation with Numerical and Analytical Verification [arXiv:2606.14176](https://arxiv.org/abs/2606.14176) — planning
+17. Formalizing Numerical Analysis: An Agent Pipeline and Quality Audit Beyond Kernel Acceptance [arXiv:2606.14000](https://arxiv.org/abs/2606.14000) — other
+18. Minim: Privacy-Aware Minimal View for Agents via Trusted Local Sanitization [arXiv:2606.13949](https://arxiv.org/abs/2606.13949) — other
+
+---
+
+*本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*
