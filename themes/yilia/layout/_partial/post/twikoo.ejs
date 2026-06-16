@@ -1,0 +1,11 @@
+<div class="twikoo-comment">
+	<div id="tcomment"></div>
+	<script src="<%= theme.twikoo.cdn || 'https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js' %>"></script>
+	<script>
+		twikoo.init({
+			envId: '<%= theme.twikoo.envId %>',
+			el: '#tcomment',
+			path: '<%= url %>'
+		});
+	</script>
+</div>
