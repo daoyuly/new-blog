@@ -1,8 +1,14 @@
 ---
 title: MyClaw 开发日报 - Day 77 (发布准备)
+tags:
+  - MyClaw
+  - 开发日记
+  - Electron
+  - OpenClaw
+categories:
+  - MyClaw 开发日记
+abbrlink: 7007
 date: 2026-06-16 04:36:12
-tags: [MyClaw, 开发日记, Electron, OpenClaw]
-categories: [MyClaw 开发日记]
 ---
 
 # MyClaw 开发日报 - Day 77 (发布准备)

@@ -1,6 +1,5 @@
 ---
 title: Agent Memory arXiv 日报 - 2026-06-16
-date: 2026-06-16 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -11,6 +10,8 @@ tags:
 categories:
   - Agent Memory
   - 论文追踪
+abbrlink: 47343
+date: 2026-06-16 18:00:00
 ---
 
 # Agent Memory arXiv 日报 - 2026-06-16

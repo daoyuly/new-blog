@@ -6,6 +6,7 @@ tags:
   - 人机交互
 categories:
   - 思考
+abbrlink: 39244
 date: 2026-06-15 19:00:00
 ---
 

@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.daoyuly.cn">
-  <title>Loop Engineering：以诗词网站为例的自运营系统设计 | 刘道玉 AI 工作坊</title>
+  <title>Loop Engineering：让诗词网站自己运转 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
   
   <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-15-loop-engineering-poetry-website/">
-  <meta name="description" content="Loop Engineering：以诗词网站为例的自运营系统设计什么是 Loop EngineeringLoop Engineering 是一种面向高级目标的完成机制。它不把系统当作一次性交付的产物，而是当作一个持续运转、自我优化的闭环。核心思路：  系统即运营 — 不存在”开发完”这个节点，系统上线只是起点 指标驱动迭代 — 用真实数据（阅读量、点赞量）而非直觉驱动每次改进 工具即回路 — 分析">
+  <meta name="description" content="Loop Engineering：让诗词网站自己运转Loop Engineering 不把系统当一次性交付的产物，而是当飞轮——上线只是起点，转起来才是正经事。 三个核心：  系统即运营 — 没有”开发完”这个节点 指标驱动 — 看数据，不看直觉 工具即回路 — 分析器、选择器、生成器自动衔接  123反馈 → 分析 → 洞察 → 调整 → 生成 → 触达 → 反馈...  ↑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Loop Engineering：以诗词网站为例的自运营系统设计">
+<meta property="og:title" content="Loop Engineering：让诗词网站自己运转">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-15-loop-engineering-poetry-website/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="Loop Engineering：以诗词网站为例的自运营系统设计什么是 Loop EngineeringLoop Engineering 是一种面向高级目标的完成机制。它不把系统当作一次性交付的产物，而是当作一个持续运转、自我优化的闭环。核心思路：  系统即运营 — 不存在”开发完”这个节点，系统上线只是起点 指标驱动迭代 — 用真实数据（阅读量、点赞量）而非直觉驱动每次改进 工具即回路 — 分析">
+<meta property="og:description" content="Loop Engineering：让诗词网站自己运转Loop Engineering 不把系统当一次性交付的产物，而是当飞轮——上线只是起点，转起来才是正经事。 三个核心：  系统即运营 — 没有”开发完”这个节点 指标驱动 — 看数据，不看直觉 工具即回路 — 分析器、选择器、生成器自动衔接  123反馈 → 分析 → 洞察 → 调整 → 生成 → 触达 → 反馈...  ↑">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-15T02:24:00.000Z">
-<meta property="article:modified_time" content="2026-06-15T04:11:50.609Z">
+<meta property="article:modified_time" content="2026-06-18T04:01:59.744Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI Agent">
 <meta property="article:tag" content="系统设计">
@@ -284,7 +284,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Loop Engineering：以诗词网站为例的自运营系统设计
+      Loop Engineering：让诗词网站自己运转
     </h1>
   
 
@@ -297,32 +297,32 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Loop-Engineering：以诗词网站为例的自运营系统设计"><a href="#Loop-Engineering：以诗词网站为例的自运营系统设计" class="headerlink" title="Loop Engineering：以诗词网站为例的自运营系统设计"></a>Loop Engineering：以诗词网站为例的自运营系统设计</h1><h2 id="什么是-Loop-Engineering"><a href="#什么是-Loop-Engineering" class="headerlink" title="什么是 Loop Engineering"></a>什么是 Loop Engineering</h2><p>Loop Engineering 是一种面向高级目标的完成机制。它不把系统当作一次性交付的产物，而是当作一个<strong>持续运转、自我优化的闭环</strong>。核心思路：</p>
+        <h1 id="Loop-Engineering：让诗词网站自己运转"><a href="#Loop-Engineering：让诗词网站自己运转" class="headerlink" title="Loop Engineering：让诗词网站自己运转"></a>Loop Engineering：让诗词网站自己运转</h1><p>Loop Engineering 不把系统当一次性交付的产物，而是当飞轮——上线只是起点，转起来才是正经事。</p>
+<p>三个核心：</p>
 <ol>
-<li><strong>系统即运营</strong> — 不存在”开发完”这个节点，系统上线只是起点</li>
-<li><strong>指标驱动迭代</strong> — 用真实数据（阅读量、点赞量）而非直觉驱动每次改进</li>
-<li><strong>工具即回路</strong> — 分析工具、选择器、生成器都是回路上的齿轮，自动衔接</li>
+<li><strong>系统即运营</strong> — 没有”开发完”这个节点</li>
+<li><strong>指标驱动</strong> — 看数据，不看直觉</li>
+<li><strong>工具即回路</strong> — 分析器、选择器、生成器自动衔接</li>
 </ol>
-<p>用一张图理解：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用户反馈 → 数据分析 → 洞察 → 调整策略 → 内容生成 → 用户触达 → 反馈...</span><br><span class="line">     ↑                                                          ↓</span><br><span class="line">     └────────────── Loop Engineering ──────────────────────────┘</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">反馈 → 分析 → 洞察 → 调整 → 生成 → 触达 → 反馈...</span><br><span class="line">  ↑                                        ↓</span><br><span class="line">  └──────── Loop Engineering ──────────────┘</span><br></pre></td></tr></table></figure>
 
-<p>这不是传统的”开发→上线→维护”线性模式，而是一个永远在转的飞轮。</p>
+<p>不是”开发→上线→维护”的线性流程，是一个永远在转的圈。</p>
 <hr>
-<h2 id="具体实例：每日诗词网站"><a href="#具体实例：每日诗词网站" class="headerlink" title="具体实例：每日诗词网站"></a>具体实例：每日诗词网站</h2><h3 id="产品定义"><a href="#产品定义" class="headerlink" title="产品定义"></a>产品定义</h3><p>一个诗词展示网站，核心交互极简：<strong>每天展示一首诗</strong>。</p>
-<p>但”选哪首诗”这件事，藏着 Loop Engineering 的全部精髓。</p>
-<h3 id="诗从哪里来：多维度选择器"><a href="#诗从哪里来：多维度选择器" class="headerlink" title="诗从哪里来：多维度选择器"></a>诗从哪里来：多维度选择器</h3><p>诗词选择不是随机的，也不是编辑人工定的。它由一个<strong>诗词选择器</strong>自动完成，输入维度包括：</p>
+<h2 id="每日诗词网站"><a href="#每日诗词网站" class="headerlink" title="每日诗词网站"></a>每日诗词网站</h2><p>核心交互极简：<strong>每天一首诗</strong>。</p>
+<p>但”选哪首”这件事，藏着 Loop Engineering 的全部。</p>
+<h3 id="多维度选择器"><a href="#多维度选择器" class="headerlink" title="多维度选择器"></a>多维度选择器</h3><p>选诗不是随机的，也不是编辑拍板的。一个选择器自动完成，输入维度：</p>
 <table>
 <thead>
 <tr>
 <th>维度</th>
-<th>数据来源</th>
-<th>示例</th>
+<th>来源</th>
+<th>例子</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>时间</td>
 <td>系统时钟</td>
-<td>清晨→王维《山居秋暝》；深夜→李白《月下独酌》</td>
+<td>清晨→《山居秋暝》；深夜→《月下独酌》</td>
 </tr>
 <tr>
 <td>地点</td>
@@ -342,165 +342,109 @@ var _hmt = _hmt || [];
 <tr>
 <td>用户记忆</td>
 <td>历史交互</td>
-<td>已展示过的降权；用户点赞过的风格提权</td>
+<td>展示过的降权；点赞过的风格提权</td>
 </tr>
 <tr>
 <td>历史上的今天</td>
 <td>历史数据</td>
-<td>6月15日→与该日期相关的诗词事件&#x2F;诗人诞辰</td>
+<td>6月15日→相关诗词事件&#x2F;诗人诞辰</td>
 </tr>
 </tbody></table>
-<p><strong>选择器算法</strong>本质上是一个加权评分模型：</p>
+<p>算法就是加权评分：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">score = w1 * time_relevance + w2 * location_relevance + \</span><br><span class="line">        w3 * weather_relevance + w4 * user_intent + \</span><br><span class="line">        w5 * novelty + w6 * historical_relevance</span><br></pre></td></tr></table></figure>
 
-<p>权重 <code>w1...w6</code> 不是固定的——它们由 Loop Engineering 的迭代机制自动调整。</p>
-<h3 id="怎么展示：记忆规律驱动的缺字-消失展示"><a href="#怎么展示：记忆规律驱动的缺字-消失展示" class="headerlink" title="怎么展示：记忆规律驱动的缺字&#x2F;消失展示"></a>怎么展示：记忆规律驱动的缺字&#x2F;消失展示</h3><p>这可能是最有趣的部分。展示一首诗不是一次性全部显示，而是模拟<strong>人类记忆的规律</strong>：</p>
+<p>关键：<code>w1...w6</code> 不固定，由迭代机制自动调。</p>
+<h3 id="缺字展示：帮人记住诗"><a href="#缺字展示：帮人记住诗" class="headerlink" title="缺字展示：帮人记住诗"></a>缺字展示：帮人记住诗</h3><p>最有趣的部分。展示一首诗不是一次全亮，而是模拟记忆规律：</p>
 <ol>
-<li><strong>首次展示</strong>：完整显示全诗，伴随赏析</li>
-<li><strong>二次遇见</strong>：随机缺1-2个字，用户需脑补（激活回忆）</li>
-<li><strong>三次遇见</strong>：缺字更多，或诗句逐行淡出消失</li>
-<li><strong>四次及以上</strong>：只显示诗名或首句，用户需回忆全诗</li>
+<li><strong>首次</strong>：完整显示 + 赏析</li>
+<li><strong>二次</strong>：缺1-2个字，脑补（激活回忆）</li>
+<li><strong>三次</strong>：缺更多，或诗句逐行淡出</li>
+<li>**四次+**：只剩诗名或首句</li>
 </ol>
-<p>缺字规则设计：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">展示次数 → 缺字比例</span><br><span class="line">  1次    →   0%</span><br><span class="line">  2次    →  15%</span><br><span class="line">  3次    →  35%</span><br><span class="line">  4次    →  55%</span><br><span class="line">  5次+   →  70%（只保留诗名+作者）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">展示次数 → 缺字比例</span><br><span class="line">  1次    →   0%</span><br><span class="line">  2次    →  15%</span><br><span class="line">  3次    →  35%</span><br><span class="line">  4次    →  55%</span><br><span class="line">  5次+   →  70%（只留诗名+作者）</span><br></pre></td></tr></table></figure>
 
-<p>消失效果：诗句从末尾开始渐隐，用户可以点击”我想起来了”展开，也可以选择”提示”显示首字。</p>
-<p>这背后的认知科学依据：</p>
+<p>诗句从末尾渐隐。用户可以点”我想起来了”展开，或点”提示”显示首字。</p>
+<p>背后的认知科学：</p>
 <ul>
-<li><strong>间隔重复（Spaced Repetition）</strong>：艾宾浩斯遗忘曲线——在即将遗忘时复习，记忆最牢固</li>
-<li><strong>提取练习效应（Retrieval Practice Effect）</strong>：主动回忆比被动重读更有效</li>
-<li><strong>必要难度（Desirable Difficulties）</strong>：适度增加回忆难度，长期记忆效果更好</li>
+<li><strong>间隔重复</strong>：即将遗忘时复习，记忆最牢</li>
+<li><strong>提取练习效应</strong>：主动回忆比被动重读管用</li>
+<li><strong>必要难度</strong>：适度增加回忆难度，长期记忆更好</li>
 </ul>
-<p>所以用户在这个网站上不是”读诗”，而是<strong>在记住诗</strong>。</p>
-<h3 id="迭代指标：阅读量与点赞量"><a href="#迭代指标：阅读量与点赞量" class="headerlink" title="迭代指标：阅读量与点赞量"></a>迭代指标：阅读量与点赞量</h3><p>Loop Engineering 的灵魂在于：<strong>用数据验证假设，用迭代逼近目标</strong>。</p>
-<h4 id="核心指标"><a href="#核心指标" class="headerlink" title="核心指标"></a>核心指标</h4><table>
+<p>所以用户不是在”读诗”，是在<strong>记诗</strong>。</p>
+<h3 id="指标驱动：阅读量和点赞量"><a href="#指标驱动：阅读量和点赞量" class="headerlink" title="指标驱动：阅读量和点赞量"></a>指标驱动：阅读量和点赞量</h3><p>Loop Engineering 的灵魂——<strong>用数据验证假设，用迭代逼近目标</strong>。</p>
+<p>核心指标：</p>
+<table>
 <thead>
 <tr>
 <th>指标</th>
-<th>定义</th>
+<th>什么意思</th>
 <th>优化方向</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>日阅读量</td>
-<td>每天打开页面的独立用户数</td>
+<td>独立访客数</td>
 <td>选诗精准度、推送时机</td>
 </tr>
 <tr>
 <td>点赞率</td>
-<td>点赞数 &#x2F; 阅读量</td>
-<td>诗词质量、展示体验、缺字策略</td>
+<td>点赞&#x2F;阅读</td>
+<td>诗词质量、展示体验</td>
 </tr>
 <tr>
 <td>回访率</td>
-<td>7天内重复访问的用户比例</td>
-<td>记忆机制粘性、内容新鲜感</td>
+<td>7天内再来的人</td>
+<td>记忆机制粘性</td>
 </tr>
 <tr>
 <td>完忆率</td>
-<td>缺字展示时用户点击”我想起来了”的比例</td>
+<td>缺字时点”想起来了”的比例</td>
 <td>缺字难度是否合适</td>
 </tr>
 </tbody></table>
-<h4 id="指标驱动迭代的实例"><a href="#指标驱动迭代的实例" class="headerlink" title="指标驱动迭代的实例"></a>指标驱动迭代的实例</h4><p><strong>假设</strong>：用户更喜欢与天气相关的诗。</p>
-<p><strong>验证</strong>：对比晴天和雨天，天气匹配诗的点赞率是否更高。</p>
-<p><strong>结果</strong>：雨天匹配率 +23%，晴天无显著差异。</p>
-<p><strong>行动</strong>：雨天加大天气维度权重 <code>w3</code>；晴天降低 <code>w3</code>，提升时间维度权重 <code>w1</code>。</p>
-<p>这就是一个完整的 Loop：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">观察数据 → 形成假设 → A/B测试 → 验证/推翻 → 调整参数 → 观察数据...</span><br></pre></td></tr></table></figure>
+<p>一个完整的 Loop 长这样：</p>
+<p>假设”用户更喜欢天气匹配的诗”→ 对比晴天雨天点赞率 → 雨天匹配率 +23%，晴天没差别 → 雨天加大 <code>w3</code>，晴天降 <code>w3</code> 提 <code>w1</code> → 继续观察。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">观察 → 假设 → 测试 → 验证/推翻 → 调参 → 观察...</span><br></pre></td></tr></table></figure>
 
-<h3 id="工具链：回路的齿轮"><a href="#工具链：回路的齿轮" class="headerlink" title="工具链：回路的齿轮"></a>工具链：回路的齿轮</h3><p>Loop Engineering 需要工具把每个环节串联起来，形成自动化回路：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────┐</span><br><span class="line">│                 Loop Engineering                 │</span><br><span class="line">│                                                  │</span><br><span class="line">│  ┌──────────┐   ┌──────────┐   ┌──────────┐    │</span><br><span class="line">│  │ 数据分析  │──→│  洞察生成 │──→│ 策略调整  │    │</span><br><span class="line">│  │  工具    │   │   工具   │   │   工具   │    │</span><br><span class="line">│  └──────────┘   └──────────┘   └──────────┘    │</span><br><span class="line">│       ↑                              │          │</span><br><span class="line">│       │         ┌──────────┐         │          │</span><br><span class="line">│       └─────────│ 内容生成  │←────────┘          │</span><br><span class="line">│                 │  工具    │                    │</span><br><span class="line">│                 └──────────┘                    │</span><br><span class="line">│                      │                          │</span><br><span class="line">│                      ↓                          │</span><br><span class="line">│              ┌──────────────┐                   │</span><br><span class="line">│              │  诗词选择器   │                   │</span><br><span class="line">│              │  展示渲染器   │                   │</span><br><span class="line">│              │  用户交互层   │                   │</span><br><span class="line">│              └──────────────┘                   │</span><br><span class="line">└─────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<h3 id="工具链"><a href="#工具链" class="headerlink" title="工具链"></a>工具链</h3><p>Loop Engineering 要工具串联成回路：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────────────────────┐</span><br><span class="line">│            Loop Engineering              │</span><br><span class="line">│                                          │</span><br><span class="line">│  数据分析 ──→ 洞察生成 ──→ 策略调整      │</span><br><span class="line">│      ↑                        │          │</span><br><span class="line">│      │        内容生成 ←───────┘          │</span><br><span class="line">│      │            │                      │</span><br><span class="line">│      └── 诗词选择器/展示渲染器/交互层 ────┘│</span><br><span class="line">└──────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
 
-<h4 id="工具1：数据分析与洞察"><a href="#工具1：数据分析与洞察" class="headerlink" title="工具1：数据分析与洞察"></a>工具1：数据分析与洞察</h4><ul>
-<li><strong>数据采集</strong>：页面访问、停留时长、点赞&#x2F;踩、缺字展开率、回访频次</li>
-<li><strong>聚合分析</strong>：按维度（天气&#x2F;时间&#x2F;地域&#x2F;诗词类型）拆解指标</li>
-<li><strong>异常检测</strong>：某天阅读量骤降 → 自动排查是否选诗不当</li>
-<li><strong>洞察输出</strong>：每日生成数据简报，推送至运营者</li>
-</ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;date&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026-06-14&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;insights&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;雨天+思乡类诗词点赞率比均值高 31%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;缺字率 35% 时完忆率最高（72%），55% 时骤降至 41%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;深夜时段（22:00-01:00）用户停留时长是白天的 2.3 倍&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;actions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;将缺字第三档从 55% 调整为 45%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;深夜时段优先推送意境深沉的诗词&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;雨天提高思乡/写景诗的权重&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>数据分析与洞察</strong>——采集页面访问、停留时长、点赞、缺字展开率、回访频次；按维度拆解；异常自动排查；每日推送简报：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;date&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026-06-14&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;insights&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;雨天+思乡类诗词点赞率比均值高 31%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;缺字率 35% 时完忆率最高（72%），55% 时骤降至 41%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;深夜（22:00-01:00）停留时长是白天 2.3 倍&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;actions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;缺字第三档从 55% 调到 45%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;深夜优先推深沉的诗词&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;雨天提高思乡/写景诗权重&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="工具2：诗词选择器"><a href="#工具2：诗词选择器" class="headerlink" title="工具2：诗词选择器"></a>工具2：诗词选择器</h4><ul>
-<li><strong>诗词库</strong>：唐诗三百首 + 宋词三百首 + 诗经选 + 用户投稿</li>
-<li><strong>标签体系</strong>：每首诗标注主题（思乡&#x2F;边塞&#x2F;田园&#x2F;爱情）、情绪（豪放&#x2F;婉约&#x2F;沉郁）、时令（春&#x2F;夏&#x2F;秋&#x2F;冬&#x2F;节日）</li>
-<li><strong>动态权重</strong>：权重由数据分析工具的输出自动调整</li>
-<li><strong>去重策略</strong>：已展示的诗词按遗忘曲线降权，间隔 2&#x2F;7&#x2F;30 天后重新出现</li>
-</ul>
-<h4 id="工具3：展示渲染器"><a href="#工具3：展示渲染器" class="headerlink" title="工具3：展示渲染器"></a>工具3：展示渲染器</h4><ul>
-<li><strong>缺字引擎</strong>：根据展示次数计算缺字比例，随机选取缺字位置（避开标题和作者）</li>
-<li><strong>消失动画</strong>：CSS 渐隐效果，从末句开始，3秒淡出</li>
-<li><strong>交互层</strong>：点击展开、提示首字、分享卡片生成</li>
-</ul>
+<p><strong>诗词选择器</strong>——唐诗三百首+宋词三百首+诗经选+用户投稿；每首诗标主题、情绪、时令；权重由分析工具自动调；按遗忘曲线降权，间隔2&#x2F;7&#x2F;30天重新出现。</p>
+<p><strong>展示渲染器</strong>——根据展示次数算缺字比例，随机选缺字位置（避开标题作者）；CSS渐隐从末句3秒淡出；点击展开、提示首字、分享卡片。</p>
 <hr>
-<h2 id="Loop-Engineering-的完整运转示例"><a href="#Loop-Engineering-的完整运转示例" class="headerlink" title="Loop Engineering 的完整运转示例"></a>Loop Engineering 的完整运转示例</h2><p>以一个完整周为例：</p>
-<h3 id="Day-1（周一）"><a href="#Day-1（周一）" class="headerlink" title="Day 1（周一）"></a>Day 1（周一）</h3><ul>
-<li><strong>选择</strong>：晴天·北京·上午 → 王维《鹿柴》</li>
-<li><strong>展示</strong>：首次完整展示</li>
-<li><strong>数据</strong>：阅读 1,200，点赞率 8%</li>
-</ul>
-<h3 id="Day-2（周二）"><a href="#Day-2（周二）" class="headerlink" title="Day 2（周二）"></a>Day 2（周二）</h3><ul>
-<li><strong>选择</strong>：阴天·杭州·下午 → 苏轼《饮湖上初晴后雨》</li>
-<li><strong>展示</strong>：首次完整展示</li>
-<li><strong>洞察</strong>：阴天+写景诗点赞率偏低（6%），低于均值</li>
-<li><strong>调整</strong>：阴天时降低写景权重，提升情感类权重</li>
-</ul>
-<h3 id="Day-3（周三）"><a href="#Day-3（周三）" class="headerlink" title="Day 3（周三）"></a>Day 3（周三）</h3><ul>
-<li><strong>选择</strong>：雨天·上海·深夜 → 李商隐《夜雨寄北》</li>
-<li><strong>展示</strong>：首次完整展示</li>
-<li><strong>数据</strong>：阅读 1,500（深夜用户暴涨），点赞率 14%！</li>
-<li><strong>洞察</strong>：雨天+思乡+深夜 &#x3D; 黄金组合</li>
-</ul>
-<h3 id="Day-4（周四）"><a href="#Day-4（周四）" class="headerlink" title="Day 4（周四）"></a>Day 4（周四）</h3><ul>
-<li><strong>选择</strong>：晴天·北京·清晨 → 孟浩然《春晓》</li>
-<li><strong>展示</strong>：首次完整展示</li>
-<li><strong>特殊</strong>：历史上6月18日是孟浩然相关纪念日，加成展示</li>
-<li><strong>数据</strong>：阅读 900，点赞率 9%</li>
-</ul>
-<h3 id="Day-5（周五）"><a href="#Day-5（周五）" class="headerlink" title="Day 5（周五）"></a>Day 5（周五）</h3><ul>
-<li><strong>选择</strong>：阴天·成都·下午 → 杜甫《春夜喜雨》</li>
-<li><strong>展示</strong>：首次完整展示</li>
-<li><strong>同时</strong>：Day 1 的《鹿柴》再次出现（间隔5天，二次展示）</li>
-<li><strong>展示</strong>：二次展示，缺字 15%，用户完忆率 78%</li>
-</ul>
-<h3 id="Day-6（周六）"><a href="#Day-6（周六）" class="headerlink" title="Day 6（周六）"></a>Day 6（周六）</h3><ul>
-<li><strong>选择</strong>：晴天·杭州·傍晚 → 白居易《暮江吟》</li>
-<li><strong>展示</strong>：首次完整展示</li>
-<li><strong>洞察</strong>：傍晚+写景诗点赞率回升（11%），不同于阴天场景</li>
-<li><strong>调整</strong>：区分晴天傍晚和阴天下午的写景诗权重</li>
-</ul>
-<h3 id="Day-7（周日）"><a href="#Day-7（周日）" class="headerlink" title="Day 7（周日）"></a>Day 7（周日）</h3><ul>
-<li><strong>周报生成</strong>：<ul>
-<li>本周阅读量 8,400，环比 +12%</li>
-<li>点赞率均值 9.6%，最高 14%（雨天深夜思乡）</li>
-<li>完忆率 78%，缺字 15% 档位效果最佳</li>
-<li>自动调整权重：雨天 w3↑、阴天写景↓、深夜思乡↑</li>
-<li>下周重点测试：缺字 20% vs 15% 的完忆率差异</li>
-</ul>
-</li>
-</ul>
+<h2 id="跑一周看看"><a href="#跑一周看看" class="headerlink" title="跑一周看看"></a>跑一周看看</h2><h3 id="Day-1（周一）"><a href="#Day-1（周一）" class="headerlink" title="Day 1（周一）"></a>Day 1（周一）</h3><p>晴天·北京·上午 → 《鹿柴》，完整展示。阅读1,200，点赞率8%。</p>
+<h3 id="Day-2（周二）"><a href="#Day-2（周二）" class="headerlink" title="Day 2（周二）"></a>Day 2（周二）</h3><p>阴天·杭州·下午 → 《饮湖上初晴后雨》。阴天+写景点赞率偏低（6%）→ 降写景权重，提情感权重。</p>
+<h3 id="Day-3（周三）"><a href="#Day-3（周三）" class="headerlink" title="Day 3（周三）"></a>Day 3（周三）</h3><p>雨天·上海·深夜 → 《夜雨寄北》。阅读1,500，点赞率14%！雨天+思乡+深夜，黄金组合。</p>
+<h3 id="Day-4（周四）"><a href="#Day-4（周四）" class="headerlink" title="Day 4（周四）"></a>Day 4（周四）</h3><p>晴天·北京·清晨 → 《春晓》。6月18日孟浩然纪念日加成。阅读900，点赞率9%。</p>
+<h3 id="Day-5（周五）"><a href="#Day-5（周五）" class="headerlink" title="Day 5（周五）"></a>Day 5（周五）</h3><p>阴天·成都·下午 → 《春夜喜雨》。同时 Day 1 的《鹿柴》二次出现，缺字15%，完忆率78%。</p>
+<h3 id="Day-6（周六）"><a href="#Day-6（周六）" class="headerlink" title="Day 6（周六）"></a>Day 6（周六）</h3><p>晴天·杭州·傍晚 → 《暮江吟》。傍晚+写景点赞率11%，跟阴天下午不一样 → 区分晴天傍晚和阴天下午的写景权重。</p>
+<h3 id="Day-7（周日）"><a href="#Day-7（周日）" class="headerlink" title="Day 7（周日）"></a>Day 7（周日）</h3><p>周报：阅读量8,400（+12%），点赞率均值9.6%，完忆率78%。自动调参：雨天w3↑、阴天写景↓、深夜思乡↑。下周测试缺字20% vs 15%。</p>
 <hr>
-<h2 id="为什么这是-Loop-Engineering-而不是普通的产品迭代"><a href="#为什么这是-Loop-Engineering-而不是普通的产品迭代" class="headerlink" title="为什么这是 Loop Engineering 而不是普通的产品迭代"></a>为什么这是 Loop Engineering 而不是普通的产品迭代</h2><table>
+<h2 id="跟普通迭代有什么不一样"><a href="#跟普通迭代有什么不一样" class="headerlink" title="跟普通迭代有什么不一样"></a>跟普通迭代有什么不一样</h2><table>
 <thead>
 <tr>
-<th>维度</th>
-<th>传统产品迭代</th>
+<th></th>
+<th>传统迭代</th>
 <th>Loop Engineering</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>频率</td>
-<td>周为单位，人工驱动</td>
-<td>天&#x2F;小时为单位，自动驱动</td>
+<td>周级别，人推着走</td>
+<td>天&#x2F;小时级别，自己转</td>
 </tr>
 <tr>
 <td>决策</td>
 <td>产品经理拍脑袋</td>
-<td>数据洞察→自动调整参数</td>
+<td>数据洞察→自动调参</td>
 </tr>
 <tr>
 <td>工具</td>
-<td>分散，靠人衔接</td>
-<td>串联成回路，自动流转</td>
+<td>散着放，人衔接</td>
+<td>串成回路，自动流转</td>
 </tr>
 <tr>
 <td>目标</td>
@@ -509,31 +453,29 @@ var _hmt = _hmt || [];
 </tr>
 <tr>
 <td>记忆</td>
-<td>靠文档和会议</td>
-<td>靠权重和模型参数</td>
+<td>文档和会议</td>
+<td>权重和参数</td>
 </tr>
 <tr>
 <td>规模</td>
 <td>受限于团队带宽</td>
-<td>可无限扩展维度和场景</td>
+<td>维度和场景随便加</td>
 </tr>
 </tbody></table>
-<p>Loop Engineering 的本质是：<strong>把产品经理的判断力编码为可自动执行的回路，让系统自己在运转中变好。</strong></p>
+<p>说白了：<strong>把产品经理的判断力编码成自动回路，让系统自己变好。</strong></p>
 <hr>
-<h2 id="技术架构建议"><a href="#技术架构建议" class="headerlink" title="技术架构建议"></a>技术架构建议</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">用户端（Next.js）</span><br><span class="line">  ├── 诗词展示页（缺字渲染 + 消失动画）</span><br><span class="line">  ├── 用户交互（点赞/展开/提示/分享）</span><br><span class="line">  └── 数据上报（停留时长/交互事件）</span><br><span class="line"></span><br><span class="line">API 层</span><br><span class="line">  ├── /api/daily-poem     → 诗词选择器</span><br><span class="line">  ├── /api/user-memory    → 用户记忆管理</span><br><span class="line">  ├── /api/interaction    → 交互数据采集</span><br><span class="line">  └── /api/insights       → 洞察推送</span><br><span class="line"></span><br><span class="line">后端服务</span><br><span class="line">  ├── 诗词选择器（多维度加权 + 动态权重）</span><br><span class="line">  ├── 数据分析引擎（聚合 + 异常检测 + 洞察生成）</span><br><span class="line">  ├── 记忆管理（遗忘曲线 + 间隔重复调度）</span><br><span class="line">  └── 权重优化器（根据洞察自动调参）</span><br><span class="line"></span><br><span class="line">数据层</span><br><span class="line">  ├── 诗词库（PostgreSQL + 向量索引）</span><br><span class="line">  ├── 用户行为（ClickHouse）</span><br><span class="line">  └── 权重参数（Redis + 版本管理）</span><br></pre></td></tr></table></figure>
+<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">用户端（Next.js）</span><br><span class="line">  ├── 诗词展示页（缺字渲染 + 消失动画）</span><br><span class="line">  ├── 用户交互（点赞/展开/提示/分享）</span><br><span class="line">  └── 数据上报（停留时长/交互事件）</span><br><span class="line"></span><br><span class="line">API 层</span><br><span class="line">  ├── /api/daily-poem     → 诗词选择器</span><br><span class="line">  ├── /api/user-memory    → 用户记忆管理</span><br><span class="line">  ├── /api/interaction    → 交互数据采集</span><br><span class="line">  └── /api/insights       → 洞察推送</span><br><span class="line"></span><br><span class="line">后端</span><br><span class="line">  ├── 诗词选择器（多维度加权 + 动态权重）</span><br><span class="line">  ├── 数据分析引擎（聚合 + 异常检测 + 洞察生成）</span><br><span class="line">  ├── 记忆管理（遗忘曲线 + 间隔重复调度）</span><br><span class="line">  └── 权重优化器（洞察驱动自动调参）</span><br><span class="line"></span><br><span class="line">数据层</span><br><span class="line">  ├── 诗词库（PostgreSQL + 向量索引）</span><br><span class="line">  ├── 用户行为（ClickHouse）</span><br><span class="line">  └── 权重参数（Redis + 版本管理）</span><br></pre></td></tr></table></figure>
 
-<p>诗词库的向量索引可以支持语义匹配——用户说”想看写秋天的”，不只匹配”秋”字，还能匹配”霜””落叶””登高”等语义关联。</p>
+<p>向量索引支持语义匹配——用户说”想看写秋天的”，不只匹配”秋”字，”霜””落叶””登高”也能命中。</p>
 <hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Loop Engineering 不是技术框架，是一种<strong>思维模式</strong>：</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>Loop Engineering 不是技术框架，是思维模式：</p>
 <ol>
-<li><strong>定义可量化的目标</strong>（阅读量、点赞率、完忆率）</li>
-<li><strong>构建自动运转的回路</strong>（数据→洞察→调整→生成→触达→数据）</li>
-<li><strong>让系统在运转中进化</strong>（权重自调整、策略自优化）</li>
+<li>定可量化的目标（阅读量、点赞率、完忆率）</li>
+<li>建自动运转的回路（数据→洞察→调整→生成→触达→数据）</li>
+<li>让系统在运转中进化（权重自调、策略自优）</li>
 </ol>
-<p>诗词网站只是一个例子。同样的思路可以用于：每日一首歌、每日一段代码、每日一个单词——任何”每天一个”的场景，都可以用 Loop Engineering 让它越运转越好。</p>
-<p>而缺字展示和消失展示的设计，让这个系统不只是在”推送内容”，而是在<strong>帮助用户建立长期记忆</strong>。这是 Loop Engineering 的更高目标：不是让用户消费更多，而是让用户真正获得更多。</p>
-<hr>
-<p><em>Loop Engineering 的理念，与 OpenClaw 的 Skills 系统和自运营 Agent 一脉相承——让系统在持续运转中自我优化，而非依赖人工干预。</em></p>
+<p>诗词网站只是一个例子。每日一首歌、每日一段代码、每日一个单词——任何”每天一个”的场景都适用。</p>
+<p>缺字和消失展示的设计，让系统不只是”推送内容”，而是在<strong>帮人建立长期记忆</strong>。这是更高的目标：不是让用户消费更多，是让用户真正获得更多。</p>
 
       
 
@@ -781,10 +723,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">创作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Agent Memory</a>
               </li>
              
@@ -805,6 +743,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">创作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AI编程</a>
               </li>
              
@@ -821,18 +763,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
              
@@ -842,6 +772,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AI Agent</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -873,6 +807,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cs.AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">研究趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">趋势分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文日报</a>
               </li>
              
@@ -886,10 +832,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Electron</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">趋势分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,18 +859,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">macOS Keychain</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">规则引擎</a>
               </li>
              
@@ -937,19 +867,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">macOS Keychain</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Web Agent</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Multi-Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Memory</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Technical Analysis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1013,6 +947,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Technical Analysis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Reinforcement Learning</a>
               </li>
              
@@ -1061,14 +1003,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多智能体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字分身</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开源项目</a>
               </li>
              
@@ -1101,11 +1035,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Research</a>
+                <a href="javascript:void(0)" class="js-tag color5">多智能体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字分身</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1117,6 +1059,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Prompt Engineering</a>
               </li>
              
@@ -1125,15 +1071,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">论文</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">memory</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">daily-report</a>
+                <a href="javascript:void(0)" class="js-tag color2">Recall</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1141,15 +1079,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">daily-report</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">knowledge-management</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">深度分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Recall</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1170,6 +1104,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1217,10 +1159,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">长期记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">browser</a>
               </li>
              
@@ -1229,7 +1167,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Planning</a>
+                <a href="javascript:void(0)" class="js-tag color5">长期记忆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1246,6 +1184,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Planning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,6 +1247,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反思记忆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元认知</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">评估方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
@@ -1318,18 +1272,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">语音识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">反思记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">元认知</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">评估方法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,6 +1291,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">意图识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">NLP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">提示词工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Multi-Agent Collaboration</a>
               </li>
              
@@ -1365,18 +1319,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">意图识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NLP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">提示词工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">协作框架</a>
               </li>
              
@@ -1386,22 +1328,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术趋势</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Task Planning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LLM Planning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ReAct</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ToT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1437,6 +1363,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Task Planning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LLM Planning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ReAct</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ToT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Agent Dialogue</a>
               </li>
              
@@ -1454,18 +1396,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Streaming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Design Patterns</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System Architecture</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Reflection</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1489,6 +1419,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">认知架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安全性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Design Patterns</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">System Architecture</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Reflection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Doubao</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ByteDance</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">AI Product</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Agent Skills</a>
               </li>
              
@@ -1509,42 +1471,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">认知架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安全性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">System Design</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Production</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Doubao</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ByteDance</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">AI Product</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Framework Comparison</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">2026 Trends</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Nanobot</a>
               </li>
              
@@ -1557,7 +1483,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Framework Comparison</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">2026 Trends</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">web-frontend-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">System Design</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Production</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自主智能体</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1566,6 +1512,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Personal AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">搜索与研究</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1585,10 +1543,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">自主智能体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Yuanqi</a>
               </li>
              
@@ -1597,15 +1551,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">搜索与研究</a>
+                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">记忆管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">神经符号AI</a>
+                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1614,14 +1564,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Dynamic Prompt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Search Engine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Genspark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1829,14 +1771,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VSA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hyperdimensional Computing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hermes</a>
               </li>
              
@@ -1869,19 +1803,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Memory Systems</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Agent Frameworks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AI Agents</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Research Trends</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hyperdimensional Computing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Memory Systems</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Agent Frameworks</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1909,6 +1847,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">health-fitness</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">电商分析</a>
               </li>
              
@@ -1918,10 +1864,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">智能分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">health-fitness</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2045,6 +1987,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Long-Horizon Agents</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Semantic Memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AI趋势</a>
               </li>
              
@@ -2054,14 +2004,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Long-Horizon Agents</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Semantic Memory</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2121,22 +2063,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Manifold Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">表示学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">深度学习理论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">几何深度学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">日历与调度</a>
               </li>
              
@@ -2150,6 +2076,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术前沿</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Manifold Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">表示学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">深度学习理论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">几何深度学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2174,6 +2116,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Context Management</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">一人公司</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">远程工作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">生产力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">社会变革</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2206,22 +2164,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">生活革命</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">一人公司</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">远程工作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">生产力</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">社会变革</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2309,6 +2251,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">memory-model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Workflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Reasoning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">神经科学</a>
               </li>
              
@@ -2326,18 +2280,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主动推理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">memory-model</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Workflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Reasoning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2417,30 +2359,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">禅宗</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">五蕴</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">无我</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自我幻觉</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">用户建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">缘起性空</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">belief-state</a>
               </li>
              
@@ -2457,6 +2375,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">禅宗</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">用户建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">五蕴</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">缘起性空</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">无我</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">apple</a>
               </li>
              
@@ -2469,23 +2407,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自我幻觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">retrieval</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KV-cache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Data Query</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Text-to-SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">数据准确性</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2502,6 +2432,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">神经语言程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Data Query</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Text-to-SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据准确性</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2561,6 +2503,430 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mcp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">education</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">通信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">邮件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">社交</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">harness</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scientific-agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">reasoning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI搜索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字营销</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内容优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">aws</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">continual-learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">memory-system</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">self-evolving-agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">philosophy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Wittgenstein</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">memory-systems</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目报告</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自动生成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Benchmark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ML Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">health-and-fitness</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像生成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">视频生成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">neuroscience</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HippoRAG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">predictive-coding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">free-energy-principle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">thousand-brains</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">可穿戴设备</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">边缘AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">端云协同</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">批判性思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">media</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">streaming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">终极形态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字物种</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">人机共生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">演化论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能耳机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI耳机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TWS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">语音交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">健康监测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工程思维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">问题拆解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">业务理解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能戒指</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">硬件创业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品研发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">品牌营销</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创业指南</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ML-engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能穿戴</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能眼镜</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能吊坠</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pkm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">知识管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GUI Agents</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">人机交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">综述</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程思维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">knowledge-graph</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Loop Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Autonomous Systems</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Career</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">evaluation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">scientific-discovery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">程序员</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">能力模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">AI 时代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">职业发展</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">reward-model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">neuro-symbolic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">productivity-and-tasks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Harness Engineering</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自主编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Codex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编排</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">周报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">自运营</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">search-and-research</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI协作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">AI agent 设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">数字劳动力</a>
               </li>
              
@@ -2573,10 +2939,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">AI agent 设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Agent设计指南 Agent开发实践</a>
               </li>
              
@@ -2585,11 +2947,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Agent设计指南 多智能体 提示词工程技巧</a>
+                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI应用</a>
+                <a href="javascript:void(0)" class="js-tag color3">Agent设计指南 多智能体 提示词工程技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2601,11 +2963,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">agentic enterprise evolution</a>
+                <a href="javascript:void(0)" class="js-tag color2">UNIX哲学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">UNIX哲学</a>
+                <a href="javascript:void(0)" class="js-tag color4">agentic enterprise evolution</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2645,15 +3007,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python 语言学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2665,15 +3027,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">人生感悟 创作</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">打油诗</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI演进 智能表格</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2690,10 +3056,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">社会思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI演进 智能表格</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2781,15 +3143,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">软件设计的哲学 软件开发 方法论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Agent开发 Claude</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2797,411 +3155,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mcp</a>
+                <a href="javascript:void(0)" class="js-tag color5">Agent开发 Claude</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">education</a>
+                <a href="javascript:void(0)" class="js-tag color4">context-management</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">通信</a>
+                <a href="javascript:void(0)" class="js-tag color5">embodied-agent</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">邮件</a>
+                <a href="javascript:void(0)" class="js-tag color4">SDD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">社交</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spec驱动</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scientific-agent</a>
+                <a href="javascript:void(0)" class="js-tag color2">self-hosted-and-automation</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">reasoning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI搜索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字营销</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内容优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">aws</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">harness</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">continual-learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">memory-system</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">self-evolving-agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">philosophy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Wittgenstein</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目报告</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自动生成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">memory-systems</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Benchmark</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ML Engineering</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">health-and-fitness</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像生成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">视频生成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">marketing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sales</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">媒体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">流媒体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">neuroscience</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HippoRAG</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">predictive-coding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">free-energy-principle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">thousand-brains</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">可穿戴设备</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">边缘AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">端云协同</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">产品哲学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">批判性思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">media</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">streaming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">终极形态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字物种</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">人机共生</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">演化论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能耳机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI耳机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TWS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">语音交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">健康监测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能戒指</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">硬件创业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">产品研发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">品牌营销</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创业指南</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工程思维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题拆解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">业务理解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能穿戴</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">记忆架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">上下文管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能眼镜</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能吊坠</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ML-engineering</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GUI Agents</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">人机交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">综述</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pkm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">知识管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程思维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">knowledge-graph</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">evaluation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">scientific-discovery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Loop Engineering</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AI Engineering</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Autonomous Systems</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Career</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">程序员</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">能力模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">AI 时代</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">职业发展</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">reward-model</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">neuro-symbolic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">productivity-and-tasks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Harness Engineering</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自主编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Codex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编排</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">自运营</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">search-and-research</a>
+                <a href="javascript:void(0)" class="js-tag color1">proactive agent</a>
               </li>
             
             <div class="clearfix"></div>

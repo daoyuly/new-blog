@@ -1,6 +1,5 @@
 ---
 title: Agent Memory arXiv 日报 (2026-06-17)
-date: 2026-06-17 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -9,6 +8,8 @@ tags:
   - embodied-agent
 categories:
   - Agent Memory 日报
+abbrlink: 21408
+date: 2026-06-17 18:00:00
 ---
 
 # Agent Memory arXiv 日报 (2026-06-17)

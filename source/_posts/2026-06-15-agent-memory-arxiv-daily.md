@@ -1,8 +1,14 @@
 ---
 title: Agent Memory arXiv 日报 (2026-06-15)
+tags:
+  - agent-memory
+  - arxiv
+  - daily-report
+  - AI-agent
+categories:
+  - Agent Memory 日报
+abbrlink: 13217
 date: 2026-06-15 18:00:00
-tags: [agent-memory, arxiv, daily-report, AI-agent]
-categories: [Agent Memory 日报]
 ---
 
 本文筛选自 2026-06-12 arXiv cs.AI / cs.CL 最新论文，聚焦 Agent Memory 相关研究。
