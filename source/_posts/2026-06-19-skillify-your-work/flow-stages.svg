@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#6366f1"/></marker>
+    <filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <!-- Step 1 -->
+  <rect x="20" y="50" width="140" height="100" rx="14" fill="#eef2ff" stroke="#818cf8" stroke-width="2" filter="url(#s)"/>
+  <text x="90" y="85" text-anchor="middle" font-size="22">📝</text>
+  <text x="90" y="110" text-anchor="middle" font-size="15" font-weight="600" fill="#4338ca">记录</text>
+  <text x="90" y="130" text-anchor="middle" font-size="11" fill="#6366f1">记下每一步实际操作</text>
+
+  <line x1="160" y1="100" x2="185" y2="100" stroke="#6366f1" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- Step 2 -->
+  <rect x="190" y="50" width="140" height="100" rx="14" fill="#fef3c7" stroke="#fbbf24" stroke-width="2" filter="url(#s)"/>
+  <text x="260" y="85" text-anchor="middle" font-size="22">✂️</text>
+  <text x="260" y="110" text-anchor="middle" font-size="15" font-weight="600" fill="#92400e">拆解</text>
+  <text x="260" y="130" text-anchor="middle" font-size="11" fill="#b45309">分出获取/判断/执行</text>
+
+  <line x1="330" y1="100" x2="355" y2="100" stroke="#6366f1" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- Step 3 -->
+  <rect x="360" y="50" width="140" height="100" rx="14" fill="#dcfce7" stroke="#4ade80" stroke-width="2" filter="url(#s)"/>
+  <text x="430" y="85" text-anchor="middle" font-size="22">🔧</text>
+  <text x="430" y="110" text-anchor="middle" font-size="15" font-weight="600" fill="#166534">搭建</text>
+  <text x="430" y="130" text-anchor="middle" font-size="11" fill="#15803d">选路径，跑通第一版</text>
+
+  <line x1="500" y1="100" x2="525" y2="100" stroke="#6366f1" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- Step 4 -->
+  <rect x="530" y="50" width="140" height="100" rx="14" fill="#fce7f3" stroke="#f472b6" stroke-width="2" filter="url(#s)"/>
+  <text x="600" y="85" text-anchor="middle" font-size="22">🔁</text>
+  <text x="600" y="110" text-anchor="middle" font-size="15" font-weight="600" fill="#9d174d">迭代</text>
+  <text x="600" y="130" text-anchor="middle" font-size="11" fill="#be185d">用了改，改了用</text>
+
+  <!-- Loop arrow -->
+  <path d="M600,50 C600,20 90,20 90,50" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#a1)"/>
+  <text x="345" y="22" text-anchor="middle" font-size="11" fill="#7c3aed">持续优化</text>
+</svg>
