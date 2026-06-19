@@ -58,6 +58,10 @@ a:hover {
 .btnctn.js-mobile-btnctn {
   display: none !important;
 }
+#mobile-nav .intrude-less,
+#mobile-nav .overlay {
+  display: none !important;
+}
 
 /* 顶栏 */
 .site-top-nav {

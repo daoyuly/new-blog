@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
+  <!-- Title -->
+  <text x="300" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#333">技能化优先级判断矩阵</text>
+
+  <!-- Axis labels -->
+  <text x="330" y="70" text-anchor="middle" font-size="14" fill="#888">频率</text>
+  <text x="58" y="255" text-anchor="middle" font-size="14" fill="#888" transform="rotate(-90,58,255)">痛点</text>
+
+  <!-- Column headers -->
+  <text x="270" y="95" text-anchor="middle" font-size="16" font-weight="600" fill="#555">高频</text>
+  <text x="470" y="95" text-anchor="middle" font-size="16" font-weight="600" fill="#555">低频</text>
+
+  <!-- Row labels -->
+  <text x="115" y="185" text-anchor="middle" font-size="15" font-weight="600" fill="#555">高痛</text>
+  <text x="115" y="335" text-anchor="middle" font-size="15" font-weight="600" fill="#555">低痛</text>
+
+  <!-- Cell 1: 高频+高痛 -->
+  <rect x="170" y="110" width="200" height="150" rx="12" fill="#fee2e2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="270" y="170" text-anchor="middle" font-size="28">🔴</text>
+  <text x="270" y="200" text-anchor="middle" font-size="16" font-weight="600" fill="#b91c1c">立即技能化</text>
+  <text x="270" y="222" text-anchor="middle" font-size="13" fill="#b91c1c">每天折磨你的事</text>
+
+  <!-- Cell 2: 低频+高痛 -->
+  <rect x="370" y="110" width="200" height="150" rx="12" fill="#fef9c3" stroke="#fde047" stroke-width="2"/>
+  <text x="470" y="170" text-anchor="middle" font-size="28">🟡</text>
+  <text x="470" y="200" text-anchor="middle" font-size="16" font-weight="600" fill="#a16207">值得技能化</text>
+  <text x="470" y="222" text-anchor="middle" font-size="13" fill="#a16207">不常遇到但每次要命</text>
+
+  <!-- Cell 3: 高频+低痛 -->
+  <rect x="170" y="260" width="200" height="150" rx="12" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+  <text x="270" y="320" text-anchor="middle" font-size="28">🟢</text>
+  <text x="270" y="350" text-anchor="middle" font-size="16" font-weight="600" fill="#15803d">考虑技能化</text>
+  <text x="270" y="372" text-anchor="middle" font-size="13" fill="#15803d">积少成多，省时间</text>
+
+  <!-- Cell 4: 低频+低痛 -->
+  <rect x="370" y="260" width="200" height="150" rx="12" fill="#f3f4f6" stroke="#d1d5db" stroke-width="2"/>
+  <text x="470" y="320" text-anchor="middle" font-size="28">⚪</text>
+  <text x="470" y="350" text-anchor="middle" font-size="16" font-weight="600" fill="#6b7280">别折腾了</text>
+  <text x="470" y="372" text-anchor="middle" font-size="13" fill="#6b7280">投入产出不划算</text>
+
+  <!-- Arrows -->
+  <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#aaa"/></marker></defs>
+  <line x1="180" y1="55" x2="540" y2="55" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="130" y1="115" x2="130" y2="395" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>

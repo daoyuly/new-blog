@@ -1,6 +1,5 @@
 ---
 title: 把工作技能化：普通人用AI提升绩效的实操指南
-date: 2026-06-19 10:15:00
 tags:
   - AI
   - skillify
@@ -8,6 +7,8 @@ tags:
   - 技能化
 categories:
   - 方法论
+abbrlink: 47072
+date: 2026-06-19 10:15:00
 ---
 
 # 把工作技能化：普通人用AI提升绩效的实操指南
@@ -56,7 +57,7 @@ categories:
 
 我用一个简单的二维判断法：
 
-![技能化优先级判断矩阵](matrix.svg)
+<img src="./matrix.svg" alt="技能化优先级判断矩阵">
 
 | | 高频 | 低频 |
 |---|---|---|
@@ -123,11 +124,11 @@ categories:
 
 ### 第三阶段：搭建
 
-![四阶段流程](flow-stages.svg)
+<img src="./flow-stages.svg" alt="四阶段流程">
 
 现在才到动手的时候。根据你的技术背景，有三种路径：
 
-![三条技术路径](flow-paths.svg)
+<img src="./flow-paths.svg" alt="三条技术路径">
 
 **路径A：零代码——用Prompt模板**
 

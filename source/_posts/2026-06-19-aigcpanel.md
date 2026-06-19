@@ -1,6 +1,5 @@
 ---
-title: "aigcpanel 项目深度分析报告"
-date: 2026-06-19 11:00:00
+title: aigcpanel 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,6 +7,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+abbrlink: 33248
+date: 2026-06-19 11:00:00
 ---
 
 # aigcpanel 项目深度分析报告
