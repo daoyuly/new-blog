@@ -15,6 +15,7 @@ function isPathMatch(path, href) {
 
 function tabActive() {
 	let $tabs = document.querySelectorAll('.js-header-menu li a')
+	if (!$tabs.length) return
 	let path = window.location.pathname
 
 	for (var i = 0, len = $tabs.length; i < len; i++) {
@@ -75,8 +76,9 @@ function scrollStop($dom, top, limit, zIndex, diff) {
 function handleScroll() {
 	let $overlay = document.querySelector('.js-overlay')
 	let $menu = document.querySelector('.js-header-menu')
-	scrollStop($overlay, document.body.scrollTop, -63, 2, 0)
-	scrollStop($menu, document.body.scrollTop, 1, 3, 0)
+	if (!$overlay && !$menu) return
+	if ($overlay) scrollStop($overlay, document.body.scrollTop, -63, 2, 0)
+	if ($menu) scrollStop($menu, document.body.scrollTop, 1, 3, 0)
 }
 
 function bindScroll() {
