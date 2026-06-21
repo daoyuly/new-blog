@@ -19,11 +19,11 @@ categories:
 先回答一个很多人没想过的问题：**驱动的是什么？**
 
 - **事件驱动**——驱动的是**控制流**。系统等着事情发生，事情发生了就执行对应逻辑。重点是"什么时候做"。
-- **模型驱动**——驱动的是**抽象层级**。把业务逻辑提升到模型定义，运行时解释执行。重点是"做什么"。
+- **模型驱动**——驱动的是**语义理解与推理**。把决策权交给大语言模型，由模型理解意图、生成方案、执行动作。重点是"怎么想"。
 - **响应式驱动**——驱动的是**数据流**。数据变了，依赖它的计算自动更新。重点是"变了之后怎样"。
 - **状态机驱动**——驱动的是**合法状态空间**。系统只能在预定义的状态之间转换，非法转换直接被拒绝。重点是"能变成什么"。
 
-四种范式解决的是不同层面的问题，所以它们不是互斥的——一个系统可以同时是事件驱动的、状态机驱动的、也是响应式的。模型驱动更多是一种工程策略，状态机驱动则是一种约束策略。
+四种范式解决的是不同层面的问题，所以它们不是互斥的——一个系统可以同时是事件驱动的、状态机驱动的、也是响应式的。模型驱动（LLM 驱动）是一种全新的决策策略，状态机驱动是一种约束策略。
 
 ## 事件驱动：当 X 发生，就做 Y
 
@@ -99,83 +99,140 @@ Inventory Service → [inventory_reserved] → Shipping Service
 - **事件风暴**：一个事件触发 N 个 handler，每个 handler 又发事件，很快你就不知道系统在干什么了。需要有意识地限制事件扇出。
 - **Schema 演进**：事件的格式会变，旧事件还在 Kafka 里。必须做好向后兼容。
 
-## 模型驱动：把业务抬到更高的抽象层
+## 模型驱动：让 LLM 来想
 
 ### 核心机制
 
-模型驱动的核心思想是：**业务逻辑不写在代码里，写在模型里，运行时解释执行**。
-
-这里的"模型"不是机器学习模型，而是业务模型的精确定义——状态机、规则表、流程图、DSL。
+这里的"模型"就是大语言模型（LLM）。模型驱动的本质是：**不再由程序员穷举所有分支逻辑，而是把上下文扔给模型，让模型理解意图、推理决策、生成行动**。
 
 ```
-业务专家定义模型 → 模型引擎解释执行 → 运行时行为
+用户意图 + 上下文 → LLM 推理 → 结构化输出 / 工具调用
 ```
 
-### 典型形态
+这和前三种范式有根本区别：事件驱动、状态机驱动、响应式驱动的逻辑都是确定性的——相同的输入永远产生相同的输出。LLM 驱动的逻辑是概率性的——同样的 prompt，两次调用的结果可能不同。
 
-**1. 状态机模型**
+### 三种 LLM 驱动模式
+
+**1. Prompt-Only 模式**
+
+最简单的方式：把需求描述清楚，让模型直接输出结果。
 
 ```python
-from transitions import Machine
+response = llm.chat("""
+你是一个订单处理助手。用户说："{user_input}"
+当前订单状态：{order_status}
+请判断用户意图，返回 JSON：
+{"action": "pay" | "cancel" | "ship" | "query", "confidence": 0-1}
+""")
+```
 
-class Order:
-    pass
+好处是灵活，坏处是不可控。模型可能返回一个你根本没预料到的 action。
 
-states = ["new", "pending", "paid", "shipped", "completed", "cancelled"]
-transitions = [
-    {"trigger": "create", "source": "new", "dest": "pending"},
-    {"trigger": "pay", "source": "pending", "dest": "paid"},
-    {"trigger": "ship", "source": "paid", "dest": "shipped"},
-    {"trigger": "complete", "source": "shipped", "dest": "completed"},
-    {"trigger": "cancel", "source": ["pending", "paid"], "dest": "cancelled"},
+**2. Tool Use / Function Calling 模式**
+
+给模型一组工具，让它决定调哪个。
+
+```typescript
+const tools = [
+  {
+    name: "reserve_inventory",
+    description: "为订单预留库存",
+    parameters: { orderId: "string", items: "array" },
+  },
+  {
+    name: "process_refund",
+    description: "处理退款",
+    parameters: { orderId: "string", amount: "number" },
+  },
+  {
+    name: "query_order_status",
+    description: "查询订单状态",
+    parameters: { orderId: "string" },
+  },
+];
+
+// LLM 决定调用哪个工具
+const result = await llm.chatWithTools({
+  messages: [{ role: "user", content: userInput }],
+  tools,
+  context: { orderStatus, orderItems },
+});
+
+// result.tool_calls = [{ name: "reserve_inventory", args: { orderId: "123", items: [...] } }]
+```
+
+这是目前 Agent 系统的主流模式。模型负责"想"，工具负责"做"，两者解耦。
+
+**3. 规划-执行模式（Plan-and-Execute）**
+
+复杂任务拆成多步规划，逐步执行。
+
+```python
+# 第一步：规划
+plan = llm.chat("""
+任务：{task}
+可用工具：{tool_descriptions}
+请制定执行计划，返回步骤列表：
+[
+  {"step": 1, "tool": "...", "reason": "..."},
+  {"step": 2, "tool": "...", "reason": "..."},
+  ...
 ]
+""")
 
-order = Order()
-machine = Machine(order, states=states, transitions=transitions, initial="new")
+# 第二步：逐步执行，每步结果反馈给模型
+for step in plan.steps:
+    result = execute_tool(step.tool, step.args)
+    # 中间结果可以用来调整后续计划
+    updated_plan = llm.chat(f"步骤 {step.step} 的结果是：{result}，请调整后续计划")
 ```
 
-业务规则在 `transitions` 定义里，不在 if-else 里。改规则改定义，不改代码。
-
-**2. 规则引擎模型**
-
-```yaml
-# Drools 风格的规则
-rules:
-  - name: high_value_discount
-    when: order.total > 10000 AND customer.vip_level >= 3
-    then: order.apply_discount(0.15)
-
-  - name: bulk_discount
-    when: order.item_count > 50
-    then: order.apply_discount(0.08)
-```
-
-**3. BPMN 流程模型**
-
-用流程图定义业务流程，引擎执行。Camunda、Flowable、Activiti 都是这条路。
+LangChain 的 Plan-and-Execute Agent、AutoGPT、BabyAGI 都是这种模式。
 
 ### 模型驱动的核心价值
 
-不是少写代码——实际上模型引擎本身的代码量不小。核心价值是**业务和实现的解耦**：
+LLM 驱动解决的是其他三种范式都解决不了的问题：**开放域的语义理解**。
 
-- 业务专家可以直接审阅模型定义（状态机、规则表、流程图）
-- 改业务规则不需要改代码、不需要重新部署
-- 模型本身就是文档，不会和代码脱节
+- 事件驱动能处理已知的事件类型，但用户说"我想把那个退了"，你得先把它映射成 `CANCEL` 事件
+- 状态机能拒绝非法转换，但它不知道用户"那个"指的是哪个订单
+- 响应式能传播数据变更，但它不理解"帮我处理一下退款"是什么意思
+
+LLM 驱动填的就是这个坑——**把模糊的自然语言意图，转化成精确的系统操作**。
 
 ### 模型驱动的坑
 
-- **模型不是银弹**：复杂到一定程度的逻辑，模型定义比代码还难读。想想那些上千行的 Drools 规则文件。
-- **调试地狱**：模型引擎是个黑盒，出 bug 了你要在模型层面和代码层面之间反复跳。
-- **性能开销**：解释执行天然比编译执行慢。对性能敏感的场景要谨慎。
-- **过度抽象**：不是所有业务都需要模型驱动。简单的 CRUD 硬上状态机，属于杀鸡用牛刀。
+- **不确定性**：同一个用户输入，两次调用的结果可能不同。对金融、医疗等场景，这是硬伤。解决方案：加约束（constrained decoding）、加校验（output validation）、加重试。
+- **成本**：每次推理都在烧 token。一个高并发的客服系统，如果每个请求都过一遍 LLM，账单会很难看。解决方案：缓存高频 pattern、用小模型做路由、只在关键决策点用大模型。
+- **延迟**：LLM 推理是秒级的，事件驱动的 handler 是毫秒级的。对实时性要求高的场景，不能每步都过模型。
+- **幻觉**：模型可能编造不存在的工具调用、捏造订单号、给出矛盾的状态判断。必须在 LLM 输出和系统执行之间加一层**守卫层（guardrail）**。
+- **可解释性差**：模型为什么选了 A 而不是 B？你只能看 logprob，但那不等于理由。审计和合规场景会很难受。
+
+### 守卫层：LLM 驱动不是裸跑
+
+生产环境下，LLM 的输出不能直接执行，必须过守卫层。这正是 LLM 驱动和状态机驱动天然互补的地方：
+
+```typescript
+// LLM 输出 → 状态机校验 → 执行
+const llmDecision = await llm.decide(userInput, context);
+
+// 状态机守卫：LLM 说要 CANCEL，但当前状态允许吗？
+const guard = fsm.canTransition(order.status, llmDecision.action);
+if (!guard.ok) {
+  // 拒绝 LLM 的决策，回退到安全路径
+  return { error: `Cannot ${llmDecision.action} from ${order.status}` };
+}
+
+// 校验通过，执行
+executeAction(llmDecision.action, llmDecision.args);
+```
+
+LLM 管语义理解，状态机管合法性约束。一个负责"听懂人话"，一个负责"别搞砸了"。
 
 ## 状态机驱动：只允许合法的存在
 
 ### 为什么要把状态机单拎出来？
 
-前面模型驱动里提到了状态机模型，但那是把它当作模型的一种形态。这里要讲的是另一种用法——**把有限状态机（FSM）提升为架构的第一等公民**，不是"模型驱动的一种"，而是一种独立的思维方式。
-
-区别在哪？模型驱动的状态机是"用模型来表达业务"；状态机驱动是"用状态机的约束来保护系统不被搞坏"。前者是表达工具，后者是安全网。
+你可能会问：状态机不就是一套转换规则吗，值得和事件驱动、LLM 驱动并列？值得。因为状态机驱动的核心贡献不是"表达业务"，而是**约束系统的合法行为空间**。LLM 驱动让系统变聪明了，但也变不可控了——状态机驱动就是那个刹车。
 
 ### 核心机制
 
@@ -430,7 +487,20 @@ def on_state_change(self, event):
 event_bus.subscribe("order.paid_to_shipped", trigger_logistics)
 ```
 
-### 状态机驱动 + 事件驱动
+### 模型驱动（LLM）+ 事件驱动
+
+LLM 的输出天然适合发事件。模型理解了用户意图后，把决策结果发到事件总线，下游服务订阅处理。
+
+```typescript
+// LLM 理解意图 → 发布领域事件
+const intent = await llm.classify(userInput);
+eventBus.publish(`order.${intent.action}`, { orderId, userId, ...intent.args });
+
+// 下游服务照常处理
+eventBus.on("order.cancel", handleCancel);
+```
+
+LLM 管语义→事件管分发，职责清晰。而且事件总线的 Schema 可以作为 LLM 输出的约束——你让模型从已知事件类型里选，比让它自由发挥安全得多。
 
 这是最自然的组合。事件是状态机转换的输入，状态机是事件处理的守门人。事件来了，先问状态机"这个转换合法吗"，合法才执行。
 
@@ -456,14 +526,14 @@ eventBus.on("APPROVE", (e) => {
 一个完整的业务系统可以同时使用三种范式：
 
 1. **事件驱动**作为系统间通信的基础设施
-2. **模型驱动**作为核心业务逻辑的表达方式
+2. **模型驱动（LLM）**作为语义理解和意图推理的决策层
 3. **状态机驱动**作为实体行为的约束框架
 4. **响应式驱动**作为数据处理和 UI 层的编程模型
 
 ```
-[事件总线] ←→ [模型引擎] ←→ [状态机守卫] ←→ [响应式数据流] ←→ [UI]
-     ↑              ↑              ↑                  ↑
-  系统间通信     业务逻辑      合法性约束         数据传播 + 渲染
+[用户输入] → [LLM 语义理解] → [状态机校验] → [事件总线] → [响应式数据流] → [UI]
+               ↑                     ↑              ↑                ↑
+           意图推理              合法性守卫      系统间通信       数据传播 + 渲染
 ```
 
 ## 选型决策：什么时候用什么
@@ -473,7 +543,8 @@ eventBus.on("APPROVE", (e) => {
 | 微服务间解耦通信 | 事件驱动 | 天然解耦，支持异构系统 |
 | 审计日志 / 时序数据 | 事件驱动 + Event Sourcing | 事件本身就是日志 |
 | 复杂状态流转（订单、工单） | 状态机驱动 | 精确定义合法转换，拒绝非法操作 |
-| 可配置业务规则（促销、定价） | 模型驱动（规则引擎） | 规则需要频繁变更 |
+| 模糊意图识别 / 自然语言交互 | 模型驱动（LLM） | LLM 能理解语义，其他范式不能 |
+| 可配置业务规则（促销、定价） | 规则引擎 / LLM | 规则明确用引擎，规则模糊用 LLM |
 | 实时数据流处理 | 响应式驱动 | 流式处理是它的主场 |
 | 前端交互密集 | 响应式驱动 | 声明式 UI 更高效 |
 | 协议实现 / 网络通信 | 状态机驱动 | 协议本身就是状态机定义 |
@@ -493,13 +564,13 @@ eventBus.on("APPROVE", (e) => {
 
 ### 1. 一致性
 
-事件驱动最终一致，响应式也做不到强一致（除非用同步等待），模型驱动和状态机驱动在分布式场景下也要处理一致性。**分布式系统没有银弹，一致性始终是最难的问题。**
+事件驱动最终一致，响应式也做不到强一致（除非用同步等待），LLM 驱动的输出本身就不确定，状态机驱动在分布式场景下也要处理一致性。**分布式系统 + 概率性决策 = 一致性是最难的问题，没有之一。**
 
 ### 2. 可观测性
 
-四种范式都是"隐式"的——事件流是隐式的传播路径，响应式是隐式的数据依赖，模型驱动是隐式的执行逻辑，状态机驱动是隐式的约束边界。没有好的可观测性工具，出了问题就是黑盒。
+四种范式都是"隐式"的——事件流是隐式的传播路径，响应式是隐式的数据依赖，LLM 驱动是隐式的推理过程，状态机驱动是隐式的约束边界。没有好的可观测性工具，出了问题就是黑盒。
 
-事件驱动需要 distributed tracing（Jaeger、Zipkin），响应式需要 marble diagram 调试工具，模型驱动需要执行日志和可视化，状态机驱动需要状态转换审计日志。
+事件驱动需要 distributed tracing（Jaeger、Zipkin），响应式需要 marble diagram 调试工具，LLM 驱动需要推理链追踪（LangSmith、Helicone），状态机驱动需要状态转换审计日志。
 
 ### 3. 测试
 
@@ -509,7 +580,7 @@ eventBus.on("APPROVE", (e) => {
 
 任何范式都可能退化为面条代码：
 - 事件驱动 → 事件风暴，回调地狱
-- 模型驱动 → 上帝模型，所有逻辑塞进一个状态机
+- 模型驱动（LLM）→ Agent 失控，无限循环调用工具
 - 状态机驱动 → 状态爆炸，转换图不可读
 - 响应式 → Observable 嵌套，operator chain 不可读
 
@@ -551,29 +622,26 @@ eventBus.on("ORDER_CANCELLED", (e) => {
 });
 ```
 
-### 模型驱动（规则引擎）
+### 模型驱动（LLM）
 
 ```typescript
-// 规则引擎方式定义——业务人员可编辑
-const orderRules = defineRules({
-  states: ["pending", "paid", "shipped", "completed", "cancelled"],
-  transitions: [
-    { from: "pending",  event: "PAY",    to: "paid" },
-    { from: "paid",     event: "SHIP",   to: "shipped" },
-    { from: "shipped",  event: "COMPLETE", to: "completed" },
-    { from: "pending",  event: "CANCEL", to: "cancelled" },
-    { from: "paid",     event: "CANCEL", to: "cancelled" },
+// LLM 理解用户意图，决定执行什么操作
+const tools = [
+  { name: "pay_order", description: "支付订单" },
+  { name: "cancel_order", description: "取消订单" },
+  { name: "ship_order", description: "发货" },
+];
+
+const result = await llm.chatWithTools({
+  messages: [
+    { role: "system", content: "你是订单助手。当前订单状态：" + order.status },
+    { role: "user", content: userInput },
   ],
-  actions: {
-    paid: "reserveInventory",
-    cancelled: "processRefund",
-    shipped: "notifyShipped",
-  },
+  tools,
 });
 
-// 引擎解释执行
-const engine = new RuleEngine(orderRules);
-engine.process(order, "PAY");  // 查规则表，找匹配，执行动作
+// result.tool_calls[0].name 可能是 "pay_order"、"cancel_order" 等
+// 但 LLM 可能会在 shipped 状态下仍然选择 pay_order —— 这就是为什么需要状态机守卫
 ```
 
 ### 状态机驱动
@@ -639,7 +707,7 @@ orderStatus$.pipe(filter(s => s === "cancelled")).subscribe(() => {
 四段代码做同一件事，但思维方式完全不同：
 
 - 事件驱动：**关注事件触发的动作**
-- 模型驱动：**关注规则表的匹配和执行**
+- 模型驱动：**关注语义理解和意图推理**
 - 状态机驱动：**关注状态的合法转换和非法拒绝**
 - 响应式驱动：**关注状态变化的传播**
 
@@ -648,7 +716,7 @@ orderStatus$.pipe(filter(s => s === "cancelled")).subscribe(() => {
 四种范式对"时间"的处理方式不同，这个区别很深，但很少有人讲。
 
 - **事件驱动**：时间是**隐式排序**。事件 A 先于事件 B 发生，所以先处理 A。时间藏在事件的先后顺序里。
-- **模型驱动**：时间是**规则匹配的轮次**。每条规则评估一次，匹配就执行。时间藏在规则引擎的执行循环里。
+- **模型驱动（LLM）**：时间是**推理轮次**。每次推理是一个时间步，多轮对话构成推理链。时间藏在 context window 的滑动里。
 - **状态机驱动**：时间是**状态变迁**。从状态 S1 到 S2，中间的转换就是"时间"。时间藏在状态机的边（edge）上。
 - **响应式驱动**：时间是**数据流**。Observable 本质就是一个时间轴上的值序列。时间就是流本身。
 
@@ -658,4 +726,4 @@ orderStatus$.pipe(filter(s => s === "cancelled")).subscribe(() => {
 
 四种范式不是信仰，是工具。选型时不要问"我是事件驱动派还是响应式派"，要问"我眼前这个问题，哪种抽象更贴切"。
 
-很多时候，最好的架构不是选一种范式贯彻到底，而是在不同层面用最合适的范式，然后用清晰的边界把它们拼起来。事件总线管通信，状态机管约束，模型引擎管规则，响应式管数据流——各司其职，比教条地只用一种要强得多。
+很多时候，最好的架构不是选一种范式贯彻到底，而是在不同层面用最合适的范式，然后用清晰的边界把它们拼起来。事件总线管通信，LLM 管理解，状态机管约束，响应式管数据流——各司其职，比教条地只用一种要强得多。
