@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent 为什么需要自己写正则？</title>
+<style>
+  * { margin: 0; padding: 0; }
+  body { background: #0a0a12; overflow: hidden; font-family: 'SF Mono', 'Fira Code', monospace; }
+  canvas { display: block; }
+  #overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 10;
+  }
+  #chapter {
+    position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.85); font-size: 20px; letter-spacing: 2px;
+    text-align: center; white-space: nowrap;
+    text-shadow: 0 0 15px rgba(100,200,255,0.4);
+    transition: opacity 0.6s;
+  }
+  #subtitle {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.45); font-size: 13px; letter-spacing: 1px;
+    text-align: center; white-space: nowrap;
+    transition: opacity 0.6s;
+  }
+  #timer {
+    position: absolute; top: 16px; right: 24px;
+    color: rgba(255,255,255,0.25); font-size: 12px;
+  }
+  #progress {
+    position: absolute; top: 0; left: 0; height: 2px;
+    background: linear-gradient(90deg, #4af, #f4a);
+    transition: width 0.3s;
+  }
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div id="progress"></div>
+  <div id="timer"></div>
+  <div id="chapter"></div>
+  <div id="subtitle"></div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+// ─── 配置 ───
+const DURATION = 36;
+const SCENE_COLOR = 0x0a0a12;
+
+// ─── 场景 ───
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(SCENE_COLOR);
+scene.fog = new THREE.FogExp2(SCENE_COLOR, 0.012);
+const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 300);
+camera.position.set(0, 8, 28);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+document.body.appendChild(renderer.domElement);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.9, 0.4, 0.85));
+
+scene.add(new THREE.AmbientLight(0x334466, 0.5));
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
+dirLight.position.set(5, 10, 7);
+scene.add(dirLight);
+
+// ─── 工具函数 ───
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+const ss = (a, b, t) => { const x = clamp((t - a) / (b - a), 0, 1); return x * x * (3 - 2 * x); };
+const v3 = (x, y, z) => new THREE.Vector3(x, y, z);
+
+// ─── 通用粒子系统 ───
+class Particles {
+  constructor(n) {
+    this.n = n;
+    this.pos = new Float32Array(n * 3);
+    this.vel = new Float32Array(n * 3);
+    this.col = new Float32Array(n * 3);
+    this.siz = new Float32Array(n);
+    this.alp = new Float32Array(n);
+    this.geo = new THREE.BufferGeometry();
+    this.geo.setAttribute('position', new THREE.BufferAttribute(this.pos, 3));
+    this.geo.setAttribute('color', new THREE.BufferAttribute(this.col, 3));
+    this.geo.setAttribute('size', new THREE.BufferAttribute(this.siz, 1));
+    this.geo.setAttribute('alpha', new THREE.BufferAttribute(this.alp, 1));
+    this.mat = new THREE.ShaderMaterial({
+      vertexShader: `
+        attribute float size; attribute float alpha;
+        varying vec3 vColor; varying float vAlpha;
+        void main() {
+          vColor = color; vAlpha = alpha;
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          gl_PointSize = size * (120.0 / -mv.z);
+          gl_Position = projectionMatrix * mv;
+        }`,
+      fragmentShader: `
+        varying vec3 vColor; varying float vAlpha;
+        void main() {
+          float d = length(gl_PointCoord - 0.5);
+          if (d > 0.5) discard;
+          gl_FragColor = vec4(vColor, smoothstep(0.5, 0.0, d) * vAlpha);
+        }`,
+      transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, vertexColors: true,
+    });
+    scene.add(new THREE.Points(this.geo, this.mat));
+  }
+  update(dt) {
+    for (let i = 0; i < this.n; i++) {
+      const i3 = i * 3;
+      this.pos[i3] += this.vel[i3] * dt;
+      this.pos[i3 + 1] += this.vel[i3 + 1] * dt;
+      this.pos[i3 + 2] += this.vel[i3 + 2] * dt;
+      // damping
+      this.vel[i3] *= 0.98;
+      this.vel[i3+1] *= 0.98;
+      this.vel[i3+2] *= 0.98;
+    }
+    this.geo.attributes.position.needsUpdate = true;
+    this.geo.attributes.alpha.needsUpdate = true;
+    this.geo.attributes.color.needsUpdate = true;
+  }
+}
+
+// ─── 文字精灵 ───
+function textSprite(text, color = '#ffffff', sz = 1) {
+  const c = document.createElement('canvas');
+  const ctx = c.getContext('2d');
+  c.width = 512; c.height = 128;
+  const fontSize = Math.round(56 / Math.max(1, text.length / 14));
+  ctx.font = `bold ${fontSize}px "PingFang SC","Microsoft YaHei","SF Mono",monospace`;
+  ctx.fillStyle = color;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, 256, 64);
+  const tex = new THREE.CanvasTexture(c);
+  const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending });
+  const sprite = new THREE.Sprite(mat);
+  sprite.scale.set(sz * 4, sz, 1);
+  return sprite;
+}
+
+// ─── 消息卡片 ───
+function makeCard(text, bgColor, textColor = '#ffffff') {
+  const c = document.createElement('canvas');
+  c.width = 512; c.height = 96;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = bgColor + '44';
+  ctx.strokeStyle = bgColor + '88';
+  ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.roundRect(4, 4, 504, 88, 8); ctx.fill(); ctx.stroke();
+  ctx.font = 'bold 22px "PingFang SC","Microsoft YaHei","SF Mono",monospace';
+  ctx.fillStyle = textColor;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, 256, 48);
+  const tex = new THREE.CanvasTexture(c);
+  const geo = new THREE.PlaneGeometry(4, 0.75);
+  const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide, depthWrite: false });
+  return new THREE.Mesh(geo, mat);
+}
+
+// ─── UI ───
+const chapterEl = document.getElementById('chapter');
+const subtitleEl = document.getElementById('subtitle');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+
+// ─── 章节定义 ───
+const chapters = [
+  { start: 0, end: 7, title: '涌入 · 混乱的非结构化数据', sub: '日志、网页、API返回……格式千奇百怪' },
+  { start: 7, end: 14, title: '理解 · LLM 识别模式', sub: '语义理解，不是硬编码' },
+  { start: 14, end: 22, title: '转化 · 编译成正则', sub: '一次推理 → 确定性逻辑' },
+  { start: 22, end: 29, title: '上线 · 正则引擎高速运转', sub: '免费、微秒级、确定性' },
+  { start: 29, end: 36, title: '对比 · LLM vs 正则', sub: '成本分层：高频走正则，低频走LLM' },
+];
+
+// ─── 动画对象初始化 ───
+
+// 混乱数据卡片
+const dataTexts = [
+  '[ERROR] req-9913b timed out',
+  '价格：￥1,299.00',
+  '2026-06-21 14:32:03',
+  'SKU-A8X2  ¥899',
+  '投诉：服务太差',
+  'req-7732f timeout 60s',
+  '会员价：1,899元',
+  'WARN slow 8500ms',
+];
+const dataColors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff8c32', '#ff6b6b', '#6bcb77', '#ffd93d'];
+const dataCards = dataTexts.map((txt, i) => {
+  const card = makeCard(txt, dataColors[i]);
+  card.position.set(
+    (Math.random() - 0.5) * 20,
+    (Math.random() - 0.5) * 10,
+    (Math.random() - 0.5) * 10
+  );
+  card.userData = {
+    basePos: card.position.clone(),
+    vel: v3((Math.random() - 0.5) * 2, (Math.random() - 0.5) * 1, (Math.random() - 0.5) * 1),
+    rotSpeed: (Math.random() - 0.5) * 0.5,
+  };
+  scene.add(card);
+  return card;
+});
+
+// LLM 大脑 - 发光球体
+const brainGeo = new THREE.IcosahedronGeometry(2, 3);
+const brainMat = new THREE.MeshStandardMaterial({
+  color: 0x4488ff,
+  emissive: 0x2244aa,
+  emissiveIntensity: 0.5,
+  wireframe: true,
+  transparent: true,
+  opacity: 0,
+});
+const brain = new THREE.Mesh(brainGeo, brainMat);
+brain.position.set(0, 2, 0);
+scene.add(brain);
+
+// 大脑内部核心
+const coreGeo = new THREE.IcosahedronGeometry(1, 2);
+const coreMat = new THREE.MeshStandardMaterial({
+  color: 0x66aaff,
+  emissive: 0x4488ff,
+  emissiveIntensity: 1.5,
+  transparent: true,
+  opacity: 0,
+});
+const core = new THREE.Mesh(coreGeo, coreMat);
+brain.add(core);
+
+// 扫描光束
+const beamGeo = new THREE.ConeGeometry(6, 12, 32, 1, true);
+const beamMat = new THREE.MeshBasicMaterial({
+  color: 0x4488ff,
+  transparent: true,
+  opacity: 0,
+  side: THREE.DoubleSide,
+  depthWrite: false,
+  blending: THREE.AdditiveBlending,
+});
+const beam = new THREE.Mesh(beamGeo, beamMat);
+beam.position.set(0, -4, 0);
+brain.add(beam);
+
+// 正则输出 - 发光的正则文字
+const regexSprite = textSprite('req-[a-z0-9]+(?=.*timed out)', '#00ffaa', 0.9);
+regexSprite.position.set(0, -2, 2);
+regexSprite.material.opacity = 0;
+scene.add(regexSprite);
+
+// 第二个正则
+const regex2Sprite = textSprite('[¥￥]?\\s?[\\d,]+\\.?\\d*', '#00ffaa', 0.8);
+regex2Sprite.position.set(0, -3.5, 2);
+regex2Sprite.material.opacity = 0;
+scene.add(regex2Sprite);
+
+// 正则引擎 - 六边形齿轮
+const engineGroup = new THREE.Group();
+engineGroup.position.set(0, 0, 0);
+engineGroup.visible = false;
+scene.add(engineGroup);
+
+const gearGeo = new THREE.TorusGeometry(3, 0.3, 8, 6);
+const gearMat = new THREE.MeshStandardMaterial({
+  color: 0x00ffaa,
+  emissive: 0x00aa66,
+  emissiveIntensity: 1,
+  transparent: true,
+  opacity: 0,
+});
+const gear1 = new THREE.Mesh(gearGeo, gearMat);
+engineGroup.add(gear1);
+
+const gear2 = new THREE.Mesh(gearGeo, gearMat.clone());
+gear2.position.set(5, 0, 0);
+gear2.rotation.z = Math.PI / 6;
+engineGroup.add(gear2);
+
+// 引擎中心
+const engineCoreGeo = new THREE.OctahedronGeometry(1.2, 0);
+const engineCoreMat = new THREE.MeshStandardMaterial({
+  color: 0x00ffcc,
+  emissive: 0x00ffaa,
+  emissiveIntensity: 2,
+  transparent: true,
+  opacity: 0,
+});
+const engineCore = new THREE.Mesh(engineCoreGeo, engineCoreMat);
+engineGroup.add(engineCore);
+
+// 对比场景 - 左侧 LLM 路径，右侧 正则路径
+// 左侧标签
+const llmLabel = textSprite('LLM 每次推理', '#ff6b6b', 0.7);
+llmLabel.position.set(-8, 5, 0);
+llmLabel.material.opacity = 0;
+scene.add(llmLabel);
+
+// 右侧标签
+const regexLabel = textSprite('正则引擎', '#00ffaa', 0.7);
+regexLabel.position.set(8, 5, 0);
+regexLabel.material.opacity = 0;
+scene.add(regexLabel);
+
+// 成本标签
+const llmCost = textSprite('$0.01 × N  |  500ms × N', '#ff8888', 0.6);
+llmCost.position.set(-8, -4, 0);
+llmCost.material.opacity = 0;
+scene.add(llmCost);
+
+const regexCost = textSprite('$0 × ∞  |  <1ms × ∞', '#88ffcc', 0.6);
+regexCost.position.set(8, -4, 0);
+regexCost.material.opacity = 0;
+scene.add(regexCost);
+
+// 粒子系统 - 混乱数据粒子
+const chaosParticles = new Particles(300);
+for (let i = 0; i < 300; i++) {
+  const i3 = i * 3;
+  chaosParticles.pos[i3] = (Math.random() - 0.5) * 30;
+  chaosParticles.pos[i3+1] = (Math.random() - 0.5) * 20;
+  chaosParticles.pos[i3+2] = (Math.random() - 0.5) * 15;
+  chaosParticles.vel[i3] = (Math.random() - 0.5) * 3;
+  chaosParticles.vel[i3+1] = (Math.random() - 0.5) * 2;
+  chaosParticles.vel[i3+2] = (Math.random() - 0.5) * 2;
+  chaosParticles.col[i3] = 1;
+  chaosParticles.col[i3+1] = 0.4 + Math.random() * 0.3;
+  chaosParticles.col[i3+2] = 0.3;
+  chaosParticles.siz[i] = 1.5 + Math.random() * 2;
+  chaosParticles.alp[i] = 0;
+}
+chaosParticles.geo.attributes.position.needsUpdate = true;
+chaosParticles.geo.attributes.color.needsUpdate = true;
+chaosParticles.geo.attributes.size.needsUpdate = true;
+
+// 流动粒子 - 编译后
+const flowParticles = new Particles(200);
+for (let i = 0; i < 200; i++) {
+  const i3 = i * 3;
+  flowParticles.pos[i3] = (Math.random() - 0.5) * 20;
+  flowParticles.pos[i3+1] = (Math.random() - 0.5) * 12;
+  flowParticles.pos[i3+2] = (Math.random() - 0.5) * 8;
+  flowParticles.col[i3] = 0;
+  flowParticles.col[i3+1] = 1;
+  flowParticles.col[i3+2] = 0.7;
+  flowParticles.siz[i] = 2;
+  flowParticles.alp[i] = 0;
+}
+flowParticles.geo.attributes.position.needsUpdate = true;
+flowParticles.geo.attributes.color.needsUpdate = true;
+flowParticles.geo.attributes.size.needsUpdate = true;
+
+// 对比粒子 - LLM侧（红色，慢）
+const llmParticles = new Particles(80);
+for (let i = 0; i < 80; i++) {
+  const i3 = i * 3;
+  llmParticles.pos[i3] = -8;
+  llmParticles.pos[i3+1] = Math.random() * 8 - 2;
+  llmParticles.pos[i3+2] = (Math.random() - 0.5) * 4;
+  llmParticles.col[i3] = 1;
+  llmParticles.col[i3+1] = 0.3;
+  llmParticles.col[i3+2] = 0.3;
+  llmParticles.siz[i] = 2;
+  llmParticles.alp[i] = 0;
+  llmParticles.vel[i3] = 0;
+  llmParticles.vel[i3+1] = 0;
+  llmParticles.vel[i3+2] = 0;
+}
+llmParticles.geo.attributes.position.needsUpdate = true;
+llmParticles.geo.attributes.color.needsUpdate = true;
+llmParticles.geo.attributes.size.needsUpdate = true;
+
+// 对比粒子 - Regex侧（绿色，快）
+const regexFlowParticles = new Particles(80);
+for (let i = 0; i < 80; i++) {
+  const i3 = i * 3;
+  regexFlowParticles.pos[i3] = 8;
+  regexFlowParticles.pos[i3+1] = Math.random() * 8 - 2;
+  regexFlowParticles.pos[i3+2] = (Math.random() - 0.5) * 4;
+  regexFlowParticles.col[i3] = 0;
+  regexFlowParticles.col[i3+1] = 1;
+  regexFlowParticles.col[i3+2] = 0.7;
+  regexFlowParticles.siz[i] = 2.5;
+  regexFlowParticles.alp[i] = 0;
+  regexFlowParticles.vel[i3] = 0;
+  regexFlowParticles.vel[i3+1] = 0;
+  regexFlowParticles.vel[i3+2] = 0;
+}
+regexFlowParticles.geo.attributes.position.needsUpdate = true;
+regexFlowParticles.geo.attributes.color.needsUpdate = true;
+regexFlowParticles.geo.attributes.size.needsUpdate = true;
+
+// 中间分隔线
+const dividerGeo = new THREE.PlaneGeometry(0.05, 14);
+const dividerMat = new THREE.MeshBasicMaterial({ color: 0x335577, transparent: true, opacity: 0 });
+const divider = new THREE.Mesh(dividerGeo, dividerMat);
+divider.position.set(0, 1, 0);
+scene.add(divider);
+
+// VS 标签
+const vsLabel = textSprite('VS', '#ffffff', 0.6);
+vsLabel.position.set(0, 5, 0);
+vsLabel.material.opacity = 0;
+scene.add(vsLabel);
+
+// ─── 主循环 ───
+let t0 = performance.now();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const dt = 1/60;
+  let t = (performance.now() - t0) / 1000;
+
+  if (t > DURATION + 1.5) { t0 = performance.now(); t = 0; }
+
+  // UI
+  const mins = Math.floor(t / 60);
+  const secs = Math.floor(t % 60);
+  timerEl.textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+  progressEl.style.width = `${(t / DURATION) * 100}%`;
+
+  // Chapter display
+  let chapVisible = false;
+  for (const ch of chapters) {
+    if (t >= ch.start && t < ch.end) {
+      chapterEl.textContent = ch.title;
+      subtitleEl.textContent = ch.sub;
+      chapterEl.style.opacity = 1;
+      subtitleEl.style.opacity = 1;
+      chapVisible = true;
+      break;
+    }
+  }
+  if (!chapVisible) {
+    chapterEl.style.opacity = 0;
+    subtitleEl.style.opacity = 0;
+  }
+
+  // ─── Act 1: 涌入 (0-7s) ───
+  // 混乱数据卡片飞入+漂浮，粒子渐显
+  if (t < 7) {
+    for (let i = 0; i < dataCards.length; i++) {
+      const card = dataCards[i];
+      const delay = i * 0.3;
+      const p = ss(delay, delay + 1.5, t);
+      card.position.x = lerp(card.userData.basePos.x + (i % 2 === 0 ? -25 : 25), card.userData.basePos.x, p);
+      card.position.y = card.userData.basePos.y + Math.sin(t * 1.5 + i) * 0.3;
+      card.position.z = card.userData.basePos.z;
+      card.rotation.z = Math.sin(t * 0.8 + i * 0.7) * 0.15;
+      card.rotation.y = Math.sin(t * 0.5 + i) * 0.1;
+      card.material.opacity = p;
+    }
+    // 混乱粒子渐显
+    for (let i = 0; i < 300; i++) {
+      const i3 = i * 3;
+      chaosParticles.alp[i] = ss(1, 3, t) * 0.4;
+      chaosParticles.vel[i3] += (Math.random() - 0.5) * 0.5 * dt;
+      chaosParticles.vel[i3+1] += (Math.random() - 0.5) * 0.3 * dt;
+      chaosParticles.vel[i3+2] += (Math.random() - 0.5) * 0.3 * dt;
+    }
+    chaosParticles.geo.attributes.alpha.needsUpdate = true;
+  }
+
+  // ─── Act 2: 理解 (7-14s) ───
+  // LLM大脑出现，扫描光束，数据卡片向中心聚拢
+  if (t >= 7 && t < 14) {
+    const brainAppear = ss(7, 9, t);
+    brainMat.opacity = brainAppear;
+    coreMat.opacity = brainAppear;
+    brain.rotation.y = t * 0.5;
+    brain.rotation.x = Math.sin(t * 0.3) * 0.2;
+    core.rotation.y = -t * 0.8;
+
+    // 光束
+    const beamAppear = ss(8, 10, t);
+    beamMat.opacity = beamAppear * 0.15;
+    beam.rotation.y = t * 1.5;
+
+    // 数据卡片向中心聚拢
+    const gatherP = ss(8, 12, t);
+    for (let i = 0; i < dataCards.length; i++) {
+      const card = dataCards[i];
+      card.position.x = lerp(card.userData.basePos.x, 0, gatherP);
+      card.position.y = lerp(card.userData.basePos.y, 0, gatherP);
+      card.position.z = lerp(card.userData.basePos.z, -2, gatherP);
+      card.material.opacity = 1 - gatherP * 0.3;
+      card.rotation.z *= 0.98;
+      card.rotation.y *= 0.98;
+    }
+
+    // 混乱粒子减弱
+    for (let i = 0; i < 300; i++) {
+      chaosParticles.alp[i] = lerp(0.4, 0.15, ss(8, 12, t));
+      // 向中心吸引
+      const i3 = i * 3;
+      const dx = -chaosParticles.pos[i3] * 0.02;
+      const dy = -chaosParticles.pos[i3+1] * 0.02;
+      chaosParticles.vel[i3] += dx * dt;
+      chaosParticles.vel[i3+1] += dy * dt;
+    }
+    chaosParticles.geo.attributes.alpha.needsUpdate = true;
+  }
+
+  // ─── Act 3: 转化 (14-22s) ───
+  // 正则从大脑底部凝聚生成，数据卡片消散
+  if (t >= 14 && t < 22) {
+    // 大脑脉冲
+    const pulse = 1 + Math.sin(t * 3) * 0.1;
+    brain.scale.setScalar(pulse);
+    brainMat.emissiveIntensity = 0.5 + Math.sin(t * 4) * 0.3;
+    brain.rotation.y = t * 0.5;
+
+    // 数据卡片消散
+    const disperseP = ss(14, 17, t);
+    for (const card of dataCards) {
+      card.material.opacity = 1 - disperseP;
+      card.position.y += disperseP * 0.5 * dt;
+    }
+
+    // 正则文字浮现
+    const regexP = ss(16, 19, t);
+    regexSprite.material.opacity = regexP;
+    regexSprite.position.y = lerp(-5, -2, regexP);
+
+    const regex2P = ss(18, 21, t);
+    regex2Sprite.material.opacity = regex2P;
+    regex2Sprite.position.y = lerp(-6, -3.5, regex2P);
+
+    // 混乱粒子变绿 - 编译完成
+    for (let i = 0; i < 300; i++) {
+      const i3 = i * 3;
+      const convertP = ss(15, 20, t);
+      chaosParticles.col[i3] = lerp(1, 0, convertP);
+      chaosParticles.col[i3+1] = lerp(0.5, 1, convertP);
+      chaosParticles.col[i3+2] = lerp(0.3, 0.7, convertP);
+      chaosParticles.alp[i] = lerp(0.15, 0.3, convertP);
+    }
+    chaosParticles.geo.attributes.color.needsUpdate = true;
+    chaosParticles.geo.attributes.alpha.needsUpdate = true;
+
+    // 流动粒子渐显
+    for (let i = 0; i < 200; i++) {
+      flowParticles.alp[i] = ss(17, 20, t) * 0.5;
+    }
+    flowParticles.geo.attributes.alpha.needsUpdate = true;
+  }
+
+  // ─── Act 4: 上线 (22-29s) ───
+  // 正则引擎齿轮旋转，数据高速通过
+  if (t >= 22 && t < 29) {
+    engineGroup.visible = true;
+    const engineP = ss(22, 25, t);
+
+    // 大脑淡出上移
+    brain.position.y = lerp(2, 6, ss(22, 25, t));
+    brainMat.opacity = 1 - ss(22, 25, t);
+    coreMat.opacity = 1 - ss(22, 25, t);
+    beamMat.opacity = 0;
+
+    // 正则文字上移到引擎上方
+    regexSprite.position.y = lerp(-2, 4, ss(22, 24, t));
+    regex2Sprite.position.y = lerp(-3.5, 3, ss(22, 24, t));
+
+    // 齿轮显现
+    gearMat.opacity = engineP;
+    gear2.material.opacity = engineP;
+    engineCoreMat.opacity = engineP;
+
+    // 齿轮旋转
+    const spinSpeed = lerp(0.5, 3, ss(23, 27, t));
+    gear1.rotation.z += spinSpeed * dt;
+    gear2.rotation.z -= spinSpeed * dt;
+    engineCore.rotation.y += spinSpeed * 0.5 * dt;
+    engineCore.rotation.x += spinSpeed * 0.3 * dt;
+    engineCoreMat.emissiveIntensity = 1.5 + Math.sin(t * 5) * 0.5;
+
+    // 流动粒子加速穿过引擎
+    for (let i = 0; i < 200; i++) {
+      const i3 = i * 3;
+      flowParticles.alp[i] = engineP * 0.6;
+      flowParticles.vel[i3] = lerp(0, 8, engineP) * (0.5 + Math.random() * 0.5);
+      // 循环：飞出后重置
+      if (flowParticles.pos[i3] > 15) {
+        flowParticles.pos[i3] = -15;
+        flowParticles.pos[i3+1] = (Math.random() - 0.5) * 8;
+        flowParticles.pos[i3+2] = (Math.random() - 0.5) * 4;
+      }
+    }
+    flowParticles.geo.attributes.alpha.needsUpdate = true;
+
+    // 混乱粒子也变流动
+    for (let i = 0; i < 300; i++) {
+      const i3 = i * 3;
+      chaosParticles.alp[i] = engineP * 0.2;
+      chaosParticles.vel[i3] = lerp(chaosParticles.vel[i3], 6, 0.02);
+      if (chaosParticles.pos[i3] > 20) {
+        chaosParticles.pos[i3] = -20;
+        chaosParticles.pos[i3+1] = (Math.random() - 0.5) * 10;
+        chaosParticles.pos[i3+2] = (Math.random() - 0.5) * 6;
+      }
+    }
+    chaosParticles.geo.attributes.alpha.needsUpdate = true;
+  }
+
+  // ─── Act 5: 对比 (29-36s) ───
+  // 左右分屏：LLM慢 vs 正则快
+  if (t >= 29 && t < 36) {
+    const splitP = ss(29, 31, t);
+
+    // 引擎淡出
+    gearMat.opacity = lerp(gearMat.opacity, 0, 0.05);
+    gear2.material.opacity = gearMat.opacity;
+    engineCoreMat.opacity = gearMat.opacity;
+    regexSprite.material.opacity = gearMat.opacity;
+    regex2Sprite.material.opacity = gearMat.opacity;
+
+    // 混乱&流动粒子淡出
+    for (let i = 0; i < 300; i++) chaosParticles.alp[i] *= 0.95;
+    for (let i = 0; i < 200; i++) flowParticles.alp[i] *= 0.95;
+    chaosParticles.geo.attributes.alpha.needsUpdate = true;
+    flowParticles.geo.attributes.alpha.needsUpdate = true;
+
+    // 分隔线出现
+    dividerMat.opacity = splitP * 0.5;
+
+    // 标签出现
+    llmLabel.material.opacity = splitP;
+    regexLabel.material.opacity = splitP;
+    vsLabel.material.opacity = splitP;
+    llmCost.material.opacity = ss(32, 34, t);
+    regexCost.material.opacity = ss(32, 34, t);
+
+    // LLM侧：粒子慢速下落，每个代表一次推理（慢）
+    for (let i = 0; i < 80; i++) {
+      const i3 = i * 3;
+      llmParticles.alp[i] = splitP * 0.6;
+      // 缓慢下落
+      llmParticles.vel[i3+1] = -0.8;
+      llmParticles.vel[i3] = (Math.random() - 0.5) * 0.3;
+      // 重置
+      if (llmParticles.pos[i3+1] < -5) {
+        llmParticles.pos[i3+1] = 5;
+        llmParticles.pos[i3] = -8 + (Math.random() - 0.5) * 3;
+      }
+    }
+    llmParticles.geo.attributes.alpha.needsUpdate = true;
+
+    // Regex侧：粒子快速下落，每个代表一次匹配（快）
+    for (let i = 0; i < 80; i++) {
+      const i3 = i * 3;
+      regexFlowParticles.alp[i] = splitP * 0.8;
+      regexFlowParticles.vel[i3+1] = -12;
+      regexFlowParticles.vel[i3] = (Math.random() - 0.5) * 0.5;
+      // 重置
+      if (regexFlowParticles.pos[i3+1] < -5) {
+        regexFlowParticles.pos[i3+1] = 5;
+        regexFlowParticles.pos[i3] = 8 + (Math.random() - 0.5) * 3;
+      }
+    }
+    regexFlowParticles.geo.attributes.alpha.needsUpdate = true;
+  }
+
+  // ─── Camera ───
+  if (t < 7) {
+    // Act 1: 远景，缓慢环绕
+    const angle = t * 0.1;
+    camera.position.x = Math.sin(angle) * 28;
+    camera.position.z = Math.cos(angle) * 28;
+    camera.position.y = 8 + Math.sin(t * 0.3) * 1;
+  } else if (t < 14) {
+    // Act 2: 推近大脑
+    const p = ss(7, 10, t);
+    camera.position.x = lerp(camera.position.x, 0, 0.03);
+    camera.position.z = lerp(28, 18, p);
+    camera.position.y = lerp(8, 5, p);
+  } else if (t < 22) {
+    // Act 3: 稍微拉远看正则产出
+    const p = ss(14, 16, t);
+    camera.position.z = lerp(18, 22, p);
+    camera.position.y = lerp(5, 4, p);
+  } else if (t < 29) {
+    // Act 4: 侧面看引擎旋转
+    const p = ss(22, 25, t);
+    camera.position.x = lerp(0, 10, p);
+    camera.position.z = lerp(22, 20, p);
+    camera.position.y = lerp(4, 3, p);
+  } else {
+    // Act 5: 正面远看对比
+    const p = ss(29, 31, t);
+    camera.position.x = lerp(10, 0, p);
+    camera.position.z = lerp(20, 25, p);
+    camera.position.y = lerp(3, 4, p);
+  }
+  camera.lookAt(0, 1, 0);
+
+  // ─── Particles update ───
+  chaosParticles.update(dt);
+  flowParticles.update(dt);
+  llmParticles.update(dt);
+  regexFlowParticles.update(dt);
+
+  composer.render();
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  composer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>

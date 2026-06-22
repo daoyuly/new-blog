@@ -12,6 +12,10 @@ categories:
 
 正则表达式是程序员最不想手写、又不得不手写的东西之一。语法诡异、调试痛苦、改一行炸一片。但在 Agent 系统里，让 LLM 生成正则这件事，不只是"帮我写个 pattern"这么简单——它改变了 Agent 和非结构化数据打交道的方式。
 
+<div style="position:relative;width:100%;padding-bottom:56.25%;margin:1.5em 0;border-radius:8px;overflow:hidden;background:#0a0a12;">
+  <iframe src="/animations/agent-llm-regex-animation.html" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>
+</div>
+
 ## 先说问题：Agent 遇到非结构化数据怎么办？
 
 Agent 的输入经常是混乱的：用户消息、日志文件、网页抓取内容、API 返回的半结构化文本。你需要从里面提取信息——邮箱、日期、金额、SKU 编号、错误码。
