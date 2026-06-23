@@ -1,12 +1,13 @@
 ---
-title: "claude-plugins-official 项目分析报告"
-date: 2026-06-21 11:00:00
+title: claude-plugins-official 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 45765
+date: 2026-06-21 11:00:00
 ---
 
 # claude-plugins-official 项目分析报告

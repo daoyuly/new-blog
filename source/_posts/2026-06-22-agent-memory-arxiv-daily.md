@@ -1,8 +1,17 @@
 ---
-title: "Agent Memory arXiv 日报 #23 — 从 Engram 到 Episodic Memory，状态与记忆的架构之争"
-date: 2026-06-22 18:00:00 +0800
-tags: [agent-memory, arxiv, daily-report, episodic-memory, RAG, long-term-memory, engram]
-categories: [agent-memory-daily]
+title: 'Agent Memory arXiv 日报 #23 — 从 Engram 到 Episodic Memory，状态与记忆的架构之争'
+date: '2026-06-22 18:00:00 +0800'
+tags:
+  - agent-memory
+  - arxiv
+  - daily-report
+  - episodic-memory
+  - RAG
+  - long-term-memory
+  - engram
+categories:
+  - agent-memory-daily
+abbrlink: 29075
 ---
 
 ## 📋 今日概览

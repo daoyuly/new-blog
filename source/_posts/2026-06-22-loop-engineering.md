@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering：循环不是问题，是解法
-date: 2026-06-22 10:06:00
 tags:
   - loop engineering
   - agent
@@ -8,6 +7,8 @@ tags:
   - engineering
 categories:
   - 工程方法论
+abbrlink: 54556
+date: 2026-06-22 10:06:00
 ---
 
 软件工程花了五十年学会一件事：别怕循环。

@@ -352,14 +352,15 @@ a:hover {
   margin: 2em 0;
 }
 
-/* 标签与分类链接 */
-.article-tag-list-link,
+/* 标签与分类链接（彩色标签底上用白字） */
+.article-tag .article-tag-list-link,
 .article-category .article-tag-list-link {
-  color: var(--ac-primary) !important;
+  color: #fff !important;
 }
-.article-tag-list-link:hover,
+.article-tag .article-tag-list-link:hover,
 .article-category .article-tag-list-link:hover {
-  color: var(--ac-primary-darker) !important;
+  color: #fff !important;
+  opacity: 0.85;
 }
 
 /* 页脚 */
