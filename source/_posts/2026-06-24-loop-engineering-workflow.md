@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering：基于日志的自动化开发和运维
-date: 2026-06-24 10:38:00
 tags:
   - engineering
   - workflow
@@ -9,6 +8,8 @@ tags:
   - observability
 categories:
   - 工程实践
+abbrlink: 2135
+date: 2026-06-24 10:38:00
 ---
 
 ## 一个闭环是怎么转起来的

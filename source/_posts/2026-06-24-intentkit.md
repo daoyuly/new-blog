@@ -1,6 +1,5 @@
 ---
-title: "intentkit 项目深度分析报告"
-date: 2026-06-24 11:00:00
+title: intentkit 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,6 +7,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+abbrlink: 14606
+date: 2026-06-24 11:00:00
 ---
 
 # intentkit 项目深度分析报告

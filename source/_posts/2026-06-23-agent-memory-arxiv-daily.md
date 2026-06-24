@@ -1,6 +1,5 @@
 ---
 title: Agent Memory arXiv 日报 — 2026-06-23
-date: 2026-06-23 18:06:00
 tags:
   - agent-memory
   - LLM
@@ -9,6 +8,8 @@ tags:
 categories:
   - AI Research
   - Agent Memory
+abbrlink: 9755
+date: 2026-06-23 18:06:00
 ---
 
 # Agent Memory arXiv 日报 — 2026-06-23
