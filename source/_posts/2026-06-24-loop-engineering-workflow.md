@@ -1,5 +1,5 @@
 ---
-title: Loop Engineering：让工程自己转起来
+title: Loop Engineering：基于日志的自动化开发和运维
 date: 2026-06-24 10:38:00
 tags:
   - engineering
