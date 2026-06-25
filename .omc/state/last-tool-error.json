@@ -1,7 +1,0 @@
-{
-  "tool_name": "mcp__plugin_context-mode_context-mode__ctx_execute",
-  "tool_input_preview": "{\"language\":\"shell\",\"code\":\"cd /Users/daoyu/Documents/my-github/new-blog\\n# Count posts per category\\npython3 <<'PY'\\nimport os, re, glob, yaml\\nfrom collections import Counter\\n\\nposts_dir = 'source/...",
-  "error": "⚠️ context-mode v1.0.162 outdated → v1.0.166 available. Upgrade: /ctx-upgrade\n\n```shell\ncd /Users/daoyu/Documents/my-github/new-blog\n# Count posts per category\npython3 <<'PY'\nimport os, re, glob, yaml\nfrom collections import Counter\n\nposts_dir = 'source/_posts'\ncat_count = Counter()\ncat_posts = {}\n\nfor f in glob.glob(f'{posts_dir}/*.md'):\n    with open(f, 'r', encoding='utf-8') as fp:\n        content = fp.read()\n    m = re.match(r'^---\\n(.*?)\\n---', content, re.DOTALL)\n    if not m:\n        cont...",
-  "timestamp": "2026-06-25T05:59:43.548Z",
-  "retry_count": 1
-}
