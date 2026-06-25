@@ -1,6 +1,5 @@
 ---
 title: AI Agent 的美学：对话里的设计原则与实践
-date: 2026-06-25 09:36:00
 tags:
   - AI
   - Agent
@@ -9,6 +8,8 @@ tags:
   - 用户体验
 categories:
   - 设计研究
+abbrlink: 36938
+date: 2026-06-25 09:36:00
 ---
 
 # AI Agent 的美学：对话里的设计原则与实践

@@ -1,0 +1,89 @@
+---
+title: cs.AI Agent 趋势日报 2026-06-25
+categories:
+  - arxiv
+  - agent
+tags:
+  - agent
+  - LLM
+  - reinforcement-learning
+  - multi-agent
+  - evaluation
+abbrlink: 14117
+date: 2026-06-25 12:00:00
+---
+
+今日 cs.AI 共收录约 40+ 篇论文，其中与 Agent 直接相关的有 8 篇。以下按主题梳理最新趋势。
+
+---
+
+## 🔥 核心趋势：Agent 训练数据工程走向系统化
+
+### [OpenThoughts-Agent: Data Recipes for Agentic Models](https://arxiv.org/abs/2606.24855)
+
+**这是今天最值得关注的论文。** OpenThoughts 团队首次系统性地研究了 Agentic Model 的训练数据配比问题。之前 SWE-Smith、SERA、Nemotron-Terminal 等工作只针对单一 benchmark 做数据，导致模型泛化能力差。OT-Agent 做了 100+ 组受控消融实验，发现**任务来源多样性和数据配比是关键**。最终用 100K 数据微调 Qwen3-32B，在 7 个 Agent benchmark 上平均 44.8%，比 Nemotron-Terminal-32B 高 3.9 个百分点，且在所有训练集规模下都优于现有开放数据集。
+
+> 💡 **Takeaway**：Agent 的能力瓶颈不在架构，在数据。谁能做好数据配方，谁就能训出更通用的 Agent。
+
+---
+
+## 🔍 Agent 诊断与评估：从"能做"到"知道哪里做错"
+
+### [SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation](https://arxiv.org/abs/2606.24626)
+
+Agent 执行轨迹越来越长，已经超出最大上下文窗口。传统方法把整个轨迹塞进 LLM 做诊断，注意力稀释严重。SAFARI 提出**工具增强的诊断循环**：给 LLM 配备搜索工具读取轨迹片段 + 短期记忆（STM）做跨轮推理，将诊断准确率与上下文长度解耦。在 Who&When 数据集上比 SOTA 高 20%，且当故障点在上下文窗口 5 倍之外时仍保持 0.58 precision——传统评估器此时完全失效。
+
+> 💡 **Takeaway**：Agent Debug 工具是刚需，"工具+记忆"范式比暴力塞上下文更可持续。
+
+### [Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System](https://arxiv.org/abs/2606.24839)
+
+多 Agent 数据分析系统（如 LAMBDA）的输出包含代码、数值、诊断文本，比单轮 LLM 回复难评估得多。论文提出三层人-AI 级联评分：严格正则匹配 → LLM 宽松评分 → 人工检查。严格评分器零假阳性，宽松评分器 recall 97%。关键发现：**迭代 nudge 机制将评分成功率从 36% 提到 97%**，且不需要重新注入原始问题——nudge 本质上是答案模板提示。
+
+> 💡 **Takeaway**：Agent 输出评估需要专门的评分管线，不能套用单轮 QA 的方法。
+
+---
+
+## 🧠 Agent 的世界模型与可信部署
+
+### [World Models in Pieces: Structural Certification for General Agents](https://arxiv.org/abs/2606.24842)
+
+理论性很强的一篇。证明了通用 Agent 不可能全知全能（not universal），标准最坏情况分析因此无法区分关键瓶颈和无关失败。论文提出 **Structural Certification**：将目标条件下的有界性能映射到 Agent 内部世界模型的逐条保证上。核心结果是构造性算法，对深度组合目标过滤特定转移，证明通用 Agent 在这些目标上有 O(1/n) + O(δ) 的世界模型误差界，且在 small-δ 体制下紧致。
+
+> 💡 **Takeaway**：部署 Agent 之前，我们需要知道它在哪些转移上可靠——局部化可靠区域比追求全局保证更实际。
+
+---
+
+## 🤝 多 Agent 与 LLM 引导的强化学习
+
+### [ASALT: Adaptive State Alignment for Lateral Transfer in Multi-agent RL](https://arxiv.org/abs/2606.24601)
+
+多 Agent RL 迁移学习的现有方法要求源域和目标域的观测/状态维度一致，太受限。ASALT 引入观测级和状态级适配器，将不同维度的观测和全局状态映射到共享嵌入空间，支持异构域之间的策略迁移。在合作场景下样本效率和全局回报都超越 baseline，且能有效缓解负迁移。
+
+### [LaGO: Latent Action Guidance for Online Reinforcement Learning](https://arxiv.org/abs/2606.24669)
+
+LLM 做控制器容易出错，因为需要精确生成动作。LaGO 换了个思路：**把 LLM 当隐动作先验，柔性引导在线策略优化**，而非直接控制。CLEVR-Robot 上成功率从 15.1% → 27.2%，Meta-World 上从 2.7% → 15.2%。更强的预训练 LLM 提供更有效的引导。
+
+> 💡 **Takeaway**：LLM 不一定要直接控制 Agent，做"软先验"可能更稳健。
+
+---
+
+## 🛡️ Agent 安全性
+
+### [AdversaBench: Automated LLM Red-Teaming](https://arxiv.org/abs/2606.24589)
+
+端到端红队管线：5 种结构化变异算子 → 查询目标模型 → 三评审团 + 元评审确认失败。在 45 个 seed 上 100% 产生确认失败。关键发现：**对抗 prompt 从 Llama 3.1 8B 零样本迁移到 Llama 3.3 70B**，说明变异利用的是模型通用缺陷而非小模型特有的弱点。对 Agent 的 tool use 场景尤其危险。
+
+---
+
+## 📊 趋势总结
+
+| 趋势 | 代表论文 | 信号强度 |
+|------|---------|---------|
+| Agent 训练数据工程 | OT-Agent | 🔴 强 |
+| Agent 诊断/评估工具化 | SAFARI, Grading the Grader | 🔴 强 |
+| Agent 可信部署与认证 | World Models in Pieces | 🟡 中 |
+| LLM 作为 Agent 的软先验 | LaGO | 🟡 中 |
+| 多 Agent 异构迁移 | ASALT | 🟢 初步 |
+| Agent 安全红队 | AdversaBench | 🔴 强 |
+
+**一句话总结今天的 Agent 方向**：社区正在从"能不能做 Agent"转向"怎么训好 Agent（数据工程）"和"怎么知道 Agent 做对了（评估/诊断/认证）"——这是 Agent 走向生产化的必经之路。

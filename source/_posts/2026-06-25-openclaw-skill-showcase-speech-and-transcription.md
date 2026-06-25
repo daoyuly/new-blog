@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Speech & Transcription（语音与转录）
-date: 2026-06-25 11:30:00
 tags:
   - openclaw
   - skill
   - speech-and-transcription
 categories:
   - 技术推荐
+abbrlink: 42312
+date: 2026-06-25 11:30:00
 ---
 
 # 🎙️ OpenClaw Skill 每日推荐 — Speech & Transcription（语音与转录）

@@ -1,6 +1,5 @@
 ---
 title: Agent 对话风格设计：让用户愿意一直聊下去
-date: 2026-06-25 09:55:00
 tags:
   - AI
   - Agent
@@ -9,6 +8,8 @@ tags:
   - 交互设计
 categories:
   - 设计研究
+abbrlink: 55611
+date: 2026-06-25 09:55:00
 ---
 
 # Agent 对话风格设计：让用户愿意一直聊下去

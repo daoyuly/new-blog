@@ -1,6 +1,5 @@
 ---
-title: "Agent Memory 日报 | 2026-06-24：记忆不再是存档，而是预判"
-date: 2026-06-24 18:00:00
+title: Agent Memory 日报 | 2026-06-24：记忆不再是存档，而是预判
 tags:
   - agent-memory
   - arxiv
@@ -10,6 +9,8 @@ tags:
   - episodic-memory
 categories:
   - AI论文日报
+abbrlink: 15888
+date: 2026-06-24 18:00:00
 ---
 
 ## 今日概览
