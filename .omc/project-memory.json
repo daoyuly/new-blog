@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1778907393102,
+  "lastScanned": 1782366982913,
   "projectRoot": "/Users/daoyu/Documents/my-github/new-blog",
   "techStack": {
     "languages": [
@@ -24,7 +24,7 @@
     "runtime": null
   },
   "build": {
-    "buildCommand": "yarn build",
+    "buildCommand": "yarn build 2>&1 | tail -40",
     "testCommand": null,
     "lintCommand": null,
     "devCommand": "yarn dev",
@@ -61,7 +61,7 @@
       "path": "platform",
       "purpose": null,
       "fileCount": 3,
-      "lastAccessed": 1778907393072,
+      "lastAccessed": 1782366982891,
       "keyFiles": [
         "README.md",
         "task-prompt.md"
@@ -70,21 +70,21 @@
     "public": {
       "path": "public",
       "purpose": "Public files",
-      "fileCount": 6,
-      "lastAccessed": 1778907393077,
+      "fileCount": 10,
+      "lastAccessed": 1782366982892,
       "keyFiles": [
+        "baidusitemap.xml",
         "content.json",
+        "googlec5827812e9d24888.html",
         "index.html",
-        "main.0cf68a.css",
-        "main.0cf68a.js",
-        "mobile.992cbe.js"
+        "main.0cf68a.css"
       ]
     },
     "scaffolds": {
       "path": "scaffolds",
       "purpose": null,
       "fileCount": 3,
-      "lastAccessed": 1778907393078,
+      "lastAccessed": 1782366982897,
       "keyFiles": [
         "draft.md",
         "page.md",
@@ -95,7 +95,7 @@
       "path": "server",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1778907393078,
+      "lastAccessed": 1782366982898,
       "keyFiles": [
         "index.js"
       ]
@@ -103,72 +103,39 @@
     "source": {
       "path": "source",
       "purpose": null,
-      "fileCount": 1,
-      "lastAccessed": 1778907393078,
-      "keyFiles": []
+      "fileCount": 3,
+      "lastAccessed": 1782366982898,
+      "keyFiles": [
+        "googlec5827812e9d24888.html",
+        "robots.txt"
+      ]
     },
     "themes": {
       "path": "themes",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1778907393078,
+      "lastAccessed": 1782366982898,
       "keyFiles": []
     }
   },
   "hotPaths": [
     {
-      "path": "",
-      "accessCount": 5,
-      "lastAccessed": 1778907455640,
-      "type": "directory"
-    },
-    {
-      "path": "_config.yml",
-      "accessCount": 4,
-      "lastAccessed": 1778907546243,
-      "type": "file"
-    },
-    {
-      "path": "themes/yilia/layout/_partial/baidu-analytics.ejs",
+      "path": "source/css/arthurchiao.css",
       "accessCount": 3,
-      "lastAccessed": 1778909047189,
+      "lastAccessed": 1782369193292,
       "type": "file"
     },
     {
-      "path": "themes/yilia/layout/_partial/head.ejs",
-      "accessCount": 2,
-      "lastAccessed": 1778907582712,
+      "path": "source/series/index.md",
+      "accessCount": 1,
+      "lastAccessed": 1782369169206,
       "type": "file"
     },
     {
       "path": "themes/yilia/_config.yml",
       "accessCount": 1,
-      "lastAccessed": 1778907437625,
+      "lastAccessed": 1782369174928,
       "type": "file"
-    },
-    {
-      "path": "package.json",
-      "accessCount": 1,
-      "lastAccessed": 1778907455243,
-      "type": "file"
-    },
-    {
-      "path": "source/robots.txt",
-      "accessCount": 1,
-      "lastAccessed": 1778907561344,
-      "type": "file"
-    },
-    {
-      "path": "themes/yilia/layout",
-      "accessCount": 1,
-      "lastAccessed": 1778907574201,
-      "type": "directory"
-    },
-    {
-      "path": "themes/yilia",
-      "accessCount": 1,
-      "lastAccessed": 1778909036951,
-      "type": "directory"
     }
   ],
   "userDirectives": []

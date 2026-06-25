@@ -1,6 +1,5 @@
 ---
 title: 情绪与预期：Goal不等于Expectation
-date: 2026-06-25 12:00:00
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 40642
+date: 2026-06-25 12:00:00
 ---
 
 # 情绪与预期：Goal不等于Expectation

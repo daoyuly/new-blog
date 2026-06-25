@@ -1,6 +1,5 @@
 ---
 title: 情绪如何重塑认知
-date: 2026-06-25 12:00:00
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 30826
+date: 2026-06-25 12:00:00
 ---
 
 # 情绪如何重塑认知
