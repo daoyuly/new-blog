@@ -8,6 +8,7 @@ tags:
   - episodic-memory
   - long-term-memory
 categories: [Agent Memory 研究]
+  - Agent Memory 研究
   - Agent Memory
 abbrlink: 4442
 date: 2026-06-18 18:00:00

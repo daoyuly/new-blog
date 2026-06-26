@@ -8,6 +8,7 @@ tags:
   - arxiv
   - daily-report
 categories: [Agent Memory 研究]
+  - Agent Memory 研究
   - Agent Memory
   - 论文日报
 abbrlink: 25588

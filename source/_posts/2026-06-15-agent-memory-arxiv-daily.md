@@ -6,6 +6,7 @@ tags:
   - daily-report
   - AI-agent
 categories: [Agent Memory 研究]
+  - Agent Memory 研究
   - Agent Memory 日报
 abbrlink: 13217
 date: 2026-06-15 18:00:00

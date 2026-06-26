@@ -7,6 +7,7 @@ tags:
   - episodic-memory
   - arxiv-daily
 categories: [Agent Memory 研究]
+  - Agent Memory 研究
   - AI论文日报
 abbrlink: 27954
 date: 2026-06-09 18:00:00

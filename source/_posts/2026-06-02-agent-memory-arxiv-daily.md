@@ -9,6 +9,7 @@ tags:
   - RAG
   - continual-learning
 categories: [Agent Memory 研究]
+  - Agent Memory 研究
   - AI论文日报
 abbrlink: 50162
 ---
