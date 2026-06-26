@@ -6,7 +6,7 @@ tags:
   - LLM
   - arXiv
   - daily-report
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory
   - 论文速递
 abbrlink: 15505

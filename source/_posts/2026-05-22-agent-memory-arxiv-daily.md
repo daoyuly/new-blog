@@ -7,7 +7,7 @@ tags:
   - LLM
   - retrieval
   - KV-cache
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory 研究
 abbrlink: 791
 date: 2026-05-22 18:00:00

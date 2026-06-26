@@ -5,7 +5,7 @@ tags:
   - arxiv-daily
   - LLM
   - RAG
-categories:
+categories: [Agent Memory 研究]
   - AI 论文追踪
   - Agent Memory
 abbrlink: 34715

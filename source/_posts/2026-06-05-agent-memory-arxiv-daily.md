@@ -6,7 +6,7 @@ tags:
   - daily-report
   - LLM
   - memory-systems
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory 日报
 abbrlink: 17562
 date: 2026-06-05 18:00:00

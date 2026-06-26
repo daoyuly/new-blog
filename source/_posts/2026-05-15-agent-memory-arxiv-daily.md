@@ -7,7 +7,7 @@ tags:
   - long-term-memory
   - episodic-memory
   - memory-model
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory 研究
 abbrlink: 60206
 date: 2026-05-15 18:00:00

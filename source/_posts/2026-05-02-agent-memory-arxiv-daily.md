@@ -6,7 +6,7 @@ tags:
   - arXiv
   - LLM
   - RAG
-categories:
+categories: [Agent Memory 研究]
   - AI Research
   - Daily Report
 abbrlink: 17033

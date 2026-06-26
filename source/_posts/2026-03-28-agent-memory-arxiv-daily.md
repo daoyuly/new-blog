@@ -8,7 +8,7 @@ tags:
   - Episodic Memory
   - AI Research
   - ArXiv Papers
-categories:
+categories: [Agent Memory 研究]
   - AI Research
   - Memory Systems
 abbrlink: 32874

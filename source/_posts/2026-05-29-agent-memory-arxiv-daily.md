@@ -7,7 +7,7 @@ tags:
   - LLM
   - long-term-memory
   - RAG
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory 研究
 abbrlink: 26011
 date: 2026-05-29 18:00:00

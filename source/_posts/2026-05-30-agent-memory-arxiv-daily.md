@@ -6,7 +6,7 @@ tags:
   - daily-report
   - LLM
   - memory
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory 研究
 abbrlink: 41799
 date: 2026-05-30 18:00:00

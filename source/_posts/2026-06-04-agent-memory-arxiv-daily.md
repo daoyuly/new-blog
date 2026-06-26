@@ -7,7 +7,7 @@ tags:
   - arxiv
   - daily-report
   - LLM
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory
   - ArXiv Daily
 abbrlink: 36583

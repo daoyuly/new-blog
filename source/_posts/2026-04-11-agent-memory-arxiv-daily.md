@@ -4,7 +4,7 @@ tags:
   - Agent Memory
   - AI
   - 论文分析
-categories:
+categories: [Agent Memory 研究]
   - AI 研究
 abbrlink: 2368
 date: 2026-04-11 18:00:00

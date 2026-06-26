@@ -6,7 +6,7 @@ tags:
   - Hyperdimensional Computing
   - Memory Systems
   - Agent Frameworks
-categories:
+categories: [Agent Memory 研究]
   - AI Research
   - Agent Memory
 abbrlink: 27117

@@ -8,7 +8,7 @@ tags:
   - LLM
   - RAG
   - continual-learning
-categories:
+categories: [Agent Memory 研究]
   - AI论文日报
 abbrlink: 50162
 ---

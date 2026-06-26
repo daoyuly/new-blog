@@ -6,7 +6,7 @@ tags:
   - Multi-Agent Systems
   - Knowledge Graph
   - ArXiv
-categories:
+categories: [Agent Memory 研究]
   - AI Research
   - Memory Systems
 abbrlink: 58420

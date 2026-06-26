@@ -6,7 +6,7 @@ tags:
   - Knowledge Management
   - LLM
   - arXiv
-categories:
+categories: [Agent Memory 研究]
   - AI 论文速递
   - Agent Memory 研究
 abbrlink: 9086

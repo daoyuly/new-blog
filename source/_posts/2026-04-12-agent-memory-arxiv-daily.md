@@ -7,7 +7,7 @@ tags:
   - Research
   - Episodic Memory
   - Long-term Memory
-categories:
+categories: [Agent Memory 研究]
   - AI Research
   - Agent Systems
 abbrlink: 55661

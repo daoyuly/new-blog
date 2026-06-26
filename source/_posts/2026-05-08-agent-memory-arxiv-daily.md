@@ -6,7 +6,7 @@ tags:
   - 强化学习
   - 自我进化
   - 经验管理
-categories:
+categories: [Agent Memory 研究]
   - 人工智能
   - Agent技术
   - 记忆系统

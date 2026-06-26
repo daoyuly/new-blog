@@ -6,7 +6,7 @@ tags:
   - daily-report
   - LLM
   - RAG
-categories:
+categories: [Agent Memory 研究]
   - 研究日报
 abbrlink: 11717
 date: 2026-06-10 18:14:00

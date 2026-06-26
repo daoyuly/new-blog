@@ -8,7 +8,7 @@ tags:
   - LLM
   - long-term-memory
   - RAG
-categories:
+categories: [Agent Memory 研究]
   - Agent Memory 日报
 ---
 
