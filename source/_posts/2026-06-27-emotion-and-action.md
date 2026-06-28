@@ -9,6 +9,7 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 3308
 date: 2026-06-27 09:54:00
 ---
 

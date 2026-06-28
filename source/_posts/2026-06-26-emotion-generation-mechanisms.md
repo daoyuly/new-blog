@@ -1,6 +1,5 @@
 ---
 title: 情绪产生的底层机制
-date: 2026-06-26 04:10:31
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 22634
+date: 2026-06-26 04:10:31
 ---
 
 ## 情绪产生的底层机制

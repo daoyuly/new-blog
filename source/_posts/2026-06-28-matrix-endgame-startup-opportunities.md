@@ -7,6 +7,7 @@ tags:
   - 思想实验
 categories:
   - 思考
+abbrlink: 14587
 date: 2026-06-28 18:57:00
 ---
 

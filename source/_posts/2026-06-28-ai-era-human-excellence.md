@@ -8,6 +8,7 @@ tags:
   - 整合
 categories:
   - 思考
+abbrlink: 43206
 date: 2026-06-28 18:34:00
 ---
 

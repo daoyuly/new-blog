@@ -6,6 +6,7 @@ tags:
   - 认知
 categories:
   - 思考
+abbrlink: 12499
 date: 2026-06-28 18:43:00
 ---
 

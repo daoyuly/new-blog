@@ -488,11 +488,39 @@ a:hover {
   line-height: 1.75;
   color: #24292f;
   padding: 1rem 1.15rem;
-  margin: 0 0 1.75rem;
+  margin: 0 0 1rem;
   background: linear-gradient(135deg, var(--ac-accent-softer) 0%, rgba(30, 41, 55, 0.04) 100%);
   border: 1px solid var(--biz-panel-border);
   border-left: 3px solid var(--biz-accent);
   border-radius: 4px;
+}
+
+.biz-page .biz-disclaimer {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ac-text-muted);
+  padding: 0.75rem 1rem;
+  margin: 0 0 1.75rem;
+  background: #fafbfc;
+  border: 1px solid var(--biz-panel-border);
+  border-left: 3px solid #9ca3af;
+  border-radius: 4px;
+}
+
+.biz-section--compliance {
+  background: var(--biz-bg);
+  border: 1px solid var(--biz-panel-border);
+  border-radius: 6px;
+  padding: 1.15rem 1.25rem 1.25rem;
+}
+
+.biz-section--compliance h2 {
+  margin-bottom: 0.75rem;
+}
+
+.biz-note--plain {
+  font-style: normal;
+  margin-top: 0.75rem;
 }
 
 .biz-section {

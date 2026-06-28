@@ -7,6 +7,7 @@ tags:
   - 开源
 categories:
   - 周报
+abbrlink: 62988
 date: 2026-06-28 17:30:00
 ---
 
