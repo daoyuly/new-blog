@@ -1,6 +1,5 @@
 ---
 title: 情绪与记忆的双向塑造
-date: 2026-06-29 04:00:01
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 37233
+date: 2026-06-29 04:00:01
 ---
 
 ## 情绪与记忆的双向塑造
