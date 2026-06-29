@@ -48,7 +48,7 @@ date: 2026-06-17 18:00:00
 
 ### 1. EvolveNav: Proactive Preflection and Self-Evolving Memory for Zero-Shot Object Goal Navigation
 
-> **来源**: [arXiv:2606.18235](https://arxiv.org/abs/2606.18235})
+> **来源**: [arXiv:2606.18235](https://arxiv.org/abs/2606.18235)
 
 **核心贡献：** ogn,preflection,shot,evolvenav,evolving,navigation,memory,zero,goal,proactive...
 
@@ -56,7 +56,7 @@ date: 2026-06-17 18:00:00
 
 ### 2. Fixed-Point Reasoners: Stable and Adaptive Deep Looped Transformers
 
-> **来源**: [arXiv:2606.18206](https://arxiv.org/abs/2606.18206})
+> **来源**: [arXiv:2606.18206](https://arxiv.org/abs/2606.18206)
 
 **核心贡献：** looped,fprm,halting,fixed,reasoners,architectures,reasoning,point,postponed,layers...
 
@@ -64,7 +64,7 @@ date: 2026-06-17 18:00:00
 
 ### 3. WEQA: Wearable hEalth Question Answering with Query-Adaptive Agentic Reasoning
 
-> **来源**: [arXiv:2606.18147](https://arxiv.org/abs/2606.18147})
+> **来源**: [arXiv:2606.18147](https://arxiv.org/abs/2606.18147)
 
 **核心贡献：** wearable,weqa,agentic,llm,health,answering,query,reasoning,pretrained,question...
 
@@ -72,7 +72,7 @@ date: 2026-06-17 18:00:00
 
 ### 4. Memory as a Wasting Asset: Pricing Flash Endurance for Embodied Agents, and the Limits of Doing So
 
-> **来源**: [arXiv:2606.18144](https://arxiv.org/abs/2606.18144})
+> **来源**: [arXiv:2606.18144](https://arxiv.org/abs/2606.18144)
 
 **核心贡献：** endurance,wear,flash,robot,nvm,value,erase,price,embodied,wasting...
 
@@ -80,7 +80,7 @@ date: 2026-06-17 18:00:00
 
 ### 5. Small Initialization Matters for Large Language Models
 
-> **来源**: [arXiv:2606.17945](https://arxiv.org/abs/2606.17945})
+> **来源**: [arXiv:2606.17945](https://arxiv.org/abs/2606.17945)
 
 **核心贡献：** initialization,reasoning,pretraining,small,gains,rage,matters,language,intelligence,rather...
 
@@ -92,7 +92,7 @@ date: 2026-06-17 18:00:00
 
 ### 1. DRFLOW: A Deep Research Benchmark for Personalized Workflow Prediction
 
-> **来源**: [arXiv:2606.18191](https://arxiv.org/abs/2606.18191})
+> **来源**: [arXiv:2606.18191](https://arxiv.org/abs/2606.18191)
 
 drflow,workflow,drfa,personalized,agent,workflows,steps,research,headcount,tasks...
 
@@ -102,31 +102,31 @@ drflow,workflow,drfa,personalized,agent,workflows,steps,research,headcount,tasks
 
 ### 1. Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure
 
-> **来源**: [arXiv:2606.18154](https://arxiv.org/abs/2606.18154})
+> **来源**: [arXiv:2606.18154](https://arxiv.org/abs/2606.18154)
 
 cardiac,hybrid,electrophysiology,twins,llm,agentic,digital,discovery,models,leads...
 
 ### 2. Your AI Travel Agent Would Book You a Bullfight: An Agentic Benchmark for Implicit Animal Welfare in Frontier AI Models
 
-> **来源**: [arXiv:2606.18142](https://arxiv.org/abs/2606.18142})
+> **来源**: [arXiv:2606.18142](https://arxiv.org/abs/2606.18142)
 
 welfare,agentic,travel,animal,booking,tac,behalf,forty,sixty,claude...
 
 ### 3. Knowledge Reutilization in Meta-Reinforcement Learning
 
-> **来源**: [arXiv:2606.18132](https://arxiv.org/abs/2606.18132})
+> **来源**: [arXiv:2606.18132](https://arxiv.org/abs/2606.18132)
 
 reutilization,meta,task,knowledge,embodiment,reinforcement,level,parametric,agent,agents...
 
 ### 4. PseudoBench: Measuring How Agentic Auto-Research Fuels Pseudoscience
 
-> **来源**: [arXiv:2606.18060](https://arxiv.org/abs/2606.18060})
+> **来源**: [arXiv:2606.18060](https://arxiv.org/abs/2606.18060)
 
 pseudoscience,pseudoscientific,pseudobench,agentic,agents,research,resist,auto,scientific,fuels...
 
 ### 5. ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents
 
-> **来源**: [arXiv:2606.18037](https://arxiv.org/abs/2606.18037})
+> **来源**: [arXiv:2606.18037](https://arxiv.org/abs/2606.18037)
 
 source,mcp,provenanceguard,factuality,attribution,claim,answers,ids,conflation,llm...
 

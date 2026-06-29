@@ -47,7 +47,7 @@ date: 2026-06-25 18:00:00
 
 ### 1. InvestPhilBench: A Multi-Layer Dynamic Benchmark for Evaluating Large Language Model Procedural Reasoning in Expert Investment Philosophy
 
-> **来源**: [arXiv:2606.25984](https://arxiv.org/abs/2606.25984})
+> **来源**: [arXiv:2606.25984](https://arxiv.org/abs/2606.25984)
 
 **核心贡献：** basp,gra,procedural,investphilbench,investment,benchmark,expert,scoring,sap,failure...
 
@@ -55,7 +55,7 @@ date: 2026-06-25 18:00:00
 
 ### 2. Cliff Tokens: Identifying Single-Token Failure Triggers in LLM Mathematical Reasoning
 
-> **来源**: [arXiv:2606.25524](https://arxiv.org/abs/2606.25524})
+> **来源**: [arXiv:2606.25524](https://arxiv.org/abs/2606.25524)
 
 **核心贡献：** cliff,token,failure,cliffs,triggers,reasoning,tokens,taxonomy,dpo,mathematical...
 
@@ -63,7 +63,7 @@ date: 2026-06-25 18:00:00
 
 ### 3. Quantization Inflates Reasoning: Token Inflation as a Hidden Cost of Low-Bit Reasoning Models
 
-> **来源**: [arXiv:2606.25519](https://arxiv.org/abs/2606.25519})
+> **来源**: [arXiv:2606.25519](https://arxiv.org/abs/2606.25519)
 
 **核心贡献：** reasoning,token,quantization,inflation,accuracy,quantized,inflates,bit,cost,int3...
 
@@ -71,7 +71,7 @@ date: 2026-06-25 18:00:00
 
 ### 4. Omni-Perception Policy Optimization for Multimodal Emotion Reasoning
 
-> **来源**: [arXiv:2606.25325](https://arxiv.org/abs/2606.25325})
+> **来源**: [arXiv:2606.25325](https://arxiv.org/abs/2606.25325)
 
 **核心贡献：** omni,perception,emotion,multimodal,oppo,reasoning,mep,cues,policy,bench...
 
@@ -79,7 +79,7 @@ date: 2026-06-25 18:00:00
 
 ### 5. To Isolate or to Score? Model-Adaptive Assessment for Cost-Efficient Multi-Agent RAG
 
-> **来源**: [arXiv:2606.25191](https://arxiv.org/abs/2606.25191})
+> **来源**: [arXiv:2606.25191](https://arxiv.org/abs/2606.25191)
 
 **核心贡献：** assessment,scoring,madara,document,agent,isolation,multi,score,rag,astoundingly...
 
@@ -91,7 +91,7 @@ date: 2026-06-25 18:00:00
 
 ### 1. Agentic System as Compressor: Quantifying System Intelligence in Bits
 
-> **来源**: [arXiv:2606.25960](https://arxiv.org/abs/2606.25960})
+> **来源**: [arXiv:2606.25960](https://arxiv.org/abs/2606.25960)
 
 agentic,codelength,bits,compressor,intelligence,system,coding,compression,operationalize,quantifying...
 
@@ -101,31 +101,31 @@ agentic,codelength,bits,compressor,intelligence,system,coding,compression,operat
 
 ### 1. The Unfireable Safety Kernel: Execution-Time AI Alignment for AI Agents and Other Escapable AI Systems
 
-> **来源**: [arXiv:2606.26057](https://arxiv.org/abs/2606.26057})
+> **来源**: [arXiv:2606.26057](https://arxiv.org/abs/2606.26057)
 
 escapable,unfireable,refused,alignment,agent,authorization,rust,safety,kernel,control...
 
 ### 2. Autodata: An agentic data scientist to create high quality synthetic data
 
-> **来源**: [arXiv:2606.25996](https://arxiv.org/abs/2606.25996})
+> **来源**: [arXiv:2606.25996](https://arxiv.org/abs/2606.25996)
 
 agentic,scientist,autodata,data,quality,create,synthetic,meta,creation,build...
 
 ### 3. AI Snitches Get Glitches: Towards Evading Agentic Surveillance
 
-> **来源**: [arXiv:2606.25836](https://arxiv.org/abs/2606.25836})
+> **来源**: [arXiv:2606.25836](https://arxiv.org/abs/2606.25836)
 
 surveillance,agentic,users,surveilling,snitches,evading,agents,glitches,unprompted,surveil...
 
 ### 4. GUI agent: Guided Exploration of User-Sensitive Screens
 
-> **来源**: [arXiv:2606.25705](https://arxiv.org/abs/2606.25705})
+> **来源**: [arXiv:2606.25705](https://arxiv.org/abs/2606.25705)
 
 gui,user,sensitive,screens,agent,llm,queries,takeover,agents,handover...
 
 ### 5. Agentic evolution of physically constrained foundation models
 
-> **来源**: [arXiv:2606.25532](https://arxiv.org/abs/2606.25532})
+> **来源**: [arXiv:2606.25532](https://arxiv.org/abs/2606.25532)
 
 hardware,agentic,physically,foundation,discovery,constrained,designs,engine,evolution,scientific...
 

@@ -47,7 +47,7 @@ date: 2026-06-18 18:00:00
 
 ### 1. Rethinking Reward Supervision: Rubric-Conditioned Self-Distillation
 
-> **来源**: [arXiv:2606.19327](https://arxiv.org/abs/2606.19327})
+> **来源**: [arXiv:2606.19327](https://arxiv.org/abs/2606.19327)
 
 **核心贡献：** rubric,rubrics,distillation,conditioned,reasoning,self,rationale,reward,supervision,grpo...
 
@@ -55,7 +55,7 @@ date: 2026-06-18 18:00:00
 
 ### 2. X+Slides: Benchmarking Audience-Conditioned Slide Generation
 
-> **来源**: [arXiv:2606.19256](https://arxiv.org/abs/2606.19256})
+> **来源**: [arXiv:2606.19256](https://arxiv.org/abs/2606.19256)
 
 **核心贡献：** audience,slide,slides,notebooklm,grounded,source,coverage,deeppresenter,slidetailor,reaches...
 
@@ -63,7 +63,7 @@ date: 2026-06-18 18:00:00
 
 ### 3. User as Engram: Internalizing Per-User Memory as Local Parametric Edits
 
-> **来源**: [arXiv:2606.19172](https://arxiv.org/abs/2606.19172})
+> **来源**: [arXiv:2606.19172](https://arxiv.org/abs/2606.19172)
 
 **核心贡献：** engram,user,facts,lora,edits,per,memory,skill,writing,reasoning...
 
@@ -71,7 +71,7 @@ date: 2026-06-18 18:00:00
 
 ### 4. RTSGameBench: An RTS Benchmark for Strategic Reasoning by Vision-Language Models
 
-> **来源**: [arXiv:2606.18950](https://arxiv.org/abs/2606.18950})
+> **来源**: [arXiv:2606.18950](https://arxiv.org/abs/2606.18950)
 
 **核心贡献：** rts,rtsgamebench,strategic,vlms,games,competency,coordination,mini,matchup,matchups...
 
@@ -79,7 +79,7 @@ date: 2026-06-18 18:00:00
 
 ### 5. Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents
 
-> **来源**: [arXiv:2606.18947](https://arxiv.org/abs/2606.18947})
+> **来源**: [arXiv:2606.18947](https://arxiv.org/abs/2606.18947)
 
 **核心贡献：** grounding,search,dsg,simpleqa,native,freshqa,provider,vendor,agnostic,llm...
 
@@ -91,31 +91,31 @@ date: 2026-06-18 18:00:00
 
 ### 1. TxBench-PP: Analyzing AI Agent Performance on Small-Molecule Preclinical Pharmacology
 
-> **来源**: [arXiv:2606.19245](https://arxiv.org/abs/2606.19245})
+> **来源**: [arXiv:2606.19245](https://arxiv.org/abs/2606.19245)
 
 preclinical,pharmacology,txbench,therapeuticsbench,assay,molecule,agents,drug,decisions,pharmacodynamic...
 
 ### 2. Towards an Agent-First Web: Redesigning the Web for AI Agents
 
-> **来源**: [arXiv:2606.19116](https://arxiv.org/abs/2606.19116})
+> **来源**: [arXiv:2606.19116](https://arxiv.org/abs/2606.19116)
 
 content,web,agent,human,agents,access,layer,economic,tier,redesigning...
 
 ### 3. RODS: Reward-Driven Online Data Synthesis for Multi-Turn Tool-Use Agents
 
-> **来源**: [arXiv:2606.19047](https://arxiv.org/abs/2606.19047})
+> **来源**: [arXiv:2606.19047](https://arxiv.org/abs/2606.19047)
 
 rods,reward,samples,turn,boundary,grpo,depletion,pool,online,synthesis...
 
 ### 4. Skill-Guided Continuation Distillation for GUI Agents
 
-> **来源**: [arXiv:2606.18890](https://arxiv.org/abs/2606.18890})
+> **来源**: [arXiv:2606.18890](https://arxiv.org/abs/2606.18890)
 
 sgcd,policy,skill,expert,continuation,gui,states,trajectories,supervision,guided...
 
 ### 5. ProfiLLM: Utility-Aligned Agentic User Profiling for Industrial Ride-Hailing Dispatch
 
-> **来源**: [arXiv:2606.18803](https://arxiv.org/abs/2606.18803})
+> **来源**: [arXiv:2606.18803](https://arxiv.org/abs/2606.18803)
 
 profiling,profillm,utility,agentic,hailing,llm,user,dispatcher,gmv,aligned...
 

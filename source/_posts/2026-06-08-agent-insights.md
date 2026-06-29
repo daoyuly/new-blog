@@ -39,7 +39,7 @@ date: 2026-06-08 18:00:00
 
 ### 1. DuMate-DeepResearch: An Auditable Multi-Agent System with Recursive Search and Rubric-Grounded Reasoning
 
-> **来源**: [arXiv:2606.07299](https://arxiv.org/abs/2606.07299})
+> **来源**: [arXiv:2606.07299](https://arxiv.org/abs/2606.07299)
 
 **核心贡献：** deepresearch,dumate,agent,rubric,planning,grounded,research,bench,auditable,recursive...
 
@@ -47,7 +47,7 @@ date: 2026-06-08 18:00:00
 
 ### 2. Think Fast: Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models
 
-> **来源**: [arXiv:2606.07157](https://arxiv.org/abs/2606.07157})
+> **来源**: [arXiv:2606.07157](https://arxiv.org/abs/2606.07157)
 
 **核心贡献：** frontier,cot,reasoning,minutes,tokens,completion,horizon,models,token,ths...
 
@@ -55,7 +55,7 @@ date: 2026-06-08 18:00:00
 
 ### 3. Beyond Post-hoc Explanation: Toward Glassbox AI via Probabilistic Mediation
 
-> **来源**: [arXiv:2606.07113](https://arxiv.org/abs/2606.07113})
+> **来源**: [arXiv:2606.07113](https://arxiv.org/abs/2606.07113)
 
 **核心贡献：** glassbox,hoc,mediation,contestable,probabilistic,reasoning,ante,post,explanation,fundamentally...
 
@@ -63,7 +63,7 @@ date: 2026-06-08 18:00:00
 
 ### 4. DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling
 
-> **来源**: [arXiv:2606.07108](https://arxiv.org/abs/2606.07108})
+> **来源**: [arXiv:2606.07108](https://arxiv.org/abs/2606.07108)
 
 **核心贡献：** dycon,reasoning,difficulty,overthinking,evolving,dynamic,redundant,lrms,mitigate,32b...
 
@@ -71,7 +71,7 @@ date: 2026-06-08 18:00:00
 
 ### 5. Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization
 
-> **来源**: [arXiv:2606.07000](https://arxiv.org/abs/2606.07000})
+> **来源**: [arXiv:2606.07000](https://arxiv.org/abs/2606.07000)
 
 **核心贡献：** ptd,distillation,rlvr,privileged,answer,token,tutoring,policy,multimodal,reasoning...
 
@@ -83,13 +83,13 @@ date: 2026-06-08 18:00:00
 
 ### 1. Declarative Skills for AI Agents in Knowledge-Grounded Tool-Use Workflows
 
-> **来源**: [arXiv:2606.06923](https://arxiv.org/abs/2606.06923})
+> **来源**: [arXiv:2606.06923](https://arxiv.org/abs/2606.06923)
 
 agents,orchestration,declarative,skill,files,imperativeagent,skills,workflows,retrieval,knowledge...
 
 ### 2. Workflow-to-Skill: Skill Creation via Routing-Workflow-Semantics-Attachments Decomposition
 
-> **来源**: [arXiv:2606.06893](https://arxiv.org/abs/2606.06893})
+> **来源**: [arXiv:2606.06893](https://arxiv.org/abs/2606.06893)
 
 skill,workflow,rwsa,skills,w2s,attachments,traces,semantics,decomposition,execution...
 
@@ -99,31 +99,31 @@ skill,workflow,rwsa,skills,w2s,attachments,traces,semantics,decomposition,execut
 
 ### 1. How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope
 
-> **来源**: [arXiv:2606.07489](https://arxiv.org/abs/2606.07489})
+> **来源**: [arXiv:2606.07489](https://arxiv.org/abs/2606.07489)
 
 computer,autonomy,search,agents,reshape,work,query,scope,users,minutes...
 
 ### 2. Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle
 
-> **来源**: [arXiv:2606.07462](https://arxiv.org/abs/2606.07462})
+> **来源**: [arXiv:2606.07462](https://arxiv.org/abs/2606.07462)
 
 aarr,research,researcher,agentic,frontier,bench,act,agents,aarri,scaffolding...
 
 ### 3. Off-Policy Evaluation with Strategic Agents via Local Disclosure
 
-> **来源**: [arXiv:2606.07308](https://arxiv.org/abs/2606.07308})
+> **来源**: [arXiv:2606.07308](https://arxiv.org/abs/2606.07308)
 
 agents,strategic,policy,ope,covariates,behavior,maker,decision,disclosure,responses...
 
 ### 4. StainFlow: Entity-Stain Tracking and Evidence Linking for Process Rewards in GUI Agents
 
-> **来源**: [arXiv:2606.07027](https://arxiv.org/abs/2606.07027})
+> **来源**: [arXiv:2606.07027](https://arxiv.org/abs/2606.07027)
 
 stain,gui,stainflow,entity,evidence,linking,agents,global,milestone,trajectory...
 
 ### 5. The Sim-to-Real Gap of Foundation Model Agents: A Unified MDP Perspective
 
-> **来源**: [arXiv:2606.07017](https://arxiv.org/abs/2606.07017})
+> **来源**: [arXiv:2606.07017](https://arxiv.org/abs/2606.07017)
 
 foundation,gap,agenda,sim,agents,real,unified,classical,entirely,model...
 

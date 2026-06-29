@@ -48,7 +48,7 @@ date: 2026-06-16 18:00:00
 
 ### 1. Adaptive and Explicit safe: Triggering Latent Safety Awareness in Large Reasoning Models
 
-> **来源**: [arXiv:2606.16808](https://arxiv.org/abs/2606.16808})
+> **来源**: [arXiv:2606.16808](https://arxiv.org/abs/2606.16808)
 
 **核心贡献：** safety,safe,awareness,lrms,queries,reasoning,sft,trigger,dpo,triggering...
 
@@ -56,7 +56,7 @@ date: 2026-06-16 18:00:00
 
 ### 2. User as Code: Executable Memory for Personalized Agents
 
-> **来源**: [arXiv:2606.16707](https://arxiv.org/abs/2606.16707})
+> **来源**: [arXiv:2606.16707](https://arxiv.org/abs/2606.16707)
 
 **核心贡献：** uac,user,memory,typed,consulted,facts,executable,personalized,rules,code...
 
@@ -68,7 +68,7 @@ date: 2026-06-16 18:00:00
 
 ### 1. The Integrator Advantage: Controlled Agentic AI for Small and Medium-Sized Companies
 
-> **来源**: [arXiv:2606.16649](https://arxiv.org/abs/2606.16649})
+> **来源**: [arXiv:2606.16649](https://arxiv.org/abs/2606.16649)
 
 agentic,autonomy,medium,companies,enterprise,sized,automation,controlled,integrator,enablement...
 
@@ -78,31 +78,31 @@ agentic,autonomy,medium,companies,enterprise,sized,automation,controlled,integra
 
 ### 1. A Causal Model of Theory of Mind in Conflict for Artificial Intelligence
 
-> **来源**: [arXiv:2606.16944](https://arxiv.org/abs/2606.16944})
+> **来源**: [arXiv:2606.16944](https://arxiv.org/abs/2606.16944)
 
 tom,conflict,mentalizing,situational,pathway,causal,mind,mentalize,agent,social...
 
 ### 2. GIST-CMTF: Goal-State Inference for Causal Minimal Tool Filtering in LLM Agents
 
-> **来源**: [arXiv:2606.16813](https://arxiv.org/abs/2606.16813})
+> **来源**: [arXiv:2606.16813](https://arxiv.org/abs/2606.16813)
 
 cmtf,goal,gist,tool,filtering,causal,agents,exposing,llm,wrong...
 
 ### 3. LabOSBench: Benchmarking Computer Use Agents for Scientific Instrument Control
 
-> **来源**: [arXiv:2606.16802](https://arxiv.org/abs/2606.16802})
+> **来源**: [arXiv:2606.16802](https://arxiv.org/abs/2606.16802)
 
 labosbench,agents,scientific,instrument,gui,computer,subtasks,benchmarking,control,reproducible...
 
 ### 4. OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models
 
-> **来源**: [arXiv:2606.16774](https://arxiv.org/abs/2606.16774})
+> **来源**: [arXiv:2606.16774](https://arxiv.org/abs/2606.16774)
 
 skill,skills,csn,collective,csts,openclaw,tree,agentic,scoring,search...
 
 ### 5. Skill-to-LoRA: From Using Skills to Learning Behaviors for Token-Efficient LLM Agents
 
-> **来源**: [arXiv:2606.16769](https://arxiv.org/abs/2606.16769})
+> **来源**: [arXiv:2606.16769](https://arxiv.org/abs/2606.16769)
 
 skill,s2l,lora,skills,text,runtime,procedural,full,adapter,token...
 

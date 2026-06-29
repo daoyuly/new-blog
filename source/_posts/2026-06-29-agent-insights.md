@@ -43,7 +43,7 @@ categories:
 
 ### 1. Tandem Reinforcement Learning with Verifiable Rewards
 
-> **来源**: [arXiv:2606.28166](https://arxiv.org/abs/2606.28166})
+> **来源**: [arXiv:2606.28166](https://arxiv.org/abs/2606.28166)
 
 **核心贡献：** junior,rlvr,tandem,senior,trl,grpo,verifiable,reasoning,rewarded,rollout...
 
@@ -51,7 +51,7 @@ categories:
 
 ### 2. NormAct: A Benchmark for Hidden Social Norm Compliance in Embodied Planning
 
-> **来源**: [arXiv:2606.27826](https://arxiv.org/abs/2606.27826})
+> **来源**: [arXiv:2606.27826](https://arxiv.org/abs/2606.27826)
 
 **核心贡献：** normact,norms,hidden,embodied,social,norm,mllms,goals,compliance,planning...
 
@@ -59,7 +59,7 @@ categories:
 
 ### 3. Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents
 
-> **来源**: [arXiv:2606.27806](https://arxiv.org/abs/2606.27806})
+> **来源**: [arXiv:2606.27806](https://arxiv.org/abs/2606.27806)
 
 **核心贡献：** gilp,llm,parameterized,calls,hallucination,language,world,hallucinated,grounded,planning...
 
@@ -67,7 +67,7 @@ categories:
 
 ### 4. Understanding Rollout Error in Graph World Models
 
-> **来源**: [arXiv:2606.27780](https://arxiv.org/abs/2606.27780})
+> **来源**: [arXiv:2606.27780](https://arxiv.org/abs/2606.27780)
 
 **核心贡献：** rollout,gwm,graph,gwms,error,edge,planning,world,dynamic,horizon...
 
@@ -75,7 +75,7 @@ categories:
 
 ### 5. MER-R1: Multimodal Emotion Reasoning via Slow-Fast Thinking Synergy
 
-> **来源**: [arXiv:2606.27652](https://arxiv.org/abs/2606.27652})
+> **来源**: [arXiv:2606.27652](https://arxiv.org/abs/2606.27652)
 
 **核心贡献：** thinking,mer,slow,fast,reasoning,emotion,synergy,recall,multimodal,precision...
 
@@ -87,7 +87,7 @@ categories:
 
 ### 1. Agentic Hardware Design as Repository-Level Code Evolution
 
-> **来源**: [arXiv:2606.28279](https://arxiv.org/abs/2606.28279})
+> **来源**: [arXiv:2606.28279](https://arxiv.org/abs/2606.28279)
 
 agentic,repository,hardware,design,git,chipbench,cvdp,evolution,hands,rtllm...
 
@@ -97,19 +97,19 @@ agentic,repository,hardware,design,git,chipbench,cvdp,evolution,hands,rtllm...
 
 ### 1. Agent-Native Immune System: Architecture, Taxonomy, and Engineering
 
-> **来源**: [arXiv:2606.28270](https://arxiv.org/abs/2606.28270})
+> **来源**: [arXiv:2606.28270](https://arxiv.org/abs/2606.28270)
 
 agent,immune,vaccines,anis,cognitive,native,taxonomy,immunity,alignment,defense...
 
 ### 2. ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents
 
-> **来源**: [arXiv:2606.27814](https://arxiv.org/abs/2606.27814})
+> **来源**: [arXiv:2606.27814](https://arxiv.org/abs/2606.27814)
 
 atod,opd,annealed,teacher,distillation,turn,reward,ceiling,policy,improves...
 
 ### 3. When Does Personality Composition Matter for Multi-Agent LLM Teams?
 
-> **来源**: [arXiv:2606.27443](https://arxiv.org/abs/2606.27443})
+> **来源**: [arXiv:2606.27443](https://arxiv.org/abs/2606.27443)
 
 personality,agreeableness,bargaining,agent,task,prompted,ended,composition,shifts,coding...
 

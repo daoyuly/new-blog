@@ -39,7 +39,7 @@ date: 2026-06-26 18:00:00
 
 ### 1. Einstein World Models
 
-> **来源**: [arXiv:2606.26969](https://arxiv.org/abs/2606.26969})
+> **来源**: [arXiv:2606.26969](https://arxiv.org/abs/2606.26969)
 
 **核心贡献：** world,reasoning,rollouts,thought,einstein,ewm,inspectable,reason,alone,llm...
 
@@ -47,7 +47,7 @@ date: 2026-06-26 18:00:00
 
 ### 2. Where Do CoT Training Gains Land in LLM based Agents?
 
-> **来源**: [arXiv:2606.26935](https://arxiv.org/abs/2606.26935})
+> **来源**: [arXiv:2606.26935](https://arxiv.org/abs/2606.26935)
 
 **核心贡献：** cot,prompt,action,reasoning,actions,checkpoints,predicting,getting,training,agents...
 
@@ -59,7 +59,7 @@ date: 2026-06-26 18:00:00
 
 ### 1. A Process Harness for Uplifting Legacy Workflows to Agentic BPM: Design and Realization in CUGA FLO
 
-> **来源**: [arXiv:2606.27188](https://arxiv.org/abs/2606.27188})
+> **来源**: [arXiv:2606.27188](https://arxiv.org/abs/2606.27188)
 
 agentic,harness,tdf,cuga,flo,process,workflow,uplifting,bpm,policy...
 
@@ -69,31 +69,31 @@ agentic,harness,tdf,cuga,flo,process,workflow,uplifting,bpm,policy...
 
 ### 1. When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models
 
-> **来源**: [arXiv:2606.27288](https://arxiv.org/abs/2606.27288})
+> **来源**: [arXiv:2606.27288](https://arxiv.org/abs/2606.27288)
 
 beta,routing,wrong,rho,router,voting,beat,failure,tetrachoric,models...
 
 ### 2. Joint Learning of Experiential Rules and Policies for Large Language Model Agents
 
-> **来源**: [arXiv:2606.27136](https://arxiv.org/abs/2606.27136})
+> **来源**: [arXiv:2606.27136](https://arxiv.org/abs/2606.27136)
 
 experiential,jerp,policy,rules,pool,trajectories,agents,policies,rule,joint...
 
 ### 3. Semantic Early-Stopping for Iterative LLM Agent Loops
 
-> **来源**: [arXiv:2606.27009](https://arxiv.org/abs/2606.27009})
+> **来源**: [arXiv:2606.27009](https://arxiv.org/abs/2606.27009)
 
 stopping,tokens,judge,drafts,llm,round,quality,loops,policy,semantic...
 
 ### 4. Diagnosing Task Insensitivity in Language Agents
 
-> **来源**: [arXiv:2606.26918](https://arxiv.org/abs/2606.26918})
+> **来源**: [arXiv:2606.26918](https://arxiv.org/abs/2606.26918)
 
 task,insensitivity,ood,agents,diagnosing,instruction,tokens,language,distinct,toward...
 
 ### 5. AgentX: Towards Agent-Driven Self-Iteration of Industrial Recommender Systems
 
-> **来源**: [arXiv:2606.26859](https://arxiv.org/abs/2606.26859})
+> **来源**: [arXiv:2606.26859](https://arxiv.org/abs/2606.26859)
 
 agentx,agent,production,iteration,self,launch,headcount,recommendation,artisanal,execution...
 

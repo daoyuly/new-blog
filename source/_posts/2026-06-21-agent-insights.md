@@ -39,7 +39,7 @@ date: 2026-06-21 18:00:00
 
 ### 1. LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
 
-> **来源**: [arXiv:2606.20529](https://arxiv.org/abs/2606.20529})
+> **来源**: [arXiv:2606.20529](https://arxiv.org/abs/2606.20529)
 
 **核心贡献：** calling,ledgeragent,tool,policy,adherent,agents,prompt,task,states,ledger...
 
@@ -47,7 +47,7 @@ date: 2026-06-21 18:00:00
 
 ### 2. FlowEdit: Associative Memory for Lifelong Pronunciation Adaptation in Flow-Matching TTS
 
-> **来源**: [arXiv:2606.20518](https://arxiv.org/abs/2606.20518})
+> **来源**: [arXiv:2606.20518](https://arxiv.org/abs/2606.20518)
 
 **核心贡献：** flowedit,pronunciation,matching,tts,nouns,corrections,flow,adaptation,lifelong,associative...
 
@@ -55,7 +55,7 @@ date: 2026-06-21 18:00:00
 
 ### 3. Context-Aware Hierarchical Bayesian Modeling of IVF Laboratory Environmental Conditions
 
-> **来源**: [arXiv:2606.20459](https://arxiv.org/abs/2606.20459})
+> **来源**: [arXiv:2606.20459](https://arxiv.org/abs/2606.20459)
 
 **核心贡献：** ivf,environmental,clinic,asian,laboratory,averages,northern,european,aware,hierarchical...
 
@@ -63,7 +63,7 @@ date: 2026-06-21 18:00:00
 
 ### 4. Leveraging systems&#039; non-linearity to tackle the scarcity of data in the design of Intelligent Fault Diagnosis Systems
 
-> **来源**: [arXiv:2606.20323](https://arxiv.org/abs/2606.20323})
+> **来源**: [arXiv:2606.20323](https://arxiv.org/abs/2606.20323)
 
 **核心贡献：** ifds,dtl,scarcity,systems,intelligent,fault,diagnosis,faults,data,leveraging...
 
@@ -71,7 +71,7 @@ date: 2026-06-21 18:00:00
 
 ### 5. QMFOL: Benchmarking Large Language Model Reasoning via Quantifiable Monadic First-Order Logic Test Case Generation
 
-> **来源**: [arXiv:2606.20227](https://arxiv.org/abs/2606.20227})
+> **来源**: [arXiv:2606.20227](https://arxiv.org/abs/2606.20227)
 
 **核心贡献：** reasoning,logical,qmfol,quantifiable,monadic,language,deductive,complexity,llms,benchmarks...
 
@@ -83,13 +83,13 @@ date: 2026-06-21 18:00:00
 
 ### 1. Automating SKILL.md Generation for Computer-Using Agents via Interaction Trajectory Mining
 
-> **来源**: [arXiv:2606.20363](https://arxiv.org/abs/2606.20363})
+> **来源**: [arXiv:2606.20363](https://arxiv.org/abs/2606.20363)
 
 skill,mined,mining,clusters,grpo,libraries,inspectable,computer,agents,trajectory...
 
 ### 2. A Multi-Agent system for Multi-Objective constrained optimization
 
-> **来源**: [arXiv:2606.20236](https://arxiv.org/abs/2606.20236})
+> **来源**: [arXiv:2606.20236](https://arxiv.org/abs/2606.20236)
 
 mamo,objective,multi,agent,constrained,environments,optimization,violations,problems,reward...
 

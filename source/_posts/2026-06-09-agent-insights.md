@@ -39,7 +39,7 @@ date: 2026-06-09 18:00:00
 
 ### 1. SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks
 
-> **来源**: [arXiv:2606.09669](https://arxiv.org/abs/2606.09669})
+> **来源**: [arXiv:2606.09669](https://arxiv.org/abs/2606.09669)
 
 **核心贡献：** spatialworld,agents,spatial,interactive,multimodal,tasks,mllms,task,world,reasoning...
 
@@ -47,7 +47,7 @@ date: 2026-06-09 18:00:00
 
 ### 2. Optical Reasoning: Rethinking Images as an Expressive Reasoning Medium Beyond Text
 
-> **来源**: [arXiv:2606.09585](https://arxiv.org/abs/2606.09585})
+> **来源**: [arXiv:2606.09585](https://arxiv.org/abs/2606.09585)
 
 **核心贡献：** reasoning,rationales,multimodal,optical,text,images,medium,language,interleaved,visual...
 
@@ -55,7 +55,7 @@ date: 2026-06-09 18:00:00
 
 ### 3. AI Scientists Are Only as Good as Their Evidence: A Stratified Ablation of Proprietary Data and Reasoning Skills in Drug-Asset Valuation
 
-> **来源**: [arXiv:2606.09556](https://arxiv.org/abs/2606.09556})
+> **来源**: [arXiv:2606.09556](https://arxiv.org/abs/2606.09556)
 
 **核心贡献：** proprietary,valuation,asset,curated,decision,scientist,scaffolds,objectivity,stratified,ablation...
 
@@ -63,7 +63,7 @@ date: 2026-06-09 18:00:00
 
 ### 4. SIFT: Selective-Index For Fast Compute of RAG Prefill by Exploiting Attention Invariance
 
-> **来源**: [arXiv:2606.09441](https://arxiv.org/abs/2606.09441})
+> **来源**: [arXiv:2606.09441](https://arxiv.org/abs/2606.09441)
 
 **核心贡献：** sift,rag,prefill,documents,attention,ttft,scores,document,queries,locations...
 
@@ -75,7 +75,7 @@ date: 2026-06-09 18:00:00
 
 ### 1. (Auto)formalization is supposed to be easy: Trellis process semantics for spelling out rigorous proofs
 
-> **来源**: [arXiv:2606.09674](https://arxiv.org/abs/2606.09674})
+> **来源**: [arXiv:2606.09674](https://arxiv.org/abs/2606.09674)
 
 autoformalization,trellis,formalization,lean,semantics,rigorous,proofs,workflow,spelling,supposed...
 
@@ -85,31 +85,31 @@ autoformalization,trellis,formalization,lean,semantics,rigorous,proofs,workflow,
 
 ### 1. SIGA: Self-Evolving Coding-Agent Adapters for Scientific Simulation
 
-> **来源**: [arXiv:2606.09774](https://arxiv.org/abs/2606.09774})
+> **来源**: [arXiv:2606.09774](https://arxiv.org/abs/2606.09774)
 
 siga,geos,simulator,grounding,coding,agent,scientific,validation,treesim,executable...
 
 ### 2. Collaborative Human-Agent Protocol (CHAP)
 
-> **来源**: [arXiv:2606.09751](https://arxiv.org/abs/2606.09751})
+> **来源**: [arXiv:2606.09751](https://arxiv.org/abs/2606.09751)
 
 chap,agent,human,standardises,protocol,handoff,deployments,chat,collaborative,becomes...
 
 ### 3. Multi-Turn Evaluation of Deep Research Agents Under Process-Level Feedback
 
-> **来源**: [arXiv:2606.09748](https://arxiv.org/abs/2606.09748})
+> **来源**: [arXiv:2606.09748](https://arxiv.org/abs/2606.09748)
 
 dras,feedback,turn,agents,research,rubric,gaps,regress,process,criteria...
 
 ### 4. SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research
 
-> **来源**: [arXiv:2606.09730](https://arxiv.org/abs/2606.09730})
+> **来源**: [arXiv:2606.09730](https://arxiv.org/abs/2606.09730)
 
 delegation,subagents,searchswarm,harness,agent,browsecomp,intelligence,horizon,agentic,research...
 
 ### 5. Beyond Probabilistic Similarity: Structural, Temporal, and Causal Limitations of Retrieval-Augmented Generation in the Legal Domain
 
-> **来源**: [arXiv:2606.09724](https://arxiv.org/abs/2606.09724})
+> **来源**: [arXiv:2606.09724](https://arxiv.org/abs/2606.09724)
 
 legal,retrieval,mereological,architectural,diachronic,blindness,causal,institutional,ontological,quaestio...
 

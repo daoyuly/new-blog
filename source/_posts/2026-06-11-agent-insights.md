@@ -49,7 +49,7 @@ date: 2026-06-11 18:00:00
 
 ### 1. PROJECTMEM: A Local-First, Event-Sourced Memory and Judgment Layer for AI Coding Agents
 
-> **来源**: [arXiv:2606.12329](https://arxiv.org/abs/2606.12329})
+> **来源**: [arXiv:2606.12329](https://arxiv.org/abs/2606.12329)
 
 **核心贡献：** projectmem,memory,coding,judgment,mcp,agents,log,session,failed,event...
 
@@ -57,7 +57,7 @@ date: 2026-06-11 18:00:00
 
 ### 2. The Art of Interrogation: Consistency Amplifies Factuality in Spatial Reasoning
 
-> **来源**: [arXiv:2606.11918](https://arxiv.org/abs/2606.11918})
+> **来源**: [arXiv:2606.11918](https://arxiv.org/abs/2606.11918)
 
 **核心贡献：** reasoning,lrms,consistency,spatial,verifiers,transformations,grpo,interrogation,amplifies,factuality...
 
@@ -65,7 +65,7 @@ date: 2026-06-11 18:00:00
 
 ### 3. SVoT: State-aware Visualization-of-Thought for Spatial Reasoning via Reinforcement Learning
 
-> **来源**: [arXiv:2606.11770](https://arxiv.org/abs/2606.11770})
+> **来源**: [arXiv:2606.11770](https://arxiv.org/abs/2606.11770)
 
 **核心贡献：** svot,reasoning,hop,intermediate,spatial,aware,interleaved,domains,visualization,thought...
 
@@ -73,7 +73,7 @@ date: 2026-06-11 18:00:00
 
 ### 4. Mind the Perspective: Let&#039;s Reason Recursively for Theory of Mind
 
-> **来源**: [arXiv:2606.11724](https://arxiv.org/abs/2606.11724})
+> **来源**: [arXiv:2606.11724](https://arxiv.org/abs/2606.11724)
 
 **核心贡献：** tom,rectom,perspective,mind,beliefs,reasoning,belief,character,filtering,nested...
 
@@ -81,7 +81,7 @@ date: 2026-06-11 18:00:00
 
 ### 5. Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents
 
-> **来源**: [arXiv:2606.11680](https://arxiv.org/abs/2606.11680})
+> **来源**: [arXiv:2606.11680](https://arxiv.org/abs/2606.11680)
 
 **核心贡献：** horma,memory,navigation,organize,retrieve,hierarchical,tasks,context,longmemeval,statelessness...
 
@@ -93,31 +93,31 @@ date: 2026-06-11 18:00:00
 
 ### 1. A Five-Plane Reference Architecture for Runtime Governance of Production AI Agents
 
-> **来源**: [arXiv:2606.12320](https://arxiv.org/abs/2606.12320})
+> **来源**: [arXiv:2606.12320](https://arxiv.org/abs/2606.12320)
 
 principals,governance,production,five,reference,agents,enterprise,audit,evidence,runtime...
 
 ### 2. The Impossibility of Eliciting Latent Knowledge
 
-> **来源**: [arXiv:2606.12268](https://arxiv.org/abs/2606.12268})
+> **来源**: [arXiv:2606.12268](https://arxiv.org/abs/2606.12268)
 
 honest,cids,agent,elk,eliciting,latent,honestly,impossibility,knowledge,training...
 
 ### 3. Human-Enhanced Loop Modeling (HELM): Agent-Based Finite Element Modeling of Concrete Bridge Barriers
 
-> **来源**: [arXiv:2606.12025](https://arxiv.org/abs/2606.12025})
+> **来源**: [arXiv:2606.12025](https://arxiv.org/abs/2606.12025)
 
 helm,modeling,barriers,agent,bridge,ansys,human,loop,element,concrete...
 
 ### 4. Embodied-BenchClaw: An Autonomous Multi-Agent System for Embodied Spatial Intelligence Benchmark Construction
 
-> **来源**: [arXiv:2606.11909](https://arxiv.org/abs/2606.11909})
+> **来源**: [arXiv:2606.11909](https://arxiv.org/abs/2606.11909)
 
 embodied,benchclaw,spatial,benchmarks,benchmark,construction,intelligence,evaluation,verifiable,intent...
 
 ### 5. Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task
 
-> **来源**: [arXiv:2606.11830](https://arxiv.org/abs/2606.11830})
+> **来源**: [arXiv:2606.11830](https://arxiv.org/abs/2606.11830)
 
 skill,outputs,expert,native,transcriptomic,exploratory,augmented,biomarker,quality,reviewer...
 

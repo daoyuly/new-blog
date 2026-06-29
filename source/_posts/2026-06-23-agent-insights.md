@@ -39,7 +39,7 @@ date: 2026-06-23 18:00:00
 
 ### 1. SPIRAL: Learning to Search and Aggregate
 
-> **来源**: [arXiv:2606.23595](https://arxiv.org/abs/2606.23595})
+> **来源**: [arXiv:2606.23595](https://arxiv.org/abs/2606.23595)
 
 **核心贡献：** reasoning,traces,spiral,primitives,sequential,final,language,compute,teach,aggregate...
 
@@ -47,7 +47,7 @@ date: 2026-06-23 18:00:00
 
 ### 2. VeriEvol: Scaling Multimodal Mathematical Reasoning via Verifiable Evol-Instruct
 
-> **来源**: [arXiv:2606.23543](https://arxiv.org/abs/2606.23543})
+> **来源**: [arXiv:2606.23543](https://arxiv.org/abs/2606.23543)
 
 **核心贡献：** verifier,verievol,grpo,htv,verifiable,scaling,prompts,evolved,sft,evol...
 
@@ -55,7 +55,7 @@ date: 2026-06-23 18:00:00
 
 ### 3. Abstract representational geometry supports inference in large language models
 
-> **来源**: [arXiv:2606.23345](https://arxiv.org/abs/2606.23345})
+> **来源**: [arXiv:2606.23345](https://arxiv.org/abs/2606.23345)
 
 **核心贡献：** abstract,representational,geometry,inference,language,hippocampus,llms,reasoning,layers,generalizable...
 
@@ -63,7 +63,7 @@ date: 2026-06-23 18:00:00
 
 ### 4. EHR-Complex: Benchmarking Medical Agents for Complex Clinical Reasoning
 
-> **来源**: [arXiv:2606.23301](https://arxiv.org/abs/2606.23301})
+> **来源**: [arXiv:2606.23301](https://arxiv.org/abs/2606.23301)
 
 **核心贡献：** ehr,sql,clinical,reasoning,complex,ehrs,agents,365k,medical,records...
 
@@ -71,7 +71,7 @@ date: 2026-06-23 18:00:00
 
 ### 5. HOLMES: Evaluating Higher-Order Logical Reasoning in LLMs
 
-> **来源**: [arXiv:2606.23238](https://arxiv.org/abs/2606.23238})
+> **来源**: [arXiv:2606.23238](https://arxiv.org/abs/2606.23238)
 
 **核心贡献：** holmes,reasoning,llms,order,symbolic,higher,predicates,verifiable,logical,logic...
 
@@ -83,19 +83,19 @@ date: 2026-06-23 18:00:00
 
 ### 1. Causal Discovery in the Era of Agents
 
-> **来源**: [arXiv:2606.23608](https://arxiv.org/abs/2606.23608})
+> **来源**: [arXiv:2606.23608](https://arxiv.org/abs/2606.23608)
 
 causal,discovery,agents,assumptions,language,outputs,priors,expert,data,principle...
 
 ### 2. AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction
 
-> **来源**: [arXiv:2606.23449](https://arxiv.org/abs/2606.23449})
+> **来源**: [arXiv:2606.23449](https://arxiv.org/abs/2606.23449)
 
 aohp,agent,agents,harness,android,open,personalized,secure,native,aosp...
 
 ### 3. Capable but Careless: Do Computer-Use Agents Follow Contextual Integrity?
 
-> **来源**: [arXiv:2606.23189](https://arxiv.org/abs/2606.23189})
+> **来源**: [arXiv:2606.23189](https://arxiv.org/abs/2606.23189)
 
 cuas,agents,agent,agentcibench,computer,careless,inappropriate,contextual,overshare,act...
 

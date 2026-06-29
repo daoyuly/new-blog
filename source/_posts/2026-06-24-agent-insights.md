@@ -39,7 +39,7 @@ date: 2026-06-24 18:00:00
 
 ### 1. CineCap: Structured Reasoning with Spatio-Temporal Anchors for Cinematographic Video Captioning
 
-> **来源**: [arXiv:2606.24636](https://arxiv.org/abs/2606.24636})
+> **来源**: [arXiv:2606.24636](https://arxiv.org/abs/2606.24636)
 
 **核心贡献：** cinematographic,cinecap,captioning,video,professional,anchors,reasoning,spatio,structured,filmed...
 
@@ -47,7 +47,7 @@ date: 2026-06-24 18:00:00
 
 ### 2. ScaleToT: Generalizing Structured LLM Reasoning for Billion-Scale Low-Activity User Modeling
 
-> **来源**: [arXiv:2606.24605](https://arxiv.org/abs/2606.24605})
+> **来源**: [arXiv:2606.24605](https://arxiv.org/abs/2606.24605)
 
 **核心贡献：** scaletot,reasoning,llm,user,profiles,structured,billion,activity,billions,users...
 
@@ -59,7 +59,7 @@ date: 2026-06-24 18:00:00
 
 ### 1. AI Tokenomics: The Economics of Tokens, Computation, and Pricing in Foundation Models
 
-> **来源**: [arXiv:2606.24616](https://arxiv.org/abs/2606.24616})
+> **来源**: [arXiv:2606.24616](https://arxiv.org/abs/2606.24616)
 
 tokenomics,token,tokens,expenditure,pricing,foundation,workflow,productivity,economic,value...
 
@@ -69,31 +69,31 @@ tokenomics,token,tokens,expenditure,pricing,foundation,workflow,productivity,eco
 
 ### 1. OpenThoughts-Agent: Data Recipes for Agentic Models
 
-> **来源**: [arXiv:2606.24855](https://arxiv.org/abs/2606.24855})
+> **来源**: [arXiv:2606.24855](https://arxiv.org/abs/2606.24855)
 
 agentic,openthoughts,nemotron,open,32b,training,pipeline,agent,data,terminal...
 
 ### 2. World Models in Pieces: Structural Certification for General Agents
 
-> **来源**: [arXiv:2606.24842](https://arxiv.org/abs/2606.24842})
+> **来源**: [arXiv:2606.24842](https://arxiv.org/abs/2606.24842)
 
 certification,agents,world,pieces,structural,general,goals,guarantees,agent,transitions...
 
 ### 3. Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System
 
-> **来源**: [arXiv:2606.24839](https://arxiv.org/abs/2606.24839})
+> **来源**: [arXiv:2606.24839](https://arxiv.org/abs/2606.24839)
 
 grading,grader,lenient,agentic,graders,genai,nudge,qrdata,raises,llm...
 
 ### 4. SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation
 
-> **来源**: [arXiv:2606.24626](https://arxiv.org/abs/2606.24626})
+> **来源**: [arXiv:2606.24626](https://arxiv.org/abs/2606.24626)
 
 safari,agentic,context,fault,attribution,horizon,investigation,window,diagnostic,token...
 
 ### 5. ASALT: Adaptive State Alignment for Lateral Transfer in Multi-agent Reinforcement Learning
 
-> **来源**: [arXiv:2606.24601](https://arxiv.org/abs/2606.24601})
+> **来源**: [arXiv:2606.24601](https://arxiv.org/abs/2606.24601)
 
 asalt,domains,transfer,dimensionalities,marl,target,adapters,agent,reinforcement,source...
 
