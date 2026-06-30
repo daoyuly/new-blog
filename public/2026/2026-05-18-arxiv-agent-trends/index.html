@@ -21,7 +21,7 @@
 <meta property="og:description" content="每日精选 papers.cool&#x2F;arxiv&#x2F;cs.AI 中与 Agent 相关的前沿论文，梳理最新研究趋势。   🔥 今日趋势总览今天 cs.AI 共 13 篇新论文，其中 8 篇与 Agent 直接相关。核心趋势：    趋势方向 代表论文 一句话    🧭 自主探索能力 Look Before You Leap Agent 需先探索再行动，而非急于利用   🧠 A">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-18T04:12:00.000Z">
-<meta property="article:modified_time" content="2026-05-18T04:14:15.729Z">
+<meta property="article:modified_time" content="2026-06-29T15:04:19.152Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="agent">
@@ -298,46 +298,46 @@ var _hmt = _hmt || [];
 </tbody></table>
 <hr>
 <h2 id="📄-重点论文详解"><a href="#📄-重点论文详解" class="headerlink" title="📄 重点论文详解"></a>📄 重点论文详解</h2><h3 id="1-🧭-Look-Before-You-Leap-自主探索是-Agent-的关键能力"><a href="#1-🧭-Look-Before-You-Leap-自主探索是-Agent-的关键能力" class="headerlink" title="1. 🧭 Look Before You Leap: 自主探索是 Agent 的关键能力"></a>1. 🧭 Look Before You Leap: 自主探索是 Agent 的关键能力</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16143">arxiv&#x2F;2605.16143</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16143">arxiv&#x2F;2605.16143</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16143%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16143+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16143+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>作者</strong>: Ziang Ye, Wentao Shi, Fuli Feng 等</li>
 <li><strong>核心发现</strong>: LLM Agent 在陌生环境中常因”过早利用”而失败——还没摸清环境就开始行动。作者提出 <strong>Exploration Checkpoint Coverage</strong> 指标量化探索广度，并设计 <strong>Explore-then-Act</strong> 范式：先花预算探索环境，再用积累的知识执行任务。</li>
 <li><strong>启示</strong>: 未来的通用 Agent 必须学会”先观察再动手”，探索能力比任务执行能力更基础。</li>
 </ul>
 <h3 id="2-🧠-FORGE-无需梯度的-Agent-记忆自进化"><a href="#2-🧠-FORGE-无需梯度的-Agent-记忆自进化" class="headerlink" title="2. 🧠 FORGE: 无需梯度的 Agent 记忆自进化"></a>2. 🧠 FORGE: 无需梯度的 Agent 记忆自进化</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16233">arxiv&#x2F;2605.16233</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16233">arxiv&#x2F;2605.16233</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16233%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16233+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16233+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>作者</strong>: Igor Bogdanov 等</li>
 <li><strong>核心发现</strong>: 提出 <strong>FORGE</strong> 框架，通过群体广播（Population Broadcast）机制让 ReAct Agent 从失败轨迹中提炼可复用的自然语言记忆（规则、示例），无需任何模型权重更新。在网络安全 POMDP 环境中，相比 Reflexion 基线提升 29-72%。</li>
 <li><strong>亮点</strong>: 弱模型受益更大 → FORGE 可能是缩小模型能力差距的利器。</li>
 </ul>
 <h3 id="3-🏗️-Compound-Agent-设计的成本-性能研究"><a href="#3-🏗️-Compound-Agent-设计的成本-性能研究" class="headerlink" title="3. 🏗️ Compound Agent 设计的成本-性能研究"></a>3. 🏗️ Compound Agent 设计的成本-性能研究</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16205">arxiv&#x2F;2605.16205</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16205">arxiv&#x2F;2605.16205</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16205%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16205+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16205+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>作者</strong>: Igor Bogdanov 等（与 FORGE 同团队）</li>
 <li><strong>核心发现</strong>: 在对抗性 POMDP 中系统对比了 Agent 设计维度：<strong>上下文表示 &gt; 推理工具 &gt; 层级分解</strong>。关键反直觉发现：把推理工具分布到层级架构中反而会降低性能（”deliberation cascade”效应）。程序化状态抽象的性价比最高。</li>
 <li><strong>设计原则</strong>: 投资基础设施（状态抽象 + 任务分解），而非堆推理深度。</li>
 </ul>
 <h3 id="4-🛡️-形式化方法-LLM-Agent-行为合规审计"><a href="#4-🛡️-形式化方法-LLM-Agent-行为合规审计" class="headerlink" title="4. 🛡️ 形式化方法 + LLM: Agent 行为合规审计"></a>4. 🛡️ 形式化方法 + LLM: Agent 行为合规审计</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16198">arxiv&#x2F;2605.16198</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16198">arxiv&#x2F;2605.16198</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16198%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16198+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16198+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>作者</strong>: Parand A. Alamdari, Sheila A. McIlraith 等</li>
 <li><strong>核心发现</strong>: 用线性时序逻辑（LTL）定义 Agent 的行为约束，实现部署前审计和运行时监控。引入”干预式监控器”可在违规发生前主动拦截。小模型 + LTL 即可超越前沿大模型的判断能力。</li>
 <li><strong>意义</strong>: Agent 安全是 2026 年的核心议题，形式化验证是最可靠的技术路线。</li>
 </ul>
 <h3 id="5-🖥️-ScreenSearch-桌面-GUI-Agent-的不确定性感知探索"><a href="#5-🖥️-ScreenSearch-桌面-GUI-Agent-的不确定性感知探索" class="headerlink" title="5. 🖥️ ScreenSearch: 桌面 GUI Agent 的不确定性感知探索"></a>5. 🖥️ ScreenSearch: 桌面 GUI Agent 的不确定性感知探索</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16024">arxiv&#x2F;2605.16024</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16024">arxiv&#x2F;2605.16024</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16024%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16024+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16024+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>作者</strong>: Michael Solodko, Justin Wagle</li>
 <li><strong>核心发现</strong>: 桌面 Agent 的核心难题是视觉相似的屏幕可能对应不同的工作流状态。ScreenSearch 用结构化屏幕检索 + 消歧 PUCT bandit 实现 OS 大规模探索，收集了 100 万+ 截图和 3 万+ 去重状态。</li>
 <li><strong>关键洞察</strong>: 减少不确定性 ≠ 好的探索策略，还需要发现新的前沿状态。</li>
 </ul>
 <h3 id="6-🛒-ShopGym-电商-Web-Agent-基准测试框架"><a href="#6-🛒-ShopGym-电商-Web-Agent-基准测试框架" class="headerlink" title="6. 🛒 ShopGym: 电商 Web Agent 基准测试框架"></a>6. 🛒 ShopGym: 电商 Web Agent 基准测试框架</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16116">arxiv&#x2F;2605.16116</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16116">arxiv&#x2F;2605.16116</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16116%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16116+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16116+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>核心</strong>: 将真实电商网站转换为可控沙盒，生成 224 个跨 7 个技能类别的 benchmark 任务，同时保持与真实环境的行为相关性。</li>
 </ul>
 <h3 id="7-🎓-LLM-Tutoring-Agents-的诊断缺陷"><a href="#7-🎓-LLM-Tutoring-Agents-的诊断缺陷" class="headerlink" title="7. 🎓 LLM Tutoring Agents 的诊断缺陷"></a>7. 🎓 LLM Tutoring Agents 的诊断缺陷</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16207">arxiv&#x2F;2605.16207</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16207">arxiv&#x2F;2605.16207</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16207%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16207+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16207+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>核心</strong>: 在 10,836 个解-反馈对上测试 7 个 LLM 教育 Agent，发现它们能识别正确答案，但系统性地<strong>过度拒绝次优但有效的推理</strong>，同时<strong>过度验证错误答案</strong>。这是架构层面的局限。</li>
 <li><strong>建议</strong>: LLM 应与知识图谱诊断模型配合，而非单独承担诊断角色。</li>
 </ul>
 <h3 id="8-🏥-Fully-Open-Meditron-可审计的临床-LLM"><a href="#8-🏥-Fully-Open-Meditron-可审计的临床-LLM" class="headerlink" title="8. 🏥 Fully Open Meditron: 可审计的临床 LLM"></a>8. 🏥 Fully Open Meditron: 可审计的临床 LLM</h3><ul>
-<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16215">arxiv&#x2F;2605.16215</a></li>
+<li><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.16215">arxiv&#x2F;2605.16215</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFarxiv/2605.16215%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2605.16215+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2605.16215+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></li>
 <li><strong>核心</strong>: 首个完全开放（非仅开放权重）的医疗 LLM 训练管线，含医生审计的训练语料和端到端可复现流程。Apertus-70B-MeditronFO 刷新了全开放医疗 SOTA。</li>
 </ul>
 <hr>
@@ -3280,6 +3280,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">distillation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">world-model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">memory-poisoning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HCI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">纪念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机历史</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web-and-frontend-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆投毒</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">对抗攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">工具链操纵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">协议攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思想病毒</a>
               </li>
             
             <div class="clearfix"></div>

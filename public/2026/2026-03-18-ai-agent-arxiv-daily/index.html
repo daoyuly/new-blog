@@ -21,7 +21,7 @@
 <meta property="og:description" content="AI Agent 领域最新进展 - arXiv Daily 2026.03.18今天整理了 arXiv cs.AI 分类下的 Agent 相关论文，以下是核心趋势和亮点工作。 🎯 核心趋势总结1. 从反应式到前瞻式规划传统 Agent 多为反应式（reactive），仅针对当前状态做出决策。今天的多篇论文强调前瞻式推理（anticipatory reasoning）的重要性——Agent 需要预">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-18T04:08:00.000Z">
-<meta property="article:modified_time" content="2026-03-18T04:10:43.600Z">
+<meta property="article:modified_time" content="2026-06-29T15:04:19.123Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="arXiv">
 <meta property="article:tag" content="LLM">
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
 <h3 id="3-Agent-治理与安全"><a href="#3-Agent-治理与安全" class="headerlink" title="3. Agent 治理与安全"></a>3. <strong>Agent 治理与安全</strong></h3><p>随着 Agent 能力增强，<strong>运行时治理（runtime governance）</strong> 成为关键议题。论文提出了基于执行路径的策略框架，平衡任务完成率与合规成本。</p>
 <h3 id="4-个性化与上下文感知"><a href="#4-个性化与上下文感知" class="headerlink" title="4. 个性化与上下文感知"></a>4. <strong>个性化与上下文感知</strong></h3><p>个性化 LLM Agent 需要区分何时应用&#x2F;抑制用户偏好。研究发现当前模型倾向于将偏好视为全局规则，而非上下文相关的规范信号。</p>
 <hr>
-<h2 id="📚-重点论文详解"><a href="#📚-重点论文详解" class="headerlink" title="📚 重点论文详解"></a>📚 重点论文详解</h2><h3 id="1-LEAFE：从反思经验中内化-Agent-能力"><a href="#1-LEAFE：从反思经验中内化-Agent-能力" class="headerlink" title="1. LEAFE：从反思经验中内化 Agent 能力"></a>1. LEAFE：从反思经验中内化 Agent 能力</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16843">Internalizing Agency from Reflective Experience</a></p>
+<h2 id="📚-重点论文详解"><a href="#📚-重点论文详解" class="headerlink" title="📚 重点论文详解"></a>📚 重点论文详解</h2><h3 id="1-LEAFE：从反思经验中内化-Agent-能力"><a href="#1-LEAFE：从反思经验中内化-Agent-能力" class="headerlink" title="1. LEAFE：从反思经验中内化 Agent 能力"></a>1. LEAFE：从反思经验中内化 Agent 能力</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16843">Internalizing Agency from Reflective Experience</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFInternalizing+Agency+from+Reflective+Experience%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16843+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16843+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心贡献</strong>:</p>
 <ul>
 <li>提出 LEAFE 框架，解决长时域交互中 Agent 恢复能力不足的问题</li>
@@ -260,7 +260,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 从”只看结果”转向”重视过程反馈”，是 Agent 训练范式的重要转变。</p>
 <hr>
-<h3 id="2-TraceR1：多模态-Agent-的前瞻式规划"><a href="#2-TraceR1：多模态-Agent-的前瞻式规划" class="headerlink" title="2. TraceR1：多模态 Agent 的前瞻式规划"></a>2. TraceR1：多模态 Agent 的前瞻式规划</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16777">Anticipatory Planning for Multimodal AI Agents</a></p>
+<h3 id="2-TraceR1：多模态-Agent-的前瞻式规划"><a href="#2-TraceR1：多模态-Agent-的前瞻式规划" class="headerlink" title="2. TraceR1：多模态 Agent 的前瞻式规划"></a>2. TraceR1：多模态 Agent 的前瞻式规划</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16777">Anticipatory Planning for Multimodal AI Agents</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFAnticipatory+Planning+for+Multimodal+AI+Agents%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16777+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16777+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心贡献</strong>:</p>
 <ul>
 <li>提出两阶段 RL 框架，显式训练前瞻式推理</li>
@@ -274,7 +274,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 前瞻式轨迹推理是构建复杂环境 Agent 的关键原则。</p>
 <hr>
-<h3 id="3-IQuest-Coder-V1：代码-Agent-的新标杆"><a href="#3-IQuest-Coder-V1：代码-Agent-的新标杆" class="headerlink" title="3. IQuest-Coder-V1：代码 Agent 的新标杆"></a>3. IQuest-Coder-V1：代码 Agent 的新标杆</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16733">IQuest-Coder-V1 Technical Report</a></p>
+<h3 id="3-IQuest-Coder-V1：代码-Agent-的新标杆"><a href="#3-IQuest-Coder-V1：代码-Agent-的新标杆" class="headerlink" title="3. IQuest-Coder-V1：代码 Agent 的新标杆"></a>3. IQuest-Coder-V1：代码 Agent 的新标杆</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16733">IQuest-Coder-V1 Technical Report</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFIQuest-Coder-V1+Technical+Report%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16733+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16733+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心贡献</strong>:</p>
 <ul>
 <li>发布 7B&#x2F;14B&#x2F;40B&#x2F;40B-Loop 系列代码模型</li>
@@ -288,7 +288,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 展示了如何通过精心设计的训练管线，让小模型在 agentic 任务上媲美大模型。</p>
 <hr>
-<h3 id="4-AI-Agent-的非标准误差"><a href="#4-AI-Agent-的非标准误差" class="headerlink" title="4. AI Agent 的非标准误差"></a>4. AI Agent 的非标准误差</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16744">Nonstandard Errors in AI Agents</a></p>
+<h3 id="4-AI-Agent-的非标准误差"><a href="#4-AI-Agent-的非标准误差" class="headerlink" title="4. AI Agent 的非标准误差"></a>4. AI Agent 的非标准误差</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16744">Nonstandard Errors in AI Agents</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFNonstandard+Errors+in+AI+Agents%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16744+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16744+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心发现</strong>:</p>
 <ul>
 <li>部署 150 个 Claude Code Agent 独立测试同一假设</li>
@@ -298,7 +298,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 对 AI 用于自动化政策评估和实证研究提出了警示。</p>
 <hr>
-<h3 id="5-个性化-LLM-Agent-的危害倾向差异"><a href="#5-个性化-LLM-Agent-的危害倾向差异" class="headerlink" title="5. 个性化 LLM Agent 的危害倾向差异"></a>5. 个性化 LLM Agent 的危害倾向差异</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16734">Differential Harm Propensity in Personalized LLM Agents</a></p>
+<h3 id="5-个性化-LLM-Agent-的危害倾向差异"><a href="#5-个性化-LLM-Agent-的危害倾向差异" class="headerlink" title="5. 个性化 LLM Agent 的危害倾向差异"></a>5. 个性化 LLM Agent 的危害倾向差异</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16734">Differential Harm Propensity in Personalized LLM Agents</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFDifferential+Harm+Propensity+in+Personalized+LLM+Agents%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16734+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16734+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心发现</strong>:</p>
 <ul>
 <li>研究心理健康披露（敏感用户上下文线索）如何影响 Agent 有害行为</li>
@@ -308,7 +308,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 个性化可作为弱保护因子，但在最小对抗压力下仍然脆弱。</p>
 <hr>
-<h3 id="6-Agent-幻灯片生成"><a href="#6-Agent-幻灯片生成" class="headerlink" title="6. Agent 幻灯片生成"></a>6. Agent 幻灯片生成</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16839">Learning to Present: Inverse Specification Rewards for Agentic Slide Generation</a></p>
+<h3 id="6-Agent-幻灯片生成"><a href="#6-Agent-幻灯片生成" class="headerlink" title="6. Agent 幻灯片生成"></a>6. Agent 幻灯片生成</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16839">Learning to Present: Inverse Specification Rewards for Agentic Slide Generation</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFLearning+to+Present:+Inverse+Specification+Rewards+for+Agentic+Slide+Generation%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16839+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16839+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心贡献</strong>:</p>
 <ul>
 <li>提出 OpenEnv 兼容的 RL 环境，LLM Agent 学习研究主题、规划内容、生成专业 HTML 幻灯片</li>
@@ -322,7 +322,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>开源</strong>: SlideRL 数据集（288 条多轮轨迹）</p>
 <hr>
-<h3 id="7-Agent-运行时治理"><a href="#7-Agent-运行时治理" class="headerlink" title="7. Agent 运行时治理"></a>7. Agent 运行时治理</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16586">Runtime Governance for AI Agents: Policies on Paths</a></p>
+<h3 id="7-Agent-运行时治理"><a href="#7-Agent-运行时治理" class="headerlink" title="7. Agent 运行时治理"></a>7. Agent 运行时治理</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16586">Runtime Governance for AI Agents: Policies on Paths</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFRuntime+Governance+for+AI+Agents:+Policies+on+Paths%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16586+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16586+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心框架</strong>:</p>
 <ul>
 <li>执行路径是运行时治理的核心对象</li>
@@ -331,7 +331,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 为 Agent 部署提供了形式化的治理框架，平衡任务完成与合规成本。</p>
 <hr>
-<h3 id="8-规范遵守的-RL-Agent"><a href="#8-规范遵守的-RL-Agent" class="headerlink" title="8. 规范遵守的 RL Agent"></a>8. 规范遵守的 RL Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16651">What if Pinocchio Were a Reinforcement Learning Agent</a></p>
+<h3 id="8-规范遵守的-RL-Agent"><a href="#8-规范遵守的-RL-Agent" class="headerlink" title="8. 规范遵守的 RL Agent"></a>8. 规范遵守的 RL Agent</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16651">What if Pinocchio Were a Reinforcement Learning Agent</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFWhat+if+Pinocchio+Were+a+Reinforcement+Learning+Agent%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16651+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16651+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心贡献</strong>:</p>
 <ul>
 <li>提出 Pino 混合模型：RL Agent + 基于论证的规范顾问</li>
@@ -340,7 +340,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>意义</strong>: 为构建符合社会规范的 Agent 提供端到端管线。</p>
 <hr>
-<h3 id="9-LLM-机器人的前端护栏"><a href="#9-LLM-机器人的前端护栏" class="headerlink" title="9. LLM 机器人的前端护栏"></a>9. LLM 机器人的前端护栏</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16537">Designing for Disagreement: Front-End Guardrails for Assistance Allocation in LLM-Enabled Robots</a></p>
+<h3 id="9-LLM-机器人的前端护栏"><a href="#9-LLM-机器人的前端护栏" class="headerlink" title="9. LLM 机器人的前端护栏"></a>9. LLM 机器人的前端护栏</h3><p><strong>论文</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.16537">Designing for Disagreement: Front-End Guardrails for Assistance Allocation in LLM-Enabled Robots</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFDesigning+for+Disagreement:+Front-End+Guardrails+for+Assistance+Allocation+in+LLM-Enabled+Robots%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.16537+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.16537+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 <p><strong>核心模式</strong>:</p>
 <ul>
 <li>提出”有边界的校准与可争议性”模式</li>
@@ -3296,6 +3296,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">distillation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">world-model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">memory-poisoning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HCI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">纪念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机历史</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web-and-frontend-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆投毒</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">对抗攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">工具链操纵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">协议攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思想病毒</a>
               </li>
             
             <div class="clearfix"></div>

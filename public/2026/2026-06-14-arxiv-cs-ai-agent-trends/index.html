@@ -13,15 +13,15 @@
   
   <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-14-arxiv-cs-ai-agent-trends/">
-  <meta name="description" content="本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：Agent 环境工程、多智能体编排与奖励建模、Agent 评估标准化。以下是精选论文与趋势分析。  🔥 本周核心趋势趋势一：从”设计 Agent”到”设计 Agent 的环境”Agent 的瓶颈不再是工作流设计，而是环境设计——资源、约束、接口如何塑造 Agent 行为。  EurekAgent (#3) 提出">
+  <meta name="description" content="本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：Agent 环境工程、多智能体编排与奖励建模、Agent 评估标准化。以下是精选论文与趋势分析。  🔥 本周核心趋势趋势一：从”设计 Agent”到”设计 Agent 的环境”Agent 的瓶颈不再是工作流设计，而是环境设计——资源、约束、接口如何塑造 Agent 行为。  EurekAgent (#3 Kim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agent 周报 | 2026-06-14：环境工程、知识编排与评估标准化">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-14-arxiv-cs-ai-agent-trends/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：Agent 环境工程、多智能体编排与奖励建模、Agent 评估标准化。以下是精选论文与趋势分析。  🔥 本周核心趋势趋势一：从”设计 Agent”到”设计 Agent 的环境”Agent 的瓶颈不再是工作流设计，而是环境设计——资源、约束、接口如何塑造 Agent 行为。  EurekAgent (#3) 提出">
+<meta property="og:description" content="本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：Agent 环境工程、多智能体编排与奖励建模、Agent 评估标准化。以下是精选论文与趋势分析。  🔥 本周核心趋势趋势一：从”设计 Agent”到”设计 Agent 的环境”Agent 的瓶颈不再是工作流设计，而是环境设计——资源、约束、接口如何塑造 Agent 行为。  EurekAgent (#3 Kim">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-14T04:04:00.000Z">
-<meta property="article:modified_time" content="2026-06-14T04:05:45.140Z">
+<meta property="article:modified_time" content="2026-06-29T15:04:18.957Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="agent">
 <meta property="article:tag" content="multi-agent">
@@ -247,31 +247,31 @@ var _hmt = _hmt || [];
 <hr>
 <h2 id="🔥-本周核心趋势"><a href="#🔥-本周核心趋势" class="headerlink" title="🔥 本周核心趋势"></a>🔥 本周核心趋势</h2><h3 id="趋势一：从”设计-Agent”到”设计-Agent-的环境”"><a href="#趋势一：从”设计-Agent”到”设计-Agent-的环境”" class="headerlink" title="趋势一：从”设计 Agent”到”设计 Agent 的环境”"></a>趋势一：从”设计 Agent”到”设计 Agent 的环境”</h3><p>Agent 的瓶颈不再是工作流设计，而是环境设计——资源、约束、接口如何塑造 Agent 行为。</p>
 <ul>
-<li><strong>EurekAgent</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13662">#3</a>) 提出 <strong>Environment Engineering</strong> 四维度框架：权限工程、制品工程、预算工程、人机协作工程。以不到 $11 的 API 成本发现新的 26 圆 packing 最优解，刷新数学和 ML 任务 SOTA。</li>
-<li><strong>Neuro-Symbolic Agents for Regulated Process Automation</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13405">#19</a>) 将法规、流程模型等符号结构作为 Agent 核心架构组件（而非外部监控），提出 <strong>compliance-by-construction</strong> 范式——在结构层面防止违规，而非事后 guardrail。</li>
+<li><strong>EurekAgent</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13662">#3</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%233%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13662+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13662+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 提出 <strong>Environment Engineering</strong> 四维度框架：权限工程、制品工程、预算工程、人机协作工程。以不到 $11 的 API 成本发现新的 26 圆 packing 最优解，刷新数学和 ML 任务 SOTA。</li>
+<li><strong>Neuro-Symbolic Agents for Regulated Process Automation</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13405">#19</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%2319%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13405+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13405+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 将法规、流程模型等符号结构作为 Agent 核心架构组件（而非外部监控），提出 <strong>compliance-by-construction</strong> 范式——在结构层面防止违规，而非事后 guardrail。</li>
 </ul>
 <blockquote>
 <p>💡 <strong>洞察</strong>：Agent 可靠性的关键不在于 Agent 本身多聪明，而在于环境如何约束和引导其行为。这与软件工程中”靠类型系统而非测试保证正确性”异曲同工。</p>
 </blockquote>
 <h3 id="趋势二：多智能体编排的奖励建模"><a href="#趋势二：多智能体编排的奖励建模" class="headerlink" title="趋势二：多智能体编排的奖励建模"></a>趋势二：多智能体编排的奖励建模</h3><p>多 Agent 系统的编排质量如何量化？本周两篇论文从不同角度回答。</p>
 <ul>
-<li><strong>OrchRM</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13598">#10</a>) 提出 <strong>编排级奖励建模</strong>：利用多 Agent 执行的中间制品构造 win-lose 对，训练 Bradley-Terry 奖励模型。相比依赖子 Agent rollout 的方法，token 效率提升 10x，测试时 scaling 精度提升 8%。</li>
-<li><strong>Multiagent Protocols with Aggregated Confidence</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13591">#11</a>) 解决多 Agent 系统缺乏整体置信度的问题：将各 Agent 置信度信号归一化后通过 soft voting 或 Bayesian fusion 聚合，AUARC 显著优于单 Agent 和标准 debate 基线。</li>
+<li><strong>OrchRM</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13598">#10</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%2310%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13598+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13598+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 提出 <strong>编排级奖励建模</strong>：利用多 Agent 执行的中间制品构造 win-lose 对，训练 Bradley-Terry 奖励模型。相比依赖子 Agent rollout 的方法，token 效率提升 10x，测试时 scaling 精度提升 8%。</li>
+<li><strong>Multiagent Protocols with Aggregated Confidence</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13591">#11</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%2311%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13591+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13591+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 解决多 Agent 系统缺乏整体置信度的问题：将各 Agent 置信度信号归一化后通过 soft voting 或 Bayesian fusion 聚合，AUARC 显著优于单 Agent 和标准 debate 基线。</li>
 </ul>
 <blockquote>
 <p>💡 <strong>洞察</strong>：多 Agent 系统正从”拼凑多个模型”走向”可量化、可优化的编排”。奖励建模和置信度聚合是两条互补路径。</p>
 </blockquote>
 <h3 id="趋势三：Agent-评估走向标准化与-Agent-化"><a href="#趋势三：Agent-评估走向标准化与-Agent-化" class="headerlink" title="趋势三：Agent 评估走向标准化与 Agent 化"></a>趋势三：Agent 评估走向标准化与 Agent 化</h3><p>评估碎片化是 Agent 领域的老问题，本周有突破性进展。</p>
 <ul>
-<li><strong>AgentBeats</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13608">#6</a>) 提出 **Agentified Agent Assessment (AAA)**：评估本身由 judge agent 执行，所有参与者通过 A2A（任务管理）和 MCP（工具访问）标准协议交互。5 个月开放竞赛吸引 298 个 judge agent 和 467 个被评 agent，验证了跨异构场景的可行性。</li>
-<li><strong>EpiBench</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13602">#9</a>) 面向表观遗传学分析的 Agent 可验证基准，106 个评测项。最强系统 GPT-5.5&#x2F;Pi 通过率仅 45%，揭示科学分析 Agent 仍需深层领域判断力。</li>
+<li><strong>AgentBeats</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13608">#6</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%236%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13608+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13608+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 提出 **Agentified Agent Assessment (AAA)**：评估本身由 judge agent 执行，所有参与者通过 A2A（任务管理）和 MCP（工具访问）标准协议交互。5 个月开放竞赛吸引 298 个 judge agent 和 467 个被评 agent，验证了跨异构场景的可行性。</li>
+<li><strong>EpiBench</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13602">#9</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%239%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13602+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13602+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 面向表观遗传学分析的 Agent 可验证基准，106 个评测项。最强系统 GPT-5.5&#x2F;Pi 通过率仅 45%，揭示科学分析 Agent 仍需深层领域判断力。</li>
 </ul>
 <blockquote>
 <p>💡 <strong>洞察</strong>：评估协议标准化（A2A&#x2F;MCP）是 Agent 生态成熟的关键基础设施。AAA 模式可能成为 Agent 评估的新范式。</p>
 </blockquote>
 <h3 id="趋势四：Agent-原生知识基础设施"><a href="#趋势四：Agent-原生知识基础设施" class="headerlink" title="趋势四：Agent 原生知识基础设施"></a>趋势四：Agent 原生知识基础设施</h3><p>Agent 需要的不是摘要和引用，而是结构化的科学知识图。</p>
 <ul>
-<li><strong>Agents-K1</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13669">#2</a>) 构建端到端知识编排管线：多模态解析器提取全文实体&#x2F;证据&#x2F;引用&#x2F;关系，4B 模型 GRPO 训练做信息抽取，graphanything CLI 统一 Web 搜索+图检索+跨文档遍历。处理 246 万篇论文构建 <strong>Scholar-KG</strong>，开放 100 万篇子集。</li>
+<li><strong>Agents-K1</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13669">#2</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%232%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13669+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13669+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 构建端到端知识编排管线：多模态解析器提取全文实体&#x2F;证据&#x2F;引用&#x2F;关系，4B 模型 GRPO 训练做信息抽取，graphanything CLI 统一 Web 搜索+图检索+跨文档遍历。处理 246 万篇论文构建 <strong>Scholar-KG</strong>，开放 100 万篇子集。</li>
 </ul>
 <blockquote>
 <p>💡 <strong>洞察</strong>：Agent-native knowledge graph vs 传统 RAG，就像结构化数据库 vs 全文检索的差距。知识的结构化程度直接决定推理的深度。</p>
@@ -285,11 +285,11 @@ var _hmt = _hmt || [];
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Multi-Agent RL for Three-Sided Dispatch</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13604">#8</a>)</td>
+<td><strong>Multi-Agent RL for Three-Sided Dispatch</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13604">#8</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%238%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13604+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13604+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>)</td>
 <td>DoorDash 生产环境部署的多 Agent RL，从延迟市场反馈中学习调度策略</td>
 </tr>
 <tr>
-<td><strong>IterCAD</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13368">#22</a>)</td>
+<td><strong>IterCAD</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.13368">#22</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF%2322%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2606.13368+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2606.13368+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>)</td>
 <td>闭环交互式多模态 Agent，多轮对话驱动的 CAD 生成与编辑</td>
 </tr>
 </tbody></table>
@@ -3236,6 +3236,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">distillation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">world-model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">memory-poisoning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HCI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">纪念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机历史</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web-and-frontend-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆投毒</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">对抗攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">工具链操纵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">协议攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思想病毒</a>
               </li>
             
             <div class="clearfix"></div>

@@ -1,6 +1,5 @@
 ---
 title: 情绪与信念的认知闭环
-date: 2026-06-30 04:00:05
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 30433
+date: 2026-06-30 04:00:05
 ---
 
 ## 情绪与信念的认知闭环

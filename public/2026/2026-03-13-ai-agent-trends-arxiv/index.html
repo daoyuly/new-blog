@@ -21,7 +21,7 @@
 <meta property="og:description" content="本篇文章整理自 arXiv cs.AI 2026年3月13日的最新论文，聚焦 AI Agent 领域的研究热点与前沿进展。  📊 Agent 相关论文概览今天 arXiv cs.AI 上有多篇高质量的 Agent 相关研究，涵盖持续学习、强化学习泛化、多智能体协作、安全与规范四大核心方向。  🔥 核心趋势一：LLM Agent 的强化学习与泛化1. Can RL Improve Genera">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-13T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-13T04:01:54.073Z">
+<meta property="article:modified_time" content="2026-06-29T15:04:19.229Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Agent">
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <h2 id="📊-Agent-相关论文概览"><a href="#📊-Agent-相关论文概览" class="headerlink" title="📊 Agent 相关论文概览"></a>📊 Agent 相关论文概览</h2><p>今天 arXiv cs.AI 上有多篇高质量的 Agent 相关研究，涵盖<strong>持续学习、强化学习泛化、多智能体协作、安全与规范</strong>四大核心方向。</p>
 <hr>
-<h2 id="🔥-核心趋势一：LLM-Agent-的强化学习与泛化"><a href="#🔥-核心趋势一：LLM-Agent-的强化学习与泛化" class="headerlink" title="🔥 核心趋势一：LLM Agent 的强化学习与泛化"></a>🔥 核心趋势一：LLM Agent 的强化学习与泛化</h2><h3 id="1-Can-RL-Improve-Generalization-of-LLM-Agents"><a href="#1-Can-RL-Improve-Generalization-of-LLM-Agents" class="headerlink" title="1. Can RL Improve Generalization of LLM Agents?"></a>1. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12011">Can RL Improve Generalization of LLM Agents?</a></h3><p><strong>研究问题</strong>：强化微调（RFT）能否提升 LLM Agent 在未见环境中的泛化能力？</p>
+<h2 id="🔥-核心趋势一：LLM-Agent-的强化学习与泛化"><a href="#🔥-核心趋势一：LLM-Agent-的强化学习与泛化" class="headerlink" title="🔥 核心趋势一：LLM Agent 的强化学习与泛化"></a>🔥 核心趋势一：LLM Agent 的强化学习与泛化</h2><h3 id="1-Can-RL-Improve-Generalization-of-LLM-Agents-Kimi解读"><a href="#1-Can-RL-Improve-Generalization-of-LLM-Agents-Kimi解读" class="headerlink" title="1. Can RL Improve Generalization of LLM Agents? Kimi解读"></a>1. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12011">Can RL Improve Generalization of LLM Agents?</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFCan+RL+Improve+Generalization+of+LLM+Agents?%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.12011+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.12011+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>研究问题</strong>：强化微调（RFT）能否提升 LLM Agent 在未见环境中的泛化能力？</p>
 <p><strong>核心发现</strong>：</p>
 <ul>
 <li>RFT 在同一环境内跨任务难度泛化良好</li>
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>启示</strong>：部署 LLM Agent 时，需考虑环境接口的一致性设计。</p>
 <hr>
-<h3 id="2-On-Information-Self-Locking-in-RL-for-Active-Reasoning-of-LLM-Agents"><a href="#2-On-Information-Self-Locking-in-RL-for-Active-Reasoning-of-LLM-Agents" class="headerlink" title="2. On Information Self-Locking in RL for Active Reasoning of LLM Agents"></a>2. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12109">On Information Self-Locking in RL for Active Reasoning of LLM Agents</a></h3><p><strong>问题发现</strong>：LLM Agent 在主动推理任务中存在「信息自锁」现象——停止提问、难以内化已获取信息。</p>
+<h3 id="2-On-Information-Self-Locking-in-RL-for-Active-Reasoning-of-LLM-Agents-Kimi解读"><a href="#2-On-Information-Self-Locking-in-RL-for-Active-Reasoning-of-LLM-Agents-Kimi解读" class="headerlink" title="2. On Information Self-Locking in RL for Active Reasoning of LLM Agents Kimi解读"></a>2. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12109">On Information Self-Locking in RL for Active Reasoning of LLM Agents</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFOn+Information+Self-Locking+in+RL+for+Active+Reasoning+of+LLM+Agents%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.12109+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.12109+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>问题发现</strong>：LLM Agent 在主动推理任务中存在「信息自锁」现象——停止提问、难以内化已获取信息。</p>
 <p><strong>解决方案</strong>：</p>
 <ul>
 <li>分解为动作选择（AS）和信念追踪（BT）两核心能力</li>
@@ -264,7 +264,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>关键洞见</strong>：信息探索不足会形成负反馈循环，需主动干预。</p>
 <hr>
-<h3 id="3-XSkill-Continual-Learning-from-Experience-and-Skills-in-Multimodal-Agents"><a href="#3-XSkill-Continual-Learning-from-Experience-and-Skills-in-Multimodal-Agents" class="headerlink" title="3. XSkill: Continual Learning from Experience and Skills in Multimodal Agents"></a>3. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill: Continual Learning from Experience and Skills in Multimodal Agents</a></h3><p><strong>创新点</strong>：双流持续学习框架，区分两类可复用知识：</p>
+<h3 id="3-XSkill-Continual-Learning-from-Experience-and-Skills-in-Multimodal-Agents-Kimi解读"><a href="#3-XSkill-Continual-Learning-from-Experience-and-Skills-in-Multimodal-Agents-Kimi解读" class="headerlink" title="3. XSkill: Continual Learning from Experience and Skills in Multimodal Agents Kimi解读"></a>3. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12056">XSkill: Continual Learning from Experience and Skills in Multimodal Agents</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFXSkill:+Continual+Learning+from+Experience+and+Skills+in+Multimodal+Agents%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.12056+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.12056+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>创新点</strong>：双流持续学习框架，区分两类可复用知识：</p>
 <table>
 <thead>
 <tr>
@@ -291,7 +291,7 @@ var _hmt = _hmt || [];
 <li>在 5 个基准测试上显著优于基线</li>
 </ul>
 <hr>
-<h2 id="🤝-核心趋势二：多智能体协作与集体行为"><a href="#🤝-核心趋势二：多智能体协作与集体行为" class="headerlink" title="🤝 核心趋势二：多智能体协作与集体行为"></a>🤝 核心趋势二：多智能体协作与集体行为</h2><h3 id="4-Increasing-intelligence-in-AI-agents-can-worsen-collective-outcomes"><a href="#4-Increasing-intelligence-in-AI-agents-can-worsen-collective-outcomes" class="headerlink" title="4. Increasing intelligence in AI agents can worsen collective outcomes"></a>4. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12129">Increasing intelligence in AI agents can worsen collective outcomes</a></h3><p><strong>反直觉发现</strong>：资源稀缺时，更智能的 Agent 群体反而可能导致更差的集体结果！</p>
+<h2 id="🤝-核心趋势二：多智能体协作与集体行为"><a href="#🤝-核心趋势二：多智能体协作与集体行为" class="headerlink" title="🤝 核心趋势二：多智能体协作与集体行为"></a>🤝 核心趋势二：多智能体协作与集体行为</h2><h3 id="4-Increasing-intelligence-in-AI-agents-can-worsen-collective-outcomes-Kimi解读"><a href="#4-Increasing-intelligence-in-AI-agents-can-worsen-collective-outcomes-Kimi解读" class="headerlink" title="4. Increasing intelligence in AI agents can worsen collective outcomes Kimi解读"></a>4. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12129">Increasing intelligence in AI agents can worsen collective outcomes</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFIncreasing+intelligence+in+AI+agents+can+worsen+collective+outcomes%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.12129+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.12129+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>反直觉发现</strong>：资源稀缺时，更智能的 Agent 群体反而可能导致更差的集体结果！</p>
 <p><strong>四维控制变量</strong>：</p>
 <ul>
 <li>Nature（LLM 多样性）</li>
@@ -304,7 +304,7 @@ var _hmt = _hmt || [];
 <p>「更智能的 Agent 群体不一定更好——是帮助还是伤害，完全取决于一个数字：容量-人口比。」</p>
 </blockquote>
 <hr>
-<h3 id="5-A-Robust-Multi-Agent-RL-Framework-for-Traffic-Signal-Control"><a href="#5-A-Robust-Multi-Agent-RL-Framework-for-Traffic-Signal-Control" class="headerlink" title="5. A Robust Multi-Agent RL Framework for Traffic Signal Control"></a>5. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12096">A Robust Multi-Agent RL Framework for Traffic Signal Control</a></h3><p><strong>实际应用</strong>：交通信号控制的多智能体强化学习框架</p>
+<h3 id="5-A-Robust-Multi-Agent-RL-Framework-for-Traffic-Signal-Control-Kimi解读"><a href="#5-A-Robust-Multi-Agent-RL-Framework-for-Traffic-Signal-Control-Kimi解读" class="headerlink" title="5. A Robust Multi-Agent RL Framework for Traffic Signal Control Kimi解读"></a>5. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.12096">A Robust Multi-Agent RL Framework for Traffic Signal Control</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFA+Robust+Multi-Agent+RL+Framework+for+Traffic+Signal+Control%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.12096+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.12096+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>实际应用</strong>：交通信号控制的多智能体强化学习框架</p>
 <p><strong>三大机制</strong>：</p>
 <ol>
 <li>转向比例随机化——增强鲁棒性</li>
@@ -313,7 +313,7 @@ var _hmt = _hmt || [];
 </ol>
 <p><strong>效果</strong>：平均等待时间减少 10%+，未见场景泛化能力强</p>
 <hr>
-<h3 id="6-A-Semi-Decentralized-Approach-to-Multiagent-Control"><a href="#6-A-Semi-Decentralized-Approach-to-Multiagent-Control" class="headerlink" title="6. A Semi-Decentralized Approach to Multiagent Control"></a>6. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11802">A Semi-Decentralized Approach to Multiagent Control</a></h3><p><strong>理论贡献</strong>：提出 SDec-POMDP 框架，统一了分散式和多智能体 POMDP</p>
+<h3 id="6-A-Semi-Decentralized-Approach-to-Multiagent-Control-Kimi解读"><a href="#6-A-Semi-Decentralized-Approach-to-Multiagent-Control-Kimi解读" class="headerlink" title="6. A Semi-Decentralized Approach to Multiagent Control Kimi解读"></a>6. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11802">A Semi-Decentralized Approach to Multiagent Control</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFA+Semi-Decentralized+Approach+to+Multiagent+Control%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.11802+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.11802+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>理论贡献</strong>：提出 SDec-POMDP 框架，统一了分散式和多智能体 POMDP</p>
 <p><strong>核心创新</strong>：</p>
 <ul>
 <li>半马尔可夫通信——对存储历史的时间和动作观测给予分布</li>
@@ -321,7 +321,7 @@ var _hmt = _hmt || [];
 <li>为多智能体通信问题提供理论基础</li>
 </ul>
 <hr>
-<h2 id="🛡️-核心趋势三：安全、规范与对齐"><a href="#🛡️-核心趋势三：安全、规范与对齐" class="headerlink" title="🛡️ 核心趋势三：安全、规范与对齐"></a>🛡️ 核心趋势三：安全、规范与对齐</h2><h3 id="7-LABSHIELD-Safety-Critical-Benchmark-for-Scientific-Labs"><a href="#7-LABSHIELD-Safety-Critical-Benchmark-for-Scientific-Labs" class="headerlink" title="7. LABSHIELD: Safety-Critical Benchmark for Scientific Labs"></a>7. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD: Safety-Critical Benchmark for Scientific Labs</a></h3><p><strong>背景</strong>：MLLM Agent 从实验室助手演进为自动驾驶实验室操作员，安全问题凸显</p>
+<h2 id="🛡️-核心趋势三：安全、规范与对齐"><a href="#🛡️-核心趋势三：安全、规范与对齐" class="headerlink" title="🛡️ 核心趋势三：安全、规范与对齐"></a>🛡️ 核心趋势三：安全、规范与对齐</h2><h3 id="7-LABSHIELD-Safety-Critical-Benchmark-for-Scientific-Labs-Kimi解读"><a href="#7-LABSHIELD-Safety-Critical-Benchmark-for-Scientific-Labs-Kimi解读" class="headerlink" title="7. LABSHIELD: Safety-Critical Benchmark for Scientific Labs Kimi解读"></a>7. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11987">LABSHIELD: Safety-Critical Benchmark for Scientific Labs</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFLABSHIELD:+Safety-Critical+Benchmark+for+Scientific+Labs%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.11987+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.11987+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>背景</strong>：MLLM Agent 从实验室助手演进为自动驾驶实验室操作员，安全问题凸显</p>
 <p><strong>基准设计</strong>：</p>
 <ul>
 <li>基于 OSHA 和 GHS 标准的安全分类体系</li>
@@ -333,7 +333,7 @@ var _hmt = _hmt || [];
 <p>模型在专业实验室场景中，安全性能平均下降 32%！</p>
 </blockquote>
 <hr>
-<h3 id="8-SLEEC-Norm-Operationalisation-for-AI-Agents"><a href="#8-SLEEC-Norm-Operationalisation-for-AI-Agents" class="headerlink" title="8. SLEEC Norm Operationalisation for AI Agents"></a>8. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11864">SLEEC Norm Operationalisation for AI Agents</a></h3><p><strong>五大规范维度</strong>：</p>
+<h3 id="8-SLEEC-Norm-Operationalisation-for-AI-Agents-Kimi解读"><a href="#8-SLEEC-Norm-Operationalisation-for-AI-Agents-Kimi解读" class="headerlink" title="8. SLEEC Norm Operationalisation for AI Agents Kimi解读"></a>8. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11864">SLEEC Norm Operationalisation for AI Agents</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFSLEEC+Norm+Operationalisation+for+AI+Agents%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.11864+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.11864+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>五大规范维度</strong>：</p>
 <ul>
 <li><strong>S</strong>ocial（社会）</li>
 <li><strong>L</strong>egal（法律）</li>
@@ -343,14 +343,14 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程化流程</strong>：确定 → 验证 → 实现 → 验证规范需求</p>
 <hr>
-<h3 id="9-NormCoRe-Studying-Norms-in-Multi-agent-AI"><a href="#9-NormCoRe-Studying-Norms-in-Multi-agent-AI" class="headerlink" title="9. NormCoRe: Studying Norms in Multi-agent AI"></a>9. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11974">NormCoRe: Studying Norms in Multi-agent AI</a></h3><p><strong>方法创新</strong>：将人类受试者实验系统翻译为 MAAI 环境</p>
+<h3 id="9-NormCoRe-Studying-Norms-in-Multi-agent-AI-Kimi解读"><a href="#9-NormCoRe-Studying-Norms-in-Multi-agent-AI-Kimi解读" class="headerlink" title="9. NormCoRe: Studying Norms in Multi-agent AI Kimi解读"></a>9. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11974">NormCoRe: Studying Norms in Multi-agent AI</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFNormCoRe:+Studying+Norms+in+Multi-agent+AI%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.11974+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.11974+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>方法创新</strong>：将人类受试者实验系统翻译为 MAAI 环境</p>
 <p><strong>发现</strong>：</p>
 <ul>
 <li>AI Agent 的规范性判断与人类基线可能不同</li>
 <li>对基础模型选择和角色语言敏感</li>
 </ul>
 <hr>
-<h2 id="🛠️-核心趋势四：技能获取与应用"><a href="#🛠️-核心趋势四：技能获取与应用" class="headerlink" title="🛠️ 核心趋势四：技能获取与应用"></a>🛠️ 核心趋势四：技能获取与应用</h2><h3 id="10-Automating-Skill-Acquisition-from-Open-Source-Repositories"><a href="#10-Automating-Skill-Acquisition-from-Open-Source-Repositories" class="headerlink" title="10. Automating Skill Acquisition from Open-Source Repositories"></a>10. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11808">Automating Skill Acquisition from Open-Source Repositories</a></h3><p><strong>研究目标</strong>：从开源仓库自动挖掘 Agent 技能</p>
+<h2 id="🛠️-核心趋势四：技能获取与应用"><a href="#🛠️-核心趋势四：技能获取与应用" class="headerlink" title="🛠️ 核心趋势四：技能获取与应用"></a>🛠️ 核心趋势四：技能获取与应用</h2><h3 id="10-Automating-Skill-Acquisition-from-Open-Source-Repositories-Kimi解读"><a href="#10-Automating-Skill-Acquisition-from-Open-Source-Repositories-Kimi解读" class="headerlink" title="10. Automating Skill Acquisition from Open-Source Repositories Kimi解读"></a>10. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11808">Automating Skill Acquisition from Open-Source Repositories</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFAutomating+Skill+Acquisition+from+Open-Source+Repositories%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.11808+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.11808+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>研究目标</strong>：从开源仓库自动挖掘 Agent 技能</p>
 <p><strong>框架流程</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">仓库结构分析 → 语义技能识别 → SKILL.md 标准格式转换</span><br></pre></td></tr></table></figure>
 
@@ -360,7 +360,7 @@ var _hmt = _hmt || [];
 <li>无需模型重训练即可扩展 LLM 能力</li>
 </ul>
 <hr>
-<h3 id="11-DocSage-Multi-Doc-Multi-Entity-QA-Agent"><a href="#11-DocSage-Multi-Doc-Multi-Entity-QA-Agent" class="headerlink" title="11. DocSage: Multi-Doc Multi-Entity QA Agent"></a>11. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage: Multi-Doc Multi-Entity QA Agent</a></h3><p><strong>解决痛点</strong>：跨文档多实体问答的证据链构建</p>
+<h3 id="11-DocSage-Multi-Doc-Multi-Entity-QA-Agent-Kimi解读"><a href="#11-DocSage-Multi-Doc-Multi-Entity-QA-Agent-Kimi解读" class="headerlink" title="11. DocSage: Multi-Doc Multi-Entity QA Agent Kimi解读"></a>11. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2603.11798">DocSage: Multi-Doc Multi-Entity QA Agent</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFDocSage:+Multi-Doc+Multi-Entity+QA+Agent%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https://arxiv.org/pdf/2603.11798+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https://papers.cool/arxiv/kimi?paper=2603.11798+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></h3><p><strong>解决痛点</strong>：跨文档多实体问答的证据链构建</p>
 <p><strong>三模块架构</strong>：</p>
 <ol>
 <li>Schema Discovery——动态推断最小可连接模式</li>
@@ -3332,6 +3332,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">distillation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">world-model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">memory-poisoning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HCI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">纪念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机历史</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web-and-frontend-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">记忆投毒</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">对抗攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">工具链操纵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">协议攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思想病毒</a>
               </li>
             
             <div class="clearfix"></div>

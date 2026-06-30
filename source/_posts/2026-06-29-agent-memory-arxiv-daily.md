@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 日报｜2026-06-29：Agent 免疫系统与记忆投毒、内部化世界模型、RAG 知识冲突
-date: 2026-06-29 18:00:00
 tags:
   - agent-memory
   - arxiv-daily
@@ -9,6 +8,8 @@ tags:
   - memory-poisoning
 categories:
   - Agent Memory 研究
+abbrlink: 49325
+date: 2026-06-29 18:00:00
 ---
 
 # Agent Memory 日报｜2026-06-29
