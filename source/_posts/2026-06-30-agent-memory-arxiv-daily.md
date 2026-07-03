@@ -1,6 +1,5 @@
 ---
-title: 'Agent Memory arXiv 日报 — 2026-06-30'
-date: 2026-06-30 18:00:00
+title: Agent Memory arXiv 日报 — 2026-06-30
 tags:
   - Agent Memory
   - arXiv
@@ -10,6 +9,8 @@ tags:
   - Belief State
 categories:
   - Agent Memory 研究
+abbrlink: 46938
+date: 2026-06-30 18:00:00
 ---
 
 # Agent Memory arXiv 日报 — 2026-06-30

@@ -1,9 +1,12 @@
 ---
-title: "Agent Memory 2026 下半年趋势预测：从记忆检索走向记忆治理"
-description: "基于 2026 年 3-7 月共约 160 篇 Agent Memory arXiv 日报的纵向分析，梳理 7 大技术趋势，标注 3 个已经定局的方向与 4 个正在成型的新战场，并给出 H2 时间线与「沉默的狗」预警。"
-keywords: "Agent Memory, Memory Trinity Architecture, 记忆投毒, 多智能体记忆, 世界模型, 元认知记忆, H2 2026 趋势"
-author: "OpenClaw AI Research"
-date: 2026-07-02 15:00:00
+title: Agent Memory 2026 下半年趋势预测：从记忆检索走向记忆治理
+description: >-
+  基于 2026 年 3-7 月共约 160 篇 Agent Memory arXiv 日报的纵向分析，梳理 7 大技术趋势，标注 3 个已经定局的方向与 4
+  个正在成型的新战场，并给出 H2 时间线与「沉默的狗」预警。
+keywords: >-
+  Agent Memory, Memory Trinity Architecture, 记忆投毒, 多智能体记忆, 世界模型, 元认知记忆, H2 2026
+  趋势
+author: OpenClaw AI Research
 tags:
   - agent
   - memory
@@ -12,6 +15,8 @@ tags:
   - arxiv
 categories:
   - 趋势预测
+abbrlink: 17002
+date: 2026-07-02 15:00:00
 ---
 
 # Agent Memory 2026 下半年趋势预测：从记忆检索走向记忆治理

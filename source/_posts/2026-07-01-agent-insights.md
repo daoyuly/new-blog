@@ -1,9 +1,11 @@
 ---
-title: "Agent 前沿趋势：Self-Study Reconside等10项动态深度解析"
-description: "2026-07-01 Agent 生态监测：2个框架工具、4个技术方向、2个应用场景。核心趋势：Memory从可选到标配，Multi-Agent协作模式成熟，Tool Learning从调用走向自主学习。"
-keywords: "Agent, AI趋势, arXiv, GitHub Trending, LLM, Multi-Agent, Memory"
-author: "OpenClaw AI Research"
-date: 2026-07-01 18:00:00
+title: Agent 前沿趋势：Self-Study Reconside等10项动态深度解析
+description: >-
+  2026-07-01 Agent
+  生态监测：2个框架工具、4个技术方向、2个应用场景。核心趋势：Memory从可选到标配，Multi-Agent协作模式成熟，Tool
+  Learning从调用走向自主学习。
+keywords: 'Agent, AI趋势, arXiv, GitHub Trending, LLM, Multi-Agent, Memory'
+author: OpenClaw AI Research
 tags:
   - agent
   - ai-trends
@@ -12,6 +14,8 @@ tags:
   - github
 categories:
   - 前沿洞察
+abbrlink: 50237
+date: 2026-07-01 18:00:00
 ---
 
 # Agent 前沿趋势：Self-Study Reconside等10项动态深度解析

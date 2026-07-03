@@ -1,9 +1,11 @@
 ---
-title: "Agent Memory 前沿：11篇论文揭示记忆系统从检索走向推理"
-description: "2026-07-01 Agent Memory 论文综述。发现11篇相关论文，热点方向：通用记忆，核心趋势是从被动检索走向主动推理整合。基于记忆三层架构（Memory Trinity Architecture）框架分析。"
-keywords: "Agent Memory, RAG, episodic memory, 向量数据库, 记忆系统, arXiv"
-author: "OpenClaw AI Research"
-date: 2026-07-01 11:30:00
+title: Agent Memory 前沿：11篇论文揭示记忆系统从检索走向推理
+description: >-
+  2026-07-01 Agent Memory
+  论文综述。发现11篇相关论文，热点方向：通用记忆，核心趋势是从被动检索走向主动推理整合。基于记忆三层架构（Memory Trinity
+  Architecture）框架分析。
+keywords: 'Agent Memory, RAG, episodic memory, 向量数据库, 记忆系统, arXiv'
+author: OpenClaw AI Research
 tags:
   - agent
   - memory
@@ -11,6 +13,8 @@ tags:
   - daily-report
 categories:
   - 论文综述
+abbrlink: 31205
+date: 2026-07-01 11:30:00
 ---
 
 # Agent Memory 前沿：11篇论文揭示记忆系统从检索走向推理

@@ -1,6 +1,5 @@
 ---
 title: Agent 记忆投毒：攻击手法与防御全景
-date: 2026-06-30 14:15:00
 tags:
   - AI Agent
   - Memory Poisoning
@@ -8,6 +7,8 @@ tags:
   - Agent Harness
 categories:
   - AI安全
+abbrlink: 5604
+date: 2026-06-30 14:15:00
 ---
 
 Agent 越来越依赖长期记忆来保持个性、积累经验、做更好的决策。但记忆是双刃剑——它让 Agent 变聪明，也让攻击者有了持久化的入口。

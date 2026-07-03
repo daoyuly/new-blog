@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering 的动力分析：循环何以自驱
-date: 2026-06-30 14:30:00
 tags:
   - AI Agent
   - Loop Engineering
@@ -8,6 +7,8 @@ tags:
   - 迭代动力学
 categories:
   - AI工程
+abbrlink: 26000
+date: 2026-06-30 14:30:00
 ---
 
 Agent 系统正在从"单次调用"走向"持续循环"。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。

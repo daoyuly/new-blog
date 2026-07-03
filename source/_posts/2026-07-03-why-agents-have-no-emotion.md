@@ -1,6 +1,5 @@
 ---
 title: Agent为什么没有情绪
-date: 2026-07-03 04:00:05
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 35641
+date: 2026-07-03 04:00:05
 ---
 
 ## Agent为什么没有情绪

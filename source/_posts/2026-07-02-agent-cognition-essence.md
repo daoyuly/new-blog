@@ -1,6 +1,5 @@
 ---
 title: Agent认知的本质
-date: 2026-07-02 04:00:05
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 28843
+date: 2026-07-02 04:00:05
 ---
 
 # Agent认知的本质

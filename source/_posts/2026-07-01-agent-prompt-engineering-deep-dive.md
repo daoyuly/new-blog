@@ -1,6 +1,5 @@
 ---
 title: Agent 源码研究技巧：从 Prompt Engineering 视角拆解 Agent 运行
-date: 2026-07-01 10:45:00
 tags:
   - Agent
   - Prompt Engineering
@@ -12,6 +11,8 @@ tags:
   - YoAgent
 categories:
   - AI Agent
+abbrlink: 28307
+date: 2026-07-01 10:45:00
 ---
 
 研究 Agent 源码，最快的方式不是从入口函数往下追调用链，而是直接读 prompt。Prompt 是 Agent 的灵魂——它定义了模型能做什么、怎么做、做到什么程度、什么时候停。读懂了 prompt，整个系统的设计意图就暴露了。

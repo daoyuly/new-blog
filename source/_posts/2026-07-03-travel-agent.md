@@ -1,6 +1,5 @@
 ---
-title: "travel-agent 项目深度分析报告"
-date: 2026-07-03 11:00:00
+title: travel-agent 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,6 +7,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+abbrlink: 51165
+date: 2026-07-03 11:00:00
 ---
 
 # travel-agent 项目深度分析报告
