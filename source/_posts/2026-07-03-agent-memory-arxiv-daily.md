@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 日报 — 2026-07-03 arXiv 精选
-date: 2026-07-03 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -10,6 +9,8 @@ tags:
   - RAG
 categories:
   - Agent Memory 研究
+abbrlink: 63057
+date: 2026-07-03 18:00:00
 ---
 
 # Agent Memory 日报 — 2026-07-03 arXiv 精选
