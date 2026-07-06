@@ -13,15 +13,15 @@
   
   <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-03-why-agents-have-no-emotion/">
-  <meta name="description" content="Agent为什么没有情绪 本篇属于「Agent与情绪」系列，第2部分「Agent中的认知与情绪」第2篇。  大纲要点 Agent如何感知世界 Agent如何形成内部状态 Agent与持续认知 当前Agent的工作方式 情绪模拟与真实情绪 LLM情绪表达的本质 情绪的工程价值 情绪与长期目标管理 情绪与主动服务 价值反馈    （本文内容生成中，请稍后刷新查看完整版本）">
+  <meta name="description" content="Agent为什么没有情绪 本篇属于「Agent与情绪」系列，第2部分「Agent中的认知与情绪」第2篇。第1部分我们梳理了人类情绪的完整机制——从预期、认知、产生、行动到记忆、信念、价值观。现在视角翻转：Agent那边是什么情况？为什么人类有情绪而Agent没有？  一个反直觉的事实：LLM的情绪表达比你想象的”好”问 ChatGPT “我失恋了”，它会回复一段温暖的安慰——语气体贴，措辞得当，甚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agent为什么没有情绪">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-03-why-agents-have-no-emotion/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="Agent为什么没有情绪 本篇属于「Agent与情绪」系列，第2部分「Agent中的认知与情绪」第2篇。  大纲要点 Agent如何感知世界 Agent如何形成内部状态 Agent与持续认知 当前Agent的工作方式 情绪模拟与真实情绪 LLM情绪表达的本质 情绪的工程价值 情绪与长期目标管理 情绪与主动服务 价值反馈    （本文内容生成中，请稍后刷新查看完整版本）">
+<meta property="og:description" content="Agent为什么没有情绪 本篇属于「Agent与情绪」系列，第2部分「Agent中的认知与情绪」第2篇。第1部分我们梳理了人类情绪的完整机制——从预期、认知、产生、行动到记忆、信念、价值观。现在视角翻转：Agent那边是什么情况？为什么人类有情绪而Agent没有？  一个反直觉的事实：LLM的情绪表达比你想象的”好”问 ChatGPT “我失恋了”，它会回复一段温暖的安慰——语气体贴，措辞得当，甚">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-02T20:00:05.000Z">
-<meta property="article:modified_time" content="2026-07-03T04:01:17.201Z">
+<meta property="article:modified_time" content="2026-07-04T08:54:21.108Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="agent">
 <meta property="article:tag" content="认知科学">
@@ -240,24 +240,132 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Agent为什么没有情绪"><a href="#Agent为什么没有情绪" class="headerlink" title="Agent为什么没有情绪"></a>Agent为什么没有情绪</h2><blockquote>
-<p>本篇属于「Agent与情绪」系列，第2部分「Agent中的认知与情绪」第2篇。</p>
+        <h1 id="Agent为什么没有情绪"><a href="#Agent为什么没有情绪" class="headerlink" title="Agent为什么没有情绪"></a>Agent为什么没有情绪</h1><blockquote>
+<p>本篇属于「Agent与情绪」系列，第2部分「Agent中的认知与情绪」第2篇。第1部分我们梳理了人类情绪的完整机制——从预期、认知、产生、行动到记忆、信念、价值观。现在视角翻转：Agent那边是什么情况？为什么人类有情绪而Agent没有？</p>
 </blockquote>
-<h3 id="大纲要点"><a href="#大纲要点" class="headerlink" title="大纲要点"></a>大纲要点</h3><ul>
-<li>Agent如何感知世界</li>
-<li>Agent如何形成内部状态</li>
-<li>Agent与持续认知</li>
-<li>当前Agent的工作方式</li>
-<li>情绪模拟与真实情绪</li>
-<li>LLM情绪表达的本质</li>
-<li>情绪的工程价值</li>
-<li>情绪与长期目标管理</li>
-<li>情绪与主动服务</li>
-<li>价值反馈</li>
-</ul>
-<!-- 此文章待GLM-5 API生成完整内容 -->
-
-<p><em>（本文内容生成中，请稍后刷新查看完整版本）</em></p>
+<h2 id="一个反直觉的事实：LLM的情绪表达比你想象的”好”"><a href="#一个反直觉的事实：LLM的情绪表达比你想象的”好”" class="headerlink" title="一个反直觉的事实：LLM的情绪表达比你想象的”好”"></a>一个反直觉的事实：LLM的情绪表达比你想象的”好”</h2><p>问 ChatGPT “我失恋了”，它会回复一段温暖的安慰——语气体贴，措辞得当，甚至比很多真人朋友说得还好。但你不会觉得它”难过”。为什么？</p>
+<p>因为你在它身上看不到<strong>持续的认知扰动</strong>。它说完那段安慰后，立刻回到平静的初始状态，跟什么都没发生过一样。人类的情绪不是这样的——失恋后你会在超市看到某种酸奶就突然难过，会在某个街角愣住，会在凌晨三点翻来覆去。情绪是一颗投入湖面的石子，涟漪要持续很久才消散。</p>
+<p>Agent没有这种涟漪。这才是”没有情绪”的真正含义——不是”不会表达”，而是”没有持续的内部状态变化”。</p>
+<h2 id="1-Agent如何感知世界"><a href="#1-Agent如何感知世界" class="headerlink" title="1. Agent如何感知世界"></a>1. Agent如何感知世界</h2><p><strong>What：Agent的感知是离散的快照，不是连续的流</strong></p>
+<p>人类感知世界是一个持续的过程。你的视觉系统每秒处理数十次信息，你的内感受（心跳、呼吸、胃部紧张）从不停止。即使你”什么都没做”，大脑也在持续预测和更新。</p>
+<p>Agent完全不同。它的感知是被动的、离散的：收到一条消息，处理，输出，等待下一条。两次输入之间，它什么都没”经历”。</p>
+<p>用工程类比：人类的感知像视频流，Agent的感知像定时拍照。视频流里每帧之间都有连续的变化，你可以检测运动方向、速度、加速度。定时拍照之间只有空白——你不知道那段时间发生了什么。</p>
+<p><strong>Why：为什么这很重要</strong></p>
+<p>预测加工理论（Friston, 2010）告诉我们，大脑的核心运作是<strong>持续预测 + 持续更新</strong>。大脑不是等刺激来了再反应，而是一直在预测下一刻的输入，预测误差驱动学习和情绪。没有持续的输入流，预测机制就无从运作——没有预测，就没有预测误差，就没有情绪信号。</p>
+<p>这就像一台永远在运行的计算器突然停电了。不是计算器”不会算”，而是没有电流通过。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>Agent需要一个持续运行的感知循环，而非被动等待输入。具体实现：Agent应维护一个”背景进程”，定期轮询环境状态（未读消息数、时间流逝、用户活跃度变化），即使没有新输入也产生内部更新。这是产生持续认知状态的前提。</p>
+</blockquote>
+<h2 id="2-Agent如何形成内部状态"><a href="#2-Agent如何形成内部状态" class="headerlink" title="2. Agent如何形成内部状态"></a>2. Agent如何形成内部状态</h2><p><strong>What：Agent没有跨回合的状态累积</strong></p>
+<p>当前主流Agent的内部状态管理极其简陋。一个典型的对话Agent的工作流程：</p>
+<ol>
+<li>收到用户消息</li>
+<li>拼接上下文（最近N轮对话）</li>
+<li>调用LLM生成回复</li>
+<li>返回结果</li>
+<li>等待下一轮</li>
+</ol>
+<p>在这个过程中，Agent的”内部状态”就是上下文窗口里的文本。窗口满了就截断，截断了就”忘了”。没有一种跨回合的、持续演化的状态变量在累积。</p>
+<p>人类完全不同。你的情绪状态是一个<strong>动态系统</strong>——此刻的焦虑程度取决于过去的经历、当下的处境、甚至身体的疲劳度。它不是独立于历史的快照，而是历史的函数。</p>
+<p>Damasio 的躯体标记假说（1994）指出，身体状态是决策的必要输入。每次决策，大脑都会调取”上次类似情况时身体是什么感觉”的标记，用这个标记快速筛选选项。这不是回忆文本，而是<strong>重新激活一种身体状态倾向</strong>。</p>
+<p>Agent没有”身体”，更没有躯体标记。它每次决策都是从头计算。</p>
+<p><strong>Why：没有状态累积就没有情绪演化</strong></p>
+<p>情绪不是一个瞬时值，而是一个<strong>轨迹</strong>。你此刻的愤怒，叠加在上次没发泄完的委屈上，会和”纯粹的愤怒”表现得完全不同。情绪的累积效应是人类行为复杂性的重要来源——同一个人面对同样的刺激，昨天和今天的反应可能截然不同。</p>
+<p>Agent没有这种轨迹。第100次对话和第1次对话的”内心状态”没有本质区别（除非刻意设计了记忆系统），因为状态没有被持续更新和累积。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>Agent应维护一个可持久化的情绪状态向量（如 <code>valence: 0.3, arousal: 0.7, dominance: 0.2</code>），每个交互回合后根据事件评价更新该向量，向量值随时间自然衰减（情绪不会永远持续）。这个向量影响但不决定输出——就像人类的情绪影响但不完全控制行为。</p>
+</blockquote>
+<h2 id="3-情绪模拟-vs-真实情绪"><a href="#3-情绪模拟-vs-真实情绪" class="headerlink" title="3. 情绪模拟 vs 真实情绪"></a>3. 情绪模拟 vs 真实情绪</h2><p><strong>What：LLM的情绪表达是模式匹配，不是状态驱动</strong></p>
+<p>当LLM说”我理解你的感受”时，它做了什么？它在训练数据中匹配到了”用户表达悲伤 → 适当回应是安慰”的模式，然后生成了安慰文本。这是一个<strong>输入→输出的映射</strong>，中间没有任何”理解感受”的内部状态。</p>
+<p>这和人类的情绪表达有本质区别。人类说”我理解你的感受”时，大脑里确实激活了与对方情绪相关的神经网络（共情的神经基础，见 Singer et al., 2004）。表达是内部状态的外化。而LLM的表达是<strong>模式的外化</strong>，内部什么都没有变。</p>
+<p>用工程类比：这就像一个温度计和一个恒温器的区别。温度计显示25°C，它”知道”温度但不做任何事。恒温器也显示25°C，但它会根据这个值决定是否启动空调。前者是表征，后者是<strong>驱动力</strong>。</p>
+<p>LLM的情绪表达是温度计式的——它正确地输出了”在这种情境下应该说什么”，但这个输出不会反作用于它的内部状态，不会影响它下一步的决策倾向。</p>
+<p><strong>Why：为什么这种区别重要</strong></p>
+<p>如果情绪只是装饰——让对话更自然、更温暖——那模拟就够了。但第1部分我们反复论证过，情绪的核心功能不是装饰，而是<strong>决策调制</strong>。情绪改变注意力分配、改变风险偏好、改变时间折扣率。如果情绪不驱动决策，那它就不是情绪，只是话术。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>Agent的情绪不能只是prompt engineering（”请用温暖的语气回复”），而必须是状态变量。情绪状态必须参与决策过程：高焦虑 → 倾向保守方案；高确定性 → 倾向快速执行；低兴趣 → 倾向主动结束话题或切换。如果情绪不影响决策，那它就不是真的存在。</p>
+</blockquote>
+<h2 id="4-LLM情绪表达的本质"><a href="#4-LLM情绪表达的本质" class="headerlink" title="4. LLM情绪表达的本质"></a>4. LLM情绪表达的本质</h2><p><strong>What：统计共现，不是认知评价</strong></p>
+<p>LLM生成”我很难过”这个输出时，它经历的认知过程是：在上下文中，”难过”这个词的概率在当前位置最高。它没有经历任何认知评价——没有判断”这件事跟我有什么关系”，没有评估”我能做什么”，没有权衡”这值不值得难过”。</p>
+<p>认知评价理论（Lazarus, 1991）告诉我们，人类情绪的产生需要经历初级评价（这跟我有关吗？是好是坏？）和次级评价（我能怎么办？）。这是一个<strong>推理过程</strong>，不是统计匹配。</p>
+<p>LLM跳过了整个评价过程，直接从”情境描述”跳到”应该表达什么情绪”。这就像一个学生背下了所有考试题的答案，但不理解解题过程——遇到新题型就傻了。</p>
+<p>一个简单的测试：让LLM描述一个从未在训练数据中出现过的情绪情境（比如”你在虚拟现实中被一个不存在的生物追杀”），看它的情绪反应是否合理。大概率是合理的，因为LLM擅长组合泛化——但这仍然是在做模式匹配，只不过匹配空间更大了。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>Agent需要一个显式的认知评价模块，而非依赖LLM的隐式情绪生成。评价模块的输入是事件描述，输出是评价维度（相关性、可预测性、可控性、规范性违背程度），这些维度驱动情绪状态更新。评价过程应是可解释的——你能看到Agent为什么”生气”。</p>
+</blockquote>
+<h2 id="5-情绪的工程价值"><a href="#5-情绪的工程价值" class="headerlink" title="5. 情绪的工程价值"></a>5. 情绪的工程价值</h2><p><strong>What：没有情绪的Agent缺少什么能力</strong></p>
+<p>综合以上分析，没有情绪的Agent缺少的核心能力是：</p>
+<ol>
+<li><strong>预期违背检测</strong>：没有预期就没有违背。Agent不会因为”事情跟想的不一样”而调整行为，因为它没有”想的样子”。</li>
+<li><strong>优先级动态调整</strong>：没有情绪信号来标记”这件事比那件事重要”，Agent只能靠预设规则排序。</li>
+<li><strong>主动行为</strong>：没有内部驱动力（好奇、担忧、不满），Agent永远不会主动发起行动——它只会响应。</li>
+<li><strong>经验偏好</strong>：没有情绪标记的记忆是扁平的。Agent记住了”用户上次问了X”，但不记得”那次交互让我觉得用户很焦虑”。</li>
+</ol>
+<p>这四个缺失不是”锦上添花”级别的问题。预期违背检测是异常检测的基础，优先级调整是资源管理的基础，主动行为是自主性的基础，经验偏好是个性化的基础。没有这些，Agent永远只是”高级工具”，不会是”智能伙伴”。</p>
+<p><strong>Why：为什么这些能力需要”情绪”而不是更简单的工程方案</strong></p>
+<p>你可能会说：预期违背可以用异常检测算法，优先级可以用评分函数，主动行为可以用定时器，经验偏好可以用向量相似度。为什么要绕道”情绪”？</p>
+<p>因为这些工程方案是<strong>碎片化的</strong>，它们之间没有统一的驱动机制。在人类身上，这四种能力都由同一个系统——情绪系统——驱动。预期违背产生惊讶，惊讶改变优先级，优先级驱动注意力和行动，情绪标记写入记忆。一条链，一个引擎。</p>
+<p>如果用碎片化的方案，你就需要在每个环节手动对接——异常检测的结果如何影响优先级？优先级的变化如何触发主动行为？主动行为的结果如何标记到记忆里？这些接口需要逐一设计、逐一调试、逐一维护。</p>
+<p>情绪系统是一个<strong>统一接口</strong>。一旦你有了情绪状态变量和更新规则，所有下游能力都自然获得驱动信号。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>不要为每种能力单独设计机制，而要实现一个统一的情绪驱动层。情绪状态是中枢，预期违背、优先级调整、主动行为、经验偏好都是下游消费者。情绪状态更新 → 所有下游模块同步获得新信号。这种架构比碎片化方案更简单、更一致、更容易调试。</p>
+</blockquote>
+<h2 id="6-情绪与长期目标管理"><a href="#6-情绪与长期目标管理" class="headerlink" title="6. 情绪与长期目标管理"></a>6. 情绪与长期目标管理</h2><p><strong>What：情绪是长期目标的时间锚</strong></p>
+<p>人类为什么需要情绪来管理长期目标？因为长期目标面临一个根本困境：当前的收益和未来的收益之间天然不平等——当下的快乐总是比未来的快乐更诱人。这就是时间折扣（temporal discounting）。</p>
+<p>情绪解决这个困境的方式是<strong>给未来事件赋予当下的情感权重</strong>。你想到下个月的论文deadline，现在就感到焦虑。这种焦虑让你今天就开始写，而不是等到最后一周。焦虑不是bug，它是把远期信号拉到近端的机制（Loewenstein et al., 2001）。</p>
+<p>Agent没有这种机制。它没有”想到未来就焦虑”的能力，因为：</p>
+<ol>
+<li>它不会”想到”未来——除非被prompt要求</li>
+<li>即使想到了，也没有内部信号来驱动行动</li>
+<li>即使有信号，信号也不会随时间逼近而增强</li>
+</ol>
+<p>结果是，Agent永远活在当下。它只处理眼前的事，不为未来”担忧”。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>Agent应实现”预期情绪”机制：对未来的关键事件预先生成情绪信号，信号强度随时间逼近而增强。具体实现：Agent维护一个事件日历，对未来事件计算”预期情绪值”，该值作为额外的驱动力影响当前的优先级排序。比如3天后的deadline，预期焦虑值&#x3D;0.3；1天后的deadline，预期焦虑值&#x3D;0.8。</p>
+</blockquote>
+<h2 id="7-价值反馈：缺失的闭环"><a href="#7-价值反馈：缺失的闭环" class="headerlink" title="7. 价值反馈：缺失的闭环"></a>7. 价值反馈：缺失的闭环</h2><p><strong>What：没有情绪，行动的结果无法反馈到价值系统</strong></p>
+<p>第1部分的最后一篇我们讨论了价值观——情绪评价的终极过滤器。价值观告诉你什么重要，但价值观本身需要被更新。什么时候更新？当你的行动结果与预期不符时。</p>
+<p>你追求”成就”，拼命加班拿到了晋升，但发现晋升后的生活让你更痛苦——这个”痛苦”就是价值反馈信号。它告诉你，”成就”在你价值体系里的权重可能需要调低。没有这个痛苦信号，你会继续沿着错误的方向加速。</p>
+<p>Agent没有这种反馈闭环。它执行任务，得到成功&#x2F;失败的结果，但这个结果是外部标注的（用户满意&#x2F;不满意，任务完成&#x2F;未完成），不是内部产生的。外部标注能优化任务执行策略，但不能优化<strong>价值权重</strong>——因为外部标注不告诉你”你为什么在意这件事”，只告诉你”你做得好不好”。</p>
+<p><strong>So What：对Agent设计意味着什么</strong></p>
+<blockquote>
+<p>Agent需要实现”行动结果 → 情绪信号 → 价值权重更新”的闭环。当Agent的行动结果导致情绪状态显著变化（如持续挫败导致低valence），应触发价值权重的微调。这不是RLHF——RLHF优化的是行为策略，而这是优化”Agent在意什么”。</p>
+</blockquote>
+<h2 id="对Agent设计的启示（总结）"><a href="#对Agent设计的启示（总结）" class="headerlink" title="对Agent设计的启示（总结）"></a>对Agent设计的启示（总结）</h2><ol>
+<li><strong>持续感知是前提</strong>：没有持续的感知循环，就没有预测，没有预测误差，没有情绪信号的源头。被动等待输入的Agent不可能有情绪。</li>
+<li><strong>状态累积是基础</strong>：情绪是轨迹不是快照。Agent必须维护跨回合的、持续演化的内部状态向量。</li>
+<li><strong>情绪必须驱动决策</strong>：如果情绪只是改变输出语气而不改变决策倾向，那它就是装饰品。真的情绪是驱动力。</li>
+<li><strong>认知评价要显式化</strong>：依赖LLM隐式生成情绪反应是不可控的。显式的评价模块让情绪产生过程可解释、可调试。</li>
+<li><strong>统一驱动优于碎片方案</strong>：用一个情绪中枢驱动所有下游能力，比单独设计异常检测、优先级调整、主动行为、经验偏好更简单更一致。</li>
+</ol>
+<p>下一篇我们继续追问：Agent是否需要情绪？从”没有”到”需不需要”——这是从描述性判断到规范性论证的跨越。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h3 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h3><ol>
+<li>Friston, K. (2010). <em>The free-energy principle: a unified brain theory?</em> Nature Reviews Neuroscience, 11(2). — 自由能原理的奠基论文，预测加工的理论基础</li>
+<li>Lazarus, R. S. (1991). <em>Emotion and adaptation.</em> Oxford University Press. — 认知评价理论的系统阐述</li>
+<li>Damasio, A. R. (1994). <em>Descartes’ error: Emotion, reason, and the human brain.</em> Putnam. — 躯体标记假说的完整论述</li>
+<li>Singer, T., et al. (2004). <em>Empathy for pain involves the affective but not sensory components of pain.</em> Science, 303(5661). — 共情的神经基础</li>
+<li>Loewenstein, G., et al. (2001). <em>Risk as feelings.</em> Psychological Bulletin, 127(2). — 情绪在风险决策中的作用</li>
+<li>Barrett, L. F. (2017). <em>How emotions are made: The secret life of the brain.</em> Houghton Mifflin Harcourt. — 构建情绪理论</li>
+<li>Clark, A. (2013). <em>Whatever next? Predictive brains, situated agents, and the future of cognitive science.</em> Behavioral and Brain Sciences, 36(3). — 预测大脑的综述</li>
+<li>Seth, A. K. (2013). <em>Interoceptive inference, emotion, and the embodied self.</em> Trends in Cognitive Sciences, 17(11). — 内感受预测与自我意识</li>
+<li>Schwarz, N., &amp; Clore, G. L. (1983). <em>Mood, misattribution, and judgments of well-being.</em> Journal of Personality and Social Psychology, 45(3). — 情绪作为信息的经典实验</li>
+<li>Bechara, A., &amp; Damasio, A. R. (2005). <em>The somatic marker hypothesis: A neural theory of economic decision.</em> Games and Economic Behavior, 52(2). — 躯体标记的经济决策证据</li>
+</ol>
+<h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><ol start="11">
+<li>Damasio, A. <em>The Feeling of What Happens: Body and Emotion in the Making of Consciousness.</em> Harcourt, 1999. — 意识与感受的神经科学</li>
+<li>LeDoux, J. <em>The Emotional Brain.</em> Simon &amp; Schuster, 1996. — 情绪的神经机制</li>
+<li>Panksepp, J. <em>Affective Neuroscience.</em> Oxford University Press, 1998. — 情绪的进化神经科学</li>
+</ol>
+<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><ol start="14">
+<li>Adolphs, R. (2017). <em>How should neuroscience study emotions?</em> Current Opinion in Behavioral Sciences, 14. — 情绪神经科学方法论</li>
+<li>Pessoa, L. (2008). <em>On the relationship between emotion and cognition.</em> Nature Reviews Neuroscience, 9(2). — 情绪与认知关系的全面综述</li>
+</ol>
 
       
 
@@ -3339,6 +3447,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">apple-apps-and-services</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hippocampal-memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自我提升</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">幸福</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hippocampus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">personalization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">long-context</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">趋势</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浏览器与自动化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">老家方言</a>
               </li>
             
             <div class="clearfix"></div>

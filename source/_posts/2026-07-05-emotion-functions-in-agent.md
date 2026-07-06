@@ -1,6 +1,5 @@
 ---
 title: 情绪在Agent中的四个功能
-date: 2026-07-05 04:00:04
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 50387
+date: 2026-07-05 04:00:04
 ---
 
 ## 情绪在Agent中的四个功能

@@ -1,6 +1,5 @@
 ---
 title: Agent如何感知人的情绪
-date: 2026-07-06 04:00:04
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 53974
+date: 2026-07-06 04:00:04
 ---
 
 ## Agent如何感知人的情绪

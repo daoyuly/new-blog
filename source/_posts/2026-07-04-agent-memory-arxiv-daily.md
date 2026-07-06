@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 日报 - 2026-07-04
-date: 2026-07-04 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -11,6 +10,8 @@ tags:
   - episodic-memory
 categories:
   - Agent Memory 研究
+abbrlink: 29147
+date: 2026-07-04 18:00:00
 ---
 
 # Agent Memory arXiv 日报 — 2026-07-04
