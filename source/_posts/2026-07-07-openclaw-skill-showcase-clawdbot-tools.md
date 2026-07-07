@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Clawdbot Tools
+tags:
+  - openclaw
+  - skill
+  - clawdbot-tools
+categories:
+  - 技术推荐
+abbrlink: 12806
 date: 2026-07-07 11:30:00
-tags: [openclaw, skill, clawdbot-tools]
-categories: [技术推荐]
 ---
 
 # 🤖 OpenClaw Skill 每日推荐 — Clawdbot Tools
