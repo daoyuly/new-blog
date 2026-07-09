@@ -2,61 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-arxiv-agent-trends/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-openclaw-skill-showcase-coding-agents-and-ides/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-agent-memory-arxiv-report/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-025-2-%E7%9F%B3%E6%99%AF%E5%B1%B1%E4%B8%93%E9%A1%B9-%E5%AE%97%E5%85%83%E6%BC%94%E8%AE%B2PPT-V1218/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-Intelli/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-evaluation/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-commercialization/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-agent-expectation-model/</loc>
     
     <lastmod>2026-07-09</lastmod>
     
@@ -74,16 +20,7 @@
   </url>
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-affective-computing-frontier/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-open-source-projects/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-regulation/</loc>
     
     <lastmod>2026-07-09</lastmod>
     
@@ -101,7 +38,43 @@
   </url>
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-expression/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-social-function/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-vector-representation/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-openclaw-skill-showcase-coding-agents-and-ides/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-commercialization/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-individual-differences/</loc>
     
     <lastmod>2026-07-09</lastmod>
     
@@ -111,6 +84,24 @@
   
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-expectation-engine/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-expression/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-open-source-projects/</loc>
     
     <lastmod>2026-07-09</lastmod>
     
@@ -137,34 +128,7 @@
   </url>
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-vector-representation/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-appraisal-system/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-social-function/</loc>
-    
-    <lastmod>2026-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-regulation/</loc>
     
     <lastmod>2026-07-09</lastmod>
     
@@ -182,7 +146,70 @@
   </url>
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-individual-differences/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-evaluation/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-025-2-%E7%9F%B3%E6%99%AF%E5%B1%B1%E4%B8%93%E9%A1%B9-%E5%AE%97%E5%85%83%E6%BC%94%E8%AE%B2PPT-V1218/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-agent-memory-arxiv-report/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-emotion-affective-computing-frontier/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-llm-slm-research-daily/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-Intelli/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-openclaw-skill-showcase-clawdbot-tools/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-insights/</loc>
     
     <lastmod>2026-07-09</lastmod>
     
@@ -193,43 +220,7 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-08-024-2-%E9%A9%AC%E9%87%91%E9%BE%99/</loc>
     
-    <lastmod>2026-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-insights/</loc>
-    
-    <lastmod>2026-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-memory-arxiv-daily/</loc>
-    
-    <lastmod>2026-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-arxiv-daily/</loc>
-    
-    <lastmod>2026-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-023-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E6%98%BE%E5%AD%98%E4%BC%98%E5%8C%96-%E8%B5%B5%E5%86%9B%E5%B9%B3/</loc>
-    
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -238,16 +229,16 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-understands-human-behavior/</loc>
     
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-openclaw-skill-showcase-clawdbot-tools/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-arxiv-daily/</loc>
     
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -256,16 +247,16 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-memory-arxiv-report/</loc>
     
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-022-2-%E5%BC%A0%E6%B6%9B-%E6%9C%89%E7%94%A8%E5%88%B0%E5%A5%BD%E7%94%A8-AI-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7%E5%A6%82%E4%BD%95%E6%94%BE%E5%A4%A7-AI-%E8%83%BD%E5%8A%9B/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-agent-memory-arxiv-daily/</loc>
     
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -274,43 +265,7 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-08-Hospital_guidance_agent/</loc>
     
-    <lastmod>2026-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-08-llm-slm-research-daily/</loc>
-    
-    <lastmod>2026-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-07-agent-harness-daily/</loc>
-    
-    <lastmod>2026-07-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-07-llm-slm-research-daily/</loc>
-    
-    <lastmod>2026-07-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-07-021-2-%E5%8F%B2%E5%B0%91%E9%94%8B-%E4%BB%8E%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E5%88%B0%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BC%81%E4%B8%9A%E7%BA%A7-Data-Agent-%E7%9A%84%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%88%9B%E6%96%B0/</loc>
-    
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -319,7 +274,43 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-07-agent-memory-arxiv-daily/</loc>
     
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-023-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E6%98%BE%E5%AD%98%E4%BC%98%E5%8C%96-%E8%B5%B5%E5%86%9B%E5%B9%B3/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-08-022-2-%E5%BC%A0%E6%B6%9B-%E6%9C%89%E7%94%A8%E5%88%B0%E5%A5%BD%E7%94%A8-AI-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7%E5%A6%82%E4%BD%95%E6%94%BE%E5%A4%A7-AI-%E8%83%BD%E5%8A%9B/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-07-agent-harness-daily/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-07-llm-slm-research-daily/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -328,7 +319,7 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-07-agent-insights/</loc>
     
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -337,7 +328,16 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-07-agent-arxiv-daily/</loc>
     
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-07-021-2-%E5%8F%B2%E5%B0%91%E9%94%8B-%E4%BB%8E%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E5%88%B0%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BC%81%E4%B8%9A%E7%BA%A7-Data-Agent-%E7%9A%84%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%88%9B%E6%96%B0/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -346,7 +346,16 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-07-020-2-%E6%9D%9E%E5%9D%9A%E7%8E%AE-Agent%E6%8A%80%E6%9C%AF%E5%9C%A8%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-09-arxiv-agent-trends/</loc>
+    
+    <lastmod>2026-07-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
