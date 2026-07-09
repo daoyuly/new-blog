@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 18592
+date: 2026-07-09 00:00:00
 ---
 
 # 情绪安全：防止失控

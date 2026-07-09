@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 58263
+date: 2026-07-09 00:00:00
 ---
 
 # 情绪障碍：当系统失灵

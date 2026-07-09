@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 52004
+date: 2026-07-09 00:00:00
 ---
 
 # 前沿研究：情感计算最新进展

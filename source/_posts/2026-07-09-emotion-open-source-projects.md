@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 18766
+date: 2026-07-09 00:00:00
 ---
 
 # 开源项目中的情绪实现：谁做对了，谁做错了

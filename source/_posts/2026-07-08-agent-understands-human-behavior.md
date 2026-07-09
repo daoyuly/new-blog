@@ -1,6 +1,5 @@
 ---
 title: Agent如何理解人的行为
-date: 2026-07-08 04:00:01
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 887
+date: 2026-07-08 04:00:01
 ---
 
 ## Agent如何理解人的行为

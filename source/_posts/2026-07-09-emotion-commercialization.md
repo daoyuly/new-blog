@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 36031
+date: 2026-07-09 00:00:00
 ---
 
 # 情绪Agent的商业化：市场、模式与风险

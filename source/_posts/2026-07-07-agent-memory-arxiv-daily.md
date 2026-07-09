@@ -1,6 +1,5 @@
 ---
-title: 'Agent Memory arXiv 日报 | 2026-07-07'
-date: 2026-07-07 18:00:00
+title: Agent Memory arXiv 日报 | 2026-07-07
 tags:
   - agent-memory
   - arxiv
@@ -9,7 +8,10 @@ tags:
   - RAG
   - episodic-memory
   - long-term-memory
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
+abbrlink: 5907
+date: 2026-07-07 18:00:00
 ---
 
 今天是 2026 年 7 月 7 日，本期 arXiv 日报聚焦 Agent Memory 领域最新论文。本期亮点非常密集——仅 7 月 4-6 日三天就出现了 **8 篇** 直接相关的记忆系统论文，覆盖架构设计、安全攻防、评测基准和自优化框架四大方向。

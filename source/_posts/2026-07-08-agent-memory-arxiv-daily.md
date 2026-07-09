@@ -1,8 +1,18 @@
 ---
-title: "Agent Memory arXiv 日报 — 2026-07-08"
-date: 2026-07-08 18:00:00 +0800
-tags: [agent-memory, arxiv, daily-report, RAG, episodic-memory, long-term-memory, fact-graph, KV-cache]
-categories: [Agent Memory 研究]
+title: Agent Memory arXiv 日报 — 2026-07-08
+date: '2026-07-08 18:00:00 +0800'
+tags:
+  - agent-memory
+  - arxiv
+  - daily-report
+  - RAG
+  - episodic-memory
+  - long-term-memory
+  - fact-graph
+  - KV-cache
+categories:
+  - Agent Memory 研究
+abbrlink: 32090
 ---
 
 ## 📋 今日相关论文列表

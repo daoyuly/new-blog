@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 22817
+date: 2026-07-09 00:00:00
 ---
 
 # 情绪的社会功能：为什么我们不是孤岛

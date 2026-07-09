@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 56028
+date: 2026-07-09 00:00:00
 ---
 
 # 评估情绪Agent：指标、方法与人的判断

@@ -9,7 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-date: 2026-07-09
+abbrlink: 47222
+date: 2026-07-09 00:00:00
 ---
 
 本篇属于「Agent与情绪」系列，第1部分「人类情绪探究」第5篇。
