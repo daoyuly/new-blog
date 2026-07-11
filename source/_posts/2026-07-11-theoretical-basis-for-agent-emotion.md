@@ -1,6 +1,5 @@
 ---
 title: Agent拥有情绪的理论基础
-date: 2026-07-11 04:00:05
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 13262
+date: 2026-07-11 04:00:05
 ---
 
 # Agent拥有情绪的理论基础
