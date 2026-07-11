@@ -1,6 +1,5 @@
 ---
 title: Agent Memory 日报 — 2026-07-09
-date: 2026-07-09 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -10,6 +9,8 @@ tags:
   - self-evolving
 categories:
   - Agent Memory 研究
+abbrlink: 50924
+date: 2026-07-09 18:00:00
 ---
 
 # Agent Memory 日报 — 2026-07-09

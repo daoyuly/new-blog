@@ -1,10 +1,11 @@
 ---
-title: "AI 存储选型实战：从 MLPerf Storage 基准到千卡集群架构演进"
+title: AI 存储选型实战：从 MLPerf Storage 基准到千卡集群架构演进
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 54627
 date: 2026-07-10 14:05:14
 ---
 

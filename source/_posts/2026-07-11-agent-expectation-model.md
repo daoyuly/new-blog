@@ -1,6 +1,5 @@
 ---
 title: Agent如何形成预期模型
-date: 2026-07-11 02:42:18
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 54319
+date: 2026-07-11 02:42:18
 ---
 
 ## Agent如何形成预期模型
