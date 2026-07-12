@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - DevOps 与云服务
-date: 2026-07-12 11:30:00
 tags:
   - openclaw
   - skill
@@ -8,6 +7,8 @@ tags:
   - cloud
 categories:
   - 技术推荐
+abbrlink: 53041
+date: 2026-07-12 11:30:00
 ---
 
 # ☁️ OpenClaw Skill 每日推荐 — DevOps 与云服务
