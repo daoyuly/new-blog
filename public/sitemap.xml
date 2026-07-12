@@ -2,34 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-12-cs-ai-agent-trends/</loc>
-    
-    <lastmod>2026-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-12-openclaw-skill-showcase-devops-and-cloud/</loc>
-    
-    <lastmod>2026-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-12-agent-memory-arxiv-report/</loc>
-    
-    <lastmod>2026-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-12-034-3-%E5%BD%AD%E6%9D%BE-%E9%B8%BF%E8%92%99%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84AI%E5%8A%A9%E5%8A%9B%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B0%E8%8C%83%E5%BC%8F_AICon_%E5%BD%AD%E6%9D%BE/</loc>
+    <loc>https://www.daoyuly.cn/2026/2026-07-12-agent-understands-user/</loc>
     
     <lastmod>2026-07-12</lastmod>
     
@@ -47,27 +20,45 @@
   </url>
   
   <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-12-openclaw-skill-showcase-devops-and-cloud/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-12-034-3-%E5%BD%AD%E6%9D%BE-%E9%B8%BF%E8%92%99%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84AI%E5%8A%A9%E5%8A%9B%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B0%E8%8C%83%E5%BC%8F_AICon_%E5%BD%AD%E6%9D%BE/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-12-agent-memory-arxiv-report/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-12-cs-ai-agent-trends/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-11-033-3-%E9%BB%84%E8%B5%9F%E8%B4%BA-%E5%90%AC%E8%A7%81%E6%9C%AA%E6%9D%A5%EF%BC%8C%E6%8E%A2%E7%B4%A2-AI-%E5%A3%B0%E5%AD%A6%E7%A1%AC%E4%BB%B6%E4%B8%8E-AI-%E5%BA%94%E7%94%A8%E7%9A%84%E4%BA%A4%E4%BA%92%E6%96%B0%E7%BA%AA%E5%85%83/</loc>
     
-    <lastmod>2026-07-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-11-agent-insights/</loc>
-    
-    <lastmod>2026-07-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.daoyuly.cn/2026/2026-07-11-agent-memory-arxiv-daily/</loc>
-    
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +67,16 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-11-agent-arxiv-daily/</loc>
     
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-11-agent-memory-arxiv-daily/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,7 +85,16 @@
   <url>
     <loc>https://www.daoyuly.cn/2026/2026-07-11-032-3-%E9%BB%84%E9%AB%98%E6%94%80-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%B1%BD%E8%BD%A6%E8%A1%8C%E4%B8%9A%E7%9A%84%E8%90%BD%E5%9C%B0%E5%AE%9E%E8%B7%B5/</loc>
     
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.daoyuly.cn/2026/2026-07-11-agent-insights/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

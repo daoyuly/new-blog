@@ -1,6 +1,5 @@
 ---
 title: Agent如何理解用户
-date: 2026-07-12 04:00:05
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 35020
+date: 2026-07-12 04:00:05
 ---
 
 ## Agent如何理解用户
