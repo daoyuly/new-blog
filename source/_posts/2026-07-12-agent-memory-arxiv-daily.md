@@ -1,6 +1,5 @@
 ---
 title: Agent Memory arXiv 日报 — 2026-07-12
-date: 2026-07-12 18:00:00
 tags:
   - Agent Memory
   - arXiv
@@ -10,6 +9,8 @@ tags:
   - LLM Agent
 categories:
   - Agent Memory 研究
+abbrlink: 60123
+date: 2026-07-12 18:00:00
 ---
 
 # Agent Memory arXiv 日报 — 2026-07-12

@@ -1,6 +1,5 @@
 ---
-title: "Multimodal-Agent-RAG 项目深度分析报告"
-date: 2026-07-13 11:00:00
+title: Multimodal-Agent-RAG 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,6 +7,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+abbrlink: 37100
+date: 2026-07-13 11:00:00
 ---
 
 # Multimodal-Agent-RAG 项目深度分析报告
