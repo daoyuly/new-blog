@@ -1,6 +1,5 @@
 ---
 title: 从对话到人物画像
-date: 2026-07-13 04:00:04
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 17358
+date: 2026-07-13 04:00:04
 ---
 
 # 从对话到人物画像
