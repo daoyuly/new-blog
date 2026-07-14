@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering 落地手册：从零搭建第一个工程闭环
-date: 2026-07-13 15:00:00
 tags:
   - Loop Engineering
   - 工程闭环
@@ -8,6 +7,8 @@ tags:
   - DevOps
 categories:
   - 工程实践
+abbrlink: 38209
+date: 2026-07-13 15:00:00
 ---
 
 # Loop Engineering 落地手册：从零搭建第一个工程闭环

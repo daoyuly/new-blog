@@ -1,6 +1,5 @@
 ---
 title: 从监控到闭环：Prometheus + Alertmanager 实操指南
-date: 2026-07-13 18:00:00
 tags:
   - Loop Engineering
   - Prometheus
@@ -8,6 +7,8 @@ tags:
   - 监控
 categories:
   - 工程实践
+abbrlink: 7273
+date: 2026-07-13 18:00:00
 ---
 
 # 从监控到闭环：Prometheus + Alertmanager 实操指南

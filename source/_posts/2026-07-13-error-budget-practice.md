@@ -1,6 +1,5 @@
 ---
 title: Error Budget 实战：从 SLO 制定到自动化发布冻结
-date: 2026-07-13 19:00:00
 tags:
   - Loop Engineering
   - SLO
@@ -8,6 +7,8 @@ tags:
   - SRE
 categories:
   - 工程实践
+abbrlink: 24842
+date: 2026-07-13 19:00:00
 ---
 
 # Error Budget 实战：从 SLO 制定到自动化发布冻结

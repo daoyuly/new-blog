@@ -1,6 +1,5 @@
 ---
 title: 多Agent协调：不是架构问题，是博弈问题
-date: 2026-07-13 16:00:00
 tags:
   - Multi-Agent
   - 博弈论
@@ -8,6 +7,8 @@ tags:
   - 机制设计
 categories:
   - AI工程
+abbrlink: 12173
+date: 2026-07-13 16:00:00
 ---
 
 # 多Agent协调：不是架构问题，是博弈问题

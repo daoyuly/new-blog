@@ -1,6 +1,5 @@
 ---
 title: 微服务环境下跨服务闭环设计
-date: 2026-07-13 15:30:00
 tags:
   - Loop Engineering
   - 微服务
@@ -8,6 +7,8 @@ tags:
   - Saga
 categories:
   - 工程实践
+abbrlink: 47692
+date: 2026-07-13 15:30:00
 ---
 
 # 微服务环境下跨服务闭环设计

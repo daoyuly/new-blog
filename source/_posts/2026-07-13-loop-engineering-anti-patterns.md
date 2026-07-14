@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering 反模式：为什么你的闭环转不起来
-date: 2026-07-13 15:30:00
 tags:
   - Loop Engineering
   - 工程闭环
@@ -8,6 +7,8 @@ tags:
   - 反模式
 categories:
   - 工程实践
+abbrlink: 5635
+date: 2026-07-13 15:30:00
 ---
 
 # Loop Engineering 反模式：为什么你的闭环转不起来

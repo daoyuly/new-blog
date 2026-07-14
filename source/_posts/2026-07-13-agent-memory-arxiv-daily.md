@@ -1,8 +1,16 @@
 ---
-title: "Agent Memory 日报 #7 — 2026-07-13：选择性持久记忆、情景记忆驱动决策、长程上下文演化"
-date: 2026-07-13 18:00:00 +0800
-tags: [agent-memory, episodic-memory, persistent-memory, RAG, long-term-memory, arxiv-daily]
-categories: [Agent Memory 研究]
+title: 'Agent Memory 日报 #7 — 2026-07-13：选择性持久记忆、情景记忆驱动决策、长程上下文演化'
+date: '2026-07-13 18:00:00 +0800'
+tags:
+  - agent-memory
+  - episodic-memory
+  - persistent-memory
+  - RAG
+  - long-term-memory
+  - arxiv-daily
+categories:
+  - Agent Memory 研究
+abbrlink: 7769
 ---
 
 ## 📋 今日概览

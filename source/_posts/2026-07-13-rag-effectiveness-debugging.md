@@ -1,6 +1,5 @@
 ---
 title: RAG 效果不好？先看这五个地方
-date: 2026-07-13 17:30:00
 tags:
   - RAG
   - 检索增强
@@ -8,6 +7,8 @@ tags:
   - LLM
 categories:
   - AI工程
+abbrlink: 3128
+date: 2026-07-13 17:30:00
 ---
 
 # RAG 效果不好？先看这五个地方

@@ -1,6 +1,5 @@
 ---
 title: 当 Loop 遇到 AI：用 LLM 做闭环决策层
-date: 2026-07-13 16:30:00
 tags:
   - Loop Engineering
   - LLM
@@ -8,6 +7,8 @@ tags:
   - 混合决策
 categories:
   - 工程实践
+abbrlink: 19334
+date: 2026-07-13 16:30:00
 ---
 
 # 当 Loop 遇到 AI：用 LLM 做闭环决策层

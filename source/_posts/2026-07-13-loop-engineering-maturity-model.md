@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering 系列完结篇：闭环成熟度模型
-date: 2026-07-13 20:00:00
 tags:
   - Loop Engineering
   - 成熟度模型
@@ -8,6 +7,8 @@ tags:
   - 自测
 categories:
   - 工程实践
+abbrlink: 35421
+date: 2026-07-13 20:00:00
 ---
 
 # Loop Engineering 系列完结篇：闭环成熟度模型

@@ -1,6 +1,5 @@
 ---
 title: Agent Token 优化进阶：生产环境的成本控制实战
-date: 2026-07-13 17:00:00
 tags:
   - AI Agent
   - Token优化
@@ -8,6 +7,8 @@ tags:
   - LLM
 categories:
   - 工程实践
+abbrlink: 55955
+date: 2026-07-13 17:00:00
 ---
 
 # Agent Token 优化进阶：生产环境的成本控制实战

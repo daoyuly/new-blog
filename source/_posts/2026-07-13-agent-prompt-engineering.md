@@ -1,6 +1,5 @@
 ---
 title: 写好 Agent Prompt：不是越长越好
-date: 2026-07-13 19:30:00
 tags:
   - AI Agent
   - Prompt工程
@@ -8,6 +7,8 @@ tags:
   - LLM
 categories:
   - AI工程
+abbrlink: 60590
+date: 2026-07-13 19:30:00
 ---
 
 # 写好 Agent Prompt：不是越长越好

@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Gaming
-date: 2026-07-14 11:30:00
 tags:
   - openclaw
   - skill
   - gaming
 categories:
   - 技术推荐
+abbrlink: 31861
+date: 2026-07-14 11:30:00
 ---
 
 # 🎮 OpenClaw Skill 每日推荐 - Gaming（游戏）

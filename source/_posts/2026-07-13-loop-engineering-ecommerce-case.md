@@ -1,6 +1,5 @@
 ---
 title: Loop Engineering 实战案例：一个电商平台的闭环演进
-date: 2026-07-13 17:00:00
 tags:
   - Loop Engineering
   - 工程闭环
@@ -8,6 +7,8 @@ tags:
   - 案例研究
 categories:
   - 工程实践
+abbrlink: 60021
+date: 2026-07-13 17:00:00
 ---
 
 # Loop Engineering 实战案例：一个电商平台的闭环演进

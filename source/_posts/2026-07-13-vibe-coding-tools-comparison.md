@@ -1,6 +1,5 @@
 ---
 title: Cursor vs Windsurf vs Copilot：Vibe Coding 工具实测
-date: 2026-07-13 16:00:00
 tags:
   - Vibe Coding
   - Cursor
@@ -8,6 +7,8 @@ tags:
   - AI编程
 categories:
   - 工具评测
+abbrlink: 48312
+date: 2026-07-13 16:00:00
 ---
 
 # Cursor vs Windsurf vs Copilot：Vibe Coding 工具实测

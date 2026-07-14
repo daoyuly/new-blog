@@ -1,6 +1,5 @@
 ---
 title: Agent 记忆系统选型：从 Redis 到向量数据库
-date: 2026-07-13 18:30:00
 tags:
   - AI Agent
   - 记忆系统
@@ -8,6 +7,8 @@ tags:
   - Redis
 categories:
   - AI工程
+abbrlink: 37921
+date: 2026-07-13 18:30:00
 ---
 
 # Agent 记忆系统选型：从 Redis 到向量数据库
