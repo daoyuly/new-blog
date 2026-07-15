@@ -1,103 +1,96 @@
 ---
-title: "OpenManus 项目分析报告"
+title: "OpenManus 项目深度分析报告"
 date: 2026-07-15 11:00:00
 tags:
   - open-source
   - ai-repo
   - daily-research
+  - deep-analysis
 categories:
   - 开源项目研究
 ---
 
-# OpenManus 项目分析报告
+# OpenManus 项目深度分析报告
 
-> 本报告由 OpenClaw 自动生成
-> 
+> 本报告由 OpenClaw 自动生成（AI 深度分析版）
+>
 > 研究日期: 2026-07-15
-> 
+>
 > 项目路径: /Users/daoyu/Documents/ai-repo/OpenManus
 
 ---
 
-## 1. 项目概述
+## 📊 项目概览
 
-Manus is incredible, but OpenManus can achieve any idea without an *Invite Code* 🛫!
-Our team members [@Xinbin Liang](https://github.com/mannaandpoem) and [@Jinyu Xiang](https://github.com/XiangJinyu) (core authors), along with [@Zhaoyang Yu](https://github.com/MoshiQAQ), [@Jiayi Zhang](https://github.com/didiforgithub), and [@Sirui Hong](https://github.com/stellaHSR), we are from [@MetaGPT](https://github.com/geekan/MetaGPT). The prototype is launched within 3 hours and we are keeping building!
-It's a simple implementation, so we welcome any suggestions, contributions, and feedback!
-Enjoy your own agent with OpenManus!
-We're also excited to introduce [OpenManus-RL](https://github.com/OpenManus/OpenManus-RL), an open-source project dedicated to reinforcement learning (RL)- based (such as GRPO) tuning methods for LLM agents, developed collaboratively by researchers from UIUC and OpenManus.
-## Project Demo
-<video src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" data-canonical-src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
-## Installation
-We provide two installation methods. Method 2 (using uv) is recommended for faster installation and better dependency management.
-### Method 1: Using conda
-1. Create a new conda environment:
-
-## 2. 技术栈
-
-
-## 3. 项目结构
-
-```
-./run_mcp.py
-./app/config.py
-./app/__init__.py
-./app/llm.py
-./app/logger.py
-./app/exceptions.py
-./app/bedrock.py
-./app/schema.py
-./setup.py
-./run_mcp_server.py
-./run_flow.py
-./sandbox_main.py
-./main.py
-
-```
-
-## 4. 技术实现分析
-
-### 核心架构
-*待深入分析*
-
-### 关键模块
-*待深入分析*
-
-### 设计模式
-*待深入分析*
-
-## 5. 产品意义
-
-### 解决的问题
-*待分析*
-
-### 目标用户
-*待分析*
-
-### 应用场景
-*待分析*
-
-## 6. 借鉴点
-
-### 技术层面
-1. *待分析*
-2. *待分析*
-
-### 产品层面
-1. *待分析*
-2. *待分析*
-
-### 工程实践
-1. *待分析*
-2. *待分析*
-
-## 7. 待深入研究
-
-- [ ] 阅读核心源码
-- [ ] 运行示例
-- [ ] 分析测试用例
-- [ ] 研究 API 设计
+- **项目名称**: OpenManus
+- **文件数量**: 183 个文件
+- **主要插件**: 0 个
 
 ---
 
-*本报告由 OpenClaw 自动生成，需要进一步人工补充*
+> ⚠️ AI 分析失败，本报告基于项目基本信息生成。
+
+## 1. 项目概述
+
+<p align="center">
+  <img src="assets/logo.jpg" width="200"/>
+</p>
+
+English | [中文](README_zh.md) | [한국어](README_ko.md) | [日本語](README_ja.md)
+
+[![GitHub stars](https://img.shields.io/github/stars/FoundationAgents/OpenManus?style=social)](https://github.com/FoundationAgents/OpenManus/stargazers)
+&ensp;
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) &ensp;
+[![Discord Follow](https://dcbadge.vercel.app/api/server/DYn29wFk9z?style=flat)](https://discord.gg/DYn29wFk9z)
+[![Demo](https://img.shields.io/badge/Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/lyh-917/OpenManusDemo)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15186407.svg)](https://doi.org/10.5281/zenodo.15186407)
+
+# 👋 OpenManus
+
+Manus is incredible, but OpenManus can achieve any idea without an *Invite Code* 🛫!
+
+Our team members [@Xinbin Liang](https://github.com/mannaandpoem) and [@Jinyu Xiang](https://github.com/XiangJinyu) (core authors), along wi
+
+---
+
+## 📁 文件结构示例
+
+```
+/Users/daoyu/Documents/ai-repo/OpenManus/CODE_OF_CONDUCT.md
+/Users/daoyu/Documents/ai-repo/OpenManus/记忆系统设计与实现深度分析.md
+/Users/daoyu/Documents/ai-repo/OpenManus/README_ja.md
+/Users/daoyu/Documents/ai-repo/OpenManus/run_mcp.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/config.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/__init__.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/llm.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/utils/files_utils.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/utils/__init__.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/utils/logger.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/react.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/swe.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/toolcall.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/__init__.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/sandbox_agent.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/browser.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/mcp.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/data_analysis.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/base.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/manus.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/mcp/server.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/mcp/__init__.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/logger.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/swe.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/toolcall.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/__init__.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/visualization.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/browser.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/mcp.py
+/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/planning.py
+...
+(共 183 个文件)
+```
+
+---
+
+*本报告由 OpenClaw 的 AI 深度分析系统生成*
+*如有疑问或需要进一步分析，请联系研究者*
