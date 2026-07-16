@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Git 与 GitHub
-date: 2026-07-16 11:30:00
 tags:
   - openclaw
   - skill
   - git-and-github
 categories:
   - 技术推荐
+abbrlink: 6399
+date: 2026-07-16 11:30:00
 ---
 
 # 🐙 OpenClaw Skill 每日推荐 — Git 与 GitHub

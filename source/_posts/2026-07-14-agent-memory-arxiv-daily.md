@@ -1,8 +1,17 @@
 ---
-title: "Agent Memory 日报 · 2026-07-14：双记忆共振、因果结构化状态与约束记忆"
-date: 2026-07-14 18:00:00 +0800
-tags: [agent-memory, arxiv, daily-report, LLM, episodic-memory, long-term-memory, state-management]
-categories: [Agent Memory 研究]
+title: Agent Memory 日报 · 2026-07-14：双记忆共振、因果结构化状态与约束记忆
+date: '2026-07-14 18:00:00 +0800'
+tags:
+  - agent-memory
+  - arxiv
+  - daily-report
+  - LLM
+  - episodic-memory
+  - long-term-memory
+  - state-management
+categories:
+  - Agent Memory 研究
+abbrlink: 50121
 ---
 
 ## 📋 今日摘要

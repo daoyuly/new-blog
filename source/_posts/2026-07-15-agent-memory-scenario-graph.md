@@ -1,6 +1,5 @@
 ---
 title: Agent记忆与场景图谱
-date: 2026-07-15 06:00:05
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 32651
+date: 2026-07-15 06:00:05
 ---
 
 ## Agent记忆与场景图谱
