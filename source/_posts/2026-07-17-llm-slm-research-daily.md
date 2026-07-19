@@ -1,6 +1,5 @@
 ---
-title: "LLM & SLM 研究日报 - 2026-07-17"
-date: 2026-07-17 09:00:00
+title: LLM & SLM 研究日报 - 2026-07-17
 tags:
   - LLM
   - SLM
@@ -11,6 +10,8 @@ tags:
   - daily-report
 categories:
   - LLM/SLM 日报
+abbrlink: 32697
+date: 2026-07-17 09:00:00
 ---
 
 
