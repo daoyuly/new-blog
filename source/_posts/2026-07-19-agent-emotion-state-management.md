@@ -1,6 +1,5 @@
 ---
 title: Agent情绪与状态管理
-date: 2026-07-19 06:00:04
 tags:
   - 情绪
   - agent
@@ -10,6 +9,8 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
+abbrlink: 46380
+date: 2026-07-19 06:00:04
 ---
 
 ## Agent情绪与状态管理

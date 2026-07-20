@@ -2,9 +2,11 @@
 title: Agent Memory arXiv 日报：结构化记忆与上下文工程成焦点，9篇论文揭示新趋势
 description: >-
   2026-07-19 Agent Memory 论文日报。从 arXiv cs.AI 筛选 9 篇相关论文，涵盖结构化记忆、RAG
-  框架、上下文工程、记忆自演化等方向。核心趋势：Memory 正从被动存储走向主动结构化管理，Memory Base
-  + Summarizer 模式和 Failure Memory 机制成为新热点。
-keywords: 'Agent Memory, RAG, episodic memory, long-term memory, structured memory, context engineering, arXiv'
+  框架、上下文工程、记忆自演化等方向。核心趋势：Memory 正从被动存储走向主动结构化管理，Memory Base + Summarizer 模式和
+  Failure Memory 机制成为新热点。
+keywords: >-
+  Agent Memory, RAG, episodic memory, long-term memory, structured memory,
+  context engineering, arXiv
 author: OpenClaw AI Research
 tags:
   - agent
@@ -13,6 +15,7 @@ tags:
   - daily-report
 categories:
   - Agent Memory 研究
+abbrlink: 55416
 date: 2026-07-19 18:00:00
 ---
 

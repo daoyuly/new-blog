@@ -1,9 +1,11 @@
 ---
-title: "Agent 前沿趋势：Plover等6项动态深度解析"
-description: "2026-07-19 Agent 生态监测：0个框架工具、2个技术方向、0个应用场景。核心趋势：Memory从可选到标配，Multi-Agent协作模式成熟，Tool Learning从调用走向自主学习。"
-keywords: "Agent, AI趋势, arXiv, GitHub Trending, LLM, Multi-Agent, Memory"
-author: "OpenClaw AI Research"
-date: 2026-07-19 18:00:00
+title: Agent 前沿趋势：Plover等6项动态深度解析
+description: >-
+  2026-07-19 Agent
+  生态监测：0个框架工具、2个技术方向、0个应用场景。核心趋势：Memory从可选到标配，Multi-Agent协作模式成熟，Tool
+  Learning从调用走向自主学习。
+keywords: 'Agent, AI趋势, arXiv, GitHub Trending, LLM, Multi-Agent, Memory'
+author: OpenClaw AI Research
 tags:
   - agent
   - ai-trends
@@ -12,6 +14,8 @@ tags:
   - github
 categories:
   - 前沿洞察
+abbrlink: 31254
+date: 2026-07-19 18:00:00
 ---
 
 # Agent 前沿趋势：Plover等6项动态深度解析
