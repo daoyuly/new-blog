@@ -1,0 +1,91 @@
+<%
+/**
+ * 相关文章推荐 - 按 tag 匹配
+ * 在文章页底部展示最多 5 篇相关文章，降低跳出率
+ */
+(function() {
+  if (index) return;
+  if (!post.tags) return;
+
+  // 安全获取 tag 名列表
+  var currentTags = [];
+  try {
+    if (post.tags.toArray) {
+      currentTags = post.tags.toArray().map(function(t) { return t.name; });
+    } else if (Array.isArray(post.tags)) {
+      currentTags = post.tags.map(function(t) { return t.name || t; });
+    } else {
+      return;
+    }
+  } catch(e) { return; }
+
+  if (!currentTags.length) return;
+
+  var relatedPosts = [];
+  var currentPath = post.path;
+  var maxCount = 5;
+
+  // 遍历所有文章，按 tag 重合度打分
+  var allPosts = site.posts.toArray ? site.posts.toArray() : site.posts;
+  allPosts.forEach(function(p) {
+    if (p.path === currentPath) return;
+    if (!p.tags) return;
+
+    var pTags = [];
+    try {
+      if (p.tags.toArray) {
+        pTags = p.tags.toArray().map(function(t) { return t.name; });
+      } else if (Array.isArray(p.tags)) {
+        pTags = p.tags.map(function(t) { return t.name || t; });
+      } else {
+        return;
+      }
+    } catch(e) { return; }
+
+    if (!pTags.length) return;
+
+    var overlap = pTags.filter(function(t) { return currentTags.indexOf(t) !== -1; }).length;
+
+    if (overlap > 0) {
+      relatedPosts.push({
+        path: p.path,
+        title: p.title,
+        date: p.date,
+        overlap: overlap,
+        tags: pTags.filter(function(t) { return currentTags.indexOf(t) !== -1; })
+      });
+    }
+  });
+
+  // 按重合度降序，再按日期降序
+  relatedPosts.sort(function(a, b) {
+    if (b.overlap !== a.overlap) return b.overlap - a.overlap;
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  relatedPosts = relatedPosts.slice(0, maxCount);
+
+  if (relatedPosts.length) {
+%>
+<div class="related-posts">
+  <div class="related-posts-title">
+    <i class="icon-related"></i> 相关文章推荐
+  </div>
+  <ul class="related-posts-list">
+    <% relatedPosts.forEach(function(rp) { %>
+      <li class="related-post-item">
+        <a href="<%- url_for(rp.path) %>" class="related-post-link">
+          <span class="related-post-title"><%= rp.title %></span>
+          <span class="related-post-tags">
+            <% rp.tags.forEach(function(tag) { %>
+              <span class="related-post-tag">#<%= tag %></span>
+            <% }) %>
+          </span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+<% }
+})();
+%>

@@ -4297,3 +4297,109 @@ a.pswp__share--download:hover {
     color: #ccc;
     text-decoration: underline
 }
+/* ===== 相关文章推荐 ===== */
+.related-posts {
+  margin: 30px 0 20px;
+  padding: 20px 24px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #4a90d9;
+}
+.related-posts-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.related-posts-title .icon-related {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #4a90d9;
+  border-radius: 3px;
+  position: relative;
+}
+.related-posts-title .icon-related::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+.related-posts-title .icon-related::after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.related-post-item {
+  padding: 8px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+.related-post-item:last-child {
+  border-bottom: none;
+}
+.related-post-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #555;
+  transition: color 0.2s;
+  gap: 10px;
+}
+.related-post-link:hover {
+  color: #4a90d9;
+}
+.related-post-title {
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.related-post-tags {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 45%;
+}
+.related-post-tag {
+  font-size: 11px;
+  color: #999;
+  background: #eee;
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .related-post-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .related-post-tags {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+  .related-post-title {
+    white-space: normal;
+  }
+}
