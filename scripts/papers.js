@@ -28,7 +28,6 @@ hexo.extend.generator.register('papers', function (locals) {
   }).join('\n');
 
   const content = `<div class="biz-page papers-page">
-<p class="biz-lead">定时任务自动生成的论文<strong>日报与周报</strong>,共 ${posts.length} 篇,按时间倒序排列。</p>
 <ul class="papers-list">
 ${items}
 </ul>
