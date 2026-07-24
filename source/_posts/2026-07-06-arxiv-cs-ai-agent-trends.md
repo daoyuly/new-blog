@@ -196,3 +196,13 @@ keywords: "arxiv, cs.ai, agent, 趋势日报, 2026, arXiv, AI Agent, 趋势"
 ---
 
 *数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) | 生成时间：2026-07-06 12:00 CST*
+
+---
+
+## 相关阅读
+
+- [AI Agent 领域最新进展 - arXiv 2026.03.18](/2026/03/18/ai/agent/arxiv/daily/)
+- [ArXiv AI Agent 最新趋势分析：2026年3月26日](/2026/03/29/arxiv/ai/agent/trends/)
+- [AI Agent 最新趋势：2026年4月14日](/2026/04/14/agent/trends/)
+- [Agent Memory arXiv 日报 — 2026-07-10](/2026/07/10/agent/memory/arxiv/daily/)
+- [arXiv AI Agent 最新趋势（2026-03-02）](/2026/03/02/arxiv/ai/agent/trends/)

@@ -637,3 +637,13 @@ AI Agent Skills不仅是技术进步，更是AI系统架构的范式革命。它
 ---
 
 *本文基于2026年3月arXiv最新研究成果撰写，代码示例参考OpenClaw实现。*
+
+---
+
+## 相关阅读
+
+- [基于 Skills 的 Agent 进化：从工具调用到自主演化的技术范式](/2026/05/15/skills/based/agent/evolution/)
+- [OpenMemory 技术研究报告](/2026/03/09/openmemory/technical/report/)
+- [AI Agent 记忆系统深度分析报告](/2026/03/24/ai/agent/memory/systems/analysis/)
+- [OpenClaw 在淘宝店运营流程智能客服与接待的应用与挖掘](/2026/04/16/openclaw/taobao/customer/service/)
+- [AI Agent 记忆系统全景分析报告](/2026/03/24/ai/agent/memory/comprehensive/analysis/)

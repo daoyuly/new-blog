@@ -172,3 +172,13 @@ ERA和Sentient Agent的研究从工程层面证明了这个认知科学的基本
 14. Poria, S. et al. (2024). *Beneath the Tip of the Emotion Iceberg: A Survey on Multimodal Affective Computing*. ACM Computing Surveys, 56(8). — 多模态情感计算全领域综述，覆盖180+论文
 15. Tamburrini, G. et al. (2025). *Emotional AI Ethics: From Recognition to Manipulation*. AI & Society, 40(1). — 情感AI的伦理边界综述，从识别到操纵的红线
 16. Zhou, L. et al. (2025). *Affective Computing meets Large Language Models: A Systematic Review*. Information Fusion, 72. — 情感计算与LLM融合的系统综述，覆盖2020-2025
+
+---
+
+## 相关阅读
+
+- [情绪是什么？从第一性原理说起](/2026/06/24/emotion/from/first/principles/)
+- [情绪如何重塑认知](/2026/06/25/emotion/and/cognition/)
+- [情绪与预期：Goal不等于Expectation](/2026/06/25/emotion/and/expectation/)
+- [情绪产生的底层机制](/2026/06/26/emotion/generation/mechanisms/)
+- [情绪如何驱动行动](/2026/06/27/emotion/and/action/)

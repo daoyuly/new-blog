@@ -173,3 +173,13 @@ keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 01), ai-agent, llm"
 ---
 
 *数据来源: [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) | 自动生成于 2026-06-01*
+
+---
+
+## 相关阅读
+
+- [arXiv cs.AI Agent 研究趋势速递 (2026-03-07)](/2026/03/07/arxiv/ai/agent/trends/)
+- [AI Agent 研究趋势周报 - 2026.03.15](/2026/03/15/AI/Agent/Trends/Weekly/)
+- [Agent 前沿日报 (2026-05-30) — cs.AI Agent 相关论文趋势](/2026/05/30/cs/ai/agent/trends/)
+- [Agent 周报｜2026.05.16 arXiv cs.AI Agent 相关论文趋势](/2026/05/16/arxiv/csai/agent/trends/)
+- [Agent 日报｜2026.05.17 arXiv cs.AI Agent 相关论文趋势](/2026/05/17/arxiv/csai/agent/trends/)

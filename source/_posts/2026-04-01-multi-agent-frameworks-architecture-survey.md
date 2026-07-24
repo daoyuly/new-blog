@@ -1521,3 +1521,13 @@ LLM选择：
 ---
 
 > 💡 **核心观点**: 多Agent协作框架正在从"能对话"向"能可靠执行复杂任务"演进。关键在于：选择合适的框架、建立可验证性机制、深耕垂直领域。框架是工具，可靠性是基础，专业性是护城河。
+
+---
+
+## 相关阅读
+
+- [AI Agent设计模式与系统架构完全指南 - 从理论到工程实践](/2026/04/01/agent/design/patterns/architecture/survey/)
+- [Agent路由机制综述 - 智能分发与负载均衡的完整指南](/2026/03/31/agent/routing/mechanisms/survey/)
+- [Agent Skills机制与业界实践深度综述 - 技能系统设计与实现完全指南](/2026/04/01/agent/skills/mechanisms/practices/survey/)
+- [Agent协作机制综述 - 从单兵作战到团队协同的完整指南](/2026/03/31/agent/collaboration/mechanisms/survey/)
+- [Agent意图识别准确性综述 - 从评估到优化的完整指南](/2026/03/31/agent/intent/recognition/accuracy/survey/)

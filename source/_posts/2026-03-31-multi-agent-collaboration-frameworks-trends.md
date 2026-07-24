@@ -388,3 +388,13 @@ result = crew.kickoff()
 
 **报告完成时间**: 2026年3月31日
 **字数统计**: ~9,500 字（精简版）
+
+---
+
+## 相关阅读
+
+- [Agent 系统交付的可量化指标研究](/2026/03/28/agent/metrics/research/)
+- [Agent Memory 评估的工程化解决方案综述](/2026/03/29/agent/memory/evaluation/engineering/)
+- [Agent 反思记忆研究综述](/2026/03/29/agent/reflective/memory/survey/)
+- [Hermes Agent 进化机制深度分析](/2026/04/13/hermes/agent/evolution/mechanism/)
+- [AI Agent 最新趋势 2026-03-08](/2026/03/08/arxiv/ai/agent/trends/)

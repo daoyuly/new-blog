@@ -1799,3 +1799,13 @@ DAG 的可视化对于理解和调试至关重要：
 
 *撰写日期：2026-05-14*  
 *字数：~15,000 字*
+
+---
+
+## 相关阅读
+
+- [对话即进化：Agent 的状态轨迹与认知收敛](/2026/05/26/conversation/as/evolution/agent/system/design/)
+- [Agent 系统交付的可量化指标：从理论到实践的全景指南](/2026/03/28/agent/quantifiable/metrics/framework/)
+- [如何设计有用的多Agent系统 - 实战指南与架构设计方法论](/2026/04/01/designing/useful/multi/agent/systems/guide/)
+- [OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析](/2026/04/03/openclaw/architecture/deep/analysis/)
+- [OpenFang 深度技术分析：下一代 Agent 操作系统的全面评测](/2026/04/21/openfang/deep/analysis/)

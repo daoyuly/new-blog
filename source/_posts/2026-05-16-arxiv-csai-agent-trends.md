@@ -151,3 +151,13 @@ OpenDeepThink（Bradley-Terry 并行推理 +405 Elo）和 DDC（10x token 节省
 ---
 
 *数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) ｜ 整理时间：2026-05-16*
+
+---
+
+## 相关阅读
+
+- [Agent 日报｜2026.05.17 arXiv cs.AI Agent 相关论文趋势](/2026/05/17/arxiv/csai/agent/trends/)
+- [arXiv cs.AI Agent 研究趋势速递 (2026-03-07)](/2026/03/07/arxiv/ai/agent/trends/)
+- [Agent 前沿日报 (2026-05-30) — cs.AI Agent 相关论文趋势](/2026/05/30/cs/ai/agent/trends/)
+- [arXiv cs.AI Agent 研究趋势速递 (2026-06-01)](/2026/06/01/arxiv/ai/agent/trends/)
+- [arXiv cs.AI Agent 论文趋势 (2026-03-10)](/2026/03/10/arxiv/ai/agent/trends/)

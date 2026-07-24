@@ -332,3 +332,13 @@ Loop Engineering 回答了一个问题：**当 Agent 足够聪明时，人做什
 - *[Addy Osmani: Loop Engineering](https://addyosmani.com/blog/loop-engineering/) — 六原语框架与 Codex/Claude Code 映射*
 - *[Anthropic Institute: When AI builds itself](https://www.anthropic.com/institute/recursive-self-improvement) — Anthropic 内部 AI 辅助开发数据*
 - *[Ben's Bites: Hey Siri, meet AI](https://bensbites.com/p/hey-siri-meet-ai) — 社区讨论与工具生态*
+
+---
+
+## 相关阅读
+
+- [Loop Engineer 综述：AI Agent 时代增长最快的工程角色](/2026/06/13/loop/engineer/comprehensive/review/)
+- [本周博客要点与思考（2026-W24）：Agent 基建的分化、Vibe Coding 的本质、穿戴设备的记忆困境](/2026/06/14/weekly/review/w24/)
+- [Loop Engineering：让诗词网站自己运转](/2026/06/15/loop/engineering/poetry/website/)
+- [Loop Engineering 的动力分析：循环何以自驱](/2026/06/30/loop/engineering/driving/forces/)
+- [逆向拆 Agent：从技术栈反推源码的研究方法论](/2026/07/01/reverse/engineering/agent/source/code/)

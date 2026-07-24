@@ -2994,3 +2994,13 @@ class PersonalizedPromptEngine:
 *本文基于2025-2026年最新研究和实践经验撰写，代码示例参考OpenClaw实现。*
 
 **持续更新中...**
+
+---
+
+## 相关阅读
+
+- [OpenMemory 技术研究报告](/2026/03/09/openmemory/technical/report/)
+- [深入解析 AI Agent Skills：从理论到实践的技术演进](/2026/03/21/ai/agent/skills/deep/analysis/)
+- [AI Agent 记忆系统深度分析报告](/2026/03/24/ai/agent/memory/systems/analysis/)
+- [Agent 进化方法论与体系深度调研](/2026/04/16/agent/evolution/methodologies/)
+- [语义蓝图：从概念到落地——Agent 智能化的新范式](/2026/05/02/semantic/blueprint/agent/)
