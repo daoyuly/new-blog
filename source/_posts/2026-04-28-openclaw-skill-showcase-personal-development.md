@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 34173
 date: 2026-04-28 00:00:00
+description: "个人发展分类包含 51 个 Skill，涵盖自我提升、习惯养成、心理健康、学习管理等多个方面。这些工具帮助用户在 AI 时代更好地成长、反思和优化自己的生活与工作方式。"
+keywords: "openclaw, skill, 每日推荐, 个人发展（personal, development）, personal-development, 技术推荐"
 ---
 
 ## 今日分类概述：个人发展（Personal Development）

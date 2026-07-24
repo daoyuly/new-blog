@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 51895
 date: 2026-04-23 00:00:00
+description: "今天是 OpenClaw Skill 每日推荐的第 17 期（共 30 期），我们聚焦于 数据与分析 分类。这个分类共包含 41 个 技能，涵盖了从数据收集、处理、分析到可视化的全流程工具，是数据驱动决策的得力助手。"
+keywords: "openclaw, skill, 每日推荐, 数据与分析, data-and-analytics, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 数据与分析

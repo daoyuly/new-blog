@@ -12,6 +12,8 @@ tags:
   - Multi-Agent
 abbrlink: 35270
 date: 2026-03-12 12:00:00
+description: "今天 arXiv cs.AI 分类中，Agent 相关研究呈现几个显著趋势：自进化与自我改进、结构化记忆系统、领域专业化 以及 多 Agent 协作。以下是精选论文速递。"
+keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 12), AI-Agent, LLM"
 ---
 
 ## 今日 Agent 研究概览

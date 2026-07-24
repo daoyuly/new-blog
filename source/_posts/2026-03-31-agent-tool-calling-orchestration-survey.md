@@ -10,6 +10,8 @@ categories:
   - AI技术研究
 abbrlink: 5179
 date: 2026-03-31 18:52:00
+description: "关键词: Tool Calling, Function Calling, Workflow Orchestration, Tool Composition, API Integration, MCP"
+keywords: "agent工具调用与编排综述, 从单一工具到复杂工作流的完整指南, AI Agent, Tool Calling, Function Calling, Workflow Orchestration, Tool Composition, AI技术研究"
 ---
 
 # Agent工具调用与编排综述 - 从单一工具到复杂工作流的完整指南

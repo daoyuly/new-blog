@@ -9,6 +9,8 @@ categories:
   - AI工程
 abbrlink: 37921
 date: 2026-07-13 18:30:00
+description: "Agent 需要记忆，这不是新鲜事。但\"用什么存记忆\"这事儿，选型文章不多。大部分教程要么用内存字典糊弄，要么直接上 Milvus 搞全套，中间地带很少聊。"
+keywords: "agent, 记忆系统选型, redis, 到向量数据库, AI Agent, 记忆系统, 向量数据库, Redis"
 ---
 
 # Agent 记忆系统选型：从 Redis 到向量数据库

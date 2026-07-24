@@ -9,6 +9,8 @@ categories:
   - 工程实践
 abbrlink: 19334
 date: 2026-07-13 16:30:00
+description: "前两篇聊的闭环，决策层都是硬编码规则——错误率超 50% 就降级，burn rate 超 14 倍就告警。规则的好处是确定性，坏处是死板。生产环境的故障千奇百怪，规则永远覆盖不全。"
+keywords: "loop, llm, 做闭环决策层, Loop Engineering, LLM, 工程闭环, 混合决策, 工程实践"
 ---
 
 # 当 Loop 遇到 AI：用 LLM 做闭环决策层

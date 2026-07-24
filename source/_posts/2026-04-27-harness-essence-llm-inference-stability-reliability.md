@@ -10,6 +10,8 @@ tags:
 categories: 技术深度
 abbrlink: harness-essence
 date: 2026-04-27 21:00:00
+description: "本文深入探讨了 Harness 在 AI Agent 和 LLM 推理系统中的本质作用。通过对多个开源项目（Hermes Agent、OpenManus、Agent Zero、AutoResearchClaw）的架构分析，我们论证了 ..."
+keywords: "harness, 的本质, llm, 推理稳定、可靠、有效的关键架构, AI Agent, LLM, Harness, 系统架构"
 ---
 
 # Harness 的本质：确保 LLM 推理稳定、可靠、有效的关键架构

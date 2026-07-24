@@ -17,6 +17,8 @@ keywords:
   - Skill Discovery
 abbrlink: 6642
 date: 2026-04-01 16:50:00
+description: "关键词: Agent Skills, Skill System, Tool Composition, MCP Protocol, Skill Discovery"
+keywords: "agent, skills机制与业界实践深度综述, 技能系统设计与实现完全指南, Agent Skills, Skill System, Tool Use, MCP Protocol, Best Practices"
 ---
 
 # Agent Skills机制与业界实践深度综述 - 技能系统设计与实现完全指南

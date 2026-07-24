@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 11_ Goal Setting and Monitoring
 tags: AI agent 设计
 abbrlink: 29156
 date: 2025-10-16 08:05:02
+description: "要使 AI Agent 真正有效且有目的性，它们不仅需要处理信息或使用工具的能力，还需要明确的方向感和判断自身是否真正成功的方法。这就是目标设定和监控模式发挥作用的地方。该模式的核心是为 Agent 提供具体的工作目标，并为其配备跟踪..."
+keywords: "agentic, design, patterns, chapter, goal, setting, and, monitoring"
 ---
 
 # 第 11 章：目标设定和监控

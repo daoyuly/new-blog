@@ -7,6 +7,8 @@ tags:
 abbrlink: 38330
 date: 2026-05-13 12:00:00
 noindex: true
+description: "今天 arXiv cs.AI 领域涌现了多篇关于 AI Agents 的重要论文，主要集中在以下几个核心方向："
+keywords: "agents, 最新趋势报告, 2026年5月13日, AI, Agents, Arxiv"
 ---
 
 # AI Agents 最新趋势报告（2026年5月13日）

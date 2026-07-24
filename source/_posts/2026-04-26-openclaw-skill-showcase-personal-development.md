@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 63773
 date: 2026-04-26 00:00:00
+description: "今日我们要介绍的是 个人发展 (Personal Development) 分类，这个分类包含 51 个 精彩的 OpenClaw Skills，旨在帮助你通过 AI 助手实现个人成长、自我提升和生活优化。"
+keywords: "openclaw, skill, 每日推荐, 个人发展, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 个人发展 🚀

@@ -9,6 +9,8 @@ categories:
   - AI工程
 abbrlink: 12173
 date: 2026-07-13 16:00:00
+description: "多 Agent 系统的文章，十个有九个从架构讲起——用什么框架、怎么通信、怎么编排。但多 Agent 协调真正难的地方不是架构，是博弈。"
+keywords: "多agent协调, 不是架构问题, 是博弈问题, Multi-Agent, 博弈论, Agent协调, 机制设计, AI工程"
 ---
 
 # 多Agent协调：不是架构问题，是博弈问题

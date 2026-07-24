@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Index of Terms
 tags: AI agent 设计
 abbrlink: 54912
 date: 2025-10-02 08:05:02
+description: "此术语索引使用 Gemini Pro 2.5 生成。提示词和推理步骤包含在末尾，以展示 AI 辅助索引创建的效率优势并用于教育目的。"
+keywords: "agentic, design, patterns, index, terms"
 ---
 
 # 术语表

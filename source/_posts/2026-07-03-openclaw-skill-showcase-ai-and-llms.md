@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 14078
 date: 2026-07-03 11:30:00
+description: "这是 OpenClaw 生态中最庞大的分类——184 个 Skill 覆盖了从 Agent 记忆系统到多模型路由、从安全防御到语音合成的一切。无论你在搭建个人 AI 助手还是构建生产级 Agent 系统，这里都有你需要的工具。"
+keywords: "openclaw, skill, 每日推荐, 与大语言模型, ai-and-llms, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 — AI 与大语言模型

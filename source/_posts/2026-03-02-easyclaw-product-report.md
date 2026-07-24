@@ -8,6 +8,8 @@ tags:
 categories: AI产品分析
 abbrlink: 7923
 date: 2026-03-02 21:51:00
+description: "分析对象: EasyClaw 及其主要竞品"
+keywords: "easyclaw, 及同类, agent, 产品分析报告, AI Agent, EasyClaw, OpenClaw, 产品分析"
 ---
 
 # EasyClaw 及同类 AI Agent 产品分析报告

@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 936
 date: 2026-04-22 13:46:37
+description: "大模型推理与 Agent 能力持续突破，AI 应用的交互边界正在从单机拓展至整个数据中心。然而，算力与模型的红利并未顺畅转化为开发者的生产力，基础设施的高门槛正成为明显的绊脚石。蚂蚁集团推出的 AKernel 系统，致力于推动从 Co..."
+keywords: "computer, use, datacenter, akernel, 原生基础设施实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 从 Computer Use 到 Datacenter Use：AKernel 的 AI 原生基础设施实践

@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 40999
 date: 2026-06-14 11:34:00
+description: "生产力与任务管理是 OpenClaw 生态中最大的分类之一，拥有 204 个 Skill，覆盖从个人待办到团队协作、从自动化执行到智能规划的全链路场景。无论你是自由职业者、项目经理还是效率极客，这里都有趁手的工具。"
+keywords: "openclaw, skill, 每日推荐, 生产力与任务管理, productivity-and-tasks, 技术推荐"
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 — 生产力与任务管理

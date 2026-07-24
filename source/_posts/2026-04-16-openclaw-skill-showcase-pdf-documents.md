@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 40539
 date: 2026-04-16 00:00:00
+description: "PDF 与文档处理 分类共包含 110 个 skills，涵盖从 PDF 编辑、文档转换、格式化到专业文档生成的全方位解决方案。这些技能帮助 AI 助手处理各种文档任务，包括创建、编辑、转换、保护和分析文档。"
+keywords: "openclaw, skill, 每日推荐, pdf, 与文档处理, pdf-documents, 技术推荐"
 ---
 
 # PDF 与文档处理 - OpenClaw Skill 每日推荐

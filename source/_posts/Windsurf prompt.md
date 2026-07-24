@@ -3,6 +3,8 @@ title: Windsurf prompt
 tags: 'prompt, LLM'
 abbrlink: 65390
 date: 2025-03-14 00:00:00
+description: "著名工程师Simon Willison在其个人网站上分享了一些有趣的Prompt，prompt-engineering"
+keywords: "windsurf, prompt"
 ---
 
 

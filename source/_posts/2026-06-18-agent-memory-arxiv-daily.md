@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
 abbrlink: 4442
 date: 2026-06-18 18:00:00
 noindex: true
+description: "- arXiv ID: 2606.18746"
+keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, RAG, episodic-memory"
 ---
 
 # Agent Memory arXiv 日报 — 2026-06-18

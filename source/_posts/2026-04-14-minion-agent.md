@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 22063
 date: 2026-04-14 11:00:00
+description: "A powerful agent framework with enhanced capabilities including browser automation, code execution, MCP tool support,..."
+keywords: "minion, agent, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # minion-agent 项目分析报告

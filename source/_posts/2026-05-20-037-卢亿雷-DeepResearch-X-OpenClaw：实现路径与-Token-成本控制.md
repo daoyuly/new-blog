@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 60671
 date: 2026-05-20 11:07:25
+description: "搜索范式正在经历从“关键词匹配”向“任务型智能体”的代际跃迁。Deep Research不再是简单的检索增强，而是旨在实现从问题理解、研究规划到深度推理与报告生成的全流程自动化。然而，当Demo走向生产环境，长任务稳定性、过程可控性、..."
+keywords: "openclaw与deepresearch架构实战, 从工程落地到token全栈降本, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # OpenClaw与DeepResearch架构实战：从工程落地到Token全栈降本

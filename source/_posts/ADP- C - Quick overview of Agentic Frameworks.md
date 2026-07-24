@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Appendix C - Quick overview of Agentic Framewor
 tags: AI agent 设计
 abbrlink: 62991
 date: 2025-11-03 08:05:02
+description: "LangChain 是一个用于开发由大语言模型驱动的应用程序的框架。其核心优势在于 LangChain 表达式语言（LCEL），它允许你将组件通过\"管道\"操作符连接成链。这种设计创建了清晰的线性序列，其中每一步的输出自动成为下一步的输..."
+keywords: "agentic, design, patterns, appendix, quick, overview, frameworks"
 ---
 
 # 附录 C - Agentic 框架快速概览

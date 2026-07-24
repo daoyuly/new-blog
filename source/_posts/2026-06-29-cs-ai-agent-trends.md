@@ -11,6 +11,8 @@ categories:
   - 论文速递
 abbrlink: 19470
 date: 2026-06-29 12:00:00
+description: "今日 cs.AI 频道共收录 13 篇新论文，其中 8 篇与 Agent 直接相关。以下是按主题整理的趋势报告。"
+keywords: "agent, 前沿速递, (2026, 29), 安全免疫、规划落地与小模型蒸馏, arxiv, LLM, planning"
 ---
 
 今日 cs.AI 频道共收录 13 篇新论文，其中 **8 篇与 Agent 直接相关**。以下是按主题整理的趋势报告。

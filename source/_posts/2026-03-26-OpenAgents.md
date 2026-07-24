@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 46180
 date: 2026-03-26 11:00:00
+description: "![GitHub stars](https://github.com/darrenhinde/OpenAgents/stargazers)"
+keywords: "openagents, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # OpenAgents 项目分析报告

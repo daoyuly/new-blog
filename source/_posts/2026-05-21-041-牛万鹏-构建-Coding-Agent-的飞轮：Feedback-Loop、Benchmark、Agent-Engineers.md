@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 13337
 date: 2026-05-21 20:06:00
+description: "大模型正在重新定义软件。在百度 Comate 的实践中，Coding Agent 已从研发专属工具走向全员普及，Vibe Coding 渐成常态，人均 Query 次数增长 5 倍，AI IDE 唤起时长占比超 60%。如何让 Age..."
+keywords: "coding, agent, 的飞轮, 从状态感知到人机共生, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 构建 Coding Agent 的飞轮：从状态感知到人机共生

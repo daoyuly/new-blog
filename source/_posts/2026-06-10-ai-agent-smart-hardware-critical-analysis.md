@@ -13,6 +13,8 @@ categories:
   - 智能硬件
 abbrlink: 39054
 date: 2026-06-10 14:30:00
+description: "2024-2026 年，\"AI Agent + 智能硬件\"成为最炙手可热的叙事。从 Humane AI Pin 到 Rabbit R1，从 Meta Ray-Ban 到 Samsung Galaxy Ring，每一家都在讲述\"硬件成为..."
+keywords: "agent, 在智能硬件中的正反辨析, 不是所有硬件都需要一个, AI Agent, 智能硬件, 可穿戴设备, 边缘AI, 端云协同"
 ---
 
 # AI Agent 在智能硬件中的正反辨析：不是所有硬件都需要一个 Agent

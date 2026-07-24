@@ -10,6 +10,8 @@ categories:
   - 技术研究
 abbrlink: 18326
 date: 2026-03-21 00:20:00
+description: "2026年3月，arXiv上涌现出大量关于AI Agent Skills的前沿研究。从Memento-Skills到TDAD，从SKILLS框架到知识激活理论，这一系列突破性工作标志着AI Agent技术正在经历从\"工具调用\"到\"能力..."
+keywords: "深入解析, agent, skills, 从理论到实践的技术演进, AI, Agent, LLM, Skills"
 ---
 
 # 深入解析 AI Agent Skills：从理论到实践的技术演进

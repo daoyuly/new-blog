@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 6399
 date: 2026-07-16 11:30:00
+description: "Git 与 GitHub 分类是 OpenClaw 生态中最大的分类之一，聚焦于版本控制的方方面面——从基础的 commit/push 到高级的 PR 风险分析、CI/CD 工作流生成、安全审计等。无论你是独立开发者还是团队协作，都能..."
+keywords: "openclaw, skill, 每日推荐, git, github, git-and-github, 技术推荐"
 ---
 
 # 🐙 OpenClaw Skill 每日推荐 — Git 与 GitHub

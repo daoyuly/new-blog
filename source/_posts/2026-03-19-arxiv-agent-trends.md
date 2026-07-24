@@ -11,6 +11,8 @@ categories:
 abbrlink: 40816
 date: 2026-03-19 12:00:00
 noindex: true
+description: "整理今天的 arXiv cs.AI 论文，聚焦 Agent 相关研究的最新进展。"
+keywords: "arxiv, agent, 研究趋势速递, (2026, 19), AI, Agent, LLM"
 ---
 
 # arXiv Agent 研究趋势速递 (2026-03-19)

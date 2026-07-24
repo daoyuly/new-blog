@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 55845
 date: 2026-07-09 11:30:00
+description: "Coding Agents & IDEs 分类涵盖了从代码生成、审查、调试到多 Agent 协作开发的全流程工具。无论你是用 Claude Code、Cursor、Codex 还是自建 Agent 系统，这里都有对应的 Skill 帮..."
+keywords: "openclaw, skill, 每日推荐, coding, agents, ides, coding-agents-and-ides, 技术推荐"
 ---
 
 # 🖥️ OpenClaw Skill 每日推荐 — Coding Agents & IDEs

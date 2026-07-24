@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
 abbrlink: 21916
 date: 2026-05-19 18:00:00
 noindex: true
+description: "今日共筛选出 20 篇 与 Agent Memory 高度相关的论文（2026-05-17 ~ 2026-05-18 提交），研究方向呈现明显的 爆发态势，覆盖记忆基准测试、神经符号记忆、经验图、分层记忆、安全风险等多个前沿方向。"
+keywords: "agent, memory, arxiv, (2026, 19), 记忆系统爆发期, LLM, daily-report"
 ---
 
 # Agent Memory arXiv 日报 — 2026年5月19日

@@ -3,6 +3,8 @@ title: 软件设计的哲学 - ch9
 date: 2021-02-9
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 39659
+description: "One of the most fundamental questions in software design is this: given two pieces of functionality, should they be i..."
+keywords: "软件设计的哲学, ch9"
 ---
 
 # 第 9 章 在一起更好还是分开更好？

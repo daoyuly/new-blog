@@ -8,6 +8,8 @@ categories:
   - 升学参考
 abbrlink: 50348
 date: 2026-06-24 22:51:00
+description: ".recommend-wrap{max-width:960px;margin:2em auto;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,sans-s..."
+keywords: "2025重庆物理类580分院校推荐, 高考, 志愿填报, 数据参考, 升学参考"
 ---
 
 <style>

@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 4675
 date: 2026-06-23 11:30:00
+description: "智能家居与物联网（Smart Home & IoT）分类共收录 43 个 Skill，覆盖了从灯光控制、温度管理、安防监控到 3D 打印机操控的全场景。这是 OpenClaw 最贴近物理世界的分类——让你的 AI 助手真正\"动起手来\"。"
+keywords: "openclaw, skill, 每日推荐, 智能家居与物联网, smart-home, iot, 技术推荐"
 ---
 
 # 🏠 OpenClaw Skill 每日推荐 — 智能家居与物联网

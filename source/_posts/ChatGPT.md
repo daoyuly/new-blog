@@ -2,6 +2,8 @@
 title: ChatGPT
 abbrlink: 43852
 date: 2024-03-23
+description: "ChatGPT像是星星之火，必将点燃人类未知的AI大森林。"
+keywords: "chatgpt"
 ---
 
 第一个让我产生了一种又爱又恨的产品。

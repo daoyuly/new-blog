@@ -10,6 +10,8 @@ categories:
   - arXiv日报
 abbrlink: 33790
 noindex: true
+description: "本文整理自 papers.cool/arxiv/cs.AI，聚焦 Agent 相关论文的最新趋势。"
+keywords: "arxiv, cs.ai, agent, 趋势日报, 2026, arXiv, AI Agent, 趋势"
 ---
 
 本文整理自 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)，聚焦 **Agent 相关**论文的最新趋势。

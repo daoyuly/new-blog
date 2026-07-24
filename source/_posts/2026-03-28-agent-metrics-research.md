@@ -9,6 +9,8 @@ categories:
   - Agent 研究
 abbrlink: 60349
 date: 2026-03-28 00:00:00
+description: "随着 AI Agent 在企业级应用中的广泛部署，如何科学、客观地评估 Agent 系统的交付质量成为关键问题。传统的软件测试和评估方法已不足以应对 Agent 系统的复杂性、自主性和不确定性。"
+keywords: "agent, 系统交付的可量化指标研究, AI Agent, 评估指标, 系统设计, 工程实践, Agent 研究"
 ---
 
 # Agent 系统交付的可量化指标研究

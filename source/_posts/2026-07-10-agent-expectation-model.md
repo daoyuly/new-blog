@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 54318
 date: 2026-07-10 04:14:00
+description: "（本文内容生成中，请稍后刷新查看完整版本）"
+keywords: "agent如何形成预期模型, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 ## Agent如何形成预期模型

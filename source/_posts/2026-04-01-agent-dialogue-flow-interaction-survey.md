@@ -17,6 +17,8 @@ keywords:
   - Human-in-the-Loop
 abbrlink: 57570
 date: 2026-04-01 16:45:00
+description: "关键词: Agent Dialogue, Conversation Flow, Interaction Design, State Management"
+keywords: "基于agent对话流的交互方式深度综述, 从单轮对话到多模态协作, Agent Dialogue, Conversation Flow, Interaction Design, Multi-turn, Streaming, AI技术研究"
 ---
 
 # 基于Agent对话流的交互方式深度综述 - 从单轮对话到多模态协作

@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 21513
 date: 2026-06-23 11:00:00
+description: "Gesture Lab 是一个专注于运动跟踪和交互式视觉实验的创新实验室项目，通过手势识别技术将用户动作转化为数字世界的交互体验。该项目整合了实时手部追踪、3D渲染和粒子系统等技术，提供了多个沉浸式互动实验。核心功能包括钢铁侠装甲组装..."
+keywords: "gesture, lab, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # gesture-lab 项目深度分析报告

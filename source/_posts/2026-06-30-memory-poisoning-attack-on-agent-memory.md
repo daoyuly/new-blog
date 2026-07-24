@@ -9,6 +9,8 @@ categories:
   - AI安全
 abbrlink: 23781
 date: 2026-06-30 01:05:00
+description: "2024年以前，AI安全研究的焦点几乎都在Prompt Injection上——攻击者通过构造恶意输入来劫持LLM的当前推理过程。这种攻击有效但有天然局限：它是无状态的。一旦对话结束，攻击就失效了。"
+keywords: "记忆投毒, 当agent的记忆成为攻击面, AI安全, Agent, 对抗攻击"
 ---
 
 ## 引言：一个被忽视的攻击面

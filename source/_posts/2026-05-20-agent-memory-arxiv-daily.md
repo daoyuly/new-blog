@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
   - Agent Memory 日报
 abbrlink: 26258
 noindex: true
+description: "今日扫描 arXiv cs.AI + cs.CL 最新论文（2026-05-19 发布），筛选出 7 篇与 Agent Memory 密切相关的论文。核心主题集中在：上下文缓存与复用、信念状态建模、跨轮经验演化，以及 RAG 系统优化。"
+keywords: "agent, memory, 2026, 上下文缓存、信念状态与跨轮经验演化, agent-memory, arxiv-daily, RAG, episodic-memory"
 ---
 
 ## 📋 今日概览

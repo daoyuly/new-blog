@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
 abbrlink: 6892
 date: 2026-05-08 00:00:00
 noindex: true
+description: "今日（2026年5月8日）在arXiv人工智能领域（cs.AI）的最新论文中，我们识别出1篇与Agent Memory直接相关的核心研究。尽管数量较少，但这篇论文代表了当前Agent Memory研究的一个重要前沿方向——技能策展与自..."
+keywords: "agent, memory领域最新研究进展, 2026年5月8日, Agent Memory, 技能策展, 强化学习, 自我进化, 经验管理"
 ---
 
 # Agent Memory领域最新研究进展综合报告

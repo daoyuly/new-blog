@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 10693
 date: 2026-04-24 11:00:00
+description: "_Forked and enhanced from the_ _crewAI examples repository_"
+keywords: "trip, planner, agent, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # trip_planner_agent 项目分析报告

@@ -3,6 +3,8 @@ title: 软件设计的哲学 - ch6
 date: 2021-02-6
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 40619
+description: "One of the most common decisions that you will face when designing a new module is whether to implement it in a gener..."
+keywords: "软件设计的哲学, ch6"
 ---
 
 # 第 6 章 通用模块更深入

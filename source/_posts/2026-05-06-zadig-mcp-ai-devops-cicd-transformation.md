@@ -10,6 +10,8 @@ categories:
   - 技术深度分析
 abbrlink: 8168
 date: 2026-05-06 16:46:00
+description: "传统 CI/CD 系统在设计之初并未考虑 AI 能力的集成，面临以下核心挑战："
+keywords: "zadig, mcp, devops, ci/cd, 改造方案, 从理论到落地, AI DevOps, Zadig"
 ---
 
 # 基于 Zadig MCP 的 AI DevOps CI/CD 改造方案：从理论到落地

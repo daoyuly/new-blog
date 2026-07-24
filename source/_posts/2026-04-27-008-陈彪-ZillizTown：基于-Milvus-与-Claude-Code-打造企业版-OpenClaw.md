@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 2043
 date: 2026-04-27 17:42:53
+description: "软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节..."
+keywords: "企业级, agent, 架构演进, zilliztown, 的工程实践与思考, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 企业级 Agent 架构演进：ZillizTown 的工程实践与思考

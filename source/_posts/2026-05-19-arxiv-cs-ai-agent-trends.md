@@ -13,6 +13,8 @@ tags:
   - benchmark
 abbrlink: 12386
 noindex: true
+description: "数据来源：papers.cool/arxiv/cs.AI，发布日期 2025-05-15。"
+keywords: "arxiv, cs.ai, agent, 前沿日报, (2026, 19), llm-agent, memory"
 ---
 
 ## 今日 Agent 相关论文精选

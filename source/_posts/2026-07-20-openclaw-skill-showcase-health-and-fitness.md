@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 37308
 date: 2026-07-20 11:30:00
+description: "Health & Fitness（健康与健身） 分类共收录 84 个 Skill，是 OpenClaw 生态中规模较大的分类之一。这些 Skill 涵盖了："
+keywords: "openclaw, skill, 每日推荐, health, fitness, 健康与健身, health-and-fitness, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Health & Fitness 健康与健身

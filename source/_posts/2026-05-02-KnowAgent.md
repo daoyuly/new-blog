@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "一份针对开源项目 KnowAgent 的深度研究报告如下："
+keywords: "knowagent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # KnowAgent 项目深度分析报告

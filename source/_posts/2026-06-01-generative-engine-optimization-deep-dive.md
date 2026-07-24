@@ -11,6 +11,8 @@ categories:
   - 技术深度分析
 abbrlink: 32372
 date: 2026-06-01 00:30:00
+description: "2024 年，Princeton 大学与 Georgia Tech 的研究团队在 ICML 上发表了开创性论文 \"GEO: Generative Engine Optimization\"，正式定义了一个全新领域——生成式引擎优化。这不..."
+keywords: "生成式引擎优化（geo）深度指南, 搜索时代的, seo, 继任者, GEO, SEO, AI搜索, LLM"
 ---
 
 # 生成式引擎优化（GEO）深度指南：AI 搜索时代的 SEO 继任者

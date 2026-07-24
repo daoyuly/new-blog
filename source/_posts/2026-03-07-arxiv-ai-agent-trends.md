@@ -12,6 +12,8 @@ tags:
   - rl
 abbrlink: 6548
 date: 2026-03-07 12:00:00
+description: "今天从 arXiv cs.AI 分类中整理了 Agent 相关 的最新研究趋势。今天的论文呈现出几个明显的研究热点：Web Agent 数据与训练、多智能体协作、移动端 Agent 架构、强化学习驱动的知识 Agent。"
+keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 07), ai-agent, llm"
 ---
 
 今天从 arXiv cs.AI 分类中整理了 **Agent 相关** 的最新研究趋势。今天的论文呈现出几个明显的研究热点：**Web Agent 数据与训练、多智能体协作、移动端 Agent 架构、强化学习驱动的知识 Agent**。

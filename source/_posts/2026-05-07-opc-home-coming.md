@@ -10,6 +10,8 @@ categories:
   - 深度观察
 abbrlink: 6604
 date: 2026-05-07 11:00:00
+description: "2020年疫情后的几年里，一个有趣的现象正在发生：越来越多的人开始告别传统的朝九晚五，选择成为\"一人公司\"（One Person Company，简称 OPC）。他们不再是某个庞大组织的螺丝钉，而是自己事业的CEO、CTO、COO，也..."
+keywords: "从一人公司（opc）到家庭回归, agent, 时代的生产力革命, AI Agent, 一人公司, 远程工作, 生产力, 社会变革"
 ---
 
 # 从一人公司（OPC）到家庭回归：AI Agent 时代的生产力革命

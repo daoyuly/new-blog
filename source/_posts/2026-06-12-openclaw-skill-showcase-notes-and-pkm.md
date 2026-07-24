@@ -10,6 +10,8 @@ categories:
   - 技术推荐
 abbrlink: 10510
 date: 2026-06-12 11:30:00
+description: "OpenClaw Skill 生态中最庞大的分类之一，71 个 Skills 涵盖了从个人笔记、知识图谱、Agent 长期记忆到会议纪要的全链路。如果你想让 AI 助手真正成为你的「第二大脑」，这个分类是必逛的。"
+keywords: "openclaw, skill, 每日推荐, notes, pkm（笔记与知识管理）, notes-and-pkm, 知识管理, 笔记"
 ---
 
 # 🧠 Notes & PKM — 笔记与知识管理

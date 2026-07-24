@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 5216
 date: 2026-07-08 11:30:00
+description: "今天我们进入 Clawdbot Tools 分类，这里汇集了 36 个专门为 OpenClaw/Clawdbot 生态打造的技能——从 Agent 构建到安全防护，从加密通信到游戏对战，堪称 OpenClaw 的\"官方工具箱\"。"
+keywords: "openclaw, skill, 每日推荐, clawdbot, clawdbot-tools, 技术推荐"
 ---
 
 # 🤖 OpenClaw Skill 每日推荐 - Clawdbot 工具

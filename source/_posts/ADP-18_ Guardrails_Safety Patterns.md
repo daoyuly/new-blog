@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 18_ Guardrails_Safety Patterns
 tags: AI agent 设计
 abbrlink: 29321
 date: 2025-10-23 08:05:02
+description: "Guardrails（防护栏），也称为安全模式，是确保智能 Agent 安全、符合道德规范并按预期运行的关键机制，尤其是在这些 Agent 变得更加自主并集成到关键系统中时。它们作为保护层，引导 Agent 的行为和输出，防止有害、有..."
+keywords: "agentic, design, patterns, chapter, guardrails, safety"
 ---
 
 # 第 18 章：Guardrails/安全模式

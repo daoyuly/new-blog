@@ -8,6 +8,8 @@ tags:
 abbrlink: 12818
 date: 2026-04-25 12:00:00
 noindex: true
+description: "本期 arXiv cs.AI 领域在 AI Agent 方面出现了多个重要研究方向，主要集中在科学自动化、多智能体通信、可扩展性优化、评估方法以及领域应用等方面。"
+keywords: "arxiv, agent, 趋势报告, 2026年4月25日, AI Agent, arXiv, Research, Trends"
 ---
 
 ## 概述

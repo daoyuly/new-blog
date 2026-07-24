@@ -7,6 +7,8 @@ categories:
   - 论文追踪
 abbrlink: 43412
 date: 2026-06-16 22:00:00
+description: "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance"
+keywords: "主动型智能体, 将大语言模型智能体从被动响应转向主动协助, proactive agent, 论文追踪"
 ---
 
 # 主动型智能体：将大语言模型智能体从被动响应转向主动协助

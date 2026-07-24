@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 45217
 date: 2026-07-09 00:00:00
+description: "本篇属于「Agent与情绪」系列，第1部分「人类情绪探究」第7篇。"
+keywords: "个体差异, 为什么每个人情绪不同, 情绪, agent, 性格, Agent 与情绪"
 ---
 
 本篇属于「Agent与情绪」系列，第1部分「人类情绪探究」第7篇。

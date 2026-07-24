@@ -3,6 +3,8 @@ title: EventBus源码解析(一)
 tags: java android EventBus
 abbrlink: 38778
 date: 2020-02-27 00:51:19
+description: "描述一对多的依赖的关系，当一个对象的状态发生变化时，所有依赖它的对象都会获得通知："
+keywords: "eventbus源码解析(一)"
 ---
 
 ### 观察者模式

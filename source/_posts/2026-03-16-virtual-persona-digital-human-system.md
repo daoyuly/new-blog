@@ -10,6 +10,8 @@ categories:
   - AI开发
 abbrlink: 16341
 date: 2026-03-16 13:20:00
+description: "2025年 AI Agent 领域的核心趋势是多智能体协作和角色化交互。基于这些理念，我设计并实现了一个以虚拟多人对话为核心的数字人系统——VirtualPersona。"
+keywords: "virtualpersona, 虚拟多人对话数字人系统, AI Agent, 数字人, 多智能体系统, TypeScript, 项目, AI开发"
 ---
 
 ## 项目背景

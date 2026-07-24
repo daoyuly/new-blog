@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 2_ Routing
 tags: AI agent 设计
 abbrlink: 38302
 date: 2025-10-07 08:05:02
+description: "虽然通过提示词链进行顺序处理是执行确定性、线性工作流的基础技术，但其适用性在需要自适应响应的场景中受到限制。现实世界的 Agent 系统必须经常根据偶然因素在多个潜在行动之间进行仲裁，例如环境状态、用户输入或前一操作的结果。这种动态决..."
+keywords: "agentic, design, patterns, chapter, routing"
 ---
 
 # 第 2 章：路由

@@ -13,6 +13,8 @@ categories:
   - 系统设计
 abbrlink: 37626
 date: 2026-05-14 14:00:00
+description: "大语言模型让 AI 具备了\"单步推理\"的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的："
+keywords: "agent, 任务规划的, dag, 从理论到工程实践, AI Agent, DAG, 任务规划, 工作流引擎"
 ---
 
 # AI Agent 任务规划的 DAG 设计：从理论到工程实践

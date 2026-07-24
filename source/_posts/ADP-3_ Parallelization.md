@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 3_ Parallelization
 tags: AI agent 设计
 abbrlink: 53712
 date: 2025-10-08 08:05:02
+description: "在前面的章节中，我们探讨了用于顺序工作流的提示链和用于动态决策及不同路径间转换的路由。虽然这些模式不可或缺，但许多复杂的 Agent 任务涉及多个可同时执行而非顺序执行的子任务。这正是并行化模式变得至关重要的场景。"
+keywords: "agentic, design, patterns, chapter, parallelization"
 ---
 
 # 第 3 章：并行化

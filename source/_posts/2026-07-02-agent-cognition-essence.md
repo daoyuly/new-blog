@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 28843
 date: 2026-07-02 04:00:05
+description: "上一篇我们从人类视角讲完了情绪如何重塑认知。从这篇开始，视角切换：不谈人，谈 Agent。"
+keywords: "agent认知的本质, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 # Agent认知的本质

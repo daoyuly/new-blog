@@ -10,6 +10,8 @@ categories:
   - 哲学与技术
 abbrlink: 3874
 date: 2026-06-03 16:10:00
+description: "当我们谈论 AI Agent 时，通常从计算机科学的视角出发——感知、规划、行动、记忆。但一个更根本的问题始终悬而未决：Agent 到底\"理解\"它在做什么吗？"
+keywords: "从维特根斯坦哲学理解, agent, 语言游戏、生活形式与人工智能的边界, philosophy, AI, Wittgenstein, 人工智能, 哲学与技术"
 ---
 
 # 从维特根斯坦哲学理解 Agent：语言游戏、生活形式与人工智能的边界

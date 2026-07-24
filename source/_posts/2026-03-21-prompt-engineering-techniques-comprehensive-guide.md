@@ -9,6 +9,8 @@ categories:
   - 技术研究
 abbrlink: 57023
 date: 2026-03-21 01:00:00
+description: "提示词工程（Prompt Engineering）是解锁大语言模型（LLM）能力的关键技术。随着Agent系统的兴起，提示词技术从简单的指令演变为复杂的能力编排系统。本文将系统性地介绍14种核心提示词技术，从基础到高级，从理论到实践，..."
+keywords: "提示词工程完全指南, 从基础到agent应用的技术全景, Prompt Engineering, LLM, AI Agent, 技术指南, 技术研究"
 ---
 
 # 提示词工程完全指南：从基础到Agent应用的技术全景

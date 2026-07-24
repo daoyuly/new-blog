@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 12_ Exception Handling and Recovery
 tags: AI agent 设计
 abbrlink: 9827
 date: 2025-10-17 08:05:02
+description: "要使 AI Agent 在各种现实世界环境中可靠运行，它们必须能够管理不可预见的情况、错误和故障。正如人类能够适应意外障碍一样，智能 Agent 需要强大的系统来检测问题、启动恢复程序，或至少确保受控失败。这一基本需求构成了异常处理和..."
+keywords: "agentic, design, patterns, chapter, exception, handling, and, recovery"
 ---
 
 # 第 12 章：异常处理和恢复

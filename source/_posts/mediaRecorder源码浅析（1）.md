@@ -3,6 +3,8 @@ title: mediaRecorder源码浅析
 tags: 技术 webrtc c++源码
 abbrlink: 30133
 date: 2023-05-31 22:10:46
+description: "https://chromium.googlesource.com/chromium/src/+/refs/tags/116.0.5830.1/third_party/blink/renderer/modules/mediarecor..."
+keywords: "mediarecorder源码浅析"
 ---
 [API](https://w3c.github.io/mediacapture-record/#mediarecorder-api)
 

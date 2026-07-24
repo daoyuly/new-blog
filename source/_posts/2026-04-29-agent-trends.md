@@ -9,6 +9,8 @@ tags:
   - AI Governance
 abbrlink: 59991
 date: 2026-04-29 12:05:00
+description: "根据 2026 年 4 月 28 日的 arXiv cs.AI 论文，Agent 研究呈现出系统化架构化、治理内生化、应用场景深化的三大趋势。"
+keywords: "agent, 研究最新趋势（2026, 29）, Multi-Agent, LLM, AI Governance, AI, Agent"
 ---
 
 ## 今日 Agent 研究前沿趋势

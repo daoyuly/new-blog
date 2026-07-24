@@ -11,6 +11,8 @@ categories:
   - Engineering
 abbrlink: 62941
 date: 2026-06-13 09:15:00
+description: "2026 年，一个全新的工程角色正在迅速崛起——Loop Engineer。这不是又一个 AI 炒作概念，而是一个深刻反映了 AI 辅助开发范式转移的真实岗位。本文将从概念、演进、技能要求、行业影响等维度，全面综述 Loop Engi..."
+keywords: "loop, engineer, agent, 时代增长最快的工程角色, AI Agent, Loop Engineering, AI Engineering, Autonomous Systems"
 ---
 
 # Loop Engineer 综述：AI Agent 时代增长最快的工程角色

@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 13261
 date: 2026-04-20 00:00:00
+description: "Health & Fitness（健康与健身）分类包含 84 个 OpenClaw Skills，涵盖了从个人健康追踪、运动训练、营养管理到心理健康监测等多个方面。这个分类的技能专注于帮助用户："
+keywords: "openclaw, skill, 每日推荐, health, fitness, health-fitness, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Health & Fitness

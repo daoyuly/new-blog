@@ -2,6 +2,8 @@
 title: 活在AI的阴影里
 abbrlink: 55499
 date: 2025-04-28
+description: "抓住AI的机会！"
+keywords: "活在ai的阴影里"
 ---
 
 从今天开始，AI的阴影会逼近每一个人。

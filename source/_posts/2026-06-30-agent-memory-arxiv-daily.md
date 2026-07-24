@@ -12,6 +12,8 @@ categories:
 abbrlink: 46938
 date: 2026-06-30 18:00:00
 noindex: true
+description: "今日扫描 cs.AI 最新论文，筛选出 3 篇与 Agent Memory 高度相关的工作。"
+keywords: "agent, memory, arxiv, 2026, Agent Memory, arXiv, Episodic Memory, World Model"
 ---
 
 # Agent Memory arXiv 日报 — 2026-06-30

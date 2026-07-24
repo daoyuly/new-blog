@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 21_ Exploration and Discovery
 tags: AI agent 设计
 abbrlink: 33903
 date: 2025-10-26 08:05:02
+description: "本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解..."
+keywords: "agentic, design, patterns, chapter, exploration, and, discovery"
 ---
 
 # 第 21 章：探索和发现

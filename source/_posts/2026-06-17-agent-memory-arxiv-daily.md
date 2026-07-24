@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 21408
 date: 2026-06-17 18:00:00
 noindex: true
+description: "每日精选 arXiv 上与 Agent Memory 相关的最新论文，涵盖记忆增强智能体、情景记忆、长期记忆、RAG 等方向。"
+keywords: "agent, memory, arxiv, (2026, 17), agent-memory, RAG, episodic-memory"
 ---
 
 # Agent Memory arXiv 日报 (2026-06-17)

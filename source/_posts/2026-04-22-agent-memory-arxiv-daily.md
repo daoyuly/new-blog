@@ -10,6 +10,8 @@ categories: [Agent Memory 研究]
   - Research Daily
 abbrlink: 35502
 noindex: true
+description: "- arXiv ID: 2604.19689"
+keywords: "agent, memory, 研究日报, 2026年4月22日, Agent Memory, RAG, Long-term Memory, AI Research"
 ---
 
 ## 今日相关论文列表

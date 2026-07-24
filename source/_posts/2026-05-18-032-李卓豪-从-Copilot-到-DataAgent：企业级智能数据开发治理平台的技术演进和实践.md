@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 64121
 date: 2026-05-18 11:06:12
+description: "大模型正在重新定义软件，数据开发治理平台也正经历从 Copilot 辅助开发向 DataAgent 自主决策的范式跃迁。在 AI 浪潮下，如何突破通用大模型的局限，构建可控、高效且真正落地的企业级智能数据开发体系？本文结合网易智企 E..."
+keywords: "copilot, dataagent, 企业级数据开发治理平台的, native, 演进与实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 从 Copilot 到 DataAgent：企业级数据开发治理平台的 AI Native 演进与实践

@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 14415
 date: 2026-06-05 14:06:20
+description: "随着RAG范式的普及，检索系统正从纯文本向多模态（文本、图像、视频、视觉文档）统一演进，且逐步从服务人类向服务Agent场景拓展。通义实验室推出的Qwen3-VL-Embedding与Reranker模型，基于MLLM基座，通过三阶段..."
+keywords: "qwen3, vl多模态表征与排序, 基于mllm的统一检索架构实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # Qwen3-VL多模态表征与排序：基于MLLM的统一检索架构实践

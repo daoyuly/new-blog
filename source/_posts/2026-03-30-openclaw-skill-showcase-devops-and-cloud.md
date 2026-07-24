@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 5236
 date: 2026-03-30 00:00:00
+description: "今天我们介绍 DevOps & Cloud 分类，这是一个包含 392 个技能 的庞大分类，涵盖了从基础设施管理到云服务部署的各个方面。这些技能专注于自动化运维、云平台管理、容器化部署、监控安全等现代 DevOps 实践。"
+keywords: "openclaw, skill, 每日推荐, devops, cloud, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - DevOps & Cloud

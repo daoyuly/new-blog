@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 64528
 date: 2026-06-15 11:00:00
+description: "OpenManus 是一个开源的智能代理框架，旨在实现无需邀请码即可自由创建和使用AI代理的功能。该项目起源于 MetaGPT 团队，核心作者包括 Xinbin Liang 和 Jinyu Xiang 等。OpenManus 的定位是..."
+keywords: "openmanus, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # OpenManus 项目深度分析报告

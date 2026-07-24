@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 6399
 date: 2026-04-11 00:00:00
+description: "Git & GitHub 分类包含 166 个技能，是 OpenClaw 生态系统中最重要的分类之一。这个分类涵盖了从基础 Git 操作到高级 GitHub 自动化的全方位工具，为开发者提供了完整的版本控制和协作工作流解决方案。"
+keywords: "openclaw, skill, 每日推荐, git, github, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Git 与 GitHub

@@ -3,6 +3,8 @@ title: Go入门学习笔记
 date: 2020-03-02 23:34:09
 tags: go语言学习
 abbrlink: 38316
+description: "- demo的前提条件，本机上按照有go的编译环境。"
+keywords: "go入门学习笔记"
 ---
 go入门学习笔记
 

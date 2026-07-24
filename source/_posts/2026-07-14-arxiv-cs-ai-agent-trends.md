@@ -9,6 +9,8 @@ categories:
 abbrlink: 3106
 date: 2026-07-14 04:00:00
 noindex: true
+description: "长程任务中 Agent 的\"遗忘\"和\"迷失\"问题，正在从 prompt engineering 转向架构级解决方案。"
+keywords: "agent, 最新趋势日报, (2026, 14), arxiv, AI Agent, 每日速递, 论文速递"
 ---
 
 > 基于 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 2026-07-13 发布论文整理，聚焦 Agent 相关研究。

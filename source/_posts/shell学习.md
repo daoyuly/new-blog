@@ -3,6 +3,8 @@ title: shell 学习笔记
 tags: shell 语言学习
 abbrlink: 55110
 date: 2020-01-30 12:14:26
+description: "关于shell使用的一些基本知识和实践，持续更新。"
+keywords: "shell, 学习笔记"
 ---
 
 关于shell使用的一些基本知识和实践，持续更新。

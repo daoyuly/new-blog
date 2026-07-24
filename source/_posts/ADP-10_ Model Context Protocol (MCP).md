@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 10_ Model Context Protocol (MCP)
 tags: AI agent 设计
 abbrlink: 319
 date: 2025-10-15 08:05:02
+description: "要使 LLM 作为 Agent 有效运作，其能力必须超越多模态生成。与外部环境的交互不可或缺，包括访问实时数据、使用外部软件以及执行特定操作任务。模型上下文协议（MCP）通过提供标准化接口满足此需求，使 LLM 能与外部资源交互。该协..."
+keywords: "agentic, design, patterns, chapter, model, context, protocol, (mcp)"
 ---
 
 # 第 10 章：模型上下文协议 (MCP)

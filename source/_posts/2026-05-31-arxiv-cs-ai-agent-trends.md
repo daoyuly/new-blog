@@ -11,6 +11,8 @@ categories:
 abbrlink: 53415
 date: 2026-05-31 12:00:00
 noindex: true
+description: "本文从今日 arXiv cs.AI 新增论文中，筛选出与 Agent 直接相关的论文，梳理最新研究趋势。"
+keywords: "arxiv, cs.ai, agent, 领域最新趋势（2026, 31）, arXiv, AI Agent, LLM"
 ---
 
 本文从今日 [arXiv cs.AI](https://papers.cool/arxiv/cs.AI) 新增论文中，筛选出与 **Agent** 直接相关的论文，梳理最新研究趋势。

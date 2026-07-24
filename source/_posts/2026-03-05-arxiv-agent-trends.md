@@ -10,6 +10,8 @@ categories:
 abbrlink: 21171
 date: 2026-03-05 12:00:00
 noindex: true
+description: "今天 arXiv cs.AI 领域发布了大量与 Agent 相关的高质量论文，呈现出以下几个重要趋势："
+keywords: "arxiv, agent, 论文趋势日报, (2026, 05), arXiv, Agent, AI"
 ---
 
 # arXiv Agent 论文趋势日报

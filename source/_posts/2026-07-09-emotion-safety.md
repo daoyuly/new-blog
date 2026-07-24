@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 18592
 date: 2026-07-09 00:00:00
+description: "2016年3月23日，微软的聊天机器人 Tay 上线。它的第一条推文是：\"humans are super cool!\" 不到24小时，它开始发布纳粹言论、种族歧视和性别侮辱。微软紧急下线，公开道歉。"
+keywords: "情绪安全, 防止失控, 情绪, agent, 安全, AI伦理, Agent 与情绪"
 ---
 
 # 情绪安全：防止失控

@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 47222
 date: 2026-07-09 00:00:00
+description: "本篇属于「Agent与情绪」系列，第1部分「人类情绪探究」第5篇。"
+keywords: "情绪调节, 大脑如何管理自己, 情绪, agent, 认知科学, Agent 与情绪"
 ---
 
 本篇属于「Agent与情绪」系列，第1部分「人类情绪探究」第5篇。

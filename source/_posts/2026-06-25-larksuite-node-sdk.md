@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 44435
 date: 2026-06-25 11:00:00
+description: "- 项目名称: larksuite-node-sdk"
+keywords: "larksuite, node, sdk, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
 ---
 
 # larksuite-node-sdk 项目深度分析报告

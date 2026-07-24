@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 19001
 date: 2026-07-11 11:30:00
+description: "通信是 AI Agent 与世界交互的桥梁。从邮件到即时通讯，从语音通话到社交网络，Communication 分类涵盖了 Agent 在人类沟通场景中的方方面面。今天我们精选 5 个最具代表性的 Skill，带你领略 Agent 通..."
+keywords: "openclaw, skill, 每日推荐, communication（通信工具）, communication, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 — Communication（通信工具）

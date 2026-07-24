@@ -10,6 +10,8 @@ categories:
   - Agent 研究
 abbrlink: 16026
 date: 2026-04-13 00:00:00
+description: "Hermes Agent 是一个革命性的自我改进型 AI 系统，其核心在于构建了一个完整的封闭学习循环（Closed Learning Loop）。通过三个核心机制的协同运作——技能系统（Procedural Memory）、记忆系统..."
+keywords: "hermes, agent, 进化机制深度分析, Hermes Agent, 自我改进, 技能系统, 记忆系统, Agent 架构"
 ---
 
 # Hermes Agent 进化机制深度分析

@@ -10,6 +10,8 @@ categories:
   - AI研究
 abbrlink: 20476
 date: 2026-03-08 12:00:00
+description: "今天的 arXiv cs.AI 领域发布了多篇与 Agent 相关的重要论文，涵盖了从终端编程、Web 自动化到多智能体协作的多个方向。以下是今天的亮点论文和趋势分析。"
+keywords: "agent, 最新趋势, 2026, AI, Agent, LLM, Web Agent, Multi-Agent"
 ---
 
 # AI Agent 最新趋势 2026-03-08

@@ -10,6 +10,8 @@ categories:
   - AI技术研究
 abbrlink: 1056
 date: 2026-03-31 15:15:00
+description: "关键词: Agent Planning, Task Decomposition, LLM Planning, ReAct, Tree-of-Thought, Workflow Orchestration"
+keywords: "agent规划技术综述, 从经典方法到现代llm驱动的任务编排, AI Agent, Task Planning, LLM Planning, ReAct, ToT, AI技术研究"
 ---
 
 # Agent规划技术综述 - 从经典方法到现代LLM驱动的任务编排

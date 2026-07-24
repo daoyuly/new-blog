@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 31861
 date: 2026-07-14 11:30:00
+description: "Gaming 分类涵盖了从 AI 社交推理游戏、自主 Minecraft 玩家、持久化人生模拟，到游戏开发工具链的完整生态。这里的核心主题是：让 AI Agent 成为游戏世界的参与者甚至创造者。"
+keywords: "openclaw, skill, 每日推荐, gaming, 技术推荐"
 ---
 
 # 🎮 OpenClaw Skill 每日推荐 - Gaming（游戏）

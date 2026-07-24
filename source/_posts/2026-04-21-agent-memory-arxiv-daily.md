@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 18727
 date: 2026-04-21 18:00:00
 noindex: true
+description: "链接: https://arxiv.org/abs/2604.18478"
+keywords: "2026, arxiv, agent, memory, 论文日报, Agent Memory, arXiv, 论文跟踪"
 ---
 
 # 2026-04-21 arXiv Agent Memory 论文日报

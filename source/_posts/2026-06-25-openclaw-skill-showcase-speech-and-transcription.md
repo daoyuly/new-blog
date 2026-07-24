@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 42312
 date: 2026-06-25 11:30:00
+description: "今天我们聚焦 Speech & Transcription 分类，这个分类包含 45 个 Skills，覆盖语音合成（TTS）、语音识别（STT）、声音克隆、会议纪要等场景。以下是精选推荐。"
+keywords: "openclaw, skill, 每日推荐, speech, transcription（语音与转录）, speech-and-transcription, 技术推荐"
 ---
 
 # 🎙️ OpenClaw Skill 每日推荐 — Speech & Transcription（语音与转录）

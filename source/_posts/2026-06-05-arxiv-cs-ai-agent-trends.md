@@ -12,6 +12,8 @@ tags:
   - safety
 abbrlink: 42755
 noindex: true
+description: "AutoLab 提出了一个直击痛点的观察：现有 Agent 基准只测单轮或短周期任务，但真实的科研/工程是反复迭代的长周期过程。"
+keywords: "arxiv, cs.ai, agent, 最新趋势, (2026, 05), llm, benchmark"
 ---
 
 > 每日速览 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 Agent 相关的最新论文，提炼趋势与关键洞察。

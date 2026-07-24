@@ -9,6 +9,8 @@ categories:
   - Agent 研究
 abbrlink: 52462
 date: 2026-03-31 00:00:00
+description: "随着 AI Agent 从单一对话系统演进到复杂任务编排平台，多 Agent 协作成为必然趋势。"
+keywords: "agent, 协作框架与, 2025, 2026, 发展趋势深度调研, Multi-Agent, 协作框架, Agent Orchestration"
 ---
 
 # 多 Agent 协作框架与 2025-2026 发展趋势深度调研

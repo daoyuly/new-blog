@@ -3,6 +3,8 @@ title: android手机执行go程序
 tags: go android linux 刷机 root
 abbrlink: 16151
 date: 2020-03-02 23:23:11
+description: "本文通过在root的android手机中执行一个go程序，来简单记录这基本过程和过程中使用的工具。"
+keywords: "android手机执行go程序"
 ---
 
 # 概述

@@ -9,6 +9,8 @@ tags:
 categories: Loop Engineering
 abbrlink: 38209
 date: 2026-07-06 17:30:00
+description: "上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。"
+keywords: "loop, engineering, 落地手册, 从零搭建第一个工程闭环, Loop Engineering, SRE, CI, Error Budget"
 ---
 
 上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。

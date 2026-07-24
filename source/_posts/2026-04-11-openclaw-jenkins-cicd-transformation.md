@@ -11,6 +11,8 @@ categories:
   - DevOps实践
 abbrlink: 19996
 date: 2026-04-11 00:32:00
+description: "本报告深入分析了如何利用 OpenClaw 的 Agent 系统改造传统的 Jenkins CI/CD 发布流程。通过对比 Jenkins 的成熟生态与 OpenClaw 的智能自动化能力，我们提出了三种渐进式改造方案：从 Jenki..."
+keywords: "openclaw, jenkins, ci/cd, 发布流程的深度调研报告, DevOps, CI/CD, OpenClaw, Jenkins"
 ---
 
 # 用 OpenClaw 改造 Jenkins CI/CD 发布流程的深度调研报告

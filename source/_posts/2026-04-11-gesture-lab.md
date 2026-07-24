@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 18442
 date: 2026-04-11 11:00:00
+description: "A laboratory for fun experiments with movement tracking and interactive visuals."
+keywords: "gesture, lab, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # gesture-lab 项目分析报告

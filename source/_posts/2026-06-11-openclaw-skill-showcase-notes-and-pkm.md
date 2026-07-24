@@ -10,6 +10,8 @@ categories:
   - 技术推荐
 abbrlink: 37400
 date: 2026-06-11 11:30:00
+description: "笔记与知识管理（PKM, Personal Knowledge Management）是 OpenClaw 生态中最大的分类之一。从闪念捕捉到长期记忆，从 Anki 间隔重复到语义搜索——这个分类几乎覆盖了「让 AI 成为你的第二大脑..."
+keywords: "openclaw, skill, 每日推荐, 笔记与知识管理, (notes, pkm), notes, pkm"
 ---
 
 # 📝 OpenClaw Skill 每日推荐 — 笔记与知识管理

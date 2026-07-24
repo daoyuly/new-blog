@@ -13,6 +13,8 @@ categories:
 abbrlink: 15116
 date: 2026-05-15 12:00:00
 noindex: true
+description: "今天的论文出现了一个明显的转向——用确定性工作流替代自规划 Agent。"
+keywords: "agent, 最新研究趋势（2026, 15）, Agent, LLM, Multi-Agent, Workflow, Reasoning"
 ---
 
 # Agent 最新研究趋势（2026-05-15）

@@ -9,6 +9,8 @@ categories:
   - 工程实践
 abbrlink: 5635
 date: 2026-07-13 15:30:00
+description: "上一篇搭了个最小闭环，代码跑得通。但真放到生产环境，闭环往往转不起来。不是代码的问题——是人的问题、指标的问题、信任的问题。"
+keywords: "loop, engineering, 反模式, 为什么你的闭环转不起来, Loop Engineering, 工程闭环, SRE, 工程实践"
 ---
 
 # Loop Engineering 反模式：为什么你的闭环转不起来

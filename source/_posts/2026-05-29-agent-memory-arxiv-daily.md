@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 26011
 date: 2026-05-29 18:00:00
 noindex: true
+description: "- arXiv ID: 2605.30159"
+keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, long-term-memory"
 ---
 
 # Agent Memory arXiv 日报 — 2026-05-29

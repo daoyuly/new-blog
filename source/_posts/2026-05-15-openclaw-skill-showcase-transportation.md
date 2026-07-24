@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 31029
 date: 2026-05-15 11:30:00
+description: "交通出行是 OpenClaw 生态中最实用的分类之一。无论你是在伦敦地铁里赶路、纽约地铁上看延误信息，还是规划一场巴黎徒步旅行、搜索便宜的机票，这些 Skill 都能让你的 AI 助手变成一个强大的出行管家。"
+keywords: "openclaw, skill, 每日推荐, 交通出行, (transportation), transportation, 技术推荐"
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 — 交通出行 (Transportation)

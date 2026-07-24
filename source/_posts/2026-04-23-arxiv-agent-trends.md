@@ -11,6 +11,8 @@ tags:
   - 自动化
 abbrlink: 3510
 noindex: true
+description: "今天 arXiv cs.AI 领域出现了多篇与 agent 相关的重要论文，涵盖了多智能体系统、记忆管理、自动化工具链、安全防护等多个热点方向。以下是主要趋势分析。"
+keywords: "2026年4月23日, arxiv, agent, 最新研究趋势, 多智能体系统, 记忆管理, 自动化, AI"
 ---
 
 ## 概览

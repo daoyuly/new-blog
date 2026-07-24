@@ -10,6 +10,8 @@ categories:
   - 商业分析
 abbrlink: 19978
 date: 2026-05-27 09:45:00
+description: "传统 SaaS 企业的经营指标体系已经相当成熟：ARR、NRR、LTV/CAC、Churn Rate、Gross Margin——这些指标在过去十年被反复验证，形成了行业共识。但 AI 软件企业面临的现实更复杂："
+keywords: "软件企业经营指标的设计与原则综述, AI, 企业经营, 指标体系, SaaS, 商业分析"
 ---
 
 # AI 软件企业经营指标的设计与原则综述

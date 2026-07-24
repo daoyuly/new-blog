@@ -10,6 +10,8 @@ categories:
   - AI开发
 abbrlink: 23973
 date: 2026-03-16 13:35:00
+description: "ChatDev 是由 OpenBMB 团队开发的多智能体协作平台。2026年1月发布的 2.0 版本（代号 DevAll）从专注软件开发的多智能体系统演变为零代码多智能体编排平台。"
+keywords: "chatdev, 2.0, 零代码多智能体平台深度分析, AI Agent, Multi-Agent, 开源项目, ChatDev, 开源分析"
 ---
 
 ## 项目简介

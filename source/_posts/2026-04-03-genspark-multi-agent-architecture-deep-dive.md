@@ -10,6 +10,8 @@ categories:
   - 技术深度分析
 abbrlink: 34545
 date: 2026-04-03 09:30:00
+description: "Genspark 不仅仅是另一个 AI 聊天机器人，而是真正意义上的 AI 原生搜索引擎。其核心创新在于："
+keywords: "genspark, agent, 架构深度解析, 搜索引擎的系统设计, AI, Multi-Agent, Architecture, Search Engine"
 ---
 
 # Genspark 多 Agent 架构深度解析：AI 搜索引擎的系统设计

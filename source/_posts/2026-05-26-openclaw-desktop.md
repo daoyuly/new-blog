@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 45389
 date: 2026-05-26 11:00:00
+description: "语言: JavaScript/TypeScript"
+keywords: "openclaw, desktop, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # openclaw-desktop 项目分析报告

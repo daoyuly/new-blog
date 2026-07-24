@@ -8,6 +8,8 @@ tags:
 abbrlink: 14338
 date: 2026-04-21 12:00:00
 noindex: true
+description: "从今天 arXiv cs.AI 论文中，我们识别出 7 篇核心 Agent 相关论文，覆盖了 Agent 系统、环境生成、记忆机制、评估基准、多智能体协作等关键方向。"
+keywords: "2026, arxiv, agent, 趋势报告, arXiv, AI Agents, 机器学习, 研究趋势"
 ---
 
 # 🤖 arXiv cs.AI Agent 趋势报告

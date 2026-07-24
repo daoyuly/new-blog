@@ -10,6 +10,8 @@ categories:
 abbrlink: 19271
 date: 2026-03-14 12:00:00
 noindex: true
+description: "今日 arXiv cs.AI 领域涌现大量 Agent 相关研究，涵盖多智能体协作、持续学习、安全推理、规范对齐等核心方向。以下是精选的 Agent 相关论文速览。"
+keywords: "arxiv, agent, 研究趋势速递, (2026.03.14), Agent, LLM, Multi-Agent, Reinforcement Learning"
 ---
 
 今日 arXiv cs.AI 领域涌现大量 Agent 相关研究，涵盖**多智能体协作、持续学习、安全推理、规范对齐**等核心方向。以下是精选的 Agent 相关论文速览。

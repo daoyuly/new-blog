@@ -9,6 +9,8 @@ categories: [Agent Memory 研究]
 abbrlink: 2368
 date: 2026-04-11 18:00:00
 noindex: true
+description: "来源： arXiv cs.AI (https://papers.cool/arxiv/cs.AI)"
+keywords: "agent, memory, 最新论文日报（2026, 11）, Agent Memory, AI, 论文分析"
 ---
 
 # Agent Memory 最新论文日报

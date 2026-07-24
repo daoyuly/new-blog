@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 51165
 date: 2026-07-03 11:00:00
+description: "AI Travel Agent & Expense Planner 是一个基于人工智能的全方位旅行规划助手，能够帮助用户规划全球任何城市的旅行。该项目通过自动化工作流整合实时信息、行程生成和费用计算功能，为用户提供一站式旅行规划解决方..."
+keywords: "travel, agent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # travel-agent 项目深度分析报告

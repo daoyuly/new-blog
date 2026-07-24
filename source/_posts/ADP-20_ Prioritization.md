@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 20_ Prioritization
 tags: AI agent 设计
 abbrlink: 21607
 date: 2025-10-25 08:05:02
+description: "在复杂、动态的环境中，Agent 经常会遇到大量潜在的行动、相互冲突的目标以及有限的资源。如果没有明确的流程来确定后续行动，Agent 可能会遭遇效率降低、操作延迟或无法实现关键目标的情况。优先级排序模式通过使 Agent 能够根据重..."
+keywords: "agentic, design, patterns, chapter, prioritization"
 ---
 
 # 第 20 章：优先级排序

@@ -10,6 +10,8 @@ categories:
   - 系统设计
 abbrlink: 64599
 date: 2026-06-15 10:24:00
+description: "Loop Engineering 不把系统当一次性交付的产物，而是当飞轮——上线只是起点，转起来才是正经事。"
+keywords: "loop, engineering, 让诗词网站自己运转, Loop Engineering, 自运营, AI Agent, 诗词, 系统设计"
 ---
 
 # Loop Engineering：让诗词网站自己运转

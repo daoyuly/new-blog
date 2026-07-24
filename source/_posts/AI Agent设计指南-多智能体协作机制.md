@@ -3,6 +3,8 @@ title: AI Agent设计指南-多智能体协作机制
 tags: Agent设计指南 多智能体 协作机制
 abbrlink: 32222
 date: 2026-04-14 16:17:07
+description: "本报告旨在全面收集AI Agent设计相关的理论基础、技术架构、实践方法、工具框架、安全考虑和成功案例，为制定AI Agent设计指南提供充分的信息支撑。"
+keywords: "agent设计指南, 多智能体协作机制"
 ---
 
 # AI Agent设计指南-多智能体协作机制

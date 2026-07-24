@@ -12,6 +12,8 @@ tags:
   - knowledge-graph
 abbrlink: 51195
 noindex: true
+description: "今日 cs.AI 共 17+ 篇论文，其中 Agent 相关 7 篇，呈现出三大趋势："
+keywords: "arxiv, cs.agent, (2026, 13), agent, 评估、多智能体编排与自主科学发现, multi-agent, evaluation"
 ---
 
 > 每日精选 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 Agent 相关的最新论文，追踪前沿趋势。

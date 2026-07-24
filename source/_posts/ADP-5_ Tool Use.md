@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 5_ Tool Use
 tags: AI agent 设计
 abbrlink: 29700
 date: 2025-10-10 08:05:02
+description: "到目前为止，我们讨论的 Agent 模式主要涉及编排语言模型之间的交互和管理 Agent 内部工作流中的信息流（链式、路由、并行化、反思）。然而，要使 Agent 真正有用并与现实世界或外部系统交互，它们需要使用工具的能力。"
+keywords: "agentic, design, patterns, chapter, tool, use"
 ---
 
 # 第 5 章：工具使用（函数调用）

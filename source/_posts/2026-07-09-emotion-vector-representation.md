@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 53493
 date: 2026-07-09 00:00:00
+description: "设想你在调试一个Agent，想给它加上\"情绪\"。最直觉的做法是什么？多半是加个枚举：emotion: happy | sad | angry | neutral。"
+keywords: "情绪向量, agent内部状态表示, 情绪, agent, 情绪模型, 状态表示, Agent 与情绪"
 ---
 
 > 本篇属于「Agent与情绪」系列，第2部分「Agent情绪架构」第2篇。

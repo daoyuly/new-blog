@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
   - 论文日报
 abbrlink: 25588
 noindex: true
+description: "从 papers.cool/arxiv/cs.AI 2026-06-05 批次中筛选出以下与 Agent Memory、经验学习、技能提取相关的论文。"
+keywords: "agent, memory, arxiv, (2026, 08), LLM, daily-report"
 ---
 
 ## 今日 Agent Memory 相关论文

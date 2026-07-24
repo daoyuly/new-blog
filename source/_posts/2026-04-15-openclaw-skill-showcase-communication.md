@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 19001
 date: 2026-04-15 00:00:00
+description: "今天我们来探索 Communication 分类，这是 OpenClaw Skill 库中一个至关重要的领域。该分类包含 145 个技能，涵盖了从邮件、即时通讯到社交网络的全方位通信解决方案。"
+keywords: "openclaw, skill, 每日推荐, communication（通信工具）, communication, 技术推荐"
 ---
 
 ## 📡 今日分类概述：Communication（通信工具）

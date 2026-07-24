@@ -9,6 +9,8 @@ categories:
   - 论文速递
 abbrlink: 19069
 date: 2026-03-02 16:22:00
+description: "今天整理 arXiv cs.AI 领域的最新论文，重点关注 Agent（智能代理） 相关的研究进展。以下是本次的核心发现。"
+keywords: "arxiv, agent, 最新趋势（2026, 02）, arXiv, AI, Agent, LLM"
 ---
 
 # arXiv AI Agent 最新趋势（2026-03-02）

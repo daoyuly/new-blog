@@ -10,6 +10,8 @@ categories:
   - MyClaw 开发日记
 abbrlink: 34062
 date: 2026-03-06 19:35:00
+description: "今天启动了一个新项目：MyClaw - 一个简化版的 EasyClaw 实现。"
+keywords: "myclaw, 项目启动, easyclaw, 技术分析, AI, OpenClaw, EasyClaw, Electron"
 ---
 
 # MyClaw 项目启动 - 仿写 EasyClaw 技术分析

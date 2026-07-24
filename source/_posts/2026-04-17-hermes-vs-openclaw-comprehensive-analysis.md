@@ -11,6 +11,8 @@ categories:
   - 平台分析
 abbrlink: 31384
 date: 2026-04-17 13:41:00
+description: "Hermes 和 OpenClaw 是两个设计理念截然不同的 AI Agent 平台。Hermes 是一个专注于自我改进的单一 Agent 系统，通过技能、记忆和背景审查构建完整的封闭学习循环；而 OpenClaw 是一个多通道网关型..."
+keywords: "hermes, openclaw, agent, 平台深度对比分析, AI Agent, Hermes, OpenClaw, 架构对比"
 ---
 
 # Hermes vs OpenClaw：两大 AI Agent 平台深度对比分析

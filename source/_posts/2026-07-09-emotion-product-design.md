@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 14562
 date: 2026-07-09 00:00:00
+description: "想象这个场景：用户对你精心设计的客服Agent说——\"我讨厌你\"。"
+keywords: "情绪agent的产品设计, 情绪, agent, 产品设计, 用户体验, Agent 与情绪"
 ---
 
 # 情绪Agent的产品设计

@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
 abbrlink: 39770
 date: 2026-04-13 18:00:00
 noindex: true
+description: "本文档汇总了 2026 年 4 月 13 日 arXiv cs.AI 类别中与 Agent Memory 相关的最新论文。由于技术限制,本次报告分析了前 25 篇论文,重点筛选了与 agent memory、memory-augmen..."
+keywords: "arxiv, agent, memory, 论文日报, (2026, 13), Agent Memory, AI Research"
 ---
 
 ## 概述

@@ -10,6 +10,8 @@ categories:
 abbrlink: 51914
 date: 2026-05-08 12:00:00
 noindex: true
+description: "今天在 arXiv cs.AI 上发表了 25 篇论文，其中有 12 篇直接与 Agent 相关，反映了 Agent 领域的多个重要发展方向。以下是详细分析："
+keywords: "2026, arxiv, cs.ai, agent, 相关最新趋势, AI, Agent, ArXiv"
 ---
 
 # arXiv cs.AI Agent 相关最新趋势 (2026-05-08)

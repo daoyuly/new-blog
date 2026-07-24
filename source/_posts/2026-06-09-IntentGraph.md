@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 8832
 date: 2026-06-09 11:00:00
+description: "![Python 3.12+](https://www.python.org/downloads/)"
+keywords: "intentgraph, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # IntentGraph 项目分析报告

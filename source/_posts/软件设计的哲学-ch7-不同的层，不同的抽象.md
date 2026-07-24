@@ -3,6 +3,8 @@ title: 软件设计的哲学 - ch7
 date: 2021-02-7
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 24170
+description: "Software systems are composed in layers, where higher layers use the facilities provided by lower layers. In a well-d..."
+keywords: "软件设计的哲学, ch7"
 ---
 
 # 第 7 章 不同的层，不同的抽象

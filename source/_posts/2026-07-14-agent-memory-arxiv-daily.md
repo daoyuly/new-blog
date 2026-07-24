@@ -13,6 +13,8 @@ categories:
   - Agent Memory 研究
 abbrlink: 50121
 noindex: true
+description: "今天在 cs.AI 领域共扫描 25 篇新论文，筛选出 6 篇与 Agent Memory 密切相关的论文。核心主题集中在：双记忆架构（短期+长期）、结构化状态管理、约束记忆的持久化，以及证据状态追踪。其中 OpsMem 的双记忆共振..."
+keywords: "agent, memory, 2026, 双记忆共振、因果结构化状态与约束记忆, agent-memory, arxiv, daily-report, LLM"
 ---
 
 ## 📋 今日摘要

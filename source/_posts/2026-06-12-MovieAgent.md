@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 50821
 date: 2026-06-12 11:00:00
+description: "MovieAgent 是一个创新的自动化电影生成系统，基于多智能体思维链（CoT）规划技术，旨在解决长视频生成过程中自动化程度低、人工干预多的问题。该项目通过模拟电影制作团队中的关键角色，实现了从剧本到成片的自动化流程。核心功能包括：..."
+keywords: "movieagent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # MovieAgent 项目深度分析报告

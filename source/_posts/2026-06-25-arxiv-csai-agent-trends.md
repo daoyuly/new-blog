@@ -11,6 +11,8 @@ tags:
   - evaluation
 abbrlink: 14117
 date: 2026-06-25 12:00:00
+description: "今日 cs.AI 共收录约 40+ 篇论文，其中与 Agent 直接相关的有 8 篇。以下按主题梳理最新趋势。"
+keywords: "cs.ai, agent, 趋势日报, 2026, LLM, reinforcement-learning, multi-agent, evaluation"
 ---
 
 今日 cs.AI 共收录约 40+ 篇论文，其中与 Agent 直接相关的有 8 篇。以下按主题梳理最新趋势。

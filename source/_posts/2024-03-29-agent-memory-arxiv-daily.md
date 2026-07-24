@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
 abbrlink: 6891
 date: 2024-03-29 00:00:00
 noindex: true
+description: "今日（2024年3月29日）在arXiv人工智能领域的最新论文中，我们识别出多篇与Agent Memory、记忆增强系统、多模态推理等相关的前沿研究。这些论文涵盖了从知识库训练、检索增强生成到智能代理技能蒸馏等关键方向。"
+keywords: "agent, memory领域最新研究进展, 2024年3月29日, Agent Memory, RAG, 知识库, 多模态推理, 强化学习"
 ---
 
 # Agent Memory领域最新研究进展综合报告

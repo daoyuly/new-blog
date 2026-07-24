@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 60880
 date: 2026-04-23 23:28:51
+description: "大模型极大降低了代码生成的门槛，但“能写代码”并不等于“能构建可维护的系统”。当开发者被动接受AI的输出，缺乏架构约束的代码将迅速演变为难以维护的焦油坑。AI时代的软件研发，正经历从“效率革命”向“效果革命”的范式转移。本文基于Toc..."
+keywords: "ai时代的dsl, spec与harness, engineering实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # AI时代的DSL-Spec与Harness Engineering实践

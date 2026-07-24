@@ -14,6 +14,8 @@ tags:
 abbrlink: 60919
 date: 2026-06-14 12:04:00
 noindex: true
+description: "本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：Agent 环境工程、多智能体编排与奖励建模、Agent 评估标准化。以下是精选论文与趋势分析。"
+keywords: "agent, 2026, 环境工程、知识编排与评估标准化, multi-agent, evaluation, knowledge-graph, reward-model, neuro-symbolic"
 ---
 
 本周 arxiv cs.AI 领域 Agent 相关论文涌现，核心趋势集中在三个方向：**Agent 环境工程**、**多智能体编排与奖励建模**、**Agent 评估标准化**。以下是精选论文与趋势分析。

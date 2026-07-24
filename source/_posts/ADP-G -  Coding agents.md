@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Appendix G -  Coding agents
 tags: AI agent 设计
 abbrlink: 46505
 date: 2025-11-07 08:05:02
+description: "\"Vibe 编码\"已发展为快速创新与创意探索的高效技术。该实践通过运用 LLM 生成初始草稿、梳理复杂逻辑或构建快速原型，显著降低启动门槛。其核心价值在于破解\"空白页\"困境，助力开发者从模糊概念快速过渡至具体可执行代码。在探索陌生 A..."
+keywords: "agentic, design, patterns, appendix, coding, agents"
 ---
 
 # 附录 G - 编码 Agent

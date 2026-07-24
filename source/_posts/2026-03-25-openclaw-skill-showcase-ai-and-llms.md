@@ -10,6 +10,8 @@ categories:
   - 技术推荐
 abbrlink: 14077
 date: 2026-03-25 11:30:00
+description: "欢迎来到 OpenClaw Skill 每日推荐系列！今天我们探索 AI 与大语言模型 分类，这是 OpenClaw 生态中最庞大的分类，包含 184 个精选 Skills，覆盖了从模型推理到智能体协作的完整技术栈。"
+keywords: "openclaw, skill, 每日推荐, 与大语言模型, ai-and-llms, 大语言模型, 人工智能, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - AI 与大语言模型

@@ -9,6 +9,8 @@ categories:
   - AI 研究趋势
 abbrlink: 30510
 date: 2026-03-18 12:08:00
+description: "今天整理了 arXiv cs.AI 分类下的 Agent 相关论文，以下是核心趋势和亮点工作。"
+keywords: "agent, 领域最新进展, arxiv, 2026.03.18, AI Agent, LLM, arXiv, Research"
 ---
 
 # AI Agent 领域最新进展 - arXiv Daily 2026.03.18

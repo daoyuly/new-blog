@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 765
 date: 2026-07-18 06:00:01
+description: "上一篇我们论证了情绪的本质：情绪不是独立的功能模块，而是场景状态变化的产物。核心链路是从 Dialogue 到 Scenario，再到 Expectation Gap，最终生成 Emotion。"
+keywords: "agent情绪的数据结构设计, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 上一篇我们论证了情绪的本质：情绪不是独立的功能模块，而是场景状态变化的产物。核心链路是从 Dialogue 到 Scenario，再到 Expectation Gap，最终生成 Emotion。

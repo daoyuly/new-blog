@@ -3,6 +3,8 @@ title: 软件设计的哲学 - ch8
 date: 2021-02-8
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 23082
+description: "This chapter introduces another way of thinking about how to create deeper classes. Suppose that you are developing a..."
+keywords: "软件设计的哲学, ch8"
 ---
 
 # 第 8 章 降低复杂性

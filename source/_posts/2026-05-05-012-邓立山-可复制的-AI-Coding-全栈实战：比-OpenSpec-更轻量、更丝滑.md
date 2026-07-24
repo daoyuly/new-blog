@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 44270
 date: 2026-05-05 13:17:03
+description: "随着大模型上下文窗口扩展与推理能力增强，AI编码工具已全面接入开发者的日常工作流。然而，当我们将AI从“玩具”推向“生产环境”时，却遭遇了显著的落差：AI能快速写出Demo，却难以产出符合工程规范的生产级代码。本分享剖析了AI编码在生..."
+keywords: "企业级ai编码可控实践, 从vibe, coding到spec, coding的全栈演进, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 企业级AI编码可控实践：从Vibe Coding到Spec Coding的全栈演进

@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
 abbrlink: 13217
 date: 2026-06-15 18:00:00
 noindex: true
+description: "本文筛选自 2026-06-12 arXiv cs.AI / cs.CL 最新论文，聚焦 Agent Memory 相关研究。"
+keywords: "agent, memory, arxiv, (2026, 15), agent-memory, daily-report, AI-agent"
 ---
 
 本文筛选自 2026-06-12 arXiv cs.AI / cs.CL 最新论文，聚焦 Agent Memory 相关研究。

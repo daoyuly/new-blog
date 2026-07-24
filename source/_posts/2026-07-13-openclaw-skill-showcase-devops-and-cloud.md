@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 53041
 date: 2026-07-13 11:30:00
+description: "今天我们进入 OpenClaw Skill 生态中最大的分类之一：DevOps 与云服务。这个分类包含了 392 个 Skill，覆盖了从基础设施管理、容器编排到监控告警、安全审计的全链路 DevOps 场景。无论你是管理 AWS、A..."
+keywords: "openclaw, skill, 每日推荐, devops, 与云服务, cloud, 技术推荐"
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 — DevOps 与云服务

@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Appendix E - AI Agents on the CLI
 tags: AI agent 设计
 abbrlink: 44873
 date: 2025-11-05 08:05:02
+description: "开发者的命令行界面，长期以来作为精确命令式指令的堡垒，正经历一场深刻变革。它正从简单的 shell 演变为由新型工具驱动的智能协作工作空间：AI Agent 命令行界面（CLI）。这些 Agent 不仅限于执行命令；它们能理解自然语言..."
+keywords: "agentic, design, patterns, appendix, agents, the, cli"
 ---
 
 # 附录 E - 命令行界面中的 AI Agent

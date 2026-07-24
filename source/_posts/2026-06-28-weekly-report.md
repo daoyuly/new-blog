@@ -9,6 +9,8 @@ categories:
   - 周报
 abbrlink: 62988
 date: 2026-06-28 17:30:00
+description: "本周发了大约 50 篇文章（含每日自动生成的 Agent 论文/趋势/harness 日报），手动写了不少有质量的深度内容。按主题梳理一下。"
+keywords: "06.22, 06.28, 情绪系列、loop, engineering、开源项目解剖, 周报, 情绪, agent, 开源"
 ---
 
 # 周报 06.22-06.28：情绪系列、Loop Engineering、开源项目解剖

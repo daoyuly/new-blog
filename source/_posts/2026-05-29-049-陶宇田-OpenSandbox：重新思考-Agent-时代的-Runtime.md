@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 48344
 date: 2026-05-29 14:04:55
+description: "大模型正在重新定义软件，这不仅是应用层的变革，更在底层驱动运行时基础设施向面向 Agent 的统一执行模型演进。当前的 AI Agent 对执行环境提出了高并发、短生命周期和可控联网的共性诉求——它们既需要文件系统与命令执行能力，也需..."
+keywords: "opensandbox, agent, 时代的运行时架构重构, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # OpenSandbox：Agent 时代的运行时架构重构

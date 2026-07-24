@@ -9,6 +9,8 @@ categories:
   - AI工程
 abbrlink: 16527
 date: 2026-07-13 20:30:00
+description: "LangChain、LlamaIndex、CrewAI、AutoGen……Agent 框架一堆，但越用越觉得：框架在帮你，也在绑你。你花在理解框架上的时间，可能比自己写一个 Agent 还多。"
+keywords: "从零搭一个能用的, agent, 不靠框架, 行代码搞定, AI Agent, 从零实现, LLM, 核心循环"
 ---
 
 # 从零搭一个能用的 Agent：不靠框架，50 行代码搞定

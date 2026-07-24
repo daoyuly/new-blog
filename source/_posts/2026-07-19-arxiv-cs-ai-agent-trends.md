@@ -9,6 +9,8 @@ categories:
 abbrlink: 31985
 date: 2026-07-19 12:50:00
 noindex: true
+description: "本文从 papers.cool/arxiv/cs.AI 今日更新中筛选 Agent 相关论文，提炼最新趋势。"
+keywords: "arxiv, cs.ai, agent, 趋势日报, (2026, 19), AI Agent, 论文速递"
 ---
 
 本文从 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 今日更新中筛选 Agent 相关论文，提炼最新趋势。

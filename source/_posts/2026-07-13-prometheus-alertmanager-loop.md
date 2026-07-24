@@ -9,6 +9,8 @@ categories:
   - 工程实践
 abbrlink: 7273
 date: 2026-07-13 18:00:00
+description: "前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。"
+keywords: "从监控到闭环, prometheus, alertmanager, 实操指南, Loop Engineering, Prometheus, Alertmanager, 监控"
 ---
 
 # 从监控到闭环：Prometheus + Alertmanager 实操指南

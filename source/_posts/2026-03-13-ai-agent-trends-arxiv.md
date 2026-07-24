@@ -10,6 +10,8 @@ categories:
   - 论文速递
 abbrlink: 4157
 date: 2026-03-13 12:00:00
+description: "今天 arXiv cs.AI 上有多篇高质量的 Agent 相关研究，涵盖持续学习、强化学习泛化、多智能体协作、安全与规范四大核心方向。"
+keywords: "agent, 领域最新研究趋势, 从持续学习到多智能体协作, AI, Agent, LLM, Reinforcement Learning, Multi-Agent"
 ---
 
 > 本篇文章整理自 arXiv cs.AI 2026年3月13日的最新论文，聚焦 AI Agent 领域的研究热点与前沿进展。

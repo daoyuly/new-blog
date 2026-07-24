@@ -9,6 +9,8 @@ categories:
 abbrlink: 16635
 date: 2026-06-02 12:00:00
 noindex: true
+description: "数据来源：papers.cool/arxiv/cs.AI"
+keywords: "2026, agent, 论文日报, 从自主科研到安全对齐, arxiv, ai-agent, daily-report, AI Agent 日报"
 ---
 
 数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)

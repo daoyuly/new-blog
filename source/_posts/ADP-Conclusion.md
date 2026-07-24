@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Conclusion
 tags: AI agent 设计
 abbrlink: 22965
 date: 2025-10-05 08:05:02
+description: "在本书中，我们从 Agentic AI 的基础概念出发，一路探索到复杂自主系统的实际实现。我们从这样一个前提开始：构建智能 Agent 就像在技术画布上创作一幅复杂的艺术作品——这个过程不仅需要一个强大的认知引擎（如大型语言模型），还..."
+keywords: "agentic, design, patterns, conclusion"
 ---
 
 # 结论

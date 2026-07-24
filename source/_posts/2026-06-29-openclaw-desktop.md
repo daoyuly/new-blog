@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 14234
 date: 2026-06-29 11:00:00
+description: "- 项目名称: openclaw-desktop"
+keywords: "openclaw, desktop, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # openclaw-desktop 项目深度分析报告

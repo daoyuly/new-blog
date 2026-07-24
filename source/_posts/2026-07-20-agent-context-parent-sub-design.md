@@ -9,6 +9,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+description: "Agent 系统从单 agent 走向多 agent，最难的不是调度，是上下文。主 agent 把任务拆给子 agent，子 agent 干完活把结果塞回主 agent 的上下文——这个过程里有多少坑，做过的人都知道。"
+keywords: "agent, 上下文设计, 篇论文的深度拆解, Agent, Multi-Agent, 论文分析, AI架构, Agent系统"
 ---
 
 # 主-子 Agent 上下文设计：5 篇论文的深度拆解

@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 22010
 date: 2026-06-01 11:07:52
+description: "随着AI Agent与强化学习（RL）的深度融合，Agentic AI正在重塑应用形态。然而，这类新负载对底层分布式系统提出了长程有状态Session、极速沙箱调度和训推分离等严苛要求。传统的应对方式是为不同需求各自搭建系统，最终演变..."
+keywords: "从烟囱到积木, 基于openyuanrong的agentic, ai基础设施实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 从烟囱到积木：基于openYuanrong的Agentic AI基础设施实践

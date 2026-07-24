@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 56028
 date: 2026-07-09 00:00:00
+description: "问你一个看似简单的问题：怎么证明你的Agent\"有情绪\"？"
+keywords: "评估情绪agent, 指标、方法与人的判断, 情绪, agent, 评估, 指标体系, Agent 与情绪"
 ---
 
 # 评估情绪Agent：指标、方法与人的判断

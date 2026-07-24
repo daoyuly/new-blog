@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
 abbrlink: 2222
 date: 2026-04-17 18:00:00
 noindex: true
+description: "2026年4月16日，arXiv cs.AI 类别共发布 20+ 篇论文。经过筛选，发现 5 篇 与 Agent Memory 高度相关的论文，主要集中在以下几个方向："
+keywords: "arxiv, agent, memory, 论文日报, 2026, Agent Memory, arXiv Daily, VSA"
 ---
 
 ## 概述

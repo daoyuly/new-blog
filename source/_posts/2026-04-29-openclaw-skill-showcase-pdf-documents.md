@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 40539
 date: 2026-04-29 00:00:00
+description: "PDF 与文档处理分类包含 110 个强大技能，涵盖 PDF 操作、文档转换、格式处理等多个方面。从添加水印到权限管理，从格式转换到内容提取，这些技能能够自动化处理各种文档需求，极大提升工作效率。"
+keywords: "openclaw, skill, 每日推荐, pdf, 与文档处理, pdf-documents, 技术推荐"
 ---
 
 ## 今日分类：PDF 与文档处理

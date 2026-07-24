@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "OpenAgents 是一个专为“计划优先”开发工作流设计的 AI Agent 框架，其核心价值在于引入了基于审批的执行机制。在当前 AI 辅助编程领域，大模型常因“幻觉”或上下文理解偏差直接修改代码导致破坏性后果。OpenAgent..."
+keywords: "openagents, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # OpenAgents 项目深度分析报告

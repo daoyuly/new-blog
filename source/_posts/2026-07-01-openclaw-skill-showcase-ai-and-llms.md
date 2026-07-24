@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 14077
 date: 2026-07-01 11:30:00
+description: "AI & LLMs 是 OpenClaw 生态中规模最大的分类，涵盖了 Agent 记忆、多模型路由、安全防护、成本监控、语音转录、金融数据等方方面面。无论你是想让 Agent 记住上下文、节省 Token 开销，还是接入区块链支付，..."
+keywords: "openclaw, skill, 每日推荐, 与大语言模型, ai-and-llms, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 — AI 与大语言模型 🤖

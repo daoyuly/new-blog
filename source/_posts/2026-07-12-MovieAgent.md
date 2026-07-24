@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "MovieAgent 是一个基于多智能体和思维链规划的全自动化长视频/电影生成框架。当前的长视频生成技术通常缺乏自动化的剧情规划能力，高度依赖人工介入来设计故事线、场景构成、摄影机位及角色交互，导致制作成本高昂且效率低下。MovieA..."
+keywords: "movieagent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # MovieAgent 项目深度分析报告

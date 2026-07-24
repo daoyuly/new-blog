@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 6783
 date: 2026-06-10 11:00:00
+description: "python run_hotpotqa.py --llm_name llama-2-13b --max_context_len 4000 --mode train --output_path ../Self-Learning/trajs/"
+keywords: "knowagent, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # KnowAgent 项目分析报告

@@ -11,6 +11,8 @@ categories:
   - 技术推荐
 abbrlink: 44971
 date: 2026-05-30 11:30:00
+description: "通信是人类协作的基础，AI Agent 也一样。今天的 Communication 分类涵盖了从邮件处理、即时通讯、语音通话到 Agent 社交网络的方方面面。让我们看看其中最值得关注的几个 Skill。"
+keywords: "openclaw, skill, 每日推荐, communication, 通信工具, 通信, 邮件, 社交"
 ---
 
 # OpenClaw Skill 每日推荐 - Communication 通信工具

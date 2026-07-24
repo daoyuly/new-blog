@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 14606
 date: 2026-06-24 11:00:00
+description: "IntentKit 是一个自主智能体框架，旨在创建和管理具备多种能力的AI智能体，包括区块链交互、社交媒体管理和自定义技能集成。该项目提供了多智能体支持、自主智能体管理、区块链集成（优先支持EVM链）、社交媒体集成（Twitter、T..."
+keywords: "intentkit, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # intentkit 项目深度分析报告

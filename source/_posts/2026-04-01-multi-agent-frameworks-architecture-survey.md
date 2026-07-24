@@ -19,6 +19,8 @@ keywords:
   - 可验证性
 abbrlink: 3607
 date: 2026-04-01 09:30:00
+description: "关键词: Multi-Agent Frameworks, System Architecture, Event Sourcing, Verifiability, 2025-2026 Trends"
+keywords: "多agent协作框架与系统架构综述, 2025, 2026趋势深度解析, AI Agent, Multi-Agent Systems, Framework Comparison, System Architecture, 2026 Trends"
 ---
 
 # 多Agent协作框架与系统架构综述 - 2025-2026趋势深度解析

@@ -3,6 +3,8 @@ title: 使用提取文本，升级版本号
 tags: shell 语言学习
 abbrlink: 35382
 date: 2020-02-20 00:38:06
+description: "使用shell写Android的自动构建脚本时，需要从build.gradle中读取当前的版本号，自动加1，最后写入build.gradle。其中使用到grep，sek命令，具体代码如下："
+keywords: "使用提取文本, 升级版本号"
 ---
 
 使用shell写Android的自动构建脚本时，需要从build.gradle中读取当前的版本号，自动加1，最后写入build.gradle。其中使用到grep，sek命令，具体代码如下：

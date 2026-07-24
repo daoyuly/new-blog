@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 13261
 date: 2026-06-06 11:30:00
+description: "健康与健身是 OpenClaw 生态中一个越来越重要的分类。从可穿戴设备数据整合到个性化训练计划，这些 Skill 让 AI 助手真正成为你的健康管理伙伴。今天精选 5 个最具代表性的 Skill 进行详解。"
+keywords: "openclaw, skill, 每日推荐, health, fitness, health-and-fitness, 技术推荐"
 ---
 
 # 🏥 OpenClaw Skill 每日推荐 — Health & Fitness（健康与健身）

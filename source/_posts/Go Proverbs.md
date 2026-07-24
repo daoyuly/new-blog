@@ -3,6 +3,8 @@ title: Go Proverbs
 tags: go 语言学习
 abbrlink: 1956
 date: 2023-09-09 21:47:26
+description: "以下要熟练背诵下来，然后再练习和感悟，最后炉火纯青的应用。"
+keywords: "proverbs"
 ---
 
 以下要熟练背诵下来，然后再练习和感悟，最后炉火纯青的应用。

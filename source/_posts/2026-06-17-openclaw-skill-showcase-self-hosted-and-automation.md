@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 58028
 date: 2026-06-17 11:30:00
+description: "自托管与自动化（Self-Hosted & Automation） 共收录 33 个 Skill，覆盖了从工作流编排、文档管理、网络监控到数据备份的全链路自托管场景。如果你是 Homelab 玩家或追求数据主权的开发者，这个分类就是为..."
+keywords: "openclaw, skill, 每日推荐, 自托管与自动化, self-hosted-and-automation, 技术推荐"
 ---
 
 # 🏠 OpenClaw Skill 每日推荐 - 自托管与自动化

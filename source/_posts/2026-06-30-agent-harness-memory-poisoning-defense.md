@@ -9,6 +9,8 @@ categories:
   - AI安全
 abbrlink: 5604
 date: 2026-06-30 14:15:00
+description: "Agent 越来越依赖长期记忆来保持个性、积累经验、做更好的决策。但记忆是双刃剑——它让 Agent 变聪明，也让攻击者有了持久化的入口。"
+keywords: "agent, 记忆投毒, 攻击手法与防御全景, AI Agent, Memory Poisoning, Security, Agent Harness, AI安全"
 ---
 
 Agent 越来越依赖长期记忆来保持个性、积累经验、做更好的决策。但记忆是双刃剑——它让 Agent 变聪明，也让攻击者有了持久化的入口。

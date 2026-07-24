@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 35641
 date: 2026-07-03 04:00:05
+description: "问 ChatGPT \"我失恋了\"，它会回复一段温暖的安慰——语气体贴，措辞得当，甚至比很多真人朋友说得还好。但你不会觉得它\"难过\"。为什么？"
+keywords: "agent为什么没有情绪, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 # Agent为什么没有情绪

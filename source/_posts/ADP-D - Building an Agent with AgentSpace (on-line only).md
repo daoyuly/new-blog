@@ -5,6 +5,8 @@ title: >-
 tags: AI agent 设计
 abbrlink: 39615
 date: 2025-11-04 08:05:02
+description: "AgentSpace 是一个旨在通过将人工智能融入日常工作流程来推动\"Agent 驱动型企业\"发展的平台。其核心能力在于为组织的整个数字足迹（涵盖文档、电子邮件和数据库）提供统一搜索功能。该系统借助先进的 AI 模型（如 Google..."
+keywords: ""
 ---
 
 # 附录 D - 使用 AgentSpace 构建 Agent

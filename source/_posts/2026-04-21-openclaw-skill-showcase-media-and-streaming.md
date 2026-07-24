@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 16144
 date: 2026-04-21 00:00:00
+description: "今天是 OpenClaw Skill 每日推荐的第17天！今天我们探索的是 媒体与流媒体 分类，这个分类包含 84个 技能，涵盖了音频、视频、流媒体播放、社交媒体等全方位的媒体处理和交互能力。"
+keywords: "openclaw, skill, 每日推荐, 媒体与流媒体, (media, streaming), media-and-streaming, 技术推荐"
 ---
 
 # 媒体与流媒体 (Media & Streaming) - OpenClaw Skill 每日推荐

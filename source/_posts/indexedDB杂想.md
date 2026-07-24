@@ -3,6 +3,8 @@ title: indexedDB杂想
 tags: 技术杂想
 abbrlink: 62137
 date: 2020-04-06 14:44:19
+description: "value可以是任何复杂类型的object，键值就是这个这些对象的键值；"
+keywords: "indexeddb杂想"
 ---
 
 ## 仔细理解下indexedDB的设计哲学：

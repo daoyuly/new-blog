@@ -12,6 +12,8 @@ categories:
 abbrlink: 70710
 date: 2026-07-10 18:00:00
 noindex: true
+description: "今日 cs.AI 共扫描约 20+ 篇新论文，筛选出 3 篇与 Agent Memory 高度相关的研究："
+keywords: "agent, memory, arxiv, 2026, Agent Memory, arXiv, 日报, LLM"
 ---
 
 > 每日追踪 arXiv cs.AI 上与 Agent Memory 相关的最新论文，筛选关键词：agent, memory, episodic, recall, retrieval, RAG, long-term, experience, persistence, memorization

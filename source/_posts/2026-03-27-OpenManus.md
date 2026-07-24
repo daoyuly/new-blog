@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 4415
 date: 2026-03-27 11:00:00
+description: "Manus is incredible, but OpenManus can achieve any idea without an Invite Code 🛫!"
+keywords: "openmanus, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # OpenManus 项目分析报告

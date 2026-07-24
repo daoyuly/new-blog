@@ -10,6 +10,8 @@ categories:
   - 开源项目
 abbrlink: 47826
 date: 2026-03-16 13:25:00
+description: "GIMP CLI 是一个 GIMP 风格的命令行图像处理工具，支持批量处理、滤镜、格式转换等功能。使用 Node.js + TypeScript + sharp 构建。"
+keywords: "gimp, cli, 命令行图像处理工具, CLI, 图像处理, Node.js, sharp, 工具"
 ---
 
 ## 简介

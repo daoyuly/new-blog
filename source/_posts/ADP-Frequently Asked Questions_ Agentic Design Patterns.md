@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Frequently Asked Questions_ Agentic Design Patt
 tags: AI agent 设计
 abbrlink: 6949
 date: 2025-10-04 08:05:02
+description: "什么是\"Agentic 设计模式\"？ Agentic 设计模式是可复用的高层解决方案，用于应对构建智能自主系统（Agent）时的常见挑战。这些模式为设计 Agent 行为提供结构化框架，其作用类似于传统编程中的软件设计模式。它们助力开..."
+keywords: "agentic, design, patterns, frequently, asked, questions"
 ---
 
 ### **常见问题解答：Agentic 设计模式**

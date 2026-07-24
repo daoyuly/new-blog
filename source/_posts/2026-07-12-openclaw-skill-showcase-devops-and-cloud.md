@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 53041
 date: 2026-07-12 11:30:00
+description: "今天是 Skill 展示的第 9 天，我们进入 OpenClaw 生态中最重量级的分类之一：DevOps 与云服务。这个分类包含了 392 个 Skill，是所有分类中数量最多的，涵盖了从容器编排、基础设施管理到安全扫描、监控告警的完..."
+keywords: "openclaw, skill, 每日推荐, devops, 与云服务, cloud, 技术推荐"
 ---
 
 # ☁️ OpenClaw Skill 每日推荐 — DevOps 与云服务

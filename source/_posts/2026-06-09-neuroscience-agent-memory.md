@@ -11,6 +11,8 @@ categories:
   - AI研究
 abbrlink: 30114
 date: 2026-06-09 17:00:00
+description: "2024 年以来，一个引人注目的趋势正在 AI 研究中兴起：神经科学正在重新成为 Agent 记忆架构的灵感源泉。这并非简单的类比搬运——从海马体索引理论到预测编码，从千脑智能到自由能原理，一系列神经科学的核心理论正在被形式化、可计算..."
+keywords: "神经科学与, agent, 从大脑到人工智能的记忆架构演进, neuroscience, agent-memory, HippoRAG, predictive-coding, free-energy-principle"
 ---
 
 # 神经科学与 Agent 记忆：从大脑到人工智能的记忆架构演进

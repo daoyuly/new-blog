@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 46380
 date: 2026-07-19 06:00:04
+description: "上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态..."
+keywords: "agent情绪与状态管理, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态怎么更新、怎么传播、怎么衰减、怎么恢复。

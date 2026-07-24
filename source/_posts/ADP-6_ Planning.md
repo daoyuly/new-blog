@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 6_ Planning
 tags: AI agent 设计
 abbrlink: 38942
 date: 2025-10-11 08:05:02
+description: "智能行为通常不仅仅涉及对即时输入做出反应。它需要远见、将复杂任务分解为更小的可管理步骤，以及制定实现期望结果的策略。这就是规划模式发挥作用的地方。规划的核心是 Agent 或 Agent 系统制定一系列行动以从初始状态向目标状态移动的能力。"
+keywords: "agentic, design, patterns, chapter, planning"
 ---
 
 # 第 6 章：规划

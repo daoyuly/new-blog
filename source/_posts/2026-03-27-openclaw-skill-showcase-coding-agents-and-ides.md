@@ -10,6 +10,8 @@ categories:
   - 技术推荐
 abbrlink: 43041
 date: 2026-03-27 11:30:00
+description: "今天介绍的是 Coding Agents & IDEs（编码代理与 IDE） 分类，这是 OpenClaw 生态系统中最大的技能分类，包含 1200+ 个技能！"
+keywords: "openclaw, skill, 每日推荐, 编码代理与, ide, coding-agents-and-ides, ai-coding, multi-agent"
 ---
 
 # OpenClaw Skill 每日推荐 - 编码代理与 IDE

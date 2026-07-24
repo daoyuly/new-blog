@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 52817
 date: 2026-06-14 11:00:00
+description: "OpenAgents 是一个创新的 AI 智能体框架，专注于\"计划先行\"的开发工作流程，采用基于审批的执行机制。该项目旨在通过 AI 代理系统自动化软件开发过程中的多个环节，包括代码规划、实现、测试和审查。OpenAgents 支持多..."
+keywords: "openagents, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # OpenAgents 项目深度分析报告

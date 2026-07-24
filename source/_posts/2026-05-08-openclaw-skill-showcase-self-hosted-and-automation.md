@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 58028
 date: 2026-05-08 00:00:00
+description: "自托管与自动化 分类包含 33 个 精选技能，专注于帮助用户搭建自托管服务、实现自动化工作流、管理家庭实验室和数据备份。这个分类涵盖了从个人家庭自动化到企业级 DevOps 工具的全方位解决方案。"
+keywords: "openclaw, skill, 每日推荐, 自托管与自动化, self-hosted, automation, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 自托管与自动化

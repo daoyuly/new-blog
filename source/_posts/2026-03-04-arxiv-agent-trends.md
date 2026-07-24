@@ -9,6 +9,8 @@ tags:
 abbrlink: 62193
 date: 2026-03-04 14:56:00
 noindex: true
+description: "今天 cs.AI 领域共发布了多篇与 Agent 相关的论文，涵盖了以下主要趋势："
+keywords: "arxiv, agent, 趋势日报, (2026, 04), trends, AI Agent"
 ---
 
 # arXiv Agent 趋势日报 (2026-03-04)

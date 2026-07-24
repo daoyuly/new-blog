@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
 abbrlink: 11717
 date: 2026-06-10 18:14:00
 noindex: true
+description: "- arXiv ID: 2606.10985"
+keywords: "agent, memory, (2026, 10), arxiv, cs.ai, 论文速递, agent-memory"
 ---
 
 # Agent Memory 日报 (2026-06-10)

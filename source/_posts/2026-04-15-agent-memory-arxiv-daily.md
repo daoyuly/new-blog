@@ -10,6 +10,8 @@ categories: [Agent Memory 研究]
 abbrlink: 30085
 date: 2026-04-15 18:00:00
 noindex: true
+description: "本文分析了 2026-04-14 至 2026-04-15 期间 arXiv cs.AI 分类下与 Agent Memory、记忆增强 Agent、长期记忆、RAG 等相关的最新论文。共筛选出 7 篇高度相关论文，涵盖了双轨记忆编码、..."
+keywords: "agent, memory, 研究日报（2026, 15）, arxiv, cs.ai, 最新论文分析, Agent Memory"
 ---
 
 ## 今日论文概览

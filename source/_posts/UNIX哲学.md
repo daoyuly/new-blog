@@ -3,6 +3,8 @@ title: UNIX哲学
 tags: UNIX哲学
 abbrlink: 8235
 date: 2023-10-24 00:00:00
+description: "Mike Gancarz的《UNIX哲学》"
+keywords: "unix哲学"
 ---
 
 Mike Gancarz的《UNIX哲学》

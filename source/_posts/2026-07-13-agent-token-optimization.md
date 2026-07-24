@@ -9,6 +9,8 @@ categories:
   - 工程实践
 abbrlink: 55955
 date: 2026-07-13 17:00:00
+description: "Token 优化不是省钱这么简单。在生产环境里，Token 成本直接影响 Agent 的可用性——单次调用贵了，你就舍不得让 Agent 多跑；上下文长了，延迟就上去；缓存命中率低，同样的问题反复花钱。"
+keywords: "agent, token, 优化进阶, 生产环境的成本控制实战, AI Agent, Token优化, 成本控制, LLM"
 ---
 
 # Agent Token 优化进阶：生产环境的成本控制实战

@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 1601
 date: 2026-06-06 11:00:00
+description: "基于 FastAPI + LangGraph + Redis + Elasticsearch + Milvus + DashScope 的医院导诊问答与流程指引助手，同时提供命令行前端（rich CLI），可以作为生产级医疗导诊 / ..."
+keywords: "hospital, guidance, agent, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # Hospital_guidance_agent 项目分析报告

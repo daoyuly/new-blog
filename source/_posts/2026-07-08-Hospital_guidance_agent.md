@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 57710
 date: 2026-07-08 11:00:00
+description: "- 项目名称: Hospital_guidance_agent"
+keywords: "hospital, guidance, agent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
 ---
 
 # Hospital_guidance_agent 项目深度分析报告

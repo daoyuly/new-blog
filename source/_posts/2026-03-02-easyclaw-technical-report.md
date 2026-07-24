@@ -8,6 +8,8 @@ tags:
 categories: 技术分析
 abbrlink: 64699
 date: 2026-03-02 21:51:00
+description: "分析对象: EasyClaw 及主要竞品技术架构"
+keywords: "easyclaw, 及同类, agent, 技术架构分析报告, AI Agent, EasyClaw, OpenClaw, 技术架构"
 ---
 
 # EasyClaw 及同类 AI Agent 技术架构分析报告

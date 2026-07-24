@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 12807
 date: 2026-05-26 11:30:00
+description: "今天我们来探索 OpenClaw 生态中最核心的分类之一 —— Clawdbot Tools（Clawdbot 工具）。这个分类包含 36 个 Skills，专门为 OpenClaw/Claudbot 平台本身提供增强、管理和扩展能力..."
+keywords: "openclaw, skill, 每日推荐, clawdbot, tools, clawdbot-tools, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Clawdbot Tools

@@ -9,6 +9,8 @@ tags:
 categories:
   - Agent前沿
 abbrlink: 21263
+description: "今日 cs.AI 共收录 25 篇论文，其中与 Agent 强相关的约 18 篇。核心趋势可以归纳为以下五个方向："
+keywords: "agent, 前沿日报, 2025.05.25, 技能自进化、多智能体协调与安全审计, arxiv, AI趋势, 论文日报, Agent前沿"
 ---
 
 > 基于 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 2026-05-22 收录论文整理，聚焦 Agent 相关最新进展。

@@ -11,6 +11,8 @@ categories:
 abbrlink: 49325
 date: 2026-06-29 18:00:00
 noindex: true
+description: "- arXiv ID: 2606.28270"
+keywords: "agent, memory, 日报｜2026, 免疫系统与记忆投毒、内部化世界模型、rag, 知识冲突, agent-memory, arxiv-daily, RAG"
 ---
 
 # Agent Memory 日报｜2026-06-29

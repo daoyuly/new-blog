@@ -11,6 +11,8 @@ categories:
 abbrlink: 1147
 date: 2026-06-24 12:00:00
 noindex: true
+description: "2026年6月24日，arXiv cs.AI 共收录约 25 篇新论文，其中 8 篇与 Agent 直接相关。今日关键词：Agentic 数据配方、Agent 故障诊断、通用 Agent 理论保障、LLM 引导的 RL。"
+keywords: "agent, arxiv, cs.ai, 2026, 训练数据配方、长轨迹故障归因、通用, 可认证部署, arXiv, Agent"
 ---
 
 > 每日精选 arXiv cs.AI 中与 Agent 相关的最新论文，追踪前沿趋势。

@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 13_ Human-in-the-Loop
 tags: AI agent 设计
 abbrlink: 36498
 date: 2025-10-18 08:05:02
+description: "人机协同（Human-in-the-Loop，HITL）模式在 Agent 的开发和部署中扮演着关键战略角色。它巧妙地将人类认知的独特优势——如判断力、创造力和细致入微的理解——与 AI 的计算能力和效率相结合。这种战略整合不仅是可选..."
+keywords: "agentic, design, patterns, chapter, human, the, loop"
 ---
 
 # 第 13 章：人机协同

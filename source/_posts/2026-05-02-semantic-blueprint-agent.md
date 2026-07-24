@@ -10,6 +10,8 @@ categories:
   - 技术研究
 abbrlink: 75293
 date: 2026-05-02 18:00:00
+description: "2025-2026年，AI Agent 领域正在经历一场深刻的范式转移。从最初的\"提示词工程\"到\"思维链\"（Chain-of-Thought），再到\"思维树\"（Tree-of-Thought）和\"思维图\"（Graph-of-Thoug..."
+keywords: "语义蓝图, 从概念到落地——agent, 智能化的新范式, Semantic Blueprint, AI Agent, 架构设计, 推理框架, 技术前沿"
 ---
 
 # 语义蓝图：从概念到落地——Agent 智能化的新范式

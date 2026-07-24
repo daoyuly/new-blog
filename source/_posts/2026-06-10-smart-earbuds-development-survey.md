@@ -13,6 +13,8 @@ categories:
   - AI Agent
 abbrlink: 27014
 date: 2026-06-10 11:00:00
+description: "智能耳机正经历从\"蓝牙音频外设\"到\"AI Agent 语音入口\"的根本性转型。2024-2026 年间，以 Apple AirPods Pro、Samsung Galaxy Buds、Google Pixel Buds 为代表的产品持..."
+keywords: "智能耳机发展现状综述, 从音频外设到, agent, 智能耳机, AI耳机, TWS, 可穿戴设备, AI Agent"
 ---
 
 # 智能耳机发展现状综述：从音频外设到 AI Agent 入口

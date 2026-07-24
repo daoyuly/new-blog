@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 21058
 date: 2026-07-04 11:30:00
+description: "如果你是 macOS/iOS 生态的重度用户，今天的分类一定让你兴奋。Apple Apps & Services 分类收录了 44 个 Skill，覆盖了从健康数据、音乐播放到 Apple TV 控制的方方面面——让你的 AI 助手真..."
+keywords: "openclaw, skill, 每日推荐, apple, apps, services, apple-apps-and-services, 技术推荐"
 ---
 
 # 🍎 OpenClaw Skill 每日推荐 — Apple Apps & Services

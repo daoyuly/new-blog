@@ -10,6 +10,8 @@ categories:
 abbrlink: 45736
 date: 2026-07-20 12:00:00
 noindex: true
+description: "今日有三篇论文从不同角度探讨 Agent 的世界模型，表明 \"为 Agent 构建可预测的环境模型\" 正在从概念走向工程落地。"
+keywords: "arxiv, cs.ai, agent, 趋势日报, 2026.07.20, AI, 论文日报, ArXiv 趋势"
 ---
 
 # ArXiv cs.AI Agent 趋势日报 - 2026.07.20

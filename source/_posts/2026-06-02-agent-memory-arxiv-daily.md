@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
   - AI论文日报
 abbrlink: 50162
 noindex: true
+description: "今天在 arXiv cs.AI 分类中筛选出 7 篇 与 Agent Memory 密切相关的论文，涵盖持续学习记忆、工作记忆外部化、记忆文件追踪、技能内化、RAG 路由优化、世界模型作为经验记忆等方向。"
+keywords: "agent, memory, arxiv, (2026, 02), agent-memory, daily-report, LLM"
 ---
 
 ## 今日 Agent Memory 相关论文

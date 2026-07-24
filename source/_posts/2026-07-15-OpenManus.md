@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。"
+keywords: "openmanus, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # OpenManus 项目深度分析报告

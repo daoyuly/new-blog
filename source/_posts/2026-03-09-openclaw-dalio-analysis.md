@@ -10,6 +10,8 @@ categories:
   - 深度分析
 abbrlink: 65103
 date: 2026-03-09 11:30:00
+description: "瑞·达利欧（Ray Dalio），桥水基金创始人，以其系统化思维和原则驱动的方法论闻名。他的核心思想是：将一切视为机器，理解输入-处理-输出的因果关系，不断提炼原则，持续进化。"
+keywords: "openclaw深度分析, 达利欧视角下的ai助手革命, OpenClaw, AI助手, 系统思维, Ray Dalio, 创业分析, 深度分析"
 ---
 
 # OpenClaw深度分析：达利欧视角下的AI助手革命

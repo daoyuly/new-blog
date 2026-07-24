@@ -9,6 +9,8 @@ categories:
   - AI工程
 abbrlink: 60590
 date: 2026-07-13 19:30:00
+description: "Agent 的 Prompt 写法，和聊天机器人的 Prompt 不是一回事。聊天机器人可以写一长串人设、语气、规则，Agent 的 Prompt 是给机器执行用的——每个 token 都有成本，每个多余的指令都可能让模型走偏。"
+keywords: "agent, prompt, 不是越长越好, AI Agent, Prompt工程, 系统指令, LLM, AI工程"
 ---
 
 # 写好 Agent Prompt：不是越长越好

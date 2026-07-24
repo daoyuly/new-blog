@@ -11,6 +11,8 @@ categories:
 abbrlink: 59075
 date: 2026-05-11 12:04:00
 noindex: true
+description: "今天的 cs.AI 预印本中，与 Agent（智能体）相关的研究呈现出几个明确的趋势。本文整理了最具代表性的论文和方向。"
+keywords: "arxiv, cs.ai, 每日速递, agent, 研究最新趋势（2026, 11）, ArXiv, AI"
 ---
 
 ## 概览

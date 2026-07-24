@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 58029
 date: 2026-05-09 11:30:00
+description: "自托管与自动化是技术爱好者最喜欢的领域之一。这个分类包含了各种用于管理自托管服务、自动化工作流、以及系统维护的 OpenClaw Skills。无论你是家庭实验室爱好者、还是正在构建私有云架构的开发者,这些 Skills 都能大大提升..."
+keywords: "openclaw, skill, 每日推荐, 自托管与自动化, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 自托管与自动化

@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 27748
 date: 2026-05-07 18:07:00
 noindex: true
+description: "本期共分析 cs.AI 分类最新论文 25 篇，筛选出 5 篇与 Agent Memory、上下文管理、长时程推理高度相关的论文。本期核心趋势聚焦于弹性上下文管理、可执行世界模型和长时程任务跟踪。"
+keywords: "agent, memory, 论文日报, 2026年5月7日, Agent Memory, Long-Horizon Reasoning, Context Management, Multi-Agent Systems"
 ---
 
 ## 概述

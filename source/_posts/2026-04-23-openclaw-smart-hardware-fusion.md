@@ -11,6 +11,8 @@ categories:
   - 行业报告
 abbrlink: 41877
 date: 2026-04-23 14:00:00
+description: "- OpenClaw 的节点控制能力可覆盖 90% 的消费级智能硬件场景"
+keywords: "openclaw, 与智能硬件融合使用行业报告, smart-hardware, iot, robotics, ai-agent, industry-report, 行业报告"
 ---
 
 # OpenClaw 与智能硬件融合使用行业报告

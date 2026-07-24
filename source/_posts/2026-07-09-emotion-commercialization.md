@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 36031
 date: 2026-07-09 00:00:00
+description: "2024年，Character.ai 被Google收购时，月活超过2000万，但年营收不到2000万美元。同期，一家做客服情绪识别的初创公司，客户不到500家，ARR却超过1亿美元。"
+keywords: "情绪agent的商业化, 市场、模式与风险, 情绪, agent, 商业化, 市场分析, Agent 与情绪"
 ---
 
 # 情绪Agent的商业化：市场、模式与风险

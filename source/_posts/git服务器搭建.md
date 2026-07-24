@@ -3,6 +3,8 @@ title: 搭建git服务器
 tags: git
 abbrlink: 1721
 date: 2020-02-04 16:02:25
+description: "以centos为例，简单介绍如何搭建git服务器。"
+keywords: "搭建git服务器"
 ---
 
 以centos为例，简单介绍如何搭建git服务器。

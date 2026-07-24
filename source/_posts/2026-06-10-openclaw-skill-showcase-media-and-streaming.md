@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 62254
 date: 2026-06-10 11:30:00
+description: "今天我们来探索 OpenClaw Skill 生态中内容最丰富的分类之一——媒体与流媒体（Media & Streaming），共收录 84 个 Skill，覆盖音乐播放、视频生成、播客制作、语音合成、社交媒体管理等方方面面。"
+keywords: "openclaw, skill, 每日推荐, 媒体与流媒体, media, streaming, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 媒体与流媒体 🎬🎵

@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 13262
 date: 2026-07-11 04:00:05
+description: "上文我们讨论了Agent如何构建预期模型。当Agent具备了预测未来的能力，一个必然的产物随之出现——预期与现实的偏差。"
+keywords: "agent拥有情绪的理论基础, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 # Agent拥有情绪的理论基础

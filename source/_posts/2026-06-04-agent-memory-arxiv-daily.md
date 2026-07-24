@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
   - ArXiv Daily
 abbrlink: 36583
 noindex: true
+description: "- arXiv ID: 2606.04781 Kimi解读"
+keywords: "agent, memory, 2026, arxiv, daily-report, LLM"
 ---
 
 # Agent Memory ArXiv 日报 — 2026年6月4日

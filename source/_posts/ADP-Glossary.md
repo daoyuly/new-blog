@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Glossary
 tags: AI agent 设计
 abbrlink: 24168
 date: 2025-10-03 08:05:02
+description: "提示词（Prompt）： 提示词是用户向 AI 模型提供的输入，通常以问题、指令或陈述形式呈现，旨在激发模型生成相应输出。提示词的质量与结构深度影响模型响应效果，使提示工程成为高效运用 AI 的核心技能。"
+keywords: "agentic, design, patterns, glossary"
 ---
 
 # 术语表

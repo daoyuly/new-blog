@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 45683
 date: 2026-04-19 01:22:11
+description: "在 AI 应用重度依赖数据的今天，“Garbage in, garbage out”不再是理论警告，而是工程现实。全球数据量正呈爆发式增长，预计 2025 年将达到 175ZB，企业架构也在从单云单域向多云多域加速演进。然而，当团队试..."
+keywords: "企业级, data, agent, 落地基石, 统一元数据与数据治理实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 企业级 Data Agent 落地基石：统一元数据与数据治理实践

@@ -17,6 +17,8 @@ keywords:
   - Production System
 abbrlink: 51180
 date: 2026-04-01 10:15:00
+description: "关键词: Doubao, ByteDance, Multi-Agent, Production Architecture"
+keywords: "豆包多agent技术实现与系统架构深度解析, Doubao, ByteDance, Multi-Agent, System Architecture, AI Product, AI产品分析, 技术调研"
 ---
 
 # 豆包多Agent技术实现与系统架构深度解析

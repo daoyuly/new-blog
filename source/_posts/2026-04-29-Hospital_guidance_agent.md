@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "- 项目名称: Hospital_guidance_agent"
+keywords: "hospital, guidance, agent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
 ---
 
 # Hospital_guidance_agent 项目深度分析报告

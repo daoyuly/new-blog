@@ -10,6 +10,8 @@ categories:
   - 思想随笔
 abbrlink: 25138
 date: 2026-04-11 13:00:00
+description: "维特根斯坦在《逻辑哲学论》中提出过一个著名的命题：\"语言是世界的图像\"（The picture theory of language）。这个简洁而深刻的洞见，不仅重塑了我们对语言的理解，也为我们思考AI Agent的本质提供了一个全新..."
+keywords: "维特根斯坦、语言与世界, agent, 如何成为不同世界的翻译者, 维特根斯坦, AI Agent, 语言哲学, 人工智能, 认知科学"
 ---
 
 ## 引言

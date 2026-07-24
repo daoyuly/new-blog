@@ -11,6 +11,8 @@ categories:
 abbrlink: 62301
 date: 2026-03-17 12:00:00
 noindex: true
+description: "今天 arXiv cs.AI 领域共发布 25 篇论文，其中与 Agent 直接相关的论文有 10 篇，占比 40%。Agent 研究持续火热，呈现以下几大趋势："
+keywords: "arxiv, agent, 研究趋势日报, (2026, 17), AI Agent, LLM, Multi-Agent"
 ---
 
 # arXiv cs.AI Agent 研究趋势日报

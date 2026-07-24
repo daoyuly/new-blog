@@ -9,6 +9,8 @@ tags:
 categories:
   - 技术推荐
 abbrlink: 46232
+description: "Marketing & Sales 是 OpenClaw 生态中最活跃的分类之一，涵盖 冷拓客、邮件营销、社交媒体管理、广告投放、CRM 集成、SEO 优化、品牌建设 等完整营销链路。无论你是独立开发者、SaaS 创业者还是营销团队负..."
+keywords: "openclaw, skill, 每日推荐, marketing, sales, 营销与销售, 技术推荐"
 ---
 
 # 🎯 OpenClaw Skill 每日推荐 — Marketing & Sales（营销与销售）

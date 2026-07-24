@@ -12,6 +12,8 @@ tags:
   - benchmark
 abbrlink: 1912
 date: 2026-03-15 12:00:00
+description: "本周共筛选出 11 篇 与 Agent 高度相关的前沿研究，涵盖 多智能体协作、LLM Agent 强化学习、Agent 安全与规范 等核心方向。"
+keywords: "agent, 研究趋势周报, 2026.03.15, ai-agent, llm, reinforcement-learning, multi-agent, benchmark"
 ---
 
 # AI Agent 研究趋势周报

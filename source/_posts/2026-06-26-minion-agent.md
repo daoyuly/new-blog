@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 25510
 date: 2026-06-26 11:00:00
+description: "Minion-Agent 是一个功能强大的智能体框架，专注于提供增强的能力，包括浏览器自动化、代码执行、MCP工具支持和深度研究功能。该项目默认采用EXTERNAL_MINION_AGENT框架，提供卓越的性能和功能。项目旨在为开发者..."
+keywords: "minion, agent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # minion-agent 项目深度分析报告

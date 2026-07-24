@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 24472
 date: 2026-06-11 11:05:42
+description: "大模型正经历从单一文本自回归向全模态融合的深刻演进，AR（自回归）与DiT（Diffusion Transformer）结合已成为多模态生成的绝对主流架构范式。然而，现有的推理引擎大多为纯文本AR设计，在面对全模态任务时显得力不从心。..."
+keywords: "vllm, omni, 突破全模态推理瓶颈的原生解耦架构实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # vLLM-Omni：突破全模态推理瓶颈的原生解耦架构实践

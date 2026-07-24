@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 19_ Evaluation and Monitoring
 tags: AI agent 设计
 abbrlink: 4509
 date: 2025-10-24 08:05:02
+description: "本章探讨了使智能 Agent 能够系统地评估其性能、监控目标进展以及检测操作异常的方法论。虽然第 11 章概述了目标设定和监控，第 17 章讨论了推理机制，但本章侧重于持续的、通常是外部的、对 Agent 有效性、效率和合规性要求的测..."
+keywords: "agentic, design, patterns, chapter, evaluation, and, monitoring"
 ---
 
 # 第 19 章：评估和监控

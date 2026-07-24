@@ -7,6 +7,8 @@ tags:
   - marketing-and-sales
 categories:
   - 技术推荐
+description: "营销与销售分类涵盖了从冷邮件外联、CRM 管理、社交媒体营销到 SEO 优化、广告投放分析等完整的营销链路。无论你是独立开发者推广产品、初创公司搭建 GTM 策略，还是营销团队自动化工作流，都能在这里找到趁手的工具。"
+keywords: "openclaw, skill, 每日推荐, marketing, sales, 营销与销售, marketing-and-sales, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Marketing & Sales 营销与销售

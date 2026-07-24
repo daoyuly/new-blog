@@ -12,6 +12,8 @@ categories:
   - AI Agent
 abbrlink: 47238
 date: 2026-07-01 09:35:00
+description: "读 Agent 源码，大部分人习惯从入口文件开始，顺着调用链往下看。这种方法在传统软件上管用，在 Agent 上效率很低——因为 Agent 的核心逻辑不在代码里，而在 prompt、上下文组装、工具编排和循环控制里。"
+keywords: "逆向拆, agent, 从技术栈反推源码的研究方法论, Agent, 源码分析, 逆向工程, Prompt Engineering, Context Engineering"
 ---
 
 读 Agent 源码，大部分人习惯从入口文件开始，顺着调用链往下看。这种方法在传统软件上管用，在 Agent 上效率很低——因为 Agent 的核心逻辑不在代码里，而在 prompt、上下文组装、工具编排和循环控制里。

@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 34023
 date: 2026-04-12 11:00:00
+description: "IntentKit is an autonomous agent framework that enables the creation and management of AI agents with various capabil..."
+keywords: "intentkit, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # intentkit 项目分析报告

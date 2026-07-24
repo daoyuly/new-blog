@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 24707
 date: 2026-07-06 11:30:00
+description: "浏览器与自动化是 OpenClaw 生态中最大的 Skill 分类之一，涵盖浏览器操控、网页抓取、RPA 自动化、社交媒体管理、金融数据获取等场景。无论你是想自动化日常网页操作，还是构建复杂的爬虫和数据管线，这个分类都有对应工具。"
+keywords: "openclaw, skill, 每日推荐, 浏览器与自动化, 技术推荐"
 ---
 
 # 🌐 OpenClaw Skill 每日推荐 — 浏览器与自动化

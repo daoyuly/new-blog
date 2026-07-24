@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 46482
 date: 2026-06-16 11:30:00
+description: "今天我们来探索 OpenClaw Skill 生态中最大的分类之一：搜索与研究（Search & Research），包含 352 个 Skills，覆盖学术研究、网络搜索、社交媒体情报、电商比价、航班酒店、法律检索等几乎所有\"找东西..."
+keywords: "openclaw, skill, 每日推荐, 搜索与研究, search-and-research, 技术推荐"
 ---
 
 # 🔍 OpenClaw Skill 每日推荐 — 搜索与研究

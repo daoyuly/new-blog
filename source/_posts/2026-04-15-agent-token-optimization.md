@@ -9,6 +9,8 @@ categories:
   - Agent 实践
 abbrlink: 57300
 date: 2026-04-15 00:00:00
+description: "通过系统提示词、上下文管理、工具调用和模型选择四个维度的优化，可以实现 30%-70% 的 token 节省，同时保持甚至提升输出质量。"
+keywords: "agent, token, 优化完全指南, Token 优化, 成本优化, Agent 性能, LLM 优化, Agent 实践"
 ---
 
 # Agent Token 优化完全指南

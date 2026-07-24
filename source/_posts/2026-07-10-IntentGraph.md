@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "以下是对 IntentGraph 项目的深度分析研究报告。"
+keywords: "intentgraph, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # IntentGraph 项目深度分析报告

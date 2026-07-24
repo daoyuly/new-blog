@@ -3,6 +3,8 @@ title: 北漂的日子（19）关于chatGPT
 tags: 北漂生活
 abbrlink: 35254
 date: 2023-05-27 23:21:10
+description: "chatGPT的出现让世人震惊了，AI已经聪明到如此地步了，人类还有活路吗？"
+keywords: "北漂的日子（19）关于chatgpt"
 ---
 
 chatGPT的出现让世人震惊了，AI已经聪明到如此地步了，人类还有活路吗？

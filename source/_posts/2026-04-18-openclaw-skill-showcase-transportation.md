@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 24888
 date: 2026-04-18 11:30:00
+description: "交通出行分类包含 110 个技能，覆盖了全球范围内的各种交通方式查询、航班跟踪、公共交通实时信息、旅行规划等功能。无论你是需要查询地铁到站时间、跟踪航班状态，还是规划复杂的跨国旅行，这个分类都能满足你的需求。"
+keywords: "openclaw, skill, 每日推荐, 交通出行, transportation, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 交通出行

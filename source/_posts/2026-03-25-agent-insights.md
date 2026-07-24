@@ -10,6 +10,8 @@ categories:
   - 前沿洞察
 abbrlink: 5588
 date: 2026-03-25 18:00:00
+description: "📄 arXiv: 2603.23234 Kimi解读"
+keywords: "agent, 前沿趋势洞察, 2026, ai-trends, daily-insights, arxiv, github, 前沿洞察"
 ---
 
 # Agent 前沿趋势洞察

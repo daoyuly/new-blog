@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 43041
 date: 2026-07-10 00:00:00
+description: "编码代理与 IDE 是 AI 辅助开发的核心战场。从编排多个编码 Agent 协同工作，到将 Cursor/Claude Code/Codex 等 IDE 工具深度集成，这个分类覆盖了现代 AI 开发工作流的方方面面。"
+keywords: "openclaw, skill, 每日推荐, 编码代理与, ide, coding-agents-and-ides, 技术推荐"
 ---
 
 # 🤖 OpenClaw Skill 每日推荐 — 编码代理与 IDE

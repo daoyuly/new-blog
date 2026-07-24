@@ -11,6 +11,8 @@ categories:
 abbrlink: 50709
 date: 2026-07-09 12:00:00
 noindex: true
+description: "- 发布日期： 2026年7月9日（收录 7月8日提交论文）"
+keywords: "arxiv, cs.ai, agent, 研究趋势, (2026, 09), arXiv, AI Agent"
 ---
 
 # arXiv cs.AI Agent 研究趋势 (2026-07-09)

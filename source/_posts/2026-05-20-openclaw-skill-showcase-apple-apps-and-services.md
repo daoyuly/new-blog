@@ -10,6 +10,8 @@ categories:
   - 技术推荐
 abbrlink: 21058
 date: 2026-05-20 11:30:00
+description: "Apple Apps & Services 分类共收录 44 个 Skills，是 OpenClaw 生态中与 Apple 平台深度集成的核心分类。这些 Skill 涵盖了 macOS/iOS 原生应用操控、硬件自动化、Apple S..."
+keywords: "openclaw, skill, 每日推荐, apple, apps, services, macOS, iOS"
 ---
 
 # OpenClaw Skill 每日推荐 - Apple Apps & Services 🍎

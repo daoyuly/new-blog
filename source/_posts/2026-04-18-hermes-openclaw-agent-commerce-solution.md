@@ -13,6 +13,8 @@ categories:
   - 电商研究
 abbrlink: 62224
 date: 2026-04-18 11:00:00
+description: "继上一篇：短视频和直播电商中小创业者痛点深度调研报告（2026-04-17）"
+keywords: "agent, 赋能短视频直播电商, hermes, openclaw, 的解决方案, AI Agent, Hermes, OpenClaw"
 ---
 
 # AI Agent 赋能短视频直播电商：Hermes 与 OpenClaw 的解决方案

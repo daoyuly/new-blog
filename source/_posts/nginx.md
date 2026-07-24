@@ -3,6 +3,8 @@ title: nginx 学习笔记
 tags: nginx
 abbrlink: 24182
 date: 2020-02-01 20:36:30
+description: "关于nginx使用的一些基本知识和实践，持续更新。"
+keywords: "nginx, 学习笔记"
 ---
 关于nginx使用的一些基本知识和实践，持续更新。
 

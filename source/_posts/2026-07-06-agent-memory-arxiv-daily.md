@@ -12,6 +12,8 @@ categories:
 abbrlink: 45927
 date: 2026-07-06 18:00:00
 noindex: true
+description: "- arXiv ID: 2607.02509"
+keywords: "agent, memory, 2026, agent-memory, arxiv, daily-report, RAG, long-term-memory"
 ---
 
 # Agent Memory 日报 | 2026-07-06

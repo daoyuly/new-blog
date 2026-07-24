@@ -13,6 +13,8 @@ tags:
 abbrlink: 21227
 date: 2026-06-23 12:00:00
 noindex: true
+description: "数据来源：papers.cool/arxiv/cs.AI，从今日 24 篇 cs.AI 论文中筛选出与 Agent 密切相关的 6 篇。"
+keywords: "arxiv, cs.ai, agent, 相关最新趋势, (2026, 23), LLM, multi-agent"
 ---
 
 ## 今日 Agent 相关论文精选

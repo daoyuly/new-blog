@@ -3,6 +3,8 @@ title: 'c#读写Excel文件'
 tags: 'c#'
 abbrlink: 18224
 date: 2008-02-04 10:28:00
+description: "近日遇到这样的一个程序需求：把sql server2005 数据库的数据表导入到excel文件中，整理出来和大家一起分析讨论。"
+keywords: "c#读写excel文件"
 ---
 
 

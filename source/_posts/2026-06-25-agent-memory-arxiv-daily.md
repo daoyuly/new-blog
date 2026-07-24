@@ -11,6 +11,8 @@ tags:
 categories: [Agent Memory 研究]
   - Agent Memory 研究
 noindex: true
+description: "- arXiv ID: 2606.25161"
+keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, long-term-memory"
 ---
 
 # Agent Memory arXiv 日报 — 2026-06-25

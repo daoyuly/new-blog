@@ -9,6 +9,8 @@ categories:
   - AI 工程实践
 abbrlink: 47121
 date: 2026-04-15 16:00:00
+description: "在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。"
+keywords: "agent, token, 优化完全指南, 在保证效果的前提下降低成本提升性能, Agent, 成本优化, 性能优化, 提示词工程"
 ---
 
 ## 前言

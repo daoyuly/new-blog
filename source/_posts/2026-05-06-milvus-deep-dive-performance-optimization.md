@@ -10,6 +10,8 @@ categories:
   - 技术深度分析
 abbrlink: 14962
 date: 2026-05-06 11:13:00
+description: "Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数据。"
+keywords: "milvus, 向量数据库深度指南, 从入门到性能优化, Vector Database, Milvus, AI Infrastructure, RAG, Performance Optimization"
 ---
 
 # Milvus 向量数据库深度指南：从入门到性能优化

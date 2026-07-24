@@ -10,6 +10,8 @@ categories:
   - 工程实践
 abbrlink: 2135
 date: 2026-06-24 10:38:00
+description: "我最近在实践一种工作流，核心思路很简单：让工程自己给自己喂料。"
+keywords: "loop, engineering, 基于日志的自动化开发和运维, workflow, loop-engineering, devops, observability, 工程实践"
 ---
 
 ## 一个闭环是怎么转起来的

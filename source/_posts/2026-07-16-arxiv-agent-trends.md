@@ -11,6 +11,8 @@ categories:
 abbrlink: 29507
 date: 2026-07-16 12:00:00
 noindex: true
+description: "- Agent 相关论文： 至少 13 篇"
+keywords: "arxiv, cs.ai, agent, 研究趋势, (2026, 16), arXiv, AI Agent"
 ---
 
 # arXiv cs.AI Agent 研究趋势 (2026-07-16)

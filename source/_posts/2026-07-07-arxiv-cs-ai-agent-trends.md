@@ -10,6 +10,8 @@ categories:
 abbrlink: 56484
 date: 2026-07-07 12:00:00
 noindex: true
+description: "Agent 不再满足于\"用一次学一次\"，开始追求递归式自我改进。"
+keywords: "arxiv, cs.ai, agent, 趋势日报, (2026, 07), arXiv, Agent"
 ---
 
 # arXiv cs.AI Agent 趋势日报 (2026-07-07)

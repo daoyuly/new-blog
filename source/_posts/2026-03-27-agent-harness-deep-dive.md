@@ -11,6 +11,8 @@ categories:
   - Agent系统
 abbrlink: 12857
 date: 2026-03-27 14:30:00
+description: "1. 什么是 Agent Harness？"
+keywords: "agent, harness, 深度调研, 的运行时基础设施, Agent, Harness, Infrastructure, LangGraph"
 ---
 
 # Agent Harness 深度调研：AI Agent 的运行时基础设施

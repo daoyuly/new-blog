@@ -12,6 +12,8 @@ categories:
   - LLM/SLM 日报
 abbrlink: 32057
 date: 2026-07-11 09:00:00
+description: "- arXiv: 2607.08768 Kimi解读"
+keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
 ---
 
 

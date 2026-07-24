@@ -11,6 +11,8 @@ categories:
   - 技术哲学
 abbrlink: 91437
 date: 2026-05-17 12:30:00
+description: "Agent 的自我反思（Self-Reflection）面临一个根本的两难——"
+keywords: "agent, 系列（二）, 观与离——自我反思的双重法门, AI Agent, 禅, 自我反思, 元认知, 技术哲学"
 ---
 
 # 禅与 Agent 系列（二）：观与离——自我反思的双重法门

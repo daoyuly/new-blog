@@ -10,6 +10,8 @@ categories:
 abbrlink: 1175
 date: 2026-06-15 12:10:00
 noindex: true
+description: "今天的 cs.AI 领域呈现三大明确方向："
+keywords: "arxiv, cs.ai, agent, 趋势日报, (2026, 15), AI, daily"
 ---
 
 # ArXiv cs.AI Agent 相关论文趋势日报

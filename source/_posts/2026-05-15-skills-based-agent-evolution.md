@@ -13,6 +13,8 @@ categories:
 abbrindent: true
 abbrlink: 33615
 date: 2026-05-15 20:15:00
+description: "传统 AI Agent 系统依赖直接的工具调用（Tool Calling）机制。LLM 根据用户请求，选择适当的 API 或函数，传入参数，获取结果。这种模式看似简洁，却暗藏几个根本性缺陷："
+keywords: "skills, agent, 从工具调用到自主演化的技术范式, AI, Agent, Skills, LLM, Self-Evolving"
 ---
 
 # 基于 Skills 的 Agent 进化：从工具调用到自主演化的技术范式

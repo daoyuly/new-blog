@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 27954
 date: 2026-06-09 18:00:00
 noindex: true
+description: "摘要要点： 提出一种基于双过程认知理论的 LLM Agent 长期记忆系统，区分快速直觉式记忆检索与慢速推理式记忆整合。系统支持自进化，Agent 可从交互经验中持续积累和优化记忆。"
+keywords: "agent, memory, arxiv, (2026, 09), 记忆系统百花齐放, agent-memory, LLM"
 ---
 
 # Agent Memory arXiv 日报 (2026-06-09)

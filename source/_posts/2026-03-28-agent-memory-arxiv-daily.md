@@ -14,6 +14,8 @@ categories: [Agent Memory 研究]
 abbrlink: 32874
 date: 2026-03-28 00:00:00
 noindex: true
+description: "- ArXiv ID: 2603.25737"
+keywords: "agent, memory, research, daily, report, 2026年3月28日, Agent Memory, RAG"
 ---
 
 # Agent Memory 研究日报 - 2026年3月28日

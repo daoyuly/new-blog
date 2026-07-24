@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 53041
 date: 2026-03-29 00:00:00
+description: "DevOps & Cloud 分类是 OpenClaw 技能库中最庞大和最重要的分类之一，包含了 392 个技能，涵盖了现代软件开发生命周期中的各个 DevOps 和云服务相关领域。"
+keywords: "openclaw, skill, 每日推荐, devops, 与云服务, cloud, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - DevOps 与云服务

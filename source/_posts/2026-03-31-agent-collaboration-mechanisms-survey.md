@@ -10,6 +10,8 @@ categories:
   - AI技术研究
 abbrlink: 3342
 date: 2026-03-31 16:27:00
+description: "关键词: Multi-Agent Collaboration, Coordination, Communication, Consensus, Task Allocation, Conflict Resolution"
+keywords: "agent协作机制综述, 从单兵作战到团队协同的完整指南, AI Agent, Multi-Agent Collaboration, Coordination, Communication Protocol, Consensus, AI技术研究"
 ---
 
 # Agent协作机制综述 - 从单兵作战到团队协同的完整指南

@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 6399
 date: 2026-06-04 11:30:00
+description: "今天我们要聊的是 Git & GitHub 分类，这是整个 OpenClaw Skill 生态中最大的分类之一，包含 166 个 skills！从提交规范到 PR 风险分析，从 CI/CD 到安全审计，几乎覆盖了 Git 工作流的方方面面。"
+keywords: "openclaw, skill, 每日推荐, git, github, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Git 与 GitHub 🔀

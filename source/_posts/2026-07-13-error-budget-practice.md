@@ -9,6 +9,8 @@ categories:
   - 工程实践
 abbrlink: 24842
 date: 2026-07-13 19:00:00
+description: "Error Budget 这个概念，SRE 圈子里人尽皆知。但真把它用起来的团队不多。大部分团队的状态是：知道 Error Budget 是什么，甚至算过，但算完就贴墙上完了，没有接入任何决策流程。"
+keywords: "error, budget, slo, 制定到自动化发布冻结, Loop Engineering, SLO, Error Budget, SRE"
 ---
 
 # Error Budget 实战：从 SLO 制定到自动化发布冻结

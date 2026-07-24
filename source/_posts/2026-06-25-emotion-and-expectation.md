@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 40642
 date: 2026-06-25 12:00:00
+description: "你有没有想过，为什么同样拿到 80 分，有人高兴有人崩溃？"
+keywords: "情绪与预期, goal不等于expectation, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 # 情绪与预期：Goal不等于Expectation

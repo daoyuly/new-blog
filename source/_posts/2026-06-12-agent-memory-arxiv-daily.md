@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 931
 date: 2026-06-12 18:02:00
 noindex: true
+description: "今天从 arXiv cs.AI 频道筛选出 5 篇 与 Agent Memory / RAG / 检索增强相关的新论文。今天没有出现专门针对 episodic memory 或 long-term memory 的核心论文，但围绕 知..."
+keywords: "agent, memory, arxiv, (2026, 12), agent-memory, daily-report, RAG"
 ---
 
 ## 今日概览

@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 7_ Multi-Agent Collaboration
 tags: AI agent 设计
 abbrlink: 64701
 date: 2025-10-12 08:05:02
+description: "虽然单体 Agent 架构对于定义明确的问题可能是有效的，但在面对复杂的多领域任务时，其能力往往受到限制。多 Agent 协作模式通过将系统构建为由不同专门化 Agent 组成的协作集合来解决这些限制。这种方法基于任务分解原则，其中高..."
+keywords: "agentic, design, patterns, chapter, multi, agent, collaboration"
 ---
 
 # 第 7 章：多 Agent 协作

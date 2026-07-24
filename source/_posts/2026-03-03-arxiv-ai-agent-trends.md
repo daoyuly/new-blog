@@ -9,6 +9,8 @@ categories:
   - AI论文速递
 abbrlink: 14117
 date: 2026-03-03 13:00:00
+description: "今天 arXiv cs.AI 领域共发布多篇与 Agent 相关的重要论文，涵盖 工具使用（Tool-Use）、多智能体系统、安全对齐、自主微调 等多个热门方向。"
+keywords: "arxiv, agent, 最新趋势速递, 2026.03.03, AI, Agent, arXiv, LLM"
 ---
 
 ## 今日 Agent 论文概览

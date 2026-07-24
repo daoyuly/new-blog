@@ -10,6 +10,8 @@ tags:
   - Jenkins
 categories:
   - DevOps
+description: "这三个工具经常被放在一起比较，但其实它们干的不是同一件事。Zadig 做的是云原生 DevOps 流水线，Rancher 管的是 Kubernetes 集群，Jenkins 是老牌 CI/CD 引擎。搞清楚边界，才知道该用哪个。"
+keywords: "zadig, rancher, jenkins, devops, 工具到底该选谁, DevOps, Kubernetes, CI/CD"
 ---
 
 这三个工具经常被放在一起比较，但其实它们干的不是同一件事。Zadig 做的是云原生 DevOps 流水线，Rancher 管的是 Kubernetes 集群，Jenkins 是老牌 CI/CD 引擎。搞清楚边界，才知道该用哪个。

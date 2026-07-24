@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 44972
 date: 2026-05-31 11:30:00
+description: "通信是 AI Agent 与世界交互的桥梁。今天的分类涵盖了邮件、即时通讯、社交媒体、电话、团队协作等各类通信场景，是目前 Skills 生态中最庞大也最实用的分类之一。从 Gmail 自动回复到加密 P2P 消息，从 Rocket...."
+keywords: "openclaw, skill, 每日推荐, communication, 通信工具, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Communication 通信工具

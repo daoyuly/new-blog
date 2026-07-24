@@ -14,6 +14,8 @@ categories: [Agent Memory 研究]
 abbrlink: 50077
 date: 2026-03-26 18:00:00
 noindex: true
+description: "筛选范围: arXiv cs.AI (2026-03-25 至 2026-03-26)"
+keywords: "agent, memory, arxiv, (2026, 26), Agent Memory, AI, arXiv"
 ---
 
 # Agent Memory arXiv 日报 (2026-03-26)

@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 6400
 date: 2026-06-05 11:30:00
+description: "核心功能： 终极 GitHub 自动化框架，整合了 Issues、PR、Releases 等全流程操作，堪称 GitHub Skills 的「瑞士军刀」。"
+keywords: "openclaw, skill, 每日推荐, git, github, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 — Git 与 GitHub 🐙

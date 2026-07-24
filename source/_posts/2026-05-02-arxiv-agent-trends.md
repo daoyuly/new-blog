@@ -9,6 +9,8 @@ categories:
 abbrlink: 35619
 date: 2026-05-02 12:00:00
 noindex: true
+description: "本报告基于 2026 年 5 月 2 日的 arXiv cs.AI 论文，分析 agent 相关的最新研究趋势。"
+keywords: "arxiv, cs.ai, agent, 趋势报告, (2026, 02), AI, Agent"
 ---
 
 # 今日 ArXiv cs.AI Agent 相关论文趋势分析

@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 56453
 date: 2026-05-06 18:00:00
 noindex: true
+description: "今日从 arXiv cs.AI 类别中筛选出 4 篇与 Agent Memory 直接相关的高质量论文。这些论文涵盖了体验驱动的 RAG 策略编排、设备端个性化记忆存储、分层记忆架构优化等前沿方向。"
+keywords: "agent, memory, 每日速递, (2026, 06), arxiv, cs.ai, 相关论文分析"
 ---
 
 ## 概览

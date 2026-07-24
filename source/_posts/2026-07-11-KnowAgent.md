@@ -8,6 +8,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+description: "KnowAgent 是一个基于知识增强的大语言模型（LLM）智能体规划框架。当前 LLM Agent 在处理复杂任务时，常因缺乏特定领域的动作规划知识而产生幻觉或执行无效动作。KnowAgent 的核心价值在于引入动作知识库作为外部信..."
+keywords: "knowagent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
 ---
 
 # KnowAgent 项目深度分析报告

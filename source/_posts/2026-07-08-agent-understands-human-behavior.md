@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 887
 date: 2026-07-08 04:00:01
+description: "（本文内容生成中，请稍后刷新查看完整版本）"
+keywords: "agent如何理解人的行为, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 ## Agent如何理解人的行为

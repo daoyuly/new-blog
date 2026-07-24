@@ -12,6 +12,8 @@ categories: [Agent Memory 研究]
 abbrlink: 50982
 date: 2026-06-03 18:00:00
 noindex: true
+description: "- arXiv ID: 2606.03463 Kimi解读"
+keywords: "agent, memory, (2026, 03), 确定性记忆、信息增益驱动的记忆训练与自演化技能系统, agent-memory, arxiv, daily-report"
 ---
 
 # Agent Memory 日报 — 2026年6月3日

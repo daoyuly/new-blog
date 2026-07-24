@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 37100
 date: 2026-06-13 11:00:00
+description: "- 项目名称: Multimodal-Agent-RAG"
+keywords: "multimodal, agent, rag, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
 ---
 
 # Multimodal-Agent-RAG 项目深度分析报告

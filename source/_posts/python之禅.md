@@ -3,6 +3,8 @@ title: The Zen of Python
 tags: Python 语言学习
 abbrlink: 14499
 date: 2020-04-27 02:29:54
+description: "Beautiful is better than ugly."
+keywords: "the, zen, python"
 ---
 
 Beautiful is better than ugly.

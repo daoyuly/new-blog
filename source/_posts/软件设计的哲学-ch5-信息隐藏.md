@@ -3,6 +3,8 @@ title: 软件设计的哲学 - ch5
 date: 2021-02-5
 tags: 软件设计的哲学 软件开发 方法论
 abbrlink: 40939
+description: "Chapter 4 argued that modules should be deep. This chapter, and the next few that follow, discuss techniques for crea..."
+keywords: "软件设计的哲学, ch5"
 ---
 
 # 第 5 章 信息隐藏(和泄漏)

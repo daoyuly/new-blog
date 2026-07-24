@@ -3,6 +3,8 @@ title: 常见javascript解析器
 tags: 技术汇总
 abbrlink: 24882
 date: 2022-10-22 19:22:17
+description: "如果对编译器或者语言编译技术感兴趣，可以研究一些JavaScript解析器。"
+keywords: "常见javascript解析器"
 ---
 
 如果对编译器或者语言编译技术感兴趣，可以研究一些JavaScript解析器。

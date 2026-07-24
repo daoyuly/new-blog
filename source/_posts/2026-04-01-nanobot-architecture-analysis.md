@@ -18,6 +18,8 @@ keywords:
   - Multi-Channel
 abbrlink: 19726
 date: 2026-04-01 11:30:00
+description: "项目版本: Nanobot v0.1.4+"
+keywords: "nanobot多agent机制与系统架构深度解析, 港大ds开源的超轻量级ai助手, Nanobot, HKUDS, Multi-Agent, System Architecture, Lightweight, AI产品分析"
 ---
 
 # Nanobot多Agent机制与系统架构深度解析 - 港大DS开源的超轻量级AI助手

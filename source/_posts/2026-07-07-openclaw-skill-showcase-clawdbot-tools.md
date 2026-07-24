@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 12806
 date: 2026-07-07 11:30:00
+description: "Clawdbot Tools 是围绕 OpenClaw Agent 运行时构建的工具类 Skill 集合。如果说其他分类是让 Agent \"能做事\"，那这个分类就是让 Agent \"更好地运行\"——从安全防护、模型同步到跨 Agent..."
+keywords: "openclaw, skill, 每日推荐, clawdbot, tools, clawdbot-tools, 技术推荐"
 ---
 
 # 🤖 OpenClaw Skill 每日推荐 — Clawdbot Tools

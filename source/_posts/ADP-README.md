@@ -3,6 +3,8 @@ title: Agentic Design Patterns - README
 tags: AI agent 设计
 abbrlink: 12517
 date: 2025-10-01
+description: "为方便阅读而翻译此系列文章，从不谋取个人利益。并遵从开源协议。"
+keywords: "agentic, design, patterns, readme"
 ---
 
 **为方便阅读而翻译此系列文章，从不谋取个人利益。并遵从开源协议。**

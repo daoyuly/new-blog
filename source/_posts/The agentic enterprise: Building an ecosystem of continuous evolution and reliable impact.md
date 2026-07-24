@@ -5,6 +5,8 @@ title: >-
 tags: agentic enterprise evolution
 abbrlink: 41350
 date: 2026-04-21 23:08:18
+description: "《The agentic enterprise: Building an ecosystem of continuous evolution and reliable impact》由 Thoughtworks 与 AWS 联合发布，..."
+keywords: ""
 ---
 
 《The agentic enterprise: Building an ecosystem of continuous evolution and reliable impact》由 Thoughtworks 与 AWS 联合发布，围绕 **“代理型企业”** 的概念，提出了企业在 AI 时代应如何构建可持续进化、可靠影响的架构与策略。以下是报告中的**核心观点与洞察**及其**主要论证**：

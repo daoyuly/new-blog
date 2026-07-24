@@ -10,6 +10,8 @@ categories:
   - 技术深度分析
 abbrlink: 22328
 date: 2026-04-03 09:55:00
+description: "传统静态 prompt 存在以下根本性问题："
+keywords: "prompt, 在个人, agent, 助理系统的可行性与应用深度分析, AI, Prompt Engineering, Personal Agent, Dynamic Prompt"
 ---
 
 # 动态 Prompt 在个人 Agent 助理系统的可行性与应用深度分析

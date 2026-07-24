@@ -9,6 +9,8 @@ categories:
   - Agent 研究
 abbrlink: 29046
 date: 2026-03-29 00:00:00
+description: "Agent 系统与传统 AI 应用的核心区别在于 上下文连贯性 和 长期学习能力，这两者都依赖于 Memory 系统。"
+keywords: "agent, memory, 评估的工程化解决方案综述, Agent Memory, RAG 评估, 记忆系统, 工程实践, Agent 研究"
 ---
 
 # Agent Memory 评估的工程化解决方案综述

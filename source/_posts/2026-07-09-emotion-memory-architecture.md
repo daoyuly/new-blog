@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 15941
 date: 2026-07-09 00:00:00
+description: "为什么你记得十年前一次公开演讲时脑子空白、声音发抖的感觉，却完全想不起昨天午饭吃了什么？"
+keywords: "情绪记忆, 让agent记住感受, 情绪, agent, 记忆, 躯体标记, Agent 与情绪"
 ---
 
 # 情绪记忆：让Agent记住感受

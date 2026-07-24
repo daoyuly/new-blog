@@ -12,6 +12,8 @@ categories:
 abbrlink: 41813
 date: 2026-06-28 18:00:00
 noindex: true
+description: "- arXiv ID: 2606.27136"
+keywords: "agent, memory, arxiv, (2026, 28), agent-memory, LLM, RAG"
 ---
 
 # Agent Memory arXiv 日报 — 2026年6月28日

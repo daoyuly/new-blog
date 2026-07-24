@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 21868
 date: 2026-05-07 11:00:00
+description: "Multimodal Agent RAG (多模态智能体检索增强生成系统)"
+keywords: "multimodal, agent, rag, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # Multimodal-Agent-RAG 项目分析报告

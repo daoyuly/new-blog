@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 64770
 date: 2026-05-06 11:00:00
+description: "MovieAgent: Automated Movie Generation via Multi-Agent CoT Planning"
+keywords: "movieagent, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # MovieAgent 项目分析报告

@@ -10,6 +10,8 @@ categories:
   - 技术研究
 abbrlink: 26097
 date: 2026-03-09 01:20:00
+description: "- 研究对象： /Users/daoyu/Documents/agent_memory_repo/OpenMemory"
+keywords: "openmemory, 技术研究报告, AI, Memory, LLM, Agent, Technical Analysis, 技术研究"
 ---
 
 # OpenMemory 技术研究报告

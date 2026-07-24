@@ -13,6 +13,8 @@ tags:
   - architecture
 abbrlink: 9212
 noindex: true
+description: "2026年5月19日 arXiv cs.AI 分类共发布约 25 篇论文，其中 10 篇直接涉及 Agent 系统，覆盖生产架构、自主研究、计算机操控、评估与不确定性量化、工程应用等方向。以下按主题梳理。"
+keywords: "arxiv, agent, 2026, llm, multi-agent, computer-use, autonomous-research, architecture"
 ---
 
 ## 今日 Agent 论文趋势概览

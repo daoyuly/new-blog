@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 24888
 date: 2026-05-16 11:36:00
+description: "交通出行（Transportation）分类共收录 110 个 Skills，覆盖了从航班追踪、公共交通查询、路线规划到旅行代理的全方位出行能力。无论你是在伦敦赶地铁、纽约坐公交、德国坐火车，还是想追踪一架航班的实时位置，这个分类都有..."
+keywords: "openclaw, skill, 每日推荐, 交通出行, transportation, 技术推荐"
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 — 交通出行 (Transportation)

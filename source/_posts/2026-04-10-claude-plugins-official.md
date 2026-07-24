@@ -9,6 +9,8 @@ categories:
   - 开源项目研究
 abbrlink: 49088
 date: 2026-04-10 11:00:00
+description: "- 项目名称: claude-plugins-official"
+keywords: "claude, plugins, official, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
 ---
 
 # claude-plugins-official 项目深度分析报告

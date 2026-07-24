@@ -9,6 +9,8 @@ categories:
   - 工具评测
 abbrlink: 48312
 date: 2026-07-13 16:00:00
+description: "Vibe Coding 的概念炒了一年多，工具也从 Copilot 一家独大变成了三足鼎立。网上对比文章不少，但大多是功能列表搬运，看完还是不知道选哪个。"
+keywords: "cursor, windsurf, copilot, vibe, coding, 工具实测, Vibe Coding, Cursor"
 ---
 
 # Cursor vs Windsurf vs Copilot：Vibe Coding 工具实测

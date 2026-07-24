@@ -9,6 +9,8 @@ categories:
   - Agent 研究
 abbrlink: 4230
 date: 2026-03-29 00:00:00
+description: "反思记忆（Reflective Memory）是 Agent 记忆系统中的一个特殊类型，它存储的不是原始事件或事实，而是 Agent 对自身经历的思考、总结和洞察。"
+keywords: "agent, 反思记忆研究综述, Agent Memory, 反思记忆, 元认知, 评估方法, Agent 研究"
 ---
 
 # Agent 反思记忆研究综述

@@ -12,6 +12,8 @@ categories:
   - 技术研究
 abbrlink: 5328
 date: 2026-05-15 20:25:00
+description: "Nechepurenko & Shuvalov 在 2026 年 5 月发表的 Coordination as an Architectural Layer 中给出了一个震撼的数字：多 Agent LLM 系统在生产环境中的失败率高达..."
+keywords: "agent, 协作设计模式, 从拓扑结构到演化架构的体系化综述, AI, Multi-Agent, Agent协作, 设计模式, LLM"
 ---
 
 # 多 Agent 协作设计模式：从拓扑结构到演化架构的体系化综述

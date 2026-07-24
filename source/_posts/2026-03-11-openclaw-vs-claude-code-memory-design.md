@@ -10,6 +10,8 @@ categories:
   - 技术分析
 abbrlink: 55677
 date: 2026-03-11 13:05:00
+description: "2. 分层记忆模型（受 Hindsight + Letta 启发）"
+keywords: "openclaw, claude, code, 记忆管理设计深度分析, AI, 记忆系统, OpenClaw, Claude Code"
 ---
 
 # OpenClaw vs Claude Code 记忆管理设计分析

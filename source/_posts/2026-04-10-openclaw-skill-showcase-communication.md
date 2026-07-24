@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 42871
 date: 2026-04-10 11:30:00
+description: "今天我们介绍 OpenClaw 的 Communication（通信工具） 分类，这个分类包含 145 个技能，覆盖了邮件、即时通讯、社交媒体、语音通信等多个领域，让 AI 代理能够高效地进行各种形式的通信交互。"
+keywords: "openclaw, skill, 每日推荐, 通信工具, communication, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 通信工具

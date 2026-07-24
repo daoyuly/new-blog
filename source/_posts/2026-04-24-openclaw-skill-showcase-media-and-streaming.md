@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 62254
 date: 2026-04-24 00:00:00
+description: "媒体与流媒体分类汇集了 84 个强大的 OpenClaw Skills，涵盖了音频处理、视频制作、音乐生成、语音识别、媒体播放器控制、社交媒体管理等多个领域。这些技能让你的 AI 助手能够处理各种媒体任务，从简单的音乐播放到复杂的视频..."
+keywords: "openclaw, skill, 每日推荐, 媒体与流媒体, media-streaming, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 媒体与流媒体

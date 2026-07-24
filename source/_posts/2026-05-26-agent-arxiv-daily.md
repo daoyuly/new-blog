@@ -11,6 +11,8 @@ categories:
   - Agent系统
 abbrlink: 64991
 date: 2026-05-26 17:30:00
+description: "- arXiv: 2605.26114 Kimi解读"
+keywords: "agent, 最新研究综述（2026, 26）, Agent, LLM, Multi-Agent, Memory, Planning"
 ---
 
 # Agent 最新研究综述（2026-05-26）

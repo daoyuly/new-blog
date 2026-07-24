@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
 abbrlink: 27117
 date: 2026-04-18 18:00:00
 noindex: true
+description: "检索范围: cs.AI (Artificial Intelligence)"
+keywords: "agent, memory, arxiv, 2026, 超维度记忆突破与自演化协议, Agent Memory, arXiv, Hyperdimensional Computing"
 ---
 
 ## 📊 日报概览

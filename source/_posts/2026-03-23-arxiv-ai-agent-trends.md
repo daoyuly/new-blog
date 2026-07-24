@@ -10,6 +10,8 @@ categories:
   - AI研究趋势
 abbrlink: 54284
 date: 2026-03-23 12:00:00
+description: "今天的 arXiv cs.AI 领域发布了多篇与 Agent 相关的前沿论文，本文整理了其中 11 篇核心论文，并总结出当前 AI Agent 研究的六大趋势。"
+keywords: "arxiv, agent, 研究趋势, (2026, 23), arXiv, AI, Agent"
 ---
 
 # arXiv AI Agent 研究趋势 (2026-03-23)

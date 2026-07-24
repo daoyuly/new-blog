@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 56621
 date: 2026-06-30 11:30:00
+description: "Web & Frontend Development 分类几乎涉及了 Web 开发的每一个环节：浏览器自动化、网站构建、前端框架集成、SEO 分析、内容管理、部署上线……这是 OpenClaw 最活跃的社区之一，也反映了 AI Age..."
+keywords: "openclaw, skill, 每日推荐, web, frontend, development, web-and-frontend-development, 技术推荐"
 ---
 
 # 🌐 OpenClaw Skill 每日推荐 — Web & Frontend Development

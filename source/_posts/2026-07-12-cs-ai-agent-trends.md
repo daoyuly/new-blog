@@ -12,6 +12,8 @@ tags:
   - hallucination
   - LLM
 abbrlink: 63845
+description: "今天 arxiv cs.AI 共收录 25 篇新论文，其中与 Agent 直接相关或高度相关的有 6 篇。以下是按主题整理的趋势分析。"
+keywords: "cs.ai, agent, 趋势日报, 2026, multi-agent, memory, workflow, hallucination"
 ---
 
 # cs.AI Agent 趋势日报 — 2026年7月12日

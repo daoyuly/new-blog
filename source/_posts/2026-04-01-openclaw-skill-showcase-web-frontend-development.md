@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 56621
 date: 2026-04-01 00:00:00
+description: "今日我们介绍 Web & Frontend Development 分类，该分类包含 925个技能，是 OpenClaw 技能库中最为庞大和活跃的分类之一。这个分类涵盖了现代 Web 开发的方方面面，从前端框架、UI/UX 设计、浏览..."
+keywords: "openclaw, skill, 每日推荐, web, frontend, development, web-frontend-development, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Web & Frontend Development

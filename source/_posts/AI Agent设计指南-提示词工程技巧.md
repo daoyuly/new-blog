@@ -3,6 +3,8 @@ title: AI Agent设计指南-提示词工程技巧
 tags: Agent设计指南 多智能体 提示词工程技巧
 abbrlink: 55432
 date: 2026-04-14 22:17:07
+description: "本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。"
+keywords: "agent设计指南, 提示词工程技巧"
 ---
 
 # AI Agent设计全面信息收集报告

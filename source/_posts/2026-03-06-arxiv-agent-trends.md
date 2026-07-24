@@ -11,6 +11,8 @@ categories:
 abbrlink: 5050
 date: 2026-03-06 12:00:00
 noindex: true
+description: "今天共发布 12 篇 Agent 相关论文，呈现出以下关键趋势："
+keywords: "2026, arxiv, agent, 领域最新趋势, arXiv, AI, Agent, LLM"
 ---
 
 # 2026年3月6日 arXiv AI Agent 领域最新趋势

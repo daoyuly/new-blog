@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 16_ Resource-Aware Optimization
 tags: AI agent 设计
 abbrlink: 55238
 date: 2025-10-21 08:05:02
+description: "资源感知优化使智能 Agent 能够在运行过程中动态监控和管理计算、时间和财务资源。这与简单的规划不同，后者主要关注动作序列的安排。资源感知优化要求 Agent 就动作执行做出决策，以在指定的资源预算内达成目标或优化效率。这涉及在更准..."
+keywords: "agentic, design, patterns, chapter, resource, aware, optimization"
 ---
 
 # 第 16 章：资源感知优化

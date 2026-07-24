@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 39201
 date: 2026-07-17 06:00:01
+description: "上一篇我们确立了记忆的本质：Memory 不是流水账式的对话历史，而是结构化的 Scenario Graph（场景图谱）。"
+keywords: "基于场景图谱的情绪建模, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 上一篇我们确立了记忆的本质：Memory 不是流水账式的对话历史，而是结构化的 Scenario Graph（场景图谱）。

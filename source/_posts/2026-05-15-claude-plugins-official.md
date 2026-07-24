@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 45765
 date: 2026-05-15 11:00:00
+description: "A curated directory of high-quality plugins for Claude Code."
+keywords: "claude, plugins, official, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # claude-plugins-official 项目分析报告

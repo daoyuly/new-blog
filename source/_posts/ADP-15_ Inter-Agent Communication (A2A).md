@@ -3,6 +3,8 @@ title: Agentic Design Patterns - Chapter 15_ Inter-Agent Communication (A2A)
 tags: AI agent 设计
 abbrlink: 38412
 date: 2025-10-20 08:05:02
+description: "即便拥有先进能力，单个 AI Agent 在处理复杂、多方面问题时仍常面临局限。为克服此限制，Agent 间通信（A2A）使不同 AI Agent（可能基于不同框架构建）能够有效协作。这种协作涉及无缝协调、任务委派和信息交换。"
+keywords: "agentic, design, patterns, chapter, inter, agent, communication, (a2a)"
 ---
 
 # 第 15 章：Agent 间通信（A2A）

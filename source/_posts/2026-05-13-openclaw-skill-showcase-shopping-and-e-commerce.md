@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 43344
 date: 2026-05-13 00:00:00
+description: "购物与电商分类汇集了各种自动化购物体验、管理电商店铺、分析价格、追踪订单等技能。从 Amazon 自动下单到 Shopify 店铺管理，从加密货币交易到物流运输，这个分类涵盖了现代数字购物的方方面面。"
+keywords: "openclaw, skill, 每日推荐, shopping, commerce（购物与电商）, shopping-and-e-commerce, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - Shopping & E-commerce（购物与电商）

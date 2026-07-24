@@ -9,6 +9,8 @@ categories:
   - 技术趋势
 abbrlink: 33497
 date: 2026-03-09 11:16:00
+description: "2025年，一个新词开始在开发者社区流行——Vibe Coding（氛围编码）。它不仅仅是一个流行语，更代表了一场深刻的编程范式革命。在这场革命中，程序员不再是被动的代码编写者，而是与AI协作的创意导演。"
+keywords: "vibe, coding, ai时代编程范式的变革与未来, AI编程, Vibe Coding, 编程范式, 人工智能, 技术趋势"
 ---
 
 # Vibe Coding 综述：AI时代编程范式的变革与未来

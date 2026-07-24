@@ -10,6 +10,8 @@ categories:
   - 开源项目研究
 abbrlink: 62436
 date: 2026-03-17 02:00:00
+description: "项目路径: /Users/daoyu/Documents/ai-repo/CoPaw"
+keywords: "copaw, 项目分析报告, 多智能体协作框架, AI, Agent, Multi-Agent, Python, 开源项目"
 ---
 
 # CoPaw 项目分析报告

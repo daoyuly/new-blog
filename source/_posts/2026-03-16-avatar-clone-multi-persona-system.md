@@ -10,6 +10,8 @@ categories:
   - AI开发
 abbrlink: 52937
 date: 2026-03-16 21:15:00
+description: "基于《分身bot设计方案.md》，实现一个多身份真人分身 Bot 的 Agent 仿真对话系统。"
+keywords: "bot, 多身份真人分身对话系统, AI Agent, 多智能体, 数字分身, TypeScript, 项目, AI开发"
 ---
 
 ## 项目背景

@@ -13,6 +13,8 @@ categories: [Agent Memory 研究]
 abbrlink: 6892
 date: 2026-04-24 00:00:00
 noindex: true
+description: "今日（2026年4月24日）在arXiv人工智能领域的最新论文中，我们识别出多篇与Agent Memory、记忆增强系统、推理技能管理等相关的前沿研究。这些研究聚焦于推理技能的存储与检索、工具调用的注意力机制、个性化记忆的隐私保护、多..."
+keywords: "agent, memory领域最新研究进展, 2026年4月24日, Agent Memory, 推理技能, 工具检索, 多智能体通信, 个性化记忆"
 ---
 
 # Agent Memory领域最新研究进展综合报告

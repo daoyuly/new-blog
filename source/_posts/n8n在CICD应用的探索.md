@@ -3,6 +3,8 @@ title: n8n在CICD应用的探索
 tags: n8n
 abbrlink: 61870
 date: 2026-04-21 23:46:40
+description: "通过几个具体的场景来展示n8n和Jenkins在实际应用中的不同。"
+keywords: "n8n在cicd应用的探索"
 ---
 
 通过几个具体的场景来展示n8n和Jenkins在实际应用中的不同。

@@ -10,6 +10,8 @@ categories:
 abbrlink: 49223
 date: 2026-07-04 12:00:00
 noindex: true
+description: "数据来源：papers.cool/arxiv/cs.AI"
+keywords: "arxiv, cs.ai, 日报｜agent, 趋势速递, 2026, agent, AI趋势, 日报"
 ---
 
 # ArXiv cs.AI Agent 趋势速递

@@ -11,6 +11,8 @@ series:
   - Agent 与情绪
 abbrlink: 39200
 date: 2026-07-16 06:00:01
+description: "上一篇我们确立了记忆的重构方案：Memory 不等于对话历史的堆砌，Memory 等于 Scenario Graph（场景图谱）。Agent 的认知单元从离散的 Token 进化成了结构化的 Scenario。"
+keywords: "基于场景图谱的情绪建模, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
 ---
 
 上一篇我们确立了记忆的重构方案：Memory 不等于对话历史的堆砌，Memory 等于 Scenario Graph（场景图谱）。Agent 的认知单元从离散的 Token 进化成了结构化的 Scenario。

@@ -11,6 +11,8 @@ categories:
   - 技术推荐
 abbrlink: 55785
 date: 2026-04-30 00:00:00
+description: "安全与密码分类包含 54 个 skills，涵盖了密码管理、加密、安全审计、威胁检测等多个领域。在数字化时代，安全是任何 AI 助手和个人工作流的基础，这个分类的技能可以帮助你保护敏感数据、检测威胁、管理凭证，并构建更安全的应用程序。"
+keywords: "openclaw, skill, 每日推荐, 安全与密码, security, password, 安全, 密码"
 ---
 
 # 🛡️ OpenClaw Skill 每日推荐 - 安全与密码

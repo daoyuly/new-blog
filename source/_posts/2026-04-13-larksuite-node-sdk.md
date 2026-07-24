@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 58491
 date: 2026-04-13 11:00:00
+description: "Feishu Open Platform provides a series of atomic APIs on the server side to realize diversified functions, but the ac..."
+keywords: "larksuite, node, sdk, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # larksuite-node-sdk 项目分析报告

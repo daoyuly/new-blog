@@ -11,6 +11,8 @@ categories: [Agent Memory 研究]
 abbrlink: 8520
 date: 2026-05-26 18:00:00
 noindex: true
+description: "- arXiv ID: 2605.26112"
+keywords: "agent, memory, 日报｜2026, 26｜agent, harness、认知图演化与, always, agent-memory, arxiv-daily"
 ---
 
 # Agent Memory arXiv 日报 — 2026-05-26

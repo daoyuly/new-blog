@@ -11,6 +11,8 @@ categories:
   - 周报
 abbrlink: 71482
 date: 2026-06-14 19:30:00
+description: "本周的 8 篇 TKDE 技术蒸馏（#066–#072）几乎在说同一件事：Agent 的瓶颈不在模型，在基础设施。"
+keywords: "本周博客要点与思考（2026, w24）, agent, 基建的分化、vibe, coding, 的本质、穿戴设备的记忆困境, 周报, AI Agent"
 ---
 
 # 本周博客要点与思考（2026-W24）

@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 19881
 date: 2026-06-01 11:00:00
+description: "This project is an AI-powered travel agent that helps users plan trips to any city worldwide. It provides real-time i..."
+keywords: "travel, agent, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # travel-agent 项目分析报告

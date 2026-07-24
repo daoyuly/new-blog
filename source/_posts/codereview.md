@@ -2,6 +2,8 @@
 title: Code Review
 abbrlink: 18224
 date: 2008-02-04 10:28:00
+description: "- PR: Pull Request. 拉取请求，给其他项目提交代码"
+keywords: "code, review"
 ---
 
 # 经常在CR中见到的缩写

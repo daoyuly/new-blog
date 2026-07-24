@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 26181
 date: 2026-06-01 20:06:52
+description: "当 AI 从辅助工具升级为主要构建者，传统软件团队的运作方式正在失效。过去一年，ColaOS 团队经历了两次深刻的组织变革：从深陷“局部空转”的至暗时刻，到尝试跨职能自驱小队，再到彻底转向“Work With Agent”模式。最终，..."
+keywords: "杀死流水线, colaos, 团队的, native, 组织变革与, 倍效率跃迁, 技术蒸馏, TKDE"
 ---
 
 # 杀死流水线：ColaOS 团队的 AI Native 组织变革与 10 倍效率跃迁

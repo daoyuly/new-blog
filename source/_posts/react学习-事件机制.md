@@ -3,6 +3,8 @@ title: react学习-事件机制
 tags: 技术
 abbrlink: 887
 date: 2022-07-01 22:20:13
+description: "以下是从“实现机制 + 历史包袱 + 真实执行路径”三个层面，对 React 事件机制（Synthetic Event System）的深入拆解。不是“怎么用”，而是为什么必须这样设计、以及它的代价是什么。"
+keywords: "react学习, 事件机制"
 ---
 
 

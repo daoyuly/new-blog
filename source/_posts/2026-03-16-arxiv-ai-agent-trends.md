@@ -9,6 +9,8 @@ tags:
 categories: 论文趋势
 abbrlink: 9703
 date: 2026-03-16 12:00:00
+description: "今天的 arXiv cs.AI 分类中，与 Agent 相关的研究呈现出几个显著趋势。本文整理了最新的 10 篇 Agent 相关论文，涵盖自主推理、多智能体系统、工具规划和记忆优化等方向。"
+keywords: "arxiv, agent, 论文趋势, (2026, 16), AI, Agent, LLM"
 ---
 
 # arXiv AI Agent 论文趋势 (2026-03-16)

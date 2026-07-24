@@ -11,6 +11,8 @@ tags:
   - daily-report
 categories:
   - LLM/SLM 日报
+description: "- 摘要: llm,pyrodash,token,slm,cost,percent,reasoning,inference,usd,accuracy"
+keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
 ---
 
 

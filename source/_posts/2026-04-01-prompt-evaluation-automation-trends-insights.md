@@ -17,6 +17,8 @@ keywords:
   - TruLens
 abbrlink: 52027
 date: 2026-04-01 20:45:00
+description: "关键词: Prompt Evaluation, LLM Testing, Auto-evaluation, RAGAS, TruLens"
+keywords: "自动化prompt评估最新趋势与洞察深度综述, 从人工评审到ai驱动的质量保证, Prompt Evaluation, LLM Evaluation, Auto-evaluation, Quality Assurance, Best Practices, AI技术研究"
 ---
 
 # 自动化Prompt评估最新趋势与洞察深度综述 - 从人工评审到AI驱动的质量保证

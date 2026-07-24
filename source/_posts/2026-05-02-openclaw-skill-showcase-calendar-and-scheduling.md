@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 24518
 date: 2026-05-02 11:30:00
+description: "日历与调度分类是 OpenClaw 生态中非常实用的一类工具，涵盖了从个人时间管理到企业级日程安排的各个方面。无论你是想快速安排会议、同步多平台日历，还是自动化提醒，这个分类都能满足你的需求。"
+keywords: "openclaw, skill, 每日推荐, 日历与调度, 技术推荐"
 ---
 
 # OpenClaw Skill 每日推荐 - 日历与调度 (Calendar & Scheduling)

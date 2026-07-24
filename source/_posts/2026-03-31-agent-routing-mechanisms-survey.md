@@ -10,6 +10,8 @@ categories:
   - AI技术研究
 abbrlink: 763
 date: 2026-03-31 15:52:00
+description: "关键词: Agent Routing, Load Balancing, Multi-Agent Systems, Capability Matching, Dynamic Dispatch"
+keywords: "agent路由机制综述, 智能分发与负载均衡的完整指南, AI Agent, Agent Routing, Load Balancing, Multi-Agent Systems, Orchestration, AI技术研究"
 ---
 
 # Agent路由机制综述 - 智能分发与负载均衡的完整指南

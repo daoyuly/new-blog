@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 6233
 date: 2026-06-26 11:30:00
+description: "语音交互正成为 AI Agent 最自然的交互方式之一。今天我们走进 Speech & Transcription 分类，这里有 45 个 Skill，覆盖从语音识别（STT）、语音合成（TTS）到声音克隆、会议纪要等全链路场景。"
+keywords: "openclaw, skill, 每日推荐, 语音与转录, 技术推荐"
 ---
 
 # 🎙️ OpenClaw Skill 每日推荐 - 语音与转录

@@ -10,6 +10,8 @@ categories:
 abbrlink: 41596
 date: 2026-06-30 12:00:00
 noindex: true
+description: "今日 cs.AI 共 13 篇新文，其中 7 篇与 Agent 直接相关，趋势清晰——安全免疫、世界模型、训练蒸馏、具身规划四大方向齐头并进。"
+keywords: "agent, 2026, cs.ai, 趋势速览, arxiv, AI, 日报, Agent 日报"
 ---
 
 今日 [cs.AI](https://papers.cool/arxiv/cs.AI) 共 13 篇新文，其中 **7 篇与 Agent 直接相关**，趋势清晰——**安全免疫、世界模型、训练蒸馏、具身规划**四大方向齐头并进。

@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 28912
 date: 2026-05-25 11:06:32
+description: "大模型 Agent 正在重塑我们与软件乃至数字世界的交互方式。然而，随着 Agent 架构从单一的 LLM 调用向包含 Planner、Tool、Memory 的复杂工作流演进，我们面临着一个严峻的现实：Agent 犯错、变慢甚至“发..."
+keywords: "构建大规模, agent, 的“ct系统”, 可观测性实践与闭环演进, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 构建大规模 Agent 的“CT系统”：可观测性实践与闭环演进

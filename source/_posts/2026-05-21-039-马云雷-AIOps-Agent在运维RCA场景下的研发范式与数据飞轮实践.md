@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 37809
 date: 2026-05-21 11:06:32
+description: "AIOps 正在经历从 1.0 到 2.0 的范式跃迁。在 1.0 时代，我们依赖统计、传统机器学习甚至 CNN 等单点算法驱动，核心痛点是泛化能力极差——换个业务场景算法即失效。进入 2.0 时代，AIOps 走向 Agentic ..."
+keywords: "aiops, agent, 研发范式与数据飞轮实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # AIOps Agent 研发范式与数据飞轮实践

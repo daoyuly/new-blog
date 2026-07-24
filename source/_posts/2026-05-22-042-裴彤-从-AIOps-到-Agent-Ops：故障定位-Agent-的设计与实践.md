@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 46727
 date: 2026-05-22 11:05:41
+description: "运维正在经历从 AIOps 辅助分析向 Agent Ops 自主执行的深刻演进。尤其在 Vibe Coding 时代，开发范式从可控代码转向概率系统，系统的不可预测性急剧上升，可观测性的重要性前所未有地凸显。然而，直接将大模型引入运维..."
+keywords: "aiops, agent, ops, 故障定位, 的设计与实践, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # 从 AIOps 到 Agent Ops：故障定位 Agent 的设计与实践

@@ -7,6 +7,8 @@ categories:
   - 技术思考
 abbrlink: 48818
 date: 2026-05-05 12:09:38
+description: "大模型时代，AI Workload 正在发生根本性转变：从单一的模型训练，转向多模态数据处理、强化学习（RL）与在线推理的融合计算。伴随这一趋势，AI 基础设施技术栈正加速向 vLLM + PyTorch + Ray + K8s 收敛..."
+keywords: "k8s与ray协同, 大模型时代的ai基础设施调度范式, 技术蒸馏, TKDE, 技术思考"
 ---
 
 # K8s与Ray协同：大模型时代的AI基础设施调度范式

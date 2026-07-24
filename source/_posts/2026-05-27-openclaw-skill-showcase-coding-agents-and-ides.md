@@ -8,6 +8,8 @@ categories:
   - 技术推荐
 abbrlink: 43041
 date: 2026-05-27 11:30:00
+description: "Coding Agents & IDEs 是整个 OpenClaw 技能生态中当之无愧的「超级分类」。1200+ 个 Skill 覆盖了从代码生成、IDE 集成、多代理协作到安全审计的完整链路。无论你用的是 Claude Code、C..."
+keywords: "openclaw, skill, 每日推荐, 编码代理与, ide, coding-agents-and-ides, 技术推荐"
 ---
 
 # 🖥️ OpenClaw Skill 每日推荐 — 编码代理与 IDE

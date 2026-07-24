@@ -10,6 +10,8 @@ categories:
   - 技术推荐
 abbrlink: 5236
 date: 2026-04-12 00:00:00
+description: "DevOps & Cloud 分类涵盖了云服务管理、DevOps 自动化、基础设施即代码、监控告警、容器编排、安全扫描等领域的技能。这些技能帮助 AI 代理完成从基础设施部署到生产运维的全流程自动化。"
+keywords: "openclaw, skill, 每日推荐, devops, cloud, devops-and-cloud, 技术推荐"
 ---
 
 # 🚀 OpenClaw Skill 每日推荐 - DevOps & Cloud

@@ -12,6 +12,8 @@ categories:
 abbrlink: 13214
 date: 2026-07-11 18:00:00
 noindex: true
+description: "- arXiv ID: 2607.08716"
+keywords: "agent, memory, arxiv, (2026, 11), Agent Memory, arXiv, 长期记忆"
 ---
 
 # Agent Memory arXiv 日报 — 2026年7月11日

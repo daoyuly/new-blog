@@ -8,6 +8,8 @@ categories:
   - 开源项目研究
 abbrlink: 13081
 date: 2026-04-01 11:00:00
+description: "一个基于 FastAPI + Vue 3 + LangGraph 构建的前后端分离多智能体中医问诊系统，支持 DeepSeek（中医微调版）、TCM-LLM 等中医领域大模型，融合 Agent 动态推理与 GraphRAG 中医知识检..."
+keywords: "smarttcm, agent, system, 项目分析报告, open-source, ai-repo, daily-research, 开源项目研究"
 ---
 
 # SmartTCM-Agent-SYSTEM 项目分析报告

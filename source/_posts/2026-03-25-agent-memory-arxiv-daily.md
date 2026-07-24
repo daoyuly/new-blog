@@ -15,6 +15,8 @@ excerpt: >-
   PERMA，以及与开源记忆项目的关联分析。
 abbrlink: 38868
 noindex: true
+description: "今日 arXiv cs.AI 领域共发布 25+ 篇论文，经筛选后发现 2 篇高度相关 的 Agent Memory 论文，以及 1 篇 RAG 相关论文。"
+keywords: "agent, memory, 每日论文速递, (2026, 25), LLM, arxiv, daily-report"
 ---
 
 ## 📋 今日概览

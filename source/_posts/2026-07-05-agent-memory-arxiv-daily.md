@@ -13,6 +13,8 @@ categories:
 abbrlink: 47259
 date: 2026-07-05 18:00:00
 noindex: true
+description: "每日自动筛选 cs.AI 领域与 Agent Memory 相关的最新论文，分析趋势与关键洞察。"
+keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, hippocampus"
 ---
 
 # Agent Memory arXiv 日报 — 2026-07-05

@@ -9,6 +9,8 @@ categories:
   - 技术推荐
 abbrlink: 24707
 date: 2026-03-26 11:30:00
+description: "今天我们来探索 OpenClaw 最庞大的技能分类之一：浏览器与自动化。这个分类包含了 320 个技能，涵盖了从简单的浏览器控制到复杂的业务流程自动化，是提升生产力的宝藏库。"
+keywords: "openclaw, skill, 每日推荐, 浏览器与自动化, browser, automation, 技术推荐"
 ---
 
 # 浏览器与自动化 - 320 个自动化神器

@@ -10,6 +10,8 @@ categories:
   - 技术深度分析
 abbrlink: 56510
 date: 2026-04-03 14:20:00
+description: "OpenClaw 使用 JSON over WebSocket 进行通信："
+keywords: "openclaw, 架构深度解析, 插件、skills、channels, 与扩展机制的完整技术分析, OpenClaw, Architecture, AI Agent, Plugin System"
 ---
 
 # OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析
