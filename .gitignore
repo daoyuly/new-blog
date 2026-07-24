@@ -6,3 +6,8 @@ node_modules/
 .deploy*/
 .qodo
 .vercel
+public/
+.omc/
+node_modules/
+.db.json
+deploy.log
