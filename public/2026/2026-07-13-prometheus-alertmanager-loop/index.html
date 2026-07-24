@@ -9,19 +9,19 @@
   <title>从监控到闭环：Prometheus + Alertmanager 实操指南 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="从监控到闭环, prometheus, alertmanager, 实操指南, Loop Engineering, Prometheus, Alertmanager, 监控">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-13-prometheus-alertmanager-loop/">
-  <meta name="description" content="从监控到闭环：Prometheus + Alertmanager 实操指南前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。 但很多人的用法只停在”采集+告警”，没有走到”自动动作”那一步。这篇把从监控到闭环的完整链路串起来。 前提：Prometheus 基础架构假设你已经有了基本的 Pro">
+  <meta name="description" content="前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从监控到闭环：Prometheus + Alertmanager 实操指南">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-13-prometheus-alertmanager-loop/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="从监控到闭环：Prometheus + Alertmanager 实操指南前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。 但很多人的用法只停在”采集+告警”，没有走到”自动动作”那一步。这篇把从监控到闭环的完整链路串起来。 前提：Prometheus 基础架构假设你已经有了基本的 Pro">
+<meta property="og:description" content="前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-13T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-14T04:01:14.949Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.884Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Loop Engineering">
 <meta property="article:tag" content="Prometheus">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "从监控到闭环：Prometheus + Alertmanager 实操指南",
+    "description": "前面几篇聊闭环的理论和设计，这篇落地到具体工具。Prometheus + Alertmanager 是当下最主流的监控告警组合，也是大部分团队搭建闭环的起点。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-13T10:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.884Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-13-prometheus-alertmanager-loop/",
+    "inLanguage": "zh-CN",
+    "keywords": "从监控到闭环, prometheus, alertmanager, 实操指南, Loop Engineering, Prometheus, Alertmanager, 监控"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3589,6 +3614,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

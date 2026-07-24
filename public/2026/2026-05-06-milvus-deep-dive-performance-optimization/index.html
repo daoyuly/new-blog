@@ -9,19 +9,19 @@
   <title>Milvus 向量数据库深度指南：从入门到性能优化 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="milvus, 向量数据库深度指南, 从入门到性能优化, Vector Database, Milvus, AI Infrastructure, RAG, Performance Optimization">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数据。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-06-milvus-deep-dive-performance-optimization/">
-  <meta name="description" content="Milvus 向量数据库深度指南：从入门到性能优化目录 Milvus 简介 核心概念与架构 快速开始 基本使用 性能优化策略 生产环境部署 最佳实践 故障排查 案例分析 未来展望   1. Milvus 简介1.1 什么是 Milvus？Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数">
+  <meta name="description" content="Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Milvus 向量数据库深度指南：从入门到性能优化">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-06-milvus-deep-dive-performance-optimization/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="Milvus 向量数据库深度指南：从入门到性能优化目录 Milvus 简介 核心概念与架构 快速开始 基本使用 性能优化策略 生产环境部署 最佳实践 故障排查 案例分析 未来展望   1. Milvus 简介1.1 什么是 Milvus？Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数">
+<meta property="og:description" content="Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数据。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-06T03:13:00.000Z">
-<meta property="article:modified_time" content="2026-05-07T05:19:45.145Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.567Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="RAG">
 <meta property="article:tag" content="Vector Database">
@@ -41,6 +41,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Milvus 向量数据库深度指南：从入门到性能优化",
+    "description": "Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数据。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-06T03:13:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.567Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-06-milvus-deep-dive-performance-optimization/",
+    "inLanguage": "zh-CN",
+    "keywords": "milvus, 向量数据库深度指南, 从入门到性能优化, Vector Database, Milvus, AI Infrastructure, RAG, Performance Optimization"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3960,6 +3985,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,19 +9,19 @@
   <title>AI Agent 记忆召回机制深度分析 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agent, 记忆召回机制深度分析, AI, Agent, Memory, Recall, RAG, 技术研究">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="- ✅ Recall 支持文本和日期两种检索">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-03-24-ai-agent-memory-recall-deep-dive/">
-  <meta name="description" content="分析时间: 2026-03-24分析维度: 召回策略 | 排序机制 | 上下文注入 | 多阶段召回   召回机制总览召回模式分类   模式 代表项目 特点    单路召回 MemGPT, Memori 向量检索或关键词匹配   多路召回 mem0, ReMe 向量 + 图遍历   三层召回 SimpleMem 语义 + 词汇 + 符号   画像驱动 Memobase 用户画像 + 事件时间线">
+  <meta name="description" content="- ✅ Recall 支持文本和日期两种检索">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI Agent 记忆召回机制深度分析">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-03-24-ai-agent-memory-recall-deep-dive/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="分析时间: 2026-03-24分析维度: 召回策略 | 排序机制 | 上下文注入 | 多阶段召回   召回机制总览召回模式分类   模式 代表项目 特点    单路召回 MemGPT, Memori 向量检索或关键词匹配   多路召回 mem0, ReMe 向量 + 图遍历   三层召回 SimpleMem 语义 + 词汇 + 符号   画像驱动 Memobase 用户画像 + 事件时间线">
+<meta property="og:description" content="- ✅ Recall 支持文本和日期两种检索">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-24T05:30:00.000Z">
-<meta property="article:modified_time" content="2026-03-25T10:03:33.209Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.412Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Agent">
@@ -41,6 +41,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI Agent 记忆召回机制深度分析",
+    "description": "- ✅ Recall 支持文本和日期两种检索",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-03-24T05:30:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.412Z",
+    "url": "https://www.daoyuly.cn/2026/2026-03-24-ai-agent-memory-recall-deep-dive/",
+    "inLanguage": "zh-CN",
+    "keywords": "agent, 记忆召回机制深度分析, AI, Agent, Memory, Recall, RAG, 技术研究"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -742,8 +767,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-19-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-23-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">16篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -3931,6 +3956,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

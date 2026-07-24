@@ -1,6 +1,5 @@
 ---
-title: "gesture-lab 项目深度分析报告"
-date: 2026-07-23 11:00:00
+title: gesture-lab 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,8 +7,15 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
-description: "Gesture Lab 是一个专注于手势追踪与交互式视觉效果结合的“实验室”级别开源项目。它的核心价值在于打破了传统的人机交互界限，利用计算机视觉捕捉手部动作，并将其映射为 3D 场景中的实时交互指令。该项目不仅是一个技术演示，更是一..."
-keywords: "gesture, lab, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+description: >-
+  Gesture Lab
+  是一个专注于手势追踪与交互式视觉效果结合的“实验室”级别开源项目。它的核心价值在于打破了传统的人机交互界限，利用计算机视觉捕捉手部动作，并将其映射为 3D
+  场景中的实时交互指令。该项目不仅是一个技术演示，更是一...
+keywords: >-
+  gesture, lab, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis,
+  开源项目研究
+abbrlink: 21514
+date: 2026-07-23 11:00:00
 ---
 
 # gesture-lab 项目深度分析报告

@@ -9,19 +9,19 @@
   <title>适用于长时间运行应用程序开发的框架设计-学习体会 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="适用于长时间运行应用程序开发的框架设计, 学习体会">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="在智能体编码的前沿领域，框架设计是提升性能的关键。以下是我们如何帮助 Claude 在前端设计和长期自主软件工程方面取得更大进步。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/%E9%80%82%E7%94%A8%E4%BA%8E%E9%95%BF%E6%97%B6%E9%97%B4%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
-  <meta name="description" content="在智能体编码的前沿领域，框架设计是提升性能的关键。以下是我们如何帮助 Claude 在前端设计和长期自主软件工程方面取得更大进步。 本文由我们实验室团队成员 Prithvi Rajasekaran 撰写。 过去几个月，我一直在研究两个相互关联的问题：一是让 Claude 生成高质量的前端设计，二是让它无需人工干预即可构建完整的应用程序。这项工作源于我们之前对前端设计技能和长期运行的编码代理框架的改">
+  <meta name="description" content="在智能体编码的前沿领域，框架设计是提升性能的关键。以下是我们如何帮助 Claude 在前端设计和长期自主软件工程方面取得更大进步。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="适用于长时间运行应用程序开发的框架设计-学习体会">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/%E9%80%82%E7%94%A8%E4%BA%8E%E9%95%BF%E6%97%B6%E9%97%B4%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="在智能体编码的前沿领域，框架设计是提升性能的关键。以下是我们如何帮助 Claude 在前端设计和长期自主软件工程方面取得更大进步。 本文由我们实验室团队成员 Prithvi Rajasekaran 撰写。 过去几个月，我一直在研究两个相互关联的问题：一是让 Claude 生成高质量的前端设计，二是让它无需人工干预即可构建完整的应用程序。这项工作源于我们之前对前端设计技能和长期运行的编码代理框架的改">
+<meta property="og:description" content="在智能体编码的前沿领域，框架设计是提升性能的关键。以下是我们如何帮助 Claude 在前端设计和长期自主软件工程方面取得更大进步。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-18T07:35:10.000Z">
-<meta property="article:modified_time" content="2026-04-20T04:10:51.750Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.989Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Agent开发 Claude">
 <meta name="twitter:card" content="summary">
@@ -37,6 +37,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "适用于长时间运行应用程序开发的框架设计-学习体会",
+    "description": "在智能体编码的前沿领域，框架设计是提升性能的关键。以下是我们如何帮助 Claude 在前端设计和长期自主软件工程方面取得更大进步。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-04-18T07:35:10.000Z",
+    "dateModified": "2026-07-24T02:24:26.989Z",
+    "url": "https://www.daoyuly.cn/2026/%E9%80%82%E7%94%A8%E4%BA%8E%E9%95%BF%E6%97%B6%E9%97%B4%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/",
+    "inLanguage": "zh-CN",
+    "keywords": "适用于长时间运行应用程序开发的框架设计, 学习体会"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3551,6 +3576,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

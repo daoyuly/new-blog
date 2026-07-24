@@ -9,19 +9,19 @@
   <title>多模态LLM搜索数据构建：从非结构化鸿沟到混合检索架构实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="多模态llm搜索数据构建, 从非结构化鸿沟到混合检索架构实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="大模型在企业落地的核心瓶颈，往往不在于模型本身的参数规模，而在于“知识”的供给。企业内部散落着大量非结构化数据——历史文档、图纸、报表、音视频，它们是大模型理解的燃料，却因为难以解析、清洗和对齐，形成了巨大的落地鸿沟。如何让这些沉睡的...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-16-042-4-%E8%B5%B5%E6%99%A8%E9%98%B3-%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E9%80%82%E7%94%A8%E4%BA%8E-LLM-%E6%90%9C%E7%B4%A2%E7%9A%84%E6%95%B0%E6%8D%AE/">
-  <meta name="description" content="多模态LLM搜索数据构建：从非结构化鸿沟到混合检索架构实践导语大模型在企业落地的核心瓶颈，往往不在于模型本身的参数规模，而在于“知识”的供给。企业内部散落着大量非结构化数据——历史文档、图纸、报表、音视频，它们是大模型理解的燃料，却因为难以解析、清洗和对齐，形成了巨大的落地鸿沟。如何让这些沉睡的多模态数据转化为 LLM 可检索、可推理的高质量知识库？本文将拆解基于多模态的混合检索架构，从数据融合、">
+  <meta name="description" content="大模型在企业落地的核心瓶颈，往往不在于模型本身的参数规模，而在于“知识”的供给。企业内部散落着大量非结构化数据——历史文档、图纸、报表、音视频，它们是大模型理解的燃料，却因为难以解析、清洗和对齐，形成了巨大的落地鸿沟。如何让这些沉睡的...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多模态LLM搜索数据构建：从非结构化鸿沟到混合检索架构实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-16-042-4-%E8%B5%B5%E6%99%A8%E9%98%B3-%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E9%80%82%E7%94%A8%E4%BA%8E-LLM-%E6%90%9C%E7%B4%A2%E7%9A%84%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="多模态LLM搜索数据构建：从非结构化鸿沟到混合检索架构实践导语大模型在企业落地的核心瓶颈，往往不在于模型本身的参数规模，而在于“知识”的供给。企业内部散落着大量非结构化数据——历史文档、图纸、报表、音视频，它们是大模型理解的燃料，却因为难以解析、清洗和对齐，形成了巨大的落地鸿沟。如何让这些沉睡的多模态数据转化为 LLM 可检索、可推理的高质量知识库？本文将拆解基于多模态的混合检索架构，从数据融合、">
+<meta property="og:description" content="大模型在企业落地的核心瓶颈，往往不在于模型本身的参数规模，而在于“知识”的供给。企业内部散落着大量非结构化数据——历史文档、图纸、报表、音视频，它们是大模型理解的燃料，却因为难以解析、清洗和对齐，形成了巨大的落地鸿沟。如何让这些沉睡的...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-16T06:04:31.000Z">
-<meta property="article:modified_time" content="2026-07-19T04:51:52.092Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.896Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "多模态LLM搜索数据构建：从非结构化鸿沟到混合检索架构实践",
+    "description": "大模型在企业落地的核心瓶颈，往往不在于模型本身的参数规模，而在于“知识”的供给。企业内部散落着大量非结构化数据——历史文档、图纸、报表、音视频，它们是大模型理解的燃料，却因为难以解析、清洗和对齐，形成了巨大的落地鸿沟。如何让这些沉睡的...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-16T06:04:31.000Z",
+    "dateModified": "2026-07-24T02:24:26.896Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-16-042-4-%E8%B5%B5%E6%99%A8%E9%98%B3-%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E9%80%82%E7%94%A8%E4%BA%8E-LLM-%E6%90%9C%E7%B4%A2%E7%9A%84%E6%95%B0%E6%8D%AE/",
+    "inLanguage": "zh-CN",
+    "keywords": "多模态llm搜索数据构建, 从非结构化鸿沟到混合检索架构实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3585,6 +3610,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

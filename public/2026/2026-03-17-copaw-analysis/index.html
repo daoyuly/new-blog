@@ -9,16 +9,16 @@
   <title>CoPaw 项目分析报告 - 多智能体协作框架 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="copaw, 项目分析报告, 多智能体协作框架, AI, Agent, Multi-Agent, Python, 开源项目">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="项目路径: /Users/daoyu/Documents/ai-repo/CoPaw">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-03-17-copaw-analysis/">
-  <meta name="description" content="CoPaw 项目分析报告研究日期: 2026-03-17项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;CoPaw  1. 项目概述![Code Style](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;code%20 style-black-black.svg?logo&#x3D;python&amp;label&#x3D;CodeS">
+  <meta name="description" content="项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;CoPaw">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CoPaw 项目分析报告 - 多智能体协作框架">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-03-17-copaw-analysis/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="CoPaw 项目分析报告研究日期: 2026-03-17项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;CoPaw  1. 项目概述![Code Style](https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;code%20 style-black-black.svg?logo&#x3D;python&amp;label&#x3D;CodeS">
+<meta property="og:description" content="项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;CoPaw">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.shields.io/badge/GitHub-Repo-black.svg?logo=github">
 <meta property="og:image" content="https://img.shields.io/pypi/v/copaw?color=3775A9&label=PyPI&logo=pypi">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://img.shields.io/badge/DeepWiki-Ask_Devin-navy.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==">
 <meta property="og:image" content="https://img.shields.io/badge/Discord-Join_Us-blueviolet.svg?logo=discord">
 <meta property="article:published_time" content="2026-03-16T18:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-18T04:10:43.601Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.400Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Agent">
@@ -52,6 +52,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "CoPaw 项目分析报告 - 多智能体协作框架",
+    "description": "项目路径: /Users/daoyu/Documents/ai-repo/CoPaw",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-03-16T18:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.400Z",
+    "url": "https://www.daoyuly.cn/2026/2026-03-17-copaw-analysis/",
+    "inLanguage": "zh-CN",
+    "keywords": "copaw, 项目分析报告, 多智能体协作框架, AI, Agent, Multi-Agent, Python, 开源项目"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3637,6 +3662,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

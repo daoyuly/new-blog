@@ -9,19 +9,19 @@
   <title>主动型智能体：将大语言模型智能体从被动响应转向主动协助 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="主动型智能体, 将大语言模型智能体从被动响应转向主动协助, proactive agent, 论文追踪">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/proactive_agent/">
-  <meta name="description" content="主动型智能体：将大语言模型智能体从被动响应转向主动协助Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance 作者：Yaxi Lu¹, Shenzhi Yang², Cheng Qian¹, Guirong Chen², Qinyu Luo¹, Yesai Wu¹, Huadong Wang">
+  <meta name="description" content="Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance">
 <meta property="og:type" content="article">
 <meta property="og:title" content="主动型智能体：将大语言模型智能体从被动响应转向主动协助">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/proactive_agent/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="主动型智能体：将大语言模型智能体从被动响应转向主动协助Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance 作者：Yaxi Lu¹, Shenzhi Yang², Cheng Qian¹, Guirong Chen², Qinyu Luo¹, Yesai Wu¹, Huadong Wang">
+<meta property="og:description" content="Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-16T14:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-18T04:01:59.753Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.958Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="proactive agent">
 <meta name="twitter:card" content="summary">
@@ -37,6 +37,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "主动型智能体：将大语言模型智能体从被动响应转向主动协助",
+    "description": "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-16T14:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.958Z",
+    "url": "https://www.daoyuly.cn/2026/proactive_agent/",
+    "inLanguage": "zh-CN",
+    "keywords": "主动型智能体, 将大语言模型智能体从被动响应转向主动协助, proactive agent, 论文追踪"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -240,7 +265,7 @@ var _hmt = _hmt || [];
         <h1 id="主动型智能体：将大语言模型智能体从被动响应转向主动协助"><a href="#主动型智能体：将大语言模型智能体从被动响应转向主动协助" class="headerlink" title="主动型智能体：将大语言模型智能体从被动响应转向主动协助"></a>主动型智能体：将大语言模型智能体从被动响应转向主动协助</h1><p><strong>Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance</strong></p>
 <p><strong>作者</strong>：Yaxi Lu¹, Shenzhi Yang², Cheng Qian¹, Guirong Chen², Qinyu Luo¹, Yesai Wu¹, Huadong Wang¹, Xin Cong¹, Zhong Zhang¹, Yankai Lin², Weiwen Liu³, Yasheng Wang³, Zhiyuan Liu¹, Fangming Liu⁴, Maosong Sun¹</p>
 <p>¹ 清华大学计算机科学与技术系<br>² 中国人民大学高瓴人工智能学院<br>³ 华为诺亚方舟实验室<br>⁴ 鹏城实验室</p>
-<p>邮箱：<a href="mailto:&#108;&#121;&#x78;&#50;&#51;&#64;&#x6d;&#x61;&#105;&#108;&#115;&#x2e;&#x74;&#115;&#x69;&#x6e;&#103;&#x68;&#x75;&#97;&#46;&#101;&#100;&#117;&#x2e;&#99;&#x6e;">&#108;&#121;&#x78;&#50;&#51;&#64;&#x6d;&#x61;&#105;&#108;&#115;&#x2e;&#x74;&#115;&#x69;&#x6e;&#103;&#x68;&#x75;&#97;&#46;&#101;&#100;&#117;&#x2e;&#99;&#x6e;</a>, <a href="mailto:&#x6d;&#114;&#108;&#121;&#x6b;&#x34;&#x32;&#x33;&#x40;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;">&#x6d;&#114;&#108;&#121;&#x6b;&#x34;&#x32;&#x33;&#x40;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;</a>, <a href="mailto:&#108;&#x69;&#117;&#x7a;&#121;&#x40;&#x74;&#x73;&#105;&#110;&#103;&#104;&#x75;&#97;&#46;&#101;&#100;&#117;&#46;&#99;&#110;">&#108;&#x69;&#117;&#x7a;&#121;&#x40;&#x74;&#x73;&#105;&#110;&#103;&#104;&#x75;&#97;&#46;&#101;&#100;&#117;&#46;&#99;&#110;</a></p>
+<p>邮箱：<a href="mailto:&#108;&#x79;&#x78;&#50;&#51;&#64;&#109;&#97;&#x69;&#x6c;&#x73;&#x2e;&#x74;&#x73;&#x69;&#x6e;&#103;&#104;&#117;&#x61;&#x2e;&#x65;&#x64;&#117;&#x2e;&#99;&#110;">&#108;&#x79;&#x78;&#50;&#51;&#64;&#109;&#97;&#x69;&#x6c;&#x73;&#x2e;&#x74;&#x73;&#x69;&#x6e;&#103;&#104;&#117;&#x61;&#x2e;&#x65;&#x64;&#117;&#x2e;&#99;&#110;</a>, <a href="mailto:&#109;&#x72;&#x6c;&#x79;&#x6b;&#52;&#50;&#x33;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#109;">&#109;&#x72;&#x6c;&#x79;&#x6b;&#52;&#50;&#x33;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#109;</a>, <a href="mailto:&#x6c;&#105;&#x75;&#x7a;&#121;&#x40;&#116;&#x73;&#x69;&#x6e;&#x67;&#104;&#117;&#97;&#46;&#x65;&#x64;&#x75;&#x2e;&#99;&#110;">&#x6c;&#105;&#x75;&#x7a;&#121;&#x40;&#116;&#x73;&#x69;&#x6e;&#x67;&#104;&#117;&#97;&#46;&#x65;&#x64;&#x75;&#x2e;&#99;&#110;</a></p>
 <p>预印本日期：2024年12月3日 (arXiv:2410.12361v3 [cs.AI])</p>
 <hr>
 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>由大语言模型驱动的智能体已经在解决复杂任务方面展现出卓越的能力。然而,目前大多数智能体系统仍然是<strong>被动响应式</strong>的,这限制了它们在需要远见和自主决策场景中的有效性。在本文中,我们尝试解决开发<strong>主动型智能体</strong>的挑战——这类智能体能够在没有明确人类指令的情况下,自主预测并发起任务。我们针对这一问题提出了一种新颖的数据驱动方法。首先,我们收集真实世界的人类活动数据,以生成主动型任务的预测。这些预测随后由人类标注者标记为接受或拒绝。带标签的数据被用来训练一个奖励模型,该模型模拟人类判断,并作为大语言模型智能体主动性的自动评估器。基于此,我们开发了一个全面的数据生成流水线,创建了多样化的数据集 <strong>ProactiveBench</strong>,包含 6,790 个事件。最后,我们证明使用所提出的 ProactiveBench 微调模型可以显著激发大语言模型智能体的主动性。实验结果显示,我们微调后的模型在主动提供协助方面达到了 <strong>66.47%</strong> 的 F1 分数,超越了所有开源和闭源模型。这些结果凸显了我们的方法在创建更具主动性、更有效的智能体系统方面的潜力,为未来人机协作研究铺平了道路。¹</p>
@@ -4007,6 +4032,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,31 +9,25 @@
   <title>OpenAgents 项目深度分析报告 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="openagents, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="OpenAgents 是一个专为“计划优先”开发工作流设计的 AI Agent 框架，其核心价值在于引入了基于审批的执行机制。在当前 AI 辅助编程领域，大模型常因“幻觉”或上下文理解偏差直接修改代码导致破坏性后果。OpenAgent...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-14-OpenAgents/">
-  <meta name="description" content="OpenAgents 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-14 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;OpenAgents   📊 项目概览 项目名称: OpenAgents 文件数量: 587 个文件 主要插件: 0 个    ⚠️ AI 分">
+  <meta name="description" content="OpenAgents 是一个专为“计划优先”开发工作流设计的 AI Agent 框架，其核心价值在于引入了基于审批的执行机制。在当前 AI 辅助编程领域，大模型常因“幻觉”或上下文理解偏差直接修改代码导致破坏性后果。OpenAgent...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenAgents 项目深度分析报告">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-14-OpenAgents/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="OpenAgents 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-14 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;OpenAgents   📊 项目概览 项目名称: OpenAgents 文件数量: 587 个文件 主要插件: 0 个    ⚠️ AI 分">
+<meta property="og:description" content="OpenAgents 是一个专为“计划优先”开发工作流设计的 AI Agent 框架，其核心价值在于引入了基于审批的执行机制。在当前 AI 辅助编程领域，大模型常因“幻觉”或上下文理解偏差直接修改代码导致破坏性后果。OpenAgent...">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.shields.io/github/stars/darrenhinde/OpenAgents?style=social">
-<meta property="og:image" content="https://img.shields.io/badge/License-MIT-yellow.svg">
-<meta property="og:image" content="https://img.shields.io/github/last-commit/darrenhinde/OpenAgents">
-<meta property="og:image" content="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
-<meta property="og:image" content="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow.svg?style=flat&logo=buy-me-a-coffee">
 <meta property="article:published_time" content="2026-07-14T03:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-14T04:01:14.951Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.887Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="open-source">
 <meta property="article:tag" content="ai-repo">
 <meta property="article:tag" content="daily-research">
 <meta property="article:tag" content="deep-analysis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.shields.io/github/stars/darrenhinde/OpenAgents?style=social">
   
   
     <link rel="icon" href="/favicon.png">
@@ -46,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "OpenAgents 项目深度分析报告",
+    "description": "OpenAgents 是一个专为“计划优先”开发工作流设计的 AI Agent 框架，其核心价值在于引入了基于审批的执行机制。在当前 AI 辅助编程领域，大模型常因“幻觉”或上下文理解偏差直接修改代码导致破坏性后果。OpenAgent...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-14T03:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.887Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-14-OpenAgents/",
+    "inLanguage": "zh-CN",
+    "keywords": "openagents, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -254,23 +273,82 @@ var _hmt = _hmt || [];
 <hr>
 <h2 id="📊-项目概览"><a href="#📊-项目概览" class="headerlink" title="📊 项目概览"></a>📊 项目概览</h2><ul>
 <li><strong>项目名称</strong>: OpenAgents</li>
-<li><strong>文件数量</strong>: 587 个文件</li>
+<li><strong>文件数量</strong>: 559 个文件</li>
 <li><strong>主要插件</strong>: 0 个</li>
 </ul>
 <hr>
-<blockquote>
-<p>⚠️ AI 分析失败，本报告基于项目基本信息生成。</p>
-</blockquote>
-<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><div align="center">
-
-<h1 id="OpenAgents"><a href="#OpenAgents" class="headerlink" title="OpenAgents"></a>OpenAgents</h1><h3 id="AI-agent-framework-for-plan-first-development-workflows-with-approval-based-execution"><a href="#AI-agent-framework-for-plan-first-development-workflows-with-approval-based-execution" class="headerlink" title="AI agent framework for plan-first development workflows with approval-based execution"></a>AI agent framework for plan-first development workflows with approval-based execution</h3><p><a target="_blank" rel="noopener" href="https://github.com/darrenhinde/OpenAgents/stargazers"><img src="https://img.shields.io/github/stars/darrenhinde/OpenAgents?style=social" alt="GitHub stars"></a><br><a target="_blank" rel="noopener" href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a><br><a target="_blank" rel="noopener" href="https://github.com/darrenhinde/OpenAgents/commits/main"><img src="https://img.shields.io/github/last-commit/darrenhinde/OpenAgents" alt="GitHub last commit"></a><br><a href="docs/contributing/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a><br><a target="_blank" rel="noopener" href="https://buymeacoffee.com/darrenhinde"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow.svg?style=flat&logo=buy-me-a-coffee" alt="Buy Me A Coffee"></a></p>
-<p><strong>Multi-language support:</strong> TypeScript • Python • Go • Rust<br><strong>Features:</strong> Automatic testing • Code review • Validation</p>
-<blockquote>
-<p><strong>🚀 Future Plans:</strong> Currently optimized for OpenCode CLI. Support for other </p>
-</blockquote>
-<hr>
-<h2 id="📁-文件结构示例"><a href="#📁-文件结构示例" class="headerlink" title="📁 文件结构示例"></a>📁 文件结构示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/registry.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/CREATING_TESTS.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/test-path-resolution.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/INTEGRATION_TESTS.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/.eval-config.example.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/README.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/.gitignore</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/package.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/demo-enhanced-features.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/run-test-verbose.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/test-agent-manual.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/test-agent-direct.ts</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/test-event-inspector.js</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/test-timeline.ts</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/test-session-reader.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/verify-timeline.ts</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/test/test-simplified-approach.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/utils/run-tests-batch.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/utils/check-agent.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/demo-logging.ts</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/debug/show-test-conversation.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/debug/inspect-session.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/debug/debug-session.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/debug/test-debug.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/debug/debug-claude-session.mjs</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/scripts/debug/debug-session.ts</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/tsconfig.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/LLM_INTEGRATION_VALIDATION.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/src/types/index.ts</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenAgents/evals/framework/src/collector/message-parser.ts</span><br><span class="line">...</span><br><span class="line">(共 587 个文件)</span><br></pre></td></tr></table></figure>
-
+<h1 id="OpenAgents-开源项目深度研究报告"><a href="#OpenAgents-开源项目深度研究报告" class="headerlink" title="OpenAgents 开源项目深度研究报告"></a>OpenAgents 开源项目深度研究报告</h1><h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p><strong>项目定位与核心价值：</strong><br>OpenAgents 是一个专为“计划优先”开发工作流设计的 AI Agent 框架，其核心价值在于引入了<strong>基于审批的执行机制</strong>。在当前 AI 辅助编程领域，大模型常因“幻觉”或上下文理解偏差直接修改代码导致破坏性后果。OpenAgents 逆转了这一范式，要求 AI Agent 必须先提出完整的实施计划，在获得人类开发者的明确审批后，才能进行增量式的代码编写与修改。这种设计在赋予 AI 高度自主性的同时，守住了代码安全与质量控制的底线。</p>
+<p><strong>主要功能列表：</strong></p>
+<ul>
+<li><strong>多语言支持</strong>：原生兼容 TypeScript、Python、Go、Rust 等主流开发语言。</li>
+<li><strong>计划优先工作流</strong>：强制 Agent 在动手前生成架构设计与实施步骤。</li>
+<li><strong>增量执行与验证</strong>：按步骤执行代码修改，每一步伴随自动测试与类型检查。</li>
+<li><strong>自动化代码审查</strong>：内置质量检测机制，确保增量代码符合工程规范。</li>
+<li><strong>OpenCode CLI 深度集成</strong>：当前版本针对 OpenCode CLI 进行了优化，未来将扩展至 Cursor、Claude Code 等工具。</li>
+</ul>
+<h2 id="2-技术栈分析"><a href="#2-技术栈分析" class="headerlink" title="2. 技术栈分析"></a>2. 技术栈分析</h2><p><strong>技术与框架：</strong></p>
+<ul>
+<li><strong>核心语言</strong>：鉴于其对 TypeScript、Python、Go、Rust 的多语言支持能力，项目底层极有可能采用 Rust 或 Go 编写以实现高性能的跨语言调用，或通过标准的 LSP (Language Server Protocol) 和 AST 解析工具链进行多语言适配。</li>
+<li><strong>交互层</strong>：基于 CLI (OpenCode CLI) 构建交互界面，通过标准输入输出流与底层 Agent 逻辑通信。</li>
+<li><strong>集成接口</strong>：提供标准化接口以便未来接入 Cursor、Claude Code 等图形化或终端 AI 工具。</li>
+</ul>
+<p><strong>架构特点：</strong></p>
+<ul>
+<li><strong>解耦设计</strong>：将“规划”、“执行”、“验证”三个阶段物理隔离。规划层仅处理逻辑与架构，执行层仅负责代码生成，验证层负责质量门禁。</li>
+<li><strong>事件驱动&#x2F;状态机模型</strong>：基于审批的工作流必然依赖状态机管理（如 <code>Pending Approval</code> -&gt; <code>Executing</code> -&gt; <code>Validating</code> -&gt; <code>Completed/Rejected</code>）。</li>
+</ul>
+<p><strong>依赖关系：</strong><br>项目外部依赖极简（根据提供的信息），主要依赖宿主环境的语言工具链（如 <code>tsc</code>, <code>mypy</code>, <code>rustc</code>, <code>go vet</code>）作为验证沙盒，以及与底层大模型 API 的通信库。</p>
+<h2 id="3-核心功能-组件分析"><a href="#3-核心功能-组件分析" class="headerlink" title="3. 核心功能&#x2F;组件分析"></a>3. 核心功能&#x2F;组件分析</h2><p><strong>主要功能模块：</strong></p>
+<ol>
+<li><strong>Planner（规划器）</strong>：接收用户的自然语言需求，结合当前代码库上下文，生成结构化的开发计划。</li>
+<li><strong>Approval Gateway（审批网关）</strong>：人机交互界面，展示 Planner 的输出，等待开发者给出 Yes&#x2F;No 或修改建议的指令。</li>
+<li><strong>Executor（执行器）</strong>：在获得授权后，按照既定计划进行代码的增量生成与修改。</li>
+<li><strong>Validator（验证器）</strong>：在每次增量执行后，触发对应语言的编译器、Linter 或测试套件。</li>
+</ol>
+<p><strong>关键组件说明与关系：</strong><br>工作流呈现严格的线性与闭环特征：<code>User Input</code> -&gt; <code>Planner</code> 生成提案 -&gt; <code>Approval Gateway</code> 拦截并请求人类确认 -&gt; 人类批准后唤醒 <code>Executor</code> -&gt; <code>Executor</code> 完成单步操作 -&gt; <code>Validator</code> 立即介入进行自动化测试 -&gt; 测试通过则继续下一步骤，失败则回退或重新规划。这种组件关系确保了每一步代码变更都是可控且可验证的。</p>
+<h2 id="4-技术实现亮点"><a href="#4-技术实现亮点" class="headerlink" title="4. 技术实现亮点"></a>4. 技术实现亮点</h2><ul>
+<li><strong>创新点：Human-in-the-loop 的优雅落地</strong>。不同于传统 AI 代码生成器的一键生成，OpenAgents 将人类审批作为工作流的核心节点，将 AI 从“黑盒生成”转变为“白盒协作”。</li>
+<li><strong>设计模式：责任链模式与命令模式</strong>。计划被拆解为多个独立的命令节点，每个节点执行后必须通过验证器的校验才能传递给下一个节点，任何节点失败都能精准定位。</li>
+<li><strong>最佳实践：渐进式与增量式重构</strong>。强制 AI 以小步快跑的方式修改代码，避免了大规模重写带来的不可控风险，高度契合现代软件工程的持续集成理念。</li>
+</ul>
+<h2 id="5-产品意义和应用场景"><a href="#5-产品意义和应用场景" class="headerlink" title="5. 产品意义和应用场景"></a>5. 产品意义和应用场景</h2><p><strong>解决的问题：</strong><br>解决了 AI 生成代码“不可控、难审查、易破坏原有架构”的痛点。开发者不再需要在一大堆 AI 生成的 Diff 中寻找潜在 Bug，而是在代码生成前就纠正了 AI 的方向。</p>
+<p><strong>目标用户：</strong></p>
+<ul>
+<li>对代码质量有极高要求的技术负责人与架构师。</li>
+<li>希望利用 AI 提效，但不愿失去对代码库控制权的资深开发者。</li>
+<li>需要进行大规模遗留系统重构的工程团队。</li>
+</ul>
+<p><strong>应用场景：</strong></p>
+<ul>
+<li><strong>大型重构任务</strong>：先让 AI 输出重构波及面与步骤，评估风险后再执行。</li>
+<li><strong>跨语言迁移</strong>：利用其多语言支持，规划例如从 Python 到 Go 的逻辑迁移方案。</li>
+<li><strong>新功能开发</strong>：在现有架构下，让 AI 遵循项目规范按步骤实现新特性并自动补全测试。</li>
+</ul>
+<h2 id="6-借鉴点"><a href="#6-借鉴点" class="headerlink" title="6. 借鉴点"></a>6. 借鉴点</h2><p><strong>技术层面：</strong></p>
+<ol>
+<li><strong>多语言验证工具链的抽象封装</strong>：如何设计一个可插拔的接口，使得 TypeScript 的 <code>tsc</code> 和 Rust 的 <code>cargo check</code> 能被统一调度，是值得学习的工程架构。</li>
+<li><strong>上下文状态管理机制</strong>：在多步骤、带审批中断的工作流中，如何持久化 Agent 的中间状态和上下文，保证中断后能无缝恢复。</li>
+<li><strong>基于 AST 的精准代码修改</strong>：相较于全文件重写，系统必然采用了 AST 级别的精准操作来执行增量修改，这是提升 AI 编码质量的关键技术。</li>
+</ol>
+<p><strong>产品层面：</strong></p>
+<ol>
+<li><strong>“Plan-First”的交互范式</strong>：将 AI 的输出从“代码”前置到了“计划”，重塑了开发者使用 AI 的交互体验。</li>
+<li><strong>渐进式信任构建</strong>：通过审批机制，让开发者逐步建立对 AI Agent 的信任，降低了新用户的心理防御门槛。</li>
+<li><strong>工具链生态定位</strong>：不盲目自建生态，而是明确定位为 OpenCode CLI 及未来 Cursor 等主流工具的底层驱动框架，展现了清晰的产品边界。</li>
+</ol>
+<p><strong>工程实践：</strong></p>
+<ol>
+<li><strong>质量门禁自动化</strong>：将 CI&#x2F;CD 中的测试和类型检查直接嵌入到 AI 编码的循环中，实现“左移测试”。</li>
+<li><strong>多语言工程项目的目录组织</strong>：559个文件的规模下，如何合理组织多语言运行时和核心逻辑的代码结构。</li>
+<li><strong>视频与代码的版本同步管理</strong>：通过 <code>video-simple</code> 分支隔离教程代码与生产代码，是极佳的开源项目教学实践。</li>
+</ol>
+<h2 id="7-待深入研究"><a href="#7-待深入研究" class="headerlink" title="7. 待深入研究"></a>7. 待深入研究</h2><ol>
+<li><strong>规划器的 Prompt 工程实现</strong>：需深入源码研究如何构造 Prompt，使得大模型能稳定输出结构化、可执行的分步计划，而非泛泛而谈的建议。</li>
+<li><strong>代码增量执行的具体底层机制</strong>：研究 Executor 是如何定位文件、解析 AST 并执行插入或替换的，以及遇到合并冲突时的处理策略。</li>
+<li><strong>多语言 Linter&#x2F;测试工具的适配层设计</strong>：分析其如何检测当前项目语言环境，并动态加载对应的验证工具链，研究其接口抽象设计。</li>
+<li><strong>审批中断后的上下文持久化机制</strong>：研究在长时间等待人类审批期间，系统如何保存 Agent 的工作记忆（如使用本地 SQLite、JSON 文件或向量数据库）。</li>
+<li><strong>OpenCode CLI 集成协议分析</strong>：研究 OpenAgents 与 OpenCode CLI 之间的数据通信协议，评估将其扩展到其他 IDE 或终端工具的可行性。</li>
+</ol>
 <hr>
 <p><em>本报告由 OpenClaw 的 AI 深度分析系统生成</em><br><em>如有疑问或需要进一步分析，请联系研究者</em></p>
 
@@ -333,6 +411,57 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-23-gesture-lab/" class="related-post-link">
+          <span class="related-post-title">gesture-lab 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-codex/" class="related-post-link">
+          <span class="related-post-title">codex 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-claude-plugins-official/" class="related-post-link">
+          <span class="related-post-title">claude-plugins-official 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-20-amemgym/" class="related-post-link">
           <span class="related-post-title">amemgym 项目深度分析报告</span>
           <span class="related-post-tags">
@@ -352,57 +481,6 @@ var _hmt = _hmt || [];
       <li class="related-post-item">
         <a href="/2026/2026-07-19-aigcpanel/" class="related-post-link">
           <span class="related-post-title">aigcpanel 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-18-WKM/" class="related-post-link">
-          <span class="related-post-title">WKM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-17-SmartTCM-Agent-SYSTEM/" class="related-post-link">
-          <span class="related-post-title">SmartTCM-Agent-SYSTEM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-ReAct/" class="related-post-link">
-          <span class="related-post-title">ReAct 项目深度分析报告</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#open-source</span>
@@ -3594,6 +3672,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

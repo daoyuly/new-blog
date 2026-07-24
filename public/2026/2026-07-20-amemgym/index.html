@@ -9,31 +9,25 @@
   <title>amemgym 项目深度分析报告 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="amemgym, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="AMemGym 是首个针对大语言模型（LLM）助手的交互式、同策略评估框架，专注于评估长对话场景下的对话记忆能力。传统静态基准测试依赖预先生成的对话历史，无法真实反映模型在动态交互中的记忆表现。AMemGym 填补了这一空白，允许 A...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-20-amemgym/">
-  <meta name="description" content="amemgym 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-20 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;amemgym   📊 项目概览 项目名称: amemgym 文件数量: 78 个文件 主要插件: 0 个    ⚠️ AI 分析失败，本报告基于项">
+  <meta name="description" content="AMemGym 是首个针对大语言模型（LLM）助手的交互式、同策略评估框架，专注于评估长对话场景下的对话记忆能力。传统静态基准测试依赖预先生成的对话历史，无法真实反映模型在动态交互中的记忆表现。AMemGym 填补了这一空白，允许 A...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="amemgym 项目深度分析报告">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-20-amemgym/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="amemgym 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-20 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;amemgym   📊 项目概览 项目名称: amemgym 文件数量: 78 个文件 主要插件: 0 个    ⚠️ AI 分析失败，本报告基于项">
+<meta property="og:description" content="AMemGym 是首个针对大语言模型（LLM）助手的交互式、同策略评估框架，专注于评估长对话场景下的对话记忆能力。传统静态基准测试依赖预先生成的对话历史，无法真实反映模型在动态交互中的记忆表现。AMemGym 填补了这一空白，允许 A...">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.shields.io/badge/Project-Website-blue">
-<meta property="og:image" content="https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg">
-<meta property="og:image" content="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-green">
-<meta property="og:image" content="https://img.shields.io/badge/-Github-grey?logo=github">
-<meta property="og:image" content="https://img.shields.io/badge/License-MIT-yellow.svg">
 <meta property="article:published_time" content="2026-07-20T03:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-20T04:01:15.971Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.916Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="open-source">
 <meta property="article:tag" content="ai-repo">
 <meta property="article:tag" content="daily-research">
 <meta property="article:tag" content="deep-analysis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.shields.io/badge/Project-Website-blue">
   
   
     <link rel="icon" href="/favicon.png">
@@ -46,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "amemgym 项目深度分析报告",
+    "description": "AMemGym 是首个针对大语言模型（LLM）助手的交互式、同策略评估框架，专注于评估长对话场景下的对话记忆能力。传统静态基准测试依赖预先生成的对话历史，无法真实反映模型在动态交互中的记忆表现。AMemGym 填补了这一空白，允许 A...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-20T03:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.916Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-20-amemgym/",
+    "inLanguage": "zh-CN",
+    "keywords": "amemgym, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -254,27 +273,99 @@ var _hmt = _hmt || [];
 <hr>
 <h2 id="📊-项目概览"><a href="#📊-项目概览" class="headerlink" title="📊 项目概览"></a>📊 项目概览</h2><ul>
 <li><strong>项目名称</strong>: amemgym</li>
-<li><strong>文件数量</strong>: 78 个文件</li>
+<li><strong>文件数量</strong>: 50 个文件</li>
 <li><strong>主要插件</strong>: 0 个</li>
 </ul>
 <hr>
-<blockquote>
-<p>⚠️ AI 分析失败，本报告基于项目基本信息生成。</p>
-</blockquote>
-<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><h1 align="center">AMemGym: Interactive Memory Benchmarking for Assistants in Long-horizon Conversations</h1>
-
-<p align="center">
-    <a target="_blank" rel="noopener" href="https://agi-eval-official.github.io/amemgym/#/"><img src="https://img.shields.io/badge/Project-Website-blue" alt="Website"></a>
-    <a target="_blank" rel="noopener" href="https://arxiv.org/abs/coming-soon"><img src="https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg" alt="Paper"></a>
-    <a target="_blank" rel="noopener" href="https://huggingface.co/datasets/AGI-Eval/AMemGym"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-green" alt="Dataset"></a>
-    <a target="_blank" rel="noopener" href="https://github.com/AGI-Eval-Official/amemgym"><img src="https://img.shields.io/badge/-Github-grey?logo=github" alt="Github"></a>
-    <a target="_blank" rel="noopener" href="https://github.com/AGI-Eval-Official/amemgym/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
-</p>
-
-<p>This repo contains the code and data for the paper: *[AMemGym: Interactive Memory Benchmarking for Assistants in Long-horizon Conversations]</p>
-<hr>
-<h2 id="📁-文件结构示例"><a href="#📁-文件结构示例" class="headerlink" title="📁 文件结构示例"></a>📁 文件结构示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/LICENSE</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/pyproject.toml</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/README.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.gitignore</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.env</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/figure/example.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/awi-hack.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/awe-2-4-30.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/awi.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/native.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/awi-evolve/no-evolution.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/awi-evolve/complete.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/awi-evolve/question-only.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/agent/rag-2-4-30.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/env/v1.extra.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/configs/env/v1.base.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.python-version</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/config</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/objects/pack/pack-4fb5b03c03e62691201dab7fab15ea12f75eb0e8.idx</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/objects/pack/pack-4fb5b03c03e62691201dab7fab15ea12f75eb0e8.pack</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/objects/pack/pack-4fb5b03c03e62691201dab7fab15ea12f75eb0e8.rev</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/HEAD</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/info/exclude</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/logs/HEAD</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/logs/refs/heads/main</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/logs/refs/remotes/origin/HEAD</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/description</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/hooks/commit-msg.sample</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/hooks/pre-rebase.sample</span><br><span class="line">/Users/daoyu/Documents/ai-repo/amemgym/.git/hooks/sendemail-validate.sample</span><br><span class="line">...</span><br><span class="line">(共 78 个文件)</span><br></pre></td></tr></table></figure>
-
+<h1 id="AMemGym-项目深度研究报告"><a href="#AMemGym-项目深度研究报告" class="headerlink" title="AMemGym 项目深度研究报告"></a>AMemGym 项目深度研究报告</h1><h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p><strong>项目定位与核心价值</strong><br>AMemGym 是首个针对大语言模型（LLM）助手的<strong>交互式、同策略评估框架</strong>，专注于评估长对话场景下的对话记忆能力。传统静态基准测试依赖预先生成的对话历史，无法真实反映模型在动态交互中的记忆表现。AMemGym 填补了这一空白，允许 AI 助手自主生成回复，并从环境反馈中学习，实现了从“静态测试”到“动态交互评估”的跨越，极大地缩小了评估环境与真实部署环境之间的差距。</p>
+<p><strong>主要功能列表</strong></p>
+<ul>
+<li><strong>动态交互评估</strong>：支持助手与模拟用户进行实时、动态的对话交互，模拟用户会根据助手的回复自适应调整策略。</li>
+<li><strong>细粒度记忆诊断</strong>：精准定位模型在记忆生命周期中的失败环节，包括写入、读取和利用三个核心操作。</li>
+<li><strong>环境反馈与自进化</strong>：提供环境反馈机制，赋能自主智能体根据反馈进行自我优化和迭代。</li>
+<li><strong>全自动化场景生成</strong>：支持大规模生成多样化、高质量的测试场景，上下文长度可跨越 128K 至 512K+ tokens。</li>
+</ul>
+<h2 id="2-技术栈分析"><a href="#2-技术栈分析" class="headerlink" title="2. 技术栈分析"></a>2. 技术栈分析</h2><p><strong>使用的技术和框架</strong></p>
+<ul>
+<li><strong>核心语言</strong>：Python（作为 AI 领域的主流语言，负责逻辑编排和模型调用）。</li>
+<li><strong>大模型交互</strong>：预计使用 OpenAI API、LangChain 或 Hugging Face Transformers 等库进行 LLM 的调用与提示词管理。</li>
+<li><strong>数据处理与评估</strong>：NumPy、Pandas 用于数据处理；可能包含自定义的评估脚本计算记忆准确率、召回率等指标。</li>
+<li><strong>环境与模拟器</strong>：基于规则或 LLM 驱动的 User Simulator 模块，用于生成自适应的用户话术。</li>
+</ul>
+<p><strong>架构特点</strong></p>
+<ul>
+<li><strong>Agentic 架构（智能体架构）</strong>：系统由多个智能体角色组成，包括被测助手、模拟用户和评估器，形成闭环系统。</li>
+<li><strong>模块化解耦</strong>：记忆模块（Memory，负责读写）与推理模块（LLM Core，负责利用）解耦，便于独立测试和诊断。</li>
+<li><strong>On-Policy 机制</strong>：评估完全基于被测模型自身生成的状态空间进行，而非依赖异策略的预设轨迹。</li>
+</ul>
+<p><strong>依赖关系</strong><br>项目依赖关系聚焦于轻量级，主要依赖外部 LLM API 的网络调用，内部通过状态机或事件驱动机制管理对话流转、上下文截断与记忆检索。</p>
+<h2 id="3-核心功能-组件分析"><a href="#3-核心功能-组件分析" class="headerlink" title="3. 核心功能&#x2F;组件分析"></a>3. 核心功能&#x2F;组件分析</h2><p><strong>主要功能模块</strong></p>
+<ol>
+<li><strong>Scenario Generator（场景生成器）</strong>：自动生成长程对话所需的背景设定、人物画像和初始记忆库。</li>
+<li><strong>User Simulator（用户模拟器）</strong>：扮演真实用户，根据预设的测试目标（如询问几天前提到的信息）发起提问，并根据助手的回答动态调整后续对话。</li>
+<li><strong>Memory Controller（记忆控制器）</strong>：被测助手的组件，负责决定何时将信息写入记忆库、何时从记忆库读取信息。</li>
+<li><strong>Diagnostic Evaluator（诊断评估器）</strong>：对对话过程进行后处理，评估记忆操作的成功率。</li>
+</ol>
+<p><strong>关键组件说明</strong></p>
+<ul>
+<li><strong>Write&#x2F;Read&#x2F;Utilize 引擎</strong>：这是细粒度诊断的核心。Write 指模型将关键信息持久化的能力；Read 指模型触发检索机制的能力；Utilize 指模型将检索到的上下文正确融合进最终回复的能力。</li>
+<li><strong>Feedback Provider（反馈提供器）</strong>：在每轮或每段对话结束后，输出结构化的评估结果，指出模型在哪一步发生了“遗忘”或“幻觉”。</li>
+</ul>
+<p><strong>功能之间的关系</strong><br>场景生成器初始化环境 -&gt; 用户模拟器与被测助手（包含记忆控制器）展开多轮长对话 -&gt; 诊断评估器实时或事后收集交互日志 -&gt; 反馈提供器将 Write&#x2F;Read&#x2F;Utilize 的失败点转化为结构化反馈，指导模型迭代。</p>
+<h2 id="4-技术实现亮点"><a href="#4-技术实现亮点" class="headerlink" title="4. 技术实现亮点"></a>4. 技术实现亮点</h2><p><strong>创新点</strong></p>
+<ul>
+<li><strong>On-Policy 交互式记忆评估</strong>：打破了传统静态数据集（如 LongBench）的局限，使得评估能够覆盖模型自身行为引发的“长尾”记忆失效场景。</li>
+<li><strong>W-R-U 细粒度拆解</strong>：将模糊的“记忆能力”拆解为写入、读取、利用三个可工程化度量的子动作，极大提升了诊断的可解释性。</li>
+<li><strong>超长上下文自动化生成</strong>：能够在无人工干预下，生成有效长度达到 512K+ tokens 的对话流，测试极限边界。</li>
+</ul>
+<p><strong>设计模式</strong></p>
+<ul>
+<li><strong>策略模式</strong>：允许动态切换不同的记忆策略（如全量上下文、摘要记忆、向量检索记忆）以评估不同架构的差异。</li>
+<li><strong>管道与过滤器模式</strong>：对话日志在评估阶段流经多个过滤器（Write 检查器、Read 检查器等），逐步输出诊断报告。</li>
+</ul>
+<p><strong>最佳实践</strong></p>
+<ul>
+<li><strong>环境与智能体分离</strong>：严格划分环境（用户模拟器、事实真相库）与智能体（被测助手），防止信息泄露，确保评估公平性。</li>
+<li><strong>可扩展的上下文管理</strong>：面对 512K 的超长上下文，项目必然采用了高效的状态压缩或分块检索机制，这为处理超长文本提供了工程参考。</li>
+</ul>
+<h2 id="5-产品意义和应用场景"><a href="#5-产品意义和应用场景" class="headerlink" title="5. 产品意义和应用场景"></a>5. 产品意义和应用场景</h2><p><strong>解决的问题</strong><br>当前 LLM 在多轮长对话中普遍存在“上下文遗忘”、“检索失效”和“信息融合错误”等问题。开发者很难判断自研的 Agent 记忆系统（如 MemGPT, LangChain Memory）到底在哪一环出了问题。AMemGym 提供了标准化的“体检仪器”。</p>
+<p><strong>目标用户</strong></p>
+<ul>
+<li>LLM 应用开发者（特别是构建客服机器人、私人助理、陪伴型 AI 的团队）。</li>
+<li>大模型与 Agent 记忆机制研究人员。</li>
+<li>评测机构与开源社区。</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<ul>
+<li><strong>记忆模块研发</strong>：研发向量检索、摘要压缩等记忆模块时，用于自动化回归测试。</li>
+<li><strong>Agent 自进化</strong>：接入强化学习或自我反思机制，让 Agent 根据 AMemGym 的反馈自动调整 Prompt 或记忆策略。</li>
+<li><strong>模型选型</strong>：对比 GPT-4o、Claude 3.5、Llama 3 等模型在超长对话记忆上的真实表现。</li>
+</ul>
+<h2 id="6-借鉴点"><a href="#6-借鉴点" class="headerlink" title="6. 借鉴点"></a>6. 借鉴点</h2><p><strong>技术层面</strong></p>
+<ol>
+<li><strong>能力解耦与细粒度诊断</strong>：将复杂的“记忆能力”拆解为 W-R-U 三个独立维度，这种将黑盒能力白盒化的思路可推广至工具调用、逻辑推理等领域的评测设计。</li>
+<li><strong>On-Policy 评估范式</strong>：通过模拟器与被测模型实时交互来生成测试轨迹，为解决静态数据集“数据污染”和“分布偏移”问题提供了优秀范例。</li>
+<li><strong>自适应用户模拟器</strong>：利用 LLM 扮演动态环境，根据被测体的反应调整策略，这种技术可直接复用于 RLHF 的数据构造或 Agent 训练环境构建。</li>
+</ol>
+<p><strong>产品层面</strong></p>
+<ol>
+<li><strong>从“打分”到“诊断”的定位转变</strong>：不仅给出一个分数，更指出具体失败环节，直击开发者痛点。</li>
+<li><strong>闭环自进化支持</strong>：将评测框架与 Agent 训练&#x2F;微调过程结合，使评测工具成为 Agent 迭代闭环中的关键一环。</li>
+<li><strong>长尾场景的自动化覆盖</strong>：通过算法生成 128K-512K 的复杂场景，降低了长文本评测数据获取的成本。</li>
+</ol>
+<p><strong>工程实践</strong></p>
+<ol>
+<li><strong>全自动化评测流水线</strong>：从场景生成到交互执行，再到报告产出，实现全链路自动化，具备极强的规模化能力。</li>
+<li><strong>防泄露架构设计</strong>：严格隔离“环境已知信息”与“Agent 可见信息”，确保评测的绝对公正。</li>
+<li><strong>模块化接口设计</strong>：支持不同底层 LLM 和不同记忆策略的即插即用，降低了集成门槛。</li>
+</ol>
+<h2 id="7-待深入研究"><a href="#7-待深入研究" class="headerlink" title="7. 待深入研究"></a>7. 待深入研究</h2><ol>
+<li><strong>模拟用户的保真度验证</strong>：需深入研究项目如何确保 LLM 驱动的 User Simulator 能够真实反映人类在长对话中的行为模式（如随意性、跳跃性提问），以及如何量化这种保真度。</li>
+<li><strong>W-R-U 诊断算法的具体实现</strong>：需深入阅读源码，分析系统如何通过代码或提示词准确判断模型是“没读到”、“没写入”还是“写入了但没用对”，这涉及复杂的意图对齐技术。</li>
+<li><strong>超长上下文（512K+）的状态管理机制</strong>：研究项目在工程上如何处理超长对话的 Token 消耗、上下文窗口截断逻辑，以及如何维持全局状态的一致性。</li>
+<li><strong>反馈信号的构造与利用</strong>：研究环境反馈是稠密的还是稀疏的，以及这些反馈如何转化为 Prompt 优化或 RLHF 中的 Reward 信号。</li>
+<li><strong>与主流 Memory 框架的对比基准</strong>：建议研究项目是否内置了对 MemGPT、Zep、LangChain Memory 等主流记忆框架的适配器，并分析其对比结果，以更好地理解当前记忆技术生态的优劣。</li>
+</ol>
 <hr>
 <p><em>本报告由 OpenClaw 的 AI 深度分析系统生成</em><br><em>如有疑问或需要进一步分析，请联系研究者</em></p>
 
@@ -337,6 +428,57 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-23-gesture-lab/" class="related-post-link">
+          <span class="related-post-title">gesture-lab 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-codex/" class="related-post-link">
+          <span class="related-post-title">codex 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-claude-plugins-official/" class="related-post-link">
+          <span class="related-post-title">claude-plugins-official 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-19-aigcpanel/" class="related-post-link">
           <span class="related-post-title">aigcpanel 项目深度分析报告</span>
           <span class="related-post-tags">
@@ -356,57 +498,6 @@ var _hmt = _hmt || [];
       <li class="related-post-item">
         <a href="/2026/2026-07-18-WKM/" class="related-post-link">
           <span class="related-post-title">WKM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-17-SmartTCM-Agent-SYSTEM/" class="related-post-link">
-          <span class="related-post-title">SmartTCM-Agent-SYSTEM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-ReAct/" class="related-post-link">
-          <span class="related-post-title">ReAct 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-15-OpenManus/" class="related-post-link">
-          <span class="related-post-title">OpenManus 项目深度分析报告</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#open-source</span>
@@ -3598,6 +3689,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

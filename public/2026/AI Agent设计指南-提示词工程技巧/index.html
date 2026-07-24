@@ -9,16 +9,16 @@
   <title>AI Agent设计指南-提示词工程技巧 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agent设计指南, 提示词工程技巧">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/AI%20Agent%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E6%8A%80%E5%B7%A7/">
-  <meta name="description" content="AI Agent设计全面信息收集报告本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。  1. AI Agent设计核心概念：上下文工程大型语言模型（LLMs）的性能与效率很大程度上取决于其接收到的“上下文”（Context）信">
+  <meta name="description" content="本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI Agent设计指南-提示词工程技巧">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/AI%20Agent%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="AI Agent设计全面信息收集报告本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。  1. AI Agent设计核心概念：上下文工程大型语言模型（LLMs）的性能与效率很大程度上取决于其接收到的“上下文”（Context）信">
+<meta property="og:description" content="本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pica.zhimg.com/v2-ae422fea0c45dab484cd1eeb6e768c26_1440w.jpg">
 <meta property="og:image" content="https://picx.zhimg.com/v2-b446a0f61aada9193b3baad332e7304f_1440w.jpg">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/v2-30d619948a781ad258e325d0368e9541_1440w.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/v2-245b528d2d7df834db93c1079993f2f6_1440w.jpg">
 <meta property="article:published_time" content="2026-04-14T14:17:07.000Z">
-<meta property="article:modified_time" content="2026-04-14T13:39:43.643Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.948Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Agent设计指南 多智能体 提示词工程技巧">
 <meta name="twitter:card" content="summary">
@@ -43,6 +43,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI Agent设计指南-提示词工程技巧",
+    "description": "本报告旨在系统性地收集AI Agent设计的核心概念、架构模式、最佳实践和案例研究，为制定AI Agent设计指南提供充分的信息支撑。报告内容主要基于对大语言模型上下文工程的综述，并辅以AI Agent行业研究报告的洞察。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-04-14T14:17:07.000Z",
+    "dateModified": "2026-07-24T02:24:26.948Z",
+    "url": "https://www.daoyuly.cn/2026/AI%20Agent%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E6%8A%80%E5%B7%A7/",
+    "inLanguage": "zh-CN",
+    "keywords": "agent设计指南, 提示词工程技巧"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3636,6 +3661,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

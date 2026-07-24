@@ -9,19 +9,19 @@
   <title>AI Agent 最新趋势日报 (2026-07-14) | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agent, 最新趋势日报, (2026, 14), arxiv, AI Agent, 每日速递, 论文速递">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="长程任务中 Agent 的&#34;遗忘&#34;和&#34;迷失&#34;问题，正在从 prompt engineering 转向架构级解决方案。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-14-arxiv-cs-ai-agent-trends/">
-  <meta name="description" content="基于 papers.cool&#x2F;arxiv&#x2F;cs.AI 2026-07-13 发布论文整理，聚焦 Agent 相关研究。  今日 Agent 核心趋势趋势一：结构化状态管理成为长程 Agent 的关键突破口长程任务中 Agent 的”遗忘”和”迷失”问题，正在从 prompt engineering 转向架构级解决方案。  StructAgent (#14) 提出统一因果状态表">
+  <meta name="description" content="长程任务中 Agent 的&quot;遗忘&quot;和&quot;迷失&quot;问题，正在从 prompt engineering 转向架构级解决方案。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI Agent 最新趋势日报 (2026-07-14)">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-14-arxiv-cs-ai-agent-trends/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="基于 papers.cool&#x2F;arxiv&#x2F;cs.AI 2026-07-13 发布论文整理，聚焦 Agent 相关研究。  今日 Agent 核心趋势趋势一：结构化状态管理成为长程 Agent 的关键突破口长程任务中 Agent 的”遗忘”和”迷失”问题，正在从 prompt engineering 转向架构级解决方案。  StructAgent (#14) 提出统一因果状态表">
+<meta property="og:description" content="长程任务中 Agent 的&quot;遗忘&quot;和&quot;迷失&quot;问题，正在从 prompt engineering 转向架构级解决方案。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-13T20:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-14T04:01:14.951Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:05.023Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI Agent">
 <meta property="article:tag" content="arxiv">
@@ -39,6 +39,10 @@
       background: #fff;
     }
   </style>
+  
+  <meta name="robots" content="noindex,nofollow">
+  
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -239,35 +243,48 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <!-- GEO citation meta
+citation_arxiv_id: 2607.11388
+citation_arxiv_id: 2607.11357
+citation_arxiv_id: 2607.11346
+citation_arxiv_id: 2607.11433
+citation_arxiv_id: 2607.11598
+citation_arxiv_id: 2607.11347
+citation_arxiv_id: 2607.11307
+citation_arxiv_id: 2607.11696
+citation_arxiv_id: 2607.11266
+citation_arxiv_id: 2607.11338
+-->
+
+<blockquote>
 <p>基于 <a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a> 2026-07-13 发布论文整理，聚焦 Agent 相关研究。</p>
 </blockquote>
 <h2 id="今日-Agent-核心趋势"><a href="#今日-Agent-核心趋势" class="headerlink" title="今日 Agent 核心趋势"></a>今日 Agent 核心趋势</h2><h3 id="趋势一：结构化状态管理成为长程-Agent-的关键突破口"><a href="#趋势一：结构化状态管理成为长程-Agent-的关键突破口" class="headerlink" title="趋势一：结构化状态管理成为长程 Agent 的关键突破口"></a>趋势一：结构化状态管理成为长程 Agent 的关键突破口</h3><p>长程任务中 Agent 的”遗忘”和”迷失”问题，正在从 prompt engineering 转向架构级解决方案。</p>
 <ul>
-<li><strong>StructAgent</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11388">#14</a>) 提出统一因果状态表示，将 Agent 的进度显式结构化为可验证的 state，配合 verifier-backed 的状态转移机制。在 OSWorld-Verified 上将 Qwen3.5-9B 从 27.0% 提升到 46.9%，MiniMax-M3 达到 78.9% SOTA，且框架可泛化到 Minecraft。</li>
-<li><strong>OpsMem</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11357">#15</a>) 引入双记忆架构：短期记忆跟踪当前诊断状态，长期记忆存储可复用的运维经验，通过”跨记忆共振”机制激活相关知识。在华为微服务故障诊断数据集上，Match 指标提升最高 46.88%。</li>
-<li><strong>Compile, Then Page</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11346">#17</a>) 将 SOP 约束编译为可执行伪代码，用栈机分页管理活跃帧，LLM 仅执行语义部分。关键发现：运行时引导的效果与模型能力相关（capability-gated），强模型受益而弱模型反而受损。</li>
+<li><strong>StructAgent</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11388">#14</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11388%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11388%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11388%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 提出统一因果状态表示，将 Agent 的进度显式结构化为可验证的 state，配合 verifier-backed 的状态转移机制。在 OSWorld-Verified 上将 Qwen3.5-9B 从 27.0% 提升到 46.9%，MiniMax-M3 达到 78.9% SOTA，且框架可泛化到 Minecraft。</li>
+<li><strong>OpsMem</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11357">#15</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11357%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11357%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11357%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 引入双记忆架构：短期记忆跟踪当前诊断状态，长期记忆存储可复用的运维经验，通过”跨记忆共振”机制激活相关知识。在华为微服务故障诊断数据集上，Match 指标提升最高 46.88%。</li>
+<li><strong>Compile, Then Page</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11346">#17</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11346%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11346%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11346%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 将 SOP 约束编译为可执行伪代码，用栈机分页管理活跃帧，LLM 仅执行语义部分。关键发现：运行时引导的效果与模型能力相关（capability-gated），强模型受益而弱模型反而受损。</li>
 </ul>
 <p><strong>趋势解读</strong>：Agent 的状态管理正在从”塞进 prompt”走向”结构化状态 + 验证驱动转移”，这是 Agent 可靠性工程的重要方向。</p>
 <hr>
 <h3 id="趋势二：证据状态追踪重塑多模态-Agent-的决策流程"><a href="#趋势二：证据状态追踪重塑多模态-Agent-的决策流程" class="headerlink" title="趋势二：证据状态追踪重塑多模态 Agent 的决策流程"></a>趋势二：证据状态追踪重塑多模态 Agent 的决策流程</h3><p>多模态 Agent 不再满足于把工具调用结果丢进 scratchpad，而是开始维护结构化的”证据账本”。</p>
 <ul>
-<li><strong>Omni-Decision</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11433">#13</a>) 为全模态 QA 设计了 training-free 的证据状态系统，维护已确认证据、未解决冲突、依赖关系和待查需求。在 OmniGAIA 上 45.6%（+27.3），WorldSense 上 58.3%（+30.2），提升幅度惊人。</li>
-<li><strong>Interaction Scaling</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11598">#6</a>) 提出 test-time compute 的第三轴——交互（interaction），核心变量是”grounding”：反馈和评分都必须来自真实观测而非模型自评。在编程任务上达到 100% pass rate，而 reasoning-only 和 best-of-N 均已饱和。</li>
+<li><strong>Omni-Decision</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11433">#13</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11433%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11433%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11433%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 为全模态 QA 设计了 training-free 的证据状态系统，维护已确认证据、未解决冲突、依赖关系和待查需求。在 OmniGAIA 上 45.6%（+27.3），WorldSense 上 58.3%（+30.2），提升幅度惊人。</li>
+<li><strong>Interaction Scaling</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11598">#6</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11598%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11598%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11598%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 提出 test-time compute 的第三轴——交互（interaction），核心变量是”grounding”：反馈和评分都必须来自真实观测而非模型自评。在编程任务上达到 100% pass rate，而 reasoning-only 和 best-of-N 均已饱和。</li>
 </ul>
 <p><strong>趋势解读</strong>：Agent 的”知道什么 vs 不知道什么”正在被形式化，从隐式的上下文累积转向显式的证据状态机。</p>
 <hr>
 <h3 id="趋势三：异构-Agent-协作与安全约束的深度融合"><a href="#趋势三：异构-Agent-协作与安全约束的深度融合" class="headerlink" title="趋势三：异构 Agent 协作与安全约束的深度融合"></a>趋势三：异构 Agent 协作与安全约束的深度融合</h3><p>安全不再是 Agent 的事后约束，而是内置在协作架构中。</p>
 <ul>
-<li><strong>Heterogeneous Agent Cohots</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11347">#24</a>) 将角色分离为 Disrupter（生成非常规方案）、Validator（在工具网关执行硬性检查）、Broker（引入远距离类比），失败经验通过 MCTS 编译为”Scars”约束补丁，被未来 cohort 继承。Scars 减少 15.1% token 消耗，信用制通信分配减少 55.9% token 成本。</li>
-<li><strong>ToMap</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11307">#21</a>) 在多 Agent 证明形式化中做瓶颈分析，发现 Decomposer 是关键瓶颈，因此只对它做 test-time 优化，Formalizer 和 Prover 作为下游执行器。在 ProofFlowBench 上提升 19.0%，且 test-time 成本更低。</li>
+<li><strong>Heterogeneous Agent Cohots</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11347">#24</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11347%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11347%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11347%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 将角色分离为 Disrupter（生成非常规方案）、Validator（在工具网关执行硬性检查）、Broker（引入远距离类比），失败经验通过 MCTS 编译为”Scars”约束补丁，被未来 cohort 继承。Scars 减少 15.1% token 消耗，信用制通信分配减少 55.9% token 成本。</li>
+<li><strong>ToMap</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11307">#21</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11307%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11307%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11307%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 在多 Agent 证明形式化中做瓶颈分析，发现 Decomposer 是关键瓶颈，因此只对它做 test-time 优化，Formalizer 和 Prover 作为下游执行器。在 ProofFlowBench 上提升 19.0%，且 test-time 成本更低。</li>
 </ul>
 <p><strong>趋势解读</strong>：不是所有 Agent 都需要等权优化——瓶颈分析 + 角色特化的协作模式正在成为新的设计范式。</p>
 <hr>
 <h3 id="趋势四：推理效率与交互式验证的统一"><a href="#趋势四：推理效率与交互式验证的统一" class="headerlink" title="趋势四：推理效率与交互式验证的统一"></a>趋势四：推理效率与交互式验证的统一</h3><ul>
-<li><strong>Hourglass Reasoning</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11696">#2</a>) 通过强制上下文隔离来提升归纳推理，信息只能以压缩的符号状态 (φ, T) 在阶段间传递。在 ARC-AGI-2 上提升 14 个百分点，ChipBench 上 Verilog 综合精度翻倍（31%→58%）。</li>
-<li><strong>Valid ≠ Necessary</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11266">#22</a>) 指出 CoT 中的”有效但冗余”步骤被现有评估器忽视，提出 CAID 指标识别低效用步骤，配合 PACE 压缩策略在保持精度的同时减少 31-53% token 消耗。</li>
-<li><strong>AutoVSR</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11338">#18</a>) 将电路图视觉理解转化为可执行中间表示，planning agent 配备符号工具库进行多步推导，精度提升 30-59%。</li>
+<li><strong>Hourglass Reasoning</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11696">#2</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11696%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11696%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11696%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 通过强制上下文隔离来提升归纳推理，信息只能以压缩的符号状态 (φ, T) 在阶段间传递。在 ARC-AGI-2 上提升 14 个百分点，ChipBench 上 Verilog 综合精度翻倍（31%→58%）。</li>
+<li><strong>Valid ≠ Necessary</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11266">#22</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11266%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11266%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11266%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 指出 CoT 中的”有效但冗余”步骤被现有评估器忽视，提出 CAID 指标识别低效用步骤，配合 PACE 压缩策略在保持精度的同时减少 31-53% token 消耗。</li>
+<li><strong>AutoVSR</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11338">#18</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11338%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11338%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11338%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a>) 将电路图视觉理解转化为可执行中间表示，planning agent 配备符号工具库进行多步推导，精度提升 30-59%。</li>
 </ul>
 <p><strong>趋势解读</strong>：推理不仅需要更深，更需要更精——信息瓶颈和交互验证正在重新定义”好的推理”。</p>
 <hr>
@@ -282,49 +299,49 @@ var _hmt = _hmt || [];
 </thead>
 <tbody><tr>
 <td>6</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11598">Interaction Scaling</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11598">Interaction Scaling</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11598%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11598%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11598%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>交互作为 test-time compute 第三轴</td>
 <td>编程任务 100% pass</td>
 </tr>
 <tr>
 <td>13</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11433">Omni-Decision</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11433">Omni-Decision</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11433%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11433%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11433%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>全模态证据状态系统</td>
 <td>OmniGAIA +27.3pp</td>
 </tr>
 <tr>
 <td>14</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11388">StructAgent</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11388">StructAgent</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11388%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11388%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11388%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>统一因果状态的长程 Agent</td>
 <td>OSWorld 78.9% SOTA</td>
 </tr>
 <tr>
 <td>15</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11357">OpsMem</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11357">OpsMem</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11357%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11357%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11357%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>双记忆跨共振故障诊断</td>
 <td>Match +46.88%</td>
 </tr>
 <tr>
 <td>17</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11346">Compile, Then Page</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11346">Compile, Then Page</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11346%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11346%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11346%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>SOP 编译 + 能力门控运行时</td>
 <td>Bank 92.8%, 100% 拒绝正确</td>
 </tr>
 <tr>
 <td>18</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11338">AutoVSR</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11338">AutoVSR</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11338%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11338%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11338%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>视觉→符号 planning agent</td>
 <td>精度 +30~59%</td>
 </tr>
 <tr>
 <td>21</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11307">ToMap</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11307">ToMap</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11307%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11307%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11307%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>瓶颈驱动的多 Agent 优化</td>
 <td>ProofFlowBench +19.0%</td>
 </tr>
 <tr>
 <td>24</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11347">Heterogeneous Agent Cohorts</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11347">Heterogeneous Agent Cohorts</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.11347%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.11347%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.11347%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></td>
 <td>异构角色 + Scars 约束继承</td>
 <td>token 成本 -55.9%</td>
 </tr>
@@ -402,41 +419,41 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-24-llm-slm-research-daily/" class="related-post-link">
+          <span class="related-post-title">LLM &amp; SLM 研究日报 - 2026-07-24</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#arxiv</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-llm-slm-research-daily/" class="related-post-link">
+          <span class="related-post-title">LLM &amp; SLM 研究日报 - 2026-07-22</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#arxiv</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-llm-slm-research-daily/" class="related-post-link">
+          <span class="related-post-title">LLM &amp; SLM 研究日报 - 2026-07-21</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#arxiv</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-20-arxiv-agent-trends/" class="related-post-link">
           <span class="related-post-title">ArXiv cs.AI Agent 趋势日报 - 2026.07.20</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#arxiv</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-20-agent-memory-arxiv-report/" class="related-post-link">
-          <span class="related-post-title">Agent Memory 前沿：10篇论文揭示记忆系统从检索走向推理</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#arxiv</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-20-llm-slm-research-daily/" class="related-post-link">
-          <span class="related-post-title">LLM &amp; SLM 研究日报 - 2026-07-20</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#arxiv</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-19-agent-insights/" class="related-post-link">
-          <span class="related-post-title">Agent 前沿趋势：Plover等6项动态深度解析</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#arxiv</span>
@@ -3622,6 +3639,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

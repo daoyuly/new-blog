@@ -1,6 +1,5 @@
 ---
-title: "SmartTCM-Agent-SYSTEM 项目深度分析报告"
-date: 2026-07-17 11:00:00
+title: SmartTCM-Agent-SYSTEM 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,8 +7,12 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
-description: "- 项目名称: SmartTCM-Agent-SYSTEM"
-keywords: "smarttcm, agent, system, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
+description: '- 项目名称: SmartTCM-Agent-SYSTEM'
+keywords: >-
+  smarttcm, agent, system, 项目深度分析报告, open-source, ai-repo, daily-research,
+  deep-analysis
+abbrlink: 65008
+date: 2026-07-17 11:00:00
 ---
 
 # SmartTCM-Agent-SYSTEM 项目深度分析报告

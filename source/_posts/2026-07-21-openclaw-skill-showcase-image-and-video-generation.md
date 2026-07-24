@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - 图像与视频生成
-date: 2026-07-21 11:30:00
 tags:
   - openclaw
   - skill
@@ -9,8 +8,12 @@ tags:
   - 视频生成
 categories:
   - 技术推荐
-description: "图像与视频生成是 OpenClaw 生态中最庞大的分类之一，汇集了 169 个 Skills，覆盖了从 AI 绘画、视频生成、头像制作、OCR 文字识别到图表可视化的全链条能力。无论你是想用一句话生成海报、把文字变成视频、还是给照片做..."
-keywords: "openclaw, skill, 每日推荐, 图像与视频生成, image-and-video-generation, AI绘画, 视频生成, 技术推荐"
+description: >-
+  图像与视频生成是 OpenClaw 生态中最庞大的分类之一，汇集了 169 个 Skills，覆盖了从 AI 绘画、视频生成、头像制作、OCR
+  文字识别到图表可视化的全链条能力。无论你是想用一句话生成海报、把文字变成视频、还是给照片做...
+keywords: 'openclaw, skill, 每日推荐, 图像与视频生成, image-and-video-generation, AI绘画, 视频生成, 技术推荐'
+abbrlink: 65109
+date: 2026-07-21 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 图像与视频生成

@@ -21,7 +21,7 @@
 <meta property="og:description" content="2026-07-10 arXiv cs.AI 共 25 篇论文，12 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-10T09:30:00.000Z">
-<meta property="article:modified_time" content="2026-07-11T04:00:48.366Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:04.997Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Agent">
 <meta property="article:tag" content="LLM">
@@ -41,6 +41,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "12篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展",
+    "description": "2026-07-10 arXiv cs.AI 共 25 篇论文，12 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。",
+    "author": {
+      "@type": "Person",
+      "name": "OpenClaw AI Research"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-10T09:30:00.000Z",
+    "dateModified": "2026-07-24T03:05:04.997Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-10-agent-arxiv-daily/",
+    "inLanguage": "zh-CN",
+    "keywords": "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -241,7 +266,20 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="12篇-Agent-前沿论文深度解析：evaluation与planning方向最新进展"><a href="#12篇-Agent-前沿论文深度解析：evaluation与planning方向最新进展" class="headerlink" title="12篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展"></a>12篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展</h1><p>Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。</p>
+        <!-- GEO citation meta
+citation_arxiv_id: 2607.08758
+citation_arxiv_id: 2607.08745
+citation_arxiv_id: 2607.08681
+citation_arxiv_id: 2607.08317
+citation_arxiv_id: 2607.08284
+citation_arxiv_id: 2607.08602
+citation_arxiv_id: 2607.08423
+citation_arxiv_id: 2607.08403
+citation_arxiv_id: 2607.08740
+citation_arxiv_id: 2607.08652
+-->
+
+<h1 id="12篇-Agent-前沿论文深度解析：evaluation与planning方向最新进展"><a href="#12篇-Agent-前沿论文深度解析：evaluation与planning方向最新进展" class="headerlink" title="12篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展"></a>12篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展</h1><p>Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。</p>
 <p>2026-07-10，arXiv cs.AI 共发布 25 篇论文，其中 12 篇与 AI Agent 直接相关。研究方向集中在Evaluation 评估基准（5篇）和Planning 规划推理（4篇），应用场景覆盖 信息检索与问答、科学研究、企业自动化。</p>
 <p>本文基于 12 篇论文的交叉分析，提出诊断式评估框架 (Diagnostic Evaluation Framework)，并给出可操作的工程建议。</p>
 <h2 id="研究方向分布"><a href="#研究方向分布" class="headerlink" title="研究方向分布"></a>研究方向分布</h2><table>
@@ -499,7 +537,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <hr>
 <h2 id="论文深度解析"><a href="#论文深度解析" class="headerlink" title="论文深度解析"></a>论文深度解析</h2><h3 id="Evaluation-评估基准（5-篇）"><a href="#Evaluation-评估基准（5-篇）" class="headerlink" title="Evaluation 评估基准（5 篇）"></a>Evaluation 评估基准（5 篇）</h3><h4 id="1-Ideas-Have-Genomes-Benchmarking-Scientific-Lineage-Reasoning-and-Lineage-Grounded-Idea-Generation"><a href="#1-Ideas-Have-Genomes-Benchmarking-Scientific-Lineage-Reasoning-and-Lineage-Grounded-Idea-Generation" class="headerlink" title="1. Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation"></a>1. Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08758">arXiv:2607.08758</a> | <strong>方向</strong>: planning, evaluation | <strong>场景</strong>: 科学研究</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08758">arXiv:2607.08758</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08758%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08758%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08758%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, evaluation | <strong>场景</strong>: 科学研究</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -507,7 +545,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）</p>
 <h4 id="2-AUTOPILOT-VQA-Benchmarking-Vision-Language-Models-for-Incident-Centric-Dashcam-Understanding"><a href="#2-AUTOPILOT-VQA-Benchmarking-Vision-Language-Models-for-Incident-Centric-Dashcam-Understanding" class="headerlink" title="2. AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding"></a>2. AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08745">arXiv:2607.08745</a> | <strong>方向</strong>: safety, evaluation | <strong>场景</strong>: 信息检索与问答</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08745">arXiv:2607.08745</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08745%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08745%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08745%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: safety, evaluation | <strong>场景</strong>: 信息检索与问答</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -515,7 +553,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）</p>
 <h4 id="3-SolarChain-Eval-A-Physics-Constrained-Benchmark-for-Trustworthy-Economic-Agents-in-Decentralized-Energy-Markets"><a href="#3-SolarChain-Eval-A-Physics-Constrained-Benchmark-for-Trustworthy-Economic-Agents-in-Decentralized-Energy-Markets" class="headerlink" title="3. SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets"></a>3. SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08681">arXiv:2607.08681</a> | <strong>方向</strong>: evaluation</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08681">arXiv:2607.08681</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08681%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08681%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08681%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: evaluation</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -523,7 +561,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）</p>
 <h4 id="4-Blind-Spots-Bench-Evaluating-Blind-Spots-in-Multimodal-Models"><a href="#4-Blind-Spots-Bench-Evaluating-Blind-Spots-in-Multimodal-Models" class="headerlink" title="4. Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models"></a>4. Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08317">arXiv:2607.08317</a> | <strong>方向</strong>: evaluation</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08317">arXiv:2607.08317</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08317%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08317%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08317%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: evaluation</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -531,7 +569,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）</p>
 <h4 id="5-Understanding-Axes-of-Difficulty-For-Long-Context-Tasks-Via-PredicateLongBench"><a href="#5-Understanding-Axes-of-Difficulty-For-Long-Context-Tasks-Via-PredicateLongBench" class="headerlink" title="5. Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench"></a>5. Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08284">arXiv:2607.08284</a> | <strong>方向</strong>: evaluation</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08284">arXiv:2607.08284</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08284%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08284%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08284%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: evaluation</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -540,7 +578,7 @@ var _hmt = _hmt || [];
 <p><strong>工程启示：</strong> 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）</p>
 <hr>
 <h3 id="Planning-规划推理（4-篇）"><a href="#Planning-规划推理（4-篇）" class="headerlink" title="Planning 规划推理（4 篇）"></a>Planning 规划推理（4 篇）</h3><h4 id="1-Ideas-Have-Genomes-Benchmarking-Scientific-Lineage-Reasoning-and-Lineage-Grounded-Idea-Generation-1"><a href="#1-Ideas-Have-Genomes-Benchmarking-Scientific-Lineage-Reasoning-and-Lineage-Grounded-Idea-Generation-1" class="headerlink" title="1. Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation"></a>1. Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08758">arXiv:2607.08758</a> | <strong>方向</strong>: planning, evaluation | <strong>场景</strong>: 科学研究</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08758">arXiv:2607.08758</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08758%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08758%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08758%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, evaluation | <strong>场景</strong>: 科学研究</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -548,7 +586,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要建立执行监控与快速重规划的反馈回路</p>
 <h4 id="2-Towards-Precision-Therapy-in-Hepatocellular-Carcinoma-A-Clinical-Reasoning-LLM-for-Risk-Stratification-and-Treatment-Guidance"><a href="#2-Towards-Precision-Therapy-in-Hepatocellular-Carcinoma-A-Clinical-Reasoning-LLM-for-Risk-Stratification-and-Treatment-Guidance" class="headerlink" title="2. Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance"></a>2. Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08602">arXiv:2607.08602</a> | <strong>方向</strong>: planning, safety</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08602">arXiv:2607.08602</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08602%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08602%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08602%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, safety</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -556,7 +594,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要建立执行监控与快速重规划的反馈回路</p>
 <h4 id="3-OmniFood-Bench-Evaluating-VLMs-for-Nutrient-Reasoning-and-Personalized-Health-Advice"><a href="#3-OmniFood-Bench-Evaluating-VLMs-for-Nutrient-Reasoning-and-Personalized-Health-Advice" class="headerlink" title="3. OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice"></a>3. OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08423">arXiv:2607.08423</a> | <strong>方向</strong>: planning</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08423">arXiv:2607.08423</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08423%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08423%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08423%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -564,7 +602,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要建立执行监控与快速重规划的反馈回路</p>
 <h4 id="4-Game-Theory-Driven-Multi-Agent-Framework-Mitigates-Language-Model-Hallucination"><a href="#4-Game-Theory-Driven-Multi-Agent-Framework-Mitigates-Language-Model-Hallucination" class="headerlink" title="4. Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination"></a>4. Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> | <strong>方向</strong>: planning, multi_agent, engineering</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08403%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08403%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08403%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, multi_agent, engineering</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -573,7 +611,7 @@ var _hmt = _hmt || [];
 <p><strong>工程启示：</strong> 需要建立执行监控与快速重规划的反馈回路</p>
 <hr>
 <h3 id="Safety-安全对齐（2-篇）"><a href="#Safety-安全对齐（2-篇）" class="headerlink" title="Safety 安全对齐（2 篇）"></a>Safety 安全对齐（2 篇）</h3><h4 id="1-AUTOPILOT-VQA-Benchmarking-Vision-Language-Models-for-Incident-Centric-Dashcam-Understanding"><a href="#1-AUTOPILOT-VQA-Benchmarking-Vision-Language-Models-for-Incident-Centric-Dashcam-Understanding" class="headerlink" title="1. AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding"></a>1. AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08745">arXiv:2607.08745</a> | <strong>方向</strong>: safety, evaluation | <strong>场景</strong>: 信息检索与问答</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08745">arXiv:2607.08745</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08745%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08745%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08745%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: safety, evaluation | <strong>场景</strong>: 信息检索与问答</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -581,7 +619,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要从规则过滤升级为基于对抗训练的安全内化</p>
 <h4 id="2-Towards-Precision-Therapy-in-Hepatocellular-Carcinoma-A-Clinical-Reasoning-LLM-for-Risk-Stratification-and-Treatment-Guidance-1"><a href="#2-Towards-Precision-Therapy-in-Hepatocellular-Carcinoma-A-Clinical-Reasoning-LLM-for-Risk-Stratification-and-Treatment-Guidance-1" class="headerlink" title="2. Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance"></a>2. Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08602">arXiv:2607.08602</a> | <strong>方向</strong>: planning, safety</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08602">arXiv:2607.08602</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08602%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08602%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08602%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, safety</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -590,7 +628,7 @@ var _hmt = _hmt || [];
 <p><strong>工程启示：</strong> 需要从规则过滤升级为基于对抗训练的安全内化</p>
 <hr>
 <h3 id="Other-其他（2-篇）"><a href="#Other-其他（2-篇）" class="headerlink" title="Other 其他（2 篇）"></a>Other 其他（2 篇）</h3><h4 id="1-Workflow-as-Knowledge-Semantic-Persistence-for-LLM-Mediated-Workflows"><a href="#1-Workflow-as-Knowledge-Semantic-Persistence-for-LLM-Mediated-Workflows" class="headerlink" title="1. Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows"></a>1. Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08740">arXiv:2607.08740</a> | <strong>方向</strong>: other | <strong>场景</strong>: 企业自动化, 信息检索与问答</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08740">arXiv:2607.08740</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08740%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08740%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08740%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: other | <strong>场景</strong>: 企业自动化, 信息检索与问答</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -598,7 +636,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 可参考其方法论用于 Agent 系统设计</p>
 <h4 id="2-Formal-Mechanisms-for-Market-Stability-in-Self-Interested-Agent-Societies-A-Marketplace-Simulation-Study"><a href="#2-Formal-Mechanisms-for-Market-Stability-in-Self-Interested-Agent-Societies-A-Marketplace-Simulation-Study" class="headerlink" title="2. Formal Mechanisms for Market Stability in Self-Interested Agent Societies: A Marketplace Simulation Study"></a>2. Formal Mechanisms for Market Stability in Self-Interested Agent Societies: A Marketplace Simulation Study</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08652">arXiv:2607.08652</a> | <strong>方向</strong>: other</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08652">arXiv:2607.08652</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08652%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08652%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08652%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: other</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -607,7 +645,7 @@ var _hmt = _hmt || [];
 <p><strong>工程启示：</strong> 可参考其方法论用于 Agent 系统设计</p>
 <hr>
 <h3 id="Memory-记忆系统（2-篇）"><a href="#Memory-记忆系统（2-篇）" class="headerlink" title="Memory 记忆系统（2 篇）"></a>Memory 记忆系统（2 篇）</h3><h4 id="1-Remember-When-It-Matters-Proactive-Memory-Agent-for-Long-Horizon-Agents"><a href="#1-Remember-When-It-Matters-Proactive-Memory-Agent-for-Long-Horizon-Agents" class="headerlink" title="1. Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"></a>1. Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08716">arXiv:2607.08716</a> | <strong>方向</strong>: memory</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08716">arXiv:2607.08716</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08716%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08716%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08716%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: memory</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -615,7 +653,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>工程启示：</strong> 需要为 Memory 模块增加推理层，而不仅是存储+检索</p>
 <h4 id="2-PolyUQuest-Verifiable-Structure-Aware-Web-RAG-over-Heterogeneous-Graphs"><a href="#2-PolyUQuest-Verifiable-Structure-Aware-Web-RAG-over-Heterogeneous-Graphs" class="headerlink" title="2. PolyUQuest: Verifiable Structure-Aware Web RAG over Heterogeneous Graphs"></a>2. PolyUQuest: Verifiable Structure-Aware Web RAG over Heterogeneous Graphs</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08269">arXiv:2607.08269</a> | <strong>方向</strong>: memory</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08269">arXiv:2607.08269</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08269%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08269%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08269%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: memory</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -624,7 +662,7 @@ var _hmt = _hmt || [];
 <p><strong>工程启示：</strong> 需要为 Memory 模块增加推理层，而不仅是存储+检索</p>
 <hr>
 <h3 id="Multi-Agent-多智能体（1-篇）"><a href="#Multi-Agent-多智能体（1-篇）" class="headerlink" title="Multi-Agent 多智能体（1 篇）"></a>Multi-Agent 多智能体（1 篇）</h3><h4 id="1-Game-Theory-Driven-Multi-Agent-Framework-Mitigates-Language-Model-Hallucination"><a href="#1-Game-Theory-Driven-Multi-Agent-Framework-Mitigates-Language-Model-Hallucination" class="headerlink" title="1. Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination"></a>1. Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> | <strong>方向</strong>: planning, multi_agent, engineering</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08403%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08403%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08403%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, multi_agent, engineering</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -633,7 +671,7 @@ var _hmt = _hmt || [];
 <p><strong>工程启示：</strong> 需要中心化编排 + 去中心化执行的折中架构</p>
 <hr>
 <h3 id="Engineering-工程架构（1-篇）"><a href="#Engineering-工程架构（1-篇）" class="headerlink" title="Engineering 工程架构（1 篇）"></a>Engineering 工程架构（1 篇）</h3><h4 id="1-Game-Theory-Driven-Multi-Agent-Framework-Mitigates-Language-Model-Hallucination-1"><a href="#1-Game-Theory-Driven-Multi-Agent-Framework-Mitigates-Language-Model-Hallucination-1" class="headerlink" title="1. Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination"></a>1. Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination</h4><blockquote>
-<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> | <strong>方向</strong>: planning, multi_agent, engineering</p>
+<p><strong>来源</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08403%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08403%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08403%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> | <strong>方向</strong>: planning, multi_agent, engineering</p>
 </blockquote>
 <p><strong>核心贡献：</strong></p>
 <ul>
@@ -696,18 +734,18 @@ var _hmt = _hmt || [];
 </ul>
 <hr>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08758">arXiv:2607.08758</a> — planning, evaluation | 科学研究</li>
-<li>AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08745">arXiv:2607.08745</a> — safety, evaluation | 信息检索与问答</li>
-<li>Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08740">arXiv:2607.08740</a> — other | 企业自动化, 信息检索与问答</li>
-<li>Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08716">arXiv:2607.08716</a> — memory</li>
-<li>SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08681">arXiv:2607.08681</a> — evaluation</li>
-<li>Formal Mechanisms for Market Stability in Self-Interested Agent Societies: A Marketplace Simulation Study <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08652">arXiv:2607.08652</a> — other</li>
-<li>Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08602">arXiv:2607.08602</a> — planning, safety</li>
-<li>OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08423">arXiv:2607.08423</a> — planning</li>
-<li>Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> — planning, multi_agent, engineering</li>
-<li>Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08317">arXiv:2607.08317</a> — evaluation</li>
-<li>Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08284">arXiv:2607.08284</a> — evaluation</li>
-<li>PolyUQuest: Verifiable Structure-Aware Web RAG over Heterogeneous Graphs <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08269">arXiv:2607.08269</a> — memory</li>
+<li>Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08758">arXiv:2607.08758</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08758%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08758%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08758%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — planning, evaluation | 科学研究</li>
+<li>AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08745">arXiv:2607.08745</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08745%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08745%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08745%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — safety, evaluation | 信息检索与问答</li>
+<li>Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08740">arXiv:2607.08740</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08740%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08740%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08740%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — other | 企业自动化, 信息检索与问答</li>
+<li>Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08716">arXiv:2607.08716</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08716%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08716%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08716%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — memory</li>
+<li>SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08681">arXiv:2607.08681</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08681%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08681%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08681%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — evaluation</li>
+<li>Formal Mechanisms for Market Stability in Self-Interested Agent Societies: A Marketplace Simulation Study <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08652">arXiv:2607.08652</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08652%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08652%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08652%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — other</li>
+<li>Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08602">arXiv:2607.08602</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08602%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08602%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08602%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — planning, safety</li>
+<li>OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08423">arXiv:2607.08423</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08423%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08423%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08423%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — planning</li>
+<li>Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08403">arXiv:2607.08403</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08403%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08403%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08403%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — planning, multi_agent, engineering</li>
+<li>Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08317">arXiv:2607.08317</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08317%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08317%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08317%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — evaluation</li>
+<li>Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08284">arXiv:2607.08284</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08284%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08284%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08284%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — evaluation</li>
+<li>PolyUQuest: Verifiable Structure-Aware Web RAG over Heterogeneous Graphs <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.08269">arXiv:2607.08269</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.08269%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2607.08269%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2607.08269%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a> — memory</li>
 </ol>
 <hr>
 <p><em>本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：<a target="_blank" rel="noopener" href="https://papers.cool/arxiv/cs.AI">papers.cool&#x2F;arxiv&#x2F;cs.AI</a></em></p>
@@ -779,84 +817,84 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-23-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">16篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#Agent</span>
+            
+              <span class="related-post-tag">#LLM</span>
+            
+              <span class="related-post-tag">#Multi-Agent</span>
+            
+              <span class="related-post-tag">#Memory</span>
+            
+              <span class="related-post-tag">#Planning</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">10篇 Agent 前沿论文深度解析：other与planning方向最新进展</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#Agent</span>
+            
+              <span class="related-post-tag">#LLM</span>
+            
+              <span class="related-post-tag">#Multi-Agent</span>
+            
+              <span class="related-post-tag">#Memory</span>
+            
+              <span class="related-post-tag">#Planning</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">14篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#Agent</span>
+            
+              <span class="related-post-tag">#LLM</span>
+            
+              <span class="related-post-tag">#Multi-Agent</span>
+            
+              <span class="related-post-tag">#Memory</span>
+            
+              <span class="related-post-tag">#Planning</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-20-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">17篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#Agent</span>
+            
+              <span class="related-post-tag">#LLM</span>
+            
+              <span class="related-post-tag">#Multi-Agent</span>
+            
+              <span class="related-post-tag">#Memory</span>
+            
+              <span class="related-post-tag">#Planning</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-19-agent-arxiv-daily/" class="related-post-link">
           <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#Agent</span>
-            
-              <span class="related-post-tag">#LLM</span>
-            
-              <span class="related-post-tag">#Multi-Agent</span>
-            
-              <span class="related-post-tag">#Memory</span>
-            
-              <span class="related-post-tag">#Planning</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-18-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#Agent</span>
-            
-              <span class="related-post-tag">#LLM</span>
-            
-              <span class="related-post-tag">#Multi-Agent</span>
-            
-              <span class="related-post-tag">#Memory</span>
-            
-              <span class="related-post-tag">#Planning</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-17-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#Agent</span>
-            
-              <span class="related-post-tag">#LLM</span>
-            
-              <span class="related-post-tag">#Multi-Agent</span>
-            
-              <span class="related-post-tag">#Memory</span>
-            
-              <span class="related-post-tag">#Planning</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">18篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#Agent</span>
-            
-              <span class="related-post-tag">#LLM</span>
-            
-              <span class="related-post-tag">#Multi-Agent</span>
-            
-              <span class="related-post-tag">#Memory</span>
-            
-              <span class="related-post-tag">#Planning</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-15-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">14篇 Agent 前沿论文深度解析：other与planning方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -4050,6 +4088,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

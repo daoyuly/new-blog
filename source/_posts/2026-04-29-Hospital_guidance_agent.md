@@ -1,6 +1,5 @@
 ---
-title: "Hospital_guidance_agent 项目深度分析报告"
-date: 2026-04-29 11:00:00
+title: Hospital_guidance_agent 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,8 +7,12 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
-description: "- 项目名称: Hospital_guidance_agent"
-keywords: "hospital, guidance, agent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
+description: '- 项目名称: Hospital_guidance_agent'
+keywords: >-
+  hospital, guidance, agent, 项目深度分析报告, open-source, ai-repo, daily-research,
+  deep-analysis
+abbrlink: 57710
+date: 2026-04-29 11:00:00
 ---
 
 # Hospital_guidance_agent 项目深度分析报告

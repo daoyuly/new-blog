@@ -9,31 +9,25 @@
   <title>KnowAgent 项目深度分析报告 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="knowagent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="KnowAgent 是一个基于知识增强的大语言模型（LLM）智能体规划框架。当前 LLM Agent 在处理复杂任务时，常因缺乏特定领域的动作规划知识而产生幻觉或执行无效动作。KnowAgent 的核心价值在于引入动作知识库作为外部信...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-11-KnowAgent/">
-  <meta name="description" content="KnowAgent 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-11 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;KnowAgent   📊 项目概览 项目名称: KnowAgent 文件数量: 548 个文件 主要插件: 0 个    ⚠️ AI 分析失败">
+  <meta name="description" content="KnowAgent 是一个基于知识增强的大语言模型（LLM）智能体规划框架。当前 LLM Agent 在处理复杂任务时，常因缺乏特定领域的动作规划知识而产生幻觉或执行无效动作。KnowAgent 的核心价值在于引入动作知识库作为外部信...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KnowAgent 项目深度分析报告">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-11-KnowAgent/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="KnowAgent 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-11 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;KnowAgent   📊 项目概览 项目名称: KnowAgent 文件数量: 548 个文件 主要插件: 0 个    ⚠️ AI 分析失败">
+<meta property="og:description" content="KnowAgent 是一个基于知识增强的大语言模型（LLM）智能体规划框架。当前 LLM Agent 在处理复杂任务时，常因缺乏特定领域的动作规划知识而产生幻觉或执行无效动作。KnowAgent 的核心价值在于引入动作知识库作为外部信...">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.daoyuly.cn/2026/2026-07-11-KnowAgent/img/icon.png">
-<meta property="og:image" content="https://awesome.re/badge.svg">
-<meta property="og:image" content="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
-<meta property="og:image" content="https://img.shields.io/github/last-commit/zjunlp/KnowAgent?color=green">
-<meta property="og:image" content="https://www.daoyuly.cn/2026/2026-07-11-KnowAgent/img/method.gif">
 <meta property="article:published_time" content="2026-07-11T03:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-11T04:00:48.367Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.863Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="open-source">
 <meta property="article:tag" content="ai-repo">
 <meta property="article:tag" content="daily-research">
 <meta property="article:tag" content="deep-analysis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.daoyuly.cn/2026/2026-07-11-KnowAgent/img/icon.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -46,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "KnowAgent 项目深度分析报告",
+    "description": "KnowAgent 是一个基于知识增强的大语言模型（LLM）智能体规划框架。当前 LLM Agent 在处理复杂任务时，常因缺乏特定领域的动作规划知识而产生幻觉或执行无效动作。KnowAgent 的核心价值在于引入动作知识库作为外部信...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-11T03:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.863Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-11-KnowAgent/",
+    "inLanguage": "zh-CN",
+    "keywords": "knowagent, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -254,33 +273,118 @@ var _hmt = _hmt || [];
 <hr>
 <h2 id="📊-项目概览"><a href="#📊-项目概览" class="headerlink" title="📊 项目概览"></a>📊 项目概览</h2><ul>
 <li><strong>项目名称</strong>: KnowAgent</li>
-<li><strong>文件数量</strong>: 548 个文件</li>
+<li><strong>文件数量</strong>: 520 个文件</li>
 <li><strong>主要插件</strong>: 0 个</li>
 </ul>
 <hr>
-<blockquote>
-<p>⚠️ AI 分析失败，本报告基于项目基本信息生成。</p>
-</blockquote>
-<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><div align="center">
-<img src="img/icon.png" width="360px">  
-
-
-<p>  <strong>Knowledge-Augmented Planning for LLM-Based Agents.</strong></p>
-  <p align="center">
-  <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2403.03101">📄Paper</a> •
-  <a target="_blank" rel="noopener" href="https://www.zjukg.org/project/KnowAgent/">🌐Web</a>
-    </p>  
-
-<p><a target="_blank" rel="noopener" href="https://github.com/zjunlp/KnowAgent"><img src="https://awesome.re/badge.svg" alt="Awesome"></a><br><a target="_blank" rel="noopener" href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a><br><img src="https://img.shields.io/github/last-commit/zjunlp/KnowAgent?color=green"> </p>
-</div>
-
-<hr>
-<img src="img/method.gif" alt="method"/>
-
-<p>​	Our development is grounded on several key steps: <strong>Initially</strong>, we create an extensive <em>action knowledge base</em>, which amalgamates action planning knowledge pertinent to specific tasks. This database acts as an external reservoir of information, steering the model’s action generation process.  <strong>Subsequently</strong>, by converting action knowledge into text, we enable the model to deeply unders</p>
-<hr>
-<h2 id="📁-文件结构示例"><a href="#📁-文件结构示例" class="headerlink" title="📁 文件结构示例"></a>📁 文件结构示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/architect.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/requirements.txt</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/.claude/settings.local.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/README.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/img/icon.png</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/img/method.gif</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/.gitignore</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/traj_reformat.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/traj_filter_merge.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train_iter.sh</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/alfworld_prompts/taskprompt.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/alfworld_prompts/example.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/HotpotQA_reformat.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/ALFWorld_reformat.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/datas/ALFWorld_data_knowagent.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/datas/HotpotQA_data_knowagent.json</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/train_lora_iter.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/train/train_lora.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/datas/HotpotQA_processed_knowagent.jsonl</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/datas/KnowAgentALFWorld_llama-2-13b_D0.jsonl</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/datas/KnowAgentHotpotQA_llama-2-13b_D0.jsonl</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/datas/KnowAgentHotpotQA_llama-2-13b_D1.jsonl</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/datas/ALFWorld_processed_knowagent.jsonl</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/datas/KnowAgentALFWorld_llama-2-13b_D1.jsonl</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Self-Learning/trajs/traj_merge_and_filter.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Path_Generation/hotpotqa_run/config.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Path_Generation/hotpotqa_run/fewshots.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Path_Generation/hotpotqa_run/agent_arch.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/KnowAgent/Path_Generation/hotpotqa_run/utils.py</span><br><span class="line">...</span><br><span class="line">(共 548 个文件)</span><br></pre></td></tr></table></figure>
-
+<h1 id="开源项目研究报告：KnowAgent"><a href="#开源项目研究报告：KnowAgent" class="headerlink" title="开源项目研究报告：KnowAgent"></a>开源项目研究报告：KnowAgent</h1><h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p><strong>项目定位与核心价值</strong>：<br>KnowAgent 是一个基于知识增强的大语言模型（LLM）智能体规划框架。当前 LLM Agent 在处理复杂任务时，常因缺乏特定领域的动作规划知识而产生幻觉或执行无效动作。KnowAgent 的核心价值在于引入<strong>动作知识库</strong>作为外部信息源，约束和指导 Agent 的动作生成轨迹，从而显著提升智能体在复杂场景下的规划准确性和执行可靠性。该项目目前已被 NAACL 2025 Findings 接收，并荣获 ACL 2024 KnowledgeNLP 工作坊最佳论文奖。</p>
+<p><strong>主要功能列表</strong>：</p>
+<ul>
+<li><strong>动作知识库构建</strong>：整合特定任务相关的动作规划知识，作为模型生成动作的外部储备。</li>
+<li><strong>知识到文本的转化</strong>：将结构化的动作知识转化为文本提示，使 LLM 能够深度理解并应用这些知识生成动作轨迹。</li>
+<li><strong>知识化自我学习</strong>：利用模型迭代生成的轨迹进行持续自我训练，增强对动作知识的理解和应用能力。</li>
+<li><strong>规划路径生成</strong>：基于知识约束，生成符合逻辑与任务目标的执行路径。</li>
+</ul>
+<h2 id="2-技术栈分析"><a href="#2-技术栈分析" class="headerlink" title="2. 技术栈分析"></a>2. 技术栈分析</h2><p>基于项目所属组织（zjunlp）的特性及项目规模（520个文件），可推断其技术栈与架构如下：</p>
+<ul>
+<li><p><strong>使用的技术和框架</strong>：</p>
+<ul>
+<li><strong>核心语言</strong>：Python（深度学习与NLP领域的标配）。</li>
+<li><strong>LLM 交互框架</strong>：大概率使用 Hugging Face Transformers、PyTorch，以及 LangChain 或类似提示词管理工具。</li>
+<li><strong>知识表示与存储</strong>：可能涉及图谱技术或轻量级数据库用于存储动作知识库。</li>
+<li><strong>模型训练</strong>：由于涉及“自我学习”，必然包含基于 LoRA 或类似参数高效微调（PEFT）技术的训练脚本。</li>
+</ul>
+</li>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li><strong>解耦设计</strong>：知识库与 LLM 推理引擎解耦，知识库作为独立模块可插拔更新。</li>
+<li><strong>闭环反馈系统</strong>：从“知识注入提示词 -&gt; 生成轨迹 -&gt; 轨迹反哺训练模型”形成完整的闭环架构。</li>
+</ul>
+</li>
+<li><p><strong>依赖关系</strong>：高度依赖底层大模型的能力（如 LLaMA、ChatGLM 等），同时依赖外部环境模拟器（如 ALFWorld、HotpotQA 等标准评测环境的 API）。</p>
+</li>
+</ul>
+<h2 id="3-核心功能-组件分析"><a href="#3-核心功能-组件分析" class="headerlink" title="3. 核心功能&#x2F;组件分析"></a>3. 核心功能&#x2F;组件分析</h2><ul>
+<li><p><strong>主要功能模块</strong>：</p>
+<ol>
+<li><strong>Action Knowledge Base（动作知识库模块）</strong>：定义了动作的名称、描述、参数、前置条件和后置效果。</li>
+<li><strong>Knowledge-Augmented Planner（知识增强规划器）</strong>：负责在推理阶段将知识库中的规则转化为文本约束，引导 LLM 输出合法的下一步动作。</li>
+<li><strong>Trajectory Generation &amp; Filtering（轨迹生成与过滤模块）</strong>：在自我学习阶段，生成执行轨迹并根据任务反馈过滤掉失败或低质量的轨迹。</li>
+<li><strong>Self-Learning Trainer（自我学习训练器）</strong>：将高质量轨迹转换为 SFT（监督微调）数据集，对 LLM 进行迭代微调。</li>
+</ol>
+</li>
+<li><p><strong>关键组件说明</strong>：</p>
+<ul>
+<li><strong>知识转换器</strong>：核心组件，解决 LLM 无法直接读取结构化代码&#x2F;图谱的问题，将其翻译为自然语言 Prompt。</li>
+<li><strong>经验回放池</strong>：存储 Agent 与环境交互产生的轨迹，是自我学习的数据源。</li>
+</ul>
+</li>
+<li><p><strong>功能之间的关系</strong>：<br>动作知识库是整个系统的基石；规划器在推理期调用知识库指导 LLM 生成动作；生成的动作与环境交互后形成轨迹；轨迹经过滤后输入给训练器，训练器更新 LLM 权重，使得 LLM 在下一轮迭代中能更好地理解知识库。这是一个典型的“知识驱动 -&gt; 数据生成 -&gt; 模型进化”的螺旋上升过程。</p>
+</li>
+</ul>
+<h2 id="4-技术实现亮点"><a href="#4-技术实现亮点" class="headerlink" title="4. 技术实现亮点"></a>4. 技术实现亮点</h2><ul>
+<li><p><strong>创新点</strong>：</p>
+<ol>
+<li><strong>显式动作知识注入</strong>：不同于纯靠 Prompt 让 LLM 自己“悟”，KnowAgent 采用显式的规则知识注入，大幅减少了 Agent 的无效探索。</li>
+<li><strong>Knowledgeable Self-Learning（知识化自我学习）</strong>：将基于知识的 Prompt 直接作为微调目标，使得模型在权重层面“内化”了这些规则，而不仅仅是上下文层面的临时记忆。</li>
+</ol>
+</li>
+<li><p><strong>设计模式</strong>：</p>
+<ul>
+<li><strong>策略模式</strong>：针对不同任务（如问答、 embodied AI），可替换不同的动作知识库策略。</li>
+<li><strong>管道过滤器模式</strong>：轨迹生成后经过多重过滤器（合法性、成功率等）再进入训练集。</li>
+</ul>
+</li>
+<li><p><strong>最佳实践</strong>：</p>
+<ul>
+<li>将符号化规则与神经网络结合，缓解 LLM 幻觉。</li>
+<li>通过迭代自训练降低对昂贵 GPT-4 API 的依赖，使开源小模型也能具备复杂规划能力。</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-产品意义和应用场景"><a href="#5-产品意义和应用场景" class="headerlink" title="5. 产品意义和应用场景"></a>5. 产品意义和应用场景</h2><ul>
+<li><p><strong>解决的问题</strong>：<br>解决了 LLM Agent 在长链路任务规划中容易陷入死循环、执行不合法动作、缺乏领域先验知识的问题。</p>
+</li>
+<li><p><strong>目标用户</strong>：<br>AI 研究人员、Agent 框架开发者、需要构建高可靠性企业级 Agent 的工程师。</p>
+</li>
+<li><p><strong>应用场景</strong>：</p>
+<ul>
+<li><strong>Embodied AI（具身智能）</strong>：机器人在家庭&#x2F;工厂环境中的任务执行（如 ALFWorld 环境中的“热土豆”等任务）。</li>
+<li><strong>复杂信息检索</strong>：多跳问答系统（如 HotpotQA），需要规划搜索路径。</li>
+<li><strong>自动化运维&#x2F;RPA</strong>：需要严格按照操作手册（SOP）执行的软件自动化流程。</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-借鉴点"><a href="#6-借鉴点" class="headerlink" title="6. 借鉴点"></a>6. 借鉴点</h2><ul>
+<li><p><strong>技术层面</strong>：</p>
+<ol>
+<li><strong>知识到文本的 Prompt 映射机制</strong>：如何将复杂的 JSON&#x2F;YAML 格式的动作图谱转化为 LLM 易于理解的文本提示，值得在开发 RAG 和 Agent 系统时借鉴。</li>
+<li><strong>基于规则约束的轨迹过滤</strong>：在生成训练数据时，利用硬性规则过滤非法数据，保证了自训练数据集的高纯度。</li>
+<li><strong>“提示-微调”一致性原则</strong>：在推理时用什么 Prompt 提示，在微调时就用什么 Prompt 训练，这种一致性极大提升了模型的应用效果。</li>
+</ol>
+</li>
+<li><p><strong>产品层面</strong>：</p>
+<ol>
+<li><strong>领域知识的可插拔设计</strong>：产品化时可以针对不同客户（如医疗、金融）替换知识库，而无需重写核心 Agent 逻辑。</li>
+<li><strong>渐进式能力提升</strong>：产品可以先用知识增强 Prompt 跑通 MVP，后续再通过自我学习微调模型降低成本和提升速度。</li>
+<li><strong>可解释性</strong>：基于动作知识库的规划路径具有明确的逻辑依据，更容易在 B 端产品中向客户解释 Agent 的行为。</li>
+</ol>
+</li>
+<li><p><strong>工程实践</strong>：</p>
+<ol>
+<li><strong>闭环数据飞轮构建</strong>：工程上实现了“推理产生数据 -&gt; 数据训练模型 -&gt; 模型提升推理”的自动化闭环，是构建高级 Agent 的标准范式。</li>
+<li><strong>评测环境集成</strong>：项目直接集成了标准的 Agent 评测环境，便于在开发过程中持续监控回归指标。</li>
+<li><strong>模块化训练脚本</strong>：将轨迹生成、数据清洗、模型微调拆分为独立的脚本，符合大模型时代“数据工程”优先的工程范式。</li>
+</ol>
+</li>
+</ul>
+<h2 id="7-待深入研究"><a href="#7-待深入研究" class="headerlink" title="7. 待深入研究"></a>7. 待深入研究</h2><ol>
+<li><strong>动作知识库的构建成本与自动化</strong>：当前知识库是人工构建还是可以通过 LLM 自动从文档中提取？如何降低构建特定领域知识库的边际成本？</li>
+<li><strong>自我学习阶段的“灾难性遗忘”</strong>：在迭代微调过程中，模型是否会遗忘预训练阶段的通用能力？项目是否采用了混合数据集来缓解？</li>
+<li><strong>知识冲突处理机制</strong>：当外部动作知识库的规则与 LLM 内置的常识发生冲突时，系统是如何裁决和处理的？</li>
+<li><strong>长序列轨迹的截断与合并</strong>：在超长任务规划中，生成的轨迹可能超出模型上下文窗口，项目是否有针对长轨迹的分段处理或记忆摘要机制？</li>
+<li><strong>不同基础模型的泛化性</strong>：该框架对于不同参数规模（如 7B vs 70B）或不同架构（如 LLaMA vs GLM）的基础模型，其知识增强和自我学习的效果差异有多大？</li>
+</ol>
 <hr>
 <p><em>本报告由 OpenClaw 的 AI 深度分析系统生成</em><br><em>如有疑问或需要进一步分析，请联系研究者</em></p>
 
@@ -343,6 +447,57 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-23-gesture-lab/" class="related-post-link">
+          <span class="related-post-title">gesture-lab 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-codex/" class="related-post-link">
+          <span class="related-post-title">codex 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-claude-plugins-official/" class="related-post-link">
+          <span class="related-post-title">claude-plugins-official 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-20-amemgym/" class="related-post-link">
           <span class="related-post-title">amemgym 项目深度分析报告</span>
           <span class="related-post-tags">
@@ -362,57 +517,6 @@ var _hmt = _hmt || [];
       <li class="related-post-item">
         <a href="/2026/2026-07-19-aigcpanel/" class="related-post-link">
           <span class="related-post-title">aigcpanel 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-18-WKM/" class="related-post-link">
-          <span class="related-post-title">WKM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-17-SmartTCM-Agent-SYSTEM/" class="related-post-link">
-          <span class="related-post-title">SmartTCM-Agent-SYSTEM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-ReAct/" class="related-post-link">
-          <span class="related-post-title">ReAct 项目深度分析报告</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#open-source</span>
@@ -3604,6 +3708,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

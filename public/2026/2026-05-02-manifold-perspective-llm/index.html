@@ -9,19 +9,19 @@
   <title>流形视角下的大模型内部机制深度解析 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="流形视角下的大模型内部机制深度解析, Manifold Learning, 大模型, 表示学习, 深度学习理论, 几何深度学习">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="2024-2026年，随着 GPT-4、Claude-3、Gemini 等大模型的能力持续突破，一个根本性的问题愈发重要：大模型究竟在做什么？">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-02-manifold-perspective-llm/">
-  <meta name="description" content="流形视角下的大模型内部机制深度解析 当数万亿参数的神经网络在数十亿 tokens 上训练，它究竟学到了什么？从流形学习的视角，大模型的内部机制展现出一个迷人的几何世界——高维空间中的低维流形、曲率、拓扑结构，这些数学概念正在揭示大语言模型的本质。  引言：为什么需要流形视角？2024-2026年，随着 GPT-4、Claude-3、Gemini 等大模型的能力持续突破，一个根本性的问题愈发重要：大">
+  <meta name="description" content="2024-2026年，随着 GPT-4、Claude-3、Gemini 等大模型的能力持续突破，一个根本性的问题愈发重要：大模型究竟在做什么？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="流形视角下的大模型内部机制深度解析">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-02-manifold-perspective-llm/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="流形视角下的大模型内部机制深度解析 当数万亿参数的神经网络在数十亿 tokens 上训练，它究竟学到了什么？从流形学习的视角，大模型的内部机制展现出一个迷人的几何世界——高维空间中的低维流形、曲率、拓扑结构，这些数学概念正在揭示大语言模型的本质。  引言：为什么需要流形视角？2024-2026年，随着 GPT-4、Claude-3、Gemini 等大模型的能力持续突破，一个根本性的问题愈发重要：大">
+<meta property="og:description" content="2024-2026年，随着 GPT-4、Claude-3、Gemini 等大模型的能力持续突破，一个根本性的问题愈发重要：大模型究竟在做什么？">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-02T11:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-02T11:02:08.448Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.555Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="大模型">
 <meta property="article:tag" content="Manifold Learning">
@@ -41,6 +41,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "流形视角下的大模型内部机制深度解析",
+    "description": "2024-2026年，随着 GPT-4、Claude-3、Gemini 等大模型的能力持续突破，一个根本性的问题愈发重要：大模型究竟在做什么？",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-02T11:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.555Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-02-manifold-perspective-llm/",
+    "inLanguage": "zh-CN",
+    "keywords": "流形视角下的大模型内部机制深度解析, Manifold Learning, 大模型, 表示学习, 深度学习理论, 几何深度学习"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3675,6 +3700,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

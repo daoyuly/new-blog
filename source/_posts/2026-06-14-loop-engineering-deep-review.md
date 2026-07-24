@@ -335,6 +335,29 @@ Loop Engineering 回答了一个问题：**当 Agent 足够聪明时，人做什
 
 ---
 
+## FAQ
+
+### Q: 什么是 Loop Engineering？
+
+A: Loop Engineering 是一种构建驱动 AI Agent 系统的工程范式。核心思想是让人从 Agent 循环的内部走向外部：不再手动编写 prompt 驱动模型，而是设计一个自动运行、判断并重试的循环（Loop = Cron + 决策器）来代替人工编排。
+
+### Q: Loop Engineering 和 Prompt Engineering 有什么区别？
+
+A: Prompt Engineering 关注“怎么跟模型说话”，侧重单次交互质量；Loop Engineering 关注“怎么让运行环境自己跑起来”，侧重系统级的自动化与状态流转。前者把人当执行者，后者把人变成循环的设计者，模型降级为子程序。
+
+### Q: Loop Engineering 和 Harness Engineering 有什么区别？
+
+A: Harness Engineering 解决“Agent 能不能跑”，提供静态的基础设施和运行环境；Loop Engineering 位于其上一层，解决“Agent 跑不跑、怎么跑、跑到什么时候停”。Harness 是静态底座，Loop 是动态编排层。
+
+### Q: 如何实际应用 Loop Engineering？
+
+A: 实践中需利用循环原语构建系统：设定定时触发器（Cron）、编写决策器评估 Agent 输出、设计自动重试或终止条件，并结合持久状态管理任务上下文。通过声明式目标（如 /goal 指令）让 Loop 自动拆解任务并调用 Agent 执行。
+
+### Q: AutoGPT 的失败对 Loop Engineering 有什么启示？
+
+A: AutoGPT 证明了“没有终止条件的自主循环就是灾难”。Loop Engineering 的核心改进在于引入结构化验证和明确的退出机制，避免 Agent 无限发散。设计 Loop 时必须精心定义决策器逻辑，确保系统在达成目标或超出约束时能自动停止。
+---
+
 ## 相关阅读
 
 - [Loop Engineer 综述：AI Agent 时代增长最快的工程角色](/2026/06/13/loop/engineer/comprehensive/review/)

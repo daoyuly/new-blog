@@ -1,12 +1,13 @@
 ---
-title: "intentkit 项目分析报告"
-date: 2026-07-24 11:00:00
+title: intentkit 项目分析报告
 tags:
   - open-source
   - ai-repo
   - daily-research
 categories:
   - 开源项目研究
+abbrlink: 34024
+date: 2026-07-24 11:00:00
 ---
 
 # intentkit 项目分析报告

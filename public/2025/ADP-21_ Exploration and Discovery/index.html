@@ -9,21 +9,21 @@
   <title>Agentic Design Patterns - Chapter 21_ Exploration and Discovery | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agentic, design, patterns, chapter, exploration, and, discovery">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解...">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-21_%20Exploration%20and%20Discovery/">
-  <meta name="description" content="第 21 章：探索和发现本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解。这种模式对于在开放式、复杂或快速演变的领域中运行的 Agent 至关重要，在这些领域中，静态知识或预编程的解决方案是不够的。它强调 Agen">
+  <meta name="description" content="本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Chapter 21_ Exploration and Discovery">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-21_%20Exploration%20and%20Discovery/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="第 21 章：探索和发现本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解。这种模式对于在开放式、复杂或快速演变的领域中运行的 Agent 至关重要，在这些领域中，静态知识或预编程的解决方案是不够的。它强调 Agen">
+<meta property="og:description" content="本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-21/image1.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-21/image2.png">
 <meta property="article:published_time" content="2025-10-26T00:05:02.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:19:52.916Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.935Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Chapter 21_ Exploration and Discovery",
+    "description": "本章探讨了使智能 Agent 能够主动寻求新信息、发现新可能性并识别其操作环境中未知的未知因素的模式。探索和发现不同于被动行为或在预定义解决方案空间内的优化。相反，它们侧重于 Agent 主动进入陌生领域、尝试新方法并生成新知识或理解...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-10-26T00:05:02.000Z",
+    "dateModified": "2026-07-24T02:24:26.935Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-21_%20Exploration%20and%20Discovery/",
+    "inLanguage": "zh-CN",
+    "keywords": "agentic, design, patterns, chapter, exploration, and, discovery"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3601,6 +3626,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

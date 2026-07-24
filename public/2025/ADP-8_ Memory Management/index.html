@@ -9,20 +9,20 @@
   <title>Agentic Design Patterns - Chapter 8_ Memory Management | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agentic, design, patterns, chapter, memory, management">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-8_%20Memory%20Management/">
-  <meta name="description" content="第 8 章：记忆管理有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。 在 Agent 系统中，记忆指代 Agent 保留并利用过去交互、观察和学习经验中信息的能力。这种能力使 Agent 能够做出明智决策、维护对话上下文并随时间持续改进。Agent 记忆通">
+  <meta name="description" content="有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Chapter 8_ Memory Management">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-8_%20Memory%20Management/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="第 8 章：记忆管理有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。 在 Agent 系统中，记忆指代 Agent 保留并利用过去交互、观察和学习经验中信息的能力。这种能力使 Agent 能够做出明智决策、维护对话上下文并随时间持续改进。Agent 记忆通">
+<meta property="og:description" content="有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-8/image1.png">
 <meta property="article:published_time" content="2025-10-13T00:05:02.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:19:52.917Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.938Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -39,6 +39,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Chapter 8_ Memory Management",
+    "description": "有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-10-13T00:05:02.000Z",
+    "dateModified": "2026-07-24T02:24:26.938Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-8_%20Memory%20Management/",
+    "inLanguage": "zh-CN",
+    "keywords": "agentic, design, patterns, chapter, memory, management"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3645,6 +3670,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

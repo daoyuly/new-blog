@@ -9,19 +9,19 @@
   <title>AI生产力工具演进与实践：从单点渗透到全场景Agent | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="ai生产力工具演进与实践, 从单点渗透到全场景agent, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="大模型技术飞速发展，但原生能力与用户实际体感之间仍存在显著鸿沟。直接将大模型丢给用户，往往难以解决垂直场景的痛点。本文以商汤小浣熊家族的实践为例，系统梳理AI生产力工具从“有用”到“好用”的演进路径，探讨如何通过工程化手段放大AI能力...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-08-022-2-%E5%BC%A0%E6%B6%9B-%E6%9C%89%E7%94%A8%E5%88%B0%E5%A5%BD%E7%94%A8-AI-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7%E5%A6%82%E4%BD%95%E6%94%BE%E5%A4%A7-AI-%E8%83%BD%E5%8A%9B/">
-  <meta name="description" content="AI生产力工具演进与实践：从单点渗透到全场景Agent大模型技术飞速发展，但原生能力与用户实际体感之间仍存在显著鸿沟。直接将大模型丢给用户，往往难以解决垂直场景的痛点。本文以商汤小浣熊家族的实践为例，系统梳理AI生产力工具从“有用”到“好用”的演进路径，探讨如何通过工程化手段放大AI能力，实现人机协作的质效提升。 核心问题与挑战在将大模型落地为生产力工具的过程中，我们面临四个核心挑战：  体感差异">
+  <meta name="description" content="大模型技术飞速发展，但原生能力与用户实际体感之间仍存在显著鸿沟。直接将大模型丢给用户，往往难以解决垂直场景的痛点。本文以商汤小浣熊家族的实践为例，系统梳理AI生产力工具从“有用”到“好用”的演进路径，探讨如何通过工程化手段放大AI能力...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI生产力工具演进与实践：从单点渗透到全场景Agent">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-08-022-2-%E5%BC%A0%E6%B6%9B-%E6%9C%89%E7%94%A8%E5%88%B0%E5%A5%BD%E7%94%A8-AI-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7%E5%A6%82%E4%BD%95%E6%94%BE%E5%A4%A7-AI-%E8%83%BD%E5%8A%9B/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="AI生产力工具演进与实践：从单点渗透到全场景Agent大模型技术飞速发展，但原生能力与用户实际体感之间仍存在显著鸿沟。直接将大模型丢给用户，往往难以解决垂直场景的痛点。本文以商汤小浣熊家族的实践为例，系统梳理AI生产力工具从“有用”到“好用”的演进路径，探讨如何通过工程化手段放大AI能力，实现人机协作的质效提升。 核心问题与挑战在将大模型落地为生产力工具的过程中，我们面临四个核心挑战：  体感差异">
+<meta property="og:description" content="大模型技术飞速发展，但原生能力与用户实际体感之间仍存在显著鸿沟。直接将大模型丢给用户，往往难以解决垂直场景的痛点。本文以商汤小浣熊家族的实践为例，系统梳理AI生产力工具从“有用”到“好用”的演进路径，探讨如何通过工程化手段放大AI能力...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-08T03:05:35.000Z">
-<meta property="article:modified_time" content="2026-07-09T04:01:29.149Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.839Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI生产力工具演进与实践：从单点渗透到全场景Agent",
+    "description": "大模型技术飞速发展，但原生能力与用户实际体感之间仍存在显著鸿沟。直接将大模型丢给用户，往往难以解决垂直场景的痛点。本文以商汤小浣熊家族的实践为例，系统梳理AI生产力工具从“有用”到“好用”的演进路径，探讨如何通过工程化手段放大AI能力...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-08T03:05:35.000Z",
+    "dateModified": "2026-07-24T02:24:26.839Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-08-022-2-%E5%BC%A0%E6%B6%9B-%E6%9C%89%E7%94%A8%E5%88%B0%E5%A5%BD%E7%94%A8-AI-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7%E5%A6%82%E4%BD%95%E6%94%BE%E5%A4%A7-AI-%E8%83%BD%E5%8A%9B/",
+    "inLanguage": "zh-CN",
+    "keywords": "ai生产力工具演进与实践, 从单点渗透到全场景agent, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3572,6 +3597,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

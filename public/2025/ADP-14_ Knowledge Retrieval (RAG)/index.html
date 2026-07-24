@@ -9,23 +9,23 @@
   <title>Agentic Design Patterns - Chapter 14_ Knowledge Retrieval (RAG) | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agentic, design, patterns, chapter, knowledge, retrieval, (rag)">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合...">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/">
-  <meta name="description" content="第 14 章：知识检索（RAG）LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。 对于 AI Agent 来说，这一点至关重要，因为它允许">
+  <meta name="description" content="LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Chapter 14_ Knowledge Retrieval (RAG)">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="第 14 章：知识检索（RAG）LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。 对于 AI Agent 来说，这一点至关重要，因为它允许">
+<meta property="og:description" content="LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image1.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image2.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image3.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-14/image4.png">
 <meta property="article:published_time" content="2025-10-19T00:05:02.000Z">
-<meta property="article:modified_time" content="2026-06-29T15:04:18.990Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:05.070Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -42,6 +42,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Chapter 14_ Knowledge Retrieval (RAG)",
+    "description": "LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-10-19T00:05:02.000Z",
+    "dateModified": "2026-07-24T03:05:05.070Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-14_%20Knowledge%20Retrieval%20(RAG)/",
+    "inLanguage": "zh-CN",
+    "keywords": "agentic, design, patterns, chapter, knowledge, retrieval, (rag)"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -242,7 +267,12 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第-14-章：知识检索（RAG）"><a href="#第-14-章：知识检索（RAG）" class="headerlink" title="第 14 章：知识检索（RAG）"></a>第 14 章：知识检索（RAG）</h1><p>LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。</p>
+        <!-- GEO citation meta
+citation_arxiv_id: 2005.11401
+citation_arxiv_id: 2501.00309
+-->
+
+<h1 id="第-14-章：知识检索（RAG）"><a href="#第-14-章：知识检索（RAG）" class="headerlink" title="第 14 章：知识检索（RAG）"></a>第 14 章：知识检索（RAG）</h1><p>LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合外部的、当前的和上下文特定的信息，从而提高其输出的准确性、相关性和事实基础。</p>
 <p>对于 AI Agent 来说，这一点至关重要，因为它允许它们在实时、可验证的数据中立足，而不仅仅是静态的训练数据。这种能力使它们能够准确执行复杂任务，例如访问最新的公司政策来回答特定问题，或在下订单前检查当前库存。通过整合外部知识，RAG 将 Agent 从简单的对话者转变为能够执行有意义工作的有效的、数据驱动的工具。</p>
 <h2 id="知识检索（RAG）模式概述"><a href="#知识检索（RAG）模式概述" class="headerlink" title="知识检索（RAG）模式概述"></a>知识检索（RAG）模式概述</h2><p>知识检索（RAG）模式通过在生成响应之前授予 LLM 访问外部知识库的权限，显著增强了它们的能力。RAG 不是仅依赖于其内部的预训练知识，而是允许 LLM “查找”信息，就像人类可能查阅书籍或搜索互联网一样。这个过程使 LLM 能够提供更准确、最新和可验证的答案。</p>
 <p>当用户向使用 RAG 的 AI 系统提出问题或给出提示时，查询不会直接发送到 LLM。相反，系统首先在一个庞大的外部知识库——一个高度组织化的文档、数据库或网页库——中搜索相关信息。这种搜索不是简单的关键字匹配；它是一种理解用户意图和词语背后含义的”语义搜索”。这个初始搜索提取出最相关的信息片段或”块”。然后这些提取的片段被”增强”或添加到原始提示中，创建一个更丰富、更有信息量的查询。最后，这个增强的提示被发送到 LLM。有了这些额外的上下文，LLM 可以生成一个不仅流畅自然，而且在事实上基于检索数据的响应。</p>
@@ -3581,6 +3611,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

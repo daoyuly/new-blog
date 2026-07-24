@@ -1,6 +1,5 @@
 ---
 title: Scenario First：场景优先的Agent架构
-date: 2026-07-22 06:00:05
 tags:
   - 情绪
   - agent
@@ -10,8 +9,12 @@ categories:
   - Agent 与情绪
 series:
   - Agent 与情绪
-description: "上一篇拆完了情绪作为进化信号的完整链路：Expectation → Reality → Expectation Gap → Emotion → Resource Allocation → Behavior Adjustment → S..."
-keywords: "scenario, first, 场景优先的agent架构, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
+description: >-
+  上一篇拆完了情绪作为进化信号的完整链路：Expectation → Reality → Expectation Gap → Emotion →
+  Resource Allocation → Behavior Adjustment → S...
+keywords: 'scenario, first, 场景优先的agent架构, 情绪, agent, 认知科学, 持续认知, Agent 与情绪'
+abbrlink: 13168
+date: 2026-07-22 06:00:05
 ---
 
 # 场景优先的Agent架构

@@ -9,19 +9,19 @@
   <title>行业多模态大模型训推加速与落地实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="行业多模态大模型训推加速与落地实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="多模态大模型（MLLM）正快速演进，架构上呈现出理解与生成统一、MoE、端侧部署及强推理能力的发展趋势。在复杂开放场景中，MLLM的泛化性显著优于传统小模型，行业应用也从单一感知向多模态理解、检索与生成综合需求转变。然而，算力墙与长尾...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-13-038-3-%E8%B0%A2%E6%A6%9B/">
-  <meta name="description" content="行业多模态大模型训推加速与落地实践导语多模态大模型（MLLM）正快速演进，架构上呈现出理解与生成统一、MoE、端侧部署及强推理能力的发展趋势。在复杂开放场景中，MLLM的泛化性显著优于传统小模型，行业应用也从单一感知向多模态理解、检索与生成综合需求转变。然而，算力墙与长尾数据成为落地的核心拦路虎。本文将系统拆解行业多模态大模型的落地Pipeline与训推加速核心技术，直击工程痛点，提供可执行的优化">
+  <meta name="description" content="多模态大模型（MLLM）正快速演进，架构上呈现出理解与生成统一、MoE、端侧部署及强推理能力的发展趋势。在复杂开放场景中，MLLM的泛化性显著优于传统小模型，行业应用也从单一感知向多模态理解、检索与生成综合需求转变。然而，算力墙与长尾...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行业多模态大模型训推加速与落地实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-13-038-3-%E8%B0%A2%E6%A6%9B/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="行业多模态大模型训推加速与落地实践导语多模态大模型（MLLM）正快速演进，架构上呈现出理解与生成统一、MoE、端侧部署及强推理能力的发展趋势。在复杂开放场景中，MLLM的泛化性显著优于传统小模型，行业应用也从单一感知向多模态理解、检索与生成综合需求转变。然而，算力墙与长尾数据成为落地的核心拦路虎。本文将系统拆解行业多模态大模型的落地Pipeline与训推加速核心技术，直击工程痛点，提供可执行的优化">
+<meta property="og:description" content="多模态大模型（MLLM）正快速演进，架构上呈现出理解与生成统一、MoE、端侧部署及强推理能力的发展趋势。在复杂开放场景中，MLLM的泛化性显著优于传统小模型，行业应用也从单一感知向多模态理解、检索与生成综合需求转变。然而，算力墙与长尾...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-13T12:04:28.000Z">
-<meta property="article:modified_time" content="2026-07-14T04:01:14.941Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.875Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "行业多模态大模型训推加速与落地实践",
+    "description": "多模态大模型（MLLM）正快速演进，架构上呈现出理解与生成统一、MoE、端侧部署及强推理能力的发展趋势。在复杂开放场景中，MLLM的泛化性显著优于传统小模型，行业应用也从单一感知向多模态理解、检索与生成综合需求转变。然而，算力墙与长尾...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-13T12:04:28.000Z",
+    "dateModified": "2026-07-24T02:24:26.875Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-13-038-3-%E8%B0%A2%E6%A6%9B/",
+    "inLanguage": "zh-CN",
+    "keywords": "行业多模态大模型训推加速与落地实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3577,6 +3602,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

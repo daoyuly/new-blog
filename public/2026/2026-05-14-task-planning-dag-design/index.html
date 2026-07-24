@@ -9,19 +9,19 @@
   <title>AI Agent 任务规划的 DAG 设计：从理论到工程实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agent, 任务规划的, dag, 从理论到工程实践, AI Agent, DAG, 任务规划, 工作流引擎">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="大语言模型让 AI 具备了&#34;单步推理&#34;的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的：">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-14-task-planning-dag-design/">
-  <meta name="description" content="AI Agent 任务规划的 DAG 设计：从理论到工程实践 当 LLM 学会了”思考”，谁来教它”编排”？答案是：DAG（有向无环图）。  引言：为什么 Agent 需要任务规划大语言模型让 AI 具备了”单步推理”的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的：  写一篇技术报告：调研 → 大纲 → 撰写 → 审校 → 发布 部署一个服务：编译 → 测试 → 打包 → 部">
+  <meta name="description" content="大语言模型让 AI 具备了&quot;单步推理&quot;的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI Agent 任务规划的 DAG 设计：从理论到工程实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-14-task-planning-dag-design/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="AI Agent 任务规划的 DAG 设计：从理论到工程实践 当 LLM 学会了”思考”，谁来教它”编排”？答案是：DAG（有向无环图）。  引言：为什么 Agent 需要任务规划大语言模型让 AI 具备了”单步推理”的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的：  写一篇技术报告：调研 → 大纲 → 撰写 → 审校 → 发布 部署一个服务：编译 → 测试 → 打包 → 部">
+<meta property="og:description" content="大语言模型让 AI 具备了&quot;单步推理&quot;的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-14T06:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-15T04:02:14.779Z">
+<meta property="article:modified_time" content="2026-07-24T02:25:44.277Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI Agent">
 <meta property="article:tag" content="LLM">
@@ -43,6 +43,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI Agent 任务规划的 DAG 设计：从理论到工程实践",
+    "description": "大语言模型让 AI 具备了\&#34;单步推理\&#34;的能力——给它一个问题，它能给出回答。但现实世界的任务从来不是单步的：",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-14T06:00:00.000Z",
+    "dateModified": "2026-07-24T02:25:44.277Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-14-task-planning-dag-design/",
+    "inLanguage": "zh-CN",
+    "keywords": "agent, 任务规划的, dag, 从理论到工程实践, AI Agent, DAG, 任务规划, 工作流引擎"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -894,6 +919,14 @@ var _hmt = _hmt || [];
 </blockquote>
 <hr>
 <p><em>撰写日期：2026-05-14</em><br><em>字数：~15,000 字</em></p>
+<hr>
+<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
+<li><a href="/2026/05/26/conversation/as/evolution/agent/system/design/">对话即进化：Agent 的状态轨迹与认知收敛</a></li>
+<li><a href="/2026/03/28/agent/quantifiable/metrics/framework/">Agent 系统交付的可量化指标：从理论到实践的全景指南</a></li>
+<li><a href="/2026/04/01/designing/useful/multi/agent/systems/guide/">如何设计有用的多Agent系统 - 实战指南与架构设计方法论</a></li>
+<li><a href="/2026/04/03/openclaw/architecture/deep/analysis/">OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析</a></li>
+<li><a href="/2026/04/21/openfang/deep/analysis/">OpenFang 深度技术分析：下一代 Agent 操作系统的全面评测</a></li>
+</ul>
 
       
 
@@ -4211,6 +4244,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

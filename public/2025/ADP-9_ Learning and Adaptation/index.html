@@ -9,23 +9,23 @@
   <title>Agentic Design Patterns - Chapter 9_ Learning and Adaptation | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agentic, design, patterns, chapter, learning, and, adaptation">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探...">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-9_%20Learning%20and%20Adaptation/">
-  <meta name="description" content="第 9 章：学习和适应学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探讨支撑 Agent 学习和适应的原理与机制。 全局视角Agent 通过基于新经验和数据改变其思维、行动或知识来实现学习和适应。这使得 Agent">
+  <meta name="description" content="学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Chapter 9_ Learning and Adaptation">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-9_%20Learning%20and%20Adaptation/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="第 9 章：学习和适应学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探讨支撑 Agent 学习和适应的原理与机制。 全局视角Agent 通过基于新经验和数据改变其思维、行动或知识来实现学习和适应。这使得 Agent">
+<meta property="og:description" content="学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-9/image1.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-9/image2.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-9/image3.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-9/image4.png">
 <meta property="article:published_time" content="2025-10-14T00:05:02.000Z">
-<meta property="article:modified_time" content="2026-06-29T15:04:19.098Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:05.073Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -42,6 +42,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Chapter 9_ Learning and Adaptation",
+    "description": "学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-10-14T00:05:02.000Z",
+    "dateModified": "2026-07-24T03:05:05.073Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-9_%20Learning%20and%20Adaptation/",
+    "inLanguage": "zh-CN",
+    "keywords": "agentic, design, patterns, chapter, learning, and, adaptation"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -242,7 +267,11 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第-9-章：学习和适应"><a href="#第-9-章：学习和适应" class="headerlink" title="第 9 章：学习和适应"></a>第 9 章：学习和适应</h1><p>学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探讨支撑 Agent 学习和适应的原理与机制。</p>
+        <!-- GEO citation meta
+citation_arxiv_id: 1707.06347
+-->
+
+<h1 id="第-9-章：学习和适应"><a href="#第-9-章：学习和适应" class="headerlink" title="第 9 章：学习和适应"></a>第 9 章：学习和适应</h1><p>学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探讨支撑 Agent 学习和适应的原理与机制。</p>
 <h2 id="全局视角"><a href="#全局视角" class="headerlink" title="全局视角"></a>全局视角</h2><p>Agent 通过基于新经验和数据改变其思维、行动或知识来实现学习和适应。这使得 Agent 能够从简单地遵循指令演化为随时间推移变得更加智能。</p>
 <ul>
 <li><strong>强化学习：</strong> Agent 尝试不同的行动，对积极结果获得奖励，对消极结果受到惩罚，从而在动态环境中学习最优行为。适用于控制机器人或玩游戏的 Agent。</li>
@@ -3611,6 +3640,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,19 +9,19 @@
   <title>Agent Token 优化完全指南：在保证效果的前提下降低成本提升性能 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agent, token, 优化完全指南, 在保证效果的前提下降低成本提升性能, Agent, 成本优化, 性能优化, 提示词工程">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-04-15-agent-token-optimization-guide/">
-  <meta name="description" content="前言在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。 本文系统化梳理了 7 大优化策略、30+ 具体技术，并提供完整的实施路线图，帮助你将成本降低 30-70%，同时保持 85% 以上的质量。  一、Token 成本分析1.1 Token 消耗构成1总 Token 成本 &#x3D; 输入 Toke">
+  <meta name="description" content="在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agent Token 优化完全指南：在保证效果的前提下降低成本提升性能">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-04-15-agent-token-optimization-guide/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="前言在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。 本文系统化梳理了 7 大优化策略、30+ 具体技术，并提供完整的实施路线图，帮助你将成本降低 30-70%，同时保持 85% 以上的质量。  一、Token 成本分析1.1 Token 消耗构成1总 Token 成本 &#x3D; 输入 Toke">
+<meta property="og:description" content="在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-15T08:00:00.000Z">
-<meta property="article:modified_time" content="2026-04-16T04:07:47.932Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.492Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Agent">
 <meta property="article:tag" content="提示词工程">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agent Token 优化完全指南：在保证效果的前提下降低成本提升性能",
+    "description": "在 Agent 开发中，Token 消耗直接关系到成本和性能。如何在保证效果的前提下，减少 Token 使用，是每个 Agent 架构师都需要面对的核心问题。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-04-15T08:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.492Z",
+    "url": "https://www.daoyuly.cn/2026/2026-04-15-agent-token-optimization-guide/",
+    "inLanguage": "zh-CN",
+    "keywords": "agent, token, 优化完全指南, 在保证效果的前提下降低成本提升性能, Agent, 成本优化, 性能优化, 提示词工程"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -551,8 +576,8 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-19-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-23-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">16篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -562,8 +587,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-18-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-22-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">10篇 Agent 前沿论文深度解析：other与planning方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -573,8 +598,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-17-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-21-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">14篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -584,8 +609,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-16-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">18篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展</span>
+        <a href="/2026/2026-07-20-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">17篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -595,8 +620,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-15-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">14篇 Agent 前沿论文深度解析：other与planning方向最新进展</span>
+        <a href="/2026/2026-07-20-agent-context-parent-sub-design/" class="related-post-link">
+          <span class="related-post-title">主-子 Agent 上下文设计：5 篇论文的深度拆解</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -3782,6 +3807,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

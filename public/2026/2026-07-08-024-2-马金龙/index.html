@@ -9,19 +9,19 @@
   <title>开天客服大模型与知识图谱融合实践：从RAG到GraphRAG的演进与精细化对齐 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="开天客服大模型与知识图谱融合实践, 从rag到graphrag的演进与精细化对齐, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="智能客服正从基于关键词和简单意图识别的传统模式，向具备复杂推理与多模态理解能力的深度交互演进。然而，通用大模型在垂直领域的落地并非坦途，幻觉问题、多跳推理短板以及知识实时更新等挑战尤为突出。本文将复盘开天智能客服大模型的研发与应用实践...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-08-024-2-%E9%A9%AC%E9%87%91%E9%BE%99/">
-  <meta name="description" content="开天客服大模型与知识图谱融合实践：从RAG到GraphRAG的演进与精细化对齐智能客服正从基于关键词和简单意图识别的传统模式，向具备复杂推理与多模态理解能力的深度交互演进。然而，通用大模型在垂直领域的落地并非坦途，幻觉问题、多跳推理短板以及知识实时更新等挑战尤为突出。本文将复盘开天智能客服大模型的研发与应用实践，聚焦从数据流水线构建、RLHF精细化对齐，到知识图谱与LLM深度融合的攻坚路径，为工程">
+  <meta name="description" content="智能客服正从基于关键词和简单意图识别的传统模式，向具备复杂推理与多模态理解能力的深度交互演进。然而，通用大模型在垂直领域的落地并非坦途，幻觉问题、多跳推理短板以及知识实时更新等挑战尤为突出。本文将复盘开天智能客服大模型的研发与应用实践...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开天客服大模型与知识图谱融合实践：从RAG到GraphRAG的演进与精细化对齐">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-08-024-2-%E9%A9%AC%E9%87%91%E9%BE%99/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="开天客服大模型与知识图谱融合实践：从RAG到GraphRAG的演进与精细化对齐智能客服正从基于关键词和简单意图识别的传统模式，向具备复杂推理与多模态理解能力的深度交互演进。然而，通用大模型在垂直领域的落地并非坦途，幻觉问题、多跳推理短板以及知识实时更新等挑战尤为突出。本文将复盘开天智能客服大模型的研发与应用实践，聚焦从数据流水线构建、RLHF精细化对齐，到知识图谱与LLM深度融合的攻坚路径，为工程">
+<meta property="og:description" content="智能客服正从基于关键词和简单意图识别的传统模式，向具备复杂推理与多模态理解能力的深度交互演进。然而，通用大模型在垂直领域的落地并非坦途，幻觉问题、多跳推理短板以及知识实时更新等挑战尤为突出。本文将复盘开天智能客服大模型的研发与应用实践...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-08T12:04:49.000Z">
-<meta property="article:modified_time" content="2026-07-09T04:01:29.152Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.840Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "开天客服大模型与知识图谱融合实践：从RAG到GraphRAG的演进与精细化对齐",
+    "description": "智能客服正从基于关键词和简单意图识别的传统模式，向具备复杂推理与多模态理解能力的深度交互演进。然而，通用大模型在垂直领域的落地并非坦途，幻觉问题、多跳推理短板以及知识实时更新等挑战尤为突出。本文将复盘开天智能客服大模型的研发与应用实践...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-08T12:04:49.000Z",
+    "dateModified": "2026-07-24T02:24:26.840Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-08-024-2-%E9%A9%AC%E9%87%91%E9%BE%99/",
+    "inLanguage": "zh-CN",
+    "keywords": "开天客服大模型与知识图谱融合实践, 从rag到graphrag的演进与精细化对齐, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3582,6 +3607,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

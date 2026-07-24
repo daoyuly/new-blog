@@ -9,19 +9,19 @@
   <title>火山引擎Mem0：重构企业级Agent记忆系统，破解上下文断裂与成本爆炸 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="火山引擎mem0, 重构企业级agent记忆系统, 破解上下文断裂与成本爆炸, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="当前，Agent正从单次无状态交互向具备跨时间持久记忆的自主智能体演进。然而，大多数Agent仍受困于“金鱼记忆”——跨会话任务断裂、排查经验无法沉淀、用户偏好随上下文窗口压缩而丢失。为弥补记忆缺失，开发者往往暴力填充历史上下文，导致...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-15-026-%E5%AD%A3%E6%97%AD-%E5%8D%9A%E5%A3%AB-AI-Agent-%E7%9A%84%E8%AE%B0%E5%BF%86%E4%B8%AD%E9%97%B4%E4%BB%B6%EF%BC%9A%E7%81%AB%E5%B1%B1-Mem0-%E6%9E%B6%E6%9E%84%E6%8B%86%E8%A7%A3%E5%8F%8A%E8%90%BD%E5%9C%B0%E5%AE%9E%E8%B7%B5/">
-  <meta name="description" content="火山引擎Mem0：重构企业级Agent记忆系统，破解上下文断裂与成本爆炸导语当前，Agent正从单次无状态交互向具备跨时间持久记忆的自主智能体演进。然而，大多数Agent仍受困于“金鱼记忆”——跨会话任务断裂、排查经验无法沉淀、用户偏好随上下文窗口压缩而丢失。为弥补记忆缺失，开发者往往暴力填充历史上下文，导致Token成本爆炸与推理延迟急剧增加。 根本解法不在于无脑扩大上下文窗口，而在于构建一套持">
+  <meta name="description" content="当前，Agent正从单次无状态交互向具备跨时间持久记忆的自主智能体演进。然而，大多数Agent仍受困于“金鱼记忆”——跨会话任务断裂、排查经验无法沉淀、用户偏好随上下文窗口压缩而丢失。为弥补记忆缺失，开发者往往暴力填充历史上下文，导致...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="火山引擎Mem0：重构企业级Agent记忆系统，破解上下文断裂与成本爆炸">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-15-026-%E5%AD%A3%E6%97%AD-%E5%8D%9A%E5%A3%AB-AI-Agent-%E7%9A%84%E8%AE%B0%E5%BF%86%E4%B8%AD%E9%97%B4%E4%BB%B6%EF%BC%9A%E7%81%AB%E5%B1%B1-Mem0-%E6%9E%B6%E6%9E%84%E6%8B%86%E8%A7%A3%E5%8F%8A%E8%90%BD%E5%9C%B0%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="火山引擎Mem0：重构企业级Agent记忆系统，破解上下文断裂与成本爆炸导语当前，Agent正从单次无状态交互向具备跨时间持久记忆的自主智能体演进。然而，大多数Agent仍受困于“金鱼记忆”——跨会话任务断裂、排查经验无法沉淀、用户偏好随上下文窗口压缩而丢失。为弥补记忆缺失，开发者往往暴力填充历史上下文，导致Token成本爆炸与推理延迟急剧增加。 根本解法不在于无脑扩大上下文窗口，而在于构建一套持">
+<meta property="og:description" content="当前，Agent正从单次无状态交互向具备跨时间持久记忆的自主智能体演进。然而，大多数Agent仍受困于“金鱼记忆”——跨会话任务断裂、排查经验无法沉淀、用户偏好随上下文窗口压缩而丢失。为弥补记忆缺失，开发者往往暴力填充历史上下文，导致...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-15T03:07:00.000Z">
-<meta property="article:modified_time" content="2026-05-15T04:02:14.778Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.595Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "火山引擎Mem0：重构企业级Agent记忆系统，破解上下文断裂与成本爆炸",
+    "description": "当前，Agent正从单次无状态交互向具备跨时间持久记忆的自主智能体演进。然而，大多数Agent仍受困于“金鱼记忆”——跨会话任务断裂、排查经验无法沉淀、用户偏好随上下文窗口压缩而丢失。为弥补记忆缺失，开发者往往暴力填充历史上下文，导致...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-15T03:07:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.595Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-15-026-%E5%AD%A3%E6%97%AD-%E5%8D%9A%E5%A3%AB-AI-Agent-%E7%9A%84%E8%AE%B0%E5%BF%86%E4%B8%AD%E9%97%B4%E4%BB%B6%EF%BC%9A%E7%81%AB%E5%B1%B1-Mem0-%E6%9E%B6%E6%9E%84%E6%8B%86%E8%A7%A3%E5%8F%8A%E8%90%BD%E5%9C%B0%E5%AE%9E%E8%B7%B5/",
+    "inLanguage": "zh-CN",
+    "keywords": "火山引擎mem0, 重构企业级agent记忆系统, 破解上下文断裂与成本爆炸, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3582,6 +3607,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

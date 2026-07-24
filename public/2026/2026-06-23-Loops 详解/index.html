@@ -9,19 +9,19 @@
   <title>Loops 详解：Claude、GPT、Mira 以及真正有效的方法 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="loops, claude、gpt、mira, 以及真正有效的方法, Loops, 技术深度解析">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="提示是一条单独的指令。循环是人工智能持续努力直至达成的目标。可以把它想象成一个递归目标：你定义一个目标，人工智能迭代执行直至完成。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-23-Loops%20%E8%AF%A6%E8%A7%A3/">
-  <meta name="description" content="原文 什么是循环？提示是一条单独的指令。循环是人工智能持续努力直至达成的目标。可以把它想象成一个递归目标：你定义一个目标，人工智能迭代执行直至完成。提示会给出一个答案，然后等待你决定下一步该怎么做。而循环则会自行运行整个过程： 12345DISCOVER  →  work out what needs doingPLAN      →  decide how to do itEXECUTE   →">
+  <meta name="description" content="提示是一条单独的指令。循环是人工智能持续努力直至达成的目标。可以把它想象成一个递归目标：你定义一个目标，人工智能迭代执行直至完成。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Loops 详解：Claude、GPT、Mira 以及真正有效的方法">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-23-Loops%20%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="原文 什么是循环？提示是一条单独的指令。循环是人工智能持续努力直至达成的目标。可以把它想象成一个递归目标：你定义一个目标，人工智能迭代执行直至完成。提示会给出一个答案，然后等待你决定下一步该怎么做。而循环则会自行运行整个过程： 12345DISCOVER  →  work out what needs doingPLAN      →  decide how to do itEXECUTE   →">
+<meta property="og:description" content="提示是一条单独的指令。循环是人工智能持续努力直至达成的目标。可以把它想象成一个递归目标：你定义一个目标，人工智能迭代执行直至完成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-23T05:48:23.000Z">
-<meta property="article:modified_time" content="2026-06-23T05:49:29.843Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.763Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Loops">
 <meta name="twitter:card" content="summary">
@@ -37,6 +37,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Loops 详解：Claude、GPT、Mira 以及真正有效的方法",
+    "description": "提示是一条单独的指令。循环是人工智能持续努力直至达成的目标。可以把它想象成一个递归目标：你定义一个目标，人工智能迭代执行直至完成。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-23T05:48:23.000Z",
+    "dateModified": "2026-07-24T02:24:26.763Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-23-Loops%20%E8%AF%A6%E8%A7%A3/",
+    "inLanguage": "zh-CN",
+    "keywords": "loops, claude、gpt、mira, 以及真正有效的方法, Loops, 技术深度解析"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3511,6 +3536,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,19 +9,19 @@
   <title>Agent情绪与状态管理 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agent情绪与状态管理, 情绪, agent, 认知科学, 持续认知, Agent 与情绪">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-19-agent-emotion-state-management/">
-  <meta name="description" content="Agent情绪与状态管理 本篇属于「Agent与情绪」系列，第3部分「构建拥有情绪的持续认知Agent」第6篇。  大纲要点 用户建模 长期观察 用户状态识别 场景抽取 场景存储 场景检索 场景演化 状态更新 状态传播 状态衰减    （本文内容生成中，请稍后刷新查看完整版本）">
+  <meta name="description" content="上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agent情绪与状态管理">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-19-agent-emotion-state-management/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="Agent情绪与状态管理 本篇属于「Agent与情绪」系列，第3部分「构建拥有情绪的持续认知Agent」第6篇。  大纲要点 用户建模 长期观察 用户状态识别 场景抽取 场景存储 场景检索 场景演化 状态更新 状态传播 状态衰减    （本文内容生成中，请稍后刷新查看完整版本）">
+<meta property="og:description" content="上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-18T22:00:04.000Z">
-<meta property="article:modified_time" content="2026-07-20T04:01:15.969Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.910Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="agent">
 <meta property="article:tag" content="认知科学">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agent情绪与状态管理",
+    "description": "上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-18T22:00:04.000Z",
+    "dateModified": "2026-07-24T02:24:26.910Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-19-agent-emotion-state-management/",
+    "inLanguage": "zh-CN",
+    "keywords": "agent情绪与状态管理, 情绪, agent, 认知科学, 持续认知, Agent 与情绪"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -240,24 +265,99 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Agent情绪与状态管理"><a href="#Agent情绪与状态管理" class="headerlink" title="Agent情绪与状态管理"></a>Agent情绪与状态管理</h2><blockquote>
-<p>本篇属于「Agent与情绪」系列，第3部分「构建拥有情绪的持续认知Agent」第6篇。</p>
-</blockquote>
-<h3 id="大纲要点"><a href="#大纲要点" class="headerlink" title="大纲要点"></a>大纲要点</h3><ul>
-<li>用户建模</li>
-<li>长期观察</li>
-<li>用户状态识别</li>
-<li>场景抽取</li>
-<li>场景存储</li>
-<li>场景检索</li>
-<li>场景演化</li>
-<li>状态更新</li>
-<li>状态传播</li>
-<li>状态衰减</li>
-</ul>
-<!-- 此文章待GLM-5 API生成完整内容 -->
+        <p>上一篇设计了 Agent 情绪的数据结构——Scenario State、Expectation State、Emotion State、Persona State 四个实体相互索引。数据结构是静态的，真正让它活起来的是状态管理：状态怎么更新、怎么传播、怎么衰减、怎么恢复。</p>
+<p>这四个操作构成了 Agent 状态管理的完整生命周期。做对了，Agent 就像一个有连贯记忆和稳定性格的伙伴；做错了，要么变成金鱼记忆（每次对话从零开始），要么变成情绪僵尸（情绪状态永远不变）。</p>
+<h2 id="状态更新：不是赋值，是演化"><a href="#状态更新：不是赋值，是演化" class="headerlink" title="状态更新：不是赋值，是演化"></a>状态更新：不是赋值，是演化</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>最直觉的做法是：每次 Scenario 状态变化时，直接用新值覆盖旧值。<code>emotion_state.satisfaction = 0.4</code> → 用户表扬了 → <code>emotion_state.satisfaction = 0.8</code>。</p>
+<p>这不对。情绪不是跳变的，它是滑动的。用户表扬了一次，满意度不会从 0.4 瞬间跳到 0.8——它应该是从 0.4 滑向 0.8 的过程中某个点，滑动的速度取决于这次表扬的力度和当前状态的惯性。</p>
+<h3 id="What：指数移动平均更新"><a href="#What：指数移动平均更新" class="headerlink" title="What：指数移动平均更新"></a>What：指数移动平均更新</h3><p>正确的更新方式是指数移动平均（EMA）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">update_emotion_state</span>(<span class="params">current_state, new_signal, alpha=<span class="number">0.3</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    alpha 越大，新信号权重越高，状态变化越快</span></span><br><span class="line"><span class="string">    alpha 越小，历史状态惯性越大，变化越慢</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> current_state:</span><br><span class="line">        current_state[key] = (<span class="number">1</span> - alpha) * current_state[key] + alpha * new_signal[key]</span><br><span class="line">    <span class="keyword">return</span> current_state</span><br></pre></td></tr></table></figure>
 
-<p><em>（本文内容生成中，请稍后刷新查看完整版本）</em></p>
+<p>alpha 是关键参数。不同维度应该有不同的 alpha：</p>
+<ul>
+<li><strong>满意度</strong>：alpha 较高（0.4）——最近一次体验权重大</li>
+<li><strong>信任度</strong>：alpha 较低（0.15）——需要长期积累，单次互动影响小</li>
+<li><strong>耐心</strong>：alpha 中等（0.25）——既有惯性也会被快速消耗</li>
+</ul>
+<h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><p>人类情绪的更新就是 EMA 式的。你不会因为一次好体验就完全信任一个人，也不会因为一次失误就彻底否定。信任是缓慢建立的，但可以被快速破坏——这意味着正向更新和负向更新的 alpha 应该不对称：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">asymmetric_update</span>(<span class="params">current, new_signal, pos_alpha=<span class="number">0.15</span>, neg_alpha=<span class="number">0.35</span></span>):</span><br><span class="line">    alpha = pos_alpha <span class="keyword">if</span> new_signal &gt; current <span class="keyword">else</span> neg_alpha</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span> - alpha) * current + alpha * new_signal</span><br></pre></td></tr></table></figure>
+
+<p>正向变化用小 alpha（缓慢上升），负向变化用大 alpha（快速下降）。这不是悲观，这是对人类信任心理的忠实建模。</p>
+<h3 id="So-What"><a href="#So-What" class="headerlink" title="So What"></a>So What</h3><p><strong>对 Agent 设计的启示：</strong></p>
+<ol>
+<li>状态更新用 EMA，不用直接赋值</li>
+<li>不同维度用不同 alpha，反映该维度的惯性特征</li>
+<li>正负向更新用不对称 alpha——信任建立慢、破坏快</li>
+</ol>
+<h2 id="状态传播：情绪在场景间扩散"><a href="#状态传播：情绪在场景间扩散" class="headerlink" title="状态传播：情绪在场景间扩散"></a>状态传播：情绪在场景间扩散</h2><h3 id="What"><a href="#What" class="headerlink" title="What"></a>What</h3><p>一个 Scenario 产生的情绪信号不应该只影响当前场景。它应该向相关的其他场景传播。</p>
+<p>用户在”代码重构”场景中经历了连续失败 → 信任度下降 → 这个信任度下降不应该只停留在代码重构场景。它应该传播到”代码审查”场景（因为都是代码相关），但不应该传播到”日程管理”场景（因为领域不相关）。</p>
+<p>传播规则：</p>
+<ol>
+<li><strong>同类型场景</strong>：高传播权重。代码任务失败 → 其他代码任务的信任度也受影响</li>
+<li><strong>关联场景</strong>：中传播权重。通过 Scenario Graph 的边传播，权重随跳数衰减</li>
+<li><strong>无关场景</strong>：零传播权重。不同领域的场景互不影响</li>
+</ol>
+<h3 id="Why-1"><a href="#Why-1" class="headerlink" title="Why"></a>Why</h3><p>人类的情绪就是这样跨场景传播的。你在工作中被批评了，回到家对家人的态度也会变差——但不会同等程度地变差，因为”工作”和”家庭”是不同的场景域。传播强度取决于场景之间的关联度。</p>
+<p>在 Agent 架构中，Scenario Graph 提供了场景关联的拓扑结构。情绪传播就是在这个图上做信息扩散。</p>
+<h3 id="So-What-1"><a href="#So-What-1" class="headerlink" title="So What"></a>So What</h3><p><strong>对 Agent 设计的启示：</strong> 实现 Scenario Graph 上的情绪传播算法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">propagate_emotion</span>(<span class="params">scenario_graph, source_scenario_id, emotion_signal</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    从源场景向关联场景传播情绪信号</span></span><br><span class="line"><span class="string">    传播权重随图距离衰减</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    visited = &#123;source_scenario_id&#125;</span><br><span class="line">    frontier = [(source_scenario_id, <span class="number">1.0</span>)]  <span class="comment"># (scenario_id, weight)</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        current_id, weight = frontier.pop(<span class="number">0</span>)</span><br><span class="line">        current = scenario_graph.get(current_id)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 更新当前场景的情绪状态</span></span><br><span class="line">        current.emotion_state.apply_signal(emotion_signal, weight=weight * <span class="number">0.5</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 向邻居传播</span></span><br><span class="line">        <span class="keyword">for</span> neighbor_id, edge_weight <span class="keyword">in</span> scenario_graph.neighbors(current_id):</span><br><span class="line">            <span class="keyword">if</span> neighbor_id <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                visited.add(neighbor_id)</span><br><span class="line">                new_weight = weight * edge_weight * <span class="number">0.7</span>  <span class="comment"># 衰减因子</span></span><br><span class="line">                <span class="keyword">if</span> new_weight &gt; <span class="number">0.05</span>:  <span class="comment"># 低于阈值停止传播</span></span><br><span class="line">                    frontier.append((neighbor_id, new_weight))</span><br></pre></td></tr></table></figure>
+
+<p>关键设计决策：</p>
+<ul>
+<li>传播权重随距离衰减（0.7 因子），防止情绪信号无限扩散</li>
+<li>低于阈值（0.05）时停止传播，避免微弱信号的计算开销</li>
+<li>传播是异步的——先更新当前场景，再批量向邻居传播</li>
+</ul>
+<h2 id="状态衰减：让情绪回归基线"><a href="#状态衰减：让情绪回归基线" class="headerlink" title="状态衰减：让情绪回归基线"></a>状态衰减：让情绪回归基线</h2><h3 id="What-1"><a href="#What-1" class="headerlink" title="What"></a>What</h3><p>情绪信号如果没有新的输入，应该随时间衰减回基线。不能让 Agent 永远记住三个月前的一次不愉快交互——那不是持续认知，那是记仇。</p>
+<p>衰减的数学形式很简单：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decay_emotion_state</span>(<span class="params">state, elapsed_time, half_life_hours=<span class="number">24</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    情绪状态随时间衰减</span></span><br><span class="line"><span class="string">    half_life: 半衰期，默认 24 小时</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    decay_factor = <span class="number">0.5</span> ** (elapsed_time / half_life_hours)</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> state:</span><br><span class="line">        <span class="comment"># 向基线衰减，不是向零衰减</span></span><br><span class="line">        state[key] = state[key] * decay_factor + state.baseline[key] * (<span class="number">1</span> - decay_factor)</span><br><span class="line">    <span class="keyword">return</span> state</span><br></pre></td></tr></table></figure>
+
+<h3 id="Why-2"><a href="#Why-2" class="headerlink" title="Why"></a>Why</h3><p>人类情绪有自然的衰减机制。PTSD（创伤后应激障碍）就是衰减机制失灵的结果——强烈负面情绪信号无法衰减，持续影响认知和行为。</p>
+<p>不同维度的衰减速度应该不同：</p>
+<ul>
+<li><strong>满意度</strong>：快衰减（半衰期 6 小时）——今天的满意不代表明天还满意</li>
+<li><strong>信任度</strong>：慢衰减（半衰期 7 天）——信任是长期状态，不会一夜消失</li>
+<li><strong>预期高度</strong>：中衰减（半衰期 24 小时）——预期会随着新信息调整</li>
+</ul>
+<h3 id="So-What-2"><a href="#So-What-2" class="headerlink" title="So What"></a>So What</h3><p><strong>对 Agent 设计的启示：</strong></p>
+<ol>
+<li>每个情绪维度有自己的半衰期，反映该状态的持久性</li>
+<li>衰减是向基线回归，不是向零回归——基线是用户的长期情绪画像</li>
+<li>衰减应该在后台定期执行，不是每次访问时计算（性能考虑）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EmotionDecayScheduler</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.last_decay_time = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maybe_decay</span>(<span class="params">self, scenario_id, current_time</span>):</span><br><span class="line">        last = <span class="variable language_">self</span>.last_decay_time.get(scenario_id, current_time)</span><br><span class="line">        elapsed = current_time - last</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> elapsed &gt; <span class="number">3600</span>:  <span class="comment"># 至少 1 小时才执行一次衰减</span></span><br><span class="line">            scenario = <span class="variable language_">self</span>.get_scenario(scenario_id)</span><br><span class="line">            scenario.emotion_state = <span class="variable language_">self</span>.decay(scenario.emotion_state, elapsed)</span><br><span class="line">            <span class="variable language_">self</span>.last_decay_time[scenario_id] = current_time</span><br></pre></td></tr></table></figure>
+
+<h2 id="状态恢复：从负面情绪中回弹"><a href="#状态恢复：从负面情绪中回弹" class="headerlink" title="状态恢复：从负面情绪中回弹"></a>状态恢复：从负面情绪中回弹</h2><h3 id="What-2"><a href="#What-2" class="headerlink" title="What"></a>What</h3><p>状态衰减是被动的——时间流逝，情绪自然回归基线。但有些情况下，Agent 需要主动恢复情绪状态。</p>
+<p>比如：用户连续三次纠正 Agent 的回答，信任度降到 0.2。如果只靠自然衰减，可能需要几天才能恢复到可用水平。但 Agent 可以采取主动恢复策略——承认错误、给出高质量回答、或者主动降低预期。</p>
+<h3 id="Why-3"><a href="#Why-3" class="headerlink" title="Why"></a>Why</h3><p>人类有主动的情绪调节机制。Gross 的情绪调节理论定义了五种策略：情境选择、情境修改、注意分配、认知重评、表达抑制。其中认知重评（cognitive reappraisal）是最有效的——改变对事件的理解方式来调节情绪反应。</p>
+<p>Agent 的主动恢复策略对应的是行为层面的调节——通过改变行为来改变用户对 Agent 的评价，从而恢复情绪状态。</p>
+<h3 id="So-What-3"><a href="#So-What-3" class="headerlink" title="So What"></a>So What</h3><p><strong>对 Agent 设计的启示：</strong> 定义一组恢复策略，根据当前情绪状态自动触发：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EmotionRecovery</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">check_and_recover</span>(<span class="params">self, scenario</span>):</span><br><span class="line">        state = scenario.emotion_state</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 信任度过低 → 主动恢复</span></span><br><span class="line">        <span class="keyword">if</span> state.trust &lt; <span class="number">0.3</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.low_trust_recovery(scenario)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 耐心耗尽 → 快速恢复</span></span><br><span class="line">        <span class="keyword">if</span> state.patience &lt; <span class="number">0.2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.low_patience_recovery(scenario)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 满意度骤降 → 紧急恢复</span></span><br><span class="line">        <span class="keyword">if</span> state.satisfaction &lt; <span class="number">0.3</span> <span class="keyword">and</span> state.satisfaction_trend == <span class="string">&quot;declining&quot;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.critical_satisfaction_recovery(scenario)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span>  <span class="comment"># 不需要恢复</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">low_trust_recovery</span>(<span class="params">self, scenario</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;信任度恢复策略&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&quot;action&quot;</span>: <span class="string">&quot;acknowledge_limitation&quot;</span>,</span><br><span class="line">            <span class="string">&quot;message&quot;</span>: <span class="string">&quot;这个问题我之前没处理好，让我换个思路试试&quot;</span>,</span><br><span class="line">            <span class="string">&quot;strategy&quot;</span>: <span class="string">&quot;conservative&quot;</span>,  <span class="comment"># 用保守策略，不冒险</span></span><br><span class="line">            <span class="string">&quot;follow_up&quot;</span>: <span class="literal">True</span>  <span class="comment"># 主动跟进结果</span></span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">low_patience_recovery</span>(<span class="params">self, scenario</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;耐心恢复策略&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&quot;action&quot;</span>: <span class="string">&quot;shorten_response&quot;</span>,</span><br><span class="line">            <span class="string">&quot;max_length&quot;</span>: <span class="number">100</span>,  <span class="comment"># 限制回答长度</span></span><br><span class="line">            <span class="string">&quot;strategy&quot;</span>: <span class="string">&quot;direct_answer&quot;</span>,  <span class="comment"># 不解释，直接给答案</span></span><br><span class="line">            <span class="string">&quot;skip_verification&quot;</span>: <span class="literal">True</span>  <span class="comment"># 跳过确认步骤</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>关键原则：恢复策略是功能性的，不是道歉话术。Agent 不是说”对不起让你不开心了”——那是客服话术。Agent 做的是调整行为模式来重建信任。</p>
+<h2 id="四个操作的完整生命周期"><a href="#四个操作的完整生命周期" class="headerlink" title="四个操作的完整生命周期"></a>四个操作的完整生命周期</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[事件发生]</span><br><span class="line">    ↓</span><br><span class="line">[状态更新] EMA 更新当前 Scenario 的情绪状态</span><br><span class="line">    ↓</span><br><span class="line">[状态传播] 通过 Scenario Graph 向关联场景扩散</span><br><span class="line">    ↓</span><br><span class="line">[状态衰减] 后台定时任务，所有场景向基线回归</span><br><span class="line">    ↓</span><br><span class="line">[状态恢复] 检测低值状态，触发主动恢复策略</span><br><span class="line">    ↓</span><br><span class="line">[场景状态变化] → 回到 [状态更新]</span><br></pre></td></tr></table></figure>
+
+<p>这四个操作确保了 Agent 的情绪系统既有即时反应能力（更新），又有跨场景影响（传播），还有遗忘能力（衰减），以及修复能力（恢复）。缺任何一个，系统都是残缺的。</p>
+<p>下一篇，我们讨论情绪如何作为持续认知的价值反馈信号——不是 Agent 的状态管理，而是 Agent 如何用情绪信号驱动自身的认知进化。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h3 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h3><ol>
+<li>Gross, J. (1998). <em>The emerging field of emotion regulation: An integrative review</em>. Review of General Psychology, 2(3). — 情绪调节理论的奠基性综述</li>
+<li>Gross, J. (2015). <em>Emotion regulation: Current status and future prospects</em>. Psychological Inquiry, 26(1). — 情绪调节理论的最新进展</li>
+<li>Ochsner, K. &amp; Gross, J. (2005). <em>The cognitive control of emotion</em>. Trends in Cognitive Sciences, 9(5). — 认知控制情绪的神经机制</li>
+<li>Koole, S. (2009). <em>The psychology of emotion regulation: An integrative review</em>. Cognition and Emotion, 23(1). — 情绪调节心理学综述</li>
+<li>Sheppes, G. et al. (2011). <em>Emotion regulation choice: A conceptual framework and supporting evidence</em>. Journal of Experimental Psychology, 147(1). — 情绪调节策略选择</li>
+<li>Thiruchselvam, R. et al. (2011). <em>The temporal dynamics of emotion regulation: An EEG study of distraction and reappraisal</em>. Biological Psychology, 87(1). — 情绪调节的时间动态</li>
+<li>Brazdil, M. et al. (2009). <em>Emotion regulation in humans: A neural systems perspective</em>. Neuroscience. — 情绪调节的神经系统视角</li>
+<li>Etkin, A. et al. (2015). <em>The neural bases of emotion regulation</em>. Nature Reviews Neuroscience, 16(11). — 情绪调节的神经基础综述</li>
+<li>Webb, T. et al. (2012). <em>Dealing with feeling: A meta-analysis of the effectiveness of strategies derived from the process model of emotion regulation</em>. Psychological Bulletin, 138(4). — 情绪调节策略效果元分析</li>
+<li>Aldao, A. et al. (2010). <em>Emotion-regulation strategies across psychopathology: A meta-analytic review</em>. Clinical Psychology Review, 30(2). — 情绪调节策略与心理健康</li>
+<li>McRae, K. &amp; Gross, J. (2020). <em>Emotion regulation</em>. Emotion, 20(1). — 情绪调节的最新理论框架</li>
+<li>David, D. et al. (2010). <em>Cognitive emotion regulation: From basic research to clinical practice</em>. Journal of Cognitive Psychotherapy, 24(2). — 认知情绪调节的临床应用</li>
+<li>Bonanno, G. &amp; Burton, C. (2013). <em>Regulatory flexibility: An individual differences perspective on coping and emotion regulation</em>. Psychological Bulletin, 139(5). — 情绪调节的个体差异</li>
+<li>Troy, A. et al. (2010). <em>Seeing the silver lining: Cognitive reappraisal ability moderates the relationship between stress and depressive symptoms</em>. Emotion, 10(6). — 认知重评的保护作用</li>
+<li>Ford, B. &amp; Gross, J. (2019). <em>Why beliefs about emotion matter: An emotion-regulation perspective</em>. Current Directions in Psychological Science, 28(1). — 情绪信念与调节的关系</li>
+</ol>
+<h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><ol>
+<li>Gross, J. (Ed.) (2014). <em>Handbook of Emotion Regulation</em> (2nd ed.). Guilford Press. — 情绪调节研究最权威的合集</li>
+</ol>
 
       
 
@@ -318,6 +418,57 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-22-scenario-first-architecture/" class="related-post-link">
+          <span class="related-post-title">Scenario First：场景优先的Agent架构</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#认知科学</span>
+            
+              <span class="related-post-tag">#情绪</span>
+            
+              <span class="related-post-tag">#持续认知</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-agent-emotion-and-evolution/" class="related-post-link">
+          <span class="related-post-title">Agent情绪与系统进化</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#认知科学</span>
+            
+              <span class="related-post-tag">#情绪</span>
+            
+              <span class="related-post-tag">#持续认知</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-20-emotion-as-value-feedback/" class="related-post-link">
+          <span class="related-post-title">情绪作为持续认知的价值反馈</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#认知科学</span>
+            
+              <span class="related-post-tag">#情绪</span>
+            
+              <span class="related-post-tag">#持续认知</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-18-agent-emotion-data-structures/" class="related-post-link">
           <span class="related-post-title">Agent情绪的数据结构设计</span>
           <span class="related-post-tags">
@@ -337,57 +488,6 @@ var _hmt = _hmt || [];
       <li class="related-post-item">
         <a href="/2026/2026-07-17-scenario-based-emotion-modeling/" class="related-post-link">
           <span class="related-post-title">基于场景图谱的情绪建模</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#认知科学</span>
-            
-              <span class="related-post-tag">#情绪</span>
-            
-              <span class="related-post-tag">#持续认知</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-scenario-based-emotion-modeling/" class="related-post-link">
-          <span class="related-post-title">基于场景图谱的情绪建模</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#认知科学</span>
-            
-              <span class="related-post-tag">#情绪</span>
-            
-              <span class="related-post-tag">#持续认知</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-15-agent-memory-scenario-graph/" class="related-post-link">
-          <span class="related-post-title">Agent记忆与场景图谱</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#认知科学</span>
-            
-              <span class="related-post-tag">#情绪</span>
-            
-              <span class="related-post-tag">#持续认知</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-14-from-dialogue-to-persona/" class="related-post-link">
-          <span class="related-post-title">从对话到人物画像</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#agent</span>
@@ -3579,6 +3679,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

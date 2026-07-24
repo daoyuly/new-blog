@@ -1,6 +1,5 @@
 ---
-title: "LLM & SLM 研究日报 - 2026-07-24"
-date: 2026-07-24 09:00:00
+title: LLM & SLM 研究日报 - 2026-07-24
 tags:
   - LLM
   - SLM
@@ -11,8 +10,10 @@ tags:
   - daily-report
 categories:
   - LLM/SLM 日报
-description: "- 摘要: llm,pyrodash,token,slm,cost,percent,reasoning,inference,usd,accuracy"
-keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
+description: '- 摘要: llm,pyrodash,token,slm,cost,percent,reasoning,inference,usd,accuracy'
+keywords: 'llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练'
+abbrlink: 36601
+date: 2026-07-24 09:00:00
 ---
 <!-- GEO citation meta
 citation_arxiv_id: 2607.20327

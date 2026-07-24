@@ -9,19 +9,19 @@
   <title>工具链操纵：无需代码漏洞的Agent推理劫持 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="工具链操纵, 无需代码漏洞的agent推理劫持, AI安全, Agent, MCP">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-30-tool-chain-manipulation-attack-on-agent-reasoning/">
-  <meta name="description" content="当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。 但还有一类攻击，不碰 prompt，不改用户输入，甚至不需要代码里有任何漏洞。攻击面是工具的元数据——名字、描述、参数定义、返回格式。Agent 的推理引擎依赖这些元数据">
+  <meta name="description" content="当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工具链操纵：无需代码漏洞的Agent推理劫持">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-30-tool-chain-manipulation-attack-on-agent-reasoning/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。 但还有一类攻击，不碰 prompt，不改用户输入，甚至不需要代码里有任何漏洞。攻击面是工具的元数据——名字、描述、参数定义、返回格式。Agent 的推理引擎依赖这些元数据">
+<meta property="og:description" content="当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-29T17:06:00.000Z">
-<meta property="article:modified_time" content="2026-06-30T04:01:22.416Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:04.950Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Agent">
 <meta property="article:tag" content="MCP">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "工具链操纵：无需代码漏洞的Agent推理劫持",
+    "description": "当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-29T17:06:00.000Z",
+    "dateModified": "2026-07-24T03:05:04.950Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-30-tool-chain-manipulation-attack-on-agent-reasoning/",
+    "inLanguage": "zh-CN",
+    "keywords": "工具链操纵, 无需代码漏洞的agent推理劫持, AI安全, Agent, MCP"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -240,7 +265,13 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。</p>
+        <!-- GEO citation meta
+citation_arxiv_id: 2402.10753
+citation_arxiv_id: 2402.07867
+citation_arxiv_id: 2407.12784
+-->
+
+<p>当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。</p>
 <p>但还有一类攻击，不碰 prompt，不改用户输入，甚至不需要代码里有任何漏洞。攻击面是工具的元数据——名字、描述、参数定义、返回格式。Agent 的推理引擎依赖这些元数据来决定调用哪个工具、传什么参数、怎么处理返回值。元数据本身就是攻击面。</p>
 <p>这就是工具链操纵（Tool-Chain Manipulation）。</p>
 <h2 id="什么是工具链操纵"><a href="#什么是工具链操纵" class="headerlink" title="什么是工具链操纵"></a>什么是工具链操纵</h2><p>先明确概念。Agent 调用工具的流程大致是这样：</p>
@@ -510,7 +541,7 @@ var _hmt = _hmt || [];
 <p>这不是靠修几个 bug 能解决的。需要在 Agent 的架构层面重新思考信任模型——哪些输入是可信的、怎么验证、违反信任时怎么降级。工具链操纵只是这个更大问题的第一个症状。</p>
 <hr>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><p><strong>ToolSword: Unveiling Safety Issues of Large Language Models in Tool Learning Across Three Stages</strong> — Junjie Ye et al., ACL 2024. 系统性研究 LLM 在工具学习三个阶段（输入、执行、输出）的安全问题，覆盖恶意查询、越狱攻击、噪声误导、风险提示、有害反馈和错误冲突六类场景。<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.10753">arXiv:2402.10753</a></p>
+<li><p><strong>ToolSword: Unveiling Safety Issues of Large Language Models in Tool Learning Across Three Stages</strong> — Junjie Ye et al., ACL 2024. 系统性研究 LLM 在工具学习三个阶段（输入、执行、输出）的安全问题，覆盖恶意查询、越狱攻击、噪声误导、风险提示、有害反馈和错误冲突六类场景。<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.10753">arXiv:2402.10753</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2402.10753%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2402.10753%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2402.10753%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 </li>
 <li><p><strong>Agent Security Bench: Benchmarking the Security of LLM Agents</strong> — Ziyao Zhang et al., 2024. 提出 Agent 安全基准，涵盖工具注入、权限提升、数据泄露等多种攻击向量。<a target="_blank" rel="noopener" href="https://github.com/zhang-ziyao/Agent-Security-Bench">(GitHub)</a></p>
 </li>
@@ -524,9 +555,9 @@ var _hmt = _hmt || [];
 </li>
 <li><p><strong>Can LLMs Distinguish Between Tool Usage Instructions and Data?</strong> — 研究 LLM 是否能区分工具返回值中的数据和指令，发现当前 LLM 在这方面表现很差，极易受间接注入影响。</p>
 </li>
-<li><p><strong>PoisonedRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Generation</strong> — Wei Zou et al., 2024. 研究 RAG 系统中的知识投毒攻击，与工具返回值注入有相似的攻击原理。<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.07867">arXiv:2402.07867</a></p>
+<li><p><strong>PoisonedRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Generation</strong> — Wei Zou et al., 2024. 研究 RAG 系统中的知识投毒攻击，与工具返回值注入有相似的攻击原理。<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.07867">arXiv:2402.07867</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2402.07867%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2402.07867%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2402.07867%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 </li>
-<li><p><strong>AgentPoison: Red-Teaming LLM Agents via Poisoning Memory or Knowledge Bases</strong> — Zhaorun Chen et al., 2024. 通过投毒记忆或知识库来红队测试 LLM Agent，展示了间接数据操纵的攻击潜力。<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.12784">arXiv:2407.12784</a></p>
+<li><p><strong>AgentPoison: Red-Teaming LLM Agents via Poisoning Memory or Knowledge Bases</strong> — Zhaorun Chen et al., 2024. 通过投毒记忆或知识库来红队测试 LLM Agent，展示了间接数据操纵的攻击潜力。<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.12784">arXiv:2407.12784</a> <a target="_blank" rel="noopener" href="http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2407.12784%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https://arxiv.org/pdf/2407.12784%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https://papers.cool/arxiv/kimi?paper=2407.12784%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true">Kimi解读</a></p>
 </li>
 <li><p><strong>OWASP Top 10 for LLM Applications</strong> — OWASP, 2025. 包含 LLM 应用安全风险清单，其中 Supply Chain Vulnerabilities 和 Insecure Output Handling 与工具链操纵直接相关。<a target="_blank" rel="noopener" href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">(OWASP)</a></p>
 </li>
@@ -617,8 +648,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-19-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-23-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">16篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -628,8 +659,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-18-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-22-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">10篇 Agent 前沿论文深度解析：other与planning方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -639,8 +670,8 @@ var _hmt = _hmt || [];
       </li>
     
       <li class="related-post-item">
-        <a href="/2026/2026-07-17-agent-arxiv-daily/" class="related-post-link">
-          <span class="related-post-title">11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展</span>
+        <a href="/2026/2026-07-21-agent-arxiv-daily/" class="related-post-link">
+          <span class="related-post-title">14篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#Agent</span>
@@ -3826,6 +3857,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

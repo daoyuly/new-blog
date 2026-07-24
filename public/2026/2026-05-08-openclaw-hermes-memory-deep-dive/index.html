@@ -9,19 +9,19 @@
   <title>OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="openclaw, hermes, agent, 记忆机制深度对比与架构设计启示, AI Agent, 记忆系统, OpenClaw, Hermes">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="在 AI Agent 的设计哲学中，记忆系统占据了核心地位。如果说模型（LLM）是 Agent 的&#34;大脑&#34;，那么记忆系统就是它的&#34;长期存储&#34;和&#34;经验库&#34;。没有记忆，Agent 每次对话都像第一次见面，无法记住用户的偏好、项目的细节、解...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-08-openclaw-hermes-memory-deep-dive/">
-  <meta name="description" content="OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示 “记忆是智能的基石。一个没有记忆的 Agent，就像一个永远无法从经验中学习的灵魂。”  引言：记忆为何如此重要？在 AI Agent 的设计哲学中，记忆系统占据了核心地位。如果说模型（LLM）是 Agent 的”大脑”，那么记忆系统就是它的”长期存储”和”经验库”。没有记忆，Agent 每次对话都像第一次见面，无法">
+  <meta name="description" content="在 AI Agent 的设计哲学中，记忆系统占据了核心地位。如果说模型（LLM）是 Agent 的&quot;大脑&quot;，那么记忆系统就是它的&quot;长期存储&quot;和&quot;经验库&quot;。没有记忆，Agent 每次对话都像第一次见面，无法记住用户的偏好、项目的细节、解...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-08-openclaw-hermes-memory-deep-dive/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示 “记忆是智能的基石。一个没有记忆的 Agent，就像一个永远无法从经验中学习的灵魂。”  引言：记忆为何如此重要？在 AI Agent 的设计哲学中，记忆系统占据了核心地位。如果说模型（LLM）是 Agent 的”大脑”，那么记忆系统就是它的”长期存储”和”经验库”。没有记忆，Agent 每次对话都像第一次见面，无法">
+<meta property="og:description" content="在 AI Agent 的设计哲学中，记忆系统占据了核心地位。如果说模型（LLM）是 Agent 的&quot;大脑&quot;，那么记忆系统就是它的&quot;长期存储&quot;和&quot;经验库&quot;。没有记忆，Agent 每次对话都像第一次见面，无法记住用户的偏好、项目的细节、解...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-07T16:12:00.000Z">
-<meta property="article:modified_time" content="2026-05-08T04:02:50.956Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.575Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI Agent">
 <meta property="article:tag" content="OpenClaw">
@@ -42,6 +42,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "OpenClaw vs Hermes Agent：记忆机制深度对比与架构设计启示",
+    "description": "在 AI Agent 的设计哲学中，记忆系统占据了核心地位。如果说模型（LLM）是 Agent 的\&#34;大脑\&#34;，那么记忆系统就是它的\&#34;长期存储\&#34;和\&#34;经验库\&#34;。没有记忆，Agent 每次对话都像第一次见面，无法记住用户的偏好、项目的细节、解...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-07T16:12:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.575Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-08-openclaw-hermes-memory-deep-dive/",
+    "inLanguage": "zh-CN",
+    "keywords": "openclaw, hermes, agent, 记忆机制深度对比与架构设计启示, AI Agent, 记忆系统, OpenClaw, Hermes"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -4229,6 +4254,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,19 +9,19 @@
   <title>Loop Engineering：循环不是问题，是解法 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="loop, engineering, 循环不是问题, 是解法, loop engineering, agent, harness, 工程方法论">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="从 while(true) 到事件循环，从 CI/CD pipeline 到 Agent 的 self-correction，循环一直是系统的核心结构。但我们对它的态度很分裂——一边知道循环是必要的，一边又觉得循环是危险的（死循环、无...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-22-loop-engineering/">
-  <meta name="description" content="软件工程花了五十年学会一件事：别怕循环。 从 while(true) 到事件循环，从 CI&#x2F;CD pipeline 到 Agent 的 self-correction，循环一直是系统的核心结构。但我们对它的态度很分裂——一边知道循环是必要的，一边又觉得循环是危险的（死循环、无限递归、反馈震荡）。Loop Engineering 要做的事很简单：把循环从”不得不用的危险结构”变成”可工程化">
+  <meta name="description" content="从 while(true) 到事件循环，从 CI&#x2F;CD pipeline 到 Agent 的 self-correction，循环一直是系统的核心结构。但我们对它的态度很分裂——一边知道循环是必要的，一边又觉得循环是危险的（死循环、无...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Loop Engineering：循环不是问题，是解法">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-22-loop-engineering/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="软件工程花了五十年学会一件事：别怕循环。 从 while(true) 到事件循环，从 CI&#x2F;CD pipeline 到 Agent 的 self-correction，循环一直是系统的核心结构。但我们对它的态度很分裂——一边知道循环是必要的，一边又觉得循环是危险的（死循环、无限递归、反馈震荡）。Loop Engineering 要做的事很简单：把循环从”不得不用的危险结构”变成”可工程化">
+<meta property="og:description" content="从 while(true) 到事件循环，从 CI&#x2F;CD pipeline 到 Agent 的 self-correction，循环一直是系统的核心结构。但我们对它的态度很分裂——一边知道循环是必要的，一边又觉得循环是危险的（死循环、无...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-22T02:06:00.000Z">
-<meta property="article:modified_time" content="2026-06-23T04:01:54.922Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.761Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="agent">
 <meta property="article:tag" content="harness">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Loop Engineering：循环不是问题，是解法",
+    "description": "从 while(true) 到事件循环，从 CI/CD pipeline 到 Agent 的 self-correction，循环一直是系统的核心结构。但我们对它的态度很分裂——一边知道循环是必要的，一边又觉得循环是危险的（死循环、无...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-22T02:06:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.761Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-22-loop-engineering/",
+    "inLanguage": "zh-CN",
+    "keywords": "loop, engineering, 循环不是问题, 是解法, loop engineering, agent, harness, 工程方法论"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -413,59 +438,59 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-23-agent-harness-daily/" class="related-post-link">
+          <span class="related-post-title">Agent Harness 日报：框架与运行时等8项框架动态，编排范式与成熟度演进</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#harness</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-agent-harness-daily/" class="related-post-link">
+          <span class="related-post-title">Agent Harness 日报：框架与运行时等14项框架动态，编排范式与成熟度演进</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#harness</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-agent-harness-daily/" class="related-post-link">
+          <span class="related-post-title">Agent Harness 日报：框架与运行时等14项框架动态，编排范式与成熟度演进</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#harness</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-20-agent-harness-daily/" class="related-post-link">
+          <span class="related-post-title">Agent Harness 日报：框架与运行时等17项框架动态，编排范式与成熟度演进</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#agent</span>
+            
+              <span class="related-post-tag">#harness</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-19-agent-harness-daily/" class="related-post-link">
-          <span class="related-post-title">Agent Harness 日报：框架与运行时等13项框架动态，编排范式与成熟度演进</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#harness</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-18-agent-harness-daily/" class="related-post-link">
-          <span class="related-post-title">Agent Harness 日报：框架与运行时等13项框架动态，编排范式与成熟度演进</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#harness</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-17-agent-harness-daily/" class="related-post-link">
-          <span class="related-post-title">Agent Harness 日报：框架与运行时等13项框架动态，编排范式与成熟度演进</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#harness</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-agent-harness-daily/" class="related-post-link">
-          <span class="related-post-title">Agent Harness 日报：框架与运行时等13项框架动态，编排范式与成熟度演进</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#agent</span>
-            
-              <span class="related-post-tag">#harness</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-15-agent-harness-daily/" class="related-post-link">
           <span class="related-post-title">Agent Harness 日报：框架与运行时等13项框架动态，编排范式与成熟度演进</span>
           <span class="related-post-tags">
             
@@ -3654,6 +3679,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

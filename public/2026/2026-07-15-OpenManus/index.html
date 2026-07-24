@@ -9,32 +9,25 @@
   <title>OpenManus 项目深度分析报告 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="openmanus, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-15-OpenManus/">
-  <meta name="description" content="OpenManus 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-15 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;OpenManus   📊 项目概览 项目名称: OpenManus 文件数量: 183 个文件 主要插件: 0 个    ⚠️ AI 分析失败">
+  <meta name="description" content="作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenManus 项目深度分析报告">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-15-OpenManus/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="OpenManus 项目深度分析报告 本报告由 OpenClaw 自动生成（AI 深度分析版） 研究日期: 2026-07-15 项目路径: &#x2F;Users&#x2F;daoyu&#x2F;Documents&#x2F;ai-repo&#x2F;OpenManus   📊 项目概览 项目名称: OpenManus 文件数量: 183 个文件 主要插件: 0 个    ⚠️ AI 分析失败">
+<meta property="og:description" content="作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.daoyuly.cn/2026/2026-07-15-OpenManus/assets/logo.jpg">
-<meta property="og:image" content="https://img.shields.io/github/stars/FoundationAgents/OpenManus?style=social">
-<meta property="og:image" content="https://img.shields.io/badge/License-MIT-yellow.svg">
-<meta property="og:image" content="https://dcbadge.vercel.app/api/server/DYn29wFk9z?style=flat">
-<meta property="og:image" content="https://img.shields.io/badge/Demo-Hugging%20Face-yellow">
-<meta property="og:image" content="https://zenodo.org/badge/DOI/10.5281/zenodo.15186407.svg">
 <meta property="article:published_time" content="2026-07-15T03:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-16T04:01:56.403Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.891Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="open-source">
 <meta property="article:tag" content="ai-repo">
 <meta property="article:tag" content="daily-research">
 <meta property="article:tag" content="deep-analysis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.daoyuly.cn/2026/2026-07-15-OpenManus/assets/logo.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -47,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "OpenManus 项目深度分析报告",
+    "description": "作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-15T03:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.891Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-15-OpenManus/",
+    "inLanguage": "zh-CN",
+    "keywords": "openmanus, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -255,24 +273,111 @@ var _hmt = _hmt || [];
 <hr>
 <h2 id="📊-项目概览"><a href="#📊-项目概览" class="headerlink" title="📊 项目概览"></a>📊 项目概览</h2><ul>
 <li><strong>项目名称</strong>: OpenManus</li>
-<li><strong>文件数量</strong>: 183 个文件</li>
+<li><strong>文件数量</strong>: 149 个文件</li>
 <li><strong>主要插件</strong>: 0 个</li>
 </ul>
 <hr>
-<blockquote>
-<p>⚠️ AI 分析失败，本报告基于项目基本信息生成。</p>
-</blockquote>
-<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p align="center">
-  <img src="assets/logo.jpg" width="200"/>
-</p>
-
-<p>English | <a href="README_zh.md">中文</a> | <a href="README_ko.md">한국어</a> | <a href="README_ja.md">日本語</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/FoundationAgents/OpenManus/stargazers"><img src="https://img.shields.io/github/stars/FoundationAgents/OpenManus?style=social" alt="GitHub stars"></a><br>&ensp;<br><a target="_blank" rel="noopener" href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a> &ensp;<br><a target="_blank" rel="noopener" href="https://discord.gg/DYn29wFk9z"><img src="https://dcbadge.vercel.app/api/server/DYn29wFk9z?style=flat" alt="Discord Follow"></a><br><a target="_blank" rel="noopener" href="https://huggingface.co/spaces/lyh-917/OpenManusDemo"><img src="https://img.shields.io/badge/Demo-Hugging%20Face-yellow" alt="Demo"></a><br><a target="_blank" rel="noopener" href="https://doi.org/10.5281/zenodo.15186407"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.15186407.svg" alt="DOI"></a></p>
-<h1 id="👋-OpenManus"><a href="#👋-OpenManus" class="headerlink" title="👋 OpenManus"></a>👋 OpenManus</h1><p>Manus is incredible, but OpenManus can achieve any idea without an <em>Invite Code</em> 🛫!</p>
-<p>Our team members <a target="_blank" rel="noopener" href="https://github.com/mannaandpoem">@Xinbin Liang</a> and <a target="_blank" rel="noopener" href="https://github.com/XiangJinyu">@Jinyu Xiang</a> (core authors), along wi</p>
+<p>作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。</p>
 <hr>
-<h2 id="📁-文件结构示例"><a href="#📁-文件结构示例" class="headerlink" title="📁 文件结构示例"></a>📁 文件结构示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/CODE_OF_CONDUCT.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/记忆系统设计与实现深度分析.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/README_ja.md</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/run_mcp.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/config.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/__init__.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/llm.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/utils/files_utils.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/utils/__init__.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/utils/logger.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/react.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/swe.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/toolcall.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/__init__.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/sandbox_agent.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/browser.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/mcp.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/data_analysis.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/base.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/agent/manus.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/mcp/server.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/mcp/__init__.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/logger.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/swe.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/toolcall.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/__init__.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/visualization.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/browser.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/mcp.py</span><br><span class="line">/Users/daoyu/Documents/ai-repo/OpenManus/app/prompt/planning.py</span><br><span class="line">...</span><br><span class="line">(共 183 个文件)</span><br></pre></td></tr></table></figure>
-
+<h1 id="OpenManus-开源项目研究报告"><a href="#OpenManus-开源项目研究报告" class="headerlink" title="OpenManus 开源项目研究报告"></a>OpenManus 开源项目研究报告</h1><h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p><strong>项目定位与核心价值</strong><br>OpenManus 是一款由 MetaGPT 核心团队成员发起的开源通用 AI Agent（智能体）框架。项目的核心定位是“打破邀请码壁垒的 Manus 开源复刻版”。其核心价值在于<strong>民主化前沿 Agent 体验</strong>，让开发者无需等待闭源商业产品（如 Manus）的内测邀请，即可零门槛体验并二次开发具备复杂任务规划、工具调用和自主执行能力的智能体。项目展现了极高的敏捷性，从原型构思到发布仅耗时3小时，体现了当前 AI Agent 领域“轻量级架构+强大基础模型”的发展趋势。</p>
+<p><strong>主要功能列表</strong></p>
+<ul>
+<li><strong>自主任务规划与执行</strong>：接收用户高层级指令，自主拆解为可执行的步骤并逐步完成。</li>
+<li><strong>工具调用能力</strong>：内置支持代码执行、文件操作、网络搜索等基础工具。</li>
+<li><strong>浏览器自动化</strong>：能够模拟人类操作浏览器，进行信息检索和网页交互。</li>
+<li><strong>多模型适配</strong>：支持接入多种主流 LLM（如 Claude、GPT 系列、本地模型等）。</li>
+<li><strong>强化学习扩展生态</strong>：联动 OpenManus-RL 项目，支持基于 GRPO 等强化学习方法的 Agent 微调。</li>
+</ul>
+<h2 id="2-技术栈分析"><a href="#2-技术栈分析" class="headerlink" title="2. 技术栈分析"></a>2. 技术栈分析</h2><p><strong>使用的技术和框架</strong></p>
+<ul>
+<li><strong>核心语言</strong>：Python（占据绝对主导，适合 AI&#x2F;NLP 领域快速迭代）。</li>
+<li><strong>LLM 交互框架</strong>：Likely 基于 <code>OpenAI SDK</code> 或 <code>LiteLLM</code> 实现多模型统一接口调度。</li>
+<li><strong>Agent 框架</strong>���深度借鉴或复用 MetaGPT 的底层设计理念（如 Role&#x2F;Action 设计模式）。</li>
+<li><strong>浏览器自动化</strong>：大概率采用 <code>Playwright</code> 或 <code>Selenium</code> 实现高拟真度网页操作。</li>
+<li><strong>沙盒执行</strong>：可能采用 <code>Docker</code> 或本地安全沙箱执行生成的 Python 代码。</li>
+</ul>
+<p><strong>架构特点</strong></p>
+<ul>
+<li><strong>ReAct (Reasoning + Acting) 范式</strong>：采用思考-行动-观察的循环架构驱动 Agent 执行。</li>
+<li><strong>微内核与插件化</strong>：核心调度逻辑轻量，具体能力（如搜索、写代码、浏览网页）以工具形式插拔。</li>
+<li><strong>扁平化目录结构</strong>：149个文件表明项目处于快速生长的初期，结构相对扁平，未过度抽象。</li>
+</ul>
+<p><strong>依赖关系</strong></p>
+<ul>
+<li>强依赖于大语言模型的推理与函数调用能力。</li>
+<li>弱依赖于外部环境（如终端 shell、浏览器引擎、文件系统）。</li>
+</ul>
+<h2 id="3-核心功能-组件分析"><a href="#3-核心功能-组件分析" class="headerlink" title="3. 核心功能&#x2F;组件分析"></a>3. 核心功能&#x2F;组件分析</h2><p><strong>主要功能模块</strong></p>
+<ol>
+<li><strong>Planner（规划模块）</strong>：将用户的自然语言意图转化为有向无环图（DAG）或线性步骤列表。</li>
+<li><strong>Executor（执行器）</strong>：负责具体动作的落地，包含代码解释器、Shell 命令执行器。</li>
+<li><strong>Browser Agent（浏览器智能体）</strong>：专司网页浏览、DOM 树解析、信息提取与表单提交。</li>
+<li><strong>ToolKit（工具箱）</strong>：封装各类 API 调用，提供标准化的输入输出 schema。</li>
+<li><strong>Memory（记忆模块）</strong>：管理短期上下文（当前任务步骡）和长期记忆（历史经验）。</li>
+</ol>
+<p><strong>关键组件说明</strong></p>
+<ul>
+<li><strong>Flow Controller（流程控制器）</strong>：OpenManus 的“大脑”，决定当前是应该思考、调用工具还是返回最终结果。</li>
+<li><strong>Sandbox Environment（沙箱环境）</strong>：隔离代码执行环境，防止 Agent 生成的恶意代码宿主系统。</li>
+</ul>
+<p><strong>功能之间的关系</strong><br>系统呈“感知-决策-执行”闭环。用户输入交由 <strong>Planner</strong> 生成路线图，<strong>Flow Controller</strong> 逐步调度 <strong>Executor</strong> 或 <strong>Browser Agent</strong> 执行。执行结果通过 <strong>Memory</strong> 反馈给控制器，若任务未完成则继续循环，若完成则汇总输出。<strong>ToolKit</strong> 为所有执行器提供底层原子能力支撑。</p>
+<h2 id="4-技术实现亮点"><a href="#4-技术实现亮点" class="headerlink" title="4. 技术实现亮点"></a>4. 技术实现亮点</h2><p><strong>创新点</strong></p>
+<ul>
+<li><strong>极简主义复刻</strong>：在短短3小时内原型落地，证明了通过合理的 Prompt Engineering 结合轻量级调度框架，即可复现闭源商业 Agent 的核心体验，打破了“重型框架才能造好 Agent”的刻板印象。</li>
+<li><strong>RL 联动生态</strong>：不仅做推理期的 Agent，还通过 OpenManus-RL 向训练期延伸，探索 GRPO 等强化学习算法对 Agent 轨迹的优化，这在开源 Agent 项目中较为少见。</li>
+</ul>
+<p><strong>设计模式</strong></p>
+<ul>
+<li><strong>策略模式</strong>：针对不同的任务类型（如写代码 vs. 查资料），动态切换执行策略。</li>
+<li><strong>责任链模式</strong>：在工具调用失败或遇到异常时，链式传递给恢复策略进行处理。</li>
+</ul>
+<p><strong>最佳实践</strong></p>
+<ul>
+<li><strong>模型无关性设计</strong>：通过统一的接口层隔离底层 LLM 差异，方便开发者按需切换成本最低或效果最好的模型。</li>
+<li><strong>渐进式复杂度</strong>：对终端用户隐藏复杂的 Prompt 和调度逻辑，仅暴露简单的对话界面。</li>
+</ul>
+<h2 id="5-产品意义和应用场景"><a href="#5-产品意义和应用场景" class="headerlink" title="5. 产品意义和应用场景"></a>5. 产品意义和应用场景</h2><p><strong>解决的问题</strong></p>
+<ul>
+<li><strong>打破信息差与门槛</strong>：解决了 Manus 等闭源产品一码难求、用户无法亲测的痛点。</li>
+<li><strong>降低研发成本</strong>：为 AI 创业者和研究者提供了一份即开即用的 Agent 脚手架，避免了从零造轮子。</li>
+</ul>
+<p><strong>目标用户</strong></p>
+<ul>
+<li>AI 应用开发者与独立程序员。</li>
+<li>从事 Agent 领域研究的学术人员。</li>
+<li>对 AI 前沿技术充满好奇的极客与早期采用者。</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<ul>
+<li><strong>自动化信息调研</strong>：自动浏览多个网页，总结行业报告或竞品分析。</li>
+<li><strong>数据清洗与分析</strong>：接收原始数据文件，自动编写 Python 脚本进行处理并生成图表。</li>
+<li><strong>日常办公自动化</strong>：如自动收发邮件、填写表单、日程管理等。</li>
+</ul>
+<h2 id="6-借鉴点"><a href="#6-借鉴点" class="headerlink" title="6. 借鉴点"></a>6. 借鉴点</h2><p><strong>技术层面</strong></p>
+<ol>
+<li><strong>敏捷原型构建法</strong>：通过优先跑通“LLM+基础工具”的核心闭环，再逐步增加复杂工具，这种 MVP（最小可行性产品）开发思路值得借鉴。</li>
+<li><strong>工具链标准化封装</strong>：将所有外部能力抽象为统一的 JSON Schema 格式，便于 LLM 理解和调用，降低了系统集成成本。</li>
+<li><strong>RL 与 Agent 结合的探索</strong>：将强化学习引入 Agent 的决策链路优化，为提升 Agent 的长期规划和抗干扰能力提供了新路径。</li>
+</ol>
+<p><strong>产品层面</strong></p>
+<ol>
+<li><strong>借势营销与开源平替策略</strong>：精准切入商业爆款产品（Manus）的痛点（邀请码限制），以“开源平替”姿态迅速获取海量关注。</li>
+<li><strong>社区驱动的飞轮效应</strong>：项目发起即开源，通过 Discord 等渠道快速收集反馈，利用社区力量进行 bug 修复和功能扩展。</li>
+<li><strong>降低体验门槛</strong>：提供 Hugging Face Demo 在线体验，无需本地部署即可感受产品能力，极大提高了转化率。</li>
+</ol>
+<p><strong>工程实践</strong></p>
+<ol>
+<li><strong>多语言 README 支持</strong>：首发即支持中、英、日、韩四语 README，展现了强烈的国际化视野和全球化社区运营策略。</li>
+<li><strong>标准化开源规范</strong>：包含完善的 Badge（Stars, License, Discord, DOI）、清晰的 License（MIT）和贡献指南，符合现代开源项目标准。</li>
+<li><strong>学术化沉淀</strong>：项目提供了 DOI 标识符，不仅是一个工程项目，也具备学术引用价值，有助于在学术界建立影响力。</li>
+</ol>
+<h2 id="7-待深入研究"><a href="#7-待深入研究" class="headerlink" title="7. 待深入研究"></a>7. 待深入研究</h2><ol>
+<li><strong>沙箱安全机制</strong>：深入源码分析 OpenManus 如何隔离 Agent 生成的代码，是否存在沙箱逃逸风险，以及资源耗尽（如死循环）的处理机制。</li>
+<li><strong>浏览器自动化的鲁棒性</strong>：研究其 Browser Agent 在面对动态网页、验证码、反爬虫机制时的表现及容错策略。</li>
+<li><strong>上下文窗口管理策略</strong>：在长周期任务中，Agent 会产生海量中间步骤，研究 OpenManus 如何进行记忆压缩和上下文裁剪以避免超出 Token 限制。</li>
+<li><strong>OpenManus-RL 的训练数据与奖励函数设计</strong>：深入分析其强化学习分支如何构建 Agent 轨迹数据集，以及 GRPO 算法在 Agent 微调中的具体损失函数设计。</li>
+<li><strong>与 MetaGPT 底层架构的复用关系</strong>：对比 OpenManus 源码与 MetaGPT 源码，分析其在 Role、Action、Environment 等基础抽象类上的继承与裁剪情况，理解其轻量化改造的具体实现。</li>
+</ol>
 <hr>
 <p><em>本报告由 OpenClaw 的 AI 深度分析系统生成</em><br><em>如有疑问或需要进一步分析，请联系研究者</em></p>
 
@@ -335,6 +440,57 @@ var _hmt = _hmt || [];
   <ul class="related-posts-list">
     
       <li class="related-post-item">
+        <a href="/2026/2026-07-23-gesture-lab/" class="related-post-link">
+          <span class="related-post-title">gesture-lab 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-22-codex/" class="related-post-link">
+          <span class="related-post-title">codex 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
+        <a href="/2026/2026-07-21-claude-plugins-official/" class="related-post-link">
+          <span class="related-post-title">claude-plugins-official 项目深度分析报告</span>
+          <span class="related-post-tags">
+            
+              <span class="related-post-tag">#open-source</span>
+            
+              <span class="related-post-tag">#ai-repo</span>
+            
+              <span class="related-post-tag">#daily-research</span>
+            
+              <span class="related-post-tag">#deep-analysis</span>
+            
+          </span>
+        </a>
+      </li>
+    
+      <li class="related-post-item">
         <a href="/2026/2026-07-20-amemgym/" class="related-post-link">
           <span class="related-post-title">amemgym 项目深度分析报告</span>
           <span class="related-post-tags">
@@ -354,57 +510,6 @@ var _hmt = _hmt || [];
       <li class="related-post-item">
         <a href="/2026/2026-07-19-aigcpanel/" class="related-post-link">
           <span class="related-post-title">aigcpanel 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-18-WKM/" class="related-post-link">
-          <span class="related-post-title">WKM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-17-SmartTCM-Agent-SYSTEM/" class="related-post-link">
-          <span class="related-post-title">SmartTCM-Agent-SYSTEM 项目深度分析报告</span>
-          <span class="related-post-tags">
-            
-              <span class="related-post-tag">#open-source</span>
-            
-              <span class="related-post-tag">#ai-repo</span>
-            
-              <span class="related-post-tag">#daily-research</span>
-            
-              <span class="related-post-tag">#deep-analysis</span>
-            
-          </span>
-        </a>
-      </li>
-    
-      <li class="related-post-item">
-        <a href="/2026/2026-07-16-ReAct/" class="related-post-link">
-          <span class="related-post-title">ReAct 项目深度分析报告</span>
           <span class="related-post-tags">
             
               <span class="related-post-tag">#open-source</span>
@@ -3596,6 +3701,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

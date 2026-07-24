@@ -9,19 +9,19 @@
   <title>AI搜索场景下的生成式UI工程实践：从协议设计到自动化产线 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="ai搜索场景下的生成式ui工程实践, 从协议设计到自动化产线, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="随着大语言模型能力的爆发，AI搜索的交互范式正在发生根本性转变：从传统的“关键词+蓝色链接”走向自然语言提问与动态界面生成。UI不再是静态的预先定义模板，而是模型输出的一部分，从静态渲染走向动态生成。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-05-013-%E9%82%93%E5%B0%8F%E7%BA%A2-AI-%E6%90%9C%E7%B4%A2%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E7%94%9F%E6%88%90%E5%BC%8F-UI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/">
-  <meta name="description" content="AI搜索场景下的生成式UI工程实践：从协议设计到自动化产线导语随着大语言模型能力的爆发，AI搜索的交互范式正在发生根本性转变：从传统的“关键词+蓝色链接”走向自然语言提问与动态界面生成。UI不再是静态的预先定义模板，而是模型输出的一部分，从静态渲染走向动态生成。 这一转变带来了巨大的体验红利，但也给工程团队提出了严峻挑战：如何让LLM稳定、合规、高性能地生成复杂UI？我们在亿级流量的AI搜索场景中">
+  <meta name="description" content="随着大语言模型能力的爆发，AI搜索的交互范式正在发生根本性转变：从传统的“关键词+蓝色链接”走向自然语言提问与动态界面生成。UI不再是静态的预先定义模板，而是模型输出的一部分，从静态渲染走向动态生成。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI搜索场景下的生成式UI工程实践：从协议设计到自动化产线">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-05-013-%E9%82%93%E5%B0%8F%E7%BA%A2-AI-%E6%90%9C%E7%B4%A2%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E7%94%9F%E6%88%90%E5%BC%8F-UI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="AI搜索场景下的生成式UI工程实践：从协议设计到自动化产线导语随着大语言模型能力的爆发，AI搜索的交互范式正在发生根本性转变：从传统的“关键词+蓝色链接”走向自然语言提问与动态界面生成。UI不再是静态的预先定义模板，而是模型输出的一部分，从静态渲染走向动态生成。 这一转变带来了巨大的体验红利，但也给工程团队提出了严峻挑战：如何让LLM稳定、合规、高性能地生成复杂UI？我们在亿级流量的AI搜索场景中">
+<meta property="og:description" content="随着大语言模型能力的爆发，AI搜索的交互范式正在发生根本性转变：从传统的“关键词+蓝色链接”走向自然语言提问与动态界面生成。UI不再是静态的预先定义模板，而是模型输出的一部分，从静态渲染走向动态生成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-05T07:18:16.000Z">
-<meta property="article:modified_time" content="2026-05-07T05:19:45.140Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.563Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI搜索场景下的生成式UI工程实践：从协议设计到自动化产线",
+    "description": "随着大语言模型能力的爆发，AI搜索的交互范式正在发生根本性转变：从传统的“关键词+蓝色链接”走向自然语言提问与动态界面生成。UI不再是静态的预先定义模板，而是模型输出的一部分，从静态渲染走向动态生成。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-05T07:18:16.000Z",
+    "dateModified": "2026-07-24T02:24:26.563Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-05-013-%E9%82%93%E5%B0%8F%E7%BA%A2-AI-%E6%90%9C%E7%B4%A2%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E7%94%9F%E6%88%90%E5%BC%8F-UI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/",
+    "inLanguage": "zh-CN",
+    "keywords": "ai搜索场景下的生成式ui工程实践, 从协议设计到自动化产线, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3617,6 +3642,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -1,6 +1,5 @@
 ---
-title: "OpenManus 项目深度分析报告"
-date: 2026-07-15 11:00:00
+title: OpenManus 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,8 +7,14 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
-description: "作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT 团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。"
-keywords: "openmanus, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+description: >-
+  作为开源项目分析专家，我基于您提供的项目信息（结合对 OpenManus 及其背后 MetaGPT
+  团队背景的行业认知），为您生成一份全面、深入的结构化研究报告。
+keywords: >-
+  openmanus, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis,
+  开源项目研究
+abbrlink: 64529
+date: 2026-07-15 11:00:00
 ---
 
 # OpenManus 项目深度分析报告

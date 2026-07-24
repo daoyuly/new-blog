@@ -1,6 +1,5 @@
 ---
-title: "LLM & SLM 研究日报 - 2026-07-21"
-date: 2026-07-21 09:00:00
+title: LLM & SLM 研究日报 - 2026-07-21
 tags:
   - LLM
   - SLM
@@ -11,8 +10,12 @@ tags:
   - daily-report
 categories:
   - LLM/SLM 日报
-description: "- 摘要: toolsciver,scientific,claim,tool,multimodal,mscv,visuals,verification,grpo,visual"
-keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
+description: >-
+  - 摘要:
+  toolsciver,scientific,claim,tool,multimodal,mscv,visuals,verification,grpo,visual
+keywords: 'llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练'
+abbrlink: 36153
+date: 2026-07-21 09:00:00
 ---
 <!-- GEO citation meta
 citation_arxiv_id: 2607.16131

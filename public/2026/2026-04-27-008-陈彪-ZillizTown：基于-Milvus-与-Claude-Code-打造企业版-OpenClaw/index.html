@@ -9,19 +9,19 @@
   <title>企业级 Agent 架构演进：ZillizTown 的工程实践与思考 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="企业级, agent, 架构演进, zilliztown, 的工程实践与思考, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-04-27-008-%E9%99%88%E5%BD%AA-ZillizTown%EF%BC%9A%E5%9F%BA%E4%BA%8E-Milvus-%E4%B8%8E-Claude-Code-%E6%89%93%E9%80%A0%E4%BC%81%E4%B8%9A%E7%89%88-OpenClaw/">
-  <meta name="description" content="企业级 Agent 架构演进：ZillizTown 的工程实践与思考导语软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节点，“小模型 + 好 Skills” 正在展现出比 “大模型无 Skills” 更强的业务落地">
+  <meta name="description" content="软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="企业级 Agent 架构演进：ZillizTown 的工程实践与思考">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-04-27-008-%E9%99%88%E5%BD%AA-ZillizTown%EF%BC%9A%E5%9F%BA%E4%BA%8E-Milvus-%E4%B8%8E-Claude-Code-%E6%89%93%E9%80%A0%E4%BC%81%E4%B8%9A%E7%89%88-OpenClaw/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="企业级 Agent 架构演进：ZillizTown 的工程实践与思考导语软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节点，“小模型 + 好 Skills” 正在展现出比 “大模型无 Skills” 更强的业务落地">
+<meta property="og:description" content="软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-27T09:42:53.000Z">
-<meta property="article:modified_time" content="2026-04-29T04:06:41.064Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.535Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "企业级 Agent 架构演进：ZillizTown 的工程实践与思考",
+    "description": "软件世界的流量入口正在发生结构性迁移——从浏览器和原生 App，快速向 Agent 与 Skills 演进。主流 SaaS 厂商纷纷开放 MCP 接口，Skills 正在替代传统 App，开发周期从月级缩短至分钟级。在这个范式切换的节...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-04-27T09:42:53.000Z",
+    "dateModified": "2026-07-24T02:24:26.535Z",
+    "url": "https://www.daoyuly.cn/2026/2026-04-27-008-%E9%99%88%E5%BD%AA-ZillizTown%EF%BC%9A%E5%9F%BA%E4%BA%8E-Milvus-%E4%B8%8E-Claude-Code-%E6%89%93%E9%80%A0%E4%BC%81%E4%B8%9A%E7%89%88-OpenClaw/",
+    "inLanguage": "zh-CN",
+    "keywords": "企业级, agent, 架构演进, zilliztown, 的工程实践与思考, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3590,6 +3615,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

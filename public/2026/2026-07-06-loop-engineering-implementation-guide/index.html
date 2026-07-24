@@ -9,19 +9,19 @@
   <title>Loop Engineering 落地手册：从零搭建第一个工程闭环 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="loop, engineering, 落地手册, 从零搭建第一个工程闭环, Loop Engineering, SRE, CI, Error Budget">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-06-loop-engineering-implementation-guide/">
-  <meta name="description" content="上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。 说白了，问题就一个：故障发现慢，响应慢，恢复更慢。监控有，报警有，但从”发现问题”到”自动止血”之间，全是人肉。 今天要干的事很简单——把这段人肉流程变成代码。从零搭一个最小的工程闭环：CI 门禁 → Error Budget 消耗">
+  <meta name="description" content="上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Loop Engineering 落地手册：从零搭建第一个工程闭环">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-06-loop-engineering-implementation-guide/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。 说白了，问题就一个：故障发现慢，响应慢，恢复更慢。监控有，报警有，但从”发现问题”到”自动止血”之间，全是人肉。 今天要干的事很简单——把这段人肉流程变成代码。从零搭一个最小的工程闭环：CI 门禁 → Error Budget 消耗">
+<meta property="og:description" content="上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-06T09:30:00.000Z">
-<meta property="article:modified_time" content="2026-07-07T04:01:35.217Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.832Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Loop Engineering">
 <meta property="article:tag" content="SRE">
@@ -41,6 +41,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Loop Engineering 落地手册：从零搭建第一个工程闭环",
+    "description": "上周三凌晨两点，支付服务 P99 飙到 8 秒，报警响了 47 条，值班的同事翻了半小时日志才定位到是下游优惠券服务超时。等熔断加上去，已经影响了 1200 笔订单。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-06T09:30:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.832Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-06-loop-engineering-implementation-guide/",
+    "inLanguage": "zh-CN",
+    "keywords": "loop, engineering, 落地手册, 从零搭建第一个工程闭环, Loop Engineering, SRE, CI, Error Budget"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3659,6 +3684,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

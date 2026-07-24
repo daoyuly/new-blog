@@ -9,19 +9,19 @@
   <title>代码重构 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="代码重构">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="在没有具体阅读《重构》之前，我认为重构就是将代码变的容易理解，容易维护，但在阅读了《重构》之后才发现重构不仅可以利用到重新构造已有的代码，也可以帮助我们在阅读代码的过程中增加我们的对代码理解的速度。其实我想每个学习编写代码的同行都在学...">
   <link rel="canonical" href="https://www.daoyuly.cn/2008/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
-  <meta name="description" content="在没有具体阅读《重构》之前，我认为重构就是将代码变的容易理解，容易维护，但在阅读了《重构》之后才发现重构不仅可以利用到重新构造已有的代码，也可以帮助我们在阅读代码的过程中增加我们的对代码理解的速度。其实我想每个学习编写代码的同行都在学习的过程中阅读过别人的代码，然后还有可能将别人的代码拿到计算机上编译运行来查看结果表现。实际上我认为这在某种意义上属于重构，只是重构的粒度有多大，或许你修改别人的代码">
+  <meta name="description" content="在没有具体阅读《重构》之前，我认为重构就是将代码变的容易理解，容易维护，但在阅读了《重构》之后才发现重构不仅可以利用到重新构造已有的代码，也可以帮助我们在阅读代码的过程中增加我们的对代码理解的速度。其实我想每个学习编写代码的同行都在学...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码重构">
 <meta property="og:url" content="https://www.daoyuly.cn/2008/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="在没有具体阅读《重构》之前，我认为重构就是将代码变的容易理解，容易维护，但在阅读了《重构》之后才发现重构不仅可以利用到重新构造已有的代码，也可以帮助我们在阅读代码的过程中增加我们的对代码理解的速度。其实我想每个学习编写代码的同行都在学习的过程中阅读过别人的代码，然后还有可能将别人的代码拿到计算机上编译运行来查看结果表现。实际上我认为这在某种意义上属于重构，只是重构的粒度有多大，或许你修改别人的代码">
+<meta property="og:description" content="在没有具体阅读《重构》之前，我认为重构就是将代码变的容易理解，容易维护，但在阅读了《重构》之后才发现重构不仅可以利用到重新构造已有的代码，也可以帮助我们在阅读代码的过程中增加我们的对代码理解的速度。其实我想每个学习编写代码的同行都在学...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2008-02-04T02:28:00.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:19:52.920Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.962Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="代码重构">
 <meta name="twitter:card" content="summary">
@@ -37,6 +37,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "代码重构",
+    "description": "在没有具体阅读《重构》之前，我认为重构就是将代码变的容易理解，容易维护，但在阅读了《重构》之后才发现重构不仅可以利用到重新构造已有的代码，也可以帮助我们在阅读代码的过程中增加我们的对代码理解的速度。其实我想每个学习编写代码的同行都在学...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2008-02-04T02:28:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.962Z",
+    "url": "https://www.daoyuly.cn/2008/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/",
+    "inLanguage": "zh-CN",
+    "keywords": "代码重构"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3447,6 +3472,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

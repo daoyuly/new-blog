@@ -1,6 +1,5 @@
 ---
-title: "IntentGraph 项目深度分析报告"
-date: 2026-07-10 11:00:00
+title: IntentGraph 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,8 +7,12 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
-description: "以下是对 IntentGraph 项目的深度分析研究报告。"
-keywords: "intentgraph, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis, 开源项目研究"
+description: 以下是对 IntentGraph 项目的深度分析研究报告。
+keywords: >-
+  intentgraph, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis,
+  开源项目研究
+abbrlink: 14094
+date: 2026-07-10 11:00:00
 ---
 
 # IntentGraph 项目深度分析报告

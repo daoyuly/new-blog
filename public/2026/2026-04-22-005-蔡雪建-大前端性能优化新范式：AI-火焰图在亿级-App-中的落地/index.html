@@ -9,19 +9,19 @@
   <title>从专家经验到工程科学：快手 FlameEye AI 火焰图性能优化实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="从专家经验到工程科学, flameeye, 火焰图性能优化实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="大前端性能优化正在经历从体系化向 AI First 及 AI Native 的深刻演进。传统的性能分析高度依赖专家经验，面对多平台、海量 Trace 数据时，往往陷入门槛高、效率低、覆盖不全的困境。快手大前端团队针对这些痛点，推出了 ...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-04-22-005-%E8%94%A1%E9%9B%AA%E5%BB%BA-%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B0%E8%8C%83%E5%BC%8F%EF%BC%9AAI-%E7%81%AB%E7%84%B0%E5%9B%BE%E5%9C%A8%E4%BA%BF%E7%BA%A7-App-%E4%B8%AD%E7%9A%84%E8%90%BD%E5%9C%B0/">
-  <meta name="description" content="从专家经验到工程科学：快手 FlameEye AI 火焰图性能优化实践导语大前端性能优化正在经历从体系化向 AI First 及 AI Native 的深刻演进。传统的性能分析高度依赖专家经验，面对多平台、海量 Trace 数据时，往往陷入门槛高、效率低、覆盖不全的困境。快手大前端团队针对这些痛点，推出了 FlameEye 系统，将研发范式从 Human In The Loop 转向 Human">
+  <meta name="description" content="大前端性能优化正在经历从体系化向 AI First 及 AI Native 的深刻演进。传统的性能分析高度依赖专家经验，面对多平台、海量 Trace 数据时，往往陷入门槛高、效率低、覆盖不全的困境。快手大前端团队针对这些痛点，推出了 ...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从专家经验到工程科学：快手 FlameEye AI 火焰图性能优化实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-04-22-005-%E8%94%A1%E9%9B%AA%E5%BB%BA-%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B0%E8%8C%83%E5%BC%8F%EF%BC%9AAI-%E7%81%AB%E7%84%B0%E5%9B%BE%E5%9C%A8%E4%BA%BF%E7%BA%A7-App-%E4%B8%AD%E7%9A%84%E8%90%BD%E5%9C%B0/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="从专家经验到工程科学：快手 FlameEye AI 火焰图性能优化实践导语大前端性能优化正在经历从体系化向 AI First 及 AI Native 的深刻演进。传统的性能分析高度依赖专家经验，面对多平台、海量 Trace 数据时，往往陷入门槛高、效率低、覆盖不全的困境。快手大前端团队针对这些痛点，推出了 FlameEye 系统，将研发范式从 Human In The Loop 转向 Human">
+<meta property="og:description" content="大前端性能优化正在经历从体系化向 AI First 及 AI Native 的深刻演进。传统的性能分析高度依赖专家经验，面对多平台、海量 Trace 数据时，往往陷入门槛高、效率低、覆盖不全的困境。快手大前端团队针对这些痛点，推出了 ...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-22T15:29:11.000Z">
-<meta property="article:modified_time" content="2026-04-23T04:03:45.453Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.521Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "从专家经验到工程科学：快手 FlameEye AI 火焰图性能优化实践",
+    "description": "大前端性能优化正在经历从体系化向 AI First 及 AI Native 的深刻演进。传统的性能分析高度依赖专家经验，面对多平台、海量 Trace 数据时，往往陷入门槛高、效率低、覆盖不全的困境。快手大前端团队针对这些痛点，推出了 ...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-04-22T15:29:11.000Z",
+    "dateModified": "2026-07-24T02:24:26.521Z",
+    "url": "https://www.daoyuly.cn/2026/2026-04-22-005-%E8%94%A1%E9%9B%AA%E5%BB%BA-%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B0%E8%8C%83%E5%BC%8F%EF%BC%9AAI-%E7%81%AB%E7%84%B0%E5%9B%BE%E5%9C%A8%E4%BA%BF%E7%BA%A7-App-%E4%B8%AD%E7%9A%84%E8%90%BD%E5%9C%B0/",
+    "inLanguage": "zh-CN",
+    "keywords": "从专家经验到工程科学, flameeye, 火焰图性能优化实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3581,6 +3606,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

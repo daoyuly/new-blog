@@ -9,19 +9,19 @@
   <title>多租户与混合多云下的 AI 算力调度与存储优化实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="多租户与混合多云下的, 算力调度与存储优化实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="随着 AI 基础设施的快速演进，算力架构正经历从单机房向跨机房、多云与混合云的深刻转型。在这一趋势下，企业内部的 AI 算力调度也从单集群孤岛迈向多集群联邦，大模型推理流量调度更是向异构算力感知与缓存亲和性方向深化。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-13-037-3-%E7%8E%8B%E5%A4%A9%E5%BA%86-%E8%B4%9D%E5%A3%B3%E6%89%BE%E6%88%BF-%E5%A4%9A%E7%A7%9F%E6%88%B7%E4%B8%8B%E7%9A%84%E7%AE%97%E5%8A%9B%E5%88%86%E9%85%8D%E5%92%8C%E8%B0%83%E5%BA%A6%E5%AE%9E%E8%B7%B5/">
-  <meta name="description" content="多租户与混合多云下的 AI 算力调度与存储优化实践导语随着 AI 基础设施的快速演进，算力架构正经历从单机房向跨机房、多云与混合云的深刻转型。在这一趋势下，企业内部的 AI 算力调度也从单集群孤岛迈向多集群联邦，大模型推理流量调度更是向异构算力感知与缓存亲和性方向深化。 然而，多租户与混合多云环境带来了算力分散、存储瓶颈及资源利用率低等严峻挑战。本文结合贝壳在 AI 基础设施领域的落地实践，探讨如">
+  <meta name="description" content="随着 AI 基础设施的快速演进，算力架构正经历从单机房向跨机房、多云与混合云的深刻转型。在这一趋势下，企业内部的 AI 算力调度也从单集群孤岛迈向多集群联邦，大模型推理流量调度更是向异构算力感知与缓存亲和性方向深化。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多租户与混合多云下的 AI 算力调度与存储优化实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-13-037-3-%E7%8E%8B%E5%A4%A9%E5%BA%86-%E8%B4%9D%E5%A3%B3%E6%89%BE%E6%88%BF-%E5%A4%9A%E7%A7%9F%E6%88%B7%E4%B8%8B%E7%9A%84%E7%AE%97%E5%8A%9B%E5%88%86%E9%85%8D%E5%92%8C%E8%B0%83%E5%BA%A6%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="多租户与混合多云下的 AI 算力调度与存储优化实践导语随着 AI 基础设施的快速演进，算力架构正经历从单机房向跨机房、多云与混合云的深刻转型。在这一趋势下，企业内部的 AI 算力调度也从单集群孤岛迈向多集群联邦，大模型推理流量调度更是向异构算力感知与缓存亲和性方向深化。 然而，多租户与混合多云环境带来了算力分散、存储瓶颈及资源利用率低等严峻挑战。本文结合贝壳在 AI 基础设施领域的落地实践，探讨如">
+<meta property="og:description" content="随着 AI 基础设施的快速演进，算力架构正经历从单机房向跨机房、多云与混合云的深刻转型。在这一趋势下，企业内部的 AI 算力调度也从单集群孤岛迈向多集群联邦，大模型推理流量调度更是向异构算力感知与缓存亲和性方向深化。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-13T06:05:06.000Z">
-<meta property="article:modified_time" content="2026-07-14T04:01:14.940Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.874Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "多租户与混合多云下的 AI 算力调度与存储优化实践",
+    "description": "随着 AI 基础设施的快速演进，算力架构正经历从单机房向跨机房、多云与混合云的深刻转型。在这一趋势下，企业内部的 AI 算力调度也从单集群孤岛迈向多集群联邦，大模型推理流量调度更是向异构算力感知与缓存亲和性方向深化。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-13T06:05:06.000Z",
+    "dateModified": "2026-07-24T02:24:26.874Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-13-037-3-%E7%8E%8B%E5%A4%A9%E5%BA%86-%E8%B4%9D%E5%A3%B3%E6%89%BE%E6%88%BF-%E5%A4%9A%E7%A7%9F%E6%88%B7%E4%B8%8B%E7%9A%84%E7%AE%97%E5%8A%9B%E5%88%86%E9%85%8D%E5%92%8C%E8%B0%83%E5%BA%A6%E5%AE%9E%E8%B7%B5/",
+    "inLanguage": "zh-CN",
+    "keywords": "多租户与混合多云下的, 算力调度与存储优化实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3589,6 +3614,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

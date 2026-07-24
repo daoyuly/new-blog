@@ -9,19 +9,19 @@
   <title>统一多模态大模型的自回归路线：从架构演进到工程实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="统一多模态大模型的自回归路线, 从架构演进到工程实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="多模态大模型正经历从“理解与生成分离”向“一体化统一架构”的关键演进。过去，我们习惯于用LLaVA架构做理解，用Diffusion模型做生成，两者各自为战。然而，这种拼凑式架构在信息流转与Scaling Law上正面临瓶颈。本文将深入...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-05-30-053-%E7%8E%8B%E6%9B%9C%E6%98%8E-%E5%8D%9A%E5%A3%AB-%E7%90%86%E8%A7%A3%E4%B8%8E%E7%94%9F%E6%88%90%E4%B8%80%E4%BD%93%E5%8C%96%EF%BC%9A%E7%BB%9F%E4%B8%80%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%87%AA%E5%9B%9E%E5%BD%92%E8%B7%AF%E7%BA%BF/">
-  <meta name="description" content="统一多模态大模型的自回归路线：从架构演进到工程实践导语多模态大模型正经历从“理解与生成分离”向“一体化统一架构”的关键演进。过去，我们习惯于用LLaVA架构做理解，用Diffusion模型做生成，两者各自为战。然而，这种拼凑式架构在信息流转与Scaling Law上正面临瓶颈。本文将深入探讨统一多模态大模型的Decoder-only纯自回归路线，剖析如何通过分模态MoE架构与统一自回归目标（NTP">
+  <meta name="description" content="多模态大模型正经历从“理解与生成分离”向“一体化统一架构”的关键演进。过去，我们习惯于用LLaVA架构做理解，用Diffusion模型做生成，两者各自为战。然而，这种拼凑式架构在信息流转与Scaling Law上正面临瓶颈。本文将深入...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="统一多模态大模型的自回归路线：从架构演进到工程实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-05-30-053-%E7%8E%8B%E6%9B%9C%E6%98%8E-%E5%8D%9A%E5%A3%AB-%E7%90%86%E8%A7%A3%E4%B8%8E%E7%94%9F%E6%88%90%E4%B8%80%E4%BD%93%E5%8C%96%EF%BC%9A%E7%BB%9F%E4%B8%80%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%87%AA%E5%9B%9E%E5%BD%92%E8%B7%AF%E7%BA%BF/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="统一多模态大模型的自回归路线：从架构演进到工程实践导语多模态大模型正经历从“理解与生成分离”向“一体化统一架构”的关键演进。过去，我们习惯于用LLaVA架构做理解，用Diffusion模型做生成，两者各自为战。然而，这种拼凑式架构在信息流转与Scaling Law上正面临瓶颈。本文将深入探讨统一多模态大模型的Decoder-only纯自回归路线，剖析如何通过分模态MoE架构与统一自回归目标（NTP">
+<meta property="og:description" content="多模态大模型正经历从“理解与生成分离”向“一体化统一架构”的关键演进。过去，我们习惯于用LLaVA架构做理解，用Diffusion模型做生成，两者各自为战。然而，这种拼凑式架构在信息流转与Scaling Law上正面临瓶颈。本文将深入...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-30T12:06:44.000Z">
-<meta property="article:modified_time" content="2026-05-31T04:01:18.491Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.651Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "统一多模态大模型的自回归路线：从架构演进到工程实践",
+    "description": "多模态大模型正经历从“理解与生成分离”向“一体化统一架构”的关键演进。过去，我们习惯于用LLaVA架构做理解，用Diffusion模型做生成，两者各自为战。然而，这种拼凑式架构在信息流转与Scaling Law上正面临瓶颈。本文将深入...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-05-30T12:06:44.000Z",
+    "dateModified": "2026-07-24T02:24:26.651Z",
+    "url": "https://www.daoyuly.cn/2026/2026-05-30-053-%E7%8E%8B%E6%9B%9C%E6%98%8E-%E5%8D%9A%E5%A3%AB-%E7%90%86%E8%A7%A3%E4%B8%8E%E7%94%9F%E6%88%90%E4%B8%80%E4%BD%93%E5%8C%96%EF%BC%9A%E7%BB%9F%E4%B8%80%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%87%AA%E5%9B%9E%E5%BD%92%E8%B7%AF%E7%BA%BF/",
+    "inLanguage": "zh-CN",
+    "keywords": "统一多模态大模型的自回归路线, 从架构演进到工程实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3589,6 +3614,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

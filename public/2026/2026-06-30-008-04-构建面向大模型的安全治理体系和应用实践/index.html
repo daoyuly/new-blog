@@ -9,19 +9,19 @@
   <title>构建面向大模型的安全治理体系：从告警疲劳到协同智能 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="构建面向大模型的安全治理体系, 从告警疲劳到协同智能, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="在AI与大模型的双重驱动下，企业安全防御正面临前所未有的压力。一方面，AI工具大幅降低了攻击门槛，威胁呈现指数级增长；另一方面，传统安全运营深陷海量无效告警与专家经验依赖的泥潭，处置效率严重滞后。如何破局？本文将拆解如何通过引入长推理...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-30-008-04-%E6%9E%84%E5%BB%BA%E9%9D%A2%E5%90%91%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E4%BD%93%E7%B3%BB%E5%92%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/">
-  <meta name="description" content="构建面向大模型的安全治理体系：从告警疲劳到协同智能导语在AI与大模型的双重驱动下，企业安全防御正面临前所未有的压力。一方面，AI工具大幅降低了攻击门槛，威胁呈现指数级增长；另一方面，传统安全运营深陷海量无效告警与专家经验依赖的泥潭，处置效率严重滞后。如何破局？本文将拆解如何通过引入长推理大模型、RAG检索增强与智能Agent，构建一套协同智能的安全运营体系，实现告警召回率超99%、处置时间压缩至分">
+  <meta name="description" content="在AI与大模型的双重驱动下，企业安全防御正面临前所未有的压力。一方面，AI工具大幅降低了攻击门槛，威胁呈现指数级增长；另一方面，传统安全运营深陷海量无效告警与专家经验依赖的泥潭，处置效率严重滞后。如何破局？本文将拆解如何通过引入长推理...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="构建面向大模型的安全治理体系：从告警疲劳到协同智能">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-30-008-04-%E6%9E%84%E5%BB%BA%E9%9D%A2%E5%90%91%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E4%BD%93%E7%B3%BB%E5%92%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="构建面向大模型的安全治理体系：从告警疲劳到协同智能导语在AI与大模型的双重驱动下，企业安全防御正面临前所未有的压力。一方面，AI工具大幅降低了攻击门槛，威胁呈现指数级增长；另一方面，传统安全运营深陷海量无效告警与专家经验依赖的泥潭，处置效率严重滞后。如何破局？本文将拆解如何通过引入长推理大模型、RAG检索增强与智能Agent，构建一套协同智能的安全运营体系，实现告警召回率超99%、处置时间压缩至分">
+<meta property="og:description" content="在AI与大模型的双重驱动下，企业安全防御正面临前所未有的压力。一方面，AI工具大幅降低了攻击门槛，威胁呈现指数级增长；另一方面，传统安全运营深陷海量无效告警与专家经验依赖的泥潭，处置效率严重滞后。如何破局？本文将拆解如何通过引入长推理...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-30T03:05:43.000Z">
-<meta property="article:modified_time" content="2026-06-30T04:01:22.409Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.795Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "构建面向大模型的安全治理体系：从告警疲劳到协同智能",
+    "description": "在AI与大模型的双重驱动下，企业安全防御正面临前所未有的压力。一方面，AI工具大幅降低了攻击门槛，威胁呈现指数级增长；另一方面，传统安全运营深陷海量无效告警与专家经验依赖的泥潭，处置效率严重滞后。如何破局？本文将拆解如何通过引入长推理...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-30T03:05:43.000Z",
+    "dateModified": "2026-07-24T02:24:26.795Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-30-008-04-%E6%9E%84%E5%BB%BA%E9%9D%A2%E5%90%91%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E4%BD%93%E7%B3%BB%E5%92%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/",
+    "inLanguage": "zh-CN",
+    "keywords": "构建面向大模型的安全治理体系, 从告警疲劳到协同智能, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3572,6 +3597,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

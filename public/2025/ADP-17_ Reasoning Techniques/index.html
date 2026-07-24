@@ -9,16 +9,16 @@
   <title>Agentic Design Patterns - Chapter 17_ Reasoning Techniques | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agentic, design, patterns, chapter, reasoning, techniques">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的...">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-17_%20Reasoning%20Techniques/">
-  <meta name="description" content="第 17 章：推理技术本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的核心原则是在推理期间分配增加的计算资源。这意味着赋予 Agent 或底层 LLM 更多的处理时间或步骤来处理查询并生成响应。Agent 不是快速">
+  <meta name="description" content="本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Chapter 17_ Reasoning Techniques">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-17_%20Reasoning%20Techniques/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="第 17 章：推理技术本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的核心原则是在推理期间分配增加的计算资源。这意味着赋予 Agent 或底层 LLM 更多的处理时间或步骤来处理查询并生成响应。Agent 不是快速">
+<meta property="og:description" content="本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-17/image1.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-17/image2.png">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-17/image6.png">
 <meta property="og:image" content="https://www.daoyuly.cn/images/chapter-17/image7.png">
 <meta property="article:published_time" content="2025-10-22T00:05:02.000Z">
-<meta property="article:modified_time" content="2026-06-29T15:04:19.253Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:05.071Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -45,6 +45,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Chapter 17_ Reasoning Techniques",
+    "description": "本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-10-22T00:05:02.000Z",
+    "dateModified": "2026-07-24T03:05:05.071Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-17_%20Reasoning%20Techniques/",
+    "inLanguage": "zh-CN",
+    "keywords": "agentic, design, patterns, chapter, reasoning, techniques"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -245,7 +270,11 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第-17-章：推理技术"><a href="#第-17-章：推理技术" class="headerlink" title="第 17 章：推理技术"></a>第 17 章：推理技术</h1><p>本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的核心原则是在推理期间分配增加的计算资源。这意味着赋予 Agent 或底层 LLM 更多的处理时间或步骤来处理查询并生成响应。Agent 不是快速的单次处理，而是可以进行迭代改进、探索多个解决路径或利用外部工具。这种在推理期间延长的处理时间通常会显著增强准确性、连贯性和鲁棒性，特别是对于需要更深入分析和审议的复杂问题。</p>
+        <!-- GEO citation meta
+citation_arxiv_id: 2502.02533
+-->
+
+<h1 id="第-17-章：推理技术"><a href="#第-17-章：推理技术" class="headerlink" title="第 17 章：推理技术"></a>第 17 章：推理技术</h1><p>本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的核心原则是在推理期间分配增加的计算资源。这意味着赋予 Agent 或底层 LLM 更多的处理时间或步骤来处理查询并生成响应。Agent 不是快速的单次处理，而是可以进行迭代改进、探索多个解决路径或利用外部工具。这种在推理期间延长的处理时间通常会显著增强准确性、连贯性和鲁棒性，特别是对于需要更深入分析和审议的复杂问题。</p>
 <h2 id="实际应用和用例"><a href="#实际应用和用例" class="headerlink" title="实际应用和用例"></a>实际应用和用例</h2><p>实际应用包括：</p>
 <ul>
 <li><strong>复杂问答</strong>：促进多跳查询的解决，这需要整合来自不同来源的数据并执行逻辑推理，可能涉及检查多个推理路径，并从延长的推理时间中受益以综合信息。</li>
@@ -3621,6 +3650,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

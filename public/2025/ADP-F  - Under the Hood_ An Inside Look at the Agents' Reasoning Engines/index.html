@@ -11,17 +11,17 @@
   
   <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力...">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents&#39;%20Reasoning%20Engines/">
-  <meta name="description" content="附录 F - 深入剖析：Agent 推理引擎的内部运作机制智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力及环境交互能力的中央”心智”。 因此，理解这些模型的内部推理机制已非学术探讨——而是开发下一代稳健、可靠且高">
+  <meta name="description" content="智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Appendix F  - Under the Hood_ An Inside Look at the Agents&#39; Reasoning Engines">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents'%20Reasoning%20Engines/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="附录 F - 深入剖析：Agent 推理引擎的内部运作机制智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力及环境交互能力的中央”心智”。 因此，理解这些模型的内部推理机制已非学术探讨——而是开发下一代稳健、可靠且高">
+<meta property="og:description" content="智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-06T00:05:02.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:19:52.915Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.941Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -37,6 +37,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Appendix F  - Under the Hood_ An Inside Look at the Agents&#39; Reasoning Engines",
+    "description": "智能 Agent 的崛起标志着人工智能领域的重大转折。这些系统专为规划、策略制定及复杂任务执行而设计，其认知核心均基于大语言模型。该 LLM 远非单纯的复杂文本生成器；它承担着基础推理引擎的角色，即赋予 Agent 决策能力、规划能力...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-11-06T00:05:02.000Z",
+    "dateModified": "2026-07-24T02:24:26.941Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents&#39;%20Reasoning%20Engines/",
+    "inLanguage": "zh-CN",
+    "keywords": "AI agent 设计"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3769,6 +3794,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

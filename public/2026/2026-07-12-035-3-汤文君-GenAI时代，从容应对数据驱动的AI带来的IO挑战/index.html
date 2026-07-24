@@ -9,19 +9,19 @@
   <title>GenAI时代AI训练的I/O挑战与Alluxio数据编排实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="genai时代ai训练的i/o挑战与alluxio数据编排实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="大模型时代，Scaling Law驱动着模型参数和训练Token呈指数级增长。当全行业将目光聚焦于GPU算力飙升时，I/O正悄然成为制约算力释放的关键短板。训练集群频繁遭遇数据读取卡顿、Checkpoint写入导致GPU长时间闲置，传...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-07-12-035-3-%E6%B1%A4%E6%96%87%E5%90%9B-GenAI%E6%97%B6%E4%BB%A3%EF%BC%8C%E4%BB%8E%E5%AE%B9%E5%BA%94%E5%AF%B9%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E7%9A%84AI%E5%B8%A6%E6%9D%A5%E7%9A%84IO%E6%8C%91%E6%88%98/">
-  <meta name="description" content="GenAI时代AI训练的I&#x2F;O挑战与Alluxio数据编排实践导语大模型时代，Scaling Law驱动着模型参数和训练Token呈指数级增长。当全行业将目光聚焦于GPU算力飙升时，I&#x2F;O正悄然成为制约算力释放的关键短板。训练集群频繁遭遇数据读取卡顿、Checkpoint写入导致GPU长时间闲置，传统存储架构在百亿级文件与高并发冲击下捉襟见肘。如何打破I&#x2F;O瓶颈，让昂">
+  <meta name="description" content="大模型时代，Scaling Law驱动着模型参数和训练Token呈指数级增长。当全行业将目光聚焦于GPU算力飙升时，I&#x2F;O正悄然成为制约算力释放的关键短板。训练集群频繁遭遇数据读取卡顿、Checkpoint写入导致GPU长时间闲置，传...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GenAI时代AI训练的I&#x2F;O挑战与Alluxio数据编排实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-07-12-035-3-%E6%B1%A4%E6%96%87%E5%90%9B-GenAI%E6%97%B6%E4%BB%A3%EF%BC%8C%E4%BB%8E%E5%AE%B9%E5%BA%94%E5%AF%B9%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E7%9A%84AI%E5%B8%A6%E6%9D%A5%E7%9A%84IO%E6%8C%91%E6%88%98/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="GenAI时代AI训练的I&#x2F;O挑战与Alluxio数据编排实践导语大模型时代，Scaling Law驱动着模型参数和训练Token呈指数级增长。当全行业将目光聚焦于GPU算力飙升时，I&#x2F;O正悄然成为制约算力释放的关键短板。训练集群频繁遭遇数据读取卡顿、Checkpoint写入导致GPU长时间闲置，传统存储架构在百亿级文件与高并发冲击下捉襟见肘。如何打破I&#x2F;O瓶颈，让昂">
+<meta property="og:description" content="大模型时代，Scaling Law驱动着模型参数和训练Token呈指数级增长。当全行业将目光聚焦于GPU算力飙升时，I&#x2F;O正悄然成为制约算力释放的关键短板。训练集群频繁遭遇数据读取卡顿、Checkpoint写入导致GPU长时间闲置，传...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-12T12:04:15.000Z">
-<meta property="article:modified_time" content="2026-07-13T04:01:09.098Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.869Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "GenAI时代AI训练的I/O挑战与Alluxio数据编排实践",
+    "description": "大模型时代，Scaling Law驱动着模型参数和训练Token呈指数级增长。当全行业将目光聚焦于GPU算力飙升时，I/O正悄然成为制约算力释放的关键短板。训练集群频繁遭遇数据读取卡顿、Checkpoint写入导致GPU长时间闲置，传...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-07-12T12:04:15.000Z",
+    "dateModified": "2026-07-24T02:24:26.869Z",
+    "url": "https://www.daoyuly.cn/2026/2026-07-12-035-3-%E6%B1%A4%E6%96%87%E5%90%9B-GenAI%E6%97%B6%E4%BB%A3%EF%BC%8C%E4%BB%8E%E5%AE%B9%E5%BA%94%E5%AF%B9%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E7%9A%84AI%E5%B8%A6%E6%9D%A5%E7%9A%84IO%E6%8C%91%E6%88%98/",
+    "inLanguage": "zh-CN",
+    "keywords": "genai时代ai训练的i/o挑战与alluxio数据编排实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3580,6 +3605,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

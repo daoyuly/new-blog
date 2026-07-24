@@ -9,19 +9,19 @@
   <title>微内核设计的Harness | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="微内核设计的harness, 微内核, Harness, 设计模式">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="代码：https://github.com/daoyuly/mirco-kernal-nanobot">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-19-%E5%BE%AE%E5%86%85%E6%A0%B8%E8%AE%BE%E8%AE%A1%E7%9A%84Harness/">
-  <meta name="description" content="微内核设计的 Harness 以 LLM loop 为内核，所有上下文工程能力（prompt、记忆、技能、权限、会话、规划……）以插件形式挂载。插件独立演进，只要不破协议，互不踩脚。   0. 验证代码代码：https:&#x2F;&#x2F;github.com&#x2F;daoyuly&#x2F;mirco-kernal-nanobot 1. 设计动机用 AI 编程时，多个任务&#x2F;多个 agent 同时进行会带来三类冲突：">
+  <meta name="description" content="代码：https:&#x2F;&#x2F;github.com&#x2F;daoyuly&#x2F;mirco-kernal-nanobot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微内核设计的Harness">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-19-%E5%BE%AE%E5%86%85%E6%A0%B8%E8%AE%BE%E8%AE%A1%E7%9A%84Harness/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="微内核设计的 Harness 以 LLM loop 为内核，所有上下文工程能力（prompt、记忆、技能、权限、会话、规划……）以插件形式挂载。插件独立演进，只要不破协议，互不踩脚。   0. 验证代码代码：https:&#x2F;&#x2F;github.com&#x2F;daoyuly&#x2F;mirco-kernal-nanobot 1. 设计动机用 AI 编程时，多个任务&#x2F;多个 agent 同时进行会带来三类冲突：">
+<meta property="og:description" content="代码：https:&#x2F;&#x2F;github.com&#x2F;daoyuly&#x2F;mirco-kernal-nanobot">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-19T03:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-19T07:59:41.607Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.752Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="Harness">
 <meta property="article:tag" content="微内核">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "微内核设计的Harness",
+    "description": "代码：https://github.com/daoyuly/mirco-kernal-nanobot",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-19T03:00:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.752Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-19-%E5%BE%AE%E5%86%85%E6%A0%B8%E8%AE%BE%E8%AE%A1%E7%9A%84Harness/",
+    "inLanguage": "zh-CN",
+    "keywords": "微内核设计的harness, 微内核, Harness, 设计模式"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3762,6 +3787,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

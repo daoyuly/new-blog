@@ -9,19 +9,19 @@
   <title>基于业务流程管理的AI Agent智能化测试实践 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="基于业务流程管理的ai, agent智能化测试实践, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="大模型正在重塑软件测试范式，推动移动端测试从传统脚本自动化向AI Agent自主推理执行演进。然而，在实际落地中，我们面临着两难困境：传统UI自动化维护成本高、稳定性差；而纯AI测试方案又过度依赖大模型推理，导致成本高昂、耗时较长，且...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-10-070-%E4%BB%B2%E6%80%9D%E5%AE%87-%E5%9F%BA%E4%BA%8E%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AFAI-Agent%E6%99%BA%E8%83%BD%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5/">
-  <meta name="description" content="基于业务流程管理的AI Agent智能化测试实践导语大模型正在重塑软件测试范式，推动移动端测试从传统脚本自动化向AI Agent自主推理执行演进。然而，在实际落地中，我们面临着两难困境：传统UI自动化维护成本高、稳定性差；而纯AI测试方案又过度依赖大模型推理，导致成本高昂、耗时较长，且容易产生幻觉，难以有效沉淀业务知识。此外，多端测试重复造轮子的问题依然严重。 针对这些痛点，我们探索出了一条基于业">
+  <meta name="description" content="大模型正在重塑软件测试范式，推动移动端测试从传统脚本自动化向AI Agent自主推理执行演进。然而，在实际落地中，我们面临着两难困境：传统UI自动化维护成本高、稳定性差；而纯AI测试方案又过度依赖大模型推理，导致成本高昂、耗时较长，且...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于业务流程管理的AI Agent智能化测试实践">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-10-070-%E4%BB%B2%E6%80%9D%E5%AE%87-%E5%9F%BA%E4%BA%8E%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AFAI-Agent%E6%99%BA%E8%83%BD%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="基于业务流程管理的AI Agent智能化测试实践导语大模型正在重塑软件测试范式，推动移动端测试从传统脚本自动化向AI Agent自主推理执行演进。然而，在实际落地中，我们面临着两难困境：传统UI自动化维护成本高、稳定性差；而纯AI测试方案又过度依赖大模型推理，导致成本高昂、耗时较长，且容易产生幻觉，难以有效沉淀业务知识。此外，多端测试重复造轮子的问题依然严重。 针对这些痛点，我们探索出了一条基于业">
+<meta property="og:description" content="大模型正在重塑软件测试范式，推动移动端测试从传统脚本自动化向AI Agent自主推理执行演进。然而，在实际落地中，我们面临着两难困境：传统UI自动化维护成本高、稳定性差；而纯AI测试方案又过度依赖大模型推理，导致成本高昂、耗时较长，且...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-10T06:06:54.000Z">
-<meta property="article:modified_time" content="2026-06-13T04:01:09.789Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.691Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "基于业务流程管理的AI Agent智能化测试实践",
+    "description": "大模型正在重塑软件测试范式，推动移动端测试从传统脚本自动化向AI Agent自主推理执行演进。然而，在实际落地中，我们面临着两难困境：传统UI自动化维护成本高、稳定性差；而纯AI测试方案又过度依赖大模型推理，导致成本高昂、耗时较长，且...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-10T06:06:54.000Z",
+    "dateModified": "2026-07-24T02:24:26.691Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-10-070-%E4%BB%B2%E6%80%9D%E5%AE%87-%E5%9F%BA%E4%BA%8E%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AFAI-Agent%E6%99%BA%E8%83%BD%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5/",
+    "inLanguage": "zh-CN",
+    "keywords": "基于业务流程管理的ai, agent智能化测试实践, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3620,6 +3645,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

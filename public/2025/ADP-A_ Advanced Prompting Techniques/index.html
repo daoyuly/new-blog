@@ -9,20 +9,20 @@
   <title>Agentic Design Patterns - Appendix A_ Advanced Prompting Techniques | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="agentic, design, patterns, appendix, advanced, prompting, techniques">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的...">
   <link rel="canonical" href="https://www.daoyuly.cn/2025/ADP-A_%20Advanced%20Prompting%20Techniques/">
-  <meta name="description" content="附录 A：高级提示工程技巧提示工程简介提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的响应。相反，设计不当的提示则可能导致模糊、不相关甚至错误的输出。 提示工程的目标是从语言模型中获得持续高质量的输出。这需要深入理">
+  <meta name="description" content="提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agentic Design Patterns - Appendix A_ Advanced Prompting Techniques">
 <meta property="og:url" content="https://www.daoyuly.cn/2025/ADP-A_%20Advanced%20Prompting%20Techniques/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="附录 A：高级提示工程技巧提示工程简介提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的响应。相反，设计不当的提示则可能导致模糊、不相关甚至错误的输出。 提示工程的目标是从语言模型中获得持续高质量的输出。这需要深入理">
+<meta property="og:description" content="提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.daoyuly.cn/images/appendix-a/image1.png">
 <meta property="article:published_time" content="2025-11-01T00:02:09.000Z">
-<meta property="article:modified_time" content="2026-06-29T15:04:18.874Z">
+<meta property="article:modified_time" content="2026-07-24T03:05:05.074Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI agent 设计">
 <meta name="twitter:card" content="summary">
@@ -39,6 +39,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Agentic Design Patterns - Appendix A_ Advanced Prompting Techniques",
+    "description": "提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2025-11-01T00:02:09.000Z",
+    "dateModified": "2026-07-24T03:05:05.074Z",
+    "url": "https://www.daoyuly.cn/2025/ADP-A_%20Advanced%20Prompting%20Techniques/",
+    "inLanguage": "zh-CN",
+    "keywords": "agentic, design, patterns, appendix, advanced, prompting, techniques"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -239,7 +264,13 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="附录-A：高级提示工程技巧"><a href="#附录-A：高级提示工程技巧" class="headerlink" title="附录 A：高级提示工程技巧"></a>附录 A：高级提示工程技巧</h1><h2 id="提示工程简介"><a href="#提示工程简介" class="headerlink" title="提示工程简介"></a>提示工程简介</h2><p>提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的响应。相反，设计不当的提示则可能导致模糊、不相关甚至错误的输出。</p>
+        <!-- GEO citation meta
+citation_arxiv_id: 2201.11903
+citation_arxiv_id: 2210.03629
+citation_arxiv_id: 2310.06117
+-->
+
+<h1 id="附录-A：高级提示工程技巧"><a href="#附录-A：高级提示工程技巧" class="headerlink" title="附录 A：高级提示工程技巧"></a>附录 A：高级提示工程技巧</h1><h2 id="提示工程简介"><a href="#提示工程简介" class="headerlink" title="提示工程简介"></a>提示工程简介</h2><p>提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的响应。相反，设计不当的提示则可能导致模糊、不相关甚至错误的输出。</p>
 <p>提示工程的目标是从语言模型中获得持续高质量的输出。这需要深入理解模型的能力边界和局限性，并有效地传达预期目标。它涉及通过学习如何最优地指导 AI 来发展与 AI 沟通的专业技能。</p>
 <p>本附录详细介绍了超越基础交互方法的各类提示技术。它探讨了构建复杂请求、增强模型推理能力、控制输出格式以及整合外部信息的方法论。这些技术适用于构建从简单聊天机器人到复杂多 Agent 系统的各类应用，能够显著提升 Agentic 应用的性能和可靠性。</p>
 <p>Agentic 模式是构建智能系统的架构蓝图，在主要章节中已有详细阐述。这些模式定义了 Agent 如何规划、使用工具、管理记忆和协同工作。这些 Agentic 系统的效能最终取决于它们与语言模型进行有意义交互的能力。</p>
@@ -3822,6 +3853,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

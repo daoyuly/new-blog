@@ -9,19 +9,19 @@
   <title>构建可扩展可隔离的AI Agent运行环境：从Prompt到Harness Engineering的演进 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="构建可扩展可隔离的ai, agent运行环境, 从prompt到harness, engineering的演进, 技术蒸馏, TKDE, 技术思考">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="随着大模型能力的跃升，AI Agent正从概念走向企业级生产环境。然而，工程团队逐渐发现，决定Agent能力上限的不再仅仅是模型本身的智力，而是其所依赖的基础设施。AI工程方法正经历从Prompt Engineering向Harnes...">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-09-067-%E8%B5%B5%E5%BA%86%E6%9D%B0-%E4%BB%8E%E4%B8%80%E6%AC%A1%E4%BC%9A%E8%AF%9D%E5%88%B0%E4%BA%BF%E7%BA%A7%E5%B9%B6%E5%8F%91%EF%BC%9A%E6%9E%84%E5%BB%BA%E5%8F%AF%E6%89%A9%E5%B1%95%E3%80%81%E5%8F%AF%E9%9A%94%E7%A6%BB%E7%9A%84-AI-Agent-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">
-  <meta name="description" content="构建可扩展可隔离的AI Agent运行环境：从Prompt到Harness Engineering的演进导语随着大模型能力的跃升，AI Agent正从概念走向企业级生产环境。然而，工程团队逐渐发现，决定Agent能力上限的不再仅仅是模型本身的智力，而是其所依赖的基础设施。AI工程方法正经历从Prompt Engineering向Harness Engineering的深刻演进——智力瓶颈正在外移至">
+  <meta name="description" content="随着大模型能力的跃升，AI Agent正从概念走向企业级生产环境。然而，工程团队逐渐发现，决定Agent能力上限的不再仅仅是模型本身的智力，而是其所依赖的基础设施。AI工程方法正经历从Prompt Engineering向Harnes...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="构建可扩展可隔离的AI Agent运行环境：从Prompt到Harness Engineering的演进">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-09-067-%E8%B5%B5%E5%BA%86%E6%9D%B0-%E4%BB%8E%E4%B8%80%E6%AC%A1%E4%BC%9A%E8%AF%9D%E5%88%B0%E4%BA%BF%E7%BA%A7%E5%B9%B6%E5%8F%91%EF%BC%9A%E6%9E%84%E5%BB%BA%E5%8F%AF%E6%89%A9%E5%B1%95%E3%80%81%E5%8F%AF%E9%9A%94%E7%A6%BB%E7%9A%84-AI-Agent-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="构建可扩展可隔离的AI Agent运行环境：从Prompt到Harness Engineering的演进导语随着大模型能力的跃升，AI Agent正从概念走向企业级生产环境。然而，工程团队逐渐发现，决定Agent能力上限的不再仅仅是模型本身的智力，而是其所依赖的基础设施。AI工程方法正经历从Prompt Engineering向Harness Engineering的深刻演进——智力瓶颈正在外移至">
+<meta property="og:description" content="随着大模型能力的跃升，AI Agent正从概念走向企业级生产环境。然而，工程团队逐渐发现，决定Agent能力上限的不再仅仅是模型本身的智力，而是其所依赖的基础设施。AI工程方法正经历从Prompt Engineering向Harnes...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-09T06:05:36.000Z">
-<meta property="article:modified_time" content="2026-06-13T04:01:09.781Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.685Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="技术蒸馏">
 <meta property="article:tag" content="TKDE">
@@ -38,6 +38,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "构建可扩展可隔离的AI Agent运行环境：从Prompt到Harness Engineering的演进",
+    "description": "随着大模型能力的跃升，AI Agent正从概念走向企业级生产环境。然而，工程团队逐渐发现，决定Agent能力上限的不再仅仅是模型本身的智力，而是其所依赖的基础设施。AI工程方法正经历从Prompt Engineering向Harnes...",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-09T06:05:36.000Z",
+    "dateModified": "2026-07-24T02:24:26.685Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-09-067-%E8%B5%B5%E5%BA%86%E6%9D%B0-%E4%BB%8E%E4%B8%80%E6%AC%A1%E4%BC%9A%E8%AF%9D%E5%88%B0%E4%BA%BF%E7%BA%A7%E5%B9%B6%E5%8F%91%EF%BC%9A%E6%9E%84%E5%BB%BA%E5%8F%AF%E6%89%A9%E5%B1%95%E3%80%81%E5%8F%AF%E9%9A%94%E7%A6%BB%E7%9A%84-AI-Agent-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/",
+    "inLanguage": "zh-CN",
+    "keywords": "构建可扩展可隔离的ai, agent运行环境, 从prompt到harness, engineering的演进, 技术蒸馏, TKDE, 技术思考"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3609,6 +3634,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,19 +9,19 @@
   <title>事件·LLM·状态机·响应式：四种驱动范式的骨相 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="事件·llm·状态机·响应式, 四种驱动范式的骨相, architecture, event-driven, model-driven, state-machine, reactive, paradigm">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="做系统设计时，&#34;事件驱动&#34;&#34;模型驱动&#34;&#34;响应式驱动&#34;&#34;状态机驱动&#34;这几个词经常被混着用。它们确实有交集，但骨子里的思考方式完全不同。这篇从技术机制出发，把这些范式的异同讲清楚。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-21-event-model-reactive-paradigms/">
-  <meta name="description" content="做系统设计时，”事件驱动””模型驱动””响应式驱动””状态机驱动”这几个词经常被混着用。它们确实有交集，但骨子里的思考方式完全不同。这篇从技术机制出发，把这些范式的异同讲清楚。 四种驱动，驱动的是什么？先回答一个很多人没想过的问题：驱动的是什么？  事件驱动——驱动的是控制流。系统等着事情发生，事情发生了就执行对应逻辑。重点是”什么时候做”。 模型驱动——驱动的是语义理解与推理。把决策权交给大语言">
+  <meta name="description" content="做系统设计时，&quot;事件驱动&quot;&quot;模型驱动&quot;&quot;响应式驱动&quot;&quot;状态机驱动&quot;这几个词经常被混着用。它们确实有交集，但骨子里的思考方式完全不同。这篇从技术机制出发，把这些范式的异同讲清楚。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件·LLM·状态机·响应式：四种驱动范式的骨相">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-21-event-model-reactive-paradigms/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="做系统设计时，”事件驱动””模型驱动””响应式驱动””状态机驱动”这几个词经常被混着用。它们确实有交集，但骨子里的思考方式完全不同。这篇从技术机制出发，把这些范式的异同讲清楚。 四种驱动，驱动的是什么？先回答一个很多人没想过的问题：驱动的是什么？  事件驱动——驱动的是控制流。系统等着事情发生，事情发生了就执行对应逻辑。重点是”什么时候做”。 模型驱动——驱动的是语义理解与推理。把决策权交给大语言">
+<meta property="og:description" content="做系统设计时，&quot;事件驱动&quot;&quot;模型驱动&quot;&quot;响应式驱动&quot;&quot;状态机驱动&quot;这几个词经常被混着用。它们确实有交集，但骨子里的思考方式完全不同。这篇从技术机制出发，把这些范式的异同讲清楚。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-21T06:20:00.000Z">
-<meta property="article:modified_time" content="2026-06-23T04:01:54.919Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.759Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="architecture">
 <meta property="article:tag" content="event-driven">
@@ -42,6 +42,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "事件·LLM·状态机·响应式：四种驱动范式的骨相",
+    "description": "做系统设计时，\&#34;事件驱动\&#34;\&#34;模型驱动\&#34;\&#34;响应式驱动\&#34;\&#34;状态机驱动\&#34;这几个词经常被混着用。它们确实有交集，但骨子里的思考方式完全不同。这篇从技术机制出发，把这些范式的异同讲清楚。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-21T06:20:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.759Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-21-event-model-reactive-paradigms/",
+    "inLanguage": "zh-CN",
+    "keywords": "事件·llm·状态机·响应式, 四种驱动范式的骨相, architecture, event-driven, model-driven, state-machine, reactive, paradigm"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3845,6 +3870,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

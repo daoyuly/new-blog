@@ -9,19 +9,19 @@
   <title>Loop Engineering 的动力分析：循环何以自驱 | 刘道玉 AI 工作坊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="刘道玉, 刘道玉 AI 工作坊, OpenClaw, AI 工作坊, AI 应用, 大模型, 具身智能">
+  <meta name="keywords" content="loop, engineering, 的动力分析, 循环何以自驱, AI Agent, Loop Engineering, Self-Evolving, 迭代动力学">
   
-  <meta name="description" content="刘道玉 AI 工作坊 - 专注 AI 应用落地、OpenClaw 开源项目、具身智能、大模型实践，帮助个人和企业用 AI 提升效率。">
+  <meta name="description" content="Agent 系统正在从&#34;单次调用&#34;走向&#34;持续循环&#34;。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。">
   <link rel="canonical" href="https://www.daoyuly.cn/2026/2026-06-30-loop-engineering-driving-forces/">
-  <meta name="description" content="Agent 系统正在从”单次调用”走向”持续循环”。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。 但循环不是免费转的。每一轮迭代都有成本，Agent 为什么会继续转下去？是什么力量在推着它往下一轮走？迭代的方向又是由什么决定的？ 这些问题比”怎么实现循环”更根本。因为理解了动力来源，才知道怎么设计循环，以及循环会不会跑偏。 Loop">
+  <meta name="description" content="Agent 系统正在从&quot;单次调用&quot;走向&quot;持续循环&quot;。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Loop Engineering 的动力分析：循环何以自驱">
 <meta property="og:url" content="https://www.daoyuly.cn/2026/2026-06-30-loop-engineering-driving-forces/index.html">
 <meta property="og:site_name" content="刘道玉 AI 工作坊">
-<meta property="og:description" content="Agent 系统正在从”单次调用”走向”持续循环”。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。 但循环不是免费转的。每一轮迭代都有成本，Agent 为什么会继续转下去？是什么力量在推着它往下一轮走？迭代的方向又是由什么决定的？ 这些问题比”怎么实现循环”更根本。因为理解了动力来源，才知道怎么设计循环，以及循环会不会跑偏。 Loop">
+<meta property="og:description" content="Agent 系统正在从&quot;单次调用&quot;走向&quot;持续循环&quot;。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-30T06:30:00.000Z">
-<meta property="article:modified_time" content="2026-07-03T04:01:17.194Z">
+<meta property="article:modified_time" content="2026-07-24T02:24:26.800Z">
 <meta property="article:author" content="刘道玉 AI 工作坊">
 <meta property="article:tag" content="AI Agent">
 <meta property="article:tag" content="Self-Evolving">
@@ -40,6 +40,31 @@
       background: #fff;
     }
   </style>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Loop Engineering 的动力分析：循环何以自驱",
+    "description": "Agent 系统正在从\&#34;单次调用\&#34;走向\&#34;持续循环\&#34;。不是跑一遍就完，而是不断自我迭代、自我修正、自我进化。这个模式有个名字——Loop Engineering。",
+    "author": {
+      "@type": "Person",
+      "name": "刘道玉 AI 工作坊"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "刘道玉 AI 工作坊",
+      "url": "https://www.daoyuly.cn"
+    },
+    "datePublished": "2026-06-30T06:30:00.000Z",
+    "dateModified": "2026-07-24T02:24:26.800Z",
+    "url": "https://www.daoyuly.cn/2026/2026-06-30-loop-engineering-driving-forces/",
+    "inLanguage": "zh-CN",
+    "keywords": "loop, engineering, 的动力分析, 循环何以自驱, AI Agent, Loop Engineering, Self-Evolving, 迭代动力学"
+  }
+  </script>
+  
   
 <script>
 var _hmt = _hmt || [];
@@ -3614,6 +3639,62 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记 思考总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">论文分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">image-and-video-generation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AI绘画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自驾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">摩托</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东灵山</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">109国道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">周末出行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ios-and-macos-development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">marketing-and-sales</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">摘录 思考 感悟</a>
               </li>
             
             <div class="clearfix"></div>

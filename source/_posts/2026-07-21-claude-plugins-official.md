@@ -1,6 +1,5 @@
 ---
-title: "claude-plugins-official 项目深度分析报告"
-date: 2026-07-21 11:00:00
+title: claude-plugins-official 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,8 +7,12 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
-description: "- 项目名称: claude-plugins-official"
-keywords: "claude, plugins, official, 项目深度分析报告, open-source, ai-repo, daily-research, deep-analysis"
+description: '- 项目名称: claude-plugins-official'
+keywords: >-
+  claude, plugins, official, 项目深度分析报告, open-source, ai-repo, daily-research,
+  deep-analysis
+abbrlink: 49089
+date: 2026-07-21 11:00:00
 ---
 
 # claude-plugins-official 项目深度分析报告
