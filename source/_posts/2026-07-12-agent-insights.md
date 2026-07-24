@@ -17,6 +17,17 @@ categories:
 abbrlink: 9264
 date: 2026-07-12 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.08403
+citation_arxiv_id: 2607.08758
+citation_arxiv_id: 2607.08716
+citation_arxiv_id: 2607.08740
+citation_arxiv_id: 2607.08681
+citation_arxiv_id: 2607.08652
+citation_arxiv_id: 2607.08602
+citation_arxiv_id: 2607.08423
+citation_arxiv_id: 2607.08269
+-->
 
 # Agent 前沿趋势：Ideas Have Genomes等9项动态深度解析
 

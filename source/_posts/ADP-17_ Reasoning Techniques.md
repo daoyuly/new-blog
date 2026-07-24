@@ -6,6 +6,9 @@ date: 2025-10-22 08:05:02
 description: "本章深入探讨智能 Agent 的高级推理方法，重点关注多步骤逻辑推理和问题解决。这些技术超越了简单的顺序操作，使 Agent 的内部推理过程变得明确。这使 Agent 能够分解问题、考虑中间步骤并得出更可靠和准确的结论。这些高级方法的..."
 keywords: "agentic, design, patterns, chapter, reasoning, techniques"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2502.02533
+-->
 
 # 第 17 章：推理技术
 

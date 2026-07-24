@@ -17,6 +17,18 @@ categories:
 abbrlink: 53239
 date: 2026-07-16 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.14046
+citation_arxiv_id: 2607.14049
+citation_arxiv_id: 2607.13899
+citation_arxiv_id: 2607.13230
+citation_arxiv_id: 2607.14004
+citation_arxiv_id: 2607.13940
+citation_arxiv_id: 2607.13884
+citation_arxiv_id: 2607.13558
+citation_arxiv_id: 2607.13548
+citation_arxiv_id: 2607.13716
+-->
 
 # Agent 前沿趋势：Deep Interaction等17项动态深度解析
 

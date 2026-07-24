@@ -15,6 +15,17 @@ noindex: true
 description: "今日 ArXiv 共收录了 25 篇 cs.AI 论文，其中约 12 篇直接与 AI Agent 相关，涵盖了从基础架构设计、性能评估、多智能体协作到实际应用等多个维度。"
 keywords: "2026年4月2日, arxiv, agent, 最新趋势分析, AI Agent, 大语言模型, 多智能体系统, 自主智能体"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.01221
+citation_arxiv_id: 2604.00594
+citation_arxiv_id: 2604.01007
+citation_arxiv_id: 2604.00931
+citation_arxiv_id: 2604.01151
+citation_arxiv_id: 2604.00901
+citation_arxiv_id: 2604.00555
+citation_arxiv_id: 2604.00842
+citation_arxiv_id: 2604.00550
+-->
 
 # 2026年4月2日 ArXiv AI Agent 最新趋势分析
 

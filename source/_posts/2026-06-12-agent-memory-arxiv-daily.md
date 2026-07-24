@@ -15,6 +15,13 @@ noindex: true
 description: "今天从 arXiv cs.AI 频道筛选出 5 篇 与 Agent Memory / RAG / 检索增强相关的新论文。今天没有出现专门针对 episodic memory 或 long-term memory 的核心论文，但围绕 知..."
 keywords: "agent, memory, arxiv, (2026, 12), agent-memory, daily-report, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.13669
+citation_arxiv_id: 2606.13550
+citation_arxiv_id: 2606.13392
+citation_arxiv_id: 2606.13391
+citation_arxiv_id: 2606.13372
+-->
 
 ## 今日概览
 

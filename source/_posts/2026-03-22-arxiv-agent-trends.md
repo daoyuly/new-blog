@@ -13,6 +13,15 @@ noindex: true
 description: "今天整理了 arXiv cs.AI 领域与 Agent 相关的最新研究，共筛选出 7 篇重点论文。以下是详细分析："
 keywords: "2026, agent, 领域最新趋势, arxiv, 论文速递, AI, Agent, arXiv"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.19191
+citation_arxiv_id: 2603.18916
+citation_arxiv_id: 2603.18859
+citation_arxiv_id: 2603.18894
+citation_arxiv_id: 2603.18866
+citation_arxiv_id: 2603.19138
+citation_arxiv_id: 2603.18871
+-->
 
 今天整理了 arXiv cs.AI 领域与 Agent 相关的最新研究，共筛选出 7 篇重点论文。以下是详细分析：
 

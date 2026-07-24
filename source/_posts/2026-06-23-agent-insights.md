@@ -17,6 +17,16 @@ categories:
 abbrlink: 38889
 date: 2026-06-23 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.23595
+citation_arxiv_id: 2606.23543
+citation_arxiv_id: 2606.23608
+citation_arxiv_id: 2606.23449
+citation_arxiv_id: 2606.23345
+citation_arxiv_id: 2606.23301
+citation_arxiv_id: 2606.23238
+citation_arxiv_id: 2606.23189
+-->
 
 # Agent 前沿趋势：SPIRAL等11项动态深度解析
 

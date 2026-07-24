@@ -15,6 +15,12 @@ noindex: true
 description: "- arXiv ID: 2607.02509"
 keywords: "agent, memory, 2026, agent-memory, arxiv, daily-report, RAG, long-term-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02509
+citation_arxiv_id: 2607.02374
+citation_arxiv_id: 2607.02303
+citation_arxiv_id: 2607.02255
+-->
 
 # Agent Memory 日报 | 2026-07-06
 

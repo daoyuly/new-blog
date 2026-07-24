@@ -14,6 +14,18 @@ categories:
 description: "- 摘要: swe,pruner,pro,prune,context,agent,oolong,coder,knows,pruning"
 keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.18213
+citation_arxiv_id: 2607.18199
+citation_arxiv_id: 2607.17828
+citation_arxiv_id: 2607.17812
+citation_arxiv_id: 2607.17715
+citation_arxiv_id: 2607.17452
+citation_arxiv_id: 2607.17420
+citation_arxiv_id: 2607.18171
+citation_arxiv_id: 2607.18043
+citation_arxiv_id: 2607.18006
+-->
 
 
 # LLM & SLM 研究日报

@@ -13,6 +13,12 @@ date: 2026-03-31 18:52:00
 description: "关键词: Tool Calling, Function Calling, Workflow Orchestration, Tool Composition, API Integration, MCP"
 keywords: "agent工具调用与编排综述, 从单一工具到复杂工作流的完整指南, AI Agent, Tool Calling, Function Calling, Workflow Orchestration, Tool Composition, AI技术研究"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2302.04761
+citation_arxiv_id: 2305.15334
+citation_arxiv_id: 2305.16504
+citation_arxiv_id: 2304.08354
+-->
 
 # Agent工具调用与编排综述 - 从单一工具到复杂工作流的完整指南
 

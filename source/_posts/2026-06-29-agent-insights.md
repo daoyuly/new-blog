@@ -17,6 +17,18 @@ categories:
 abbrlink: 30088
 date: 2026-06-29 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.27757
+citation_arxiv_id: 2606.28166
+citation_arxiv_id: 2606.27826
+citation_arxiv_id: 2606.28279
+citation_arxiv_id: 2606.28270
+citation_arxiv_id: 2606.27814
+citation_arxiv_id: 2606.27806
+citation_arxiv_id: 2606.27780
+citation_arxiv_id: 2606.27652
+citation_arxiv_id: 2606.27443
+-->
 
 # Agent 前沿趋势：Tandem Reinforcement等11项动态深度解析
 

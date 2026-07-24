@@ -13,6 +13,18 @@ date: 2026-03-26 18:00:00
 description: "🔗 链接: https://arxiv.org/abs/2603.24582 Kimi解读"
 keywords: "agent, 前沿趋势洞察, 2026, ai-trends, daily-insights, arxiv, github, 前沿洞察"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.24582
+citation_arxiv_id: 2603.23625
+citation_arxiv_id: 2603.24481
+citation_arxiv_id: 2603.24065
+citation_arxiv_id: 2603.24014
+citation_arxiv_id: 2603.23909
+citation_arxiv_id: 2603.23840
+citation_arxiv_id: 2603.23910
+citation_arxiv_id: 2603.23610
+citation_arxiv_id: 2603.24402
+-->
 
 # Agent 前沿趋势洞察
 

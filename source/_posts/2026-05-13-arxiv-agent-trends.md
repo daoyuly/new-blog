@@ -10,6 +10,17 @@ noindex: true
 description: "今天 arXiv cs.AI 领域涌现了多篇关于 AI Agents 的重要论文，主要集中在以下几个核心方向："
 keywords: "agents, 最新趋势报告, 2026年5月13日, AI, Agents, Arxiv"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.12481
+citation_arxiv_id: 2605.12294
+citation_arxiv_id: 2605.12357
+citation_arxiv_id: 2605.12213
+citation_arxiv_id: 2605.12240
+citation_arxiv_id: 2605.12366
+citation_arxiv_id: 2605.12265
+citation_arxiv_id: 2605.12376
+citation_arxiv_id: 2605.12334
+-->
 
 # AI Agents 最新趋势报告（2026年5月13日）
 

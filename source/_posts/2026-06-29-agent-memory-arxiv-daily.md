@@ -14,6 +14,15 @@ noindex: true
 description: "- arXiv ID: 2606.28270"
 keywords: "agent, memory, 日报｜2026, 免疫系统与记忆投毒、内部化世界模型、rag, 知识冲突, agent-memory, arxiv-daily, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.28270
+citation_arxiv_id: 2606.27483
+citation_arxiv_id: 2606.27786
+citation_arxiv_id: 2606.28186
+citation_arxiv_id: 2606.27806
+citation_arxiv_id: 2606.27780
+citation_arxiv_id: 2606.27814
+-->
 
 # Agent Memory 日报｜2026-06-29
 

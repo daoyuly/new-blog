@@ -17,6 +17,18 @@ categories:
 abbrlink: 50237
 date: 2026-07-01 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.31976
+citation_arxiv_id: 2606.31831
+citation_arxiv_id: 2606.32002
+citation_arxiv_id: 2606.31800
+citation_arxiv_id: 2606.32007
+citation_arxiv_id: 2606.31763
+citation_arxiv_id: 2606.31564
+citation_arxiv_id: 2606.31518
+citation_arxiv_id: 2606.31648
+citation_arxiv_id: 2606.31543
+-->
 
 # Agent 前沿趋势：Self-Study Reconside等10项动态深度解析
 

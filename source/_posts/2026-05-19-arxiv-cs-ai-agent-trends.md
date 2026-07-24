@@ -16,6 +16,17 @@ noindex: true
 description: "数据来源：papers.cool/arxiv/cs.AI，发布日期 2025-05-15。"
 keywords: "arxiv, cs.ai, agent, 前沿日报, (2026, 19), llm-agent, memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.16233
+citation_arxiv_id: 2605.16143
+citation_arxiv_id: 2605.16024
+citation_arxiv_id: 2605.16205
+citation_arxiv_id: 2605.16198
+citation_arxiv_id: 2605.16116
+citation_arxiv_id: 2605.16238
+citation_arxiv_id: 2605.16207
+citation_arxiv_id: 2605.16142
+-->
 
 ## 今日 Agent 相关论文精选
 

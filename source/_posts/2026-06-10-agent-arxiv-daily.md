@@ -17,6 +17,18 @@ categories:
 abbrlink: 59830
 date: 2026-06-10 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.11150
+citation_arxiv_id: 2606.11063
+citation_arxiv_id: 2606.11045
+citation_arxiv_id: 2606.11042
+citation_arxiv_id: 2606.10833
+citation_arxiv_id: 2606.11078
+citation_arxiv_id: 2606.10933
+citation_arxiv_id: 2606.10917
+citation_arxiv_id: 2606.10806
+citation_arxiv_id: 2606.10752
+-->
 
 # 14篇 Agent 前沿论文深度解析：evaluation与other方向最新进展
 

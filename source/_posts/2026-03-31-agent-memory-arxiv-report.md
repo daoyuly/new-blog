@@ -13,6 +13,17 @@ noindex: true
 description: "- arXiv ID: 2603.28716"
 keywords: "agent, memory, 每日论文综述, 2026, arxiv, daily-report, 论文综述"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.28716
+citation_arxiv_id: 2603.28651
+citation_arxiv_id: 2603.28444
+citation_arxiv_id: 2603.28407
+citation_arxiv_id: 2603.28361
+citation_arxiv_id: 2603.28360
+citation_arxiv_id: 2603.28336
+citation_arxiv_id: 2603.28203
+citation_arxiv_id: 2603.28052
+-->
 
 
 # Agent Memory 每日论文综述

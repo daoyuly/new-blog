@@ -12,6 +12,18 @@ noindex: true
 description: "今天 cs.AI 领域共发布了多篇与 Agent 相关的论文，涵盖了以下主要趋势："
 keywords: "arxiv, agent, 趋势日报, (2026, 04), trends, AI Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.03258
+citation_arxiv_id: 2603.03005
+citation_arxiv_id: 2603.03116
+citation_arxiv_id: 2603.03078
+citation_arxiv_id: 2603.03233
+citation_arxiv_id: 2603.03175
+citation_arxiv_id: 2603.03212
+citation_arxiv_id: 2603.03018
+citation_arxiv_id: 2603.03119
+citation_arxiv_id: 2603.03147
+-->
 
 # arXiv Agent 趋势日报 (2026-03-04)
 

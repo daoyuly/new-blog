@@ -17,6 +17,18 @@ categories:
 abbrlink: 19479
 date: 2026-07-02 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.00627
+citation_arxiv_id: 2607.01224
+citation_arxiv_id: 2607.01223
+citation_arxiv_id: 2607.00269
+citation_arxiv_id: 2607.01061
+citation_arxiv_id: 2607.00871
+citation_arxiv_id: 2607.01084
+citation_arxiv_id: 2607.00972
+citation_arxiv_id: 2607.00924
+citation_arxiv_id: 2607.00692
+-->
 
 # Agent 前沿趋势：AutoMem等17项动态深度解析
 

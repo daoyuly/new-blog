@@ -13,6 +13,11 @@ date: 2026-03-31 18:35:00
 description: "关键词: Agent Memory, Episodic Memory, Semantic Memory, RAG, Memory Management, Lifelong Learning"
 keywords: "agent记忆系统综述, 从短期记忆到终身学习的完整架构, AI Agent, Agent Memory, Long-term Memory, Episodic Memory, RAG, AI技术研究"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2310.08560
+citation_arxiv_id: 2005.11401
+citation_arxiv_id: 2304.03442
+-->
 
 # Agent记忆系统综述 - 从短期记忆到终身学习的完整架构
 

@@ -14,6 +14,10 @@ noindex: true
 description: "- arXiv ID: 2606.25161"
 keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, long-term-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.25161
+citation_arxiv_id: 2606.25191
+-->
 
 # Agent Memory arXiv 日报 — 2026-06-25
 

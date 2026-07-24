@@ -16,6 +16,13 @@ noindex: true
 description: "每日自动筛选 cs.AI 领域与 Agent Memory 相关的最新论文，分析趋势与关键洞察。"
 keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, hippocampus"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02509
+citation_arxiv_id: 2607.02374
+citation_arxiv_id: 2607.02303
+citation_arxiv_id: 2607.02329
+citation_arxiv_id: 2607.02514
+-->
 
 # Agent Memory arXiv 日报 — 2026-07-05
 

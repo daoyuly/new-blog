@@ -15,6 +15,13 @@ noindex: true
 description: "今日 arXiv cs.AI 共收录 13 篇新论文，其中与 AI Agent 密切相关的有 5 篇，覆盖 Agent 基础设施、训练方法、评测基准和长期交互理论。以下是核心趋势提炼。"
 keywords: "arxiv, cs.ai, agent, 趋势速览, (2026, 18), RL, web"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.19116
+citation_arxiv_id: 2606.19047
+citation_arxiv_id: 2606.19245
+citation_arxiv_id: 2606.19144
+citation_arxiv_id: 2606.19172
+-->
 
 今日 arXiv cs.AI 共收录 13 篇新论文，其中与 **AI Agent** 密切相关的有 5 篇，覆盖 Agent 基础设施、训练方法、评测基准和长期交互理论。以下是核心趋势提炼。
 

@@ -17,6 +17,18 @@ categories:
 abbrlink: 16744
 date: 2026-07-13 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.09586
+citation_arxiv_id: 2607.09076
+citation_arxiv_id: 2607.09600
+citation_arxiv_id: 2607.09493
+citation_arxiv_id: 2607.09521
+citation_arxiv_id: 2607.09474
+citation_arxiv_id: 2607.09059
+citation_arxiv_id: 2607.09099
+citation_arxiv_id: 2607.08894
+citation_arxiv_id: 2607.09403
+-->
 
 # Agent 前沿趋势：Agora等17项动态深度解析
 

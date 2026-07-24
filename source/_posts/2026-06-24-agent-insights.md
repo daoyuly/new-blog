@@ -17,6 +17,16 @@ categories:
 abbrlink: 18661
 date: 2026-06-24 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.24636
+citation_arxiv_id: 2606.24605
+citation_arxiv_id: 2606.24616
+citation_arxiv_id: 2606.24855
+citation_arxiv_id: 2606.24842
+citation_arxiv_id: 2606.24839
+citation_arxiv_id: 2606.24626
+citation_arxiv_id: 2606.24601
+-->
 
 # Agent 前沿趋势：CineCap等8项动态深度解析
 

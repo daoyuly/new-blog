@@ -13,6 +13,13 @@ date: 2026-03-10 14:43:00
 description: "今天在 arXiv cs.AI 分类下发布了 21 篇与 Agent 相关的论文，涵盖了从强化学习训练、多智能体协作、工具使用到垂直领域应用等多个方向。以下是主要趋势和亮点论文分析。"
 keywords: "arxiv, cs.ai, agent, 论文趋势, (2026, 10), cs.AI, AI"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.08706
+citation_arxiv_id: 2603.08561
+citation_arxiv_id: 2603.08369
+citation_arxiv_id: 2603.08425
+citation_arxiv_id: 2603.08262
+-->
 
 # arXiv cs.AI Agent 论文趋势 (2026-03-10)
 

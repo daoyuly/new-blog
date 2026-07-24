@@ -6,6 +6,9 @@ date: 2025-10-14 08:05:02
 description: "学习和适应对于增强人工智能 Agent 的能力至关重要。这些过程使 Agent 能够超越预定义参数进行演化，通过经验和环境交互实现自主改进。通过学习和适应，Agent 可以有效应对新情况并优化其性能，而无需持续的人工干预。本章将深入探..."
 keywords: "agentic, design, patterns, chapter, learning, and, adaptation"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 1707.06347
+-->
 
 # 第 9 章：学习和适应
 

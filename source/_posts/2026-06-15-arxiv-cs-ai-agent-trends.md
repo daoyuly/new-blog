@@ -13,6 +13,18 @@ noindex: true
 description: "今天的 cs.AI 领域呈现三大明确方向："
 keywords: "arxiv, cs.ai, agent, 趋势日报, (2026, 15), AI, daily"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.14672
+citation_arxiv_id: 2606.14502
+citation_arxiv_id: 2606.14476
+citation_arxiv_id: 2606.14470
+citation_arxiv_id: 2606.14249
+citation_arxiv_id: 2606.14239
+citation_arxiv_id: 2606.14211
+citation_arxiv_id: 2606.14200
+citation_arxiv_id: 2606.14314
+citation_arxiv_id: 2606.14571
+-->
 
 # ArXiv cs.AI Agent 相关论文趋势日报
 

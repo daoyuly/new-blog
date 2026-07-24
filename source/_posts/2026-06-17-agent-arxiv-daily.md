@@ -18,6 +18,18 @@ categories:
 abbrlink: 34186
 date: 2026-06-17 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.18235
+citation_arxiv_id: 2606.18144
+citation_arxiv_id: 2606.18075
+citation_arxiv_id: 2606.17945
+citation_arxiv_id: 2606.18206
+citation_arxiv_id: 2606.18147
+citation_arxiv_id: 2606.18154
+citation_arxiv_id: 2606.18060
+citation_arxiv_id: 2606.18005
+citation_arxiv_id: 2606.17929
+-->
 
 # 16篇 Agent 前沿论文深度解析：memory与planning方向最新进展
 

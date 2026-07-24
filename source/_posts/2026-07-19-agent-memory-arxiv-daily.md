@@ -19,6 +19,17 @@ abbrlink: 55416
 date: 2026-07-19 18:00:00
 noindex: true
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.14512
+citation_arxiv_id: 2607.14396
+citation_arxiv_id: 2607.14661
+citation_arxiv_id: 2607.15257
+citation_arxiv_id: 2607.15202
+citation_arxiv_id: 2607.14095
+citation_arxiv_id: 2607.14275
+citation_arxiv_id: 2607.14485
+citation_arxiv_id: 2607.14387
+-->
 
 # Agent Memory arXiv 日报：结构化记忆与上下文工程成焦点
 

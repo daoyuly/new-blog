@@ -18,6 +18,14 @@ noindex: true
 description: "今日在 arXiv cs.AI 分类中共筛选出 6 篇 与 Agent Memory 密切相关的论文，涵盖情感状态记忆、时序记忆治理、GraphRAG 检索轨迹、基于案例的经验复用、多智能体自我演化、以及智能体建模框架。研究方向呈现出..."
 keywords: "agent, memory, 领域最新研究进展, 2026年5月16日, Agent Memory, RAG, GraphRAG, 长期记忆"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.14833
+citation_arxiv_id: 2605.14802
+citation_arxiv_id: 2605.15109
+citation_arxiv_id: 2605.15041
+citation_arxiv_id: 2605.14892
+citation_arxiv_id: 2605.15040
+-->
 
 # Agent Memory 领域最新研究进展综合报告
 

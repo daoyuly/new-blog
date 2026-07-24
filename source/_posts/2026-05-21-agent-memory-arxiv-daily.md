@@ -15,6 +15,9 @@ noindex: true
 description: "今日（2026-05-20 提交的论文）共筛选出 12 篇 与 Agent Memory 密切相关的论文，涵盖长期记忆系统、记忆压缩、记忆冲突评估、具身智能记忆、多智能体记忆等多个方向。Agent Memory 研究正在从简单的 RA..."
 keywords: "agent, memory, 论文日报, 2026, agent-memory, arxiv, daily-report, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.20630
+-->
 
 # Agent Memory 论文日报 — 2026-05-21
 

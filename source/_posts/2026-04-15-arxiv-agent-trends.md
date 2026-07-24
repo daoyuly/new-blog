@@ -12,6 +12,18 @@ noindex: true
 description: "今天（2026年4月14日发布）的 arXiv cs.AI 类别中，agent 相关的研究呈现出几个明显的趋势：搜索 Agent 的无监督训练、记忆机制的改进、跨领域应用扩展、以及安全与可靠性增强。以下是对重点论文的深度分析。"
 keywords: "2026, arxiv, agent, 趋势报告, arXiv, AI Agent, 趋势分析, AI研究"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.12967
+citation_arxiv_id: 2604.12867
+citation_arxiv_id: 2604.12948
+citation_arxiv_id: 2604.12717
+citation_arxiv_id: 2604.12874
+citation_arxiv_id: 2604.12898
+citation_arxiv_id: 2604.12820
+citation_arxiv_id: 2604.12667
+citation_arxiv_id: 2604.12669
+citation_arxiv_id: 2604.12955
+-->
 
 # 2026年4月15日 arXiv cs.AI Agent 研究趋势
 

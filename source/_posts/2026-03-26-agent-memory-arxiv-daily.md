@@ -17,6 +17,15 @@ noindex: true
 description: "筛选范围: arXiv cs.AI (2026-03-25 至 2026-03-26)"
 keywords: "agent, memory, arxiv, (2026, 26), Agent Memory, AI, arXiv"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.23840
+citation_arxiv_id: 2603.24018
+citation_arxiv_id: 2603.24402
+citation_arxiv_id: 2603.23910
+citation_arxiv_id: 2603.23610
+citation_arxiv_id: 2603.24065
+citation_arxiv_id: 2603.23625
+-->
 
 # Agent Memory arXiv 日报 (2026-03-26)
 

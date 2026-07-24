@@ -18,6 +18,18 @@ categories:
 abbrlink: 16911
 date: 2026-06-28 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.27288
+citation_arxiv_id: 2606.27188
+citation_arxiv_id: 2606.27136
+citation_arxiv_id: 2606.27009
+citation_arxiv_id: 2606.26918
+citation_arxiv_id: 2606.26859
+citation_arxiv_id: 2606.27277
+citation_arxiv_id: 2606.26969
+citation_arxiv_id: 2606.26935
+citation_arxiv_id: 2606.26857
+-->
 
 # 12篇 Agent 前沿论文深度解析：other与planning方向最新进展
 

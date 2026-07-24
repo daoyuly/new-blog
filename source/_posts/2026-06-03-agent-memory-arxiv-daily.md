@@ -15,6 +15,14 @@ noindex: true
 description: "- arXiv ID: 2606.03463 Kimi解读"
 keywords: "agent, memory, (2026, 03), 确定性记忆、信息增益驱动的记忆训练与自演化技能系统, agent-memory, arxiv, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.03463
+citation_arxiv_id: 2606.03329
+citation_arxiv_id: 2606.03692
+citation_arxiv_id: 2606.03841
+citation_arxiv_id: 2606.03544
+citation_arxiv_id: 2606.03678
+-->
 
 # Agent Memory 日报 — 2026年6月3日
 

@@ -14,6 +14,17 @@ noindex: true
 description: "- Agent Memory 相关: 9 篇"
 keywords: "agent, memory, 每日论文综述, 2026, arxiv, daily-report, deep-analysis, 论文综述"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.12967
+citation_arxiv_id: 2604.12948
+citation_arxiv_id: 2604.12898
+citation_arxiv_id: 2604.12875
+citation_arxiv_id: 2604.12874
+citation_arxiv_id: 2604.12867
+citation_arxiv_id: 2604.12717
+citation_arxiv_id: 2604.12669
+citation_arxiv_id: 2604.12616
+-->
 
 
 # Agent Memory 每日论文综述

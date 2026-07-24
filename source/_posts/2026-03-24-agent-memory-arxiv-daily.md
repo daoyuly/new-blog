@@ -15,6 +15,18 @@ noindex: true
 description: "今日 arXiv cs.AI 共发布 24 篇论文，筛选出 11 篇与 Agent Memory、RAG、知识管理高度相关的论文。"
 keywords: "agent, memory, 每日论文速递, (2026, 24), agent-memory, arxiv, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.22096
+citation_arxiv_id: 2603.21925
+citation_arxiv_id: 2603.21866
+citation_arxiv_id: 2603.22179
+citation_arxiv_id: 2603.22083
+citation_arxiv_id: 2603.21846
+citation_arxiv_id: 2603.21698
+citation_arxiv_id: 2603.21696
+citation_arxiv_id: 2603.21692
+citation_arxiv_id: 2603.21630
+-->
 
 ## 📋 今日概览
 

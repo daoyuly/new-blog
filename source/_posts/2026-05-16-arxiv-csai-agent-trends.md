@@ -14,6 +14,17 @@ abbrlink: 22200
 description: "本期（2026-05-14 发布）cs.AI 共约 25 篇新论文，其中 Agent 直接相关约 10 篇，覆盖多智能体协作、Agent 训练框架、工具使用、Agent 评估、工作流可靠性等多个方向。"
 keywords: "agent, 周报｜2026.05.16, arxiv, cs.ai, 相关论文趋势, multi-agent, llm, weekly"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.15040
+citation_arxiv_id: 2605.14892
+citation_arxiv_id: 2605.14865
+citation_arxiv_id: 2605.15132
+citation_arxiv_id: 2605.14968
+citation_arxiv_id: 2605.15109
+citation_arxiv_id: 2605.15041
+citation_arxiv_id: 2605.14857
+citation_arxiv_id: 2605.14771
+-->
 
 > 🤖 每周整理 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 Agent 相关的最新论文，追踪前沿趋势。
 

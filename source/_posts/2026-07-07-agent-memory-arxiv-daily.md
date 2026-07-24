@@ -16,6 +16,15 @@ noindex: true
 description: "今天是 2026 年 7 月 7 日，本期 arXiv 日报聚焦 Agent Memory 领域最新论文。本期亮点非常密集——仅 7 月 4-6 日三天就出现了 8 篇 直接相关的记忆系统论文，覆盖架构设计、安全攻防、评测基准和自优化..."
 keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.05189
+citation_arxiv_id: 2607.04617
+citation_arxiv_id: 2607.04391
+citation_arxiv_id: 2607.03726
+citation_arxiv_id: 2607.04089
+citation_arxiv_id: 2607.05202
+citation_arxiv_id: 2607.05363
+-->
 
 今天是 2026 年 7 月 7 日，本期 arXiv 日报聚焦 Agent Memory 领域最新论文。本期亮点非常密集——仅 7 月 4-6 日三天就出现了 **8 篇** 直接相关的记忆系统论文，覆盖架构设计、安全攻防、评测基准和自优化框架四大方向。
 

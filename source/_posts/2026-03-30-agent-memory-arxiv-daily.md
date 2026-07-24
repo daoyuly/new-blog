@@ -15,6 +15,14 @@ noindex: true
 description: "经过对arXiv cs.AI类别论文的筛选分析，今日与Agent Memory、记忆增强、检索生成等相关的论文如下："
 keywords: "agent, memory研究前沿日报, 2026年3月27日, Agent Memory, AI Research, RAG, Knowledge Graph, Retrieval-Augmented"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.26266
+citation_arxiv_id: 2603.26512
+citation_arxiv_id: 2603.26076
+citation_arxiv_id: 2603.26499
+citation_arxiv_id: 2603.26567
+citation_arxiv_id: 2603.26556
+-->
 
 # Agent Memory研究前沿日报 - 2026年3月27日
 

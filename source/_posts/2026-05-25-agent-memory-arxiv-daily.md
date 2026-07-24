@@ -15,6 +15,13 @@ noindex: true
 description: "- arXiv ID: 2605.23723"
 keywords: "agent, memory, arxiv, (2026, 25), LLM, arXiv, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.23723
+citation_arxiv_id: 2605.23296
+citation_arxiv_id: 2605.23904
+citation_arxiv_id: 2605.23899
+citation_arxiv_id: 2605.23590
+-->
 
 # Agent Memory 每日 arXiv 速递 (2026-05-25)
 

@@ -13,6 +13,17 @@ noindex: true
 description: "今日 arXiv cs.AI 领域涌现大量 Agent 相关研究，涵盖多智能体协作、持续学习、安全推理、规范对齐等核心方向。以下是精选的 Agent 相关论文速览。"
 keywords: "arxiv, agent, 研究趋势速递, (2026.03.14), Agent, LLM, Multi-Agent, Reinforcement Learning"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.12129
+citation_arxiv_id: 2603.12109
+citation_arxiv_id: 2603.12056
+citation_arxiv_id: 2603.12011
+citation_arxiv_id: 2603.11987
+citation_arxiv_id: 2603.11864
+citation_arxiv_id: 2603.11808
+citation_arxiv_id: 2603.11798
+citation_arxiv_id: 2603.11802
+-->
 
 今日 arXiv cs.AI 领域涌现大量 Agent 相关研究，涵盖**多智能体协作、持续学习、安全推理、规范对齐**等核心方向。以下是精选的 Agent 相关论文速览。
 

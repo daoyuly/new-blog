@@ -15,6 +15,16 @@ noindex: true
 description: "今天共筛选出 8 篇 与 Agent Memory 高度相关的论文，覆盖记忆即模型范式、自召回推理、Agentic GraphRAG、长期记忆检索评估、历史经验驱动的工具使用、多粒度 RAG、Agent 框架记忆基础设施、以及纵向时序..."
 keywords: "agent, memory, arxiv, #11, 2026, agent-memory, arxiv-daily, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.15156
+citation_arxiv_id: 2605.15102
+citation_arxiv_id: 2605.15109
+citation_arxiv_id: 2605.15184
+citation_arxiv_id: 2605.15041
+citation_arxiv_id: 2605.15019
+citation_arxiv_id: 2605.15040
+citation_arxiv_id: 2605.15016
+-->
 
 > 本报告自动扫描 ArXiv cs.AI / cs.CL 最新论文，筛选与 Agent Memory 相关的研究并生成分析。
 > 关联系列：[开源 Agent Memory 框架对比分析](https://www.daoyuly.cn)

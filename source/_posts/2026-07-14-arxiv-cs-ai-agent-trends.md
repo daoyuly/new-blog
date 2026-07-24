@@ -12,6 +12,18 @@ noindex: true
 description: "长程任务中 Agent 的\"遗忘\"和\"迷失\"问题，正在从 prompt engineering 转向架构级解决方案。"
 keywords: "agent, 最新趋势日报, (2026, 14), arxiv, AI Agent, 每日速递, 论文速递"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.11388
+citation_arxiv_id: 2607.11357
+citation_arxiv_id: 2607.11346
+citation_arxiv_id: 2607.11433
+citation_arxiv_id: 2607.11598
+citation_arxiv_id: 2607.11347
+citation_arxiv_id: 2607.11307
+citation_arxiv_id: 2607.11696
+citation_arxiv_id: 2607.11266
+citation_arxiv_id: 2607.11338
+-->
 
 > 基于 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 2026-07-13 发布论文整理，聚焦 Agent 相关研究。
 

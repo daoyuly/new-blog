@@ -17,6 +17,18 @@ categories:
 abbrlink: 51071
 date: 2026-06-25 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.25400
+citation_arxiv_id: 2606.25984
+citation_arxiv_id: 2606.25524
+citation_arxiv_id: 2606.25960
+citation_arxiv_id: 2606.26057
+citation_arxiv_id: 2606.25996
+citation_arxiv_id: 2606.25519
+citation_arxiv_id: 2606.25325
+citation_arxiv_id: 2606.25191
+citation_arxiv_id: 2606.25836
+-->
 
 # Agent 前沿趋势：InvestPhilBench等17项动态深度解析
 

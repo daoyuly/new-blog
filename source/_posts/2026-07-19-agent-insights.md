@@ -17,6 +17,14 @@ categories:
 abbrlink: 31254
 date: 2026-07-19 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.15193
+citation_arxiv_id: 2607.14886
+citation_arxiv_id: 2607.15257
+citation_arxiv_id: 2607.15247
+citation_arxiv_id: 2607.15079
+citation_arxiv_id: 2607.14890
+-->
 
 # Agent 前沿趋势：Plover等6项动态深度解析
 

@@ -16,6 +16,18 @@ noindex: true
 description: "今天的论文出现了一个明显的转向——用确定性工作流替代自规划 Agent。"
 keywords: "agent, 最新研究趋势（2026, 15）, Agent, LLM, Multi-Agent, Workflow, Reasoning"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.15177
+citation_arxiv_id: 2605.15132
+citation_arxiv_id: 2605.15109
+citation_arxiv_id: 2605.15100
+citation_arxiv_id: 2605.15041
+citation_arxiv_id: 2605.15040
+citation_arxiv_id: 2605.14968
+citation_arxiv_id: 2605.14892
+citation_arxiv_id: 2605.14865
+citation_arxiv_id: 2605.14857
+-->
 
 # Agent 最新研究趋势（2026-05-15）
 

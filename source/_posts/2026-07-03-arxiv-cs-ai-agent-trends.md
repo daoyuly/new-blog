@@ -16,6 +16,14 @@ noindex: true
 description: "今日 cs.AI 共 14 篇新论文，其中与 Agent 强相关的有 6 篇。最突出的趋势：Agent 安全与可控性——超过一半的 Agent 相关论文在讨论如何让自主 Agent 更安全、更可监督。"
 keywords: "arxiv, cs.agent, 2026, agent, 安全与自治进化, safety, multi-agent, autonomous"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02514
+citation_arxiv_id: 2607.02389
+citation_arxiv_id: 2607.02440
+citation_arxiv_id: 2607.02507
+citation_arxiv_id: 2607.02329
+citation_arxiv_id: 2607.02376
+-->
 
 # arXiv cs.AI Agent 趋势日报 — 2026年7月3日
 

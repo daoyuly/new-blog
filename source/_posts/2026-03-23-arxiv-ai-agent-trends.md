@@ -13,6 +13,18 @@ date: 2026-03-23 12:00:00
 description: "今天的 arXiv cs.AI 领域发布了多篇与 Agent 相关的前沿论文，本文整理了其中 11 篇核心论文，并总结出当前 AI Agent 研究的六大趋势。"
 keywords: "arxiv, agent, 研究趋势, (2026, 23), arXiv, AI, Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.19461
+citation_arxiv_id: 2603.20185
+citation_arxiv_id: 2603.19685
+citation_arxiv_id: 2603.19639
+citation_arxiv_id: 2603.19896
+citation_arxiv_id: 2603.19584
+citation_arxiv_id: 2603.20179
+citation_arxiv_id: 2603.19782
+citation_arxiv_id: 2603.20101
+citation_arxiv_id: 2603.19500
+-->
 
 # arXiv AI Agent 研究趋势 (2026-03-23)
 

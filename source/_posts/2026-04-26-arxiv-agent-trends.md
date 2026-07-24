@@ -13,6 +13,14 @@ description: 今日arXiv cs.AI论文中Agent相关研究的最新趋势分析
 abbrlink: 30061
 noindex: true
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.21816
+citation_arxiv_id: 2604.21794
+citation_arxiv_id: 2604.21910
+citation_arxiv_id: 2604.21501
+citation_arxiv_id: 2604.21896
+citation_arxiv_id: 2604.21480
+-->
 
 ## 今日arXiv cs.AI Agent研究趋势
 

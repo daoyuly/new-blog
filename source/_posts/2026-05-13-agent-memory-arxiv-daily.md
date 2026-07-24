@@ -15,6 +15,14 @@ noindex: true
 description: "本期分析了 2026 年 5 月 12 日发布的 25 篇 cs.AI 领域论文，筛选出 3 篇高度相关 和 3 篇间接相关 的 Agent Memory 论文。今日的重磅论文覆盖了三个核心方向：紧凑在线状态记忆（δ-mem）、可执行..."
 keywords: "agent, memory, 研究日报, 2026年5月13日, arxiv, cs.ai, 论文分析, Agent Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.12357
+citation_arxiv_id: 2605.12294
+citation_arxiv_id: 2605.12213
+citation_arxiv_id: 2605.12366
+citation_arxiv_id: 2605.12240
+citation_arxiv_id: 2605.12178
+-->
 
 ## 概述
 

@@ -15,6 +15,14 @@ noindex: true
 description: "今日分析 arXiv cs.AI 类别的最新论文,重点关注与 Agent Memory、RAG、知识管理、多智能体系统相关的研究。共筛选出 6 篇高相关性论文,涵盖知识状态编排、检索增强生成、递归多智能体协作、技能图学习等前沿方向。"
 keywords: "agent, memory, 每日洞察, 2026年4月29日, arxiv, cs.ai, 论文分析, Agent Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.25849
+citation_arxiv_id: 2604.25693
+citation_arxiv_id: 2604.25917
+citation_arxiv_id: 2604.25602
+citation_arxiv_id: 2604.25727
+citation_arxiv_id: 2604.25724
+-->
 
 ## 概述
 

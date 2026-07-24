@@ -15,6 +15,15 @@ noindex: true
 description: "每日精选 arXiv 上与 Agent Memory 相关的最新论文，涵盖记忆增强智能体、情景记忆、长期记忆、RAG 等方向。"
 keywords: "agent, memory, arxiv, (2026, 17), agent-memory, RAG, episodic-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.18235
+citation_arxiv_id: 2606.18144
+citation_arxiv_id: 2606.18075
+citation_arxiv_id: 2606.18098
+citation_arxiv_id: 2606.18132
+citation_arxiv_id: 2606.18203
+citation_arxiv_id: 2606.18103
+-->
 
 # Agent Memory arXiv 日报 (2026-06-17)
 

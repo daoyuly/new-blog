@@ -16,6 +16,13 @@ noindex: true
 description: "检索范围: cs.AI (Artificial Intelligence)"
 keywords: "agent, memory, arxiv, 2026, 超维度记忆突破与自演化协议, Agent Memory, arXiv, Hyperdimensional Computing"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.15121
+citation_arxiv_id: 2604.15113
+citation_arxiv_id: 2604.15034
+citation_arxiv_id: 2604.15148
+citation_arxiv_id: 2604.15093
+-->
 
 ## 📊 日报概览
 

@@ -14,6 +14,11 @@ date: 2026-03-27 14:30:00
 description: "1. 什么是 Agent Harness？"
 keywords: "agent, harness, 深度调研, 的运行时基础设施, Agent, Harness, Infrastructure, LangGraph"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2210.03629
+citation_arxiv_id: 2302.02551
+citation_arxiv_id: 2201.11903
+-->
 
 # Agent Harness 深度调研：AI Agent 的运行时基础设施
 

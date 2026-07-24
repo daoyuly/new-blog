@@ -14,6 +14,17 @@ noindex: true
 description: "- 核心 Agent 论文： 至少 10 篇"
 keywords: "arxiv, cs.ai, agent, 研究趋势, (2026, 03), arXiv, AI Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.02568
+citation_arxiv_id: 2606.02536
+citation_arxiv_id: 2606.02497
+citation_arxiv_id: 2606.02484
+citation_arxiv_id: 2606.02470
+citation_arxiv_id: 2606.02461
+citation_arxiv_id: 2606.02458
+citation_arxiv_id: 2606.02449
+citation_arxiv_id: 2606.02386
+-->
 
 # arXiv cs.AI Agent 研究趋势 (2026-06-03)
 

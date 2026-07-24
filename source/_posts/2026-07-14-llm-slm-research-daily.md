@@ -15,6 +15,18 @@ date: 2026-07-14 09:00:00
 description: "- arXiv: 2607.09623 Kimi解读"
 keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.09623
+citation_arxiv_id: 2607.09348
+citation_arxiv_id: 2607.09328
+citation_arxiv_id: 2607.08775
+citation_arxiv_id: 2607.09600
+citation_arxiv_id: 2607.09528
+citation_arxiv_id: 2607.09287
+citation_arxiv_id: 2607.09204
+citation_arxiv_id: 2607.09053
+citation_arxiv_id: 2607.09543
+-->
 
 
 # LLM & SLM 研究日报

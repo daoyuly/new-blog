@@ -12,6 +12,16 @@ noindex: true
 description: "本报告基于 2026年4月16日发布的 arXiv cs.AI 最新论文，分析 Agent 相关研究的发展趋势。当日共收录了多篇与 Agent 相关的重要论文，涵盖了医疗、设计、移动端、RTL 优化等多个领域。"
 keywords: "arxiv, cs.ai, agent, 研究趋势报告, (2026, 18), arXiv, AI Agents"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.15231
+citation_arxiv_id: 2604.15034
+citation_arxiv_id: 2604.15078
+citation_arxiv_id: 2604.15037
+citation_arxiv_id: 2604.15184
+citation_arxiv_id: 2604.15093
+citation_arxiv_id: 2604.15233
+citation_arxiv_id: 2604.14989
+-->
 
 ## 概述
 

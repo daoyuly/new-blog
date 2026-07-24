@@ -16,6 +16,17 @@ noindex: true
 description: "今日 arXiv cs.AI 板块更新了多篇重磅论文，Agent 方向呈现出几个明显的趋势。以下按主题梳理。"
 keywords: "arxiv, cs.ai, agent, 相关最新趋势（2026, 06）, LLM, Agent, Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.06473
+citation_arxiv_id: 2606.06448
+citation_arxiv_id: 2606.06337
+citation_arxiv_id: 2606.06416
+citation_arxiv_id: 2606.06322
+citation_arxiv_id: 2606.06462
+citation_arxiv_id: 2606.06453
+citation_arxiv_id: 2606.06388
+citation_arxiv_id: 2606.06468
+-->
 
 今日 arXiv cs.AI 板块更新了多篇重磅论文，Agent 方向呈现出几个明显的趋势。以下按主题梳理。
 

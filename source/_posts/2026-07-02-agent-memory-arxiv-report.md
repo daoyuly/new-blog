@@ -17,6 +17,17 @@ abbrlink: 43090
 date: 2026-07-02 11:30:00
 noindex: true
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.32007
+citation_arxiv_id: 2606.31976
+citation_arxiv_id: 2606.31831
+citation_arxiv_id: 2606.31763
+citation_arxiv_id: 2606.31648
+citation_arxiv_id: 2606.31518
+citation_arxiv_id: 2606.32002
+citation_arxiv_id: 2606.31564
+citation_arxiv_id: 2606.31495
+-->
 
 # Agent Memory 前沿：9篇论文揭示记忆系统从检索走向推理
 

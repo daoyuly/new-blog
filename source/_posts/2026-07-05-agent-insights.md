@@ -17,6 +17,18 @@ categories:
 abbrlink: 58340
 date: 2026-07-05 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02509
+citation_arxiv_id: 2607.02491
+citation_arxiv_id: 2607.02389
+citation_arxiv_id: 2607.02514
+citation_arxiv_id: 2607.02507
+citation_arxiv_id: 2607.02396
+citation_arxiv_id: 2607.02376
+citation_arxiv_id: 2607.02374
+citation_arxiv_id: 2607.02440
+citation_arxiv_id: 2607.02245
+-->
 
 # Agent 前沿趋势：ReContext等18项动态深度解析
 

@@ -15,6 +15,17 @@ noindex: true
 description: "链接: https://arxiv.org/abs/2604.18478"
 keywords: "2026, arxiv, agent, memory, 论文日报, Agent Memory, arXiv, 论文跟踪"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.18478
+citation_arxiv_id: 2604.18576
+citation_arxiv_id: 2604.18584
+citation_arxiv_id: 2604.18292
+citation_arxiv_id: 2604.18240
+citation_arxiv_id: 2604.18543
+citation_arxiv_id: 2604.18530
+citation_arxiv_id: 2604.18344
+citation_arxiv_id: 2604.18327
+-->
 
 # 2026-04-21 arXiv Agent Memory 论文日报
 

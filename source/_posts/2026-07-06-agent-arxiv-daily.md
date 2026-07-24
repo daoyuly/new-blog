@@ -18,6 +18,18 @@ categories:
 abbrlink: 33589
 date: 2026-07-06 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02509
+citation_arxiv_id: 2607.02491
+citation_arxiv_id: 2607.02396
+citation_arxiv_id: 2607.02376
+citation_arxiv_id: 2607.02374
+citation_arxiv_id: 2607.02175
+citation_arxiv_id: 2607.02507
+citation_arxiv_id: 2607.02245
+citation_arxiv_id: 2607.02210
+citation_arxiv_id: 2607.02186
+-->
 
 # 17篇 Agent 前沿论文深度解析：planning与multi_agent方向最新进展
 

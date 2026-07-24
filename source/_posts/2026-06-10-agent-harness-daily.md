@@ -15,6 +15,16 @@ categories:
 abbrlink: 8637
 date: 2026-06-10 15:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.11150
+citation_arxiv_id: 2606.11120
+citation_arxiv_id: 2606.11063
+citation_arxiv_id: 2606.11045
+citation_arxiv_id: 2606.11042
+citation_arxiv_id: 2606.10949
+citation_arxiv_id: 2606.10833
+citation_arxiv_id: 2606.10799
+-->
 
 # Agent Harness 日报：评测与可观测等16项框架动态，编排范式与成熟度演进
 

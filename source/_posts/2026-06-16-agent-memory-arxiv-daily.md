@@ -17,6 +17,16 @@ noindex: true
 description: "- arXiv ID: 2606.17016"
 keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.17016
+citation_arxiv_id: 2606.17034
+citation_arxiv_id: 2606.16925
+citation_arxiv_id: 2606.16774
+citation_arxiv_id: 2606.16769
+citation_arxiv_id: 2606.17041
+citation_arxiv_id: 2606.17029
+citation_arxiv_id: 2606.17053
+-->
 
 # Agent Memory arXiv 日报 - 2026-06-16
 

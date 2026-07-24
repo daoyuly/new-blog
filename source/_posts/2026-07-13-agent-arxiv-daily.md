@@ -18,6 +18,18 @@ categories:
 abbrlink: 60591
 date: 2026-07-13 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.09521
+citation_arxiv_id: 2607.09492
+citation_arxiv_id: 2607.09474
+citation_arxiv_id: 2607.09217
+citation_arxiv_id: 2607.09195
+citation_arxiv_id: 2607.09175
+citation_arxiv_id: 2607.09403
+citation_arxiv_id: 2607.09330
+citation_arxiv_id: 2607.09153
+citation_arxiv_id: 2607.09099
+-->
 
 # 19篇 Agent 前沿论文深度解析：other与multi_agent方向最新进展
 

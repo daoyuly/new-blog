@@ -17,6 +17,18 @@ categories:
 abbrlink: 40401
 date: 2026-06-17 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.18075
+citation_arxiv_id: 2606.18068
+citation_arxiv_id: 2606.18235
+citation_arxiv_id: 2606.18206
+citation_arxiv_id: 2606.18191
+citation_arxiv_id: 2606.18154
+citation_arxiv_id: 2606.18142
+citation_arxiv_id: 2606.18147
+citation_arxiv_id: 2606.18144
+citation_arxiv_id: 2606.17945
+-->
 
 # Agent 前沿趋势：EvolveNav等16项动态深度解析
 

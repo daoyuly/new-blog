@@ -12,6 +12,18 @@ date: 2026-03-02 16:22:00
 description: "今天整理 arXiv cs.AI 领域的最新论文，重点关注 Agent（智能代理） 相关的研究进展。以下是本次的核心发现。"
 keywords: "arxiv, agent, 最新趋势（2026, 02）, arXiv, AI, Agent, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2602.23720
+citation_arxiv_id: 2602.23701
+citation_arxiv_id: 2602.23716
+citation_arxiv_id: 2602.23864
+citation_arxiv_id: 2602.23681
+citation_arxiv_id: 2602.23668
+citation_arxiv_id: 2602.23876
+citation_arxiv_id: 2602.24273
+citation_arxiv_id: 2602.24100
+citation_arxiv_id: 2602.24288
+-->
 
 # arXiv AI Agent 最新趋势（2026-03-02）
 

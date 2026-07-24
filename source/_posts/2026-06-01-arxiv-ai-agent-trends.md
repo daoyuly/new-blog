@@ -16,6 +16,18 @@ date: 2026-06-01 12:00:00
 description: "今天从 arXiv cs.AI 分类中整理了 Agent 相关 的最新研究趋势。本期共 25 篇论文中，有约 15 篇与 Agent 高度相关，呈现出几个明显的研究热点：科学 Agent 全生命周期系统、Web Agent 自我进化、..."
 keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 01), ai-agent, llm"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.31468
+citation_arxiv_id: 2605.31365
+citation_arxiv_id: 2605.31308
+citation_arxiv_id: 2605.31354
+citation_arxiv_id: 2605.30838
+citation_arxiv_id: 2605.30785
+citation_arxiv_id: 2605.31492
+citation_arxiv_id: 2605.31370
+citation_arxiv_id: 2605.31264
+citation_arxiv_id: 2605.30824
+-->
 
 今天从 arXiv cs.AI 分类中整理了 **Agent 相关** 的最新研究趋势。本期共 25 篇论文中，有约 15 篇与 Agent 高度相关，呈现出几个明显的研究热点：**科学 Agent 全生命周期系统、Web Agent 自我进化、Agent 轨迹诊断与评估、Agent 安全对齐、长时程上下文管理**。
 

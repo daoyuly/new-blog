@@ -6,6 +6,10 @@ date: 2025-10-19 08:05:02
 description: "LLM 在生成类人文本方面展现出了强大的能力。然而，它们的知识库通常局限于训练时使用的数据，限制了它们对实时信息、特定公司数据或高度专业化细节的访问。知识检索（RAG，即检索增强生成）解决了这一局限。RAG 使 LLM 能够访问和整合..."
 keywords: "agentic, design, patterns, chapter, knowledge, retrieval, (rag)"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2005.11401
+citation_arxiv_id: 2501.00309
+-->
 
 # 第 14 章：知识检索（RAG）
 

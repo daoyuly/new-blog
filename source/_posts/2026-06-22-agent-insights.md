@@ -17,6 +17,15 @@ categories:
 abbrlink: 29634
 date: 2026-06-22 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.20529
+citation_arxiv_id: 2606.20518
+citation_arxiv_id: 2606.20363
+citation_arxiv_id: 2606.20236
+citation_arxiv_id: 2606.20459
+citation_arxiv_id: 2606.20323
+citation_arxiv_id: 2606.20227
+-->
 
 # Agent 前沿趋势：LedgerAgent等8项动态深度解析
 

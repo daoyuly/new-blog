@@ -14,6 +14,14 @@ noindex: true
 description: "- arXiv ID: 2605.16233"
 keywords: "agent, memory, arxiv, 日报（2026, 18）, LLM, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.16233
+citation_arxiv_id: 2605.16045
+citation_arxiv_id: 2605.15759
+citation_arxiv_id: 2605.15701
+citation_arxiv_id: 2605.15710
+citation_arxiv_id: 2605.16113
+-->
 
 # Agent Memory arXiv 日报 — 2026年5月18日
 

@@ -16,6 +16,14 @@ noindex: true
 description: "数据来源：papers.cool/arxiv/cs.AI，从今日 24 篇 cs.AI 论文中筛选出与 Agent 密切相关的 6 篇。"
 keywords: "arxiv, cs.ai, agent, 相关最新趋势, (2026, 23), LLM, multi-agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.20529
+citation_arxiv_id: 2606.20363
+citation_arxiv_id: 2606.20333
+citation_arxiv_id: 2606.20245
+citation_arxiv_id: 2606.20236
+citation_arxiv_id: 2606.20274
+-->
 
 ## 今日 Agent 相关论文精选
 

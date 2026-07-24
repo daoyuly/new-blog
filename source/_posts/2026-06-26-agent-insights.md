@@ -17,6 +17,16 @@ categories:
 abbrlink: 1049
 date: 2026-06-26 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.26969
+citation_arxiv_id: 2606.26935
+citation_arxiv_id: 2606.27188
+citation_arxiv_id: 2606.27288
+citation_arxiv_id: 2606.27136
+citation_arxiv_id: 2606.27009
+citation_arxiv_id: 2606.26918
+citation_arxiv_id: 2606.26859
+-->
 
 # Agent 前沿趋势：Einstein World Model等9项动态深度解析
 

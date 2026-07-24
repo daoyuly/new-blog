@@ -14,6 +14,18 @@ categories:
   - AI架构
   - Agent系统
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.18100
+citation_arxiv_id: 2607.18034
+citation_arxiv_id: 2607.17973
+citation_arxiv_id: 2607.17917
+citation_arxiv_id: 2607.17884
+citation_arxiv_id: 2607.18084
+citation_arxiv_id: 2607.17890
+citation_arxiv_id: 2607.17745
+citation_arxiv_id: 2607.18004
+citation_arxiv_id: 2607.17879
+-->
 
 # 14篇 Agent 前沿论文深度解析：planning与evaluation方向最新进展
 

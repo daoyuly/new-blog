@@ -14,6 +14,13 @@ noindex: true
 description: "2026年4月16日，arXiv cs.AI 类别共发布 20+ 篇论文。经过筛选，发现 5 篇 与 Agent Memory 高度相关的论文，主要集中在以下几个方向："
 keywords: "arxiv, agent, memory, 论文日报, 2026, Agent Memory, arXiv Daily, VSA"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.15121
+citation_arxiv_id: 2604.15113
+citation_arxiv_id: 2604.15093
+citation_arxiv_id: 2604.15034
+citation_arxiv_id: 2604.15148
+-->
 
 ## 概述
 

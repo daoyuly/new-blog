@@ -15,6 +15,14 @@ noindex: true
 description: "- arXiv ID: 2606.27136"
 keywords: "agent, memory, arxiv, (2026, 28), agent-memory, LLM, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.27136
+citation_arxiv_id: 2606.27330
+citation_arxiv_id: 2606.27009
+citation_arxiv_id: 2606.27229
+citation_arxiv_id: 2606.26935
+citation_arxiv_id: 2606.26918
+-->
 
 # Agent Memory arXiv 日报 — 2026年6月28日
 

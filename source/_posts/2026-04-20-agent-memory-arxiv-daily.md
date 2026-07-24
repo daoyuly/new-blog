@@ -13,6 +13,14 @@ noindex: true
 description: "本文分析了 2026 年 4 月 16-17 日发表于 arXiv cs.AI 的论文中，与 Agent Memory 高度相关的研究成果。共识别出 6 篇核心论文，主要围绕以下方向："
 keywords: "agent, memory, 每日速递, 经验压缩谱系与技能优化, AI Agents, Memory Systems, ArXiv, Research"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.15877
+citation_arxiv_id: 2604.15709
+citation_arxiv_id: 2604.16175
+citation_arxiv_id: 2604.15951
+citation_arxiv_id: 2604.15558
+citation_arxiv_id: 2604.15528
+-->
 
 ## 📋 今日论文概览
 

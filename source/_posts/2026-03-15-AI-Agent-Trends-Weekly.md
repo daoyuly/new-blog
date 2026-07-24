@@ -15,6 +15,18 @@ date: 2026-03-15 12:00:00
 description: "本周共筛选出 11 篇 与 Agent 高度相关的前沿研究，涵盖 多智能体协作、LLM Agent 强化学习、Agent 安全与规范 等核心方向。"
 keywords: "agent, 研究趋势周报, 2026.03.15, ai-agent, llm, reinforcement-learning, multi-agent, benchmark"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.12129
+citation_arxiv_id: 2603.12109
+citation_arxiv_id: 2603.12011
+citation_arxiv_id: 2603.12056
+citation_arxiv_id: 2603.12096
+citation_arxiv_id: 2603.11987
+citation_arxiv_id: 2603.11974
+citation_arxiv_id: 2603.11864
+citation_arxiv_id: 2603.11808
+citation_arxiv_id: 2603.11802
+-->
 
 # AI Agent 研究趋势周报
 

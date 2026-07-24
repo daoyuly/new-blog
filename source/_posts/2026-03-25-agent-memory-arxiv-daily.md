@@ -18,6 +18,11 @@ noindex: true
 description: "今日 arXiv cs.AI 领域共发布 25+ 篇论文，经筛选后发现 2 篇高度相关 的 Agent Memory 论文，以及 1 篇 RAG 相关论文。"
 keywords: "agent, memory, 每日论文速递, (2026, 25), LLM, arxiv, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.23234
+citation_arxiv_id: 2603.23231
+citation_arxiv_id: 2603.22934
+-->
 
 ## 📋 今日概览
 

@@ -6,6 +6,16 @@ date: 2026-03-26 16:19:23
 description: "今日arXiv cs.AI类别中有多篇关于AI代理的重要研究，涵盖了从硬件优化到可持续性等多个前沿方向。以下是最主要的agent相关趋势分析。"
 keywords: "agent, research, trends, march, 2026"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.25719
+citation_arxiv_id: 2603.25498
+citation_arxiv_id: 2603.25158
+citation_arxiv_id: 2603.25334
+citation_arxiv_id: 2603.25727
+citation_arxiv_id: 2603.25415
+citation_arxiv_id: 2603.25412
+citation_arxiv_id: 2603.25633
+-->
 
 # AI Agent Research Trends - March 26, 2026
 

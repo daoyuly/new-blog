@@ -14,6 +14,10 @@ noindex: true
 description: "- arXiv ID: 2606.10985"
 keywords: "agent, memory, (2026, 10), arxiv, cs.ai, 论文速递, agent-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.10985
+citation_arxiv_id: 2606.11078
+-->
 
 # Agent Memory 日报 (2026-06-10)
 

@@ -14,6 +14,18 @@ noindex: true
 description: "整理今天的 arXiv cs.AI 论文，聚焦 Agent 相关研究的最新进展。"
 keywords: "arxiv, agent, 研究趋势速递, (2026, 19), AI, Agent, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.18000
+citation_arxiv_id: 2603.17831
+citation_arxiv_id: 2603.17787
+citation_arxiv_id: 2603.17694
+citation_arxiv_id: 2603.17639
+citation_arxiv_id: 2603.17445
+citation_arxiv_id: 2603.17425
+citation_arxiv_id: 2603.17244
+citation_arxiv_id: 2603.17112
+citation_arxiv_id: 2603.17216
+-->
 
 # arXiv Agent 研究趋势速递 (2026-03-19)
 

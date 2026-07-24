@@ -13,6 +13,18 @@ noindex: true
 description: "本文整理自 papers.cool/arxiv/cs.AI，聚焦 Agent 相关论文的最新趋势。"
 keywords: "arxiv, cs.ai, agent, 趋势日报, 2026, arXiv, AI Agent, 趋势"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02514
+citation_arxiv_id: 2607.02389
+citation_arxiv_id: 2607.02210
+citation_arxiv_id: 2607.02510
+citation_arxiv_id: 2607.02255
+citation_arxiv_id: 2607.02374
+citation_arxiv_id: 2607.02376
+citation_arxiv_id: 2607.02507
+citation_arxiv_id: 2607.02186
+citation_arxiv_id: 2607.02245
+-->
 
 本文整理自 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)，聚焦 **Agent 相关**论文的最新趋势。
 

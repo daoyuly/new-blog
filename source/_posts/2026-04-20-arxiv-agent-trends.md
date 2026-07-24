@@ -13,6 +13,18 @@ noindex: true
 description: "今天（2026年4月20日）的 arXiv cs.AI 分区中，Agent 相关论文呈现出多个重要研究方向，主要集中在多智能体协作、Agent 安全性、推理能力优化和经验管理等核心主题。"
 keywords: "arxiv, 论文速递, agent, 趋势分析, (2026, 20), AI, Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.16175
+citation_arxiv_id: 2604.16022
+citation_arxiv_id: 2604.15972
+citation_arxiv_id: 2604.16286
+citation_arxiv_id: 2604.15559
+citation_arxiv_id: 2604.15877
+citation_arxiv_id: 2604.15709
+citation_arxiv_id: 2604.15839
+citation_arxiv_id: 2604.15529
+citation_arxiv_id: 2604.15951
+-->
 
 ## 🤖 今日 Agent 相关论文概览
 

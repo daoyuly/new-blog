@@ -13,6 +13,18 @@ noindex: true
 description: "- arXiv ID: 2604.19689"
 keywords: "agent, memory, 研究日报, 2026年4月22日, Agent Memory, RAG, Long-term Memory, AI Research"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.19689
+citation_arxiv_id: 2604.19516
+citation_arxiv_id: 2604.19457
+citation_arxiv_id: 2604.19488
+citation_arxiv_id: 2604.19523
+citation_arxiv_id: 2604.19278
+citation_arxiv_id: 2604.19538
+citation_arxiv_id: 2604.19211
+citation_arxiv_id: 2604.19559
+citation_arxiv_id: 2604.19633
+-->
 
 ## 今日相关论文列表
 

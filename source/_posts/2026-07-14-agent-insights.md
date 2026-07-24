@@ -17,6 +17,18 @@ categories:
 abbrlink: 52932
 date: 2026-07-14 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.11696
+citation_arxiv_id: 2607.11436
+citation_arxiv_id: 2607.11388
+citation_arxiv_id: 2607.11607
+citation_arxiv_id: 2607.11433
+citation_arxiv_id: 2607.11357
+citation_arxiv_id: 2607.11338
+citation_arxiv_id: 2607.11317
+citation_arxiv_id: 2607.11346
+citation_arxiv_id: 2607.11307
+-->
 
 # Agent 前沿趋势：Think Through a Bott等12项动态深度解析
 

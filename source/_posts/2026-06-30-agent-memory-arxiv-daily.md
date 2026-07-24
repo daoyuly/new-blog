@@ -15,6 +15,11 @@ noindex: true
 description: "今日扫描 cs.AI 最新论文，筛选出 3 篇与 Agent Memory 高度相关的工作。"
 keywords: "agent, memory, arxiv, 2026, Agent Memory, arXiv, Episodic Memory, World Model"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.30639
+citation_arxiv_id: 2606.30335
+citation_arxiv_id: 2606.30296
+-->
 
 # Agent Memory arXiv 日报 — 2026-06-30
 

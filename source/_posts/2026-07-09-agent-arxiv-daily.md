@@ -17,6 +17,18 @@ categories:
 abbrlink: 52632
 date: 2026-07-09 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.07676
+citation_arxiv_id: 2607.07504
+citation_arxiv_id: 2607.07436
+citation_arxiv_id: 2607.07405
+citation_arxiv_id: 2607.07379
+citation_arxiv_id: 2607.06906
+citation_arxiv_id: 2607.06820
+citation_arxiv_id: 2607.07695
+citation_arxiv_id: 2607.07492
+citation_arxiv_id: 2607.07467
+-->
 
 # 21篇 Agent 前沿论文深度解析：other与engineering方向最新进展
 

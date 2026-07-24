@@ -16,6 +16,14 @@ noindex: true
 description: "从 papers.cool/arxiv/cs.AI 2026-06-05 批次中筛选出以下与 Agent Memory、经验学习、技能提取相关的论文。"
 keywords: "agent, memory, arxiv, (2026, 08), LLM, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.06787
+citation_arxiv_id: 2606.06741
+citation_arxiv_id: 2606.06893
+citation_arxiv_id: 2606.06923
+citation_arxiv_id: 2606.07299
+citation_arxiv_id: 2606.07027
+-->
 
 ## 今日 Agent Memory 相关论文
 

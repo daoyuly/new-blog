@@ -12,6 +12,16 @@ noindex: true
 description: "今天(2026-04-11)的 arXiv cs.AI 领域中,关于 AI Agent 的研究呈现出以下几个重要趋势:"
 keywords: "2026, arxiv, agent, 最新趋势分析, arXiv, AI Agent, LLM, AI Research"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.08465
+citation_arxiv_id: 2604.08377
+citation_arxiv_id: 2604.08401
+citation_arxiv_id: 2604.08369
+citation_arxiv_id: 2604.08455
+citation_arxiv_id: 2604.08276
+citation_arxiv_id: 2604.08388
+citation_arxiv_id: 2604.08178
+-->
 
 # 今日 arXiv AI Agent 最新趋势分析
 

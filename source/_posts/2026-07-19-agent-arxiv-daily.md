@@ -17,6 +17,18 @@ categories:
 abbrlink: 19632
 date: 2026-07-19 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.15257
+citation_arxiv_id: 2607.15247
+citation_arxiv_id: 2607.15079
+citation_arxiv_id: 2607.14890
+citation_arxiv_id: 2607.15190
+citation_arxiv_id: 2607.15176
+citation_arxiv_id: 2607.15166
+citation_arxiv_id: 2607.14975
+citation_arxiv_id: 2607.15193
+citation_arxiv_id: 2607.15142
+-->
 
 # 11篇 Agent 前沿论文深度解析：other与evaluation方向最新进展
 

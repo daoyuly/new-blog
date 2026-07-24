@@ -17,6 +17,15 @@ noindex: true
 description: "2026年6月18日 arXiv cs.AI / cs.CL 新文中，筛选出 7 篇 与 Agent Memory 高度相关的论文。今日主题鲜明：记忆的存储范式正在从\"外部检索\"转向\"内部参数化\"——从 Engram 模型的局部参数编..."
 keywords: "agent, memory, arxiv, #23, engram, episodic, 状态与记忆的架构之争, agent-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.19172
+citation_arxiv_id: 2606.20518
+citation_arxiv_id: 2606.20529
+citation_arxiv_id: 2606.20333
+citation_arxiv_id: 2606.20363
+citation_arxiv_id: 2606.19144
+citation_arxiv_id: 2606.19047
+-->
 
 ## 📋 今日概览
 

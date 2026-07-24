@@ -14,6 +14,18 @@ categories:
 description: "- 摘要: llm,pyrodash,token,slm,cost,percent,reasoning,inference,usd,accuracy"
 keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.20327
+citation_arxiv_id: 2607.20056
+citation_arxiv_id: 2607.19956
+citation_arxiv_id: 2607.20228
+citation_arxiv_id: 2607.20214
+citation_arxiv_id: 2607.20410
+citation_arxiv_id: 2607.20265
+citation_arxiv_id: 2607.20145
+citation_arxiv_id: 2607.20374
+citation_arxiv_id: 2607.20367
+-->
 
 
 # LLM & SLM 研究日报

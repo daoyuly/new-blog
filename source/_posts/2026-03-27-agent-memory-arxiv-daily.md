@@ -16,6 +16,16 @@ noindex: true
 description: "- 总论文数: 177 篇 (cs.AI)"
 keywords: "agent, memory, arxiv, 每日速递, (2026, 27), Agent Memory, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.25737
+citation_arxiv_id: 2603.25158
+citation_arxiv_id: 2603.25152
+citation_arxiv_id: 2603.25293
+citation_arxiv_id: 2603.25415
+citation_arxiv_id: 2603.25480
+citation_arxiv_id: 2603.25498
+citation_arxiv_id: 2603.25334
+-->
 
 # Agent Memory arXiv 每日速递
 

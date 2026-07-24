@@ -14,6 +14,12 @@ noindex: true
 description: "- arXiv ID: 2605.26112"
 keywords: "agent, memory, 日报｜2026, 26｜agent, harness、认知图演化与, always, agent-memory, arxiv-daily"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.26112
+citation_arxiv_id: 2605.26086
+citation_arxiv_id: 2605.26081
+citation_arxiv_id: 2605.25931
+-->
 
 # Agent Memory arXiv 日报 — 2026-05-26
 

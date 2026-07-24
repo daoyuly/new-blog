@@ -14,6 +14,13 @@ noindex: true
 description: "今天 arXiv cs.AI 共收录约 23 篇新论文，其中与 Agent 直接相关的有 5 篇。以下聚焦 Agent 领域最新趋势与关键论文解读。"
 keywords: "arxiv, cs.ai, agent, 趋势速递, 2026, arXiv, AI Agent, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.08716
+citation_arxiv_id: 2607.08740
+citation_arxiv_id: 2607.08652
+citation_arxiv_id: 2607.08681
+citation_arxiv_id: 2607.08403
+-->
 
 今天 arXiv cs.AI 共收录约 23 篇新论文，其中与 **Agent** 直接相关的有 5 篇。以下聚焦 Agent 领域最新趋势与关键论文解读。
 

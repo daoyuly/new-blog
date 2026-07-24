@@ -13,6 +13,16 @@ noindex: true
 description: "Agent 不再满足于\"用一次学一次\"，开始追求递归式自我改进。"
 keywords: "arxiv, cs.ai, agent, 趋势日报, (2026, 07), arXiv, Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.05297
+citation_arxiv_id: 2607.05202
+citation_arxiv_id: 2607.04963
+citation_arxiv_id: 2607.05174
+citation_arxiv_id: 2607.05363
+citation_arxiv_id: 2607.05055
+citation_arxiv_id: 2607.05391
+citation_arxiv_id: 2607.05346
+-->
 
 # arXiv cs.AI Agent 趋势日报 (2026-07-07)
 

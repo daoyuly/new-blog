@@ -14,6 +14,18 @@ date: 2026-05-29 17:30:00
 description: "- arXiv: 2605.30344 Kimi解读"
 keywords: "agent, 最新研究综述（2026, 29）, Agent, LLM, Multi-Agent, Memory, Planning"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.30344
+citation_arxiv_id: 2605.30284
+citation_arxiv_id: 2605.30085
+citation_arxiv_id: 2605.30144
+citation_arxiv_id: 2605.30136
+citation_arxiv_id: 2605.30042
+citation_arxiv_id: 2605.30353
+citation_arxiv_id: 2605.30335
+citation_arxiv_id: 2605.30187
+citation_arxiv_id: 2605.30207
+-->
 
 # Agent 最新研究综述（2026-05-29）
 

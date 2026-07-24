@@ -17,6 +17,18 @@ categories:
 abbrlink: 43700
 date: 2026-06-18 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.18988
+citation_arxiv_id: 2606.19327
+citation_arxiv_id: 2606.19256
+citation_arxiv_id: 2606.19245
+citation_arxiv_id: 2606.19116
+citation_arxiv_id: 2606.19172
+citation_arxiv_id: 2606.18950
+citation_arxiv_id: 2606.18947
+citation_arxiv_id: 2606.19047
+citation_arxiv_id: 2606.18890
+-->
 
 # Agent 前沿趋势：Rethinking Reward Su等15项动态深度解析
 

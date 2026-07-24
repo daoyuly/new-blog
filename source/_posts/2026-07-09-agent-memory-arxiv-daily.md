@@ -15,6 +15,15 @@ noindex: true
 description: "arXiv: 2607.07321 Kimi解读"
 keywords: "agent, memory, 2026, agent-memory, arxiv, daily-report, LLM, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.07321
+citation_arxiv_id: 2607.07436
+citation_arxiv_id: 2607.07676
+citation_arxiv_id: 2607.06993
+citation_arxiv_id: 2607.07467
+citation_arxiv_id: 2607.07663
+citation_arxiv_id: 2607.06906
+-->
 
 # Agent Memory 日报 — 2026-07-09
 

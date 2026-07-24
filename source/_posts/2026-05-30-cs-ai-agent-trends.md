@@ -15,6 +15,15 @@ date: 2026-05-30 12:00:00
 description: "今天 cs.AI 共发布约 40+ 篇论文，其中与 Agent 密切相关的有 7 篇，覆盖以下方向："
 keywords: "agent, 前沿日报, (2026, 30), cs.ai, 相关论文趋势, llm, mcp"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.30314
+citation_arxiv_id: 2605.30335
+citation_arxiv_id: 2605.30353
+citation_arxiv_id: 2605.30300
+citation_arxiv_id: 2605.30260
+citation_arxiv_id: 2605.30200
+citation_arxiv_id: 2605.30150
+-->
 
 > 每日精选 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 **AI Agent** 相关的最新论文，分析趋势与亮点。
 

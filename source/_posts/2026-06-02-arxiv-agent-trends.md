@@ -12,6 +12,18 @@ noindex: true
 description: "数据来源：papers.cool/arxiv/cs.AI"
 keywords: "2026, agent, 论文日报, 从自主科研到安全对齐, arxiv, ai-agent, daily-report, AI Agent 日报"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.31468
+citation_arxiv_id: 2605.31365
+citation_arxiv_id: 2605.31308
+citation_arxiv_id: 2605.30838
+citation_arxiv_id: 2605.30824
+citation_arxiv_id: 2605.31370
+citation_arxiv_id: 2605.31264
+citation_arxiv_id: 2605.31278
+citation_arxiv_id: 2605.31354
+citation_arxiv_id: 2605.30785
+-->
 
 数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)
 

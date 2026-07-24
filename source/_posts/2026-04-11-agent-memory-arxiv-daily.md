@@ -12,6 +12,13 @@ noindex: true
 description: "来源： arXiv cs.AI (https://papers.cool/arxiv/cs.AI)"
 keywords: "agent, memory, 最新论文日报（2026, 11）, Agent Memory, AI, 论文分析"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.08276
+citation_arxiv_id: 2604.08377
+citation_arxiv_id: 2604.08401
+citation_arxiv_id: 2604.08263
+citation_arxiv_id: 2604.08178
+-->
 
 # Agent Memory 最新论文日报
 

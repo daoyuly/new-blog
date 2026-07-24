@@ -15,6 +15,15 @@ date: 2026-03-12 12:00:00
 description: "今天 arXiv cs.AI 分类中，Agent 相关研究呈现几个显著趋势：自进化与自我改进、结构化记忆系统、领域专业化 以及 多 Agent 协作。以下是精选论文速递。"
 keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 12), AI-Agent, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.10600
+citation_arxiv_id: 2603.10677
+citation_arxiv_id: 2603.10564
+citation_arxiv_id: 2603.10291
+citation_arxiv_id: 2603.10808
+citation_arxiv_id: 2603.11048
+citation_arxiv_id: 2603.10133
+-->
 
 ## 今日 Agent 研究概览
 

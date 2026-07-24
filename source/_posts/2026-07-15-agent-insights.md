@@ -17,6 +17,18 @@ categories:
 abbrlink: 26818
 date: 2026-07-15 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.13034
+citation_arxiv_id: 2607.12893
+citation_arxiv_id: 2607.12886
+citation_arxiv_id: 2607.12823
+citation_arxiv_id: 2607.12815
+citation_arxiv_id: 2607.12733
+citation_arxiv_id: 2607.12711
+citation_arxiv_id: 2607.12790
+citation_arxiv_id: 2607.12747
+citation_arxiv_id: 2607.12662
+-->
 
 # Agent 前沿趋势：Do AI Agents Know Wh等12项动态深度解析
 

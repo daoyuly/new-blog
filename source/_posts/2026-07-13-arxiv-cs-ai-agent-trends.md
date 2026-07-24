@@ -16,6 +16,17 @@ noindex: true
 description: "来源：papers.cool/arxiv/cs.AI，筛选 2026-07-10 发布的 Agent 方向论文。"
 keywords: "arxiv, cs.ai, agent, 论文日报, (2026, 10), LLM, multi-agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.09600
+citation_arxiv_id: 2607.09586
+citation_arxiv_id: 2607.09521
+citation_arxiv_id: 2607.09493
+citation_arxiv_id: 2607.09403
+citation_arxiv_id: 2607.09330
+citation_arxiv_id: 2607.09322
+citation_arxiv_id: 2607.09474
+citation_arxiv_id: 2607.09217
+-->
 
 ## 今日 Agent 相关论文速览
 

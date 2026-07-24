@@ -14,6 +14,18 @@ categories:
 description: "- 摘要: toolsciver,scientific,claim,tool,multimodal,mscv,visuals,verification,grpo,visual"
 keywords: "llm, slm, 研究日报, 2026, LLM, SLM, 算法, 训练"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.16131
+citation_arxiv_id: 2607.16085
+citation_arxiv_id: 2607.16072
+citation_arxiv_id: 2607.16057
+citation_arxiv_id: 2607.15893
+citation_arxiv_id: 2607.15829
+citation_arxiv_id: 2607.15736
+citation_arxiv_id: 2607.15498
+citation_arxiv_id: 2607.16184
+citation_arxiv_id: 2607.16156
+-->
 
 
 # LLM & SLM 研究日报

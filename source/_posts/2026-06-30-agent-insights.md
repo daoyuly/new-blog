@@ -17,6 +17,17 @@ categories:
 abbrlink: 39762
 date: 2026-06-30 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.30639
+citation_arxiv_id: 2606.30296
+citation_arxiv_id: 2606.30182
+citation_arxiv_id: 2606.30555
+citation_arxiv_id: 2606.30544
+citation_arxiv_id: 2606.30185
+citation_arxiv_id: 2606.30531
+citation_arxiv_id: 2606.30383
+citation_arxiv_id: 2606.30294
+-->
 
 # Agent 前沿趋势：Self-Evolving World 等11项动态深度解析
 

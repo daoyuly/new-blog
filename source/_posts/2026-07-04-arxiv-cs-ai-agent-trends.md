@@ -13,6 +13,12 @@ noindex: true
 description: "数据来源：papers.cool/arxiv/cs.AI"
 keywords: "arxiv, cs.ai, 日报｜agent, 趋势速递, 2026, agent, AI趋势, 日报"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.02514
+citation_arxiv_id: 2607.02507
+citation_arxiv_id: 2607.02440
+citation_arxiv_id: 2607.02510
+-->
 
 # ArXiv cs.AI Agent 趋势速递
 

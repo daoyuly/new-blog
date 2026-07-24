@@ -18,6 +18,18 @@ categories:
 abbrlink: 29055
 date: 2026-07-16 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.14004
+citation_arxiv_id: 2607.13716
+citation_arxiv_id: 2607.13705
+citation_arxiv_id: 2607.13655
+citation_arxiv_id: 2607.13621
+citation_arxiv_id: 2607.13396
+citation_arxiv_id: 2607.14049
+citation_arxiv_id: 2607.13899
+citation_arxiv_id: 2607.13558
+citation_arxiv_id: 2607.13548
+-->
 
 # 18篇 Agent 前沿论文深度解析：evaluation与planning方向最新进展
 

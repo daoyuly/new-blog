@@ -12,6 +12,14 @@ noindex: true
 description: "本文从 papers.cool/arxiv/cs.AI 今日更新中筛选 Agent 相关论文，提炼最新趋势。"
 keywords: "arxiv, cs.ai, agent, 趋势日报, (2026, 19), AI Agent, 论文速递"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.15257
+citation_arxiv_id: 2607.15193
+citation_arxiv_id: 2607.15218
+citation_arxiv_id: 2607.15247
+citation_arxiv_id: 2607.15079
+citation_arxiv_id: 2607.14890
+-->
 
 本文从 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 今日更新中筛选 Agent 相关论文，提炼最新趋势。
 

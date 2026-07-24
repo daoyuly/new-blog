@@ -17,6 +17,18 @@ categories:
 abbrlink: 47437
 date: 2026-07-09 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.07492
+citation_arxiv_id: 2607.07467
+citation_arxiv_id: 2607.07646
+citation_arxiv_id: 2607.07391
+citation_arxiv_id: 2607.07504
+citation_arxiv_id: 2607.07397
+citation_arxiv_id: 2607.07695
+citation_arxiv_id: 2607.07676
+citation_arxiv_id: 2607.07229
+citation_arxiv_id: 2607.06764
+-->
 
 # Agent 前沿趋势：RL Post-Training Bui等19项动态深度解析
 

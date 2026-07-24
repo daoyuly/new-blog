@@ -13,6 +13,11 @@ date: 2026-03-12 11:32:00
 description: "原理：AI 生成的文本在统计分布上有可辨识的特征"
 keywords: "味检测方法与业界实践综述, AI, 内容检测, LLM, 水印技术, 学术诚信, 技术综述"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2301.07597
+citation_arxiv_id: 2305.13242
+citation_arxiv_id: 2306.04634
+-->
 
 # AI 味检测方法与业界实践综述
 

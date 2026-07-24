@@ -12,6 +12,14 @@ tags:
 categories:
   - Agent框架
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.19262
+citation_arxiv_id: 2607.19108
+citation_arxiv_id: 2607.19117
+citation_arxiv_id: 2607.19096
+citation_arxiv_id: 2607.18909
+citation_arxiv_id: 2607.19297
+-->
 
 # Agent Harness 日报：框架与运行时等14项框架动态，编排范式与成熟度演进
 

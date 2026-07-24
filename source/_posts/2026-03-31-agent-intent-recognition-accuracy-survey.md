@@ -13,6 +13,15 @@ date: 2026-03-31 14:10:00
 description: "关键词: Intent Recognition, Agent Systems, NLU Evaluation, Prompt Engineering, Accuracy Metrics"
 keywords: "agent意图识别准确性综述, 从评估到优化的完整指南, AI Agent, 意图识别, NLP, 评估指标, 提示词工程, AI技术研究"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2012.13041
+citation_arxiv_id: 1902.10909
+citation_arxiv_id: 2109.10589
+citation_arxiv_id: 2105.10928
+citation_arxiv_id: 2104.08324
+citation_arxiv_id: 2005.09043
+citation_arxiv_id: 1907.13518
+-->
 
 # Agent意图识别准确性综述 - 从评估到优化的完整指南
 

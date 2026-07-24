@@ -53,5 +53,29 @@
   <% if (page.noindex){ %>
   <meta name="robots" content="noindex,nofollow">
   <% } %>
+  <% if (is_post() && !page.noindex){ %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "<%= page.title %>",
+    "description": "<%= (page.description || config.description || '').replace(/"/g, '\\"') %>",
+    "author": {
+      "@type": "Person",
+      "name": "<%= page.author || config.author || '刘道玉' %>"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "<%= config.title %>",
+      "url": "<%= config.url %>"
+    },
+    "datePublished": "<%= page.date.toISOString() %>",
+    "dateModified": "<%= page.updated ? page.updated.toISOString() : page.date.toISOString() %>",
+    "url": "<%= config.url %><%= url_for(page.path) %>",
+    "inLanguage": "zh-CN",
+    "keywords": "<%= page.keywords || (page.tags ? page.tags.map(function(t){return t.name}).join(', ') : '') %>"
+  }
+  </script>
+  <% } %>
   <%- partial('baidu-analytics') %>  
 </head>

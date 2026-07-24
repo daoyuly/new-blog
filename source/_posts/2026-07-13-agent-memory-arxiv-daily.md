@@ -15,6 +15,13 @@ noindex: true
 description: "今日 cs.AI 共 24 篇新论文，筛选出 5 篇与 Agent Memory 高度相关的论文。核心主题集中在：选择性持久记忆架构、情景记忆与语义记忆的双系统设计、长程上下文演化与验证。"
 keywords: "agent, memory, 2026, 选择性持久记忆、情景记忆驱动决策、长程上下文演化, agent-memory, episodic-memory, persistent-memory, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.09493
+citation_arxiv_id: 2607.09521
+citation_arxiv_id: 2607.09175
+citation_arxiv_id: 2607.09322
+citation_arxiv_id: 2607.09560
+-->
 
 ## 📋 今日概览
 

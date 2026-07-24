@@ -13,6 +13,11 @@ date: 2026-03-31 16:27:00
 description: "关键词: Multi-Agent Collaboration, Coordination, Communication, Consensus, Task Allocation, Conflict Resolution"
 keywords: "agent协作机制综述, 从单兵作战到团队协同的完整指南, AI Agent, Multi-Agent Collaboration, Coordination, Communication Protocol, Consensus, AI技术研究"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 1911.05563
+citation_arxiv_id: 2308.08155
+citation_arxiv_id: 2307.07924
+-->
 
 # Agent协作机制综述 - 从单兵作战到团队协同的完整指南
 

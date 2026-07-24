@@ -12,6 +12,11 @@ date: 2026-06-30 01:06:00
 description: "当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。"
 keywords: "工具链操纵, 无需代码漏洞的agent推理劫持, AI安全, Agent, MCP"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2402.10753
+citation_arxiv_id: 2402.07867
+citation_arxiv_id: 2407.12784
+-->
 
 当我们在讨论 AI Agent 安全的时候，注意力往往集中在 prompt injection——有人在用户输入里藏了恶意指令，LLM 照做了。这确实是当前最普遍的攻击方式，防御方案也相对成熟：输入过滤、指令层级隔离、输出监控。
 

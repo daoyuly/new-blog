@@ -6,6 +6,11 @@ date: 2025-11-01 08:02:09
 description: "提示工程是与语言模型交互的主要接口，是指通过精心设计输入来引导模型生成期望输出的过程。这包括构建请求结构、提供相关上下文、指定输出格式以及展示预期的响应模式。设计精良的提示能够最大限度地发挥语言模型的潜力，产生准确、相关且富有创造性的..."
 keywords: "agentic, design, patterns, appendix, advanced, prompting, techniques"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2201.11903
+citation_arxiv_id: 2210.03629
+citation_arxiv_id: 2310.06117
+-->
 
 # 附录 A：高级提示工程技巧
 

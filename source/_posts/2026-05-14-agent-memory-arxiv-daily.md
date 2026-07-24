@@ -14,6 +14,16 @@ noindex: true
 description: "今天共筛选出 8 篇 与 Agent Memory 高度相关的论文，覆盖主动记忆架构、记忆搜索反思、知识图谱增强记忆、具身信念记忆、结构化记忆 Agent、检索增强推理、多 Agent 记忆系统、以及历史行为锚定安全等方向。"
 keywords: "agent, memory, arxiv, #10, 2026, agent-memory, arxiv-daily, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.13438
+citation_arxiv_id: 2605.13486
+citation_arxiv_id: 2605.13481
+citation_arxiv_id: 2605.13335
+citation_arxiv_id: 2605.13542
+citation_arxiv_id: 2605.13534
+citation_arxiv_id: 2605.13725
+citation_arxiv_id: 2605.13825
+-->
 
 > 本报告自动扫描 ArXiv cs.AI / cs.CL 最新论文，筛选与 Agent Memory 相关的研究并生成分析。
 > 关联系列：[开源 Agent Memory 框架对比分析](https://www.daoyuly.cn)

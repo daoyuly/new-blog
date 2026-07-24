@@ -16,6 +16,10 @@ noindex: true
 description: "- arXiv ID: 2606.04781 Kimi解读"
 keywords: "agent, memory, 2026, arxiv, daily-report, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.04781
+citation_arxiv_id: 2606.04823
+-->
 
 # Agent Memory ArXiv 日报 — 2026年6月4日
 

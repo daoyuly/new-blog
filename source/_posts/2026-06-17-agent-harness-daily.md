@@ -15,6 +15,13 @@ categories:
 abbrlink: 53401
 date: 2026-06-17 15:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.16774
+citation_arxiv_id: 2606.17005
+citation_arxiv_id: 2606.16802
+citation_arxiv_id: 2606.16613
+citation_arxiv_id: 2606.16605
+-->
 
 # Agent Harness 日报：框架与运行时等13项框架动态，编排范式与成熟度演进
 

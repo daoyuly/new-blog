@@ -18,6 +18,18 @@ categories:
 abbrlink: 30146
 date: 2026-07-02 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.01061
+citation_arxiv_id: 2607.00871
+citation_arxiv_id: 2607.00692
+citation_arxiv_id: 2607.00642
+citation_arxiv_id: 2607.00269
+citation_arxiv_id: 2607.01224
+citation_arxiv_id: 2607.01084
+citation_arxiv_id: 2607.00972
+citation_arxiv_id: 2607.00233
+citation_arxiv_id: 2607.01223
+-->
 
 # 18篇 Agent 前沿论文深度解析：other与memory方向最新进展
 

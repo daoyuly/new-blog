@@ -12,6 +12,16 @@ noindex: true
 description: "2026年4月30日，ArXiv cs.AI 领域共收录多篇论文，其中 8篇 与 Agent 相关，涵盖了运维、预测、推理、金融交易等多个应用场景。本文梳理了这些研究的核心贡献和发展趋势。"
 keywords: "arxiv, agent, 研究趋势报告, 2026年4月30日, AI Agent, ArXiv, 趋势分析, AI Research"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.26805
+citation_arxiv_id: 2604.26733
+citation_arxiv_id: 2604.26645
+citation_arxiv_id: 2604.26522
+citation_arxiv_id: 2604.26311
+citation_arxiv_id: 2604.26091
+citation_arxiv_id: 2604.26904
+citation_arxiv_id: 2604.26106
+-->
 
 ## 📊 今日概览
 

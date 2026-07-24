@@ -14,6 +14,18 @@ noindex: true
 description: "今天 arXiv cs.AI 领域共发布 25 篇论文，其中与 Agent 直接相关的论文有 10 篇，占比 40%。Agent 研究持续火热，呈现以下几大趋势："
 keywords: "arxiv, agent, 研究趋势日报, (2026, 17), AI Agent, LLM, Multi-Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.15255
+citation_arxiv_id: 2603.15371
+citation_arxiv_id: 2603.15483
+citation_arxiv_id: 2603.15473
+citation_arxiv_id: 2603.15364
+citation_arxiv_id: 2603.15351
+citation_arxiv_id: 2603.15260
+citation_arxiv_id: 2603.15341
+citation_arxiv_id: 2603.15262
+citation_arxiv_id: 2603.15280
+-->
 
 # arXiv cs.AI Agent 研究趋势日报
 

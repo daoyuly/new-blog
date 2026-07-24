@@ -13,6 +13,14 @@ date: 2026-03-31 15:15:00
 description: "关键词: Agent Planning, Task Decomposition, LLM Planning, ReAct, Tree-of-Thought, Workflow Orchestration"
 keywords: "agent规划技术综述, 从经典方法到现代llm驱动的任务编排, AI Agent, Task Planning, LLM Planning, ReAct, ToT, AI技术研究"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2210.03629
+citation_arxiv_id: 2305.10601
+citation_arxiv_id: 2305.04091
+citation_arxiv_id: 2303.17651
+citation_arxiv_id: 2308.09687
+citation_arxiv_id: 2403.19831
+-->
 
 # Agent规划技术综述 - 从经典方法到现代LLM驱动的任务编排
 

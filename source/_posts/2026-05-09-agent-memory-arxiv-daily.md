@@ -15,6 +15,9 @@ noindex: true
 description: "本期分析了 2026 年 5 月 7 日发布的 22 篇 cs.AI 领域论文，筛选出 1 篇与 Agent Memory 高度相关的论文。本期的重点论文探讨了自我进化 Agent 中的技能策展和经验学习机制，为长期记忆系统的设计提供..."
 keywords: "agent, memory, 研究日报, 2026年5月9日, arxiv, cs.ai, 论文分析, Agent Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.06614
+-->
 
 ## 概述
 

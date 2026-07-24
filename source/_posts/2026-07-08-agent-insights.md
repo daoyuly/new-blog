@@ -17,6 +17,18 @@ categories:
 abbrlink: 64512
 date: 2026-07-08 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.06214
+citation_arxiv_id: 2607.06523
+citation_arxiv_id: 2607.06522
+citation_arxiv_id: 2607.06233
+citation_arxiv_id: 2607.06503
+citation_arxiv_id: 2607.06489
+citation_arxiv_id: 2607.06447
+citation_arxiv_id: 2607.06328
+citation_arxiv_id: 2607.06326
+citation_arxiv_id: 2607.06435
+-->
 
 # Agent 前沿趋势：DepthWeave-KV等14项动态深度解析
 

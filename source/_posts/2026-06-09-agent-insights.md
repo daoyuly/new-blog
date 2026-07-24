@@ -17,6 +17,18 @@ categories:
 abbrlink: 14357
 date: 2026-06-09 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.09669
+citation_arxiv_id: 2606.09585
+citation_arxiv_id: 2606.09674
+citation_arxiv_id: 2606.09774
+citation_arxiv_id: 2606.09751
+citation_arxiv_id: 2606.09556
+citation_arxiv_id: 2606.09441
+citation_arxiv_id: 2606.09748
+citation_arxiv_id: 2606.09730
+citation_arxiv_id: 2606.09724
+-->
 
 # Agent 前沿趋势：SpatialWorld等11项动态深度解析
 

@@ -17,6 +17,18 @@ categories:
 abbrlink: 56894
 date: 2026-06-16 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.16987
+citation_arxiv_id: 2606.16811
+citation_arxiv_id: 2606.16808
+citation_arxiv_id: 2606.16707
+citation_arxiv_id: 2606.16649
+citation_arxiv_id: 2606.16944
+citation_arxiv_id: 2606.16813
+citation_arxiv_id: 2606.16802
+citation_arxiv_id: 2606.16774
+citation_arxiv_id: 2606.16769
+-->
 
 # Agent 前沿趋势：Adaptive and Explici等13项动态深度解析
 

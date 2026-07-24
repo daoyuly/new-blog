@@ -15,6 +15,15 @@ noindex: true
 description: "本报告基于 papers.cool/arxiv/cs.AI 2026-04-30 的最新论文，筛选出与 Agent Memory 高度相关的研究。本期共发现 7 篇 相关论文，涵盖了案例记忆蒸馏、联想记忆、意图记忆、引理库进化等多个前..."
 keywords: "agent, memory, 研究日报, arxiv, cs.ai, 2026, 新论文洞察, Agent Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.26805
+citation_arxiv_id: 2604.26733
+citation_arxiv_id: 2604.26522
+citation_arxiv_id: 2604.26311
+citation_arxiv_id: 2604.26120
+citation_arxiv_id: 2604.26091
+citation_arxiv_id: 2604.26841
+-->
 
 ## 概述
 

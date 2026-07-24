@@ -14,6 +14,18 @@ noindex: true
 description: "今天共发布 12 篇 Agent 相关论文，呈现出以下关键趋势："
 keywords: "2026, arxiv, agent, 领域最新趋势, arXiv, AI, Agent, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.05295
+citation_arxiv_id: 2603.05294
+citation_arxiv_id: 2603.05044
+citation_arxiv_id: 2603.05218
+citation_arxiv_id: 2603.05344
+citation_arxiv_id: 2603.05129
+citation_arxiv_id: 2603.05240
+citation_arxiv_id: 2603.05069
+citation_arxiv_id: 2603.05120
+citation_arxiv_id: 2603.05399
+-->
 
 # 2026年3月6日 arXiv AI Agent 领域最新趋势
 

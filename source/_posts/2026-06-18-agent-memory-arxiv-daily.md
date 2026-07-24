@@ -16,6 +16,15 @@ noindex: true
 description: "- arXiv ID: 2606.18746"
 keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, RAG, episodic-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.18746
+citation_arxiv_id: 2606.19172
+citation_arxiv_id: 2606.18847
+citation_arxiv_id: 2606.19144
+citation_arxiv_id: 2606.18947
+citation_arxiv_id: 2606.18874
+citation_arxiv_id: 2606.18950
+-->
 
 # Agent Memory arXiv 日报 — 2026-06-18
 

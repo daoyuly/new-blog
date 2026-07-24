@@ -15,6 +15,12 @@ noindex: true
 description: "今日（2026年5月2日）在 arXiv cs.AI 类目中，共发现 4篇 与 Agent Memory 高度相关的论文。这些论文涵盖了从传统检索增强记忆到结构化记忆系统、从单智能体记忆到多智能体记忆协作等多个前沿方向。"
 keywords: "agent, memory, 前沿论文日报, 2026年5月2日, Agent Memory, AI Research, arXiv, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.27906
+citation_arxiv_id: 2604.27996
+citation_arxiv_id: 2604.28181
+citation_arxiv_id: 2604.27934
+-->
 
 ## 概述
 

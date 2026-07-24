@@ -14,6 +14,18 @@ abbrlink: 22201
 description: "本期（2026-05-14 发布）cs.AI 共约 25 篇新论文，其中 Agent 直接相关约 12 篇，覆盖 Agent 训练框架、多智能体系统、推理时计算缩放、Agent 工作流可靠性、工具使用、Agent 评估与诊断、知识图谱..."
 keywords: "agent, 日报｜2026.05.17, arxiv, cs.ai, 相关论文趋势, multi-agent, llm, daily"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.15040
+citation_arxiv_id: 2605.15177
+citation_arxiv_id: 2605.15132
+citation_arxiv_id: 2605.15100
+citation_arxiv_id: 2605.15041
+citation_arxiv_id: 2605.14892
+citation_arxiv_id: 2605.14865
+citation_arxiv_id: 2605.14968
+citation_arxiv_id: 2605.15109
+citation_arxiv_id: 2605.14857
+-->
 
 > 🤖 每日整理 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 Agent 相关的最新论文，追踪前沿趋势。
 

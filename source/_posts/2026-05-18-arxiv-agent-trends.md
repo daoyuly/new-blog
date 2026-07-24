@@ -16,6 +16,16 @@ noindex: true
 description: "今天 cs.AI 共 13 篇新论文，其中 8 篇与 Agent 直接相关。核心趋势："
 keywords: "arxiv, agent, 2026, 自主探索、记忆进化与安全监控, LLM, exploration, memory, safety"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.16143
+citation_arxiv_id: 2605.16233
+citation_arxiv_id: 2605.16205
+citation_arxiv_id: 2605.16198
+citation_arxiv_id: 2605.16024
+citation_arxiv_id: 2605.16116
+citation_arxiv_id: 2605.16207
+citation_arxiv_id: 2605.16215
+-->
 
 > 每日精选 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 **Agent** 相关的前沿论文，梳理最新研究趋势。
 

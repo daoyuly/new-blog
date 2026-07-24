@@ -15,6 +15,15 @@ noindex: true
 description: "- arXiv ID: 2605.31468"
 keywords: "agent, memory, arxiv, 2026, agent-memory, arxiv-daily, LLM, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.31468
+citation_arxiv_id: 2605.30785
+citation_arxiv_id: 2605.31354
+citation_arxiv_id: 2605.31264
+citation_arxiv_id: 2605.31492
+citation_arxiv_id: 2605.31545
+citation_arxiv_id: 2605.31408
+-->
 
 # Agent Memory arXiv 日报 — 2026-06-01
 

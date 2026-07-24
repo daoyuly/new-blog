@@ -14,6 +14,17 @@ noindex: true
 description: "- 发布日期： 2026年7月9日（收录 7月8日提交论文）"
 keywords: "arxiv, cs.ai, agent, 研究趋势, (2026, 09), arXiv, AI Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.07695
+citation_arxiv_id: 2607.07676
+citation_arxiv_id: 2607.07663
+citation_arxiv_id: 2607.07504
+citation_arxiv_id: 2607.07467
+citation_arxiv_id: 2607.07436
+citation_arxiv_id: 2607.07405
+citation_arxiv_id: 2607.07397
+citation_arxiv_id: 2607.07321
+-->
 
 # arXiv cs.AI Agent 研究趋势 (2026-07-09)
 

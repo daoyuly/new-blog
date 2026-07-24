@@ -12,6 +12,17 @@ date: 2026-03-18 12:08:00
 description: "今天整理了 arXiv cs.AI 分类下的 Agent 相关论文，以下是核心趋势和亮点工作。"
 keywords: "agent, 领域最新进展, arxiv, 2026.03.18, AI Agent, LLM, arXiv, Research"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.16843
+citation_arxiv_id: 2603.16777
+citation_arxiv_id: 2603.16733
+citation_arxiv_id: 2603.16744
+citation_arxiv_id: 2603.16734
+citation_arxiv_id: 2603.16839
+citation_arxiv_id: 2603.16586
+citation_arxiv_id: 2603.16651
+citation_arxiv_id: 2603.16537
+-->
 
 # AI Agent 领域最新进展 - arXiv Daily 2026.03.18
 

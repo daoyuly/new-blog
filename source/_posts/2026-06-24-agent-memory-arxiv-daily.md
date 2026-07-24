@@ -15,6 +15,13 @@ noindex: true
 description: "2026 年 6 月的 Agent Memory 领域迎来爆发期——仅最近两周就有 9 篇 直接相关的新论文上线，加上几篇高度相关的间接论文，总计超过 10 篇。核心趋势非常清晰：从\"记住一切\"走向\"知道何时该记、何时该忘、以及未来什..."
 keywords: "agent, memory, 2026, 记忆不再是存档, 而是预判, agent-memory, arxiv, daily-report"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.22844
+citation_arxiv_id: 2606.21144
+citation_arxiv_id: 2606.17328
+citation_arxiv_id: 2606.15405
+citation_arxiv_id: 2606.06787
+-->
 
 ## 今日概览
 

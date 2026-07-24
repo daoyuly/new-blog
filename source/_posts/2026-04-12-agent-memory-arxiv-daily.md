@@ -16,6 +16,12 @@ noindex: true
 description: "本文档分析了 2026 年 4 月 9 日发布在 arXiv cs.AI 类别上的论文，重点筛选了与 Agent Memory、记忆增强智能体、情景记忆、长期记忆、检索增强生成（RAG）等方向相关的研究。"
 keywords: "agent, memory, 研究日报, arxiv, cs.ai, 2026, 论文分析, Agent Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.08401
+citation_arxiv_id: 2604.08377
+citation_arxiv_id: 2604.08276
+citation_arxiv_id: 2604.08178
+-->
 
 ## 概述
 

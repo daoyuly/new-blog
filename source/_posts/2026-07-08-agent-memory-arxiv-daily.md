@@ -17,6 +17,15 @@ noindex: true
 description: "从 cs.AI 频道筛选出 7 篇与 Agent Memory 密切相关的论文："
 keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, RAG, episodic-memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.06447
+citation_arxiv_id: 2607.06503
+citation_arxiv_id: 2607.06283
+citation_arxiv_id: 2607.06269
+citation_arxiv_id: 2607.06523
+citation_arxiv_id: 2607.06519
+citation_arxiv_id: 2607.06401
+-->
 
 ## 📋 今日相关论文列表
 

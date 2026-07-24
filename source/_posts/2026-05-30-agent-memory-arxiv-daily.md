@@ -14,6 +14,17 @@ noindex: true
 description: "- arXiv ID: 2605.30159"
 keywords: "agent, memory, arxiv, (2026, 30), agent-memory, daily-report, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.30159
+citation_arxiv_id: 2605.30343
+citation_arxiv_id: 2605.30087
+citation_arxiv_id: 2605.30219
+citation_arxiv_id: 2605.30274
+citation_arxiv_id: 2605.30260
+citation_arxiv_id: 2605.30058
+citation_arxiv_id: 2605.30136
+citation_arxiv_id: 2605.30051
+-->
 
 # Agent Memory arXiv 日报 (2026-05-30)
 

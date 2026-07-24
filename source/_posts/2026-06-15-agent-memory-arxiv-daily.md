@@ -14,6 +14,12 @@ noindex: true
 description: "本文筛选自 2026-06-12 arXiv cs.AI / cs.CL 最新论文，聚焦 Agent Memory 相关研究。"
 keywords: "agent, memory, arxiv, (2026, 15), agent-memory, daily-report, AI-agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.14571
+citation_arxiv_id: 2606.14470
+citation_arxiv_id: 2606.14502
+citation_arxiv_id: 2606.14314
+-->
 
 本文筛选自 2026-06-12 arXiv cs.AI / cs.CL 最新论文，聚焦 Agent Memory 相关研究。
 

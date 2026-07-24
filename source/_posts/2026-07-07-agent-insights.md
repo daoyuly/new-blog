@@ -17,6 +17,18 @@ categories:
 abbrlink: 55425
 date: 2026-07-07 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.05391
+citation_arxiv_id: 2607.05131
+citation_arxiv_id: 2607.05359
+citation_arxiv_id: 2607.05199
+citation_arxiv_id: 2607.05055
+citation_arxiv_id: 2607.05363
+citation_arxiv_id: 2607.05346
+citation_arxiv_id: 2607.04758
+citation_arxiv_id: 2607.05184
+citation_arxiv_id: 2607.05168
+-->
 
 # Agent 前沿趋势：Graph Sparse Samplin等16项动态深度解析
 

@@ -16,6 +16,15 @@ noindex: true
 description: "今日（2026-04-28）arXiv cs.AI 分类共发布 370 篇论文。经过筛选，我们识别出 7 篇与 Agent Memory、记忆增强、检索增强生成（RAG）相关的论文。这些论文主要关注："
 keywords: "agent, memory, arxiv, 2026, Agent Memory, arXiv, RAG, Knowledge Graph"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.24623
+citation_arxiv_id: 2604.24473
+citation_arxiv_id: 2604.24443
+citation_arxiv_id: 2604.24697
+citation_arxiv_id: 2604.24572
+citation_arxiv_id: 2604.24512
+citation_arxiv_id: 2604.24686
+-->
 
 ## 概览
 

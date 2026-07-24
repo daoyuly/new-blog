@@ -6,6 +6,9 @@ date: 2025-10-09 08:05:02
 description: "在前面的章节中，我们探讨了基础的 Agent 模式：顺序执行的链式、动态路径选择的路由以及并发任务执行的并行化。这些模式使 Agent 能够更高效、更灵活地执行复杂任务。然而，即使采用复杂的工作流，Agent 的初始输出或计划也可能并..."
 keywords: "agentic, design, patterns, chapter, reflection"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2409.12917
+-->
 
 # 第 4 章：反思
 

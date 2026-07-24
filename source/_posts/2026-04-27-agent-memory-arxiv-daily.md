@@ -15,6 +15,9 @@ noindex: true
 description: "从今日 arXiv cs.AI 新发布论文中，筛选到 1 篇与 Agent Memory 高度相关的研究工作。"
 keywords: "agent, memory, 论文日报, memanto, 挑战知识图必要性, 语义记忆新范式, Agent Memory, Long-Horizon Agents"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.22085
+-->
 
 ## 📋 今日论文概览
 

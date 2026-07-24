@@ -18,6 +18,18 @@ categories:
 abbrlink: 4975
 date: 2026-06-19 17:30:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.20529
+citation_arxiv_id: 2606.20459
+citation_arxiv_id: 2606.20323
+citation_arxiv_id: 2606.20517
+citation_arxiv_id: 2606.20227
+citation_arxiv_id: 2606.20146
+citation_arxiv_id: 2606.20363
+citation_arxiv_id: 2606.20210
+citation_arxiv_id: 2606.20236
+citation_arxiv_id: 2606.20162
+-->
 
 # 10篇 Agent 前沿论文深度解析：memory与evaluation方向最新进展
 

@@ -13,6 +13,18 @@ date: 2026-03-08 12:00:00
 description: "今天的 arXiv cs.AI 领域发布了多篇与 Agent 相关的重要论文，涵盖了从终端编程、Web 自动化到多智能体协作的多个方向。以下是今天的亮点论文和趋势分析。"
 keywords: "agent, 最新趋势, 2026, AI, Agent, LLM, Web Agent, Multi-Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.05344
+citation_arxiv_id: 2603.05295
+citation_arxiv_id: 2603.05294
+citation_arxiv_id: 2603.05044
+citation_arxiv_id: 2603.05129
+citation_arxiv_id: 2603.05120
+citation_arxiv_id: 2603.05218
+citation_arxiv_id: 2603.05069
+citation_arxiv_id: 2603.05240
+citation_arxiv_id: 2603.05485
+-->
 
 # AI Agent 最新趋势 2026-03-08
 

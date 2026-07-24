@@ -15,6 +15,10 @@ noindex: true
 description: "今日 cs.AI 共扫描约 20+ 篇新论文，筛选出 3 篇与 Agent Memory 高度相关的研究："
 keywords: "agent, memory, arxiv, 2026, Agent Memory, arXiv, 日报, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2607.08716
+citation_arxiv_id: 2607.08740
+-->
 
 > 每日追踪 arXiv cs.AI 上与 Agent Memory 相关的最新论文，筛选关键词：agent, memory, episodic, recall, retrieval, RAG, long-term, experience, persistence, memorization
 

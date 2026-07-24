@@ -13,6 +13,14 @@ noindex: true
 description: "本期报告分析了 arXiv cs.AI 领域（2026-04-15 至 2026-04-16）发布的论文中与 Agent Memory 相关的研究。共筛选出 6 篇高度相关论文，涵盖了记忆转移学习、认知架构、技能学习、上下文恢复等前沿方向。"
 keywords: "agent, memory, 领域最新论文速递（2026, 16）, Agent Memory, AI Research, Paper Review, Transfer Learning"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.14004
+citation_arxiv_id: 2604.13757
+citation_arxiv_id: 2604.13488
+citation_arxiv_id: 2604.13348
+citation_arxiv_id: 2604.13318
+citation_arxiv_id: 2604.13180
+-->
 
 # Agent Memory 领域最新论文速递（2026-04-16）
 

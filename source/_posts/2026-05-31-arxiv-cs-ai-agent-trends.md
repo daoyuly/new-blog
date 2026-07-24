@@ -14,6 +14,18 @@ noindex: true
 description: "本文从今日 arXiv cs.AI 新增论文中，筛选出与 Agent 直接相关的论文，梳理最新研究趋势。"
 keywords: "arxiv, cs.ai, agent, 领域最新趋势（2026, 31）, arXiv, AI Agent, LLM"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2605.30353
+citation_arxiv_id: 2605.30335
+citation_arxiv_id: 2605.30159
+citation_arxiv_id: 2605.30219
+citation_arxiv_id: 2605.30144
+citation_arxiv_id: 2605.30136
+citation_arxiv_id: 2605.30283
+citation_arxiv_id: 2605.30187
+citation_arxiv_id: 2605.30094
+citation_arxiv_id: 2605.30087
+-->
 
 本文从今日 [arXiv cs.AI](https://papers.cool/arxiv/cs.AI) 新增论文中，筛选出与 **Agent** 直接相关的论文，梳理最新研究趋势。
 

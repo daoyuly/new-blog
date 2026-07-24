@@ -17,6 +17,16 @@ noindex: true
 description: "- ArXiv ID: 2603.25737"
 keywords: "agent, memory, research, daily, report, 2026年3月28日, Agent Memory, RAG"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2603.25737
+citation_arxiv_id: 2603.25293
+citation_arxiv_id: 2603.25158
+citation_arxiv_id: 2603.25415
+citation_arxiv_id: 2603.25719
+citation_arxiv_id: 2603.25498
+citation_arxiv_id: 2603.25480
+citation_arxiv_id: 2603.25334
+-->
 
 # Agent Memory 研究日报 - 2026年3月28日
 

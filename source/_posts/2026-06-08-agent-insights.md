@@ -17,6 +17,18 @@ categories:
 abbrlink: 51089
 date: 2026-06-08 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.07299
+citation_arxiv_id: 2606.07157
+citation_arxiv_id: 2606.06923
+citation_arxiv_id: 2606.06893
+citation_arxiv_id: 2606.07489
+citation_arxiv_id: 2606.07462
+citation_arxiv_id: 2606.07113
+citation_arxiv_id: 2606.07108
+citation_arxiv_id: 2606.07000
+citation_arxiv_id: 2606.07308
+-->
 
 # Agent 前沿趋势：DuMate-DeepResearch等17项动态深度解析
 

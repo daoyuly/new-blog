@@ -13,6 +13,17 @@ noindex: true
 description: "2026年6月8日 arXiv cs.AI 共发布约 25 篇论文，其中 9 篇与 Agent 直接相关。今天的主题集中在：Agent 协作协议、委托智能、Agent 安全监控、Web Agent 实战落地。"
 keywords: "agent, 2026, arxiv, cs.ai, 前沿趋势, AI Agent, arXiv, 论文日报"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.09751
+citation_arxiv_id: 2606.09730
+citation_arxiv_id: 2606.09748
+citation_arxiv_id: 2606.09563
+citation_arxiv_id: 2606.09489
+citation_arxiv_id: 2606.09774
+citation_arxiv_id: 2606.09669
+citation_arxiv_id: 2606.09663
+citation_arxiv_id: 2606.09556
+-->
 
 > 每日精选 arXiv cs.AI 中与 Agent 相关的最新论文，梳理前沿趋势。
 

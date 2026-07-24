@@ -17,6 +17,18 @@ categories:
 abbrlink: 28228
 date: 2026-06-11 18:00:00
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2606.12065
+citation_arxiv_id: 2606.12040
+citation_arxiv_id: 2606.12329
+citation_arxiv_id: 2606.11918
+citation_arxiv_id: 2606.12320
+citation_arxiv_id: 2606.12268
+citation_arxiv_id: 2606.12018
+citation_arxiv_id: 2606.11770
+citation_arxiv_id: 2606.11724
+citation_arxiv_id: 2606.11680
+-->
 
 # Agent 前沿趋势：PROJECTMEM等16项动态深度解析
 

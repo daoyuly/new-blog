@@ -14,6 +14,11 @@ noindex: true
 description: "本日报分析了 2026 年 4 月 10 日 arXiv cs.AI 分类中与 Agent Memory 相关的最新论文。今日共筛选出 3 篇高度相关的论文，聚焦于内部信念记忆更新、跨用户经验积累和动态记忆更新机制等关键方向。"
 keywords: "agent, memory, 研究日报, 2026年4月10日, Agent Memory, arXiv Daily, AI Research, Long-term Memory"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.08401
+citation_arxiv_id: 2604.08377
+citation_arxiv_id: 2604.08276
+-->
 
 ## 概述
 

@@ -12,6 +12,18 @@ date: 2026-04-29 12:05:00
 description: "根据 2026 年 4 月 28 日的 arXiv cs.AI 论文，Agent 研究呈现出系统化架构化、治理内生化、应用场景深化的三大趋势。"
 keywords: "agent, 研究最新趋势（2026, 29）, Multi-Agent, LLM, AI Governance, AI, Agent"
 ---
+<!-- GEO citation meta
+citation_arxiv_id: 2604.25917
+citation_arxiv_id: 2604.25724
+citation_arxiv_id: 2604.25602
+citation_arxiv_id: 2604.25684
+citation_arxiv_id: 2604.25345
+citation_arxiv_id: 2604.25849
+citation_arxiv_id: 2604.25727
+citation_arxiv_id: 2604.25796
+citation_arxiv_id: 2604.25834
+citation_arxiv_id: 2604.25832
+-->
 
 ## 今日 Agent 研究前沿趋势
 
