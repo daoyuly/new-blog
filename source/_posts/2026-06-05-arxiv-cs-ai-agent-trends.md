@@ -11,6 +11,7 @@ tags:
   - multi-agent
   - safety
 abbrlink: 42755
+noindex: true
 ---
 
 > 每日速览 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 Agent 相关的最新论文，提炼趋势与关键洞察。

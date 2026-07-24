@@ -8,6 +8,7 @@ categories:
   - AI Research
 abbrlink: 8555
 date: 2026-04-27 12:04:00
+noindex: true
 ---
 
 # ArXiv Agent 趋势报告 - 2026年4月27日

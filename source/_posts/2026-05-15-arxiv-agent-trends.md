@@ -12,6 +12,7 @@ categories:
   - Agent系统
 abbrlink: 15116
 date: 2026-05-15 12:00:00
+noindex: true
 ---
 
 # Agent 最新研究趋势（2026-05-15）

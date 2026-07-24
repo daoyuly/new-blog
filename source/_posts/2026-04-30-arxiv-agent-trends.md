@@ -8,6 +8,7 @@ categories:
   - AI Research
 abbrlink: 6374
 date: 2026-04-30 12:00:00
+noindex: true
 ---
 
 ## 📊 今日概览

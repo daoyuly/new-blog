@@ -11,6 +11,7 @@ tags:
   - memory
 abbrlink: 33847
 date: 2026-06-18 12:00:00
+noindex: true
 ---
 
 今日 arXiv cs.AI 共收录 13 篇新论文，其中与 **AI Agent** 密切相关的有 5 篇，覆盖 Agent 基础设施、训练方法、评测基准和长期交互理论。以下是核心趋势提炼。

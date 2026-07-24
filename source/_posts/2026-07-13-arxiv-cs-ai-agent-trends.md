@@ -12,6 +12,7 @@ tags:
   - theorem-proving
 abbrlink: 38672
 date: 2026-07-13 12:00:00
+noindex: true
 ---
 
 ## 今日 Agent 相关论文速览

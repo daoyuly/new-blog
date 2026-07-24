@@ -9,6 +9,7 @@ categories:
   - AI研究
 abbrlink: 1365
 date: 2026-04-12 12:00:00
+noindex: true
 ---
 
 # 今日 Agent 研究前沿

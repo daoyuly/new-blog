@@ -6,6 +6,7 @@ tags:
   - Arxiv
 abbrlink: 38330
 date: 2026-05-13 12:00:00
+noindex: true
 ---
 
 # AI Agents 最新趋势报告（2026年5月13日）

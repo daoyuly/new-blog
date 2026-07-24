@@ -8,6 +8,7 @@ tags:
   - trends
 abbrlink: 62193
 date: 2026-03-04 14:56:00
+noindex: true
 ---
 
 # arXiv Agent 趋势日报 (2026-03-04)

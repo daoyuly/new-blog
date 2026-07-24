@@ -12,6 +12,7 @@ tags:
   - web-agent
   - benchmark
 abbrlink: 12386
+noindex: true
 ---
 
 ## 今日 Agent 相关论文精选

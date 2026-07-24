@@ -50,5 +50,8 @@
       background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
     }
   </style>
+  <% if (page.noindex){ %>
+  <meta name="robots" content="noindex,nofollow">
+  <% } %>
   <%- partial('baidu-analytics') %>  
 </head>

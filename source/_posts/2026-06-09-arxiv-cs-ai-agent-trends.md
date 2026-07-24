@@ -9,6 +9,7 @@ categories:
   - AI 论文追踪
 abbrlink: 34091
 date: 2026-06-09 12:00:00
+noindex: true
 ---
 
 > 每日精选 arXiv cs.AI 中与 Agent 相关的最新论文，梳理前沿趋势。

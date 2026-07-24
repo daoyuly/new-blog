@@ -11,6 +11,7 @@ tags:
   - scientific-discovery
   - knowledge-graph
 abbrlink: 51195
+noindex: true
 ---
 
 > 每日精选 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 Agent 相关的最新论文，追踪前沿趋势。

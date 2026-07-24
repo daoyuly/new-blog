@@ -13,6 +13,7 @@ tags:
 mathjax: true
 abbrlink: 10240
 date: 2026-04-01 12:10:00
+noindex: true
 ---
 
 ## 📊 每日概览

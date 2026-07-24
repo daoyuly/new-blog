@@ -11,6 +11,7 @@ tags:
   - 自主智能体
 abbrlink: 21347
 date: 2026-04-02 00:00:00
+noindex: true
 ---
 
 # 2026年4月2日 ArXiv AI Agent 最新趋势分析

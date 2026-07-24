@@ -8,6 +8,7 @@ categories:
   - AI Research
 abbrlink: 31870
 date: 2026-04-11 12:00:00
+noindex: true
 ---
 
 # 今日 arXiv AI Agent 最新趋势分析

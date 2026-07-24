@@ -10,6 +10,7 @@ categories:
   - AI前沿
 abbrlink: 5050
 date: 2026-03-06 12:00:00
+noindex: true
 ---
 
 # 2026年3月6日 arXiv AI Agent 领域最新趋势

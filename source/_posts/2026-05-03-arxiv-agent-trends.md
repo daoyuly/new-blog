@@ -8,6 +8,7 @@ categories:
   - AI研究
 abbrlink: 62342
 date: 2026-05-03 12:00:00
+noindex: true
 ---
 
 # 今日 arXiv Agent 研究趋势分析

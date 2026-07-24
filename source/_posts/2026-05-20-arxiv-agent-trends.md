@@ -12,6 +12,7 @@ tags:
   - autonomous-research
   - architecture
 abbrlink: 9212
+noindex: true
 ---
 
 ## 今日 Agent 论文趋势概览

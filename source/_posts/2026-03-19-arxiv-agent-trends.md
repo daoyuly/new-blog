@@ -10,6 +10,7 @@ categories:
   - 研究趋势
 abbrlink: 40816
 date: 2026-03-19 12:00:00
+noindex: true
 ---
 
 # arXiv Agent 研究趋势速递 (2026-03-19)

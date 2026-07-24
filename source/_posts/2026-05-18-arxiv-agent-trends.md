@@ -12,6 +12,7 @@ tags:
   - safety
   - benchmark
 abbrlink: 36482
+noindex: true
 ---
 
 > 每日精选 [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) 中与 **Agent** 相关的前沿论文，梳理最新研究趋势。

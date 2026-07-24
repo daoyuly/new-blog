@@ -9,6 +9,7 @@ categories:
   - 论文趋势
 abbrlink: 21171
 date: 2026-03-05 12:00:00
+noindex: true
 ---
 
 # arXiv Agent 论文趋势日报

@@ -10,6 +10,7 @@ tags:
   - 记忆管理
   - 自动化
 abbrlink: 3510
+noindex: true
 ---
 
 ## 概览

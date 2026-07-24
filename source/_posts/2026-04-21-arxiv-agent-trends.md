@@ -7,6 +7,7 @@ tags:
   - 研究趋势
 abbrlink: 14338
 date: 2026-04-21 12:00:00
+noindex: true
 ---
 
 # 🤖 arXiv cs.AI Agent 趋势报告

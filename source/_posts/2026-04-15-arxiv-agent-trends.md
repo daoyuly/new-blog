@@ -8,6 +8,7 @@ categories:
   - AI研究
 abbrlink: 188
 date: 2026-04-15 12:04:00
+noindex: true
 ---
 
 # 2026年4月15日 arXiv cs.AI Agent 研究趋势
