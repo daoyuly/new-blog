@@ -2,8 +2,9 @@
 <section class="home-search-list-wrap">
   <ul class="search-ul home-search-ul">
     <% page.posts.each(function(post){ %>
-    <li class="search-li">
+    <li class="search-li<% if (post.sticky) { %> sticky-post<% } %>">
       <a href="<%- url_for(post.path) %>" class="search-title">
+        <% if (post.sticky) { %><span class="sticky-badge">置顶</span><% } %>
         <span><%= post.title %></span>
       </a>
       <p class="search-time">

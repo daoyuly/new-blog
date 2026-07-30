@@ -4403,3 +4403,27 @@ a.pswp__share--download:hover {
     white-space: normal;
   }
 }
+
+/* ===== 置顶文章样式 ===== */
+.sticky-post {
+  background: #fff8e6;
+  border-left: 3px solid #ffb800;
+  padding-left: 12px !important;
+  border-radius: 0 4px 4px 0;
+  transition: background .2s ease;
+}
+.sticky-post:hover {
+  background: #fff3d9;
+}
+.sticky-badge {
+  display: inline-block;
+  background: #ffb800;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: middle;
+  font-weight: 600;
+}
