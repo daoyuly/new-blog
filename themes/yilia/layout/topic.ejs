@@ -1,0 +1,36 @@
+<article id="topic-<%= page.slug %>" class="article article-type-topic" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <% if (page.title){ %>
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name"><%= page.title %></h1>
+      </header>
+    <% } %>
+    <div class="article-entry" itemprop="articleBody">
+      <%- page.content %>
+
+      <% if (page.topic_name) { %>
+      <%
+        var topicPosts = site.posts.filter(function(p){
+          return p.series && p.series.indexOf(page.topic_name) !== -1;
+        }).sort(function(a,b){ return b.date - a.date; });
+      %>
+      <% if (topicPosts.length > 0) { %>
+      <h2>全部文章（<%= topicPosts.length %> 篇）</h2>
+      <ul class="topic-post-list">
+        <% topicPosts.each(function(post){ %>
+        <li class="topic-post-item">
+          <a href="<%- url_for(post.path) %>" class="topic-post-link"><%= post.title %></a>
+          <span class="topic-post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+          <% if (post.description) { %>
+          <p class="topic-post-desc"><%= post.description %></p>
+          <% } %>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p class="topic-empty">暂无文章，持续更新中。</p>
+      <% } %>
+      <% } %>
+    </div>
+  </div>
+</article>

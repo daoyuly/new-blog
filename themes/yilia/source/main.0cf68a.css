@@ -4427,3 +4427,51 @@ a.pswp__share--download:hover {
   vertical-align: middle;
   font-weight: 600;
 }
+
+/* ===== 专题页面样式 ===== */
+.topic-post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.topic-post-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+.topic-post-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.topic-post-link:hover {
+  color: #1890ff;
+}
+.topic-post-date {
+  font-size: 13px;
+  color: #999;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.topic-post-desc {
+  flex-basis: 100%;
+  font-size: 13px;
+  color: #888;
+  margin: 4px 0 0 0;
+  line-height: 1.5;
+}
+.topic-loading {
+  color: #999;
+  padding: 20px 0;
+}
+.topic-empty {
+  color: #aaa;
+  padding: 20px 0;
+  font-style: italic;
+}

@@ -3,6 +3,8 @@ title: claude code 记忆探究
 keywords: claude code 记忆
 abbrlink: 18140
 date: 2026-07-24 13:35:19
+series:
+  - Claude Code 探究
 ---
 
 # Claude Code 记忆有效性机制探究
