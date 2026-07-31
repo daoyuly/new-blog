@@ -347,9 +347,10 @@ a:hover {
 }
 
 .article-entry pre {
-  background: var(--ac-code-dark);
+  background: var(--ac-code-bg);
   padding: 1.1em 1.25em;
   border-radius: 6px;
+  border: 1px solid var(--ac-border);
   overflow-x: auto;
   margin: 1.25em 0;
   line-height: 1.6;
@@ -359,26 +360,28 @@ a:hover {
   background: none;
   padding: 0;
   border: none;
-  color: #abb2bf;
+  color: var(--ac-text);
   font-size: 0.875em;
   text-shadow: none;
 }
 
 .article-entry .highlight {
-  background: var(--ac-code-dark);
+  background: var(--ac-code-bg);
   border-radius: 6px;
   margin: 1.25em 0;
-  border: none;
+  border: 1px solid var(--ac-border);
+  color: var(--ac-text);
 }
 
 .article-entry .highlight pre {
   margin: 0;
   padding: 1.1em 1.25em;
   background: none;
+  border: none;
 }
 
 .article-entry .highlight .line {
-  color: #abb2bf;
+  color: var(--ac-text);
   min-height: auto;
 }
 
@@ -982,6 +985,90 @@ a:hover {
 
 .biz-section--series-cta a {
   font-weight: 600;
+}
+
+/* ─── 语法高亮：浅色主题（覆盖主题自带 Monokai 暗色） ─── */
+.article-entry pre .comment,
+.article-entry .highlight .comment {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.article-entry pre .keyword,
+.article-entry .highlight .keyword,
+.article-entry pre .function .keyword,
+.article-entry .highlight .function .keyword,
+.article-entry pre .class .params {
+  color: #d73a49;
+}
+
+.article-entry pre .string,
+.article-entry .highlight .string,
+.article-entry pre .value,
+.article-entry .highlight .value {
+  color: #032f62;
+}
+
+.article-entry pre .number,
+.article-entry .highlight .number {
+  color: #005cc5;
+}
+
+.article-entry pre .title,
+.article-entry .highlight .title,
+.article-entry pre .function .title,
+.article-entry .highlight .function .title,
+.article-entry pre .preprocessor .keyword,
+.article-entry .highlight .preprocessor .keyword {
+  color: #6f42c1;
+}
+
+.article-entry pre .built_in,
+.article-entry .highlight .built_in,
+.article-entry pre .class,
+.article-entry .highlight .class,
+.article-entry pre .css~* .class,
+.article-entry .highlight .css~* .class,
+.article-entry pre .attribute,
+.article-entry .highlight .attribute {
+  color: #005cc5;
+}
+
+.article-entry pre .function,
+.article-entry .highlight .function,
+.article-entry pre .params,
+.article-entry .highlight .params,
+.article-entry pre .tag,
+.article-entry .highlight .tag,
+.article-entry pre .doctype,
+.article-entry .highlight .doctype,
+.article-entry pre .css .value,
+.article-entry .highlight .css .value {
+  color: #24292e;
+}
+
+.article-entry pre .at_rule,
+.article-entry .highlight .at_rule,
+.article-entry pre .at_rule .keyword,
+.article-entry .highlight .at_rule .keyword,
+.article-entry pre .css~* .tag,
+.article-entry .highlight .css~* .tag,
+.article-entry pre .preprocessor,
+.article-entry .highlight .preprocessor {
+  color: #d73a49;
+}
+
+.article-entry pre .css~* .id,
+.article-entry .highlight .css~* .id,
+.article-entry pre .id,
+.article-entry .highlight .id {
+  color: #6f42c1;
+}
+
+/* gutter 行号 */
+.article-entry .highlight .gutter pre,
+.article-entry .highlight .gutter pre .line {
+  color: #959da5;
 }
 
 /* ─── 阅读体验细节 ─── */
