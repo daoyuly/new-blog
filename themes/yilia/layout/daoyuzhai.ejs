@@ -1,24 +1,37 @@
-<%
-  var dzPosts = site.posts.filter(function(p){
-    return p.tags && p.tags.some(function(t){ return t.name === 'daoyuzhai'; });
-  }).sort(function(a,b){ return b.date - a.date; });
-%>
-<% if (dzPosts.length > 0) { %>
-<div class="topic-list">
-  <% dzPosts.each(function(post){ %>
-  <a class="topic-list-item" href="<%- url_for(post.path) %>">
-    <div class="topic-list-item__main">
-      <h3 class="topic-list-item__title"><%= post.title %></h3>
-      <% if (post.description) { %>
-      <p class="topic-list-item__desc"><%= post.description %></p>
+<article id="daoyuzhai" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <% if (page.title){ %>
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name"><%= page.title %></h1>
+      </header>
+    <% } %>
+    <div class="article-entry" itemprop="articleBody">
+      <%- page.content %>
+
+      <%
+        var dzPosts = site.posts.filter(function(p){
+          return p.tags && p.tags.some(function(t){ return t.name === 'daoyuzhai'; });
+        }).sort(function(a,b){ return b.date - a.date; });
+      %>
+      <% if (dzPosts.length > 0) { %>
+      <div class="topic-list">
+        <% dzPosts.each(function(post){ %>
+        <a class="topic-list-item" href="<%- url_for(post.path) %>">
+          <div class="topic-list-item__main">
+            <h3 class="topic-list-item__title"><%= post.title %></h3>
+            <% if (post.description) { %>
+            <p class="topic-list-item__desc"><%= post.description %></p>
+            <% } %>
+          </div>
+          <span class="topic-list-item__meta"><%= date(post.date, 'YYYY-MM-DD') %></span>
+        </a>
+        <% }) %>
+      </div>
+      <% } else { %>
+      <div class="topic-list">
+        <p class="topic-list-empty">暂无内容，持续更新中。</p>
+      </div>
       <% } %>
     </div>
-    <span class="topic-list-item__meta"><%= date(post.date, 'YYYY-MM-DD') %></span>
-  </a>
-  <% }) %>
-</div>
-<% } else { %>
-<div class="topic-list">
-  <p class="topic-list-empty">暂无内容，持续更新中。</p>
-</div>
-<% } %>
+  </div>
+</article>

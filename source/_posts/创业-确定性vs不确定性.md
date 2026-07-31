@@ -1,7 +1,9 @@
 ---
 title: 创业中的确定性vs不确定性
 abbrlink: 55499
-tags:n  - daoyuzhaidate: 2025-03-16 00:00:00
+tags:
+  - daoyuzhai
+date: 2025-03-16 00:00:00
 description: "初创公司里的一切没有确定性。创业本质上是一种从0到1的过程，就是对抗不确定性的过程。"
 keywords: "创业中的确定性vs不确定性"
 ---
