@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering 的动力分析：循环何以自驱
 tags:
+  - Agent设计
   - AI Agent
   - Loop Engineering
   - Self-Evolving

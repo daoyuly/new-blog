@@ -1,6 +1,7 @@
 ---
 title: Loop Engineer 综述：AI Agent 时代增长最快的工程角色
 tags:
+  - Agent设计
   - AI Agent
   - Loop Engineering
   - AI Engineering

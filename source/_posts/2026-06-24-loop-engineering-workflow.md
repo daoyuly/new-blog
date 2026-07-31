@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering：基于日志的自动化开发和运维
 tags:
+  - Agent设计
   - engineering
   - workflow
   - loop-engineering

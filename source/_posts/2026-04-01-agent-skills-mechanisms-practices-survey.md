@@ -1,6 +1,7 @@
 ---
 title: Agent Skills机制与业界实践深度综述 - 技能系统设计与实现完全指南
 tags:
+  - Agent设计
   - Agent Skills
   - Skill System
   - Tool Use

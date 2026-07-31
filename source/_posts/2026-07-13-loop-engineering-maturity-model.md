@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering 系列完结篇：闭环成熟度模型
 tags:
+  - Agent设计
   - Loop Engineering
   - 成熟度模型
   - 工程闭环

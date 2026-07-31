@@ -1,6 +1,7 @@
 ---
 title: 微服务环境下跨服务闭环设计
 tags:
+  - Agent设计
   - Loop Engineering
   - 微服务
   - 分布式系统

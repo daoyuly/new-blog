@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering：让诗词网站自己运转
 tags:
+  - Agent设计
   - Loop Engineering
   - 自运营
   - AI Agent

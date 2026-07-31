@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering 实战案例：一个电商平台的闭环演进
 tags:
+  - Agent设计
   - Loop Engineering
   - 工程闭环
   - 电商

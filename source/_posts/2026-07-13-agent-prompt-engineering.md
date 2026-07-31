@@ -1,6 +1,7 @@
 ---
 title: 写好 Agent Prompt：不是越长越好
 tags:
+  - Agent设计
   - AI Agent
   - Prompt工程
   - 系统指令

@@ -1,6 +1,7 @@
 ---
 title: Agent 系统交付的可量化指标：从理论到实践的全景指南
 tags:
+  - Agent设计
   - AI Agent
   - 评估指标
   - KPI

@@ -1,6 +1,7 @@
 ---
 title: Agentic Design Patterns - Chapter 19_ Evaluation and Monitoring
 tags:
+  - ADP
   - Agent 设计
   - Agentic Design Patterns
 abbrlink: 4509

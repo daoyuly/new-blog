@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering 落地手册：从零搭建第一个工程闭环
 tags:
+  - Agent设计
   - Loop Engineering
   - SRE
   - CI

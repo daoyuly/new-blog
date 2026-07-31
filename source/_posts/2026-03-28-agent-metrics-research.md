@@ -1,6 +1,7 @@
 ---
 title: Agent 系统交付的可量化指标研究
 tags:
+  - Agent设计
   - AI Agent
   - 评估指标
   - 系统设计

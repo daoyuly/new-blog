@@ -8,28 +8,41 @@
     <div class="article-entry" itemprop="articleBody">
       <%- page.content %>
 
-      <% if (page.topic_name) { %>
       <%
-        var topicPosts = site.posts.filter(function(p){
-          return p.series && p.series.indexOf(page.topic_name) !== -1;
-        }).sort(function(a,b){ return b.date - a.date; });
+        var topicTag = page.topic_tag || page.title;
+        var arr = [];
+        site.posts.forEach(function(p){
+          // 匹配 topic_tag 或 series
+          var match = false;
+          if (p.tags && p.tags.some(function(t){ return t.name === topicTag; })) match = true;
+          if (p.series && p.series.indexOf(topicTag) !== -1) match = true;
+          if (match) arr.push(p);
+        });
+        arr.sort(function(a,b){
+          var da = new Date(a.date).getTime() || 0;
+          var db = new Date(b.date).getTime() || 0;
+          return db - da;
+        });
       %>
-      <% if (topicPosts.length > 0) { %>
-      <h2>全部文章（<%= topicPosts.length %> 篇）</h2>
-      <ul class="topic-post-list">
-        <% topicPosts.each(function(post){ %>
-        <li class="topic-post-item">
-          <a href="<%- url_for(post.path) %>" class="topic-post-link"><%= post.title %></a>
-          <span class="topic-post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
-          <% if (post.description) { %>
-          <p class="topic-post-desc"><%= post.description %></p>
-          <% } %>
-        </li>
+      <% if (arr.length > 0) { %>
+      <h2>全部文章（<%= arr.length %> 篇）</h2>
+      <div class="topic-list">
+        <% arr.forEach(function(post){ %>
+        <a class="topic-list-item" href="<%- url_for(post.path) %>">
+          <div class="topic-list-item__main">
+            <h3 class="topic-list-item__title"><%= post.title %></h3>
+            <% if (post.description) { %>
+            <p class="topic-list-item__desc"><%= post.description %></p>
+            <% } %>
+          </div>
+          <span class="topic-list-item__meta"><%= date(post.date, 'YYYY-MM-DD') %></span>
+        </a>
         <% }) %>
-      </ul>
+      </div>
       <% } else { %>
-      <p class="topic-empty">暂无文章，持续更新中。</p>
-      <% } %>
+      <div class="topic-list">
+        <p class="topic-list-empty">暂无内容，持续更新中。</p>
+      </div>
       <% } %>
     </div>
   </div>

@@ -1,6 +1,7 @@
 ---
 title: Loop Engineering 反模式：为什么你的闭环转不起来
 tags:
+  - Agent设计
   - Loop Engineering
   - 工程闭环
   - SRE

@@ -1,6 +1,7 @@
 ---
 title: 基于 Skills 的 Agent 进化：从工具调用到自主演化的技术范式
 tags:
+  - Agent设计
   - AI
   - Agent
   - Skills

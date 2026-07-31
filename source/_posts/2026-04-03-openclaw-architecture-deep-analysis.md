@@ -1,6 +1,7 @@
 ---
 title: OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析
 tags:
+  - Agent设计
   - OpenClaw
   - Architecture
   - AI Agent

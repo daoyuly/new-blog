@@ -1,6 +1,7 @@
 ---
 title: Hermes Agent 进化机制深度分析
 tags:
+  - Agent设计
   - Hermes Agent
   - 自我改进
   - 技能系统

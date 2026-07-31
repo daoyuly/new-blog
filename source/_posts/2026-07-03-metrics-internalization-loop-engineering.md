@@ -1,6 +1,7 @@
 ---
 title: 指标内化：让技术和业务指标成为工程闭环的一部分
 tags:
+  - Agent设计
   - 工程实践
   - 指标体系
   - loop-engineering

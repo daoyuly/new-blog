@@ -16,6 +16,34 @@ noDate: true
     </div>
     <span class="topic-list-item__meta">46 篇文章</span>
   </a>
+  <a class="topic-list-item" href="/topics/agentic-design-patterns/">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title">Agentic Design Patterns</h3>
+      <p class="topic-list-item__desc">Agent 设计模式的系统化拆解——从 Prompt Chaining、Routing、Reflection 到 Multi-Agent Collaboration、Memory Management、Tool Use，覆盖 21 种核心模式。</p>
+    </div>
+    <span class="topic-list-item__meta">33 篇文章</span>
+  </a>
+  <a class="topic-list-item" href="/topics/agent-design-guide/">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title">Agent设计指南</h3>
+      <p class="topic-list-item__desc">Agent 架构设计的实践指南——涵盖 Harness Engineering、Loop Engineering、Context Engineering、Skill 体系、多 Agent 协作架构等关键议题。</p>
+    </div>
+    <span class="topic-list-item__meta">38 篇文章</span>
+  </a>
+  <a class="topic-list-item" href="/topics/software-design-philosophy/">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title">软件设计的哲学</h3>
+      <p class="topic-list-item__desc">代码即设计决策的累加。探讨软件架构、设计哲学与工程实践中的深层思考——从 AI 编程的理论边界到系统设计的本质规律。</p>
+    </div>
+    <span class="topic-list-item__meta">18 篇文章</span>
+  </a>
+  <a class="topic-list-item" href="/topics/beauty-of-learning/">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title">学习之美</h3>
+      <p class="topic-list-item__desc">学习的本质是认知的重塑。从有效提问、学习公式、认知模型出发，探索如何在学习中找到美与秩序。</p>
+    </div>
+    <span class="topic-list-item__meta">9 篇文章</span>
+  </a>
   <a class="topic-list-item" href="/topics/claude-code/">
     <div class="topic-list-item__main">
       <h3 class="topic-list-item__title">Claude Code 探究</h3>

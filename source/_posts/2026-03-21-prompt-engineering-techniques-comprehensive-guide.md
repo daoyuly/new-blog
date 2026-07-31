@@ -1,6 +1,7 @@
 ---
 title: 提示词工程完全指南：从基础到Agent应用的技术全景
 tags:
+  - Agent设计
   - Prompt Engineering
   - LLM
   - AI Agent

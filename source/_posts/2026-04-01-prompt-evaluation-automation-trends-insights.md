@@ -1,6 +1,7 @@
 ---
 title: 自动化Prompt评估最新趋势与洞察深度综述 - 从人工评审到AI驱动的质量保证
 tags:
+  - Agent设计
   - Prompt Evaluation
   - LLM Evaluation
   - Auto-evaluation
