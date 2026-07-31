@@ -5,12 +5,12 @@ subtitle: ''
 
 menu:
   主页: /
-  论文研读: /papers/
-  合作: /business/
-  项目案例: /cases/
-  全智能家庭档案馆: /family-archive/
   专题: /topics/
   盗愚斎: /daoyuzhai/
+  论文研读: /papers/
+  项目案例: /cases/
+  全智能家庭档案馆: /family-archive/
+  合作: /business/
   #随笔: /tags/随笔/
 
 # SubNav
