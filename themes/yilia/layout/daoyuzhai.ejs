@@ -1,0 +1,24 @@
+<%
+  var dzPosts = site.posts.filter(function(p){
+    return p.tags && p.tags.some(function(t){ return t.name === 'daoyuzhai'; });
+  }).sort(function(a,b){ return b.date - a.date; });
+%>
+<% if (dzPosts.length > 0) { %>
+<div class="topic-list">
+  <% dzPosts.each(function(post){ %>
+  <a class="topic-list-item" href="<%- url_for(post.path) %>">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title"><%= post.title %></h3>
+      <% if (post.description) { %>
+      <p class="topic-list-item__desc"><%= post.description %></p>
+      <% } %>
+    </div>
+    <span class="topic-list-item__meta"><%= date(post.date, 'YYYY-MM-DD') %></span>
+  </a>
+  <% }) %>
+</div>
+<% } else { %>
+<div class="topic-list">
+  <p class="topic-list-empty">暂无内容，持续更新中。</p>
+</div>
+<% } %>
