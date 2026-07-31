@@ -660,6 +660,78 @@ a:hover {
   text-align: center;
 }
 
+/* ─── 项目案例页 ─── */
+.case-list {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--ac-border-light);
+}
+
+.case-item:last-child {
+  border-bottom: none;
+}
+
+.case-item__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.case-item__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ac-text);
+}
+
+.case-item__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ac-primary);
+  background: var(--ac-accent-soft);
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.case-item__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ac-text-muted);
+  margin: 0 0 0.6rem;
+}
+
+.case-item__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--ac-text-light);
+  font-family: SFMono-Regular, Consolas, monospace;
+}
+
+.case-note {
+  margin-top: 2rem;
+  padding: 0.9rem 1.15rem;
+  background: var(--ac-code-bg);
+  border: 1px solid var(--ac-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--ac-text-muted);
+  line-height: 1.6;
+}
+
+.case-note a {
+  font-weight: 600;
+}
+
 /* ─── 商业合作页 ─── */
 .biz-page {
   --biz-bg: #f6f8fa;

@@ -6,7 +6,7 @@ comments: false
 noDate: true
 ---
 
-<p class="biz-lead">围绕一个主题持续深挖的<strong>系列文章</strong>。每个专题把相关文章串成一条可追踪的阅读线，点进任意专题可看到全部内容按时间排序。</p>
+<p class="biz-lead">如切如磋，如琢如磨</p>
 
 <div class="topic-list">
   <a class="topic-list-item" href="/topics/agent-emotion/">
