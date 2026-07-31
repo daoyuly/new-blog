@@ -11,7 +11,7 @@ categories:
   - Agent系统
 ---
 
-> 数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) · 生成时间：2026/7/31 22:51:24
+> 数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) · 生成时间：2026/7/31 22:52:04
 > 本报告聚合本周 arXiv cs.AI 的 Agent 相关论文，跨天去重后深度分析。
 
 ## 本周总览
@@ -46,65 +46,65 @@ categories:
 - arXiv: [2607.25956](https://arxiv.org/abs/2607.25956)
 - 方向: 其他
 - 场景: 科学研究、信息检索与问答
-- 摘要: allocation,selector,grpo,formulation,inventory,expert,ipo,warehouse,mip,sft
+- 关键词: `allocation` `selector` `grpo` `formulation` `inventory` `expert` `ipo` `warehouse` `mip` `sft`
 
 ### 2. A Cost-Effective Multimodal LLM Reasoning Framework for Question Answering over Irregular Clinical Time Series
 
 - arXiv: [2607.25947](https://arxiv.org/abs/2607.25947)
 - 方向: 规划推理 · 工程架构
 - 场景: 信息检索与问答
-- 摘要: llm,clinical,irregular,series,icts,multimodal,answering,clinprism,question,time
+- 关键词: `llm` `clinical` `irregular` `series` `icts` `multimodal` `answering` `clinprism` `question` `time`
 
 ### 3. Penelope: Localized Latent Recurrence for Efficient Structured Reasoning
 
 - arXiv: [2607.25915](https://arxiv.org/abs/2607.25915)
 - 方向: 规划推理
 - 场景: 代码开发
-- 摘要: reasoning,penelope,decoder,latent,structured,computation,cot,recurrent,localized,serializing
+- 关键词: `reasoning` `penelope` `decoder` `latent` `structured` `computation` `cot` `recurrent` `localized` `serializing`
 
 ### 4. Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks
 
 - arXiv: [2607.25877](https://arxiv.org/abs/2607.25877)
 - 方向: 多智能体 · 安全对齐
-- 摘要: actuarial,uncertainty,agent,bayesian,runtime,log,probabilities,multi,llms,risk
+- 关键词: `actuarial` `uncertainty` `agent` `bayesian` `runtime` `log` `probabilities` `multi` `llms` `risk`
 
 ### 5. CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization
 
 - arXiv: [2607.25659](https://arxiv.org/abs/2607.25659)
 - 方向: 工程架构
 - 场景: 决策支持
-- 摘要: grpo,cort,rubric,response,credit,token,counterfactual,level,contrasts,reward
+- 关键词: `grpo` `cort` `rubric` `response` `credit` `token` `counterfactual` `level` `contrasts` `reward`
 
 ### 6. OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation
 
 - arXiv: [2607.25656](https://arxiv.org/abs/2607.25656)
 - 方向: 多智能体
 - 场景: 企业自动化
-- 摘要: orchbench,orchestration,agent,plans,isolation,subtasks,worker,agents,workflow,parallelism
+- 关键词: `orchbench` `orchestration` `agent` `plans` `isolation` `subtasks` `worker` `agents` `workflow` `parallelism`
 
 ### 7. Toward Standardized Cross-Vendor Agent Tool Trust Management in Autonomous Networks
 
 - arXiv: [2607.25914](https://arxiv.org/abs/2607.25914)
 - 方向: 其他
-- 摘要: vendor,trust,management,standardized,nrm,mns,notifications,cross,3gpp,notification
+- 关键词: `vendor` `trust` `management` `standardized` `nrm` `mns` `notifications` `cross` `3gpp` `notification`
 
 ### 8. Interactive Reward Agent: GUI Task Evaluation via Environment-State Verification
 
 - arXiv: [2607.25904](https://arxiv.org/abs/2607.25904)
 - 方向: 评估基准
-- 摘要: gui,ira,task,reward,rewardbench,agent,evaluation,environment,interactive,execution
+- 关键词: `gui` `ira` `task` `reward` `rewardbench` `agent` `evaluation` `environment` `interactive` `execution`
 
 ### 9. Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation
 
 - arXiv: [2607.25891](https://arxiv.org/abs/2607.25891)
 - 方向: 评估基准
-- 摘要: messier,verifier,agent,benchmark,corpus,verifiers,rankings,capability,evaluation,standardized
+- 关键词: `messier` `verifier` `agent` `benchmark` `corpus` `verifiers` `rankings` `capability` `evaluation` `standardized`
 
 ### 10. Distributing Security Controls Through Harness Engineering
 
 - arXiv: [2607.25890](https://arxiv.org/abs/2607.25890)
 - 方向: 其他
-- 摘要: harness,security,controls,agents,agent,commercial,sandboxing,agentic,shard,coding
+- 关键词: `harness` `security` `controls` `agents` `agent` `commercial` `sandboxing` `agentic` `shard` `coding`
 
 ## 研究趋势
 
