@@ -596,6 +596,70 @@ a:hover {
   text-align: center;
 }
 
+/* ─── 专题/盗愚斎 列表式 ─── */
+.topic-list {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-list-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--ac-border-light);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.topic-list-item:hover {
+  background: var(--ac-accent-softer);
+  text-decoration: none;
+}
+
+.topic-list-item__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.topic-list-item__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  color: var(--ac-text);
+  transition: color 0.15s ease;
+}
+
+.topic-list-item:hover .topic-list-item__title {
+  color: var(--ac-primary);
+}
+
+.topic-list-item__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ac-text-muted);
+  margin: 0;
+}
+
+.topic-list-item__meta {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--ac-text-light);
+  font-family: SFMono-Regular, Consolas, monospace;
+  white-space: nowrap;
+  padding-top: 0.15rem;
+}
+
+.topic-list-empty {
+  color: var(--ac-text-muted);
+  font-size: 0.95rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
 /* ─── 商业合作页 ─── */
 .biz-page {
   --biz-bg: #f6f8fa;
