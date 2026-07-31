@@ -240,7 +240,7 @@ a:hover {
 
 /* ─── 文章区域 ─── */
 .article-inner {
-  max-width: 780px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
@@ -531,7 +531,7 @@ a:hover {
 /* ─── 首页列表 ─── */
 .home-search-list-wrap {
   width: 100%;
-  max-width: 780px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
   padding: 24px 1.25rem 80px;
@@ -863,7 +863,7 @@ a:hover {
 
 /* 全智能家庭档案馆 */
 .biz-page.family-archive-page {
-  max-width: 780px;
+  max-width: 1024px;
 }
 
 .family-archive-page .biz-manifesto {
