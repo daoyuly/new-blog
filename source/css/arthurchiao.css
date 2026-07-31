@@ -330,11 +330,14 @@ a:hover {
   margin: 0.5em 0;
 }
 
-/* 代码 */
+/* 代码 — 字体与正文统一，仅用等宽区分 */
 .article-entry code,
-.article-entry pre {
-  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 0.875em;
+.article-entry pre,
+.article-entry .highlight,
+.article-entry .gist .gist-file {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji" !important;
+  font-size: 0.9em !important;
+  line-height: 1.7 !important;
 }
 
 .article-entry code {
@@ -343,45 +346,44 @@ a:hover {
   border-radius: 3px;
   border: none;
   color: #d6336c;
-  font-size: 0.85em;
 }
 
 .article-entry pre {
-  background: var(--ac-code-bg);
-  padding: 1.1em 1.25em;
+  background: var(--ac-code-bg) !important;
+  padding: 1.1em 1.25em !important;
   border-radius: 6px;
   border: 1px solid var(--ac-border);
   overflow-x: auto;
-  margin: 1.25em 0;
-  line-height: 1.6;
+  margin: 1.25em 0 !important;
+  color: var(--ac-text) !important;
 }
 
 .article-entry pre code {
-  background: none;
+  background: none !important;
   padding: 0;
   border: none;
-  color: var(--ac-text);
-  font-size: 0.875em;
-  text-shadow: none;
+  color: var(--ac-text) !important;
+  text-shadow: none !important;
 }
 
 .article-entry .highlight {
-  background: var(--ac-code-bg);
+  background: var(--ac-code-bg) !important;
   border-radius: 6px;
-  margin: 1.25em 0;
+  margin: 1.25em 0 !important;
   border: 1px solid var(--ac-border);
-  color: var(--ac-text);
+  color: var(--ac-text) !important;
+  padding: 0 !important;
 }
 
 .article-entry .highlight pre {
   margin: 0;
-  padding: 1.1em 1.25em;
-  background: none;
+  padding: 1.1em 1.25em !important;
+  background: none !important;
   border: none;
 }
 
 .article-entry .highlight .line {
-  color: var(--ac-text);
+  color: var(--ac-text) !important;
   min-height: auto;
 }
 
