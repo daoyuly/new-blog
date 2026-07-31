@@ -44,6 +44,9 @@
   <% } %>
   <%- partial('css') %>
   <link rel="stylesheet" type="text/css" href="<%= config.root %>css/arthurchiao.css">
+  <% if (is_post()) { %>
+  <%- partial('katex') %>
+  <% } %>
   <style type="text/css">
   <% var defaultCtnBg = '#fff' %>
     #container.show {
