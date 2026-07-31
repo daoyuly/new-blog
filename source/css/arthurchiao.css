@@ -363,7 +363,6 @@ a:hover {
   padding: 0;
   border: none;
   color: var(--ac-text) !important;
-  text-shadow: none !important;
 }
 
 .article-entry .highlight {
