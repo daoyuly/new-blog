@@ -9,13 +9,21 @@
       <%- page.content %>
 
       <%
-        var dzPosts = site.posts.filter(function(p){
-          return p.tags && p.tags.some(function(t){ return t.name === 'daoyuzhai'; });
-        }).sort(function(a,b){ return b.date - a.date; });
+        var arr = [];
+        site.posts.forEach(function(p){
+          if (p.tags && p.tags.some(function(t){ return t.name === 'daoyuzhai'; })){
+            arr.push(p);
+          }
+        });
+        arr.sort(function(a,b){
+          var da = new Date(a.date).getTime() || 0;
+          var db = new Date(b.date).getTime() || 0;
+          return db - da;
+        });
       %>
-      <% if (dzPosts.length > 0) { %>
+      <% if (arr.length > 0) { %>
       <div class="topic-list">
-        <% dzPosts.each(function(post){ %>
+        <% arr.forEach(function(post){ %>
         <a class="topic-list-item" href="<%- url_for(post.path) %>">
           <div class="topic-list-item__main">
             <h3 class="topic-list-item__title"><%= post.title %></h3>
