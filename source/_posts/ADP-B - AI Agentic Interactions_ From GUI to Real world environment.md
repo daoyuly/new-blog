@@ -2,7 +2,9 @@
 title: >-
   Agentic Design Patterns - Appendix B - AI Agentic Interactions_ From GUI to
   Real world environment
-tags: AI agent 设计
+tags:
+  - Agent 设计
+  - Agentic Design Patterns
 abbrlink: 42652
 date: 2025-11-02 08:05:02
 description: "AI Agent 正日益通过数字界面和物理环境的交互来执行复杂任务。它们在这些多样化环境中感知、处理和行动的能力，正在从根本上重塑自动化、人机交互和智能系统的格局。本附录深入探讨 Agent 如何与计算机及其环境交互，并重点介绍相关技..."

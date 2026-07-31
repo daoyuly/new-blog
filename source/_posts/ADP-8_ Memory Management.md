@@ -1,6 +1,8 @@
 ---
 title: Agentic Design Patterns - Chapter 8_ Memory Management
-tags: AI agent 设计
+tags:
+  - Agent 设计
+  - Agentic Design Patterns
 abbrlink: 23083
 date: 2025-10-13 08:05:02
 description: "有效的记忆管理对于智能 Agent 保留信息至关重要。与人类类似，Agent 需要不同类型的记忆才能高效运行。本章深入探讨记忆管理，特别关注 Agent 的即时（短期）和持久（长期）记忆需求。"

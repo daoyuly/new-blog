@@ -1,6 +1,8 @@
 ---
 title: Agentic Design Patterns - Chapter 1_ Prompt Chaining
-tags: AI agent 设计
+tags:
+  - Agent 设计
+  - Agentic Design Patterns
 abbrlink: 14285
 date: 2025-10-06 08:05:02
 description: "提示词链（Prompt Chaining），有时也称为管道模式（Pipeline pattern），是利用大型语言模型（LLM）处理复杂任务时的一种强大范式。提示词链不是期望 LLM 在单一的、整体化的步骤中解决复杂问题，而是采用分而..."

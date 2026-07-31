@@ -1,6 +1,8 @@
 ---
 title: Agentic Design Patterns - Chapter 4_ Reflection
-tags: AI agent 设计
+tags:
+  - Agent 设计
+  - Agentic Design Patterns
 abbrlink: 18933
 date: 2025-10-09 08:05:02
 description: "在前面的章节中，我们探讨了基础的 Agent 模式：顺序执行的链式、动态路径选择的路由以及并发任务执行的并行化。这些模式使 Agent 能够更高效、更灵活地执行复杂任务。然而，即使采用复杂的工作流，Agent 的初始输出或计划也可能并..."
