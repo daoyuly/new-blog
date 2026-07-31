@@ -16,6 +16,7 @@ menu:
 # SubNav
 subnav:
   github: "https://github.com/daoyuly/cv"
+  github_label: "github"
   #weibo: "#"
   #rss: "#"
   #zhihu: "#"
