@@ -393,8 +393,14 @@ result = crew.kickoff()
 
 ## 相关阅读
 
-- [Agent 系统交付的可量化指标研究](/2026/03/28/agent/metrics/research/)
-- [Agent Memory 评估的工程化解决方案综述](/2026/03/29/agent/memory/evaluation/engineering/)
-- [Agent 反思记忆研究综述](/2026/03/29/agent/reflective/memory/survey/)
-- [Hermes Agent 进化机制深度分析](/2026/04/13/hermes/agent/evolution/mechanism/)
-- [AI Agent 最新趋势 2026-03-08](/2026/03/08/arxiv/ai/agent/trends/)
+**Agent 架构核心**
+- [2026年AI Agent发展趋势与增长点预测研究报告](/posts/34210/) — Agent 领域全景综述
+- [AI Agent 记忆系统全景分析报告](/posts/31113/) — 多 Agent 协作中的 Memory 共享
+- [AI Agent 任务规划的 DAG 设计](/posts/37626/) — 多 Agent 任务的 DAG 编排
+- [Agent Token 优化完全指南](/posts/47121/) — 多 Agent 通信的 Token 成本优化
+- [Agent 系统交付的可量化指标](/posts/4153/) — 多 Agent 系统怎么衡量
+
+**Agent Harness 与工程化**
+- [Loop Engineering 深度综述](/posts/83127/) — 多 Agent 闭环的工程范式
+- [Agent 进化方法论与体系深度调研](/posts/41693/) — 多 Agent 协同进化
+- [Hermes-Agent vs DeerFlow 深度对比](/posts/8523/) — 两大框架的多 Agent 设计差异

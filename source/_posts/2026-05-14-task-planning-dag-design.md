@@ -1805,8 +1805,20 @@ DAG 的可视化对于理解和调试至关重要：
 
 ## 相关阅读
 
-- [对话即进化：Agent 的状态轨迹与认知收敛](/2026/05/26/conversation/as/evolution/agent/system/design/)
-- [Agent 系统交付的可量化指标：从理论到实践的全景指南](/2026/03/28/agent/quantifiable/metrics/framework/)
-- [如何设计有用的多Agent系统 - 实战指南与架构设计方法论](/2026/04/01/designing/useful/multi/agent/systems/guide/)
-- [OpenClaw 架构深度解析：插件、Skills、Channels 与扩展机制的完整技术分析](/2026/04/03/openclaw/architecture/deep/analysis/)
-- [OpenFang 深度技术分析：下一代 Agent 操作系统的全面评测](/2026/04/21/openfang/deep/analysis/)
+本篇讲的是 Agent 任务规划的 DAG 设计，如果你想继续深入 Agent 架构和工程实践：
+
+**Agent 架构核心**
+- [AI Agent 记忆系统全景分析报告](/posts/31113/) — DAG 的每个节点可能需要记忆，Memory 系统怎么设计
+- [多 Agent 协作框架与趋势深度调研](/posts/52462/) — 多智能体协作时 DAG 变成协作图
+- [Agent Token 优化完全指南](/posts/47121/) — DAG 节点多了 Token 消耗大，怎么优化
+- [Agent 系统交付的可量化指标](/posts/4153/) — DAG 执行效果怎么衡量
+- [2026年AI Agent发展趋势与增长点预测研究报告](/posts/34210/) — Agent 领域全景综述
+
+**Agent Harness 与工程化**
+- [Loop Engineering 深度综述](/posts/83127/) — DAG 是 Loop 的基础结构
+- [Agent 进化方法论与体系深度调研](/posts/41693/) — 从 DAG 到自进化
+- [Hermes-Agent vs DeerFlow 深度对比](/posts/8523/) — 两大框架的 DAG 设计差异
+
+**基础设施**
+- [Milvus 向量数据库深度指南](/posts/14962/) — DAG 节点的向量检索底座
+- [生成式引擎优化（GEO）深度指南](/posts/32372/) — 让你的 DAG 设计文章被 AI 搜索找到

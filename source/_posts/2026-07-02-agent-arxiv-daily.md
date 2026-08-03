@@ -483,8 +483,14 @@ A: 3篇论文涉及信息检索与问答场景。核心瓶颈：幻觉累积。�
 
 ## 相关阅读
 
-- [Agent 最新研究综述（2026-03-27）](/2026/03/27/agent/arxiv/daily/)
+**深度文章（从日报走向工程实践）**
+- [2026年AI Agent发展趋势与增长点预测研究报告](/posts/34210/) — Agent 领域全景综述
+- [AI Agent 记忆系统全景分析报告](/posts/31113/) — Memory 系统怎么设计
+- [AI Agent 任务规划的 DAG 设计](/posts/37626/) — 从理论到工程实践
+- [Agent Token 优化完全指南](/posts/47121/) — 降本增效的工程方法
+- [Loop Engineering 深度综述](/posts/83127/) — 从 Prompt 到自主循环
+
+**更多日报**
 - [Agent 最新研究综述（2026-04-09）](/2026/04/09/agent/arxiv/daily/)
 - [Agent 最新研究综述（2026-04-10）](/2026/04/10/agent/arxiv/daily/)
 - [Agent 最新研究综述（2026-04-22）](/2026/04/22/agent/arxiv/daily/)
-- [Agent 最新研究综述（2026-04-29）](/2026/04/29/agent/arxiv/daily/)
