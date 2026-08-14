@@ -283,6 +283,30 @@ result = crew.kickoff()
 
 ---
 
+## 四点五、主流框架协作模式可视化
+
+```mermaid
+graph TB
+    subgraph LangGraph[LangChain + LangGraph]
+        LG_R[Researcher] --> LG_W[Writer]
+        LG_W --> LG_V[Reviewer]
+        LG_V -->|需要修改| LG_W
+        LG_V -->|通过| LG_E[END]
+    end
+
+    subgraph AutoGenF[AutoGen]
+        AG_U[User Proxy] <-->|对话| AG_A[Assistant]
+        AG_A -->|代码| AG_S[沙箱执行]
+        AG_S -->|结果| AG_U
+    end
+
+    subgraph CrewAIF[CrewAI]
+        CR_PM[产品经理] --> CR_ARCH[架构师]
+        CR_ARCH --> CR_DEV[开发者]
+        CR_DEV --> CR_QA[测试]
+    end
+```
+
 ## 五、应用场景与案例
 
 ### 5.1 内容创作场景

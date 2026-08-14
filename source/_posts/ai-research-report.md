@@ -28,6 +28,24 @@ keywords: "2026年ai, agent发展趋势与增长点预测研究报告"
 
 ---
 
+### AI Agent 演进路线图
+
+```mermaid
+graph LR
+    A[规则自动化] -->|2023| B[Copilot 辅助]
+    B -->|2024| C[工具调用 Agent]
+    C -->|2025| D[多 Agent 协作]
+    D -->|2026| E[自主决策 Agent]
+    E -->|2027+| F[群体智能 A2A]
+
+    style A fill:#e0e0e0
+    style B fill:#ffd700
+    style C fill:#90ee90
+    style D fill:#87ceeb
+    style E fill:#9370db
+    style F fill:#ff69b4
+```
+
 ### 详细分析
 
 #### 一、 技术演进：迈向高阶自主性与多模态协同

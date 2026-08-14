@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 浏览器自动化
-date: 2026-08-14 11:30:00
 tags:
   - openclaw
   - skill
   - browser-and-automation
 categories:
   - 技术推荐
+abbrlink: 30195
+date: 2026-08-14 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 浏览器自动化

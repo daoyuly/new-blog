@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - 智能家居与物联网
-date: 2026-08-05 11:30:00
 tags:
   - openclaw
   - skill
@@ -8,6 +7,8 @@ tags:
   - iot
 categories:
   - 技术推荐
+abbrlink: 4677
+date: 2026-08-05 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 智能家居与物联网 🏠

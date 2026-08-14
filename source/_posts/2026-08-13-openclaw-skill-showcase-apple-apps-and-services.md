@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - Apple Apps & Services
-date: 2026-08-13 11:30:00
 tags:
   - openclaw
   - skill
@@ -8,6 +7,8 @@ tags:
   - macos
 categories:
   - 技术推荐
+abbrlink: 21059
+date: 2026-08-13 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - Apple Apps & Services 🍎

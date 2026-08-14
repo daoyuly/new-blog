@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Web & Frontend Development
-date: 2026-08-11 11:30:00
 tags:
   - openclaw
   - skill
   - web-and-frontend-development
 categories:
   - 技术推荐
+abbrlink: 56622
+date: 2026-08-11 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - Web & Frontend Development

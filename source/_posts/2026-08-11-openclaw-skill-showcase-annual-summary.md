@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 年度总结报告
-date: 2026-08-11 11:35:00
 tags:
   - openclaw
   - skill
   - 年度总结
 categories:
   - 技术推荐
+abbrlink: 37187
+date: 2026-08-11 11:35:00
 ---
 
 # OpenClaw Skill 每日推荐 - 年度总结报告
