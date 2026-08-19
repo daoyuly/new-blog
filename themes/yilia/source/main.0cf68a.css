@@ -2439,7 +2439,7 @@ pre .id {
     font-weight: 700;
     color: #574c4c;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ddd
+    border-bottom: 1px solid var(--ac-border-light);
 }
 
 .article-entry video {
