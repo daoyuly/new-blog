@@ -1,20 +1,31 @@
 ---
-title: Agent Memory 评估的工程化解决方案综述
+title: Agent Memory 评估工程化：六维框架与实践指南
 tags:
   - Agent设计
-  - Agent Memory
-  - RAG 评估
+  - Agent记忆
+  - RAG评估
   - 记忆系统
   - 工程实践
 categories:
   - Agent 研究
 abbrlink: 29046
 date: 2026-03-29 00:00:00
-description: "Agent 系统与传统 AI 应用的核心区别在于 上下文连贯性 和 长期学习能力，这两者都依赖于 Memory 系统。"
+description: "提出 Agent Memory 六维评估框架（6D-MEM），覆盖记忆保真度、检索精度、时效性、一致性、容量效率和安全性，结合 MemGPT、LangChain 等框架提供完整工程化实施方案与评估工具链。"
 keywords: "agent, memory, 评估的工程化解决方案综述, Agent Memory, RAG 评估, 记忆系统, 工程实践, Agent 研究"
 ---
 
-# Agent Memory 评估的工程化解决方案综述
+# Agent Memory 评估工程化：六维框架与实践指南
+
+Agent Memory 是区分智能体与传统 AI 应用的核心——它决定了 Agent 的上下文连贯性和长期学习能力。本文提出六维评估框架（6D-MEM），为 Memory 系统提供可量化、可工程化的评估方案。
+
+| 维度 | 核心要点 |
+|------|---------|
+| 核心问题 | Agent Memory 缺乏统一评估标准，难以量化记忆质量 |
+| 评估框架 | 6D-MEM：保真度、检索精度、时效性、一致性、容量效率、安全性 |
+| 三层架构 | 工作记忆（L1）→ 短期记忆（L2）→ 长期记忆（L3） |
+| 评估工具 | RAGAS、TruLens、LangSmith 等工具链对比 |
+| 框架分析 | MemGPT、LangChain、LlamaIndex Memory 机制横向对比 |
+| 工程落地 | 评估流水线设计、CI/CD 集成、持续监控方案 |
 
 > **研究日期**: 2026-03-29
 > **研究目标**: 系统性分析 Agent Memory 系统的评估方法、工具和工程实践

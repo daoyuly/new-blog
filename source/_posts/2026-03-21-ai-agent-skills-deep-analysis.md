@@ -1,23 +1,32 @@
 ---
 title: 深入解析 AI Agent Skills：从理论到实践的技术演进
 tags:
-  - AI
-  - Agent
-  - LLM
-  - Skills
+  - AI Agent
+  - 技能系统
+  - 大语言模型
   - 技术分析
 categories:
   - 技术研究
 abbrlink: 18326
 date: 2026-03-21 00:20:00
-description: "2026年3月，arXiv上涌现出大量关于AI Agent Skills的前沿研究。从Memento-Skills到TDAD，从SKILLS框架到知识激活理论，这一系列突破性工作标志着AI Agent技术正在经历从\"工具调用\"到\"能力..."
+description: "基于 2025-2026 年最新研究，深入分析 AI Agent Skills 从工具调用到能力组合的范式转变，覆盖 Memento-Skills、TDAD、SKILLS 框架等前沿技术，揭示技能抽象、组合与演化的核心机制。"
 keywords: "深入解析, agent, skills, 从理论到实践的技术演进, AI, Agent, LLM, Skills"
 ---
 
 # 深入解析 AI Agent Skills：从理论到实践的技术演进
 
-> 基于 2025-2026 年最新研究成果的全面技术分析
+AI Agent 正经历从"工具调用"到"能力组合"的范式转变，Skills 抽象使 Agent 具备可复用、可组合、可演化的知识单元，本文基于 Memento-Skills、TDAD、SKILLS 等前沿研究揭示其核心机制。
 
+| 维度 | 核心要点 |
+|------|---------|
+| 范式转变 | 从直接工具调用（Tool Calling）到可复用的技能抽象 |
+| 核心论文 | Memento-Skills、TDAD、SKILLS、VeriGrey |
+| 关键能力 | 技能形成、组合、演化、安全边界定义 |
+| 技术机制 | 知识激活、记忆持久化、端到端代理设计 |
+| 实践框架 | OpenClaw Skills 系统的插件化扩展机制 |
+| 应用场景 | 编码代理、自动化运维、多步推理任务 |
+
+## 引言
 ## 引言
 
 2026年3月，arXiv上涌现出大量关于AI Agent Skills的前沿研究。从Memento-Skills到TDAD，从SKILLS框架到知识激活理论，这一系列突破性工作标志着AI Agent技术正在经历从"工具调用"到"能力组合"的范式转变。本文将深入分析Skills技术的形成原因、核心原理、技术机制及实际应用。

@@ -2,22 +2,32 @@
 title: 提示词工程完全指南：从基础到Agent应用的技术全景
 tags:
   - Agent设计
-  - Prompt Engineering
-  - LLM
+  - 提示词工程
+  - 大语言模型
   - AI Agent
   - 技术指南
 categories:
   - 技术研究
 abbrlink: 57023
 date: 2026-03-21 01:00:00
-description: "提示词工程（Prompt Engineering）是解锁大语言模型（LLM）能力的关键技术。随着Agent系统的兴起，提示词技术从简单的指令演变为复杂的能力编排系统。本文将系统性地介绍14种核心提示词技术，从基础到高级，从理论到实践，..."
+description: "系统介绍 14 种核心提示词技术，从 Zero-Shot、Chain-of-Thought 到 Self-Consistency、Tree of Thoughts，覆盖基础到高级方法，结合正反例与 Agent 开发实战，帮助开发者构建更强的 AI 应用。"
 keywords: "提示词工程完全指南, 从基础到agent应用的技术全景, Prompt Engineering, LLM, AI Agent, 技术指南, 技术研究"
 ---
 
 # 提示词工程完全指南：从基础到Agent应用的技术全景
 
-> 系统性综述提示词工程技术，深入剖析原理机制，提供正例反例，并探索在Agent开发中的实战应用
+提示词工程是解锁大语言模型能力的关键技术，本文系统介绍 14 种核心提示词技术——从 Zero-Shot 到 Tree of Thoughts——结合正反例与 Agent 开发实战，帮助开发者构建更强的 AI 应用。
 
+| 维度 | 核心要点 |
+|------|---------|
+| 技术覆盖 | 14 种核心提示词技术，从基础到高级 |
+| 基础技术 | Zero-Shot、Few-Shot、Chain-of-Thought |
+| 高级技术 | Self-Consistency、Tree of Thoughts、ReAct |
+| Agent 应用 | 提示词在 Agent 系统中的编排与组合策略 |
+| 实战指导 | 每种技术配有正例反例与代码实现 |
+| 适用读者 | AI 应用开发者、Agent 系统架构师 |
+
+## 引言
 ## 引言
 
 提示词工程（Prompt Engineering）是解锁大语言模型（LLM）能力的关键技术。随着Agent系统的兴起，提示词技术从简单的指令演变为复杂的能力编排系统。本文将系统性地介绍14种核心提示词技术，从基础到高级，从理论到实践，帮助开发者构建更强大的AI应用。

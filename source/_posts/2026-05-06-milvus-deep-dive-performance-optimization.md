@@ -1,20 +1,31 @@
 ---
 title: Milvus 向量数据库深度指南：从入门到性能优化
 tags:
-  - Vector Database
+  - 向量数据库
   - Milvus
-  - AI Infrastructure
+  - AI基础设施
   - RAG
-  - Performance Optimization
+  - 性能优化
 categories:
   - 技术深度分析
 abbrlink: 14962
 date: 2026-05-06 11:13:00
-description: "Milvus 是一个开源的高性能向量数据库，专为大规模向量检索和 AI 应用而设计。它能够存储、索引和管理由深度神经网络和其他机器学习（ML）模型生成的海量向量数据。"
+description: "系统解析 Milvus 向量数据库的核心架构、索引机制与性能优化策略，覆盖 IVF/HNSW 等索引原理、分布式部署方案及生产环境最佳实践，帮助开发者快速构建毫秒级十亿级向量检索能力。"
 keywords: "milvus, 向量数据库深度指南, 从入门到性能优化, Vector Database, Milvus, AI Infrastructure, RAG, Performance Optimization"
 ---
 
 # Milvus 向量数据库深度指南：从入门到性能优化
+
+Milvus 是当前最成熟的开源向量数据库，支持十亿级向量毫秒级检索，广泛应用于 RAG、推荐系统和图像搜索等 AI 场景，其云原生架构与多索引支持使其在生产环境中具备高可用、可扩展的核心优势。
+
+| 维度 | 核心要点 |
+|------|---------|
+| 定位 | 开源高性能向量数据库，专为大规模向量检索设计 |
+| 索引类型 | IVF、HNSW、Annoy、DiskANN 等 |
+| 部署架构 | 存储计算分离，支持分布式水平扩展 |
+| 检索性能 | 十亿级向量毫秒级响应 |
+| 典型场景 | RAG、推荐系统、图像/语义搜索 |
+| 生态支持 | Python/Java/Go/Node.js SDK，兼容主流 AI 框架 |
 
 ## 目录
 
