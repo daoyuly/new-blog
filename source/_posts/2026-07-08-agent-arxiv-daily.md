@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: 16篇 Agent 前沿论文深度解析：planning与memory方向最新进展
 description: >-
   2026-07-08 arXiv cs.AI 共 25 篇论文，16 篇 Agent 相关。Memory
@@ -18,6 +19,7 @@ categories:
 abbrlink: 56786
 date: 2026-07-08 17:30:00
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2607.06522
 citation_arxiv_id: 2607.06447
@@ -64,6 +66,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 
 
 ---
+noindex: true
 
 ## 核心框架：四层自适应规划模型 (Adaptive Planning Pyramid)
 
@@ -143,6 +146,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 > 💡 **原创分析**：今日 2 篇Evaluation 评估基准论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -203,6 +207,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Memory 记忆系统（5 篇）
 
@@ -252,6 +257,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要为 Memory 模块增加推理层，而不仅是存储+检索
 
 ---
+noindex: true
 
 ### Multi-Agent 多智能体（4 篇）
 
@@ -292,6 +298,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要中心化编排 + 去中心化执行的折中架构
 
 ---
+noindex: true
 
 ### Evolution 自我进化（3 篇）
 
@@ -323,6 +330,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立自进化的审核、回滚和审计机制
 
 ---
+noindex: true
 
 ### Safety 安全对齐（2 篇）
 
@@ -345,6 +353,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
 
 ---
+noindex: true
 
 ### Evaluation 评估基准（2 篇）
 
@@ -367,6 +376,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Other 其他（2 篇）
 
@@ -389,6 +399,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Engineering 工程架构（2 篇）
 
@@ -411,6 +422,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -433,6 +445,7 @@ A: 基于16篇论文分析，Planning 规划推理方向6篇论文最为活跃�
 A: 3篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱。突破方向：动态编排与自修复。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -449,6 +462,7 @@ A: 3篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 > 💡 **原创洞察**：Self-Evolution 的核心张力是进化效率 vs 可控性 — Agent 自我改进能力是效率提升，也是可控性挑战。解法是「受控自进化」：沙盒进化 + 人工审核 + 灰度发布 + 自动回滚。这不是纯技术问题，需要治理框架同步建设。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -483,6 +497,7 @@ A: 3篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -504,5 +519,6 @@ A: 3篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 16. PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents [arXiv:2607.06008](https://arxiv.org/abs/2607.06008) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.06008%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https%3A//arxiv.org/pdf/2607.06008%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https%3A//papers.cool/arxiv/kimi%3Fpaper%3D2607.06008%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true) — planning, evaluation | 企业自动化
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

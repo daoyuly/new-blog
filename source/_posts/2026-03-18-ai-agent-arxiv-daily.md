@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: AI Agent 领域最新进展 - arXiv 2026.03.18
 tags:
   - AI Agent
@@ -12,6 +13,7 @@ date: 2026-03-18 12:08:00
 description: "今天整理了 arXiv cs.AI 分类下的 Agent 相关论文，以下是核心趋势和亮点工作。"
 keywords: "agent, 领域最新进展, arxiv, 2026.03.18, AI Agent, LLM, arXiv, Research"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2603.16843
 citation_arxiv_id: 2603.16777
@@ -43,6 +45,7 @@ citation_arxiv_id: 2603.16537
 个性化 LLM Agent 需要区分何时应用/抑制用户偏好。研究发现当前模型倾向于将偏好视为全局规则，而非上下文相关的规范信号。
 
 ---
+noindex: true
 
 ## 📚 重点论文详解
 
@@ -62,6 +65,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 从"只看结果"转向"重视过程反馈"，是 Agent 训练范式的重要转变。
 
 ---
+noindex: true
 
 ### 2. TraceR1：多模态 Agent 的前瞻式规划
 
@@ -79,6 +83,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 前瞻式轨迹推理是构建复杂环境 Agent 的关键原则。
 
 ---
+noindex: true
 
 ### 3. IQuest-Coder-V1：代码 Agent 的新标杆
 
@@ -96,6 +101,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 展示了如何通过精心设计的训练管线，让小模型在 agentic 任务上媲美大模型。
 
 ---
+noindex: true
 
 ### 4. AI Agent 的非标准误差
 
@@ -110,6 +116,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 对 AI 用于自动化政策评估和实证研究提出了警示。
 
 ---
+noindex: true
 
 ### 5. 个性化 LLM Agent 的危害倾向差异
 
@@ -124,6 +131,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 个性化可作为弱保护因子，但在最小对抗压力下仍然脆弱。
 
 ---
+noindex: true
 
 ### 6. Agent 幻灯片生成
 
@@ -141,6 +149,7 @@ citation_arxiv_id: 2603.16537
 **开源**: SlideRL 数据集（288 条多轮轨迹）
 
 ---
+noindex: true
 
 ### 7. Agent 运行时治理
 
@@ -154,6 +163,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 为 Agent 部署提供了形式化的治理框架，平衡任务完成与合规成本。
 
 ---
+noindex: true
 
 ### 8. 规范遵守的 RL Agent
 
@@ -167,6 +177,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 为构建符合社会规范的 Agent 提供端到端管线。
 
 ---
+noindex: true
 
 ### 9. LLM 机器人的前端护栏
 
@@ -181,6 +192,7 @@ citation_arxiv_id: 2603.16537
 **意义**: 在多元价值和 LLM 不确定性下，提供用户友好的实时护栏。
 
 ---
+noindex: true
 
 ## 🔮 未来方向
 
@@ -190,6 +202,7 @@ citation_arxiv_id: 2603.16537
 4. **小模型的 agentic 能力**: 通过精心设计的训练管线，让 7B 模型接近 frontier 水平
 
 ---
+noindex: true
 
 ## 📊 相关资源
 
@@ -199,6 +212,7 @@ citation_arxiv_id: 2603.16537
 | Slide Forge | [GitHub](https://github.com/pushing-the-frontier/slide-forge-llm) |
 
 ---
+noindex: true
 
 **整理时间**: 2026-03-18  
 **来源**: [arXiv cs.AI](https://papers.cool/arxiv/cs.AI)

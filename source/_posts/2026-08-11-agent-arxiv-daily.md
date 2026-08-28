@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: 13篇 Agent 前沿论文深度解析：engineering与evaluation方向最新进展
 description: >-
   2026-08-11 arXiv cs.AI 共 25 篇论文，13 篇 Agent 相关。Planning
@@ -17,6 +18,7 @@ categories:
 abbrlink: 42440
 date: 2026-08-11 17:30:00
 ---
+noindex: true
 
 # 13篇 Agent 前沿论文深度解析：engineering与evaluation方向最新进展
 
@@ -50,6 +52,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 
 
 ---
+noindex: true
 
 ## 核心框架：研究方向分析
 
@@ -116,6 +119,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 > 💡 **原创分析**：今日 1 篇Evolution 自我进化论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -158,6 +162,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ### Evaluation 评估基准（4 篇）
 
@@ -198,6 +203,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Other 其他（3 篇）
 
@@ -229,6 +235,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Planning 规划推理（3 篇）
 
@@ -260,6 +267,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Safety 安全对齐（1 篇）
 
@@ -273,6 +281,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
 
 ---
+noindex: true
 
 ### Tool Use 工具使用（1 篇）
 
@@ -286,6 +295,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 需要设计多工具编排的 DAG 引擎和错误隔离机制
 
 ---
+noindex: true
 
 ### Evolution 自我进化（1 篇）
 
@@ -299,6 +309,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Ag
 **工程启示：** 需要建立自进化的审核、回滚和审计机制
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -315,6 +326,7 @@ A: 基于13篇论文分析，Engineering 工程架构方向4篇论文最为活�
 A: 3篇论文涉及决策支持场景。核心瓶颈：可解释性不足。突破方向：因果推理增强解释。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -329,6 +341,7 @@ A: 3篇论文涉及决策支持场景。核心瓶颈：可解释性不足。突�
 > 💡 **原创洞察**：Tool Use 从「调用」进化为「编排」— 单个工具调用已基本解决，新挑战是多工具编排：工具间依赖关系、执行顺序、错误传播、结果聚合。这本质是分布式系统问题，需借鉴工作流引擎和数据流编程思想。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -357,6 +370,7 @@ A: 3篇论文涉及决策支持场景。核心瓶颈：可解释性不足。突�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -375,5 +389,6 @@ A: 3篇论文涉及决策支持场景。核心瓶颈：可解释性不足。突�
 13. Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents [arXiv:2608.09555](https://arxiv.org/abs/2608.09555) — other
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

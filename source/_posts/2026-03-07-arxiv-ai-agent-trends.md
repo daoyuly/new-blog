@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: arXiv cs.AI Agent 研究趋势速递 (2026-03-07)
 categories:
   - AI Research
@@ -15,6 +16,7 @@ date: 2026-03-07 12:00:00
 description: "今天从 arXiv cs.AI 分类中整理了 Agent 相关 的最新研究趋势。今天的论文呈现出几个明显的研究热点：Web Agent 数据与训练、多智能体协作、移动端 Agent 架构、强化学习驱动的知识 Agent。"
 keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 07), ai-agent, llm"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2603.05295
 citation_arxiv_id: 2603.05044
@@ -31,6 +33,7 @@ citation_arxiv_id: 2603.05399
 今天从 arXiv cs.AI 分类中整理了 **Agent 相关** 的最新研究趋势。今天的论文呈现出几个明显的研究热点：**Web Agent 数据与训练、多智能体协作、移动端 Agent 架构、强化学习驱动的知识 Agent**。
 
 ---
+noindex: true
 
 ## 🔥 核心趋势一览
 
@@ -44,6 +47,7 @@ citation_arxiv_id: 2603.05399
 | 终端 Coding Agent | OPENDEV | CLI 原生、上下文压缩、双智能体架构 |
 
 ---
+noindex: true
 
 ## 📊 Web Agent：数据与训练范式革新
 
@@ -60,6 +64,7 @@ citation_arxiv_id: 2603.05399
 **意义**: 为下一代可扩展 Web Agent 提供了关键的数据基础设施，覆盖复杂高价值任务（合成方法经常遗漏的任务类型）。
 
 ---
+noindex: true
 
 ### 2. WebFactory: 闭环 RL 训练 GUI Agent
 
@@ -74,6 +79,7 @@ citation_arxiv_id: 2603.05399
 **核心洞察**: 数据量不是唯一关键，**知识压缩效率** 才是训练高效 Agent 的核心。
 
 ---
+noindex: true
 
 ### 3. STRUCTUREDAGENT: AND/OR 树实现长时程规划
 
@@ -92,6 +98,7 @@ citation_arxiv_id: 2603.05399
 **评估**: 在 WebVoyager、WebArena 和自定义购物基准上超越标准 LLM Agent。
 
 ---
+noindex: true
 
 ## 🤝 多智能体协作走向实用化
 
@@ -110,6 +117,7 @@ citation_arxiv_id: 2603.05399
 **评估**: 在 MIMIC-IV 肝病案例上超越现有方法和闭源模型。
 
 ---
+noindex: true
 
 ### 5. GCAgent: 群聊场景对话 Agent
 
@@ -126,6 +134,7 @@ citation_arxiv_id: 2603.05399
 **偏好率**: 51.04% 的场景优于基础模型。
 
 ---
+noindex: true
 
 ### 6. 双向课程生成：多智能体数学推理
 
@@ -142,6 +151,7 @@ citation_arxiv_id: 2603.05399
 **效果**: 用更少的指令样本实现更优的推理性能。
 
 ---
+noindex: true
 
 ## 📱 移动端 Agent 架构突破
 
@@ -161,6 +171,7 @@ citation_arxiv_id: 2603.05399
 **特点**: 无持久云端状态、无持续后台执行、无隐私妥协。
 
 ---
+noindex: true
 
 ## 🧠 强化学习驱动的知识 Agent
 
@@ -183,6 +194,7 @@ citation_arxiv_id: 2603.05399
 **对比**: 在 KARLBench 上相比 Claude 4.6 和 GPT 5.2 是 **Pareto 最优** 的。
 
 ---
+noindex: true
 
 ## 💻 终端 Coding Agent
 
@@ -203,6 +215,7 @@ citation_arxiv_id: 2603.05399
 **定位**: 为终端优先的 AI 辅助提供安全、可扩展的基础蓝图。
 
 ---
+noindex: true
 
 ## 🔬 Agent 评估与可靠性
 
@@ -219,6 +232,7 @@ citation_arxiv_id: 2603.05399
 **工具地址**: https://github.com/RANDCorporation/judge-reliability-harness
 
 ---
+noindex: true
 
 ## 📈 趋势总结
 
@@ -239,6 +253,7 @@ citation_arxiv_id: 2603.05399
 - **个人助理**: 移动端责任管理
 
 ---
+noindex: true
 
 ## 🔗 相关链接
 
@@ -249,5 +264,6 @@ citation_arxiv_id: 2603.05399
 - [OPENDEV 论文](https://arxiv.org/abs/2603.05344) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFOPENDEV+%E8%AE%BA%E6%96%87%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Farxiv.org%2Fpdf%2F2603.05344+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Fpapers.cool%2Farxiv%2Fkimi%3Fpaper%3D2603.05344+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true)
 
 ---
+noindex: true
 
 *本文由 AI Agent 自动整理生成，数据来源: arXiv cs.AI (2026-03-07)*

@@ -36,6 +36,20 @@
   <meta name="description" content="<%= page.description || page.excerpt || config.description %>">
   <link rel="canonical" href="<%= config.url %><%= url_for(page.path) %>">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <%# Twitter Card %>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= title %>">
+  <meta name="twitter:description" content="<%= page.description || config.description %>">
+  <% if (page.tags && page.tags.length){ %>
+  <meta name="twitter:label1" content="标签">
+  <meta name="twitter:data1" content="<%= page.tags.map(function(t){return t.name}).join(', ') %>">
+  <% } %>
+  <%# Article meta for GEO %>
+  <meta property="article:published_time" content="<%= page.date.toISOString() %>">
+  <meta property="article:author" content="<%= page.author || config.author || '刘道玉' %>">
+  <% if (page.categories && page.categories.length){ %>
+  <meta property="article:section" content="<%= page.categories.first().name %>">
+  <% } %>
   <% if (theme.rss){ %>
     <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>

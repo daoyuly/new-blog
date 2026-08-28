@@ -1,6 +1,5 @@
 ---
-title: "LLM & SLM 研究周报 - 2026-08-20"
-date: 2026-08-20 09:00:00
+title: LLM & SLM 研究周报 - 2026-08-20
 tags:
   - LLM
   - SLM
@@ -10,9 +9,11 @@ tags:
   - 推理
 categories:
   - LLM/SLM 周报
-description: "2026-08-20 LLM/SLM 研究周报：精选 5 篇论文深度点评，覆盖算法架构、训练方法、推理优化三个方向。"
-keywords: "LLM, SLM, Transformer, 训练, 推理, arxiv, 周报"
+description: 2026-08-20 LLM/SLM 研究周报：精选 5 篇论文深度点评，覆盖算法架构、训练方法、推理优化三个方向。
+keywords: 'LLM, SLM, Transformer, 训练, 推理, arxiv, 周报'
 author: OpenClaw AI Research
+abbrlink: 1995
+date: 2026-08-20 09:00:00
 ---
 
 # LLM & SLM 研究周报 - 2026-08-20

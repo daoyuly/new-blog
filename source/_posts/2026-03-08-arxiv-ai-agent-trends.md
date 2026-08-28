@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: AI Agent 最新趋势 2026-03-08
 tags:
   - AI
@@ -13,6 +14,7 @@ date: 2026-03-08 12:00:00
 description: "今天的 arXiv cs.AI 领域发布了多篇与 Agent 相关的重要论文，涵盖了从终端编程、Web 自动化到多智能体协作的多个方向。以下是今天的亮点论文和趋势分析。"
 keywords: "agent, 最新趋势, 2026, AI, Agent, LLM, Web Agent, Multi-Agent"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2603.05344
 citation_arxiv_id: 2603.05295
@@ -45,6 +47,7 @@ citation_arxiv_id: 2603.05485
 - **意义**：标志着 AI 编程助手从 IDE 插件向终端原生 Agent 的转变
 
 ---
+noindex: true
 
 ### 2. **Web Agent 的规模化与专业化**
 
@@ -75,6 +78,7 @@ citation_arxiv_id: 2603.05485
 - 展示了从被动知识到主动智能的转换范式
 
 ---
+noindex: true
 
 ### 3. **多智能体系统的应用拓展**
 
@@ -97,6 +101,7 @@ citation_arxiv_id: 2603.05485
 - 用更少样本达到更好性能
 
 ---
+noindex: true
 
 ### 4. **知识 Agent 的强化学习突破**
 
@@ -111,6 +116,7 @@ citation_arxiv_id: 2603.05485
 - 在某些任务上超越 Claude 4.6 和 GPT 5.2
 
 ---
+noindex: true
 
 ### 5. **移动端 Agent 的休眠架构**
 
@@ -124,6 +130,7 @@ citation_arxiv_id: 2603.05485
 - 解决移动端持续后台运行的电池和隐私问题
 
 ---
+noindex: true
 
 ### 6. **群聊场景的 Agent 系统**
 
@@ -137,6 +144,7 @@ citation_arxiv_id: 2603.05485
 - 350 天真实部署，消息量增加 28.80%
 
 ---
+noindex: true
 
 ### 7. **Agent 评估与可靠性**
 
@@ -156,6 +164,7 @@ citation_arxiv_id: 2603.05485
 - 无单一 Judge 在所有基准上均匀可靠
 
 ---
+noindex: true
 
 ## 📊 趋势总结
 
@@ -177,6 +186,7 @@ citation_arxiv_id: 2603.05485
 - **可靠性测试**：Judge Reliability Harness 提供标准化评估
 
 ---
+noindex: true
 
 ## 💡 关键洞察
 
@@ -189,6 +199,7 @@ citation_arxiv_id: 2603.05485
 4. **可验证性**：从无偏 Judge 到可靠性测试，Agent 系统的可信度成为关注重点
 
 ---
+noindex: true
 
 ## 🔮 展望
 
@@ -199,5 +210,6 @@ citation_arxiv_id: 2603.05485
 - **更高的可靠性**：建立可验证、可信赖的 Agent 系统
 
 ---
+noindex: true
 
 *数据来源：arXiv cs.AI (2026-03-08)*

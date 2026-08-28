@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: AI Scientist 研究报告 demo
 tags:
   - agent
@@ -13,6 +14,7 @@ date: 2026-03-29 18:00:00
 description: "_筛选论文：14；检索召回：0；辩论轮次：0_"
 keywords: "scientist, 研究报告, demo, agent, ai-trends, daily-insights, arxiv, github"
 ---
+noindex: true
 
 # AI Scientist 研究报告
 

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: 21篇 Agent 前沿论文深度解析：other与engineering方向最新进展
 description: >-
   2026-07-09 arXiv cs.AI 共 25 篇论文，21 篇 Agent 相关。Planning
@@ -17,6 +18,7 @@ categories:
 abbrlink: 52632
 date: 2026-07-09 17:30:00
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2607.07676
 citation_arxiv_id: 2607.07504
@@ -64,6 +66,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 
 
 ---
+noindex: true
 
 ## 核心框架：研究方向分析
 
@@ -143,6 +146,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 > 💡 **原创分析**：今日 1 篇Tool Use 工具使用论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -212,6 +216,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Engineering 工程架构（6 篇）
 
@@ -270,6 +275,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ### Planning 规划推理（6 篇）
 
@@ -328,6 +334,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Multi-Agent 多智能体（4 篇）
 
@@ -368,6 +375,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要中心化编排 + 去中心化执行的折中架构
 
 ---
+noindex: true
 
 ### Safety 安全对齐（3 篇）
 
@@ -399,6 +407,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
 
 ---
+noindex: true
 
 ### Evaluation 评估基准（3 篇）
 
@@ -430,6 +439,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Evolution 自我进化（1 篇）
 
@@ -443,6 +453,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要建立自进化的审核、回滚和审计机制
 
 ---
+noindex: true
 
 ### Tool Use 工具使用（1 篇）
 
@@ -456,6 +467,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要设计多工具编排的 DAG 引擎和错误隔离机制
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -475,6 +487,7 @@ A: 基于21篇论文分析，Other 其他方向7篇论文最为活跃。
 A: 4篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱。突破方向：动态编排与自修复。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -491,6 +504,7 @@ A: 4篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 > 💡 **原创洞察**：Tool Use 从「调用」进化为「编排」— 单个工具调用已基本解决，新挑战是多工具编排：工具间依赖关系、执行顺序、错误传播、结果聚合。这本质是分布式系统问题，需借鉴工作流引擎和数据流编程思想。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -525,6 +539,7 @@ A: 4篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -551,5 +566,6 @@ A: 4篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 21. Cost-Effective Agent Harnesses for Abstract Reasoning and Generalization on ARC-AGI-1 [arXiv:2607.06764](https://arxiv.org/abs/2607.06764) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AF2607.06764%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF%20https%3A//arxiv.org/pdf/2607.06764%20%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF%20https%3A//papers.cool/arxiv/kimi%3Fpaper%3D2607.06764%20%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true) — planning, engineering
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

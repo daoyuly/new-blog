@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: Agent 最新研究综述（2026-05-26）
 tags:
   - Agent
@@ -14,6 +15,7 @@ date: 2026-05-26 17:30:00
 description: "- arXiv: 2605.26114 Kimi解读"
 keywords: "agent, 最新研究综述（2026, 26）, Agent, LLM, Multi-Agent, Memory, Planning"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2605.26114
 citation_arxiv_id: 2605.26081
@@ -34,6 +36,7 @@ citation_arxiv_id: 2605.25720
 > 生成时间：2026/5/26 17:30:05
 
 ---
+noindex: true
 
 ## 📊 今日概况
 
@@ -62,6 +65,7 @@ citation_arxiv_id: 2605.25720
 
 
 ---
+noindex: true
 
 ## 1️⃣ 今日论文列表（按研究方向）
 
@@ -117,6 +121,7 @@ citation_arxiv_id: 2605.25720
   - cua,gym,cuas,rlvr,verifiable,environments,reward,agent,training,task
 
 ---
+noindex: true
 
 ### 🎯 Planning / 规划推理（5 篇）
 
@@ -156,6 +161,7 @@ citation_arxiv_id: 2605.25720
   - reasoning,scorer,unfaithfulness,cie,cot,traces,internal,external,unfaithful,circuit
 
 ---
+noindex: true
 
 ### 📊 Evaluation / 评估基准（4 篇）
 
@@ -188,6 +194,7 @@ citation_arxiv_id: 2605.25720
   - agenthijack,corruptions,agents,environment,computer,agent,robustness,common,onlooker,execution
 
 ---
+noindex: true
 
 ### 🏗️ Engineering / 工程架构（2 篇）
 
@@ -206,6 +213,7 @@ citation_arxiv_id: 2605.25720
   - reserve,actuarial,capital,authority,runtime,frontier,underwriting,autonomous,aai,contract
 
 ---
+noindex: true
 
 ### 🧠 Memory / 记忆系统（1 篇）
 
@@ -217,6 +225,7 @@ citation_arxiv_id: 2605.25720
   - harness,agentic,scaling,governance,foundation,orchestration,memory,cheetahclaws,verification,agent
 
 ---
+noindex: true
 
 ### 🔧 Tool Use / 工具使用（1 篇）
 
@@ -228,6 +237,7 @@ citation_arxiv_id: 2605.25720
   - reserve,actuarial,capital,authority,runtime,frontier,underwriting,autonomous,aai,contract
 
 ---
+noindex: true
 
 ## 2️⃣ 应用场景深度分析
 
@@ -242,6 +252,7 @@ citation_arxiv_id: 2605.25720
 **工程落地难点**: 计算资源的弹性调度、实验数据的版本管理、跨团队协作的可复现性
 
 ---
+noindex: true
 
 ### 信息检索与问答
 
@@ -254,6 +265,7 @@ citation_arxiv_id: 2605.25720
 **工程落地难点**: 索引更新的实时性、多源数据的去重与融合、检索延迟与质量的平衡
 
 ---
+noindex: true
 
 ### 决策支持
 
@@ -266,6 +278,7 @@ citation_arxiv_id: 2605.25720
 **工程落地难点**: 数据新鲜度与推理延迟的权衡、决策过程的可审计性、多维度指标聚合
 
 ---
+noindex: true
 
 ### 创意与内容
 
@@ -278,6 +291,7 @@ citation_arxiv_id: 2605.25720
 **工程落地难点**: 内容安全审核的自动化、版权合规检测、A/B测试与效果归因
 
 ---
+noindex: true
 
 ### 场景交叉洞察
 
@@ -452,5 +466,6 @@ Semantic Memory (知识图谱, 结构化)
 18. [Detecting Unfaithful Chain-of-Thought via Circuit-Guided Internal-External Discrepancy](https://arxiv.org/abs/2605.25603) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFDetecting+Unfaithful+Chain-of-Thought+via+Circuit-Guided+Internal-External+Discrepancy%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Farxiv.org%2Fpdf%2F2605.25603+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Fpapers.cool%2Farxiv%2Fkimi%3Fpaper%3D2605.25603+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true) — planning
 
 ---
+noindex: true
 
 *本报告由 OpenClaw 自动生成 · 面向 Agent 架构师与工程师，提供决策与工程参考*

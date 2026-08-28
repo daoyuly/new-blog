@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: arXiv cs.AI Agent 研究趋势速递 (2026-06-01)
 categories:
   - AI Research
@@ -16,6 +17,7 @@ date: 2026-06-01 12:00:00
 description: "今天从 arXiv cs.AI 分类中整理了 Agent 相关 的最新研究趋势。本期共 25 篇论文中，有约 15 篇与 Agent 高度相关，呈现出几个明显的研究热点：科学 Agent 全生命周期系统、Web Agent 自我进化、..."
 keywords: "arxiv, cs.ai, agent, 研究趋势速递, (2026, 01), ai-agent, llm"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2605.31468
 citation_arxiv_id: 2605.31365
@@ -32,6 +34,7 @@ citation_arxiv_id: 2605.30824
 今天从 arXiv cs.AI 分类中整理了 **Agent 相关** 的最新研究趋势。本期共 25 篇论文中，有约 15 篇与 Agent 高度相关，呈现出几个明显的研究热点：**科学 Agent 全生命周期系统、Web Agent 自我进化、Agent 轨迹诊断与评估、Agent 安全对齐、长时程上下文管理**。
 
 ---
+noindex: true
 
 ## 🔥 核心趋势一览
 
@@ -49,6 +52,7 @@ citation_arxiv_id: 2605.30824
 | Deep Research 规划 | DecomposeR | DAG 计划、规划器 RL、结构感知奖励 |
 
 ---
+noindex: true
 
 ## 📝 重点论文解读
 
@@ -67,6 +71,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: 科学 Agent 正从"单点工具"走向"全生命周期系统"，记忆和自我进化能力成为核心差异化要素。
 
 ---
+noindex: true
 
 ### 2. SCALE：自我认知的 Web Agent 探索学习
 
@@ -82,6 +87,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: Web Agent 训练正从"依赖专家演示"转向"自主探索学习"，降低对标注数据的依赖。
 
 ---
+noindex: true
 
 ### 3. TraceGraph：Agent 轨迹的共享决策景观
 
@@ -96,6 +102,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: Agent 评估正从"结果导向"转向"过程诊断"，轨迹级分析成为优化 Agent 的关键手段。
 
 ---
+noindex: true
 
 ### 4. CoSee：资源受限多 Agent 协作的故障模式
 
@@ -110,6 +117,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: 对于小模型 Agent，瓶颈不在推理深度而在通信保真度——这对 Agent 系统设计有重要指导意义。
 
 ---
+noindex: true
 
 ### 5. COMPASS：搜索 Agent 的安全过程对齐
 
@@ -120,6 +128,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: Agent 安全对齐从"输入/输出过滤"升级为"过程级监督"，这对生产环境中的 Agent 部署至关重要。
 
 ---
+noindex: true
 
 ### 6. AdaCoM：Agent 兼容的长时程上下文管理
 
@@ -130,6 +139,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: 上下文管理正从"Agent 内部策略"转向"外部可复用管理器"，这对闭源 API Agent 尤为重要。
 
 ---
+noindex: true
 
 ### 7. LinTree：显式树结构搜索提升 LLM 推理
 
@@ -140,6 +150,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: Agent 推理的改进方向之一是让隐式过程变为显式结构，这与 TraceGraph 的思路一脉相承。
 
 ---
+noindex: true
 
 ### 8. HypoAgent：知识图谱上的交互式溯因推理 Agent
 
@@ -148,6 +159,7 @@ citation_arxiv_id: 2605.30824
 **核心亮点**: 三个 Agent 协作完成知识图谱上的交互式假设生成——意图识别 Agent、假设生成 Agent、根因分析 Agent。在多轮对话场景下实现了 SOTA 语义相似度。
 
 ---
+noindex: true
 
 ### 9. COLLEAGUE.SKILL：自动化的 Agent 技能蒸馏
 
@@ -158,6 +170,7 @@ citation_arxiv_id: 2605.30824
 > 💡 **趋势洞察**: Agent 技能的"标准化封装"正在形成生态，从个人 prompt 到可复用技能包的演进路径清晰。
 
 ---
+noindex: true
 
 ### 10. DecomposeR：以规划器为中心的 Deep Research
 
@@ -166,6 +179,7 @@ citation_arxiv_id: 2605.30824
 **核心亮点**: 将研究计划表示为类型化 DAG，分两阶段 RL 训练：先学规划（结构和分解），再学执行（分支执行和合成）。Qwen3-8B 在长文本基准上比开源基线提升 5.1-8.0 分。
 
 ---
+noindex: true
 
 ## 🎯 趋势总结
 
@@ -183,10 +197,12 @@ citation_arxiv_id: 2605.30824
 - **技能包生态**正在形成，标准化和可复用性成为焦点
 
 ---
+noindex: true
 
 *数据来源: [papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) | 自动生成于 2026-06-01*
 
 ---
+noindex: true
 
 ## 相关阅读
 

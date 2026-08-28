@@ -1,6 +1,5 @@
 ---
-title: "OpenManus 项目深度分析报告"
-date: 2026-08-16 11:00:00
+title: OpenManus 项目深度分析报告
 tags:
   - open-source
   - ai-repo
@@ -8,6 +7,8 @@ tags:
   - deep-analysis
 categories:
   - 开源项目研究
+abbrlink: 64530
+date: 2026-08-16 11:00:00
 ---
 
 # OpenManus 项目深度分析报告

@@ -1,9 +1,12 @@
 ---
-title: "16篇 Agent 前沿论文深度解析：planning与other方向最新进展"
-description: "2026-08-21 arXiv cs.AI 共 25 篇论文，16 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Agent 自进化需要受控框架（沙盒进化 + 人工审核）。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-08-21 17:30:00
+noindex: true
+title: 16篇 Agent 前沿论文深度解析：planning与other方向最新进展
+description: >-
+  2026-08-21 arXiv cs.AI 共 25 篇论文，16 篇 Agent 相关。Memory
+  系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Agent
+  自进化需要受控框架（沙盒进化 + 人工审核）。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,7 +16,10 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 61808
+date: 2026-08-21 17:30:00
 ---
+noindex: true
 
 # 16篇 Agent 前沿论文深度解析：planning与other方向最新进展
 
@@ -47,6 +53,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 
 
 ---
+noindex: true
 
 ## 核心框架：四层自适应规划模型 (Adaptive Planning Pyramid)
 
@@ -113,6 +120,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 > 💡 **原创分析**：今日 1 篇Tool Use 工具使用论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -173,6 +181,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Other 其他（5 篇）
 
@@ -222,6 +231,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Evaluation 评估基准（5 篇）
 
@@ -271,6 +281,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Evolution 自我进化（4 篇）
 
@@ -311,6 +322,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立自进化的审核、回滚和审计机制
 
 ---
+noindex: true
 
 ### Memory 记忆系统（2 篇）
 
@@ -333,6 +345,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要为 Memory 模块增加推理层，而不仅是存储+检索
 
 ---
+noindex: true
 
 ### Engineering 工程架构（2 篇）
 
@@ -355,6 +368,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ### Tool Use 工具使用（1 篇）
 
@@ -368,6 +382,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要设计多工具编排的 DAG 引擎和错误隔离机制
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -384,6 +399,7 @@ A: 基于16篇论文分析，Planning 规划推理方向6篇论文最为活跃�
 A: 2篇论文涉及代码开发场景。核心瓶颈：上下文理解深度不足。突破方向：强化学习代码自验证。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -398,6 +414,7 @@ A: 2篇论文涉及代码开发场景。核心瓶颈：上下文理解深度不�
 > 💡 **原创洞察**：Tool Use 从「调用」进化为「编排」— 单个工具调用已基本解决，新挑战是多工具编排：工具间依赖关系、执行顺序、错误传播、结果聚合。这本质是分布式系统问题，需借鉴工作流引擎和数据流编程思想。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -426,6 +443,7 @@ A: 2篇论文涉及代码开发场景。核心瓶颈：上下文理解深度不�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -447,5 +465,6 @@ A: 2篇论文涉及代码开发场景。核心瓶颈：上下文理解深度不�
 16. ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance [arXiv:2608.19974](https://arxiv.org/abs/2608.19974) — other
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

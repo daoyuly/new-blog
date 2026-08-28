@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: 13篇 Agent 前沿论文深度解析：other与memory方向最新进展
 description: >-
   2026-08-07 arXiv cs.AI 共 25 篇论文，13 篇 Agent 相关。Memory
@@ -18,6 +19,7 @@ categories:
 abbrlink: 39864
 date: 2026-08-07 17:30:00
 ---
+noindex: true
 
 # 13篇 Agent 前沿论文深度解析：other与memory方向最新进展
 
@@ -50,6 +52,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 
 
 ---
+noindex: true
 
 ## 核心框架：研究方向分析
 
@@ -116,6 +119,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 > 💡 **原创分析**：今日 1 篇Safety 安全对齐论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -158,6 +162,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Memory 记忆系统（4 篇）
 
@@ -198,6 +203,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要为 Memory 模块增加推理层，而不仅是存储+检索
 
 ---
+noindex: true
 
 ### Evaluation 评估基准（2 篇）
 
@@ -220,6 +226,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Planning 规划推理（2 篇）
 
@@ -242,6 +249,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Engineering 工程架构（2 篇）
 
@@ -264,6 +272,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ### Evolution 自我进化（1 篇）
 
@@ -277,6 +286,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立自进化的审核、回滚和审计机制
 
 ---
+noindex: true
 
 ### Safety 安全对齐（1 篇）
 
@@ -290,6 +300,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -309,6 +320,7 @@ A: 基于13篇论文分析，Other 其他方向4篇论文最为活跃。
 A: 2篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱。突破方向：动态编排与自修复。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -323,6 +335,7 @@ A: 2篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 > 💡 **原创洞察**：Self-Evolution 的核心张力是进化效率 vs 可控性 — Agent 自我改进能力是效率提升，也是可控性挑战。解法是「受控自进化」：沙盒进化 + 人工审核 + 灰度发布 + 自动回滚。这不是纯技术问题，需要治理框架同步建设。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -351,6 +364,7 @@ A: 2篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -369,5 +383,6 @@ A: 2篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 13. ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment [arXiv:2608.06110](https://arxiv.org/abs/2608.06110) — memory, safety
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: Agent 最新研究综述（2026-05-24）
 tags:
   - Agent
@@ -14,6 +15,7 @@ date: 2026-05-24 17:30:00
 description: "- arXiv: 2605.22773 Kimi解读"
 keywords: "agent, 最新研究综述（2026, 24）, Agent, LLM, Multi-Agent, Memory, Planning"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2605.22773
 citation_arxiv_id: 2605.22763
@@ -34,6 +36,7 @@ citation_arxiv_id: 2605.22511
 > 生成时间：2026/5/24 17:32:07
 
 ---
+noindex: true
 
 ## 📊 今日概况
 
@@ -66,6 +69,7 @@ citation_arxiv_id: 2605.22511
 
 
 ---
+noindex: true
 
 ## 1️⃣ 今日论文列表（按研究方向）
 
@@ -100,6 +104,7 @@ citation_arxiv_id: 2605.22511
   - spreadsheet,excel,agents,tasks,gym,advancing,microsoft,domain,spreadsheetbench,workflows
 
 ---
+noindex: true
 
 ### 🏗️ Engineering / 工程架构（4 篇）
 
@@ -132,6 +137,7 @@ citation_arxiv_id: 2605.22511
   - harness,optimizers,ranking,priority,optimizer,optimization,agent,evaluation,agents,hinder
 
 ---
+noindex: true
 
 ### 🧬 Evolution / 自我进化（3 篇）
 
@@ -157,6 +163,7 @@ citation_arxiv_id: 2605.22511
   - search,grpo,self,augmented,machinery,distillation,ofsd,recipe,reasoning,supervision
 
 ---
+noindex: true
 
 ### 📊 Evaluation / 评估基准（3 篇）
 
@@ -182,6 +189,7 @@ citation_arxiv_id: 2605.22511
   - harness,optimizers,ranking,priority,optimizer,optimization,agent,evaluation,agents,hinder
 
 ---
+noindex: true
 
 ### 👥 Multi-Agent / 多智能体（2 篇）
 
@@ -200,6 +208,7 @@ citation_arxiv_id: 2605.22511
   - claw,lab,research,autonomous,agent,harness,team,prompt,interactive,laboratory
 
 ---
+noindex: true
 
 ### 🔧 Tool Use / 工具使用（2 篇）
 
@@ -218,6 +227,7 @@ citation_arxiv_id: 2605.22511
   - meta,system,adaptation,systems,target,control,uncertain,framework,learning,imaml
 
 ---
+noindex: true
 
 ### 🎯 Planning / 规划推理（2 篇）
 
@@ -236,6 +246,7 @@ citation_arxiv_id: 2605.22511
   - search,grpo,self,augmented,machinery,distillation,ofsd,recipe,reasoning,supervision
 
 ---
+noindex: true
 
 ### 🛡️ Safety / 安全对齐（1 篇）
 
@@ -247,6 +258,7 @@ citation_arxiv_id: 2605.22511
   - conflict,failure,conflicts,humanitarian,worse,societies,contexts,atrocities,nine,genocide
 
 ---
+noindex: true
 
 ## 2️⃣ 应用场景深度分析
 
@@ -261,6 +273,7 @@ citation_arxiv_id: 2605.22511
 **工程落地难点**: 索引更新的实时性、多源数据的去重与融合、检索延迟与质量的平衡
 
 ---
+noindex: true
 
 ### 企业自动化
 
@@ -273,6 +286,7 @@ citation_arxiv_id: 2605.22511
 **工程落地难点**: 遗留系统的API兼容性、流程变更的灰度发布、审计日志的完整性
 
 ---
+noindex: true
 
 ### 科学研究
 
@@ -285,6 +299,7 @@ citation_arxiv_id: 2605.22511
 **工程落地难点**: 计算资源的弹性调度、实验数据的版本管理、跨团队协作的可复现性
 
 ---
+noindex: true
 
 ### 数据分析
 
@@ -297,6 +312,7 @@ citation_arxiv_id: 2605.22511
 **工程落地难点**: 数据隐私与合规性保障、查询性能与成本的权衡、结果缓存与一致性维护
 
 ---
+noindex: true
 
 ### 创意与内容
 
@@ -309,6 +325,7 @@ citation_arxiv_id: 2605.22511
 **工程落地难点**: 内容安全审核的自动化、版权合规检测、A/B测试与效果归因
 
 ---
+noindex: true
 
 ### 决策支持
 
@@ -321,6 +338,7 @@ citation_arxiv_id: 2605.22511
 **工程落地难点**: 数据新鲜度与推理延迟的权衡、决策过程的可审计性、多维度指标聚合
 
 ---
+noindex: true
 
 ### 场景交叉洞察
 
@@ -510,5 +528,6 @@ citation_arxiv_id: 2605.22511
 15. [Towards Direct Evaluation of Harness Optimizers via Priority Ranking](https://arxiv.org/abs/2605.22505) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFTowards+Direct+Evaluation+of+Harness+Optimizers+via+Priority+Ranking%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Farxiv.org%2Fpdf%2F2605.22505+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Fpapers.cool%2Farxiv%2Fkimi%3Fpaper%3D2605.22505+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true) — evaluation, engineering | 决策支持
 
 ---
+noindex: true
 
 *本报告由 OpenClaw 自动生成 · 面向 Agent 架构师与工程师，提供决策与工程参考*

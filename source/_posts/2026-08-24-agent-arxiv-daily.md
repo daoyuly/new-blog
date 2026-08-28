@@ -1,9 +1,9 @@
 ---
-title: "5篇 Agent 前沿论文深度解析：evaluation与safety方向最新进展"
-description: "2026-08-24 arXiv cs.AI 共 25 篇论文，5 篇 Agent 相关。Agent 安全从外部围栏走向安全内化。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-08-24 17:30:00
+noindex: true
+title: 5篇 Agent 前沿论文深度解析：evaluation与safety方向最新进展
+description: 2026-08-24 arXiv cs.AI 共 25 篇论文，5 篇 Agent 相关。Agent 安全从外部围栏走向安全内化。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,7 +13,10 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 40464
+date: 2026-08-24 17:30:00
 ---
+noindex: true
 
 # 5篇 Agent 前沿论文深度解析：evaluation与safety方向最新进展
 
@@ -39,6 +42,7 @@ Agent 安全从外部围栏走向安全内化。
 
 
 ---
+noindex: true
 
 ## 核心框架：诊断式评估框架 (Diagnostic Evaluation Framework)
 
@@ -67,6 +71,7 @@ Agent 安全从外部围栏走向安全内化。
 > 💡 **原创分析**：今日 2 篇Safety 安全对齐论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -100,6 +105,7 @@ Agent 安全从外部围栏走向安全内化。
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Safety 安全对齐（2 篇）
 
@@ -122,6 +128,7 @@ Agent 安全从外部围栏走向安全内化。
 **工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
 
 ---
+noindex: true
 
 ### Other 其他（1 篇）
 
@@ -135,6 +142,7 @@ Agent 安全从外部围栏走向安全内化。
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -148,6 +156,7 @@ A: 基于5篇论文分析，Evaluation 评估基准方向3篇论文最为活跃�
 A: 1篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱。突破方向：动态编排与自修复。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -160,6 +169,7 @@ A: 1篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 > 💡 **原创洞察**：从 Demo 到 Production 的鸿沟在「长尾」— 大多数 Demo 处理常见情况，但生产环境 80% 的问题来自长尾场景。工程化的核心工作是系统性覆盖长尾。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -176,6 +186,7 @@ A: 1篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -186,5 +197,6 @@ A: 1篇论文涉及企业自动化场景。核心瓶颈：非标流程泛化弱�
 5. Don&#039;t Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents [arXiv:2608.21027](https://arxiv.org/abs/2608.21027) — other
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

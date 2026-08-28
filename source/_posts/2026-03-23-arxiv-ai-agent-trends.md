@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: arXiv AI Agent 研究趋势 (2026-03-23)
 tags:
   - arXiv
@@ -13,6 +14,7 @@ date: 2026-03-23 12:00:00
 description: "今天的 arXiv cs.AI 领域发布了多篇与 Agent 相关的前沿论文，本文整理了其中 11 篇核心论文，并总结出当前 AI Agent 研究的六大趋势。"
 keywords: "arxiv, agent, 研究趋势, (2026, 23), arXiv, AI, Agent"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2603.19461
 citation_arxiv_id: 2603.20185
@@ -94,6 +96,7 @@ citation_arxiv_id: 2603.19500
 - **亮点**: 动态信念图表示心理状态，联合推断潜在信念和学习时变依赖关系
 
 ---
+noindex: true
 
 ## 🔥 六大研究趋势
 
@@ -114,6 +117,7 @@ citation_arxiv_id: 2603.19500
 **挑战**: 在线执行时新信息到达导致代理迷失方向；RL 微调中稀疏奖励难以识别成功路径
 
 ---
+noindex: true
 
 ### 趋势二：自我进化与元认知能力
 
@@ -131,6 +135,7 @@ citation_arxiv_id: 2603.19500
 **突破**: 不再依赖手工设计的元级机制，实现开放式自我改进
 
 ---
+noindex: true
 
 ### 趋势三：工具使用与编排的系统化
 
@@ -150,6 +155,7 @@ citation_arxiv_id: 2603.19500
 - **效用引导策略**: 可控、可分析的中间路线
 
 ---
+noindex: true
 
 ### 趋势四：领域专业化与科学发现
 
@@ -168,6 +174,7 @@ citation_arxiv_id: 2603.19500
 **现状**: 实验高能物理社区低估了当前系统的能力，大多数提出的代理工作流过于狭窄
 
 ---
+noindex: true
 
 ### 趋势五：安全性与可控性
 
@@ -188,6 +195,7 @@ citation_arxiv_id: 2603.19500
 - LLM 可能通过记忆或猜测复现已发表结果
 
 ---
+noindex: true
 
 ### 趋势六：多模态与跨域理解
 
@@ -204,6 +212,7 @@ citation_arxiv_id: 2603.19500
 3. **物理反馈**: 具身交互验证数字预测
 
 ---
+noindex: true
 
 ## 📈 技术演进路线
 
@@ -228,6 +237,7 @@ citation_arxiv_id: 2603.19500
 ```
 
 ---
+noindex: true
 
 ## 🎯 关键性能指标
 
@@ -239,6 +249,7 @@ citation_arxiv_id: 2603.19500
 | PowerLens | 移动电源管理 | 81.7% 准确率 | 38.8% 节能 |
 
 ---
+noindex: true
 
 ## 🔮 未来展望
 
@@ -258,6 +269,7 @@ citation_arxiv_id: 2603.19500
 3. **安全可控的超级智能**: 元认知能力与人类价值观对齐
 
 ---
+noindex: true
 
 ## 💡 启示与建议
 
@@ -277,6 +289,7 @@ citation_arxiv_id: 2603.19500
 3. **人才培养**: 科学发现自动化将改变研究者的角色，需要新的技能组合
 
 ---
+noindex: true
 
 ## 📚 推荐阅读顺序
 
@@ -287,6 +300,7 @@ citation_arxiv_id: 2603.19500
 5. **批判**: Interpretability Agents → 评估方法的陷阱
 
 ---
+noindex: true
 
 ## 🔗 相关资源
 
@@ -296,9 +310,11 @@ citation_arxiv_id: 2603.19500
 - [Hyperagents 论文](https://arxiv.org/abs/2603.19461) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFHyperagents+%E8%AE%BA%E6%96%87%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Farxiv.org%2Fpdf%2F2603.19461+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Fpapers.cool%2Farxiv%2Fkimi%3Fpaper%3D2603.19461+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true)
 
 ---
+noindex: true
 
 **总结**: 今天的 arXiv 论文展示了 AI Agent 研究从"能用"向"好用、安全、自主改进"的全面演进。长时间跨度规划、自我进化能力、领域专业化是当前的核心突破方向，而安全性和可控性则是工业部署的必要前提。未来 1-2 年，我们有理由期待 Agent 在科学发现、复杂系统管理等领域的大规模应用。
 
 ---
+noindex: true
 
 *最后更新: 2026-03-23 12:00 (Asia/Shanghai)*

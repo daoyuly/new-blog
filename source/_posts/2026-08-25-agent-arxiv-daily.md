@@ -1,9 +1,12 @@
 ---
-title: "11篇 Agent 前沿论文深度解析：planning与other方向最新进展"
-description: "2026-08-25 arXiv cs.AI 共 25 篇论文，11 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Agent 安全从外部围栏走向安全内化。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-08-25 17:30:00
+noindex: true
+title: 11篇 Agent 前沿论文深度解析：planning与other方向最新进展
+description: >-
+  2026-08-25 arXiv cs.AI 共 25 篇论文，11 篇 Agent 相关。Memory
+  系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Agent
+  安全从外部围栏走向安全内化。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,7 +16,10 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 51399
+date: 2026-08-25 17:30:00
 ---
+noindex: true
 
 # 11篇 Agent 前沿论文深度解析：planning与other方向最新进展
 
@@ -44,6 +50,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 
 
 ---
+noindex: true
 
 ## 核心框架：四层自适应规划模型 (Adaptive Planning Pyramid)
 
@@ -110,6 +117,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 > 💡 **原创分析**：今日 1 篇Safety 安全对齐论文验证了该框架的核心假设。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -161,6 +169,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Other 其他（4 篇）
 
@@ -201,6 +210,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Evolution 自我进化（2 篇）
 
@@ -223,6 +233,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要建立自进化的审核、回滚和审计机制
 
 ---
+noindex: true
 
 ### Memory 记忆系统（1 篇）
 
@@ -236,6 +247,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要为 Memory 模块增加推理层，而不仅是存储+检索
 
 ---
+noindex: true
 
 ### Evaluation 评估基准（1 篇）
 
@@ -249,6 +261,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Safety 安全对齐（1 篇）
 
@@ -262,6 +275,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要从规则过滤升级为基于对抗训练的安全内化
 
 ---
+noindex: true
 
 ### Engineering 工程架构（1 篇）
 
@@ -275,6 +289,7 @@ Memory 系统正在从被动的向量检索进化为主动的推理整合层（�
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -294,6 +309,7 @@ A: 基于11篇论文分析，Planning 规划推理方向5篇论文最为活跃�
 A: 1篇论文涉及科学研究场景。核心瓶颈：假设-验证鸿沟。突破方向：Agent 驱动假设-验证循环。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -308,6 +324,7 @@ A: 1篇论文涉及科学研究场景。核心瓶颈：假设-验证鸿沟。突
 > 💡 **原创洞察**：Self-Evolution 的核心张力是进化效率 vs 可控性 — Agent 自我改进能力是效率提升，也是可控性挑战。解法是「受控自进化」：沙盒进化 + 人工审核 + 灰度发布 + 自动回滚。这不是纯技术问题，需要治理框架同步建设。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -336,6 +353,7 @@ A: 1篇论文涉及科学研究场景。核心瓶颈：假设-验证鸿沟。突
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -352,5 +370,6 @@ A: 1篇论文涉及科学研究场景。核心瓶颈：假设-验证鸿沟。突
 11. Cognitive Profiling of LRMs&#039; Reasoning Traces Using Bloom&#039;s Taxonomy [arXiv:2608.23205](https://arxiv.org/abs/2608.23205) — planning
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

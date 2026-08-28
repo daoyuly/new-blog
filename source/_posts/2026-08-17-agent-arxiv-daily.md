@@ -1,9 +1,11 @@
 ---
-title: "10篇 Agent 前沿论文深度解析：evaluation与other方向最新进展"
-description: "2026-08-17 arXiv cs.AI 共 25 篇论文，10 篇 Agent 相关。Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-08-17 17:30:00
+noindex: true
+title: 10篇 Agent 前沿论文深度解析：evaluation与other方向最新进展
+description: >-
+  2026-08-17 arXiv cs.AI 共 25 篇论文，10 篇 Agent 相关。Planning
+  瓶颈从「生成计划」转向「执行监控与动态调整」；Multi-Agent 核心挑战从通信协议转向组织设计。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,7 +15,10 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 56563
+date: 2026-08-17 17:30:00
 ---
+noindex: true
 
 # 10篇 Agent 前沿论文深度解析：evaluation与other方向最新进展
 
@@ -44,6 +49,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 
 
 ---
+noindex: true
 
 ## 核心框架：诊断式评估框架 (Diagnostic Evaluation Framework)
 
@@ -86,6 +92,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 > 💡 **原创分析**：今日 1 篇Multi-Agent 多智能体论文验证了该框架的中心化编排优势。具体证据见下方论文分析。
 
 ---
+noindex: true
 
 ## 论文深度解析
 
@@ -119,6 +126,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要从单一指标走向诊断式评估（定位瓶颈而非仅打分）
 
 ---
+noindex: true
 
 ### Other 其他（3 篇）
 
@@ -150,6 +158,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 可参考其方法论用于 Agent 系统设计
 
 ---
+noindex: true
 
 ### Planning 规划推理（2 篇）
 
@@ -172,6 +181,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要建立执行监控与快速重规划的反馈回路
 
 ---
+noindex: true
 
 ### Engineering 工程架构（2 篇）
 
@@ -194,6 +204,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要关注从 Demo 到 Production 的长尾场景覆盖
 
 ---
+noindex: true
 
 ### Multi-Agent 多智能体（1 篇）
 
@@ -207,6 +218,7 @@ Planning 瓶颈从「生成计划」转向「执行监控与动态调整」；Mu
 **工程启示：** 需要中心化编排 + 去中心化执行的折中架构
 
 ---
+noindex: true
 
 ## 常见问题
 
@@ -223,6 +235,7 @@ A: 基于10篇论文分析，Evaluation 评估基准方向3篇论文最为活跃
 A: 2篇论文涉及信息检索与问答场景。核心瓶颈：幻觉累积。突破方向：多跳推理可信度传播。
 
 ---
+noindex: true
 
 ## 深度洞察
 
@@ -233,6 +246,7 @@ A: 2篇论文涉及信息检索与问答场景。核心瓶颈：幻觉累积。�
 > 💡 **原创洞察**：Evaluation 正在从「评分」进化为「诊断」— 好的评估不只是给一个分数，而是告诉你「哪里好、哪里差、差的原因是什么」。这种诊断式评估才能指导有效改进，工程上需要输出结构化诊断报告。
 
 ---
+noindex: true
 
 ## 工程行动清单
 
@@ -255,6 +269,7 @@ A: 2篇论文涉及信息检索与问答场景。核心瓶颈：幻觉累积。�
 - [ ] 建立 Agent 行为回放和调试工具，支持时间旅行调试
 
 ---
+noindex: true
 
 ## 参考文献
 
@@ -270,5 +285,6 @@ A: 2篇论文涉及信息检索与问答场景。核心瓶颈：幻觉累积。�
 10. TimeSage-EV: A Live Benchmark for Agentic Time Series Analysis in Evolving Environments [arXiv:2608.14270](https://arxiv.org/abs/2608.14270) — evaluation
 
 ---
+noindex: true
 
 *本文由 OpenClaw AI Research 基于 arXiv 论文自动生成，分析观点为原创内容。数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI)*

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: Agent 最新研究综述（2026-05-28）
 tags:
   - Agent
@@ -14,6 +15,7 @@ date: 2026-05-28 17:30:00
 description: "- arXiv: 2605.28742 Kimi解读"
 keywords: "agent, 最新研究综述（2026, 28）, Agent, LLM, Multi-Agent, Memory, Planning"
 ---
+noindex: true
 <!-- GEO citation meta
 citation_arxiv_id: 2605.28742
 citation_arxiv_id: 2605.28713
@@ -34,6 +36,7 @@ citation_arxiv_id: 2605.28721
 > 生成时间：2026/5/28 17:30:06
 
 ---
+noindex: true
 
 ## 📊 今日概况
 
@@ -65,6 +68,7 @@ citation_arxiv_id: 2605.28721
 
 
 ---
+noindex: true
 
 ## 1️⃣ 今日论文列表（按研究方向）
 
@@ -127,6 +131,7 @@ citation_arxiv_id: 2605.28721
   - sat,adr,reasoning,cnf,packing,satisfiable,satisfiability,llms,metrics,instances
 
 ---
+noindex: true
 
 ### 📊 Evaluation / 评估基准（4 篇）
 
@@ -159,6 +164,7 @@ citation_arxiv_id: 2605.28721
   - muse,cad,assemblability,design,text,assemblable,manufacturability,manufacturable,engineering,generation
 
 ---
+noindex: true
 
 ### 📎 Other / 其他（3 篇）
 
@@ -184,6 +190,7 @@ citation_arxiv_id: 2605.28721
   - lacuna,agents,agent,code,runtime,rejected,browsecomp,reaches,expresses,action
 
 ---
+noindex: true
 
 ### 👥 Multi-Agent / 多智能体（2 篇）
 
@@ -202,6 +209,7 @@ citation_arxiv_id: 2605.28721
   - tracer,credit,reinforcement,regret,rewards,riding,gsm8k,speak,turn,reasoning
 
 ---
+noindex: true
 
 ### 🧬 Evolution / 自我进化（2 篇）
 
@@ -220,6 +228,7 @@ citation_arxiv_id: 2605.28721
   - agents,execution,workflow,multimodal,adaptive,automatic,guis,framework,mllms,navigating
 
 ---
+noindex: true
 
 ### 🔧 Tool Use / 工具使用（1 篇）
 
@@ -231,6 +240,7 @@ citation_arxiv_id: 2605.28721
   - reasoning,parametric,core,rollouts,prompt,traces,unsuccessful,contrastive,reflection,insights
 
 ---
+noindex: true
 
 ### 🏗️ Engineering / 工程架构（1 篇）
 
@@ -242,6 +252,7 @@ citation_arxiv_id: 2605.28721
   - agents,execution,workflow,multimodal,adaptive,automatic,guis,framework,mllms,navigating
 
 ---
+noindex: true
 
 ## 2️⃣ 应用场景深度分析
 
@@ -256,6 +267,7 @@ citation_arxiv_id: 2605.28721
 **工程落地难点**: 索引更新的实时性、多源数据的去重与融合、检索延迟与质量的平衡
 
 ---
+noindex: true
 
 ### 决策支持
 
@@ -268,6 +280,7 @@ citation_arxiv_id: 2605.28721
 **工程落地难点**: 数据新鲜度与推理延迟的权衡、决策过程的可审计性、多维度指标聚合
 
 ---
+noindex: true
 
 ### 科学研究
 
@@ -280,6 +293,7 @@ citation_arxiv_id: 2605.28721
 **工程落地难点**: 计算资源的弹性调度、实验数据的版本管理、跨团队协作的可复现性
 
 ---
+noindex: true
 
 ### 代码开发
 
@@ -292,6 +306,7 @@ citation_arxiv_id: 2605.28721
 **工程落地难点**: 代码沙箱的隔离性与灵活性平衡、大仓库的索引与检索效率、CI/CD集成中的权限管理
 
 ---
+noindex: true
 
 ### 企业自动化
 
@@ -304,6 +319,7 @@ citation_arxiv_id: 2605.28721
 **工程落地难点**: 遗留系统的API兼容性、流程变更的灰度发布、审计日志的完整性
 
 ---
+noindex: true
 
 ### 创意与内容
 
@@ -316,6 +332,7 @@ citation_arxiv_id: 2605.28721
 **工程落地难点**: 内容安全审核的自动化、版权合规检测、A/B测试与效果归因
 
 ---
+noindex: true
 
 ### 场景交叉洞察
 
@@ -479,5 +496,6 @@ citation_arxiv_id: 2605.28721
 14. [MUSE: Benchmarking Manufacturable, Functional, and Assemblable Text-to-CAD Generation](https://arxiv.org/abs/2605.28579) [Kimi解读](http://kimi.com/_prefill_chat?prefill_prompt=%E6%88%91%E4%BB%AC%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%9A%84%E8%AE%BA%E6%96%87%E6%98%AFMUSE%3A+Benchmarking+Manufacturable%2C+Functional%2C+and+Assemblable+Text-to-CAD+Generation%EF%BC%8C%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Farxiv.org%2Fpdf%2F2605.28579+%EF%BC%8C%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E9%93%BE%E6%8E%A5%E6%98%AF+https%3A%2F%2Fpapers.cool%2Farxiv%2Fkimi%3Fpaper%3D2605.28579+%E3%80%82%E8%AF%B7%E4%BB%A5%E6%AD%A4%E4%B8%BA%E5%9F%BA%E7%A1%80%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%9B%9E%E7%AD%94%E6%88%91%E5%90%8E%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82&system_prompt=%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%B0%86%E5%9B%B4%E7%BB%95%E7%9D%80%E4%BB%A5%E4%B8%8B%E8%AE%BA%E6%96%87%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%EF%BC%8C%E5%B7%B2%E7%BB%8F%E9%80%9A%E8%BF%87%E9%93%BE%E6%8E%A5%E7%BB%99%E5%87%BA%E4%BA%86%E8%AE%BA%E6%96%87%E7%9A%84PDF%E5%92%8C%E8%AE%BA%E6%96%87%E5%B7%B2%E6%9C%89%E7%9A%84FAQ%E3%80%82%E7%94%A8%E6%88%B7%E5%B0%86%E7%BB%A7%E7%BB%AD%E5%90%91%E4%BD%A0%E5%92%A8%E8%AF%A2%E8%AE%BA%E6%96%87%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E4%BD%A0%E4%BD%9C%E5%87%BA%E4%B8%93%E4%B8%9A%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%BA%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%EF%BC%8C%E5%BD%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%88%86%E7%82%B9%E5%9B%9E%E7%AD%94%E6%97%B6%EF%BC%8C%E9%BC%93%E5%8A%B1%E4%BD%A0%E4%BB%A5markdown%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E3%80%82&send_immediately=true) — evaluation | 创意与内容
 
 ---
+noindex: true
 
 *本报告由 OpenClaw 自动生成 · 面向 Agent 架构师与工程师，提供决策与工程参考*
