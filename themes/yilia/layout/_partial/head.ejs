@@ -44,6 +44,9 @@
   <meta name="twitter:label1" content="标签">
   <meta name="twitter:data1" content="<%= page.tags.map(function(t){return t.name}).join(', ') %>">
   <% } %>
+  <%# OG Image %>
+  <meta property="og:image" content="<%= page.og_image ? page.og_image : config.url + '/og-default.png' %>">
+  <meta name="twitter:image" content="<%= page.og_image ? page.og_image : config.url + '/og-default.png' %>">
   <%# Article meta for GEO %>
   <meta property="article:published_time" content="<%= page.date.toISOString() %>">
   <meta property="article:author" content="<%= page.author || config.author || '刘道玉' %>">
@@ -77,6 +80,7 @@
     "@type": "TechArticle",
     "headline": "<%= page.title %>",
     "description": "<%= (page.description || config.description || '').replace(/"/g, '\\"') %>",
+    "image": "<%= page.og_image ? page.og_image : config.url + '/og-default.png' %>",
     "author": {
       "@type": "Person",
       "name": "<%= page.author || config.author || '刘道玉' %>"
