@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - iOS & macOS Development
-date: 2026-08-31 11:30:00
 tags:
   - openclaw
   - skill
   - ios-and-macos-development
 categories:
   - 技术推荐
+abbrlink: 48693
+date: 2026-08-31 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - iOS & macOS Development

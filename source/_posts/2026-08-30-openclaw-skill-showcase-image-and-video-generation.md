@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 图像与视频生成
-date: 2026-08-30 11:30:00
 tags:
   - openclaw
   - skill
   - image-and-video-generation
 categories:
   - 技术推荐
+abbrlink: 65108
+date: 2026-08-30 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 图像与视频生成
