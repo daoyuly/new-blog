@@ -48,7 +48,9 @@
   <meta property="og:image" content="<%= page.og_image ? page.og_image : config.url + '/og-default.png' %>">
   <meta name="twitter:image" content="<%= page.og_image ? page.og_image : config.url + '/og-default.png' %>">
   <%# Article meta for GEO %>
+  <% if (page.date){ %>
   <meta property="article:published_time" content="<%= page.date.toISOString() %>">
+  <% } %>
   <meta property="article:author" content="<%= page.author || config.author || '刘道玉' %>">
   <% if (page.categories && page.categories.length){ %>
   <meta property="article:section" content="<%= page.categories.first().name %>">
