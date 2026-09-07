@@ -1,6 +1,7 @@
 ---
 title: Lyra：一个不推荐歌曲的音乐 agent
 date: 2026-09-07 09:00:00
+sticky: 1
 tags:
   - Lyra
   - 音乐
