@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - 语音与转录
-date: 2026-09-15 11:30:00
 tags:
   - openclaw
   - skill
@@ -10,6 +9,8 @@ tags:
   - 语音
 categories:
   - 技术推荐
+abbrlink: 6235
+date: 2026-09-15 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 语音与转录
