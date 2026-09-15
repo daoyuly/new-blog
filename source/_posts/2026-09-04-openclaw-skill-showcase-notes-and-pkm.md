@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - Notes & PKM
-date: 2026-09-04 11:30:00
 tags:
   - openclaw
   - skill
@@ -9,6 +8,8 @@ tags:
   - 记忆系统
 categories:
   - 技术推荐
+abbrlink: 21066
+date: 2026-09-04 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 — Notes & PKM（笔记与知识管理）

@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - 安全与密码
-date: 2026-09-11 11:30:00
 tags:
   - openclaw
   - skill
@@ -9,6 +8,8 @@ tags:
   - 安全
 categories:
   - 技术推荐
+abbrlink: 55786
+date: 2026-09-11 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 安全与密码 🔐

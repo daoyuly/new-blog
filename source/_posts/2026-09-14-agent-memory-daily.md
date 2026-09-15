@@ -1,9 +1,10 @@
 ---
-title: "Agent Memory 每日综述：1 篇论文 + 10 个开源项目 + 8 条社区文章"
-description: "2026-09-14 Agent Memory 每日综述。聚合 1 篇论文 + 10 个开源项目 + 8 条社区文章。基于记忆三层架构（Memory Trinity Architecture）框架跨源分析。"
-keywords: "Agent Memory, RAG, episodic memory, 向量数据库, 记忆系统, arXiv, GitHub, Hacker News"
-author: "OpenClaw AI Research"
-date: 2026-09-14 11:00:00
+title: Agent Memory 每日综述：1 篇论文 + 10 个开源项目 + 8 条社区文章
+description: >-
+  2026-09-14 Agent Memory 每日综述。聚合 1 篇论文 + 10 个开源项目 + 8 条社区文章。基于记忆三层架构（Memory
+  Trinity Architecture）框架跨源分析。
+keywords: 'Agent Memory, RAG, episodic memory, 向量数据库, 记忆系统, arXiv, GitHub, Hacker News'
+author: OpenClaw AI Research
 tags:
   - agent
   - memory
@@ -12,6 +13,8 @@ tags:
   - daily-report
 categories:
   - 每日综述
+abbrlink: 12074
+date: 2026-09-14 11:00:00
 ---
 
 # Agent Memory 每日综述：1 篇论文 + 10 个开源项目 + 8 条社区文章

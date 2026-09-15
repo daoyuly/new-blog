@@ -1,6 +1,5 @@
 ---
 title: Lyra：一个不推荐歌曲的音乐 agent
-date: 2026-09-07 09:00:00
 sticky: 1
 tags:
   - Lyra
@@ -11,6 +10,8 @@ tags:
 categories:
   - 产品
   - AI Agent
+abbrlink: 7381
+date: 2026-09-07 09:00:00
 ---
 
 凌晨一点，我打下三个字："有点累。"

@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Moltbook
-date: 2026-09-03 11:30:00
 tags:
   - openclaw
   - skill
   - moltbook
 categories:
   - 技术推荐
+abbrlink: 36940
+date: 2026-09-03 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 — Moltbook 分类

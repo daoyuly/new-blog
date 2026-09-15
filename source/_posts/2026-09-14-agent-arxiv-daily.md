@@ -1,9 +1,10 @@
 ---
-title: "8篇 Agent 前沿论文深度解析：evaluation与engineering方向最新进展"
-description: "2026-09-14 arXiv cs.AI 共 25 篇论文，8 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Agent 安全从外部围栏走向安全内化。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-09-14 17:30:00
+title: 8篇 Agent 前沿论文深度解析：evaluation与engineering方向最新进展
+description: >-
+  2026-09-14 arXiv cs.AI 共 25 篇论文，8 篇 Agent 相关。Memory
+  系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Agent 安全从外部围栏走向安全内化。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,6 +14,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 17744
+date: 2026-09-14 17:30:00
 ---
 
 # 8篇 Agent 前沿论文深度解析：evaluation与engineering方向最新进展

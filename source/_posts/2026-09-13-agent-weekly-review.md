@@ -1,6 +1,5 @@
 ---
-title: "Agent 研究周度深度综述（2026-09-07 ~ 2026-09-13）"
-date: 2026-09-13 20:00:00
+title: Agent 研究周度深度综述（2026-09-07 ~ 2026-09-13）
 tags:
   - Agent
   - LLM
@@ -9,6 +8,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 17940
+date: 2026-09-13 20:00:00
 ---
 
 > 数据来源：[papers.cool/arxiv/cs.AI](https://papers.cool/arxiv/cs.AI) · 生成时间：2026/9/11 17:00:05

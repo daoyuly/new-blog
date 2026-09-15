@@ -1,6 +1,5 @@
 ---
 title: OpenClaw Skill 每日推荐 - 购物与电商
-date: 2026-09-13 11:30:00
 tags:
   - openclaw
   - skill
@@ -8,6 +7,8 @@ tags:
   - e-commerce
 categories:
   - 技术推荐
+abbrlink: 33221
+date: 2026-09-13 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐 - 购物与电商
