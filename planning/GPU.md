@@ -1484,3 +1484,1256 @@ Agent
 这条路线和你原本的 Agent 系统背景是能接上的。你最终真正需要的不是成为 CUDA 专家，而是成为一个**能够从模型算法一直看到 GPU 硬件，并能解释推理系统性能的 Agent/LLM 系统架构师**。
 
 如果按每天 1～2 小时执行，我会把这个月进一步拆成一份 **30 天 × 每天 60～120 分钟的具体任务表**，每一天明确到“读什么、写什么 CUDA 代码、做什么实验、回答什么问题、产出什么笔记”，这样可以直接照着执行。
+
+
+
+下面把它落成一份可以直接执行的「GPU 30 天训练计划」。考虑到你的目标不是转 CUDA 工程师，而是最终深入 LLM 推理，我会刻意控制 CUDA 的深度：**够理解 GPU、够分析性能、够读 Kernel，不追求把 CUDA API 学全。**
+
+每天建议 90 分钟；有时间可以做到 2 小时。
+
+整体节奏：
+
+> 30 分钟理论 → 40 分钟实验 → 20 分钟总结
+> 每 7 天做一次小项目，而不是继续堆知识。
+
+---
+
+# 第 1 周：建立 GPU 心智模型
+
+目标：
+
+> 搞清楚 GPU 是怎么执行程序的，以及数据是怎么在 GPU 里流动的。
+
+## Day 1 — CPU vs GPU
+
+理论：
+
+* CPU / GPU 的设计目标
+* Latency vs Throughput
+* ILP / TLP
+* SIMD / SIMT
+* 为什么深度学习适合 GPU
+
+实验：
+
+用 Python + NumPy/PyTorch 对一个大数组做：
+
+```python
+C = A + B
+```
+
+分别：
+
+```text
+CPU
+GPU
+```
+
+测试不同数据规模。
+
+重点不是得到一个漂亮的 benchmark，而是观察：
+
+```text
+数据规模
+CPU 时间
+GPU 时间
+GPU 加速比
+```
+
+回答：
+
+> 为什么小任务 GPU 可能反而更慢？
+
+---
+
+## Day 2 — GPU 架构
+
+学习：
+
+```text
+GPU
+├── GPC
+├── SM
+│   ├── CUDA Core
+│   ├── Tensor Core
+│   ├── Register
+│   ├── Shared Memory
+│   └── L1
+├── L2
+└── HBM
+```
+
+重点理解：
+
+> SM 到底是什么？
+
+不要死记 NVIDIA 某一代 GPU 有多少个 SM。
+
+你需要理解的是：
+
+> **Kernel 最终是在 SM 上执行的。**
+
+产出：
+
+画一张你自己的 GPU Architecture 图。
+
+---
+
+## Day 3 — Thread / Warp / Block
+
+理解：
+
+```text
+Thread
+  ↓
+Warp
+  ↓
+Block
+  ↓
+Grid
+```
+
+重点：
+
+* Thread
+* Warp = 32 threads
+* Block
+* Grid
+* SM
+
+实验：
+
+写一个最简单 CUDA Kernel：
+
+```cpp
+C[i] = A[i] + B[i]
+```
+
+改变：
+
+```text
+threads/block
+```
+
+例如：
+
+```text
+32
+64
+128
+256
+512
+1024
+```
+
+记录性能。
+
+---
+
+## Day 4 — CUDA Kernel
+
+深入：
+
+```cpp
+threadIdx
+blockIdx
+blockDim
+gridDim
+```
+
+理解：
+
+```cpp
+int i =
+    blockIdx.x * blockDim.x
+    + threadIdx.x;
+```
+
+自己画：
+
+```text
+Grid
+ ├── Block 0
+ │    ├── Thread 0
+ │    ├── Thread 1
+ │    └── ...
+ ├── Block 1
+ └── ...
+```
+
+实验：
+
+实现：
+
+```text
+Vector Add
+Vector Multiply
+SAXPY
+```
+
+不需要复杂。
+
+目标是能够自己写 Kernel。
+
+---
+
+## Day 5 — GPU Memory Hierarchy
+
+重点学习：
+
+```text
+Register
+   ↓
+Shared Memory
+   ↓
+L1 Cache
+   ↓
+L2 Cache
+   ↓
+HBM
+```
+
+建立三个维度：
+
+```text
+容量
+延迟
+带宽
+```
+
+重点理解：
+
+> 越靠近计算单元，通常越快、越小。
+
+实验：
+
+比较不同 memory access pattern。
+
+例如：
+
+```text
+A[i]
+```
+
+和：
+
+```text
+A[i * stride]
+```
+
+改变：
+
+```text
+stride = 1
+2
+4
+8
+32
+128
+```
+
+观察性能。
+
+---
+
+## Day 6 — Coalesced Access
+
+重点：
+
+> GPU 为什么希望一个 Warp 的线程访问连续地址？
+
+理解：
+
+```text
+Thread 0 → A[0]
+Thread 1 → A[1]
+Thread 2 → A[2]
+...
+```
+
+与：
+
+```text
+Thread 0 → A[0]
+Thread 1 → A[1024]
+Thread 2 → A[2048]
+...
+```
+
+之间的区别。
+
+这是以后理解：
+
+* Attention
+* KV Cache
+* FlashAttention
+* Embedding
+* Quantization
+
+的基础。
+
+---
+
+## Day 7 — Week 1 小项目
+
+做：
+
+> **GPU Vector Benchmark**
+
+实现：
+
+```text
+Vector Add
+Vector Multiply
+Vector SAXPY
+```
+
+测试：
+
+```text
+不同数据量
+不同 block size
+不同 memory access
+```
+
+输出一张表：
+
+| Experiment | Size | Block | Time | Bandwidth |
+| ---------- | ---: | ----: | ---: | --------: |
+| Add        |   1M |   128 |  ... |       ... |
+| Add        |   1M |   256 |  ... |       ... |
+| Add        |  10M |   256 |  ... |       ... |
+
+然后写 500～1000 字：
+
+> 为什么 GPU Vector Add 通常不是计算瓶颈，而是 Memory Bandwidth 瓶颈？
+
+---
+
+# 第 2 周：性能工程
+
+这一周开始从“GPU 是什么”进入：
+
+> **GPU 为什么快 / 为什么慢？**
+
+---
+
+# Day 8 — FLOPs
+
+学习：
+
+```text
+FLOP
+FLOPS
+TFLOPS
+PFLOPS
+```
+
+重点掌握矩阵乘法：
+
+```text
+[M,K] × [K,N]
+```
+
+大约：
+
+```text
+2 × M × K × N FLOPs
+```
+
+自己算：
+
+```text
+4096 × 4096
+```
+
+矩阵乘法需要多少 FLOPs。
+
+再计算：
+
+```text
+1024 × 4096
+×
+4096 × 4096
+```
+
+---
+
+# Day 9 — Memory Bandwidth
+
+学习：
+
+```text
+Memory Bandwidth
+GB/s
+TB/s
+```
+
+假设 GPU：
+
+```text
+HBM Bandwidth = 1 TB/s
+```
+
+一个 Kernel 每次需要读取：
+
+```text
+100 GB
+```
+
+理论最短时间是多少？
+
+这类估算以后必须做到“心算级”。
+
+---
+
+# Day 10 — Compute Bound vs Memory Bound
+
+学习：
+
+```text
+Compute Bound
+Memory Bound
+```
+
+建立：
+
+```text
+                    Compute
+                      ↑
+                      │
+                      │
+Memory ───────────────┼────────
+                      │
+```
+
+然后理解：
+
+> GPU 利用率低，不一定代表 GPU 没有工作。
+
+可能是：
+
+```text
+Memory Bound
+Kernel Launch
+Synchronization
+Low Occupancy
+```
+
+---
+
+# Day 11 — Arithmetic Intensity
+
+掌握：
+
+```text
+Arithmetic Intensity
+
+= FLOPs / Bytes
+```
+
+例如：
+
+一个操作：
+
+```text
+1 TFLOP
+100 GB memory traffic
+```
+
+则：
+
+```text
+10 FLOPs/Byte
+```
+
+然后思考：
+
+> AI 越高是不是一定越快？
+
+答案不是。
+
+这会引出 Roofline。
+
+---
+
+# Day 12 — Roofline Model
+
+这是本月必须掌握的核心模型。
+
+你应该能自己画出：
+
+```text
+Performance
+│
+│                 ───────── Compute Ceiling
+│               /
+│             /
+│           /
+│         /
+│_______/________________
+        Arithmetic Intensity
+```
+
+理解：
+
+```text
+低 AI
+→ Memory Bound
+
+高 AI
+→ Compute Bound
+```
+
+然后把：
+
+```text
+Vector Add
+GEMM
+Attention
+```
+
+放到这个模型中。
+
+---
+
+# Day 13 — Tensor Core
+
+理解：
+
+```text
+CUDA Core
+vs
+Tensor Core
+```
+
+重点：
+
+> Tensor Core 本质上是为矩阵乘加设计的专用计算单元。
+
+理解：
+
+```text
+FP32
+TF32
+FP16
+BF16
+FP8
+INT8
+```
+
+不要求现在把每种格式的细节全部学完。
+
+只需要建立：
+
+```text
+Precision
+ ↓
+Memory
+ ↓
+Compute
+ ↓
+Accuracy
+```
+
+之间的关系。
+
+---
+
+# Day 14 — Week 2 小项目：GEMM
+
+实现三个版本：
+
+```text
+Naive GEMM
+     ↓
+Tiled GEMM
+     ↓
+Shared Memory GEMM
+```
+
+然后比较：
+
+```text
+Latency
+GFLOPS
+Memory
+```
+
+回答三个问题：
+
+1. 为什么矩阵乘法适合 GPU？
+2. 为什么 Shared Memory 有用？
+3. 为什么 GEMM 能非常接近 GPU 峰值算力？
+
+如果这三个问题回答清楚，第二周基本过关。
+
+---
+
+# 第 3 周：GPU → Transformer → LLM
+
+这是整个学习计划最关键的一周。
+
+你开始把前面的 GPU 知识全部连接起来。
+
+---
+
+# Day 15 — Transformer 的 GPU 映射
+
+不要先研究 Transformer 数学。
+
+只看：
+
+```text
+Transformer Layer
+
+Input
+ ↓
+QKV Projection
+ ↓
+Attention
+ ↓
+Output Projection
+ ↓
+MLP
+ ↓
+Output
+```
+
+然后映射：
+
+```text
+Linear
+ ↓
+GEMM
+
+Attention
+ ↓
+Matrix + Memory
+
+MLP
+ ↓
+GEMM
+
+RMSNorm
+ ↓
+Elementwise
+```
+
+最终理解：
+
+> Transformer 并不是一个“大算法”，而是大量 GPU Kernel 的组合。
+
+---
+
+# Day 16 — Prefill
+
+理解：
+
+```text
+Prompt
+ ↓
+Tokenizer
+ ↓
+Prefill
+ ↓
+KV Cache
+```
+
+例如：
+
+```text
+8K prompt
+```
+
+模型可以同时处理大量 token。
+
+所以 Prefill 通常具有：
+
+```text
+高并行度
+GEMM
+Compute Intensive
+```
+
+重点问题：
+
+> 为什么 Prefill 通常比较容易把 GPU 算力利用起来？
+
+---
+
+# Day 17 — Decode
+
+理解：
+
+```text
+Token 1
+ ↓
+Token 2
+ ↓
+Token 3
+ ↓
+Token 4
+```
+
+每次生成一个 token。
+
+于是：
+
+```text
+Prefill
+≈ 大矩阵计算
+
+Decode
+≈ 小计算 + 大量 Memory Access
+```
+
+这时你应该开始意识到：
+
+> **LLM 推理不是一个统一 workload。**
+
+Prefill 和 Decode 是两种完全不同的性能问题。
+
+---
+
+# Day 18 — KV Cache
+
+这是整个第 3 周最重要的内容。
+
+自己计算：
+
+假设：
+
+```text
+Layers = 32
+Heads = 32
+Head Dim = 128
+Sequence = 8192
+dtype = FP16
+```
+
+计算：
+
+```text
+KV Cache / token
+KV Cache / request
+KV Cache / 100 requests
+```
+
+然后回答：
+
+> 为什么长上下文 + 高并发很容易把 GPU 显存打爆？
+
+---
+
+# Day 19 — Model Memory
+
+建立完整 GPU Memory Model：
+
+```text
+GPU Memory
+│
+├── Model Weights
+├── KV Cache
+├── Activations
+├── CUDA Context
+├── Temporary Workspace
+└── Fragmentation
+```
+
+分别估算：
+
+```text
+7B
+14B
+32B
+70B
+```
+
+FP16 模型的 Weight Memory。
+
+然后：
+
+```text
+FP16
+BF16
+INT8
+INT4
+```
+
+进行比较。
+
+---
+
+# Day 20 — Batching
+
+理解：
+
+```text
+Batch = 1
+Batch = 8
+Batch = 32
+```
+
+然后：
+
+```text
+Static Batch
+Dynamic Batch
+Continuous Batch
+```
+
+重点理解：
+
+> 为什么 LLM Serving 中 Continuous Batching 非常重要？
+
+不要背 vLLM 的答案。
+
+从 GPU 利用率和请求生命周期自己推导。
+
+---
+
+# Day 21 — Week 3 小项目
+
+做：
+
+# LLM Memory Calculator
+
+输入：
+
+```text
+Model Parameters
+Layers
+Heads
+Head Dimension
+Context Length
+Batch Size
+Precision
+```
+
+输出：
+
+```text
+Model Weight Memory
+KV Cache Memory
+Total Estimated Memory
+```
+
+例如：
+
+```text
+Qwen
+32B
+FP16
+32K Context
+Batch 16
+```
+
+估算：
+
+> 到底需要多少显存？
+
+然后再思考：
+
+> 为什么真实运行所需显存和理论值不同？
+
+---
+
+# 第 4 周：FlashAttention + Profiling + 推理系统
+
+最后一周从“理解 GPU”进入真正的 LLM Performance Engineering。
+
+---
+
+# Day 22 — Attention IO
+
+重新看：
+
+```text
+QKᵀ
+ ↓
+Softmax
+ ↓
+×V
+```
+
+不要只看 FLOPs。
+
+计算：
+
+```text
+需要读取多少数据？
+需要写多少数据？
+中间 Attention Matrix 多大？
+```
+
+然后问：
+
+> Attention 为什么会产生大量 HBM traffic？
+
+---
+
+# Day 23 — FlashAttention
+
+现在开始读：
+
+**FlashAttention**
+
+重点不是论文证明。
+
+重点是：
+
+> 它如何利用 GPU Memory Hierarchy？
+
+理解：
+
+```text
+HBM
+ ↓
+Tile
+ ↓
+Shared Memory / SRAM
+ ↓
+Compute
+ ↓
+减少 HBM Read/Write
+```
+
+核心认知：
+
+> FlashAttention 的核心价值是 IO 优化，而不只是数学计算优化。
+
+---
+
+# Day 24 — Kernel Fusion
+
+理解：
+
+```text
+Kernel A
+ ↓
+HBM
+ ↓
+Kernel B
+ ↓
+HBM
+ ↓
+Kernel C
+```
+
+与：
+
+```text
+Fused Kernel
+```
+
+为什么后者可能更快。
+
+然后理解：
+
+```text
+Memory Traffic
+Kernel Launch
+Intermediate Tensor
+```
+
+之间的关系。
+
+---
+
+# Day 25 — Nsight Systems
+
+学习：
+
+> 如何看整个 GPU workload。
+
+重点关注：
+
+```text
+CPU
+GPU
+Kernel
+Memory
+Synchronization
+```
+
+你要学会回答：
+
+> GPU 到底有没有被充分利用？
+
+---
+
+# Day 26 — Nsight Compute
+
+学习：
+
+> 如何分析一个 Kernel。
+
+重点关注：
+
+```text
+Occupancy
+Memory Throughput
+Compute Throughput
+Warp
+Cache
+Registers
+Shared Memory
+```
+
+不要试图理解 Nsight Compute 的所有指标。
+
+先抓住：
+
+> **这个 Kernel 到底是 Compute Bound 还是 Memory Bound？**
+
+---
+
+# Day 27 — LLM Serving Benchmark
+
+跑一个真实模型。
+
+建议：
+
+```text
+Qwen / Llama
+```
+
+测试：
+
+```text
+Batch 1
+Batch 4
+Batch 8
+Batch 16
+```
+
+记录：
+
+```text
+TTFT
+TPOT
+Tokens/s
+GPU Memory
+GPU Utilization
+```
+
+然后做：
+
+```text
+Batch Size
+      ↓
+Throughput
+      ↓
+Latency
+```
+
+曲线。
+
+---
+
+# Day 28 — PagedAttention
+
+开始看：
+
+**vLLM / PagedAttention**
+
+核心问题：
+
+> KV Cache 为什么需要分页？
+
+理解：
+
+```text
+传统：
+
+Request A
+████████████████
+Request B
+████████████
+Request C
+██████████████████
+
+可能出现大量碎片
+```
+
+Paged KV Cache：
+
+```text
+Page
+Page
+Page
+Page
+Page
+```
+
+由类似虚拟内存的思想管理。
+
+这时你应该能够理解：
+
+> 为什么 vLLM 不只是“一个更快的模型推理框架”。
+
+它实际上涉及：
+
+```text
+GPU Memory Management
++
+KV Cache Management
++
+Batch Scheduling
++
+Kernel
+```
+
+---
+
+# Day 29 — 最终项目
+
+做：
+
+# Mini LLM Performance Analyzer
+
+输入：
+
+```text
+Model
+Parameter Count
+Layers
+Heads
+Head Dim
+Context
+Batch
+Input Tokens
+Output Tokens
+Precision
+GPU
+```
+
+输出：
+
+```text
+Weight Memory
+KV Cache
+Estimated FLOPs
+Estimated Memory Traffic
+Arithmetic Intensity
+Expected Bottleneck
+```
+
+然后实际跑一次模型。
+
+比较：
+
+```text
+理论模型
+      VS
+真实 Benchmark
+```
+
+分析误差来源。
+
+---
+
+# Day 30 — Final Review
+
+最后一天不要学习新东西。
+
+完成一篇：
+
+> 《一个 Token 是如何在 GPU 上生成的》
+
+建议从：
+
+```text
+User
+ ↓
+Prompt
+ ↓
+Tokenizer
+ ↓
+Transformer
+ ↓
+QKV
+ ↓
+Attention
+ ↓
+KV Cache
+ ↓
+GEMM
+ ↓
+CUDA Kernel
+ ↓
+Warp
+ ↓
+SM
+ ↓
+Tensor Core
+ ↓
+HBM
+ ↓
+Next Token
+```
+
+一路讲到底。
+
+然后反过来：
+
+> 如果生成一个 Token 很慢，我如何定位问题？
+
+形成：
+
+```text
+模型
+ ↓
+Inference Engine
+ ↓
+Scheduler
+ ↓
+Kernel
+ ↓
+Compute
+ ↓
+Memory
+ ↓
+Hardware
+```
+
+的排查树。
+
+---
+
+# 最后给你一个非常重要的调整
+
+你未来一年学习“推理”，我建议建立四层知识结构，而不是单纯按照论文顺序学习：
+
+```text
+L4  Inference System
+    vLLM / SGLang / TRT-LLM
+              ↑
+L3  Model Computation
+    Transformer / Attention / MoE
+              ↑
+L2  GPU Software
+    CUDA / Kernel / Compiler
+              ↑
+L1  Hardware
+    SM / Tensor Core / HBM / Cache
+```
+
+你现在的第一个月，只解决：
+
+```text
+L1 Hardware
+     ↓
+L2 CUDA
+```
+
+但要不断拿 LLM 作为例子。
+
+这样到了第 4～5 个月，你会形成非常有价值的能力：
+
+> **看到一个 LLM 推理优化技术，不只是知道“它是什么”，而是能判断它究竟在优化计算、Memory、通信、调度还是算法复杂度。**
+
+这会比单纯学习“vLLM 怎么用”“FlashAttention 怎么调用”高一个层次。
+
+尤其对于你这种已经有 Agent 系统和生产工程背景的人，我认为这条路线比从 Transformer 数学开始重新学一遍更合适：**你真正缺的不是应用层知识，而是把模型计算一直下钻到 GPU 执行层的能力。**
