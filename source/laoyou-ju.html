@@ -27,8 +27,9 @@
       radial-gradient(ellipse at 85% 90%, rgba(168,130,60,.10), transparent 50%),
       radial-gradient(ellipse at 50% 50%, var(--paper) 0%, #ece4d0 100%);
     min-height:100vh;
-    display:grid;
-    place-items:center;
+    min-height:100svh;
+    display:flex;
+    justify-content:center;
     padding:40px 16px;
     overflow-x:hidden;
   }
@@ -63,6 +64,7 @@
   .card{
     position:relative;
     z-index:2;
+    margin:auto;
     width:100%;
     max-width:600px;
     background:rgba(253,250,242,.92);
