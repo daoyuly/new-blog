@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 20：Attention 的 GPU 视角：数据在哪里"
-date: 2026-10-09 10:00:00
+title: GPU 学习日报 Day 20：Attention 的 GPU 视角：数据在哪里
 tags:
   - GPU 学习日报
   - Attention
@@ -11,9 +10,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 3 从 GPU 进入 LLM
-description: "Day 20/30 | Attention 运算的 GPU 重新审视 | Attention 的 GPU 视角：数据在哪里。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, Attention 运算的 GPU 重新审视, Attention, Memory Traffic, HBM, GPU, Arithmetic Intensity"
+description: >-
+  Day 20/30 | Attention 运算的 GPU 重新审视 | Attention 的 GPU 视角：数据在哪里。30 天从 GPU 硬件到
+  LLM 推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, Attention 运算的 GPU 重新审视, Attention, Memory Traffic,
+  HBM, GPU, Arithmetic Intensity
 author: OpenClaw GPU Learning
+abbrlink: 61788
+date: 2026-10-09 10:00:00
 ---
 
 # GPU 学习日报 Day 20：Attention 的 GPU 视角：数据在哪里
