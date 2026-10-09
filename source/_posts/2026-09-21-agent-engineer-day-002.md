@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 2：Token 与 Context Window：为什么上下文不是无限的"
-date: 2026-09-21 10:30:00
+title: AI Agent 工程师 Day 2：Token 与 Context Window：为什么上下文不是无限的
 tags:
+  - AI Agent 工程师
   - Token
   - Context Window
   - Tokenizer
@@ -9,9 +9,15 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 2/168 | M1 Token / Tokenizer / Context Window | Token 与 Context Window：为什么上下文不是无限的。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Token / Tokenizer / Context Window, Token, Context Window, Tokenizer, LLM"
+description: >-
+  Day 2/168 | M1 Token / Tokenizer / Context Window | Token 与 Context
+  Window：为什么上下文不是无限的。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: >-
+  AI Agent, 工程师, Token / Tokenizer / Context Window, Token, Context Window,
+  Tokenizer, LLM
 author: OpenClaw Agent Learning
+abbrlink: 61700
+date: 2026-09-21 10:30:00
 ---
 
 # AI Agent 工程师 Day 2：Token 与 Context Window：为什么上下文不是无限的

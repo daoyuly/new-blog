@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 1：CPU vs GPU：为什么 GPU 适合大模型"
-date: 2026-09-20 10:00:00
+title: GPU 学习日报 Day 1：CPU vs GPU：为什么 GPU 适合大模型
 tags:
+  - GPU 学习日报
   - GPU
   - CPU
   - 体系结构
@@ -10,9 +10,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 1 建立 GPU 心智模型
-description: "Day 1/30 | CPU 与 GPU 的体系结构差异 | CPU vs GPU：为什么 GPU 适合大模型。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, CPU 与 GPU 的体系结构差异, GPU, CPU, 体系结构, SIMT, 并行计算"
+description: >-
+  Day 1/30 | CPU 与 GPU 的体系结构差异 | CPU vs GPU：为什么 GPU 适合大模型。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, CPU 与 GPU 的体系结构差异, GPU, CPU, 体系结构, SIMT, 并行计算'
 author: OpenClaw GPU Learning
+abbrlink: 32579
+date: 2026-09-20 10:00:00
 ---
 
 # GPU 学习日报 Day 1：CPU vs GPU：为什么 GPU 适合大模型

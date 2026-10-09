@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 1：建立完整认知地图：从 LLM 到 Agent Runtime"
-date: 2026-09-20 10:30:00
+title: AI Agent 工程师 Day 1：建立完整认知地图：从 LLM 到 Agent Runtime
 tags:
+  - AI Agent 工程师
   - LLM
   - Agent
   - Runtime
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 1/168 | M1 LLM → Agent 的完整演进链路 | 建立完整认知地图：从 LLM 到 Agent Runtime。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, LLM → Agent 的完整演进链路, LLM, Agent, Runtime, 认知地图"
+description: >-
+  Day 1/168 | M1 LLM → Agent 的完整演进链路 | 建立完整认知地图：从 LLM 到 Agent Runtime。6 个月从 LLM
+  到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, LLM → Agent 的完整演进链路, LLM, Agent, Runtime, 认知地图'
 author: OpenClaw Agent Learning
+abbrlink: 52975
+date: 2026-09-20 10:30:00
 ---
 
 # AI Agent 工程师 Day 1：建立完整认知地图：从 LLM 到 Agent Runtime

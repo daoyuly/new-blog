@@ -1,12 +1,13 @@
 ---
 title: AI的需求是长出来的
-date: 2026-09-16 10:00:00
 tags:
   - AI
   - 产品思考
   - daoyuzhai
 categories:
   - 产品
+abbrlink: 7640
+date: 2026-09-16 10:00:00
 ---
 
 用 AI 半年的人和用 AI 一年的人，几乎是两个物种。

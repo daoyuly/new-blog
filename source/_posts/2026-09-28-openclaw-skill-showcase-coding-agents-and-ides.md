@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Coding Agents & IDEs（编码代理与 IDE）
+tags:
+  - openclaw
+  - skill
+  - coding-agents-and-ides
+categories:
+  - 技术推荐
+abbrlink: 38314
 date: 2026-09-28 11:30:00
-tags: [openclaw, skill, coding-agents-and-ides]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 —— Coding Agents & IDEs（编码代理与 IDE）

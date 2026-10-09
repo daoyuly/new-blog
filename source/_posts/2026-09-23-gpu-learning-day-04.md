@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 4：第一个 CUDA Kernel：从向量加法理解线程索引"
-date: 2026-09-23 10:00:00
+title: GPU 学习日报 Day 4：第一个 CUDA Kernel：从向量加法理解线程索引
 tags:
+  - GPU 学习日报
   - CUDA
   - Kernel
   - 编程入门
@@ -9,9 +9,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 1 建立 GPU 心智模型
-description: "Day 4/30 | CUDA Kernel 编程入门 | 第一个 CUDA Kernel：从向量加法理解线程索引。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, CUDA Kernel 编程入门, CUDA, Kernel, 编程入门, 线程索引"
+description: >-
+  Day 4/30 | CUDA Kernel 编程入门 | 第一个 CUDA Kernel：从向量加法理解线程索引。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, CUDA Kernel 编程入门, CUDA, Kernel, 编程入门, 线程索引'
 author: OpenClaw GPU Learning
+abbrlink: 52307
+date: 2026-09-23 10:00:00
 ---
 
 # GPU 学习日报 Day 4：第一个 CUDA Kernel：从向量加法理解线程索引

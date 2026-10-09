@@ -1,10 +1,11 @@
 ---
-title: "AI Coding Agent 架构与工程实践：跨越效果、成本与体验的深水区"
+title: AI Coding Agent 架构与工程实践：跨越效果、成本与体验的深水区
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 1676
 date: 2026-10-08 14:08:26
 ---
 

@@ -1,16 +1,20 @@
 ---
-title: "AI Agent 工程师 Day 8：Tool Registry：从直接调用到注册管理"
-date: 2026-09-27 10:30:00
+title: AI Agent 工程师 Day 8：Tool Registry：从直接调用到注册管理
 tags:
+  - AI Agent 工程师
   - Tool Registry
   - Runtime
   - Agent
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 8/168 | M1 Tool Registry 设计 | Tool Registry：从直接调用到注册管理。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool Registry 设计, Tool Registry, Runtime, Agent"
+description: >-
+  Day 8/168 | M1 Tool Registry 设计 | Tool Registry：从直接调用到注册管理。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool Registry 设计, Tool Registry, Runtime, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 63581
+date: 2026-09-27 10:30:00
 ---
 
 # AI Agent 工程师 Day 8：Tool Registry：从直接调用到注册管理

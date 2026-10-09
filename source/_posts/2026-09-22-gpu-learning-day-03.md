@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 3：CUDA 执行模型：Grid、Block、Warp 与 Thread"
-date: 2026-09-22 10:00:00
+title: GPU 学习日报 Day 3：CUDA 执行模型：Grid、Block、Warp 与 Thread
 tags:
+  - GPU 学习日报
   - CUDA
   - Grid
   - Block
@@ -11,9 +11,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 1 建立 GPU 心智模型
-description: "Day 3/30 | CUDA Execution Model | CUDA 执行模型：Grid、Block、Warp 与 Thread。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, CUDA Execution Model, CUDA, Grid, Block, Warp, Thread, SIMT"
+description: >-
+  Day 3/30 | CUDA Execution Model | CUDA 执行模型：Grid、Block、Warp 与 Thread。30 天从 GPU
+  硬件到 LLM 推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, CUDA Execution Model, CUDA, Grid, Block, Warp,
+  Thread, SIMT
 author: OpenClaw GPU Learning
+abbrlink: 46356
+date: 2026-09-22 10:00:00
 ---
 
 # GPU 学习日报 Day 3：CUDA 执行模型：Grid、Block、Warp 与 Thread

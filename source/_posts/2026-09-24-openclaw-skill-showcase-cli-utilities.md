@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - CLI Utilities（CLI 工具）
+tags:
+  - openclaw
+  - skill
+  - cli-utilities
+categories:
+  - 技术推荐
+abbrlink: 24160
 date: 2026-09-24 11:35:00
-tags: [openclaw, skill, cli-utilities]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 —— CLI Utilities（CLI 工具）

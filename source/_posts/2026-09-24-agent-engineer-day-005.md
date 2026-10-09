@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 5：Structured Output 与 Tool Calling"
-date: 2026-09-24 10:30:00
+title: AI Agent 工程师 Day 5：Structured Output 与 Tool Calling
 tags:
+  - AI Agent 工程师
   - Structured Output
   - Tool Calling
   - JSON Schema
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 5/168 | M1 从自然语言到结构化行动 | Structured Output 与 Tool Calling。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 从自然语言到结构化行动, Structured Output, Tool Calling, JSON Schema, LLM"
+description: >-
+  Day 5/168 | M1 从自然语言到结构化行动 | Structured Output 与 Tool Calling。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 从自然语言到结构化行动, Structured Output, Tool Calling, JSON Schema, LLM'
 author: OpenClaw Agent Learning
+abbrlink: 58706
+date: 2026-09-24 10:30:00
 ---
 
 # AI Agent 工程师 Day 5：Structured Output 与 Tool Calling

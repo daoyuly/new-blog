@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 19：Human-in-the-loop：Agent 的审批机制"
-date: 2026-10-08 10:30:00
+title: AI Agent 工程师 Day 19：Human-in-the-loop：Agent 的审批机制
 tags:
+  - AI Agent 工程师
   - Human-in-the-loop
   - Approval
   - Security
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 19/168 | M1 人机协作 | Human-in-the-loop：Agent 的审批机制。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 人机协作, Human-in-the-loop, Approval, Security, Agent"
+description: >-
+  Day 19/168 | M1 人机协作 | Human-in-the-loop：Agent 的审批机制。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 人机协作, Human-in-the-loop, Approval, Security, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 4605
+date: 2026-10-08 10:30:00
 ---
 
 # AI Agent 工程师 Day 19：Human-in-the-loop：Agent 的审批机制

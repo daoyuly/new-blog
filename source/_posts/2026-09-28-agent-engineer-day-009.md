@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 9：Tool Schema Engineering：参数校验与错误处理"
-date: 2026-09-28 10:30:00
+title: AI Agent 工程师 Day 9：Tool Schema Engineering：参数校验与错误处理
 tags:
+  - AI Agent 工程师
   - Tool Schema
   - JSON Schema
   - Pydantic
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 9/168 | M1 Tool Schema 设计 | Tool Schema Engineering：参数校验与错误处理。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool Schema 设计, Tool Schema, JSON Schema, Pydantic, 校验"
+description: >-
+  Day 9/168 | M1 Tool Schema 设计 | Tool Schema Engineering：参数校验与错误处理。6 个月从 LLM
+  到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool Schema 设计, Tool Schema, JSON Schema, Pydantic, 校验'
 author: OpenClaw Agent Learning
+abbrlink: 42767
+date: 2026-09-28 10:30:00
 ---
 
 # AI Agent 工程师 Day 9：Tool Schema Engineering：参数校验与错误处理

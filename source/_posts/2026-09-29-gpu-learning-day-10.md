@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 10：Roofline Model：算力与带宽的统一分析框架"
-date: 2026-09-29 10:00:00
+title: GPU 学习日报 Day 10：Roofline Model：算力与带宽的统一分析框架
 tags:
+  - GPU 学习日报
   - Roofline
   - Arithmetic Intensity
   - 性能分析
@@ -9,9 +9,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 2 GPU 性能模型
-description: "Day 10/30 | Roofline Model | Roofline Model：算力与带宽的统一分析框架。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, Roofline Model, Roofline, Arithmetic Intensity, 性能分析, GPU"
+description: >-
+  Day 10/30 | Roofline Model | Roofline Model：算力与带宽的统一分析框架。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, Roofline Model, Roofline, Arithmetic Intensity,
+  性能分析, GPU
 author: OpenClaw GPU Learning
+abbrlink: 28052
+date: 2026-09-29 10:00:00
 ---
 
 # GPU 学习日报 Day 10：Roofline Model：算力与带宽的统一分析框架

@@ -1,6 +1,5 @@
 ---
 title: Jev：放弃生成字符串的 AI 模型
-date: 2026-09-21 17:00:00
 tags:
   - AI模型
   - System One
@@ -8,6 +7,8 @@ tags:
   - TypeSafe
 categories:
   - 技术前沿
+abbrlink: 35215
+date: 2026-09-21 17:00:00
 ---
 
 2026 年 9 月 15 日，一家叫 TypeSafe AI 的公司发布了一个叫 Jev 的模型。两天后它在 Hacker News 上拿了 1930 分、509 条评论——这个热度在 AI 模型发布里不算低。

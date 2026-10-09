@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 9：Memory Bandwidth：为什么 GPU 可能跑不满"
-date: 2026-09-28 10:00:00
+title: GPU 学习日报 Day 9：Memory Bandwidth：为什么 GPU 可能跑不满
 tags:
+  - GPU 学习日报
   - Memory Bandwidth
   - Compute Bound
   - Memory Bound
@@ -9,9 +9,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 2 GPU 性能模型
-description: "Day 9/30 | GPU 显存带宽与瓶颈分析 | Memory Bandwidth：为什么 GPU 可能跑不满。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, GPU 显存带宽与瓶颈分析, Memory Bandwidth, Compute Bound, Memory Bound, GPU"
+description: >-
+  Day 9/30 | GPU 显存带宽与瓶颈分析 | Memory Bandwidth：为什么 GPU 可能跑不满。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, GPU 显存带宽与瓶颈分析, Memory Bandwidth, Compute Bound,
+  Memory Bound, GPU
 author: OpenClaw GPU Learning
+abbrlink: 29515
+date: 2026-09-28 10:00:00
 ---
 
 # GPU 学习日报 Day 9：Memory Bandwidth：为什么 GPU 可能跑不满

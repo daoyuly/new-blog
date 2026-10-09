@@ -1,12 +1,13 @@
 ---
 title: AI交付结果：到底什么是"结果"？
-date: 2026-09-16 10:05:00
 tags:
   - AI
   - 产品思考
   - daoyuzhai
 categories:
   - 产品
+abbrlink: 7101
+date: 2026-09-16 10:05:00
 ---
 
 "AI是在交付结果，不是在交付工具。"

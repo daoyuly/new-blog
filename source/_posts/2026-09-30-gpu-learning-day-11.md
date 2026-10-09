@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 11：Tensor Core：GPU 的矩阵计算引擎"
-date: 2026-09-30 10:00:00
+title: GPU 学习日报 Day 11：Tensor Core：GPU 的矩阵计算引擎
 tags:
+  - GPU 学习日报
   - Tensor Core
   - MMA
   - 数据类型
@@ -9,9 +9,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 2 GPU 性能模型
-description: "Day 11/30 | Tensor Core 深入 | Tensor Core：GPU 的矩阵计算引擎。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, Tensor Core 深入, Tensor Core, MMA, 数据类型, GPU"
+description: >-
+  Day 11/30 | Tensor Core 深入 | Tensor Core：GPU 的矩阵计算引擎。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, Tensor Core 深入, Tensor Core, MMA, 数据类型, GPU'
 author: OpenClaw GPU Learning
+abbrlink: 18595
+date: 2026-09-30 10:00:00
 ---
 
 # GPU 学习日报 Day 11：Tensor Core：GPU 的矩阵计算引擎

@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 2：GPU 硬件结构：SM、CUDA Core 与 Tensor Core"
-date: 2026-09-21 10:00:00
+title: GPU 学习日报 Day 2：GPU 硬件结构：SM、CUDA Core 与 Tensor Core
 tags:
+  - GPU 学习日报
   - GPU
   - SM
   - CUDA Core
@@ -10,9 +10,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 1 建立 GPU 心智模型
-description: "Day 2/30 | GPU 基本硬件结构 | GPU 硬件结构：SM、CUDA Core 与 Tensor Core。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, GPU 基本硬件结构, GPU, SM, CUDA Core, Tensor Core, 硬件结构"
+description: >-
+  Day 2/30 | GPU 基本硬件结构 | GPU 硬件结构：SM、CUDA Core 与 Tensor Core。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, GPU 基本硬件结构, GPU, SM, CUDA Core, Tensor Core, 硬件结构'
 author: OpenClaw GPU Learning
+abbrlink: 37121
+date: 2026-09-21 10:00:00
 ---
 
 # GPU 学习日报 Day 2：GPU 硬件结构：SM、CUDA Core 与 Tensor Core

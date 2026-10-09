@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 8：FLOPS：GPU 算力的度量与 Transformer 计算量"
-date: 2026-09-27 10:00:00
+title: GPU 学习日报 Day 8：FLOPS：GPU 算力的度量与 Transformer 计算量
 tags:
+  - GPU 学习日报
   - FLOPS
   - 算力
   - Transformer
@@ -9,9 +9,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 2 GPU 性能模型
-description: "Day 8/30 | FLOPS 与计算量估算 | FLOPS：GPU 算力的度量与 Transformer 计算量。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, FLOPS 与计算量估算, FLOPS, 算力, Transformer, 计算量"
+description: >-
+  Day 8/30 | FLOPS 与计算量估算 | FLOPS：GPU 算力的度量与 Transformer 计算量。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, FLOPS 与计算量估算, FLOPS, 算力, Transformer, 计算量'
 author: OpenClaw GPU Learning
+abbrlink: 4048
+date: 2026-09-27 10:00:00
 ---
 
 # GPU 学习日报 Day 8：FLOPS：GPU 算力的度量与 Transformer 计算量

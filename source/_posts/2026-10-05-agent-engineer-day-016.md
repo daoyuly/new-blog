@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 16：Message State：Agent 跑 10 轮后模型应该看到什么"
-date: 2026-10-05 10:30:00
+title: AI Agent 工程师 Day 16：Message State：Agent 跑 10 轮后模型应该看到什么
 tags:
+  - AI Agent 工程师
   - Message
   - State
   - Context
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 16/168 | M1 消息管理 | Message State：Agent 跑 10 轮后模型应该看到什么。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 消息管理, Message, State, Context, Agent"
+description: >-
+  Day 16/168 | M1 消息管理 | Message State：Agent 跑 10 轮后模型应该看到什么。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 消息管理, Message, State, Context, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 30941
+date: 2026-10-05 10:30:00
 ---
 
 # AI Agent 工程师 Day 16：Message State：Agent 跑 10 轮后模型应该看到什么

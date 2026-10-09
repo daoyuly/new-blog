@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 3：Attention 与 KV Cache：LLM 推理的基石"
-date: 2026-09-22 10:30:00
+title: AI Agent 工程师 Day 3：Attention 与 KV Cache：LLM 推理的基石
 tags:
+  - AI Agent 工程师
   - Attention
   - KV Cache
   - Prefill
@@ -10,9 +10,15 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 3/168 | M1 Self Attention / KV Cache / Prefill / Decode | Attention 与 KV Cache：LLM 推理的基石。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Self Attention / KV Cache / Prefill / Decode, Attention, KV Cache, Prefill, Decode, LLM"
+description: >-
+  Day 3/168 | M1 Self Attention / KV Cache / Prefill / Decode | Attention 与 KV
+  Cache：LLM 推理的基石。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: >-
+  AI Agent, 工程师, Self Attention / KV Cache / Prefill / Decode, Attention, KV
+  Cache, Prefill, Decode, LLM
 author: OpenClaw Agent Learning
+abbrlink: 60096
+date: 2026-09-22 10:30:00
 ---
 
 # AI Agent 工程师 Day 3：Attention 与 KV Cache：LLM 推理的基石

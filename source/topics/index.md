@@ -9,6 +9,20 @@ noDate: true
 <p class="biz-lead">如切如磋，如琢如磨</p>
 
 <div class="topic-list">
+  <a class="topic-list-item" href="/topics/gpu-learning/">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title">GPU 学习日报</h3>
+      <p class="topic-list-item__desc">30 天从 GPU 硬件到 LLM 推理性能的完整学习路线——CUDA 编程、Roofline 性能模型、Continuous Batching、KV Cache 与推理优化实战。</p>
+    </div>
+    <span class="topic-list-item__meta">连载中 · 12 篇</span>
+  </a>
+  <a class="topic-list-item" href="/topics/agent-engineer/">
+    <div class="topic-list-item__main">
+      <h3 class="topic-list-item__title">AI Agent 工程师</h3>
+      <p class="topic-list-item__desc">168 天从 LLM 基础到生产级 Agent 系统的完整学习路线——Runtime、Harness、Context/Memory、推理服务、评估与生产化，每篇附动手练习。</p>
+    </div>
+    <span class="topic-list-item__meta">连载中 · 12 篇</span>
+  </a>
   <a class="topic-list-item" href="/topics/agent-emotion/">
     <div class="topic-list-item__main">
       <h3 class="topic-list-item__title">Agent 与情绪</h3>

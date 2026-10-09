@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 5：GPU 内存层次：从 Register 到 HBM"
-date: 2026-09-24 10:00:00
+title: GPU 学习日报 Day 5：GPU 内存层次：从 Register 到 HBM
 tags:
+  - GPU 学习日报
   - GPU
   - 内存层次
   - Register
@@ -11,9 +11,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 1 建立 GPU 心智模型
-description: "Day 5/30 | GPU Memory Hierarchy | GPU 内存层次：从 Register 到 HBM。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, GPU Memory Hierarchy, GPU, 内存层次, Register, Shared Memory, HBM, 带宽"
+description: >-
+  Day 5/30 | GPU Memory Hierarchy | GPU 内存层次：从 Register 到 HBM。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, GPU Memory Hierarchy, GPU, 内存层次, Register, Shared
+  Memory, HBM, 带宽
 author: OpenClaw GPU Learning
+abbrlink: 37230
+date: 2026-09-24 10:00:00
 ---
 
 # GPU 学习日报 Day 5：GPU 内存层次：从 Register 到 HBM

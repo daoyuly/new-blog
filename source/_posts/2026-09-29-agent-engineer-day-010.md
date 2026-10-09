@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 10：Tool Executor：执行与结果归一化"
-date: 2026-09-29 10:30:00
+title: AI Agent 工程师 Day 10：Tool Executor：执行与结果归一化
 tags:
+  - AI Agent 工程师
   - Tool Executor
   - ToolResult
   - Runtime
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 10/168 | M1 Tool Executor 设计 | Tool Executor：执行与结果归一化。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool Executor 设计, Tool Executor, ToolResult, Runtime, Agent"
+description: >-
+  Day 10/168 | M1 Tool Executor 设计 | Tool Executor：执行与结果归一化。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool Executor 设计, Tool Executor, ToolResult, Runtime, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 16836
+date: 2026-09-29 10:30:00
 ---
 
 # AI Agent 工程师 Day 10：Tool Executor：执行与结果归一化

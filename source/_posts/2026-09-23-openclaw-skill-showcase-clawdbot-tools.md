@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Clawdbot Tools（36 个让代理自我管理的工具）
+tags:
+  - openclaw
+  - skill
+  - clawdbot-tools
+categories:
+  - 技术推荐
+abbrlink: 30621
 date: 2026-09-23 11:30:00
-tags: [openclaw, skill, clawdbot-tools]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 - Clawdbot Tools

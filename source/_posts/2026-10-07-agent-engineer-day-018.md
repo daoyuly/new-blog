@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 18：Checkpoint：让 Agent 可以崩溃恢复"
-date: 2026-10-07 10:30:00
+title: AI Agent 工程师 Day 18：Checkpoint：让 Agent 可以崩溃恢复
 tags:
+  - AI Agent 工程师
   - Checkpoint
   - SQLite
   - 持久化
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 18/168 | M1 Agent 持久化 | Checkpoint：让 Agent 可以崩溃恢复。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Agent 持久化, Checkpoint, SQLite, 持久化, 可靠性"
+description: >-
+  Day 18/168 | M1 Agent 持久化 | Checkpoint：让 Agent 可以崩溃恢复。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Agent 持久化, Checkpoint, SQLite, 持久化, 可靠性'
 author: OpenClaw Agent Learning
+abbrlink: 49492
+date: 2026-10-07 10:30:00
 ---
 
 # AI Agent 工程师 Day 18：Checkpoint：让 Agent 可以崩溃恢复

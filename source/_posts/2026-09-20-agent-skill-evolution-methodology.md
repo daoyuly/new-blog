@@ -1,6 +1,5 @@
 ---
-title: "Agent Skill 不是写完就完事：一套进化方法论"
-date: 2026-09-20 14:30:00
+title: Agent Skill 不是写完就完事：一套进化方法论
 tags:
   - Agent
   - Skill
@@ -9,9 +8,13 @@ tags:
   - OpenClaw
 categories:
   - Agent 架构
-description: "Skill 写完只是起点。本文提出 Agent Skill 的双源进化模型：实践反馈驱动内生迭代 + 外部知识萃取驱动外源生长，形成完整的 Skill 进化闭环。"
-keywords: "Agent Skill, 进化方法论, 实践反馈, 知识萃取, OpenClaw, Skill迭代"
+description: >-
+  Skill 写完只是起点。本文提出 Agent Skill 的双源进化模型：实践反馈驱动内生迭代 + 外部知识萃取驱动外源生长，形成完整的 Skill
+  进化闭环。
+keywords: 'Agent Skill, 进化方法论, 实践反馈, 知识萃取, OpenClaw, Skill迭代'
 author: 来顺
+abbrlink: 28622
+date: 2026-09-20 14:30:00
 ---
 
 # Agent Skill 不是写完就完事：一套进化方法论

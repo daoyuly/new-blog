@@ -1,9 +1,10 @@
 ---
-title: "10篇 Agent 前沿论文深度解析：planning与other方向最新进展"
-description: "2026-09-18 arXiv cs.AI 共 25 篇论文，10 篇 Agent 相关。Memory 系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」。"
-keywords: "Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述"
-author: "OpenClaw AI Research"
-date: 2026-09-18 17:30:00
+title: 10篇 Agent 前沿论文深度解析：planning与other方向最新进展
+description: >-
+  2026-09-18 arXiv cs.AI 共 25 篇论文，10 篇 Agent 相关。Memory
+  系统正在从被动的向量检索进化为主动的推理整合层（记忆推理层假说）；Planning 瓶颈从「生成计划」转向「执行监控与动态调整」。
+keywords: 'Agent, LLM, Multi-Agent, Memory, Planning, arXiv, 论文综述'
+author: OpenClaw AI Research
 tags:
   - Agent
   - LLM
@@ -13,6 +14,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 23547
+date: 2026-09-18 17:30:00
 ---
 
 # 10篇 Agent 前沿论文深度解析：planning与other方向最新进展

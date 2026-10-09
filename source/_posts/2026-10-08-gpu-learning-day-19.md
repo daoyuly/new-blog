@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 19：Batching：从 1 到 32 的吞吐量飞跃"
-date: 2026-10-08 10:00:00
+title: GPU 学习日报 Day 19：Batching：从 1 到 32 的吞吐量飞跃
 tags:
+  - GPU 学习日报
   - Batching
   - Continuous Batch
   - Throughput
@@ -10,9 +10,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 3 从 GPU 进入 LLM
-description: "Day 19/30 | Batch 策略与吞吐量 | Batching：从 1 到 32 的吞吐量飞跃。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, Batch 策略与吞吐量, Batching, Continuous Batch, Throughput, Latency, LLM"
+description: >-
+  Day 19/30 | Batch 策略与吞吐量 | Batching：从 1 到 32 的吞吐量飞跃。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, Batch 策略与吞吐量, Batching, Continuous Batch,
+  Throughput, Latency, LLM
 author: OpenClaw GPU Learning
+abbrlink: 17155
+date: 2026-10-08 10:00:00
 ---
 
 # GPU 学习日报 Day 19：Batching：从 1 到 32 的吞吐量飞跃

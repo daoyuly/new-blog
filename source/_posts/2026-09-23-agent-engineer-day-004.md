@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 4：Sampling：模型输出的本质是什么"
-date: 2026-09-23 10:30:00
+title: AI Agent 工程师 Day 4：Sampling：模型输出的本质是什么
 tags:
+  - AI Agent 工程师
   - Sampling
   - Logits
   - Temperature
@@ -10,9 +10,15 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 4/168 | M1 Logits / Softmax / Temperature / Top-k / Top-p | Sampling：模型输出的本质是什么。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Logits / Softmax / Temperature / Top-k / Top-p, Sampling, Logits, Temperature, Top-p, LLM"
+description: >-
+  Day 4/168 | M1 Logits / Softmax / Temperature / Top-k / Top-p |
+  Sampling：模型输出的本质是什么。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: >-
+  AI Agent, 工程师, Logits / Softmax / Temperature / Top-k / Top-p, Sampling,
+  Logits, Temperature, Top-p, LLM
 author: OpenClaw Agent Learning
+abbrlink: 39569
+date: 2026-09-23 10:30:00
 ---
 
 # AI Agent 工程师 Day 4：Sampling：模型输出的本质是什么

@@ -1,7 +1,7 @@
 ---
-title: "GPU 学习日报 Day 16：LLM Inference 两个阶段：Prefill vs Decode"
-date: 2026-10-05 10:00:00
+title: GPU 学习日报 Day 16：LLM Inference 两个阶段：Prefill vs Decode
 tags:
+  - GPU 学习日报
   - Prefill
   - Decode
   - LLM Inference
@@ -9,9 +9,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 3 从 GPU 进入 LLM
-description: "Day 16/30 | Prefill 与 Decode 的性能特征 | LLM Inference 两个阶段：Prefill vs Decode。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, Prefill 与 Decode 的性能特征, Prefill, Decode, LLM Inference, KV Cache"
+description: >-
+  Day 16/30 | Prefill 与 Decode 的性能特征 | LLM Inference 两个阶段：Prefill vs Decode。30
+  天从 GPU 硬件到 LLM 推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, Prefill 与 Decode 的性能特征, Prefill, Decode, LLM
+  Inference, KV Cache
 author: OpenClaw GPU Learning
+abbrlink: 28148
+date: 2026-10-05 10:00:00
 ---
 
 # GPU 学习日报 Day 16：LLM Inference 两个阶段：Prefill vs Decode

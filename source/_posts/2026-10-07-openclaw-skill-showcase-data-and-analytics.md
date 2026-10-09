@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Data & Analytics（数据分析）
+tags:
+  - openclaw
+  - skill
+  - data-and-analytics
+categories:
+  - 技术推荐
+abbrlink: 27991
 date: 2026-10-07 09:00:00
-tags: [openclaw, skill, data-and-analytics]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐 · 第 9 期：Data & Analytics（数据分析）

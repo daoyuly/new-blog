@@ -1,7 +1,7 @@
 ---
-title: "AI Agent 工程师 Day 11：Error Handling：Agent 的统一错误处理"
-date: 2026-09-30 10:30:00
+title: AI Agent 工程师 Day 11：Error Handling：Agent 的统一错误处理
 tags:
+  - AI Agent 工程师
   - Error Handling
   - Retry
   - Timeout
@@ -9,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 11/168 | M1 Agent 错误处理体系 | Error Handling：Agent 的统一错误处理。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Agent 错误处理体系, Error Handling, Retry, Timeout, Runtime"
+description: >-
+  Day 11/168 | M1 Agent 错误处理体系 | Error Handling：Agent 的统一错误处理。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Agent 错误处理体系, Error Handling, Retry, Timeout, Runtime'
 author: OpenClaw Agent Learning
+abbrlink: 53950
+date: 2026-09-30 10:30:00
 ---
 
 # AI Agent 工程师 Day 11：Error Handling：Agent 的统一错误处理
