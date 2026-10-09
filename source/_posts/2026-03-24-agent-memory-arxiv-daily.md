@@ -7,7 +7,8 @@ tags:
   - daily-report
   - RAG
   - knowledge-management
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
   - Agent Memory
 abbrlink: 2005

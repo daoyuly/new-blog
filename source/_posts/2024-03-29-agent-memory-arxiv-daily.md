@@ -6,7 +6,8 @@ tags:
   - 知识库
   - 多模态推理
   - 强化学习
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - 人工智能
   - Agent技术
   - 知识管理
