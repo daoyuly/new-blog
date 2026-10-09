@@ -1,4 +1,4 @@
-<% if (post.categories && post.categories.length){ %>
+<% if (post.categories && post.categories.length && typeof post.categories.forEach === 'function'){ %>
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">

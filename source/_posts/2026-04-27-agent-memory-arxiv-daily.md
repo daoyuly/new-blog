@@ -6,7 +6,8 @@ tags:
   - Semantic Memory
   - arXiv
   - AI Research
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
   - Agent Memory
 abbrlink: 9238

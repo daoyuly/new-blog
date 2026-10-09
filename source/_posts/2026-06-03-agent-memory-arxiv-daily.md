@@ -7,7 +7,8 @@ tags:
   - LLM
   - memory-system
   - self-evolving-agent
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Agent Memory 研究追踪
 abbrlink: 50982
 date: 2026-06-03 18:00:00

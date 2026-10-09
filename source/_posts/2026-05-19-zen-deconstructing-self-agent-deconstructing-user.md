@@ -12,7 +12,7 @@ categories:
 abbrlink: 54552
 date: 2026-05-19 12:40:00
 description: "——从五蕴到五层，从缘起到检索，从能所双亡到非二元交互"
-keywords: "禅宗拆解自我的视角, agent, 如何拆解"用户结构, 禅宗, AI Agent, 用户建模, 五蕴, 缘起性空"
+keywords: "禅宗拆解自我的视角, agent, 如何拆解\"用户结构, 禅宗, AI Agent, 用户建模, 五蕴, 缘起性空"
 ---
 
 # 禅宗拆解自我的视角：AI Agent 如何拆解"用户结构"

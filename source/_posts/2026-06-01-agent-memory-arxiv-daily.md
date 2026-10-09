@@ -5,7 +5,7 @@ tags:
   - arxiv-daily
   - LLM
   - RAG
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
   - AI 论文追踪
   - Agent Memory

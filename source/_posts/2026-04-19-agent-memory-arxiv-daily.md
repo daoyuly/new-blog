@@ -7,7 +7,8 @@ tags:
   - RAG
   - 超维记忆
   - 智能体系统
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
 abbrlink: 15196
 date: 2026-04-19 18:00:00

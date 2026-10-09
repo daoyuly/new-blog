@@ -6,7 +6,8 @@ tags:
   - 每日报告
   - LLM Agents
   - 记忆机制
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
   - Agent Systems
 abbrlink: 61021

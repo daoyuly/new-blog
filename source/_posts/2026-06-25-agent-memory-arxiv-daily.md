@@ -1,6 +1,5 @@
 ---
 title: Agent Memory arXiv 日报 — 2026-06-25
-date: 2026-06-25 18:00:00
 tags:
   - agent-memory
   - arxiv
@@ -8,11 +7,13 @@ tags:
   - LLM
   - long-term-memory
   - RAG
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
 noindex: true
-description: "- arXiv ID: 2606.25161"
-keywords: "agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, long-term-memory"
+description: '- arXiv ID: 2606.25161'
+keywords: 'agent, memory, arxiv, 2026, agent-memory, daily-report, LLM, long-term-memory'
+abbrlink: 9371
+date: 2026-06-25 18:00:00
 ---
 <!-- GEO citation meta
 citation_arxiv_id: 2606.25161

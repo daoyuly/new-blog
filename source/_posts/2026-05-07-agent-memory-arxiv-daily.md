@@ -6,7 +6,8 @@ tags:
   - Context Management
   - Multi-Agent Systems
   - arXiv Daily
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
   - Paper Review
 abbrlink: 27748

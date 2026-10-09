@@ -5,7 +5,8 @@ tags:
   - LLM Agents
   - arXiv
   - Research
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Research
 abbrlink: 30085
 date: 2026-04-15 18:00:00

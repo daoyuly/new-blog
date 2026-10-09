@@ -7,7 +7,8 @@ tags:
   - LLM
   - RAG
   - episodic-memory
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI论文日报
 abbrlink: 15888
 date: 2026-06-24 18:00:00

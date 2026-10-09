@@ -6,7 +6,8 @@ tags:
   - daily-report
   - LLM
   - RAG
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - 论文追踪
   - Agent Memory
 abbrlink: 58774

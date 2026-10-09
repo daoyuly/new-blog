@@ -7,7 +7,7 @@ tags:
   - LLM
   - episodic-memory
   - RAG
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
   - Agent Memory
 abbrlink: 48303

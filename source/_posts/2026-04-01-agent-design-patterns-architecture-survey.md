@@ -10,17 +10,10 @@ tags:
 categories:
   - AI技术研究
   - 架构设计
-keywords:
-  - Agent Design Patterns
-  - ReAct Pattern
-  - Plan-and-Execute
-  - Reflection Pattern
-  - Multi-Agent Architecture
-  - Human-in-the-Loop
+keywords: "agent设计模式与系统架构完全指南, 从理论到工程实践, AI Agent, Design Patterns, System Architecture, ReAct, Reflection, Multi-Agent"
 abbrlink: 41096
 date: 2026-04-01 09:45:00
 description: "关键词: Agent Design Patterns, ReAct, Plan-and-Execute, Reflection, Architecture Patterns"
-keywords: "agent设计模式与系统架构完全指南, 从理论到工程实践, AI Agent, Design Patterns, System Architecture, ReAct, Reflection, Multi-Agent"
 ---
 
 # AI Agent设计模式与系统架构完全指南 - 从理论到工程实践

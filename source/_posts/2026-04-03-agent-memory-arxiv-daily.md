@@ -6,7 +6,8 @@ tags:
   - 强化学习
   - 神经符号AI
   - 自主智能体
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - 人工智能
   - Agent技术
   - 认知科学

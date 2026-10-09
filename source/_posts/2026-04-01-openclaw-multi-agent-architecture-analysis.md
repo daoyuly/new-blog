@@ -10,16 +10,10 @@ categories:
   - AI产品分析
   - 开源项目
   - 技术调研
-keywords:
-  - OpenClaw
-  - Multi-Agent Architecture
-  - Personal AI Assistant
-  - Agent Routing
-  - Sub-Agent
+keywords: "openclaw多agent机制与系统架构深度解析, 开源个人ai助手的技术内幕, OpenClaw, Open Source, Multi-Agent, System Architecture, Personal AI, AI产品分析"
 abbrlink: 31769
 date: 2026-04-01 10:45:00
 description: "项目版本: OpenClaw v2026.2+"
-keywords: "openclaw多agent机制与系统架构深度解析, 开源个人ai助手的技术内幕, OpenClaw, Open Source, Multi-Agent, System Architecture, Personal AI, AI产品分析"
 ---
 
 # OpenClaw多Agent机制与系统架构深度解析 - 开源个人AI助手的技术内幕

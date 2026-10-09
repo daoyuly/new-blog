@@ -6,7 +6,8 @@ tags:
   - 工具检索
   - 多智能体通信
   - 个性化记忆
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - 人工智能
   - Agent技术
   - 知识管理

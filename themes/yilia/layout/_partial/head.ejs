@@ -40,7 +40,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= title %>">
   <meta name="twitter:description" content="<%= page.description || config.description %>">
-  <% if (page.tags && page.tags.length){ %>
+  <% if (page.tags && page.tags.length && typeof page.tags.map === 'function'){ %>
   <meta name="twitter:label1" content="标签">
   <meta name="twitter:data1" content="<%= page.tags.map(function(t){return t.name}).join(', ') %>">
   <% } %>

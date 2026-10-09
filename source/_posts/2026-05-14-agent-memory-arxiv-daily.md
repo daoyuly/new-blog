@@ -6,7 +6,7 @@ tags:
   - RAG
   - long-term-memory
   - episodic-memory
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
 abbrlink: 60205
 date: 2026-05-14 18:00:00

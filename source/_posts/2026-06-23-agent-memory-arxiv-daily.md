@@ -5,7 +5,7 @@ tags:
   - LLM
   - arxiv
   - daily-report
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
   - AI Research
   - Agent Memory

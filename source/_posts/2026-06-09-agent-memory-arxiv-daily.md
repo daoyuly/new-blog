@@ -6,7 +6,7 @@ tags:
   - RAG
   - episodic-memory
   - arxiv-daily
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
   - AI论文日报
 abbrlink: 27954

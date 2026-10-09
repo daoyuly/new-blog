@@ -7,7 +7,8 @@ tags:
   - RAG
   - episodic-memory
   - belief-state
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Agent Memory 日报
 abbrlink: 26258
 noindex: true

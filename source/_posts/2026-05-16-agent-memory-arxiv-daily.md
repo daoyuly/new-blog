@@ -9,7 +9,8 @@ tags:
   - Persona Consistency
   - 多智能体系统
   - 自我演化
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Agent 研究
   - arXiv 日报
 abbrlink: 81016

@@ -7,7 +7,8 @@ tags:
   - RAG
   - arXiv
   - AI Research
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Research Report
 abbrlink: 57162
 date: 2026-05-09 18:00:00

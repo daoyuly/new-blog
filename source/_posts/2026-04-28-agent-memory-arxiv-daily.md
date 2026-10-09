@@ -7,7 +7,8 @@ tags:
   - Knowledge Graph
   - Long-term Memory
   - 智能体
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
   - Memory Systems
 abbrlink: 62352

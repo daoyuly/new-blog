@@ -11,16 +11,10 @@ tags:
 categories:
   - 技术对比
   - 架构选型
-keywords:
-  - Agent Framework Comparison
-  - LangGraph vs AutoGen
-  - CrewAI vs MetaGPT
-  - Framework Selection
-  - Architecture Analysis
+keywords: "流行agent框架系统对比与选型指南, 异同、优劣势及适用场景深度分析, Agent Framework, Comparison, LangGraph, AutoGen, CrewAI, OpenClaw"
 abbrlink: 1210
 date: 2026-04-01 13:30:00
 description: "关键词: Agent Framework, Comparison, Selection Guide, Architecture Analysis"
-keywords: "流行agent框架系统对比与选型指南, 异同、优劣势及适用场景深度分析, Agent Framework, Comparison, LangGraph, AutoGen, CrewAI, OpenClaw"
 ---
 
 # 流行Agent框架系统对比与选型指南 - 异同、优劣势及适用场景深度分析

@@ -5,7 +5,8 @@ tags:
   - arXiv Daily
   - AI Research
   - Long-term Memory
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Research
   - AI Agents
 abbrlink: 13035

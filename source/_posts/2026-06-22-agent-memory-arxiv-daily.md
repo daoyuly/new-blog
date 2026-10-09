@@ -9,7 +9,7 @@ tags:
   - RAG
   - long-term-memory
   - engram
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
   - agent-memory-daily
 abbrlink: 29075

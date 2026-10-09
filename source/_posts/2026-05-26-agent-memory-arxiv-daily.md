@@ -5,7 +5,7 @@ tags:
   - arxiv-daily
   - AI-agent
   - LLM
-categories: [Agent Memory 研究]
+categories:
   - Agent Memory 研究
   - Agent Memory 日报
 abbrlink: 8520

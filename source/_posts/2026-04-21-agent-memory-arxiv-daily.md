@@ -6,7 +6,8 @@ tags:
   - 论文跟踪
   - RAG
   - Long-term Memory
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI 研究
   - 论文综述
 abbrlink: 18727

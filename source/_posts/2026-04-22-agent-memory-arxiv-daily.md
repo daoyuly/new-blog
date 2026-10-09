@@ -6,7 +6,8 @@ tags:
   - RAG
   - Long-term Memory
   - AI Research
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - Research Daily
 abbrlink: 35502
 noindex: true

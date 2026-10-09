@@ -5,7 +5,8 @@ tags:
   - AI Research
   - Paper Review
   - Transfer Learning
-categories: [Agent Memory 研究]
+categories:
+  - Agent Memory 研究
   - AI Research
 abbrlink: 35526
 date: 2026-04-16 18:00:00
