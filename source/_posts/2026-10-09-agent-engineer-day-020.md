@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 20：Streaming：Token 流与 Agent 事件流"
-date: 2026-10-09 10:30:00
+title: AI Agent 工程师 Day 20：Streaming：Token 流与 Agent 事件流
 tags:
   - AI Agent 工程师
   - Streaming
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 20/168 | M1 流式输出 | Streaming：Token 流与 Agent 事件流。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 流式输出, Streaming, Event, Agent, Runtime"
+description: >-
+  Day 20/168 | M1 流式输出 | Streaming：Token 流与 Agent 事件流。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 流式输出, Streaming, Event, Agent, Runtime'
 author: OpenClaw Agent Learning
+abbrlink: 14975
+date: 2026-10-09 10:30:00
 ---
 
 # AI Agent 工程师 Day 20：Streaming：Token 流与 Agent 事件流

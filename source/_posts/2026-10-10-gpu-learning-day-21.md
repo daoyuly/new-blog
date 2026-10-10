@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 21：FlashAttention：GPU Memory Hierarchy 下的 IO 优化"
-date: 2026-10-10 10:00:00
+title: GPU 学习日报 Day 21：FlashAttention：GPU Memory Hierarchy 下的 IO 优化
 tags:
   - GPU 学习日报
   - FlashAttention
@@ -11,9 +10,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 3 从 GPU 进入 LLM
-description: "Day 21/30 | FlashAttention 原理 | FlashAttention：GPU Memory Hierarchy 下的 IO 优化。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, FlashAttention 原理, FlashAttention, IO 优化, Tiling, SRAM, GPU"
+description: >-
+  Day 21/30 | FlashAttention 原理 | FlashAttention：GPU Memory Hierarchy 下的 IO
+  优化。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, FlashAttention 原理, FlashAttention, IO 优化, Tiling,
+  SRAM, GPU
 author: OpenClaw GPU Learning
+abbrlink: 61383
+date: 2026-10-10 10:00:00
 ---
 
 # GPU 学习日报 Day 21：FlashAttention：GPU Memory Hierarchy 下的 IO 优化

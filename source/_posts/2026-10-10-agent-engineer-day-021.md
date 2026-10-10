@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 21：Stateful Agent V1：State + Checkpoint + Streaming 整合"
-date: 2026-10-10 10:30:00
+title: AI Agent 工程师 Day 21：Stateful Agent V1：State + Checkpoint + Streaming 整合
 tags:
   - AI Agent 工程师
   - Stateful Agent
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 21/168 | M1 有状态 Agent 整合 | Stateful Agent V1：State + Checkpoint + Streaming 整合。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 有状态 Agent 整合, Stateful Agent, Checkpoint, Streaming, Runtime"
+description: >-
+  Day 21/168 | M1 有状态 Agent 整合 | Stateful Agent V1：State + Checkpoint +
+  Streaming 整合。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 有状态 Agent 整合, Stateful Agent, Checkpoint, Streaming, Runtime'
 author: OpenClaw Agent Learning
+abbrlink: 51598
+date: 2026-10-10 10:30:00
 ---
 
 # AI Agent 工程师 Day 21：Stateful Agent V1：State + Checkpoint + Streaming 整合
