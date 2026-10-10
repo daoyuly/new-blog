@@ -137,6 +137,9 @@ a:hover {
   position: relative;
   display: inline-block;
   padding-bottom: 0.45rem;
+  /* 抵消 padding-bottom 对布局的影响，保持与其他菜单项垂直对齐；
+     padding 本身保留作悬停桥，防止鼠标移向面板时菜单关闭 */
+  margin-bottom: -0.45rem;
 }
 .site-top-nav__dropdown:hover,
 .site-top-nav__dropdown:focus-within {
