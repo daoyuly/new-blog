@@ -55,9 +55,9 @@
   <% if (page.categories && page.categories.length){ %>
   <meta property="article:section" content="<%= page.categories.first().name %>">
   <% } %>
-  <% if (theme.rss){ %>
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-  <% } %>
+  <% rss_feeds().forEach(function (feed) { %>
+    <link rel="alternate" href="<%= full_url_for(feed.path) %>" title="<%= config.title %> - <%= feed.label %>" type="<%= feed.mime %>">
+  <% }); %>
   <% if (theme.favicon){ %>
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>

@@ -1,22 +1,18 @@
 #!/bin/bash
-# set -e  # disabled: hexo generate has non-fatal theme errors but still produces output
+set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
 
 # 1. 构建
-npm run build
-cd ./public
-rm -rf ./.DS_Store
+npm run build:verified
 
 # 2. 通过 git status 找到新增和修改的文件
 cd "$ROOT"
 git add .
 
 # 3. 只上传新增和修改的文件
-cd ./public
-rm -rf ./.DS_Store
-scp -r ./* root@8.147.135.17:/usr/share/nginx/html/
+bash tools/upload-public.sh
 
 # 4. 上传后 git 提交所有变更
 if ! git diff --staged --quiet; then

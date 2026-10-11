@@ -12,6 +12,22 @@
   ],
   "routes": [
     {
+      "src": "/atom\\.xml",
+      "headers": {
+        "Content-Type": "application/atom+xml; charset=utf-8",
+        "Cache-Control": "public, max-age=300, s-maxage=300"
+      },
+      "dest": "/public/atom.xml"
+    },
+    {
+      "src": "/rss\\.xml",
+      "headers": {
+        "Content-Type": "application/rss+xml; charset=utf-8",
+        "Cache-Control": "public, max-age=300, s-maxage=300"
+      },
+      "dest": "/public/rss.xml"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
     }

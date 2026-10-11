@@ -1,20 +1,9 @@
-# /bin/bash
+#!/bin/bash
+set -euo pipefail
 
-function readDir(){
-    for file in `ls $1`; do
-        if [ -d $1"/"$file ]; then
-            readDir $1"/"$file
-        else
-            scp -r $1"/"$file root@8.147.135.17:/usr/share/nginx/html/$1"/"$file
-        fi
-    done
-}
+PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$PROJECT_ROOT"
 
-    
-
-npm run build
-cd ./public
-rm -rf ./.DS_Store
-#readDir .
-scp -r ./* root@8.147.135.17:/usr/share/nginx/html/
+npm run build:verified
+bash tools/upload-public.sh
 

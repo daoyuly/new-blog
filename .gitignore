@@ -11,3 +11,6 @@ public/
 node_modules/
 .db.json
 deploy.log
+.rss-build/
+output/playwright/
+.playwright-cli/

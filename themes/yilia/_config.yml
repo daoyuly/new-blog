@@ -9,6 +9,7 @@ menu:
   盗愚斎: /daoyuzhai/
   论文研读: /papers/
   行业报告: /industry-reports/
+  RSS 订阅: /subscribe/
   项目合作:
     全智能家庭档案馆: /family-archive/
     合作: /business/
@@ -20,7 +21,7 @@ subnav:
   github: "https://github.com/daoyuly/cv"
   github_label: "github"
   #weibo: "#"
-  #rss: "#"
+  rss: /atom.xml
   #zhihu: "#"
   #qq: "#"
   #weixin: "#"
@@ -35,7 +36,8 @@ subnav:
   #twitter: "#"
   #linkedin: "#"
 
-#rss: /atom.xml
+rss: /atom.xml
+rss_menu_label: RSS 订阅
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，

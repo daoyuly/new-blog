@@ -29,7 +29,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				<% for (var i in theme.subnav){ %>
-					<% if (i !== 'github') { %>
+					<% if (i === 'rss') { var feeds = rss_feeds(); var atom = feeds.find(function (feed) { return feed.type === 'atom'; }) || feeds[0]; if (atom) { %>
+					<a class="rss" href="<%= url_for(atom.path) %>" title="RSS 订阅" aria-label="RSS 订阅"><i class="icon-rss" aria-hidden="true"></i></a>
+					<% } } else if (i !== 'github') { %>
 					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
 					<% } %>
 		        <%}%>

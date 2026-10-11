@@ -17,8 +17,8 @@
         <%- partial('_partial/theme-menu', { mode: 'classic' }) %>
       </nav>
       <nav id="sub-nav">
-        <% if (theme.rss){ %>
-          <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
+        <% var feeds = rss_feeds(); var atom = feeds.find(function (feed) { return feed.type === 'atom'; }) || feeds[0]; if (atom){ %>
+          <a id="nav-rss-link" class="nav-icon" href="<%= url_for(atom.path) %>" title="RSS 订阅" aria-label="RSS 订阅"></a>
         <% } %>
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>

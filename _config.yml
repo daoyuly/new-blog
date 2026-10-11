@@ -134,6 +134,17 @@ jsonContent:
       tags: true
 
 # Sitemap
+feed:
+  enable: true
+  type: [atom, rss2]
+  path: [atom.xml, rss.xml]
+  limit: 50
+  content: false
+  content_limit: 200
+  content_limit_delim: ''
+  order_by: -date
+  autodiscovery: false
+
 sitemap:
   path: sitemap.xml
   rel: true
