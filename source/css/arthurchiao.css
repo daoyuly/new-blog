@@ -389,6 +389,10 @@ a:hover {
   min-height: auto;
 }
 
+.article-entry .highlight table {
+  text-align: left;
+}
+
 /* 列表 */
 .article-entry ul,
 .article-entry ol {
