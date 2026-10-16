@@ -143,7 +143,7 @@ AutoGen:           UserProxy ◄──消息──► Assistant ◄──消息�
 | 恢复粒度 | 自定义 | 每个 superstep 自动存档 | 手动保存消息历史 |
 | 时间旅行 | 自己实现很痛苦 | 支持（从任意 checkpoint 分叉重放） | 不支持 |
 
-**LangGraph 在这个维度的优势是结构性的，不是实现性的。** 因果链是：显式 State + 声明式 Reducer + 图结构 → 每个 superstep 的状态变化是确定的 ��� 所以自动 checkpoint 是“顺带”的能力。你的 Runtime 想做到同样的事，必须先回答“什么算状态的一部分？”——所有手工循环里闭包捕获的变量、对话中间态，都是坑。
+**LangGraph 在这个维度的优势是结构性的，不是实现性的。** 因果链是：显式 State + 声明式 Reducer + 图结构 → 每个 superstep 的状态变化是确定的 → 所以自动 checkpoint 是“顺带”的能力。你的 Runtime 想做到同样的事，必须先回答“什么算状态的一部分？”——所有手工循环里闭包捕获的变量、对话中间态，都是坑。
 
 我自己的 Runtime 实现 checkpoint 时踩的最大坑就是：State 里混进了不可序列化的对象（open file handle、lambda）。LangGraph 通过强制 State 是纯数据结构（TypedDict/Pydantic）从根上消灭了这类问题。**约束换来可靠性**——这是框架价值的典型样本。
 

@@ -300,7 +300,7 @@ A：x 方向最多 2³¹-1（约 21 亿），y/z 方向各最多 65535。对绝�
 A：不会。Kernel Launch 是异步的，CPU 立刻继续执行下一行。`cudaMemcpy`（D2H 方向）会隐式同步等待；如需中途同步可调用 `cudaDeviceSynchronize()`。忘记这一点是异步结果错误的头号来源。
 
 **Q4：为什么我的向量加法 GPU 版比 CPU 版还慢？**
-A：大概率是数据搬运吃掉了全部收益。数组太小（比如只有几千个元素）时，`cudaMalloc` + 两次 `cudaMemcpy` 的固定开销远超计算节省。GPU 的收益来自规模：数据量和并行度足够大时才划算。另外检查是否用�� Debug 模式编译（加 `-O3`）。
+A：大概率是数据搬运吃掉了全部收益。数组太小（比如只有几千个元素）时，`cudaMalloc` + 两次 `cudaMemcpy` 的固定开销远超计算节省。GPU 的收益来自规模：数据量和并行度足够大时才划算。另外检查是否用了 Debug 模式编译（加 `-O3`）。
 
 **Q5：`blockIdx.x * blockDim.x + threadIdx.x` 会不会整数溢出？**
 A：会，且是真 bug。`blockIdx.x * blockDim.x` 是 `int`（32 位）乘法，当总线程数超过 2³¹-1 时溢出。处理超大数组的 Kernel 应写成 `(size_t)blockIdx.x * blockDim.x + threadIdx.x`。LLM 推理的 KV Cache Kernel 常处理超大索引，实际工程中就是这么写的。

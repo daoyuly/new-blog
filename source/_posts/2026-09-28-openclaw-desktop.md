@@ -73,7 +73,7 @@ openclaw-desktop（对外品牌名为 XiaodongBot Desktop）是一个专为 Nano
 4. **成本与分析面板**
    - 独立的数据可视化模块，聚合 NanoBot 产生的日志和计费数据，通过图表展示消耗趋势。
 5. **国际化(i18n)系统**
-   - 深度集成 RTL（从右向左）布局支持。这不仅是文本翻译，更要求整个 UI 布局（如 Flex 方向、Margin/Padding）能够根据语言动��翻转。
+   - 深度集成 RTL（从右向左）布局支持。这不仅是文本翻译，更要求整个 UI 布局（如 Flex 方向、Margin/Padding）能够根据语言动态翻转。
 
 **功能之间的关系**
 整个系统以 **Chat (对话)** 为核心交互入口。当用户在对话中触发 Agent 执行任务时，**Agent Hub** 提供底层能力支撑，**Terminal** 允许用户实时查看或干预 Agent 生成的 Shell 指令，**Cron Monitor** 负责调度周期性的 Agent 唤醒，而最终的执行结果与 Token 消耗则回流至 **Analytics** 面板进行展示。各模块形成了一个完整的 AI Agent 运维闭环。

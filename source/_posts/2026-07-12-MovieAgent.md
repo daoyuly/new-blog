@@ -54,7 +54,7 @@ MovieAgent 是一个基于多智能体和思维链规划的全自动化长视频
 **使用的技术和框架**
 基于项目特征与多智能体系统的主流实践，MovieAgent 的技术栈主要包含：
 - **大语言模型与 Agent 框架**：使用 LLM（如 GPT-4 / Claude）作为大脑，结合 LangChain / AutoGen 等框架构建多智能体交互逻辑。
-- **视觉生成模型**：结合 Stable Diffusion 系列或先进的视频生成模型（如 Sora 类架构、AnimateDiff ��）生成关键帧和视频片段。
+- **视觉生成模型**：结合 Stable Diffusion 系列或先进的视频生成模型（如 Sora 类架构、AnimateDiff 等）生成关键帧和视频片段。
 - **音频处理模型**：TTS（文本转语音）模型用于配音，音频生成模型用于背景音效。
 - **编程语言**：Python 为主，涵盖深度学习计算与系统编排。
 

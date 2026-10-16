@@ -209,7 +209,7 @@ citation_arxiv_id: 2606.18037
 
 基于今日论文分析，Agent Memory的技术演进路线为：
 
-**RAG(检索增强生成) → Memory System(记忆系统) → Context-Aware & Relation-Aware Graph Memory(上下文感知与关系感知图记忆) → Agentic Discovery & Self-Evolving Memory(代理发现与自进化��忆)**
+**RAG(检索增强生成) → Memory System(记忆系统) → Context-Aware & Relation-Aware Graph Memory(上下文感知与关系感知图记忆) → Agentic Discovery & Self-Evolving Memory(代理发现与自进化记忆)**
 
 具体判断：
 1. 下一站将是**上下文感知与关系感知图记忆**，如论文8提出的HyGRaG框架，通过分层知识块和实体关系构建更复杂的记忆结构

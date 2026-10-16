@@ -261,7 +261,7 @@ RunStarted → ModelStarted → Token* → (ToolCall → ToolStarted
 
 在生产级 Agent 系统中，事件流不是锦上添花，而是四个关键能力的地基：
 
-1. **前���体验**：Agent 产品 UI（时间线、工具卡片、打字机）全部由事件驱动。没有事件流，前端只能做转圈。
+1. **前端体验**：Agent 产品 UI（时间线、工具卡片、打字机）全部由事件驱动。没有事件流，前端只能做转圈。
 2. **可观测性（Observability）**：事件序列天然是结构化 trace，直接对接 LangSmith、Langfuse 等观测平台，可以回放每一次 Run 的完整过程。
 3. **Human-in-the-loop**：`ToolCall` 与 `ToolStarted` 之间插入“等待用户审批”状态，是敏感操作（发邮件、转账、删数据）审批流的标准实现点。
 4. **多 Agent 编排**：当子 Agent 作为父 Agent 的工具被调用时，子 Agent 的事件流可以被“转发”或“折叠”进父级事件流——这就是为什么主流框架（LangGraph、CrewAI）都把事件流作为一等公民设计。

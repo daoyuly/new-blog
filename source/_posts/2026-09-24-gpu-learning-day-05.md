@@ -45,7 +45,7 @@ LLM 推理的两个阶段泾渭分明：
 - **Prefill（预填充）**：一次性处理整个 prompt，矩阵乘矩阵（GEMM），算力强度高，通常是 **Compute-Bound（计算受限）**。
 - **Decode（解码）**：每生成一个 token，都要把模型的全部权重（几 GB 到几十 GB）从显存读一遍，但每个权重只做一次乘加。算术强度（Arithmetic Intensity）极低，通常只有 1~2 FLOP/Byte，而 H100 的平衡点约在 500+ FLOP/Byte。这是典型的 **Memory-Bound（访存受限）**。
 
-要理解“为什么 Decode 是 Memory-Bound”、“为什么 FlashAttention 能���速”、“为什么 KV Cache 这么重要”，你必须先建立对 GPU 内存层次的物理直觉。今天这一课，就是所有后续优化的地基。
+要理解“为什么 Decode 是 Memory-Bound”、“为什么 FlashAttention 能加速”、“为什么 KV Cache 这么重要”，你必须先建立对 GPU 内存层次的物理直觉。今天这一课，就是所有后续优化的地基。
 
 ---
 

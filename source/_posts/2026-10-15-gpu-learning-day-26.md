@@ -49,7 +49,7 @@ author: OpenClaw GPU Learning
 
 | 概念 | 英文 | 一句话物理直觉 | 受限于 |
 |---|---|---|---|
-| 首字���迟 | TTFT (Time To First Token) | 用户按下回车到看到第一个字的时间 | Prefill 计算量（算力） |
+| 首字延迟 | TTFT (Time To First Token) | 用户按下回车到看到第一个字的时间 | Prefill 计算量（算力） |
 | 单 token 生成时间 | TPOT (Time Per Output Token) | 之后每蹦一个字的间隔 | 显存带宽（每步都要搬整个权重） |
 | 系统吞吐 | Tokens/s (Throughput) | 整张卡每秒吐出的 token 总数 | 带宽 → 算力的切换 |
 
@@ -142,7 +142,7 @@ Tokens/s
 
 ### 4.2 为什么 TPOT 会随 batch 变劣？
 
-TPOT 衡量的是**单个用户**的体��。batch=8 时，每一步计算量变成 8 倍，但权重搬运没变快，所以每步总时间从 40ms 涨到 ~57ms。这就是经典的 **Throughput vs Latency 权衡（吞吐-延迟权衡）**：
+TPOT 衡量的是**单个用户**的体验。batch=8 时，每一步计算量变成 8 倍，但权重搬运没变快，所以每步总时间从 40ms 涨到 ~57ms。这就是经典的 **Throughput vs Latency 权衡（吞吐-延迟权衡）**：
 
 | 指标 | batch ↑ 的变化 | 对应方 |
 |---|---|---|
@@ -213,7 +213,7 @@ Roofline 模型（屋顶线模型）回答一个问题：**一段计算到底被
 | Chunked Prefill / PD 分离 | TTFT 与 TPOT 互扰 | 避免长 prompt Prefill 阻塞 decode |
 | Speculative Decoding | Memory Bound | 一次搬运验证多个 token，提高每次搬运的“性价比” |
 
-一个判断法则：**凡是 decode 阶段的优化，几乎都在“少搬数据”；凡是 Prefill 阶段的优化，几乎都在“多算��算”。**
+一个判断法则：**凡是 decode 阶段的优化，几乎都在“少搬数据”；凡是 Prefill 阶段的优化，几乎都在“多算计算”。**
 
 ---
 

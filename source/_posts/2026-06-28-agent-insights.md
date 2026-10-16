@@ -123,7 +123,7 @@ agentx,agent,production,iteration,self,launch,headcount,recommendation,artisanal
 
 **Einstein World Models (EWM) 的突破性价值在于其将世界模型与推理能力整合的架构，使 Agent 能够进行可检查的推理和rollouts。这一技术突破显著提升了 Agent 的规划能力和问题解决能力，特别是在复杂、动态环境中，Agent 能够更好地预测行动后果并调整策略，这代表了 AI Agent 从反应式向预判式的重要转变。**
 
-**Where Do CoT Training Gains Land in LLM based Agents? 研究揭示了 CoT 训练增益在 Agent 行动点而非整个推理链中的分布规律，这一发现具��重大实践价值。它表明 Agent 训练应更关注关键决策点而非全面提升推理能力，这将显著提高训练效率，降低计算成本，使 Agent 在资源受限环境下也能表现优异。**
+**Where Do CoT Training Gains Land in LLM based Agents? 研究揭示了 CoT 训练增益在 Agent 行动点而非整个推理链中的分布规律，这一发现具有重大实践价值。它表明 Agent 训练应更关注关键决策点而非全面提升推理能力，这将显著提高训练效率，降低计算成本，使 Agent 在资源受限环境下也能表现优异。**
 
 **CUGA FLO 的 Process Harness 技术实现了将传统工作流无缝升级为 Agent 驱动的业务流程管理，其创新之处在于无需完全替换现有系统，而是通过适配层引入 Agent 能力。这一技术突破解决了企业数字化转型的痛点，保护了现有投资，同时获得了 Agent 带来的灵活性和智能性，为企业提供了渐进式数字化路径。**
 

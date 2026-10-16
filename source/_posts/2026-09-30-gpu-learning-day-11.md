@@ -288,7 +288,7 @@ wmma::store_matrix_sync(C_ptr, c_frag, ldc, wmma::mem_row_major);
 
 ## 七、实践练习与思考题
 
-**练习 1（查表）**：打开 NVIDIA H100 官方 Datasheet，抄下各精度的 Tensor Core 算力，验证“降精度、算��翻倍”规律；再对比消费卡 RTX 4090 的表，找出它与数据中心卡的差异点（提示：FP64、稀疏、显存带宽）。
+**练习 1（查表）**：打开 NVIDIA H100 官方 Datasheet，抄下各精度的 Tensor Core 算力，验证“降精度、算力翻倍”规律；再对比消费卡 RTX 4090 的表，找出它与数据中心卡的差异点（提示：FP64、稀疏、显存带宽）。
 
 **练习 2（跑基准）**：用 PyTorch 在 A100/H100 上跑：
 

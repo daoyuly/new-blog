@@ -99,7 +99,7 @@ date: 2026-09-20 10:30:00
 
 ### 4. 从 LLM 到 Agent Runtime 的演进路径
 
-理解了 Agent 的循环本质，我们就能看清从 LLM 到 Agent Runtime 的工程演进路径。Agent Runtime 就是承载 Agent 循环运行��软件环境。
+理解了 Agent 的循环本质，我们就能看清从 LLM 到 Agent Runtime 的工程演进路径。Agent Runtime 就是承载 Agent 循环运行的软件环境。
 
 **阶段一：单次调用**
 开发者直接使用 `requests.post` 调用 OpenAI API。系统是无状态的，每次调用独立。
@@ -280,7 +280,7 @@ def agent_loop(user_input):
 ## FAQ
 
 **Q1: 为什么不推荐直接用 Prompt 让 LLM 输出工具调用的 JSON，而是要用 API 提供的 Function Calling 功能？**
-**A:** 虽然 Prompt 可以让 LLM 输出 JSON，但 LLM 的输出具有概率性，容易产生多余的文本（如 "好的，这是你要的 JSON:"）或格式错误。API 提供的 Function Calling 是在模型层面进行了微调和对齐，并在推理引擎层做了约束解码，保证了 JSON 格式的 100% 合法性，极大提升了 Agent 系统的稳定性��
+**A:** 虽然 Prompt 可以让 LLM 输出 JSON，但 LLM 的输出具有概率性，容易产生多余的文本（如 "好的，这是你要的 JSON:"）或格式错误。API 提供的 Function Calling 是在模型层面进行了微调和对齐，并在推理引擎层做了约束解码，保证了 JSON 格式的 100% 合法性，极大提升了 Agent 系统的稳定性。
 
 **Q2: 既然 Agent 本质是循环，那是不是循环次数越多，Agent 就越聪明？**
 **A:** 不是。循环次数多往往意味着任务被拆解得过细，或者 LLM 在某一步卡住了。过多的循环会消耗大量 Token，增加延迟，且容易导致上下文窗口溢出或“思路漂移”。优秀的 Agent 设计追求的是用最少的步骤完成任务。

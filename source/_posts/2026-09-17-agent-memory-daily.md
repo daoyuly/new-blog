@@ -169,7 +169,7 @@ Cognee is the open-source AI memory platform for agents. Give your AI agents per
 论据：HN 热榜中 `HippoRAG`（65 points）基于海马体神经机制构建长期记忆，`Ask HN` 社区主动探讨知识图谱在 LLM Agent 记忆管理中的应用，`NERDs` 也采用以实体为中心的长期记忆架构；开源项目 `cognee` 同样强调知识图谱在持久记忆中的作用（来源：HN/GitHub）。影响：实体关系图谱将取代纯文本块作为 Agent 记忆的骨架，解决大模型在长程任务中“记不住关键实体关系”和“幻觉关联”的痛点。
 
 **趋势三：工程焦点向“上下文窗口极致优化与团队级记忆隔离”转移。**
-论据：开源项目 `context-mode` 实现了沙盒工具输出 98% 的缩减及跨 17 个平台的上下���路由；`TencentDB-Agent-Memory` 将会话、文档转化为团队级共享的四大可复用记忆资产；HN 社区出现基于单文件 SQLite 的轻量级记忆方案（来源：GitHub/HN）。影响：Agent Memory 不再仅是单机实验，而是转向企业级生产环境，上下文 Token 成本控制和多用户/多 Agent 间的记忆权限隔离成为商业化刚需。
+论据：开源项目 `context-mode` 实现了沙盒工具输出 98% 的缩减及跨 17 个平台的上下文路由；`TencentDB-Agent-Memory` 将会话、文档转化为团队级共享的四大可复用记忆资产；HN 社区出现基于单文件 SQLite 的轻量级记忆方案（来源：GitHub/HN）。影响：Agent Memory 不再仅是单机实验，而是转向企业级生产环境，上下文 Token 成本控制和多用户/多 Agent 间的记忆权限隔离成为商业化刚需。
 
 ## 2. 技术演进路线图
 

@@ -168,7 +168,7 @@ citation_arxiv_id: 2606.13361
 
 2. EurekAgent论文强调了环境工程的重要性，表明未来Agent Memory系统需要与环境深度耦合，理解环境状态并据此调整记忆内容。
 
-3. IterCAD论文展示了多模态Agent与CAD系统的交互，预示着Agent Memory将发展出对特定领域环境的���知能力，如设计环境、科学实验环境等。
+3. IterCAD论文展示了多模态Agent与CAD系统的交互，预示着Agent Memory将发展出对特定领域环境的感知能力，如设计环境、科学实验环境等。
 
 4. Uncertainty-Aware Hybrid Retrieval论文提出的检索不确定性感知，将扩展为对环境状态不确定性的感知，使Agent Memory能够适应动态变化的环境。
 

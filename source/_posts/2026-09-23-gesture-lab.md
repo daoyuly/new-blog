@@ -47,7 +47,7 @@ Gesture Lab 是一个专注于“动作追踪与交互式视觉实验”的前�
 
 **使用的技术和框架**
 - **开发语言与工具链**：TypeScript 5.0 保证类型安全，Vite 提供极速的现代前端构建与热更新（HMR）能力。
-- **3D 渲染引擎**：Three.js (v0.160)，配合 `@lume/three-meshline`（高级线条渲染）和 `postprocessing`（后期处理特效，���辉光 Bloom 等）。
+- **3D 渲染引擎**：Three.js (v0.160)，配合 `@lume/three-meshline`（高级线条渲染）和 `postprocessing`（后期处理特效，如辉光 Bloom 等）。
 - **计算机视觉**：`@mediapipe/tasks-vision`，Google 提供的端侧实时手势追踪解决方案。
 - **交互与反馈**：GSAP（高性能动画引擎）、Howler（音频引擎，提供空间音频和音效反馈）。
 - **部署与监控**：`@vercel/analytics`（站点性能与访问监控）。

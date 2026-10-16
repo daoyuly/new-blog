@@ -53,7 +53,7 @@ date: 2026-08-08 11:00:00
 *   **LLM 服务**：DashScope（阿里云通义千问，兼容 OpenAI 接口的 Chat 与 Embedding 模型）
 *   **存储与检索**：
     *   Redis（会话元数据存储 + LangGraph 状态持久化 `RedisSaver`）
-    *   Elasticsearch（医院流程、制度等结构化/半结��化文档检索）
+    *   Elasticsearch（医院流程、制度等结构化/半结构化文档检索）
     *   Milvus（症状、医疗知识等非结构化向量检索）
 *   **前端交互**：Python `rich` 库（终端美化与 Markdown 渲染）、`requests`（API 调用）
 

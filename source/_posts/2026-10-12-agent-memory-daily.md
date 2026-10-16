@@ -160,7 +160,7 @@ Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG 
 影响：纯向量检索在处理复杂多跳推理时遭遇瓶颈，Graph RAG 与实体记忆层将成为下一代长程 Agent 的标配，大幅提升跨周期对话的准确性与逻辑一致性。
 
 **趋势三：工程焦点向“上下文窗口极致优化”与“开发态记忆”转移。**
-论据：`context-mode` 专注于沙盒工具输出优化（减少 98%）及跨 17 个平台的路由强制执行；`agentmemory` 专为 AI 编码智能体提供基准测试下的持久记忆���`TencentDB-Agent-Memory` 将对话、文档、代码转化为四种可复用记忆资产（来源：开源）。
+论据：`context-mode` 专注于沙盒工具输出优化（减少 98%）及跨 17 个平台的路由强制执行；`agentmemory` 专为 AI 编码智能体提供基准测试下的持久记忆；`TencentDB-Agent-Memory` 将对话、文档、代码转化为四种可复用记忆资产（来源：开源）。
 影响：随着 Coding Agent 和多智能体协同的爆发，如何管理和压缩工具调用产生的大量噪声上下文，并为开发团队提供结构化的记忆复用，成为 B 端落地的关键破局点。
 
 ---

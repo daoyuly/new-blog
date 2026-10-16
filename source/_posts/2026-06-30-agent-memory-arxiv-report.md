@@ -134,7 +134,7 @@ citation_arxiv_id: 2606.28279
 
 **RAG (检索增强生成)** → **Memory System (记忆系统)** → **Cognitive Architecture (认知架构)**
 
-具体判断：下一站将��"Cognitive Architecture"，即具有认知能力的Agent架构。这一判断基于以下论文证据：
+具体判断：下一站将是"Cognitive Architecture"，即具有认知能力的Agent架构。这一判断基于以下论文证据：
 
 1. 《Agent-Native Immative System》提出了具有免疫系统的Agent架构，展示了如何将生物学原理融入Agent设计，形成更高级的认知能力。
 

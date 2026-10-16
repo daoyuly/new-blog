@@ -45,7 +45,7 @@ date: 2026-09-22 10:30:00
 - Agent 的响应体验由 **TTFT（Time To First Token，首 Token 延迟）** 和 **TPOT（Time Per Output Token，每 Token 生成时间）** 决定——这两个指标的差异来自 Prefill 和 Decode 的本质不同。
 - 选择模型部署方案（云 API vs 本地推理 vs 端侧 M 系列 GPU 推理）时，你必须能估算 KV Cache 占用的显存。
 
-不懂这些，你就是在黑盒里调参。懂了这些，prompt 裁剪、上下文压缩、流式输出、长对话摘要这些 Agent 工程���践，都会有清晰的因果依据。
+不懂这些，你就是在黑盒里调参。懂了这些，prompt 裁剪、上下文压缩、流式输出、长对话摘要这些 Agent 工程实践，都会有清晰的因果依据。
 
 ---
 

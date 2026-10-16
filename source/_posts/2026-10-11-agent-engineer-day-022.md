@@ -126,7 +126,7 @@ def agent_node(state: AgentState) -> dict:
 
 边分两种：
 
-- **普通边（Normal Edge���**：无条件跳转，`add_edge("retrieve", "generate")`；
+- **普通边（Normal Edge）**：无条件跳转，`add_edge("retrieve", "generate")`；
 - **条件边（Conditional Edge）**：根据当前 State 动态决定去向。
 
 ```python
@@ -154,7 +154,7 @@ graph.add_conditional_edges("agent", should_continue,
 2. **时间旅行（Time Travel）**：加载历史任意一步的 State，从那里重跑——调试 Agent 的神器。"如果第 3 步检索换一个 query，后面会怎样？"
 3. **多轮会话记忆（Cross-thread Memory）**：同一个 `thread_id` 的对话可以在不同进程、不同时间继续。
 
-**因果链**：State 集中化 → 才能整体快照 → 才能恢��和回放。如果你的状态散落在各节点的闭包变量里，checkpoint 根本无从谈起。这再次印证了 State 设计是整个架构的地基。
+**因果链**：State 集中化 → 才能整体快照 → 才能恢复和回放。如果你的状态散落在各节点的闭包变量里，checkpoint 根本无从谈起。这再次印证了 State 设计是整个架构的地基。
 
 ### 2.6 Interrupt：人在环中的正确姿势（Human-in-the-loop / 人机协同 / Interrupt）
 

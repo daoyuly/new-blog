@@ -156,7 +156,7 @@ citation_arxiv_id: 2606.06893
 ## 2. 编排模式分析
 
 **今日动态反映的编排趋势：**
-今日动态中，线性链编排在游戏和研究场景中占主导地位，如Serpent.AI和DuMate-DeepResearch都采用明确的线性步骤执行。同时，事件驱动编排在工具使用��景中逐渐兴起，如Declarative Skills for AI Agents强调响应式工具调用。自治协作编排在多智能体系统中表现突出，如DuMate-DeepResearch中的递归搜索和Rubric-Grounded推理。
+今日动态中，线性链编排在游戏和研究场景中占主导地位，如Serpent.AI和DuMate-DeepResearch都采用明确的线性步骤执行。同时，事件驱动编排在工具使用场景中逐渐兴起，如Declarative Skills for AI Agents强调响应式工具调用。自治协作编排在多智能体系统中表现突出，如DuMate-DeepResearch中的递归搜索和Rubric-Grounded推理。
 
 **范式胜出场景：**
 - 线性链编排：在游戏Agent和简单研究任务中胜出，因为任务步骤明确且顺序固定。

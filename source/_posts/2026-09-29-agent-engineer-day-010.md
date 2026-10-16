@@ -58,7 +58,7 @@ Tool Executor（执行层：★ 你在这里 ★）
 
 Executor 之上是“认知”，之下是“行动”。它是 Agent 从一个“会聊天的模型”变成“能干事的系统”的分界线。后面几周你会学到的 Sandbox 执行、多步编排、可观测性，全部建立在今天这个抽象之上——如果这里的设计是脏的，后面的每一层都会被污染。
 
-一个直观的因果链：**LLM 不可靠 → 调用参数可能非法 → 工具可能挂起 → 返回格式千奇百怪 → 如果没有统一执行层，这些不确定性会直接爆炸到编排代码里**。Executor 的全部意��，就是把这四种不确定性封死在一个模块内。
+一个直观的因果链：**LLM 不可靠 → 调用参数可能非法 → 工具可能挂起 → 返回格式千奇百怪 → 如果没有统一执行层，这些不确定性会直接爆炸到编排代码里**。Executor 的全部意义，就是把这四种不确定性封死在一个模块内。
 
 ---
 
@@ -183,7 +183,7 @@ ToolCall
 | stderr / warning | 警告与诊断 | `metadata["stderr"]`，摘要并入 `output` | ⚠️ 摘要 |
 | structured result | 结构化数据 | `metadata`（保结构）+ `output`（文本化） | ✅ 文本版 |
 | error / exception | 失败原因 | `error` + `success=False` | ✅ 是 |
-| runtime info（耗时、重试次数） | 观测��据 | `metadata` + `latency_ms` | ❌ 否 |
+| runtime info（耗时、重试次数） | 观测数据 | `metadata` + `latency_ms` | ❌ 否 |
 
 处理原则只有三条：
 

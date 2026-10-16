@@ -58,7 +58,7 @@ OpenManus 是一款由 MetaGPT 核心团队成员发起的开源通用 AI Agent�
 **使用的技术和框架**
 - **核心语言**：Python（占据绝对主导，适合 AI/NLP 领域快速迭代）。
 - **LLM 交互框架**：Likely 基于 `OpenAI SDK` 或 `LiteLLM` 实现多模型统一接口调度。
-- **Agent 框架**���深度借鉴或复用 MetaGPT 的底层设计理念（如 Role/Action 设计模式）。
+- **Agent 框架**：深度借鉴或复用 MetaGPT 的底层设计理念（如 Role/Action 设计模式）。
 - **浏览器自动化**：大概率采用 `Playwright` 或 `Selenium` 实现高拟真度网页操作。
 - **沙盒执行**：可能采用 `Docker` 或本地安全沙箱执行生成的 Python 代码。
 

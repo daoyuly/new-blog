@@ -52,7 +52,7 @@ IntentKit 是由 Crestal 团队开发的一个自主智能体框架。其核心�
 
 **技术与框架：**
 - **包管理与环境**：近期从 Poetry 迁移至 `uv`，表明项目追求极致的依赖解析速度和构建效率，符合现代 Python 高性能工程实践。
-- **区块链技术**：基于 EVM 兼容链的交互库，底层可能集成��� Web3.py 或 ethers.js 的 Python 等价物。
+- **区块链技术**：基于 EVM 兼容链的交互库，底层可能集成了 Web3.py 或 ethers.js 的 Python 等价物。
 - **社交平台 API**：深度集成 Twitter (X) 和 Telegram 的 Bot API。
 - **AI/LLM 框架**：作为自主智能体框架，底层必然依赖大语言模型（如 OpenAI, Anthropic 等）进行推理和任务规划。
 

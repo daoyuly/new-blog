@@ -170,7 +170,7 @@ Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG 
 
 ## 2. 技术演进路线图：Memory 系统的下一站
 
-基于今日数据，Agent Memory 的演进已进入**“上下文工程与记忆复用并���”的第三阶段**。下一站的具体技术落脚点在于以下两个方向：
+基于今日数据，Agent Memory 的演进已进入**“上下文工程与记忆复用并行”的第三阶段**。下一站的具体技术落脚点在于以下两个方向：
 
 1. **工具输出沙盒化与上下文动态压缩**：下一站不再是单纯扩大上下文窗口，而是对中间过程进行“有损/无损压缩”。如 `context-mode` 将工具输出沙盒化并减少 98%，`MemOS` 实现 35.24% 的 token 节省。未来的 Memory 系统将内置“路由层”，在 Session Memory 和 Long-term Memory 之间进行动态仲裁。
 2. **团队级记忆资产的四维拆分**：以 `TencentDB-Agent-Memory` 为代表，记忆将从“单 Agent 孤岛”走向“团队级记忆中枢”。下一站会将记忆拆分为 Chat Memory（对话记忆）、Doc Memory（文档记忆）、Code Memory（代码记忆）和 Skill Memory（技能记忆），实现多 Agent 协同工作中的资产无损流转与复用。
@@ -197,7 +197,7 @@ Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG 
 
 1. **采用“双轨制”存储架构**：在工程实现上，将短期工作记忆基于 Redis/内存实现以保证极速读写，长期记忆则直接落地 SQLite（如 Rekal 方案）或轻量级图数据库。不要一开始就强行上马重型图数据库，先验证记忆召回逻辑的有效性。
 2. **强制实施 Tool Output 的预处理路由**：在 Agent 执行工具调用后，必须增加一层“记忆清洗层”。参考 `context-mode` 的做法，将冗长的 Tool Output（如日志、网页抓取内容）进行摘要或沙盒隔离，只将关键状态变量写回 Session Memory，防止上下文窗口被无效 token 挤爆。
-3. **基于实体为中心构建记忆网络**：参考 HN 热点 NERDs 和 HippoRAG 的思路，在写入长期��忆时，先通过轻量级 NLP 抽取实体与关系，构建“实体-事件-时间”的三元组。检索时先匹配实体，再通过图遍历扩展上下文，这比单纯依靠向量相似度检索能获得更精准的时序和因果关联。
+3. **基于实体为中心构建记忆网络**：参考 HN 热点 NERDs 和 HippoRAG 的思路，在写入长期记忆时，先通过轻量级 NLP 抽取实体与关系，构建“实体-事件-时间”的三元组。检索时先匹配实体，再通过图遍历扩展上下文，这比单纯依靠向量相似度检索能获得更精准的时序和因果关联。
 
 ---
 

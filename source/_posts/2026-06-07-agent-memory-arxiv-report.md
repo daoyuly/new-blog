@@ -166,7 +166,7 @@ citation_arxiv_id: 2606.06212
 
 基于今日论文分析，Agent Memory的技术演进路线如下：
 
-**RAG (检索增强生成) → Memory System (结构���记忆管理) → Contextual Memory Orchestration (上下文记忆编排)**
+**RAG (检索增强生成) → Memory System (结构化记忆管理) → Contextual Memory Orchestration (上下文记忆编排)**
 
 具体判断：
 1. **当前阶段**：以论文3和6为代表的Memory System阶段，关注如何结构化存储和管理长程上下文，解决Token限制和记忆召回问题。

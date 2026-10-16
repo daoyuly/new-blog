@@ -163,7 +163,7 @@ Batching 提高吞吐的代价是延迟上升，原因有二：
 原因的因果链：
 
 - **Decode 时每步只有 1 个 token**，矩阵乘法退化成矩阵-向量乘（GEMV），算术强度约等于 1，完全喂不饱 GPU 的算力——只能靠 Batch=32 来提供 32 倍的“并行 token”填满流水线。
-- **Prefill 时一个请求就有几百上千个 token**，本身就是大矩阵乘（GEMM），���行度已经很高，接近算力上限。再叠加 Batch，计算时间按比例增长，**吞吐几乎不涨，延迟明显变坏**。
+- **Prefill 时一个请求就有几百上千个 token**，本身就是大矩阵乘（GEMM），并行度已经很高，接近算力上限。再叠加 Batch，计算时间按比例增长，**吞吐几乎不涨，延迟明显变坏**。
 
 由此衍生出一个重要的工程实践：**Prefill 与 Decode 分离调度**，即 Chunked Prefill / Prefill-Decode Disaggregation（如 SARATHI、DistServe 的方案）。如果一个大 Prompt 的 Prefill 和别人的 Decode 混在同一批次，Prefill 的长计算会阻塞所有正在 Decode 的请求，导致 ITL 尖刺。拆开调度（或把 Prefill 切成 chunk 分次执行）可以让延迟曲线平滑得多。
 

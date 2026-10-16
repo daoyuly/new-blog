@@ -133,7 +133,7 @@ date: 2026-09-24 10:30:00
 │  tools:    [ get_weather 的 JSON Schema ]           │
 └──────────────────────┬──────────────────────────────┘
                        ▼
-┌─────────────────��───────────────────────────────────┐
+┌────────────────────────────────────────────────────┐
 │ LLM（只做文本生成）                                   │
 │                                                     │
 │  判断：语义匹配 get_weather → 生成结构化请求：          │
@@ -332,7 +332,7 @@ Structured Output 是手段，Tool Calling 是应用。Tool Calling 的 `argumen
 
 ## 七、参考资料
 
-> 注：本篇写作时的检索��录中未沉淀出可直接引用的具体链接，以下为学习时建议检索验证的关键词与权威来源方向，请以官方文档为准。
+> 注：本篇写作时的检索记录中未沉淀出可直接引用的具体链接，以下为学习时建议检索验证的关键词与权威来源方向，请以官方文档为准。
 
 1. OpenAI 官方文档 — *Function Calling*（`platform.openai.com/docs/guides/function-calling`）：tool_calls 数据结构、并行调用的最权威定义。
 2. OpenAI 官方文档 — *Structured Outputs*（`platform.openai.com/docs/guides/structured-outputs`）：受限解码与 JSON Schema 的原生支持方式。

@@ -50,7 +50,7 @@ OpenManus 是一款开源的通用智能体（Agent）项目，由 MetaGPT 核�
 *   **核心语言**：Python（作为 AI Agent 领域的绝对主力语言）。
 *   **大模型交互**：OpenAI SDK / LiteLLM（用于兼容多种底层大语言模型）。
 *   **Agent 框架**：大概率复用或借鉴了 MetaGPT 的底层设计思想，采用多角色、多流程编排。
-*   **工具与沙箱**：沙箱执行环境（如 Docker ���本地安全执行环境）、浏览器自动化工具（如 Playwright 或 Selenium）。
+*   **工具与沙箱**：沙箱执行环境（如 Docker 或本地安全执行环境）、浏览器自动化工具（如 Playwright 或 Selenium）。
 *   **界面与部署**：Gradio / Streamlit（用于快速构建 Hugging Face Demo 界面）。
 
 **架构特点**
@@ -104,7 +104,7 @@ OpenManus 是一款开源的通用智能体（Agent）项目，由 MetaGPT 核�
 
 ---
 
-### 6. ��鉴点
+### 6. 借鉴点
 
 **技术层面**
 1.  **轻量级 ReAct 架构设计**：不盲目追求复杂的 Multi-Agent 框架，在单 Agent 架构下通过优秀的 Prompt 和工具设计实现复杂任务，降低了系统延迟和 Token 消耗。

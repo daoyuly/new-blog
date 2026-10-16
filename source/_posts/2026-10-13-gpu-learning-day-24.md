@@ -48,7 +48,7 @@ author: OpenClaw GPU Learning
 
 算子融合（Operator Fusion，中文也常称“核融合”或“kernel 合并”）的动机就在于此：**既然每个 kernel 都要为“读数据→写数据”付出两次带宽代价，那就把流水线上相邻的算子合并，让中间结果根本不落地到显存。**
 
-一个 Transformer decode 层里，隐藏状态要从显存被完��读写多少次？RMSNorm 写一次，QKV 投影写一次，残差加一次……如果全都单独执行，一个 4090 维的 hidden state 在 7B 模型单层中可能被搬运 6~8 次。融合后可以压缩到 2~3 次。
+一个 Transformer decode 层里，隐藏状态要从显存被完整读写多少次？RMSNorm 写一次，QKV 投影写一次，残差加一次……如果全都单独执行，一个 4090 维的 hidden state 在 7B 模型单层中可能被搬运 6~8 次。融合后可以压缩到 2~3 次。
 
 ---
 
@@ -224,7 +224,7 @@ compiled = torch.compile(model, mode="max-autotune")  # 自动融合 + autotune
 
 | 操作 | 不融合的额外显存搬运（单层） | 融合后 |
 |---|---|---|
-| Residual + RMSNorm | 读 2 ��� + 写 1 次 hidden ≈ 24 KB | 读 2 次 + 写 1 次（必须的），中间归约在片上 |
+| Residual + RMSNorm | 读 2 次 + 写 1 次 hidden ≈ 24 KB | 读 2 次 + 写 1 次（必须的），中间归约在片上 |
 | SiLU + mul | 写+读 2×11008×2B ≈ 44 KB | 0（GEMM epilogue） |
 | QKV 三 GEMM | 3 次 launch，权重分三次读 | 1 次 launch，权重 packing |
 | Attention softmax 中间矩阵 | O(S²) 落地 | FlashAttention，不落地 |
