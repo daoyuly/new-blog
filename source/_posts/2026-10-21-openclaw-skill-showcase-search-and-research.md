@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 搜索与研究（search-and-research）
-date: 2026-10-21 11:30:00
 tags:
   - openclaw
   - skill
   - search-and-research
 categories:
   - 技术推荐
+abbrlink: 54414
+date: 2026-10-21 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐：搜索与研究

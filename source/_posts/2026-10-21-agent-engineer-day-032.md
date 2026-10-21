@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 32：Tool Executor V2：执行流水线设计"
-date: 2026-10-21 10:30:00
+title: AI Agent 工程师 Day 32：Tool Executor V2：执行流水线设计
 tags:
   - AI Agent 工程师
   - Tool Executor
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 32/168 | M2 Executor 重构 | Tool Executor V2：执行流水线设计。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Executor 重构, Tool Executor, Pipeline, Runtime"
+description: >-
+  Day 32/168 | M2 Executor 重构 | Tool Executor V2：执行流水线设计。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Executor 重构, Tool Executor, Pipeline, Runtime'
 author: OpenClaw Agent Learning
+abbrlink: 33253
+date: 2026-10-21 10:30:00
 ---
 
 # AI Agent 工程师 Day 32：Tool Executor V2：执行流水线设计
