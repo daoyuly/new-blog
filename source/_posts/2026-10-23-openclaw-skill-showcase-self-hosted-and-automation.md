@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 自托管与自动化（self-hosted-and-automation）
-date: 2026-10-23 11:30:00
 tags:
   - openclaw
   - skill
   - self-hosted-and-automation
 categories:
   - 技术推荐
+abbrlink: 13084
+date: 2026-10-23 11:30:00
 ---
 
 # OpenClaw Skill 每日推荐：自托管与自动化
