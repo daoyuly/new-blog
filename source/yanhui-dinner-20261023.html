@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宴帖 · 今晚七时 · 宴徽菜三元桥店</title>
+<meta name="description" content="10月23日（周五）晚7点，宴徽菜·三元桥店。一桌徽菜，Daoyu 请朋哥。臭鳜鱼已点，毛豆腐已候。">
+<meta property="og:title" content="宴帖 · 今晚七时 · 宴徽菜三元桥店">
+<meta property="og:description" content="一桌徽菜，我请客。今晚七点，三元桥，等你。">
+<style>
+  :root{
+    --paper:#efe8d8;
+    --card:#faf6ea;
+    --ink:#33302a;
+    --ink-light:#83786a;
+    --seal:#9e2f26;
+    --wall:#3a4353;
+    --gold:#a8823c;
+    --line:#c9b98f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","STSongti-SC","STZhongsong","SimSun",serif;
+    color:var(--ink);
+    background:
+      radial-gradient(ellipse at 18% 8%, rgba(255,255,255,.55), transparent 55%),
+      radial-gradient(ellipse at 82% 88%, rgba(58,67,83,.08), transparent 52%),
+      radial-gradient(ellipse at 50% 50%, var(--paper) 0%, #e5dbc4 100%);
+    min-height:100vh;
+    min-height:100svh;
+    display:flex;
+    justify-content:center;
+    padding:40px 16px 48px;
+    overflow-x:hidden;
+  }
+  .watermark{
+    position:fixed;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    font-size:56vmin;
+    color:var(--ink);
+    opacity:.035;
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+    line-height:1;
+  }
+  .side{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    writing-mode:vertical-rl;
+    letter-spacing:.65em;
+    font-size:14px;
+    color:#8a7a55;
+    opacity:.75;
+    z-index:1;
+    user-select:none;
+  }
+  .side.left{left:5vw;}
+  .side.right{right:5vw;}
+  @media (max-width:900px){.side{display:none;}}
+
+  .card{
+    position:relative;
+    z-index:2;
+    margin:auto;
+    width:100%;
+    max-width:600px;
+    background:rgba(250,246,234,.93);
+    border:1px solid var(--line);
+    box-shadow:0 24px 60px -20px rgba(60,50,20,.28), 0 2px 8px rgba(60,50,20,.08);
+    padding:56px 48px 0;
+    text-align:center;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:9px;
+    border:1px solid rgba(168,130,60,.45);
+    pointer-events:none;
+  }
+
+  /* ---------- 竖排帖头 ---------- */
+  .head{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:26px;
+    animation:fadeUp .8s ease-out both;
+  }
+  .title-v{
+    writing-mode:vertical-rl;
+    font-size:62px;
+    font-weight:700;
+    letter-spacing:.32em;
+    line-height:1;
+    color:var(--ink);
+  }
+  .head-side{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding-top:6px;
+  }
+  .kicker-v{
+    writing-mode:vertical-rl;
+    font-size:13px;
+    letter-spacing:.42em;
+    color:var(--ink-light);
+    min-height:150px;
+  }
+  .seal-mini{
+    width:34px;height:34px;
+    background:var(--seal);
+    color:#f6f1e4;
+    font-size:19px;
+    font-weight:700;
+    display:grid;
+    place-items:center;
+    border-radius:4px;
+    transform:rotate(-4deg);
+    box-shadow:0 3px 10px rgba(158,47,38,.3);
+    position:relative;
+  }
+  .seal-mini::after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    border:1px solid rgba(246,241,228,.6);
+    border-radius:2px;
+  }
+
+  .orn{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:30px auto 26px;
+    color:var(--gold);
+  }
+  .orn::before,.orn::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--line), transparent);
+  }
+  .orn span{font-size:12px;}
+
+  /* ---------- 信笺 ---------- */
+  .letter{
+    font-size:16px;
+    line-height:2.15;
+    letter-spacing:.08em;
+    color:var(--ink);
+    animation:fadeUp .8s .12s ease-out both;
+  }
+  .letter p{margin:0;}
+  .letter em{
+    font-style:normal;
+    color:var(--seal);
+  }
+
+  /* ---------- 信息区 ---------- */
+  .info{
+    margin-top:34px;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .item{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    animation:fadeUp .8s ease-out both;
+  }
+  .item:nth-of-type(1){animation-delay:.2s;}
+  .item:nth-of-type(2){animation-delay:.3s;}
+  .item:nth-of-type(3){animation-delay:.4s;}
+  .num{
+    flex:none;
+    width:40px;height:40px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:16px;
+    color:var(--gold);
+    margin-top:2px;
+  }
+  .item h2{
+    font-size:13px;
+    letter-spacing:.5em;
+    color:var(--ink-light);
+    font-weight:400;
+    margin-bottom:7px;
+  }
+  .item .big{
+    font-size:19px;
+    letter-spacing:.08em;
+    font-weight:600;
+  }
+  .item .note{
+    margin-top:5px;
+    font-size:13.5px;
+    color:var(--ink-light);
+    letter-spacing:.06em;
+    line-height:1.9;
+  }
+
+  .routes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:4px;
+  }
+  @media (max-width:480px){.routes{grid-template-columns:1fr;}}
+  .route{
+    border:1px dashed var(--line);
+    background:rgba(255,255,255,.45);
+    padding:13px 15px;
+    font-size:13.5px;
+    line-height:1.95;
+    color:var(--ink-light);
+    letter-spacing:.04em;
+  }
+  .route .who{
+    display:block;
+    font-size:12px;
+    letter-spacing:.3em;
+    color:var(--gold);
+    margin-bottom:4px;
+  }
+  .route .who strong{
+    font-size:15px;
+    color:var(--ink);
+    letter-spacing:.15em;
+    margin-right:6px;
+  }
+
+  /* ---------- 倒计时 ---------- */
+  .count{
+    margin-top:30px;
+    padding:16px 12px 15px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    animation:fadeUp .8s .5s ease-out both;
+  }
+  .count .label{
+    font-size:12px;
+    letter-spacing:.45em;
+    text-indent:.45em;
+    color:var(--ink-light);
+  }
+  .count .time{
+    margin-top:8px;
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:.1em;
+    font-variant-numeric:tabular-nums;
+    color:var(--seal);
+    line-height:1.2;
+  }
+  .count .time small{font-size:15px;letter-spacing:.2em;color:var(--seal);}
+
+  .map-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 42px;
+    border:1px solid var(--seal);
+    color:var(--seal);
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:.35em;
+    text-indent:.35em;
+    transition:all .25s ease;
+  }
+  .map-btn:hover{
+    background:var(--seal);
+    color:var(--card);
+  }
+
+  footer{
+    margin-top:36px;
+    position:relative;
+    z-index:1;
+  }
+  .rsvp{
+    font-size:14.5px;
+    color:var(--ink);
+    letter-spacing:.18em;
+    line-height:2;
+  }
+  .rsvp .muted{
+    display:block;
+    margin-top:4px;
+    font-size:12.5px;
+    color:var(--ink-light);
+    letter-spacing:.22em;
+  }
+  .seal{
+    width:58px;height:58px;
+    margin:24px auto 16px;
+    background:var(--seal);
+    color:#f6f1e4;
+    font-size:30px;
+    font-weight:700;
+    display:grid;
+    place-items:center;
+    border-radius:6px;
+    position:relative;
+    box-shadow:0 4px 14px rgba(158,47,38,.35);
+    animation:stamp .55s .75s cubic-bezier(.2,1.5,.4,1) both;
+  }
+  .seal::after{
+    content:"";
+    position:absolute;
+    inset:4px;
+    border:1px solid rgba(246,241,228,.65);
+    border-radius:3px;
+  }
+  .sign{
+    font-size:13px;
+    letter-spacing:.5em;
+    text-indent:.5em;
+    color:var(--ink-light);
+    padding-bottom:22px;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---------- 马头墙剪影 ---------- */
+  .huizhou{
+    position:relative;
+    margin:30px -49px 0;
+    line-height:0;
+  }
+  .huizhou svg{width:100%;height:auto;display:block;}
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @keyframes stamp{
+    from{opacity:0;transform:scale(1.7) rotate(-12deg);}
+    to{opacity:1;transform:scale(1) rotate(-4deg);}
+  }
+  @media (max-width:480px){
+    .card{padding:46px 28px 0;}
+    .huizhou{margin:28px -29px 0;}
+    .title-v{font-size:52px;}
+    .letter{font-size:15px;}
+    .item .big{font-size:17px;}
+    .count .time{font-size:28px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .head,.letter,.item,.count,.seal{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="watermark">宴</div>
+<div class="side left">粉墙黛瓦</div>
+<div class="side right">一席徽宴</div>
+
+<main class="card">
+  <header class="head">
+    <h1 class="title-v">宴帖</h1>
+    <div class="head-side">
+      <p class="kicker-v">徽菜 · 三元桥 · 今晚七时</p>
+      <span class="seal-mini">邀</span>
+    </div>
+  </header>
+
+  <div class="orn"><span>❖</span></div>
+
+  <section class="letter">
+    <p>有件事，得下张帖子才显郑重——</p>
+    <p>今晚七点，三元桥，一桌徽菜。</p>
+    <p>臭鳜鱼闻着臭吃着香，毛豆腐白毛越厚，越见诚意。</p>
+    <p>不为别的，就是想跟你坐下来，<em>慢慢吃一顿</em>。</p>
+  </section>
+
+  <section class="info">
+    <div class="item">
+      <span class="num">壹</span>
+      <div>
+        <h2>何 时</h2>
+        <p class="big">10 月 23 日（周五）晚 7:00</p>
+        <p class="note">倒计时就在下面，掐着点出门就行。</p>
+      </div>
+    </div>
+    <div class="item">
+      <span class="num">贰</span>
+      <div>
+        <h2>何 处</h2>
+        <p class="big">宴徽菜 · 三元桥店</p>
+        <p class="note">我提前到，门口等你。</p>
+      </div>
+    </div>
+    <div class="item">
+      <span class="num">叁</span>
+      <div>
+        <h2>路 线</h2>
+        <div class="routes">
+          <div class="route">
+            <span class="who"><strong>朋哥</strong>自 阜成门</span>
+            地铁 2 号线 → 东直门换首都机场线 → 三元桥站<br>
+            约 40 分钟 · 打车约 30 分钟
+          </div>
+          <div class="route">
+            <span class="who"><strong>Daoyu</strong>自 金台路</span>
+            地铁 6 号线 → 呼家楼换 10 号线 → 三元桥站<br>
+            约 30 分钟 · 先到占座
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="count">
+    <p class="label">距 开 席</p>
+    <p class="time" id="countdown">--:--:--</p>
+  </div>
+
+  <a class="map-btn" href="https://uri.amap.com/search?keyword=%E5%AE%B4%E5%BE%BD%E8%8F%9C%E4%B8%89%E5%85%83%E6%A1%A5%E5%BA%97" target="_blank" rel="noopener">在高德地图中打开 ↗</a>
+
+  <footer>
+    <p class="rsvp">今晚不设抢单——我扫。
+      <span class="muted">收到请回话，菜好按人头点。</span>
+    </p>
+    <div class="seal">宴</div>
+    <p class="sign">Daoyu 敬约 · 恭候朋哥</p>
+  </footer>
+
+  <div class="huizhou" aria-hidden="true">
+    <svg viewBox="0 0 640 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 远景 -->
+      <path fill="#3a4353" opacity=".28" d="M0,130 L0,86 L64,86 L64,70 L150,70 L150,82 L238,82 L238,60 L330,60 L330,78 L420,78 L420,88 L512,88 L512,72 L600,72 L600,84 L640,84 L640,130 Z"/>
+      <!-- 近景马头墙 -->
+      <path fill="#3a4353" d="M0,130 L0,74 L26,74 Q30,74 32,70 L34,66 L34,58 L92,58 L92,36 L96,32 Q98,28 104,28 L168,28 L168,50 L172,54 Q174,58 180,58 L238,58 L238,22 L242,18 Q244,14 250,14 L318,14 L318,44 L322,48 Q324,52 330,52 L392,52 L392,34 L396,30 Q398,26 404,26 L466,26 L466,56 L470,60 Q472,64 478,64 L534,64 L534,78 L538,82 Q540,86 546,86 L600,86 L600,96 L604,100 Q606,104 612,104 L640,104 L640,130 Z"/>
+      <!-- 月 -->
+      <circle cx="586" cy="26" r="14" fill="#c9a45c" opacity=".8"/>
+    </svg>
+  </div>
+</main>
+
+<script>
+(function(){
+  var el = document.getElementById('countdown');
+  var target = new Date();
+  target.setHours(19,0,0,0);
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var now = new Date();
+    var diff = target - now;
+    if(diff <= 0){
+      el.textContent = '开席 · 请入座';
+      el.style.fontSize = '26px';
+      return;
+    }
+    var h = Math.floor(diff/3600000);
+    var m = Math.floor(diff%3600000/60000);
+    var s = Math.floor(diff%60000/1000);
+    el.textContent = pad(h) + ' 小时 ' + pad(m) + ' 分 ' + pad(s) + ' 秒';
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
+
+</body>
+</html>
