@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 34：Tool Result Engineering：当返回结果有 50MB"
-date: 2026-10-23 10:30:00
+title: AI Agent 工程师 Day 34：Tool Result Engineering：当返回结果有 50MB
 tags:
   - AI Agent 工程师
   - Tool Result
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 34/168 | M2 Tool 结果处理 | Tool Result Engineering：当返回结果有 50MB。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool 结果处理, Tool Result, Compression, Context, Agent"
+description: >-
+  Day 34/168 | M2 Tool 结果处理 | Tool Result Engineering：当返回结果有 50MB。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool 结果处理, Tool Result, Compression, Context, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 21952
+date: 2026-10-23 10:30:00
 ---
 
 # AI Agent 工程师 Day 34：Tool Result Engineering：当返回结果有 50MB

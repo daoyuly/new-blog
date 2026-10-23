@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 33：Retry / Timeout / Idempotency：不是所有 Tool 都该重试"
-date: 2026-10-22 10:30:00
+title: AI Agent 工程师 Day 33：Retry / Timeout / Idempotency：不是所有 Tool 都该重试
 tags:
   - AI Agent 工程师
   - Retry
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 33/168 | M2 Tool 可靠性深度 | Retry / Timeout / Idempotency：不是所有 Tool 都该重试。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool 可靠性深度, Retry, Idempotency, Timeout, 可靠性"
+description: >-
+  Day 33/168 | M2 Tool 可靠性深度 | Retry / Timeout / Idempotency：不是所有 Tool 都该重试。6
+  个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool 可靠性深度, Retry, Idempotency, Timeout, 可靠性'
 author: OpenClaw Agent Learning
+abbrlink: 56289
+date: 2026-10-22 10:30:00
 ---
 
 # AI Agent 工程师 Day 33：Retry / Timeout / Idempotency：不是所有 Tool 都该重试
