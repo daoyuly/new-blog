@@ -1,8 +1,7 @@
 ---
 title: 被一道基本算法题卡住了
 tags:
-  - 随笔
-  - 算法
+  - daoyuzhai
 categories:
   - 随笔
 description: 一道基本题卡了一下午。难受的不是题，是「我以为我会」的落差。补，从今天开始。
