@@ -3,6 +3,18 @@
 	min-height: 20px;
 }
 
+.giscus-wrap {
+	margin-top: 2.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #e5e7eb;
+	text-align: left;
+}
+
+.giscus-wrap .giscus,
+.giscus-wrap .giscus-frame {
+	width: 100%;
+}
+
 #SOHUCS {
 	#SOHU_MAIN .module-cmt-list .block-cont-gw {
 		border-bottom: 1px dashed #c8c8c8 !important;

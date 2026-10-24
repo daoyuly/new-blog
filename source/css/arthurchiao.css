@@ -1223,6 +1223,19 @@ a:hover {
   border-top: 1px solid var(--ac-border-light);
 }
 
+/* Giscus 评论，跟正文同一栏 */
+.giscus-wrap {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ac-border);
+  text-align: left;
+}
+
+.giscus-wrap .giscus,
+.giscus-wrap .giscus-frame {
+  width: 100%;
+}
+
 /* 文章导航（上一篇/下一篇）更简洁 */
 #article-nav {
   margin-top: 3rem;

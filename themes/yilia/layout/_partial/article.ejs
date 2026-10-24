@@ -71,6 +71,9 @@
       <% } %>
       <div class="clearfix"></div>
     </div>
+    <% if (!index && post.comments && theme.giscus && theme.giscus.enable && theme.giscus.repo && theme.giscus.repo_id && theme.giscus.category && theme.giscus.category_id){ %>
+      <%- partial('post/giscus') %>
+    <% } %>
   </div>
 </article>
 <% if (!index){ %>

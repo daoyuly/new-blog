@@ -90,7 +90,7 @@ avatar: false
 #是否开启分享
 share_jia: false
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment；6、Giscus
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
@@ -113,6 +113,27 @@ gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
+
+#6、Giscus（评论存在 GitHub Discussions）
+# 生效还需要两步：仓库 Settings → Features 打开 Discussions；
+# 安装 https://github.com/apps/giscus 并授权给本仓库。
+# 然后打开 https://giscus.app/zh-CN ，仓库填 daoyuly/new-blog，
+# 分类选 Announcements，把 Category ID 填到 category_id。
+# category_id 为空时不渲染，避免页面上出现报错框。
+giscus:
+  enable: true
+  repo: daoyuly/new-blog
+  repo_id: R_kgDOIHIw_g
+  category: Announcements
+  category_id: ''
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: light
+  lang: zh-CN
+  loading: lazy
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
