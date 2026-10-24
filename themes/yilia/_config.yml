@@ -114,18 +114,14 @@ gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
 
-#6、Giscus（评论存在 GitHub Discussions）
-# 生效还需要两步：仓库 Settings → Features 打开 Discussions；
-# 安装 https://github.com/apps/giscus 并授权给本仓库。
-# 然后打开 https://giscus.app/zh-CN ，仓库填 daoyuly/new-blog，
-# 分类选 Announcements，把 Category ID 填到 category_id。
-# category_id 为空时不渲染，避免页面上出现报错框。
+#6、Giscus（评论存在 GitHub Discussions 的 Announcements 分类）
+# 还需安装 https://github.com/apps/giscus 并授权给 daoyuly/new-blog，评论框才能加载。
 giscus:
   enable: true
   repo: daoyuly/new-blog
   repo_id: R_kgDOIHIw_g
   category: Announcements
-  category_id: ''
+  category_id: DIC_kwDOIHIw_s4DJgAe
   mapping: pathname
   strict: 0
   reactions_enabled: 1
