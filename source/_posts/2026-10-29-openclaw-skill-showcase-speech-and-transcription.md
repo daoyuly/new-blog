@@ -6,6 +6,7 @@ tags:
   - speech-and-transcription
 categories:
   - 技术推荐
+abbrlink: 26940
 date: 2026-10-29 11:30:00
 ---
 

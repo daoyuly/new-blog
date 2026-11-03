@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 41：Model Gateway：多模型的统一接口"
-date: 2026-10-30 10:30:00
+title: AI Agent 工程师 Day 41：Model Gateway：多模型的统一接口
 tags:
   - AI Agent 工程师
   - Model Gateway
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 41/168 | M2 Model Gateway 设计 | Model Gateway：多模型的统一接口。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Model Gateway 设计, Model Gateway, 多模型, Runtime, Agent"
+description: >-
+  Day 41/168 | M2 Model Gateway 设计 | Model Gateway：多模型的统一接口。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Model Gateway 设计, Model Gateway, 多模型, Runtime, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 31527
+date: 2026-10-30 10:30:00
 ---
 
 # AI Agent 工程师 Day 41：Model Gateway：多模型的统一接口

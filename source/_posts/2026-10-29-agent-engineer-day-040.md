@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 40：MCP Resource：获取上下文与数据"
-date: 2026-10-29 10:30:00
+title: AI Agent 工程师 Day 40：MCP Resource：获取上下文与数据
 tags:
   - AI Agent 工程师
   - MCP
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 40/168 | M2 MCP Resource 概念 | MCP Resource：获取上下文与数据。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, MCP Resource 概念, MCP, Resource, Context, Memory"
+description: >-
+  Day 40/168 | M2 MCP Resource 概念 | MCP Resource：获取上下文与数据。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, MCP Resource 概念, MCP, Resource, Context, Memory'
 author: OpenClaw Agent Learning
+abbrlink: 10412
+date: 2026-10-29 10:30:00
 ---
 
 # AI Agent 工程师 Day 40：MCP Resource：获取上下文与数据

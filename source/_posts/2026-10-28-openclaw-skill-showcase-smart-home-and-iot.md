@@ -6,6 +6,7 @@ tags:
   - smart-home-and-iot
 categories:
   - 技术推荐
+abbrlink: 34969
 date: 2026-10-28 11:30:00
 ---
 

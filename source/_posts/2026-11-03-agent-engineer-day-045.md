@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 45：Shell Environment：让 Agent 执行命令"
-date: 2026-11-03 10:30:00
+title: AI Agent 工程师 Day 45：Shell Environment：让 Agent 执行命令
 tags:
   - AI Agent 工程师
   - Shell
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 45/168 | M2 Shell 环境 | Shell Environment：让 Agent 执行命令。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Shell 环境, Shell, Environment, Sandbox, Agent"
+description: >-
+  Day 45/168 | M2 Shell 环境 | Shell Environment：让 Agent 执行命令。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Shell 环境, Shell, Environment, Sandbox, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 8567
+date: 2026-11-03 10:30:00
 ---
 
 # AI Agent 工程师 Day 45：Shell Environment：让 Agent 执行命令

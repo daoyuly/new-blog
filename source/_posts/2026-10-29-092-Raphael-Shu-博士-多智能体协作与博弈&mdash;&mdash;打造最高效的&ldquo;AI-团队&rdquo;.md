@@ -1,10 +1,11 @@
 ---
-title: "开放世界多智能体协作与博弈：从 Workflow 走向 Ecosystem"
+title: 开放世界多智能体协作与博弈：从 Workflow 走向 Ecosystem
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 46968
 date: 2026-10-29 11:06:13
 ---
 

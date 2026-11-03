@@ -1,10 +1,11 @@
 ---
-title: "企业级 Agentic AI 重构智能生产力：从五大支柱到工程落地"
+title: 企业级 Agentic AI 重构智能生产力：从五大支柱到工程落地
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 56589
 date: 2026-10-30 14:11:36
 ---
 

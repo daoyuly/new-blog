@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 39：MCP Discovery：工具的自动发现"
-date: 2026-10-28 10:30:00
+title: AI Agent 工程师 Day 39：MCP Discovery：工具的自动发现
 tags:
   - AI Agent 工程师
   - MCP
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 39/168 | M2 MCP 工具发现 | MCP Discovery：工具的自动发现。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, MCP 工具发现, MCP, Discovery, 动态注册, Agent"
+description: >-
+  Day 39/168 | M2 MCP 工具发现 | MCP Discovery：工具的自动发现。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, MCP 工具发现, MCP, Discovery, 动态注册, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 60575
+date: 2026-10-28 10:30:00
 ---
 
 # AI Agent 工程师 Day 39：MCP Discovery：工具的自动发现

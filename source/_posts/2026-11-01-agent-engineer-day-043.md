@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 43：什么是 Environment：Tool 与环境的本质区别"
-date: 2026-11-01 10:30:00
+title: AI Agent 工程师 Day 43：什么是 Environment：Tool 与环境的本质区别
 tags:
   - AI Agent 工程师
   - Environment
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 43/168 | M2 Environment 概念 | 什么是 Environment：Tool 与环境的本质区别。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Environment 概念, Environment, Tool, Agent, 架构"
+description: >-
+  Day 43/168 | M2 Environment 概念 | 什么是 Environment：Tool 与环境的本质区别。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Environment 概念, Environment, Tool, Agent, 架构'
 author: OpenClaw Agent Learning
+abbrlink: 5286
+date: 2026-11-01 10:30:00
 ---
 
 # AI Agent 工程师 Day 43：什么是 Environment：Tool 与环境的本质区别

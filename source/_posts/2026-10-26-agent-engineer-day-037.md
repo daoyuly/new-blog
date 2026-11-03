@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 37：MCP Protocol：从协议到实现"
-date: 2026-10-26 10:30:00
+title: AI Agent 工程师 Day 37：MCP Protocol：从协议到实现
 tags:
   - AI Agent 工程师
   - MCP
@@ -9,9 +8,11 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 37/168 | M2 MCP 协议实践 | MCP Protocol：从协议到实现。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, MCP 协议实践, MCP, Protocol, Implementation"
+description: Day 37/168 | M2 MCP 协议实践 | MCP Protocol：从协议到实现。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, MCP 协议实践, MCP, Protocol, Implementation'
 author: OpenClaw Agent Learning
+abbrlink: 60473
+date: 2026-10-26 10:30:00
 ---
 
 # AI Agent 工程师 Day 37：MCP Protocol：从协议到实现

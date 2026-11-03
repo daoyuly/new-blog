@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 42：Multi-Model Benchmark：不同模型在 Agent 场景下的表现"
-date: 2026-10-31 10:30:00
+title: AI Agent 工程师 Day 42：Multi-Model Benchmark：不同模型在 Agent 场景下的表现
 tags:
   - AI Agent 工程师
   - Multi-Model
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 42/168 | M2 多模型对比 | Multi-Model Benchmark：不同模型在 Agent 场景下的表现。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 多模型对比, Multi-Model, Benchmark, Model Gateway"
+description: >-
+  Day 42/168 | M2 多模型对比 | Multi-Model Benchmark：不同模型在 Agent 场景下的表现。6 个月从 LLM
+  到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 多模型对比, Multi-Model, Benchmark, Model Gateway'
 author: OpenClaw Agent Learning
+abbrlink: 259
+date: 2026-10-31 10:30:00
 ---
 
 # AI Agent 工程师 Day 42：Multi-Model Benchmark：不同模型在 Agent 场景下的表现
