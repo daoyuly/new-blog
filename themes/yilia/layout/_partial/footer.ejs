@@ -5,12 +5,12 @@
       <%- partial('_partial/theme-menu', { mode: 'footer' }) %>
       <% if (theme.subnav && theme.subnav.github) { %>
         <span class="footer-nav-sep">·</span>
-        <a href="<%- url_for(theme.subnav.github) %>" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="<%- url_for(theme.subnav.github) %>"><%= theme.subnav.github_label || 'GitHub' %></a>
       <% } %>
     </nav>
     <% } else if (theme.subnav && theme.subnav.github) { %>
     <nav class="footer-nav" aria-label="社交">
-      <a href="<%- url_for(theme.subnav.github) %>" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="<%- url_for(theme.subnav.github) %>"><%= theme.subnav.github_label || 'GitHub' %></a>
     </nav>
     <% } %>
     <div id="footer-info">

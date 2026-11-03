@@ -19,8 +19,8 @@ menu:
 
 # SubNav
 subnav:
-  github: "https://github.com/daoyuly/cv"
-  github_label: "github"
+  github: "/about/"
+  github_label: "关于我"
   #weibo: "#"
   rss: /atom.xml
   #zhihu: "#"
@@ -156,6 +156,5 @@ smart_menu:
 friends:
   csdn: https://blog.csdn.net/daoyuly/article/list/1
   cnblogs: https://www.cnblogs.com/daoyuly
-  github: https://github.com/daoyuly/cv
 
 aboutme: 程序员，关于技术我所知甚少，唯有探索，方得真知。
