@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 47：Git Environment：Coding Agent 的版本管理"
-date: 2026-11-05 10:30:00
+title: AI Agent 工程师 Day 47：Git Environment：Coding Agent 的版本管理
 tags:
   - AI Agent 工程师
   - Git
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 47/168 | M2 Git 工具集 | Git Environment：Coding Agent 的版本管理。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Git 工具集, Git, Environment, Coding Agent"
+description: >-
+  Day 47/168 | M2 Git 工具集 | Git Environment：Coding Agent 的版本管理。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Git 工具集, Git, Environment, Coding Agent'
 author: OpenClaw Agent Learning
+abbrlink: 18051
+date: 2026-11-05 10:30:00
 ---
 
 # AI Agent 工程师 Day 47：Git Environment：Coding Agent 的版本管理
