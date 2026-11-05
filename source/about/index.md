@@ -6,7 +6,7 @@ comments: false
 noDate: true
 ---
 
-<p class="biz-lead">刘道玉 · 高级 AI 应用工程师｜全栈产品研发｜北京</p>
+<p class="biz-lead">刘道玉 · AI智能体工程师｜全栈产品研发｜北京</p>
 
 电话：15901084766 ｜ 邮箱：<a href="mailto:liudaoyu@outlook.com">liudaoyu@outlook.com</a><br>
 Blog：<https://daoyuly.cn/> ｜ GitHub：<https://github.com/daoyuly>
