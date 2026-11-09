@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 48：Test Environment：让 Agent 验证自己的修改"
-date: 2026-11-06 10:30:00
+title: AI Agent 工程师 Day 48：Test Environment：让 Agent 验证自己的修改
 tags:
   - AI Agent 工程师
   - Test
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 48/168 | M2 测试环境 | Test Environment：让 Agent 验证自己的修改。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 测试环境, Test, Environment, Coding Agent"
+description: >-
+  Day 48/168 | M2 测试环境 | Test Environment：让 Agent 验证自己的修改。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 测试环境, Test, Environment, Coding Agent'
 author: OpenClaw Agent Learning
+abbrlink: 18924
+date: 2026-11-06 10:30:00
 ---
 
 # AI Agent 工程师 Day 48：Test Environment：让 Agent 验证自己的修改

@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 51：Repository Understanding：让 Agent 读懂代码库"
-date: 2026-11-09 10:30:00
+title: AI Agent 工程师 Day 51：Repository Understanding：让 Agent 读懂代码库
 tags:
   - AI Agent 工程师
   - Repository
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 51/168 | M2 代码库理解 | Repository Understanding：让 Agent 读懂代码库。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 代码库理解, Repository, Code Understanding, Coding Agent"
+description: >-
+  Day 51/168 | M2 代码库理解 | Repository Understanding：让 Agent 读懂代码库。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 代码库理解, Repository, Code Understanding, Coding Agent'
 author: OpenClaw Agent Learning
+abbrlink: 42226
+date: 2026-11-09 10:30:00
 ---
 
 # AI Agent 工程师 Day 51：Repository Understanding：让 Agent 读懂代码库

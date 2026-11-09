@@ -1,10 +1,11 @@
 ---
-title: "AI Agent与LLM微调实践：从多智能体协作到私有代码微调的工程落地"
+title: AI Agent与LLM微调实践：从多智能体协作到私有代码微调的工程落地
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 64402
 date: 2026-11-09 11:06:15
 ---
 
