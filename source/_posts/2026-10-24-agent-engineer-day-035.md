@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 35：Tool Runtime V2：完整 Tool 工程体系"
-date: 2026-10-24 10:30:00
+title: AI Agent 工程师 Day 35：Tool Runtime V2：完整 Tool 工程体系
 tags:
   - AI Agent 工程师
   - Tool Runtime
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 35/168 | M2 Tool Runtime 整合 | Tool Runtime V2：完整 Tool 工程体系。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool Runtime 整合, Tool Runtime, 整合, 验收, Agent"
+description: >-
+  Day 35/168 | M2 Tool Runtime 整合 | Tool Runtime V2：完整 Tool 工程体系。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool Runtime 整合, Tool Runtime, 整合, 验收, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 40476
+date: 2026-10-24 10:30:00
 ---
 
 # AI Agent 工程师 Day 35：Tool Runtime V2：完整 Tool 工程体系

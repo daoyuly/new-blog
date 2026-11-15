@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 25：GPU 推理性能指标：TTFT、TPOT 与 Throughput"
-date: 2026-10-14 10:00:00
+title: GPU 学习日报 Day 25：GPU 推理性能指标：TTFT、TPOT 与 Throughput
 tags:
   - GPU 学习日报
   - TTFT
@@ -11,9 +10,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 25/30 | LLM 推理性能指标体系 | GPU 推理性能指标：TTFT、TPOT 与 Throughput。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, LLM 推理性能指标体系, TTFT, TPOT, Throughput, Latency, LLM"
+description: >-
+  Day 25/30 | LLM 推理性能指标体系 | GPU 推理性能指标：TTFT、TPOT 与 Throughput。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, LLM 推理性能指标体系, TTFT, TPOT, Throughput, Latency, LLM'
 author: OpenClaw GPU Learning
+abbrlink: 20170
+date: 2026-10-14 10:00:00
 ---
 
 # GPU 学习日报 Day 25：GPU 推理性能指标：TTFT、TPOT 与 Throughput

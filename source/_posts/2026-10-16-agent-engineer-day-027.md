@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 27：Agent Runtime V2：大重构"
-date: 2026-10-16 10:30:00
+title: AI Agent 工程师 Day 27：Agent Runtime V2：大重构
 tags:
   - AI Agent 工程师
   - 重构
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 27/168 | M1 Runtime 架构重构 | Agent Runtime V2：大重构。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Runtime 架构重构, 重构, Runtime, 架构, Agent"
+description: >-
+  Day 27/168 | M1 Runtime 架构重构 | Agent Runtime V2：大重构。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Runtime 架构重构, 重构, Runtime, 架构, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 49040
+date: 2026-10-16 10:30:00
 ---
 
 # AI Agent 工程师 Day 27：Agent Runtime V2：大重构

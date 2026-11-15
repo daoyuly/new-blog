@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 54：Coding Agent Reliability：防死循环与安全护栏"
-date: 2026-11-12 10:30:00
+title: AI Agent 工程师 Day 54：Coding Agent Reliability：防死循环与安全护栏
 tags:
   - AI Agent 工程师
   - Reliability
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 54/168 | M2 Agent 可靠性 | Coding Agent Reliability：防死循环与安全护栏。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 可靠性, Reliability, Guard, Safety, 死循环"
+description: >-
+  Day 54/168 | M2 Agent 可靠性 | Coding Agent Reliability：防死循环与安全护栏。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 可靠性, Reliability, Guard, Safety, 死循环'
 author: OpenClaw Agent Learning
+abbrlink: 16845
+date: 2026-11-12 10:30:00
 ---
 
 # AI Agent 工程师 Day 54：Coding Agent Reliability：防死循环与安全护栏

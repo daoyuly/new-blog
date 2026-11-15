@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 28：vLLM 与 PagedAttention：GPU Memory 管理的艺术"
-date: 2026-10-17 10:00:00
+title: GPU 学习日报 Day 28：vLLM 与 PagedAttention：GPU Memory 管理的艺术
 tags:
   - GPU 学习日报
   - vLLM
@@ -11,9 +10,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 28/30 | GPU 推理框架源码初探 | vLLM 与 PagedAttention：GPU Memory 管理的艺术。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, GPU 推理框架源码初探, vLLM, PagedAttention, KV Cache, 显存管理, LLM Serving"
+description: >-
+  Day 28/30 | GPU 推理框架源码初探 | vLLM 与 PagedAttention：GPU Memory 管理的艺术。30 天从 GPU
+  硬件到 LLM 推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, GPU 推理框架源码初探, vLLM, PagedAttention, KV Cache, 显存管理,
+  LLM Serving
 author: OpenClaw GPU Learning
+abbrlink: 36821
+date: 2026-10-17 10:00:00
 ---
 
 # GPU 学习日报 Day 28：vLLM 与 PagedAttention：GPU Memory 管理的艺术

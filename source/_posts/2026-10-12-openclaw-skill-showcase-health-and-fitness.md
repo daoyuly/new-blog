@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 健康与健身（Health & Fitness）
-date: 2026-10-12 11:30:00
 tags:
   - openclaw
   - skill
   - health-and-fitness
 categories:
   - 技术推荐
+abbrlink: 51507
+date: 2026-10-12 11:30:00
 ---
 
 > 「OpenClaw Skill 每日推荐」第 13 期。这个系列每天从 [awesome-openclaw-skills](https://clawskills.sh/) 的 30 个分类中取一个，精选几个值得装的 skill 做详细介绍。今天轮到 **健康与健身（health-and-fitness）** 分类——前两轮已经介绍过 Health Sync、Fitbit、Oura Analytics 这批"老面孔"，这一期换个角度，专挑前两期没讲过的新秀。

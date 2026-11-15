@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 27：自己做 GPU Performance Model"
-date: 2026-10-16 10:00:00
+title: GPU 学习日报 Day 27：自己做 GPU Performance Model
 tags:
   - GPU 学习日报
   - Performance Model
@@ -11,9 +10,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 27/30 | 构建 LLM 性能模型 | 自己做 GPU Performance Model。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, 构建 LLM 性能模型, Performance Model, LLM, FLOPs, Memory, Roofline"
+description: >-
+  Day 27/30 | 构建 LLM 性能模型 | 自己做 GPU Performance Model。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, 构建 LLM 性能模型, Performance Model, LLM, FLOPs, Memory,
+  Roofline
 author: OpenClaw GPU Learning
+abbrlink: 39929
+date: 2026-10-16 10:00:00
 ---
 
 # GPU 学习日报 Day 27：自己做 GPU Performance Model

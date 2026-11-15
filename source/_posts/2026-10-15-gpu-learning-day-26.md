@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 26：GPU 推理性能分析：实战 Profile"
-date: 2026-10-15 10:00:00
+title: GPU 学习日报 Day 26：GPU 推理性能分析：实战 Profile
 tags:
   - GPU 学习日报
   - 性能分析
@@ -11,9 +10,11 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 26/30 | 真实模型推理性能分析 | GPU 推理性能分析：实战 Profile。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, 真实模型推理性能分析, 性能分析, Benchmark, Qwen, Llama, GPU"
+description: Day 26/30 | 真实模型推理性能分析 | GPU 推理性能分析：实战 Profile。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, 真实模型推理性能分析, 性能分析, Benchmark, Qwen, Llama, GPU'
 author: OpenClaw GPU Learning
+abbrlink: 13861
+date: 2026-10-15 10:00:00
 ---
 
 # GPU 学习日报 Day 26：GPU 推理性能分析：实战 Profile

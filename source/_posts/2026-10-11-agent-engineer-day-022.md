@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 22：拆解 LangGraph：Graph / State / Node / Edge"
-date: 2026-10-11 10:30:00
+title: AI Agent 工程师 Day 22：拆解 LangGraph：Graph / State / Node / Edge
 tags:
   - AI Agent 工程师
   - LangGraph
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 22/168 | M1 LangGraph 架构分析 | 拆解 LangGraph：Graph / State / Node / Edge。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, LangGraph 架构分析, LangGraph, Graph, State, 架构"
+description: >-
+  Day 22/168 | M1 LangGraph 架构分析 | 拆解 LangGraph：Graph / State / Node / Edge。6
+  个月从 LLM 到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, LangGraph 架构分析, LangGraph, Graph, State, 架构'
 author: OpenClaw Agent Learning
+abbrlink: 25158
+date: 2026-10-11 10:30:00
 ---
 
 # AI Agent 工程师 Day 22：拆解 LangGraph：Graph / State / Node / Edge

@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 29：Mini Project：LLM GPU Profiler"
-date: 2026-10-18 10:00:00
+title: GPU 学习日报 Day 29：Mini Project：LLM GPU Profiler
 tags:
   - GPU 学习日报
   - Mini Project
@@ -11,9 +10,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 29/30 | 实战项目 - GPU 性能分析器 | Mini Project：LLM GPU Profiler。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, 实战项目 - GPU 性能分析器, Mini Project, Profiler, LLM, GPU, 工具开发"
+description: >-
+  Day 29/30 | 实战项目 - GPU 性能分析器 | Mini Project：LLM GPU Profiler。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, 实战项目 - GPU 性能分析器, Mini Project, Profiler, LLM, GPU,
+  工具开发
 author: OpenClaw GPU Learning
+abbrlink: 63935
+date: 2026-10-18 10:00:00
 ---
 
 # GPU 学习日报 Day 29：Mini Project：LLM GPU Profiler

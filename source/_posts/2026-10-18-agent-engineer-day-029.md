@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 29：重新理解 Tool：Tool Calling ≠ Tool Execution"
-date: 2026-10-18 10:30:00
+title: AI Agent 工程师 Day 29：重新理解 Tool：Tool Calling ≠ Tool Execution
 tags:
   - AI Agent 工程师
   - Tool
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 29/168 | M2 Tool 概念重塑 | 重新理解 Tool：Tool Calling ≠ Tool Execution。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool 概念重塑, Tool, Runtime, Agent"
+description: >-
+  Day 29/168 | M2 Tool 概念重塑 | 重新理解 Tool：Tool Calling ≠ Tool Execution。6 个月从 LLM
+  到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool 概念重塑, Tool, Runtime, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 45653
+date: 2026-10-18 10:30:00
 ---
 
 # AI Agent 工程师 Day 29：重新理解 Tool：Tool Calling ≠ Tool Execution

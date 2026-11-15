@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 24：比较三种架构：我的 Runtime vs LangGraph vs AutoGen"
-date: 2026-10-13 10:30:00
+title: AI Agent 工程师 Day 24：比较三种架构：我的 Runtime vs LangGraph vs AutoGen
 tags:
   - AI Agent 工程师
   - 架构对比
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 24/168 | M1 架构对比与取舍 | 比较三种架构：我的 Runtime vs LangGraph vs AutoGen。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 架构对比与取舍, 架构对比, LangGraph, AutoGen, Runtime"
+description: >-
+  Day 24/168 | M1 架构对比与取舍 | 比较三种架构：我的 Runtime vs LangGraph vs AutoGen。6 个月从 LLM
+  到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 架构对比与取舍, 架构对比, LangGraph, AutoGen, Runtime'
 author: OpenClaw Agent Learning
+abbrlink: 13354
+date: 2026-10-13 10:30:00
 ---
 
 # AI Agent 工程师 Day 24：比较三种架构：我的 Runtime vs LangGraph vs AutoGen

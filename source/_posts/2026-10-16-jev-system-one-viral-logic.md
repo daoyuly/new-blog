@@ -1,14 +1,15 @@
 ---
-title: "不会聊天的模型，凭什么爆火？Jev 与「系统一模型」背后的深层逻辑"
-date: 2026-10-16 15:25:00
+title: 不会聊天的模型，凭什么爆火？Jev 与「系统一模型」背后的深层逻辑
 tags:
-  - "Jev"
-  - "TypeSafe"
-  - "System One"
-  - "AI Agent"
-  - "AI 商业分析"
+  - Jev
+  - TypeSafe
+  - System One
+  - AI Agent
+  - AI 商业分析
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 54681
+date: 2026-10-16 15:25:00
 ---
 
 # 不会聊天的模型，凭什么爆火？

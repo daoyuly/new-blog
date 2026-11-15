@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 52：Code Editing：LLM 如何可靠修改代码"
-date: 2026-11-10 10:30:00
+title: AI Agent 工程师 Day 52：Code Editing：LLM 如何可靠修改代码
 tags:
   - AI Agent 工程师
   - Code Editing
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 52/168 | M2 代码编辑策略 | Code Editing：LLM 如何可靠修改代码。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 代码编辑策略, Code Editing, Patch, Coding Agent"
+description: >-
+  Day 52/168 | M2 代码编辑策略 | Code Editing：LLM 如何可靠修改代码。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 代码编辑策略, Code Editing, Patch, Coding Agent'
 author: OpenClaw Agent Learning
+abbrlink: 13063
+date: 2026-11-10 10:30:00
 ---
 
 # AI Agent 工程师 Day 52：Code Editing：LLM 如何可靠修改代码

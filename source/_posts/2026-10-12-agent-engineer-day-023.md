@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 23：拆解 AutoGen Runtime：Agent 与 Runtime 的边界"
-date: 2026-10-12 10:30:00
+title: AI Agent 工程师 Day 23：拆解 AutoGen Runtime：Agent 与 Runtime 的边界
 tags:
   - AI Agent 工程师
   - AutoGen
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 23/168 | M1 AutoGen 架构分析 | 拆解 AutoGen Runtime：Agent 与 Runtime 的边界。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, AutoGen 架构分析, AutoGen, Runtime, Agent, 架构"
+description: >-
+  Day 23/168 | M1 AutoGen 架构分析 | 拆解 AutoGen Runtime：Agent 与 Runtime 的边界。6 个月从
+  LLM 到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, AutoGen 架构分析, AutoGen, Runtime, Agent, 架构'
 author: OpenClaw Agent Learning
+abbrlink: 44106
+date: 2026-10-12 10:30:00
 ---
 
 # AI Agent 工程师 Day 23：拆解 AutoGen Runtime：Agent 与 Runtime 的边界

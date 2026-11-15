@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 24：Operator Fusion：合并 Kernel 的性能魔法"
-date: 2026-10-13 10:00:00
+title: GPU 学习日报 Day 24：Operator Fusion：合并 Kernel 的性能魔法
 tags:
   - GPU 学习日报
   - Operator Fusion
@@ -11,9 +10,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 24/30 | 算子融合 | Operator Fusion：合并 Kernel 的性能魔法。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, 算子融合, Operator Fusion, Kernel, RMSNorm, SiLU, LLM"
+description: >-
+  Day 24/30 | 算子融合 | Operator Fusion：合并 Kernel 的性能魔法。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, 算子融合, Operator Fusion, Kernel, RMSNorm, SiLU, LLM'
 author: OpenClaw GPU Learning
+abbrlink: 29041
+date: 2026-10-13 10:00:00
 ---
 
 # GPU 学习日报 Day 24：Operator Fusion：合并 Kernel 的性能魔法

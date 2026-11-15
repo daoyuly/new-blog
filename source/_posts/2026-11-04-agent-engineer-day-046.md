@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 46：Sandbox Security：为什么 Coding Agent 不能拥有宿主机权限"
-date: 2026-11-04 10:30:00
+title: AI Agent 工程师 Day 46：Sandbox Security：为什么 Coding Agent 不能拥有宿主机权限
 tags:
   - AI Agent 工程师
   - Sandbox
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 46/168 | M2 沙箱安全 | Sandbox Security：为什么 Coding Agent 不能拥有宿主机权限。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 沙箱安全, Sandbox, Security, Docker, Isolation"
+description: >-
+  Day 46/168 | M2 沙箱安全 | Sandbox Security：为什么 Coding Agent 不能拥有宿主机权限。6 个月从 LLM
+  到生产级 Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 沙箱安全, Sandbox, Security, Docker, Isolation'
 author: OpenClaw Agent Learning
+abbrlink: 56984
+date: 2026-11-04 10:30:00
 ---
 
 # AI Agent 工程师 Day 46：Sandbox Security：为什么 Coding Agent 不能拥有宿主机权限

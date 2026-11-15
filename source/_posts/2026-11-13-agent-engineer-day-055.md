@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 55：Agent Harness V0：系统整合"
-date: 2026-11-13 10:30:00
+title: AI Agent 工程师 Day 55：Agent Harness V0：系统整合
 tags:
   - AI Agent 工程师
   - Harness
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 55/168 | M2 Harness 初版 | Agent Harness V0：系统整合。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Harness, 系统整合, 架构, Runtime"
+description: >-
+  Day 55/168 | M2 Harness 初版 | Agent Harness V0：系统整合。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Harness, 系统整合, 架构, Runtime'
 author: OpenClaw Agent Learning
+abbrlink: 47445
+date: 2026-11-13 10:30:00
 ---
 
 # AI Agent 工程师 Day 55：Agent Harness V0：系统整合

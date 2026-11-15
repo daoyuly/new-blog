@@ -1,6 +1,5 @@
 ---
 title: 微信开发者工具在 M4 Pro 上为什么慢
-date: 2026-11-05 09:40:00
 tags:
   - macOS
   - Cursor
@@ -9,7 +8,11 @@ tags:
   - 复盘
 categories:
   - 工程笔记
-description: 2026-11-05 的一次本机实测。M4 Pro、24GB 内存，小程序只有 12 个源文件。启动到编辑器扩展宿主用了 3 分钟，预览整段 37 秒。慢在 Intel 包的 Rosetta 转译，以及两天没重启后被 Cursor 和 Chrome 撑满的内存。
+description: >-
+  2026-11-05 的一次本机实测。M4 Pro、24GB 内存，小程序只有 12 个源文件。启动到编辑器扩展宿主用了 3 分钟，预览整段 37 秒。慢在
+  Intel 包的 Rosetta 转译，以及两天没重启后被 Cursor 和 Chrome 撑满的内存。
+abbrlink: 11568
+date: 2026-11-05 09:40:00
 ---
 
 今早微信开发者工具启动慢，项目加载慢，预览也慢。机器是 Apple M4 Pro，14 核，24GB 内存，原装固态，macOS 15.6，磁盘还剩 463GB。这种配置对不上「电脑太旧」的解释。

@@ -103,6 +103,7 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  - '**/weekly/**'
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

@@ -1,10 +1,11 @@
 ---
-title: "从 RAG 到 Agent：Milvus 向量数据湖与 Context Engineering 实践"
+title: 从 RAG 到 Agent：Milvus 向量数据湖与 Context Engineering 实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 30429
 date: 2026-10-13 11:07:36
 ---
 

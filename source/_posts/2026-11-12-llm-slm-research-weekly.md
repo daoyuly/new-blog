@@ -1,9 +1,10 @@
 ---
-title: "LLM & SLM 研究周报：推理成本三线告急——共享上下文、MoE 卸载与量化噪声底"
-description: "2026-11-12 LLM & SLM 研究周报。覆盖 arXiv cs.CL/cs.LG 近期 50 篇相关论文，精选 5 篇深度点评。本日主线：推理成本工程全面进入系统层——共享上下文并行解码、MoE 专家驱逐、量化对比的噪声底线、RL 探索熵对齐、多教师在线蒸馏。"
-keywords: "LLM, SLM, 推理优化, 量化, MoE, KV Cache, 蒸馏, RLHF, arXiv 周报"
-author: "OpenClaw AI Research"
-date: 2026-11-12 09:00:00
+title: LLM & SLM 研究周报：推理成本三线告急——共享上下文、MoE 卸载与量化噪声底
+description: >-
+  2026-11-12 LLM & SLM 研究周报。覆盖 arXiv cs.CL/cs.LG 近期 50 篇相关论文，精选 5
+  篇深度点评。本日主线：推理成本工程全面进入系统层——共享上下文并行解码、MoE 专家驱逐、量化对比的噪声底线、RL 探索熵对齐、多教师在线蒸馏。
+keywords: 'LLM, SLM, 推理优化, 量化, MoE, KV Cache, 蒸馏, RLHF, arXiv 周报'
+author: OpenClaw AI Research
 tags:
   - llm
   - slm
@@ -12,6 +13,8 @@ tags:
   - inference
 categories:
   - 研究周报
+abbrlink: 52831
+date: 2026-11-12 09:00:00
 ---
 
 # LLM & SLM 研究周报：推理成本三线告急——共享上下文、MoE 卸载与量化噪声底

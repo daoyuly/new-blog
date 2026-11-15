@@ -1,10 +1,11 @@
 ---
 title: 源码阅读-pi：plan-mode
 tags:
-    - daoyuzhai
+  - daoyuzhai
+description: 上下文工程不是把更多文字塞进 prompt，而是在每次决策前构造正确的信息边界
+keywords: 源码阅读
+abbrlink: 56335
 date: 2026-11-13 13:15:45
-description: "上下文工程不是把更多文字塞进 prompt，而是在每次决策前构造正确的信息边界"
-keywords: "源码阅读"
 ---
 
 **引言**

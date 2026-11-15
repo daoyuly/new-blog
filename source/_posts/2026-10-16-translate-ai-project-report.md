@@ -9,9 +9,10 @@ tags:
   - 项目报告
 categories:
   - 项目报告
+description: 用本地 8B 档小模型把学术 PDF 译成可校对的简体中文 Markdown；论文不出本机。
+keywords: 'translate-ai, 本地翻译, Ollama, Qwen, Marker, 学术 PDF, 术语库, 项目报告'
+abbrlink: 51077
 date: 2026-10-16 09:30:00
-description: "用本地 8B 档小模型把学术 PDF 译成可校对的简体中文 Markdown；论文不出本机。"
-keywords: "translate-ai, 本地翻译, Ollama, Qwen, Marker, 学术 PDF, 术语库, 项目报告"
 ---
 
 # translate-ai 项目报告书：本地小模型学术 PDF 翻译流水线

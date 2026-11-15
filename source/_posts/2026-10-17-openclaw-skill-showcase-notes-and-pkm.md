@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - 笔记与知识管理（Notes & PKM）
+tags:
+  - openclaw
+  - skill
+  - notes-and-pkm
+categories:
+  - 技术推荐
+abbrlink: 20718
 date: 2026-10-17 11:30:00
-tags: [openclaw, skill, notes-and-pkm]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐：笔记与知识管理（Notes & PKM）（71 个 Skills）

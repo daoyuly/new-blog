@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 31：Tool Description：描述如何影响选择"
-date: 2026-10-20 10:30:00
+title: AI Agent 工程师 Day 31：Tool Description：描述如何影响选择
 tags:
   - AI Agent 工程师
   - Tool Description
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 31/168 | M2 Tool 描述工程 | Tool Description：描述如何影响选择。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Tool 描述工程, Tool Description, Tool Selection, Benchmark"
+description: >-
+  Day 31/168 | M2 Tool 描述工程 | Tool Description：描述如何影响选择。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Tool 描述工程, Tool Description, Tool Selection, Benchmark'
 author: OpenClaw Agent Learning
+abbrlink: 9306
+date: 2026-10-20 10:30:00
 ---
 
 # AI Agent 工程师 Day 31：Tool Description：描述如何影响选择

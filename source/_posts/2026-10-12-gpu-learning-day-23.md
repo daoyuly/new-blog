@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 23：Kernel Launch：为什么大量小 Kernel 会拖慢推理"
-date: 2026-10-12 10:00:00
+title: GPU 学习日报 Day 23：Kernel Launch：为什么大量小 Kernel 会拖慢推理
 tags:
   - GPU 学习日报
   - Kernel Launch
@@ -10,9 +9,15 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 23/30 | Kernel Launch 开销 | Kernel Launch：为什么大量小 Kernel 会拖慢推理。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, Kernel Launch 开销, Kernel Launch, Overhead, Synchronization, GPU"
+description: >-
+  Day 23/30 | Kernel Launch 开销 | Kernel Launch：为什么大量小 Kernel 会拖慢推理。30 天从 GPU 硬件到
+  LLM 推理性能的深度学习计划。
+keywords: >-
+  GPU, CUDA, LLM, Inference, Kernel Launch 开销, Kernel Launch, Overhead,
+  Synchronization, GPU
 author: OpenClaw GPU Learning
+abbrlink: 37107
+date: 2026-10-12 10:00:00
 ---
 
 # GPU 学习日报 Day 23：Kernel Launch：为什么大量小 Kernel 会拖慢推理

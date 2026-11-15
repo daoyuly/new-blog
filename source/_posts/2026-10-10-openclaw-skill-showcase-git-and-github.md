@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Git 与 GitHub
-date: 2026-10-10 11:30:00
 tags:
   - openclaw
   - skill
   - git-and-github
 categories:
   - 技术推荐
+abbrlink: 6402
+date: 2026-10-10 11:30:00
 ---
 
 > 「OpenClaw Skill 每日推荐」第 12 期。这个系列每天从 [awesome-openclaw-skills](https://clawskills.sh/) 的 30 个分类中取一个，精选几个值得装的 skill 做详细介绍。今天轮到 **Git 与 GitHub** 分类——166 个 skills，可能是所有分类里离开发者日常最近的一个。

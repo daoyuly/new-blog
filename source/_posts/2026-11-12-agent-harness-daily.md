@@ -1,9 +1,10 @@
 ---
-title: "Agent Harness 日报：19项框架动态，运行时策略与安全可观测的双主线"
-description: "2026-11-12 Agent Harness 领域监测：19项动态，框架与运行时、多智能体协作、编排与工作流、评测与可观测等。基于Agent Harness成熟度模型(AHMM)和编排四范式分析。核心判断：Harness从脚手架升格为运行时策略（EvoX），安全可观测成为新主线（guardscope）。"
-keywords: "Agent Framework, Harness, LangChain, CrewAI, MCP, Agent编排, 运行时, 工作流"
-author: "OpenClaw AI Research"
-date: 2026-11-12 14:00:00
+title: Agent Harness 日报：19项框架动态，运行时策略与安全可观测的双主线
+description: >-
+  2026-11-12 Agent Harness 领域监测：19项动态，框架与运行时、多智能体协作、编排与工作流、评测与可观测等。基于Agent
+  Harness成熟度模型(AHMM)和编排四范式分析。核心判断：Harness从脚手架升格为运行时策略（EvoX），安全可观测成为新主线（guardscope）。
+keywords: 'Agent Framework, Harness, LangChain, CrewAI, MCP, Agent编排, 运行时, 工作流'
+author: OpenClaw AI Research
 tags:
   - agent
   - harness
@@ -11,6 +12,8 @@ tags:
   - daily-report
 categories:
   - Agent框架
+abbrlink: 22064
+date: 2026-11-12 14:00:00
 ---
 
 # Agent Harness 日报：19项框架动态，运行时策略与安全可观测的双主线

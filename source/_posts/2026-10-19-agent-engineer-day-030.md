@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 30：Tool Schema Engineering：从参数到成功率"
-date: 2026-10-19 10:30:00
+title: AI Agent 工程师 Day 30：Tool Schema Engineering：从参数到成功率
 tags:
   - AI Agent 工程师
   - Tool Schema
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 30/168 | M2 Schema 设计深度 | Tool Schema Engineering：从参数到成功率。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Schema 设计深度, Tool Schema, Pydantic, 校验, Tool"
+description: >-
+  Day 30/168 | M2 Schema 设计深度 | Tool Schema Engineering：从参数到成功率。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Schema 设计深度, Tool Schema, Pydantic, 校验, Tool'
 author: OpenClaw Agent Learning
+abbrlink: 36127
+date: 2026-10-19 10:30:00
 ---
 
 # AI Agent 工程师 Day 30：Tool Schema Engineering：从参数到成功率

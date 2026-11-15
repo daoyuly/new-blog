@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 25：Trace：让 Agent 的每一步可观测"
-date: 2026-10-14 10:30:00
+title: AI Agent 工程师 Day 25：Trace：让 Agent 的每一步可观测
 tags:
   - AI Agent 工程师
   - Trace
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 25/168 | M1 Agent Trace 设计 | Trace：让 Agent 的每一步可观测。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Agent Trace 设计, Trace, Observability, Debugging, Agent"
+description: >-
+  Day 25/168 | M1 Agent Trace 设计 | Trace：让 Agent 的每一步可观测。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Agent Trace 设计, Trace, Observability, Debugging, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 51448
+date: 2026-10-14 10:30:00
 ---
 
 # AI Agent 工程师 Day 25：Trace：让 Agent 的每一步可观测

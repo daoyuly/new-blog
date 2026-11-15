@@ -1,9 +1,13 @@
 ---
-title: "给 Personal Agent 装上 System 1：Jev 在个人智能体上的应用实践"
-description: "Personal Agent 的日常不是深度推理，而是成千上万次微小判断：这条消息要不要回、这段记忆要不要存、这个工具调用安不安全。这些判断现在都由 LLM 用生成的方式完成，慢、贵、还要解析 JSON。Jev 这类 System One 模型把判断从生成中拆出来——毫秒级返回类型化结果和校准概率。本文拆解 Jev 的三原语与四种架构模式，给出个人智能体上七个可落地的接入点，以及哪些地方不该用它。"
-keywords: "Jev, TypeSafe, System One, Personal Agent, AI Agent, 判断模型, 模型路由, Agent Memory, Laya"
-author: "daoyu"
-date: 2026-10-12 20:30:00
+title: 给 Personal Agent 装上 System 1：Jev 在个人智能体上的应用实践
+description: >-
+  Personal Agent 的日常不是深度推理，而是成千上万次微小判断：这条消息要不要回、这段记忆要不要存、这个工具调用安不安全。这些判断现在都由 LLM
+  用生成的方式完成，慢、贵、还要解析 JSON。Jev 这类 System One 模型把判断从生成中拆出来——毫秒级返回类型化结果和校准概率。本文拆解
+  Jev 的三原语与四种架构模式，给出个人智能体上七个可落地的接入点，以及哪些地方不该用它。
+keywords: >-
+  Jev, TypeSafe, System One, Personal Agent, AI Agent, 判断模型, 模型路由, Agent Memory,
+  Laya
+author: daoyu
 tags:
   - AI Agent
   - Jev
@@ -13,6 +17,8 @@ tags:
 categories:
   - AI架构
   - Agent系统
+abbrlink: 44659
+date: 2026-10-12 20:30:00
 ---
 
 <!-- reviewed & polished -->

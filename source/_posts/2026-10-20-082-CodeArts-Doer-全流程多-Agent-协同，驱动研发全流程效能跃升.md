@@ -1,10 +1,11 @@
 ---
-title: "华为云 CodeArts Doer 研发智能体实践：从提示工程到多智能体协同的确定性演进"
+title: 华为云 CodeArts Doer 研发智能体实践：从提示工程到多智能体协同的确定性演进
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 45614
 date: 2026-10-20 14:08:17
 ---
 

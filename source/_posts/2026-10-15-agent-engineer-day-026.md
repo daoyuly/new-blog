@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 26：Benchmark：Agent 的第一份实验数据"
-date: 2026-10-15 10:30:00
+title: AI Agent 工程师 Day 26：Benchmark：Agent 的第一份实验数据
 tags:
   - AI Agent 工程师
   - Benchmark
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M1 LLM + Agent Runtime
-description: "Day 26/168 | M1 Agent Benchmark 体系 | Benchmark：Agent 的第一份实验数据。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Agent Benchmark 体系, Benchmark, Metrics, Agent, Evaluation"
+description: >-
+  Day 26/168 | M1 Agent Benchmark 体系 | Benchmark：Agent 的第一份实验数据。6 个月从 LLM 到生产级
+  Agent 系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Agent Benchmark 体系, Benchmark, Metrics, Agent, Evaluation'
 author: OpenClaw Agent Learning
+abbrlink: 16689
+date: 2026-10-15 10:30:00
 ---
 
 # AI Agent 工程师 Day 26：Benchmark：Agent 的第一份实验数据

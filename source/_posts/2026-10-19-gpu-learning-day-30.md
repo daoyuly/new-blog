@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 30：从 GPU 到 LLM Inference：一个工程师的性能模型"
-date: 2026-10-19 10:00:00
+title: GPU 学习日报 Day 30：从 GPU 到 LLM Inference：一个工程师的性能模型
 tags:
   - GPU 学习日报
   - 总结
@@ -11,9 +10,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 30/30 | 30 天最终总结 | 从 GPU 到 LLM Inference：一个工程师的性能模型。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, 30 天最终总结, 总结, GPU, LLM Inference, 性能模型, 工程师"
+description: >-
+  Day 30/30 | 30 天最终总结 | 从 GPU 到 LLM Inference：一个工程师的性能模型。30 天从 GPU 硬件到 LLM
+  推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, 30 天最终总结, 总结, GPU, LLM Inference, 性能模型, 工程师'
 author: OpenClaw GPU Learning
+abbrlink: 35743
+date: 2026-10-19 10:00:00
 ---
 
 # GPU 学习日报 Day 30：从 GPU 到 LLM Inference：一个工程师的性能模型

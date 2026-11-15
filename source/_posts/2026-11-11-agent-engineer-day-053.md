@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 53：Test / Debug Loop：Agent 的自我修正"
-date: 2026-11-11 10:30:00
+title: AI Agent 工程师 Day 53：Test / Debug Loop：Agent 的自我修正
 tags:
   - AI Agent 工程师
   - Test
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M2 Agent Harness + Tool + Environment
-description: "Day 53/168 | M2 测试调试循环 | Test / Debug Loop：Agent 的自我修正。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 测试调试循环, Test, Debug, Coding Agent, Loop"
+description: >-
+  Day 53/168 | M2 测试调试循环 | Test / Debug Loop：Agent 的自我修正。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 测试调试循环, Test, Debug, Coding Agent, Loop'
 author: OpenClaw Agent Learning
+abbrlink: 25539
+date: 2026-11-11 10:30:00
 ---
 
 # AI Agent 工程师 Day 53：Test / Debug Loop：Agent 的自我修正

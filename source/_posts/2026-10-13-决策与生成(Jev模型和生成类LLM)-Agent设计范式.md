@@ -1,10 +1,11 @@
 ---
 title: 决策与生成：从输出合同理解 Agent 设计范式
-date: 2026-10-12 21:30:00
 tags:
   - Agent开发感悟
 categories:
   - daoyuzhai
+abbrlink: 28537
+date: 2026-10-12 21:30:00
 ---
 
 # 决策与生成：从输出合同理解 Agent 设计范式

@@ -1,10 +1,11 @@
 ---
-title: "tRPC-Agent多智能体框架架构与实践"
+title: tRPC-Agent多智能体框架架构与实践
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 64654
 date: 2026-10-12 11:07:31
 ---
 

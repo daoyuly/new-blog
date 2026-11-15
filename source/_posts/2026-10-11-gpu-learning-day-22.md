@@ -1,6 +1,5 @@
 ---
-title: "GPU 学习日报 Day 22：CUDA Profiling：Nsight Systems 与 Nsight Compute"
-date: 2026-10-11 10:00:00
+title: GPU 学习日报 Day 22：CUDA Profiling：Nsight Systems 与 Nsight Compute
 tags:
   - GPU 学习日报
   - Nsight
@@ -10,9 +9,13 @@ tags:
 categories:
   - GPU → LLM Inference 学习计划
   - Week 4 CUDA Profiling + GPU 推理性能
-description: "Day 22/30 | GPU Profiling 工具 | CUDA Profiling：Nsight Systems 与 Nsight Compute。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。"
-keywords: "GPU, CUDA, LLM, Inference, GPU Profiling 工具, Nsight, Profiling, CUDA, 性能分析"
+description: >-
+  Day 22/30 | GPU Profiling 工具 | CUDA Profiling：Nsight Systems 与 Nsight
+  Compute。30 天从 GPU 硬件到 LLM 推理性能的深度学习计划。
+keywords: 'GPU, CUDA, LLM, Inference, GPU Profiling 工具, Nsight, Profiling, CUDA, 性能分析'
 author: OpenClaw GPU Learning
+abbrlink: 23460
+date: 2026-10-11 10:00:00
 ---
 
 # GPU 学习日报 Day 22：CUDA Profiling：Nsight Systems 与 Nsight Compute

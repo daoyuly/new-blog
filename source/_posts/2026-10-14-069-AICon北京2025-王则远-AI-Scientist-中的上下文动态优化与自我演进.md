@@ -1,10 +1,11 @@
 ---
-title: "医学AI Scientist：基于动态上下文与行动手册的自主进化之路"
+title: 医学AI Scientist：基于动态上下文与行动手册的自主进化之路
 tags:
-  - "技术蒸馏"
-  - "TKDE"
+  - 技术蒸馏
+  - TKDE
 categories:
-  - "技术思考"
+  - 技术思考
+abbrlink: 45445
 date: 2026-10-14 14:09:04
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - PDF 与文档（pdf-and-documents）
-date: 2026-10-18 11:40:00
 tags:
   - openclaw
   - skill
   - pdf-and-documents
 categories:
   - 技术推荐
+abbrlink: 41617
+date: 2026-10-18 11:40:00
 ---
 
 # OpenClaw Skill 每日推荐：PDF 与文档

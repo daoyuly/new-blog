@@ -1,8 +1,13 @@
 ---
 title: OpenClaw Skill 每日推荐 - Moltbook（AI Agent 社交网络）
+tags:
+  - openclaw
+  - skill
+  - moltbook
+categories:
+  - 技术推荐
+abbrlink: 11788
 date: 2026-10-16 11:30:00
-tags: [openclaw, skill, moltbook]
-categories: [技术推荐]
 ---
 
 # OpenClaw Skill 每日推荐：Moltbook（AI Agent 社交网络）（44 个 Skills）
