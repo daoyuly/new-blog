@@ -268,9 +268,12 @@
   }
   .count .time small{font-size:15px;letter-spacing:.2em;color:var(--seal);}
 
+  .btn-row{
+    margin-top:30px;
+    display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  }
   .map-btn{
     display:inline-block;
-    margin-top:30px;
     padding:12px 42px;
     border:1px solid var(--seal);
     color:var(--seal);
@@ -282,6 +285,14 @@
   }
   .map-btn:hover{
     background:var(--seal);
+    color:var(--card);
+  }
+  .map-btn.ghost{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+  .map-btn.ghost:hover{
+    background:var(--gold);
     color:var(--card);
   }
 
@@ -436,7 +447,9 @@
     <p class="time" id="countdown">--:--:--</p>
   </div>
 
-  <a class="map-btn" href="https://uri.amap.com/search?keyword=%E4%BA%AC%E8%99%8E%E9%97%A8%E6%B6%AE%E8%82%89%E5%AE%8B%E5%AE%B6%E5%BA%84%E5%BA%97" target="_blank" rel="noopener">在高德地图中打开 ↗</a>
+  <div class="btn-row">
+    <a class="map-btn ghost" href="/shuan-dinner-20261118-3d.html">走进店里 · 3D ↗</a><a class="map-btn" href="https://uri.amap.com/search?keyword=%E4%BA%AC%E8%99%8E%E9%97%A8%E6%B6%AE%E8%82%89%E5%AE%8B%E5%AE%B6%E5%BA%84%E5%BA%97" target="_blank" rel="noopener">在高德地图中打开 ↗</a>
+  </div>
 
   <footer>
     <p class="rsvp">今晚不设抢单——我扫。</p>

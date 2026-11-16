@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>涮帖 · 3D 场景 · 京虎门涮肉宋家庄店</title>
+<meta name="description" content="走进这家涮肉店——炭火铜锅、蒸汽、红灯笼、窗外落雪。11月18日（周三）晚7点，宋家庄见。">
+<meta property="og:title" content="涮帖 · 3D 场景 · 京虎门涮肉宋家庄店">
+<meta property="og:description" content="走进这家涮肉店——炭火铜锅、蒸汽、红灯笼、窗外落雪。11月18日（周三）晚7点，宋家庄见。">
+<style>
+  :root{
+    --ink:#33302a;
+    --ink-light:#83786a;
+    --seal:#c2452e;
+    --gold:#b07a3f;
+    --line:#c9b98f;
+    --paper:rgba(250,246,234,.92);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","STSongti-SC","SimSun",serif;
+    background:#170f0b;color:var(--ink);overflow:hidden;
+  }
+  #stage{position:fixed;inset:0;display:block;touch-action:none;cursor:grab;}
+  #stage:active{cursor:grabbing;}
+
+  /* ---------- 加载进度 ---------- */
+  #loader{
+    position:fixed;inset:0;z-index:30;
+    background:
+      radial-gradient(ellipse at 50% 42%, #2a1c13 0%, #170f0b 75%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+    transition:opacity .8s ease;
+  }
+  #loader.done{opacity:0;pointer-events:none;}
+  #loader .l-title{
+    font-size:30px;letter-spacing:.5em;text-indent:.5em;color:#e8dcc8;
+    animation:breath 2.2s ease-in-out infinite;
+  }
+  #loader .bar{
+    width:min(260px,60vw);height:3px;background:rgba(200,180,140,.18);
+    border-radius:2px;overflow:hidden;
+  }
+  #loader .bar i{
+    display:block;height:100%;width:0%;
+    background:linear-gradient(90deg,#b07a3f,#e8a25c);
+    border-radius:2px;transition:width .5s ease;
+  }
+  #loader .l-label{
+    font-size:13px;letter-spacing:.35em;text-indent:.35em;color:#9c8d75;
+  }
+  #loader .l-err{display:none;max-width:70vw;text-align:center;color:#d98a76;
+    font-size:13.5px;line-height:1.9;letter-spacing:.1em;}
+  @keyframes breath{0%,100%{opacity:.65;}50%{opacity:1;}}
+
+  /* ---------- 场景内 UI 覆盖层 ---------- */
+  .ui{position:fixed;z-index:10;pointer-events:none;}
+  .ui a,.ui .card{pointer-events:auto;}
+  .chip{
+    top:26px;left:26px;display:flex;align-items:center;gap:12px;
+  }
+  .chip .t{
+    writing-mode:vertical-rl;font-size:26px;font-weight:700;letter-spacing:.3em;
+    color:#f0e6d2;text-shadow:0 2px 14px rgba(0,0,0,.6);
+  }
+  .chip .k{
+    writing-mode:vertical-rl;font-size:11.5px;letter-spacing:.4em;color:#c9b78f;
+    text-shadow:0 1px 8px rgba(0,0,0,.7);padding-top:4px;
+  }
+  .chip .s{
+    width:30px;height:30px;background:var(--seal);color:#f6f1e4;font-size:17px;font-weight:700;
+    display:grid;place-items:center;border-radius:4px;transform:rotate(-4deg);
+    box-shadow:0 3px 12px rgba(194,69,46,.45);margin-top:2px;
+  }
+  .card{
+    left:26px;bottom:26px;max-width:340px;
+    background:var(--paper);border:1px solid var(--line);
+    box-shadow:0 18px 50px -12px rgba(0,0,0,.55);
+    padding:20px 22px 16px;backdrop-filter:blur(3px);
+  }
+  .card::before{content:"";position:absolute;inset:6px;border:1px solid rgba(176,122,63,.4);pointer-events:none;}
+  .card{position:fixed;}
+  .card h2{font-size:11.5px;letter-spacing:.5em;color:var(--ink-light);font-weight:400;margin-bottom:8px;}
+  .card .v{font-size:15.5px;letter-spacing:.05em;line-height:1.8;}
+  .card .v small{display:block;font-size:12.5px;color:var(--ink-light);margin-top:2px;}
+  .card .cd{
+    margin-top:12px;padding-top:10px;border-top:1px solid var(--line);
+    font-size:13px;letter-spacing:.15em;color:var(--seal);
+    font-variant-numeric:tabular-nums;
+  }
+  .card .acts{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;}
+  .card .acts a{
+    font-size:12.5px;letter-spacing:.25em;text-indent:.25em;text-decoration:none;
+    padding:8px 16px;border:1px solid var(--seal);color:var(--seal);transition:all .25s;
+  }
+  .card .acts a:hover{background:var(--seal);color:#faf6ea;}
+  .hint{
+    right:26px;bottom:24px;font-size:12px;letter-spacing:.3em;color:#8d7f68;
+    text-shadow:0 1px 6px rgba(0,0,0,.8);text-align:right;
+  }
+  @media (max-width:640px){
+    .chip{top:18px;left:16px;}
+    .chip .t{font-size:21px;}
+    .card{left:12px;right:12px;bottom:12px;max-width:none;padding:14px 16px 12px;}
+    .card .v{font-size:13.5px;}
+    .hint{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="stage"></canvas>
+
+<div id="loader">
+  <div class="l-title">涮帖</div>
+  <div class="bar"><i id="lbar"></i></div>
+  <div class="l-label" id="llabel">备料中…</div>
+  <div class="l-err" id="lerr">炭火没能生起来（3D 引擎加载失败）。<br>请检查网络后刷新，或 <a style="color:inherit" href="https://www.daoyuly.cn/shuan-dinner-20261118.html">返回宴帖 →</a></div>
+</div>
+
+<div class="ui chip">
+  <span class="t">涮帖</span>
+  <span class="k">铜锅 · 宋家庄 · 周三七时</span>
+  <span class="s">涮</span>
+</div>
+
+<div class="ui card">
+  <h2>何 时 何 处</h2>
+  <p class="v">11 月 18 日（周三）晚 7:00<small>京虎门涮肉 · 宋家庄店 · 当晚晴 0~6°C</small></p>
+  <p class="cd" id="countdown">--:--:--</p>
+  <div class="acts">
+    <a href="https://www.daoyuly.cn/shuan-dinner-20261118.html">查看宴帖 ↗</a>
+  </div>
+  <p class="v" style="margin-top:12px;font-size:12px;color:var(--ink-light);letter-spacing:.2em;">Daoyu 敬约 · 恭候超哥</p>
+</div>
+
+<div class="ui hint">🖱 拖动旋转 · 滚轮缩放<br>初次加载约 5~10 秒</div>
+
+<script type="module">
+/* ================================================================
+ * 0 · 主题与参数（改这里最省事）
+ * ================================================================ */
+const THEME = {
+  "potColor": "#b87333",
+  "emberColor": "#ff7a2a",
+  "lanternColor": "#d64533",
+  "lanternGlow": "#ffb36b",
+  "fogColor": "#26190f",
+  "bgColor": "#1d130c",
+  "ambientColor": "#6b5138",
+  "keyLightColor": "#ffd9a0",
+  "wallColor": "#3a2e26",
+  "windowGlow": "#33506e",
+  "snowColor": "#c4d2e4"
+};
+
+const CFG = {
+  camera:   { fov: 45, pos: [3.0, 2.0, 3.6], target: [0, 0.85, 0] },
+  controls: { minR: 1.7, maxR: 7.5, minPhi: 0.5, maxPhi: 1.5, autoSpeed: 0.0028, damp: 0.1 },
+  fog:      { density: 0.036 },
+  steam:    { count: 34 },
+  snow:     { count: 220 },
+  dpr:      1.75,
+};
+
+/* ================================================================
+ * 1 · 加载进度 + 引擎加载（jsdelivr → unpkg 自动切换）
+ * ================================================================ */
+const lbar = document.getElementById('lbar');
+const llabel = document.getElementById('llabel');
+function progress(p, label) {
+  lbar.style.width = Math.round(p) + '%';
+  if (label) llabel.textContent = label;
+}
+progress(6, '取炭火 · 引擎装载…');
+
+let THREE = null;
+const CDN = [
+  'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js',
+  'https://unpkg.com/three@0.160.0/build/three.module.js',
+];
+for (const url of CDN) {
+  try { THREE = await import(url); break; }
+  catch (e) { console.warn('CDN 失败，切换:', url); }
+}
+if (!THREE) {
+  document.getElementById('lerr').style.display = 'block';
+  document.querySelector('#loader .bar').style.display = 'none';
+  llabel.style.display = 'none';
+  throw new Error('three.js 加载失败');
+}
+progress(28, '备料 · 生成贴图…');
+
+/* ================================================================
+ * 2 · 渲染器 / 场景 / 相机 / 雾
+ * ================================================================ */
+const canvas = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, CFG.dpr));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.4;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(THEME.bgColor);
+scene.fog = new THREE.FogExp2(new THREE.Color(THEME.fogColor), CFG.fog.density);
+
+const camera = new THREE.PerspectiveCamera(CFG.camera.fov, innerWidth / innerHeight, 0.1, 60);
+camera.position.set(...CFG.camera.pos);
+const camTarget = new THREE.Vector3(...CFG.camera.target);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+/* ================================================================
+ * 3 · 贴图工厂（全部代码生成，零外部图片）
+ * ================================================================ */
+function canvasTex(w, h, draw, opts = {}) {
+  const c = document.createElement('canvas');
+  c.width = w; c.height = h;
+  draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c);
+  if (!opts.noSRGB) t.colorSpace = THREE.SRGBColorSpace;
+  if (opts.wrap) { t.wrapS = t.wrapT = THREE.RepeatWrapping; }
+  return t;
+}
+const rnd = (a, b) => a + Math.random() * (b - a);
+
+const makeTex = {
+  /* 木纹（桌面/凳/地板共用参数） */
+  wood(base, dark, plank) {
+    return canvasTex(512, 512, (g, w, h) => {
+      g.fillStyle = base; g.fillRect(0, 0, w, h);
+      const n = plank ? 8 : 1;            // plank=true 画地板条
+      const ph = h / n;
+      for (let i = 0; i < n; i++) {
+        if (plank && i % 2) { g.fillStyle = dark; g.globalAlpha = .35; g.fillRect(0, i * ph, w, ph); g.globalAlpha = 1; }
+        for (let k = 0; k < (plank ? 26 : 90); k++) {
+          g.strokeStyle = Math.random() > .5 ? dark : base;
+          g.globalAlpha = rnd(.04, .16);
+          g.lineWidth = rnd(.6, 2.2);
+          const y = i * ph + rnd(2, ph - 2), x0 = rnd(-40, w), len = rnd(60, 240);
+          g.beginPath(); g.moveTo(x0, y);
+          g.bezierCurveTo(x0 + len * .3, y + rnd(-3, 3), x0 + len * .6, y + rnd(-3, 3), x0 + len, y + rnd(-4, 4));
+          g.stroke();
+        }
+        if (plank) { g.globalAlpha = .5; g.strokeStyle = dark; g.lineWidth = 2; g.beginPath(); g.moveTo(0, i * ph); g.lineTo(w, i * ph); g.stroke(); g.globalAlpha = 1; }
+      }
+    }, { wrap: true });
+  },
+  /* 铜锅：竖向拉丝 + 氧化斑 */
+  copper() {
+    return canvasTex(256, 256, (g, w, h) => {
+      const grad = g.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#c98a4b'); grad.addColorStop(.5, '#b87333'); grad.addColorStop(1, '#9a5f2a');
+      g.fillStyle = grad; g.fillRect(0, 0, w, h);
+      for (let i = 0; i < 300; i++) {
+        g.strokeStyle = Math.random() > .5 ? 'rgba(255,220,170,.10)' : 'rgba(60,30,10,.10)';
+        g.lineWidth = rnd(.5, 1.4);
+        const x = rnd(0, w);
+        g.beginPath(); g.moveTo(x, 0); g.lineTo(x + rnd(-6, 6), h); g.stroke();
+      }
+      for (let i = 0; i < 40; i++) {  // 氧化斑
+        g.fillStyle = `rgba(70,120,90,${rnd(.03, .09)})`;
+        g.beginPath(); g.ellipse(rnd(0, w), rnd(0, h), rnd(3, 12), rnd(2, 6), rnd(0, 3), 0, 7); g.fill();
+      }
+    }, { wrap: true });
+  },
+  /* 灯笼：竖向竹骨 + 上下渐隐 */
+  lantern() {
+    return canvasTex(256, 256, (g, w, h) => {
+      const grad = g.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#7a1f16'); grad.addColorStop(.18, '#d64533');
+      grad.addColorStop(.5, '#e8604a'); grad.addColorStop(.82, '#d64533'); grad.addColorStop(1, '#7a1f16');
+      g.fillStyle = grad; g.fillRect(0, 0, w, h);
+      for (let x = 0; x <= w; x += w / 12) {
+        g.strokeStyle = 'rgba(80,20,12,.5)'; g.lineWidth = 2.5;
+        g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke();
+      }
+      g.fillStyle = '#f5c95e'; g.font = 'bold 74px serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillText('福', w / 2, h / 2);
+    });
+  },
+  /* 柔和圆点（蒸汽/雪花/光晕共用） */
+  soft(inner, outer) {
+    return canvasTex(128, 128, (g, w, h) => {
+      const grad = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+      grad.addColorStop(0, inner); grad.addColorStop(1, outer);
+      g.fillStyle = grad; g.fillRect(0, 0, w, h);
+    }, { noSRGB: true });
+  },
+  /* 接触阴影 */
+  shadow() {
+    return canvasTex(256, 256, (g, w, h) => {
+      const grad = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+      grad.addColorStop(0, 'rgba(0,0,0,.42)'); grad.addColorStop(.55, 'rgba(0,0,0,.22)'); grad.addColorStop(1, 'rgba(0,0,0,0)');
+      g.fillStyle = grad; g.fillRect(0, 0, w, h);
+    }, { noSRGB: true });
+  },
+  /* 窗外夜空：深蓝渐变 + 城市灯点 + 一轮月 */
+  night() {
+    return canvasTex(512, 384, (g, w, h) => {
+      const grad = g.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#0c1626'); grad.addColorStop(.62, '#1b2c44'); grad.addColorStop(.72, '#33506e'); grad.addColorStop(1, '#0e1a2a');
+      g.fillStyle = grad; g.fillRect(0, 0, w, h);
+      // 远处楼影
+      g.fillStyle = '#0a1220';
+      let x = 0;
+      while (x < w) { const bw = rnd(24, 60), bh = rnd(40, 130); g.fillRect(x, h * .72 - bh, bw, bh); x += bw + rnd(4, 14); }
+      // 亮窗
+      for (let i = 0; i < 90; i++) {
+        g.fillStyle = `rgba(255,214,140,${rnd(.25, .8)})`;
+        g.fillRect(rnd(0, w), rnd(h * .45, h * .7), rnd(2, 4), rnd(2, 4));
+      }
+      // 月
+      g.fillStyle = '#e8ddb8'; g.beginPath(); g.arc(w * .78, h * .2, 17, 0, 7); g.fill();
+      g.fillStyle = 'rgba(232,221,184,.25)'; g.beginPath(); g.arc(w * .78, h * .2, 26, 0, 7); g.fill();
+    });
+  },
+};
+
+const TEX = {
+  tableWood: makeTex.wood('#6b4a30', '#4a3018', false),
+  floorWood: makeTex.wood('#3a281a', '#241610', true),
+  copper:    makeTex.copper(),
+  lantern:   makeTex.lantern(),
+  soft:      makeTex.soft('rgba(255,252,246,.85)', 'rgba(255,252,246,0)'),
+  halo:      makeTex.soft('rgba(255,190,110,.9)', 'rgba(255,190,110,0)'),
+  shadow:    makeTex.shadow(),
+  night:     makeTex.night(),
+};
+
+progress(46, '生炭 · 搭建场景…');
+
+/* ================================================================
+ * 4 · 组件（独立可改：每个组件一个函数，互不依赖）
+ * ================================================================ */
+const world = new THREE.Group();
+scene.add(world);
+
+/* ---------- 4.1 房间：地板 + 后墙 + 格子窗 ---------- */
+function createRoom() {
+  const g = new THREE.Group();
+
+  const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(16, 16),
+    new THREE.MeshStandardMaterial({ map: TEX.floorWood, roughness: .92, metalness: 0 })
+  );
+  floor.material.map.repeat.set(3, 3);
+  floor.rotation.x = -Math.PI / 2;
+  g.add(floor);
+
+  // 后墙（z=-3.4），中间开 1.9×1.3 的窗洞：四块墙板拼出洞
+  const wallMat = new THREE.MeshStandardMaterial({ color: THEME.wallColor, roughness: .95 });
+  const W = 12, H = 3.6, zW = -3.4;
+  const winW = 2.0, winH = 1.35, winY = 1.55, winX = -0.6;
+  const mkWall = (w, h, x, y) => {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, .18), wallMat);
+    m.position.set(x, y, zW); g.add(m);
+  };
+  mkWall(winX - winW / 2 - (W / 2 - (-winX + winW / 2 + 0)) / 1 + 0, 0, 0, 0); // 占位无操作（保持结构清晰）
+  // 左右两段
+  const leftW = (winX - winW / 2) - (-W / 2);
+  const rightW = (W / 2) - (winX + winW / 2);
+  mkWall(leftW, H, -W / 2 + leftW / 2, H / 2);
+  mkWall(rightW, H, winX + winW / 2 + rightW / 2, H / 2);
+  // 上下两段
+  mkWall(winW, winY - winH / 2, winX, (winY - winH / 2) / 2);
+  mkWall(winW, H - (winY + winH / 2), winX, winY + winH / 2 + (H - winY - winH / 2) / 2);
+
+  // 窗框 + 窗棂（老木格窗）
+  const frameMat = new THREE.MeshStandardMaterial({ color: '#241812', roughness: .8 });
+  const bar = (w, h, d, x, y, z) => {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), frameMat);
+    m.position.set(x, y, z); g.add(m); return m;
+  };
+  bar(winW + .16, .09, .26, winX, winY + winH / 2 + .045, zW);
+  bar(winW + .16, .09, .26, winX, winY - winH / 2 - .045, zW);
+  bar(.09, winH, .26, winX - winW / 2 - .045, winY, zW);
+  bar(.09, winH, .26, winX + winW / 2 + .045, winY, zW);
+  for (let i = 1; i < 4; i++) bar(.045, winH, .1, winX - winW / 2 + (winW / 4) * i, winY, zW);
+  for (let i = 1; i < 3; i++) bar(winW, .045, .1, winX, winY - winH / 2 + (winH / 3) * i, zW);
+
+  // 窗外夜景（不受雾影响，保持清冷）
+  const night = new THREE.Mesh(
+    new THREE.PlaneGeometry(7, 4.6),
+    new THREE.MeshBasicMaterial({ map: TEX.night, fog: false })
+  );
+  night.position.set(winX, 1.9, zW - 2.2);
+  g.add(night);
+
+  // 窗口进来的冷光
+  const cool = new THREE.DirectionalLight(THEME.windowGlow, 0.18);
+  cool.position.set(winX, 2.2, zW - 1);
+  cool.target.position.set(0.6, 0.4, 0);
+  g.add(cool, cool.target);
+
+  g.userData.window = { x: winX, y: winY, w: winW, h: winH, z: zW };
+  return g;
+}
+
+/* ---------- 4.2 圆桌 ---------- */
+function createTable() {
+  const g = new THREE.Group();
+  const wood = new THREE.MeshStandardMaterial({ map: TEX.tableWood, roughness: .55, metalness: 0 });
+
+  const top = new THREE.Mesh(new THREE.CylinderGeometry(1.15, 1.15, .06, 48), wood);
+  top.position.y = .78;
+  const skirt = new THREE.Mesh(new THREE.CylinderGeometry(1.12, 1.02, .1, 48), wood);
+  skirt.position.y = .74;
+  const leg = new THREE.Mesh(new THREE.CylinderGeometry(.13, .2, .72, 20), wood);
+  leg.position.y = .37;
+  g.add(top, skirt, leg);
+  return g;
+}
+
+/* ---------- 4.3 炭火铜锅（本场景主角） ---------- */
+function createPot() {
+  const g = new THREE.Group();
+  const copper = new THREE.MeshStandardMaterial({
+    map: TEX.copper, color: THEME.potColor, metalness: .85, roughness: .38,
+  });
+  const dark = new THREE.MeshStandardMaterial({ color: '#1c0f08', roughness: .9 });
+
+  // 锅体：车削轮廓（经典北京铜锅）
+  const pts = [
+    [0.00, 0.02], [0.20, 0.02], [0.27, 0.06], [0.31, 0.16], [0.30, 0.24],
+    [0.14, 0.27], [0.095, 0.30], [0.092, 0.50], [0.115, 0.53], [0.11, 0.55],
+  ].map(p => new THREE.Vector2(p[0], p[1]));
+  const body = new THREE.Mesh(new THREE.LatheGeometry(pts, 40), copper);
+  g.add(body);
+
+  // 烟囱口发亮的炭火
+  const ember = new THREE.Mesh(
+    new THREE.CylinderGeometry(.085, .085, .02, 20),
+    new THREE.MeshStandardMaterial({ color: '#2a0d04', emissive: THEME.emberColor, emissiveIntensity: 2.2 })
+  );
+  ember.position.y = .53;
+  g.add(ember);
+
+  // 烧红的烟囱箍
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(.104, .008, 10, 32),
+    new THREE.MeshStandardMaterial({ color: '#3a1206', emissive: '#c33d12', emissiveIntensity: 1.1 })
+  );
+  ring.rotation.x = Math.PI / 2; ring.position.y = .52;
+  g.add(ring);
+
+  // 提梁
+  const handle = new THREE.Mesh(new THREE.TorusGeometry(.34, .012, 8, 40, Math.PI), copper);
+  handle.position.y = .3; handle.rotation.z = Math.PI;
+  g.add(handle);
+
+  // 锅底座
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(.24, .3, .05, 32), dark);
+  base.position.y = -.015;
+  g.add(base);
+
+  // 炭火点光（呼吸摇曳）
+  const fire = new THREE.PointLight(THEME.emberColor, 5, 2.6, 2);
+  fire.position.set(0, .62, 0);
+  g.add(fire);
+  g.userData.fire = fire;
+
+  g.position.y = .81;   // 坐在桌面上
+  return g;
+}
+
+/* ---------- 4.4 桌上菜 ---------- */
+function createDishes() {
+  const g = new THREE.Group();
+  const porcelain = new THREE.MeshStandardMaterial({ color: '#efe9dd', roughness: .25 });
+  const mkPlate = (r) => {
+    const p = new THREE.Group();
+    const plate = new THREE.Mesh(new THREE.CylinderGeometry(r, r * .82, .035, 32), porcelain);
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(r - .015, .012, 8, 32), porcelain);
+    rim.rotation.x = Math.PI / 2; rim.position.y = .012;
+    p.add(plate, rim);
+    return p;
+  };
+
+  // 手切羊肉卷：两摞粉红薄片
+  const meat = new THREE.Group();
+  const meatMat = new THREE.MeshStandardMaterial({ color: '#e8a094', roughness: .5 });
+  const fatMat = new THREE.MeshStandardMaterial({ color: '#f6e3da', roughness: .5 });
+  for (let pile = 0; pile < 2; pile++) {
+    for (let i = 0; i < 7; i++) {
+      const s = new THREE.Mesh(new THREE.BoxGeometry(.17, .012, .055), i % 3 ? meatMat : fatMat);
+      s.position.set(pile ? .05 : -.05, .03 + i * .012, pile ? .03 : -.02);
+      s.rotation.y = rnd(-.3, .3);
+      meat.add(s);
+    }
+  }
+  const meatPlate = mkPlate(.24); meatPlate.add(meat);
+  meatPlate.position.set(-.55, .8, .38); g.add(meatPlate);
+
+  // 青菜：一盘子绿
+  const greens = new THREE.Group();
+  const leaf = new THREE.MeshStandardMaterial({ color: '#5f9448', roughness: .6 });
+  for (let i = 0; i < 9; i++) {
+    const l = new THREE.Mesh(new THREE.IcosahedronGeometry(rnd(.035, .05), 0), leaf);
+    l.position.set(rnd(-.12, .12), .035 + rnd(0, .02), rnd(-.12, .12));
+    l.scale.y = .55; l.rotation.set(rnd(0, 3), rnd(0, 3), 0);
+    greens.add(l);
+  }
+  const greensPlate = mkPlate(.22); greensPlate.add(greens);
+  greensPlate.position.set(.52, .8, .45); g.add(greensPlate);
+
+  // 冻豆腐：白方块
+  const tofu = new THREE.Group();
+  const tofuMat = new THREE.MeshStandardMaterial({ color: '#f2ead9', roughness: .8 });
+  [[-.05, 0], [.06, .02], [0, -.07], [.02, .08]].forEach(([x, z], i) => {
+    const t = new THREE.Mesh(new THREE.BoxGeometry(.065, .045, .065), tofuMat);
+    t.position.set(x, .04, z); t.rotation.y = rnd(0, .8);
+    tofu.add(t);
+  });
+  const tofuPlate = mkPlate(.18); tofuPlate.add(tofu);
+  tofuPlate.position.set(.58, .8, -.42); g.add(tofuPlate);
+
+  // 两碗麻酱蘸料
+  const sauce = new THREE.MeshStandardMaterial({ color: '#c9ab7c', roughness: .4 });
+  [.42, -.44].forEach((x, i) => {
+    const bowl = new THREE.Mesh(new THREE.CylinderGeometry(.085, .06, .05, 24), porcelain);
+    const dip = new THREE.Mesh(new THREE.CylinderGeometry(.075, .075, .012, 24), sauce);
+    bowl.position.set(x, .805, i ? .5 : -.55); dip.position.set(x, .828, i ? .5 : -.55);
+    g.add(bowl, dip);
+  });
+
+  // 两双筷子
+  const chop = new THREE.MeshStandardMaterial({ color: '#8a5a30', roughness: .6 });
+  [-.2, .25].forEach((x, i) => {
+    const k = new THREE.Mesh(new THREE.CylinderGeometry(.007, .005, .42, 8), chop);
+    k.rotation.z = Math.PI / 2; k.rotation.y = i ? .3 : -.25;
+    k.position.set(x, .815, i ? -.62 : .66);
+    g.add(k);
+  });
+  return g;
+}
+
+/* ---------- 4.5 四只圆凳 ---------- */
+function createStools() {
+  const g = new THREE.Group();
+  const wood = new THREE.MeshStandardMaterial({ map: TEX.tableWood, roughness: .7 });
+  for (let i = 0; i < 4; i++) {
+    const a = Math.PI / 4 + (Math.PI / 2) * i;
+    const s = new THREE.Group();
+    const seat = new THREE.Mesh(new THREE.CylinderGeometry(.25, .23, .07, 24), wood);
+    const band = new THREE.Mesh(new THREE.TorusGeometry(.24, .012, 8, 24),
+      new THREE.MeshStandardMaterial({ color: '#241812', roughness: .8 }));
+    band.rotation.x = Math.PI / 2; band.position.y = -.01;
+    const leg = new THREE.Mesh(new THREE.CylinderGeometry(.16, .19, .42, 16), wood);
+    seat.position.y = .46; leg.position.y = .21;
+    s.add(seat, band, leg);
+    s.position.set(Math.cos(a) * 1.62, 0, Math.sin(a) * 1.62);
+    s.lookAt(0, .46, 0);
+    g.add(s);
+  }
+  return g;
+}
+
+/* ---------- 4.6 红灯笼 ×3（光晕 + 点光） ---------- */
+function createLanterns() {
+  const g = new THREE.Group();
+  g.userData.lights = [];
+  const spots = [[-1.9, 2.35, -1.3], [1.75, 2.5, -1.7], [0.3, 2.65, -2.4]];
+  const cordMat = new THREE.MeshStandardMaterial({ color: '#1c1410', roughness: .9 });
+  const capMat = new THREE.MeshStandardMaterial({ color: '#3a2318', roughness: .7, metalness: .3 });
+
+  spots.forEach(([x, y, z], idx) => {
+    const L = new THREE.Group();
+    // 吊绳
+    const cord = new THREE.Mesh(new THREE.CylinderGeometry(.008, .008, 1.2, 6), cordMat);
+    cord.position.y = .62;
+    // 灯笼体
+    const body = new THREE.Mesh(
+      new THREE.SphereGeometry(.26, 24, 18),
+      new THREE.MeshStandardMaterial({
+        map: TEX.lantern, color: THEME.lanternColor,
+        emissive: THEME.lanternColor, emissiveIntensity: .5, roughness: .6,
+      })
+    );
+    body.scale.set(1, .82, 1);
+    // 上下盖 + 流苏
+    const cap = new THREE.Mesh(new THREE.CylinderGeometry(.09, .12, .05, 16), capMat);
+    const cap2 = cap.clone(); cap.position.y = .215; cap2.position.y = -.215;
+    const tassel = new THREE.Mesh(
+      new THREE.ConeGeometry(.035, .16, 8),
+      new THREE.MeshStandardMaterial({ color: '#d4a24e', roughness: .5 })
+    );
+    tassel.position.y = -.32; tassel.rotation.x = Math.PI;
+    // 光晕
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: TEX.halo, transparent: true, opacity: .5, depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    }));
+    halo.scale.set(1.5, 1.5, 1);
+    // 点光
+    const light = new THREE.PointLight(THEME.lanternGlow, 9, 8, 2);
+
+    L.add(cord, body, cap, cap2, tassel, halo, light);
+    L.position.set(x, y, z);
+    L.userData.phase = idx * 2.1;
+    g.add(L);
+    g.userData.lights.push({ light, group: L });
+  });
+  return g;
+}
+
+/* ---------- 4.7 锅上蒸汽（Sprite 粒子） ---------- */
+function createSteam() {
+  const g = new THREE.Group();
+  g.userData.puffs = [];
+  for (let i = 0; i < CFG.steam.count; i++) {
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: TEX.soft, transparent: true, opacity: 0, depthWrite: false,
+    }));
+    const p = {
+      sp, life: rnd(0, 1), speed: rnd(.14, .24),
+      x0: rnd(-.06, .06), z0: rnd(-.06, .06),
+      swayAmp: rnd(.05, .14), swayFreq: rnd(.8, 1.6), phase: rnd(0, 6.28),
+      fromChimney: Math.random() > .35,   // 65% 从烟囱口，35% 从锅沿
+    };
+    g.userData.puffs.push(p);
+    g.add(sp);
+  }
+  g.position.y = .81;
+  return g;
+}
+
+/* ---------- 4.8 窗外落雪（Points 粒子） ---------- */
+function createSnow(win) {
+  const N = CFG.snow.count;
+  const geo = new THREE.BufferGeometry();
+  const pos = new Float32Array(N * 3);
+  const data = [];
+  for (let i = 0; i < N; i++) {
+    pos[i * 3] = win.x + rnd(-2.6, 2.6);
+    pos[i * 3 + 1] = rnd(-.5, 4.2);
+    pos[i * 3 + 2] = win.z - rnd(.25, 1.9);
+    data.push({ vy: rnd(.25, .55), dx: rnd(-.06, .06), phase: rnd(0, 6.28) });
+  }
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const mat = new THREE.PointsMaterial({
+    color: THEME.snowColor, size: .045, map: TEX.soft, transparent: true,
+    opacity: .85, depthWrite: false, sizeAttenuation: true,
+  });
+  const pts = new THREE.Points(geo, mat);
+  pts.userData.data = data;
+  pts.userData.win = win;
+  return pts;
+}
+
+/* ---------- 4.9 假接触阴影（零 GPU 阴影开销） ---------- */
+function createShadows() {
+  const g = new THREE.Group();
+  const mat = new THREE.MeshBasicMaterial({ map: TEX.shadow, transparent: true, depthWrite: false });
+  const mk = (r, x, z, y, sx = 1, sz = 1) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(r * 2, r * 2), mat);
+    m.rotation.x = -Math.PI / 2; m.position.set(x, y, z); m.scale.set(sx, sz, 1);
+    g.add(m);
+  };
+  mk(1.9, 0, 0, .005);                       // 桌下大阴影
+  for (let i = 0; i < 4; i++) {              // 凳子
+    const a = Math.PI / 4 + (Math.PI / 2) * i;
+    mk(.38, Math.cos(a) * 1.62, Math.sin(a) * 1.62, .006);
+  }
+  return g;
+}
+
+/* ---------- 组装 ---------- */
+const room = createRoom();
+const table = createTable();
+const pot = createPot();
+const dishes = createDishes();
+const stools = createStools();
+const lanterns = createLanterns();
+const steam = createSteam();
+const snow = createSnow(room.userData.window);
+const shadows = createShadows();
+world.add(room, table, pot, dishes, stools, lanterns, steam, snow, shadows);
+
+/* ================================================================
+ * 5 · 灯光与雾（氛围核心）
+ * ================================================================ */
+scene.add(new THREE.AmbientLight(THEME.ambientColor, 1.7));
+const hemi = new THREE.HemisphereLight('#6b5a45', '#241812', .6);
+scene.add(hemi);
+// 主光：头顶暖聚光（无实时阴影，靠贴图阴影）
+const key = new THREE.SpotLight(THEME.keyLightColor, 80, 14, .6, .7, 1.5);
+key.position.set(0.6, 4.2, 1.2);
+key.target.position.set(0, .8, 0);
+scene.add(key, key.target);
+// 补光：侧面低强度暖光，勾轮廓
+const rim = new THREE.DirectionalLight('#c98d5a', .45);
+rim.position.set(-4, 2.2, 2.5);
+scene.add(rim);
+
+progress(72, '预热 · 编译着色器…');
+
+/* ================================================================
+ * 6 · 自制轨道控制器（拖转 / 滚轮缩放 / 双指捏合 / 惯性 / 自动旋转）
+ *    —— 单 CDN 依赖方案，不引 addons
+ * ================================================================ */
+class MiniOrbit {
+  constructor(cam, dom, target) {
+    this.cam = cam; this.dom = dom; this.target = target;
+    const off = cam.position.clone().sub(target);
+    this.sph = new THREE.Spherical().setFromVector3(off);
+    this.goal = { r: this.sph.radius, phi: this.sph.phi, theta: this.sph.theta };
+    this.auto = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.pointers = new Map();
+    this.pinchD = 0;
+
+    dom.addEventListener('pointerdown', e => {
+      dom.setPointerCapture(e.pointerId);
+      this.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      this.auto = false;                       // 用户接管，停自动旋转
+    });
+    dom.addEventListener('pointermove', e => {
+      if (!this.pointers.has(e.pointerId)) return;
+      const p = this.pointers.get(e.pointerId);
+      if (this.pointers.size === 1) {
+        this.goal.theta -= (e.clientX - p.x) * .0052;
+        this.goal.phi = THREE.MathUtils.clamp(this.goal.phi - (e.clientY - p.y) * .0042,
+          CFG.controls.minPhi, CFG.controls.maxPhi);
+      } else if (this.pointers.size === 2) {   // 双指捏合缩放
+        const arr = [...this.pointers.values()];
+        const other = arr.find(q => q !== p);
+        const dNow = Math.hypot(e.clientX - other.x, e.clientY - other.y);
+        const dOld = Math.hypot(p.x - other.x, p.y - other.y);
+        this.goal.r = THREE.MathUtils.clamp(this.goal.r * (dOld / Math.max(dNow, 1)),
+          CFG.controls.minR, CFG.controls.maxR);
+      }
+      p.x = e.clientX; p.y = e.clientY;
+    });
+    const up = e => { this.pointers.delete(e.pointerId); };
+    dom.addEventListener('pointerup', up);
+    dom.addEventListener('pointercancel', up);
+    dom.addEventListener('wheel', e => {
+      e.preventDefault();
+      this.goal.r = THREE.MathUtils.clamp(this.goal.r * (1 + e.deltaY * .0011),
+        CFG.controls.minR, CFG.controls.maxR);
+    }, { passive: false });
+  }
+  update() {
+    if (this.auto) this.goal.theta += CFG.controls.autoSpeed;
+    const k = CFG.controls.damp;
+    this.sph.radius += (this.goal.r - this.sph.radius) * k;
+    this.sph.phi += (this.goal.phi - this.sph.phi) * k;
+    this.sph.theta += (this.goal.theta - this.sph.theta) * k;
+    this.cam.position.setFromSpherical(this.sph).add(this.target);
+    this.cam.lookAt(this.target);
+  }
+}
+const controls = new MiniOrbit(camera, canvas, camTarget);
+
+/* ================================================================
+ * 7 · 动画循环
+ * ================================================================ */
+const clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime(), dt = Math.min(clock.getDelta(), .05) || .016;
+
+  // 蒸汽：上升 / 摇摆 / 长大 / 淡出
+  for (const p of steam.userData.puffs) {
+    p.life += dt * p.speed;
+    if (p.life > 1) { p.life = 0; p.speed = rnd(.14, .24); }
+    const l = p.life;
+    const y0 = p.fromChimney ? .55 : .3;
+    p.sp.position.set(
+      p.x0 + Math.sin(t * p.swayFreq + p.phase) * p.swayAmp * l,
+      y0 + l * (p.fromChimney ? 1.1 : .5),
+      p.z0 + Math.cos(t * p.swayFreq * .8 + p.phase) * p.swayAmp * l
+    );
+    const s = .12 + l * .34;
+    p.sp.scale.set(s, s, 1);
+    p.sp.material.opacity = .34 * Math.sin(Math.PI * Math.min(l * 1.15, 1));
+  }
+
+  // 落雪
+  const pos = snow.geometry.attributes.position;
+  snow.userData.data.forEach((d, i) => {
+    let y = pos.getY(i) - d.vy * dt;
+    if (y < -.4) y = 4.2;
+    pos.setY(i, y);
+    pos.setX(i, pos.getX(i) + Math.sin(t * .8 + d.phase) * d.dx * dt);
+  });
+  pos.needsUpdate = true;
+
+  // 炭火摇曳 + 灯笼呼吸
+  pot.userData.fire.intensity = 4.2 + Math.sin(t * 9.3) * .8 + Math.sin(t * 23.7) * .5;
+  lanterns.userData.lights.forEach(({ light, group }) => {
+    light.intensity = 8 + Math.sin(t * 1.8 + group.userData.phase) * 1.2;
+    group.rotation.z = Math.sin(t * .7 + group.userData.phase) * .025;
+  });
+
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+/* ================================================================
+ * 8 · 启动：编译 → 首帧 → 揭幕
+ * ================================================================ */
+renderer.compile(scene, camera);
+progress(92, '上菜…');
+renderer.render(scene, camera);
+requestAnimationFrame(() => {
+  progress(100, '开涮');
+  setTimeout(() => document.getElementById('loader').classList.add('done'), 350);
+  animate();
+});
+
+/* ---------- 倒计时（与宴帖同款） ---------- */
+(function () {
+  var el = document.getElementById('countdown');
+  var target = new Date('2026-11-18T19:00:00+08:00');
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function tick() {
+    var diff = target - new Date();
+    if (diff <= 0) { el.textContent = '开席 · 请入座'; return; }
+    var h = Math.floor(diff / 3600000), m = Math.floor(diff % 3600000 / 60000),
+        s = Math.floor(diff % 60000 / 1000),
+        d = Math.floor(h / 24); h = h % 24;
+    el.textContent = (d > 0 ? d + ' 天 ' : '') + pad(h) + ' 小时 ' + pad(m) + ' 分 ' + pad(s) + ' 秒';
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
+
+</body>
+</html>
