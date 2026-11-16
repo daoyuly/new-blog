@@ -58,22 +58,6 @@
   /* ---------- 场景内 UI 覆盖层 ---------- */
   .ui{position:fixed;z-index:10;pointer-events:none;}
   .ui a,.ui .card{pointer-events:auto;}
-  .chip{
-    top:26px;left:26px;display:flex;align-items:center;gap:12px;
-  }
-  .chip .t{
-    writing-mode:vertical-rl;font-size:26px;font-weight:700;letter-spacing:.3em;
-    color:#f0e6d2;text-shadow:0 2px 14px rgba(0,0,0,.6);
-  }
-  .chip .k{
-    writing-mode:vertical-rl;font-size:11.5px;letter-spacing:.4em;color:#c9b78f;
-    text-shadow:0 1px 8px rgba(0,0,0,.7);padding-top:4px;
-  }
-  .chip .s{
-    width:30px;height:30px;background:var(--seal);color:#f6f1e4;font-size:17px;font-weight:700;
-    display:grid;place-items:center;border-radius:4px;transform:rotate(-4deg);
-    box-shadow:0 3px 12px rgba(194,69,46,.45);margin-top:2px;
-  }
   .card{
     left:26px;bottom:26px;max-width:340px;
     background:var(--paper);border:1px solid var(--line);
@@ -101,8 +85,6 @@
     text-shadow:0 1px 6px rgba(0,0,0,.8);text-align:right;
   }
   @media (max-width:640px){
-    .chip{top:18px;left:16px;}
-    .chip .t{font-size:21px;}
     .card{left:12px;right:12px;bottom:12px;max-width:none;padding:14px 16px 12px;}
     .card .v{font-size:13.5px;}
     .hint{display:none;}
@@ -120,11 +102,6 @@
   <div class="l-err" id="lerr">炭火没能生起来（3D 引擎加载失败）。<br>请检查网络后刷新，或 <a style="color:inherit" href="https://www.daoyuly.cn/shuan-dinner-20261118.html">返回宴帖 →</a></div>
 </div>
 
-<div class="ui chip">
-  <span class="t">涮帖</span>
-  <span class="k">铜锅 · 宋家庄 · 周三七时</span>
-  <span class="s">涮</span>
-</div>
 
 <div class="ui card">
   <h2>何 时 何 处</h2>
