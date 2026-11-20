@@ -86,7 +86,7 @@ noDate: true
   </div>
 </div>
 
-代表性交付案例详见 <a href="/cases/">项目案例</a> 页面。
+代表性交付案例详见 <a href="/cases/">项目案例</a> 页面。行业规范见 <a href="/2026/ai-agent-industry-standards/">AI Agent 开发行业规范与标准指引</a>。
 
 ## 合作说明与合规边界
 

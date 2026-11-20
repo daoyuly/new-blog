@@ -1,32 +1,33 @@
-<%# 首页：与侧栏「所有文章」相同的 search-ul 列表，作为主内容区 %>
+<% var lanes = content_lanes(); %>
 <section class="home-search-list-wrap">
-  <ul class="search-ul home-search-ul">
-    <% page.posts.each(function(post){ %>
-    <li class="search-li<% if (post.sticky) { %> sticky-post<% } %>">
-      <a href="<%- url_for(post.path) %>" class="search-title">
-        <% if (post.sticky) { %><span class="sticky-badge">置顶</span><% } %>
-        <span><%= post.title %></span>
-      </a>
-      <p class="search-time">
-        
-        <span><%= date(post.date, config.date_format) %></span>
-      </p>
-      <p class="search-tag">
-        
-        <% post.tags.forEach(function(tag){ %>
-        <span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></span>
-        <% }) %>
-      </p>
-      <div class="clearfix"></div>
-    </li>
+  <nav class="home-topics" aria-label="专题">
+    <% lanes.topics.forEach(function (topic) { %>
+    <a href="<%- url_for(topic.path) %>"><%= topic.title %></a>
     <% }) %>
-  </ul>
-  <% if (page.total > 1){ %>
-  <nav id="page-nav">
-    <%- paginator({
-      prev_text: '&laquo; Prev',
-      next_text: 'Next &raquo;'
-    }) %>
   </nav>
-  <% } %>
+  <div class="home-lanes">
+    <section class="home-lane" aria-labelledby="home-updates">
+      <h2 id="home-updates">连载更新</h2>
+      <ul class="search-ul home-search-ul">
+        <% lanes.updates.forEach(function (post) { %>
+        <li class="search-li">
+          <a href="<%- url_for(post.path) %>" class="search-title"><span><%= post.title %></span></a>
+          <p class="search-time"><span><%= date(post.date, config.date_format) %></span></p>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+    <section class="home-lane" aria-labelledby="home-essays">
+      <h2 id="home-essays">文章</h2>
+      <ul class="search-ul home-search-ul">
+        <% lanes.essays.forEach(function (post) { %>
+        <li class="search-li">
+          <a href="<%- url_for(post.path) %>" class="search-title"><span><%= post.title %></span></a>
+          <p class="search-time"><span><%= date(post.date, config.date_format) %></span></p>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+  </div>
+  <p class="home-all"><a href="<%- url_for('/archives/') %>">全部文章</a></p>
 </section>

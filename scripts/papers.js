@@ -1,47 +1,25 @@
 'use strict';
 
-// 论文研读列表页:自动收集定时任务生成的日报/周报文章,生成 /papers/
-const PATTERN = /(日报|周报|综述|速递|arxiv|daily|weekly)/i;
-
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
+const { partition, renderPostList } = require('../lib/content-lanes');
 
 hexo.extend.generator.register('papers', function (locals) {
   const root = this.config.root || '/';
-
-  const posts = locals.posts.toArray()
-    .filter(post => {
-      const cats = post.categories ? post.categories.map(c => c.name).join(' ') : '';
-      return PATTERN.test(post.title || '') || PATTERN.test(cats);
-    })
-    .sort((a, b) => b.date.valueOf() - a.date.valueOf());
-
-  const items = posts.map(post => {
-    const date = post.date.format('YYYY-MM-DD');
-    const href = root + post.path;
-    return `  <li class="papers-item"><span class="papers-date">${date}</span> · <a href="${href}">${escapeHtml(post.title)}</a></li>`;
-  }).join('\n');
+  const papers = partition(locals.posts.toArray()).paper;
 
   const content = `<div class="biz-page papers-page">
-<ul class="papers-list">
-${items}
-</ul>
+<p class="biz-lead">论文、日报、周报与综述。<a href="/research/">返回研究</a></p>
+${renderPostList(papers, root)}
 </div>`;
 
   return {
     path: 'papers/index.html',
     layout: ['page'],
     data: {
-      title: '论文研读',
+      title: '论文与综述',
       path: 'papers/index.html',
       comments: false,
       noDate: true,
-      content: content
+      content
     }
   };
 });

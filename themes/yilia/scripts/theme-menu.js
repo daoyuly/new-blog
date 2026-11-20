@@ -51,6 +51,24 @@ hexo.extend.helper.register('theme_menu_top_level_count', function () {
   return hexo.extend.helper.get('theme_menu_parsed').call(this).length;
 });
 
+hexo.extend.helper.register('theme_menu_active', function (href) {
+  const target = String(href || '').replace(/^\/+|\/+$/g, '');
+  const current = String(this.page.path || '')
+    .replace(/index\.html$/, '')
+    .replace(/^\/+|\/+$/g, '');
+  if (!target) return this.is_home();
+  if (target === 'research') {
+    return current === 'research' || current.startsWith('research/')
+      || current === 'papers' || current.startsWith('papers/');
+  }
+  if (target === 'workshop') {
+    return current === 'workshop' || current.startsWith('workshop/')
+      || current === 'business' || current.startsWith('business/')
+      || current === 'cases' || current.startsWith('cases/');
+  }
+  return current === target || current.startsWith(`${target}/`);
+});
+
 hexo.extend.tag.register('rss_subscribe', function () {
   const entries = feedEntries(hexo.config, hexo.theme.config);
   if (!entries.length) return '<p>订阅源暂未开放。</p>';

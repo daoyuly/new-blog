@@ -120,9 +120,14 @@ a:hover {
   white-space: nowrap;
   transition: color 0.15s ease;
 }
-.site-top-nav__links a:hover {
+.site-top-nav__links a:hover,
+.site-top-nav__links a.is-active,
+.site-top-nav__brand a.is-active {
   color: var(--ac-primary);
   text-decoration: none;
+}
+.site-top-nav__links a.is-active {
+  font-weight: 500;
 }
 .site-top-nav__links .site-top-nav__github {
   color: var(--ac-primary);
@@ -545,6 +550,45 @@ a:hover {
   padding: 24px 1.25rem 80px;
   box-sizing: border-box;
   text-align: left;
+}
+.home-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.9rem;
+  margin: 0 0 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ac-border-light);
+}
+.home-topics a {
+  color: var(--ac-text-muted);
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+.home-topics a:hover {
+  color: var(--ac-primary);
+  text-decoration: none;
+}
+.home-lanes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  align-items: start;
+}
+.home-lane h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ac-text);
+}
+.home-all {
+  margin: 1.75rem 0 0;
+}
+.home-all a {
+  color: var(--ac-primary);
+  text-decoration: none;
+}
+.home-all a:hover {
+  text-decoration: underline;
 }
 .home-search-list-wrap .home-search-ul.search-ul {
   margin: 0;
@@ -1282,6 +1326,16 @@ a:hover {
 
 /* 移动端微调 */
 @media (max-width: 768px) {
+  .home-lanes {
+    grid-template-columns: 1fr;
+  }
+  .site-top-nav__inner {
+    padding: 0.55rem 1rem;
+  }
+  .site-top-nav__links {
+    gap: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
   .article-inner {
     padding: 0 1rem;
   }

@@ -17,7 +17,7 @@
 <% } else if (mode === 'top') { %>
   <% items.forEach(function (item) { %>
     <% if (item.type === 'link') { %>
-    <a href="<%- url_for(item.path) %>"><%= item.label %></a>
+    <a href="<%- url_for(item.path) %>"<% if (theme_menu_active(item.path)) { %> class="is-active" aria-current="page"<% } %>><%= item.label %></a>
     <% } else { %>
     <div class="site-top-nav__dropdown" tabindex="0">
       <span class="site-top-nav__dropdown-label"><%= item.label %></span>

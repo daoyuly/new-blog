@@ -68,7 +68,7 @@ noDate: true
   <a class="topic-list-item" href="/topics/openclaw-workshop/">
     <div class="topic-list-item__main">
       <h3 class="topic-list-item__title">OpenClaw 工作坊</h3>
-      <p class="topic-list-item__desc">线下工作坊实录与延伸材料：淘宝店主、短视频创作者如何用 OpenClaw 串起可落地的智能化链条。</p>
+      <p class="topic-list-item__desc">线下工作坊实录与延伸材料：淘宝店主、短视频创作者如何用 OpenClaw 串起可落地的智能化链条。线下实录也收在工作坊。</p>
     </div>
     <span class="topic-list-item__meta">2 场工作坊</span>
   </a>

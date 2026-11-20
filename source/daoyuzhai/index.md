@@ -6,4 +6,4 @@ comments: false
 noDate: true
 ---
 
-<p class="biz-lead"><strong>盗愚斎</strong>——窃愚者之得，斋心自省。</p>
+<p class="biz-lead"><strong>盗愚斎</strong>——窃愚者之得，斋心自省。<br>随笔、生活与读书。</p>

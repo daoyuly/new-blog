@@ -4,23 +4,20 @@ author: 刘道玉 AI 工作坊
 subtitle: ''
 
 menu:
-  主页: /
+  随笔: /daoyuzhai/
+  研究: /research/
   专题: /topics/
-  盗愚斎: /daoyuzhai/
-  论文研读: /papers/
-  行业报告: /industry-reports/
-  外部链接: /links/
-  RSS 订阅: /subscribe/
-  项目合作:
-    全智能家庭档案馆: /family-archive/
-    合作: /business/
-    行业规范: /2026/ai-agent-industry-standards/
-  #随笔: /tags/随笔/
+  工作坊: /workshop/
+  关于: /about/
+
+footer_menu:
+  订阅: /subscribe/
+  外部站点: /links/
+  行业资料: /industry-reports/
+  全部文章: /archives/
 
 # SubNav
 subnav:
-  github: "/about/"
-  github_label: "关于我"
   #weibo: "#"
   rss: /atom.xml
   #zhihu: "#"

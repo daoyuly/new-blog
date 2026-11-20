@@ -1,16 +1,12 @@
 <footer id="footer">
   <div class="outer">
-    <% if (theme.menu && Object.keys(theme.menu).length) { %>
-    <nav class="footer-nav" aria-label="站点导航">
-      <%- partial('_partial/theme-menu', { mode: 'footer' }) %>
-      <% if (theme.subnav && theme.subnav.github) { %>
-        <span class="footer-nav-sep">·</span>
-        <a href="<%- url_for(theme.subnav.github) %>"><%= theme.subnav.github_label || 'GitHub' %></a>
+    <% if (theme.footer_menu && Object.keys(theme.footer_menu).length) { %>
+    <nav class="footer-nav" aria-label="更多">
+      <% var fi = 0; %>
+      <% for (var label in theme.footer_menu) { %>
+        <% if (fi++ > 0) { %><span class="footer-nav-sep">·</span><% } %>
+        <a href="<%- url_for(theme.footer_menu[label]) %>"><%= label %></a>
       <% } %>
-    </nav>
-    <% } else if (theme.subnav && theme.subnav.github) { %>
-    <nav class="footer-nav" aria-label="社交">
-      <a href="<%- url_for(theme.subnav.github) %>"><%= theme.subnav.github_label || 'GitHub' %></a>
     </nav>
     <% } %>
     <div id="footer-info">
