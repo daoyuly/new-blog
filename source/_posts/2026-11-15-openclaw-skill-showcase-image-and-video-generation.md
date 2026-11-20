@@ -6,6 +6,7 @@ tags:
   - image-and-video-generation
 categories:
   - 技术推荐
+abbrlink: 1284
 date: 2026-11-15 11:30:00
 ---
 

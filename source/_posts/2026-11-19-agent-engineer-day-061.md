@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 61：Tool Context：工具描述与结果的管理"
-date: 2026-11-19 10:30:00
+title: AI Agent 工程师 Day 61：Tool Context：工具描述与结果的管理
 tags:
   - AI Agent 工程师
   - Tool Context
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M3 Context + Memory + Retrieval
-description: "Day 61/168 | M3 工具上下文 | Tool Context：工具描述与结果的管理。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 工具上下文, Tool Context, Token, Agent"
+description: >-
+  Day 61/168 | M3 工具上下文 | Tool Context：工具描述与结果的管理。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 工具上下文, Tool Context, Token, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 64563
+date: 2026-11-19 10:30:00
 ---
 
 # AI Agent 工程师 Day 61：Tool Context：工具描述与结果的管理

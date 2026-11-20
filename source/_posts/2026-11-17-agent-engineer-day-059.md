@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 59：Conversation Window：对话历史的裁剪策略"
-date: 2026-11-17 10:30:00
+title: AI Agent 工程师 Day 59：Conversation Window：对话历史的裁剪策略
 tags:
   - AI Agent 工程师
   - Conversation
@@ -10,9 +9,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M3 Context + Memory + Retrieval
-description: "Day 59/168 | M3 对话窗口 | Conversation Window：对话历史的裁剪策略。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 对话窗口, Conversation, Sliding Window, Summary, Context"
+description: >-
+  Day 59/168 | M3 对话窗口 | Conversation Window：对话历史的裁剪策略。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 对话窗口, Conversation, Sliding Window, Summary, Context'
 author: OpenClaw Agent Learning
+abbrlink: 19881
+date: 2026-11-17 10:30:00
 ---
 
 # AI Agent 工程师 Day 59：Conversation Window：对话历史的裁剪策略

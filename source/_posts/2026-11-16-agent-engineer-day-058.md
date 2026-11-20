@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 58：Token Budget：有限上下文的预算分配"
-date: 2026-11-16 10:30:00
+title: AI Agent 工程师 Day 58：Token Budget：有限上下文的预算分配
 tags:
   - AI Agent 工程师
   - Token Budget
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M3 Context + Memory + Retrieval
-description: "Day 58/168 | M3 Token 预算 | Token Budget：有限上下文的预算分配。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Token 预算, Token Budget, Context, Agent"
+description: >-
+  Day 58/168 | M3 Token 预算 | Token Budget：有限上下文的预算分配。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Token 预算, Token Budget, Context, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 37855
+date: 2026-11-16 10:30:00
 ---
 
 # AI Agent 工程师 Day 58：Token Budget：有限上下文的预算分配

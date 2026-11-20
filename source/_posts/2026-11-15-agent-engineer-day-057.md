@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 57：Context 到底是什么：从消息到上下文工程"
-date: 2026-11-15 10:30:00
+title: AI Agent 工程师 Day 57：Context 到底是什么：从消息到上下文工程
 tags:
   - AI Agent 工程师
   - Context
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M3 Context + Memory + Retrieval
-description: "Day 57/168 | M3 Context 概念重塑 | Context 到底是什么：从消息到上下文工程。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, Context 概念重塑, Context, Context Engineering, Agent"
+description: >-
+  Day 57/168 | M3 Context 概念重塑 | Context 到底是什么：从消息到上下文工程。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, Context 概念重塑, Context, Context Engineering, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 35732
+date: 2026-11-15 10:30:00
 ---
 
 # AI Agent 工程师 Day 57：Context 到底是什么：从消息到上下文工程

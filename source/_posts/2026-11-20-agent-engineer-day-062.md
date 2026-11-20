@@ -1,6 +1,5 @@
 ---
-title: "AI Agent 工程师 Day 62：Context Packing：信息密度最大化"
-date: 2026-11-20 10:30:00
+title: AI Agent 工程师 Day 62：Context Packing：信息密度最大化
 tags:
   - AI Agent 工程师
   - Context Packing
@@ -9,9 +8,13 @@ tags:
 categories:
   - AI Agent 工程师学习计划
   - M3 Context + Memory + Retrieval
-description: "Day 62/168 | M3 上下文打包 | Context Packing：信息密度最大化。6 个月从 LLM 到生产级 Agent 系统的完整学习路线。"
-keywords: "AI Agent, 工程师, 上下文打包, Context Packing, Information Density, Agent"
+description: >-
+  Day 62/168 | M3 上下文打包 | Context Packing：信息密度最大化。6 个月从 LLM 到生产级 Agent
+  系统的完整学习路线。
+keywords: 'AI Agent, 工程师, 上下文打包, Context Packing, Information Density, Agent'
 author: OpenClaw Agent Learning
+abbrlink: 45657
+date: 2026-11-20 10:30:00
 ---
 
 # AI Agent 工程师 Day 62：Context Packing：信息密度最大化
