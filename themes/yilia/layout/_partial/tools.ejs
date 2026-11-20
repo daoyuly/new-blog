@@ -35,14 +35,8 @@
           <label class="search-switch">
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
-          <ul class="article-tag-list" q-show="showTags">
-            <% site.tags.forEach(function(tag, i){ %> 
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
-              </li>
-            <% }) %>
-            <div class="clearfix"></div>
-          </ul>
+          <%# 全站标签在打开侧栏后由 slider 从 content.json 填入，避免每页内嵌上千个标签 %>
+          <ul class="article-tag-list" q-show="showTags"></ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">

@@ -70,6 +70,7 @@ function init() {
   				app.$set('isShow', true)
   				app.$set('isCtnShow', true)
   				setScrollZero()
+  				if (type === 'innerArchive') loadSearchIndex()
 			}
 	    },
 	    filters: {
@@ -135,22 +136,64 @@ function init() {
 		handleSearch(val)
     })
 
-	window.fetch(window.yiliaConfig.root + 'content.json?t=' + (+ new Date()), {
-		method: 'get',
-	}).then((res) => {
-		return res.json()
-	}).then((data) => {
-		data.forEach((em) => {
-			em.isShow = true
+	// 阅读时不请求全站索引。点开「所有文章」或文内标签后再拉取，并复用本次会话缓存。
+	let searchLoaded = false
+	let searchLoading = false
+	function loadSearchIndex() {
+		if (searchLoaded || searchLoading) return
+		searchLoading = true
+		const apply = (data) => {
+			data.forEach((em) => {
+				em.isShow = true
+			})
+			app.$set('items', data)
+			buildTagCloud(data)
+			let searchWording = (window.localStorage && window.localStorage.getItem(localSearchKey)) || ''
+			app.$set('search', searchWording)
+			searchWording !== '' && handleSearch(searchWording)
+			searchLoaded = true
+			searchLoading = false
+		}
+		const cacheKey = 'yilia-content-json-v1'
+		try {
+			const cached = window.sessionStorage && sessionStorage.getItem(cacheKey)
+			if (cached) {
+				apply(JSON.parse(cached))
+				return
+			}
+		} catch (e) {}
+		window.fetch(window.yiliaConfig.root + 'content.json', {
+			method: 'get',
+		}).then((res) => {
+			return res.json()
+		}).then((data) => {
+			try {
+				sessionStorage.setItem(cacheKey, JSON.stringify(data))
+			} catch (e) {}
+			apply(data)
+		}).catch((err) => {
+			searchLoading = false
+			app.$set('jsonFail', true)
 		})
-		app.$set('items', data)
-		// 搜索
-		let searchWording = (window.localStorage && window.localStorage.getItem(localSearchKey)) || ''
-		app.$set('search', searchWording)
-		searchWording !== '' && handleSearch(searchWording)
-	}).catch((err) => {
-		app.$set('jsonFail', true)
-	});
+	}
+
+	function buildTagCloud(items) {
+		const ul = document.querySelector('.search-tag .article-tag-list')
+		if (!ul || ul.getAttribute('data-built')) return
+		const seen = {}
+		items.forEach((item) => {
+			(item.tags || []).forEach((tag) => {
+				if (tag && tag.name) seen[tag.name] = true
+			})
+		})
+		const html = Object.keys(seen).sort().map((name) => {
+			const color = name.length % 5 + 1
+			const safe = name.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+			return '<li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color' + color + '">' + safe + '</a></li>'
+		}).join('')
+		ul.innerHTML = html + '<div class="clearfix"></div>'
+		ul.setAttribute('data-built', '1')
+	}
 
 	// 隐藏
 	document.querySelector('#container').onclick = (e) => {
@@ -175,24 +218,36 @@ function init() {
 	}
 	app.$set('showTags', JSON.parse(isTagOn))
 
-	// 其他标签点击
-	// 标签
-	let $tags = document.querySelectorAll('.tagcloud a.js-tag')
-	for (var i = 0, len = $tags.length; i < len; i++) {
-		let $em = $tags[i]
-		$em.setAttribute('href', 'javascript:void(0)')
-		$em.onclick = (e) => {
-			e.stopPropagation()
-			app.$set('innerArchive', true)
-			app.$set('friends', false)
-			app.$set('aboutme', false)
-			app.$set('isShow', true)
-			app.$set('isCtnShow', true)
-			app.$set('search', '#' + $em.innerHTML)
-			setScrollZero()
-			return false
+	// 文章标签和侧栏标签都走这里。捕获阶段处理，避免点标签时把侧栏关掉。
+	document.addEventListener('click', (e) => {
+		let el = e.target
+		while (el && el !== document) {
+			if (el.tagName === 'A' && el.className && el.className.indexOf('js-tag') > -1) {
+				let parent = el
+				let inCloud = false
+				while (parent && parent !== document) {
+					if (parent.className && String(parent.className).indexOf('tagcloud') > -1) {
+						inCloud = true
+						break
+					}
+					parent = parent.parentNode
+				}
+				if (!inCloud) break
+				e.preventDefault()
+				e.stopPropagation()
+				loadSearchIndex()
+				app.$set('innerArchive', true)
+				app.$set('friends', false)
+				app.$set('aboutme', false)
+				app.$set('isShow', true)
+				app.$set('isCtnShow', true)
+				app.$set('search', '#' + (el.textContent || ''))
+				setScrollZero()
+				return
+			}
+			el = el.parentNode
 		}
-	}
+	}, true)
 }
 
 init()

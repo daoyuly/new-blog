@@ -28,6 +28,13 @@
       "dest": "/public/rss.xml"
     },
     {
+      "src": "/content\\.json",
+      "headers": {
+        "Cache-Control": "public, max-age=3600"
+      },
+      "dest": "/public/content.json"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
     }
