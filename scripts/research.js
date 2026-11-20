@@ -8,27 +8,29 @@ const {
   renderPostList
 } = require('../lib/content-lanes');
 
-const PREVIEW = 12;
+const PREVIEW = 6;
 
-function page(path, title, content) {
+function page(path, title, content, extra) {
   return {
     path,
     layout: ['page'],
-    data: {
+    data: Object.assign({
       title,
       path,
       comments: false,
       noDate: true,
       content
-    }
+    }, extra)
   };
 }
 
 function section(title, allHref, allLabel, posts, root) {
   const preview = posts.slice(0, PREVIEW);
-  return `<section class="biz-section">
+  return `<section class="hub-section">
+<div class="hub-section__head">
 <h2>${title}</h2>
-<p><a href="${allHref}">${allLabel} ${posts.length} 篇</a></p>
+<a href="${allHref}">${allLabel} ${posts.length} 篇</a>
+</div>
 ${renderPostList(preview, root)}
 </section>`;
 }
@@ -49,20 +51,21 @@ hexo.extend.generator.register('research', function (locals) {
   const buckets = partition(locals.posts.toArray());
   const serialLinks = SERIAL_TOPICS.map(item => `<a href="${item.path}">${item.title}</a>`).join(' · ');
 
-  const research = `<div class="biz-page">
-<p class="biz-lead">按更新节奏分开的四条线。连载的完整目录在专题里。</p>
+  const research = `<div class="hub-sections">
 ${section('论文与综述', '/papers/', '全部', buckets.paper, root)}
 ${section('项目拆解', '/research/teardowns/', '全部', buckets.teardown, root)}
 ${section('Skill', '/research/skills/', '全部', buckets.skill, root)}
-<section class="biz-section">
+<section class="hub-section">
+<div class="hub-section__head">
 <h2>连载</h2>
-<p>${serialLinks}</p>
+<span>${serialLinks}</span>
+</div>
 ${renderPostList(buckets.serial.slice(0, PREVIEW), root)}
 </section>
 </div>`;
 
   return [
-    page('research/index.html', '研究', research),
+    page('research/index.html', '研究', research, { noHeader: true }),
     page('research/skills/index.html', 'Skill', `<div class="biz-page">
 <p class="biz-lead">OpenClaw Skill 每日推荐。<a href="/research/">返回研究</a></p>
 ${renderPostList(buckets.skill, root)}

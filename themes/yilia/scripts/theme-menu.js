@@ -64,7 +64,8 @@ hexo.extend.helper.register('theme_menu_active', function (href) {
   if (target === 'workshop') {
     return current === 'workshop' || current.startsWith('workshop/')
       || current === 'business' || current.startsWith('business/')
-      || current === 'cases' || current.startsWith('cases/');
+      || current === 'cases' || current.startsWith('cases/')
+      || current === 'family-archive' || current.startsWith('family-archive/');
   }
   return current === target || current.startsWith(`${target}/`);
 });

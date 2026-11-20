@@ -4,7 +4,17 @@ layout: page
 date: 2026-04-15
 comments: false
 noDate: true
+noHeader: true
 ---
+
+<nav class="ws-nav" aria-label="工作坊">
+  <a href="/workshop/">工作坊</a>
+  <a href="/business/">合作</a>
+  <a class="is-current" href="/cases/">项目案例</a>
+  <a href="/workshop/fde/">FDE案例</a>
+  <a href="/workshop/advisors/">顾问团队</a>
+  <a href="/workshop/products/">Agent产品</a>
+</nav>
 
 <p class="biz-lead">合作中已脱敏展示的代表性<strong>项目案例</strong>，覆盖健康硬件、医疗品牌与数字人口播等方向。</p>
 

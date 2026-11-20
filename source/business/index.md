@@ -4,7 +4,17 @@ layout: page
 date: 2026-04-14
 comments: false
 noDate: true
+noHeader: true
 ---
+
+<nav class="ws-nav" aria-label="工作坊">
+  <a href="/workshop/">工作坊</a>
+  <a class="is-current" href="/business/">合作</a>
+  <a href="/cases/">项目案例</a>
+  <a href="/workshop/fde/">FDE案例</a>
+  <a href="/workshop/advisors/">顾问团队</a>
+  <a href="/workshop/products/">Agent产品</a>
+</nav>
 
 <p class="biz-lead">面向企业、团队与个人的 <strong>AI 应用与智能体（Agent）</strong>相关咨询、定制开发与知识赋能。技术导向、交付可落地，沟通透明。</p>
 

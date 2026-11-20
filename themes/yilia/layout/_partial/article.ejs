@@ -1,6 +1,6 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%>" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%> <% if (post.noHeader){ %>article-hub<% } %>" itemscope itemprop="blogPost">
   <div class="article-inner">
-    <% if (post.link || post.title){ %>
+    <% if (!post.noHeader && (post.link || post.title)){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
         <% if (!post.noDate){ %>
@@ -51,6 +51,7 @@
         </div>
       <% } %>
     </div>
+    <% if (!post.noHeader){ %>
     <div class="article-info article-info-index">
       <%if(post.top){%>
         <div class="article-pop-out tagcloud">
@@ -71,12 +72,13 @@
       <% } %>
       <div class="clearfix"></div>
     </div>
+    <% } %>
     <% if (!index && post.comments && theme.giscus && theme.giscus.enable && theme.giscus.repo && theme.giscus.repo_id && theme.giscus.category && theme.giscus.category_id){ %>
       <%- partial('post/giscus') %>
     <% } %>
   </div>
 </article>
-<% if (!index){ %>
+<% if (!index && !post.noHeader){ %>
   <%- partial('post/related-posts') %>
   <%- partial('post/nav') %>
 <% } %>

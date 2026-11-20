@@ -499,20 +499,51 @@ a:hover {
   padding: 0.5em 0;
 }
 
-/* ─── 标签与分类 ─── */
+/* ─── 标签与分类：收成浅色文字，不再用色块丝带 ─── */
+.tagcloud a,
+.tagcloud a.color1,
+.tagcloud a.color2,
+.tagcloud a.color3,
+.tagcloud a.color4,
+.tagcloud a.color5,
 .article-tag .article-tag-list-link,
 .article-category .article-tag-list-link {
-  color: #fff !important;
-  border-radius: 3px;
-  padding: 2px 8px;
-  font-size: 0.8em;
+  background: transparent;
+  color: var(--ac-text-muted) !important;
+  height: auto;
+  line-height: 1.4;
+  float: none;
+  padding: 0;
+  margin: 0 0.45em 0 0;
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 1;
   text-decoration: none;
 }
+.tagcloud a:before,
+.tagcloud a:after,
+.tagcloud a.color1:before,
+.tagcloud a.color2:before,
+.tagcloud a.color3:before,
+.tagcloud a.color4:before,
+.tagcloud a.color5:before {
+  content: none;
+  display: none;
+  border: 0;
+}
+.tagcloud a:hover,
 .article-tag .article-tag-list-link:hover,
 .article-category .article-tag-list-link:hover {
-  color: #fff !important;
-  opacity: 0.88;
+  color: var(--ac-text) !important;
+  opacity: 1;
   text-decoration: none;
+}
+.archive-article-inner .article-meta .article-tag-list .article-tag-list-item,
+.archive-article-inner .article-meta .article-category .article-category-link {
+  max-width: none;
+  width: auto;
+  padding-left: 0;
 }
 
 /* ─── 页脚 ─── */
@@ -645,6 +676,253 @@ a:hover {
 .home-search-list-wrap #page-nav {
   margin-top: 2rem;
   text-align: center;
+}
+
+/* ─── 专题 / 研究 / 工作坊枢纽 ─── */
+.article-hub .article-entry {
+  padding-top: 1.35rem;
+}
+.article-entry .hub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.75rem;
+  margin: 0;
+}
+.article-entry .hub-card {
+  display: block;
+  padding: 1.15rem 0 1.2rem;
+  border-bottom: 1px solid var(--ac-border-light);
+  color: inherit;
+  text-decoration: none;
+}
+.article-entry .hub-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.article-entry .hub-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ac-text-muted);
+}
+.article-entry .hub-card span {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  color: var(--ac-text-light);
+}
+.article-entry .hub-card:hover {
+  text-decoration: none;
+}
+.article-entry .hub-card:hover h2 {
+  color: var(--ac-primary);
+}
+.article-entry .hub-grid--doors {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+}
+.hub-note {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ac-text-muted);
+}
+.hub-note a {
+  color: var(--ac-text);
+  text-decoration: none;
+}
+.hub-note a:hover {
+  color: var(--ac-primary);
+}
+
+/* ─── 工作坊商业页 ─── */
+.ws {
+  max-width: 40rem;
+  text-align: left;
+}
+.ws-lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ac-text);
+}
+.ws-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  margin: 1.35rem 0 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--ac-border-light);
+  border-bottom: 1px solid var(--ac-border-light);
+}
+.ws-nav a {
+  color: var(--ac-text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.ws-nav a:hover,
+.ws-nav a.is-current {
+  color: var(--ac-primary);
+  text-decoration: none;
+}
+.ws-nav a.is-current {
+  font-weight: 500;
+}
+.ws-block {
+  scroll-margin-top: 4.5rem;
+  margin-top: 2.25rem;
+}
+.ws-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--ac-border);
+}
+.article-entry .ws-head h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--ac-text);
+}
+.ws-head a {
+  font-size: 0.82rem;
+  color: var(--ac-text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ws-head a:hover {
+  color: var(--ac-primary);
+  text-decoration: none;
+}
+.ws-intro,
+.ws-note,
+.ws-close {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ac-text-muted);
+}
+.ws-close {
+  margin-top: 2.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--ac-border-light);
+}
+.ws-close a {
+  color: var(--ac-text);
+  text-decoration: none;
+}
+.ws-close a:hover {
+  color: var(--ac-primary);
+}
+.ws-list {
+  margin-top: 0.15rem;
+}
+.ws-list--doors {
+  margin-top: 0.35rem;
+  border-top: 1px solid var(--ac-border-light);
+}
+.ws-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--ac-border-light);
+  color: inherit;
+  text-decoration: none;
+}
+.ws-item:last-child {
+  border-bottom: none;
+}
+a.ws-item:hover {
+  text-decoration: none;
+}
+a.ws-item:hover h3 {
+  color: var(--ac-primary);
+}
+.ws-item__main {
+  min-width: 0;
+}
+.article-entry .ws-item h3 {
+  margin: 0 0 0.25rem;
+  padding: 0;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ac-text);
+}
+.ws-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ac-text-muted);
+}
+.ws-item .ws-role {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ac-primary-dark);
+}
+.ws-tag {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ac-primary);
+  background: var(--ac-accent-soft);
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.hub-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 2.75rem;
+  align-items: start;
+}
+.hub-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.article-entry .hub-section__head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.hub-section__head a,
+.hub-section__head span {
+  font-size: 0.82rem;
+  color: var(--ac-text-muted);
+  text-decoration: none;
+}
+.hub-section__head > a {
+  white-space: nowrap;
+}
+.hub-section__head a:hover,
+.hub-section__head span a:hover {
+  color: var(--ac-primary);
+  text-decoration: none;
+}
+.hub-section .topic-list {
+  margin: 0.35rem 0 0;
+}
+.hub-section .topic-list-item {
+  padding: 0.55rem 0;
+}
+.hub-section .topic-list-item__title {
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 /* ─── 专题/盗愚斎 列表式 ─── */
@@ -1326,6 +1604,11 @@ a:hover {
 
 /* 移动端微调 */
 @media (max-width: 768px) {
+  .article-entry .hub-grid,
+  .article-entry .hub-grid--doors,
+  .hub-sections {
+    grid-template-columns: 1fr;
+  }
   .home-lanes {
     grid-template-columns: 1fr;
   }
